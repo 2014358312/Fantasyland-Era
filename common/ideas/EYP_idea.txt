@@ -1,0 +1,1200 @@
+ideas = {
+	hidden_ideas = {
+		BUL_army_restrictions_aat = {}#temp idea
+		EYP_nineth_director_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = EYP
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+				intel_network_gain_factor = 0.10
+			}
+			
+			cancel = {
+				ROOT = { NOT = { has_idea_with_trait = nineth_director_locked } }
+			}
+		}
+		
+		EYP_deception_plan_idea_fake = {
+			name = EYP_deception_plan_dynamic_modifier
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { always = no }
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = 0.35
+			}
+		}
+		
+		EYP_industry_plan = {
+			name = EYP_industry_plan_dynamic_modifier
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = {
+				has_dynamic_modifier = {
+					modifier = EYP_industry_plan_dynamic_modifier
+				}
+			}
+			
+			removal_cost = -1
+			
+			research_bonus = {
+				computing_tech = 0.05
+			}
+		}
+		
+		EYP_army_idea_fake = {
+			name = EYP_eylstadt_army_dynamic_modifier
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { always = no }
+			
+			removal_cost = -1
+		}
+		
+		EYP_elite_army_idea_fake = {
+			name = EYP_eylstadt_army_dynamic_modifier
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { always = no }
+			
+			removal_cost = -1
+			
+			modifier = {
+				experience_gain_army_factor = 0.10
+			}
+		}
+		
+		EYP_modular_production_idea = {
+			name = EYP_eylstadt_army_dynamic_modifier
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = {
+				has_dynamic_modifier = {
+					modifier = EYP_eylstadt_army_dynamic_modifier
+				}
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+		
+		EYP_airforce_search_idea = {
+			picture = generic_air_research
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = {
+				has_dynamic_modifier = {
+					modifier = EYP_airforce_research_dynamic_modifier
+				}
+			}
+			
+			removal_cost = -1
+			
+			research_bonus = {
+				air_equipment = 0.05
+			}
+		}
+		
+		EYP_airforce_search_idea_1 = {
+			name = EYP_airforce_search_idea
+			picture = generic_air_research
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = {
+				has_dynamic_modifier = {
+					modifier = EYP_airforce_research_dynamic_modifier
+				}
+			}
+			
+			removal_cost = -1
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+		}
+		
+		EYP_airforce_search_idea_2 = {
+			name = EYP_airforce_search_idea
+			picture = generic_air_research
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = {
+				has_dynamic_modifier = {
+					modifier = EYP_airforce_research_dynamic_modifier
+				}
+			}
+			
+			removal_cost = -1
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+		}
+		
+		EYP_airforce_search_idea_3 = {
+			name = EYP_airforce_search_idea
+			picture = generic_air_research
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = {
+				has_dynamic_modifier = {
+					modifier = EYP_airforce_research_dynamic_modifier
+				}
+			}
+			
+			removal_cost = -1
+			
+			research_bonus = {
+				air_equipment = 0.20
+			}
+		}
+		
+		EYP_airforce_search_idea_4 = {
+			name = EYP_airforce_search_idea
+			picture = generic_air_research
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = {
+				has_dynamic_modifier = {
+					modifier = EYP_airforce_research_dynamic_modifier
+				}
+			}
+			
+			removal_cost = -1
+			
+			research_bonus = {
+				air_equipment = 0.25
+			}
+		}
+		
+		EYP_airforce_search_idea_5 = {
+			name = EYP_airforce_search_idea
+			picture = generic_air_research
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = {
+				has_dynamic_modifier = {
+					modifier = EYP_airforce_research_dynamic_modifier
+				}
+			}
+			
+			removal_cost = -1
+			
+			research_bonus = {
+				air_equipment = 0.30
+			}
+		}
+		
+		EYP_airforce_bomb = {
+			name = EYP_airforce_search_idea
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = {
+				has_dynamic_modifier = {
+					modifier = EYP_airforce_research_dynamic_modifier
+				}
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				medium_plane_fighter_airframe = {
+					air_range = 0.05
+					air_superiority = 0.10
+					instant = yes
+				}
+				medium_plane_airframe = {
+					air_agility = 0.05
+					air_ground_attack = 0.10
+					instant = yes
+				}
+			}
+		}
+		
+		EYP_airforce_bomb_fake = {
+			name = EYP_airforce_search_idea
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { always = no }
+			
+			removal_cost = -1
+			
+			modifier = {
+				air_escort_efficiency = 0.10
+			}
+			
+			equipment_bonus = {
+				medium_plane_fighter_airframe = {
+					air_range = 0.05
+					air_superiority = 0.10
+					instant = yes
+				}
+				medium_plane_airframe = {
+					air_agility = 0.05
+					air_ground_attack = 0.10
+					instant = yes
+				}
+			}
+			
+			research_bonus = {
+				air_equipment = 0.05
+			}
+		}
+		
+		EYP_airforce_closed_support = {
+			name = EYP_airforce_search_idea
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = {
+				has_dynamic_modifier = {
+					modifier = EYP_airforce_research_dynamic_modifier
+				}
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				small_plane_cas_airframe = {
+					air_ground_attack = 0.20
+					instant = yes
+				}
+			}
+		}
+		
+		EYP_airforce_fighter = {
+			name = EYP_airforce_search_idea
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = {
+				has_dynamic_modifier = {
+					modifier = EYP_airforce_research_dynamic_modifier
+				}
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				small_plane_airframe = {
+					air_defence = 0.10
+					air_agility = 0.15
+					instant = yes
+				}
+				medium_plane_fighter_airframe = {
+					air_attack = 0.10
+					air_agility = 0.10
+					instant = yes
+				}
+				jet_fighter_equipment = {
+					air_agility = 0.05
+					instant = yes
+				}
+			}
+		}
+		
+		EYP_airforce_heavy_bomb = {
+			name = EYP_airforce_search_idea
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = {
+				has_dynamic_modifier = {
+					modifier = EYP_airforce_research_dynamic_modifier
+				}
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				large_plane_airframe = {
+					air_range = 0.20
+					air_bombing = 0.10
+					instant = yes
+				}
+				jet_strat_bomber_equipment = {
+					air_range = 0.20
+					air_defence = 0.10
+					instant = yes
+				}
+			}
+		}
+	}
+
+	country = {
+		EYP_settlement_of_witch = {
+			picture = FRA_national_resistance_council
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			available = {}
+			
+			cancel = {}
+			
+			traits = {}
+			
+			modifier = {
+				drift_defence_factor = 0.50
+			}
+			
+			targeted_modifier = {}
+			
+			equipment_bonus = {}
+			
+			research_bonus = {}
+			
+			rule = {}
+			
+			on_add = {}
+			
+			on_remove = {}
+		}
+		
+		EYP_resource_export = {
+			picture = generic_exploit_mines
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				min_export = 0.05
+				consumer_goods_factor = -0.15
+				local_resources_factor = 0.10
+			}
+		}
+		
+		EYP_rudolf_iii = {
+			picture = GFX_idea_EYP_rudolf_iii
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			traits = { popular_figurehead }
+		}
+		
+		EYP_resistance_of_rearmament = {
+			picture = tur_kemalist_officers_disloyalty_effect
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.10
+				neutrality_drift = 0.10
+				war_support_factor = -0.10
+				production_speed_arms_factory_factor = -0.50
+				land_bunker_effectiveness_factor = -0.5
+				coastal_bunker_effectiveness_factor = -0.25
+			}
+		}
+		
+		EYP_order_of_fighter = {
+			picture = generic_fighter_production_diverted
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { NOT = { has_country_flag = EYP_airforce_base_flag } }
+			
+			removal_cost = -1
+			
+			modifier = {
+				civilian_factory_use = 2
+			}
+			
+			on_remove = {
+				EYP_get_fighter = yes
+				set_country_flag = EYP_airforce_base_flag
+			}
+		}
+		
+		EYP_cash_from_order_of_fighter = {
+			picture = generic_foreign_capital
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.08
+			}
+		}
+		
+		EYP_royal_special_force = {
+			picture = eng_special_air_service
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.15
+			}
+		}
+		
+		EYP_startup_private_financing = {
+			picture = generic_foreign_capital
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.20
+				industrial_capacity_factory = 0.20
+				industrial_capacity_dockyard = 0.20
+				production_speed_buildings_factor = -0.25
+				production_speed_bunker_factor = 0.25
+				production_speed_coastal_bunker_factor = 0.25
+				production_factory_efficiency_gain_factor = 0.10
+				production_lack_of_resource_penalty_factor = -0.10
+				line_change_production_efficiency_factor = -0.10
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_offsite_building = {
+						type = arms_factory
+						level = 2
+					}
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					add_offsite_building = {
+						type = arms_factory
+						level = -2
+					}
+				}
+			}
+		}
+		
+		EYP_startup_defend_point = {
+			picture = ast_naval_auxiliary_patrol
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				max_dig_in = 20
+				recon_factor_while_entrenched = 0.10
+				land_reinforce_rate = 0.05
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { EYP_EA_max_dig_in_var = 20 }
+					add_to_variable = { EYP_EA_recon_factor_while_entrenched_var = 0.10 }
+					add_to_variable = { EYP_EA_land_reinforce_rate_var = 0.05 }
+				}
+			}
+		}
+		
+		EYP_startup_simple_workshop = {
+			picture = generic_infantry_equipment_manufacturer_3
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.20
+					reliability = -0.10
+					instant = yes
+				}
+			}
+		}
+		
+		EYP_startup_guerrilla_warfare = {
+			picture = LAT_neopaganism_4
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				resistance_growth_on_our_occupied_states = 0.10
+				org_loss_when_moving = -0.10
+				supply_consumption_factor = -0.10
+				minimum_training_level = -0.10
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { EYP_EA_resistance_growth_on_our_occupied_states_var = 0.10 }
+					add_to_variable = { EYP_EA_org_loss_when_moving_var = -0.10 }
+					add_to_variable = { EYP_EA_supply_consumption_factor_var = -0.10 }
+					add_to_variable = { EYP_EA_minimum_training_level_var = -0.10 }
+				}
+			}
+		}
+		
+		EYP_startup_use_weapon = {
+			picture = generic_infantry_equipment_manufacturer_2
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				equipment_capture_factor = 0.50
+				equipment_conversion_speed = 0.50
+				equipment_upgrade_xp_cost = -0.80
+			}
+		}
+		
+		EYP_startup_coronation_sta_idea = {
+			picture = generic_stability
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = 0.10
+				surrender_limit = 0.10
+			}
+		}
+		
+		EYP_startup_coronation_sup_idea = {
+			picture = generic_war_support
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_core_attack_factor = 0.10
+				command_power_gain_mult = 0.20
+			}
+		}
+		
+		EYP_mining_industry_exploration_committee = {
+			picture = generic_mining_industry
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.10
+				local_resources_factor = 0.15
+			}
+		}
+		
+		EYP_agricultural_compensation = {
+			picture = generic_goods_red_bonus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.10
+				party_popularity_stability_factor = 0.05
+				master_ideology_drift = 0.05
+			}
+		}
+		
+		EYP_production_line_level_up = {
+			picture = SOV_fourth_five_year_plan
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.10
+			}
+		}
+		
+		EYP_introducing_mechanized_equipment = {
+			picture = FRA_motorized_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				experience_gain_mechanized_training_factor = -0.10
+			}
+			
+			equipment_bonus = {
+				mechanized_equipment = {
+					soft_attack = 0.10
+					reliability = 0.05
+					maximum_speed = -0.08
+					instant = yes
+				}
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.05
+				cat_mechanized_equipment = 0.10
+			}
+		}
+		
+		EYP_provide_for_oneself = {
+			picture = generic_exploit_mines
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				min_export = -0.10
+			}
+		}
+		
+		EYP_airforce_club = {
+			picture = generic_aircraft_support
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				air_accidents_factor = -0.25
+				air_ace_generation_chance_factor = 0.25
+				air_weather_penalty = -0.1
+				air_training_xp_gain_factor = 0.1
+			}
+			
+			rule = {
+				can_generate_female_aces = yes
+			}
+		}
+		
+		EYP_navy_build = {
+			picture = generic_the_london_naval_treaty
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		
+		EYP_navy_transport = {
+			picture = eng_preparing_the_second_front
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				convoy_retreat_speed = 0.15
+			}
+			
+			equipment_bonus = {
+				convoy = {
+					anti_air_attack = 0.50
+					lg_attack = 0.25
+					instant = yes
+				}
+			}
+		}
+		
+		EYP_navy_bb_first = {
+			picture = generic_sea_focused_navy
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				naval_hit_chance = 0.10
+				industrial_capacity_dockyard = 0.05
+			}
+			
+			equipment_bonus = {
+				ship_hull_heavy = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}
+		}
+		
+		EYP_navy_cv_first = {
+			picture = generic_sea_focused_navy
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				naval_detection = 0.10
+				industrial_capacity_dockyard = 0.05
+			}
+			
+			equipment_bonus = {
+				ship_hull_carrier = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}
+		}
+		
+		EYP_navy_idea = {
+			picture = generic_sea_focused_navy
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				naval_hit_chance = 0.10
+				naval_detection = 0.10
+				industrial_capacity_dockyard = 0.10
+			}
+			
+			equipment_bonus = {
+				ship_hull_heavy = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				ship_hull_carrier = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}
+		}
+		
+		EYP_navy_dd_idea = {
+			picture = generic_coastal_defense_ships2
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				screening_efficiency = 0.05
+				convoy_escort_efficiency = 0.05
+			}
+		}
+		
+		EYP_navy_dd_large_gun = {
+			picture = generic_coastal_defense_ships2
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				screening_efficiency = 0.05
+				convoy_escort_efficiency = 0.10
+				navy_screen_attack_factor = 0.10
+			}
+		}
+		
+		EYP_navy_dd_greater_bomb = {
+			picture = generic_coastal_defense_ships2
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				screening_efficiency = 0.10
+				convoy_escort_efficiency = 0.05
+				naval_torpedo_screen_penetration_factor = 0.10
+			}
+		}
+		
+		EYP_navy_ss = {
+			picture = generic_navy_submarine
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				ship_hull_submarine = {
+					naval_speed = 0.10
+					torpedo_attack = 0.05
+					instant = yes
+				}
+			}
+		}
+		
+		EYP_navy_ss_slient_learn = {
+			name = EYP_navy_ss
+			picture = generic_navy_submarine
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				naval_torpedo_cooldown_factor = -0.10
+			}
+			
+			equipment_bonus = {
+				ship_hull_submarine = {
+					naval_speed = 0.10
+					sub_visibility = -0.10
+					torpedo_attack = 0.05
+					instant = yes
+				}
+			}
+		}
+		
+		EYP_save_airforce = {
+			picture = generic_air_payment
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				cv_small_plane_airframe = {
+					naval_range = 0.25
+					instant = yes
+				}
+			}
+		}
+		
+		EYP_across_sea_transport = {
+			picture = generic_air_bonus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				navy_max_range_factor = 1
+			}
+			
+			equipment_bonus = {
+				cv_small_plane_airframe = {
+					naval_range = 0.25
+					instant = yes
+				}
+			}
+		}
+		
+		EYP_eastern_intelligence_division = {
+			picture = generic_spy_intel
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				operative_slot = 1
+			}
+			
+			targeted_modifier = {
+				tag = ITA
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+		}
+		
+		EYP_eastern_intelligence_division_safe = {
+			name = EYP_eastern_intelligence_division
+			picture = generic_spy_intel
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				operative_slot = 1
+			}
+		}
+	}
+}

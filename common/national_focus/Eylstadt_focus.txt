@@ -1,0 +1,3205 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_USA_CONGRESS}
+
+focus_tree = {
+	id = eylstadt_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 100
+			original_tag = EYP
+		}
+	}
+	continuous_focus_position = { x = 50 y = 1600 }
+	default = no
+#	focus = {
+#		id = EYP_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		relative_position_id = 
+#		x = 0
+#		y = 1
+#		cost = 10
+#		ai_will_do = {
+#			factor = 1
+#		}
+#		available = {
+#
+#		}
+#		bypass = {
+#
+#		}
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#		completion_reward = {
+#
+#		}
+#	}
+
+
+ ######   #######  ##    ## ######## ##       ####  ######  ######## 
+##    ## ##     ## ###   ## ##       ##        ##  ##    ##    ##    
+##       ##     ## ####  ## ##       ##        ##  ##          ##    
+##       ##     ## ## ## ## ######   ##        ##  ##          ##    
+##       ##     ## ##  #### ##       ##        ##  ##          ##    
+##    ## ##     ## ##   ### ##       ##        ##  ##    ##    ##    
+ ######   #######  ##    ## ##       ######## ####  ######     ##    
+
+	focus = {
+		id = EYP_startup_private_financing
+		icon = GFX_focus_generic_concessions
+		x = 3
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = { EYP_patriotic_war = yes }
+		completion_reward = {
+			add_ideas = EYP_startup_private_financing
+			effect_tooltip = {
+				add_offsite_building = {
+					type = arms_factory
+					level = 2
+				}
+			}
+			custom_effect_tooltip = EYP_startup_private_financing_tt
+		}
+	}
+
+	focus = {
+		id = EYP_startup_defend_point
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = EYP_startup_private_financing }
+		mutually_exclusive = { focus = EYP_startup_guerrilla_warfare }
+		relative_position_id = EYP_startup_private_financing
+		x = -2
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_patriotic_war = yes }
+		search_filters = {}
+		completion_reward = {
+			every_core_state = {
+				limit = { is_controlled_by = ROOT }
+				custom_effect_tooltip = EYP_startup_defend_point_tt
+				hidden_effect = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							all_provinces = yes
+							limit_to_victory_point = yes
+						}
+						instant_build = yes
+					}
+				}
+			}
+			add_ideas = EYP_startup_defend_point
+		}
+	}
+
+	focus = {
+		id = EYP_startup_guerrilla_warfare
+		icon = GFX_focus_prc_infiltration
+		prerequisite = { focus = EYP_startup_private_financing }
+		mutually_exclusive = { focus = EYP_startup_defend_point }
+		relative_position_id = EYP_startup_private_financing
+		x = 2
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_patriotic_war = yes }
+		search_filters = {}
+		completion_reward = {
+			add_ideas = EYP_startup_guerrilla_warfare
+		}
+	}
+
+	focus = {
+		id = EYP_startup_coronation
+		icon = GFX_focus_rom_royal_dictatorship
+		prerequisite = {
+			focus = EYP_startup_defend_point
+			focus = EYP_startup_guerrilla_warfare
+		}
+		relative_position_id = EYP_startup_private_financing
+		x = 0
+		y = 3
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_patriotic_war = yes }
+		search_filters = {}
+		completion_reward = {
+			country_event = eylstadt.6
+			effect_tooltip = { add_ideas = EYP_deception_plan_idea_fake }
+			hidden_effect = {
+				add_to_variable = { EYP_DP_political_power_factor_var = 0.35 }
+				add_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier }
+			}
+		}
+	}
+
+	focus = {
+		id = EYP_startup_clear_fields
+		icon = GFX_focus_RAJ_lions_of_the_great_war
+		prerequisite = { focus = EYP_startup_defend_point }
+		relative_position_id = EYP_startup_defend_point
+		x = 1
+		y = 1
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			EYP_patriotic_war = yes
+			has_completed_focus = EYP_startup_coronation
+		}
+		search_filters = {}
+		completion_reward = {
+			unlock_decision_tooltip = EYP_startup_clear_fields_decision
+			if = {
+				limit = { has_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier } }
+				custom_effect_tooltip = EYP_modifier_deception_plan_tt
+				add_to_variable = { EYP_DP_supply_factor_var = 0.10 tooltip = supply_factor_tt }
+				add_to_variable = { EYP_DP_supply_node_range_var = -0.10 tooltip = supply_node_range_tt }
+			}
+		}
+	}
+
+	focus = {
+		id = EYP_startup_simple_workshop
+		icon = GFX_focus_focus_fra_maquis
+		prerequisite = { focus = EYP_startup_defend_point }
+		relative_position_id = EYP_startup_defend_point
+		x = -1
+		y = 1
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			EYP_patriotic_war = yes
+			has_completed_focus = EYP_startup_coronation
+		}
+		search_filters = {}
+		completion_reward = {
+			add_ideas = EYP_startup_simple_workshop
+		}
+	}
+
+	focus = {
+		id = EYP_startup_no_step_back
+		icon = GFX_focus_focus_fra_revolution_utmost
+		prerequisite = { focus = EYP_startup_simple_workshop }
+		prerequisite = { focus = EYP_startup_clear_fields }
+		relative_position_id = EYP_startup_clear_fields
+		x = -1
+		y = 1
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			EYP_patriotic_war = yes
+			has_idea = EYP_startup_defend_point
+		}
+		search_filters = {}
+		completion_reward = {
+			custom_effect_tooltip = EYP_startup_no_step_back_tt
+			set_country_flag = EYP_startup_no_step_back_flag
+		}
+	}
+
+	focus = {
+		id = EYP_startup_jager_movement
+		icon = GFX_focus_EYP_jager_movement
+		prerequisite = { focus = EYP_startup_guerrilla_warfare }
+		relative_position_id = EYP_startup_guerrilla_warfare
+		x = -1
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			EYP_patriotic_war = yes
+			has_completed_focus = EYP_startup_coronation
+		}
+		search_filters = {}
+		completion_reward = {
+			hidden_effect = { set_technology = { EYP_startup_royal_jager_tech = 1 } }
+			custom_effect_tooltip = EYP_startup_jager_movement
+		}
+	}
+
+	focus = {
+		id = EYP_startup_use_weapon
+		icon = GFX_focus_FIN_salvaged_and_retooled
+		prerequisite = { focus = EYP_startup_guerrilla_warfare }
+		relative_position_id = EYP_startup_guerrilla_warfare
+		x = 1
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			EYP_patriotic_war = yes
+			has_completed_focus = EYP_startup_coronation
+		}
+		search_filters = {}
+		completion_reward = {
+			add_ideas = EYP_startup_use_weapon
+		}
+	}
+
+	focus = {
+		id = EYP_startup_jointly_defend
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		prerequisite = { focus = EYP_startup_jager_movement }
+		prerequisite = { focus = EYP_startup_use_weapon }
+		relative_position_id = EYP_startup_jager_movement
+		x = 1
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			EYP_patriotic_war = yes
+			has_idea = EYP_startup_guerrilla_warfare
+		}
+		search_filters = {}
+		completion_reward = {
+			custom_effect_tooltip = EYP_startup_jointly_defend_tt
+			set_country_flag = EYP_startup_jointly_defend_flag
+		}
+	}
+
+	focus = {
+		id = EYP_startup_hardest_passed_away
+		icon = GFX_focus_EYP_hardest_passed_away
+		prerequisite = {
+			focus = EYP_startup_no_step_back
+			focus = EYP_startup_jointly_defend
+		}
+		prerequisite = { focus = EYP_startup_coronation }
+		relative_position_id = EYP_startup_coronation
+		x = 0
+		y = 1
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_patriotic_war = yes }
+		search_filters = {}
+		completion_reward = {
+			custom_effect_tooltip = EYP_startup_hardest_passed_away_tt
+			if = {
+				limit = { has_country_flag = EYP_startup_coronation_sta_flag }
+				custom_effect_tooltip = EYP_modifier_deception_plan_tt
+				add_to_variable = { EYP_DP_stability_factor_var = 0.10 tooltip = stability_factor_tt }
+				add_to_variable = { EYP_DP_political_power_factor_var = 0.05 tooltip = political_power_factor_tt }
+			}
+			else_if = {
+				limit = { has_country_flag = EYP_startup_coronation_sup_flag }
+				custom_effect_tooltip = EYP_modifier_deception_plan_tt
+				add_to_variable = { EYP_DP_stability_factor_var = 0.05 tooltip = stability_factor_tt }
+				add_to_variable = { EYP_DP_war_support_factor_var = 0.05 tooltip = war_support_factor_tt }
+			}
+			else = { custom_effect_tooltip = EYP_modifier_deception_plan_tt }
+			add_to_variable = { EYP_DP_army_core_attack_factor_var = 0.15 tooltip = army_core_attack_factor_tt }
+			add_to_variable = { EYP_DP_army_core_defence_factor_var = 0.15 tooltip = army_core_defence_factor_tt }
+		}
+	}
+	
+#### ##    ## ########  ##     ##  ######  ######## ########  ##    ## 
+ ##  ###   ## ##     ## ##     ## ##    ##    ##    ##     ##  ##  ##  
+ ##  ####  ## ##     ## ##     ## ##          ##    ##     ##   ####   
+ ##  ## ## ## ##     ## ##     ##  ######     ##    ########     ##    
+ ##  ##  #### ##     ## ##     ##       ##    ##    ##   ##      ##    
+ ##  ##   ### ##     ## ##     ## ##    ##    ##    ##    ##     ##    
+#### ##    ## ########   #######   ######     ##    ##     ##    ##    
+	
+	focus = {
+		id = EYP_industry_plan
+		icon = GFX_goal_generic_demand_territory
+		x = 15
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_industry_plan
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+			effect_tooltip = { add_ideas = EYP_industry_plan }
+			hidden_effect = { add_dynamic_modifier = { modifier = EYP_industry_plan_dynamic_modifier } }
+			unlock_decision_category_tooltip = EYP_industry_plan_decision_category
+		}
+	}
+	
+	focus = {
+		id = EYP_aim_at_mining_industry
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = EYP_industry_plan }
+		relative_position_id = EYP_industry_plan
+		x = -6
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_aim_at_mining_industry
+				bonus = 3.0
+				uses = 1
+				category = excavation_tech
+			}
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_production_speed_infrastructure_factor_var = 0.10 tooltip = production_speed_infrastructure_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_mining_industry_exploration_committee
+		icon = GFX_focus_generic_mining_industry
+		prerequisite = { focus = EYP_aim_at_mining_industry }
+		relative_position_id = EYP_aim_at_mining_industry
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_ideas = EYP_mining_industry_exploration_committee
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_production_lack_of_resource_penalty_factor_var = -0.10 tooltip = production_lack_of_resource_penalty_factor_tt }
+			add_to_variable = { EYP_IP_production_factory_start_efficiency_factor_var = 0.10 tooltip = production_factory_start_efficiency_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_towards_the_deep_sea
+		icon = GFX_focus_generic_offshore_oil_rig
+		prerequisite = { focus = EYP_mining_industry_exploration_committee }
+		relative_position_id = EYP_mining_industry_exploration_committee
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			random_controlled_state = {
+				limit = { is_coastal = yes }
+				add_resource = {
+					type = oil
+					amount = 6
+				}
+			}
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_production_speed_dockyard_factor_var = 0.10 tooltip = production_speed_dockyard_factor_tt }
+			add_to_variable = { EYP_IP_industrial_capacity_dockyard_var = 0.10 tooltip = industrial_capacity_dockyard_tt }
+			add_to_variable = { EYP_IP_navy_fuel_consumption_factor_var = -0.05 tooltip = navy_fuel_consumption_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_agricultural_compensation
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = EYP_aim_at_mining_industry }
+		relative_position_id = EYP_aim_at_mining_industry
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_timed_idea = { idea = EYP_agricultural_compensation days = 120 }
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				prioritize = {  }
+				add_extra_state_shared_building_slots = 1
+				if = {
+					limit = { infrastructure < 5 }
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_party_popularity_stability_factor_var = 0.05 tooltip = party_popularity_stability_factor_tt }
+			add_to_variable = { EYP_IP_production_speed_industrial_complex_factor_var = 0.15 tooltip = production_speed_industrial_complex_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_improve_transportation_capacity
+		icon = GFX_goal_generic_road_construction
+		prerequisite = {
+			focus = EYP_mining_industry_exploration_committee
+			focus = EYP_agricultural_compensation
+		}
+		relative_position_id = EYP_agricultural_compensation
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_production_speed_rail_way_factor_var = 0.15 tooltip = production_speed_rail_way_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_production_line_level_up
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = EYP_industry_plan }
+		relative_position_id = EYP_industry_plan
+		x = 6
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_timed_idea = { idea = EYP_production_line_level_up days = 90 }
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_production_factory_max_efficiency_factor_var = 0.10 tooltip = production_factory_max_efficiency_factor_tt }
+			add_to_variable = { EYP_IP_industrial_capacity_factory_var = 0.05 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { EYP_IP_industrial_capacity_dockyard_var = 0.10 tooltip = industrial_capacity_dockyard_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_form_speciality_school
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = EYP_production_line_level_up }
+		relative_position_id = EYP_production_line_level_up
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_research_slot = 1
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_research_speed_factor_var = 0.05 tooltip = research_speed_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_introducing_mechanized_equipment
+		icon = GFX_goal_generic_mechanisation
+		prerequisite = { focus = EYP_form_speciality_school }
+		relative_position_id = EYP_form_speciality_school
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_ideas = EYP_introducing_mechanized_equipment
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_consumer_goods_factor_var = -0.06 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { EYP_IP_production_speed_buildings_factor_var = 0.05 tooltip = production_speed_buildings_factor_tt }
+			add_to_variable = { EYP_IP_production_speed_infrastructure_factor_var = 0.10 tooltip = production_speed_infrastructure_factor_tt }
+			add_to_variable = { EYP_IP_global_building_slots_factor_var = 0.20 tooltip = global_building_slots_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_industrial_base
+		icon = GFX_goal_generic_factory_complex
+		prerequisite = { focus = EYP_production_line_level_up }
+		relative_position_id = EYP_production_line_level_up
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_radio_base
+		icon = GFX_goal_generic_radio
+		prerequisite = {
+			focus = EYP_form_speciality_school
+			focus = EYP_industrial_base
+		}
+		relative_position_id = EYP_industrial_base
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_radio_base
+				uses = 1
+				bonus = 1
+				category = radar_tech
+			}
+			if = {
+				limit = { has_tech = radio_detection }
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						is_capital = yes
+					}
+					prioritize = {}
+					add_building_construction = {
+						type = radar_station
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_form_law_of_industry
+		icon = GFX_focus_generic_court
+		prerequisite = { focus = EYP_industry_plan }
+		relative_position_id = EYP_industry_plan
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_political_power = 70
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_trade_laws_cost_factor_var = -0.10 tooltip = trade_laws_cost_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_minimum_salary_guarantee
+		icon = GFX_focus_mex_privatisation
+		prerequisite = { focus = EYP_form_law_of_industry }
+		mutually_exclusive = { focus = EYP_corp_with_noble }
+		relative_position_id = EYP_form_law_of_industry
+		x = -3
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_political_power_factor_var = -0.05 tooltip = political_power_factor_tt }
+			add_to_variable = { EYP_IP_stability_factor_var = 0.05 tooltip = stability_factor_tt }
+			add_to_variable = { EYP_IP_production_factory_max_efficiency_factor_var = 0.08 tooltip = production_factory_max_efficiency_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_corp_with_noble
+		icon = GFX_focus_SWE_privately_managed_vacation
+		prerequisite = { focus = EYP_form_law_of_industry }
+		mutually_exclusive = { focus = EYP_minimum_salary_guarantee }
+		relative_position_id = EYP_form_law_of_industry
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_industrial_capacity_factory_var = 0.05 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { EYP_IP_industrial_capacity_dockyard_var = 0.10 tooltip = industrial_capacity_dockyard_tt }
+			add_to_variable = { EYP_IP_line_change_production_efficiency_factor_var = -0.05 tooltip = line_change_production_efficiency_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_protect_environment
+		icon = GFX_focus_POL_support_global_falangism
+		prerequisite = { focus = EYP_form_law_of_industry }
+		mutually_exclusive = { focus = EYP_ignore_environment }
+		relative_position_id = EYP_form_law_of_industry
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			unlock_decision_tooltip = EYP_protect_environment_decision
+		}
+	}
+	
+	focus = {
+		id = EYP_ignore_environment
+		icon = GFX_focus_SWE_landsverk
+		prerequisite = { focus = EYP_form_law_of_industry }
+		mutually_exclusive = { focus = EYP_protect_environment }
+		relative_position_id = EYP_form_law_of_industry
+		x = 3
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_global_building_slots_factor_var = 0.30 tooltip = global_building_slots_factor_tt }
+			add_to_variable = { EYP_IP_production_speed_buildings_factor_var = 0.20 tooltip = production_speed_buildings_factor_tt }
+			add_to_variable = { EYP_IP_party_popularity_stability_factor_var = 0.10 tooltip = party_popularity_stability_factor_tt }
+			custom_effect_tooltip = EYP_ignore_environment_tt
+		}
+	}
+	
+	focus = {
+		id = EYP_connect_country
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = {
+			focus = EYP_improve_transportation_capacity
+			focus = EYP_radio_base
+		}
+		relative_position_id = EYP_industry_plan
+		x = 0
+		y = 4
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_connect_country_tt
+			hidden_effect = {
+				every_core_state = {
+					limit = {
+						free_building_slots = {
+							building = infrastructure
+							size > 4
+							include_locked = yes
+						}
+					}
+					ROOT = { add_political_power = 10 }
+				}
+			}
+			every_core_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size < 5
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_national_electric_interprise
+		icon = GFX_focus_POL_warsaw_main_station
+		prerequisite = { focus = EYP_connect_country }
+		relative_position_id = EYP_connect_country
+		x = -3
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_hydropower
+		icon = GFX_focus_generic_hydroelectric_energy
+		prerequisite = { focus = EYP_national_electric_interprise }
+		relative_position_id = EYP_national_electric_interprise
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_consumer_goods_factor_var = -0.04 tooltip = consumer_goods_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_integrating_into_the_mainland_financial_system
+		icon = GFX_focus_EYP_standing_on_the_same_side
+		prerequisite = { focus = EYP_national_electric_interprise }
+		relative_position_id = EYP_national_electric_interprise
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_coachman
+		icon = GFX_focus_eng_global_defense
+		prerequisite = {
+			focus = EYP_hydropower
+			focus = EYP_integrating_into_the_mainland_financial_system
+		}
+		relative_position_id = EYP_hydropower
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 100
+				producer = ROOT
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_capital_economic_circle
+		icon = GFX_focus_DEN_no_regulations
+		prerequisite = {
+			focus = EYP_hydropower
+			focus = EYP_integrating_into_the_mainland_financial_system
+		}
+		relative_position_id = EYP_integrating_into_the_mainland_financial_system
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_capital = yes }
+				add_extra_state_shared_building_slots = 5
+				if = {
+					limit = { infrastructure < 5 }
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					add_dynamic_modifier = {
+						modifier = EYP_capital_economic_circle_state_dynamic_modifier
+						scope = ROOT
+						days = 365
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			every_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					any_neighbor_state = { is_capital = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_provide_for_oneself
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = EYP_connect_country }
+		relative_position_id = EYP_connect_country
+		x = 3
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_ideas = EYP_provide_for_oneself
+			if = {
+				limit = { NOT = { has_tech = fuel_silos } }
+				set_technology = { fuel_silos = 1 }
+			}
+			else_if = {
+				limit = {
+					has_tech = fuel_silos
+					NOT = { has_tech = synth_oil_experiments }
+				}
+				set_technology = { synth_oil_experiments = 1 }
+			}
+			add_tech_bonus = {
+				name = EYP_provide_for_oneself
+				uses = 3
+				bonus = 1.0
+				category = synth_resources
+			}
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_economy_cost_factor_var = -0.10 tooltip = economy_cost_factor_tt }
+			add_to_variable = { EYP_IP_trade_laws_cost_factor_var = -0.05 tooltip = trade_laws_cost_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_strengthen_military_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = EYP_provide_for_oneself }
+		relative_position_id = EYP_provide_for_oneself
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				#remove_dynamic_modifier = { modifier =  }
+				#add_dynamic_modifier = { modifier =  }
+			}
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_production_speed_arms_factory_factor_var = 0.10 tooltip = production_speed_arms_factory_factor_tt }
+			add_to_variable = { EYP_IP_production_speed_dockyard_factor_var = 0.10 tooltip = production_speed_dockyard_factor_tt }
+			add_to_variable = { EYP_IP_production_speed_industrial_complex_factor_var = -0.10 tooltip = production_speed_industrial_complex_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_anti_air_industry
+		icon = GFX_focus_generic_air_defense
+		prerequisite = { focus = EYP_provide_for_oneself }
+		relative_position_id = EYP_provide_for_oneself
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_anti_air_industry
+				uses = 1
+				bonus = 1.0
+				category = industry
+			}
+			if = {
+				limit = { NOT = { has_tech = concentrated_industry } }
+				add_tech_bonus = {
+					name = EYP_anti_air_industry
+					uses = 1
+					ahead_reduction = 3.0
+					category = dispersed_industry_category
+				}
+			}
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_static_anti_air_damage_factor_var = 0.10 tooltip = static_anti_air_damage_factor_tt }
+			add_to_variable = { EYP_IP_static_anti_air_hit_chance_factor_var = 0.10 tooltip = static_anti_air_hit_chance_factor_tt }
+			add_to_variable = { EYP_IP_industry_air_damage_factor_var = -0.10 tooltip = industry_air_damage_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_total_economy
+		icon = GFX_goal_generic_defence
+		prerequisite = {
+			focus = EYP_strengthen_military_industry
+			focus = EYP_anti_air_industry
+		}
+		relative_position_id = EYP_strengthen_military_industry
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_modifier_industry_plan_tt
+			add_to_variable = { EYP_IP_economy_cost_factor_var = -0.15 tooltip = economy_cost_factor_tt }
+			add_to_variable = { EYP_IP_conscription_var = 0.015 tooltip = conscription_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_high_quality_ammunition
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = {
+			focus = EYP_strengthen_military_industry
+			focus = EYP_anti_air_industry
+		}
+		relative_position_id = EYP_anti_air_industry
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_new_energy_formula
+		icon = GFX_focus_generic_university_1
+		prerequisite = { focus = EYP_connect_country }
+		relative_position_id = EYP_connect_country
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			EYP_industrialization_in_progress = yes
+			num_of_factories > 20
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_new_energy_formula
+				uses = 1
+				bonus = 1.0
+				ahead_reduction = 1.0
+				category = nuclear
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_miracle_in_distance
+		icon = GFX_focus_generic_jet_planes
+		prerequisite = { focus = EYP_new_energy_formula }
+		relative_position_id = EYP_new_energy_formula
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = { EYP_industrialization_in_progress = yes }
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_miracle_in_distance
+				uses = 1
+				bonus = 1.0
+				ahead_reduction = 1.0
+				category = jet_technology
+				technology = jet_engines
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_fruitful
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = EYP_miracle_in_distance }
+		relative_position_id = EYP_miracle_in_distance
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			EYP_industrialization_in_progress = yes
+			num_of_factories > 30
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+   ###    ########  ##     ## ##    ## 
+  ## ##   ##     ## ###   ###  ##  ##  
+ ##   ##  ##     ## #### ####   ####   
+##     ## ########  ## ### ##    ##    
+######### ##   ##   ##     ##    ##    
+##     ## ##    ##  ##     ##    ##    
+##     ## ##     ## ##     ##    ##    
+	
+	focus = {
+		id = EYP_elite_army
+		icon = GFX_focus_generic_defence_army
+		x = 30
+		y = 0
+		cost = 6
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = { has_idea = EYP_resistance_of_rearmament }
+			custom_trigger_tooltip = {
+				tooltip = EYP_elite_army_ttt
+				NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+			}
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			army_experience = 5
+			effect_tooltip = {
+				if = {
+					limit = { has_dynamic_modifier = { modifier = EYP_eylstadt_army_dynamic_modifier } }
+					swap_ideas = {
+						remove_idea = EYP_army_idea_fake
+						add_idea = EYP_elite_army_idea_fake
+					}
+				}
+				else = { add_ideas = EYP_elite_army_idea_fake }
+			}
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_dynamic_modifier = { modifier = EYP_eylstadt_army_dynamic_modifier } } }
+					add_dynamic_modifier = { modifier = EYP_eylstadt_army_dynamic_modifier }
+				}
+				add_to_variable = { EYP_EA_experience_gain_army_factor_var = 0.10 }
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_fully_armed
+		icon = GFX_focus_generic_modernize_industry
+		prerequisite = { focus = EYP_elite_army }
+		relative_position_id = EYP_elite_army
+		x = -3
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_stand
+		icon = GFX_focus_generic_limited_social_mobilization
+		prerequisite = { focus = EYP_fully_armed }
+		mutually_exclusive = { focus = EYP_breakthrough focus = EYP_soft_attack }
+		relative_position_id = EYP_fully_armed
+		x = -2
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			army_experience = 10
+			add_doctrine_cost_reduction = {
+				name = EYP_stand
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_army_defence_factor_var = 0.05 tooltip = army_defence_factor_tt }
+			add_to_variable = { EYP_EA_max_planning_factor_var = 0.20 tooltip = max_planning_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_official_school
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = EYP_stand }
+		relative_position_id = EYP_stand
+		x = -1
+		y = 2
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_training_time_factor_var = -0.10 tooltip = training_time_factor_tt }
+			add_to_variable = { EYP_EA_army_spirit_category_type_cost_factor_var = -0.15 tooltip = army_spirit_category_type_cost_factor_tt }
+			add_to_variable = { EYP_EA_command_abilities_cost_factor_var = -0.20 tooltip = command_abilities_cost_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_training_country
+		icon = GFX_goal_generic_conscription
+		prerequisite = { focus = EYP_stand }
+		relative_position_id = EYP_stand
+		x = 0
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_minimum_training_level_var = -0.05 tooltip = minimum_training_level_tt }
+			add_to_variable = { EYP_EA_conscription_factor_var = 0.10 tooltip = conscription_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_soft_attack
+		icon = GFX_focus_SWE_let_fly_all_guns
+		prerequisite = { focus = EYP_fully_armed }
+		mutually_exclusive = { focus = EYP_breakthrough focus = EYP_stand }
+		relative_position_id = EYP_fully_armed
+		x = 0
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			army_experience = 10
+			add_doctrine_cost_reduction = {
+				name = EYP_soft_attack
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_army_artillery_attack_factor_var = 0.10 tooltip = army_artillery_attack_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_airground_coordination
+		icon = GFX_focus_generic_multi_role_aircraft
+		prerequisite = { focus = EYP_soft_attack }
+		relative_position_id = EYP_soft_attack
+		x = 0
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			random_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					any_neighbor_state = { NOT = { is_controlled_by = ROOT } }
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_army_artillery_attack_factor_var = 0.10 tooltip = army_artillery_attack_factor_tt }
+			add_to_variable = { EYP_EA_air_cas_efficiency_var = 0.10 tooltip = air_cas_efficiency_tt }
+			add_to_variable = { EYP_EA_army_bonus_air_superiority_factor_var = 0.10 tooltip = army_bonus_air_superiority_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_logistics
+		icon = GFX_focus_generic_supply_line
+		prerequisite = {
+			focus = EYP_stand
+			focus = EYP_soft_attack
+		}
+		relative_position_id = EYP_stand
+		x = 1
+		y = 2
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_logistics
+				uses = 3
+				bonus = 1.0
+				category = logistics_tech
+				category = motorized_equipment
+				category = train_tech
+				category = tp_tech
+			}
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_supply_consumption_factor_var = -0.05 tooltip = supply_consumption_factor_tt }
+			add_to_variable = { EYP_EA_production_speed_rail_way_factor_var = 0.10 tooltip = production_speed_rail_way_factor_tt }
+			add_to_variable = { EYP_EA_pocket_penalty_var = -0.10 tooltip = pocket_penalty_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_breakthrough
+		icon = GFX_goal_generic_doctrine_tank_warfare
+		prerequisite = { focus = EYP_fully_armed }
+		mutually_exclusive = { focus = EYP_soft_attack focus = EYP_stand }
+		relative_position_id = EYP_fully_armed
+		x = 2
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			army_experience = 10
+			add_doctrine_cost_reduction = {
+				name = EYP_soft_attack
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_army_armor_attack_factor_var = 0.05 tooltip = army_armor_attack_factor_tt }
+			add_to_variable = { EYP_EA_army_armor_defence_factor_var = 0.05 tooltip = army_armor_defence_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_auxiliary
+		icon = GFX_focus_generic_truck
+		prerequisite = {
+			focus = EYP_soft_attack
+			focus = EYP_breakthrough
+		}
+		relative_position_id = EYP_breakthrough
+		x = -1
+		y = 2
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_auxiliary
+				uses = 3
+				bonus = 1.0
+				category = engineers_tech
+				category = recon_tech
+				category = hospital_tech
+				category = signal_company_tech
+			}
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_army_attack_speed_factor_var = 0.10 tooltip = army_attack_speed_factor_tt }
+			add_to_variable = { EYP_EA_org_loss_when_moving_var = -0.05 tooltip = org_loss_when_moving_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_efficient_communication
+		icon = GFX_goal_generic_radar
+		prerequisite = { focus = EYP_breakthrough }
+		relative_position_id = EYP_breakthrough
+		x = 0
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_breakthrough_factor_var = 0.10 tooltip = breakthrough_factor_tt }
+			add_to_variable = { EYP_EA_army_armor_speed_factor_var = 0.05 tooltip = army_armor_speed_factor_tt }
+			add_to_variable = { EYP_EA_land_reinforce_rate_var = 0.02 tooltip = land_reinforce_rate_tt }
+			add_to_variable = { EYP_EA_initiative_factor_var = 0.10 tooltip = initiative_factor_tt }
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_modular_production
+		icon = GFX_goal_generic_design_equipment_standards
+		prerequisite = { focus = EYP_breakthrough }
+		relative_position_id = EYP_breakthrough
+		x = 1
+		y = 2
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_land_equipment_upgrade_xp_cost_var = -0.50 tooltip = land_equipment_upgrade_xp_cost_tt }
+			custom_effect_tooltip = EYP_modular_production_tt
+			hidden_effect = { add_ideas = EYP_modular_production_idea }
+		}
+	}
+	
+	focus = {
+		id = EYP_centre_command
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = EYP_elite_army }
+		mutually_exclusive = { focus = EYP_limit_positive }
+		relative_position_id = EYP_elite_army
+		x = -1
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			army_experience = 10
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_experience_gain_army_factor_var = 0.15 tooltip = experience_gain_army_factor_tt }
+			add_to_variable = { EYP_EA_land_doctrine_cost_factor_var = -0.10 tooltip = land_doctrine_cost_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_limit_positive
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = EYP_elite_army }
+		mutually_exclusive = { focus = EYP_centre_command }
+		relative_position_id = EYP_elite_army
+		x = 1
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			army_experience = 10
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_experience_gain_army_unit_factor_var = 0.25 tooltip = experience_gain_army_unit_factor_tt }
+			add_to_variable = { EYP_EA_army_core_defence_factor_var = 0.06 tooltip = army_core_defence_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_jager
+		icon = GFX_focus_GRE_a_land_of_mountains
+		prerequisite = { focus = EYP_elite_army }
+		relative_position_id = EYP_elite_army
+		x = 3
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = EYP_jager
+				uses = 1
+				bonus = 1.0
+				category = mountaineers_tech
+			}
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_tech = EYP_startup_royal_jager_tech } }
+					set_technology = { EYP_startup_royal_jager_tech = 1 popup = no }
+				}
+				set_technology = { EYP_royal_jager_tech = 1 popup = no }
+			}
+			custom_effect_tooltip = EYP_jager_tt
+		}
+	}
+	
+	focus = {
+		id = EYP_terrain_adaptation
+		icon = GFX_goal_generic_arctic_warfare
+		prerequisite = { focus = EYP_jager }
+		relative_position_id = EYP_jager
+		x = -1
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_heat_attrition_factor_var = -0.1 tooltip = heat_attrition_factor_tt }
+			add_to_variable = { EYP_EA_winter_attrition_factor_var = -0.1 tooltip = winter_attrition_factor_tt }
+			add_to_variable = { EYP_EA_acclimatization_cold_climate_gain_factor_var = 0.15 tooltip = acclimatization_cold_climate_gain_factor_tt }
+			add_to_variable = { EYP_EA_acclimatization_hot_climate_gain_factor_var = 0.15 tooltip = acclimatization_hot_climate_gain_factor_tt }
+			add_to_variable = { EYP_EA_terrain_penalty_reduction_var = 0.05 tooltip = terrain_penalty_reduction_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_camouflage
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = EYP_jager }
+		relative_position_id = EYP_jager
+		x = 1
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_cas_damage_reduction_var = 0.05 tooltip = cas_damage_reduction_tt }
+			add_to_variable = { EYP_EA_max_dig_in_var = 5 tooltip = max_dig_in_tt }
+			add_to_variable = { EYP_EA_dig_in_speed_factor_var = 0.10 tooltip = dig_in_speed_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_commando_units
+		icon = GFX_goal_generic_authority
+		prerequisite = {
+			focus = EYP_breakthrough
+			focus = EYP_terrain_adaptation
+		}
+		relative_position_id = EYP_terrain_adaptation
+		x = -1
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_commando_units_tt
+		}
+	}
+	
+	focus = {
+		id = EYP_veins_of_land
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = EYP_camouflage }
+		relative_position_id = EYP_camouflage
+		x = 1
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_pocket_penalty_var = -0.10 tooltip = pocket_penalty_tt }
+			add_to_variable = { EYP_EA_no_supply_grace_var = 48 tooltip = no_supply_grace_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_enemy_rear_supply
+		icon = GFX_goal_generic_drafted_army
+		prerequisite = { focus = EYP_camouflage }
+		prerequisite = { focus = EYP_terrain_adaptation }
+		relative_position_id = EYP_terrain_adaptation
+		x = 1
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_org_loss_when_moving_var = -0.10 tooltip = org_loss_when_moving_tt }
+			add_to_variable = { EYP_EA_army_morale_factor_var = 0.10 tooltip = army_morale_factor_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_carry_forward_army_tradition
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = {
+			focus = EYP_commando_units
+			focus = EYP_enemy_rear_supply
+			focus = EYP_veins_of_land
+		}
+		relative_position_id = EYP_enemy_rear_supply
+		x = 0
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			army_experience = 50
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_surrender_limit_var = 0.10 tooltip = surrender_limit_tt }
+			add_to_variable = { EYP_EA_experience_loss_factor_var = -0.50 tooltip = experience_loss_factor_tt }
+			add_to_variable = { EYP_EA_land_doctrine_cost_factor_var = -0.10 tooltip = land_doctrine_cost_factor_tt }
+			add_to_variable = { EYP_EA_max_command_power_var = 50 tooltip = max_command_power_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_intelligence
+		icon = GFX_goal_generic_investigation
+		prerequisite = { focus = EYP_elite_army }
+		relative_position_id = EYP_elite_army
+		x = 5
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			if = {
+				limit = { has_intelligence_agency = no }
+				add_political_power = -25
+				create_intelligence_agency = {
+					name = "Army Intelligence General Staff Third Bureau"
+					icon = GFX_intelligence_agency_logo_generic_1
+				}
+			}
+			gain_random_agency_upgrade = yes
+			custom_effect_tooltip = EYP_modifier_eylstadt_army_tt
+			add_to_variable = { EYP_EA_army_intel_factor_var = 0.10 tooltip = army_intel_factor_tt }
+			add_to_variable = { EYP_EA_operative_slot_var = 1 tooltip = operative_slot_tt }
+		}
+	}
+	
+	
+   ###    #### ########     ##    ##    ###    ##     ## ##    ## 
+  ## ##    ##  ##     ##    ###   ##   ## ##   ##     ##  ##  ##  
+ ##   ##   ##  ##     ##    ####  ##  ##   ##  ##     ##   ####   
+##     ##  ##  ########     ## ## ## ##     ## ##     ##    ##    
+#########  ##  ##   ##      ##  #### #########  ##   ##     ##    
+##     ##  ##  ##    ##     ##   ### ##     ##   ## ##      ##    
+##     ## #### ##     ##    ##    ## ##     ##    ###       ##    
+	
+	focus = {
+		id = EYP_airforce_build
+		icon = GFX_goal_generic_build_airforce
+		relative_position_id = EYP_elite_army
+		x = 9
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			if = {
+				limit = { is_debug = no }
+				NOT = { has_idea = EYP_order_of_fighter }
+			}
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = EYP_airforce_build
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			add_tech_bonus = {
+				name = EYP_airforce_search
+				uses = 1
+				bonus = 1.0
+				category = air_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_airforce_search
+		icon = GFX_focus_POL_warsaw_main_station
+		prerequisite = { focus = EYP_airforce_build }
+		relative_position_id = EYP_airforce_build
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_completed_focus = EYP_airforce_bomb } }
+				effect_tooltip = { add_ideas = EYP_airforce_search_idea }
+				hidden_effect = {
+					add_dynamic_modifier = { modifier = EYP_airforce_research_dynamic_modifier }
+					EYP_airforce_research_level_up = yes
+				}
+			}
+			else = {
+				custom_effect_tooltip = EYP_modifier_airforce_research_tt
+				EYP_airforce_research_level_up = yes
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = independent_air_force_spirit
+						has_idea = industrial_destruction_spirit
+						has_idea = dive_bombing_spirit
+						has_idea = material_destruction_spirit
+						has_idea = industry_liasons_spirit
+						has_idea = effective_training_programs_spirit
+						has_idea = branch_independence_spirit
+						has_idea = air_crew_surveys_spirit
+					}
+				}
+				add_ideas = industry_liasons_spirit
+			}
+			else = { air_experience = 50 }
+		}
+	}
+	
+	focus = {
+		id = EYP_airforce_copy
+		icon = GFX_goal_generic_air_production
+		prerequisite = { focus = EYP_airforce_search }
+		relative_position_id = EYP_airforce_search
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_airforce_copy
+				uses = 2
+				bonus = 1.0
+				category = cat_air_guns
+				category = cat_air_bombs
+				category = cat_air_engine
+			}
+			custom_effect_tooltip = EYP_modifier_airforce_research_tt
+			EYP_airforce_research_level_up = yes
+			add_to_variable = { EYP_AS_license_air_purchase_cost = -0.50 tooltip = license_air_purchase_cost_tt }
+		}
+	}
+	
+	focus = {
+		id = EYP_airforce_club
+		icon = GFX_focus_SOV_flying_clubs
+		prerequisite = { focus = EYP_airforce_search }
+		relative_position_id = EYP_airforce_search
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			air_experience = 25
+			add_ideas = EYP_airforce_club
+			effect_tooltip = {
+				set_rule = {
+					can_generate_female_aces = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_airforce_closed_support
+		icon = GFX_focus_generic_cas_aircraft
+		prerequisite = { focus = EYP_airforce_copy }
+		relative_position_id = EYP_airforce_copy
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				add_tech_bonus = {
+					name = EYP_airforce_closed_support
+					uses = 1
+					bonus = 1.0
+					category = light_air
+					category = cat_air_bombs
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = EYP_airforce_closed_support
+					uses = 1
+					bonus = 1.0
+					category = cas_bomber
+				}
+			}
+			custom_effect_tooltip = EYP_modifier_airforce_research_tt
+			EYP_airforce_research_level_up = yes
+			add_to_variable = { EYP_AS_air_close_air_support_attack_factor_var = 0.10 tooltip = cas_attack_tt }
+			custom_effect_tooltip = EYP_airforce_closed_support_tt
+			hidden_effect = { add_ideas = EYP_airforce_closed_support }
+		}
+	}
+	
+	focus = {
+		id = EYP_airforce_fighter
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = EYP_airforce_club }
+		relative_position_id = EYP_airforce_club
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				add_tech_bonus = {
+					name = EYP_airforce_fighter
+					uses = 1
+					bonus = 1.0
+					category = light_air
+					category = medium_air
+				}
+				add_tech_bonus = {
+					name = EYP_airforce_fighter
+					uses = 1
+					bonus = 1.0
+					category = cat_air_guns
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = EYP_airforce_fighter
+					uses = 1
+					bonus = 1.0
+					category = light_fighter
+					category = cat_heavy_fighter
+				}
+			}
+			custom_effect_tooltip = EYP_modifier_airforce_research_tt
+			EYP_airforce_research_level_up = yes
+			add_to_variable = { EYP_AS_air_superiority_efficiency_var = 0.10 tooltip = air_superiority_efficiency_tt }
+			custom_effect_tooltip = EYP_airforce_fighter_tt
+			hidden_effect = { add_ideas = EYP_airforce_fighter }
+		}
+	}
+	
+	focus = {
+		id = EYP_airforce_threot
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = {
+			focus = EYP_airforce_copy
+			focus = EYP_airforce_club
+		}
+		relative_position_id = EYP_airforce_copy
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = EYP_airforce_threot
+				cost_reduction = 0.5
+				uses = 3
+				category = air_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_airforce_bomb
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = EYP_airforce_build }
+		relative_position_id = EYP_airforce_build
+		x = 3
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				add_tech_bonus = {
+					name = EYP_airforce_bomb
+					uses = 1
+					bonus = 1.0
+					category = medium_air
+					category = cat_air_bombs
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = EYP_airforce_bomb
+					uses = 1
+					bonus = 1.0
+					category = tactical_bomber
+				}
+			}
+			if = {
+				limit = { NOT = { has_completed_focus = EYP_airforce_search } }
+				add_political_power = -25
+				effect_tooltip = { add_ideas = EYP_airforce_bomb_fake }
+				hidden_effect = {
+					add_dynamic_modifier = { modifier = EYP_airforce_research_dynamic_modifier }
+					EYP_airforce_research_level_up = yes
+					add_to_variable = { EYP_AS_air_escort_efficiency_var = 0.10 }
+				}
+			}
+			else = {
+				custom_effect_tooltip = EYP_modifier_airforce_research_tt
+				EYP_airforce_research_level_up = yes
+				add_to_variable = { EYP_AS_air_escort_efficiency_var = 0.10 tooltip = air_escort_efficiency_tt }
+				custom_effect_tooltip = EYP_airforce_bomb_tt
+			}
+			hidden_effect = { add_ideas = EYP_airforce_bomb }
+		}
+	}
+	
+	focus = {
+		id = EYP_airforce_heavy_bomb
+		icon = GFX_focus_generic_long_range_aircraft
+		prerequisite = { focus = EYP_airforce_bomb }
+		relative_position_id = EYP_airforce_bomb
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				add_tech_bonus = {
+					name = EYP_airforce_heavy_bomb
+					uses = 1
+					bonus = 1.0
+					category = heavy_air
+					category = cat_air_engine
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = EYP_airforce_heavy_bomb
+					uses = 1
+					bonus = 1.0
+					category = cat_strategic_bomber
+				}
+			}
+			custom_effect_tooltip = EYP_modifier_airforce_research_tt
+			EYP_airforce_research_level_up = yes
+			add_to_variable = { EYP_AS_air_mission_efficiency_var = 0.15 tooltip = air_mission_efficiency_tt }
+			custom_effect_tooltip = EYP_airforce_heavy_bomb_tt
+			hidden_effect = { add_ideas = EYP_airforce_heavy_bomb }
+		}
+	}
+	
+	focus = {
+		id = EYP_navy_build
+		icon = GFX_goal_generic_build_navy
+		relative_position_id = EYP_airforce_build
+		x = 10
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = EYP_navy_build
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+			navy_experience = 30
+			add_ideas = EYP_navy_build
+		}
+	}
+	
+	focus = {
+		id = EYP_navy_marine
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = EYP_navy_build }
+		relative_position_id = EYP_navy_build
+		x = -4
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_navy_marine
+				uses = 1
+				bonus = 1.0
+				category = marine_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_navy_transport
+		icon = GFX_focus_POL_develop_polish_shipbuilding
+		prerequisite = { focus = EYP_navy_build }
+		relative_position_id = EYP_navy_build
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 50
+				producer = ROOT
+			}
+			add_tech_bonus = {
+				name = EYP_navy_transport
+				uses = 1
+				bonus = 1.0
+				category = tp_tech
+			}
+			add_ideas = EYP_navy_transport
+		}
+	}
+	
+	focus = {
+		id = EYP_navy_bb_test
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = EYP_navy_build }
+		relative_position_id = EYP_navy_build
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_navy_bb_test
+				uses = 1
+				bonus = 1.0
+				category = bb_tech
+				category = shbb_tech
+			}
+			effect_tooltip = {
+				if = {
+					limit = { has_country_flag = EYP_navy_cv_first_flag }
+					swap_ideas = {
+						remove_idea = EYP_navy_cv_first
+						add_idea = EYP_navy_idea
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = EYP_navy_build
+						add_idea = EYP_navy_bb_first
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_idea = EYP_navy_cv_first } }
+					swap_ideas = {
+						remove_idea = EYP_navy_build
+						add_idea = EYP_navy_bb_first
+					}
+					set_country_flag = EYP_navy_bb_first_flag
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = EYP_navy_cv_first
+						add_idea = EYP_navy_idea
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_navy_dd
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = EYP_navy_build }
+		relative_position_id = EYP_navy_build
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_navy_dd
+				uses = 1
+				bonus = 2.0
+				category = dd_tech
+			}
+			add_ideas = EYP_navy_dd_idea
+		}
+	}
+	
+	focus = {
+		id = EYP_navy_dd_large_gun
+		icon = GFX_focus_SWE_coastal_support
+		prerequisite = { focus = EYP_navy_dd }
+		mutually_exclusive = { focus = EYP_navy_dd_greater_bomb }
+		relative_position_id = EYP_navy_dd
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_navy_dd_large_gun
+				uses = 1
+				bonus = 1.0
+				category = cat_ship_light_battery
+				category = cat_ship_medium_battery
+			}
+			swap_ideas = {
+				remove_idea = EYP_navy_dd_idea
+				add_idea = EYP_navy_dd_large_gun
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_navy_dd_greater_bomb
+		icon = GFX_goal_generic_navy_anti_submarine
+		prerequisite = { focus = EYP_navy_dd }
+		mutually_exclusive = { focus = EYP_navy_dd_large_gun }
+		relative_position_id = EYP_navy_dd
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_navy_dd_greater_bomb
+				uses = 1
+				bonus = 1.0
+				category = cat_torpedoes
+			}
+			swap_ideas = {
+				remove_idea = EYP_navy_dd_idea
+				add_idea = EYP_navy_dd_greater_bomb
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_navy_ss
+		icon = GFX_focus_generic_midget_submarines
+		prerequisite = { focus = EYP_navy_build }
+		relative_position_id = EYP_navy_build
+		x = -1
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_navy_ss
+				uses = 1
+				bonus = 1.0
+				category = ss_tech
+			}
+			add_ideas = EYP_navy_ss
+		}
+	}
+	
+	focus = {
+		id = EYP_navy_ss_tor
+		icon = GFX_goal_generic_occupy_start_war
+		prerequisite = { focus = EYP_navy_ss }
+		prerequisite = {
+			focus = EYP_navy_dd_large_gun
+			focus = EYP_navy_dd_greater_bomb
+		}
+		relative_position_id = EYP_navy_ss
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_navy_ss_tor
+				uses = 1
+				bonus = 3.0
+				category = cat_torpedoes
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_navy_ss_slient_learn
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = EYP_navy_ss }
+		relative_position_id = EYP_navy_ss
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_navy_ss_slient_learn
+				uses = 1
+				bonus = 1.0
+				category = ship_modules_tech
+			}
+			swap_ideas = {
+				remove_idea = EYP_navy_ss
+				add_idea = EYP_navy_ss_slient_learn
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_navy_cl
+		icon = GFX_focus_generic_cruiser2
+		prerequisite = {
+			focus = EYP_navy_dd_greater_bomb
+			focus = EYP_navy_dd_large_gun
+		}
+		relative_position_id = EYP_navy_dd_large_gun
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_navy_cl
+				uses = 3
+				bonus = 1.0
+				category = cl_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_airborne
+		icon = GFX_focus_FIN_expand_air_force_academy
+		prerequisite = { focus = EYP_airforce_bomb }
+		prerequisite = { focus = EYP_navy_marine }
+		relative_position_id = EYP_airforce_bomb
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_airborne
+				uses = 1
+				bonus = 1.0
+				category = para_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_save_airforce
+		icon = GFX_focus_generic_air_bases
+		prerequisite = { focus = EYP_navy_build }
+		relative_position_id = EYP_navy_build
+		x = -3
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_tech = survivability_studies } }
+				add_tech_bonus = {
+					name = EYP_save_airforce
+					uses = 1
+					bonus = 1.0
+					technology = survivability_studies
+				}
+			}
+			else = { add_political_power = 50 }
+			add_ideas = EYP_save_airforce
+		}
+	}
+	
+	focus = {
+		id = EYP_across_sea_transport
+		icon = GFX_focus_generic_air_defense
+		prerequisite = { focus = EYP_save_airforce }
+		relative_position_id = EYP_save_airforce
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = EYP_save_airforce
+				add_idea = EYP_across_sea_transport
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_cv
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = EYP_airforce_club }
+		prerequisite = { focus = EYP_save_airforce }
+		relative_position_id = EYP_save_airforce
+		x = -3
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EYP_cv
+				uses = 1
+				bonus = 1.0
+				category = cv_tech
+			}
+			effect_tooltip = {
+				if = {
+					limit = { has_country_flag = EYP_navy_bb_first_flag }
+					swap_ideas = {
+						remove_idea = EYP_navy_bb_first
+						add_idea = EYP_navy_idea
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = EYP_navy_build
+						add_idea = EYP_navy_cv_first
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_idea = EYP_navy_bb_first } }
+					swap_ideas = {
+						remove_idea = EYP_navy_build
+						add_idea = EYP_navy_cv_first
+					}
+					set_country_flag = EYP_navy_cv_first_flag
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = EYP_navy_bb_first
+						add_idea = EYP_navy_idea
+					}
+				}
+			}
+		}
+	}
+	
+
+########   #######  ##       #### ######## ####  ######     ###    ##       
+##     ## ##     ## ##        ##     ##     ##  ##    ##   ## ##   ##       
+##     ## ##     ## ##        ##     ##     ##  ##        ##   ##  ##       
+########  ##     ## ##        ##     ##     ##  ##       ##     ## ##       
+##        ##     ## ##        ##     ##     ##  ##       ######### ##       
+##        ##     ## ##        ##     ##     ##  ##    ## ##     ## ##       
+##         #######  ######## ####    ##    ####  ######  ##     ## ######## 
+	
+	focus = {
+		id = EYP_newborn
+		icon = GFX_focus_EYP_newborn
+		mutually_exclusive = { focus = EYP_sunrise focus = EYP_harvest_and_reflection }
+		x = 66
+		y = 0
+		cost = 0
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			effect_tooltip = {
+				hidden_effect = {
+					set_popularities = {
+						democratic = 80
+						neutrality = 10
+						fascism = 8
+						communism = 2
+					}
+				}
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = no
+					last_election = "1935.12.17"
+					election_frequency = 120
+					name = EYP_puppet_government
+					long_name = EYP_puppet_government_long
+				}
+				hidden_effect = {
+					GIA = {
+						set_nationality = {
+							character = EYP_Bergmann
+							target_country = EYP
+						}
+					}
+				}
+				add_country_leader_role = {
+					character = EYP_Bergmann
+					country_leader = {
+						ideology = conservatism
+						expire = "1965.1.1.1"
+						traits = { war_industrialist }
+					}
+					promote_leader = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_wildfire
+		icon = GFX_focus_SWE_bofors_fly_swatter
+		prerequisite = { focus = EYP_newborn }
+		relative_position_id = EYP_newborn
+		x = -6
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_country_leader = {
+				character = EYP_Bergmann
+				ruling_only = yes
+			}
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			effect_tooltip = {
+				every_core_state = {
+					limit = { is_capital = no }
+					set_state_flag = EYP_core_state_flag
+					remove_core_of = ROOT
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_cut_root
+		icon = GFX_focus_SWE_attack_landsorganisationen
+		prerequisite = { focus = EYP_wildfire }
+		mutually_exclusive = { focus = EYP_wind_live }
+		relative_position_id = EYP_wildfire
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_country_leader = {
+				character = EYP_Bergmann
+				ruling_only = yes
+			}
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_key_point_milita
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = EYP_cut_root }
+		relative_position_id = EYP_cut_root
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_country_leader = {
+				character = EYP_Bergmann
+				ruling_only = yes
+			}
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_cut_lord
+		icon = GFX_focus_NOR_send_the_king_back_to_denmark
+		prerequisite = { focus = EYP_cut_root }
+		relative_position_id = EYP_cut_root
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_country_leader = {
+				character = EYP_Bergmann
+				ruling_only = yes
+			}
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_guide_democracy
+		icon = GFX_focus_NOR_restore_public_trust_in_the_storting
+		prerequisite = { focus = EYP_key_point_milita }
+		prerequisite = { focus = EYP_cut_lord }
+		mutually_exclusive = { focus = EYP_no_time_to_die focus = EYP_follow_step_of_lord focus = EYP_palace_intrigue }
+		relative_position_id = EYP_cut_root
+		x = 0
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_country_leader = {
+				character = EYP_Bergmann
+				ruling_only = yes
+			}
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			every_controlled_state = {
+				limit = { has_state_flag = EYP_core_state_flag }
+				add_core_of = ROOT
+			}
+		}
+	}
+	
+	focus = {
+		id = EYP_wind_live
+		icon = GFX_focus_SWE_beneath_sticks_and_stone
+		prerequisite = { focus = EYP_wildfire }
+		mutually_exclusive = { focus = EYP_cut_root }
+		relative_position_id = EYP_wildfire
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_sea_support
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = EYP_wind_live }
+		mutually_exclusive = { focus = EYP_industry_support }
+		relative_position_id = EYP_wind_live
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_industry_support
+		icon = GFX_focus_DEN_heavy_regulations
+		prerequisite = { focus = EYP_wind_live }
+		mutually_exclusive = { focus = EYP_sea_support }
+		relative_position_id = EYP_wind_live
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_rescue_fine
+		icon = GFX_focus_spa_save_the_alcazar
+		prerequisite = { focus = EYP_wind_live }
+		mutually_exclusive = { focus = EYP_united_opposition }
+		relative_position_id = EYP_wind_live
+		x = -2
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = { has_government = neutrality }
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_united_opposition
+		icon = GFX_focus_POL_complete_april_constitution
+		prerequisite = { focus = EYP_wind_live }
+		mutually_exclusive = { focus = EYP_rescue_fine }
+		relative_position_id = EYP_wind_live
+		x = -4
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = { has_government = democratic }
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_no_time_to_die
+		dynamic = yes
+		icon = {
+			trigger = { has_completed_focus = EYP_rescue_fine }
+			value = GFX_focus_EYP_no_time_to_die_unite_royalist
+		}
+		icon = {
+			trigger = { has_completed_focus = EYP_united_opposition }
+			value = GFX_focus_EYP_no_time_to_die_unite_republican
+		}
+		icon = {
+			value = GFX_focus_EYP_no_time_to_die_alone
+		}
+		prerequisite = {
+			focus = EYP_sea_support
+			focus = EYP_industry_support
+		}
+		mutually_exclusive = { focus = EYP_guide_democracy focus = EYP_follow_step_of_lord focus = EYP_palace_intrigue }
+		relative_position_id = EYP_wind_live
+		x = 0
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_sunrise
+		icon = GFX_focus_EYP_sunrise
+		mutually_exclusive = { focus = EYP_newborn focus = EYP_harvest_and_reflection }
+		relative_position_id = EYP_newborn
+		x = 2
+		y = 0
+		cost = 0
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_harvest_and_reflection
+		icon = GFX_focus_SWI_embrace_panoramaheim
+		mutually_exclusive = { focus = EYP_newborn focus = EYP_sunrise }
+		relative_position_id = EYP_newborn
+		x = 4
+		y = 0
+		cost = 0
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			always = no
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_eastern_intelligence_division
+		icon = GFX_focus_generic_national_security
+		prerequisite = {
+			focus = EYP_newborn
+			focus = EYP_sunrise
+			focus = EYP_harvest_and_reflection
+		}
+		relative_position_id = EYP_sunrise
+		x = 0
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_ideas = EYP_eastern_intelligence_division
+		}
+	}
+	
+	focus = {
+		id = EYP_after_war
+		icon = GFX_focus_SWE_refuge_from_war
+		prerequisite = { focus = EYP_eastern_intelligence_division }
+		relative_position_id = EYP_eastern_intelligence_division
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_war = no
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	
+	focus = {
+		id = EYP_line_construction
+		icon = GFX_focus_SWE_hedgehog_defense
+		prerequisite = { focus = EYP_after_war }
+		relative_position_id = EYP_after_war
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_ideas = EYP_eastern_intelligence_division
+		}
+	}
+	
+	focus = {
+		id = EYP_borrow_from_bank
+		icon = GFX_focus_ETH_the_state_bank_of_ethiopia
+		prerequisite = { focus = EYP_after_war }
+		relative_position_id = EYP_after_war
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_ideas = EYP_eastern_intelligence_division
+		}
+	}
+	
+	focus = {
+		id = EYP_national_revival_strategy
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = EYP_after_war }
+		relative_position_id = EYP_after_war
+		x = -3
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_ideas = EYP_eastern_intelligence_division
+		}
+	}
+	
+	focus = {
+		id = EYP_follow_step_of_lord
+		icon = GFX_focus_EYP_follow_step_of_lord
+		prerequisite = { focus = EYP_after_war }
+		mutually_exclusive = { focus = EYP_no_time_to_die focus = EYP_guide_democracy focus = EYP_palace_intrigue }
+		relative_position_id = EYP_after_war
+		x = 0
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_country_leader = {
+				character = EYP_Ortfine_von_Eylstadt
+				ruling_only = yes
+			}
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_ideas = EYP_eastern_intelligence_division
+		}
+	}
+	
+	focus = {
+		id = EYP_beat_ploughshares_into_swords
+		icon = GFX_focus_focus_fra_fascist_threat
+		prerequisite = { focus = EYP_harvest_and_reflection }
+		relative_position_id = EYP_harvest_and_reflection
+		x = 4
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = EYP_strengthen_bonds
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		prerequisite = {
+			focus = EYP_after_war
+			focus = EYP_beat_ploughshares_into_swords
+		}
+		relative_position_id = EYP_after_war
+		x = 3
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			add_ideas = EYP_eastern_intelligence_division
+		}
+	}
+	
+	focus = {
+		id = EYP_palace_intrigue
+		icon = GFX_focus_SWE_organize_a_putsch
+		prerequisite = { focus = EYP_beat_ploughshares_into_swords }
+		mutually_exclusive = { focus = EYP_no_time_to_die focus = EYP_guide_democracy focus = EYP_follow_step_of_lord }
+		relative_position_id = EYP_beat_ploughshares_into_swords
+		x = 4
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		search_filters = {}
+		bypass = {  }
+		completion_reward = {
+			
+		}
+	}
+}

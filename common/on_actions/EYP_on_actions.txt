@@ -1,0 +1,110 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			EYP = {
+				set_nationality = {
+					character = EYP_Bergmann
+					target_country = GIA
+				}
+			}
+			GIA = {
+				add_ideas = EYP_Bergmann
+				remove_ideas = GIA_on_both_side_of_balance_fake
+				add_dynamic_modifier = { modifier = GIA_on_both_side_of_balance_dynamic_modifier }
+			}
+			SMA = {
+				remove_ideas = SMA_decadent_army_fake
+				add_dynamic_modifier = { modifier = SMA_decadent_army_dynamic_modifier }
+			}
+			Z86 = {
+				remove_ideas = Z86_production_fake
+				add_dynamic_modifier = { modifier = Z86_production_dynamic_modifier }
+			}
+		}
+	}
+	
+	on_capitulation_immediate = {
+		effect = {
+			if = {
+				limit = {
+					FROM = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+					ROOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+				}
+				if = {
+					limit = { ROOT = { TAG = EYP } }
+					ROOT = {
+						white_peace = {
+							tag = FROM
+							message = 123_tt
+						}
+					}
+					every_state = {
+						limit = { is_core_of = ROOT }
+						ROOT = { transfer_state = PREV }
+					}
+					ROOT = {
+						set_popularities = {
+							democratic = 80
+							neutrality = 10
+							fascism = 8
+							communism = 2
+						}
+						set_politics = {
+							ruling_party = democratic
+							elections_allowed = no
+							election_frequency = 120
+							name = EYP_puppet_government
+							long_name = EYP_puppet_government_long
+						}
+						GIA = {
+							remove_ideas = EYP_Bergmann
+							set_nationality = {
+								character = EYP_Bergmann
+								target_country = EYP
+							}
+						}
+						add_country_leader_role = {
+							character = EYP_Bergmann
+							country_leader = {
+								ideology = conservatism
+								expire = "1965.1.1.1"
+								traits = { war_industrialist }
+							}
+							promote_leader = yes
+						}
+						complete_national_focus = EYP_newborn
+					}
+				}
+				else_if = {
+					limit = { ROOT = { TAG = AIL } }
+					ROOT = {
+						white_peace = {
+							tag = FROM
+							message = 456_tt
+						}
+					}
+					every_state = {
+						limit = { is_core_of = ROOT }
+						ROOT = { transfer_state = PREV }
+					}
+				}
+				every_country = {
+					limit = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+					clr_country_flag = eylstadt_drift_defence_war_member_flag
+				}
+				EYP = {
+					remove_ideas = EYP_royal_special_force
+					remove_ideas = EYP_resistance_of_rearmament
+					remove_ideas = EYP_startup_private_financing
+					remove_ideas = EYP_startup_defend_point
+					remove_ideas = EYP_startup_simple_workshop
+					remove_ideas = EYP_startup_guerrilla_warfare
+					remove_ideas = EYP_startup_use_weapon
+					remove_ideas = EYP_startup_coronation_sta_idea
+					remove_ideas = EYP_startup_coronation_sup_idea
+					remove_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier }
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,77 @@
+﻿capital = 52
+
+set_research_slots = 2
+set_convoys = 80
+set_stability = 0.65
+set_war_support = 0.35
+starting_train_buffer = 2.0
+
+set_technology = {
+	basic_train = 1
+	### Infantry ###
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+	militia_tech = 1
+}
+if = {
+	limit = { has_dlc = "No Step Back" }
+	#load_oob = "EYP_1936_NSB"
+	set_technology = {
+		gwtank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
+}
+
+#add_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier }
+
+activate_mission = EYP_hundred_day_crisis_mission
+add_days_mission_timeout = {
+	mission = EYP_hundred_day_crisis_mission
+	days = -65
+}
+set_variable = { global.EYP_war_escalation_length_var = 30 }
+set_variable = { EYP_war_plan_length_var = 7 }
+
+add_ideas = {
+	EYP_settlement_of_witch
+	EYP_resource_export
+	EYP_resistance_of_rearmament
+	EYP_rudolf_iii
+}
+add_timed_idea = { idea = EYP_order_of_fighter days = 16 }
+recruit_character = EYP_Bergmann
+recruit_character = EYP_Bianca
+recruit_character = EYP_Elvira
+recruit_character = EYP_Ferna
+recruit_character = EYP_Ortfine_von_Eylstadt
+recruit_character = EYP_Halt_Meyer
+recruit_character = EYP_Hans
+recruit_character = EYP_Herman
+recruit_character = EYP_Izetta
+recruit_character = EYP_Jonas
+recruit_character = EYP_Lotte
+recruit_character = EYP_Rudolf
+recruit_character = EYP_Schneider
+recruit_character = EYP_Seeger
+recruit_character = EYP_Tobias
+recruit_character = EYP_Varma
+
+
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1935.11.08"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 100
+}
+

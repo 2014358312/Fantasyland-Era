@@ -1,0 +1,364 @@
+defined_text = {
+    name = EYP_Get_HD_Name
+	text = {
+		trigger = { has_global_flag = eylstadt_drift_defence_war }
+		localization_key = EYP_hundred_day_crisis_decision_category_war
+    }
+	text = { localization_key = EYP_hundred_day_crisis_decision_category_ready }
+}
+
+defined_text = {
+    name = EYP_Get_HD_Desc
+	text = {
+		trigger = { tag = EYP }
+		localization_key = EYP_hundred_day_crisis_decision_category_desc_EYP
+    }
+	text = {
+		trigger = { tag = GIA }
+		localization_key = EYP_hundred_day_crisis_decision_category_desc_GIA
+    }
+	text = {
+		trigger = { tag = SMA }
+		localization_key = EYP_hundred_day_crisis_decision_category_desc_SMA
+    }
+	text = {
+		trigger = { tag = Z86 }
+		localization_key = EYP_hundred_day_crisis_decision_category_desc_Z86
+    }
+	text = {
+		trigger = { tag = AIL }
+		localization_key = EYP_hundred_day_crisis_decision_category_desc_AIL
+    }
+	text = { localization_key = EYP_hundred_day_crisis_decision_category_desc_error }
+}
+
+defined_text = {
+    name = EYP_GET_WAR_ESCALATION_LEVEL
+	text = {
+		trigger = { has_global_flag = eylstadt_drift_defence_war }
+		localization_key = EYP_war_escalation_level_tt_war
+    }
+	text = { localization_key = EYP_war_escalation_level_tt_ready }
+}
+
+defined_text = {
+    name = EYP_GET_EYP_ACTION_0
+	text = {
+		trigger = { NOT = { has_global_flag = eylstadt_drift_defence_war } }
+		localization_key = EYP_war_escalation_eylstadt_action_0
+    }
+}
+
+defined_text = {
+    name = EYP_GET_EYP_ACTION_1
+	text = {
+		trigger = { has_global_flag = eylstadt_drift_defence_war }
+		localization_key = EYP_war_escalation_eylstadt_action_1
+    }
+}
+
+defined_text = {
+    name = EYP_GET_ITA_ACTION_0
+	text = {
+		trigger = { NOT = { has_global_flag = eylstadt_drift_defence_war } }
+		localization_key = EYP_war_escalation_italian_action_0
+    }
+}
+
+defined_text = {
+    name = EYP_GET_ITA_ACTION_1
+	text = {
+		trigger = { has_global_flag = eylstadt_drift_defence_war }
+		localization_key = EYP_war_escalation_italian_action_1
+    }
+}
+
+defined_text = {
+    name = EYP_GET_WAR_ESCALATION_LEVEL_1_COLOR
+	text = {
+		trigger = {
+			tag = AUS
+			check_variable = { EYP.EYP_escalation_level_total > 0 }
+		}
+		localization_key = "GFX_war_escalation_level_red"
+	}
+	text = {
+		trigger = {
+			tag = EYP
+			check_variable = { EYP.EYP_escalation_level_total > 0 }
+		}
+		localization_key = "GFX_war_escalation_level_green"
+	}
+	text = {
+		localization_key = "GFX_war_escalation_level_white"
+	}
+}
+
+defined_text = {
+    name = EYP_GET_WAR_ESCALATION_LEVEL_2_COLOR
+	text = {
+		trigger = {
+			tag = AUS
+			check_variable = { EYP.EYP_escalation_level_total > 1 }
+		}
+		localization_key = "GFX_war_escalation_level_red"
+	}
+	text = {
+		trigger = {
+			tag = EYP
+			check_variable = { EYP.EYP_escalation_level_total > 1 }
+		}
+		localization_key = "GFX_war_escalation_level_green"
+	}
+	text = {
+		localization_key = "GFX_war_escalation_level_white"
+	}
+}
+
+defined_text = {
+    name = EYP_GET_WAR_ESCALATION_LEVEL_3_COLOR
+	text = {
+		trigger = {
+			tag = AUS
+			check_variable = { EYP.EYP_escalation_level_total > 2 }
+		}
+		localization_key = "GFX_war_escalation_level_red"
+	}
+	text = {
+		trigger = {
+			tag = EYP
+			check_variable = { EYP.EYP_escalation_level_total > 2 }
+		}
+		localization_key = "GFX_war_escalation_level_green"
+	}
+	text = {
+		localization_key = "GFX_war_escalation_level_white"
+	}
+}
+
+defined_text = {
+    name = EYP_GET_WAR_ESCALATION_LEVEL_4_COLOR
+	text = {
+		trigger = {
+			tag = AUS
+			check_variable = { EYP.EYP_escalation_level_total > 3 }
+		}
+		localization_key = "GFX_war_escalation_level_red"
+	}
+	text = {
+		trigger = {
+			tag = EYP
+			check_variable = { EYP.EYP_escalation_level_total > 3 }
+		}
+		localization_key = "GFX_war_escalation_level_green"
+	}
+	text = {
+		localization_key = "GFX_war_escalation_level_white"
+	}
+}
+
+defined_text = {
+    name = EYP_GET_WAR_ESCALATION_LEVEL_5_COLOR
+	text = {
+		trigger = {
+			tag = AUS
+			check_variable = { EYP.EYP_escalation_level_total > 4 }
+		}
+		localization_key = "GFX_war_escalation_level_red"
+	}
+	text = {
+		trigger = {
+			tag = EYP
+			check_variable = { EYP.EYP_escalation_level_total > 4 }
+		}
+		localization_key = "GFX_war_escalation_level_green"
+	}
+	text = {
+		localization_key = "GFX_war_escalation_level_white"
+	}
+}
+
+defined_text = {
+    name = EYP_GET_WAR_ESCALATION_LEVEL_6_COLOR
+	text = {
+		trigger = {
+			tag = AUS
+			check_variable = { EYP.EYP_escalation_level_total > 5 }
+		}
+		localization_key = "GFX_war_escalation_level_red"
+	}
+	text = {
+		trigger = {
+			tag = EYP
+			check_variable = { EYP.EYP_escalation_level_total > 5 }
+		}
+		localization_key = "GFX_war_escalation_level_green"
+	}
+	text = {
+		localization_key = "GFX_war_escalation_level_white"
+	}
+}
+
+defined_text = {
+    name = EYP_GET_WAR_ESCALATION_LEVEL_7_COLOR
+	text = {
+		trigger = {
+			tag = AUS
+			check_variable = { EYP.EYP_escalation_level_total > 6 }
+		}
+		localization_key = "GFX_war_escalation_level_red"
+	}
+	text = {
+		trigger = {
+			tag = EYP
+			check_variable = { EYP.EYP_escalation_level_total > 6 }
+		}
+		localization_key = "GFX_war_escalation_level_green"
+	}
+	text = {
+		localization_key = "GFX_war_escalation_level_white"
+	}
+}
+
+defined_text = {
+    name = EYP_GET_WAR_ESCALATION_LEVEL_8_COLOR
+	text = {
+		trigger = {
+			tag = AUS
+			check_variable = { EYP.EYP_escalation_level_total > 7 }
+		}
+		localization_key = "GFX_war_escalation_level_red"
+	}
+	text = {
+		trigger = {
+			tag = EYP
+			check_variable = { EYP.EYP_escalation_level_total > 7 }
+		}
+		localization_key = "GFX_war_escalation_level_green"
+	}
+	text = {
+		localization_key = "GFX_war_escalation_level_white"
+	}
+}
+
+defined_text = {
+    name = EYP_GET_WAR_ESCALATION_LEVEL_9_COLOR
+	text = {
+		trigger = {
+			tag = AUS
+			check_variable = { EYP.EYP_escalation_level_total > 8 }
+		}
+		localization_key = "GFX_war_escalation_level_red"
+	}
+	text = {
+		trigger = {
+			tag = EYP
+			check_variable = { EYP.EYP_escalation_level_total > 8 }
+		}
+		localization_key = "GFX_war_escalation_level_green"
+	}
+	text = {
+		localization_key = "GFX_war_escalation_level_white"
+	}
+}
+
+defined_text = {
+    name = EYP_GET_WAR_ESCALATION_LEVEL_10_COLOR
+	text = {
+		trigger = {
+			tag = AUS
+			check_variable = { EYP.EYP_escalation_level_total > 9 }
+		}
+		localization_key = "GFX_war_escalation_level_red"
+	}
+	text = {
+		trigger = {
+			tag = EYP
+			check_variable = { EYP.EYP_escalation_level_total > 9 }
+		}
+		localization_key = "GFX_war_escalation_level_green"
+	}
+	text = {
+		localization_key = "GFX_war_escalation_level_white"
+	}
+}
+
+defined_text = {
+    name = GET_F_MODIFIER
+	text = {
+		trigger = { has_idea = EYP_airforce_fighter }
+		localization_key = EYP_AS_fighter_modifier
+	}
+	text = { localization_key = generic_null }
+}
+
+defined_text = {
+    name = GET_HF_MODIFIER
+	text = {
+		trigger = {
+			has_idea = EYP_airforce_fighter
+			NOT = { has_idea = EYP_airforce_bomb }
+		}
+		localization_key = EYP_AS_heavy_fighter_modifier_1
+	}
+	text = {
+		trigger = {
+			has_idea = EYP_airforce_bomb
+			NOT = { has_idea = EYP_airforce_fighter }
+		}
+		localization_key = EYP_AS_heavy_fighter_modifier_2
+	}
+	text = {
+		trigger = {
+			has_idea = EYP_airforce_fighter
+			has_idea = EYP_airforce_bomb
+		}
+		localization_key = EYP_AS_heavy_fighter_modifier_3
+	}
+	text = { localization_key = generic_null }
+}
+
+defined_text = {
+    name = GET_JF_MODIFIER
+	text = {
+		trigger = { has_idea = EYP_airforce_fighter }
+		localization_key = EYP_AS_jet_fighter_modifier
+	}
+	text = { localization_key = generic_null }
+}
+
+defined_text = {
+    name = GET_C_MODIFIER
+	text = {
+		trigger = { has_idea = EYP_airforce_closed_support }
+		localization_key = EYP_AS_cas_modifier
+	}
+	text = { localization_key = generic_null }
+}
+
+defined_text = {
+    name = GET_TB_MODIFIER
+	text = {
+		trigger = { has_idea = EYP_airforce_bomb }
+		localization_key = EYP_AS_tac_bomber_modifier
+	}
+	text = { localization_key = generic_null }
+}
+
+defined_text = {
+    name = GET_SB_MODIFIER
+	text = {
+		trigger = { has_idea = EYP_airforce_heavy_bomb }
+		localization_key = EYP_AS_strat_bomber_modifier
+	}
+	text = { localization_key = generic_null }
+}
+
+defined_text = {
+    name = GET_JB_MODIFIER
+	text = {
+		trigger = { has_idea = EYP_airforce_heavy_bomb }
+		localization_key = EYP_AS_jet_strat_bomber_modifier
+	}
+	text = { localization_key = generic_null }
+}

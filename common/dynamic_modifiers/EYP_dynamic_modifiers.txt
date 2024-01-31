@@ -1,0 +1,213 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#       attacker_modifier = no  # if yes this modifier will also be read in combat for 
+#                               # people engaging in the combat even if not in the state
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+EYP_deception_plan_dynamic_modifier = {
+	icon = GFX_idea_generic_spy_political
+	enable = { always = yes }
+	
+	stability_factor = EYP_DP_stability_factor_var
+	war_support_factor = EYP_DP_war_support_factor_var
+	political_power_factor = EYP_DP_political_power_factor_var
+	cas_damage_reduction = EYP_DP_cas_damage_reduction_var
+	supply_consumption_factor = EYP_DP_supply_consumption_factor_var
+	supply_factor = EYP_DP_supply_factor_var
+	supply_node_range = EYP_DP_supply_node_range_var
+	army_core_attack_factor = EYP_DP_army_core_attack_factor_var
+	army_core_defence_factor = EYP_DP_army_core_defence_factor_var
+}
+
+EYP_startup_clear_fields_state_dynamic_modifier = {
+	icon = GFX_modifiers_demilitarize_zone
+	enable = { always = yes }
+	
+	supply_consumption_factor = 0.20
+}
+
+EYP_industry_plan_dynamic_modifier = {
+	icon = GFX_idea_SOV_third_five_year_plan_civilian
+	enable = { always = yes }
+	
+	custom_modifier_tooltip = EYP_industry_plan_focus_mtt
+	
+	political_power_factor = EYP_IP_political_power_factor_var
+	stability_factor = EYP_IP_stability_factor_var
+	party_popularity_stability_factor = EYP_IP_party_popularity_stability_factor_var
+	research_speed_factor = EYP_IP_research_speed_factor_var
+	trade_laws_cost_factor = EYP_IP_trade_laws_cost_factor_var
+	economy_cost_factor = EYP_IP_economy_cost_factor_var
+	conscription = EYP_IP_conscription_var
+	
+	consumer_goods_factor = EYP_IP_consumer_goods_factor_var
+	production_speed_buildings_factor = EYP_IP_production_speed_buildings_factor_var
+	production_speed_infrastructure_factor = EYP_IP_production_speed_infrastructure_factor_var
+	production_speed_rail_way_factor = EYP_IP_production_speed_rail_way_factor_var
+	production_speed_industrial_complex_factor = EYP_IP_production_speed_industrial_complex_factor_var
+	production_speed_arms_factory_factor = EYP_IP_production_speed_arms_factory_factor_var
+	production_speed_dockyard_factor = EYP_IP_production_speed_dockyard_factor_var
+	global_building_slots_factor = EYP_IP_global_building_slots_factor_var
+	production_lack_of_resource_penalty_factor = EYP_IP_production_lack_of_resource_penalty_factor_var
+	production_factory_start_efficiency_factor = EYP_IP_production_factory_start_efficiency_factor_var
+	production_factory_max_efficiency_factor = EYP_IP_production_factory_max_efficiency_factor_var
+	line_change_production_efficiency_factor = EYP_IP_line_change_production_efficiency_factor_var
+	
+	industrial_capacity_factory = EYP_IP_industrial_capacity_factory_var
+	industrial_capacity_dockyard = EYP_IP_industrial_capacity_dockyard_var
+	
+	static_anti_air_damage_factor = EYP_IP_static_anti_air_damage_factor_var
+	static_anti_air_hit_chance_factor = EYP_IP_static_anti_air_hit_chance_factor_var
+	industry_air_damage_factor = EYP_IP_industry_air_damage_factor_var
+	
+	navy_fuel_consumption_factor = EYP_IP_navy_fuel_consumption_factor_var
+}
+
+EYP_protect_environment_state_dynamic_modifier = {
+	icon = GFX_modifiers_SWE_hygienic_housing
+	enable = { always = yes }
+	
+	local_building_slots = -1
+	recruitable_population_factor = 0.10
+	state_resources_factor = -0.05
+	state_production_speed_industrial_complex_factor = 0.20
+	state_production_speed_infrastructure_factor = 0.10
+	state_production_speed_supply_node_factor = 0.25
+	local_org_regain = 0.10
+}
+
+EYP_capital_economic_circle_state_dynamic_modifier = {
+	icon = GFX_modifiers_generic_construction
+	enable = { always = yes }
+	
+	state_production_speed_industrial_complex_factor = 0.25
+	state_production_speed_arms_factory_factor = 0.25
+}
+
+EYP_eylstadt_army_dynamic_modifier = {
+	icon = GFX_idea_MEX_politicised_army_2
+	enable = { always = yes }
+	
+	max_dig_in = EYP_EA_max_dig_in_var
+	recon_factor_while_entrenched = EYP_EA_recon_factor_while_entrenched_var
+	land_reinforce_rate = EYP_EA_land_reinforce_rate_var
+	
+	resistance_growth_on_our_occupied_states = EYP_EA_resistance_growth_on_our_occupied_states_var
+	org_loss_when_moving = EYP_EA_org_loss_when_moving_var
+	supply_consumption_factor = EYP_EA_supply_consumption_factor_var
+	minimum_training_level = EYP_EA_minimum_training_level_var
+	
+	army_defence_factor = EYP_EA_army_defence_factor_var
+	training_time_factor = EYP_EA_training_time_factor_var
+	army_spirit_category_type_cost_factor = EYP_EA_army_spirit_category_type_cost_factor_var
+	conscription_factor = EYP_EA_conscription_factor_var
+	command_abilities_cost_factor = EYP_EA_command_abilities_cost_factor_var
+	max_planning_factor = EYP_EA_max_planning_factor_var
+	
+	army_artillery_attack_factor = EYP_EA_army_artillery_attack_factor_var
+	air_cas_efficiency = EYP_EA_air_cas_efficiency_var
+	army_bonus_air_superiority_factor = EYP_EA_army_bonus_air_superiority_factor_var
+	production_speed_rail_way_factor = EYP_EA_production_speed_rail_way_factor_var
+	pocket_penalty = EYP_EA_pocket_penalty_var
+	
+	army_armor_attack_factor = EYP_EA_army_armor_attack_factor_var
+	army_armor_defence_factor = EYP_EA_army_armor_defence_factor_var
+	army_armor_speed_factor = EYP_EA_army_armor_speed_factor_var
+	breakthrough_factor = EYP_EA_breakthrough_factor_var
+	initiative_factor = EYP_EA_initiative_factor_var
+	land_equipment_upgrade_xp_cost = EYP_EA_land_equipment_upgrade_xp_cost_var
+	
+	land_doctrine_cost_factor = EYP_EA_land_doctrine_cost_factor_var
+	army_core_defence_factor = EYP_EA_army_core_defence_factor_var
+	experience_gain_army_factor = EYP_EA_experience_gain_army_factor_var
+	experience_gain_army_unit_factor = EYP_EA_experience_gain_army_unit_factor_var
+	
+	heat_attrition_factor = EYP_EA_heat_attrition_factor_var
+	winter_attrition_factor = EYP_EA_winter_attrition_factor_var
+	acclimatization_cold_climate_gain_factor = EYP_EA_acclimatization_cold_climate_gain_factor_var
+	acclimatization_hot_climate_gain_factor = EYP_EA_acclimatization_hot_climate_gain_factor_var
+	terrain_penalty_reduction = EYP_EA_terrain_penalty_reduction_var
+	
+	cas_damage_reduction = EYP_EA_cas_damage_reduction_var
+	dig_in_speed_factor = EYP_EA_dig_in_speed_factor_var
+	
+	no_supply_grace = EYP_EA_no_supply_grace_var
+	army_morale_factor = EYP_EA_army_morale_factor_var
+	
+	surrender_limit = EYP_EA_surrender_limit_var
+	experience_loss_factor = EYP_EA_experience_loss_factor_var
+	max_command_power = EYP_EA_max_command_power_var
+	
+	army_intel_factor = EYP_EA_army_intel_factor_var
+	operative_slot = EYP_EA_operative_slot_var
+}
+
+EYP_airforce_research_dynamic_modifier = {
+	icon = GFX_idea_generic_air_research
+	enable = { always = yes }
+	
+	license_air_purchase_cost = EYP_AS_license_air_purchase_cost
+	air_escort_efficiency = EYP_AS_air_escort_efficiency_var
+	air_superiority_efficiency = EYP_AS_air_superiority_efficiency_var
+	air_close_air_support_attack_factor = EYP_AS_air_close_air_support_attack_factor_var
+	air_mission_efficiency = EYP_AS_air_mission_efficiency_var
+	custom_modifier_tooltip = EYP_AS_fighter_mtt
+	custom_modifier_tooltip = EYP_AS_heavy_fighter_mtt
+	custom_modifier_tooltip = EYP_AS_jet_fighter_mtt
+	custom_modifier_tooltip = EYP_AS_cas_mtt
+	custom_modifier_tooltip = EYP_AS_tac_bomber_mtt
+	custom_modifier_tooltip = EYP_AS_strat_bomber_mtt
+	custom_modifier_tooltip = EYP_AS_jet_strat_bomber_mtt
+	custom_modifier_tooltip = EYP_airforce_research_level_mtt
+}
+
+GIA_on_both_side_of_balance_dynamic_modifier = {
+	icon = GFX_idea_GIA_on_both_side_of_balance
+	enable = { always = yes }
+
+	political_power_factor = GIA_SOB_political_power_factor_var
+	communism_drift = GIA_SOB_communism_drift_var
+}
+
+SMA_decadent_army_dynamic_modifier = {
+	icon = GFX_idea_generic_army_problems
+	enable = { always = yes }
+
+	conscription_factor = SMA_DA_conscription_factor_var
+	land_reinforce_rate = SMA_DA_land_reinforce_rate_var
+	army_attack_factor = SMA_DA_army_attack_factor_var
+	army_defence_factor = SMA_DA_army_defence_factor_var
+	army_org_factor = SMA_DA_army_org_factor_var
+	army_morale_factor = SMA_DA_army_morale_factor_var
+	max_dig_in_factor = SMA_DA_max_dig_in_factor_var
+}
+
+Z86_production_dynamic_modifier = {
+	icon = GFX_idea_man_five_year_plan_industry
+	enable = { always = yes }
+
+	industrial_capacity_factory = Z86_P_industrial_capacity_factory_var
+	industrial_capacity_dockyard = Z86_P_industrial_capacity_dockyard_var
+}

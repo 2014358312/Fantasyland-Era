@@ -1,0 +1,416 @@
+EYP_hundred_day_crisis_decision_category = {
+	EYP_hundred_day_crisis_mission = {
+		icon = GFX_decision_generic_train
+		allowed = { tag = EYP }
+		visible = { NOT = { has_global_flag = eylstadt_drift_defence_war } }
+		available = { hidden_trigger = { always = no } }
+		days_mission_timeout = 100
+		is_good = no
+		fire_only_once = yes
+		activation = { always = no }
+		timeout_effect = {
+			effect_tooltip = {
+				GIA = {
+					create_wargoal = {
+						target = ROOT
+						type = liberate_wargoal
+					}
+				}
+			}
+			AIL = {
+				effect_tooltip = {
+					create_wargoal = {
+						target = ROOT
+						type = liberate_wargoal
+					}
+				}
+				declare_war_on = {
+					target = ROOT
+					type = liberate_wargoal
+				}
+			}
+			EYP = {
+				custom_effect_tooltip = EYP_hundred_day_crisis_mission_tt
+				add_war_support = 0.05
+				Manpower_act_level_up = yes
+			}
+			hidden_effect = {
+				set_global_flag = eylstadt_drift_defence_war
+				EYP = { set_country_flag = eylstadt_drift_defence_war_member_flag }
+				GIA = { set_country_flag = eylstadt_drift_defence_war_member_flag }
+				AIL = { set_country_flag = eylstadt_drift_defence_war_member_flag }
+				add_to_variable = { global.EYP_war_escalation_level_EYP_action = 1 }
+				add_to_variable = { global.EYP_war_escalation_level_GIA_action = 1 }
+				EYP_escalate_the_war_effect = yes
+				GIA = { country_event = { id = eylstadt.2 hours = 6 } }
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	EYP_hundred_day_crisis_mission_fake = {
+		icon = GFX_decision_generic_train
+		allowed = {
+			OR = {
+				tag = GIA
+				tag = SMA
+				tag = AIL
+				tag = Z86
+			}
+		}
+		visible = { NOT = { has_global_flag = eylstadt_drift_defence_war } }
+		available = { hidden_trigger = { has_global_flag = eylstadt_drift_defence_war } }
+		days_mission_timeout = 100
+		is_good = no
+		fire_only_once = yes
+		activation = { always = no }
+		timeout_effect = {
+			effect_tooltip = {
+				custom_effect_tooltip = EYP_hundred_day_crisis_mission_tt2
+				create_wargoal = {
+					target = EYP
+					type = liberate_wargoal
+				}
+				AIL = {
+					create_wargoal = {
+						target = EYP
+						type = liberate_wargoal
+					}
+					declare_war_on = {
+						target = EYP
+						type = liberate_wargoal
+					}
+				}
+				EYP = {
+					add_war_support = 0.05
+					Manpower_act_level_up = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	EYP_time_based_war_escalation_mission = {
+		icon = GFX_decision_generic_ignite_civil_war
+		allowed = { tag = EYP }
+		visible = { hidden_trigger = { has_global_flag = eylstadt_drift_defence_war } }
+		available = {
+			hidden_trigger = { always = no }
+		}
+		activation = {
+			has_war = yes
+			has_global_flag = eylstadt_drift_defence_war
+			has_country_flag = eylstadt_drift_defence_war_member_flag
+			check_variable = { global.EYP_war_escalation_level_total < 10}
+		}
+		is_good = yes
+		fire_only_once = no
+		cancel_if_not_visible = yes
+		selectable_mission = no
+		days_mission_timeout = global.EYP_war_escalation_length_var
+		timeout_effect = {
+			add_to_variable = { EYP.EYP_escalation_time_increase = 1 tooltip = war_escalation_level_up_tt }
+			EYP_escalate_the_war_effect = yes
+			if = {
+				limit = { check_variable = { global.EYP_war_escalation_length_var < 30 } }
+				set_variable = { global.EYP_war_escalation_length_var = 30 }
+			}
+			hidden_effect = { activate_mission = EYP_time_based_war_escalation_mission }
+		}
+	}
+	
+	EYP_time_based_war_escalation_mission_fake = {
+		icon = GFX_decision_generic_ignite_civil_war
+		allowed = {
+			OR = {
+				tag = EYP
+				tag = SMA
+				tag = AIL
+				tag = Z86
+			}
+		}
+		visible = { hidden_trigger = { has_global_flag = eylstadt_drift_defence_war } }
+		available = {
+			hidden_trigger = { always = no }
+		}
+		activation = {
+			has_war = yes
+			has_global_flag = eylstadt_drift_defence_war
+			has_country_flag = eylstadt_drift_defence_war_member_flag
+			check_variable = { global.EYP_war_escalation_level_total < 10}
+		}
+		is_good = yes
+		fire_only_once = no
+		cancel_if_not_visible = yes
+		selectable_mission = no
+		days_mission_timeout = global.EYP_war_escalation_length_var
+		timeout_effect = {
+			effect_tooltip = {
+				add_to_variable = { EYP.EYP_escalation_time_increase = 1 tooltip = war_escalation_level_up_tt }
+				EYP_escalate_the_war_effect = yes
+				if = {
+					limit = { check_variable = { global.EYP_war_escalation_length_var < 30 } }
+					set_variable = { global.EYP_war_escalation_length_var = 30 }
+				}
+			}
+			hidden_effect = { activate_mission = EYP_time_based_war_escalation_mission_fake }
+		}
+	}
+	
+	EYP_recruit_royal_special_force_decision = {
+		icon = GFX_decision_generic_intelligence_operation
+		allowed = { tag = EYP }
+		visible = { NOT = { has_global_flag = eylstadt_drift_defence_war } }
+		available = {
+			has_country_leader = {
+				character = EYP_Ortfine_von_Eylstadt
+				ruling_only = yes
+			}
+			has_war = no
+			hidden_trigger = {
+				NOT = { has_global_flag = eylstadt_drift_defence_war }
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_ideas = EYP_royal_special_force
+		}
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 0
+				always = no
+			}
+		}
+	}
+	
+	EYP_attack_on_carrier_decision = {
+		icon = GFX_decision_generic_naval_mine
+		allowed = { tag = EYP }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			has_country_leader = {
+				character = EYP_Ortfine_von_Eylstadt
+				ruling_only = yes
+			}
+			NOT = { has_country_leader_with_trait = out_of_country }
+			NOT = { has_country_flag = EYP_executing_a_plan_flag }
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = EYP_war_plan_length_var
+		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
+		modifier = { command_power_gain_mult = -0.50 }
+		remove_effect = {
+			clr_country_flag = EYP_executing_a_plan_flag
+			add_political_power = 1
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_fight_in_air_decision = {
+		icon = GFX_decision_generic_air
+		allowed = { tag = EYP }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			has_country_leader = {
+				character = EYP_Ortfine_von_Eylstadt
+				ruling_only = yes
+			}
+			NOT = { has_country_leader_with_trait = out_of_country }
+			NOT = { has_country_flag = EYP_executing_a_plan_flag }
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = EYP_war_plan_length_var
+		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
+		modifier = { command_power_gain_mult = -0.50 }
+		remove_effect = {
+			clr_country_flag = EYP_executing_a_plan_flag
+			if = {
+				limit = { has_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier } }
+				custom_effect_tooltip = EYP_modifier_deception_plan_tt
+				add_to_variable = { EYP_DP_cas_damage_reduction_var = 0.05 tooltip = cas_damage_reduction_tt }
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_cooperate_with_artillery_decision = {
+		icon = GFX_decision_hol_draw_up_staff_plans
+		allowed = { tag = EYP }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			has_country_leader = {
+				character = EYP_Ortfine_von_Eylstadt
+				ruling_only = yes
+			}
+			NOT = { has_country_leader_with_trait = out_of_country }
+			NOT = { has_country_flag = EYP_executing_a_plan_flag }
+			
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = EYP_war_plan_length_var
+		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
+		modifier = { command_power_gain_mult = -0.50 }
+		remove_effect = {
+			clr_country_flag = EYP_executing_a_plan_flag
+			add_political_power = 1
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_defend_sellun_decision = {
+		icon = GFX_decision_generic_mountain_fortification
+		allowed = { tag = EYP }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			has_country_leader = {
+				character = EYP_Ortfine_von_Eylstadt
+				ruling_only = yes
+			}
+			NOT = { has_country_leader_with_trait = out_of_country }
+			NOT = { has_country_flag = EYP_executing_a_plan_flag }
+			
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = EYP_war_plan_length_var
+		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
+		modifier = { command_power_gain_mult = -0.50 }
+		remove_effect = {
+			clr_country_flag = EYP_executing_a_plan_flag
+			add_political_power = 1
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_startup_clear_fields_decision = {
+		icon = GFX_decision_generic_mountain_fortification
+		state_target = yes
+		on_map_mode = map_only
+		target_root_trigger = {
+			#has_completed_focus = EYP_startup_clear_fields
+			#has_country_flag = eylstadt_drift_defence_war_member_flag
+			TAG = EYP
+		}
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				NOT = { has_dynamic_modifier = { modifier = EYP_startup_clear_fields_state_dynamic_modifier } }
+			}
+		}
+		allowed = { original_tag = EYP }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			FROM = { is_core_of = ROOT }
+			any_enemy_country = {
+				FROM = {
+					NOT = { is_fully_controlled_by = PREV }
+				}
+			}
+		}
+		cost = 10
+		fire_only_once = yes
+		days_remove = 7
+		modifier = { command_power_gain_mult = -0.50 }
+		remove_effect = {
+			FROM = { add_dynamic_modifier = { modifier = EYP_startup_clear_fields_state_dynamic_modifier } }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_GIA_test_decision = {
+		icon = GFX_decision_generic_mountain_fortification
+		allowed = { tag = GIA }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = { NOT = { has_country_flag = GIA_executing_a_plan_flag } }
+		cost = 25
+		fire_only_once = yes
+		days_remove = GIA_war_plan_length_var
+		complete_effect = { set_country_flag = GIA_executing_a_plan_flag }
+		modifier = { command_power_gain_mult = -0.50 }
+		remove_effect = {
+			clr_country_flag = GIA_executing_a_plan_flag
+			add_political_power = 1
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+}
+
+EYP_industry_plan_decision_category = {
+	EYP_protect_environment_decision = {
+		icon = GFX_decision_generic_mountain_fortification
+		state_target = yes
+		on_map_mode = map_only
+		target_root_trigger = {
+			has_completed_focus = EYP_protect_environment
+			TAG = EYP
+		}
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				is_coastal = yes
+			}
+		}
+		allowed = { original_tag = EYP }
+		visible = {  }
+		available = {
+			FROM = { is_coastal = yes }
+		}
+		cost = 25
+		fire_only_once = yes
+		complete_effect = {
+			FROM = { add_dynamic_modifier = { modifier = EYP_protect_environment_state_dynamic_modifier } }
+		}
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 0
+				always = no
+			}
+		}
+	}
+}

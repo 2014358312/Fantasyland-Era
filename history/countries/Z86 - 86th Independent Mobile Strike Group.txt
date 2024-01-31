@@ -1,0 +1,63 @@
+﻿capital = 62
+
+set_research_slots = 2
+set_convoys = 80
+set_stability = 0.65
+set_war_support = 0.35
+starting_train_buffer = 2.0
+
+set_technology = {
+	basic_train = 1
+	### Infantry ###
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+}
+if = {
+	limit = { has_dlc = "No Step Back" }
+	
+	set_technology = {
+		gwtank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
+}
+
+activate_mission = EYP_hundred_day_crisis_mission_fake
+add_days_mission_timeout = {
+	mission = EYP_hundred_day_crisis_mission_fake
+	days = -65
+}
+
+set_variable = { Z86_P_industrial_capacity_factory_var = 0.10 }
+set_variable = { Z86_P_industrial_capacity_dockyard_var = 0.10 }
+#add_dynamic_modifier = { modifier = Z86_production_dynamic_modifier }
+
+
+add_ideas = {
+	Z86_mobile_power
+	Z86_common_military
+	Z86_self_independent_government
+	Z86_production_fake
+}
+
+recruit_character = SMA_Vladilena_Milize
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1932.6.15"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 20
+	neutrality = 73
+	communism = 2
+	fascism = 5
+}
+

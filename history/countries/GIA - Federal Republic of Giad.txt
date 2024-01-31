@@ -1,0 +1,84 @@
+﻿capital = 118
+
+set_research_slots = 2
+set_convoys = 80
+set_stability = 0.65
+set_war_support = 0.35
+starting_train_buffer = 2.0
+
+set_technology = {
+	basic_train = 1
+	### Infantry ###
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+}
+if = {
+	limit = { has_dlc = "No Step Back" }
+	
+	set_technology = {
+		gwtank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
+}
+
+
+set_variable = { GIA_war_plan_length_var = 9 }
+activate_mission = EYP_hundred_day_crisis_mission_fake
+add_days_mission_timeout = {
+	mission = EYP_hundred_day_crisis_mission_fake
+	days = -65
+}
+
+set_variable = { GIA_SOB_political_power_factor_var = -0.10 }
+set_variable = { GIA_SOB_communism_drift_var = -0.05 }
+#add_dynamic_modifier = { modifier = GIA_on_both_side_of_balance_dynamic_modifier }
+
+add_ideas = {
+	GIA_reborn_from_fire
+	GIA_retire_navy
+	GIA_ban_computer
+	GIA_on_both_side_of_balance_fake
+}
+
+if = {
+	limit = {
+		OR = {
+			has_dlc = "Together for Victory"
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_autonomy = {
+		target = AIL
+		autonomous_state = autonomy_military_district
+	}
+	else = { puppet = AIL }
+}
+
+#create_faction = Allies
+#add_to_faction = GIA
+#add_to_faction = Z86
+#add_to_faction = SMA
+
+recruit_character = GIA_Ernst_Zimmerman
+
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1932.6.15"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 48
+	neutrality = 45
+	communism = 2
+	fascism = 5
+}
+

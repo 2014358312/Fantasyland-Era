@@ -1,0 +1,48 @@
+@tier1 = 30
+@tier2 = 20
+@tier3 = 10
+
+@chief_experience_gain_low = 0.20
+@chief_experience_gain_medium = 0.30
+@chief_experience_gain_high = 0.40
+
+###Todo remove commented advisor experience gains
+
+leader_traits = {
+	interim_president = {
+		random = no
+		
+		political_power_gain = -0.20
+	}
+
+	final_emperor = {
+		random = no
+		
+		army_core_attack_factor = 0.05
+		army_core_defence_factor = 0.05
+		surrender_limit = 0.05
+	}
+	
+	microphone_of_saint_jaedel = {
+		random = no
+		
+		hidden_modifier = {
+			political_advisor_cost_factor = 1.00
+			economy_cost_factor = 1.00
+			trade_laws_cost_factor = 1.00
+			mobilization_laws_cost_factor = 1.00
+			army_chief_cost_factor = 1.00
+			navy_chief_cost_factor = 1.00
+			air_chief_cost_factor = 1.00
+			high_command_cost_factor = 1.00
+			theorist_cost_factor = 1.00
+			materiel_manufacturer_cost_factor = 1.00
+			naval_manufacturer_cost_factor = 1.00
+			aircraft_manufacturer_cost_factor = 1.00
+			tank_manufacturer_cost_factor = 1.00
+			industrial_concern_cost_factor = 1.00
+		}
+		custom_modifier_tooltip = microphone_of_saint_jaedel_mtt
+		stability_factor = 0.10
+	}
+}

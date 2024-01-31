@@ -1,0 +1,112 @@
+EYP_get_fighter = {
+	hidden_effect = {
+		ROOT = {
+#			if = {
+#				limit = { has_dlc = "By Blood Alone" }
+#				add_equipment_to_stockpile = {
+#					type = small_plane_airframe_0
+#					amount = 100
+#					producer = ENG
+#					variant_name = "Hawker Fury"
+#				}
+#			}
+#			else = {
+#				add_equipment_to_stockpile = {
+#					type = fighter_equipment_0
+#					amount = 100
+#					producer = ENG
+#				}
+#			}
+			country_event = eylstadt.1
+		}
+		GIA = {
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				add_cic = 1000
+			}
+			else = {
+				add_timed_idea = { idea = EYP_cash_from_order_of_fighter days = 90 }
+			}
+			country_event = eylstadt.1
+		}
+	}
+}
+
+EYP_escalate_the_war_effect = {
+	set_variable = { global.EYP_escalation_level_total = 0 }
+	add_to_variable = { global.EYP_escalation_level_total = global.EYP_escalation_time_increase }
+	add_to_variable = { global.EYP_escalation_level_total = global.EYP_war_escalation_level_EYP_action }
+	add_to_variable = { global.EYP_escalation_level_total = global.EYP_war_escalation_level_ITA_action }
+}
+
+EYP_airforce_research_level_up = {
+	custom_effect_tooltip = EYP_modifier_airforce_research_level_tt
+	hidden_effect = {
+		if = {
+			limit = { has_idea = EYP_airforce_search_idea_5 }
+			air_experience = 25
+			add_political_power = 10
+		}
+		else_if = {
+			limit = { has_idea = EYP_airforce_search_idea_4 }
+			add_to_variable = { EYP_airforce_research_level_var = 0.05 }
+			swap_ideas = {
+				remove_idea = EYP_airforce_search_idea_4
+				add_idea = EYP_airforce_search_idea_5
+			}
+		}
+		else_if = {
+			limit = { has_idea = EYP_airforce_search_idea_3 }
+			add_to_variable = { EYP_airforce_research_level_var = 0.05 }
+			swap_ideas = {
+				remove_idea = EYP_airforce_search_idea_3
+				add_idea = EYP_airforce_search_idea_4
+			}
+		}
+		else_if = {
+			limit = { has_idea = EYP_airforce_search_idea_2 }
+			add_to_variable = { EYP_airforce_research_level_var = 0.05 }
+			swap_ideas = {
+				remove_idea = EYP_airforce_search_idea_2
+				add_idea = EYP_airforce_search_idea_3
+			}
+		}
+		else_if = {
+			limit = { has_idea = EYP_airforce_search_idea_1 }
+			add_to_variable = { EYP_airforce_research_level_var = 0.05 }
+			swap_ideas = {
+				remove_idea = EYP_airforce_search_idea_1
+				add_idea = EYP_airforce_search_idea_2
+			}
+		}
+		else_if = {
+			limit = { has_idea = EYP_airforce_search_idea }
+			add_to_variable = { EYP_airforce_research_level_var = 0.05 }
+			swap_ideas = {
+				remove_idea = EYP_airforce_search_idea
+				add_idea = EYP_airforce_search_idea_1
+			}
+		}
+		else = {
+			add_to_variable = { EYP_airforce_research_level_var = 0.05 }
+			add_ideas = EYP_airforce_search_idea
+		}
+	}
+}
+
+test1 = {
+	if = {
+		limit = { NOT = { has_active_mission = EYP_hundred_day_crisis_mission } }
+		activate_mission = EYP_hundred_day_crisis_mission
+		add_days_mission_timeout = {
+			mission = EYP_hundred_day_crisis_mission
+			days = -65
+		}
+	}
+}
+
+test2 = {
+	country_lock_all_division_template = no
+	set_technology = { EYP_startup_royal_jager_tech = 1 } 
+	set_technology = { EYP_royal_jager_tech = 1 }
+}

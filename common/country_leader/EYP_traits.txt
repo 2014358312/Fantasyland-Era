@@ -1,0 +1,55 @@
+@tier1 = 30
+@tier2 = 20
+@tier3 = 10
+
+@chief_experience_gain_low = 0.20
+@chief_experience_gain_medium = 0.30
+@chief_experience_gain_high = 0.40
+
+###Todo remove commented advisor experience gains
+
+leader_traits = {
+	young_princess = {
+		random = no
+		
+		political_power_factor = 0.05
+		party_popularity_stability_factor = 0.10
+	}
+	
+	out_of_country = {
+		random = no
+		
+		political_power_gain = -0.50
+	}
+	
+	loyal_maid = {
+		random = no
+		sprite = 13
+		
+		neutrality_drift = 0.05
+	}
+	
+	prime_minister_varma = {
+		random = no
+		sprite = 13
+		
+		political_power_factor = 0.05
+		democratic_acceptance = 50
+	}
+	
+	nineth_director_locked = {
+		random = no
+		sprite = 13
+		
+		research_speed_factor = 0.05
+		custom_modifier_tooltip = nineth_director_locked_mtt
+	}
+	
+	nineth_director_unlocked = {
+		random = no
+		sprite = 13
+		
+		political_power_gain = -0.10
+		custom_modifier_tooltip = nineth_director_unlocked_mtt
+	}
+}

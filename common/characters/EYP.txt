@@ -1,0 +1,434 @@
+characters = {
+	EYP_Bergmann = {
+		name = Bergmann
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Bergmann
+				small = GFX_idea_advisor_EYP_Bergmann
+			}
+			army = {
+				large = GFX_Portrait_EYP_Bergmann
+				small = GFX_idea_advisor_EYP_Bergmann
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = EYP_Bergmann
+			allowed = {
+				OR = {
+					original_tag = EYP
+					original_tag = ITA
+				}
+			}
+			can_be_fired = no
+			traits = { nineth_director_locked }
+			on_add = {
+				hidden_effect = {
+					ROOT = {
+						if = {
+							limit = { NOT = { has_idea = EYP_nineth_director_idea } }
+							add_ideas = EYP_nineth_director_idea
+						}
+					}
+				}
+			}
+			on_remove = {
+				hidden_effect = {
+					ROOT = {
+						if = {
+							limit = { has_idea = EYP_nineth_director_idea }
+							remove_ideas = EYP_nineth_director_idea
+						}
+					}
+				}
+			}
+			ai_will_do = {
+				base = 1
+				modifier = {
+					factor = 0
+					THIS = { has_idea_with_trait = nineth_director_unlocked }
+				}
+			}
+		}
+	}
+	
+	EYP_Bianca = {
+		name = Bianca
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Bianca
+				small = GFX_idea_advisor_EYP_Bianca
+			}
+			army = {
+				large = GFX_Portrait_EYP_Bianca
+				small = GFX_idea_advisor_EYP_Bianca
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = EYP_Bianca
+			allowed = { original_tag = EYP }
+			cost = 50
+			traits = { army_chief_morale_1 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	EYP_Elvira = {
+		name = Elvira
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Elvira
+				small = GFX_idea_advisor_EYP_Elvira
+			}
+			army = {
+				large = GFX_Portrait_EYP_Elvira
+				small = GFX_idea_advisor_EYP_Elvira
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = EYP_Elvira
+			allowed = { original_tag = EYP }
+			cost = 150
+			traits = { political_dancer }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	EYP_Ferna = {
+		name = Ferna
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Ferna
+				small = GFX_idea_advisor_EYP_Ferna
+			}
+			army = {
+				large = GFX_Portrait_EYP_Ferna
+				small = GFX_idea_advisor_EYP_Ferna
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = EYP_Ferna
+			allowed = { original_tag = EYP }
+			cost = 100
+			traits = { army_chief_morale_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 4
+			logistics_skill = 1
+		}
+	}
+	
+	EYP_Ortfine_von_Eylstadt = {
+		name = Ortfine_von_Eylstadt
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Fine_alt1
+				small = GFX_idea_advisor_EYP_Fine
+			}
+			army = {
+				large = GFX_Portrait_EYP_Fine_alt1
+				small = GFX_idea_advisor_EYP_Fine
+			}
+		}
+		country_leader = {
+			ideology = moderatism
+			traits = { young_princess out_of_country }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = EYP_Fine
+			allowed = { original_tag = EYP }
+			visible = { is_country_leader = no }
+			available = {
+				NOT = { has_government = democratic }
+			}
+			cost = 150
+			traits = { political_dancer }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	EYP_Halt_Meyer = {
+		name = Halt_Meyer
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Halt_Meyer
+				small = GFX_idea_advisor_EYP_Halt_Meyer
+			}
+			army = {
+				large = GFX_Portrait_EYP_Halt_Meyer
+				small = GFX_idea_advisor_EYP_Halt_Meyer
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = EYP_Halt_Meyer
+			allowed = { original_tag = EYP }
+			cost = 150
+			traits = { political_dancer }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	EYP_Hans = {
+		name = Hans
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Hans
+				small = GFX_idea_advisor_EYP_Hans
+			}
+			army = {
+				large = GFX_Portrait_EYP_Hans
+				small = GFX_idea_advisor_EYP_Hans
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = EYP_Hans
+			allowed = { original_tag = EYP }
+			cost = 150
+			traits = { political_dancer }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	EYP_Herman = {
+		name = Herman
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Herman
+				small = GFX_idea_advisor_EYP_Herman
+			}
+			army = {
+				large = GFX_Portrait_EYP_Herman
+				small = GFX_idea_advisor_EYP_Herman
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = EYP_Herman
+			allowed = { original_tag = EYP }
+			cost = 150
+			traits = { political_dancer }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	EYP_Izetta = {
+		name = Izetta
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Izetta
+				small = GFX_idea_advisor_EYP_Izetta
+			}
+			army = {
+				large = GFX_Portrait_EYP_Izetta
+				small = GFX_idea_advisor_EYP_Izetta
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 4
+			logistics_skill = 1
+			visible = { THIS = { has_character_flag = EYP_wake_up_flag } }
+		}
+	}
+	
+	EYP_Jonas = {
+		name = Jonas
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Jonas
+				small = GFX_idea_advisor_EYP_Jonas
+			}
+			army = {
+				large = GFX_Portrait_EYP_Jonas
+				small = GFX_idea_advisor_EYP_Jonas
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = EYP_Jonas
+			allowed = { original_tag = EYP }
+			cost = 150
+			traits = { political_dancer }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	EYP_Lotte = {
+		name = Lotte
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Lotte
+				small = GFX_idea_advisor_EYP_Lotte
+			}
+			army = {
+				large = GFX_Portrait_EYP_Lotte
+				small = GFX_idea_advisor_EYP_Lotte
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = EYP_Lotte
+			allowed = { original_tag = EYP }
+			cost = 75
+			traits = { loyal_maid }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	EYP_Rudolf = {
+		name = Rudolf
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Rudolf
+				small = GFX_idea_advisor_EYP_Rudolf
+			}
+			army = {
+				large = GFX_Portrait_EYP_Rudolf
+				small = GFX_idea_advisor_EYP_Rudolf
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = EYP_Rudolf
+			allowed = { original_tag = EYP }
+			visible = { always = no }
+			cost = 150
+			traits = { popular_figurehead }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	EYP_Schneider = {
+		name = Schneider
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Schneider
+				small = GFX_idea_advisor_EYP_Schneider
+			}
+			army = {
+				large = GFX_Portrait_EYP_Schneider
+				small = GFX_idea_advisor_EYP_Schneider
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = EYP_Schneider
+			allowed = { original_tag = EYP }
+			cost = 75
+			traits = { loyal_maid }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	EYP_Seeger = {
+		name = Seeger
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Seeger
+				small = GFX_idea_advisor_EYP_Seeger
+			}
+			army = {
+				large = GFX_Portrait_EYP_Seeger
+				small = GFX_idea_advisor_EYP_Seeger
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = EYP_Seeger
+			allowed = { original_tag = EYP }
+			cost = 150
+			traits = { SWI_intelligence_officer }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	EYP_Tobias = {
+		name = Tobias
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Tobias
+				small = GFX_idea_advisor_EYP_Tobias
+			}
+			army = {
+				large = GFX_Portrait_EYP_Tobias
+				small = GFX_idea_advisor_EYP_Tobias
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = EYP_Tobias
+			allowed = { original_tag = EYP }
+			cost = 75
+			traits = { loyal_maid }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	EYP_Varma = {
+		name = Varma
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EYP_Varma
+				small = GFX_idea_advisor_EYP_Varma
+			}
+			army = {
+				large = GFX_Portrait_EYP_Varma
+				small = GFX_idea_advisor_EYP_Varma
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = EYP_Varma
+			allowed = { original_tag = EYP }
+			cost = 150
+			traits = { prime_minister_varma }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+}

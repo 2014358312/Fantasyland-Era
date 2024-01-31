@@ -1,0 +1,38 @@
+################
+#####   EYP  ######
+################
+
+EYP_hundred_day_crisis_decision_category = {
+	icon = power_struggle
+	picture = GFX_decision_cat_picture_EYP_hundred_crisis
+	priority = 100
+	allowed = {
+		OR = {
+			original_tag = EYP
+			original_tag = GIA
+			original_tag = SMA
+			original_tag = AIL
+			original_tag = Z86
+		}
+	}
+	visible = {
+		OR = {
+			NOT = { has_global_flag = eylstadt_drift_defence_war }
+			has_country_flag = eylstadt_drift_defence_war_member_flag
+		}
+	}
+	scripted_gui = EYP_war_escalation_decision_ui
+}
+
+EYP_industry_plan_decision_category = {
+	icon = generic_industry
+	picture = GFX_decision_cat_picture_generic_industry_plan
+	priority = 10
+	allowed = { original_tag = EYP }
+	visible = {
+		OR = {
+			has_dynamic_modifier = { modifier = EYP_industry_plan_dynamic_modifier }
+			is_debug = yes
+		}
+	}
+}
