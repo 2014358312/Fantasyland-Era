@@ -1,0 +1,132 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_USA_CONGRESS}
+
+focus_tree = {
+	id = eylstadt_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 100
+			original_tag = EYP
+		}
+	}
+	continuous_focus_position = { x = 50 y = 1600 }
+	default = no
+#	focus = {
+#		id = TIA_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		relative_position_id = 
+#		x = 0
+#		y = 1
+#		cost = 10
+#		ai_will_do = {
+#			factor = 1
+#		}
+#		available = {
+#
+#		}
+#		bypass = {
+#
+#		}
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#		completion_reward = {
+#
+#		}
+#	}
+
+
+ ######   #######  ##    ## ######## ##       ####  ######  ######## 
+##    ## ##     ## ###   ## ##       ##        ##  ##    ##    ##    
+##       ##     ## ####  ## ##       ##        ##  ##          ##    
+##       ##     ## ## ## ## ######   ##        ##  ##          ##    
+##       ##     ## ##  #### ##       ##        ##  ##          ##    
+##    ## ##     ## ##   ### ##       ##        ##  ##    ##    ##    
+ ######   #######  ##    ## ##       ######## ####  ######     ##    
+
+	
+#### ##    ## ########  ##     ##  ######  ######## ########  ##    ## 
+ ##  ###   ## ##     ## ##     ## ##    ##    ##    ##     ##  ##  ##  
+ ##  ####  ## ##     ## ##     ## ##          ##    ##     ##   ####   
+ ##  ## ## ## ##     ## ##     ##  ######     ##    ########     ##    
+ ##  ##  #### ##     ## ##     ##       ##    ##    ##   ##      ##    
+ ##  ##   ### ##     ## ##     ## ##    ##    ##    ##    ##     ##    
+#### ##    ## ########   #######   ######     ##    ##     ##    ##    
+	
+	
+   ###    ########  ##     ## ##    ## 
+  ## ##   ##     ## ###   ###  ##  ##  
+ ##   ##  ##     ## #### ####   ####   
+##     ## ########  ## ### ##    ##    
+######### ##   ##   ##     ##    ##    
+##     ## ##    ##  ##     ##    ##    
+##     ## ##     ## ##     ##    ##    
+	
+
+   ###    #### ########     ##    ##    ###    ##     ## ##    ## 
+  ## ##    ##  ##     ##    ###   ##   ## ##   ##     ##  ##  ##  
+ ##   ##   ##  ##     ##    ####  ##  ##   ##  ##     ##   ####   
+##     ##  ##  ########     ## ## ## ##     ## ##     ##    ##    
+#########  ##  ##   ##      ##  #### #########  ##   ##     ##    
+##     ##  ##  ##    ##     ##   ### ##     ##   ## ##      ##    
+##     ## #### ##     ##    ##    ## ##     ##    ###       ##    
+	
+	
+
+########   #######  ##       #### ######## ####  ######     ###    ##       
+##     ## ##     ## ##        ##     ##     ##  ##    ##   ## ##   ##       
+##     ## ##     ## ##        ##     ##     ##  ##        ##   ##  ##       
+########  ##     ## ##        ##     ##     ##  ##       ##     ## ##       
+##        ##     ## ##        ##     ##     ##  ##       ######### ##       
+##        ##     ## ##        ##     ##     ##  ##    ## ##     ## ##       
+##         #######  ######## ####    ##    ####  ######  ##     ## ######## 
+focus = {
+	id = TIA_dream
+	icon = GFX_focus_generic_concessions
+	x = 3
+	y = 0
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		
+	}
+}
+
+focus = {
+	id = TIA_decide
+	icon = GFX_focus_generic_concessions
+	relative_position_id = TIA_dream
+	x = 0
+	y = 1
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TIA_dream }
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		
+	}
+}
+
+}
