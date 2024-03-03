@@ -4,7 +4,6 @@ tags={
 	"Map"
 }
 name="Fantasyland Era"
-supported_version="1.13.*"
 replace_path="common/abilities"
 replace_path="common/ai_strategy"
 replace_path="common/ai_equipment"
@@ -45,4 +44,5 @@ replace_path="map/terrain"
 replace_path="map/strategicregions"
 replace_path="map/supplyareas"
 replace_path="tutorial"
-
+supported_version="1.13.7"
+remote_file_id="3169876384"
