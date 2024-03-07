@@ -201,6 +201,26 @@ focus_tree = {
         }
     }
 
+    focus = { #联系福克罗德商会
+        id = TIA_Contact_FaulkLeod_Chamber_Commerce
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Transform_campus_life
+		x = -4
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Transform_campus_life
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
     focus = { #舞会事件
         id = TIA_Prom_events
         icon = GFX_goal_generic_nationalism_focus
@@ -213,12 +233,158 @@ focus_tree = {
         }
 		prerequisite = {
 			focus = TIA_Stay_away_Sion
+			focus = TIA_Lock_on_Abel
+			focus = TIA_uphold_Tiona_Rudolvon
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    
+    focus = { #进口小麦合约
+        id = TIA_Wheat_import_contract
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Prom_events
+		x = -4
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Prom_events
 		}
 		prerequisite = {
-			focus = TIA_Lock_on_Abel
+			focus = TIA_Contact_FaulkLeod_Chamber_Commerce
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    
+    focus = { #处理静海森林问题
+        id = TIA_Dealing_Jinghai_Forest
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Prom_events
+		x = -2
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Prom_events
 		}
 		prerequisite = {
 			focus = TIA_uphold_Tiona_Rudolvon
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    
+    focus = { #成立皇女直辖领
+        id = TIA_Establishment_Princess_Directly_Governed_Territory
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Dealing_Jinghai_Forest
+		x = 0
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Dealing_Jinghai_Forest
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    
+    focus = { #建立学院
+        id = TIA_build_school
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Establishment_Princess_Directly_Governed_Territory
+		x = 0
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Establishment_Princess_Directly_Governed_Territory
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    
+    focus = { #鲁多路冯伯爵领的小麦储备
+        id = TIA_Rudolvon_food_reserves
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Establishment_Princess_Directly_Governed_Territory
+		x = -2
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Establishment_Princess_Directly_Governed_Territory
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+
+    focus = { #加入马术社
+        id = TIA_Join_equestrian_club
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Transform_campus_life
+		x = 4
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Transform_campus_life
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = { #剑术大会的便当
+        id = TIA_Bento_kendo_tournament
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Join_equestrian_club
+		x = -1
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Join_equestrian_club
+		}
+		prerequisite = {
+			focus = TIA_Lock_on_Abel
 		}
         completion_reward = {
             add_political_power = 50
