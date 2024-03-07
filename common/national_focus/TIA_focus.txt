@@ -8,125 +8,248 @@
 ### search_filters = {FOCUS_FILTER_USA_CONGRESS}
 
 focus_tree = {
-	id = eylstadt_focus
-	
-	country = {
-		factor = 0
-		
-		modifier = {
-			add = 100
-			original_tag = EYP
+    id = TIA_focus_tree
+    country = {
+        factor = 0
+        modifier = {
+            add = 10
+            tag = TIA
+        }
+    }
+    default = no
+
+    focus = { #梦？
+        id = TIA_dream
+        icon = GFX_goal_generic_nationalism_focus
+        x = 0
+        y = 0
+        cost = 10
+        available = {
+            always = no 
+        }
+        completion_reward = {
+            add_political_power = 150
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    
+    focus = { #抉择
+        id = TIA_Choice
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_dream
+		x = 0
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_dream
 		}
-	}
-	continuous_focus_position = { x = 50 y = 1600 }
-	default = no
-#	focus = {
-#		id = TIA_
-#		icon = GFX_
-#		prerequisite = { focus = }
-#		mutually_exclusive = { focus =  }
-#		relative_position_id = 
-#		x = 0
-#		y = 1
-#		cost = 10
-#		ai_will_do = {
-#			factor = 1
-#		}
-#		available = {
-#
-#		}
-#		bypass = {
-#
-#		}
-#		cancel_if_invalid = yes
-#		continue_if_invalid = no
-#		available_if_capitulated = no
-#		completion_reward = {
-#
-#		}
-#	}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
 
+    focus = { #做出改变
+        id = TIA_Make_change
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Choice
+		x = 8
+		y = 1
+        cost = 5
+		mutually_exclusive = {
+			focus = TIA_prank
+		}
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Choice
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
 
- ######   #######  ##    ## ######## ##       ####  ######  ######## 
-##    ## ##     ## ###   ## ##       ##        ##  ##    ##    ##    
-##       ##     ## ####  ## ##       ##        ##  ##          ##    
-##       ##     ## ## ## ## ######   ##        ##  ##          ##    
-##       ##     ## ##  #### ##       ##        ##  ##          ##    
-##    ## ##     ## ##   ### ##       ##        ##  ##    ##    ##    
- ######   #######  ##    ## ##       ######## ####  ######     ##    
+    focus = { #财政问题
+        id = TIA_Financial_issues
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Make_change
+		x = -2
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Make_change
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
 
-	
-#### ##    ## ########  ##     ##  ######  ######## ########  ##    ## 
- ##  ###   ## ##     ## ##     ## ##    ##    ##    ##     ##  ##  ##  
- ##  ####  ## ##     ## ##     ## ##          ##    ##     ##   ####   
- ##  ## ## ## ##     ## ##     ##  ######     ##    ########     ##    
- ##  ##  #### ##     ## ##     ##       ##    ##    ##   ##      ##    
- ##  ##   ### ##     ## ##     ## ##    ##    ##    ##    ##     ##    
-#### ##    ## ########   #######   ######     ##    ##     ##    ##    
-	
-	
-   ###    ########  ##     ## ##    ## 
-  ## ##   ##     ## ###   ###  ##  ##  
- ##   ##  ##     ## #### ####   ####   
-##     ## ########  ## ### ##    ##    
-######### ##   ##   ##     ##    ##    
-##     ## ##    ##  ##     ##    ##    
-##     ## ##     ## ##     ##    ##    
-	
+    focus = { #预防瘟疫
+        id = TIA_Prevention_plague
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Make_change
+		x = 2
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Make_change
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
 
-   ###    #### ########     ##    ##    ###    ##     ## ##    ## 
-  ## ##    ##  ##     ##    ###   ##   ## ##   ##     ##  ##  ##  
- ##   ##   ##  ##     ##    ####  ##  ##   ##  ##     ##   ####   
-##     ##  ##  ########     ## ## ## ##     ## ##     ##    ##    
-#########  ##  ##   ##      ##  #### #########  ##   ##     ##    
-##     ##  ##  ##    ##     ##   ### ##     ##   ## ##      ##    
-##     ## #### ##     ##    ##    ## ##     ##    ###       ##    
-	
-	
+    focus = { #改变校园生活
+        id = TIA_Transform_campus_life
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Make_change
+		x = 0
+		y = 2
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Prevention_plague
+		}
+		prerequisite = {
+			focus = TIA_Financial_issues
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
 
-########   #######  ##       #### ######## ####  ######     ###    ##       
-##     ## ##     ## ##        ##     ##     ##  ##    ##   ## ##   ##       
-##     ## ##     ## ##        ##     ##     ##  ##        ##   ##  ##       
-########  ##     ## ##        ##     ##     ##  ##       ##     ## ##       
-##        ##     ## ##        ##     ##     ##  ##       ######### ##       
-##        ##     ## ##        ##     ##     ##  ##    ## ##     ## ##       
-##         #######  ######## ####    ##    ####  ######  ##     ## ######## 
-focus = {
-	id = TIA_dream
-	icon = GFX_focus_generic_concessions
-	x = 3
-	y = 0
-	cost = 5
-	ai_will_do = {
-		factor = 1
-	}
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
+    focus = { #维护迪欧娜·鲁多路冯
+        id = TIA_uphold_Tiona_Rudolvon
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Transform_campus_life
+		x = -2
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Transform_campus_life
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
 
-	completion_reward = {
-		
-	}
-}
+    focus = { #锁定阿贝尔王子
+        id = TIA_Lock_on_Abel
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Transform_campus_life
+		x = 2
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Transform_campus_life
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
 
-focus = {
-	id = TIA_decide
-	icon = GFX_focus_generic_concessions
-	relative_position_id = TIA_dream
-	x = 0
-	y = 1
-	cost = 5
-	ai_will_do = {
-		factor = 1
-	}
-	prerequisite = { focus = TIA_dream }
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
+    focus = { #远离席翁王子
+        id = TIA_Stay_away_Sion
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Transform_campus_life
+		x = 0
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Transform_campus_life
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
 
-	completion_reward = {
-		
-	}
-}
+    focus = { #舞会事件
+        id = TIA_Prom_events
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Transform_campus_life
+		x = 0
+		y = 2
+        cost = 5
+        available = {
+            alwyas = no
+        }
+		prerequisite = {
+			focus = TIA_Stay_away_Sion
+		}
+		prerequisite = {
+			focus = TIA_Lock_on_Abel
+		}
+		prerequisite = {
+			focus = TIA_uphold_Tiona_Rudolvon
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = { #恶作剧吧
+        id = TIA_prank
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Choice
+		x = -8
+		y = 1
+        cost = 5
+		mutually_exclusive = {
+			focus = TIA_Make_change
+		}
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Choice
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
 
 }
