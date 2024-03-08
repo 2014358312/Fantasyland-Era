@@ -6,6 +6,7 @@ on_actions = {
 					character = EYP_Bergmann
 					target_country = GIA
 				}
+				country_event = { id = eylstadt.7 days = 180 random = 30 }
 			}
 			GIA = {
 				add_ideas = EYP_Bergmann
@@ -35,13 +36,17 @@ on_actions = {
 					ROOT = {
 						white_peace = {
 							tag = FROM
-							message = 123_tt
+							message = AIL_EYP_1936_war_tt
 						}
 					}
 					every_state = {
 						limit = { is_core_of = ROOT }
 						ROOT = { transfer_state = PREV }
 					}
+					#every_state = {
+					#	limit = { is_core_of = PREV }
+					#	PREV = { transfer_state = PREV }
+					#}
 					ROOT = {
 						set_popularities = {
 							democratic = 80
@@ -80,13 +85,17 @@ on_actions = {
 					ROOT = {
 						white_peace = {
 							tag = FROM
-							message = 456_tt
+							message = EYP_AIL_1936_war_tt
 						}
 					}
 					every_state = {
 						limit = { is_core_of = ROOT }
 						ROOT = { transfer_state = PREV }
 					}
+					#every_state = {
+					#	limit = { is_core_of = PREV }
+					#	PREV = { transfer_state = PREV }
+					#}
 				}
 				every_country = {
 					limit = { has_country_flag = eylstadt_drift_defence_war_member_flag }
