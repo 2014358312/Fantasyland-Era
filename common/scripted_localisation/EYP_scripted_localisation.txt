@@ -58,34 +58,62 @@ defined_text = {
 }
 
 defined_text = {
-    name = EYP_GET_ITA_ACTION_0
+    name = EYP_GET_GIA_ACTION_0
 	text = {
 		trigger = { NOT = { has_global_flag = eylstadt_drift_defence_war } }
-		localization_key = EYP_war_escalation_italian_action_0
+		localization_key = EYP_war_escalation_giad_action_0
     }
 }
 
 defined_text = {
-    name = EYP_GET_ITA_ACTION_1
+    name = EYP_GET_GIA_ACTION_1
 	text = {
 		trigger = { has_global_flag = eylstadt_drift_defence_war }
-		localization_key = EYP_war_escalation_italian_action_1
+		localization_key = EYP_war_escalation_giad_action_1
     }
+}
+
+defined_text = {
+    name = EYP_GET_AIL_ACTION_0
+	text = {
+		trigger = { NOT = { has_global_flag = eylstadt_drift_defence_war } }
+		localization_key = EYP_war_escalation_artificial_intelligence_action_0
+    }
+}
+
+defined_text = {
+    name = EYP_GET_AIL_ACTION_1
+	text = {
+		trigger = { has_global_flag = eylstadt_drift_defence_war }
+		localization_key = EYP_war_escalation_artificial_intelligence_action_1
+    }
+}
+
+defined_text = {
+    name = EYP_GET_TIA_ACTION_0
+	text = { localization_key = EYP_war_escalation_tiam_action_0 }
 }
 
 defined_text = {
     name = EYP_GET_WAR_ESCALATION_LEVEL_1_COLOR
 	text = {
 		trigger = {
-			tag = AUS
-			check_variable = { EYP.EYP_escalation_level_total > 0 }
+			OR = {
+				tag = GIA
+				tag = AIL
+				tag = SMA
+			}
+			check_variable = { global.EYP_escalation_level_total > 0 }
 		}
 		localization_key = "GFX_war_escalation_level_red"
 	}
 	text = {
 		trigger = {
-			tag = EYP
-			check_variable = { EYP.EYP_escalation_level_total > 0 }
+			OR = {
+				tag = EYP
+				tag = Z86
+			}
+			check_variable = { global.EYP_escalation_level_total > 0 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
 	}
@@ -98,15 +126,22 @@ defined_text = {
     name = EYP_GET_WAR_ESCALATION_LEVEL_2_COLOR
 	text = {
 		trigger = {
-			tag = AUS
-			check_variable = { EYP.EYP_escalation_level_total > 1 }
+			OR = {
+				tag = GIA
+				tag = AIL
+				tag = SMA
+			}
+			check_variable = { global.EYP_escalation_level_total > 1 }
 		}
 		localization_key = "GFX_war_escalation_level_red"
 	}
 	text = {
 		trigger = {
-			tag = EYP
-			check_variable = { EYP.EYP_escalation_level_total > 1 }
+			OR = {
+				tag = EYP
+				tag = Z86
+			}
+			check_variable = { global.EYP_escalation_level_total > 1 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
 	}
@@ -119,15 +154,22 @@ defined_text = {
     name = EYP_GET_WAR_ESCALATION_LEVEL_3_COLOR
 	text = {
 		trigger = {
-			tag = AUS
-			check_variable = { EYP.EYP_escalation_level_total > 2 }
+			OR = {
+				tag = GIA
+				tag = AIL
+				tag = SMA
+			}
+			check_variable = { global.EYP_escalation_level_total > 2 }
 		}
 		localization_key = "GFX_war_escalation_level_red"
 	}
 	text = {
 		trigger = {
-			tag = EYP
-			check_variable = { EYP.EYP_escalation_level_total > 2 }
+			OR = {
+				tag = EYP
+				tag = Z86
+			}
+			check_variable = { global.EYP_escalation_level_total > 2 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
 	}
@@ -140,15 +182,22 @@ defined_text = {
     name = EYP_GET_WAR_ESCALATION_LEVEL_4_COLOR
 	text = {
 		trigger = {
-			tag = AUS
-			check_variable = { EYP.EYP_escalation_level_total > 3 }
+			OR = {
+				tag = GIA
+				tag = AIL
+				tag = SMA
+			}
+			check_variable = { global.EYP_escalation_level_total > 3 }
 		}
 		localization_key = "GFX_war_escalation_level_red"
 	}
 	text = {
 		trigger = {
-			tag = EYP
-			check_variable = { EYP.EYP_escalation_level_total > 3 }
+			OR = {
+				tag = EYP
+				tag = Z86
+			}
+			check_variable = { global.EYP_escalation_level_total > 3 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
 	}
@@ -161,15 +210,22 @@ defined_text = {
     name = EYP_GET_WAR_ESCALATION_LEVEL_5_COLOR
 	text = {
 		trigger = {
-			tag = AUS
-			check_variable = { EYP.EYP_escalation_level_total > 4 }
+			OR = {
+				tag = GIA
+				tag = AIL
+				tag = SMA
+			}
+			check_variable = { global.EYP_escalation_level_total > 4 }
 		}
 		localization_key = "GFX_war_escalation_level_red"
 	}
 	text = {
 		trigger = {
-			tag = EYP
-			check_variable = { EYP.EYP_escalation_level_total > 4 }
+			OR = {
+				tag = EYP
+				tag = Z86
+			}
+			check_variable = { global.EYP_escalation_level_total > 4 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
 	}
@@ -182,15 +238,22 @@ defined_text = {
     name = EYP_GET_WAR_ESCALATION_LEVEL_6_COLOR
 	text = {
 		trigger = {
-			tag = AUS
-			check_variable = { EYP.EYP_escalation_level_total > 5 }
+			OR = {
+				tag = GIA
+				tag = AIL
+				tag = SMA
+			}
+			check_variable = { global.EYP_escalation_level_total > 5 }
 		}
 		localization_key = "GFX_war_escalation_level_red"
 	}
 	text = {
 		trigger = {
-			tag = EYP
-			check_variable = { EYP.EYP_escalation_level_total > 5 }
+			OR = {
+				tag = EYP
+				tag = Z86
+			}
+			check_variable = { global.EYP_escalation_level_total > 5 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
 	}
@@ -203,15 +266,22 @@ defined_text = {
     name = EYP_GET_WAR_ESCALATION_LEVEL_7_COLOR
 	text = {
 		trigger = {
-			tag = AUS
-			check_variable = { EYP.EYP_escalation_level_total > 6 }
+			OR = {
+				tag = GIA
+				tag = AIL
+				tag = SMA
+			}
+			check_variable = { global.EYP_escalation_level_total > 6 }
 		}
 		localization_key = "GFX_war_escalation_level_red"
 	}
 	text = {
 		trigger = {
-			tag = EYP
-			check_variable = { EYP.EYP_escalation_level_total > 6 }
+			OR = {
+				tag = EYP
+				tag = Z86
+			}
+			check_variable = { global.EYP_escalation_level_total > 6 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
 	}
@@ -224,15 +294,22 @@ defined_text = {
     name = EYP_GET_WAR_ESCALATION_LEVEL_8_COLOR
 	text = {
 		trigger = {
-			tag = AUS
-			check_variable = { EYP.EYP_escalation_level_total > 7 }
+			OR = {
+				tag = GIA
+				tag = AIL
+				tag = SMA
+			}
+			check_variable = { global.EYP_escalation_level_total > 7 }
 		}
 		localization_key = "GFX_war_escalation_level_red"
 	}
 	text = {
 		trigger = {
-			tag = EYP
-			check_variable = { EYP.EYP_escalation_level_total > 7 }
+			OR = {
+				tag = EYP
+				tag = Z86
+			}
+			check_variable = { global.EYP_escalation_level_total > 7 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
 	}
@@ -245,15 +322,22 @@ defined_text = {
     name = EYP_GET_WAR_ESCALATION_LEVEL_9_COLOR
 	text = {
 		trigger = {
-			tag = AUS
-			check_variable = { EYP.EYP_escalation_level_total > 8 }
+			OR = {
+				tag = GIA
+				tag = AIL
+				tag = SMA
+			}
+			check_variable = { global.EYP_escalation_level_total > 8 }
 		}
 		localization_key = "GFX_war_escalation_level_red"
 	}
 	text = {
 		trigger = {
-			tag = EYP
-			check_variable = { EYP.EYP_escalation_level_total > 8 }
+			OR = {
+				tag = EYP
+				tag = Z86
+			}
+			check_variable = { global.EYP_escalation_level_total > 8 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
 	}
@@ -266,15 +350,22 @@ defined_text = {
     name = EYP_GET_WAR_ESCALATION_LEVEL_10_COLOR
 	text = {
 		trigger = {
-			tag = AUS
-			check_variable = { EYP.EYP_escalation_level_total > 9 }
+			OR = {
+				tag = GIA
+				tag = AIL
+				tag = SMA
+			}
+			check_variable = { global.EYP_escalation_level_total > 9 }
 		}
 		localization_key = "GFX_war_escalation_level_red"
 	}
 	text = {
 		trigger = {
-			tag = EYP
-			check_variable = { EYP.EYP_escalation_level_total > 9 }
+			OR = {
+				tag = EYP
+				tag = Z86
+			}
+			check_variable = { global.EYP_escalation_level_total > 9 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
 	}

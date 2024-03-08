@@ -9,36 +9,28 @@ EYP_hundred_day_crisis_decision_category = {
 		fire_only_once = yes
 		activation = { always = no }
 		timeout_effect = {
-			effect_tooltip = {
-				GIA = {
-					create_wargoal = {
-						target = ROOT
-						type = liberate_wargoal
-					}
-				}
-			}
-			AIL = {
-				effect_tooltip = {
-					create_wargoal = {
-						target = ROOT
-						type = liberate_wargoal
-					}
-				}
-				declare_war_on = {
-					target = ROOT
-					type = liberate_wargoal
-				}
-			}
-			EYP = {
-				custom_effect_tooltip = EYP_hundred_day_crisis_mission_tt
-				add_war_support = 0.05
-				Manpower_act_level_up = yes
-			}
+			custom_effect_tooltip = EYP_hundred_day_crisis_mission_tt
 			hidden_effect = {
 				set_global_flag = eylstadt_drift_defence_war
-				EYP = { set_country_flag = eylstadt_drift_defence_war_member_flag }
 				GIA = { set_country_flag = eylstadt_drift_defence_war_member_flag }
-				AIL = { set_country_flag = eylstadt_drift_defence_war_member_flag }
+				AIL = {
+					set_country_flag = eylstadt_drift_defence_war_member_flag
+					declare_war_on = {
+						target = EYP
+						type = liberate_wargoal
+					}
+				}
+				SMA = { 
+					set_country_flag = eylstadt_drift_defence_war_member_flag
+				}
+				EYP = {
+					set_country_flag = eylstadt_drift_defence_war_member_flag
+					add_war_support = 0.05
+					Manpower_act_level_up = yes
+				}
+				Z86 = { 
+					set_country_flag = eylstadt_drift_defence_war_member_flag
+				}
 				add_to_variable = { global.EYP_war_escalation_level_EYP_action = 1 }
 				add_to_variable = { global.EYP_war_escalation_level_GIA_action = 1 }
 				EYP_escalate_the_war_effect = yes
@@ -67,27 +59,7 @@ EYP_hundred_day_crisis_decision_category = {
 		fire_only_once = yes
 		activation = { always = no }
 		timeout_effect = {
-			effect_tooltip = {
-				custom_effect_tooltip = EYP_hundred_day_crisis_mission_tt2
-				create_wargoal = {
-					target = EYP
-					type = liberate_wargoal
-				}
-				AIL = {
-					create_wargoal = {
-						target = EYP
-						type = liberate_wargoal
-					}
-					declare_war_on = {
-						target = EYP
-						type = liberate_wargoal
-					}
-				}
-				EYP = {
-					add_war_support = 0.05
-					Manpower_act_level_up = yes
-				}
-			}
+			custom_effect_tooltip = EYP_hundred_day_crisis_mission_tt
 		}
 		ai_will_do = {
 			factor = 10
@@ -99,7 +71,13 @@ EYP_hundred_day_crisis_decision_category = {
 		allowed = { tag = EYP }
 		visible = { hidden_trigger = { has_global_flag = eylstadt_drift_defence_war } }
 		available = {
-			hidden_trigger = { always = no }
+			hidden_trigger = {
+				all_country = {
+					NOT = {
+						has_country_flag = eylstadt_drift_defence_war_member_flag
+					}
+				}
+			}
 		}
 		activation = {
 			has_war = yes
@@ -113,13 +91,18 @@ EYP_hundred_day_crisis_decision_category = {
 		selectable_mission = no
 		days_mission_timeout = global.EYP_war_escalation_length_var
 		timeout_effect = {
-			add_to_variable = { EYP.EYP_escalation_time_increase = 1 tooltip = war_escalation_level_up_tt }
+			add_to_variable = { global.EYP_escalation_time_increase = 1 tooltip = war_escalation_level_up_tt }
 			EYP_escalate_the_war_effect = yes
 			if = {
 				limit = { check_variable = { global.EYP_war_escalation_length_var < 30 } }
 				set_variable = { global.EYP_war_escalation_length_var = 30 }
 			}
-			hidden_effect = { activate_mission = EYP_time_based_war_escalation_mission }
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+					activate_mission = EYP_time_based_war_escalation_mission
+				}
+			}
 		}
 	}
 	
@@ -127,7 +110,7 @@ EYP_hundred_day_crisis_decision_category = {
 		icon = GFX_decision_generic_ignite_civil_war
 		allowed = {
 			OR = {
-				tag = EYP
+				tag = GIA
 				tag = SMA
 				tag = AIL
 				tag = Z86
@@ -135,7 +118,13 @@ EYP_hundred_day_crisis_decision_category = {
 		}
 		visible = { hidden_trigger = { has_global_flag = eylstadt_drift_defence_war } }
 		available = {
-			hidden_trigger = { always = no }
+			hidden_trigger = {
+				all_country = {
+					NOT = {
+						has_country_flag = eylstadt_drift_defence_war_member_flag
+					}
+				}
+			}
 		}
 		activation = {
 			has_war = yes
@@ -151,13 +140,13 @@ EYP_hundred_day_crisis_decision_category = {
 		timeout_effect = {
 			effect_tooltip = {
 				add_to_variable = { EYP.EYP_escalation_time_increase = 1 tooltip = war_escalation_level_up_tt }
-				EYP_escalate_the_war_effect = yes
+			}
+			hidden_effect = {
 				if = {
-					limit = { check_variable = { global.EYP_war_escalation_length_var < 30 } }
-					set_variable = { global.EYP_war_escalation_length_var = 30 }
+					limit = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+					activate_mission = EYP_time_based_war_escalation_mission_fake
 				}
 			}
-			hidden_effect = { activate_mission = EYP_time_based_war_escalation_mission_fake }
 		}
 	}
 	
@@ -320,8 +309,8 @@ EYP_hundred_day_crisis_decision_category = {
 		state_target = yes
 		on_map_mode = map_only
 		target_root_trigger = {
-			#has_completed_focus = EYP_startup_clear_fields
-			#has_country_flag = eylstadt_drift_defence_war_member_flag
+			has_completed_focus = EYP_startup_clear_fields
+			has_country_flag = eylstadt_drift_defence_war_member_flag
 			TAG = EYP
 		}
 		target_trigger = {
@@ -331,14 +320,17 @@ EYP_hundred_day_crisis_decision_category = {
 			}
 		}
 		allowed = { original_tag = EYP }
-		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		visible = {
+			has_country_flag = eylstadt_drift_defence_war_member_flag
+			has_completed_focus = EYP_startup_defend_point
+		}
 		available = {
-			FROM = { is_core_of = ROOT }
-			any_enemy_country = {
-				FROM = {
-					NOT = { is_fully_controlled_by = PREV }
-				}
+			has_completed_focus = EYP_startup_clear_fields
+			FROM = {
+				is_core_of = ROOT
+				is_owned_by = ROOT
 			}
+			NOT = { any_enemy_country = { has_full_control_of_state = FROM } }
 		}
 		cost = 10
 		fire_only_once = yes
@@ -346,6 +338,125 @@ EYP_hundred_day_crisis_decision_category = {
 		modifier = { command_power_gain_mult = -0.50 }
 		remove_effect = {
 			FROM = { add_dynamic_modifier = { modifier = EYP_startup_clear_fields_state_dynamic_modifier } }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_deploy_engineering_decision = {
+		icon = generic_cavalry
+		allowed = { tag = EYP }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			has_country_leader = {
+				character = EYP_Ortfine_von_Eylstadt
+				ruling_only = yes
+			}
+			NOT = { has_country_leader_with_trait = out_of_country }
+			NOT = { has_country_flag = EYP_executing_a_plan_flag }
+			custom_trigger_tooltip = {
+				tooltip = war_escalation_3_ttt
+				check_variable = {
+					var = global.EYP_escalation_level_total
+					value = 2
+					compare = greater_than
+				}
+			}
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = EYP_war_plan_length_var
+		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
+		modifier = { experience_gain_army_factor = -0.25 }
+		remove_effect = {
+			clr_country_flag = EYP_executing_a_plan_flag
+			#set_technology = { EYP_witch_auxiliary_engineering_tech = 1 popup = no }
+			set_country_flag = EYP_deploy_engineering_flag
+			division_template = {
+				name = "Witch Engineering Team"
+				division_names_group = EYP_CAV_01
+				is_locked = yes
+				force_allow_recruiting = no
+				division_cap = 1
+				priority = 2
+				regiments = {
+					witch_auxiliary_engineering = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Witch Engineering Team\" division_template = \"Witch Engineering Team\""
+					count = 1
+					owner = ROOT
+					id = 514
+				}
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_dredge_river_decision = {
+		icon = generic_research
+		allowed = { tag = EYP }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			has_country_leader = {
+				character = EYP_Ortfine_von_Eylstadt
+				ruling_only = yes
+			}
+			NOT = { has_country_leader_with_trait = out_of_country }
+			NOT = { has_country_flag = EYP_executing_a_plan_flag }
+			custom_trigger_tooltip = {
+				tooltip = war_escalation_4_ttt
+				check_variable = {
+					var = global.EYP_escalation_level_total
+					value = 3
+					compare = greater_than
+				}
+			}
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = EYP_war_plan_length_var
+		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
+		modifier = { experience_gain_army_factor = -0.25 }
+		remove_effect = {
+			clr_country_flag = EYP_executing_a_plan_flag
+			#set_technology = { EYP_witch_auxiliary_engineering_tech = 1 popup = no }
+			
+			division_template = {
+				name = "Witch Engineering Team"
+				division_names_group = EYP_INF_01
+				is_locked = yes
+				force_allow_recruiting = no
+				division_cap = 1
+				priority = 2
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+				}
+				support = {
+					witch_auxiliary_engineering = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Witch Engineering Team\" division_template = \"Witch Engineering Team\""
+					count = 1
+					owner = ROOT
+					id = 514
+				}
+			}
 		}
 		ai_will_do = {
 			base = 0
