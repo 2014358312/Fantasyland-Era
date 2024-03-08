@@ -24,6 +24,57 @@ on_actions = {
 		}
 	}
 	
+	on_daily_EYP = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = eylstadt_drift_defence_war_member_flag
+					has_country_flag = EYP_deploy_engineering_flag
+				}
+				every_controlled_state = {
+					limit = {
+						has_dynamic_modifier = {
+							modifier = EYP_witch_engineering_state_dynamic_modifier
+						}
+					}
+					if = {
+						limit = {
+							PREV = {
+								divisions_in_state = {
+									unit = witch_auxiliary_engineering
+									size < 1
+									state = PREV
+								}
+							}
+						}
+						remove_dynamic_modifier = {
+							modifier = EYP_witch_engineering_state_dynamic_modifier
+						}
+					}
+				}
+				every_controlled_state = {
+					limit = {
+						NOT = {
+							has_dynamic_modifier = {
+								modifier = EYP_witch_engineering_state_dynamic_modifier
+							}
+						}
+						PREV = {
+							divisions_in_state = {
+								unit = witch_auxiliary_engineering
+								size > 0
+								state = PREV
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = EYP_witch_engineering_state_dynamic_modifier
+					}
+				}
+			}
+		}
+	}
+	
 	on_capitulation_immediate = {
 		effect = {
 			if = {
@@ -112,6 +163,14 @@ on_actions = {
 					remove_ideas = EYP_startup_coronation_sta_idea
 					remove_ideas = EYP_startup_coronation_sup_idea
 					remove_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier }
+					every_country_division = {
+						limit = { division_has_battalion_in_template = witch_auxiliary_engineering }
+						destroy_unit = yes
+					}
+					delete_unit_template_and_units = {
+						division_template = "Witch Engineering Team"
+						disband = yes
+					}
 				}
 			}
 		}

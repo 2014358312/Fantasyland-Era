@@ -48,6 +48,17 @@ EYP_startup_clear_fields_state_dynamic_modifier = {
 	supply_consumption_factor = 0.20
 }
 
+EYP_witch_engineering_state_dynamic_modifier = {
+	icon = GFX_modifiers_SOV_invaders_must_die
+	enable = { always = yes }
+	
+	army_core_attack_factor = 0.05
+	army_core_defence_factor = 0.10
+	army_strength_factor = 0.10
+	army_morale_factor = 0.05
+	initiative_factor = -0.10
+}
+
 EYP_industry_plan_dynamic_modifier = {
 	icon = GFX_idea_SOV_third_five_year_plan_civilian
 	enable = { always = yes }
@@ -181,33 +192,4 @@ EYP_airforce_research_dynamic_modifier = {
 	custom_modifier_tooltip = EYP_AS_strat_bomber_mtt
 	custom_modifier_tooltip = EYP_AS_jet_strat_bomber_mtt
 	custom_modifier_tooltip = EYP_airforce_research_level_mtt
-}
-
-GIA_on_both_side_of_balance_dynamic_modifier = {
-	icon = GFX_idea_GIA_on_both_side_of_balance
-	enable = { always = yes }
-
-	political_power_factor = GIA_SOB_political_power_factor_var
-	communism_drift = GIA_SOB_communism_drift_var
-}
-
-SMA_decadent_army_dynamic_modifier = {
-	icon = GFX_idea_generic_army_problems
-	enable = { always = yes }
-
-	conscription_factor = SMA_DA_conscription_factor_var
-	land_reinforce_rate = SMA_DA_land_reinforce_rate_var
-	army_attack_factor = SMA_DA_army_attack_factor_var
-	army_defence_factor = SMA_DA_army_defence_factor_var
-	army_org_factor = SMA_DA_army_org_factor_var
-	army_morale_factor = SMA_DA_army_morale_factor_var
-	max_dig_in_factor = SMA_DA_max_dig_in_factor_var
-}
-
-Z86_production_dynamic_modifier = {
-	icon = GFX_idea_man_five_year_plan_industry
-	enable = { always = yes }
-
-	industrial_capacity_factory = Z86_P_industrial_capacity_factory_var
-	industrial_capacity_dockyard = Z86_P_industrial_capacity_dockyard_var
 }
