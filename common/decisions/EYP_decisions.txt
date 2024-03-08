@@ -348,6 +348,125 @@ EYP_hundred_day_crisis_decision_category = {
 		}
 	}
 	
+	EYP_deploy_engineering_decision = {
+		icon = generic_cavalry
+		allowed = { tag = EYP }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			has_country_leader = {
+				character = EYP_Ortfine_von_Eylstadt
+				ruling_only = yes
+			}
+			NOT = { has_country_leader_with_trait = out_of_country }
+			NOT = { has_country_flag = EYP_executing_a_plan_flag }
+			custom_trigger_tooltip = {
+				tooltip = war_escalation_3_ttt
+				check_variable = {
+					var = global.EYP_escalation_level_total
+					value = 2
+					compare = greater_than
+				}
+			}
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = EYP_war_plan_length_var
+		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
+		modifier = { experience_gain_army_factor = -0.25 }
+		remove_effect = {
+			clr_country_flag = EYP_executing_a_plan_flag
+			#set_technology = { EYP_witch_auxiliary_engineering_tech = 1 popup = no }
+			set_country_flag = EYP_deploy_engineering_flag
+			division_template = {
+				name = "Witch Engineering Team"
+				division_names_group = EYP_CAV_01
+				is_locked = yes
+				force_allow_recruiting = no
+				division_cap = 1
+				priority = 2
+				regiments = {
+					witch_auxiliary_engineering = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Witch Engineering Team\" division_template = \"Witch Engineering Team\""
+					count = 1
+					owner = ROOT
+					id = 514
+				}
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_dredge_river_decision = {
+		icon = generic_research
+		allowed = { tag = EYP }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			has_country_leader = {
+				character = EYP_Ortfine_von_Eylstadt
+				ruling_only = yes
+			}
+			NOT = { has_country_leader_with_trait = out_of_country }
+			NOT = { has_country_flag = EYP_executing_a_plan_flag }
+			custom_trigger_tooltip = {
+				tooltip = war_escalation_4_ttt
+				check_variable = {
+					var = global.EYP_escalation_level_total
+					value = 3
+					compare = greater_than
+				}
+			}
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = EYP_war_plan_length_var
+		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
+		modifier = { experience_gain_army_factor = -0.25 }
+		remove_effect = {
+			clr_country_flag = EYP_executing_a_plan_flag
+			#set_technology = { EYP_witch_auxiliary_engineering_tech = 1 popup = no }
+			
+			division_template = {
+				name = "Witch Engineering Team"
+				division_names_group = EYP_INF_01
+				is_locked = yes
+				force_allow_recruiting = no
+				division_cap = 1
+				priority = 2
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+				}
+				support = {
+					witch_auxiliary_engineering = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Witch Engineering Team\" division_template = \"Witch Engineering Team\""
+					count = 1
+					owner = ROOT
+					id = 514
+				}
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
 	EYP_GIA_test_decision = {
 		icon = GFX_decision_generic_mountain_fortification
 		allowed = { tag = GIA }

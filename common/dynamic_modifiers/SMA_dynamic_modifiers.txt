@@ -1,0 +1,40 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#       attacker_modifier = no  # if yes this modifier will also be read in combat for 
+#                               # people engaging in the combat even if not in the state
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+SMA_decadent_army_dynamic_modifier = {
+	icon = GFX_idea_generic_army_problems
+	enable = { always = yes }
+
+	conscription_factor = SMA_DA_conscription_factor_var
+	land_reinforce_rate = SMA_DA_land_reinforce_rate_var
+	army_attack_factor = SMA_DA_army_attack_factor_var
+	army_defence_factor = SMA_DA_army_defence_factor_var
+	army_org_factor = SMA_DA_army_org_factor_var
+	army_morale_factor = SMA_DA_army_morale_factor_var
+	max_dig_in_factor = SMA_DA_max_dig_in_factor_var
+}
