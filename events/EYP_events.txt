@@ -23,7 +23,7 @@ country_event = {
 #					add_equipment_to_stockpile = {
 #						type = small_plane_airframe_0
 #						amount = 100
-#						producer = Z86
+#						producer = ENG
 #						variant_name = "Hawker Fury"
 #					}
 #				}
@@ -31,11 +31,11 @@ country_event = {
 #					add_equipment_to_stockpile = {
 #						type = fighter_equipment_0
 #						amount = 100
-#						producer = Z86
+#						producer = ENG
 #					}
 #				}
 			}
-			Z86 = {
+			GIA = {
 				if = {
 					limit = { has_dlc = "Arms Against Tyranny" }
 					add_cic = 1000
@@ -174,30 +174,5 @@ country_event = {
 		add_war_support = 0.10
 		add_timed_idea = { idea = EYP_startup_coronation_sup_idea days = 30 }
 		set_country_flag = EYP_startup_coronation_sup_flag
-	}
-}
-
-country_event = {
-	id = eylstadt.7
-	title = eylstadt.7.t
-	desc = eylstadt.7.desc
-	picture = GFX_report_event_usa_pearl_harbor_airphoto
-
-	fire_only_once = yes
-
-	is_triggered_only = yes
-	
-	immediate = {
-		hidden_effect = {
-			remove_ideas = EYP_rudolf_iii
-		}
-	}
-
-	option = {
-		name = eylstadt.7.a
-		effect_tooltip = {
-			remove_ideas = EYP_rudolf_iii
-		}
-		add_political_power = -25
 	}
 }

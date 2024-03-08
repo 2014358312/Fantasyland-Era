@@ -15,10 +15,17 @@ set_technology = {
 	tech_engineers = 1
 	militia_tech = 1
 }
-
-load_oob = "EYP_1936_nsb"
-set_technology = {
-	gwtank_chassis = 1
+if = {
+	limit = { has_dlc = "No Step Back" }
+	#load_oob = "EYP_1936_NSB"
+	set_technology = {
+		gwtank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
 }
 
 #add_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier }
