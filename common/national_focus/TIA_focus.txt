@@ -20,8 +20,8 @@ focus_tree = {
 
     focus = { #梦？
         id = TIA_dream
-        icon = GFX_goal_generic_nationalism_focus
-        x = 0
+        icon = GFX_focus_TIA_Mia_and_guillotine
+        x = 10
         y = 0
         cost = 10
         available = {
@@ -37,7 +37,7 @@ focus_tree = {
     
     focus = { #抉择
         id = TIA_Choice
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_choice
 		relative_position_id = TIA_dream
 		x = 0
 		y = 1
@@ -57,9 +57,9 @@ focus_tree = {
 
     focus = { #做出改变
         id = TIA_Make_change
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_change_future
 		relative_position_id = TIA_Choice
-		x = 8
+		x = 3
 		y = 1
         cost = 5
 		mutually_exclusive = {
@@ -310,7 +310,7 @@ focus_tree = {
         }
     }
     
-    focus = { #建立学院
+    focus = { #帝国境内的“圣诺尔学院”
         id = TIA_build_school
         icon = GFX_goal_generic_nationalism_focus
 		relative_position_id = TIA_Establishment_Princess_Directly_Governed_Territory
@@ -330,7 +330,7 @@ focus_tree = {
         }
     }
     
-    focus = { #鲁多路冯伯爵领的小麦储备
+    focus = { #皇女“名下”的小麦储备
         id = TIA_Rudolvon_food_reserves
         icon = GFX_goal_generic_nationalism_focus
 		relative_position_id = TIA_Establishment_Princess_Directly_Governed_Territory
@@ -394,11 +394,98 @@ focus_tree = {
         }
     }
 
+    focus = { #来自邻国的坏消息
+        id = TIA_Bad_news_from_neighboring
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Bento_kendo_tournament
+		x = -1
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Bento_kendo_tournament
+		}
+		prerequisite = {
+			focus = TIA_Prom_events
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = { #调动国内忠臣
+        id = TIA_Mobilize_loyal_ministers
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Bad_news_from_neighboring
+		x = -1
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Bad_news_from_neighboring
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = { #亲力亲为
+        id = TIA_Hands_on
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Bad_news_from_neighboring
+		x = 1
+		y = 1
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Bad_news_from_neighboring
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = { #结束这场愚蠢的叛乱
+        id = TIA_End_stupid_rebellion
+        icon = GFX_goal_generic_nationalism_focus
+		relative_position_id = TIA_Bad_news_from_neighboring
+		x = 0
+		y = 2
+        cost = 5
+        available = {
+        }
+		prerequisite = {
+			focus = TIA_Hands_on
+		}
+		prerequisite = {
+			focus = TIA_Mobilize_loyal_ministers
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+
     focus = { #恶作剧吧
         id = TIA_prank
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_no_change
 		relative_position_id = TIA_Choice
-		x = -8
+		x = -3
 		y = 1
         cost = 5
 		mutually_exclusive = {
