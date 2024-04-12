@@ -23,12 +23,14 @@ focus_tree = {
         icon = GFX_focus_TIA_Mia_and_guillotine
         x = 10
         y = 0
-        cost = 10
+        cost = 2
         available = {
-            always = no 
         }
         completion_reward = {
             add_political_power = 150
+            country_event = {
+                id = TIA.1
+            }
         }
         ai_will_do = {
             factor = 1
@@ -43,6 +45,7 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
+            always = no
         }
 		prerequisite = {
 			focus = TIA_dream
@@ -66,12 +69,23 @@ focus_tree = {
 			focus = TIA_prank
 		}
         available = {
+            has_country_flag = TIA.1_A
         }
 		prerequisite = {
 			focus = TIA_Choice
 		}
         completion_reward = {
-            add_political_power = 50
+            add_political_power = 10
+            remove_trait = {
+                character = TIA_Mia_Runa_Tiamun
+                slot = political_advisor
+                trait = Imperial_sagacity
+            }
+		    add_trait = {
+                character = TIA_Mia_Runa_Tiamun
+                slot = political_advisor
+                trait = Imperial_sagacity_1
+           }
         }
         ai_will_do = {
             factor = 1
@@ -91,7 +105,7 @@ focus_tree = {
 			focus = TIA_Make_change
 		}
         completion_reward = {
-            add_political_power = 50
+            add_ideas = TIA_Ludwig_Hewitt
         }
         ai_will_do = {
             factor = 1
@@ -492,6 +506,7 @@ focus_tree = {
 			focus = TIA_Make_change
 		}
         available = {
+            has_country_flag = TIA.1_B
         }
 		prerequisite = {
 			focus = TIA_Choice
