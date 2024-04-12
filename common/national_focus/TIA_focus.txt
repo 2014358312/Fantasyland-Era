@@ -23,12 +23,14 @@ focus_tree = {
         icon = GFX_focus_TIA_Mia_and_guillotine
         x = 10
         y = 0
-        cost = 10
+        cost = 2
         available = {
-            always = no 
         }
         completion_reward = {
             add_political_power = 150
+            country_event = {
+                id = TIA.1
+            }
         }
         ai_will_do = {
             factor = 1
@@ -43,6 +45,7 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
+            always = no
         }
 		prerequisite = {
 			focus = TIA_dream
@@ -66,12 +69,23 @@ focus_tree = {
 			focus = TIA_prank
 		}
         available = {
+            has_country_flag = TIA.1_A
         }
 		prerequisite = {
 			focus = TIA_Choice
 		}
         completion_reward = {
-            add_political_power = 50
+            add_political_power = 10
+            remove_trait = {
+                character = TIA_Mia_Runa_Tiamun
+                slot = political_advisor
+                trait = Imperial_sagacity
+            }
+		    add_trait = {
+                character = TIA_Mia_Runa_Tiamun
+                slot = political_advisor
+                trait = Imperial_sagacity_1
+           }
         }
         ai_will_do = {
             factor = 1
@@ -80,7 +94,7 @@ focus_tree = {
 
     focus = { #财政问题
         id = TIA_Financial_issues
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_money_ciris
 		relative_position_id = TIA_Make_change
 		x = -2
 		y = 1
@@ -91,7 +105,7 @@ focus_tree = {
 			focus = TIA_Make_change
 		}
         completion_reward = {
-            add_political_power = 50
+            add_ideas = TIA_Ludwig_Hewitt
         }
         ai_will_do = {
             factor = 1
@@ -100,7 +114,7 @@ focus_tree = {
 
     focus = { #预防瘟疫
         id = TIA_Prevention_plague
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_build_hospital
 		relative_position_id = TIA_Make_change
 		x = 2
 		y = 1
@@ -120,7 +134,7 @@ focus_tree = {
 
     focus = { #改变校园生活
         id = TIA_Transform_campus_life
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_school_life
 		relative_position_id = TIA_Make_change
 		x = 0
 		y = 2
@@ -143,7 +157,7 @@ focus_tree = {
 
     focus = { #维护迪欧娜·鲁多路冯
         id = TIA_uphold_Tiona_Rudolvon
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_Mia_Tiona
 		relative_position_id = TIA_Transform_campus_life
 		x = -2
 		y = 1
@@ -163,7 +177,7 @@ focus_tree = {
 
     focus = { #锁定阿贝尔王子
         id = TIA_Lock_on_Abel
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_Mia_Abel
 		relative_position_id = TIA_Transform_campus_life
 		x = 2
 		y = 1
@@ -183,7 +197,7 @@ focus_tree = {
 
     focus = { #远离席翁王子
         id = TIA_Stay_away_Sion
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_Mia_Sion
 		relative_position_id = TIA_Transform_campus_life
 		x = 0
 		y = 1
@@ -203,7 +217,7 @@ focus_tree = {
 
     focus = { #联系福克罗德商会
         id = TIA_Contact_FaulkLeod_Chamber_Commerce
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_Mia_and_FaulkLeod
 		relative_position_id = TIA_Transform_campus_life
 		x = -4
 		y = 1
@@ -223,7 +237,7 @@ focus_tree = {
 
     focus = { #舞会事件
         id = TIA_Prom_events
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_Prom_events
 		relative_position_id = TIA_Transform_campus_life
 		x = 0
 		y = 2
@@ -246,7 +260,7 @@ focus_tree = {
     
     focus = { #进口小麦合约
         id = TIA_Wheat_import_contract
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_Wheat_import_contract
 		relative_position_id = TIA_Prom_events
 		x = -4
 		y = 1
@@ -269,7 +283,7 @@ focus_tree = {
     
     focus = { #处理静海森林问题
         id = TIA_Dealing_Jinghai_Forest
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_Dealing_Jinghai_Forest
 		relative_position_id = TIA_Prom_events
 		x = -2
 		y = 1
@@ -292,7 +306,7 @@ focus_tree = {
     
     focus = { #成立皇女直辖领
         id = TIA_Establishment_Princess_Directly_Governed_Territory
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_Establishment_Princess_Directly_Governed_Territory
 		relative_position_id = TIA_Dealing_Jinghai_Forest
 		x = 0
 		y = 1
@@ -312,7 +326,7 @@ focus_tree = {
     
     focus = { #帝国境内的“圣诺尔学院”
         id = TIA_build_school
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_build_school
 		relative_position_id = TIA_Establishment_Princess_Directly_Governed_Territory
 		x = 0
 		y = 1
@@ -332,7 +346,7 @@ focus_tree = {
     
     focus = { #皇女“名下”的小麦储备
         id = TIA_Rudolvon_food_reserves
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_Rudolvon_food_reserves
 		relative_position_id = TIA_Establishment_Princess_Directly_Governed_Territory
 		x = -2
 		y = 1
@@ -353,7 +367,7 @@ focus_tree = {
 
     focus = { #加入马术社
         id = TIA_Join_equestrian_club
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_Equestrian_club
 		relative_position_id = TIA_Transform_campus_life
 		x = 4
 		y = 1
@@ -373,7 +387,7 @@ focus_tree = {
 
     focus = { #剑术大会的便当
         id = TIA_Bento_kendo_tournament
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_Bento_kendo_tournament
 		relative_position_id = TIA_Join_equestrian_club
 		x = -1
 		y = 1
@@ -396,7 +410,7 @@ focus_tree = {
 
     focus = { #来自邻国的坏消息
         id = TIA_Bad_news_from_neighboring
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_Bad_news_from_neighboring
 		relative_position_id = TIA_Bento_kendo_tournament
 		x = -1
 		y = 1
@@ -419,7 +433,7 @@ focus_tree = {
 
     focus = { #调动国内忠臣
         id = TIA_Mobilize_loyal_ministers
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_Mobilize_loyal_ministers
 		relative_position_id = TIA_Bad_news_from_neighboring
 		x = -1
 		y = 1
@@ -439,7 +453,7 @@ focus_tree = {
 
     focus = { #亲力亲为
         id = TIA_Hands_on
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_Hands_on
 		relative_position_id = TIA_Bad_news_from_neighboring
 		x = 1
 		y = 1
@@ -459,7 +473,7 @@ focus_tree = {
 
     focus = { #结束这场愚蠢的叛乱
         id = TIA_End_stupid_rebellion
-        icon = GFX_goal_generic_nationalism_focus
+        icon = GFX_focus_TIA_End_stupid_rebellion
 		relative_position_id = TIA_Bad_news_from_neighboring
 		x = 0
 		y = 2
@@ -492,6 +506,7 @@ focus_tree = {
 			focus = TIA_Make_change
 		}
         available = {
+            has_country_flag = TIA.1_B
         }
 		prerequisite = {
 			focus = TIA_Choice

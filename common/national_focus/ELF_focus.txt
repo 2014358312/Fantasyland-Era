@@ -1,0 +1,37 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_USA_CONGRESS}
+
+focus_tree = {
+    id = ELF_focus_tree
+    country = {
+        factor = 0
+        modifier = {
+            add = 10
+            tag = ELF
+        }
+    }
+    default = no
+
+    focus = { 
+        id = ELF_
+        icon = GFX_ELF_
+        x = 10
+        y = 0
+        cost = 10
+        available = {
+            always = no 
+        }
+        completion_reward = {
+            add_political_power = 150
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+}
