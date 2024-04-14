@@ -76,16 +76,19 @@ focus_tree = {
 		}
         completion_reward = {
             add_political_power = 10
-            remove_trait = {
-                character = TIA_Mia_Runa_Tiamun
-                slot = political_advisor
-                trait = Imperial_sagacity
+            hidden_effect = {
+                remove_trait = {
+                    character = TIA_Mia_Runa_Tiamun
+                    slot = political_advisor
+                    trait = Imperial_sagacity
+                }
+		        add_trait = {
+                    character = TIA_Mia_Runa_Tiamun
+                    slot = political_advisor
+                    trait = Imperial_sagacity_1
+                }
             }
-		    add_trait = {
-                character = TIA_Mia_Runa_Tiamun
-                slot = political_advisor
-                trait = Imperial_sagacity_1
-           }
+            custom_effect_tooltip = TIA_Mia_trait
         }
         ai_will_do = {
             factor = 1
@@ -106,6 +109,10 @@ focus_tree = {
 		}
         completion_reward = {
             add_ideas = TIA_Ludwig_Hewitt
+            swap_ideas = {
+                remove_idea = TIA_financial_emergency
+                add_idea = TIA_financial_emergency_1
+            }
         }
         ai_will_do = {
             factor = 1
@@ -125,7 +132,7 @@ focus_tree = {
 			focus = TIA_Make_change
 		}
         completion_reward = {
-            add_political_power = 50
+            custom_effect_tooltip = TIA_plague_change
         }
         ai_will_do = {
             factor = 1
@@ -520,4 +527,239 @@ focus_tree = {
     }
 
 
+ #经济
+    focus = { #亡羊补牢为时不晚
+        id = TIA_never_too_late_to_mend
+        icon = GFX_focus_TIA_
+        relative_position_id = TIA_dream
+        x = 15
+        y = 0
+        cost = 5
+        available = {
+            has_completed_focus = TIA_Financial_issues
+        }
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    focus = { #重视七号自由港
+        id = TIA_focus_Free_Port_Seven
+        icon = GFX_focus_TIA_
+        relative_position_id = TIA_never_too_late_to_mend
+        x = 0
+        y = 1
+        cost = 5
+		prerequisite = {
+			focus = TIA_never_too_late_to_mend
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    focus = { #促进铁路贸易
+        id = TIA_promotion_railway_trade
+        icon = GFX_focus_TIA_
+        relative_position_id = TIA_never_too_late_to_mend
+        x = -2
+        y = 1
+        cost = 5
+		prerequisite = {
+			focus = TIA_never_too_late_to_mend
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    focus = { #推广铁路人偶
+        id = TIA_promotion_Raillords
+        icon = GFX_focus_TIA_
+        relative_position_id = TIA_never_too_late_to_mend
+        x = 2
+        y = 1
+        cost = 5
+		prerequisite = {
+			focus = TIA_never_too_late_to_mend
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    focus = { #以工代赈
+        id = TIA_Work_instead_food
+        icon = GFX_focus_TIA_
+        relative_position_id = TIA_never_too_late_to_mend
+        x = 4
+        y = 1
+        cost = 5
+		prerequisite = {
+			focus = TIA_never_too_late_to_mend
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    focus = { #开发荒原
+        id = TIA_Wilderness_development
+        icon = GFX_focus_TIA_
+        relative_position_id = TIA_Work_instead_food
+        x = 0
+        y = 1
+        cost = 5
+		prerequisite = {
+			focus = TIA_Work_instead_food
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    focus = { #淘金热
+        id = TIA_Gold_rush
+        icon = GFX_focus_TIA_
+        relative_position_id = TIA_never_too_late_to_mend
+        x = -4
+        y = 1
+        cost = 5
+		prerequisite = {
+			focus = TIA_never_too_late_to_mend
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    focus = { #开发旅游产业
+        id = TIA_Develop_tourism_industry
+        icon = GFX_focus_TIA_
+        relative_position_id = TIA_Gold_rush
+        x = 0
+        y = 1
+        cost = 5
+		prerequisite = {
+			focus = TIA_Gold_rush
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    focus = { #环大陆铁路同盟
+        id = TIA_Transcontinental_Railroad_Alliance
+        icon = GFX_focus_TIA_
+        relative_position_id = TIA_focus_Free_Port_Seven
+        x = 0
+        y = 1
+        cost = 5
+		prerequisite = {
+			focus = TIA_focus_Free_Port_Seven
+		}
+		prerequisite = {
+			focus = TIA_promotion_railway_trade
+		}
+		prerequisite = {
+			focus = TIA_promotion_Raillords
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    focus = { #强化游汐叶界四国贸易
+        id = TIA_Strengthen_Gamindustri_four_countries_trade
+        icon = GFX_focus_TIA_
+        relative_position_id = TIA_never_too_late_to_mend
+        x = 3
+        y = 3
+        cost = 5
+		mutually_exclusive = {
+			focus = TIA_War_driven_economy
+		}
+		prerequisite = {
+			focus = TIA_never_too_late_to_mend
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    focus = { #优势互补
+        id = TIA_Complementary_advantages
+        icon = GFX_focus_TIA_
+        relative_position_id = TIA_Strengthen_Gamindustri_four_countries_trade
+        x = 0
+        y = 1
+        cost = 5
+		prerequisite = {
+			focus = TIA_Strengthen_Gamindustri_four_countries_trade
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    focus = { #战争带动经济
+        id = TIA_War_driven_economy
+        icon = GFX_focus_TIA_
+        relative_position_id = TIA_never_too_late_to_mend
+        x = -3
+        y = 3
+        cost = 5
+		mutually_exclusive = {
+			focus = TIA_Strengthen_Gamindustri_four_countries_trade
+		}
+		prerequisite = {
+			focus = TIA_never_too_late_to_mend
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    focus = { #吸纳电子产业
+        id = TIA_Absorb_electronics_industry
+        icon = GFX_focus_TIA_
+        relative_position_id = TIA_War_driven_economy
+        x = 0
+        y = 1
+        cost = 5
+		prerequisite = {
+			focus = TIA_War_driven_economy
+		}
+        completion_reward = {
+            add_political_power = 50
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
 }
