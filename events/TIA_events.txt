@@ -21,9 +21,119 @@ country_event = {
 	}
 	option = {
 		name = TIA.1.b
-		effect_tooltip = {
-			complete_national_focus = TIA_Choice
-			set_country_flag = TIA.1_B 
+		complete_national_focus = TIA_Choice
+		set_country_flag = TIA.1_B 
+	}
+}
+
+country_event = { #校园生活开始
+	id = TIA.2
+	title = TIA.2.t
+	desc = TIA.2.desc
+	picture = GFX_report_event_TIA_guillotine
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.2.a
+		hidden_effect = {
+			country_event = { id = TIA.3 days = 1 }
+		}
+	}
+}
+
+
+country_event = { #维护
+	id = TIA.3
+	title = TIA.3.t
+	desc = TIA.3.desc
+	picture = GFX_report_event_TIA_guillotine
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.3.a
+		hidden_effect = {
+			country_event = { id = TIA.5 days = 7 }
+			complete_national_focus = TIA_uphold_Tiona_Rudolvon
+		}
+	}
+}
+
+
+country_event = { #远离
+	id = TIA.4
+	title = TIA.4.t
+	desc = TIA.4.desc
+	picture = GFX_report_event_TIA_guillotine
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.4.a
+		hidden_effect = {
+			country_event = { id = TIA.6 days = 31 }
+			country_event = { id = TIA.7 days = 15 }
+			country_event = { id = TIA.8 days = 12 }
+			complete_national_focus = TIA_Stay_away_Sion
+		}
+	}
+}
+
+country_event = { #锁定
+	id = TIA.5
+	title = TIA.5.t
+	desc = TIA.5.desc
+	picture = GFX_report_event_TIA_guillotine
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.5.a
+		hidden_effect = {
+			country_event = { id = TIA.4 days = 21 }
+			complete_national_focus = TIA_Lock_on_Abel
+		}
+	}
+}
+
+country_event = { #马术社
+	id = TIA.6
+	title = TIA.6.t
+	desc = TIA.6.desc
+	picture = GFX_report_event_TIA_guillotine
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.6.a
+		hidden_effect = {
+			complete_national_focus = TIA_Join_equestrian_club
+		}
+	}
+}
+
+country_event = { #福克罗德
+	id = TIA.7
+	title = TIA.7.t
+	desc = TIA.7.desc
+	picture = GFX_report_event_TIA_guillotine
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.7.a
+		hidden_effect = {
+			complete_national_focus = TIA_Contact_FaulkLeod_Chamber_Commerce
+		}
+	}
+}
+
+country_event = { #舞会事件
+	id = TIA.8
+	title = TIA.8.t
+	desc = TIA.8.desc
+	picture = GFX_report_event_TIA_guillotine
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.8.a
+		hidden_effect = {
+			complete_national_focus = TIA_Prom_events
 		}
 	}
 }
