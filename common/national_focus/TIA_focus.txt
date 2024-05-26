@@ -45,7 +45,7 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
-            always = no
+            has_country_flag = TIA_focus_cannot_completed
         }
 		prerequisite = {
 			focus = TIA_dream
@@ -147,6 +147,7 @@ focus_tree = {
 		y = 2
         cost = 5
         available = {
+            has_country_flag = TIA_focus_cannot_completed
         }
 		prerequisite = {
 			focus = TIA_Prevention_plague
@@ -155,7 +156,8 @@ focus_tree = {
 			focus = TIA_Financial_issues
 		}
         completion_reward = {
-            add_political_power = 50
+            add_political_power = 150
+            country_event = { id = TIA.2 days = 1 }
         }
         ai_will_do = {
             factor = 1
@@ -170,12 +172,27 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
+            has_country_flag = TIA_focus_cannot_completed
         }
 		prerequisite = {
 			focus = TIA_Transform_campus_life
 		}
         completion_reward = {
-            add_political_power = 50
+            add_political_power = -50
+            add_stability = -0.05
+            custom_effect_tooltip = TIA_Rudolvon_trait
+            hidden_effect = {
+                remove_trait = {
+                    character = TIA_Tiona_Rudolvon
+                    slot = political_advisor
+                    trait = frontier_aristocracy
+                }
+		        add_trait = {
+                    character = TIA_Tiona_Rudolvon
+                    slot = political_advisor
+                    trait = frontier_aristocracy_1
+                }
+            }
         }
         ai_will_do = {
             factor = 1
@@ -190,12 +207,13 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
+            has_country_flag = TIA_focus_cannot_completed
         }
 		prerequisite = {
 			focus = TIA_Transform_campus_life
 		}
         completion_reward = {
-            add_political_power = 50
+            add_political_power = -50
         }
         ai_will_do = {
             factor = 1
@@ -210,12 +228,13 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
+            has_country_flag = TIA_focus_cannot_completed
         }
 		prerequisite = {
 			focus = TIA_Transform_campus_life
 		}
         completion_reward = {
-            add_political_power = 50
+            add_political_power = -50
         }
         ai_will_do = {
             factor = 1
@@ -230,12 +249,13 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
+            has_country_flag = TIA_focus_cannot_completed
         }
 		prerequisite = {
 			focus = TIA_Transform_campus_life
 		}
         completion_reward = {
-            add_political_power = 50
+            add_political_power = -15
         }
         ai_will_do = {
             factor = 1
@@ -250,7 +270,7 @@ focus_tree = {
 		y = 2
         cost = 5
         available = {
-            alwyas = no
+            has_country_flag = TIA_focus_cannot_completed
         }
 		prerequisite = {
 			focus = TIA_Stay_away_Sion
@@ -258,7 +278,7 @@ focus_tree = {
 			focus = TIA_uphold_Tiona_Rudolvon
 		}
         completion_reward = {
-            add_political_power = 50
+            add_political_power = -10
         }
         ai_will_do = {
             factor = 1
@@ -324,7 +344,12 @@ focus_tree = {
 			focus = TIA_Dealing_Jinghai_Forest
 		}
         completion_reward = {
-            add_political_power = 50
+            add_political_power = -10
+            set_victory_points = {
+                province = 6190
+                value = 10
+            }
+            # set_province_name = { id = 239 name = "皇女镇" }
         }
         ai_will_do = {
             factor = 1
@@ -380,12 +405,19 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
+            has_country_flag = TIA_focus_cannot_completed
         }
 		prerequisite = {
 			focus = TIA_Transform_campus_life
 		}
         completion_reward = {
-            add_political_power = 50
+            add_political_power = -15
+            add_trait = {
+                character = TIA_Mia_Runa_Tiamun
+                slot = political_advisor
+                trait = Member_Equestrian_Club
+           }
+            
         }
         ai_will_do = {
             factor = 1
@@ -400,6 +432,7 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
+            has_country_flag = TIA_focus_cannot_completed
         }
 		prerequisite = {
 			focus = TIA_Join_equestrian_club
@@ -423,6 +456,8 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
+            has_country_flag = TIA_focus_cannot_completed
+            ALC = { has_civil_war = yes }
         }
 		prerequisite = {
 			focus = TIA_Bento_kendo_tournament
@@ -446,6 +481,7 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
+            has_country_flag = TIA_focus_cannot_completed
         }
 		prerequisite = {
 			focus = TIA_Bad_news_from_neighboring
@@ -466,6 +502,7 @@ focus_tree = {
 		y = 1
         cost = 5
         available = {
+            has_country_flag = TIA_focus_cannot_completed
         }
 		prerequisite = {
 			focus = TIA_Bad_news_from_neighboring
@@ -486,6 +523,7 @@ focus_tree = {
 		y = 2
         cost = 5
         available = {
+            has_country_flag = TIA_focus_cannot_completed
         }
 		prerequisite = {
 			focus = TIA_Hands_on
