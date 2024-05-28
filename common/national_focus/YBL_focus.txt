@@ -1,0 +1,1119 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+focus_tree = {
+	id = mod_focus_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = YBL
+		}
+	}
+	default = no
+	#审判庭线
+	focus = {
+		id = YBL_wendingxianzhuang
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = -10
+		y = 0
+		relative_position_id = YBl_shenmifangke
+		mutually_exclusive = {
+			focus = YBl_shenmifangke
+			focus = YBL_guiyudahai
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			set_party_name = {
+				ideology = neutrality
+				name = YBL_shenpantingzhishang_long
+				long_name = YBL_shenpantingzhishang
+			}
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_chongjianjiayuan
+		icon = GFX_goal_generic_construction
+		x = -1
+		y = 1
+		relative_position_id = YBL_wendingxianzhuang
+		mutually_exclusive = {
+			focus = YBL_xunqiuwaiyuan
+		}
+		prerequisite = {
+			focus = YBL_wendingxianzhuang
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			set_party_name = {
+				ideology = neutrality
+				name = YBL_shenpantingzhishang_long
+				long_name = YBL_shenpantingzhishang
+			}
+			add_political_power = 120
+		}
+	}
+	#右
+	focus = {
+		id = YBL_xunqiuwaiyuan
+		icon = GFX_focus_BRA_reach_out_to_military_dem
+		x = 1
+		y = 1
+		relative_position_id = YBL_wendingxianzhuang
+		mutually_exclusive = {
+			focus = YBL_chongjianjiayuan
+		}
+		prerequisite = {
+			focus = YBL_wendingxianzhuang
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			create_field_marshal = {
+				name = "乌尔比安"
+				portrait_path = "gfx/leaders/YBL/YBL_wuerbian.png"
+				traits = {
+					brilliant_strategist
+				}
+				skill = 4
+				attack_skill = 6
+				defense_skill = 3
+				planning_skill = 3
+				logistics_skill = 3
+			}
+		}
+	}
+	focus = {
+		id = YBL_zhengshimaodun
+		icon = GFX_goal_generic_forceful_treaty
+		x = 0
+		y = 1
+		relative_position_id = YBL_chongjianjiayuan
+		prerequisite = {
+			focus = YBL_chongjianjiayuan
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_buchangageerren
+		icon = YBL_buchangageerren
+		x = 0
+		y = 1
+		relative_position_id = YBL_zhengshimaodun
+		prerequisite = {
+			focus = YBL_zhengshimaodun
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_jianzhengyiqiedeshengtu
+		icon = YBL_jianzhengyiqiedeshengtu
+		x = -1
+		y = 1
+		relative_position_id = YBL_buchangageerren
+		prerequisite = {
+			focus = YBL_buchangageerren
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_ailinifaling
+		icon = GFX_focus_BRA_the_polaca
+		x = 1
+		y = 1
+		relative_position_id = YBL_buchangageerren
+		prerequisite = {
+			focus = YBL_buchangageerren
+			focus = YBL_yimianqizhilianggeminzu
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_shenhailieren
+		icon = YBL_shenhailieren
+		x = 0
+		y = 1
+		relative_position_id = YBL_xunqiuwaiyuan
+		prerequisite = {
+			focus = YBL_xunqiuwaiyuan
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_yimianqizhilianggeminzu
+		icon = YBL_yimianqizhilianggeminzu
+		x = 0
+		y = 1
+		relative_position_id = YBL_shenhailieren
+		prerequisite = {
+			focus = YBL_shenhailieren
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_huangjinhaianjiuyejihua
+		icon = GFX_focus_por_workers_of_iberia
+		x = 0
+		y = 1
+		relative_position_id = YBL_ailinifaling
+		prerequisite = {
+			focus = YBL_ailinifaling
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_huangjinhaianjiuyejihua
+		icon = YBL_huangjinhaianjiuyejihua
+		x = 0
+		y = 1
+		relative_position_id = YBL_ailinifaling
+		prerequisite = {
+			focus = YBL_ailinifaling
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_xuanbuhoujingmidejieshu
+		icon = YBL_xuanbuhoujingmidejieshu
+		x = 0
+		y = 1
+		relative_position_id = YBL_huangjinhaianjiuyejihua
+		prerequisite = {
+			focus = YBL_huangjinhaianjiuyejihua
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_jujiaoguojizhuangkuang
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		relative_position_id = YBL_xuanbuhoujingmidejieshu
+		prerequisite = {
+			focus = YBL_xuanbuhoujingmidejieshu
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_yibiliyayanjiuyuan
+		icon = GFX_focus_research
+		x = 0
+		y = 1
+		relative_position_id = YBL_jujiaoguojizhuangkuang
+		prerequisite = {
+			focus = YBL_jujiaoguojizhuangkuang
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_zhongshidalu
+		icon = YBL_zhongshidalu
+		x = -1
+		y = 1
+		relative_position_id = YBL_yibiliyayanjiuyuan
+		mutually_exclusive = {
+			focus = YBL_zhimiandahai
+		}
+		prerequisite = {
+			focus = YBL_yibiliyayanjiuyuan
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_dongdalugongshi
+		icon = GFX_goal_generic_attack_allies
+		x = 0
+		y = 1
+		relative_position_id = YBL_zhongshidalu
+		prerequisite = {
+			focus = YBL_zhongshidalu
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_youhaodeyinju
+		icon = GFX_goal_generic_improve_relations
+		x = -1
+		y = 1
+		relative_position_id = YBL_dongdalugongshi
+		prerequisite = {
+			focus = YBL_dongdalugongshi
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_fangemingzhenxian
+		icon = GFX_goal_anschluss
+		x = 0
+		y = 1
+		relative_position_id = YBL_youhaodeyinju
+		prerequisite = {
+			focus = YBL_youhaodeyinju
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_sisuiminzhuweizhuang
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 1
+		y = 1
+		relative_position_id = YBL_dongdalugongshi
+		prerequisite = {
+			focus = YBL_dongdalugongshi
+			focus = YBL_kuayuedayangdemengyou
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_dongdalushoufuzhe
+		icon = YBL_dongdalushoufuzhe
+		x = 0
+		y = 1
+		relative_position_id = YBL_sisuiminzhuweizhuang
+		prerequisite = {
+			focus = YBL_sisuiminzhuweizhuang
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_zhimiandahai
+		icon = YBL_zhimiandahai
+		x = 1
+		y = 1
+		relative_position_id = YBL_yibiliyayanjiuyuan
+		mutually_exclusive = {
+			focus = YBL_zhongshidalu
+		}
+		prerequisite = {
+			focus = YBL_yibiliyayanjiuyuan
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_kuayuedayangdemengyou
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = YBL_zhimiandahai
+		prerequisite = {
+			focus = YBL_zhimiandahai
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_jingjihuzhutiaokuan
+		icon = GFX_goal_generic_major_alliance
+		x = 1
+		y = 1
+		relative_position_id = YBL_kuayuedayangdemengyou
+		prerequisite = {
+			focus = YBL_kuayuedayangdemengyou
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_shenpanbujingzhe
+		icon = YBL_shenpanbujingzhe
+		x = 0
+		y = 1
+		relative_position_id = YBL_jingjihuzhutiaokuan
+		prerequisite = {
+			focus = YBL_jingjihuzhutiaokuan
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_shenpanri
+		icon = YBL_shenpanri
+		x = 0
+		y = 1
+		relative_position_id = YBL_dongdalushoufuzhe
+		prerequisite = {
+			focus = YBL_dongdalushoufuzhe
+			focus = YBL_fangemingzhenxian
+			focus = YBL_shenpanbujingzhe
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_nianqingdedashenpanguan
+		icon = GFX_YBL_nianqingdedashenpanguan
+		x = 1
+		y = 1
+		relative_position_id = YBL_yimianqizhilianggeminzu
+		prerequisite = {
+			focus = YBL_yimianqizhilianggeminzu
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	#审判庭线
+	#王室线
+	focus = {
+		id = YBl_shenmifangke
+		icon = GFX_focus_generic_monarchy_2
+		relative_position_id = YBl_guiyudahai
+		mutually_exclusive = {
+			focus = YBL_wendingxianzhuang
+			focus = YBL_guiyudahai
+		}
+		x = -10
+		y = 0
+		cost = 5
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_wangnvdebairixuanyan
+		icon = GFX_goal_generic_construction
+		x = 0
+		y = 1
+		relative_position_id = YBl_shenmifangke
+		prerequisite = {
+			focus = YBl_shenmifangke
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			set_party_name = {
+				ideology = neutrality
+				name = YBL_diguotongyidang_long
+				long_name = YBL_diguotongyidang
+			}
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_zaizuguojiaohui
+		icon = GFX_focus_por_concordat
+		x = 0
+		y = 1
+		relative_position_id = YBL_wangnvdebairixuanyan
+		prerequisite = {
+			focus = YBL_wangnvdebairixuanyan
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_chongqiyibiliyazhiyan
+		icon = YBL_chongqiyibiliyazhiyan
+		x = 0
+		y = 1
+		relative_position_id = YBL_zaizuguojiaohui
+		prerequisite = {
+			focus = YBL_zaizuguojiaohui
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_yinghuichuanqi
+		icon = YBL_yinghuichuanqi
+		x = -1
+		y = 1
+		relative_position_id = YBL_chongqiyibiliyazhiyan
+		prerequisite = {
+			focus = YBL_chongqiyibiliyazhiyan
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_dajingmixingcunzhe
+		icon = YBL_dajingmixingcunzhe
+		x = 1
+		y = 1
+		relative_position_id = YBL_chongqiyibiliyazhiyan
+		prerequisite = {
+			focus = YBL_chongqiyibiliyazhiyan
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_shuijinglieyuchaxingdong
+		icon = YBL_shuijinglieyuchaxingdong
+		x = -1
+		y = 1
+		relative_position_id = YBL_dajingmixingcunzhe
+		prerequisite = {
+			focus = YBL_dajingmixingcunzhe
+			focus = YBL_yinghuichuanqi
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_chaoyuexuemaideminzu
+		icon = YBL_chaoyuexuemaideminzu
+		x = 0
+		y = 1
+		relative_position_id = YBL_shuijinglieyuchaxingdong
+		prerequisite = {
+			focus = YBL_shuijinglieyuchaxingdong
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_xuangaodiguochongjian
+		icon = YBL_xuangaodiguochongjian
+		x = 0
+		y = 1
+		relative_position_id = YBL_chaoyuexuemaideminzu
+		prerequisite = {
+			focus = YBL_chaoyuexuemaideminzu
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_huangjiayanjiuyuan
+		icon = GFX_focus_research
+		x = 2
+		y = 1
+		relative_position_id = YBL_chaoyuexuemaideminzu
+		prerequisite = {
+			focus = YBL_chaoyuexuemaideminzu
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_zhigengniaojihua
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		relative_position_id = YBL_huangjiayanjiuyuan
+		prerequisite = {
+			focus = YBL_huangjiayanjiuyuan
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_chuangjianxuexiaotuan
+		icon = GFX_goal_generic_national_unity
+		x = -2
+		y = 1
+		relative_position_id = YBL_chaoyuexuemaideminzu
+		prerequisite = {
+			focus = YBL_chaoyuexuemaideminzu
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_chuyingnvhuang
+		icon = YBL_chuyingnvhuang
+		x = 0
+		y = 2
+		relative_position_id = YBL_xuangaodiguochongjian
+		prerequisite = {
+			focus = YBL_xuangaodiguochongjian
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_huifuguofangjunjingfei
+		icon = YBL_huifuguofangjunjingfei
+		x = 0
+		y = 1
+		relative_position_id = YBL_chuyingnvhuang
+		prerequisite = {
+			focus = YBL_chuyingnvhuang
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_gonghuizizhufazhan
+		icon = YBL_gonghuizizhufazhan
+		x = 0
+		y = 1
+		relative_position_id = YBL_huifuguofangjunjingfei
+		prerequisite = {
+			focus = YBL_huifuguofangjunjingfei
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_wangyushibing
+		icon = YBL_wangyushibing
+		x = 0
+		y = 1
+		relative_position_id = YBL_gonghuizizhufazhan
+		prerequisite = {
+			focus = YBL_gonghuizizhufazhan
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_renmingongchang
+		icon = GFX_focus_secret_rearmament
+		x = -2
+		y = 1
+		relative_position_id = YBL_chuyingnvhuang
+		prerequisite = {
+			focus = YBL_chuyingnvhuang
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_kejifuwushengchan
+		icon = YBL_kejifuwushengchan
+		x = 0
+		y = 1
+		relative_position_id = YBL_renmingongchang
+		prerequisite = {
+			focus = YBL_renmingongchang
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_paoyumianbao
+		icon = YBL_paoyumianbao
+		x = 0
+		y = 1
+		relative_position_id = YBL_kejifuwushengchan
+		prerequisite = {
+			focus = YBL_kejifuwushengchan
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_jianglishenpanguan
+		icon = GFX_focus_generic_military_mission
+		x = 2
+		y = 1
+		relative_position_id = YBL_chuyingnvhuang
+		prerequisite = {
+			focus = YBL_chuyingnvhuang
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_chengjiejunquanlixiafang
+		icon = YBL_chengjiejunquanlixiafang
+		x = 0
+		y = 1
+		relative_position_id = YBL_jianglishenpanguan
+		prerequisite = {
+			focus = YBL_jianglishenpanguan
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_jianyutideng
+		icon = YBL_jianyutideng
+		x = 0
+		y = 1
+		relative_position_id = YBL_chengjiejunquanlixiafang
+		prerequisite = {
+			focus = YBL_chengjiejunquanlixiafang
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = YBL_nvwangwansui
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1.5
+		relative_position_id = YBL_wangyushibing
+		prerequisite = {
+			focus = YBL_wangyushibing
+			focus = YBL_paoyumianbao
+			focus = YBL_jianyutideng
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	#王室线
+	#深海教会线
+	focus = {
+		id = YBL_guiyudahai
+		icon = GFX_focus_BRA_tribunal
+		x = 0
+		y = 0
+		mutually_exclusive = {
+			focus = BRA_end_the_state_of_emergency
+			focus = BRA_prepare_for_second_intentona
+		}
+		cost = 5
+		available = {
+		}
+		allow_branch = {
+		}
+		completion_reward = {
+			create_country_leader = {
+				name = "YBL_yishamala"
+				desc = ""
+				picture = "gfx/leaders/YBL/YBL_yishamala.png"
+				expire = "1999.1.1"
+				ideology = despotism
+				traits = {
+				}
+			}
+		}
+	}
+	continuous_focus_position = {
+		x = 0
+		y = 2500
+	}
+}
+
+#深海教会线
