@@ -41,6 +41,30 @@ on_actions = {
 			every_state = {
 				cancel_resistance = yes
 			}
+			######
+			every_country = {
+				if = {
+					limit = { has_tech = advanced_infantry_weapons }
+					set_variable = { infantry_equipment_level_var = 4 }
+				}
+				else_if = {
+					limit = { has_tech = improved_infantry_weapons }
+					set_variable = { infantry_equipment_level_var = 3 }
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_tech = infantry_weapons1
+							has_tech = magic_infantry_weapons1
+						}
+					}
+					set_variable = { infantry_equipment_level_var = 2 }
+				}
+				else_if = {
+					limit = { has_tech = infantry_weapons }
+					set_variable = { infantry_equipment_level_var = 1 }
+				}
+			}
 		}
 	}
 }
