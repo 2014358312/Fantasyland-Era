@@ -108,16 +108,16 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "ideology"
-				position = { x = 9 y = 8 }
+				position = { x = 9 y = 6 }
 				font = "hoi_18mbs"
 				text = "ideology"
 				maxWidth = 155
-				maxHeight = 20
+				maxHeight = 30
 			}
 			
 			instantTextboxType = {
 				name = "elections"
-				position = { x = 9 y = 29 }
+				position = { x = 9 y = 33 }
 				font = "hoi_16mbs"
 				text = "elections"
 				maxWidth = 155
@@ -1762,5 +1762,22 @@ guiTypes = {
 			alwaystransparent = yes
 		}		
 		
+	}
+	
+	containerWindowType = {
+		name = "ruling_party_detail"
+		position = { x = 97 y = 330 }
+		
+		instantTextboxType = {
+			name = "subideology_name"
+			position = { x = 0 y = 0 }
+			font = "hoi_16mbs"
+			text = "[GetRulingIdeologySubtype]"
+			pdx_tooltip = "[GetRulingIdeologySubtype]"
+			maxWidth = 155
+			maxHeight = 20
+			fixedsize = yes
+			alwaystransparent = yes
+		}
 	}
 }

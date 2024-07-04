@@ -4,14 +4,16 @@ on_actions = {
 			EYP = {
 				set_nationality = {
 					character = EYP_Bergmann
-					target_country = GIA
+					target_country = AIL
 				}
 				country_event = { id = eylstadt.7 days = 180 random = 30 }
 			}
-			GIA = {
+			AIL = {
 				add_ideas = EYP_Bergmann
-				remove_ideas = GIA_on_both_side_of_balance_fake
-				add_dynamic_modifier = { modifier = GIA_on_both_side_of_balance_dynamic_modifier }
+			}
+			LAN = {
+				remove_ideas = LAN_republican_parliament_fake
+				add_dynamic_modifier = { modifier = LAN_republican_parliament_dynamic_modifier }
 			}
 			SMA = {
 				remove_ideas = SMA_decadent_army_fake
