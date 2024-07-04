@@ -1,0 +1,152 @@
+﻿capital = 119
+
+set_research_slots = 2
+set_convoys = 80
+set_stability = 0.65
+set_war_support = 0.35
+starting_train_buffer = 2.0
+
+set_technology = {
+	basic_train = 1
+	### Infantry ###
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+}
+if = {
+	limit = { has_dlc = "No Step Back" }
+	
+	set_technology = {
+		gwtank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
+}
+
+
+activate_mission = EYP_hundred_day_crisis_mission_fake
+add_days_mission_timeout = {
+	mission = EYP_hundred_day_crisis_mission_fake
+	days = -65
+}
+
+add_ideas = {
+	
+}
+
+if = {
+	limit = {
+		OR = {
+			has_dlc = "Together for Victory"
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_autonomy = {
+		target = AIL
+		autonomous_state = autonomy_military_district
+	}
+	else = { puppet = AIL }
+	AIL = {
+		set_popularities = {
+			neutrality = 1
+			fascism = 99
+		}
+		set_politics = {
+			ruling_party = fascism
+			election_frequency = 48
+			elections_allowed = no
+		}
+	}
+}
+
+#create_faction = Allies
+#add_to_faction = GIA
+#add_to_faction = Z86
+#add_to_faction = SMA
+
+
+recruit_character = LAN_Agato_Shifuna
+recruit_character = LAN_Aki_Makoto
+recruit_character = LAN_Amano_Suzume
+recruit_character = LAN_Arisa
+recruit_character = LAN_Ayase_Yukari
+recruit_character = LAN_Christina_Morgan
+recruit_character = LAN_Claire_Boyancia
+recruit_character = LAN_Djeeta
+recruit_character = LAN_Eustiana_von_Astraea
+recruit_character = LAN_Futaba_Aoi
+recruit_character = LAN_Gasai_Yuno
+recruit_character = LAN_Grea
+recruit_character = LAN_Harusaki_Hiyori
+recruit_character = LAN_Hasekura_Io
+recruit_character = LAN_Hashimoto_Kanna
+recruit_character = LAN_Hiiragi_Anna
+recruit_character = LAN_Hikawa_Kyoka
+recruit_character = LAN_Himemiya_Maho
+recruit_character = LAN_Hojo_Ayane
+recruit_character = LAN_Hoshino_Shizuru
+recruit_character = LAN_Illya_Onstein
+recruit_character = LAN_Inosaki_Rino
+recruit_character = LAN_Izumo_Miyako
+recruit_character = LAN_Kamiki_Shinobu
+recruit_character = LAN_Kashiwazaki_Hatsune
+recruit_character = LAN_Kashiwazaki_Shiori
+recruit_character = LAN_Kazemiya_Akari
+recruit_character = LAN_Kazemiya_Yori
+recruit_character = LAN_Kirihara_Kasumi
+recruit_character = LAN_Kuraishi_Eriko
+recruit_character = LAN_Kuribayashi_Kurumi
+recruit_character = LAN_Kuro_Chie
+recruit_character = LAN_Kuroe_Hanako
+recruit_character = LAN_Kusano_Yui
+recruit_character = LAN_Kyan_Kaori
+recruit_character = LAN_Lailair
+recruit_character = LAN_Mikuma_Tomo
+recruit_character = LAN_Minami_Suzuna
+recruit_character = LAN_Minerva
+recruit_character = LAN_Misumi_Chika
+recruit_character = LAN_Miyasaka_Tamaki
+recruit_character = LAN_Momochi_Kiruya
+recruit_character = LAN_Monika_Weisswind
+recruit_character = LAN_Natsume_Kokoro
+recruit_character = LAN_Nijimura_Yuki
+recruit_character = LAN_Ninon_Joubert
+recruit_character = LAN_Ogami_Mifuyu
+recruit_character = LAN_Orihara_Matsuri
+recruit_character = LAN_Rima
+recruit_character = LAN_Sakurai_Nozomi
+recruit_character = LAN_Sasaki_Saren
+recruit_character = LAN_Senri_Mana
+recruit_character = LAN_Shijo_Rei
+recruit_character = LAN_Shingyoji_Yuni
+recruit_character = LAN_Shirogane_Jun
+recruit_character = LAN_Sonoue_Muimi
+recruit_character = LAN_Tachiarai_Ruka
+recruit_character = LAN_Tanno_Nanaka
+recruit_character = LAN_Todo_Akino
+recruit_character = LAN_Tono_Homare
+recruit_character = LAN_Utsushimi_Neneka
+
+
+recruit_character = LAN_Sakai_Naoto
+recruit_character = LAN_Nobody
+
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1932.6.15"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 48
+	neutrality = 45
+	communism = 2
+	fascism = 5
+}
+

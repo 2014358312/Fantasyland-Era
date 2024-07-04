@@ -27,7 +27,6 @@ if = {
 	}
 }
 
-
 set_variable = { GIA_war_plan_length_var = 9 }
 activate_mission = EYP_hundred_day_crisis_mission_fake
 add_days_mission_timeout = {
@@ -45,25 +44,6 @@ add_ideas = {
 	GIA_ban_computer
 	GIA_on_both_side_of_balance_fake
 }
-
-if = {
-	limit = {
-		OR = {
-			has_dlc = "Together for Victory"
-			has_dlc = "Man the Guns"
-		}
-	}
-	set_autonomy = {
-		target = AIL
-		autonomous_state = autonomy_military_district
-	}
-	else = { puppet = AIL }
-}
-
-#create_faction = Allies
-#add_to_faction = GIA
-#add_to_faction = Z86
-#add_to_faction = SMA
 
 recruit_character = GIA_Ernst_Zimmerman
 
