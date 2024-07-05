@@ -1,0 +1,29 @@
+LAN_republican_parliament_decision_category = {
+	LAN_recruit_royal_special_force_decision = {
+		icon = GFX_decision_generic_intelligence_operation
+		allowed = { tag = LAN }
+		visible = { NOT = { has_global_flag = eylstadt_drift_defence_war } }
+		available = {
+			has_country_leader = {
+				character = EYP_Ortfine_von_Eylstadt
+				ruling_only = yes
+			}
+			has_war = no
+			hidden_trigger = {
+				NOT = { has_global_flag = eylstadt_drift_defence_war }
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_ideas = EYP_royal_special_force
+		}
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 0
+				always = no
+			}
+		}
+	}
+}
