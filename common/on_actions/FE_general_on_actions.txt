@@ -78,7 +78,6 @@ on_actions = {
 							}
 							TAG = "[THIS.GetCountryTag]"
 						}
-						clr_country_flag = ROOT_has_land_combat_unit_flag
 					}
 					if = {
 						limit = { has_country_flag = ROOT_has_naval_combat_unit_flag }
@@ -88,7 +87,6 @@ on_actions = {
 							}
 							TAG = "[THIS.GetCountryTag]"
 						}
-						clr_country_flag = ROOT_has_naval_combat_unit_flag
 					}
 					if = {
 						limit = { has_country_flag = ROOT_has_air_combat_unit_flag }
@@ -98,8 +96,21 @@ on_actions = {
 							}
 							TAG = "[THIS.GetCountryTag]"
 						}
-						clr_country_flag = ROOT_has_air_combat_unit_flag
 					}
+				}
+			}
+			every_country = {
+				if = {
+					limit = { has_country_flag = ROOT_has_land_combat_unit_flag }
+					clr_country_flag = ROOT_has_land_combat_unit_flag
+				}
+				if = {
+					limit = { has_country_flag = ROOT_has_naval_combat_unit_flag }
+					clr_country_flag = ROOT_has_naval_combat_unit_flag
+				}
+				if = {
+					limit = { has_country_flag = ROOT_has_air_combat_unit_flag }
+					clr_country_flag = ROOT_has_air_combat_unit_flag
 				}
 			}
 			######
