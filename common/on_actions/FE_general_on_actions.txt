@@ -1,6 +1,7 @@
 on_actions = {
 	on_startup = {
 		effect = {
+			######
 			every_country = {
 				limit = {
 					#NOT = { TAG = EYP }
@@ -66,16 +67,42 @@ on_actions = {
 				}
 			}
 			######
-			every_country = {
-				limit = { has_country_flag = ROOT_has_land_combat_unit_flag }
-				meta_effect = {
-					text = {
-						load_oob = "[TAG]_1000_nsb"
+			if = {
+				limit = { has_start_date > 1000.01.01 }
+				every_country = {
+					if = {
+						limit = { has_country_flag = ROOT_has_land_combat_unit_flag }
+						meta_effect = {
+							text = {
+								load_oob = "[TAG]_1000_nsb"
+							}
+							TAG = "[THIS.GetCountryTag]"
+						}
+						clr_country_flag = ROOT_has_land_combat_unit_flag
 					}
-					TAG = "[THIS.GetCountryTag]"
+					if = {
+						limit = { has_country_flag = ROOT_has_naval_combat_unit_flag }
+						meta_effect = {
+							text = {
+								load_oob = "[TAG]_1000_naval_mtg"
+							}
+							TAG = "[THIS.GetCountryTag]"
+						}
+						clr_country_flag = ROOT_has_naval_combat_unit_flag
+					}
+					if = {
+						limit = { has_country_flag = ROOT_has_air_combat_unit_flag }
+						meta_effect = {
+							text = {
+								load_oob = "[TAG]_1000_air_bba"
+							}
+							TAG = "[THIS.GetCountryTag]"
+						}
+						clr_country_flag = ROOT_has_air_combat_unit_flag
+					}
 				}
-				clr_country_flag = ROOT_has_land_combat_unit_flag
 			}
+			######
 		}
 	}
 }
