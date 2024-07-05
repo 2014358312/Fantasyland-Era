@@ -12,12 +12,18 @@ EYP_hundred_day_crisis_decision_category = {
 			custom_effect_tooltip = EYP_hundred_day_crisis_mission_tt
 			hidden_effect = {
 				set_global_flag = eylstadt_drift_defence_war
-				LAN = { set_country_flag = eylstadt_drift_defence_war_member_flag }
+				LAN = {
+					set_country_flag = eylstadt_drift_defence_war_member_flag
+				}
 				AIL = {
 					set_country_flag = eylstadt_drift_defence_war_member_flag
 					declare_war_on = {
 						target = EYP
 						type = liberate_wargoal
+					}
+					add_relation_modifier = {
+						target = EYP
+						modifier = AIL_pioneer_ai
 					}
 				}
 				SMA = { 

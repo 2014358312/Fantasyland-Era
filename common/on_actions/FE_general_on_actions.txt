@@ -65,6 +65,17 @@ on_actions = {
 					set_variable = { infantry_equipment_level_var = 1 }
 				}
 			}
+			######
+			every_country = {
+				limit = { has_country_flag = ROOT_has_land_combat_unit_flag }
+				meta_effect = {
+					text = {
+						load_oob = "[TAG]_1000_nsb"
+					}
+					TAG = "[THIS.GetCountryTag]"
+				}
+				clr_country_flag = ROOT_has_land_combat_unit_flag
+			}
 		}
 	}
 }
