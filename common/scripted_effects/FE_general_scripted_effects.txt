@@ -1,19 +1,5 @@
 DEBUG_load_oob = {
-	every_country = {
-		log = "This country is [?THIS.GetTag]"
-		meta_effect = {
-			text = {
-				load_oob = "[TAG]_1000_nsb"
-				add_equipment_to_stockpile = {
-					type = infantry_equipment_1
-					amount = 10000
-					producer = [TAG]
-				}
-				[TAG] = { ROOT = { add_political_power = 1 } }
-			}
-			TAG = "[THIS.GetCountryTag]"
-		}
-	}
+	load_oob = "EYP_1000_nsb"
 }
 
 reload_focus_tree = {
