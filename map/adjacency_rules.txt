@@ -45,18 +45,67 @@ adjacency_rule =
 		trade = yes
 	}
 	
-	required_provinces = { 12133 4744 10676 }
+	required_provinces = { 12133 4744 }
 
 	is_disabled = {
 		OR = {
 			has_global_flag = STRIKE_CROSSING_SEA_BRIDGE_UNDER_CONSTRUCTION
 			has_global_flag = STRIKE_CROSSING_SEA_BRIDGE_BLOCKED
 			has_country_flag = STRIKE_CROSSING_SEA_BRIDGE_BLOCKED_FOR_COUNTRY
-			has_country_flag = STRIKE_CROSSING_SEA_BRIDGE_FLAG
+			has_country_flag = STRIKE_SANCTIONS_FLAG
 		}
 		tooltip = strike_blocked_tt
 	}
 	
 	icon = 10676
 	offset = { -12 0 4 }
+}
+
+#Dell Canal
+adjacency_rule =
+{
+	name = "DELL_CANAL"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 2681 3186 101 4399 }
+
+	is_disabled = {
+		OR = {
+			has_global_flag = DELL_CANAL_BLOCKED
+			has_country_flag = DELL_CANAL_BLOCKED_FOR_COUNTRY
+			has_country_flag = DELL_SANCTIONS_FLAG
+		}
+		tooltip = disable_canal_tt
+	}
+	
+	icon = 9602
+	offset = { -8 0 -15 }
 }
