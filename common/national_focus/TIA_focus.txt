@@ -20,7 +20,7 @@ focus_tree = {
 		#梦？
 		id = TIA_dream
 		icon = GFX_focus_TIA_Mia_and_guillotine
-		x = 10
+		x = 0
 		y = 0
 		cost = 2
 		available = {
@@ -57,15 +57,45 @@ focus_tree = {
 		}
 	}
 	focus = {
-		#做出改变
-		id = TIA_Make_change
+		#女神降临阿克塞尔
+		id = TIA_Aqua_descend_Axel
 		icon = GFX_focus_TIA_change_future
 		relative_position_id = TIA_Choice
-		x = 3
+		x = -9
 		y = 1
 		cost = 5
 		mutually_exclusive = {
 			focus = TIA_prank
+		}
+		mutually_exclusive = {
+			focus = TIA_Make_change
+		}
+		available = {
+			has_country_flag = TIA.1_C
+		}
+		prerequisite = {
+			focus = TIA_Choice
+		}
+		completion_reward = {
+			add_political_power = 10
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#做出改变
+		id = TIA_Make_change
+		icon = GFX_focus_TIA_change_future
+		relative_position_id = TIA_Choice
+		x = 9
+		y = 1
+		cost = 5
+		mutually_exclusive = {
+			focus = TIA_prank
+		}
+		mutually_exclusive = {
+			focus = TIA_Aqua_descend_Axel
 		}
 		available = {
 			has_country_flag = TIA.1_A
@@ -545,11 +575,14 @@ focus_tree = {
 		id = TIA_prank
 		icon = GFX_focus_TIA_no_change
 		relative_position_id = TIA_Choice
-		x = -3
+		x = 0
 		y = 1
 		cost = 5
 		mutually_exclusive = {
 			focus = TIA_Make_change
+		}
+		mutually_exclusive = {
+			focus = TIA_Aqua_descend_Axel
 		}
 		available = {
 			has_country_flag = TIA.1_B
@@ -564,13 +597,97 @@ focus_tree = {
 			factor = 1
 		}
 	}
+	focus = {
+		#财政危机
+		id = TIA_Financial_crisis
+		icon = GFX_focus_TIA_no_change
+		relative_position_id = TIA_prank
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			has_country_flag = TIA.1_B
+		}
+		prerequisite = {
+			focus = TIA_prank
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#瘟疫横行
+		id = TIA_Plague_rampant
+		icon = GFX_focus_TIA_no_change
+		relative_position_id = TIA_Financial_crisis
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			has_country_flag = TIA.1_B
+		}
+		prerequisite = {
+			focus = TIA_Financial_crisis
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#一切正如梦中所发生
+		id = TIA_Everything_happened_as_it_happened_in_dream
+		icon = GFX_focus_TIA_no_change
+		relative_position_id = TIA_Plague_rampant
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			has_country_flag = TIA.1_B
+		}
+		prerequisite = {
+			focus = TIA_Plague_rampant
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#然后......革命开始了......
+		id = TIA_Then_revolution_began
+		icon = GFX_focus_TIA_no_change
+		relative_position_id = TIA_Everything_happened_as_it_happened_in_dream
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			has_country_flag = TIA.1_B
+		}
+		prerequisite = {
+			focus = TIA_Everything_happened_as_it_happened_in_dream
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	#经济
 	focus = {
 		#亡羊补牢为时不晚
 		id = TIA_never_too_late_to_mend
 		icon = GFX_focus_TIA_
 		relative_position_id = TIA_dream
-		x = 15
+		x = 25
 		y = 0
 		cost = 5
 		available = {
@@ -920,7 +1037,7 @@ focus_tree = {
 		id = TIA_Expansion_MCG
 		icon = GFX_focus_TIA_
 		relative_position_id = TIA_dream
-		x = 30
+		x = 40
 		y = 0
 		cost = 5
 		available = {
