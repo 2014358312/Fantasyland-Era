@@ -1,0 +1,69 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+# contain
+# area_priority
+# building_target
+
+
+LAN_conflict_bystanders = {
+	allowed = {
+		original_tag = LAN
+	}
+	enable = {
+		has_country_flag = eylstadt_drift_defence_war_member_flag
+	}
+	abort = {
+		NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+	}
+
+	ai_strategy = {
+		type = ignore
+		id = EYP
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = AIL
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = dont_join_wars_with
+		id = AIL
+		target_country = EYP
+		value = 2000
+	}
+}
+
+LAN_dont_trust_ai = {
+	allowed = {
+		original_tag = LAN
+	}
+	enable = {
+		AIL = { has_idea = AIL_artificial_intelligence }
+	}
+	abort = {
+		AIL = {
+			OR = {
+				exists = no
+				NOT = { has_idea = AIL_artificial_intelligence }
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = AIL
+		value = 100
+	}
+}

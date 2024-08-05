@@ -1,0 +1,23 @@
+# All global modifiers are here. They are applied from certain game-features.
+# Effects are fully scriptable here.
+# These names can NOT be removed or changes, as the code uses them....
+
+local_war_client = {
+	ai_call_ally_desire_factor = -5000
+}
+
+local_war_server = {
+	ai_join_ally_desire_factor = -5000
+}
+
+AIL_pioneer_ai = {
+	valid_relation_trigger = {
+		FROM = {
+			is_ai = yes
+			has_war_with = ROOT
+		}
+	}
+
+	attack_bonus_against = -0.15
+	defense_bonus_against = -0.15
+}

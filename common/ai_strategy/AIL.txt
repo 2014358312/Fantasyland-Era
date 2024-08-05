@@ -1,0 +1,117 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+# contain
+# area_priority
+# building_target
+
+
+AIL_conflict_participant = {
+	allowed = {
+		original_tag = AIL
+	}
+	enable = {
+		OR = {
+			has_country_flag = eylstadt_drift_defence_war_member_flag
+			has_active_mission = EYP_hundred_day_crisis_mission_fake
+		}
+	}
+	abort = {
+		NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = EYP
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = front_armor_score
+		id = EYP
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = front_control
+		state_trigger = {
+			is_owned_by = EYP
+			NOT = {
+				has_dynamic_modifier = {
+					modifier = EYP_startup_clear_fields_state_dynamic_modifier
+				}
+				has_dynamic_modifier = {
+					modifier = EYP_witch_engineering_state_dynamic_modifier
+				}
+			}
+		}
+		ratio = 0.8
+		ordertype = front
+		execution_type = rush#rush_weak
+		manual_attack = no
+	}
+	
+	ai_strategy = {
+		type = garrison
+		value = -50
+	}
+	
+	ai_strategy = {
+		type = dont_join_wars_with
+		id = LAN
+		target_country = EYP
+		value = 2000
+	}
+}
+
+AIL_conflict_participant_2 = {#It's useless but I've decided to keep it 
+	allowed = {
+		original_tag = AIL
+	}
+	enable = {
+		has_country_flag = eylstadt_drift_defence_war_member_flag
+	}
+	abort = {
+		OR = {
+			NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+			SMA = { NOT = { is_in_faction_with = ROOT } }
+		}
+	}
+	ai_strategy = {
+		type = dont_join_wars_with
+		id = SMA
+		target_country = EYP
+		value = 2000
+	}
+}
+
+LAN_dont_trust_ai = {
+	allowed = {
+		original_tag = LAN
+	}
+	enable = {
+		AIL = { has_idea = AIL_artificial_intelligence }
+	}
+	abort = {
+		AIL = {
+			OR = {
+				exists = no
+				NOT = { has_idea = AIL_artificial_intelligence }
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = AIL
+		value = 100
+	}
+}

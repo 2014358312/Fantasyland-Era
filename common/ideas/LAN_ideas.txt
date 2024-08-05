@@ -1,0 +1,172 @@
+ideas = {
+	hidden_ideas = {
+		
+	}
+	
+	country = {
+		LAN_birthplace_of_republican_revolution = {
+			picture = home_of_revolution
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			available = {}
+			
+			cancel = {}
+			
+			traits = {}
+			
+			modifier = {
+				drift_defence_factor = 0.50
+			}
+			
+			targeted_modifier = {}
+			
+			equipment_bonus = {}
+			
+			research_bonus = {}
+			
+			rule = {
+				can_create_factions = yes
+			}
+			
+			on_add = {}
+			
+			on_remove = {}
+		}
+		
+		LAN_astraea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			traits = { popular_figurehead }
+		}
+		
+		LAN_weak_infrastructure = {
+			picture = tur_balkan_central_bank_wealthy_greece
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.25
+				consumer_goods_factor = 0.10
+				production_speed_buildings_factor = -0.20
+				global_building_slots_factor = -0.20
+			}
+		}
+		
+		LAN_retire_navy = {
+			picture = SOV_conspiracy_in_the_academy_navy
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_cost_max_ship_hull_carrier = 9500
+				production_cost_max_ship_hull_heavy = 10000
+				production_cost_max_ship_hull_cruiser = 5300
+				production_cost_max_ship_hull_light = 3800
+				production_cost_max_ship_hull_submarine = 1500
+			}
+			
+			research_bonus = {
+				naval_equipment = -0.25
+				infantry_weapons = 0.10
+				armor = 0.10
+			}
+		}
+		
+		LAN_ban_computer = {
+			picture = jap_duplicate_research
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				land_reinforce_rate = 0.01
+			}
+			
+			research_bonus = {
+				computing_tech = -0.10
+			}
+		}
+		
+		LAN_military_anomaly = {
+			picture = tur_kemalist_army_officers_powerless_effect
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				air_volunteer_cap = 100
+				air_mission_xp_gain_factor = 0.10
+				fascism_drift = 0.01
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				stability_factor = -0.15
+				war_support_factor = 0.05
+				mobilization_laws_cost_factor = -0.15
+				high_command_cost_factor = 0.20
+				custom_modifier_tooltip = LAN_military_anomaly_mtt
+			}
+		}
+		
+		LAN_republican_parliament_fake = {
+			name = LAN_republican_parliament
+			picture = GIA_on_both_side_of_balance
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			available = { always = no }
+			
+			modifier = {
+				political_power_factor = -0.10
+			}
+		}
+	}
+}

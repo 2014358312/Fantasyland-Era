@@ -1,0 +1,42 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_USA_CONGRESS}
+#!gfx:interface\FE_goals.gfx
+
+focus_tree = {
+    id = landsol_focus
+    country = {
+        factor = 0
+        modifier = {
+            add = 10
+            tag = LAN
+        }
+    }
+    default = no
+
+    focus = { 
+        id = LAN_into_millennium
+        icon = GFX_focus_generic_collaborate_local_elites
+        x = 10
+        y = 0
+        cost = 10
+        available = {
+            is_subject = no
+        }
+		select_effect = {
+			set_country_flag = LAN_into_millennium_flag
+		}
+        completion_reward = {
+            clr_country_flag = LAN_into_millennium_flag
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+}

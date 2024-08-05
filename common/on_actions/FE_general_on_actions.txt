@@ -1,6 +1,10 @@
 on_actions = {
 	on_startup = {
 		effect = {
+			random_country = {
+				set_global_flag = STRIKE_CROSSING_SEA_BRIDGE_UNDER_CONSTRUCTION
+			}
+			######
 			every_country = {
 				limit = {
 					#NOT = { TAG = EYP }
@@ -41,6 +45,78 @@ on_actions = {
 			every_state = {
 				cancel_resistance = yes
 			}
+			######
+			every_country = {
+				if = {
+					limit = { has_tech = advanced_infantry_weapons }
+					set_variable = { infantry_equipment_level_var = 4 }
+				}
+				else_if = {
+					limit = { has_tech = improved_infantry_weapons }
+					set_variable = { infantry_equipment_level_var = 3 }
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_tech = infantry_weapons1
+							has_tech = magic_infantry_weapons1
+						}
+					}
+					set_variable = { infantry_equipment_level_var = 2 }
+				}
+				else_if = {
+					limit = { has_tech = infantry_weapons }
+					set_variable = { infantry_equipment_level_var = 1 }
+				}
+			}
+			######
+			if = {
+				limit = { has_start_date > 1000.01.01 }
+				every_country = {
+					if = {
+						limit = { has_country_flag = ROOT_has_land_combat_unit_flag }
+						meta_effect = {
+							text = {
+								load_oob = "[TAG]_1000_nsb"
+							}
+							TAG = "[THIS.GetCountryTag]"
+						}
+					}
+					if = {
+						limit = { has_country_flag = ROOT_has_naval_combat_unit_flag }
+						meta_effect = {
+							text = {
+								load_oob = "[TAG]_1000_naval_mtg"
+							}
+							TAG = "[THIS.GetCountryTag]"
+						}
+					}
+					if = {
+						limit = { has_country_flag = ROOT_has_air_combat_unit_flag }
+						meta_effect = {
+							text = {
+								load_oob = "[TAG]_1000_air_bba"
+							}
+							TAG = "[THIS.GetCountryTag]"
+						}
+					}
+				}
+			}
+			every_country = {
+				if = {
+					limit = { has_country_flag = ROOT_has_land_combat_unit_flag }
+					clr_country_flag = ROOT_has_land_combat_unit_flag
+				}
+				if = {
+					limit = { has_country_flag = ROOT_has_naval_combat_unit_flag }
+					clr_country_flag = ROOT_has_naval_combat_unit_flag
+				}
+				if = {
+					limit = { has_country_flag = ROOT_has_air_combat_unit_flag }
+					clr_country_flag = ROOT_has_air_combat_unit_flag
+				}
+			}
+			######
 		}
 	}
 }

@@ -1,18 +1,32 @@
 ﻿capital = 102
 
+add_manpower = 720000
+
 set_research_slots = 2
 set_convoys = 80
-set_stability = 0.65
-set_war_support = 0.35
+set_stability = 1.00
+set_war_support = 1.00
 starting_train_buffer = 2.0
 
+set_oob = AIL_1000_nsb
 set_technology = {
-	basic_train = 1
-	### Infantry ###
 	infantry_weapons = 1
 	infantry_weapons1 = 1
-	tech_support = 1
+	tech_recon = 1
+	tech_support = 1		
 	tech_engineers = 1
+	tech_military_police = 1
+	tech_mountaineers = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	basic_train = 1
+	synth_oil_experiments = 1
+	fuel_silos = 1
+	fuel_refining = 1
+	mobile_warfare = 1
+	electronic_mechanical_engineering = 1
+	radio = 1
 }
 	
 set_technology = {
@@ -20,6 +34,14 @@ set_technology = {
 	basic_light_tank_chassis = 1
 	basic_medium_tank_chassis = 1
 	armor_tech_1 = 1
+}
+
+set_technology = {
+	mtg_transport = 1
+}
+
+set_technology = {
+	armored_car1 = 1
 }
 
 activate_mission = EYP_hundred_day_crisis_mission_fake
@@ -34,6 +56,10 @@ add_ideas = {
 	AIL_ban_aircraft
 	AIL_armor_talent
 	AIL_if_final_word
+	
+	extensive_conscription
+	closed_economy
+	war_economy
 }
 
 recruit_character = GIA_Augusta_Friedrich_Adler
@@ -86,6 +112,28 @@ if = {
 			tank_nsb_engine_upgrade = 3
 			tank_nsb_armor_upgrade = 1
 		}
-		icon = "GFX_GER_basic_light_tank_medium"
+		icon = "GFX_GER_basic_medium_tank_medium"
 	}
+}
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 10000
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 2000
+}
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 500
+}
+add_equipment_to_stockpile = {
+	type = light_tank_chassis_1
+	amount = 1000
+	variant_name = "Panzer I Ausf. A"
+}
+add_equipment_to_stockpile = {
+	type = motorized_equipment_1
+	amount = 250
 }

@@ -127,7 +127,15 @@ guiTypes = {
 	### country entry
 	containerWindowType = {
 		name = "country_entry"
-
+		
+		buttonType = {
+			name = "country_leader"
+			quadTextureSprite = "GFX_leader_unknown"
+			position = { x = 4017 y = 22 }
+			#GET OUT OF MY EYES
+			scale=0.75
+			clicksound = click_checkbox
+		}
 		
 		iconType = {
 			name = "country_flag"
@@ -143,6 +151,18 @@ guiTypes = {
 			position = { x=26 y =222 }
 			clicksound = click_checkbox
 		}
+
+		instantTextBoxType = {
+			name = "country_name"
+			position = { x = 6 y = 280 }
+			font = "hoi_20b"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 131
+			maxHeight = 20
+			fixedsize = yes
+			format = center
+			Orientation = "UPPER_LEFT"
+		}
 		
 	}
 
@@ -154,7 +174,7 @@ guiTypes = {
 		iconType = {
 			name = "country_flag"
 			quadTextureSprite ="GFX_shield_medium"
-			position = { x = 30 y = 15 }
+			position = { x = 30 y = 35 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -162,7 +182,7 @@ guiTypes = {
 		buttonType = {
 			name = "country"
 			quadTextureSprite = "GFX_country_selection_minor_entry"
-			position = { x=27 y =15 }
+			position = { x=27 y =35 }
 			clicksound = click_checkbox
 		}
 		
@@ -584,7 +604,7 @@ guiTypes = {
 
 	containerWindowType = {
 		name ="gamesetup_interesting_countries_window"
-		size = { width=1225 height=717 }
+		size = { width=1225 height=817 }
 		Orientation = center
 		origo = center
 		clipping = no
@@ -609,7 +629,7 @@ guiTypes = {
 
 		ButtonType = {
 			name = "back_button"
-			position = { x = -148 y = 70 }
+			position = { x = -148 y = -30 }
 			quadTextureSprite ="GFX_button_148x34"
 			buttonText = "BACK"
 			buttonFont = "hoi_18mbs"
@@ -621,7 +641,7 @@ guiTypes = {
 
 		ButtonType = {
 			name = "select_button"
-			position = { x = 10 y = 70 }
+			position = { x = 10 y = -30 }
 			quadTextureSprite ="GFX_button_148x34"
 			buttonText = "FE_SELECT_COUNTRY"
 			buttonFont = "hoi_18mbs"
@@ -685,7 +705,7 @@ guiTypes = {
 		iconType = {
 			name = "minor_country_leader"
 			quadTextureSprite ="GFX_leader_unknown"
-			position = { x = 215 y = 591 }
+			position = { x = 205 y = 621 }
 			scale=0.696
 			rotation=-0.04
 		}
@@ -693,7 +713,7 @@ guiTypes = {
 		iconType = {
 				name ="minor_portrait_overlay"
 				spriteType = "GFX_minor_portrait_overlay"
-				position = { x= 180 y = 565 }
+				position = { x = 170 y = 590 }
 		}
 
 
@@ -711,15 +731,26 @@ guiTypes = {
 		containerWindowType = {
 			name = "info"
 			position = { x = 100 y = 570 }
+			
+			instantTextBoxType = {
+				name = "leader_label"
+				position = { x = 0 y = 195 }
+				textureFile = ""
+				font = "hoi4_typewriter16"
+				borderSize = {x = 0 y = 0}
+				text = "LEADER"
+				maxWidth = 230
+				format = left
+			}
 
 			instantTextBoxType = {
 				name = "leader"
-				position = { x = 120 y = 175 }
+				position = { x = 0 y = 212 }
 				textureFile = ""
 				font = "hoi4_typewriter16"
 				borderSize = {x = 0 y = 0}
 				text = ""
-				maxWidth = 100
+				maxWidth = 230
 				format = left
 			}
 
@@ -730,7 +761,8 @@ guiTypes = {
 				font = "hoi4_typewriter16"
 				borderSize = {x = 0 y = 0}
 				text = "IDEOLOGY"
-				maxWidth = 340
+				maxWidth = 100
+				maxHeight = 20
 				format = left
 			}
 
@@ -739,7 +771,8 @@ guiTypes = {
 				position = { x = 0 y = 52 }
 				font = "hoi4_typewriter16"
 				borderSize = {x = 0 y = 0}
-				maxWidth = 340
+				maxWidth = 100
+				maxHeight = 20
 				format = left
 			}
 
@@ -749,7 +782,8 @@ guiTypes = {
 				font = "hoi4_typewriter16"
 				borderSize = {x = 0 y = 0}
 				text = "GOVERNMENT"
-				maxWidth = 340
+				maxWidth = 100
+				maxHeight = 20
 				format = left
 			}
 
@@ -759,7 +793,8 @@ guiTypes = {
 				font = "hoi4_typewriter16"
 				borderSize = {x = 0 y = 0}
 				text = "FE_INTERESTING_COUNTRIES"
-				maxWidth = 340
+				maxWidth = 100
+				maxHeight = 20
 				format = left
 			}
 
@@ -769,7 +804,8 @@ guiTypes = {
 				font = "hoi4_typewriter16"
 				borderSize = {x = 0 y = 0}
 				text = "ELECTIONS"
-				maxWidth = 340
+				maxWidth = 100
+				maxHeight = 20
 				format = left
 			}
 
@@ -778,7 +814,8 @@ guiTypes = {
 				position = { x = 0 y = 132 }
 				font = "hoi4_typewriter16"
 				borderSize = {x = 0 y = 0}
-				maxWidth = 340
+				maxWidth = 80
+				maxHeight = 20
 				format = left
 			}
 
@@ -788,7 +825,8 @@ guiTypes = {
 				font = "hoi4_typewriter16"
 				borderSize = {x = 0 y = 0}
 				text = "RULING_PARTY"
-				maxWidth = 340
+				maxWidth = 100
+				maxHeight = 20
 				format = left
 			}
 
@@ -797,19 +835,20 @@ guiTypes = {
 				position = { x = 0 y = 172 }
 				font = "hoi4_typewriter16"
 				borderSize = {x = 0 y = 0}
-				maxWidth = 340
+				maxWidth = 100
+				maxHeight = 20
 				format = left
 			}
 		}
 
 		instantTextBoxType = {
 			name = "nation_title"
-			position = { x = 430 y = 570 }
+			position = { x = 400 y = 570 }
 			font = "hoi_24header"
 			borderSize = {x = 0 y = 0}
-			maxWidth = 340
+			maxWidth = 220
 			maxHeight = 48
-			format = left
+			format = center
 			vertical_alignment = center
 		}
 

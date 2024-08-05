@@ -1,0 +1,392 @@
+﻿division_template = {
+	name = "Infanterie-Division"
+
+	division_names_group = AIL_Inf_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+        infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	
+	support = {
+        artillery = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Panzer-Division"
+
+	division_names_group = AIL_Arm_01
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+        motorized = { x = 2 y = 1 }
+	}
+	support = {
+        mot_recon = { x = 0 y = 0 }
+        artillery = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Infanterie-Division (mot.)" 			# Used to be SS division -> New system for SS. Also messed up the civil war by refusing to move to the fascists, and immersion-breaking to have them around as royalists
+
+	division_names_group = AIL_MOT_02
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+	    motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		
+		motorized = { x = 2 y = 0 }
+	    motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+        mot_recon = { x = 0 y = 0 }
+        artillery = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Gebirgs-Brigade"		# Gebirgsbrigade
+	#Note: precursor to Gebirgs-Divisions
+	division_names_group = AIL_Mnt_01
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+	    mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "Kavallerie-Brigade"
+
+	division_names_group = AIL_Cav_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+        cavalry = { x = 0 y = 1 }
+        cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	    military_police = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division= {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 1270
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 2
+		}
+		location = 480
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 3
+		}
+		location = 1386
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 4
+		}
+		location = 6586
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 4016
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 6
+		}
+		location = 260
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 7
+		}
+		location = 3283
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 8
+		}
+		location = 854
+		division_template = "Infanterie-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	
+	### Panzer ###
+	
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 480
+		division_template = "Panzer-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = { light_tank_chassis_1 = { owner = "AIL" version_name = "Panzer I Ausf. A" } }
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 2
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_AIL_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 1386
+		division_template = "Panzer-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = { light_tank_chassis_1 = { owner = "AIL" version_name = "Panzer I Ausf. A" } }
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 3
+		}
+		location = 480
+		division_template = "Panzer-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = { light_tank_chassis_1 = { owner = "AIL" version_name = "Panzer I Ausf. A" } }
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 4
+		}
+		location = 1386
+		division_template = "Panzer-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = { light_tank_chassis_1 = { owner = "AIL" version_name = "Panzer I Ausf. A" } }
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 28
+		division_template = "Panzer-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = { light_tank_chassis_1 = { owner = "AIL" version_name = "Panzer I Ausf. A" } }
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 6
+		}
+		location = 28
+		division_template = "Panzer-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = { light_tank_chassis_1 = { owner = "AIL" version_name = "Panzer I Ausf. A" } }
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 7
+		}
+		location = 28
+		division_template = "Panzer-Division"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = { light_tank_chassis_1 = { owner = "AIL" version_name = "Panzer I Ausf. A" } }
+	}
+
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 2813
+		division_template = "Infanterie-Division (mot.)"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	
+	### Police ###
+	
+	division= {
+		name = "Kavallerie-Kommando Insterburg" 
+		location = 279
+		division_template = "Kavallerie-Brigade"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 2672
+		division_template = "Kavallerie-Brigade"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division= {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 2
+		}
+		location = 6428
+		division_template = "Kavallerie-Brigade"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 3
+		}
+		location = 30
+		division_template = "Kavallerie-Brigade"
+		start_experience_factor = 0.3
+		start_manpower_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+
+### Air oob in its own file
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "AIL"
+		}
+		requested_factories = 10
+		progress = 0.1
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "AIL" 
+		}
+		requested_factories = 2
+		progress = 0.3
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "AIL" 
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = light_tank_chassis_1
+			creator = "AIL" 
+			version_name = "Panzer I Ausf. A"
+		}
+		requested_factories = 2
+		progress = 0.4
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = motorized_equipment_1
+			creator = "AIL" 
+		}
+		requested_factories = 2
+		progress = 0.4
+		efficiency = 50
+	}
+}
