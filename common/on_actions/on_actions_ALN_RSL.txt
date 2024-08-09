@@ -4,10 +4,24 @@ on_actions = {
 			ALN = {
 				remove_ideas = ALN_spy_war_fake
 				add_dynamic_modifier = { modifier = ALN_spy_war_dynamic_modifier }
+				every_state = {
+					limit = {
+						is_core_of = RSL
+						NOT = { is_core_of = ALN }
+					}
+					add_core_of = ALN
+				}
 			}
 			RSL = {
 				remove_ideas = RSL_spy_war_fake
 				add_dynamic_modifier = { modifier = RSL_spy_war_dynamic_modifier }
+				every_state = {
+					limit = {
+						is_core_of = ALN
+						NOT = { is_core_of = RSL }
+					}
+					add_core_of = RSL
+				}
 			}
 		}
 	}

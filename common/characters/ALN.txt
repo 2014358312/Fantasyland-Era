@@ -31,4 +31,47 @@ characters = {
 			}
 		}
 	}
+	
+	ALN_Archetto = {
+		name = Archetto
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_ALN_Archetto
+				small = GFX_idea_advisor_ALN_Archetto
+			}
+			army = {
+				large = GFX_Portrait_ALN_Archetto
+				small = GFX_idea_advisor_ALN_Archetto
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ALN_Archetto_political_advisor
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+				not_already_hired_except_as = political_advisor
+				has_country_flag = ALN_allow_landon_to_john_flag
+			}
+			cost = 150
+			traits = { london_convent_friar }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = ALN_Archetto_army_chief
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+				not_already_hired_except_as = army_chief
+				has_country_flag = ALN_allow_landon_to_john_flag
+			}
+			cost = 100
+			traits = { army_chief_morale_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
 }

@@ -14,9 +14,44 @@ scripted_gui = {
 		}
 
 		properties = {
-			
+			title_button = {
+				image = GFX_intel_broadside_button
+				frame = agency_detail_status
+			}
+		}
+		
+		effects = {
+			title_button_click = {
+				if = {
+					limit = { check_variable = { agency_detail_status = 2 } }
+					set_variable = { agency_detail_status = 1 }
+				}
+				else = { set_variable = { agency_detail_status = 2 } }
+			}
 		}
 	}
 	
+	intelligence_warfare_detail_ui = {
+		context_type = player_context
+		    
+		window_name = "agency_detail"
+		parent_window_token = top_bar
+
+		visible = {
+			OR = {
+				tag = ALN
+				tag = RSL
+			}
+			check_variable = { agency_detail_status = 2 }
+		}
+
+		properties = {
+			
+		}
+		
+		effects = {
+			
+		}
+	}
 }
 
