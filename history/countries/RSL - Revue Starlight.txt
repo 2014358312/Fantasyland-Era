@@ -15,7 +15,29 @@ set_technology = {
 	tech_engineers = 1
 }
 
+set_variable = { RSL_SW_intelligence_agency_defense_var = 2 }
+set_variable = { RSL_SW_operative_slot_var = 1 }
+set_variable = { RSL_SW_agency_upgrade_time_var = -0.20 }
+set_variable = { RSL_SW_intel_network_gain_factor_var = 0.15 }
+set_variable = { RSL_SW_diplomatic_pressure_mission_factor_var = 0.10 }
+set_variable = { RSL_SW_control_trade_mission_factor_var = 0.10 }
+set_variable = { RSL_SW_defense_impact_on_blueprint_stealing_var = -0.50 }
+set_variable = { RSL_SW_operative_death_on_capture_chance_var = -1.00 }
+#add_dynamic_modifier = { modifier = RSL_spy_war_dynamic_modifier }
+
+#DIPLOMACY
+create_intelligence_agency = {
+	name = "Republic Third Intelligence Service"
+	icon = GFX_intelligence_agency_logo_ita
+}
+
 recruit_character = RSL_Nishino_Elle
+
+add_ideas = {
+	RSL_armistice
+	RSL_tech_advance
+	RSL_spy_war_fake
+}
 
 
 set_politics = {

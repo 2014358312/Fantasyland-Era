@@ -15,7 +15,29 @@ set_technology = {
 	tech_engineers = 1
 }
 
+set_variable = { ALN_SW_intelligence_agency_defense_var = 2 }
+set_variable = { ALN_SW_operative_slot_var = 1 }
+set_variable = { ALN_SW_agency_upgrade_time_var = -0.20 }
+set_variable = { ALN_SW_civilian_intel_factor_var = -0.10 }
+set_variable = { ALN_SW_army_intel_factor_var = -0.10 }
+set_variable = { ALN_SW_navy_intel_factor_var = -0.10 }
+set_variable = { ALN_SW_airforce_intel_factor_var = -0.10 }
+set_variable = { ALN_SW_enemy_operative_capture_chance_factor_var = 0.15 }
+#add_dynamic_modifier = { modifier = ALN_spy_war_dynamic_modifier }
+
+#DIPLOMACY
+create_intelligence_agency = {
+	name = "Kingdom Special Police Operation Department"
+	icon = GFX_intelligence_agency_logo_BRA_neutrality
+}
+
 recruit_character = ALN_Vertin
+
+add_ideas = {
+	ALN_armistice
+	ALN_return_to_king
+	ALN_spy_war_fake
+}
 
 set_politics = {
 	ruling_party = democratic

@@ -1,0 +1,94 @@
+ideas = {
+	hidden_ideas = {
+		
+	}
+	
+	country = {
+		ALN_armistice = {
+			picture = generic_armistice
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			available = {}
+			
+			cancel = {}
+			
+			traits = {}
+			
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = -0.05
+				offensive_war_stability_factor = -0.10
+				defensive_war_stability_factor = 0.10
+			}
+			
+			targeted_modifier = {
+				tag = RSL
+				attack_bonus_against = -0.20
+			}
+			
+			equipment_bonus = {}
+			
+			research_bonus = {}
+			
+			rule = {}
+			
+			on_add = {}
+			
+			on_remove = {}
+		}
+		
+		ALN_spy_war_fake = {
+			name = spy_war
+			picture = generic_spy_intel
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { always = no }
+			
+			removal_cost = -1
+			
+			modifier = {
+				intelligence_agency_defense = 1
+				operative_slot = 1
+				agency_upgrade_time = -0.20
+				
+				civilian_intel_factor = -0.10
+				army_intel_factor = -0.10
+				navy_intel_factor = -0.10
+				airforce_intel_factor = -0.10
+				enemy_operative_capture_chance_factor = 0.15
+			}
+		}
+		
+		ALN_return_to_king = {
+			picture = HUN_hungarian_monarchy
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				neutrality_drift = 0.01
+				political_power_gain = -0.20
+			}
+		}
+	}
+}

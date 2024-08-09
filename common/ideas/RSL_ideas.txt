@@ -1,0 +1,93 @@
+ideas = {
+	hidden_ideas = {
+		
+	}
+	
+	country = {
+		RSL_armistice = {
+			picture = generic_armistice
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			available = {}
+			
+			cancel = {}
+			
+			traits = {}
+			
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = -0.05
+				offensive_war_stability_factor = -0.10
+				defensive_war_stability_factor = 0.10
+			}
+			
+			targeted_modifier = {
+				tag = ALN
+				attack_bonus_against = -0.20
+			}
+			
+			equipment_bonus = {}
+			
+			research_bonus = {}
+			
+			rule = {}
+			
+			on_add = {}
+			
+			on_remove = {}
+		}
+		
+		RSL_spy_war_fake = {
+			name = spy_war
+			picture = generic_spy_intel
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { always = no }
+			
+			removal_cost = -1
+			
+			modifier = {
+				intelligence_agency_defense = 2
+				operative_slot = 1
+				agency_upgrade_time = -0.20
+				
+				intel_network_gain_factor = 0.15
+				diplomatic_pressure_mission_factor = 0.10
+				control_trade_mission_factor = 0.10
+				defense_impact_on_blueprint_stealing = -0.50
+				operative_death_on_capture_chance = -1.00
+			}
+		}
+		
+		RSL_tech_advance = {
+			picture = generic_research_bonus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.10
+			}
+		}
+	}
+}
