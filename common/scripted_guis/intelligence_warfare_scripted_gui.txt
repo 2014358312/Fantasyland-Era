@@ -11,12 +11,19 @@ scripted_gui = {
 				tag = ALN
 				tag = RSL
 			}
+			has_war = no
 		}
 
 		properties = {
 			title_button = {
 				image = GFX_intel_broadside_button
 				frame = agency_detail_status
+			}
+		}
+		
+		triggers = {
+			title_button_click_enabled = {
+				NOT = { has_country_flag = ALN_cold_war_is_over }
 			}
 		}
 		
@@ -27,6 +34,19 @@ scripted_gui = {
 					set_variable = { agency_detail_status = 1 }
 				}
 				else = { set_variable = { agency_detail_status = 2 } }
+				for_each_loop = {
+					array = agency_department_tab_array
+					value = v
+					index = i
+
+					if = {
+						limit = {
+							check_variable = { v = 1 }	
+						}
+						set_variable = { agency_department_tab_array^i = 2 }
+					}
+				}
+				set_variable = { agency_department_tab_array^0 = 1 }
 			}
 		}
 	}
@@ -35,7 +55,6 @@ scripted_gui = {
 		context_type = player_context
 		    
 		window_name = "agency_detail"
-		parent_window_token = top_bar
 
 		visible = {
 			OR = {
@@ -43,14 +62,106 @@ scripted_gui = {
 				tag = RSL
 			}
 			check_variable = { agency_detail_status = 2 }
+			NOT = { has_country_flag = ALN_cold_war_is_over }
+		}
+		
+		
+		dynamic_lists = {
+			agency_tab_gridbox = {
+				array = agency_department_tab_array
+				value = agency_tab_v
+				index = agency_tab_i
+				entry_container = agency_tab_list_window
+			}
 		}
 
 		properties = {
-			
+			agency_tab_button = {
+				frame = agency_tab_v
+			}
 		}
 		
 		effects = {
-			
+			close_button_click = {
+				set_variable = { agency_detail_status = 1 }
+				for_each_loop = {
+					array = agency_department_tab_array
+					value = v
+					index = i
+
+					if = {
+						limit = {
+							check_variable = { v = 1 }	
+						}
+						set_variable = { agency_department_tab_array^i = 2 }
+					}
+				}
+				set_variable = { agency_department_tab_array^0 = 1 }
+			}
+			agency_tab_button_click = {
+				set_variable = { selected_agency_tab_id = agency_tab_i }
+				for_each_loop = {
+					array = agency_department_tab_array
+					value = v
+					index = i
+
+					if = {
+						limit = {
+							check_variable = { v = 1 }	
+						}
+						set_variable = { agency_department_tab_array^i = 2 }
+					}
+				}
+				set_variable = { agency_department_tab_array^selected_agency_tab_id = 1 }
+			}
+		}
+	}
+	
+	intelligence_warfare_detail_tab_0_ui = {
+		context_type = player_context
+		    
+		window_name = "agency_detail_tab_0"
+		parent_window_name = agency_detail
+
+		visible = {
+			OR = {
+				tag = ALN
+				tag = RSL
+			}
+			check_variable = { agency_detail_status = 2 }
+			check_variable = { agency_department_tab_array^0 = 1 }
+		}
+		
+		
+		dynamic_lists = {
+			agency_member_gridbox = {
+				array = agency_member_list_array
+				value = agency_member_v
+				index = agency_member_i
+				entry_container = agency_member_list_window
+			}
+		}
+
+		properties = {
+			agency_member_icon = {
+				image = "GFX_agency_operative_[?agency_member_i]"
+			}
+		}
+	}
+	
+	intelligence_warfare_detail_tab_1_ui = {
+		context_type = player_context
+		    
+		window_name = "agency_detail_tab_1"
+		parent_window_name = agency_detail
+
+		visible = {
+			OR = {
+				tag = ALN
+				tag = RSL
+			}
+			check_variable = { agency_detail_status = 2 }
+			check_variable = { agency_department_tab_array^1 = 1 }
 		}
 	}
 }

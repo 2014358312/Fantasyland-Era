@@ -1,0 +1,21 @@
+DEBUG_load_oob = {
+	load_oob = "EYP_1000_nsb"
+}
+
+DEBUG_create_faction = {
+	create_faction = DEBUG_faction
+	every_other_country = {
+		limit = { is_subject_of = ROOT }
+		ROOT = { add_to_faction = PREV }
+	}
+}
+
+DEBUG_add_to_faction = {
+	random_other_country = {
+		limit = {
+			is_in_faction = yes
+			is_faction_leader = yes
+		}
+		add_to_faction = ROOT
+	}
+}

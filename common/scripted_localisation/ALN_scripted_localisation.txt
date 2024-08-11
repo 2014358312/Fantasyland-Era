@@ -1,0 +1,100 @@
+defined_text = {
+    name = GetAlbionAgencyName
+	text = {
+		trigger = { tag = RSL }
+		localization_key = RSL_agency_name
+    }
+	text = {
+		trigger = { tag = ALN }
+		localization_key = ALN_agency_name
+    }
+	text = { localization_key = "AGENCY NAME" }
+}
+
+defined_text = {
+    name = GetAlbionAgencyDesc
+	text = {
+		trigger = { tag = RSL }
+		localization_key = RSL_agency_desc
+    }
+	text = {
+		trigger = { tag = ALN }
+		localization_key = ALN_agency_desc
+    }
+	text = { localization_key = "AGENCY DESC" }
+}
+
+defined_text = {
+    name = GetAlbionAgencyTabName
+	text = {
+		trigger = { check_variable = { agency_tab_i = 0 } }
+		localization_key = agency_member_list
+    }
+	text = {
+		trigger = { check_variable = { agency_tab_i = 1 } }
+		localization_key = agency_action_map
+    }
+	text = { localization_key = "TAB" }
+}
+
+defined_text = {
+    name = GetAlbionAgencyCommanderStatus
+	text = {
+		trigger = { tag = RSL }
+		localization_key = [GetAlbionAgencyRSLCommanderStatus]
+    }
+	text = {
+		trigger = { tag = ALN }
+		localization_key = [GetAlbionAgencyALNCommanderStatus]
+    }
+	text = { localization_key = "general_null" }
+}
+
+defined_text = {
+    name = GetAlbionAgencyRSLCommanderStatus
+	text = {
+		trigger = { has_idea = RSL_Erari_Himeyuri }
+		localization_key = agent_commander_Erari_enable
+    }
+	text = { localization_key = agent_commander_Erari_disable }
+}
+
+defined_text = {
+    name = GetAlbionAgencyALNCommanderStatus
+	#text = {
+	#	trigger = { tag = RSL }
+	#	localization_key = [GetAlbionAgencyRSLCommanderStatus]
+    #}
+	text = { localization_key = "general_null" }
+}
+
+defined_text = {
+    name = GetAlbionAgencyCommanderStatusDesc
+	text = {
+		trigger = { tag = RSL }
+		localization_key = [GetAlbionAgencyRSLCommanderStatusDesc]
+    }
+	text = {
+		trigger = { tag = ALN }
+		localization_key = [GetAlbionAgencyALNCommanderStatusDesc]
+    }
+	text = { localization_key = "general_null" }
+}
+
+defined_text = {
+    name = GetAlbionAgencyRSLCommanderStatusDesc
+	#text = {
+	#	trigger = { has_idea = RSL_Erari_Himeyuri }
+	#	localization_key = agent_commander_Erari_desc_tt
+    #}
+	text = { localization_key = agent_commander_Erari_desc }
+}
+
+defined_text = {
+    name = GetAlbionAgencyALNCommanderStatusDesc
+	#text = {
+	#	trigger = { tag = RSL }
+	#	localization_key = [GetAlbionAgencyRSLCommanderStatus]
+    #}
+	text = { localization_key = "general_null" }
+}

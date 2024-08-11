@@ -22,6 +22,29 @@ on_actions = {
 					}
 					add_core_of = RSL
 				}
+				set_variable = { current_agent_num = 7 }
+				set_variable = { load_agent_i = 1 }
+				while_loop_effect = {
+					limit = {
+						check_variable = {
+							var = load_agent_i
+							value = current_agent_num
+							compare = less_than_or_equals
+						}
+					}
+					add_to_array = { agency_member_list_array = load_agent_i }
+					add_to_variable = { load_agent_i = 1 }
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = ALN
+						tag = RSL
+					}
+				}
+				add_to_array = { agency_department_tab_array = 2 }
+				add_to_array = { agency_department_tab_array = 1 }
 			}
 		}
 	}

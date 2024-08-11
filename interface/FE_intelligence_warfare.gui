@@ -3,17 +3,26 @@ guiTypes = {
 	containerWindowType = {
 		name = "agency_title"
 		position = { x = 340 y = 150 }
-		size = { width = 100 height= 80 } 
+		size = { width = 100 height = 80 }
+		
+		iconType = {
+			name = "agent_commander"
+			spriteType = "GFX_idea_generic_spy_coup"
+			position = { x = 80 y = -92 }
+			pdx_tooltip = agent_commander_tt
+			pdx_tooltip_delayed = agent_commander_ttd
+			scale = 0.9
+		}
 
 		iconType = {
 			name = "title_bg"
-			spriteType ="GFX_intel_short_header_bg"
+			spriteType = "GFX_intel_short_header_bg"
 			position = { x = 10	y = 9 }
 		}
 
 		buttonType = {
 			name = "title_button"
-			spriteType ="GFX_intel_broadside_button"
+			spriteType = "GFX_intel_broadside_button"
 			position = { x = 10	y = 9 }
 		}
 		
@@ -31,11 +40,160 @@ guiTypes = {
 	containerWindowType = {
 		name = "agency_detail"
 		position = { x = 540 y = 120 }
-		size = { width = 500 height= 500 }
+		size = { width = 1024 height = 768 }
 		
 		background = {
 			name = "background"
-			quadTextureSprite ="GFX_tiled_bg"
+			quadTextureSprite = "GFX_tiled_bg"
+		}
+		
+		instantTextboxType = {
+			name = "agency_detail_name"
+			position = { x = 20 y = 20 }
+			font = "hoi_36header"
+			text = "[GetAlbionAgencyName]"
+			format = center
+			maxWidth = 985
+		}
+		
+		iconType = {
+			name = "agency_desc"
+			spriteType = "GFX_theatre_combat_log_icon"
+			position = { x = -94 y = 18 }
+			Orientation = "UPPER_RIGHT"
+			pdx_tooltip = agency_desc_tt
+			pdx_tooltip_delayed = agency_desc_ttd
+		}
+
+		buttonType = {
+			name = "close_button"
+			position = { x = -54 y = 22 }
+			clicksound = click_close
+			quadTextureSprite = "GFX_closebutton"
+			buttonFont = "Main_14_black"
+			Orientation = "UPPER_RIGHT"
+			shortcut = "ESCAPE"
+			pdx_tooltip = "CLOSE"
+		}
+		
+		containerWindowType = {
+			name = "agency_tab_window"
+			position = { x = 10 y = 90 }
+			size = { width = 1004 height = 667 }
+			
+			background = {
+				name = "background"
+				quadTextureSprite = "GFX_tiled_bg"
+			}
+		}
+		
+		containerWindowType = {
+			name = "agency_tab_list"
+			position = { x = 10 y = 59 }
+			size = { width = 1000 height = 60 }
+			
+			background = {
+				name = "Background"
+			}
+			
+			gridBoxType = {
+				name = "agency_tab_gridbox"
+				position = { x = 13 y = 1 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 145 height = 100 }
+				max_slots_vertical = 1
+				format = "UPPER_LEFT"
+			}
+		}
+	}
+		
+	containerWindowType = {
+		name = "agency_detail_tab_0"
+		position = { x = 12 y = 90 }
+		size = { width = 990 height = 800 }
+		
+		background = {
+			name = "background"
+			#quadTextureSprite = "GFX_tiled_bg"
+		}
+		
+		containerWindowType = {
+			name = "agency_member_list"
+			position = { x = 10 y = 10 }
+			size = { width = 985 height = 650 }
+			verticalScrollbar = "right_vertical_slider"
+			scroll_wheel_factor = 40
+			smooth_scrolling = yes
+			margin = { bottom = 10 }
+			
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_paper_bg2"
+			}
+			
+			gridBoxType = {
+				name = "agency_member_gridbox"
+				position = { x = 42 y = 20 }
+				size = { width = 300 height = 330 }
+				slotsize = { width = 300 height = 330 }
+				max_slots_horizontal = 3
+				format = "UPPER_LEFT"
+			}
+		}
+	}
+		
+	containerWindowType = {
+		name = "agency_detail_tab_1"
+		position = { x = 12 y = 90 }
+		size = { width = 800 height = 600 }
+		
+		background = {
+			name = "background"
+		}
+
+		buttonType = {
+			name = "test_button"
+			position = { x = 22 y = 22 }
+			quadTextureSprite = "GFX_flag_small"
+		}
+	}
+
+	containerWindowType = {
+		name = "agency_tab_list_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100 height = 80 }
+		
+		buttonType = {
+			name = "agency_tab_button"
+			spriteType = "GFX_agency_tab_medium_small"
+			position = { x = 0	y = 0 }
+		}
+		
+		instantTextboxType = {
+			name = "agency_tab_name"
+			position = { x = 15 y = 7 }
+			font = "hoi_24header"
+			text = "[GetAlbionAgencyTabName]"
+			format = center
+			maxWidth = 120
+			#alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "agency_member_list_window"
+		position = { x = 0 y = 0 }
+		size = { width = 280 height = 300 }
+		
+		background = {
+			name = "Background"
+			quadTextureSprite = "GFX_tile_outliner_bg"
+		}
+		
+		iconType = {
+			name = "agency_member_icon"
+			position = { x = 10	y = 10 }
+			scale = 0.6
 		}
 	}
 }
