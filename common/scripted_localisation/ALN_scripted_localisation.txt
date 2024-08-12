@@ -47,7 +47,7 @@ defined_text = {
 		trigger = { tag = ALN }
 		localization_key = [GetAlbionAgencyALNCommanderStatus]
     }
-	text = { localization_key = "general_null" }
+	text = { localization_key = general_null }
 }
 
 defined_text = {
@@ -65,7 +65,7 @@ defined_text = {
 	#	trigger = { tag = RSL }
 	#	localization_key = [GetAlbionAgencyRSLCommanderStatus]
     #}
-	text = { localization_key = "general_null" }
+	text = { localization_key = general_null }
 }
 
 defined_text = {
@@ -78,7 +78,7 @@ defined_text = {
 		trigger = { tag = ALN }
 		localization_key = [GetAlbionAgencyALNCommanderStatusDesc]
     }
-	text = { localization_key = "general_null" }
+	text = { localization_key = general_null }
 }
 
 defined_text = {
@@ -96,5 +96,80 @@ defined_text = {
 	#	trigger = { tag = RSL }
 	#	localization_key = [GetAlbionAgencyRSLCommanderStatus]
     #}
-	text = { localization_key = "general_null" }
+	text = { localization_key = general_null }
+}
+
+defined_text = {
+    name = GetSouthernDevelopmentStatus
+	text = {
+		trigger = {
+			295 = { NOT = { has_dynamic_modifier = { modifier = RSL_forgotten_south_state_dynamic_modifier } } }
+			296 = { NOT = { has_dynamic_modifier = { modifier = RSL_forgotten_south_state_dynamic_modifier } } }
+			306 = { NOT = { has_dynamic_modifier = { modifier = RSL_forgotten_south_state_dynamic_modifier } } }
+		}
+		localization_key = general_null
+    }
+	text = { localization_key = RSL_forgotten_south_mtt_none }
+}
+
+defined_text = {
+    name = GetSouthernDevelopmentStatus295
+	text = {
+		trigger = { 295 = { has_dynamic_modifier = { modifier = RSL_forgotten_south_state_dynamic_modifier } } }
+		localization_key = RSL_forgotten_south_mtt_295
+    }
+	text = { localization_key = general_null }
+}
+
+defined_text = {
+    name = GetSouthernDevelopmentStatus296
+	text = {
+		trigger = { 296 = { has_dynamic_modifier = { modifier = RSL_forgotten_south_state_dynamic_modifier } } }
+		localization_key = RSL_forgotten_south_mtt_296
+    }
+	text = { localization_key = general_null }
+}
+
+defined_text = {
+    name = GetSouthernDevelopmentStatus306
+	text = {
+		trigger = { 306 = { has_dynamic_modifier = { modifier = RSL_forgotten_south_state_dynamic_modifier } } }
+		localization_key = RSL_forgotten_south_mtt_306
+    }
+	text = { localization_key = general_null }
+}
+
+defined_text = {
+    name = GetSouthernDevelopmentStatusPause295296
+	text = {
+		trigger = {
+			OR = {
+				295 = { NOT = { has_dynamic_modifier = { modifier = RSL_forgotten_south_state_dynamic_modifier } } }
+				AND = {
+					296 = { NOT = { has_dynamic_modifier = { modifier = RSL_forgotten_south_state_dynamic_modifier } } }
+					306 = { NOT = { has_dynamic_modifier = { modifier = RSL_forgotten_south_state_dynamic_modifier } } }
+				}
+			}
+		}
+		localization_key = general_null
+    }
+	text = { localization_key = RSL_forgotten_south_mtt_pause }
+}
+
+defined_text = {
+    name = GetSouthernDevelopmentStatusPause296306
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					295 = { NOT = { has_dynamic_modifier = { modifier = RSL_forgotten_south_state_dynamic_modifier } } }
+					296 = { NOT = { has_dynamic_modifier = { modifier = RSL_forgotten_south_state_dynamic_modifier } } }
+				}
+				296 = { NOT = { has_dynamic_modifier = { modifier = RSL_forgotten_south_state_dynamic_modifier } } }
+				306 = { NOT = { has_dynamic_modifier = { modifier = RSL_forgotten_south_state_dynamic_modifier } } }
+			}
+		}
+		localization_key = general_null
+    }
+	text = { localization_key = RSL_forgotten_south_mtt_pause }
 }
