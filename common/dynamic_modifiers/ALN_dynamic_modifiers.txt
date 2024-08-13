@@ -55,3 +55,50 @@ RSL_forgotten_south_state_dynamic_modifier = {
 	local_building_slots_factor = -0.50
 	state_production_speed_buildings_factor = -0.50
 }
+
+RSL_independent_forest_state_dynamic_modifier = {
+	icon = GFX_modifiers_SOV_civilian_labor_in_defense
+	enable = { always = yes }
+	remove_trigger = {
+		ROOT = { 
+			OR = {
+				owner = { NOT = { tag = RSL } }
+				owner = {
+					tag = RSL
+					NOT = { has_country_flag = RSL_conflict_with_forest_flag }
+				}
+			}
+		} # ROOT refers to the state on which the modifier is added
+	}
+
+	local_building_slots_factor = -1.00
+	local_factories = -1.00
+	local_intel_to_enemies = -0.75
+	local_supply_impact_factor = 0.25
+	recruitable_population_factor = -0.90
+	state_production_speed_buildings_factor = -0.90
+	state_resources_factor = -0.90
+
+	enemy_operative_detection_chance_factor_over_occupied_tag = 0.80
+	enemy_intel_network_gain_factor_over_occupied_tag = -0.80
+	enemy_army_speed_factor = -0.50
+	enemy_attrition = 0.50
+}
+
+RSL_independent_forest_hidden_state_dynamic_modifier = {
+	enable = { always = yes }
+	remove_trigger = {
+		ROOT = {
+			NOT = {
+				has_dynamic_modifier = {
+					modifier = RSL_independent_forest_state_dynamic_modifier
+				}
+			} # ROOT refers to the state on which the modifier is added
+		}
+	}
+
+	enemy_operative_detection_chance_factor_over_occupied_tag = 0.80
+	enemy_intel_network_gain_factor_over_occupied_tag = -0.80
+	enemy_army_speed_factor = -0.50
+	enemy_attrition = 0.50
+}

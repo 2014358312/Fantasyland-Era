@@ -11,6 +11,19 @@ on_actions = {
 					}
 					add_core_of = ALN
 				}
+				set_variable = { current_agent_num = 107 }
+				set_variable = { load_agent_i = 101 }
+				while_loop_effect = {
+					limit = {
+						check_variable = {
+							var = load_agent_i
+							value = current_agent_num
+							compare = less_than_or_equals
+						}
+					}
+					add_to_array = { agency_member_list_array = load_agent_i }
+					add_to_variable = { load_agent_i = 1 }
+				}
 			}
 			RSL = {
 				remove_ideas = RSL_spy_war_fake
