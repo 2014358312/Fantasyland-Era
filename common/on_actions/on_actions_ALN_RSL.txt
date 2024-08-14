@@ -11,7 +11,7 @@ on_actions = {
 					}
 					add_core_of = ALN
 				}
-				set_variable = { current_agent_num = 107 }
+				set_variable = { current_agent_num = 102 }
 				set_variable = { load_agent_i = 101 }
 				while_loop_effect = {
 					limit = {
@@ -21,7 +21,7 @@ on_actions = {
 							compare = less_than_or_equals
 						}
 					}
-					add_to_array = { agency_member_list_array = load_agent_i }
+					add_to_array = { THIS.agency_member_list_array = load_agent_i }
 					add_to_variable = { load_agent_i = 1 }
 				}
 			}
@@ -45,7 +45,7 @@ on_actions = {
 							compare = less_than_or_equals
 						}
 					}
-					add_to_array = { agency_member_list_array = load_agent_i }
+					add_to_array = { THIS.agency_member_list_array = load_agent_i }
 					add_to_variable = { load_agent_i = 1 }
 				}
 			}
