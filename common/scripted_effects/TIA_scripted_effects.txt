@@ -1,0 +1,56 @@
+TIA_modify_blockade_to_revolutionary_albion = {
+	if = {
+		limit = { check_variable = { TIA_block_39_rate = 3 } }
+		set_variable = { TIA_blocked_39_rate_temp = 25 }
+	}
+	else_if = {
+		limit = { check_variable = { TIA_block_39_rate = 2 } }
+		set_variable = { TIA_blocked_39_rate_temp = 12.5 }
+	}
+	else = { set_variable = { TIA_blocked_39_rate_temp = 25 } }
+	
+	if = {
+		limit = { check_variable = { TIA_block_43_rate = 3 } }
+		set_variable = { TIA_blocked_43_rate_temp = 25 }
+	}
+	else_if = {
+		limit = { check_variable = { TIA_block_43_rate = 2 } }
+		set_variable = { TIA_blocked_43_rate_temp = 12.5 }
+	}
+	else = { set_variable = { TIA_blocked_43_rate_temp = 25 } }
+	
+	if = {
+		limit = { check_variable = { TIA_block_13_rate = 3 } }
+		set_variable = { TIA_blocked_13_rate_temp = 25 }
+	}
+	else_if = {
+		limit = { check_variable = { TIA_block_13_rate = 2 } }
+		set_variable = { TIA_blocked_13_rate_temp = 12.5 }
+	}
+	else = { set_variable = { TIA_blocked_13_rate_temp = 25 } }
+	
+	if = {
+		limit = { check_variable = { TIA_block_26_rate = 3 } }
+		set_variable = { TIA_blocked_26_rate_temp = 25 }
+	}
+	else_if = {
+		limit = { check_variable = { TIA_block_26_rate = 2 } }
+		set_variable = { TIA_blocked_26_rate_temp = 12.5 }
+	}
+	else = { set_variable = { TIA_blocked_26_rate_temp = 25 } }
+	
+	set_variable = { TIA_blocked_rate_var = 0 }
+	add_to_variable = { TIA_blocked_rate_var = TIA_blocked_39_rate_temp }
+	add_to_variable = { TIA_blocked_rate_var = TIA_blocked_43_rate_temp }
+	add_to_variable = { TIA_blocked_rate_var = TIA_blocked_13_rate_temp }
+	add_to_variable = { TIA_blocked_rate_var = TIA_blocked_26_rate_temp }
+	clear_variable = TIA_blocked_39_rate_temp
+	clear_variable = TIA_blocked_43_rate_temp
+	clear_variable = TIA_blocked_13_rate_temp
+	clear_variable = TIA_blocked_26_rate_temp
+	clamp_variable = {
+		var = TIA_blocked_rate_var
+		min = 0
+		max = 100
+	}
+}

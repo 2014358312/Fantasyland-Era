@@ -175,6 +175,35 @@ defined_text = {
 }
 
 defined_text = {
+    name = GetTaftTreatyStatus
+	text = {
+		trigger = {
+			check_variable = { ALN.ALN_taft_treaty_status_var > 4 }
+		}
+		localization_key = ALN_treaty_with_tiam_status_green
+    }
+	text = {
+		trigger = {
+			check_variable = { ALN.ALN_taft_treaty_status_var > 3 }
+		}
+		localization_key = ALN_treaty_with_tiam_status_cyan
+    }
+	text = {
+		trigger = {
+			check_variable = { ALN.ALN_taft_treaty_status_var > 2 }
+		}
+		localization_key = ALN_treaty_with_tiam_status_yellow
+    }
+	text = {
+		trigger = {
+			check_variable = { ALN.ALN_taft_treaty_status_var > 1 }
+		}
+		localization_key = ALN_treaty_with_tiam_status_orange
+    }
+	text = { localization_key = ALN_treaty_with_tiam_status_red }
+}
+
+defined_text = {
     name = GetALNTIAOccupiedColonyStatus279
 	text = {
 		trigger = {
@@ -274,4 +303,168 @@ defined_text = {
 		localization_key = ALN_colony_308_green
     }
 	text = { localization_key = ALN_colony_308_yellow }
+}
+
+defined_text = {
+    name = GetRSLBlockedRegion39
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = no
+				ships_in_area = { area = 39 size > 49 }
+			}
+		}
+		localization_key = RSL_blocked_region_39_green
+    }
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = no
+				ships_in_area = { area = 39 size > 24 }
+			}
+		}
+		localization_key = RSL_blocked_region_39_yellow
+    }
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = yes
+				check_variable = { TIA_block_39_rate = 3 }
+			}
+		}
+		localization_key = RSL_blocked_region_39_green
+    }
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = yes
+				check_variable = { TIA_block_39_rate = 2 }
+			}
+		}
+		localization_key = RSL_blocked_region_39_yellow
+    }
+	text = { localization_key = RSL_blocked_region_39_red }
+}
+
+defined_text = {
+    name = GetRSLBlockedRegion43
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = no
+				ships_in_area = { area = 43 size > 49 }
+			}
+		}
+		localization_key = RSL_blocked_region_43_green
+    }
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = no
+				ships_in_area = { area = 43 size > 24 }
+			}
+		}
+		localization_key = RSL_blocked_region_43_yellow
+    }
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = yes
+				check_variable = { TIA_block_43_rate = 3 }
+			}
+		}
+		localization_key = RSL_blocked_region_43_green
+    }
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = yes
+				check_variable = { TIA_block_43_rate = 2 }
+			}
+		}
+		localization_key = RSL_blocked_region_43_yellow
+    }
+	text = { localization_key = RSL_blocked_region_43_red }
+}
+
+defined_text = {
+    name = GetRSLBlockedRegion13
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = no
+				ships_in_area = { area = 13 size > 49 }
+			}
+		}
+		localization_key = RSL_blocked_region_13_green
+    }
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = no
+				ships_in_area = { area = 13 size > 24 }
+			}
+		}
+		localization_key = RSL_blocked_region_13_yellow
+    }
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = yes
+				check_variable = { TIA_block_13_rate = 3 }
+			}
+		}
+		localization_key = RSL_blocked_region_13_green
+    }
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = yes
+				check_variable = { TIA_block_13_rate = 2 }
+			}
+		}
+		localization_key = RSL_blocked_region_13_yellow
+    }
+	text = { localization_key = RSL_blocked_region_13_red }
+}
+
+defined_text = {
+    name = GetRSLBlockedRegion26
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = no
+				ships_in_area = { area = 26 size > 49 }
+			}
+		}
+		localization_key = RSL_blocked_region_26_green
+    }
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = no
+				ships_in_area = { area = 26 size > 24 }
+			}
+		}
+		localization_key = RSL_blocked_region_26_yellow
+    }
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = yes
+				check_variable = { TIA_block_26_rate = 3 }
+			}
+		}
+		localization_key = RSL_blocked_region_26_green
+    }
+	text = {
+		trigger = {
+			TIA = {
+				is_ai = yes
+				check_variable = { TIA_block_26_rate = 2 }
+			}
+		}
+		localization_key = RSL_blocked_region_26_yellow
+    }
+	text = { localization_key = RSL_blocked_region_26_red }
 }

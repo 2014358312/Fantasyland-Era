@@ -15,8 +15,15 @@
  ALN_london_wall: "$london_name$墙"
  ALN_school_of_primary_defense: "第一防线学校"
  ALN_treaty_with_tiam: "塔夫堡条约"
- ALN_treaty_with_tiam_status: "条约状态：\n[GetALNTIAOccupiedColonyStatus279]\n[GetALNTIAOccupiedColonyStatus281]\n[GetALNTIAOccupiedColonyStatus282]\n[GetALNTIAOccupiedColonyStatus283]\n[GetALNTIAOccupiedColonyStatus307]\n[GetALNTIAOccupiedColonyStatus308]"
+ ALN_treaty_with_tiam_status: "$ALN_treaty_with_tiam$状态：[GetTaftTreatyStatus]\n\n$ALN_treaty_with_tiam_island_status$\n\n$ALN_treaty_with_tiam_navy_status$"
+ ALN_treaty_with_tiam_island_status: "原阿尔比恩岛屿实际归属权：\n[GetALNTIAOccupiedColonyStatus279]\n[GetALNTIAOccupiedColonyStatus281]\n[GetALNTIAOccupiedColonyStatus282]\n[GetALNTIAOccupiedColonyStatus283]\n[GetALNTIAOccupiedColonyStatus307]\n[GetALNTIAOccupiedColonyStatus308]"
+ ALN_treaty_with_tiam_navy_status: "对共和国贸易封锁完整度：[?TIA.TIA_blocked_rate_var|Y.1%%]\n[GetRSLBlockedRegion39]\n[GetRSLBlockedRegion43]\n[GetRSLBlockedRegion13]\n[GetRSLBlockedRegion26]"
  ALN_treaty_with_tiam_desc: "$ALN_treaty_with_tiam_status$\n§W--------------§!\n塔夫堡条约"
+ ALN_treaty_with_tiam_status_green: "§G完全遵守§!"
+ ALN_treaty_with_tiam_status_cyan: "§C部分争议§!"
+ ALN_treaty_with_tiam_status_yellow: "§Y部分遵守§!"
+ ALN_treaty_with_tiam_status_orange: "§O阳奉阴违§!"
+ ALN_treaty_with_tiam_status_red: "§R名存实亡§!"
  ALN_colony_279_red: "§Y[279.GetName]§!控制者：§O[TIA.GetNameWithFlag]§!"
  ALN_colony_279_green: "§Y[279.GetName]§!控制者：§C[ALN.GetNameWithFlag]§!"
  ALN_colony_279_yellow: "§Y[279.GetName]§!控制者：§W条约外第三方§!"
@@ -38,6 +45,18 @@
  RSL_tiam_navy_blocked: "堤亚穆海军封锁"
  RSL_tiam_navy_blocked_desc: "$ALN_treaty_with_tiam_desc$"
  RSL_tiam_navy_blocked_mtt: "贸易法案锁定为§Y$closed_economy$§!"
+ RSL_blocked_region_39_green: "§Y$STRATEGICREGION_39$§!：§G完全封锁§!"
+ RSL_blocked_region_39_yellow: "§Y$STRATEGICREGION_39$§!：§W部分封锁§!"
+ RSL_blocked_region_39_red: "§Y$STRATEGICREGION_39$§!：§R尚未封锁§!"
+ RSL_blocked_region_43_green: "§Y$STRATEGICREGION_43$§!：§G完全封锁§!"
+ RSL_blocked_region_43_yellow: "§Y$STRATEGICREGION_43$§!：§W部分封锁§!"
+ RSL_blocked_region_43_red: "§Y$STRATEGICREGION_43$§!：§R尚未封锁§!"
+ RSL_blocked_region_13_green: "§Y$STRATEGICREGION_13$§!：§G完全封锁§!"
+ RSL_blocked_region_13_yellow: "§Y$STRATEGICREGION_13$§!：§W部分封锁§!"
+ RSL_blocked_region_13_red: "§Y$STRATEGICREGION_13$§!：§R尚未封锁§!"
+ RSL_blocked_region_26_green: "§Y$STRATEGICREGION_26$§!：§G完全封锁§!"
+ RSL_blocked_region_26_yellow: "§Y$STRATEGICREGION_26$§!：§W部分封锁§!"
+ RSL_blocked_region_26_red: "§Y$STRATEGICREGION_26$§!：§R尚未封锁§!"
  RSL_recover_from_war: "从内战中恢复过来"
  RSL_tech_advance: "技术优势"
  ALN_is_former_albion_member_ttt: "是前§Y阿尔比恩王国§!成员"
@@ -56,8 +75,8 @@
  RSL_independent_forest_desc: "§Y[299.GetName]§!的精灵们在长久的生活中已经将这里俨然打造成了国中之国，即使是王国的大革命似乎也丝毫没有影响到她们。我们如果想要重新掌控这一地区，与她们的接触是必不可少的。"
  #"在§Y[299.GetName]§!地区的历史中，曾生活在王国各地的树精灵在赞恩七世去世后的三凤争冠中遭到波及，在几经颠沛流离后逐渐聚集到了这里，将这里本就繁茂的森林变得更加广袤和活跃，逐渐将[299.GetName]打造成了遗世独立的国度。\n对于这块生长在身侧的钉子，王国对其发起了多次斡旋，或战争或谈判各代国王试图在长久的斗争中，王国对具有本土优势的精灵无能为力，双方最终签订了"
  RSL_independent_forest_state_dynamic_modifier: "$RSL_independent_forest$"
- RSL_independent_forest_state_dynamic_modifier_desc: "$RSL_independent_forest_state_dynamic_modifier_trait$\n§W--------------§!\n这里是介绍"
- RSL_independent_forest_state_dynamic_modifier_trait: "§W特工指挥官§!\n\n\n\n\n\n\n\n£GFX_agency_commander_Erari \n\n\n\n\n\n\n\n§Y艾琳娜·坎贝尔§!\n§Y始源精灵§!\n§W  - 敌方特工被发现几率系数: §G+80%§!\n  - 敌方情报网强度增长: §G-80%§!\n  - 敌人陆军师速度: §G-50.00%§!\n  - 敌方陆军师损耗: §G+50.00%§!§!"
+ RSL_independent_forest_state_dynamic_modifier_desc: "$RSL_independent_forest_state_dynamic_modifier_trait$\n§W--------------§!\n这里是介绍这里是介绍这里是介绍这里是介绍这里是介绍这里是介绍这里是介绍这里是介绍这里是介绍这里是介绍这里是介绍"
+ RSL_independent_forest_state_dynamic_modifier_trait: "§W精灵领袖§!\n\n\n\n\n\n\n\n£GFX_forest_leader_Elena \n\n\n\n\n\n\n\n§Y艾琳娜·坎贝尔§!\n§Y始源精灵§!\n§W  - 敌方特工被发现几率系数: §G+80%§!\n  - 敌方情报网强度增长: §G-80%§!\n  - 敌人陆军师速度: §G-50.00%§!\n  - 敌方陆军师损耗: §G+50.00%§!§!"
  RSL_independent_forest_hidden_state_dynamic_modifier: "艾琳娜"
  
  
@@ -77,7 +96,7 @@
  agency_member_list: "成员列表"
  agency_action_map: "行动地图"
  
- 
+ ALN_kingdom_politics_election_month: "大选月"
  
  
  

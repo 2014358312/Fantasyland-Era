@@ -1,0 +1,26 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_USA_CONGRESS}
+
+focus_tree = {
+    id = albion_focus
+    country = {
+        factor = 0
+        modifier = {
+            add = 10
+            OR = {
+				tag = ALN
+				tag = RSL
+			}
+        }
+    }
+    default = no
+	
+	shared_focus = ALN_kingdom_politics_election_month
+
+}
