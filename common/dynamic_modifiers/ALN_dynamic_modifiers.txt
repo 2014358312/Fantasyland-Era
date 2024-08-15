@@ -97,3 +97,35 @@ RSL_independent_forest_hidden_state_dynamic_modifier = {
 	enemy_army_speed_factor = -0.50
 	enemy_attrition = 0.50
 }
+
+RSL_spy_war_dynamic_modifier = {
+	icon = GFX_idea_generic_spy_intel
+	enable = { always = yes }
+
+	intelligence_agency_defense = RSL_SW_intelligence_agency_defense_var
+	operative_slot = RSL_SW_operative_slot_var
+	agency_upgrade_time = RSL_SW_agency_upgrade_time_var
+	
+	intel_network_gain_factor = RSL_SW_intel_network_gain_factor_var
+	diplomatic_pressure_mission_factor = RSL_SW_diplomatic_pressure_mission_factor_var
+	control_trade_mission_factor = RSL_SW_control_trade_mission_factor_var
+	defense_impact_on_blueprint_stealing = RSL_SW_defense_impact_on_blueprint_stealing_var
+	operative_death_on_capture_chance = RSL_SW_operative_death_on_capture_chance_var
+				
+	civilian_intel_factor = RSL_SW_civilian_intel_factor_var
+	army_intel_factor = RSL_SW_army_intel_factor_var
+	navy_intel_factor = RSL_SW_navy_intel_factor_var
+	airforce_intel_factor = RSL_SW_airforce_intel_factor_var
+	enemy_operative_capture_chance_factor = RSL_SW_enemy_operative_capture_chance_factor_var
+	
+}
+
+RSL_montevinio_fortress_group_state_dynamic_modifier = {
+	icon = GFX_modifiers_SOV_armored_battery
+	enable = { always = yes }
+
+	max_planning = 0.10
+	planning_speed_factor = -0.10
+	army_defence_factor = 0.20
+	custom_modifier_tooltip = RSL_montevinio_fortress_group_state_dynamic_modifier_mtt
+}

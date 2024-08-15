@@ -1,6 +1,50 @@
 ideas = {
 	hidden_ideas = {
 		
+		RSL_montevinio_fortress_group_idea = {
+			name = RSL_montevinio_fortress_group_state_dynamic_modifier
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = {
+				306 = {
+					is_controlled_by = ROOT
+					has_dynamic_modifier = {
+						modifier = RSL_montevinio_fortress_group_state_dynamic_modifier
+					}
+				}
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.10
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					if = {
+						limit = {
+							306 = {
+								has_dynamic_modifier = {
+									modifier = RSL_montevinio_fortress_group_state_dynamic_modifier
+								}
+							}
+						}
+						random_country = {
+							limit = { controls_state = 306 }
+							add_ideas = RSL_montevinio_fortress_group_idea
+						}
+					}
+				}
+			}
+		}
+		
 	}
 	
 	country = {
