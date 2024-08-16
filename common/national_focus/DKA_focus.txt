@@ -9,7 +9,7 @@
 		}
 	}
 	default = no
-	continuous_focus_position = { x = 1150 y = 1350 }
+	continuous_focus_position = { x = 150 y = 2000}
 
 #	focus = {
 #		id = CHI_
@@ -46,7 +46,7 @@
 #
 #		}
 #	}
-
+###支持旧王
 	focus = {
 		id = DKA_support_old_king
 		icon = GFX_goal_generic_major_alliance
@@ -78,33 +78,7 @@
 			add_stability = 0.05
 		}
 	}
-	focus = {
-		 id = DKA_Rearmament
-		 icon = GFX_focus_chi_cooperation_with_the_nationalists
-		 prerequisite = { focus = DKA_support_old_king }
-		 x = 0
-		 y = 1
-		 relative_position_id = DKA_support_old_king
-
-		 cost = 6
- 
-		 ai_will_do = {
-			factor = 1
-		}
-
-		 available = {
-		}
-
-		 bypass = {
-
-		}
-
-		 completion_reward = {
-			add_war_support = 0.1
-			army_experience =20
-			add_timed_idea = { idea =Rearmament days = 50 }
-		}
-	}
+	###处理反对党
     focus = {
 		id = DKA_Dealing_with_opposition_parties
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
@@ -132,6 +106,7 @@
 			add_war_support =0.1
 		}
 	}
+	##处理亚人
 	focus = {
 		id = DKA_Suppressing_Resistance_demi-human
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
@@ -161,6 +136,7 @@
 			add_stability = -0.15
 		}
 	}
+	###成立军事委员会
 	focus = {
 		id = DKA_Establish_a_Military_Committee
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
@@ -189,6 +165,7 @@
 			add_command_power =150
 		}
 	}
+##准备北伐
 	focus = {
 		id = DKA_Preparing_for_the_Northern_Expedition
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
@@ -232,11 +209,129 @@
 			}
 	}
    }
+###向BET宣战
    focus = {
 	id = DKA_Declare_war_on_the_Kingdom_of_Bertom
 	icon = GFX_focus_chi_cooperation_with_the_nationalists
 	prerequisite = { focus = DKA_Preparing_for_the_Northern_Expedition }
 	relative_position_id = DKA_Preparing_for_the_Northern_Expedition
+	x = 0
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+		}
+	available = {
+		}
+		bypass = {
+		}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	complete_tooltip = {
+		}
+	completion_reward = {
+		declare_war_on  = { target = BET type =annex_everything }
+		add_timed_idea = { idea =Attack_on_the_Kingdom_of_Bertom days = 120 }
+      }
+   }
+##向PAT宣战
+   focus = {
+	id = DKA_Declare_war_on_the_Kingdom_of_Paretia
+	icon = GFX_focus_chi_cooperation_with_the_nationalists
+	prerequisite = { focus = DKA_Preparing_for_the_Northern_Expedition }
+	prerequisite = {  focus =DKA_Declare_war_on_the_Kingdom_of_Bertom }
+	relative_position_id = DKA_Preparing_for_the_Northern_Expedition
+	x = 3
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+		}
+	available = {
+		}
+		bypass = {
+		}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	complete_tooltip = {
+		}
+	completion_reward = {
+		declare_war_on  = { target = PAT type =annex_everything }
+		add_timed_idea = { idea =Attack_on_the_Kingdom_of_paretia days = 120 }
+      }
+   }
+###向ALC宣战
+   focus = {
+	id = DKA_Declare_war_on_the_Kingdom_of_Aruka
+	icon = GFX_focus_chi_cooperation_with_the_nationalists
+	prerequisite = { focus = DKA_Preparing_for_the_Northern_Expedition }
+	prerequisite = {  focus =DKA_Declare_war_on_the_Kingdom_of_Paretia }
+	relative_position_id = DKA_Preparing_for_the_Northern_Expedition
+	x = -3
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+		}
+	available = {
+		}
+		bypass = {
+		}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	complete_tooltip = {
+		}
+	completion_reward = {
+		declare_war_on  = { target = ALC type =annex_everything }
+		add_timed_idea = { idea =Attack_on_the_Kingdom_of_Aruka days = 120 }
+      }
+   }
+###重整军备
+   focus = {
+	id = DKA_Rearmament
+	icon = GFX_focus_chi_cooperation_with_the_nationalists
+	prerequisite = { focus =DKA_support_old_king }
+	x = 0
+	y = 1
+	relative_position_id = DKA_support_old_king
+
+	cost = 6
+
+	ai_will_do = {
+	   factor = 1
+   }
+
+	available = {
+   }
+
+	bypass = {
+
+   }
+
+	completion_reward = {
+	   add_war_support = 0.1
+	   army_experience =20
+	   add_timed_idea = { idea =Rearmament days = 50 }
+   }
+   }
+##宣扬我们的胜利
+   focus = {
+	id = DKA_Promote_our_victory
+	icon = GFX_focus_chi_cooperation_with_the_nationalists
+	prerequisite = { focus =DKA_assimilation_Kingdom_of_Aruka focus =DKA_assimilation_Kingdom_of_Bertom focus=DKA_assimilation_Kingdom_of_Paretia }
+	relative_position_id = DKA_Declare_war_on_the_Kingdom_of_Bertom
 	x = 0
 	y = 2
 	cost = 10
@@ -256,8 +351,138 @@
 	complete_tooltip = {
 		}
 	completion_reward = {
-		declare_war_on  = { target = BET type =annex_everything }
-		add_ideas =Attack_on_the_Kingdom_of_Bertom
+		
+      }
+	}
+##准备处理MUL
+   focus = {
+	id = DKA_Preparing_to_deal_with_the_Murunait_Empire
+	icon = GFX_focus_chi_cooperation_with_the_nationalists
+	prerequisite = { focus =DKA_Promote_our_victory}
+	relative_position_id = DKA_Promote_our_victory
+	x = 0
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+		}
+	available = {
+		}
+		bypass = {
+		}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	complete_tooltip = {
+		}
+	completion_reward = {
+		1774 = {
+			add_building_construction = {
+				type = air_base
+				level = 4
+				instant_build = yes 
+				province = 351
+			}
+		}
+		5699= {
+			add_building_construction = {
+				type =supply_node
+				level = 1
+				instant_build = yes 
+				province = 352
+			}
+		}
+		army_experience =100
+		air_experience = 100
       }
    }
+   ###同化ALC
+   focus = {
+	id = DKA_assimilation_Kingdom_of_Aruka
+	icon = GFX_focus_chi_cooperation_with_the_nationalists
+	prerequisite = { focus =DKA_Declare_war_on_the_Kingdom_of_Aruka}
+	relative_position_id = DKA_Declare_war_on_the_Kingdom_of_Aruka
+	x = 0
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+		}
+	available = {
+		NOT = { country_exists = ALC }
+		}
+		bypass = {
+		}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	complete_tooltip = {
+		}
+	completion_reward = {
+		add_timed_idea = { idea =assimilation_Kingdom_of_Aruka days = 30}
+      }
+	}  
+	##同化BET
+	focus = {
+		id = DKA_assimilation_Kingdom_of_Bertom
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus =DKA_Declare_war_on_the_Kingdom_of_Bertom}
+		relative_position_id = DKA_Declare_war_on_the_Kingdom_of_Bertom
+		x = 0
+		y = 1
+		cost = 10
+	
+		ai_will_do = {
+			factor = 1
+			}
+		available = {
+			NOT = { country_exists = BET }
+			}
+			bypass = {
+			}
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
+		complete_tooltip = {
+			}
+		completion_reward = {
+			add_timed_idea = { idea =assimilation_Kingdom_of_Bertom days = 30 }
+		  }
+		}
+		focus = {
+			id = DKA_assimilation_Kingdom_of_Paretia
+			icon = GFX_focus_chi_cooperation_with_the_nationalists
+			prerequisite = { focus =DKA_Declare_war_on_the_Kingdom_of_Paretia}
+			relative_position_id = DKA_Declare_war_on_the_Kingdom_of_Paretia
+			x = 0
+			y = 1
+			cost = 10
+		
+			ai_will_do = {
+				factor = 1
+				}
+			available = {
+				}
+				bypass = {
+				}
+		
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+		
+			complete_tooltip = {
+				}
+			completion_reward = {
+				add_timed_idea = { idea =assimilation_Kingdom_of_Paretia days = 30 }
+			  }
+			}		
 }
+

@@ -21,6 +21,7 @@ ideas = {
 				stability_factor = -0.2
 				war_support_weekly = -0.002
 				conscription = -0.2
+				communism_drift =0.05
 			}
 		}
 		Attack_on_the_Kingdom_of_Bertom = {
@@ -37,5 +38,75 @@ ideas = {
 					trade_cost_for_target_factor = 0.5
 				}
 			}
+		Attack_on_the_Kingdom_of_Aruka = {
+			icon = generic_research_bonus
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+					}
+				targeted_modifier = {
+					tag = ALC
+					attack_bonus_against = +1
+					defense_bonus_against = +1
+					trade_cost_for_target_factor = 0.5
+					}
+				}
+		Attack_on_the_Kingdom_of_paretia = {
+				icon = generic_research_bonus
+				allowed = { always = no }
+				allowed_civil_war = { always = no }
+				removal_cost = -1
+				modifier = {
+							}
+					targeted_modifier = {
+						tag = PAT
+						attack_bonus_against = +1
+						defense_bonus_against = +1
+						trade_cost_for_target_factor = 0.5
+							}
+						}
+		assimilation_Kingdom_of_Aruka = {
+				icon = generic_research_bonus
+				allowed = { always = no }
+				allowed_civil_war = { always = no }
+				removal_cost = -1
+				on_remove = { 
+					add_core_of = ALC
+			}				
+				modifier = {
+					resistance_target =-0.5
+					stability_weekly =-0.005
+					compliance_growth =0.05										
+										}
+						}
+		 assimilation_Kingdom_of_Bertom= {
+			    icon = generic_research_bonus
+				allowed = { always = no }
+				allowed_civil_war = { always = no }
+				removal_cost = -1
+			    on_remove = { 
+					add_core_of = BET
+						}				
+				modifier = {
+					resistance_target =-0.5
+					stability_weekly =-0.005
+					compliance_growth =0.05										
+											}
+									}
+		assimilation_Kingdom_of_Paretia= {
+				icon = generic_research_bonus
+				allowed = { always = no }
+				allowed_civil_war = { always = no }
+			    removal_cost = -1
+				on_remove = { 
+				add_core_of = PAT
+												}				
+			    modifier = {
+							resistance_target =-0.5
+							stability_weekly =-0.005
+							compliance_growth =0.05										
+													}
+															}									
 		}
     }
