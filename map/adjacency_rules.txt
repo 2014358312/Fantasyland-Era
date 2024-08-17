@@ -109,3 +109,180 @@ adjacency_rule =
 	icon = 9602
 	offset = { -8 0 -15 }
 }
+
+#Four Tatariel Route
+adjacency_rule =
+{
+	name = "WEST_TATARIEL_ROUTE"
+
+	contested = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	enemy = {
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	friend = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	neutral = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	
+	required_provinces = { 2324 839 }
+
+	is_disabled = {
+		OR = {
+			has_global_flag = TATARIEL_ROUTE_BLOCKED
+			has_global_flag = WEST_TATARIEL_ROUTE_DISABLED
+			has_country_flag = WEST_TATARIEL_ROUTE_BLOCKED_FOR_COUNTRY
+		}
+		tooltip = disable_tatariel_route_tt
+	}
+	
+	icon = 3235
+	offset = { 0 0 0 }
+}
+
+adjacency_rule =
+{
+	name = "SOUTH_TATARIEL_ROUTE"
+
+	contested = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	enemy = {
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	friend = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	neutral = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	
+	required_provinces = { 3930 134 }
+
+	is_disabled = {
+		OR = {
+			has_global_flag = TATARIEL_ROUTE_BLOCKED
+			has_global_flag = SOUTH_TATARIEL_ROUTE_DISABLED
+			has_country_flag = SOUTH_TATARIEL_ROUTE_BLOCKED_FOR_COUNTRY
+		}
+		tooltip = disable_tatariel_route_tt
+	}
+	
+	icon = 975
+	offset = { 10 0 0 }
+}
+
+adjacency_rule =
+{
+	name = "EAST_TATARIEL_ROUTE"
+
+	contested = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	enemy = {
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	friend = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	neutral = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	
+	required_provinces = { 2230 391 }
+
+	is_disabled = {
+		OR = {
+			has_global_flag = TATARIEL_ROUTE_BLOCKED
+			has_global_flag = EAST_TATARIEL_ROUTE_DISABLED
+			has_country_flag = EAST_TATARIEL_ROUTE_BLOCKED_FOR_COUNTRY
+		}
+		tooltip = disable_tatariel_route_tt
+	}
+	
+	icon = 352
+	offset = { 0 0 0 }
+}
+
+adjacency_rule =
+{
+	name = "NORTH_TATARIEL_ROUTE"
+
+	contested = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	enemy = {
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	friend = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	neutral = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	
+	required_provinces = { 1815 1611 }
+
+	is_disabled = {
+		OR = {
+			has_global_flag = TATARIEL_ROUTE_BLOCKED
+			has_global_flag = NORTH_TATARIEL_ROUTE_DISABLED
+			has_country_flag = NORTH_TATARIEL_ROUTE_BLOCKED_FOR_COUNTRY
+		}
+		tooltip = disable_tatariel_route_tt
+	}
+	
+	icon = 214
+	offset = { -10 0 0 }
+}
