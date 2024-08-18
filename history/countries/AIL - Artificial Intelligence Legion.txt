@@ -9,6 +9,7 @@ set_war_support = 1.00
 starting_train_buffer = 2.0
 
 set_oob = AIL_1000_nsb
+set_naval_oob = AIL_1000_naval_mtg
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
@@ -37,7 +38,30 @@ set_technology = {
 }
 
 set_technology = {
+	basic_naval_mines = 1
+	submarine_mine_laying = 1
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	early_ship_hull_submarine = 1
+	early_ship_hull_cruiser = 1
+	basic_ship_hull_cruiser = 1
+	early_ship_hull_heavy = 1
+	basic_ship_hull_heavy = 1
+	early_ship_hull_carrier = 1
+	basic_ship_hull_carrier = 1
+	basic_battery = 1
+	basic_light_battery = 1
+	basic_medium_battery = 1
+	basic_heavy_battery = 1
+	basic_torpedo = 1
+	sonar = 1
+	smoke_generator = 1
+	basic_depth_charges = 1
+	basic_cruiser_armor_scheme = 1
+	basic_heavy_armor_scheme = 1
 	mtg_transport = 1
+	basic_fire_control_system = 1
+	basic_dp_light_battery = 1
 }
 
 set_technology = {
@@ -114,6 +138,72 @@ if = {
 		}
 		icon = "GFX_GER_basic_medium_tank_medium"
 	}
+	add_equipment_to_stockpile = {
+		type = light_tank_chassis_1
+		amount = 1000
+		variant_name = "Panzer I Ausf. A"
+	}
+}
+
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	create_equipment_variant = {
+		name = "Wolf Class"
+		type = ship_hull_submarine_1
+		name_group = GER_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+	}
+	create_equipment_variant = {
+		name = "Worden Class"
+		type = ship_hull_light_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_mine_layer_1
+		}
+	}
+	create_equipment_variant = {
+		name = "Milwaukee Class"
+		type = ship_hull_cruiser_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = ship_light_medium_battery_1
+			mid_2_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = empty
+		}
+	}
+	create_equipment_variant = {
+		name = "Graf Zeppelin Class"
+		type = ship_hull_carrier_1
+		parent_version = 0
+		modules = {
+			fixed_ship_deck_slot_1 = ship_deck_space
+			fixed_ship_deck_slot_2 = ship_armor_carrier_deck
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_engine_slot = carrier_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = empty
+		}
+	}
 }
 
 add_equipment_to_stockpile = {
@@ -129,11 +219,10 @@ add_equipment_to_stockpile = {
 	amount = 500
 }
 add_equipment_to_stockpile = {
-	type = light_tank_chassis_1
-	amount = 1000
-	variant_name = "Panzer I Ausf. A"
-}
-add_equipment_to_stockpile = {
 	type = motorized_equipment_1
 	amount = 250
+}
+add_offsite_building = {
+	type = dockyard
+	level = 1
 }
