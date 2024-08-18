@@ -17,6 +17,25 @@ division_template = {
 
 	}
 }
+division_template = {
+	name = "Panzer-Division"
+
+	division_names_group = GER_MEC_01
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+        motorized = { x = 2 y = 1 }
+	}
+	support = {
+        mot_recon = { x = 0 y = 0 }
+        engineer = { x = 0 y = 1 }
+        artillery = { x = 0 y = 2 }
+	}
+}
 
 #####################
 ######  UNITS  ######
@@ -25,7 +44,7 @@ division_template = {
 units = {
 	division={
 		name="魔王第一师"
-		location=4943
+		location=1098
 		division_template="Infantry Division"
 		start_experience_factor=0.3
 	}
@@ -55,8 +74,20 @@ units = {
 	}
 	division={
 		name="魔王第六师"
-		location=4943
+		location=1098
 		division_template="Infantry Division"
+		start_experience_factor=0.3
+	}
+	division={
+		name="魔王第一装甲师"
+		location=7012
+		division_template="Panzer-Division"
+		start_experience_factor=0.3
+	}
+	division={
+		name="魔王第二装甲师"
+		location=7012
+		division_template="Panzer-Division"
 		start_experience_factor=0.3
 	}
 }
