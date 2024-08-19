@@ -457,6 +457,7 @@
 			add_timed_idea = { idea =assimilation_Kingdom_of_Bertom days = 30 }
 		  }
 		}
+		##同化PAT
 		focus = {
 			id = DKA_assimilation_Kingdom_of_Paretia
 			icon = GFX_focus_chi_cooperation_with_the_nationalists
@@ -470,6 +471,7 @@
 				factor = 1
 				}
 			available = {
+				NOT = { country_exists = PAT}
 				}
 				bypass = {
 				}
@@ -483,6 +485,93 @@
 			completion_reward = {
 				add_timed_idea = { idea =assimilation_Kingdom_of_Paretia days = 30 }
 			  }
-			}		
+			}	
+			##重整军备	
+			focus = {
+				id = DKA_Rearmament
+				icon = GFX_focus_chi_cooperation_with_the_nationalists
+				prerequisite = { focus =DKA_Declare_allegiance_to_Ariel }
+				x = 0
+				y = 1
+				relative_position_id =DKA_Declare_allegiance_to_Ariel
+			
+				cost = 6
+			
+				ai_will_do = {
+				   factor = 1
+			   }
+			
+				available = {
+			   }
+			
+				bypass = {
+			
+			   }
+			
+				completion_reward = {
+				   add_war_support = 0.1
+				   army_experience =20
+				   add_timed_idea = { idea =Rearmament days = 50 }
+			   }
+			   }
+			##向爱丽儿效忠
+			   focus = {
+				id = DKA_Declare_allegiance_to_Ariel
+				icon = GFX_focus_chi_cooperation_with_the_nationalists
+				prerequisite = { focus =DKA_support_old_king }
+				relative_position_id = DKA_support_old_king
+				x = 0
+				y = 1
+				cost = 10
+			
+				ai_will_do = {
+					factor = 1
+					}
+				available = {
+					}
+					bypass = {
+					}
+			
+				cancel_if_invalid = yes
+				continue_if_invalid = no
+				available_if_capitulated = no
+			
+				complete_tooltip = {
+					}
+				completion_reward = {
+					add_popularity = { ideology = fascism   popularity = 0.2 } 
+					add_stability = 0.05
+					add_political_power = 150
+				  }
+				}
+		##建立政治局
+			focus = {
+					id = DKA_Establish_a_Political_Bureau
+					icon = GFX_focus_chi_cooperation_with_the_nationalists
+					prerequisite = { focus = DKA_Declare_allegiance_to_Ariel }
+					relative_position_id =  DKA_Declare_allegiance_to_Ariel
+					x = -2
+					y = 1
+					cost = 10
+				
+					ai_will_do = {
+						factor = 1
+						}
+					available = {
+						}
+						bypass = {
+						}
+				
+					cancel_if_invalid = yes
+					continue_if_invalid = no
+					available_if_capitulated = no
+				
+					complete_tooltip = {
+						}
+					completion_reward = {
+						create_intelligence_agency = yes
+						add_ideas = ITA_servizio_informazione_militare_ns
+					  }
+					}
 		}
 
