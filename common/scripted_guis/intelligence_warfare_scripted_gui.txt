@@ -149,10 +149,197 @@ scripted_gui = {
 		}
 	}
 	
-	intelligence_warfare_detail_tab_1_ui = {
+	intelligence_warfare_detail_tab_1_1_ui = {
 		context_type = player_context
 		    
-		window_name = "agency_detail_tab_1"
+		window_name = "agency_detail_tab_1_1"
+		parent_window_name = agency_detail
+
+		visible = {
+			OR = {
+				tag = ALN
+				tag = RSL
+			}
+			check_variable = { agency_detail_status = 2 }
+			check_variable = { agency_department_tab_array^1 = 1 }
+		}
+		
+		properties = {
+			state_284_icon = { frame = agency_operation_map_active_array^0 }
+			state_285_icon = { frame = agency_operation_map_active_array^1 }
+			state_286_icon = { frame = agency_operation_map_active_array^2 }
+			state_287_icon = { frame = agency_operation_map_active_array^3 }
+			state_288_icon = { frame = agency_operation_map_active_array^4 }
+			state_289_icon = { frame = agency_operation_map_active_array^5 }
+			state_290_icon = { frame = agency_operation_map_active_array^6 }
+			state_291_icon = { frame = agency_operation_map_active_array^7 }
+			state_292_icon = { frame = agency_operation_map_active_array^8 }
+			state_293_icon = { frame = agency_operation_map_active_array^9 }
+			state_294_icon = { frame = agency_operation_map_active_array^10 }
+			state_295_icon = { frame = agency_operation_map_active_array^11 }
+			state_296_icon = { frame = agency_operation_map_active_array^12 }
+			state_297_icon = { frame = agency_operation_map_active_array^13 }
+			state_298_icon = { frame = agency_operation_map_active_array^14 }
+			state_299_icon = { frame = agency_operation_map_active_array^15 }
+			state_300_icon = { frame = agency_operation_map_active_array^16 }
+			state_301_icon = { frame = agency_operation_map_active_array^17 }
+			state_302_icon = { frame = agency_operation_map_active_array^18 }
+			state_303_icon = { frame = agency_operation_map_active_array^19 }
+			state_304_icon = { frame = agency_operation_map_active_array^20 }
+			state_305_icon = { frame = agency_operation_map_active_array^21 }
+			state_306_icon = { frame = agency_operation_map_active_array^22 }
+			state_309_icon = { frame = agency_operation_map_active_array^23 }
+			state_625_icon = { frame = agency_operation_map_active_array^24 }
+			state_627_icon = { frame = agency_operation_map_active_array^25 }
+			state_628_icon = { frame = agency_operation_map_active_array^26 }
+		}
+		
+		triggers = {
+			state_284_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_285_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_286_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_287_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_288_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_289_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_290_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_291_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_292_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_293_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_294_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_295_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_296_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_297_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_298_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_299_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_300_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_301_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_302_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_303_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_304_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_305_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_306_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_309_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_625_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_627_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			state_628_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+		}
+		
+		effects = {
+			state_284_icon_click = {
+				set_temp_variable = { temp_selected_state = 284 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_285_icon_click = {
+				set_temp_variable = { temp_selected_state = 285 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_286_icon_click = {
+				set_temp_variable = { temp_selected_state = 286 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_287_icon_click = {
+				set_temp_variable = { temp_selected_state = 287 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_288_icon_click = {
+				set_temp_variable = { temp_selected_state = 288 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_289_icon_click = {
+				set_temp_variable = { temp_selected_state = 289 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_290_icon_click = {
+				set_temp_variable = { temp_selected_state = 290 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_291_icon_click = {
+				set_temp_variable = { temp_selected_state = 291 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_292_icon_click = {
+				set_temp_variable = { temp_selected_state = 292 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_293_icon_click = {
+				set_temp_variable = { temp_selected_state = 293 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_294_icon_click = {
+				set_temp_variable = { temp_selected_state = 294 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_295_icon_click = {
+				set_temp_variable = { temp_selected_state = 295 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_296_icon_click = {
+				set_temp_variable = { temp_selected_state = 296 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_297_icon_click = {
+				set_temp_variable = { temp_selected_state = 297 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_298_icon_click = {
+				set_temp_variable = { temp_selected_state = 298 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_299_icon_click = {
+				set_temp_variable = { temp_selected_state = 299 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_300_icon_click = {
+				set_temp_variable = { temp_selected_state = 300 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_301_icon_click = {
+				set_temp_variable = { temp_selected_state = 301 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_302_icon_click = {
+				set_temp_variable = { temp_selected_state = 302 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_303_icon_click = {
+				set_temp_variable = { temp_selected_state = 303 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_304_icon_click = {
+				set_temp_variable = { temp_selected_state = 304 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_305_icon_click = {
+				set_temp_variable = { temp_selected_state = 305 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_306_icon_click = {
+				set_temp_variable = { temp_selected_state = 306 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_309_icon_click = {
+				set_temp_variable = { temp_selected_state = 309 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_625_icon_click = {
+				set_temp_variable = { temp_selected_state = 625 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_627_icon_click = {
+				set_temp_variable = { temp_selected_state = 627 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_628_icon_click = {
+				set_temp_variable = { temp_selected_state = 628 }
+				ALN_iw_change_state_scope = yes
+			}
+		}
+	}
+	
+	intelligence_warfare_detail_tab_1_2_ui = {
+		context_type = player_context
+		    
+		window_name = "agency_detail_tab_1_2"
 		parent_window_name = agency_detail
 
 		visible = {

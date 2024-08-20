@@ -1,0 +1,138 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			ALN = {
+				remove_ideas = ALN_spy_war_fake
+				add_dynamic_modifier = { modifier = ALN_spy_war_dynamic_modifier }
+				every_state = {
+					limit = {
+						is_core_of = RSL
+						NOT = { is_core_of = ALN }
+					}
+					add_core_of = ALN
+				}
+				set_variable = { current_agent_num = 102 }
+				set_variable = { load_agent_i = 101 }
+				while_loop_effect = {
+					limit = {
+						check_variable = {
+							var = load_agent_i
+							value = current_agent_num
+							compare = less_than_or_equals
+						}
+					}
+					add_to_array = { THIS.agency_member_list_array = load_agent_i }
+					add_to_variable = { load_agent_i = 1 }
+				}
+				###### Fuck you Paradox why can't i get state id by using variable.
+				add_to_array = { THIS.agency_operation_map_array = 284 }
+				add_to_array = { THIS.agency_operation_map_array = 285 }
+				add_to_array = { THIS.agency_operation_map_array = 286 }
+				add_to_array = { THIS.agency_operation_map_array = 287 }
+				add_to_array = { THIS.agency_operation_map_array = 288 }
+				add_to_array = { THIS.agency_operation_map_array = 289 }
+				add_to_array = { THIS.agency_operation_map_array = 290 }
+				add_to_array = { THIS.agency_operation_map_array = 291 }
+				add_to_array = { THIS.agency_operation_map_array = 292 }
+				add_to_array = { THIS.agency_operation_map_array = 293 }
+				add_to_array = { THIS.agency_operation_map_array = 294 }
+				add_to_array = { THIS.agency_operation_map_array = 295 }
+				add_to_array = { THIS.agency_operation_map_array = 296 }
+				add_to_array = { THIS.agency_operation_map_array = 297 }
+				add_to_array = { THIS.agency_operation_map_array = 298 }
+				add_to_array = { THIS.agency_operation_map_array = 299 }
+				add_to_array = { THIS.agency_operation_map_array = 300 }
+				add_to_array = { THIS.agency_operation_map_array = 301 }
+				add_to_array = { THIS.agency_operation_map_array = 302 }
+				add_to_array = { THIS.agency_operation_map_array = 303 }
+				add_to_array = { THIS.agency_operation_map_array = 304 }
+				add_to_array = { THIS.agency_operation_map_array = 305 }
+				add_to_array = { THIS.agency_operation_map_array = 306 }
+				add_to_array = { THIS.agency_operation_map_array = 309 }
+				add_to_array = { THIS.agency_operation_map_array = 625 }
+				#626 is same as 625.
+				add_to_array = { THIS.agency_operation_map_array = 627 }
+				add_to_array = { THIS.agency_operation_map_array = 628 }
+				for_each_loop = {
+					array = THIS.agency_operation_map_array
+					value = mapv
+					index = mapi
+
+					add_to_array = { THIS.agency_operation_map_active_array = 1 }
+				}
+				######
+			}
+			RSL = {
+				remove_ideas = RSL_spy_war_fake
+				add_dynamic_modifier = { modifier = RSL_spy_war_dynamic_modifier }
+				every_state = {
+					limit = {
+						is_core_of = ALN
+						NOT = { is_core_of = RSL }
+					}
+					add_core_of = RSL
+				}
+				set_variable = { current_agent_num = 7 }
+				set_variable = { load_agent_i = 1 }
+				while_loop_effect = {
+					limit = {
+						check_variable = {
+							var = load_agent_i
+							value = current_agent_num
+							compare = less_than_or_equals
+						}
+					}
+					add_to_array = { THIS.agency_member_list_array = load_agent_i }
+					add_to_variable = { load_agent_i = 1 }
+				}
+				######
+				add_to_array = { THIS.agency_operation_map_array = 284 }
+				add_to_array = { THIS.agency_operation_map_array = 285 }
+				add_to_array = { THIS.agency_operation_map_array = 286 }
+				add_to_array = { THIS.agency_operation_map_array = 287 }
+				add_to_array = { THIS.agency_operation_map_array = 288 }
+				add_to_array = { THIS.agency_operation_map_array = 289 }
+				add_to_array = { THIS.agency_operation_map_array = 290 }
+				add_to_array = { THIS.agency_operation_map_array = 291 }
+				add_to_array = { THIS.agency_operation_map_array = 292 }
+				add_to_array = { THIS.agency_operation_map_array = 293 }
+				add_to_array = { THIS.agency_operation_map_array = 294 }
+				add_to_array = { THIS.agency_operation_map_array = 295 }
+				add_to_array = { THIS.agency_operation_map_array = 296 }
+				add_to_array = { THIS.agency_operation_map_array = 297 }
+				add_to_array = { THIS.agency_operation_map_array = 298 }
+				add_to_array = { THIS.agency_operation_map_array = 299 }
+				add_to_array = { THIS.agency_operation_map_array = 300 }
+				add_to_array = { THIS.agency_operation_map_array = 301 }
+				add_to_array = { THIS.agency_operation_map_array = 302 }
+				add_to_array = { THIS.agency_operation_map_array = 303 }
+				add_to_array = { THIS.agency_operation_map_array = 304 }
+				add_to_array = { THIS.agency_operation_map_array = 305 }
+				add_to_array = { THIS.agency_operation_map_array = 306 }
+				add_to_array = { THIS.agency_operation_map_array = 309 }
+				add_to_array = { THIS.agency_operation_map_array = 625 }
+				#626 is same as 625.
+				add_to_array = { THIS.agency_operation_map_array = 627 }
+				add_to_array = { THIS.agency_operation_map_array = 628 }
+				for_each_loop = {
+					array = THIS.agency_operation_map_array
+					value = mapv
+					index = mapi
+
+					add_to_array = { THIS.agency_operation_map_active_array = 1 }
+				}
+				######
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = ALN
+						tag = RSL
+					}
+				}
+				add_to_array = { agency_department_tab_array = 2 }
+				add_to_array = { agency_department_tab_array = 1 }
+			}
+		}
+	}
+}

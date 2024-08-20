@@ -1,0 +1,46 @@
+ALN_iw_change_state_scope = {
+	if = {
+		limit = { NOT = { check_variable = { selected_state = temp_selected_state } } }
+		set_variable = { selected_state = temp_selected_state }
+		for_each_loop = {
+			array = THIS.agency_operation_map_array
+			value = mapv
+			index = mapi
+
+			if = {
+				limit = {
+					check_variable = { mapv = selected_state }
+				}
+				set_variable = { active_mapid = mapi }
+			}
+		}
+		for_each_loop = {
+			array = THIS.agency_operation_map_active_array
+			value = mapv
+			index = mapi
+
+			if = {
+				limit = {
+					check_variable = { mapv = 2 }
+				}
+				set_variable = { agency_operation_map_active_array^mapi = 1 }
+			}
+		}
+		set_variable = { agency_operation_map_active_array^active_mapid = 2 }
+	}
+	else = {
+		set_variable = { selected_state = 0 }
+		for_each_loop = {
+			array = THIS.agency_operation_map_active_array
+			value = mapv
+			index = mapi
+
+			if = {
+				limit = {
+					check_variable = { mapv = 2 }
+				}
+				set_variable = { agency_operation_map_active_array^mapi = 1 }
+			}
+		}
+	}
+}
