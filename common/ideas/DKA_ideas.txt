@@ -139,6 +139,35 @@ ideas = {
 				modifier = {
 					operative_slot = 3
 											}
-													}															
+														}		
+		Attack_on_the_Kingdom_of_Tolistine= {
+								    icon = generic_research_bonus
+						         	allowed = { always = no }
+									allowed_civil_war = { always = no }
+									removal_cost = -1
+									modifier = {
+																		}
+									targeted_modifier = {
+									tag = TOR
+									attack_bonus_against = +1
+									defense_bonus_against = +1
+									trade_cost_for_target_factor = 0.5
+																		}
+																	}	
+		assimilation_Kingdom_of_Tolistine= {
+		icon = generic_research_bonus
+		allowed = { always = no }
+		allowed_civil_war = { always = no }
+		removal_cost = -1
+		on_remove = { 
+		add_core_of = TOP
+																}				
+		modifier = {
+								resistance_target =-0.5
+								stability_weekly =-0.005
+								compliance_growth =0.05										
+																											}
+																													}	
+																																							
 		}
     }

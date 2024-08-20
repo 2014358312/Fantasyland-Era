@@ -173,7 +173,7 @@
 		prerequisite = { focus =DKA_Establish_a_Military_Committee }
 		prerequisite = { focus =DKA_Suppressing_Resistance_demi-human }
 		relative_position_id = DKA_Rearmament
-	    x = 0
+	    x = -2.5
 		y = 2
 	    cost = 10
 
@@ -245,7 +245,7 @@
 	prerequisite = { focus = DKA_Preparing_for_the_Northern_Expedition }
 	prerequisite = {  focus =DKA_Declare_war_on_the_Kingdom_of_Bertom }
 	relative_position_id = DKA_Preparing_for_the_Northern_Expedition
-	x = 3
+	x = 2
 	y = 1
 	cost = 10
 
@@ -275,7 +275,7 @@
 	prerequisite = { focus = DKA_Preparing_for_the_Northern_Expedition }
 	prerequisite = {  focus =DKA_Declare_war_on_the_Kingdom_of_Paretia }
 	relative_position_id = DKA_Preparing_for_the_Northern_Expedition
-	x = -3
+	x = -2
 	y = 1
 	cost = 10
 
@@ -298,41 +298,13 @@
 		add_timed_idea = { idea =Attack_on_the_Kingdom_of_Aruka days = 120 }
       }
    }
-###重整军备
-   focus = {
-	id = DKA_Rearmament
-	icon = GFX_focus_chi_cooperation_with_the_nationalists
-	prerequisite = { focus =DKA_support_old_king }
-	x = 0
-	y = 1
-	relative_position_id = DKA_support_old_king
-
-	cost = 6
-
-	ai_will_do = {
-	   factor = 1
-   }
-
-	available = {
-   }
-
-	bypass = {
-
-   }
-
-	completion_reward = {
-	   add_war_support = 0.1
-	   army_experience =20
-	   add_timed_idea = { idea =Rearmament days = 50 }
-   }
-   }
 ##宣扬我们的胜利
    focus = {
 	id = DKA_Promote_our_victory
 	icon = GFX_focus_chi_cooperation_with_the_nationalists
-	prerequisite = { focus =DKA_assimilation_Kingdom_of_Aruka focus =DKA_assimilation_Kingdom_of_Bertom focus=DKA_assimilation_Kingdom_of_Paretia }
+	prerequisite = { focus =DKA_assimilation_Kingdom_of_Aruka focus =DKA_assimilation_Kingdom_of_Bertom focus=DKA_assimilation_Kingdom_of_Paretia  focus=DKA_assimilation_Kingdom_of_Tolistine}
 	relative_position_id = DKA_Declare_war_on_the_Kingdom_of_Bertom
-	x = 0
+	x = 2
 	y = 2
 	cost = 10
 
@@ -360,7 +332,7 @@
 	icon = GFX_focus_chi_cooperation_with_the_nationalists
 	prerequisite = { focus =DKA_Promote_our_victory}
 	relative_position_id = DKA_Promote_our_victory
-	x = 0
+	x = -2
 	y = 1
 	cost = 10
 
@@ -489,7 +461,6 @@
 			##重整军备	
 			focus = {
 				id = DKA_Rearmament
-				icon = GFX_focus_chi_cooperation_with_the_nationalists
 				prerequisite = { focus =DKA_Declare_allegiance_to_Ariel }
 				x = 0
 				y = 1
@@ -573,5 +544,138 @@
 						add_ideas = ITA_servizio_informazione_militare_ns
 					  }
 					}
-		}
+		##准备南征
+			focus = {
+						id = DKA_Preparing_for_the_Southern_Expedition
+						icon = GFX_focus_chi_cooperation_with_the_nationalists
+						prerequisite = { focus =DKA_Dealing_with_opposition_parties }
+						prerequisite = { focus =DKA_Establish_a_Military_Committee }
+						prerequisite = { focus =DKA_Suppressing_Resistance_demi-human }
+						relative_position_id = DKA_Rearmament
+						x = 2
+						y = 2
+						cost = 10
+				
+						ai_will_do = {
+							factor = 1
+							}
+						available = {
+							has_war =no
+							}
+							bypass = {
+							}
+					
+						cancel_if_invalid = yes
+						continue_if_invalid = no
+						available_if_capitulated = no
+					
+						complete_tooltip = {
+							}
+						completion_reward = {
+							add_war_support = 0.15
+							army_experience =150
+							navy_experience =150
+							air_experience =150
+							add_equipment_to_stockpile = {
+								type = infantry_equipment
+								amount = 1000
+							}
+							add_doctrine_cost_reduction = {
+								name = land_doc_bonus
+								cost_reduction = 0.5
+								uses = 2
+								category = land_doctrine
+							}
+					}
+				   }
+		##向托利斯汀宣战	
+			focus = {
+					id = DKA_Declare_war_on_the_Kingdom_of_Tolistine
+					icon = GFX_focus_chi_cooperation_with_the_nationalists
+					prerequisite = { focus = DKA_Preparing_for_the_Southern_Expedition }
+					relative_position_id = DKA_Preparing_for_the_Southern_Expedition
+					x = 0
+					y = 1
+					cost = 10
+				
+					ai_will_do = {
+						factor = 1
+						}
+					available = {
+						}
+						bypass = {
+						}
+				
+					cancel_if_invalid = yes
+					continue_if_invalid = no
+					available_if_capitulated = no
+				
+					complete_tooltip = {
+						}
+					completion_reward = {
+						declare_war_on  = { target = TOR type =annex_everything }
+						add_timed_idea = { idea =Attack_on_the_Kingdom_of_Tolistine days = 120 }
+					  }
+				   }
+			###同化	
+			focus = {
+					id = DKA_assimilation_Kingdom_of_Tolistine
+					icon = GFX_focus_chi_cooperation_with_the_nationalists
+					prerequisite = { focus =DKA_Declare_war_on_the_Kingdom_of_Tolistine}
+					relative_position_id = DKA_Declare_war_on_the_Kingdom_of_Tolistine
+					x = 0
+					y = 1
+					cost = 10
+				
+					ai_will_do = {
+						factor = 1
+						}
+					available = {
+						NOT = { country_exists = TOR}
+						}
+						bypass = {
+						}
+				
+					cancel_if_invalid = yes
+					continue_if_invalid = no
+					available_if_capitulated = no
+				
+					complete_tooltip = {
+						}
+					completion_reward = {
+						add_timed_idea = { idea =assimilation_Kingdom_of_Tolistine days = 30 }
+					  }
+					}
+		##与穆露奈伊特王国建交
+		focus = {
+		id = DKA_Establish_diplomatic_relations_with_the_Kingdom_of_Mulunait
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus =DKA_Promote_our_victory}
+		mutually_exclusive = { focus =DKA_Preparing_to_deal_with_the_Murunait_Empire }
+		relative_position_id = DKA_Promote_our_victory
+		x = 2
+		y = 1
+		cost = 10
+					
+			ai_will_do = {
+				factor = 1
+					}
+			available = {
+							}
+			bypass = {
+							}
+					
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+					
+			complete_tooltip = {
+							}
+			completion_reward = {
+	     MUL={
+			add_opinion_modifier = { target = DKA modifier=mul_dka_diplomatic_focus }
+	    }
+		 }
+						  }
+					   }				   	
 
