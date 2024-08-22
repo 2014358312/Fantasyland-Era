@@ -195,6 +195,9 @@ scripted_gui = {
 		}
 		
 		triggers = {
+			###########
+			### OLD ###
+			###########
 			state_284_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
 			state_285_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
 			state_286_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
@@ -222,9 +225,21 @@ scripted_gui = {
 			state_625_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
 			state_627_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
 			state_628_icon_visible = { ALN_iw_map_legacy_of_modder = yes }
+			###########
+			###########
+			###########
+			state_284_outline_icon_visible = {
+				check_variable = { agency_operation_map_active_array^0 = 2 }
+			}
+			state_301_outline_icon_visible = {
+				check_variable = { agency_operation_map_active_array^17 = 2 }
+			}
 		}
 		
 		effects = {
+			###########
+			### OLD ###
+			###########
 			state_284_icon_click = {
 				set_temp_variable = { temp_selected_state = 284 }
 				ALN_iw_change_state_scope = yes
@@ -331,6 +346,17 @@ scripted_gui = {
 			}
 			state_628_icon_click = {
 				set_temp_variable = { temp_selected_state = 628 }
+				ALN_iw_change_state_scope = yes
+			}
+			###########
+			###########
+			###########
+			state_284_button_click = {
+				set_temp_variable = { temp_selected_state = 284 }
+				ALN_iw_change_state_scope = yes
+			}
+			state_301_button_click = {
+				set_temp_variable = { temp_selected_state = 301 }
 				ALN_iw_change_state_scope = yes
 			}
 		}
