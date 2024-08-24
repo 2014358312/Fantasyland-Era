@@ -850,6 +850,102 @@
 		}
 						}
 					}
-	
+	###坦克世界启动				
+	focus = {
+		id = DKA_World_of_Tanks_start-up
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = DKA_Follow_Tank}
+		mutually_exclusive = { focus =DKA_War_Thunder_start-up }
+		x = -1
+		y = 1
+		relative_position_id =DKA_Follow_Tank
+																																							
+		cost = 10
+																																							
+		ai_will_do = {
+		factor = 2
+						}
+																																						
+		available = {
+																																							
+						}
+																																							
+		bypass = {
+																																							
+								}
+																																							
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+																																							
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_ideas =World_of_Tanks
+											}
+			}
+	###战雷启动
+	focus = {
+				id = DKA_War_Thunder_start-up
+				icon = GFX_goal_generic_army_tanks
+				prerequisite = { focus = DKA_Follow_Tank}
+				mutually_exclusive = { focus =DKA_World_of_Tanks_start-up }
+				x = 1
+				y = 1
+				relative_position_id =DKA_Follow_Tank
+																																									
+				cost = 10
+																																									
+				ai_will_do = {
+				factor = 2
+								}
+																																								
+				available = {
+																																									
+								}
+																																									
+				bypass = {
+																																									
+										}
+																																									
+				cancel_if_invalid = yes
+				continue_if_invalid = no
+				available_if_capitulated = no
+																																									
+				search_filters = { FOCUS_FILTER_RESEARCH }
+				completion_reward = {
+					add_ideas = War_Thunder
+													}
+		}
+		focus = {
+			id = DKA_Request_guidance_from_the_Tank_Alliance
+			icon = GFX_goal_generic_army_tanks
+			prerequisite = {  focus =DKA_World_of_Tanks_start-up   focus =DKA_War_Thunder_start-up}
+			x=1
+			y = 1
+			relative_position_id =DKA_World_of_Tanks_start-up
+																																								
+			cost = 10
+																																								
+			ai_will_do = {
+			factor = 2
+							}
+																																							
+			available = {
+																																								
+							}
+																																								
+			bypass = {
+																																								
+									}
+																																								
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+																																								
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			completion_reward = {
+				
+												}
+											}										
 					   }				   	
 

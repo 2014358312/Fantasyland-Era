@@ -153,7 +153,8 @@ ideas = {
 									defense_bonus_against = +1
 									trade_cost_for_target_factor = 0.5
 																		}
-																	}	
+																	}
+
 		assimilation_Kingdom_of_Tolistine= {
 		icon = generic_research_bonus
 		allowed = { always = no }
@@ -163,11 +164,61 @@ ideas = {
 		add_core_of = TOP
 																}				
 		modifier = {
-								resistance_target =-0.5
-								stability_weekly =-0.005
-								compliance_growth =0.05										
-																											}
-																													}	
-																																							
+		resistance_target =-0.5
+		stability_weekly =-0.005
+		compliance_growth =0.05										
+					}
+					}	
+		
+		World_of_Tanks= {
+		icon = generic_research_bonus
+		allowed = { always = no }
+		allowed_civil_war = { always = no }
+		removal_cost = -1
+		on_remove = { 
+		add_core_of = TOP
+											}				
+		modifier = {
+			army_armor_defence_factor =0.2
+			army_armor_attack_factor =-0.05										
+							}
+		equipment_bonus = {
+			heavy_tank_equipment = {
+									build_cost_ic = -0.2
+									instant = yes
+								}
+							}
+	equipment_bonus = {
+		medium_tank_equipment = {
+			build_cost_ic = -0.15
+			instant = yes
+		}
+	}
+	}		
+	   War_Thunder= {
+		icon = generic_research_bonus
+		allowed = { always = no }
+		allowed_civil_war = { always = no }
+		removal_cost = -1
+		on_remove = { 
+		add_core_of = TOP
+											}				
+		modifier = {
+			army_armor_defence_factor =0.05
+			army_armor_attack_factor =0.2									
+							}
+		equipment_bonus = {
+			light_tank_equipment = {
+									build_cost_ic = -0.2
+									instant = yes
+								}
+							}
+	equipment_bonus = {
+		medium_tank_equipment = {
+			build_cost_ic = -0.15
+			instant = yes
+		}
+	}
+									}																																						
 		}
     }
