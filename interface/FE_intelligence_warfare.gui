@@ -47,6 +47,12 @@ guiTypes = {
 			quadTextureSprite = "GFX_tiled_bg"
 		}
 		
+		iconType = {
+			name = "agency_name_bg"
+			spriteType = "GFX_intel_name_header_bg"
+			position = { x = 16 y = 16 }
+		}
+		
 		instantTextboxType = {
 			name = "agency_detail_name"
 			position = { x = 20 y = 20 }
@@ -59,15 +65,14 @@ guiTypes = {
 		iconType = {
 			name = "agency_desc"
 			spriteType = "GFX_theatre_combat_log_icon"
-			position = { x = -94 y = 18 }
-			Orientation = "UPPER_RIGHT"
+			position = { x = 29 y = 20 }
 			pdx_tooltip = agency_desc_tt
 			pdx_tooltip_delayed = agency_desc_ttd
 		}
 
 		buttonType = {
 			name = "close_button"
-			position = { x = -54 y = 22 }
+			position = { x = -64 y = 24 }
 			clicksound = click_close
 			quadTextureSprite = "GFX_closebutton"
 			buttonFont = "Main_14_black"
@@ -336,18 +341,23 @@ guiTypes = {
 		name = "agency_detail_tab_1_2"
 		position = { x = 760 y = 105 }
 		size = { width = 240 height = 640 }
+		scale = 0.9
 		
 		background = {
 			name = "background"
 			quadTextureSprite = "GFX_tiled_window_gameui_gilding_border"
 		}
 
-		#iconType = {
-		#	name = "map_bg"
-		#	position = { x = 10 y = 10 }
-		#	quadTextureSprite = "GFX_albion_map_bg"
-		#	scale = 0.97
-		#}
+		iconType = {
+			name = "map_detail_bg"
+			position = { x = 19 y = 220 }
+			quadTextureSprite = "GFX_intel_agency_map_detail_bg"
+		}
+		buttonType = {
+			name = "map_action_button"
+			position = { x = 19 y = 470 }
+			quadTextureSprite = "GFX_intel_agency_map_action_button"
+		}
 	}
 
 	containerWindowType = {
