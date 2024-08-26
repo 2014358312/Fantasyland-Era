@@ -1,6 +1,6 @@
 EYP_hundred_day_crisis_decision_category = {
 	EYP_hundred_day_crisis_mission = {
-		icon = GFX_decision_generic_train
+		icon = generic_train
 		allowed = { tag = EYP }
 		visible = { NOT = { has_global_flag = eylstadt_drift_defence_war } }
 		available = { hidden_trigger = { always = no } }
@@ -12,11 +12,14 @@ EYP_hundred_day_crisis_decision_category = {
 			custom_effect_tooltip = EYP_hundred_day_crisis_mission_tt
 			hidden_effect = {
 				set_global_flag = eylstadt_drift_defence_war
+				set_variable = { global.EYP_war_escalation_length_var = 30 }
 				LAN = {
 					set_country_flag = eylstadt_drift_defence_war_member_flag
+					set_variable = { LAN_war_plan_length_var = 7 }
 				}
 				AIL = {
 					set_country_flag = eylstadt_drift_defence_war_member_flag
+					set_variable = { AIL_war_plan_length_var = 7 }
 					declare_war_on = {
 						target = EYP
 						type = liberate_wargoal
@@ -28,17 +31,21 @@ EYP_hundred_day_crisis_decision_category = {
 				}
 				SMA = { 
 					set_country_flag = eylstadt_drift_defence_war_member_flag
+					set_variable = { SMA_war_plan_length_var = 7 }
 				}
 				EYP = {
 					set_country_flag = eylstadt_drift_defence_war_member_flag
+					set_variable = { EYP_war_plan_length_var = 7 }
 					add_war_support = 0.05
 					Manpower_act_level_up = yes
 				}
 				Z86 = { 
 					set_country_flag = eylstadt_drift_defence_war_member_flag
+					set_variable = { Z86_war_plan_length_var = 7 }
 				}
 				TIA = { 
 					set_country_flag = eylstadt_drift_defence_war_member_flag
+					set_variable = { TIA_war_plan_length_var = 15 }
 				}
 				add_to_variable = { global.EYP_war_escalation_level_EYP_action = 1 }
 				add_to_variable = { global.EYP_war_escalation_level_GIA_action = 1 }
@@ -52,7 +59,7 @@ EYP_hundred_day_crisis_decision_category = {
 	}
 	
 	EYP_hundred_day_crisis_mission_fake = {
-		icon = GFX_decision_generic_train
+		icon = generic_train
 		allowed = {
 			OR = {
 				tag = LAN
@@ -77,7 +84,7 @@ EYP_hundred_day_crisis_decision_category = {
 	}
 	
 	EYP_time_based_war_escalation_mission = {
-		icon = GFX_decision_generic_ignite_civil_war
+		icon = generic_ignite_civil_war
 		allowed = { tag = EYP }
 		visible = { hidden_trigger = { has_global_flag = eylstadt_drift_defence_war } }
 		available = {
@@ -117,7 +124,7 @@ EYP_hundred_day_crisis_decision_category = {
 	}
 	
 	EYP_time_based_war_escalation_mission_fake = {
-		icon = GFX_decision_generic_ignite_civil_war
+		icon = generic_ignite_civil_war
 		allowed = {
 			OR = {
 				tag = LAN
@@ -162,7 +169,7 @@ EYP_hundred_day_crisis_decision_category = {
 	}
 	
 	EYP_recruit_royal_special_force_decision = {
-		icon = GFX_decision_generic_intelligence_operation
+		icon = generic_intelligence_operation
 		allowed = { tag = EYP }
 		visible = { NOT = { has_global_flag = eylstadt_drift_defence_war } }
 		available = {
@@ -190,16 +197,13 @@ EYP_hundred_day_crisis_decision_category = {
 	}
 	
 	EYP_attack_on_carrier_decision = {
-		icon = GFX_decision_generic_naval_mine
+		icon = generic_naval_mine
 		allowed = { tag = EYP }
 		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
 		available = {
-			has_country_leader = {
-				character = EYP_Ortfine_von_Eylstadt
-				ruling_only = yes
-			}
-			NOT = { has_country_leader_with_trait = out_of_country }
+			EYP_princess_return = yes
 			NOT = { has_country_flag = EYP_executing_a_plan_flag }
+			has_idea = EYP_enemy_navy_blocked_idea
 		}
 		cost = 25
 		fire_only_once = yes
@@ -208,7 +212,7 @@ EYP_hundred_day_crisis_decision_category = {
 		modifier = { command_power_gain_mult = -0.50 }
 		remove_effect = {
 			clr_country_flag = EYP_executing_a_plan_flag
-			add_political_power = 1
+			remove_ideas = EYP_enemy_navy_blocked_idea
 		}
 		ai_will_do = {
 			base = 0
@@ -220,15 +224,11 @@ EYP_hundred_day_crisis_decision_category = {
 	}
 	
 	EYP_fight_in_air_decision = {
-		icon = GFX_decision_generic_air
+		icon = generic_air
 		allowed = { tag = EYP }
 		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
 		available = {
-			has_country_leader = {
-				character = EYP_Ortfine_von_Eylstadt
-				ruling_only = yes
-			}
-			NOT = { has_country_leader_with_trait = out_of_country }
+			EYP_princess_return = yes
 			NOT = { has_country_flag = EYP_executing_a_plan_flag }
 		}
 		cost = 25
@@ -254,15 +254,11 @@ EYP_hundred_day_crisis_decision_category = {
 	}
 	
 	EYP_cooperate_with_artillery_decision = {
-		icon = GFX_decision_hol_draw_up_staff_plans
+		icon = hol_draw_up_staff_plans
 		allowed = { tag = EYP }
 		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
 		available = {
-			has_country_leader = {
-				character = EYP_Ortfine_von_Eylstadt
-				ruling_only = yes
-			}
-			NOT = { has_country_leader_with_trait = out_of_country }
+			EYP_princess_return = yes
 			NOT = { has_country_flag = EYP_executing_a_plan_flag }
 			
 		}
@@ -285,15 +281,11 @@ EYP_hundred_day_crisis_decision_category = {
 	}
 	
 	EYP_defend_sellun_decision = {
-		icon = GFX_decision_generic_mountain_fortification
+		icon = generic_mountain_fortification
 		allowed = { tag = EYP }
 		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
 		available = {
-			has_country_leader = {
-				character = EYP_Ortfine_von_Eylstadt
-				ruling_only = yes
-			}
-			NOT = { has_country_leader_with_trait = out_of_country }
+			EYP_princess_return = yes
 			NOT = { has_country_flag = EYP_executing_a_plan_flag }
 			
 		}
@@ -316,7 +308,7 @@ EYP_hundred_day_crisis_decision_category = {
 	}
 	
 	EYP_startup_clear_fields_decision = {
-		icon = GFX_decision_generic_mountain_fortification
+		icon = generic_mountain_fortification
 		state_target = yes
 		on_map_mode = map_only
 		target_root_trigger = {
@@ -364,20 +356,8 @@ EYP_hundred_day_crisis_decision_category = {
 		allowed = { tag = EYP }
 		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
 		available = {
-			has_country_leader = {
-				character = EYP_Ortfine_von_Eylstadt
-				ruling_only = yes
-			}
-			NOT = { has_country_leader_with_trait = out_of_country }
 			NOT = { has_country_flag = EYP_executing_a_plan_flag }
-			custom_trigger_tooltip = {
-				tooltip = war_escalation_3_ttt
-				check_variable = {
-					var = global.EYP_escalation_level_total
-					value = 2
-					compare = greater_than
-				}
-			}
+			EYP_escalation_level_3 = yes
 		}
 		cost = 25
 		fire_only_once = yes
@@ -422,20 +402,8 @@ EYP_hundred_day_crisis_decision_category = {
 		allowed = { tag = EYP }
 		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
 		available = {
-			has_country_leader = {
-				character = EYP_Ortfine_von_Eylstadt
-				ruling_only = yes
-			}
-			NOT = { has_country_leader_with_trait = out_of_country }
 			NOT = { has_country_flag = EYP_executing_a_plan_flag }
-			custom_trigger_tooltip = {
-				tooltip = war_escalation_4_ttt
-				check_variable = {
-					var = global.EYP_escalation_level_total
-					value = 3
-					compare = greater_than
-				}
-			}
+			EYP_escalation_level_4 = yes
 		}
 		cost = 25
 		fire_only_once = yes
@@ -444,29 +412,173 @@ EYP_hundred_day_crisis_decision_category = {
 		modifier = { experience_gain_army_factor = -0.25 }
 		remove_effect = {
 			clr_country_flag = EYP_executing_a_plan_flag
-			#set_technology = { EYP_witch_auxiliary_engineering_tech = 1 popup = no }
 			
-			division_template = {
-				name = "Witch Engineering Team"
-				division_names_group = EYP_INF_01
-				is_locked = yes
-				force_allow_recruiting = no
-				division_cap = 1
-				priority = 2
-				regiments = {
-					cavalry = { x = 0 y = 0 }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_AIL_carriar_decision = {
+		icon = generic_naval
+		allowed = { tag = AIL }
+		visible = {
+			has_country_flag = eylstadt_drift_defence_war_member_flag
+			EYP = { NOT = { has_idea = EYP_enemy_navy_blocked_idea } }
+			has_navy_size = {
+				size > 0
+				type = carrier
+				archetype = ship_hull_carrier
+			}
+		}
+		available = {
+			if = {
+				limit = { is_ai = no }
+				ships_in_area = { area = 13 size > 6 }
+				ships_in_area = { area = 14 size > 6 }
+			}
+			has_navy_size = {
+				size > 0
+				type = carrier
+				archetype = ship_hull_carrier
+			}
+			NOT = { has_country_flag = AIL_executing_a_plan_flag }
+		}
+		cost = 25
+		fire_only_once = no
+		days_remove = AIL_war_plan_length_var
+		days_re_enable = 1
+		complete_effect = { set_country_flag = AIL_executing_a_plan_flag }
+		modifier = { command_power_gain_mult = -0.50 }
+		remove_effect = {
+			clr_country_flag = AIL_executing_a_plan_flag
+			EYP = { add_ideas = EYP_enemy_navy_blocked_idea }
+			activate_mission = EYP_AIL_carriar_ongoing_mission
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_AIL_carriar_ongoing_mission = {
+		icon = SWE_set_air_budget
+		allowed = { tag = AIL }
+		available = {
+			OR = {
+				if = {
+					limit = { is_ai = no }
+					ships_in_area = { area = 14 size < 7 }
+					ships_in_area = { area = 14 size < 7 }
 				}
-				support = {
-					witch_auxiliary_engineering = { x = 0 y = 0 }
+				has_navy_size = {
+					size < 1
+					type = carrier
+					archetype = ship_hull_carrier
+				}
+				hidden_trigger = {
+					all_country = {
+						NOT = {
+							has_country_flag = eylstadt_drift_defence_war_member_flag
+						}
+					}
 				}
 			}
-			capital_scope = {
-				create_unit = {
-					division = "name = \"Witch Engineering Team\" division_template = \"Witch Engineering Team\""
-					count = 1
-					owner = ROOT
-					id = 514
+		}
+		activation = { always = no }
+		is_good = yes
+		days_mission_timeout = 14
+		timeout_effect = {
+			add_political_power = 10
+			add_command_power = 5
+			add_war_support = 0.02
+			random_state = {
+				limit = {
+					is_core_of = EYP
+					NOT = { is_fully_controlled_by = AIL }
+					NOT = {
+						has_dynamic_modifier = {
+							modifier = AIL_blocked_coastal_state_dynamic_modifier
+							scope = AIL
+						}
+					}
 				}
+				add_dynamic_modifier = {
+					modifier = AIL_blocked_coastal_state_dynamic_modifier
+					scope = AIL
+				}
+			}
+			if = {
+				limit = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+				activate_mission = EYP_AIL_carriar_ongoing_mission
+			}
+		}
+		complete_effect = {
+			every_state = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = AIL_blocked_coastal_state_dynamic_modifier
+						scope = AIL
+					}
+				}
+				remove_dynamic_modifier = {
+					modifier = AIL_blocked_coastal_state_dynamic_modifier
+					scope = AIL
+				}
+			}
+			EYP = { remove_ideas = EYP_enemy_navy_blocked_idea }
+		}
+	}
+	
+	EYP_LAN_military_advisor_decision = {
+		icon = generic_army_support
+		allowed = { tag = LAN }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			NOT = { has_country_flag = LAN_executing_a_plan_flag }
+			EYP_escalation_level_4 = yes
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = LAN_war_plan_length_var
+		complete_effect = { set_country_flag = LAN_executing_a_plan_flag }
+		modifier = { command_power_gain_mult = -0.50 }
+		remove_effect = {
+			clr_country_flag = LAN_executing_a_plan_flag
+			AIL = { add_ideas = received_attache }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_SMA_report_war_decision = {
+		icon = hol_radio_oranje
+		allowed = { tag = SMA }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = { NOT = { has_country_flag = SMA_executing_a_plan_flag } }
+		cost = 25
+		fire_only_once = no
+		days_remove = SMA_war_plan_length_var
+		complete_effect = { set_country_flag = SMA_executing_a_plan_flag }
+		modifier = { command_power_gain_mult = -0.50 }
+		remove_effect = {
+			clr_country_flag = SMA_executing_a_plan_flag
+			add_war_support = 0.02
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
 			}
 		}
 		ai_will_do = {
@@ -478,19 +590,49 @@ EYP_hundred_day_crisis_decision_category = {
 		}
 	}
 	
-	EYP_GIA_test_decision = {
-		icon = GFX_decision_generic_mountain_fortification
-		allowed = { tag = GIA }
+	EYP_Z86_send_volunteer_decision = {
+		icon = generic_protection
+		allowed = { tag = Z86 }
 		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
-		available = { NOT = { has_country_flag = GIA_executing_a_plan_flag } }
+		available = {
+			NOT = { has_country_flag = Z86_executing_a_plan_flag }
+			
+		}
 		cost = 25
-		fire_only_once = yes
-		days_remove = GIA_war_plan_length_var
-		complete_effect = { set_country_flag = GIA_executing_a_plan_flag }
+		fire_only_once = no
+		days_remove = Z86_war_plan_length_var
+		complete_effect = { set_country_flag = Z86_executing_a_plan_flag }
 		modifier = { command_power_gain_mult = -0.50 }
 		remove_effect = {
-			clr_country_flag = GIA_executing_a_plan_flag
-			add_political_power = 1
+			clr_country_flag = Z86_executing_a_plan_flag
+			add_war_support = 0.01
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_TIA_eyes_on_east_decision = {
+		icon = eng_puppet_usa
+		allowed = { tag = TIA }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			NOT = { has_country_flag = TIA_executing_a_plan_flag }
+			always = no
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = TIA_war_plan_length_var
+		complete_effect = { set_country_flag = TIA_executing_a_plan_flag }
+		modifier = { command_power_gain_mult = -0.50 }
+		remove_effect = {
+			clr_country_flag = TIA_executing_a_plan_flag
+			set_country_flag = EYP_TIA_eyes_on_east_flag
+			custom_effect_tooltip = EYP_TIA_eyes_on_east_decision_tt
 		}
 		ai_will_do = {
 			base = 0

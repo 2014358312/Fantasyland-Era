@@ -27,3 +27,41 @@ LAN_republican_parliament_decision_category = {
 		}
 	}
 }
+
+LAN_balance_of_power_decision_category = {
+	LAN_take_army_budget_decision = {
+		icon = eng_blackshirt_march
+		allowed = {
+			original_tag = LAN
+		}
+		visible = {
+			is_power_balance_side_active = {
+				id = LAN_balance_of_power
+				side = LAN_mana_right_side
+			}
+		}
+		cost = 10
+		complete_effect = {
+			army_experience = 10
+			LAN_bop_right_small = yes
+		}
+	}
+	
+	LAN_contact_officer_decision = {
+		icon = generic_political_discourse
+		allowed = {
+			original_tag = LAN
+		}
+		visible = {
+			is_power_balance_side_active = {
+				id = LAN_balance_of_power
+				side = LAN_council_left_side
+			}
+		}
+		cost = 10
+		complete_effect = {
+			add_political_power = 10
+			LAN_bop_left_small = yes
+		}
+	}
+}

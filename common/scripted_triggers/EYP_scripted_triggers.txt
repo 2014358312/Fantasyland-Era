@@ -1,3 +1,11 @@
+EYP_princess_return = {
+	has_country_leader = {
+		character = EYP_Ortfine_von_Eylstadt
+		ruling_only = yes
+	}
+	NOT = { has_country_leader_with_trait = out_of_country }
+}
+
 EYP_patriotic_war = {
 	custom_trigger_tooltip = {
 		tooltip = EYP_patriotic_war_ttt
@@ -11,5 +19,93 @@ EYP_industrialization_in_progress = {
 	custom_trigger_tooltip = {
 		tooltip = EYP_industrialization_in_progress_ttt
 		has_dynamic_modifier = { modifier = EYP_industry_plan_dynamic_modifier }
+	}
+}
+
+EYP_escalation_level_3 = {
+	custom_trigger_tooltip = {
+		tooltip = war_escalation_4_ttt
+		check_variable = {
+			var = global.EYP_escalation_level_total
+			value = 3
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+EYP_escalation_level_4 = {
+	custom_trigger_tooltip = {
+		tooltip = war_escalation_4_ttt
+		check_variable = {
+			var = global.EYP_escalation_level_total
+			value = 4
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+EYP_escalation_level_5 = {
+	custom_trigger_tooltip = {
+		tooltip = war_escalation_4_ttt
+		check_variable = {
+			var = global.EYP_escalation_level_total
+			value = 5
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+EYP_escalation_level_6 = {
+	custom_trigger_tooltip = {
+		tooltip = war_escalation_4_ttt
+		check_variable = {
+			var = global.EYP_escalation_level_total
+			value = 6
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+EYP_escalation_level_7 = {
+	custom_trigger_tooltip = {
+		tooltip = war_escalation_4_ttt
+		check_variable = {
+			var = global.EYP_escalation_level_total
+			value = 7
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+EYP_escalation_level_8 = {
+	custom_trigger_tooltip = {
+		tooltip = war_escalation_4_ttt
+		check_variable = {
+			var = global.EYP_escalation_level_total
+			value = 8
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+EYP_escalation_level_9 = {
+	custom_trigger_tooltip = {
+		tooltip = war_escalation_4_ttt
+		check_variable = {
+			var = global.EYP_escalation_level_total
+			value = 9
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+EYP_escalation_level_10 = {
+	custom_trigger_tooltip = {
+		tooltip = war_escalation_4_ttt
+		check_variable = {
+			var = global.EYP_escalation_level_total
+			value = 10
+			compare = greater_than_or_equals
+		}
 	}
 }
