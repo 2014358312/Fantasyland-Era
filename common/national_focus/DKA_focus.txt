@@ -326,12 +326,262 @@
 		add_ideas =our_victory
       }
 	}
+	##确认接下来的道路
+	focus = {
+		id = DKA_Confirm_the_next_path
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus =DKA_Promote_our_victory}
+		relative_position_id = DKA_Promote_our_victory
+		x = 0
+		y = 1
+		cost = 1
+	
+		ai_will_do = {
+			factor = 1
+			}
+		available = {
+			}
+			bypass = {
+			}
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
+		complete_tooltip = {
+			}
+		completion_reward = {
+			add_ideas =our_victory
+		  }
+		}
+	##铁与血
+	focus = {
+		id = DKA_Iron_and_Blood
+			icon = GFX_focus_chi_cooperation_with_the_nationalists
+			prerequisite = { focus =DKA_Confirm_the_next_path}
+			mutually_exclusive = { focus =DKA_Bread_and_Peace }
+			relative_position_id = DKA_Confirm_the_next_path
+			x = -1
+			y = 1
+			cost = 1
+		
+			ai_will_do = {
+				factor = 1
+				}
+			available = {
+				}
+				bypass = {
+				}
+		
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+		
+			complete_tooltip = {
+				}
+			completion_reward = {
+				add_ideas =our_victory
+			  }
+	}
+	##更长远的打算
+	focus = {
+		id = DKA_A_longer-term_plan
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus =DKA_Iron_and_Blood focus =DKA_Bread_and_Peace}
+		relative_position_id = DKA_Iron_and_Blood
+		x = 0.5
+		y = 1
+		cost = 10
+	
+		ai_will_do = {
+			factor = 1
+			}
+		available = {
+			}
+			bypass = {
+			}
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
+		complete_tooltip = {
+			}
+		completion_reward = {
+			1774 = {
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes 
+					province = 351
+				}
+			}
+			5699= {
+				add_building_construction = {
+					type =supply_node
+					level = 1
+					instant_build = yes 
+					province = 352
+				}
+			}
+			army_experience =100
+			air_experience = 100
+		  }
+	   }
+	###与魔国联邦取得联系
+	focus = {
+		id = DKA_Contact_the_Federation_of_Demon_States
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus =DKA_Iron_and_Blood focus =DKA_Bread_and_Peace}
+		relative_position_id = DKA_Iron_and_Blood
+		x = 2
+		y = 1
+		cost = 10
+	
+		ai_will_do = {
+			factor = 1
+			}
+		available = {
+			}
+			bypass = {
+			}
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
+		complete_tooltip = {
+			}
+		completion_reward = {
+			1774 = {
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes 
+					province = 351
+				}
+			}
+			5699= {
+				add_building_construction = {
+					type =supply_node
+					level = 1
+					instant_build = yes 
+					province = 352
+				}
+			}
+			army_experience =100
+			air_experience = 100
+		  }
+	   }
+	   ##邀请魔物联邦加入
+	   focus = {
+		id = DKA_Invite_the_Demon_Federation_to_join
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus =DKA_Establish_an_alliance}
+		prerequisite = { focus =DKA_Contact_the_Federation_of_Demon_States}
+		relative_position_id = DKA_Establish_an_alliance
+		x = 0
+		y = 1
+		cost = 10
+	
+		ai_will_do = {
+			factor = 1
+			}
+		available = {
+			}
+			bypass = {
+			}
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
+		complete_tooltip = {
+			}
+		completion_reward = {
+			1774 = {
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes 
+					province = 351
+				}
+			}
+			5699= {
+				add_building_construction = {
+					type =supply_node
+					level = 1
+					instant_build = yes 
+					province = 352
+				}
+			}
+			army_experience =100
+			air_experience = 100
+		  }
+	   }
+	   ###建立同盟
+	   focus = {
+		id = DKA_Establish_an_alliance
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus =DKA_A_longer-term_plan}
+		relative_position_id = DKA_A_longer-term_plan
+		x = 0
+		y = 1
+		cost = 10
+	
+		ai_will_do = {
+			factor = 1
+			}
+		available = {
+			}
+			bypass = {
+			}
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
+		complete_tooltip = {
+			}
+		completion_reward = {
+			create_faction ="魔王"
+		  }
+	   }
+	##面包与和平
+	focus = {
+		id = DKA_Bread_and_Peace
+			icon = GFX_focus_chi_cooperation_with_the_nationalists
+			prerequisite = { focus =DKA_Confirm_the_next_path}
+			mutually_exclusive = { focus =DKA_Iron_and_Blood }
+			relative_position_id = DKA_Confirm_the_next_path
+			x = 1
+			y = 1
+			cost = 1
+		
+			ai_will_do = {
+				factor = 1
+				}
+			available = {
+				}
+				bypass = {
+				}
+		
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+		
+			complete_tooltip = {
+				}
+			completion_reward = {
+				add_ideas =our_victory
+			  }
+	}
 ##准备处理MUL
    focus = {
 	id = DKA_Preparing_to_deal_with_the_Murunait_Empire
 	icon = GFX_focus_chi_cooperation_with_the_nationalists
-	prerequisite = { focus =DKA_Promote_our_victory}
-	relative_position_id = DKA_Promote_our_victory
+	prerequisite = { focus =DKA_Iron_and_Blood}
+	relative_position_id = DKA_Iron_and_Blood
 	x = -2
 	y = 1
 	cost = 10
@@ -650,9 +900,8 @@
 		focus = {
 		id = DKA_Establish_diplomatic_relations_with_the_Kingdom_of_Mulunait
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
-		prerequisite = { focus =DKA_Promote_our_victory}
-		mutually_exclusive = { focus =DKA_Preparing_to_deal_with_the_Murunait_Empire }
-		relative_position_id = DKA_Promote_our_victory
+		prerequisite = { focus =DKA_Bread_and_Peace}
+		relative_position_id =DKA_Bread_and_Peace
 		x = 2
 		y = 1
 		cost = 10
