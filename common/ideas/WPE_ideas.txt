@@ -1,0 +1,82 @@
+ideas = {
+	hidden_ideas = {
+		
+	}
+	
+	country = {
+		WPE_unpopular_government = {
+			picture = FRA_down_marianne
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			available = {}
+			
+			cancel = {}
+			
+			traits = {}
+			
+			modifier = {
+				political_power_gain = -0.50
+				stability_factor = -0.50
+			}
+			
+			targeted_modifier = {}
+			
+			equipment_bonus = {}
+			
+			research_bonus = {}
+			
+			rule = {}
+			
+			on_add = {}
+			
+			on_remove = {}
+		}
+		
+		WPE_unloyal_military = {
+			picture = SPR_disbanded_army
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				experience_gain_army_factor = -0.80
+				experience_gain_navy_factor = -0.40
+				experience_gain_air_factor = -0.40
+				war_support_factor = 0.25
+				custom_modifier_tooltip = SPR_military_disloyalty_tt
+			}
+		}
+		
+		WPE_unstable_economy = {
+			picture = generic_economic_crisis
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.50
+				production_speed_buildings_factor = -0.50
+			}
+		}
+	}
+}

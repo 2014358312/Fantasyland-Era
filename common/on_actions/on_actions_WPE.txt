@@ -1,0 +1,17 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			WPE = {
+				every_core_state = {
+					every_possible_country = {
+						limit = {
+							original_tag = WPE
+							NOT = { tag = WPE }
+						}
+						PREV = { remove_core_of = PREV }
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+﻿###########################
+# Landsol Events
+###########################
+
+add_namespace = landsol
+
+country_event = {
+	id = landsol.1
+	title = landsol.1.t
+	desc = landsol.1.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = landsol.1.a
+		add_political_power = 10
+		add_stability = -0.05
+		set_power_balance = {
+			id = LAN_balance_of_power
+			left_side = LAN_council_left_side
+			right_side = LAN_mana_right_side
+			set_default = 0.08
+		}
+	}
+}

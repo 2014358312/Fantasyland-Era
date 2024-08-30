@@ -1,0 +1,48 @@
+﻿###########################
+# White Pole Events
+###########################
+
+add_namespace = white_pole
+add_namespace = white_civil_war
+
+country_event = {
+	id = white_civil_war.1
+	title = white_civil_war.1.t
+	desc = white_civil_war.1.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event white_civil_war.1"
+	}
+
+	option = { #federation always right
+		name = white_civil_war.1.a
+		hidden_effect = {
+			WPE_reassign_roles = yes
+			
+			### we are federation now ###
+			set_cosmetic_tag = WPE_federation_lucia
+			set_country_flag = WPE_federation_lucia_flag
+
+			### ensure card and cash ###
+			WPA = {
+				set_cosmetic_tag = WPE_military_lucia
+				set_country_flag = WPE_military_lucia_flag
+			}
+			random_owned_state = {
+				WPA = { transfer_state = PREV }
+			}
+			
+			### first into war then allocate troops ###
+			WPA = {
+				declare_war_on = {
+					target = WPF
+					type = civil_war
+				}
+				add_civil_war_target = WPF
+			}
+		}
+	}
+}
