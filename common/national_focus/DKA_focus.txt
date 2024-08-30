@@ -9,7 +9,7 @@
 		}
 	}
 	default = no
-	continuous_focus_position = { x = 150 y = 2000}
+	continuous_focus_position = { x = 150 y = 3000}
 
 #	focus = {
 #		id = CHI_
@@ -304,7 +304,7 @@
 	icon = GFX_focus_chi_cooperation_with_the_nationalists
 	prerequisite = { focus =DKA_assimilation_Kingdom_of_Aruka focus =DKA_assimilation_Kingdom_of_Bertom focus=DKA_assimilation_Kingdom_of_Paretia  focus=DKA_assimilation_Kingdom_of_Tolistine}
 	relative_position_id = DKA_Declare_war_on_the_Kingdom_of_Bertom
-	x = 2
+	x = 1
 	y = 2
 	cost = 10
 
@@ -619,6 +619,94 @@
 		}
 		army_experience =100
 		air_experience = 100
+      }
+   }
+   ###向穆露奈伊特帝国宣战
+   focus = {
+	id = DKA_Declare_war_on_the_Mulunait_Empire
+	icon = GFX_focus_chi_cooperation_with_the_nationalists
+	prerequisite = { focus = DKA_Preparing_to_deal_with_the_Murunait_Empire }
+	relative_position_id = DKA_Preparing_to_deal_with_the_Murunait_Empire
+	x = 0
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+		}
+	available = {
+		}
+		bypass = {
+		}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	complete_tooltip = {
+		}
+	completion_reward = {
+		declare_war_on  = { target = ALC type =annex_everything }
+		add_timed_idea = { idea =Attack_on_the_Kingdom_of_Aruka days = 120 }
+      }
+   }
+   ##否认缓冲区
+   focus = {
+	id = DKA_Deny_buffer_zone
+	icon = GFX_focus_chi_cooperation_with_the_nationalists
+	prerequisite = { focus = DKA_Declare_war_on_the_Mulunait_Empire }
+	relative_position_id = DKA_Declare_war_on_the_Mulunait_Empire
+	x = 0
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+		}
+	available = {
+		}
+		bypass = {
+		}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	complete_tooltip = {
+		}
+	completion_reward = {
+		declare_war_on  = { target = ALC type =annex_everything }
+		add_timed_idea = { idea =Attack_on_the_Kingdom_of_Aruka days = 120 }
+      }
+   }
+
+###向提亚穆帝国迈进
+   focus = {
+	id = DKA_Advancing_towards_the_Tiyamu_Empire
+	icon = GFX_focus_chi_cooperation_with_the_nationalists
+	prerequisite = { focus = DKA_Deny_buffer_zone}
+	relative_position_id = DKA_Deny_buffer_zone
+	x = 0
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+		}
+	available = {
+		}
+		bypass = {
+		}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	complete_tooltip = {
+		}
+	completion_reward = {
+		declare_war_on  = { target = ALC type =annex_everything }
+		add_timed_idea = { idea =Attack_on_the_Kingdom_of_Aruka days = 120 }
       }
    }
    ###同化ALC
