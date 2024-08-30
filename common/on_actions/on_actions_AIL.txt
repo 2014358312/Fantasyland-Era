@@ -1,0 +1,102 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			AIL = {
+				AIL_Neuro_sama = {
+					add_country_leader_role = {
+						country_leader = {
+							ideology = hive_mind_n_subtype
+							traits = { neuro_sama_blue }
+							desc = "POLITICS_NEURO_SAMA_DESC"
+							expire = "2200.1.1.1"
+							id = -1
+						}
+						promote_leader = yes
+					}
+				}
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				set_popularities = {
+					neutrality = 100
+				}
+			}
+		}
+	}
+	on_war = {
+		effect = {
+			every_country = {
+				limit = {
+					has_character = AIL_Neuro_sama
+					has_government = neutrality
+					has_country_leader = {
+						character = AIL_Neuro_sama
+						ruling_only = yes
+					}
+					has_country_leader_ideology = hive_mind_n_subtype
+				}
+				AIL_Neuro_sama = {
+					remove_country_leader_role = {
+						ideology = hive_mind_n_subtype
+					}
+					add_country_leader_role = {
+						country_leader = {
+							ideology = hive_mind_f_subtype
+							traits = { neuro_sama_red }
+							desc = "POLITICS_NEURO_SAMA_DESC"
+							expire = "2200.1.1.1"
+							id = -1
+						}
+						promote_leader = yes
+					}
+				}
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}
+				set_popularities = {
+					fascism = 100
+				}
+			}
+		}
+	}
+	
+	on_peace = {
+		effect = {
+			every_country = {
+				limit = {
+					has_character = AIL_Neuro_sama
+					has_government = fascism
+					has_country_leader = {
+						character = AIL_Neuro_sama
+						ruling_only = yes
+					}
+					has_country_leader_ideology = hive_mind_f_subtype
+				}
+				AIL_Neuro_sama = {
+					remove_country_leader_role = {
+						ideology = hive_mind_f_subtype
+					}
+					add_country_leader_role = {
+						country_leader = {
+							ideology = hive_mind_n_subtype
+							traits = { neuro_sama_blue }
+							desc = "POLITICS_NEURO_SAMA_DESC"
+							expire = "2200.1.1.1"
+							id = -1
+						}
+						promote_leader = yes
+					}
+				}
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				set_popularities = {
+					neutrality = 100
+				}
+			}
+		}
+	}
+}
