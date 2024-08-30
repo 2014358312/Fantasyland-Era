@@ -2,24 +2,27 @@ on_actions = {
 	on_startup = {
 		effect = {
 			AIL = {
-				AIL_Neuro_sama = {
-					add_country_leader_role = {
-						country_leader = {
-							ideology = hive_mind_n_subtype
-							traits = { neuro_sama_blue }
-							desc = "POLITICS_NEURO_SAMA_DESC"
-							expire = "2200.1.1.1"
-							id = -1
+				if = {
+					limit = { has_country_flag = AIL_neuro_flag }
+					AIL_Neuro_sama = {
+						add_country_leader_role = {
+							country_leader = {
+								ideology = hive_mind_n_subtype
+								traits = { neuro_sama_blue }
+								desc = "POLITICS_NEURO_SAMA_DESC"
+								expire = "2200.1.1.1"
+								id = -1
+							}
+							promote_leader = yes
 						}
-						promote_leader = yes
 					}
-				}
-				set_politics = {
-					ruling_party = neutrality
-					elections_allowed = no
-				}
-				set_popularities = {
-					neutrality = 100
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = no
+					}
+					set_popularities = {
+						neutrality = 100
+					}
 				}
 			}
 		}
@@ -35,6 +38,7 @@ on_actions = {
 						ruling_only = yes
 					}
 					has_country_leader_ideology = hive_mind_n_subtype
+					has_country_flag = AIL_neuro_flag
 				}
 				AIL_Neuro_sama = {
 					remove_country_leader_role = {
@@ -73,6 +77,7 @@ on_actions = {
 						ruling_only = yes
 					}
 					has_country_leader_ideology = hive_mind_f_subtype
+					has_country_flag = AIL_neuro_flag
 				}
 				AIL_Neuro_sama = {
 					remove_country_leader_role = {
