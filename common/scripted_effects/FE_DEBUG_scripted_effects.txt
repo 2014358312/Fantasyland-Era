@@ -1,21 +1,100 @@
+clear_DEBUG_decisions_flag = {
+	if = {
+		limit = { has_country_flag = DEBUG_decisions_flag }
+		clr_country_flag = DEBUG_decisions_flag
+	}
+}
+
 DEBUG_load_oob = {
-	load_oob = "EYP_1000_nsb"
+	if = {
+		limit = { is_debug = yes }
+		load_oob = "EYP_1000_nsb"
+	}
+	clear_DEBUG_decisions_flag = yes
 }
 
 DEBUG_create_faction = {
-	create_faction = DEBUG_faction
-	every_other_country = {
-		limit = { is_subject_of = ROOT }
-		ROOT = { add_to_faction = PREV }
+	if = {
+		limit = { is_debug = yes }
+		create_faction = DEBUG_faction
+		every_other_country = {
+			limit = { is_subject_of = ROOT }
+			ROOT = { add_to_faction = PREV }
+		}
 	}
+	clear_DEBUG_decisions_flag = yes
 }
 
 DEBUG_add_to_faction = {
-	random_other_country = {
-		limit = {
-			is_in_faction = yes
-			is_faction_leader = yes
+	if = {
+		limit = { is_debug = yes }
+		random_other_country = {
+			limit = {
+				is_in_faction = yes
+				is_faction_leader = yes
+			}
+			add_to_faction = ROOT
 		}
-		add_to_faction = ROOT
 	}
+	clear_DEBUG_decisions_flag = yes
+}
+
+DEBUG_load_test_troop = {
+	if = {
+		limit = { is_debug = yes }
+		if = {
+			limit = { NOT = { has_template = "Test Cavalry Division" } }
+			division_template = {
+				name = "Test Cavalry Division"
+				is_locked = yes
+				division_names_group = ANA_TST_01
+				priority = 2
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 0 y = 2 }
+					cavalry = { x = 0 y = 3 }
+					cavalry = { x = 1 y = 0 }
+					cavalry = { x = 1 y = 1 }
+					cavalry = { x = 1 y = 2 }
+					cavalry = { x = 1 y = 3 }
+					cavalry = { x = 2 y = 0 }
+					cavalry = { x = 2 y = 1 }
+					cavalry = { x = 2 y = 2 }
+					cavalry = { x = 2 y = 3 }
+					cavalry = { x = 3 y = 0 }
+					cavalry = { x = 3 y = 1 }
+					cavalry = { x = 3 y = 2 }
+					cavalry = { x = 3 y = 3 }
+					cavalry = { x = 4 y = 0 }
+					cavalry = { x = 4 y = 1 }
+					cavalry = { x = 4 y = 2 }
+					cavalry = { x = 4 y = 3 }
+				}
+			}
+		}
+		capital_scope = {
+			create_unit = {
+				division = "name = \"Test Cavalry Division\" division_template = \"Test Cavalry Division\" start_experience_factor = 1.0 start_manpower_factor = 1.0 start_equipment_factor = 1.0"
+				owner = ROOT
+				count = 12
+				allow_spawning_on_enemy_provs = yes
+			}
+		}
+	}
+	clear_DEBUG_decisions_flag = yes
+}
+
+DEBUG_delete_test_troop = {
+	if = {
+		limit = { is_debug = yes }
+		if = {
+			limit = { has_template = "Test Cavalry Division" }
+			delete_unit_template_and_units = {
+				division_template = "Test Cavalry Division"
+				disband = no
+			}
+		}
+	}
+	clear_DEBUG_decisions_flag = yes
 }
