@@ -212,7 +212,68 @@ EYP_hundred_day_crisis_decision_category = {
 		modifier = { command_power_gain_mult = -0.50 }
 		remove_effect = {
 			clr_country_flag = EYP_executing_a_plan_flag
+			AIL = {
+				country_event = ai.1
+				destroy_ships = {
+					type = carrier
+					count = all
+				}
+			}
+			every_state = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = AIL_blocked_coastal_state_dynamic_modifier
+						scope = AIL
+					}
+				}
+				remove_dynamic_modifier = {
+					modifier = AIL_blocked_coastal_state_dynamic_modifier
+					scope = AIL
+				}
+			}
 			remove_ideas = EYP_enemy_navy_blocked_idea
+			hidden_effect = {
+				every_country = {
+					limit = { is_ai = no }
+					news_event = { id = news.1 days = 2 }
+				}
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_reform_army_in_war_decision = {
+		icon = hol_draw_up_staff_plans
+		allowed = { tag = EYP }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			EYP_princess_return = yes
+			NOT = { has_country_flag = EYP_executing_a_plan_flag }
+			has_idea = EYP_resistance_of_rearmament
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = EYP_war_plan_length_var
+		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
+		modifier = { command_power_gain_mult = -0.50 }
+		complete_effect = {
+			remove_ideas = EYP_resistance_of_rearmament
+			army_experience = 10
+		}
+		remove_effect = {
+			clr_country_flag = EYP_executing_a_plan_flag
+			set_country_flag = EYP_elite_army_flag
+			add_timed_idea = {
+				idea = EYP_startup_defend_motherland
+				days = 60
+			}
+			custom_effect_tooltip = EYP_reform_army_in_war_decision_tt
 		}
 		ai_will_do = {
 			base = 0
@@ -260,7 +321,6 @@ EYP_hundred_day_crisis_decision_category = {
 		available = {
 			EYP_princess_return = yes
 			NOT = { has_country_flag = EYP_executing_a_plan_flag }
-			
 		}
 		cost = 25
 		fire_only_once = yes
@@ -456,8 +516,12 @@ EYP_hundred_day_crisis_decision_category = {
 		modifier = { command_power_gain_mult = -0.50 }
 		remove_effect = {
 			clr_country_flag = AIL_executing_a_plan_flag
-			EYP = { add_ideas = EYP_enemy_navy_blocked_idea }
+			EYP = {
+				country_event = eylstadt.8
+				add_ideas = EYP_enemy_navy_blocked_idea
+			}
 			activate_mission = EYP_AIL_carriar_ongoing_mission
+			custom_effect_tooltip = EYP_AIL_carriar_decision_tt
 		}
 		ai_will_do = {
 			base = 0

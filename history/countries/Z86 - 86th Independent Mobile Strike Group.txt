@@ -13,19 +13,63 @@ set_technology = {
 	infantry_weapons1 = 1
 	tech_support = 1
 	tech_engineers = 1
+	tech_recon = 1
+	tech_trucks = 1
+	fuel_silos = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	interwar_antiair = 1
 }
-if = {
-	limit = { has_dlc = "No Step Back" }
-	
-	set_technology = {
-		gwtank_chassis = 1
-	}
-	else = {
-		set_technology = {
-			gwtank = 1
-		}
-	}
+set_technology = {
+	gwtank_chassis = 1
+	basic_light_tank_chassis = 1
+	improved_light_tank_chassis = 1
+	basic_heavy_tank_chassis = 1
+	engine_tech_1 = 1
 }
+set_technology = {
+	basic_naval_mines = 1
+	submarine_mine_laying = 1
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	early_ship_hull_submarine = 1
+	early_ship_hull_cruiser = 1
+	basic_ship_hull_cruiser = 1
+	early_ship_hull_heavy = 1
+	basic_ship_hull_heavy = 1
+	early_ship_hull_carrier = 1
+	basic_ship_hull_carrier = 1
+	basic_battery = 1
+	basic_light_battery = 1
+	basic_medium_battery = 1
+	basic_heavy_battery = 1
+	basic_torpedo = 1
+	sonar = 1
+	smoke_generator = 1
+	basic_depth_charges = 1
+	basic_cruiser_armor_scheme = 1
+	basic_heavy_armor_scheme = 1
+	mtg_transport = 1
+	basic_fire_control_system = 1
+	basic_dp_light_battery = 1
+}
+set_technology = {
+	aa_lmg = 1
+	aa_cannon_1 = 1
+	engines_1 = 1
+	engines_2 = 1
+	early_bombs = 1
+	aircraft_construction = 1
+	iw_small_airframe = 1
+	iw_medium_airframe = 1
+	iw_large_airframe = 1
+	basic_small_airframe = 1
+	basic_medium_airframe = 1
+	iw_large_airframe = 1
+	basic_large_airframe = 1
+	air_torpedoe_1 = 1
+}
+
 
 activate_mission = EYP_hundred_day_crisis_mission_fake
 add_days_mission_timeout = {
@@ -61,3 +105,22 @@ set_popularities = {
 	fascism = 5
 }
 
+if = {
+	limit = { has_dlc = "Man the Guns" }
+}
+if = {
+	limit = { has_dlc = "No Step Back" }
+}
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+	create_equipment_variant = {
+		name = "Hawker Fury" 
+		type = small_plane_airframe_1
+		modules = {
+			fixed_main_weapon_slot = light_mg_4x
+			fixed_auxiliary_weapon_slot_1 = light_mg_4x
+			engine_type_slot = engine_2_1x
+			special_type_slot_1 = empty
+		}
+	}
+}

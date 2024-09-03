@@ -1,0 +1,32 @@
+﻿################################
+# Artificial Intelligence Events
+################################
+
+add_namespace = ai
+
+country_event = {
+	id = ai.1
+	title = ai.1.t
+	desc = ai.1.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			LAN = { country_event = { id = landsol.2 days = 1 } }
+		}
+	}
+
+	option = {
+		name = ai.1.a
+		ROOT = {
+			effect_tooltip = {
+				destroy_ships = {
+					type = carrier
+					count = all
+				}
+			}
+		}
+	}
+}

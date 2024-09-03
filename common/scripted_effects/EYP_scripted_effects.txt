@@ -1,25 +1,15 @@
 EYP_get_fighter = {
 	hidden_effect = {
 		ROOT = {
-#			if = {
-#				limit = { has_dlc = "By Blood Alone" }
-#				add_equipment_to_stockpile = {
-#					type = small_plane_airframe_0
-#					amount = 100
-#					producer = ENG
-#					variant_name = "Hawker Fury"
-#				}
-#			}
-#			else = {
-#				add_equipment_to_stockpile = {
-#					type = fighter_equipment_0
-#					amount = 100
-#					producer = ENG
-#				}
-#			}
+			add_equipment_to_stockpile = {
+				type = small_plane_airframe_0
+				amount = 100
+				producer = Z86
+				variant_name = "Hawker Fury"
+			}
 			country_event = eylstadt.1
 		}
-		GIA = {
+		Z86 = {
 			if = {
 				limit = { has_dlc = "Arms Against Tyranny" }
 				add_cic = 1000

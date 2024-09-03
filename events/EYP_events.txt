@@ -18,22 +18,12 @@ country_event = {
 		name = eylstadt.1.a
 		effect_tooltip = {
 			EYP = {
-#				if = {
-#					limit = { has_dlc = "By Blood Alone" }
-#					add_equipment_to_stockpile = {
-#						type = small_plane_airframe_0
-#						amount = 100
-#						producer = Z86
-#						variant_name = "Hawker Fury"
-#					}
-#				}
-#				else = {
-#					add_equipment_to_stockpile = {
-#						type = fighter_equipment_0
-#						amount = 100
-#						producer = Z86
-#					}
-#				}
+				add_equipment_to_stockpile = {
+					type = small_plane_airframe_1
+					amount = 100
+					producer = Z86
+					variant_name = "Hawker Fury"
+				}
 			}
 			Z86 = {
 				if = {
@@ -199,5 +189,39 @@ country_event = {
 			remove_ideas = EYP_rudolf_iii
 		}
 		add_political_power = -25
+	}
+}
+
+country_event = {
+	id = eylstadt.8
+	title = eylstadt.8.t
+	desc = eylstadt.8.desc
+	picture = GFX_report_event_EYP_01
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = eylstadt.8.a
+		effect_tooltip = {
+			add_ideas = EYP_enemy_navy_blocked_idea
+		}
+		custom_effect_tooltip = EYP_AIL_carriar_decision_tt
+	}
+}
+
+country_event = {
+	id = eylstadt.9
+	title = eylstadt.9.t
+	desc = eylstadt.9.desc
+	picture = GFX_report_event_EYP_01
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = eylstadt.9.a
 	}
 }

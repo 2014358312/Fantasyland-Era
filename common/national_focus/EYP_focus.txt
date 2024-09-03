@@ -1249,7 +1249,10 @@ focus_tree = {
 			NOT = { has_idea = EYP_resistance_of_rearmament }
 			custom_trigger_tooltip = {
 				tooltip = EYP_elite_army_ttt
-				NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+				OR = {
+					NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+					has_country_flag = EYP_elite_army_flag
+				}
 			}
 		}
 		search_filters = {}
@@ -1274,6 +1277,11 @@ focus_tree = {
 				}
 				add_to_variable = { EYP_EA_experience_gain_army_factor_var = 0.10 }
 			}
+			if = {
+				limit = { has_idea = EYP_startup_defend_motherland }
+				modify_timed_idea = { idea = EYP_startup_defend_motherland days = 30 }
+			}
+			else = { add_timed_idea = { idea = EYP_startup_defend_motherland days = 30 }
 		}
 	}
 	
