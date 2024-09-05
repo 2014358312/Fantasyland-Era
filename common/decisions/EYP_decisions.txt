@@ -208,36 +208,27 @@ EYP_hundred_day_crisis_decision_category = {
 		cost = 25
 		fire_only_once = yes
 		days_remove = EYP_war_plan_length_var
-		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
+		complete_effect = {
+			set_country_flag = EYP_executing_a_plan_flag
+			custom_effect_tooltip = EYP_attack_on_carrier_decision_tt
+			hidden_effect = {
+				meta_effect = {
+					text = {
+						set_variable_to_random = {
+							var = random_happens
+							min = 5
+							max = [HAPPENS]
+							integer = yes
+						}
+					}
+					HAPPENS = [?EYP_war_plan_length_var]
+				}
+				country_event = { id = eylstadt.9 days = random_happens }
+			}
+		}
 		modifier = { command_power_gain_mult = -0.50 }
 		remove_effect = {
 			clr_country_flag = EYP_executing_a_plan_flag
-			AIL = {
-				country_event = ai.1
-				destroy_ships = {
-					type = carrier
-					count = all
-				}
-			}
-			every_state = {
-				limit = {
-					has_dynamic_modifier = {
-						modifier = AIL_blocked_coastal_state_dynamic_modifier
-						scope = AIL
-					}
-				}
-				remove_dynamic_modifier = {
-					modifier = AIL_blocked_coastal_state_dynamic_modifier
-					scope = AIL
-				}
-			}
-			remove_ideas = EYP_enemy_navy_blocked_idea
-			hidden_effect = {
-				every_country = {
-					limit = { is_ai = no }
-					news_event = { id = news.1 days = 2 }
-				}
-			}
 		}
 		ai_will_do = {
 			base = 0
@@ -260,12 +251,12 @@ EYP_hundred_day_crisis_decision_category = {
 		cost = 50
 		fire_only_once = yes
 		days_remove = EYP_war_plan_length_var
-		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
-		modifier = { command_power_gain_mult = -0.50 }
 		complete_effect = {
+			set_country_flag = EYP_executing_a_plan_flag
 			remove_ideas = EYP_resistance_of_rearmament
 			army_experience = 10
 		}
+		modifier = { command_power_gain_mult = -0.50 }
 		remove_effect = {
 			clr_country_flag = EYP_executing_a_plan_flag
 			set_country_flag = EYP_elite_army_flag
@@ -293,14 +284,27 @@ EYP_hundred_day_crisis_decision_category = {
 			NOT = { has_country_flag = EYP_executing_a_plan_flag }
 		}
 		cost = 25
-		fire_only_once = yes
+		fire_only_once = no
 		days_remove = EYP_war_plan_length_var
-		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
+		days_re_enable = 15
+		complete_effect = {
+			set_country_flag = EYP_executing_a_plan_flag
+			if = {
+				limit = { NOT = { has_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier } } }
+				add_timed_idea = {
+					idea = EYP_startup_fight_in_air_idea
+					months = 1
+				}
+			}
+		}
 		modifier = { command_power_gain_mult = -0.50 }
 		remove_effect = {
 			clr_country_flag = EYP_executing_a_plan_flag
 			if = {
-				limit = { has_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier } }
+				limit = {
+					has_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier }
+					NOT = { has_idea = EYP_startup_fight_in_air_idea }
+				}
 				custom_effect_tooltip = EYP_modifier_deception_plan_tt
 				add_to_variable = { EYP_DP_cas_damage_reduction_var = 0.05 tooltip = cas_damage_reduction_tt }
 			}

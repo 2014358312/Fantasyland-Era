@@ -223,5 +223,31 @@ country_event = {
 
 	option = {
 		name = eylstadt.9.a
+		AIL = {
+			country_event = ai.1
+			destroy_ships = {
+				type = carrier
+				count = all
+			}
+		}
+		every_state = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = AIL_blocked_coastal_state_dynamic_modifier
+					scope = AIL
+				}
+			}
+			remove_dynamic_modifier = {
+				modifier = AIL_blocked_coastal_state_dynamic_modifier
+				scope = AIL
+			}
+		}
+		remove_ideas = EYP_enemy_navy_blocked_idea
+		hidden_effect = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = news.1 days = 2 }
+			}
+		}
 	}
 }
