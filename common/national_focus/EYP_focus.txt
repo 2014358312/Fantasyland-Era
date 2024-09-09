@@ -60,7 +60,13 @@ focus_tree = {
 	focus = {
 		id = EYP_startup_private_financing
 		icon = GFX_focus_generic_concessions
-		x = 3
+		allow_branch = {
+			OR = {
+				has_country_flag = eylstadt_drift_defence_war_member_flag
+				NOT = { has_global_flag = eylstadt_drift_defence_war }
+			}
+		}
+		x = -3
 		y = 0
 		cost = 5
 		ai_will_do = {
@@ -70,6 +76,7 @@ focus_tree = {
 				has_country_flag = eylstadt_drift_defence_war_member_flag
 			}
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = { EYP_patriotic_war = yes }
 		completion_reward = {
@@ -92,7 +99,7 @@ focus_tree = {
 		relative_position_id = EYP_startup_private_financing
 		x = -2
 		y = 1
-		cost = 2
+		cost = 5
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -101,6 +108,7 @@ focus_tree = {
 			}
 		}
 		available = { EYP_patriotic_war = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		completion_reward = {
 			every_core_state = {
@@ -130,7 +138,7 @@ focus_tree = {
 		relative_position_id = EYP_startup_private_financing
 		x = 2
 		y = 1
-		cost = 2
+		cost = 5
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -139,6 +147,7 @@ focus_tree = {
 			}
 		}
 		available = { EYP_patriotic_war = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		completion_reward = {
 			add_ideas = EYP_startup_guerrilla_warfare
@@ -155,7 +164,7 @@ focus_tree = {
 		relative_position_id = EYP_startup_private_financing
 		x = 0
 		y = 3
-		cost = 2
+		cost = 5
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -164,6 +173,7 @@ focus_tree = {
 			}
 		}
 		available = { EYP_patriotic_war = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		completion_reward = {
 			country_event = eylstadt.6
@@ -182,7 +192,7 @@ focus_tree = {
 		relative_position_id = EYP_startup_defend_point
 		x = 1
 		y = 1
-		cost = 3
+		cost = 5
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -194,6 +204,7 @@ focus_tree = {
 			EYP_patriotic_war = yes
 			has_completed_focus = EYP_startup_coronation
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		completion_reward = {
 			unlock_decision_tooltip = EYP_startup_clear_fields_decision
@@ -213,7 +224,7 @@ focus_tree = {
 		relative_position_id = EYP_startup_defend_point
 		x = -1
 		y = 1
-		cost = 3
+		cost = 5
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -225,6 +236,7 @@ focus_tree = {
 			EYP_patriotic_war = yes
 			has_completed_focus = EYP_startup_coronation
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		completion_reward = {
 			add_ideas = EYP_startup_simple_workshop
@@ -239,7 +251,7 @@ focus_tree = {
 		relative_position_id = EYP_startup_clear_fields
 		x = -1
 		y = 1
-		cost = 3
+		cost = 5
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -251,6 +263,7 @@ focus_tree = {
 			EYP_patriotic_war = yes
 			has_idea = EYP_startup_defend_point
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		completion_reward = {
 			custom_effect_tooltip = EYP_startup_no_step_back_tt
@@ -265,7 +278,7 @@ focus_tree = {
 		relative_position_id = EYP_startup_guerrilla_warfare
 		x = -1
 		y = 1
-		cost = 2
+		cost = 5
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -277,6 +290,7 @@ focus_tree = {
 			EYP_patriotic_war = yes
 			has_completed_focus = EYP_startup_coronation
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		completion_reward = {
 			hidden_effect = { set_technology = { EYP_startup_royal_jager_tech = 1 } }
@@ -291,7 +305,7 @@ focus_tree = {
 		relative_position_id = EYP_startup_guerrilla_warfare
 		x = 1
 		y = 1
-		cost = 2
+		cost = 5
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -303,6 +317,7 @@ focus_tree = {
 			EYP_patriotic_war = yes
 			has_completed_focus = EYP_startup_coronation
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		completion_reward = {
 			add_ideas = EYP_startup_use_weapon
@@ -317,7 +332,7 @@ focus_tree = {
 		relative_position_id = EYP_startup_jager_movement
 		x = 1
 		y = 1
-		cost = 2
+		cost = 5
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -329,6 +344,7 @@ focus_tree = {
 			EYP_patriotic_war = yes
 			has_idea = EYP_startup_guerrilla_warfare
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		completion_reward = {
 			custom_effect_tooltip = EYP_startup_jointly_defend_tt
@@ -347,7 +363,7 @@ focus_tree = {
 		relative_position_id = EYP_startup_coronation
 		x = 0
 		y = 1
-		cost = 3
+		cost = 5
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -356,6 +372,7 @@ focus_tree = {
 			}
 		}
 		available = { EYP_patriotic_war = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		completion_reward = {
 			custom_effect_tooltip = EYP_startup_hardest_passed_away_tt
@@ -388,12 +405,13 @@ focus_tree = {
 	focus = {
 		id = EYP_industry_plan
 		icon = GFX_goal_generic_demand_territory
-		x = 15
+		x = 9
 		y = 0
 		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -421,6 +439,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -447,6 +466,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -469,6 +489,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -498,6 +519,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -541,6 +563,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -561,6 +584,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -584,6 +608,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -605,6 +630,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -629,6 +655,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -668,6 +695,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -707,6 +735,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -729,6 +758,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -752,6 +782,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -775,6 +806,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -795,6 +827,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -821,6 +854,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -866,6 +900,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -885,6 +920,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -905,6 +941,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -927,6 +964,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -953,6 +991,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1007,6 +1046,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1046,6 +1086,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1081,6 +1122,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1121,6 +1163,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1145,6 +1188,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1167,6 +1211,7 @@ focus_tree = {
 			EYP_industrialization_in_progress = yes
 			num_of_factories > 20
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1192,6 +1237,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { EYP_industrialization_in_progress = yes }
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1221,6 +1267,7 @@ focus_tree = {
 			EYP_industrialization_in_progress = yes
 			num_of_factories > 30
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1239,7 +1286,7 @@ focus_tree = {
 	focus = {
 		id = EYP_elite_army
 		icon = GFX_focus_generic_defence_army
-		x = 30
+		x = 24
 		y = 0
 		cost = 6
 		ai_will_do = {
@@ -1255,6 +1302,7 @@ focus_tree = {
 				}
 			}
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1281,7 +1329,7 @@ focus_tree = {
 				limit = { has_idea = EYP_startup_defend_motherland }
 				modify_timed_idea = { idea = EYP_startup_defend_motherland days = 30 }
 			}
-			else = { add_timed_idea = { idea = EYP_startup_defend_motherland days = 30 }
+			else = { add_timed_idea = { idea = EYP_startup_defend_motherland days = 30 } }
 		}
 	}
 	
@@ -1296,6 +1344,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1332,6 +1381,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1359,6 +1409,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1380,6 +1431,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1401,6 +1453,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1427,6 +1480,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1462,6 +1516,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1493,6 +1548,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1523,6 +1579,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1552,6 +1609,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1575,6 +1633,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1597,6 +1656,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1619,6 +1679,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1640,6 +1701,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1672,6 +1734,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1695,6 +1758,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1719,6 +1783,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1737,6 +1802,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1758,6 +1824,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1782,6 +1849,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1805,6 +1873,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1848,6 +1917,7 @@ focus_tree = {
 				NOT = { has_idea = EYP_order_of_fighter }
 			}
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1880,6 +1950,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1928,6 +1999,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1959,6 +2031,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -1986,6 +2059,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2029,6 +2103,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2082,6 +2157,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2108,6 +2184,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2163,6 +2240,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2205,6 +2283,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2233,6 +2312,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2259,6 +2339,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2291,6 +2372,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2349,6 +2431,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2377,6 +2460,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2409,6 +2493,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2439,6 +2524,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2470,6 +2556,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2496,6 +2583,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2529,6 +2617,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2556,6 +2645,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2582,6 +2672,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2613,6 +2704,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2638,6 +2730,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2694,7 +2787,7 @@ focus_tree = {
 		id = EYP_newborn
 		icon = GFX_focus_EYP_newborn
 		mutually_exclusive = { focus = EYP_sunrise focus = EYP_harvest_and_reflection }
-		x = 66
+		x = 60
 		y = 0
 		cost = 0
 		ai_will_do = {
@@ -2703,6 +2796,7 @@ focus_tree = {
 		available = {
 			always = no
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2761,6 +2855,7 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2792,6 +2887,7 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2816,6 +2912,7 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2840,6 +2937,7 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2866,6 +2964,7 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2891,6 +2990,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2913,6 +3013,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2935,6 +3036,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2957,6 +3059,7 @@ focus_tree = {
 		available = {
 			NOT = { has_government = neutrality }
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -2979,6 +3082,7 @@ focus_tree = {
 		available = {
 			NOT = { has_government = democratic }
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -3015,6 +3119,7 @@ focus_tree = {
 		available = {
 			
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -3036,6 +3141,7 @@ focus_tree = {
 		available = {
 			always = no
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -3057,6 +3163,7 @@ focus_tree = {
 		available = {
 			always = no
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -3081,6 +3188,7 @@ focus_tree = {
 		}
 		available = {
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -3102,6 +3210,7 @@ focus_tree = {
 		available = {
 			has_war = no
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -3122,6 +3231,7 @@ focus_tree = {
 		}
 		available = {
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -3142,6 +3252,7 @@ focus_tree = {
 		}
 		available = {
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -3162,6 +3273,7 @@ focus_tree = {
 		}
 		available = {
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -3187,6 +3299,7 @@ focus_tree = {
 				ruling_only = yes
 			}
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -3207,6 +3320,7 @@ focus_tree = {
 		}
 		available = {
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -3230,6 +3344,7 @@ focus_tree = {
 		}
 		available = {
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {
@@ -3251,6 +3366,7 @@ focus_tree = {
 		}
 		available = {
 		}
+		available_if_capitulated = yes
 		search_filters = {}
 		bypass = {  }
 		completion_reward = {

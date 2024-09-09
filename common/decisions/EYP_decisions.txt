@@ -498,6 +498,7 @@ EYP_hundred_day_crisis_decision_category = {
 				type = carrier
 				archetype = ship_hull_carrier
 			}
+			NOT = { has_active_mission = EYP_AIL_carriar_ongoing_mission }
 		}
 		available = {
 			if = {
@@ -540,23 +541,25 @@ EYP_hundred_day_crisis_decision_category = {
 		icon = SWE_set_air_budget
 		allowed = { tag = AIL }
 		available = {
-			OR = {
-				if = {
-					limit = { is_ai = no }
+			if = {
+				limit = { is_ai = no }
+				OR = {
 					ships_in_area = { area = 14 size < 7 }
 					ships_in_area = { area = 14 size < 7 }
-				}
-				has_navy_size = {
-					size < 1
-					type = carrier
-					archetype = ship_hull_carrier
-				}
-				hidden_trigger = {
-					all_country = {
-						NOT = {
-							has_country_flag = eylstadt_drift_defence_war_member_flag
-						}
+					has_navy_size = {
+						unit = carrier
+						size < 1
 					}
+					NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+				}
+			}
+			else = {
+				OR = {
+					has_navy_size = {
+						unit = carrier
+						size < 1
+					}
+					NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
 				}
 			}
 		}
