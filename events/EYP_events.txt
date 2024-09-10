@@ -251,3 +251,48 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = eylstadt.10
+	title = eylstadt.10.t
+	desc = eylstadt.10.desc
+	picture = GFX_report_event_EYP_01
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = EYP
+		has_country_flag = eylstadt_drift_defence_war_member_flag
+		OR = {
+			has_completed_focus = EYP_startup_defend_point
+			has_completed_focus = EYP_startup_guerrilla_warfare
+		}
+		NOT = { has_completed_focus = EYP_startup_coronation }
+	}
+	
+	mean_time_to_happen = {
+		days = 60
+		#modifier = {
+		#	factor = 0
+		#	focus_progress = {
+		#		focus = EYP_startup_coronation
+		#		progress > 0
+		#	}
+		#}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = EYP_late_wedding_flag
+		}
+	}
+
+	option = {
+		name = eylstadt.10.a
+		effect_tooltip = { add_ideas = EYP_deception_plan_idea_fake }
+		hidden_effect = {
+			add_to_variable = { EYP_DP_political_power_factor_var = 0.35 }
+			add_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier }
+		}
+	}
+}

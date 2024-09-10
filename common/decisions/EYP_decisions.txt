@@ -212,18 +212,14 @@ EYP_hundred_day_crisis_decision_category = {
 			set_country_flag = EYP_executing_a_plan_flag
 			custom_effect_tooltip = EYP_attack_on_carrier_decision_tt
 			hidden_effect = {
-				meta_effect = {
-					text = {
-						set_variable_to_random = {
-							var = random_happens
-							min = 5
-							max = [HAPPENS]
-							integer = yes
-						}
-					}
-					HAPPENS = [?EYP_war_plan_length_var]
+				set_variable_to_random = {
+					var = random_happens
+					min = 5
+					max = 15
+					integer = yes
 				}
 				country_event = { id = eylstadt.9 days = random_happens }
+				clear_variable = random_happens
 			}
 		}
 		modifier = { command_power_gain_mult = -0.50 }
@@ -289,12 +285,9 @@ EYP_hundred_day_crisis_decision_category = {
 		days_re_enable = 15
 		complete_effect = {
 			set_country_flag = EYP_executing_a_plan_flag
-			if = {
-				limit = { NOT = { has_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier } } }
-				add_timed_idea = {
-					idea = EYP_startup_fight_in_air_idea
-					months = 1
-				}
+			add_timed_idea = {
+				idea = EYP_startup_fight_in_air_idea
+				months = 1
 			}
 		}
 		modifier = { command_power_gain_mult = -0.50 }
@@ -303,7 +296,6 @@ EYP_hundred_day_crisis_decision_category = {
 			if = {
 				limit = {
 					has_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier }
-					NOT = { has_idea = EYP_startup_fight_in_air_idea }
 				}
 				custom_effect_tooltip = EYP_modifier_deception_plan_tt
 				add_to_variable = { EYP_DP_cas_damage_reduction_var = 0.05 tooltip = cas_damage_reduction_tt }
@@ -330,10 +322,13 @@ EYP_hundred_day_crisis_decision_category = {
 		fire_only_once = yes
 		days_remove = EYP_war_plan_length_var
 		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
-		modifier = { command_power_gain_mult = -0.50 }
+		modifier = {
+			command_power_gain_mult = -0.50
+			army_artillery_attack_factor = 0.20
+			army_artillery_defence_factor = 0.20
+		}
 		remove_effect = {
 			clr_country_flag = EYP_executing_a_plan_flag
-			add_political_power = 1
 		}
 		ai_will_do = {
 			base = 0
@@ -351,16 +346,40 @@ EYP_hundred_day_crisis_decision_category = {
 		available = {
 			EYP_princess_return = yes
 			NOT = { has_country_flag = EYP_executing_a_plan_flag }
-			
+			834 = {
+				is_controlled_by = ROOT
+				any_neighbor_state = { NOT = { is_controlled_by = ROOT } }
+			}
 		}
 		cost = 25
 		fire_only_once = yes
 		days_remove = EYP_war_plan_length_var
-		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
+		complete_effect = {
+			set_country_flag = EYP_executing_a_plan_flag
+			834 = {
+				add_dynamic_modifier = {
+					modifier = EYP_defend_sellun_state_dynamic_modifier
+					days = 45
+					scope = EYP
+				}
+			}
+		}
 		modifier = { command_power_gain_mult = -0.50 }
 		remove_effect = {
 			clr_country_flag = EYP_executing_a_plan_flag
-			add_political_power = 1
+			add_political_power = 20
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+		cancel_trigger = {
+			834 = { NOT = { is_controlled_by = ROOT } }
+		}
+		cancel_effect = {
+			834 = { remove_dynamic_modifier = { modifier = EYP_defend_sellun_state_dynamic_modifier } }
+			add_political_power = -20
+			add_stability = -0.05
+			add_war_support = -0.05
+			clr_country_flag = EYP_executing_a_plan_flag
 		}
 		ai_will_do = {
 			base = 0
@@ -462,21 +481,55 @@ EYP_hundred_day_crisis_decision_category = {
 	}
 	
 	EYP_dredge_river_decision = {
-		icon = generic_research
-		allowed = { tag = EYP }
-		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
-		available = {
-			NOT = { has_country_flag = EYP_executing_a_plan_flag }
-			EYP_escalation_level_4 = yes
+		icon = generic_mountain_fortification
+		state_target = yes
+		on_map_mode = map_only
+		target_root_trigger = {
+			has_country_flag = eylstadt_drift_defence_war_member_flag
+			TAG = EYP
 		}
-		cost = 25
-		fire_only_once = yes
-		days_remove = EYP_war_plan_length_var
-		complete_effect = { set_country_flag = EYP_executing_a_plan_flag }
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				NOT = { has_dynamic_modifier = { modifier = EYP_dredge_river_state_dynamic_modifier } }
+			}
+		}
+		allowed = { original_tag = EYP }
+		visible = {
+			has_country_flag = eylstadt_drift_defence_war_member_flag
+			EYP_escalation_level_4 = yes
+			FROM = {
+				is_core_of = ROOT
+				OR = {
+					is_controlled_by = ROOT
+					AND = {
+						NOT = { is_controlled_by = ROOT }
+						any_neighbor_state = { is_controlled_by = ROOT }
+					}
+				}
+			}
+		}
+		available = {
+			EYP_escalation_level_4 = yes
+			NOT = { has_country_flag = EYP_dredge_river_flag }
+		}
+		cost = 10
+		fire_only_once = no
+		days_remove = 7
 		modifier = { experience_gain_army_factor = -0.25 }
 		remove_effect = {
-			clr_country_flag = EYP_executing_a_plan_flag
-			
+			FROM = {
+				add_dynamic_modifier = {
+					modifier = EYP_dredge_river_state_dynamic_modifier
+					scope = EYP
+					days = 45
+				}
+				if = {
+					limit = { has_country_flag = EYP_dredge_river_flag }
+					clr_country_flag = EYP_dredge_river_flag
+				}
+				else = { set_country_flag = EYP_dredge_river_flag }
+			}
 		}
 		ai_will_do = {
 			base = 0

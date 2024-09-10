@@ -177,11 +177,15 @@ focus_tree = {
 		search_filters = {}
 		completion_reward = {
 			country_event = eylstadt.6
-			effect_tooltip = { add_ideas = EYP_deception_plan_idea_fake }
-			hidden_effect = {
-				add_to_variable = { EYP_DP_political_power_factor_var = 0.35 }
-				add_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier }
+			if = {
+				limit = { NOT = { has_country_flag = EYP_late_wedding_flag } }
+				effect_tooltip = { add_ideas = EYP_deception_plan_idea_fake }
+				hidden_effect = {
+					add_to_variable = { EYP_DP_political_power_factor_var = 0.35 }
+					add_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier }
+				}
 			}
+			else = { clr_country_flag = EYP_late_wedding_flag }
 		}
 	}
 
