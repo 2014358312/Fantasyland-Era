@@ -698,3 +698,58 @@ east_continent_debug_decisions = {
 		}
 	}
 }
+
+northwest_continent_debug_decisions = {
+
+	debug_release_fontaine_decision = {
+		allowed = {
+			always = yes
+		}
+		
+		visible = {
+			always = yes
+		}
+		
+		available = {
+			NOT = { country_exists = FON }
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision debug_release_fontaine_decision"
+			every_state = {
+				limit = {
+					OR = {
+						state = 9
+						state = 12
+						state = 13
+						state = 14
+						state = 15
+						state = 16
+						state = 17
+						state = 18
+						state = 19
+						state = 20
+						state = 21
+						state = 22
+						state = 23
+						state = 24
+					}
+				}
+				effect_tooltip = {
+					add_core_of = FON
+					FON = { transfer_state = PREV }
+				}
+				hidden_effect = {
+					if = {
+						limit = { NOT = { has_core_of = FON } }
+						add_core_of = FON
+					}
+					if = {
+						limit = { NOT = { is_controlled_by = FON } }
+						FON = { transfer_state = PREV }
+					}
+				}
+			}
+		}
+	}
+}
