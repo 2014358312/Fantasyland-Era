@@ -67,3 +67,32 @@ LAN_dont_trust_ai = {
 		value = 100
 	}
 }
+
+LAN_avoid_getting_involved_with_eylstadt = {
+	allowed = {
+		NOT = { tag = AIL }
+		OR = {
+			original_tag = LAN
+			is_in_faction_with = LAN
+		}
+	}
+	enable = {
+		country_exists = AIL
+		has_country_flag = eylstadt_drift_defence_war_member_flag
+	}
+	abort = {
+		NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = eylstadt_artificial_conflict_area
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0
+		area = eylstadt_artificial_conflict_area
+	}
+}

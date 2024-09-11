@@ -5,6 +5,7 @@ tags={
 }
 name="Fantasyland Era"
 replace_path="common/abilities"
+replace_path="common/ai_areas"
 replace_path="common/ai_strategy"
 replace_path="common/ai_equipment"
 replace_path="common/ai_focuses"

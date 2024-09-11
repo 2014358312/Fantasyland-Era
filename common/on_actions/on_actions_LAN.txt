@@ -84,4 +84,26 @@ on_actions = {
 			}
 		}
 	}
+	
+	on_daily_LAN = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = eylstadt_drift_defence_war_member_flag
+					check_variable = {
+						var = global.EYP_escalation_level_total
+						value = 9
+						compare = less_than
+					}  
+				}
+				every_state = {
+					limit = { is_controlled_by = AIL }
+					teleport_armies = {
+						limit = { tag = LAN }
+						to_state_array = LAN.owned_controlled_states
+					}
+				}
+			}
+		}
+	}
 }

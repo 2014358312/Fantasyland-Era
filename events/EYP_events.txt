@@ -16,23 +16,33 @@ country_event = {
 
 	option = {
 		name = eylstadt.1.a
-		effect_tooltip = {
-			EYP = {
-				add_equipment_to_stockpile = {
-					type = small_plane_airframe_1
-					amount = 100
-					producer = Z86
-					variant_name = "Hawker Fury"
+		hidden_effect = {
+			create_equipment_variant = {
+				name = "Hawker Fury" 
+				type = small_plane_airframe_1
+				modules = {
+					fixed_main_weapon_slot = light_mg_4x
+					fixed_auxiliary_weapon_slot_1 = light_mg_4x
+					engine_type_slot = engine_2_1x
+					special_type_slot_1 = empty
 				}
 			}
-			Z86 = {
-				if = {
-					limit = { has_dlc = "Arms Against Tyranny" }
-					add_cic = 1000
-				}
-				else = {
-					add_timed_idea = { idea = EYP_cash_from_order_of_fighter days = 90 }
-				}
+		}
+		EYP = {
+			add_equipment_to_stockpile = {
+				type = small_plane_airframe_1
+				amount = 100
+				producer = Z86
+				variant_name = "Hawker Fury"
+			}
+		}
+		Z86 = {
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				add_cic = 1000
+			}
+			else = {
+				add_timed_idea = { idea = EYP_cash_from_order_of_fighter days = 90 }
 			}
 		}
 	}
@@ -207,7 +217,6 @@ country_event = {
 		effect_tooltip = {
 			add_ideas = EYP_enemy_navy_blocked_idea
 		}
-		custom_effect_tooltip = EYP_AIL_carriar_decision_tt
 	}
 }
 
@@ -258,6 +267,136 @@ country_event = {
 	desc = eylstadt.10.desc
 	picture = GFX_report_event_EYP_01
 
+	is_triggered_only = yes
+
+	option = {
+		name = eylstadt.10.a
+		trigger = { has_equipment = { infantry_equipment > 2000 } }
+		custom_effect_tooltip = eylstadt_10_tt
+		effect_tooltip = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 2000
+				target = FROM
+			}
+		}
+		hidden_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -2000
+			}
+			FROM = { 
+				set_country_flag = EYP_get_infantry_equipment_flag
+				country_event = eylstadt.11
+			}
+		}
+	}
+
+	option = {
+		name = eylstadt.10.b
+		trigger = { has_equipment = { support_equipment > 500 } }
+		custom_effect_tooltip = eylstadt_10_tt
+		effect_tooltip = {
+			send_equipment = {
+				equipment = support_equipment
+				amount = 500
+				target = FROM
+			}
+		}
+		hidden_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = -500
+			}
+			FROM = { 
+				set_country_flag = EYP_get_support_equipment_flag
+				country_event = eylstadt.11
+			}
+		}
+	}
+
+	option = {
+		name = eylstadt.10.c
+		trigger = { has_equipment = { artillery_equipment > 200 } }
+		custom_effect_tooltip = eylstadt_10_tt
+		effect_tooltip = {
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = -200
+			}
+			send_equipment = {
+				equipment = artillery_equipment
+				amount = 200
+				target = FROM
+			}
+		}
+		hidden_effect = {
+			FROM = { 
+				set_country_flag = EYP_get_artillery_equipment_flag
+				country_event = eylstadt.11
+			}
+		}
+	}
+
+	option = {
+		name = eylstadt.10.d
+		if = {
+			limit = {
+				has_equipment = { infantry_equipment < 2000 }
+				has_equipment = { support_equipment < 500 }
+				has_equipment = { artillery_equipment < 200 }
+			}
+			custom_effect_tooltip = eylstadt_10_tt2
+		}
+		FROM = { country_event = eylstadt.12 }
+	}
+}
+
+country_event = {
+	id = eylstadt.11
+	title = eylstadt.11.t
+	desc = eylstadt.11.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = eylstadt.11.a
+		if = {
+			limit = { has_country_flag = EYP_get_infantry_equipment_flag }
+			event_option_tooltip = eylstadt.10.a
+		}
+		else_if = {
+			limit = { has_country_flag = EYP_get_support_equipment_flag }
+			event_option_tooltip = eylstadt.10.b
+		}
+		else_if = {
+			limit = { has_country_flag = EYP_get_artillery_equipment_flag }
+			event_option_tooltip = eylstadt.10.c
+		}
+		custom_effect_tooltip = eylstadt_11_tt
+	}
+}
+
+country_event = {
+	id = eylstadt.12
+	title = eylstadt.12.t
+	desc = eylstadt.12.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = eylstadt.12.a
+	}
+}
+
+country_event = {
+	id = eylstadt.13
+	title = eylstadt.13.t
+	desc = eylstadt.13.desc
+	picture = GFX_report_event_EYP_01
+
 	fire_only_once = yes
 
 	trigger = {
@@ -288,11 +427,56 @@ country_event = {
 	}
 
 	option = {
-		name = eylstadt.10.a
+		name = eylstadt.13.a
 		effect_tooltip = { add_ideas = EYP_deception_plan_idea_fake }
 		hidden_effect = {
 			add_to_variable = { EYP_DP_political_power_factor_var = 0.35 }
 			add_dynamic_modifier = { modifier = EYP_deception_plan_dynamic_modifier }
 		}
+	}
+}
+
+country_event = {
+	id = eylstadt.14
+	title = eylstadt.14.t
+	desc = eylstadt.14.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = eylstadt.14.a
+		ai_chance = {
+			base = 10
+		}
+		hidden_effect = {
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = EYP
+				value = 200
+			}
+			set_country_flag = can_send_volunteers_to_EYP
+		}
+	}
+
+	option = {
+		name = eylstadt.14.b
+		ai_chance = {
+			base = 1
+		}
+		FROM = { country_event = eylstadt.15 }
+	}
+}
+
+country_event = {
+	id = eylstadt.15
+	title = eylstadt.15.t
+	desc = eylstadt.15.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = eylstadt.15.a
 	}
 }

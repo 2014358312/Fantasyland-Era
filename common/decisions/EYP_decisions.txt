@@ -15,10 +15,12 @@ EYP_hundred_day_crisis_decision_category = {
 				set_variable = { global.EYP_war_escalation_length_var = 30 }
 				LAN = {
 					set_country_flag = eylstadt_drift_defence_war_member_flag
+					activate_mission = EYP_time_based_war_escalation_mission_fake
 					set_variable = { LAN_war_plan_length_var = 7 }
 				}
 				AIL = {
 					set_country_flag = eylstadt_drift_defence_war_member_flag
+					activate_mission = EYP_time_based_war_escalation_mission_fake
 					set_variable = { AIL_war_plan_length_var = 7 }
 					declare_war_on = {
 						target = EYP
@@ -31,20 +33,24 @@ EYP_hundred_day_crisis_decision_category = {
 				}
 				SMA = { 
 					set_country_flag = eylstadt_drift_defence_war_member_flag
+					activate_mission = EYP_time_based_war_escalation_mission_fake
 					set_variable = { SMA_war_plan_length_var = 7 }
 				}
 				EYP = {
 					set_country_flag = eylstadt_drift_defence_war_member_flag
+					activate_mission = EYP_time_based_war_escalation_mission
 					set_variable = { EYP_war_plan_length_var = 7 }
 					add_war_support = 0.05
 					Manpower_act_level_up = yes
 				}
 				Z86 = { 
 					set_country_flag = eylstadt_drift_defence_war_member_flag
+					activate_mission = EYP_time_based_war_escalation_mission_fake
 					set_variable = { Z86_war_plan_length_var = 7 }
 				}
 				TIA = { 
 					set_country_flag = eylstadt_drift_defence_war_member_flag
+					activate_mission = EYP_time_based_war_escalation_mission_fake
 					set_variable = { TIA_war_plan_length_var = 15 }
 				}
 				add_to_variable = { global.EYP_war_escalation_level_EYP_action = 1 }
@@ -204,6 +210,7 @@ EYP_hundred_day_crisis_decision_category = {
 			EYP_princess_return = yes
 			NOT = { has_country_flag = EYP_executing_a_plan_flag }
 			has_idea = EYP_enemy_navy_blocked_idea
+			EYP_Izetta = { is_army_leader = yes }
 		}
 		cost = 25
 		fire_only_once = yes
@@ -540,6 +547,135 @@ EYP_hundred_day_crisis_decision_category = {
 		}
 	}
 	
+	EYP_ask_for_equipment_decision = {
+		icon = generic_cavalry
+		allowed = { tag = EYP }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			NOT = { has_country_flag = EYP_executing_a_plan_flag }
+			NOT = { has_idea = EYP_enemy_navy_blocked_idea }
+			any_controlled_state = { is_coastal = yes }
+			TIA = {
+				exists = yes
+				has_civil_war = no
+				hidden_trigger = { has_war = no }
+				any_controlled_state = { is_coastal = yes }
+			}
+			EYP_escalation_level_5 = yes
+		}
+		cost = 25
+		fire_only_once = no
+		days_remove = EYP_war_plan_length_var
+		days_re_enable = 1
+		complete_effect = {
+			set_country_flag = EYP_executing_a_plan_flag
+			TIA = { country_event = eylstadt.10 }
+		}
+		modifier = { political_power_gain = -0.25 }
+		remove_effect = {
+			clr_country_flag = EYP_executing_a_plan_flag
+			if = {
+				limit = { has_country_flag = EYP_get_infantry_equipment_flag }
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 2000
+					producer = TIA
+				}
+				clr_country_flag = EYP_get_infantry_equipment_flag
+			}
+			else_if = {
+				limit = { has_country_flag = EYP_get_support_equipment_flag }
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 500
+					producer = TIA
+				}
+				clr_country_flag = EYP_get_support_equipment_flag
+			}
+			else_if = {
+				limit = { has_country_flag = EYP_get_artillery_equipment_flag }
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 200
+					producer = TIA
+				}
+				clr_country_flag = EYP_get_artillery_equipment_flag
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_ask_for_volunteer_decision = {
+		icon = generic_cavalry
+		allowed = { tag = EYP }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			NOT = { has_country_flag = EYP_executing_a_plan_flag }
+			NOT = { has_idea = EYP_enemy_navy_blocked_idea }
+			any_controlled_state = { is_coastal = yes }
+			TIA = {
+				exists = yes
+				has_civil_war = no
+				hidden_trigger = { has_war = no }
+				any_controlled_state = { is_coastal = yes }
+			}
+			EYP_escalation_level_6 = yes
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = EYP_war_plan_length_var
+		complete_effect = {
+			set_country_flag = EYP_executing_a_plan_flag
+			TIA = { country_event = eylstadt.14 }
+		}
+		modifier = { political_power_gain = -0.25 }
+		remove_effect = {
+			clr_country_flag = EYP_executing_a_plan_flag
+			division_template = {
+				name = "Tiam Volunteer Division"
+				division_names_group = EYP_INF_01
+				is_locked = yes
+				division_cap = 1
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					artillery_brigade = { x = 2 y = 0 }
+					artillery_brigade = { x = 2 y = 1 }
+					artillery_brigade = { x = 2 y = 2 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Tiam Volunteer Division\" division_template = \"Tiam Volunteer Division\""
+					count = 1
+					owner = ROOT
+					id = 1919
+				}
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
 	EYP_AIL_carriar_decision = {
 		icon = generic_naval
 		allowed = { tag = AIL }
@@ -579,7 +715,6 @@ EYP_hundred_day_crisis_decision_category = {
 				add_ideas = EYP_enemy_navy_blocked_idea
 			}
 			activate_mission = EYP_AIL_carriar_ongoing_mission
-			custom_effect_tooltip = EYP_AIL_carriar_decision_tt
 		}
 		ai_will_do = {
 			base = 0
@@ -661,6 +796,32 @@ EYP_hundred_day_crisis_decision_category = {
 		}
 	}
 	
+	EYP_AIL_awake_our_witch_decision = {
+		icon = generic_cavalry
+		allowed = { tag = AIL }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			NOT = { has_country_flag = EYP_executing_a_plan_flag }
+			EYP_escalation_level_5 = yes
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = AIL_war_plan_length_var
+		complete_effect = { set_country_flag = AIL_executing_a_plan_flag }
+		modifier = { research_speed_factor = -0.05 }
+		remove_effect = {
+			clr_country_flag = AIL_executing_a_plan_flag
+			
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
 	EYP_LAN_military_advisor_decision = {
 		icon = generic_army_support
 		allowed = { tag = LAN }
@@ -677,6 +838,83 @@ EYP_hundred_day_crisis_decision_category = {
 		remove_effect = {
 			clr_country_flag = LAN_executing_a_plan_flag
 			AIL = { add_ideas = received_attache }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_global_flag = eylstadt_drift_defence_war
+			}
+		}
+	}
+	
+	EYP_LAN_air_volunteer_decision = {
+		icon = generic_army_support
+		allowed = { tag = LAN }
+		visible = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+		available = {
+			NOT = { has_country_flag = LAN_executing_a_plan_flag }
+			EYP_escalation_level_6 = yes
+		}
+		cost = 25
+		fire_only_once = no
+		days_remove = LAN_war_plan_length_var
+		days_re_enable = 7
+		complete_effect = {
+			set_country_flag = LAN_executing_a_plan_flag
+		}
+		modifier = {
+			command_power_gain_mult = -0.50
+			experience_gain_air_factor = -1.00
+		}
+		remove_effect = {
+			clr_country_flag = LAN_executing_a_plan_flag
+			hidden_effect = {
+				create_equipment_variant = {
+					name = "U-2" #
+					type = small_plane_cas_airframe_0
+					modules = {
+						fixed_main_weapon_slot = bomb_locks
+						fixed_auxiliary_weapon_slot_1 = empty
+						engine_type_slot = engine_1_1x
+						special_type_slot_1 = non_strategic_materials_small
+					}
+				}
+				create_equipment_variant = {
+					name = "Pe-2" #
+					type = small_plane_cas_airframe_2
+					allow_without_tech = yes
+					modules = {
+						fixed_main_weapon_slot = small_bomb_bay
+						fixed_auxiliary_weapon_slot_1 = light_mg_2x
+						engine_type_slot = engine_2_2x
+						special_type_slot_1 = lmg_defense_turret
+						special_type_slot_2 = dive_brakes_small
+					}
+				}
+				create_equipment_variant = {
+					name = "Yak-1" #
+					type = small_plane_airframe_1
+					modules = {
+						fixed_main_weapon_slot = aircraft_cannon_1_1x
+						fixed_auxiliary_weapon_slot_1 = heavy_mg_2x
+						engine_type_slot = engine_2_1x
+						special_type_slot_1 = non_strategic_materials_small
+					}
+				}
+				103 = {
+					if = {
+						limit = { air_base < 1 }
+						add_building_construction = {
+							type = air_base
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				AIL = { load_oob = "AIL_LAN_volunteer_air_bba" }
+			}
+			custom_effect_tooltip = EYP_LAN_air_volunteer_decision_tt
 		}
 		ai_will_do = {
 			base = 0
