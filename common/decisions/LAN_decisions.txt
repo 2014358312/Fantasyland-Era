@@ -65,3 +65,68 @@ LAN_balance_of_power_decision_category = {
 		}
 	}
 }
+
+operations = {
+	fate_of_86 = {
+		icon = generic_break_treaty
+
+		available = {
+			if = {
+				limit = { tag = SMA }
+				NOT = { country_exists = LAN }
+			}
+			else_if = {
+				limit = { tag = LAN }
+				NOT = { country_exists = SMA }
+			}
+			else = { always = no }
+			Z86 = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		visible = {
+			OR = {
+				tag = LAN
+				tag = SMA
+			}
+		}
+		
+		days_remove = 70
+		#days_re_enable = 30
+
+		fire_only_once = yes
+
+		cost = 100
+		
+		complete_effect = {
+		
+		}
+
+		remove_effect = {
+			annex_country = {
+				target = Z86
+				transfer_troops = yes
+			}
+		}
+		
+		cancel_trigger = {
+			Z86 = {
+				OR = {
+					exists = no
+					is_subject = yes
+					has_war_with = ROOT
+				}
+			}
+		}
+		
+		cancel_effect = {
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
