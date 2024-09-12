@@ -1,3 +1,62 @@
+TIA_calculate_blockade_rate = {
+	TIA = {
+		if = {
+			limit = { is_ai = no }
+			if = {
+				limit = { ships_in_area = { area = 39 size > 49 } }
+				set_variable = { TIA_block_39_rate = 3 }
+			}
+			else_if = {
+				limit = { ships_in_area = { area = 39 size > 24 } }
+				set_variable = { TIA_block_39_rate = 2 }
+			}
+			else = {
+				set_variable = { TIA_block_39_rate = 1 }
+			}
+			if = {
+				limit = { ships_in_area = { area = 43 size > 49 } }
+				set_variable = { TIA_block_43_rate = 3 }
+			}
+			else_if = {
+				limit = { ships_in_area = { area = 43 size > 24 } }
+				set_variable = { TIA_block_43_rate = 2 }
+			}
+			else = {
+				set_variable = { TIA_block_43_rate = 1 }
+			}
+			if = {
+				limit = { ships_in_area = { area = 13 size > 49 } }
+				set_variable = { TIA_block_13_rate = 3 }
+			}
+			else_if = {
+				limit = { ships_in_area = { area = 13 size > 24 } }
+				set_variable = { TIA_block_13_rate = 2 }
+			}
+			else = {
+				set_variable = { TIA_block_13_rate = 1 }
+			}
+			if = {
+				limit = { ships_in_area = { area = 26 size > 49 } }
+				set_variable = { TIA_block_26_rate = 3 }
+			}
+			else_if = {
+				limit = { ships_in_area = { area = 26 size > 24 } }
+				set_variable = { TIA_block_26_rate = 2 }
+			}
+			else = {
+				set_variable = { TIA_block_26_rate = 1 }
+			}
+		}
+		else = {
+			set_variable = { TIA_block_39_rate = TIA_block_39_rate_ai }
+			set_variable = { TIA_block_43_rate = TIA_block_43_rate_ai }
+			set_variable = { TIA_block_13_rate = TIA_block_13_rate_ai }
+			set_variable = { TIA_block_26_rate = TIA_block_26_rate_ai }
+		}
+		TIA_modify_blockade_to_revolutionary_albion = yes
+	}
+}
+
 TIA_modify_blockade_to_revolutionary_albion = {
 	if = {
 		limit = { check_variable = { TIA_block_39_rate = 3 } }
@@ -52,5 +111,127 @@ TIA_modify_blockade_to_revolutionary_albion = {
 		var = TIA_blocked_rate_var
 		min = 0
 		max = 100
+	}
+	TIA_calculate_revue_idea_level = yes
+}
+
+TIA_calculate_revue_idea_level = {
+	if = {
+		limit = {
+			RSL = {
+				OR = {
+					has_idea = RSL_tiam_navy_blocked_6
+					has_idea = RSL_tiam_navy_blocked_5
+					has_idea = RSL_tiam_navy_blocked_4
+					has_idea = RSL_tiam_navy_blocked_3
+					has_idea = RSL_tiam_navy_blocked_2
+					has_idea = RSL_tiam_navy_blocked_1
+				}
+				NOT = { has_country_flag = RSL_bypass_blockade_flag }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					check_variable = { TIA_blocked_rate_var = 100 }
+					check_variable = { TIA_blocked_rate_var = 87.5 }
+				}
+			}
+			RSL = {
+				remove_ideas = {
+					RSL_tiam_navy_blocked_6
+					RSL_tiam_navy_blocked_5
+					RSL_tiam_navy_blocked_4
+					RSL_tiam_navy_blocked_3
+					RSL_tiam_navy_blocked_2
+					RSL_tiam_navy_blocked_1
+				}
+				add_ideas = RSL_tiam_navy_blocked_6
+			}
+		}
+		else_if = {
+			limit = { check_variable = { TIA_blocked_rate_var = 75 } }
+			RSL = {
+				remove_ideas = {
+					RSL_tiam_navy_blocked_6
+					RSL_tiam_navy_blocked_5
+					RSL_tiam_navy_blocked_4
+					RSL_tiam_navy_blocked_3
+					RSL_tiam_navy_blocked_2
+					RSL_tiam_navy_blocked_1
+				}
+				add_ideas = RSL_tiam_navy_blocked_5
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					check_variable = { TIA_blocked_rate_var = 62.5 }
+					check_variable = { TIA_blocked_rate_var = 50 }
+				}
+			}
+			RSL = {
+				remove_ideas = {
+					RSL_tiam_navy_blocked_6
+					RSL_tiam_navy_blocked_5
+					RSL_tiam_navy_blocked_4
+					RSL_tiam_navy_blocked_3
+					RSL_tiam_navy_blocked_2
+					RSL_tiam_navy_blocked_1
+				}
+				add_ideas = RSL_tiam_navy_blocked_4
+			}
+		}
+		else_if = {
+			limit = { check_variable = { TIA_blocked_rate_var = 37.5 } }
+			RSL = {
+				remove_ideas = {
+					RSL_tiam_navy_blocked_6
+					RSL_tiam_navy_blocked_5
+					RSL_tiam_navy_blocked_4
+					RSL_tiam_navy_blocked_3
+					RSL_tiam_navy_blocked_2
+					RSL_tiam_navy_blocked_1
+				}
+				add_ideas = RSL_tiam_navy_blocked_3
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					check_variable = { TIA_blocked_rate_var = 25 }
+					check_variable = { TIA_blocked_rate_var = 12.5 }
+				}
+			}
+			RSL = {
+				remove_ideas = {
+					RSL_tiam_navy_blocked_6
+					RSL_tiam_navy_blocked_5
+					RSL_tiam_navy_blocked_4
+					RSL_tiam_navy_blocked_3
+					RSL_tiam_navy_blocked_2
+					RSL_tiam_navy_blocked_1
+				}
+				add_ideas = RSL_tiam_navy_blocked_2
+			}
+		}
+		else_if = {
+			limit = { check_variable = { TIA_blocked_rate_var = 0 } }
+			RSL = {
+				remove_ideas = {
+					RSL_tiam_navy_blocked_6
+					RSL_tiam_navy_blocked_5
+					RSL_tiam_navy_blocked_4
+					RSL_tiam_navy_blocked_3
+					RSL_tiam_navy_blocked_2
+					RSL_tiam_navy_blocked_1
+				}
+				add_ideas = RSL_tiam_navy_blocked_1
+			}
+		}
+		else = { #remind players that there is a problem somewhere
+			add_political_power = -100
+			log = "[GetDateText]: [Root.GetName]: wrong in calculating RSL block idea level. locate to line 118 of TIA_scripted_effects.txt file"
+		}
 	}
 }

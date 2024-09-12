@@ -456,6 +456,11 @@ country_event = {
 				value = 200
 			}
 			set_country_flag = can_send_volunteers_to_EYP
+			add_relation_modifier = {
+				target = EYP
+				modifier = major_volunteer_size_medium
+			}
+			EYP = { set_country_flag = EYP_get_volunteer_flag }
 		}
 	}
 

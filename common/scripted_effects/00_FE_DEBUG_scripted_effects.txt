@@ -5,6 +5,17 @@ clear_DEBUG_decisions_flag = {
 	}
 }
 
+DEBUG_test_static_modifier = {
+	if = {
+		limit = { is_debug = yes }
+		add_relation_modifier = {
+			target = EYP
+			modifier = HUN_dynastic_ties_license
+		}
+	}
+	clear_DEBUG_decisions_flag = yes
+}
+
 DEBUG_load_oob = {
 	if = {
 		limit = { is_debug = yes }

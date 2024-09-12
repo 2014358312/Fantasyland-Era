@@ -3,6 +3,7 @@
 ###########################
 
 add_namespace = TIA
+add_namespace = tiam
 
 country_event = {
 	id = TIA.1
@@ -134,6 +135,24 @@ country_event = { #舞会事件
 		name = TIA.8.a
 		hidden_effect = {
 			complete_national_focus = TIA_Prom_events
+		}
+	}
+}
+
+country_event = {
+	id = tiam.101
+	
+	hidden = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { has_idea = TIA_cash_from_albion_treaty }
+				TIA_calculate_blockade_rate = yes
+				country_event = { id = tiam.101 days = 1 }
+			}
 		}
 	}
 }

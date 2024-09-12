@@ -382,7 +382,29 @@ ideas = {
 		free_trade = {
 
 			available = {
-				
+				if = {
+					limit = {
+						TAG = RSL
+						OR = {
+							has_idea = RSL_tiam_navy_blocked_6
+							has_idea = RSL_tiam_navy_blocked_5
+							has_idea = RSL_tiam_navy_blocked_4
+							has_idea = RSL_tiam_navy_blocked_3
+							has_idea = RSL_tiam_navy_blocked_2
+							has_idea = RSL_tiam_navy_blocked_1
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = RSL_low_tiam_navy_blocked_ttt
+						NOT = {
+							has_idea = RSL_tiam_navy_blocked_6
+							has_idea = RSL_tiam_navy_blocked_5
+							has_idea = RSL_tiam_navy_blocked_4
+							has_idea = RSL_tiam_navy_blocked_3
+							has_idea = RSL_tiam_navy_blocked_2
+						}
+					}
+				}
 			}
 
 			cost = 150
@@ -409,7 +431,27 @@ ideas = {
 		export_focus = {
 
 			available = {
-
+				if = {
+					limit = {
+						TAG = RSL
+						OR = {
+							has_idea = RSL_tiam_navy_blocked_6
+							has_idea = RSL_tiam_navy_blocked_5
+							has_idea = RSL_tiam_navy_blocked_4
+							has_idea = RSL_tiam_navy_blocked_3
+							has_idea = RSL_tiam_navy_blocked_2
+							has_idea = RSL_tiam_navy_blocked_1
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = RSL_medium_tiam_navy_blocked_ttt
+						NOT = {
+							has_idea = RSL_tiam_navy_blocked_6
+							has_idea = RSL_tiam_navy_blocked_5
+							has_idea = RSL_tiam_navy_blocked_4
+						}
+					}
+				}
 			}
 
 
@@ -470,8 +512,26 @@ ideas = {
 						}
 					}
 				}
-
-
+				if = {
+					limit = {
+						TAG = RSL
+						OR = {
+							has_idea = RSL_tiam_navy_blocked_6
+							has_idea = RSL_tiam_navy_blocked_5
+							has_idea = RSL_tiam_navy_blocked_4
+							has_idea = RSL_tiam_navy_blocked_3
+							has_idea = RSL_tiam_navy_blocked_2
+							has_idea = RSL_tiam_navy_blocked_1
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = RSL_high_tiam_navy_blocked_ttt
+						NOT = {
+							has_idea = RSL_tiam_navy_blocked_6
+							has_idea = RSL_tiam_navy_blocked_5
+						}
+					}
+				}
 			}
 
 			cost = 150
@@ -539,7 +599,6 @@ ideas = {
 					has_idea = war_economy
 					has_idea = tot_economic_mobilisation
 				}
-
 			}
 
 			rule = {
@@ -558,6 +617,25 @@ ideas = {
 			}
 
 			cancel_if_invalid = no
+
+			allowed_to_remove = {
+				if = {
+					limit = {
+						TAG = RSL
+						OR = {
+							has_idea = RSL_tiam_navy_blocked_6
+							has_idea = RSL_tiam_navy_blocked_5
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = RSL_no_high_tiam_navy_blocked_ttt
+						NOT = {
+							has_idea = RSL_tiam_navy_blocked_6
+							has_idea = RSL_tiam_navy_blocked_5
+						}
+					}
+				}
+			}
 
 			ai_will_do = {
    				factor = 1

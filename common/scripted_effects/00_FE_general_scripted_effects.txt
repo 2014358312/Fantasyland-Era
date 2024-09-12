@@ -375,3 +375,116 @@ white_peace_with_every_enemy_country = {
 		}
 	}
 }
+
+create_temp_army = {
+	if = {
+		limit = { NOT = { has_template = "Infantry Division" } }
+		division_template = {
+			name = "Infantry Division"
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 2 y = 0 }
+				infantry = { x = 3 y = 0 }
+				infantry = { x = 4 y = 0 }
+			}
+		}
+	}
+	if = {
+		limit = { NOT = { has_template = "Cavalry Division" } }
+		division_template = {
+			name = "Cavalry Division"
+			regiments = {
+				cavalry = { x = 0 y = 0 }
+				cavalry = { x = 1 y = 0 }
+				cavalry = { x = 2 y = 0 }
+				cavalry = { x = 3 y = 0 }
+				cavalry = { x = 4 y = 0 }
+			}
+		}
+	}
+	every_core_state = {
+		limit = {
+			is_owned_and_controlled_by = PREV
+			is_demilitarized_zone = no
+		}
+		set_variable_to_random = {
+			var = troop_num
+			min = 1
+			max = 5
+			integer = yes
+		}
+		random_list = {
+			20 = {
+				set_variable = { infantry_num = 1 }
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					check_variable = { troop_num < 2 }
+				}
+				set_variable = { infantry_num = 2 }
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					check_variable = { troop_num < 3 }
+				}
+				set_variable = { infantry_num = 3 }
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					check_variable = { troop_num < 4 }
+				}
+				set_variable = { infantry_num = 4 }
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					check_variable = { troop_num < 5 }
+				}
+				set_variable = { infantry_num = 5 }
+			}
+		}
+		while_loop_effect = {
+			limit = {
+				check_variable = {
+					var = infantry_id
+					value = infantry_num
+					compare = less_than
+				}
+			}
+			create_unit = {
+				division = "name = \"Infantry Troop\" division_template = \"Infantry Division\" start_experience_factor = 0.2 start_manpower_factor = 0.9 start_equipment_factor = 1.0"
+				count = 1
+				owner = PREV
+				allow_spawning_on_enemy_provs = yes
+			}
+			add_to_variable = { infantry_id = 1 }
+		}
+		set_variable = { cavalry_num = troop_num }
+		subtract_from_variable = { cavalry_num = infantry_num }
+		while_loop_effect = {
+			limit = {
+				check_variable = {
+					var = cavalry_id
+					value = cavalry_num
+					compare = less_than
+				}
+			}
+			create_unit = {
+				division = "name = \"Cavalry Troop\" division_template = \"Cavalry Division\" start_experience_factor = 0.2 start_manpower_factor = 0.9 start_equipment_factor = 1.0"
+				count = 1
+				owner = PREV
+				allow_spawning_on_enemy_provs = yes
+			}
+			add_to_variable = { cavalry_id = 1 }
+		}
+		clear_variable = infantry_id
+		clear_variable = infantry_num
+		clear_variable = cavalry_id
+		clear_variable = cavalry_num
+		clear_variable = troop_num
+	}
+}

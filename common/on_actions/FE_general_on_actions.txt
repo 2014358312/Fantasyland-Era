@@ -127,6 +127,24 @@ on_actions = {
 				set_country_flag = unknown_country_flag
 			}
 			######
+			every_country = {
+				limit = {
+					NOT = { has_country_flag = unknown_country_flag }
+					has_army_size = { size < 1 }		#calculate number of division in the army
+					#has_army_manpower = { size < 1 }	#calculate number of serving in the army
+				}
+				create_temp_army = yes
+			}
+			######
+		}
+	}
+	
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = { FROM.FROM = { is_core_of = ROOT } }
+				FROM.FROM = { cancel_resistance = yes }
+			}
 		}
 	}
 }

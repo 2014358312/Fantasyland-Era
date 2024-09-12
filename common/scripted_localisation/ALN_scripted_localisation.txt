@@ -359,11 +359,25 @@ defined_text = {
 }
 
 defined_text = {
+    name = GetTaftTreatyNavyStatus
+	text = {
+		trigger = {
+			RSL = {
+				has_country_flag = RSL_bypass_blockade_flag
+			}
+		}
+		localization_key = ALN_treaty_with_tiam_navy_lose_efficacy
+    }
+	text = { localization_key = ALN_treaty_with_tiam_navy_effective }
+}
+
+defined_text = {
     name = GetRSLBlockedRegion39
 	text = {
 		trigger = {
 			TIA = {
 				is_ai = no
+				check_variable = { TIA_block_39_rate = 3 }
 				ships_in_area = { area = 39 size > 49 }
 			}
 		}
@@ -373,6 +387,7 @@ defined_text = {
 		trigger = {
 			TIA = {
 				is_ai = no
+				check_variable = { TIA_block_39_rate = 2 }
 				ships_in_area = { area = 39 size > 24 }
 			}
 		}
@@ -405,6 +420,7 @@ defined_text = {
 		trigger = {
 			TIA = {
 				is_ai = no
+				check_variable = { TIA_block_43_rate = 3 }
 				ships_in_area = { area = 43 size > 49 }
 			}
 		}
@@ -414,6 +430,7 @@ defined_text = {
 		trigger = {
 			TIA = {
 				is_ai = no
+				check_variable = { TIA_block_43_rate = 2 }
 				ships_in_area = { area = 43 size > 24 }
 			}
 		}
@@ -446,6 +463,7 @@ defined_text = {
 		trigger = {
 			TIA = {
 				is_ai = no
+				check_variable = { TIA_block_13_rate = 3 }
 				ships_in_area = { area = 13 size > 49 }
 			}
 		}
@@ -455,6 +473,7 @@ defined_text = {
 		trigger = {
 			TIA = {
 				is_ai = no
+				check_variable = { TIA_block_13_rate = 2 }
 				ships_in_area = { area = 13 size > 24 }
 			}
 		}
@@ -487,6 +506,7 @@ defined_text = {
 		trigger = {
 			TIA = {
 				is_ai = no
+				check_variable = { TIA_block_26_rate = 3 }
 				ships_in_area = { area = 26 size > 49 }
 			}
 		}
@@ -496,6 +516,7 @@ defined_text = {
 		trigger = {
 			TIA = {
 				is_ai = no
+				check_variable = { TIA_block_26_rate = 2 }
 				ships_in_area = { area = 26 size > 24 }
 			}
 		}

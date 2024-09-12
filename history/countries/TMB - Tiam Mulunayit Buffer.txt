@@ -1,19 +1,21 @@
 ﻿capital = 377
 
-set_research_slots = 2
-set_convoys = 80
-set_stability = 0.65
-set_war_support = 0.35
+set_research_slots = 1
+set_convoys = 0
+set_stability = 0.40
+set_war_support = 0.10
 starting_train_buffer = 2.0
 
 set_technology = {
 	basic_train = 1
-	### Infantry ###
-	infantry_weapons = 1
-	infantry_weapons1 = 1
-	tech_support = 1
-	tech_engineers = 1
 }
+
+
+add_ideas = {
+	TMB_demilitarized_zone
+}
+country_lock_all_division_template = yes
+every_owned_state = { set_demilitarized_zone = yes }
 
 
 set_politics = {
@@ -22,9 +24,6 @@ set_politics = {
 }
 
 set_popularities = {
-	democratic = 3
-	neutrality = 95
-	communism = 1
-	fascism = 1
+	neutrality = 100
 }
 

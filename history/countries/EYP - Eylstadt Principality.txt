@@ -52,6 +52,14 @@ add_days_mission_timeout = {
 	mission = EYP_hundred_day_crisis_mission
 	days = -65
 }
+every_other_country = {
+	limit = { OR = { tag = LAN tag = SMA tag = AIL tag = Z86 tag = TIA } }
+	activate_mission = EYP_hundred_day_crisis_mission_fake
+	add_days_mission_timeout = {
+		mission = EYP_hundred_day_crisis_mission_fake
+		days = -65
+	}
+}
 
 country_event = { id = eylstadt.7 days = 46 }
 
