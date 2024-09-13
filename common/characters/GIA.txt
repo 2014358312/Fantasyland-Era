@@ -1,34 +1,46 @@
 characters = {
+	#all characters here is exiled from LAN to various places.
+	#in the ALLOWED bracket pair, the first line represents the nationality of the GIA,
+	#and the second line and beyond represent where they may appear.
+	
 	GIA_Ernst_Zimmerman = {
 		name = Ernst_Zimmerman
 		portraits = {
 			civilian = {
 				large = GFX_Portrait_GIA_Ernst_Zimmerman
-				#small = GFX_idea_advisor_EYP_Fine
 			}
 			army = {
 				large = GFX_Portrait_GIA_Ernst_Zimmerman
-				#small = GFX_idea_advisor_EYP_Fine
 			}
 		}
-		country_leader = {
-			ideology = conservatism
-			traits = { interim_president }
-			expire = "1965.1.1.1"
-			id = -1
+		advisor = {
+			slot = political_advisor
+			idea_token = GIA_Ernst_Zimmerman
+			allowed = {
+				OR = {
+					original_tag = GIA
+					original_tag = SMA
+				}
+			}
+			available = {
+				has_country_flag = SMA_enable_giad_exile_flag
+			}
+			cost = 150
+			traits = { SWE_ardent_conservative }
+			ai_will_do = {
+				base = 1.000
+			}
 		}
 	}
 	
 	GIA_Augusta_Friedrich_Adler = {
-		name = Augusta_Friedrich_Adler
+		name = Fredrica_Rozenfort	#if giad released, she will restore her original name, Augusta Friedrich Adler.
 		portraits = {
 			civilian = {
 				large = GFX_Portrait_GIA_Augusta_Friedrich_Adler
-				#small = GFX_idea_advisor_GIA_Augusta_Friedrich_Adler
 			}
 			army = {
 				large = GFX_Portrait_GIA_Augusta_Friedrich_Adler
-				#small = GFX_idea_advisor_GIA_Augusta_Friedrich_Adler
 			}
 		}
 		country_leader = {
@@ -44,18 +56,34 @@ characters = {
 		portraits = {
 			civilian = {
 				large = GFX_Portrait_GIA_Richard_Turner
-				#small = GFX_idea_advisor_EYP_Fine
 			}
 			army = {
 				large = GFX_Portrait_GIA_Richard_Turner
-				#small = GFX_idea_advisor_EYP_Fine
 			}
 		}
 		country_leader = {
 			ideology = conservatism
-			traits = { microphone_of_saint_jaedel }
+			traits = { ring_from_landsol }
 			expire = "1965.1.1.1"
 			id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = GIA_Ernst_Zimmerman
+			allowed = {
+				OR = {
+					original_tag = GIA
+					original_tag = SMA
+				}
+			}
+			available = {
+				has_country_flag = SMA_enable_giad_exile_flag
+			}
+			cost = 150
+			traits = { SWE_ardent_conservative }
+			ai_will_do = {
+				base = 1.000
+			}
 		}
 	}
 }
