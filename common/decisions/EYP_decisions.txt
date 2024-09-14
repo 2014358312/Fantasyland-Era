@@ -742,7 +742,7 @@ EYP_hundred_day_crisis_decision_category = {
 						unit = carrier
 						size < 1
 					}
-					NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+					hidden_trigger = { NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag } }
 				}
 			}
 			else = {
@@ -752,6 +752,7 @@ EYP_hundred_day_crisis_decision_category = {
 						size < 1
 					}
 					NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+					# never loc, but ai status, so never mind.
 				}
 			}
 		}
