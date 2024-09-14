@@ -42,6 +42,11 @@ set_variable = { SMA_DA_army_morale_factor_var = -0.30 }
 set_variable = { SMA_DA_max_dig_in_factor_var = 0.50 }
 #add_dynamic_modifier = { modifier = SMA_decadent_army_dynamic_modifier }
 
+create_intelligence_agency = {
+	name = "San Magnolian Special Intelligence"
+	icon = GFX_intelligence_agency_logo_ger
+}
+
 
 add_ideas = {
 	SMA_sour_loser
@@ -54,6 +59,17 @@ add_ideas = {
 recruit_character = GIA_Richard_Turner
 recruit_character = SMA_Yuuki_Asuna
 recruit_character = SMA_Vladilena_Milize
+
+
+create_operative_leader = {
+	name = "Twilight"
+	GFX = "GFX_Portrait_SMA_Loid_Forger"
+	traits = { operative_tough operative_well_groomed operative_commando operative_master_interrogator operative_linguist operative_safe_cracker operative_natural_orator operative_escape_artist operative_demolition_expert }
+	bypass_recruitment = no
+	available_to_spy_master = no
+	female = no
+	nationalities = { SMA }
+}
 
 set_politics = {
 	ruling_party = democratic

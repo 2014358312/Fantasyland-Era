@@ -13,4 +13,1465 @@ characters = {
 			id = -1
 		}
 	}
+	
+	CRB_Akatsuki_Kojo = {
+		name = Akatsuki_Kojo
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Akatsuki_Kojo
+				small = GFX_idea_advisor_CRB_Akatsuki_Kojo
+			}
+			army = {
+				large = GFX_Portrait_CRB_Akatsuki_Kojo
+				small = GFX_idea_advisor_CRB_Akatsuki_Kojo
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_CRB_AKATSUKI_KOJO_DESC"
+			ideology = despotism
+			traits = { kaleido_blood }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+	
+	CRB_Aiba_Asagi = {
+		name = Aiba_Asagi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Aiba_Asagi_ai
+				small = GFX_idea_advisor_CRB_Aiba_Asagi
+			}
+			army = {
+				large = GFX_Portrait_CRB_Aiba_Asagi_ai
+				small = GFX_idea_advisor_CRB_Aiba_Asagi
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Aiba_Asagi_political_advisor
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				is_country_leader = no
+				not_already_hired_except_as = political_advisor
+				NOT = { has_government = fascism }
+			}
+			traits = {
+				cyber_empress
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = CRB_Aiba_Asagi_high_command
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				is_country_leader = no
+				not_already_hired_except_as = high_command
+			}
+			traits = {
+				witch_of_cain
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	CRB_Himeragi_Yukina = {
+		name = Himeragi_Yukina
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Himeragi_Yukina
+				small = GFX_idea_advisor_CRB_Himeragi_Yukina
+			}
+			army = {
+				large = GFX_Portrait_CRB_Himeragi_Yukina
+				small = GFX_idea_advisor_CRB_Himeragi_Yukina
+			}
+		}
+		#country_leader = {
+		#	desc = "POLITICS_CRB_HIMERAGI_YUKINA_DESC"
+		#	ideology = warm_syndicalism_group
+		#	traits = { moderate_reformist }
+		#	expire = "1965.1.1.1"
+		#	id = -1
+		#}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Himeragi_Yukina_political_advisor
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				is_country_leader = no
+				not_already_hired_except_as = political_advisor
+				NOT = { has_government = fascism }
+			}
+			traits = {
+				unclear_communist
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = CRB_Himeragi_Yukina_army_chief
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				is_country_leader = no
+				not_already_hired_except_as = army_chief
+			}
+			traits = {
+				knights_witch
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { desert_fox trait_mountaineer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Kanase_Kanon = {
+		name = Kanase_Kanon
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Kanase_Kanon
+				small = GFX_idea_advisor_CRB_Kanase_Kanon
+			}
+			army = {
+				large = GFX_Portrait_CRB_Kanase_Kanon
+				small = GFX_idea_advisor_CRB_Kanase_Kanon
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Kanase_Kanon
+			allowed = {
+				original_tag = CRB
+			}
+			traits = {
+				martyr
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { trait_reckless commando swamp_fox }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Kirasaka_Sayaka = {
+		name = Kirasaka_Sayaka
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Kirasaka_Sayaka_uniform
+				small = GFX_idea_advisor_CRB_Kirasaka_Sayaka
+			}
+			army = {
+				large = GFX_Portrait_CRB_Kirasaka_Sayaka_uniform
+				small = GFX_idea_advisor_CRB_Kirasaka_Sayaka
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Kirasaka_Sayaka
+			allowed = {
+				original_tag = CRB
+			}
+			traits = {
+				CRB_body_guard
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal = {
+			traits = { logistics_wizard organisational_leader }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	
+	CRB_La_Folia_Rihavein = {
+		name = La_Folia_Rihavein
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_La_Folia_Rihavein
+				small = GFX_idea_advisor_CRB_La_Folia_Rihavein
+			}
+			army = {
+				large = GFX_Portrait_CRB_La_Folia_Rihavein
+				small = GFX_idea_advisor_CRB_La_Folia_Rihavein
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = CRB_La_Folia_Rihavein
+			allowed = {
+				original_tag = CRB
+			}
+			traits = {
+				head_of_knights_team
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal = {
+			traits = { logistics_wizard offensive_doctrine organisational_leader }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Minamiya_Natsuki = {
+		name = Minamiya_Natsuki
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Minamiya_Natsuki_dress
+				small = GFX_idea_advisor_CRB_Minamiya_Natsuki
+			}
+			army = {
+				large = GFX_Portrait_CRB_Minamiya_Natsuki_dress
+				small = GFX_idea_advisor_CRB_Minamiya_Natsuki
+			}
+		}
+		#country_leader = {
+		#	desc = "POLITICS_CRB_MINAMIYA_NATSUKI_DESC"
+		#	ideology = liberalism
+		#	traits = { witch_of_the_void }
+		#	expire = "1965.1.1.1"
+		#	id = -1
+		#}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Minamiya_Natsuki
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				is_country_leader = no
+			}
+			can_be_fired = no
+			traits = {
+				witch_of_the_void
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		corps_commander = {
+			traits = { trickster ranger }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Akatsuki_Nagisa = {
+		name = Akatsuki_Nagisa
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Akatsuki_Nagisa
+				small = GFX_idea_advisor_CRB_Akatsuki_Nagisa
+			}
+			army = {
+				large = GFX_Portrait_CRB_Akatsuki_Nagisa
+				small = GFX_idea_advisor_CRB_Akatsuki_Nagisa
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Akatsuki_Nagisa
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				
+			}
+			traits = {
+				tenacious_negotiator
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	
+	CRB_Tokoyogi_Yuma = {
+		name = Tokoyogi_Yuma
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Tokoyogi_Yuma
+				small = GFX_idea_advisor_CRB_Tokoyogi_Yuma
+			}
+			army = {
+				large = GFX_Portrait_CRB_Tokoyogi_Yuma
+				small = GFX_idea_advisor_CRB_Tokoyogi_Yuma
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = CRB_Tokoyogi_Yuma
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				
+			}
+			traits = {
+				blitzkrieg_theorist
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { panzer_leader desert_fox inspirational_leader }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Sizukunasi_Castella = {
+		name = Sizukunasi_Castella
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Sizukunasi_Castella
+				small = GFX_idea_advisor_CRB_Sizukunasi_Castella
+			}
+			army = {
+				large = GFX_Portrait_CRB_Sizukunasi_Castella
+				small = GFX_idea_advisor_CRB_Sizukunasi_Castella
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = CRB_Sizukunasi_Castella
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				
+			}
+			traits = {
+				nun_knight
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { trickster ranger }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Yaze_Motoki = {
+		name = Yaze_Motoki
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Yaze_Motoki
+				small = GFX_idea_advisor_CRB_Yaze_Motoki
+			}
+			army = {
+				large = GFX_Portrait_CRB_Yaze_Motoki
+				small = GFX_idea_advisor_CRB_Yaze_Motoki
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Yaze_Motoki
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				
+			}
+			traits = {
+				head_of_intelligence
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	CRB_Astaluti = {
+		name = Astaluti
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Astaluti
+				small = GFX_idea_advisor_CRB_Astaluti
+			}
+			army = {
+				large = GFX_Portrait_CRB_Astaluti
+				small = GFX_idea_advisor_CRB_Astaluti
+			}
+		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = CRB_Astaluti
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				OR = {
+					has_government = democratic
+					has_idea = CRB_Minamiya_Natsuki
+				}
+			}
+			traits = {
+				air_air_superiority_3
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { commando desert_fox }
+			skill = 2
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Sasazaki_Misaki = {
+		name = Sasazaki_Misaki
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Sasazaki_Misaki
+				small = GFX_idea_advisor_CRB_Sasazaki_Misaki
+			}
+			army = {
+				large = GFX_Portrait_CRB_Sasazaki_Misaki
+				small = GFX_idea_advisor_CRB_Sasazaki_Misaki
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = CRB_Sasazaki_Misaki_army_chief
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = army_chief
+			}
+			traits = {
+				army_chief_offensive_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = CRB_Sasazaki_Misaki_theorist
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = theorist
+			}
+			traits = {
+				mass_assault_expert
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { desert_fox trait_mountaineer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Eguji_Yume = {
+		name = Eguji_Yume
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Eguji_Yume
+				small = GFX_idea_advisor_CRB_Eguji_Yume
+			}
+			army = {
+				large = GFX_Portrait_CRB_Eguji_Yume
+				small = GFX_idea_advisor_CRB_Eguji_Yume
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			ledger = navy
+			idea_token = CRB_Eguji_Yume_navy_chief
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = navy_chief
+			}
+			traits = {
+				navy_chief_decisive_battle_1
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = CRB_Eguji_Yume_theorist
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = theorist
+			}
+			traits = {
+				grand_fleet_proponent
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		navy_leader = {
+			traits = {blockade_runner superior_tactician spotter }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Lidian_Titi = {
+		name = Lidian_Titi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Lidian_Titi
+				small = GFX_idea_advisor_CRB_Lidian_Titi
+			}
+			army = {
+				large = GFX_Portrait_CRB_Lidian_Titi
+				small = GFX_idea_advisor_CRB_Lidian_Titi
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Lidian_Titi_political_advisor
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = political_advisor
+			}
+			traits = {
+				technocrat
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = CRB_Lidian_Titi_high_command
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = high_command
+			}
+			traits = {
+				air_close_air_support_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	CRB_Zii_Juranbalada = {
+		name = Zii_Juranbalada
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Zii_Juranbalada
+				small = GFX_idea_advisor_CRB_Zii_Juranbalada
+			}
+			army = {
+				large = GFX_Portrait_CRB_Zii_Juranbalada
+				small = GFX_idea_advisor_CRB_Zii_Juranbalada
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Zii_Juranbalada_political_advisor
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = political_advisor
+			}
+			traits = {
+				gran_carabinero
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = CRB_Zii_Juranbalada_army_chief
+			allowed = {
+				original_tag = CRB
+			}
+			visible = { has_idea = CRB_Zii_Juranbalada_army_chief }
+			available = {
+				not_already_hired_except_as = political_advisor
+			}
+			traits = {
+				change_always
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	CRB_Vertyana_Karyana = {
+		name = Vertyana_Karyana
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Vertyana_Karyana
+				small = GFX_idea_advisor_CRB_Vertyana_Karyana
+			}
+			army = {
+				large = GFX_Portrait_CRB_Vertyana_Karyana
+				small = GFX_idea_advisor_CRB_Vertyana_Karyana
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Vertyana_Karyana_political_advisor
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = political_advisor
+			}
+			traits = {
+				quartermaster_general
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			ledger = navy
+			idea_token = CRB_Vertyana_Karyana_navy_chief
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = navy_chief
+			}
+			traits = {
+				navy_chief_commerce_raiding_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		navy_leader = {
+			traits = { seawolf blockade_runner spotter ironside }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Aiswordgur_Yajiz = {
+		name = Aiswordgur_Yajiz
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Aiswordgur_Yajiz
+				small = GFX_idea_advisor_CRB_Aiswordgur_Yajiz
+			}
+			army = {
+				large = GFX_Portrait_CRB_Aiswordgur_Yajiz
+				small = GFX_idea_advisor_CRB_Aiswordgur_Yajiz
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Aiswordgur_Yajiz_political_advisor
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = political_advisor
+			}
+			traits = {
+				shadow_of_court
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			can_be_fired = no
+			idea_token = CRB_Aiswordgur_Yajiz_high_command
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = high_command
+			}
+			traits = {
+				air_airborne_3
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	CRB_Jiada_Kukokan = {
+		name = Jiada_Kukokan
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Jiada_Kukokan
+				small = GFX_idea_advisor_CRB_Jiada_Kukokan
+			}
+			army = {
+				large = GFX_Portrait_CRB_Jiada_Kukokan
+				small = GFX_idea_advisor_CRB_Jiada_Kukokan
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = CRB_Jiada_Kukokan_theorist
+			can_be_fired = no
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = theorist
+			}
+			traits = {
+				grand_battle_plan_expert
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = CRB_Jiada_Kukokan_high_command
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = high_command
+			}
+			traits = {
+				army_artillery_3
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { war_hero }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Cereida_Shati = {
+		name = Cereida_Shati
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Cereida_Shati
+				small = GFX_idea_advisor_CRB_Cereida_Shati
+			}
+			army = {
+				large = GFX_Portrait_CRB_Cereida_Shati
+				small = GFX_idea_advisor_CRB_Cereida_Shati
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Cereida_Shati_political_advisor
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = political_advisor
+			}
+			traits = {
+				lieutenant_of_industry
+				war_industrialist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = navy
+			idea_token = CRB_Cereida_Shati_high_command
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = high_command
+			}
+			traits = {
+				navy_fleet_logistics_1
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		navy_leader = {
+			traits = { superior_tactician ironside }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Akatsuki_Moegi = {
+		name = Akatsuki_Moegi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Akatsuki_Moegi
+				small = GFX_idea_advisor_CRB_Akatsuki_Moegi
+			}
+			army = {
+				large = GFX_Portrait_CRB_Akatsuki_Moegi
+				small = GFX_idea_advisor_CRB_Akatsuki_Moegi
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = CRB_Akatsuki_Moegi
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				
+			}
+			traits = {
+				army_combined_arms_1
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	CRB_Akatsuki_Reina = {
+		name = Akatsuki_Reina
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Akatsuki_Reina
+				small = GFX_idea_advisor_CRB_Akatsuki_Reina
+			}
+			army = {
+				large = GFX_Portrait_CRB_Akatsuki_Reina
+				small = GFX_idea_advisor_CRB_Akatsuki_Reina
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Akatsuki_Reina
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				
+			}
+			traits = {
+				from_future
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { bearer_of_artillery swamp_fox trait_mountaineer }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 5
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Aurora_Florestina = {
+		name = Aurora_Florestina
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Aurora_Florestina
+				small = GFX_idea_advisor_CRB_Aurora_Florestina
+			}
+			army = {
+				large = GFX_Portrait_CRB_Aurora_Florestina
+				small = GFX_idea_advisor_CRB_Aurora_Florestina
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Aurora_Florestina
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				has_country_leader = { character = CRB_Akatsuki_Kojo }
+			}
+			traits = {
+				legitimate_heir
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	CRB_Kayo_Chinei = {
+		name = Kayo_Chinei
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Kayo_Chinei
+				small = GFX_idea_advisor_CRB_Kayo_Chinei
+			}
+			army = {
+				large = GFX_Portrait_CRB_Kayo_Chinei
+				small = GFX_idea_advisor_CRB_Kayo_Chinei
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = CRB_Kayo_Chinei
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				
+			}
+			traits = {
+				army_regrouping_3
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { trickster }
+			skill = 1
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Kondo = {
+		name = Kondo
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Kondo
+				small = GFX_idea_advisor_CRB_Kondo
+			}
+			army = {
+				large = GFX_Portrait_CRB_Kondo
+				small = GFX_idea_advisor_CRB_Kondo
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Kondo
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				
+			}
+			traits = {
+				old_figurehead
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	CRB_Habanami_Yuri = {
+		name = Habanami_Yuri
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Habanami_Yuri
+				small = GFX_idea_advisor_CRB_Habanami_Yuri
+			}
+			army = {
+				large = GFX_Portrait_CRB_Habanami_Yuri
+				small = GFX_idea_advisor_CRB_Habanami_Yuri
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = CRB_Habanami_Yuri
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				
+			}
+			traits = {
+				army_chief_organizational_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	CRB_Aikawa_Shiho = {
+		name = Aikawa_Shiho
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Aikawa_Shiho
+				small = GFX_idea_advisor_CRB_Aikawa_Shiho
+			}
+			army = {
+				large = GFX_Portrait_CRB_Aikawa_Shiho
+				small = GFX_idea_advisor_CRB_Aikawa_Shiho
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = CRB_Aikawa_Shiho
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				
+			}
+			traits = {
+				submarine_specialist
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal = {
+			traits = { media_personality panzer_leader defensive_doctrine }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Hesaki_Makoto = {
+		name = Hesaki_Makoto
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Hesaki_Makoto
+				small = GFX_idea_advisor_CRB_Hesaki_Makoto
+			}
+			army = {
+				large = GFX_Portrait_CRB_Hesaki_Makoto
+				small = GFX_idea_advisor_CRB_Hesaki_Makoto
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = navy
+			idea_token = CRB_Hesaki_Makoto
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				
+			}
+			traits = {
+				navy_naval_air_defense_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		navy_leader = {
+			traits = { blockade_runner spotter ironside }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Ge_Lianda = {
+		name = Ge_Lianda
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Ge_Lianda
+				small = GFX_idea_advisor_CRB_Ge_Lianda
+			}
+			army = {
+				large = GFX_Portrait_CRB_Ge_Lianda
+				small = GFX_idea_advisor_CRB_Ge_Lianda
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Ge_Lianda_political_advisor
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = political_advisor
+				has_country_leader = { character = CRB_Akatsuki_Kojo }
+			}
+			traits = {
+				SWI_intelligence_officer
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = CRB_Ge_Lianda_high_command
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				not_already_hired_except_as = high_command
+				has_country_leader = { character = CRB_Akatsuki_Kojo }
+			}
+			traits = {
+				army_concealment_1
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	CRB_Carly = {
+		name = Carly
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Carly
+				small = GFX_idea_advisor_CRB_Carly
+			}
+			army = {
+				large = GFX_Portrait_CRB_Carly
+				small = GFX_idea_advisor_CRB_Carly
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Carly
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				has_government = fascism
+			}
+			traits = {
+				nkvd_rezident
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	CRB_Tenka_Kano = {
+		name = Tenka_Kano
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Tenka_Kano
+				small = GFX_idea_advisor_CRB_Tenka_Kano
+			}
+			army = {
+				large = GFX_Portrait_CRB_Tenka_Kano
+				small = GFX_idea_advisor_CRB_Tenka_Kano
+			}
+		}
+		corps_commander = {
+			traits = { bearer_of_artillery swamp_fox trait_mountaineer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Tokoyogi_Aya = {
+		name = Tokoyogi_Aya
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Tokoyogi_Aya
+				small = GFX_idea_advisor_CRB_Tokoyogi_Aya
+			}
+			army = {
+				large = GFX_Portrait_CRB_Tokoyogi_Aya
+				small = GFX_idea_advisor_CRB_Tokoyogi_Aya
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Tokoyogi_Aya
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				has_government = fascism
+			}
+			traits = {
+				witch_of_notaria
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	CRB_Nina_Adillad = {
+		name = Nina_Adillad
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Nina_Adillad
+				small = GFX_idea_advisor_CRB_Nina_Adillad
+			}
+			army = {
+				large = GFX_Portrait_CRB_Nina_Adillad
+				small = GFX_idea_advisor_CRB_Nina_Adillad
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Nina_Adillad
+			allowed = {
+				original_tag = CRB
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = CRB_Nina_Adillad_ttt
+					OR = {
+						AND = {
+							has_government = fascism
+							fascism > 0.75
+						}
+						AND = {
+							has_government = neutrality
+							neutrality > 0.75
+						}
+						AND = {
+							has_government = democratic
+							democratic > 0.75
+						}
+						AND = {
+							has_government = communism
+							communism > 0.75
+						}
+					}
+				}
+			}
+			traits = {
+				headstrong
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { old_guard }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	
+	CRB_Mao_Shizuko = {
+		name = Mao_Shizuko
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Mao_Shizuko
+				small = GFX_idea_advisor_CRB_Mao_Shizuko
+			}
+			army = {
+				large = GFX_Portrait_CRB_Mao_Shizuko
+				small = GFX_idea_advisor_CRB_Mao_Shizuko
+			}
+		}
+	}
+	
+	CRB_Dimitrier_Vatola = {
+		name = Dimitrier_Vatola
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CRB_Dimitrier_Vatola
+				small = GFX_idea_advisor_CRB_Dimitrier_Vatola
+			}
+			army = {
+				large = GFX_Portrait_CRB_Dimitrier_Vatola
+				small = GFX_idea_advisor_CRB_Dimitrier_Vatola
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRB_Dimitrier_Vatola
+			can_be_fired = no
+			allowed = {
+				original_tag = CRB
+			}
+			visible = { has_idea = CRB_Dimitrier_Vatola }
+			available = {
+				
+			}
+			traits = {
+				ambassador_with_smile
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
 }
