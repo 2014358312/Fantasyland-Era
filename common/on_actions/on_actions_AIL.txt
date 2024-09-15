@@ -27,6 +27,35 @@ on_actions = {
 			}
 		}
 	}
+	
+	on_monthly_AIL = {
+		effect = {
+			if = {
+				limit = {
+					is_ai = yes
+					has_country_flag = eylstadt_drift_defence_war_member_flag
+				}
+				set_fuel_ratio = 1.00
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 10000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 2000
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 800
+				}
+			}
+		}
+	}
+	
 	on_war = {
 		effect = {
 			every_country = {
