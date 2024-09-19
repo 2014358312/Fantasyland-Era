@@ -39,3 +39,47 @@ LAN_bop_right_large = {
 		value = 0.06
 	}
 }
+
+LAN_initialize_congress = {
+	set_variable_to_random = {
+		var = landsol_congress_sup
+		min = 60
+		max = 97
+		integer = yes
+	}
+	
+	set_variable = { landsol_congress_unit = landsol_congress_member }
+	divide_variable = { landsol_congress_unit = 21 }
+	
+	LAN_congress_support_small = yes
+}
+
+LAN_change_congress = {
+	set_variable = { landsol_congress_change = congress_current_change }
+	add_to_variable = { landsol_congress_sup = landsol_congress_change }
+	set_variable = { landsol_congress_sup_ratio = landsol_congress_sup }
+	divide_variable = { landsol_congress_sup_ratio = landsol_congress_member }
+	
+	set_variable = { landsol_congress_sup_frame = landsol_congress_sup }
+	divide_variable = { landsol_congress_sup_frame = landsol_congress_unit }
+	
+	clamp_variable = {
+		var = landsol_congress_sup
+		min = 0
+		max = landsol_congress_member
+	}
+	
+	clamp_variable = {
+		var = landsol_congress_sup_frame
+		min = 1
+		max = 21
+	}
+	round_variable = landsol_congress_sup_frame
+	set_variable = { landsol_congress_frame = landsol_congress_sup_frame }
+}
+
+LAN_congress_support_small = {
+	custom_effect_tooltip = LAN_congress_support_small_tt
+	set_temp_variable = { congress_current_change = 3 }
+	LAN_change_congress = yes
+}

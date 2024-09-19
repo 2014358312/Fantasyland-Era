@@ -56,9 +56,11 @@ characters = {
 		portraits = {
 			civilian = {
 				large = GFX_Portrait_GIA_Richard_Turner
+				small = GFX_idea_advisor_GIA_Richard_Turner
 			}
 			army = {
 				large = GFX_Portrait_GIA_Richard_Turner
+				small = GFX_idea_advisor_GIA_Richard_Turner
 			}
 		}
 		country_leader = {
@@ -77,6 +79,10 @@ characters = {
 				}
 			}
 			available = {
+				if = {
+					limit = { is_country_leader = yes }
+					is_country_leader = no
+				}
 				has_country_flag = SMA_enable_giad_exile_flag
 			}
 			cost = 150

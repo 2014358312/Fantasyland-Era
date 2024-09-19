@@ -36,21 +36,33 @@ on_actions = {
 					has_country_flag = eylstadt_drift_defence_war_member_flag
 				}
 				set_fuel_ratio = 1.00
-				add_equipment_to_stockpile = {
-					type = infantry_equipment_1
-					amount = 10000
+				if = {
+					limit = { has_equipment = { infantry_equipment_1 < 1 } }
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_1
+						amount = 10000
+					}
 				}
-				add_equipment_to_stockpile = {
-					type = support_equipment_1
-					amount = 2000
+				if = {
+					limit = { has_equipment = { support_equipment_1 < 1 } }
+					add_equipment_to_stockpile = {
+						type = support_equipment_1
+						amount = 2000
+					}
 				}
-				add_equipment_to_stockpile = {
-					type = artillery_equipment_1
-					amount = 1000
+				if = {
+					limit = { has_equipment = { artillery_equipment_1 < 1 } }
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_1
+						amount = 1000
+					}
 				}
-				add_equipment_to_stockpile = {
-					type = motorized_equipment_1
-					amount = 800
+				if = {
+					limit = { has_equipment = { motorized_equipment_1 < 1 } }
+					add_equipment_to_stockpile = {
+						type = motorized_equipment_1
+						amount = 800
+					}
 				}
 			}
 		}

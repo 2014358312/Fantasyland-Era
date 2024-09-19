@@ -12,7 +12,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology = fascism_subtype
+			ideology = neutrality_subtype
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = -1
@@ -30,6 +30,239 @@ characters = {
 				large = GFX_Portrait_SMA_Vladilena_Milize_army
 				small = GFX_idea_advisor_SMA_Vladilena_Milize_army
 			}
+		}
+	}
+	
+	SMA_Asada_Shino = {
+		name = Asada_Shino
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Asada_Shino
+				small = GFX_idea_advisor_SMA_Asada_Shino
+			}
+			army = {
+				large = GFX_Portrait_SMA_Asada_Shino
+				small = GFX_idea_advisor_SMA_Asada_Shino
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = SMA_Asada_Shino
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 150
+			traits = { army_commando_3 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	SMA_Ayano_Keiko = {
+		name = Ayano_Keiko
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Ayano_Keiko
+				small = GFX_idea_advisor_SMA_Ayano_Keiko
+			}
+			army = {
+				large = GFX_Portrait_SMA_Ayano_Keiko
+				small = GFX_idea_advisor_SMA_Ayano_Keiko
+			}
+		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = SMA_Ayano_Keiko
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 50
+			traits = { air_chief_all_weather_1 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	SMA_Kirigaya_Kazuto = {
+		name = Kirigaya_Kazuto
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Kirigaya_Kazuto
+				small = GFX_idea_advisor_SMA_Kirigaya_Kazuto
+			}
+			army = {
+				large = GFX_Portrait_SMA_Kirigaya_Kazuto
+				small = GFX_idea_advisor_SMA_Kirigaya_Kazuto
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = SMA_Kirigaya_Kazuto
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 150
+			traits = { army_concealment_3 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	SMA_Kirigaya_Suguha = {
+		name = Kirigaya_Suguha
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Kirigaya_Suguha
+				small = GFX_idea_advisor_SMA_Kirigaya_Suguha
+			}
+			army = {
+				large = GFX_Portrait_SMA_Kirigaya_Suguha
+				small = GFX_idea_advisor_SMA_Kirigaya_Suguha
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = SMA_Kirigaya_Suguha
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 100
+			traits = { army_chief_maneuver_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	SMA_Shinozaki_Rika = {
+		name = Shinozaki_Rika
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Shinozaki_Rika
+				small = GFX_idea_advisor_SMA_Shinozaki_Rika
+			}
+			army = {
+				large = GFX_Portrait_SMA_Shinozaki_Rika
+				small = GFX_idea_advisor_SMA_Shinozaki_Rika
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SMA_Shinozaki_Rika
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 150
+			traits = { weapons_designer }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	SMA_Yui = {
+		name = Yui
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Yui
+				small = GFX_idea_advisor_SMA_Yui
+			}
+			army = {
+				large = GFX_Portrait_SMA_Yui
+				small = GFX_idea_advisor_SMA_Yui
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SMA_Yui_political_advisor
+			allowed = { original_tag = SMA }
+			available = {
+				not_already_hired_except_as = political_advisor
+			}
+			cost = 150
+			traits = { psychoanalytic_physician }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = SMA_Yui_theorist
+			allowed = { original_tag = SMA }
+			available = {
+				not_already_hired_except_as = theorist
+			}
+			cost = 150
+			research_bonus = {
+				electronics = 0.15
+				rocketry = 0.05
+			}
+			traits = { computer_expert }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	SMA_Henrietta_Penrose = {
+		name = Henrietta_Penrose
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Henrietta_Penrose
+				small = GFX_idea_advisor_SMA_Henrietta_Penrose
+			}
+			army = {
+				large = GFX_Portrait_SMA_Henrietta_Penrose
+				small = GFX_idea_advisor_SMA_Henrietta_Penrose
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = SMA_Henrietta_Panlos
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 150
+			research_bonus = {
+				rocketry = 0.15
+			}
+			modifier = {
+				land_reinforce_rate = 0.05
+			}
+			traits = { rocket_scientist }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	SMA_ES_Alpha = {
+		name = ES_Alpha
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_ES_Alpha
+				small = GFX_idea_advisor_SMA_ES_Alpha
+			}
+			army = {
+				large = GFX_Portrait_SMA_ES_Alpha
+				small = GFX_idea_advisor_SMA_ES_Alpha
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
 		}
 	}
 }
