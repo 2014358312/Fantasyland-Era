@@ -11,12 +11,12 @@ characters = {
 				small = GFX_idea_advisor_SMA_Yuuki_Asuna_army_neutrality
 			}
 		}
-		country_leader = {
-			ideology = neutrality_subtype
-			traits = {  }
-			expire = "1965.1.1.1"
-			id = -1
-		}
+		#country_leader = {
+		#	ideology = neutrality_subtype
+		#	traits = { flashlight }
+		#	expire = "1965.1.1.1"
+		#	id = -1
+		#}
 	}
 	
 	SMA_Vladilena_Milize = {
@@ -255,14 +255,85 @@ characters = {
 				small = GFX_idea_advisor_SMA_ES_Alpha
 			}
 		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
+		#country_leader = {
+		#	ideology = democratic_subtype
+		#	traits = {  }
+		#	expire = "1965.1.1.1"
+		#	id = -1
+		#}
+	}
+	
+	SMA_Elesis_Sieghart = {
+		name = Elesis_Sieghart
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Elesis_Sieghart
+				small = GFX_idea_advisor_SMA_Elesis_Sieghart
+			}
+			army = {
+				large = GFX_Portrait_SMA_Elesis_Sieghart
+				small = GFX_idea_advisor_SMA_Elesis_Sieghart
+			}
+		}
+		country_leader = {
+			ideology = fascism_subtype
+			traits = { radical_officer }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+
+	SMA_Isuzuruha_Centollusia = {
+		name = Sento_Isuzu
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Isuzuruha_Centollusia
+				small = GFX_idea_advisor_SMA_Isuzuruha_Centollusia
+			}
+			army = {
+				large = GFX_Portrait_SMA_Isuzuruha_Centollusia
+				small = GFX_idea_advisor_SMA_Isuzuruha_Centollusia
+			}
+		}
+		country_leader = {
+			ideology = communism_subtype
+			traits = { army_star }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+
+	SMA_Roxy_Migurdia = {
+		name = Roxy_Migurdia
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Roxy_Migurdia
+				small = GFX_idea_advisor_SMA_Roxy_Migurdia
+			}
+			army = {
+				large = GFX_Portrait_SMA_Roxy_Migurdia
+				small = GFX_idea_advisor_SMA_Roxy_Migurdia
+			}
+		}
+		country_leader = {
+			ideology = neutrality_subtype
+			traits = { lonely_genius }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = SMA_Roxy_Migurdia
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 0
+			can_be_fired = no
+			traits = { commander_in_chief_for_military_reconstruction }
+			ai_will_do = {
+				base = 1.000
+			}
 		}
 	}
 }

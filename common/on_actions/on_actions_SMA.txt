@@ -1,0 +1,24 @@
+on_actions = {
+	on_war = {
+		effect = {
+			if = {
+				limit = {
+					THIS = {
+						TAG = SMA
+						has_country_leader = {
+							character = SMA_Vladilena_Milize
+							ruling_only = yes
+						}
+						OR = {
+							has_country_leader_with_trait = flower_power
+							has_country_leader_with_trait = flower_power_1
+							has_country_leader_with_trait = flower_power_2
+							has_country_leader_with_trait = flower_power_3
+						}
+					}
+				}
+				THIS = { country_event = { id = san_magnolia.301 days = 1 } }
+			}
+		}
+	}
+}

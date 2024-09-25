@@ -1,0 +1,210 @@
+SMA_democratic_es_alpha_leader = {
+	retire_ideology_leader = democratic
+	SMA_ES_Alpha = {
+		add_country_leader_role = {
+			country_leader = {
+				ideology = democratic_subtype
+				expire = "1965.1.1.1"
+				traits = {  }
+			}
+			promote_leader = yes
+		}
+	}
+	set_party_name = {
+		ideology = democratic
+		name = SMA_democratic_party_shadow
+		long_name = SMA_democratic_party_shadow_long
+	}
+}
+
+SMA_democratic_richard_turner_leader = {
+	retire_ideology_leader = democratic
+	GIA_Richard_Turner = {
+		add_country_leader_role = {
+			country_leader = {
+				ideology = democratic_subtype
+				expire = "1965.1.1.1"
+				traits = { ring_from_landsol }
+			}
+			promote_leader = yes
+		}
+	}
+	set_party_name = {
+		ideology = democratic
+		name = SMA_democratic_party
+		long_name = SMA_democratic_party_long
+	}
+}
+
+SMA_neutrality_military_yuuki_asuna_leader = {
+	retire_ideology_leader = neutrality
+	SMA_Yuuki_Asuna = {
+		add_country_leader_role = {
+			country_leader = {
+				ideology = neutrality_subtype
+				expire = "1965.1.1.1"
+				traits = { flashlight }
+			}
+			promote_leader = yes
+		}
+	}
+	set_party_name = {
+		ideology = neutrality
+		name = SMA_neutrality_party_military
+		long_name = SMA_neutrality_party_military_long
+	}
+}
+
+SMA_neutrality_military_joint_vladilena_milize_leader = {
+	retire_ideology_leader = neutrality
+	SMA_Vladilena_Milize = {
+		add_country_leader_role = {
+			country_leader = {
+				ideology = neutrality_subtype
+				expire = "1965.1.1.1"
+				traits = { flower_power }
+			}
+			promote_leader = yes
+		}
+	}
+	set_party_name = {
+		ideology = neutrality
+		name = SMA_neutrality_party_military_joint
+		long_name = SMA_neutrality_party_military_joint_lena_long
+	}
+}
+
+SMA_update_lena_flower_power_trait = {
+	if = {
+		limit = {
+			has_country_leader = {
+				character = SMA_Vladilena_Milize
+				ruling_only = yes
+			}
+			OR = {
+				has_country_leader_with_trait = flower_power
+				has_country_leader_with_trait = flower_power_1
+				has_country_leader_with_trait = flower_power_2
+				has_country_leader_with_trait = flower_power_3
+			}
+		}
+		hidden_effect = {
+			SMA_Vladilena_Milize = {
+				if = {
+					limit = { SMA = { has_country_leader_with_trait = flower_power } }
+					swap_country_leader_traits = {
+						remove = flower_power
+						add = flower_power_1
+					}
+				}
+				else_if = {
+					limit = { SMA = { has_country_leader_with_trait = flower_power_1 } }
+					swap_country_leader_traits = {
+						remove = flower_power_1
+						add = flower_power_2
+					}
+				}
+				else_if = {
+					limit = { SMA = { has_country_leader_with_trait = flower_power_2 } }
+					swap_country_leader_traits = {
+						remove = flower_power_2
+						add = flower_power_3
+					}
+				}
+				else_if = {
+					limit = { SMA = { has_country_leader_with_trait = flower_power_3 } }
+					log = "[GetDateText]: [Root.GetName]: Warn: trait flower_power cannot be upgraded again."
+				}
+			}
+		}
+		if = {
+			limit = { check_variable = { SMA.flower_power_level = 0 } }
+			set_variable = { SMA.flower_power_stability_factor_var = 0.05 }
+			set_variable = { SMA.flower_power_war_support_factor_var = -0.05 }
+			set_variable = { SMA.flower_power_industrial_capacity_factory_var = -0.05 }
+			set_variable = { SMA.flower_power_local_resources_factor_var = 0.05 }
+			set_variable = { SMA.flower_power_trade_opinion_factor_var = 0.15 }
+			set_variable = { SMA.flower_power_production_speed_industrial_complex_factor_var = 0.10 }
+		}
+		if = {
+			limit = { check_variable = { SMA.flower_power_level < 3 } }
+			custom_effect_tooltip = update_flower_power_level_tt
+			add_to_variable = { SMA.flower_power_level = 1 }
+			add_to_variable = { SMA.flower_power_stability_factor_var = 0.05 tooltip = stability_factor_tt }
+			if = {
+				limit = { check_variable = { SMA.flower_power_level < 3 } }
+				subtract_from_variable = { SMA.flower_power_war_support_factor_var = 0.05 tooltip = war_support_factor_tt }
+			}
+			if = {
+				limit = { check_variable = { SMA.flower_power_level < 2 } }
+				subtract_from_variable = { SMA.flower_power_industrial_capacity_factory_var = 0.05 tooltip = industrial_capacity_factory_tt  }
+			}
+			add_to_variable = { SMA.flower_power_local_resources_factor_var = 0.05 tooltip = local_resources_factor_tt }
+			add_to_variable = { SMA.flower_power_trade_opinion_factor_var = 0.15 tooltip = trade_opinion_factor_tt }
+			add_to_variable = { SMA.flower_power_production_speed_industrial_complex_factor_var = 0.10 tooltip = production_speed_industrial_complex_factor_tt }
+		}
+	}
+}
+
+SMA_lena_call_of_duty = {
+	if = {
+		limit = { has_country_leader_with_trait = flower_power }
+		remove_country_leader_trait = flower_power
+		add_war_support = 0.05
+		add_political_power = 25
+		add_timed_idea = {
+			idea = SMA_awakening_of_giants
+			months = 6
+		}
+	}
+	else_if = {
+		limit = { has_country_leader_with_trait = flower_power }
+		remove_country_leader_trait = flower_power_1
+		add_war_support = 0.05
+		add_political_power = 50
+		add_timed_idea = {
+			idea = SMA_awakening_of_giants_2
+			months = 8
+		}
+	}
+	else_if = {
+		limit = { has_country_leader_with_trait = flower_power }
+		remove_country_leader_trait = flower_power_2
+		add_war_support = 0.10
+		add_political_power = 75
+		add_timed_idea = {
+			idea = SMA_awakening_of_giants_2
+			months = 10
+		}
+	}
+	else_if = {
+		limit = { has_country_leader_with_trait = flower_power }
+		remove_country_leader_trait = flower_power_3
+		add_war_support = 0.10
+		add_political_power = 100
+		add_timed_idea = {
+			idea = SMA_awakening_of_giants_3
+			months = 12
+		}
+	}
+	add_country_leader_trait = blood_queen
+}
+
+SMA_neutrality_military_joint_yuuki_asuna_leader = {
+	retire_ideology_leader = neutrality
+	SMA_Yuuki_Asuna = {
+		add_country_leader_role = {
+			country_leader = {
+				ideology = neutrality_subtype
+				expire = "1965.1.1.1"
+				traits = { flashlight }
+			}
+			promote_leader = yes
+		}
+	}
+	set_party_name = {
+		ideology = neutrality
+		name = SMA_neutrality_party_military_joint
+		long_name = SMA_neutrality_party_military_joint_asuna_long
+	}
+}

@@ -60,8 +60,17 @@ add_days_mission_timeout = {
 	days = -65
 }
 
-set_variable = { landsol_congress_member = 126 } #this can be divided by 21, which is similar to the number of actual characters.
-LAN_initialize_congress = yes
+set_variable = { landsol_congress_council_member = 10 }
+set_variable = { landsol_congress_council_sup = 6 }
+set_variable = { landsol_congress_council_frame = landsol_congress_council_sup }
+
+set_variable = { landsol_congress_state_member = 126 } #this can be divided by 21, which is similar to the number of actual characters.
+LAN_initialize_congress_state = yes
+
+#member of congress national is dynamic.
+set_country_flag = LAN_congress_national_enable_flag
+LAN_initialize_congress_national = yes
+
 
 set_variable = { LAN_RP_political_power_factor_var = -0.10 }
 #add_dynamic_modifier = { modifier = LAN_republican_parliament_dynamic_modifier }

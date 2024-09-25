@@ -1,0 +1,100 @@
+﻿capital = 100
+
+set_research_slots = 2
+set_convoys = 80
+set_stability = 0.65
+set_war_support = 0.35
+starting_train_buffer = 2.0
+
+set_technology = {
+	basic_train = 1
+	### Infantry ###
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+}
+if = {
+	limit = { has_dlc = "No Step Back" }
+	
+	set_technology = {
+		gwtank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
+}
+
+activate_mission = EYP_hundred_day_crisis_mission_fake
+add_days_mission_timeout = {
+	mission = EYP_hundred_day_crisis_mission_fake
+	days = -65
+}
+
+set_variable = { SMA_DA_conscription_factor_var = -0.30 }
+set_variable = { SMA_DA_land_reinforce_rate_var = -0.03 }
+set_variable = { SMA_DA_army_attack_factor_var = -0.30 }
+set_variable = { SMA_DA_army_defence_factor_var = -0.30 }
+set_variable = { SMA_DA_army_org_factor_var = -0.30 }
+set_variable = { SMA_DA_army_morale_factor_var = -0.30 }
+set_variable = { SMA_DA_max_dig_in_factor_var = 0.50 }
+#add_dynamic_modifier = { modifier = SMA_decadent_army_dynamic_modifier }
+
+create_intelligence_agency = {
+	name = "San Magnolian Special Intelligence"
+	icon = GFX_intelligence_agency_logo_sma
+}
+
+
+add_ideas = {
+	SMA_sour_loser
+	SMA_after_iron_wall_fallen
+	SMA_on_the_ruin
+	SMA_decadent_army_fake
+	SMA_chivalric_order
+}
+
+recruit_character = GIA_Richard_Turner
+recruit_character = SMA_Vladilena_Milize
+recruit_character = SMA_Asada_Shino
+recruit_character = SMA_Ayano_Keiko
+recruit_character = SMA_Henrietta_Penrose
+recruit_character = SMA_Kirigaya_Kazuto
+recruit_character = SMA_Kirigaya_Suguha
+recruit_character = SMA_Shinozaki_Rika
+recruit_character = SMA_Yui
+recruit_character = SMA_Yuuki_Asuna
+recruit_character = SMA_ES_Alpha
+recruit_character = SMA_Elesis_Sieghart
+recruit_character = SMA_Isuzuruha_Centollusia
+recruit_character = SMA_Roxy_Migurdia
+
+activate_advisor = SMA_Roxy_Migurdia
+
+
+create_operative_leader = {
+	name = "Twilight"
+	GFX = "GFX_Portrait_SMA_Loid_Forger"
+	traits = { operative_tough operative_well_groomed operative_commando operative_master_interrogator operative_linguist operative_safe_cracker operative_natural_orator operative_escape_artist operative_demolition_expert }
+	bypass_recruitment = yes
+	available_to_spy_master = no
+	female = no
+	nationalities = { SMA }
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1932.6.15"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 38
+	neutrality = 2
+	communism = 15
+	fascism = 45
+}
+

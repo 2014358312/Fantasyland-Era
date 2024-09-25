@@ -5,36 +5,105 @@ guiTypes = {
 		position = { x = 0 y = 0 }
 		size = { width = 100 height = 200 }
 		
+		
 		iconType = {
-			name = "congress_leader_icon"
-			spriteType = "GFX_landsol_congress_leader_icon"
-			position = { x = 100 y = 30 }
-			scale = 0.6
+			name = "state_icon"
+			spriteType = "GFX_landsol_congress_state_icon"
+			position = { x = 100 y = 71 }
 		}
 		
 		instantTextboxType = {
-			name = "congress_leader_name"
-			position = { x = 250 y = 140 }
+			name = "state_summary"
+			position = { x = 100 y = 131 }
 			font = "hoi_18mbs"
-			text = "congress_leader_name_text"
-			format = center
-			maxWidth = 200
-		}
-		
-		iconType = {
-			name = "congress_icon"
-			spriteType = "GFX_landsol_congress_icon"
-			position = { x = 300 y = 50 }
-		}
-		
-		instantTextboxType = {
-			name = "congress_summary"
-			position = { x = 300 y = 110 }
-			font = "hoi_18mbs"
-			text = "[?landsol_congress_sup]/[?landsol_congress_member]"
+			text = "[?landsol_congress_state_sup|.0]/[?landsol_congress_state_member|.0]"
 			format = center
 			maxWidth = 94
 			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "council_icon"
+			spriteType = "GFX_landsol_congress_council_icon"
+			position = { x = 215 y = 98 }
+		}
+		
+		instantTextboxType = {
+			name = "council_summary"
+			position = { x = 215 y = 131 }
+			font = "hoi_18mbs"
+			text = "[?landsol_congress_council_sup|.0]/[?landsol_congress_council_member|.0]"
+			format = center
+			maxWidth = 55
+			alwaystransparent = yes
+		}
+			
+		iconType = {
+			name = "national_icon"
+			spriteType = "GFX_landsol_congress_national_icon"
+			position = { x = 300 y = 50 }
+		}
+	
+		instantTextboxType = {
+			name = "national_summary"
+			position = { x = 300 y = 131 }
+			font = "hoi_18mbs"
+			text = "[?landsol_congress_national_sup|.0]/[?landsol_congress_national_member|.0]"
+			format = center
+			maxWidth = 131
+			alwaystransparent = yes
+		}
+		
+		buttonType = {
+			name = "congress_detail"
+			spriteType = "GFX_help_button"
+			position = { x = 450 y = 20 }
+		}
+	}
+	
+	containerWindowType = {
+		name = "landsol_congress_main"
+		position = { x = 400 y = 200 }
+		size = { width = 1024 height = 768 }
+		
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_plain_bg"
+		}
+		
+		buttonType = {
+			name = "close_button"
+			position = { x = -50 y = 5 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+		
+		containerWindowType = {
+			name = "landsol_congress_common"
+			position = { x = 200 y = 200 }
+			
+			gridboxtype = {
+				name = "congressStateDiaContainer"
+				position = { x = 0 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 100%% height = 0 }
+				max_slots_horizontal = 1
+				add_horizontal = no
+			}
+		}
+	}
+	
+	containerWindowType = {
+		name = "congressStateContainer"
+		position = { x = 0 y = 0 }
+
+		iconType = { 
+			name = "congressStateSeatGUI"
+			quadTextureSprite = "GFX_landsol_congress_seat_state"
 		}
 	}
 }

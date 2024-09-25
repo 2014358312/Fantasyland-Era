@@ -40,46 +40,407 @@ LAN_bop_right_large = {
 	}
 }
 
-LAN_initialize_congress = {
+LAN_initialize_congress_state = {
+	###decision
 	set_variable_to_random = {
-		var = landsol_congress_sup
+		var = landsol_congress_state_sup
 		min = 60
 		max = 97
 		integer = yes
 	}
 	
-	set_variable = { landsol_congress_unit = landsol_congress_member }
-	divide_variable = { landsol_congress_unit = 21 }
+	set_variable = { landsol_congress_state_unit = landsol_congress_state_member }
+	divide_variable = { landsol_congress_state_unit = 21 }
 	
-	LAN_congress_support_small = yes
+	LAN_congress_state_support_small = yes
+	
+	###GUI
+	###Only displaying the number of members from different guilds, 
+	###so there is no need to make any further changes.
+	clear_array = congressStateFrame
+	resize_array = {
+		array = congressStateFrame
+		value = 1
+		size = landsol_congress_state_member
+	}
+	
+	clear_array = congressStateX
+	clear_array = congressStateY
+	add_to_array = { congressStateX = 0 }
+	add_to_array = { congressStateY = 213 }
+	add_to_array = { congressStateX = 25 }
+	add_to_array = { congressStateY = 213 }
+	add_to_array = { congressStateX = 51 }
+	add_to_array = { congressStateY = 213 }
+	add_to_array = { congressStateX = 76 }
+	add_to_array = { congressStateY = 213 }
+	add_to_array = { congressStateX = 101 }
+	add_to_array = { congressStateY = 213 }
+	add_to_array = { congressStateX = 127 }
+	add_to_array = { congressStateY = 213 }
+	add_to_array = { congressStateX = 2 }
+	add_to_array = { congressStateY = 188 }
+	add_to_array = { congressStateX = 28 }
+	add_to_array = { congressStateY = 189 }
+	add_to_array = { congressStateX = 54 }
+	add_to_array = { congressStateY = 189 }
+	add_to_array = { congressStateX = 79 }
+	add_to_array = { congressStateY = 191 }
+	add_to_array = { congressStateX = 8 }
+	add_to_array = { congressStateY = 165 }
+	add_to_array = { congressStateX = 105 }
+	add_to_array = { congressStateY = 192 }
+	add_to_array = { congressStateX = 34 }
+	add_to_array = { congressStateY = 165 }
+	add_to_array = { congressStateX = 131 }
+	add_to_array = { congressStateY = 193 }
+	add_to_array = { congressStateX = 60 }
+	add_to_array = { congressStateY = 166 }
+	add_to_array = { congressStateX = 16 }
+	add_to_array = { congressStateY = 142 }
+	add_to_array = { congressStateX = 86 }
+	add_to_array = { congressStateY = 170 }
+	add_to_array = { congressStateX = 43 }
+	add_to_array = { congressStateY = 143 }
+	add_to_array = { congressStateX = 113 }
+	add_to_array = { congressStateY = 172 }
+	add_to_array = { congressStateX = 70 }
+	add_to_array = { congressStateY = 145 }
+	add_to_array = { congressStateX = 26 }
+	add_to_array = { congressStateY = 120 }
+	add_to_array = { congressStateX = 96 }
+	add_to_array = { congressStateY = 150 }
+	add_to_array = { congressStateX = 54 }
+	add_to_array = { congressStateY = 122 }
+	add_to_array = { congressStateX = 140 }
+	add_to_array = { congressStateY = 175 }
+	add_to_array = { congressStateX = 39 }
+	add_to_array = { congressStateY = 99 }
+	add_to_array = { congressStateX = 83 }
+	add_to_array = { congressStateY = 125 }
+	add_to_array = { congressStateX = 124 }
+	add_to_array = { congressStateY = 154 }
+	add_to_array = { congressStateX = 68 }
+	add_to_array = { congressStateY = 102 }
+	add_to_array = { congressStateX = 109 }
+	add_to_array = { congressStateY = 132 }
+	add_to_array = { congressStateX = 54 }
+	add_to_array = { congressStateY = 80 }
+	add_to_array = { congressStateX = 98 }
+	add_to_array = { congressStateY = 107 }
+	add_to_array = { congressStateX = 152 }
+	add_to_array = { congressStateY = 160 }
+	add_to_array = { congressStateX = 84 }
+	add_to_array = { congressStateY = 85 }
+	add_to_array = { congressStateX = 138 }
+	add_to_array = { congressStateY = 138 }
+	add_to_array = { congressStateX = 71 }
+	add_to_array = { congressStateY = 63 }
+	add_to_array = { congressStateX = 124 }
+	add_to_array = { congressStateY = 117 }
+	add_to_array = { congressStateX = 116 }
+	add_to_array = { congressStateY = 91 }
+	add_to_array = { congressStateX = 103 }
+	add_to_array = { congressStateY = 69 }
+	add_to_array = { congressStateX = 90 }
+	add_to_array = { congressStateY = 47 }
+	add_to_array = { congressStateX = 168 }
+	add_to_array = { congressStateY = 147 }
+	add_to_array = { congressStateX = 155 }
+	add_to_array = { congressStateY = 126 }
+	add_to_array = { congressStateX = 142 }
+	add_to_array = { congressStateY = 104 }
+	add_to_array = { congressStateX = 110 }
+	add_to_array = { congressStateY = 34 }
+	add_to_array = { congressStateX = 123 }
+	add_to_array = { congressStateY = 56 }
+	add_to_array = { congressStateX = 136 }
+	add_to_array = { congressStateY = 78 }
+	add_to_array = { congressStateX = 132 }
+	add_to_array = { congressStateY = 24 }
+	add_to_array = { congressStateX = 162 }
+	add_to_array = { congressStateY = 94 }
+	add_to_array = { congressStateX = 145 }
+	add_to_array = { congressStateY = 46 }
+	add_to_array = { congressStateX = 174 }
+	add_to_array = { congressStateY = 116 }
+	add_to_array = { congressStateX = 157 }
+	add_to_array = { congressStateY = 68 }
+	add_to_array = { congressStateX = 186 }
+	add_to_array = { congressStateY = 139 }
+	add_to_array = { congressStateX = 155 }
+	add_to_array = { congressStateY = 16 }
+	add_to_array = { congressStateX = 168 }
+	add_to_array = { congressStateY = 39 }
+	add_to_array = { congressStateX = 182 }
+	add_to_array = { congressStateY = 87 }
+	add_to_array = { congressStateX = 180 }
+	add_to_array = { congressStateY = 62 }
+	add_to_array = { congressStateX = 194 }
+	add_to_array = { congressStateY = 110 }
+	add_to_array = { congressStateX = 179 }
+	add_to_array = { congressStateY = 10 }
+	add_to_array = { congressStateX = 191 }
+	add_to_array = { congressStateY = 34 }
+	add_to_array = { congressStateX = 205 }
+	add_to_array = { congressStateY = 134 }
+	add_to_array = { congressStateX = 204 }
+	add_to_array = { congressStateY = 84 }
+	add_to_array = { congressStateX = 203 }
+	add_to_array = { congressStateY = 58 }
+	add_to_array = { congressStateX = 203 }
+	add_to_array = { congressStateY = 8 }
+	add_to_array = { congressStateX = 215 }
+	add_to_array = { congressStateY = 108 }
+	add_to_array = { congressStateX = 215 }
+	add_to_array = { congressStateY = 33 }
+	add_to_array = { congressStateX = 227 }
+	add_to_array = { congressStateY = 8 }
+	add_to_array = { congressStateX = 227 }
+	add_to_array = { congressStateY = 58 }
+	add_to_array = { congressStateX = 226 }
+	add_to_array = { congressStateY = 84 }
+	add_to_array = { congressStateX = 225 }
+	add_to_array = { congressStateY = 134 }
+	add_to_array = { congressStateX = 239 }
+	add_to_array = { congressStateY = 34 }
+	add_to_array = { congressStateX = 251 }
+	add_to_array = { congressStateY = 10 }
+	add_to_array = { congressStateX = 236 }
+	add_to_array = { congressStateY = 110 }
+	add_to_array = { congressStateX = 250 }
+	add_to_array = { congressStateY = 62 }
+	add_to_array = { congressStateX = 248 }
+	add_to_array = { congressStateY = 87 }
+	add_to_array = { congressStateX = 263 }
+	add_to_array = { congressStateY = 39 }
+	add_to_array = { congressStateX = 275 }
+	add_to_array = { congressStateY = 16 }
+	add_to_array = { congressStateX = 244 }
+	add_to_array = { congressStateY = 139 }
+	add_to_array = { congressStateX = 273 }
+	add_to_array = { congressStateY = 68 }
+	add_to_array = { congressStateX = 256 }
+	add_to_array = { congressStateY = 116 }
+	add_to_array = { congressStateX = 285 }
+	add_to_array = { congressStateY = 46 }
+	add_to_array = { congressStateX = 269 }
+	add_to_array = { congressStateY = 94 }
+	add_to_array = { congressStateX = 298 }
+	add_to_array = { congressStateY = 24 }
+	add_to_array = { congressStateX = 295 }
+	add_to_array = { congressStateY = 78 }
+	add_to_array = { congressStateX = 307 }
+	add_to_array = { congressStateY = 56 }
+	add_to_array = { congressStateX = 320 }
+	add_to_array = { congressStateY = 34 }
+	add_to_array = { congressStateX = 288 }
+	add_to_array = { congressStateY = 104 }
+	add_to_array = { congressStateX = 275 }
+	add_to_array = { congressStateY = 126 }
+	add_to_array = { congressStateX = 262 }
+	add_to_array = { congressStateY = 147 }
+	add_to_array = { congressStateX = 340 }
+	add_to_array = { congressStateY = 47 }
+	add_to_array = { congressStateX = 327 }
+	add_to_array = { congressStateY = 69 }
+	add_to_array = { congressStateX = 314 }
+	add_to_array = { congressStateY = 91 }
+	add_to_array = { congressStateX = 306 }
+	add_to_array = { congressStateY = 117 }
+	add_to_array = { congressStateX = 359 }
+	add_to_array = { congressStateY = 63 }
+	add_to_array = { congressStateX = 292 }
+	add_to_array = { congressStateY = 138 }
+	add_to_array = { congressStateX = 346 }
+	add_to_array = { congressStateY = 85 }
+	add_to_array = { congressStateX = 278 }
+	add_to_array = { congressStateY = 160 }
+	add_to_array = { congressStateX = 332 }
+	add_to_array = { congressStateY = 107 }
+	add_to_array = { congressStateX = 376 }
+	add_to_array = { congressStateY = 80 }
+	add_to_array = { congressStateX = 321 }
+	add_to_array = { congressStateY = 132 }
+	add_to_array = { congressStateX = 362 }
+	add_to_array = { congressStateY = 102 }
+	add_to_array = { congressStateX = 306 }
+	add_to_array = { congressStateY = 154 }
+	add_to_array = { congressStateX = 348 }
+	add_to_array = { congressStateY = 125 }
+	add_to_array = { congressStateX = 391 }
+	add_to_array = { congressStateY = 99 }
+	add_to_array = { congressStateX = 290 }
+	add_to_array = { congressStateY = 175 }
+	add_to_array = { congressStateX = 376 }
+	add_to_array = { congressStateY = 122 }
+	add_to_array = { congressStateX = 334 }
+	add_to_array = { congressStateY = 150 }
+	add_to_array = { congressStateX = 404 }
+	add_to_array = { congressStateY = 120 }
+	add_to_array = { congressStateX = 360 }
+	add_to_array = { congressStateY = 145 }
+	add_to_array = { congressStateX = 317 }
+	add_to_array = { congressStateY = 172 }
+	add_to_array = { congressStateX = 388 }
+	add_to_array = { congressStateY = 143 }
+	add_to_array = { congressStateX = 344 }
+	add_to_array = { congressStateY = 170 }
+	add_to_array = { congressStateX = 415 }
+	add_to_array = { congressStateY = 142 }
+	add_to_array = { congressStateX = 370 }
+	add_to_array = { congressStateY = 166 }
+	add_to_array = { congressStateX = 299 }
+	add_to_array = { congressStateY = 193 }
+	add_to_array = { congressStateX = 396 }
+	add_to_array = { congressStateY = 165 }
+	add_to_array = { congressStateX = 325 }
+	add_to_array = { congressStateY = 192 }
+	add_to_array = { congressStateX = 422 }
+	add_to_array = { congressStateY = 165 }
+	add_to_array = { congressStateX = 351 }
+	add_to_array = { congressStateY = 191 }
+	add_to_array = { congressStateX = 376 }
+	add_to_array = { congressStateY = 189 }
+	add_to_array = { congressStateX = 402 }
+	add_to_array = { congressStateY = 189 }
+	add_to_array = { congressStateX = 428 }
+	add_to_array = { congressStateY = 188 }
+	add_to_array = { congressStateX = 303 }
+	add_to_array = { congressStateY = 213 }
+	add_to_array = { congressStateX = 329 }
+	add_to_array = { congressStateY = 213 }
+	add_to_array = { congressStateX = 354 }
+	add_to_array = { congressStateY = 213 }
+	add_to_array = { congressStateX = 379 }
+	add_to_array = { congressStateY = 213 }
+	add_to_array = { congressStateX = 405 }
+	add_to_array = { congressStateY = 213 }
+	add_to_array = { congressStateX = 430 }
+	add_to_array = { congressStateY = 213 }
 }
 
-LAN_change_congress = {
-	set_variable = { landsol_congress_change = congress_current_change }
-	add_to_variable = { landsol_congress_sup = landsol_congress_change }
-	set_variable = { landsol_congress_sup_ratio = landsol_congress_sup }
-	divide_variable = { landsol_congress_sup_ratio = landsol_congress_member }
+LAN_change_congress_state = {
+	set_variable = { landsol_congress_state_change = congress_state_current_change }
+	add_to_variable = { landsol_congress_state_sup = landsol_congress_state_change }
+	set_variable = { landsol_congress_state_sup_ratio = landsol_congress_state_sup }
+	divide_variable = { landsol_congress_state_sup_ratio = landsol_congress_state_member }
 	
-	set_variable = { landsol_congress_sup_frame = landsol_congress_sup }
-	divide_variable = { landsol_congress_sup_frame = landsol_congress_unit }
+	set_variable = { landsol_congress_state_sup_frame = landsol_congress_state_sup }
+	divide_variable = { landsol_congress_state_sup_frame = landsol_congress_state_unit }
 	
 	clamp_variable = {
-		var = landsol_congress_sup
+		var = landsol_congress_state_sup
 		min = 0
-		max = landsol_congress_member
+		max = landsol_congress_state_member
 	}
 	
 	clamp_variable = {
-		var = landsol_congress_sup_frame
+		var = landsol_congress_state_sup_frame
 		min = 1
 		max = 21
 	}
-	round_variable = landsol_congress_sup_frame
-	set_variable = { landsol_congress_frame = landsol_congress_sup_frame }
+	round_variable = landsol_congress_state_sup_frame
+	set_variable = { landsol_congress_state_frame = landsol_congress_state_sup_frame }
 }
 
-LAN_congress_support_small = {
-	custom_effect_tooltip = LAN_congress_support_small_tt
-	set_temp_variable = { congress_current_change = 3 }
-	LAN_change_congress = yes
+LAN_congress_state_support_small = {
+	custom_effect_tooltip = LAN_congress_state_support_small_tt
+	set_temp_variable = { congress_state_current_change = 3 }
+	LAN_change_congress_state = yes
+}
+
+LAN_initialize_congress_national = {
+	LAN_congress_national_base = yes
+	
+	set_variable_to_random = {
+		var = landsol_congress_national_sup
+		min = 0
+		max = 468
+		integer = yes
+	}
+	clamp_variable = {
+		var = landsol_congress_national_sup
+		min = 0
+		max = landsol_congress_national_member
+	}
+	
+	LAN_congress_national_support_small = yes
+}
+
+LAN_congress_national_base = {
+	set_variable = { landsol_congress_national_member = 0 }
+	every_owned_state = {
+		limit = { is_core_of = LAN }
+		#Proportional representation system, simplified here as a fixed 12 person system.
+		ROOT = { add_to_variable = { landsol_congress_national_member = 12 } }
+	}
+	
+	set_variable = { landsol_congress_national_unit = landsol_congress_national_member }
+	divide_variable = { landsol_congress_national_unit = 21 }
+	round_variable = landsol_congress_national_unit
+}
+
+LAN_change_congress_national = {
+	set_variable = { landsol_congress_national_change = congress_national_current_change }
+	add_to_variable = { landsol_congress_national_sup = landsol_congress_national_change }
+	set_variable = { landsol_congress_national_sup_ratio = landsol_congress_national_sup }
+	divide_variable = { landsol_congress_national_sup_ratio = landsol_congress_national_member }
+	
+	set_variable = { landsol_congress_national_sup_frame = landsol_congress_national_sup }
+	divide_variable = { landsol_congress_national_sup_frame = landsol_congress_national_unit }
+	
+	clamp_variable = {
+		var = landsol_congress_national_sup
+		min = 0
+		max = landsol_congress_national_member
+	}
+	
+	clamp_variable = {
+		var = landsol_congress_national_sup_frame
+		min = 1
+		max = 21
+	}
+	round_variable = landsol_congress_national_sup_frame
+	set_variable = { landsol_congress_national_frame = landsol_congress_national_sup_frame }
+}
+
+LAN_congress_national_support_small = {
+	custom_effect_tooltip = LAN_congress_national_support_small_tt
+	set_temp_variable = { congress_national_current_change = 15 }
+	LAN_change_congress_national = yes
+}
+
+LAN_annex_crossbell_autonomous_prefecture = {
+	CRB = {
+		every_core_state = {
+			add_core_of = LAN
+		}
+	}
+	LAN = {
+		annex_country = {
+			target = CRB
+			transfer_troops = yes
+		}
+	}
+}
+
+LAN_annex_northumbria_autonomous_prefecture = {
+	NUB = {
+		every_core_state = {
+			add_core_of = LAN
+		}
+	}
+	LAN = {
+		annex_country = {
+			target = NUB
+			transfer_troops = yes
+		}
+	}
+}
+
+LAN_congress_council_support_small = {
+	custom_effect_tooltip = LAN_congress_council_support_small_tt
+	add_to_variable = { landsol_congress_council_sup = 1 }
+	set_variable = { landsol_congress_council_frame = landsol_congress_council_sup }
 }

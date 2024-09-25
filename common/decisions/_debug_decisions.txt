@@ -679,15 +679,16 @@ east_continent_debug_decisions = {
 		}
 		
 		visible = {
-			tag = WPE
+			always = yes
 		}
 		
 		available = {
+			tag = WPE
 			country_exists = WPE
 			NOT = { has_global_flag = white_civil_war_happens }
 			WPE = {
 				all_core_state = {
-					is_owned_by = THIS
+					is_owned_by = WPE
 				}
 			}
 		}
@@ -741,7 +742,7 @@ northwest_continent_debug_decisions = {
 				}
 				hidden_effect = {
 					if = {
-						limit = { NOT = { has_core_of = FON } }
+						limit = { NOT = { is_core_of = FON } }
 						add_core_of = FON
 					}
 					if = {

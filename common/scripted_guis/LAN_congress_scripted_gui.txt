@@ -6,13 +6,56 @@ scripted_gui = {
 		visible = {}
 
 		properties = {
-			congress_icon = {
-				image = GFX_landsol_congress_icon
-				frame = landsol_congress_frame
+			state_icon = {
+				image = GFX_landsol_congress_state_icon
+				frame = landsol_congress_state_frame
 			}
-			
-			congress_leader_icon = {
-				image = GFX_landsol_congress_leader_[?congress_leader]
+			council_icon = {
+				image = GFX_landsol_congress_council_icon
+				frame = landsol_congress_council_frame
+			}
+			national_icon = {
+				image = GFX_landsol_congress_national_icon
+				frame = landsol_congress_national_frame
+			}
+		}
+		
+		effects = {
+			congress_detail_click = {
+				if = {
+					limit = { has_country_flag = LAN_landsol_congress_main_flag }
+					clr_country_flag = LAN_landsol_congress_main_flag
+				}
+				else = { set_country_flag = LAN_landsol_congress_main_flag }
+			}
+		}
+	}
+	
+	LAN_landsol_congress_main_ui = {
+		context_type = player_context
+		window_name = "landsol_congress_main"
+		visible = { has_country_flag = LAN_landsol_congress_main_flag }
+
+		dynamic_lists = {
+			congressStateDiaContainer = {
+				array = congressStateX
+				change_scope = no
+				entry_container = congressStateContainer
+				index = state_seat_idx
+			}
+		}
+
+		properties = {
+			congressStateSeatGUI = {
+				x = congressStateX^state_seat_idx
+				y = congressStateY^state_seat_idx
+				frame = congressStateFrame^state_seat_idx
+			}
+		}
+		
+		effects = {
+			close_button_click = {
+				clr_country_flag = LAN_landsol_congress_main_flag
 			}
 		}
 	}

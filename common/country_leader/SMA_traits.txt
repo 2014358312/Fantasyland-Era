@@ -17,6 +17,50 @@ leader_traits = {
 		war_stability_factor = 0.05
 		org_loss_at_low_org_factor = -0.15
 	}
+	
+	flower_power = {#Lena from general to election, and then before next war.
+		random = no
+		
+		stability_factor = 0.05
+		war_support_factor = -0.05
+		industrial_capacity_factory = -0.05
+		local_resources_factor = 0.05
+		trade_opinion_factor = 0.15
+		production_speed_industrial_complex_factor = 0.10
+	}
+	
+	flower_power_1 = {
+		random = no
+		
+		stability_factor = 0.10
+		war_support_factor = -0.10
+		industrial_capacity_factory = -0.10
+		local_resources_factor = 0.10
+		trade_opinion_factor = 0.30
+		production_speed_industrial_complex_factor = 0.20
+	}
+	
+	flower_power_2 = {
+		random = no
+		
+		stability_factor = 0.15
+		war_support_factor = -0.15
+		industrial_capacity_factory = -0.10
+		local_resources_factor = 0.15
+		trade_opinion_factor = 0.45
+		production_speed_industrial_complex_factor = 0.30
+	}
+	
+	flower_power_3 = {
+		random = no
+		
+		stability_factor = 0.20
+		war_support_factor = -0.15
+		industrial_capacity_factory = -0.10
+		local_resources_factor = 0.20
+		trade_opinion_factor = 0.60
+		production_speed_industrial_complex_factor = 0.40
+	}
 
 	computer_expert = {
 		random = no
@@ -45,5 +89,59 @@ leader_traits = {
 				instant = yes
 			}
 		}
+	}
+	
+	lonely_genius = {
+		random = no
+
+		command_power_gain_mult = 0.10
+		political_power_factor = -0.10
+		terrain_penalty_reduction = 0.15
+	}
+	
+	flashlight = {
+		random = no
+
+		army_speed_factor = 0.15
+		breakthrough_factor = 0.10
+		supply_consumption_factor = 0.10
+	}
+	
+	commander_in_chief_for_military_reconstruction = {
+		random = no
+		
+		land_doctrine_cost_factor = -0.20
+		training_time_factor = -0.20
+		army_spirit_category_type_cost_factor = -0.50
+		unit_infantry_design_cost_factor = -0.40
+		justify_war_goal_time = 0.80
+		org_loss_when_moving = 0.40
+		experience_gain_army = @chief_experience_gain_low
+
+		command_cap = @tier1
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
+		}
+	}
+	
+	army_star = {
+		random = no
+		
+		army_org_factor = 0.10
+		war_support_factor = 0.10
+	}
+	
+	radical_officer = {
+		random = no
+		
+		conscription = 0.01
+		army_core_attack_factor = 0.05
+		dig_in_speed_factor = 0.05
+		max_dig_in = 5
 	}
 }

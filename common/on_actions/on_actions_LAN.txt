@@ -29,4 +29,19 @@ on_actions = {
 			}
 		}
 	}
+	
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						ROOT = { tag = LAN }
+						FROM = { tag = LAN }
+					}
+					LAN = { has_country_flag = LAN_congress_national_enable_flag }
+				}
+				LAN = { LAN_congress_national_base = yes }
+			}
+		}
+	}
 }
