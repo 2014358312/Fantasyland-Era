@@ -46,14 +46,114 @@
 #
 #		}
 #	}
+###最漫长的一夜
+focus = {
+	id = DKA_The_Longest_Night
+	icon = GFX_goal_generic_major_alliance
+	x = 10
+	y = 0
+
+	cost = 3
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		add_political_power =150
+	}
+}
+###相信亚人
+focus = {
+	id = DKA_believe_in_demi-human
+	icon = GFX_goal_generic_major_alliance
+	prerequisite = { focus =DKA_The_Longest_Night }
+	relative_position_id = DKA_The_Longest_Night
+	mutually_exclusive = { focus =DKA_support_old_king}
+	x = 6
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		add_political_power = 120
+		add_popularity = { ideology = communism popularity = 0.1 } 
+		add_stability = -0.1
+	}
+}
+###争取军队的支持
+focus = {
+	id = DKA_believe_in_demi-human
+	icon = GFX_goal_generic_major_alliance
+	prerequisite = { focus =DKA_The_Longest_Night }
+	relative_position_id = DKA_The_Longest_Night
+	mutually_exclusive = { focus =DKA_support_old_king}
+	x = 6
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		add_political_power = 120
+		add_popularity = { ideology = communism popularity = 0.1 } 
+		add_stability = -0.1
+	}
+}
 ###支持旧王
 	focus = {
 		id = DKA_support_old_king
 		icon = GFX_goal_generic_major_alliance
-		x = 10
-		y = 0
-
-		cost = 3
+		prerequisite = { focus =DKA_The_Longest_Night }
+		relative_position_id = DKA_The_Longest_Night
+		mutually_exclusive = { focus =DKA_believe_in_demi-human}
+	    x = 1
+		y = 1
+	    cost = 10
 
 		ai_will_do = {
 			factor = 1
