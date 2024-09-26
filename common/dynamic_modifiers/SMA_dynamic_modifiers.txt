@@ -38,3 +38,21 @@ SMA_decadent_army_dynamic_modifier = {
 	army_morale_factor = SMA_DA_army_morale_factor_var
 	max_dig_in_factor = SMA_DA_max_dig_in_factor_var
 }
+
+SMA_status_under_landsol_state_dynamic_modifier = {
+	icon = GFX_modifiers_generic_immigration_promoted
+	enable = { always = yes }
+	remove_trigger = {
+		ROOT = {
+			controller = {
+				original_tag = SMA
+			}
+		}
+	}
+
+	attrition_for_controller = LAN_SUL_attrition_for_controller_var
+	compliance_growth = LAN_SUL_compliance_growth_var
+	resistance_growth = LAN_SUL_resistance_growth_var
+	recruitable_population_factor = LAN_SUL_recruitable_population_factor_var
+	state_resources_factor = LAN_SUL_state_resources_factor_var
+}

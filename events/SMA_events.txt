@@ -5,6 +5,27 @@
 add_namespace = san_magnolia
 
 country_event = {
+	id = san_magnolia.11
+	title = san_magnolia.11.t
+	desc = san_magnolia.11.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			LAN = { country_event = { id = landsol.3 hours = 2 } }
+		}
+	}
+
+	option = {
+		name = san_magnolia.11.a
+		add_political_power = -50
+		SMA_fulfill_dalton_treaty = yes
+	}
+}
+
+country_event = {
 	id = san_magnolia.301
 	title = san_magnolia.301.t
 	desc = san_magnolia.301.desc
@@ -13,7 +34,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = spy_and_family.1.a
+		name = san_magnolia.301.a
 		SMA_lena_call_of_duty = yes
 	}
 }

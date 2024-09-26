@@ -1,4 +1,19 @@
 on_actions = {
+	on_startup = {
+		effect = {
+			SMA = {
+				every_owned_state = {
+					limit = { has_state_flag = SMA_state_treaty_of_dalton_flag }
+					set_variable = { LAN_SUL_attrition_for_controller_var = 0.10 }
+					set_variable = { LAN_SUL_compliance_growth_var = 0.04 }
+					set_variable = { LAN_SUL_resistance_growth_var = 0.02 }
+					set_variable = { LAN_SUL_recruitable_population_factor_var = -0.50 }
+					set_variable = { LAN_SUL_state_resources_factor_var = 0.10 }
+				}
+			}
+		}
+	}
+
 	on_war = {
 		effect = {
 			if = {
