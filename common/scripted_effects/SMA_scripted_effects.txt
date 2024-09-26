@@ -57,20 +57,40 @@ SMA_neutrality_military_yuuki_asuna_leader = {
 
 SMA_neutrality_military_joint_vladilena_milize_leader = {
 	retire_ideology_leader = neutrality
-	SMA_Vladilena_Milize = {
-		add_country_leader_role = {
-			country_leader = {
-				ideology = neutrality_subtype
-				expire = "1965.1.1.1"
-				traits = { flower_power }
+	if = {
+		limit = { has_war = no }
+		SMA_Vladilena_Milize = {
+			add_country_leader_role = {
+				country_leader = {
+					ideology = neutrality_subtype
+					expire = "1965.1.1.1"
+					traits = { flower_power }
+				}
+				promote_leader = yes
 			}
-			promote_leader = yes
+		}
+		set_party_name = {
+			ideology = neutrality
+			name = SMA_neutrality_party_military_joint
+			long_name = SMA_neutrality_party_military_joint_lena_peace_long
 		}
 	}
-	set_party_name = {
-		ideology = neutrality
-		name = SMA_neutrality_party_military_joint
-		long_name = SMA_neutrality_party_military_joint_lena_long
+	else = {
+		SMA_Vladilena_Milize = {
+			add_country_leader_role = {
+				country_leader = {
+					ideology = neutrality_subtype
+					expire = "1965.1.1.1"
+					traits = { blood_queen }
+				}
+				promote_leader = yes
+			}
+		}
+		set_party_name = {
+			ideology = neutrality
+			name = SMA_neutrality_party_military_joint
+			long_name = SMA_neutrality_party_military_joint_lena_long
+		}
 	}
 }
 
@@ -96,6 +116,11 @@ SMA_update_lena_flower_power_trait = {
 						remove = flower_power
 						add = flower_power_1
 					}
+					set_party_name = {
+						ideology = neutrality
+						name = SMA_neutrality_party_military_joint
+						long_name = SMA_neutrality_party_military_joint_lena_peace_1_long
+					}
 				}
 				else_if = {
 					limit = { SMA = { has_country_leader_with_trait = flower_power_1 } }
@@ -103,12 +128,22 @@ SMA_update_lena_flower_power_trait = {
 						remove = flower_power_1
 						add = flower_power_2
 					}
+					set_party_name = {
+						ideology = neutrality
+						name = SMA_neutrality_party_military_joint
+						long_name = SMA_neutrality_party_military_joint_lena_peace_2_long
+					}
 				}
 				else_if = {
 					limit = { SMA = { has_country_leader_with_trait = flower_power_2 } }
 					swap_country_leader_traits = {
 						remove = flower_power_2
 						add = flower_power_3
+					}
+					set_party_name = {
+						ideology = neutrality
+						name = SMA_neutrality_party_military_joint
+						long_name = SMA_neutrality_party_military_joint_lena_peace_3_long
 					}
 				}
 				else_if = {
@@ -188,6 +223,13 @@ SMA_lena_call_of_duty = {
 		}
 	}
 	add_country_leader_trait = blood_queen
+	hidden_effect = {
+		set_party_name = {
+			ideology = neutrality
+			name = SMA_neutrality_party_military_joint
+			long_name = SMA_neutrality_party_military_joint_lena_long
+		}
+	}
 }
 
 SMA_neutrality_military_joint_yuuki_asuna_leader = {
