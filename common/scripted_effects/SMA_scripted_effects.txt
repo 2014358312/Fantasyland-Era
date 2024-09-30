@@ -1,4 +1,13 @@
-SMA_Roxy_appoint = {
+SMA_start_first_election_bop = {
+	set_power_balance = {
+		id = SMA_balance_of_power
+		left_side = SMA_first_election_left_wing_side
+		right_side = SMA_first_election_right_wing_side
+		set_value = 0.15
+	}
+}
+
+SMA_roxy_appoint = {
 	hidden_effect = {
 		if = {
 			limit = {
@@ -51,7 +60,7 @@ SMA_Roxy_appoint = {
 	}
 }
 
-SMA_Roxy_remove = {
+SMA_roxy_remove = {
 	hidden_effect = {
 		if = {
 			limit = {
@@ -377,4 +386,72 @@ SMA_fulfill_dalton_treaty = {
 			days = 17885
 		}
 	}
+}
+
+SMA_army_reform_roxy = {
+	effect_tooltip = {
+		swap_ideas = {
+			remove_idea = SMA_decadent_army_ns
+			add_idea = SMA_roxy_army_reform_ns
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = SMA_decadent_army_dynamic_modifier
+				}
+			}
+			remove_dynamic_modifier = {
+				modifier = SMA_decadent_army_dynamic_modifier
+			}
+			add_dynamic_modifier = {
+				modifier = SMA_roxy_army_reform_dynamic_modifier
+			}
+		}
+	}
+	custom_effect_tooltip = SMA_modify_roxy_army_reform_tt
+	add_to_variable = { SMA_RAR_army_org_factor_var = 0.10 tooltip = army_org_factor_tt }
+}
+
+SMA_army_reform_new = {
+	if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = SMA_decadent_army_dynamic_modifier
+			}
+		}
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = SMA_decadent_army_ns
+				add_idea = SMA_new_army_ns
+			}
+		}
+		hidden_effect = {
+			remove_dynamic_modifier = {
+				modifier = SMA_decadent_army_dynamic_modifier
+			}
+			add_dynamic_modifier = {
+				modifier = SMA_new_army_dynamic_modifier
+			}
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = SMA_roxy_army_reform_ns
+				add_idea = SMA_new_army_ns
+			}
+		}
+		hidden_effect = {
+			remove_dynamic_modifier = {
+				modifier = SMA_roxy_army_reform_dynamic_modifier
+			}
+			add_dynamic_modifier = {
+				modifier = SMA_new_army_dynamic_modifier
+			}
+		}
+	}
+	custom_effect_tooltip = SMA_modify_roxy_army_reform_tt
+	add_to_variable = { SMA_NA_army_org_factor_var = 0.10 tooltip = army_org_factor_tt }
 }

@@ -26,6 +26,74 @@ country_event = {
 }
 
 country_event = {
+	id = san_magnolia.61
+	title = san_magnolia.61.t
+	desc = san_magnolia.61.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_variable = { SMA_RAR_conscription_factor_var = SMA_DA_conscription_factor_var }
+			set_variable = { SMA_RAR_land_reinforce_rate_var = SMA_DA_land_reinforce_rate_var }
+			set_variable = { SMA_RAR_army_attack_factor_var = SMA_DA_army_attack_factor_var }
+			set_variable = { SMA_RAR_army_defence_factor_var = SMA_DA_army_defence_factor_var }
+			set_variable = { SMA_RAR_army_org_factor_var = SMA_DA_army_org_factor_var }
+			set_variable = { SMA_RAR_army_morale_factor_var = SMA_DA_army_morale_factor_var }
+			set_variable = { SMA_RAR_max_dig_in_factor_var = SMA_DA_max_dig_in_factor_var }
+		}
+	}
+	
+	option = {
+		name = san_magnolia.61.a
+		SMA_army_reform_roxy = yes
+	}
+}
+
+country_event = {
+	id = san_magnolia.62
+	title = san_magnolia.62.t
+	desc = san_magnolia.62.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = SMA_decadent_army_dynamic_modifier
+					}
+				}
+				set_variable = { SMA_NA_conscription_factor_var = SMA_DA_conscription_factor_var }
+				set_variable = { SMA_NA_land_reinforce_rate_var = SMA_DA_land_reinforce_rate_var }
+				set_variable = { SMA_NA_army_attack_factor_var = SMA_DA_army_attack_factor_var }
+				set_variable = { SMA_NA_army_defence_factor_var = SMA_DA_army_defence_factor_var }
+				set_variable = { SMA_NA_army_org_factor_var = SMA_DA_army_org_factor_var }
+				set_variable = { SMA_NA_army_morale_factor_var = SMA_DA_army_morale_factor_var }
+				set_variable = { SMA_NA_max_dig_in_factor_var = SMA_DA_max_dig_in_factor_var }
+			}
+			else = {
+				set_variable = { SMA_NA_conscription_factor_var = SMA_RAR_conscription_factor_var }
+				set_variable = { SMA_NA_land_reinforce_rate_var = SMA_RAR_land_reinforce_rate_var }
+				set_variable = { SMA_NA_army_attack_factor_var = SMA_RAR_army_attack_factor_var }
+				set_variable = { SMA_NA_army_defence_factor_var = SMA_RAR_army_defence_factor_var }
+				set_variable = { SMA_NA_army_org_factor_var = SMA_RAR_army_org_factor_var }
+				set_variable = { SMA_NA_army_morale_factor_var = SMA_RAR_army_morale_factor_var }
+				set_variable = { SMA_NA_max_dig_in_factor_var = SMA_RAR_max_dig_in_factor_var }
+			}
+		}
+	}
+	
+	option = {
+		name = san_magnolia.62.a
+		SMA_army_reform_new = yes
+	}
+}
+
+country_event = {
 	id = san_magnolia.301
 	title = san_magnolia.301.t
 	desc = san_magnolia.301.desc

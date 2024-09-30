@@ -1,9 +1,61 @@
-SMA_is_rebuilding_army = {
+SMA_roxy_is_rebuilding_army = {
 	custom_trigger_tooltip = {
-		tooltip = SMA_is_rebuilding_army_ttt
+		tooltip = SMA_roxy_is_rebuilding_army_ttt
 		OR = {
 			ROOT = { NOT = { has_idea = SMA_Roxy_Migurdia } }
 			has_character_flag = SMA_free_military_minister_flag
+		}
+	}
+}
+
+SMA_roxy_leading_military = {
+	SMA_Roxy_Migurdia = { is_hired_as_advisor = yes }
+}
+
+SMA_is_army_reforming = {
+	if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = SMA_decadent_army_dynamic_modifier
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = SMA_has_decadent_army_idea_ttt
+			has_dynamic_modifier = {
+				modifier = SMA_decadent_army_dynamic_modifier
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = SMA_roxy_army_reform_dynamic_modifier
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = SMA_has_roxy_army_reform_idea_ttt
+			has_dynamic_modifier = {
+				modifier = SMA_roxy_army_reform_dynamic_modifier
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = SMA_new_army_dynamic_modifier
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = SMA_has_new_army_idea_ttt
+			has_dynamic_modifier = {
+				modifier = SMA_new_army_dynamic_modifier
+			}
+		}
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = something_with_wrong_ttt
+			always = no
 		}
 	}
 }

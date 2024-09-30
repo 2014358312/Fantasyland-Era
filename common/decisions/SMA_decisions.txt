@@ -1,0 +1,20 @@
+SMA_balance_of_power_decision_category = {
+	SMA_BOP_military_attitude = {
+		icon = generic_protection
+		allowed = {
+			original_tag = SMA
+		}
+		visible = {
+			is_power_balance_side_active = {
+				id = SMA_balance_of_power
+				side = SMA_first_election_left_wing_side
+			}
+			is_power_balance_side_active = {
+				id = SMA_balance_of_power
+				side = SMA_first_election_right_wing_side
+			}
+		}
+		available = { hidden_trigger = { always = no } }
+		cost = 0
+	}
+}
