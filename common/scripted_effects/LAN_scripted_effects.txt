@@ -411,6 +411,12 @@ LAN_congress_national_support_small = {
 	LAN_change_congress_national = yes
 }
 
+LAN_congress_council_support_small = {
+	custom_effect_tooltip = LAN_congress_council_support_small_tt
+	add_to_variable = { landsol_congress_council_sup = 1 }
+	set_variable = { landsol_congress_council_frame = landsol_congress_council_sup }
+}
+
 LAN_annex_crossbell_autonomous_prefecture = {
 	CRB = {
 		every_core_state = {
@@ -439,8 +445,41 @@ LAN_annex_northumbria_autonomous_prefecture = {
 	}
 }
 
-LAN_congress_council_support_small = {
-	custom_effect_tooltip = LAN_congress_council_support_small_tt
-	add_to_variable = { landsol_congress_council_sup = 1 }
-	set_variable = { landsol_congress_council_frame = landsol_congress_council_sup }
+LAN_add_ideology_influence = {
+	LAN_remove_ideology_influence = yes
+	if = {
+		limit = { LAN = { has_government = communism } }
+		add_ideas = LAN_landsol_ideology_influence_communism
+	}
+	else_if = {
+		limit = { LAN = { has_government = democratic } }
+		add_ideas = LAN_landsol_ideology_influence_democratic
+	}
+	else_if = {
+		limit = { LAN = { has_government = neutrality } }
+		add_ideas = LAN_landsol_ideology_influence_neutrality
+	}
+	else_if = {
+		limit = { LAN = { has_government = fascism } }
+		add_ideas = LAN_landsol_ideology_influence_fascism
+	}
+}
+
+LAN_remove_ideology_influence = {
+	if = {
+		limit = { has_idea = LAN_landsol_ideology_influence_communism }
+		remove_ideas = LAN_landsol_ideology_influence_communism
+	}
+	else_if = {
+		limit = { has_idea = LAN_landsol_ideology_influence_democratic }
+		remove_ideas = LAN_landsol_ideology_influence_democratic
+	}
+	else_if = {
+		limit = { has_idea = LAN_landsol_ideology_influence_neutrality }
+		remove_ideas = LAN_landsol_ideology_influence_neutrality
+	}
+	else_if = {
+		limit = { has_idea = LAN_landsol_ideology_influence_fascism }
+		remove_ideas = LAN_landsol_ideology_influence_fascism
+	}
 }

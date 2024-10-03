@@ -1,6 +1,171 @@
 ideas = {
 	hidden_ideas = {
+		LAN_landsol_influence_economy_hidden = {
+			name = LAN_landsol_influence
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { 
+				NOT = {
+					original_tag = LAN
+				}
+				has_idea = LAN_landsol_influence_economy
+				#will be removed when in war with landsol by event
+			}
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = LAN
+				cic_to_target_factor = 0.20
+				mic_to_target_factor = 0.10
+				trade_cost_for_target_factor = -0.50
+			}
+		}
 		
+		LAN_landsol_influence_military_hidden = {
+			name = LAN_landsol_influence
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { 
+				NOT = {
+					original_tag = LAN
+				}
+				has_idea = LAN_landsol_influence_military
+				#will be removed when in war with landsol by event
+			}
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = LAN
+				attack_bonus_against = -0.25
+				defense_bonus_against = -0.25
+			}
+		}
+		
+		LAN_landsol_ideology_influence_communism = {
+			name = LAN_landsol_influence
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { 
+				NOT = {
+					original_tag = LAN
+					has_idea = LAN_landsol_ideology_influence_democratic
+					has_idea = LAN_landsol_ideology_influence_neutrality
+					has_idea = LAN_landsol_ideology_influence_fascism
+				}
+				has_idea = LAN_landsol_influence_political
+				#will be removed when in war with landsol by event
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				communism_drift = 0.02
+			}
+		}
+		
+		LAN_landsol_ideology_influence_democratic = {
+			name = LAN_landsol_influence
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { 
+				NOT = {
+					original_tag = LAN
+					has_idea = LAN_landsol_ideology_influence_communism
+					has_idea = LAN_landsol_ideology_influence_neutrality
+					has_idea = LAN_landsol_ideology_influence_fascism
+				}
+				has_idea = LAN_landsol_influence_political
+				#will be removed when in war with landsol by event
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				democratic_drift = 0.02
+			}
+		}
+		
+		LAN_landsol_ideology_influence_neutrality = {
+			name = LAN_landsol_influence
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { 
+				NOT = {
+					original_tag = LAN
+					has_idea = LAN_landsol_ideology_influence_communism
+					has_idea = LAN_landsol_ideology_influence_democratic
+					has_idea = LAN_landsol_ideology_influence_fascism
+				}
+				has_idea = LAN_landsol_influence_political
+				#will be removed when in war with landsol by event
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				neutrality_drift = 0.02
+			}
+		}
+		
+		LAN_landsol_ideology_influence_fascism = {
+			name = LAN_landsol_influence
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { 
+				NOT = {
+					original_tag = LAN
+					has_idea = LAN_landsol_ideology_influence_communism
+					has_idea = LAN_landsol_ideology_influence_democratic
+					has_idea = LAN_landsol_ideology_influence_neutrality
+				}
+				has_idea = LAN_landsol_influence_political
+				#will be removed when in war with landsol by event
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				fascism_drift = 0.02
+			}
+		}
 	}
 	
 	country = {
@@ -166,6 +331,179 @@ ideas = {
 			
 			modifier = {
 				political_power_factor = -0.10
+			}
+		}
+		
+		LAN_landsol_influence_economy = {
+			name = LAN_landsol_influence
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { 
+				NOT = {
+					original_tag = LAN
+				}
+				#will be removed when in war with landsol by event
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.15
+				consumer_goods_factor = 0.10
+				production_speed_buildings_factor = 0.10
+				monthly_population = 0.20
+				max_fuel_factor = -0.20
+				custom_modifier_tooltip = LAN_landsol_influence_economy_mtt
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_ideas = LAN_landsol_influence_economy_hidden
+					LAN = {
+						if = {
+							limit = {
+								has_dynamic_modifier = {
+									modifier = LAN_landsol_influence_dynamic_modifier
+								}
+							}
+							add_to_variable = { max_fuel_factor = 0.10 }
+							add_to_variable = { consumer_goods_factor = -0.05 }
+						}
+					}
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					remove_ideas = LAN_landsol_influence_economy_hidden
+					LAN = {
+						if = {
+							limit = {
+								has_dynamic_modifier = {
+									modifier = LAN_landsol_influence_dynamic_modifier
+								}
+							}
+							add_to_variable = { max_fuel_factor = -0.10 }
+							add_to_variable = { consumer_goods_factor = 0.05 }
+						}
+					}
+				}
+			}
+		}
+		
+		LAN_landsol_influence_military = {
+			name = LAN_landsol_influence
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { 
+				NOT = {
+					original_tag = LAN
+				}
+				#will be removed when in war with landsol by event
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.15
+				experience_gain_army = 0.10
+				experience_gain_navy_factor = 0.10
+				experience_gain_air_factor = 0.05
+				training_time_factor = -0.10
+				production_factory_max_efficiency_factor = -0.20
+				custom_modifier_tooltip = LAN_landsol_influence_military_mtt
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_ideas = LAN_landsol_influence_military_hidden
+					LAN = {
+						if = {
+							limit = {
+								has_dynamic_modifier = {
+									modifier = LAN_landsol_influence_dynamic_modifier
+								}
+							}
+							add_to_variable = { LAN_LI_production_factory_max_efficiency_factor_var = 0.05 }
+							add_to_variable = { LAN_LI_production_factory_efficiency_gain_factor_var = 0.05 }
+						}
+					}
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					remove_ideas = LAN_landsol_influence_military_hidden
+					LAN = {
+						if = {
+							limit = {
+								has_dynamic_modifier = {
+									modifier = LAN_landsol_influence_dynamic_modifier
+								}
+							}
+							add_to_variable = { LAN_LI_production_factory_max_efficiency_factor_var = -0.05 }
+							add_to_variable = { LAN_LI_production_factory_efficiency_gain_factor_var = -0.05 }
+						}
+					}
+				}
+			}
+		}
+		
+		LAN_landsol_influence_political = {
+			name = LAN_landsol_influence
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { 
+				NOT = {
+					original_tag = LAN
+				}
+				#will be removed when in war with landsol by event
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.20
+				custom_modifier_tooltip = LAN_landsol_influence_political_mtt
+			}
+			
+			on_add = {
+				hidden_effect = {
+					LAN_add_ideology_influence = yes
+					LAN = {
+						add_intel = {
+							target = PREV
+							civilian_intel = 10
+							army_intel = 10
+							navy_intel = 10
+							airforce_intel = 10
+						}
+					}
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					LAN_remove_ideology_influence = yes
+				}
 			}
 		}
 	}

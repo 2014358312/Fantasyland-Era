@@ -51,7 +51,10 @@ characters = {
 			idea_token = SMA_Asada_Shino
 			allowed = { original_tag = SMA }
 			available = {
-				SMA_roxy_is_rebuilding_army = yes
+				if = {
+					limit = { SMA_roxy_leading_military = yes }
+					SMA_roxy_is_rebuilding_army = yes
+				}
 			}
 			cost = 150
 			traits = { army_commando_3 }
@@ -81,7 +84,10 @@ characters = {
 			idea_token = SMA_Ayano_Keiko
 			allowed = { original_tag = SMA }
 			available = {
-				SMA_roxy_is_rebuilding_army = yes
+				if = {
+					limit = { SMA_roxy_leading_military = yes }
+					SMA_roxy_is_rebuilding_army = yes
+				}
 			}
 			cost = 50
 			traits = { air_chief_all_weather_1 }
@@ -111,7 +117,10 @@ characters = {
 			idea_token = SMA_Kirigaya_Kazuto
 			allowed = { original_tag = SMA }
 			available = {
-				SMA_roxy_is_rebuilding_army = yes
+				if = {
+					limit = { SMA_roxy_leading_military = yes }
+					SMA_roxy_is_rebuilding_army = yes
+				}
 			}
 			cost = 150
 			traits = { army_concealment_3 }
@@ -141,7 +150,10 @@ characters = {
 			idea_token = SMA_Kirigaya_Suguha
 			allowed = { original_tag = SMA }
 			available = {
-				SMA_roxy_is_rebuilding_army = yes
+				if = {
+					limit = { SMA_roxy_leading_military = yes }
+					SMA_roxy_is_rebuilding_army = yes
+				}
 			}
 			cost = 100
 			traits = { army_chief_maneuver_2 }
@@ -338,8 +350,8 @@ characters = {
 			ledger = army
 			idea_token = SMA_Roxy_Migurdia
 			allowed = { original_tag = SMA }
-			available = {
-				
+			visible = {
+				SMA_roxy_leading_military = yes
 			}
 			cost = 0
 			can_be_fired = no

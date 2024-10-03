@@ -391,7 +391,10 @@ create_temp_army = {
 		}
 	}
 	if = {
-		limit = { NOT = { has_template = "Cavalry Division" } }
+		limit = {
+			NOT = { has_template = "Cavalry Division" }
+			NOT = { TAG = UMA }
+		}
 		division_template = {
 			name = "Cavalry Division"
 			regiments = {
@@ -400,6 +403,22 @@ create_temp_army = {
 				cavalry = { x = 2 y = 0 }
 				cavalry = { x = 3 y = 0 }
 				cavalry = { x = 4 y = 0 }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = { has_template = "Cavalry Division" }
+			TAG = UMA
+		}
+		division_template = {
+			name = "Cavalry Division"
+			regiments = {
+				umamusume = { x = 0 y = 0 }
+				umamusume = { x = 1 y = 0 }
+				umamusume = { x = 2 y = 0 }
+				umamusume = { x = 3 y = 0 }
+				umamusume = { x = 4 y = 0 }
 			}
 		}
 	}

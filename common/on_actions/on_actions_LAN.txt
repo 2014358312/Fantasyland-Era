@@ -5,6 +5,45 @@ on_actions = {
 				remove_ideas = LAN_republican_congress_fake
 				add_dynamic_modifier = { modifier = LAN_republican_congress_dynamic_modifier }
 			}
+			every_country = {
+				limit = {
+					NOT = { original_tag = LAN }
+					OR = {
+						has_idea = LAN_landsol_influence_economy
+						has_idea = LAN_landsol_influence_military
+						has_idea = LAN_landsol_influence_political
+					}
+				}
+				if = {
+					limit = { has_idea = LAN_landsol_influence_economy }
+					add_ideas = LAN_landsol_influence_economy_hidden
+					LAN = {
+						add_to_variable = { LAN_LI_max_fuel_factor_var = 0.10 }
+						add_to_variable = { LAN_LI_consumer_goods_factor_var = -0.05 }
+					}
+				}
+				if = {
+					limit = { has_idea = LAN_landsol_influence_military }
+					add_ideas = LAN_landsol_influence_military_hidden
+					LAN = {
+						add_to_variable = { LAN_LI_production_factory_max_efficiency_factor_var = 0.05 }
+						add_to_variable = { LAN_LI_production_factory_efficiency_gain_factor_var = 0.05 }
+					}
+				}
+				if = {
+					limit = { has_idea = LAN_landsol_influence_political }
+					LAN_add_ideology_influence = yes
+					LAN = {
+						add_intel = {
+							target = PREV
+							civilian_intel = 75
+							army_intel = 75
+							navy_intel = 75
+							airforce_intel = 75
+						}
+					}
+				}
+			}
 		}
 	}
 	
@@ -30,6 +69,30 @@ on_actions = {
 		}
 	}
 	
+	on_weekly_LAN = {
+		effect = {
+			if = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = LAN_landsol_influence_dynamic_modifier
+					}
+				}
+				every_other_country = {
+					limit = { has_idea = LAN_landsol_influence_political }
+					LAN = {
+						add_intel = {
+							target = PREV
+							civilian_intel = 10
+							army_intel = 10
+							navy_intel = 10
+							airforce_intel = 10
+						}
+					}
+				}
+			}
+		}
+	}
+	
 	on_state_control_changed = {
 		effect = {
 			if = {
@@ -41,6 +104,27 @@ on_actions = {
 					LAN = { has_country_flag = LAN_congress_national_enable_flag }
 				}
 				LAN = { LAN_congress_national_base = yes }
+			}
+		}
+	}
+	
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = LAN
+				}
+				if = {
+					limit = {
+						has_dynamic_modifier = {
+							modifier = LAN_landsol_influence_dynamic_modifier
+						}
+					}
+					every_other_country = {
+						limit = { has_idea = LAN_landsol_influence_political }
+						LAN_add_ideology_influence = yes
+					}
+				}
 			}
 		}
 	}
