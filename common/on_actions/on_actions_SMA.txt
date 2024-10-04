@@ -2,6 +2,10 @@ on_actions = {
 	on_startup = {
 		effect = {
 			SMA = {
+				remove_ideas = SMA_decadent_army_fake
+				add_dynamic_modifier = { modifier = SMA_decadent_army_dynamic_modifier }
+				remove_ideas = SMA_chivalric_order_fake
+				add_dynamic_modifier = { modifier = SMA_chivalric_order_dynamic_modifier }
 				every_owned_state = {
 					limit = { has_state_flag = SMA_state_treaty_of_dalton_flag }
 					set_variable = { LAN_SUL_attrition_for_controller_var = 0.10 }

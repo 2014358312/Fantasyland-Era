@@ -42,6 +42,10 @@ set_variable = { SMA_DA_army_morale_factor_var = -0.30 }
 set_variable = { SMA_DA_max_dig_in_factor_var = 0.50 }
 #add_dynamic_modifier = { modifier = SMA_decadent_army_dynamic_modifier }
 
+set_variable = { SMA_CO_political_power_factor_var = 0.10 }
+set_variable = { SMA_CO_fascism_drift_var = 0.05 }
+#add_dynamic_modifier = { modifier = SMA_chivalric_order_dynamic_modifier }
+
 create_intelligence_agency = {
 	name = "San Magnolian Special Intelligence"
 	icon = GFX_intelligence_agency_logo_sma
@@ -53,7 +57,7 @@ add_ideas = {
 	SMA_after_iron_wall_fallen
 	SMA_on_the_ruin
 	SMA_decadent_army_fake
-	SMA_chivalric_order
+	SMA_chivalric_order_fake
 }
 
 recruit_character = GIA_Richard_Turner
@@ -93,8 +97,8 @@ set_politics = {
 
 set_popularities = {
 	democratic = 38
-	neutrality = 2
+	neutrality = 45
 	communism = 15
-	fascism = 45
+	fascism = 2
 }
 
