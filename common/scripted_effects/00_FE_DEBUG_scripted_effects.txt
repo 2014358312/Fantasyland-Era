@@ -109,3 +109,47 @@ DEBUG_delete_test_troop = {
 	}
 	clear_DEBUG_decisions_flag = yes
 }
+
+DEBUG_government_communism = {
+	if = {
+		limit = { is_debug = yes }
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+	}
+	clear_DEBUG_decisions_flag = yes
+}
+
+DEBUG_government_democratic = {
+	if = {
+		limit = { is_debug = yes }
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+		}
+	}
+	clear_DEBUG_decisions_flag = yes
+}
+
+DEBUG_government_neutrality = {
+	if = {
+		limit = { is_debug = yes }
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+	}
+	clear_DEBUG_decisions_flag = yes
+}
+
+DEBUG_government_fascism = {
+	if = {
+		limit = { is_debug = yes }
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+	}
+	clear_DEBUG_decisions_flag = yes
+}

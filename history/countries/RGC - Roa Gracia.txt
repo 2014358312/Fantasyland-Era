@@ -1,4 +1,4 @@
-﻿capital = 402
+﻿capital = 419
 
 set_research_slots = 2
 set_convoys = 80
@@ -15,6 +15,59 @@ set_technology = {
 	tech_engineers = 1
 }
 
+add_ideas = {
+	RGC_two_crowns
+	RGC_agricultural_issues
+	RGC_emergency_state
+	RGC_brink_of_civil_war
+	RGC_fate_of_royal
+}
+
+
+
+if = {
+	limit = {
+		OR = {
+			has_dlc = "Together for Victory"
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_autonomy = {
+		target = CET
+		autonomous_state = autonomy_personal_union
+	}
+	set_autonomy = {
+		target = WGN
+		autonomous_state = autonomy_duchy
+	}
+	set_autonomy = {
+		target = WDM
+		autonomous_state = autonomy_duchy
+	}
+	else = {
+		puppet = CET
+		puppet = WGN
+		puppet = WDM
+	}
+	CET = {
+		restore_ideology_popularities = yes
+		restore_ruling_party = yes
+	}
+	WGN = {
+		restore_ideology_popularities = yes
+		restore_ruling_party = yes
+	}
+	WDM = {
+		restore_ideology_popularities = yes
+		restore_ruling_party = yes
+	}
+}
+
+recruit_character = RGC_Darjeeling
+recruit_character = RGC_Delphine_Windermere
+recruit_character = RGC_Heidi_Thomson
+recruit_character = RGC_Rita_Skamandros
+
 
 set_politics = {
 	ruling_party = neutrality
@@ -22,9 +75,9 @@ set_politics = {
 }
 
 set_popularities = {
-	democratic = 3
-	neutrality = 95
-	communism = 1
-	fascism = 1
+	democratic = 20
+	neutrality = 50
+	communism = 5
+	fascism = 25
 }
 
