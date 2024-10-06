@@ -6,7 +6,6 @@
 ### search_filters = {FOCUS_FILTER_MANPOWER}
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 ### search_filters = {FOCUS_FILTER_USA_CONGRESS}
-
 #!gfx:interface\goals\FE_country_TIA_goal.gfx
 focus_tree = {
 	id = TIA_focus_tree
@@ -270,6 +269,10 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = TIA_Mia_trait
+			set_power_balance = {
+				id = TIA_power_balance
+				set_default = yes
+			}
 		}
 		ai_will_do = {
 			factor = 1
