@@ -26,6 +26,14 @@ add_ideas = {
 	RGC_fate_of_royal
 }
 
+every_controlled_state = {
+	limit = {
+		is_capital = no
+		NOT = { any_neighbor_state = { is_capital = yes } }
+	}
+	set_demilitarized_zone = yes
+}
+
 if = {
 	limit = {
 		OR = {
