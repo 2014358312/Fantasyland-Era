@@ -1,27 +1,25 @@
 debug_decisions = {
-
 	debug_show_decisions = {
 		priority = 100
 		allowed = {
 			always = yes
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
-			NOT = { has_global_flag = show_debug_decisions_flag }
+			NOT = {
+				has_global_flag = show_debug_decisions_flag
+			}
 		}
 		complete_effect = {
 			set_global_flag = show_debug_decisions_flag
 		}
 	}
-
 	debug_hide_decisions = {
 		priority = -1
 		allowed = {
 			always = yes
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
@@ -31,16 +29,77 @@ debug_decisions = {
 			clr_global_flag = show_debug_decisions_flag
 		}
 	}
-	
-	research_all_tank_techs_nsb = {
-		icon = generic_tank
-
+	debug_transfer_ideologies_communism = {
+		priority = -1
+		allowed = {
+			always = yes
+		}
 		visible = {
 			is_ai = no
 			is_debug = yes
 			has_global_flag = show_debug_decisions_flag
 		}
-
+		complete_effect = {
+			set_politics = {
+				ruling_party = communism
+			}
+		}
+	}
+	debug_transfer_ideologies_democratic = {
+		priority = -1
+		allowed = {
+			always = yes
+		}
+		visible = {
+			is_ai = no
+			is_debug = yes
+			has_global_flag = show_debug_decisions_flag
+		}
+		complete_effect = {
+			set_politics = {
+				ruling_party = democratic
+			}
+		}
+	}
+	debug_transfer_ideologies_neutrality = {
+		priority = -1
+		allowed = {
+			always = yes
+		}
+		visible = {
+			is_ai = no
+			is_debug = yes
+			has_global_flag = show_debug_decisions_flag
+		}
+		complete_effect = {
+			set_politics = {
+				ruling_party = neutrality
+			}
+		}
+	}
+	debug_transfer_ideologies_fascism = {
+		priority = -1
+		allowed = {
+			always = yes
+		}
+		visible = {
+			is_ai = no
+			is_debug = yes
+			has_global_flag = show_debug_decisions_flag
+		}
+		complete_effect = {
+			set_politics = {
+				ruling_party = fascism
+			}
+		}
+	}
+	research_all_tank_techs_nsb = {
+		icon = generic_tank
+		visible = {
+			is_ai = no
+			is_debug = yes
+			has_global_flag = show_debug_decisions_flag
+		}
 		complete_effect = {
 			set_technology = {
 				gwtank_chassis = 1
@@ -49,83 +108,83 @@ debug_decisions = {
 			set_technology = {
 				basic_light_tank_chassis = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				improved_light_tank_chassis = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				amphibious_tank_chassis = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				amphibious_drive = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				advanced_light_tank_chassis = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				basic_medium_tank_chassis = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				improved_medium_tank_chassis = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				advanced_medium_tank_chassis = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				main_battle_tank_chassis = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				basic_heavy_tank_chassis = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				improved_heavy_tank_chassis = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				advanced_heavy_tank_chassis = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				super_heavy_tank_chassis = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				armor_tech_1 = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				armor_tech_2 = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				armor_tech_3 = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				armor_tech_4 = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				engine_tech_1 = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				engine_tech_2 = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				engine_tech_3 = 1
 				popup = no
-			}			
+			}
 			set_technology = {
 				engine_tech_4 = 1
 				popup = no
@@ -234,7 +293,6 @@ debug_decisions = {
 				tech_engineers2 = 1
 				popup = no
 			}
-
 			if = {
 				limit = {
 					tag = ITA
@@ -254,46 +312,36 @@ debug_decisions = {
 			}
 		}
 	}
-
 	add_efficiency_growth_debug = {
 		icon = generic_research
-
 		available = {
 			is_ai = no
 			is_debug = yes
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
 			has_global_flag = show_debug_decisions_flag
 		}
-
 		fire_only_once = no
 		cost = 0
-
 		complete_effect = {
 			add_ideas = add_production_efficiency
 		}
 	}
-		
 	remove_efficiency_growth_debug = {
 		icon = generic_research
-
 		available = {
 			is_ai = no
 			is_debug = yes
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
 			has_global_flag = show_debug_decisions_flag
 		}
-
 		fire_only_once = no
 		cost = 0
-
 		complete_effect = {
 			if = {
 				limit = {
@@ -306,173 +354,133 @@ debug_decisions = {
 					has_idea = decrease_production_efficiency
 				}
 				remove_ideas = decrease_production_efficiency
-			}	
+			}
 		}
 	}
-		
 	decrease_efficiency_growth_debug = {
 		icon = generic_research
-
 		available = {
 			is_ai = no
 			is_debug = yes
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
 			has_global_flag = show_debug_decisions_flag
 		}
-
 		fire_only_once = no
 		cost = 0
-
 		complete_effect = {
 			add_ideas = decrease_production_efficiency
 		}
-
 		ai_will_do = {
 			base = 0
 		}
 	}
-	
 	history_entry_debug = {
-
 		icon = generic_research
-
 		available = {
 			is_ai = no
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
 			has_global_flag = show_debug_decisions_flag
 		}
-
 		fire_only_once = no
 		cost = 0
-
 		complete_effect = {
 			random_country_division = {
-
 				add_history_entry = {
 					key = custom_localized_key
 					subject = "Custom String (not localized)"
 					allow = yes
 				}
 			}
-			
 		}
-
 		ai_will_do = {
 			base = 0
 		}
 	}
-
-
 	create_operative_debug = {
-
 		icon = generic_research
-
 		available = {
 			is_ai = no
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
 			has_global_flag = show_debug_decisions_flag
 		}
-
 		fire_only_once = no
 		cost = 0
-
 		complete_effect = {
 			create_operative_leader = {
 				bypass_recruitment = yes
 			}
 		}
-
 		ai_will_do = {
 			base = 0
 		}
-		
 		power_balance = _test_balance
 	}
-
-
 	create_recruitable_operative_not_to_spy_master_debug = {
 		icon = generic_research
-
 		available = {
 			is_ai = no
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
 			has_global_flag = show_debug_decisions_flag
 		}
-
 		fire_only_once = no
 		cost = 0
-
 		complete_effect = {
 			create_operative_leader = {
 				bypass_recruitment = no
 				available_to_spy_master = no
 			}
 		}
-
 		ai_will_do = {
 			base = 0
 		}
 	}
-
 	create_recruitable_operative_debug = {
 		icon = generic_research
-
 		available = {
 			is_ai = no
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
 			has_global_flag = show_debug_decisions_flag
 		}
-
 		fire_only_once = no
 		cost = 0
-
 		complete_effect = {
 			create_operative_leader = {
 				bypass_recruitment = no
 			}
 		}
-
 		ai_will_do = {
 			base = 0
 		}
 	}
-
-
 	FRA_capture_operative_debug = {
 		available = {
-			NOT = { TAG = FRA }
+			NOT = {
+				TAG = FRA
+			}
 			num_of_operatives > 0
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
 			has_global_flag = show_debug_decisions_flag
 		}
-
 		fire_only_once = no
 		cost = 0
-
 		complete_effect = {
 			random_operative = {
 				limit = {
@@ -483,27 +491,21 @@ debug_decisions = {
 				}
 			}
 		}
-
 		ai_will_do = {
 			base = 0
 		}
-
 	}
-
 	harm_operative_debug = {
 		available = {
 			#num_of_operatives > 0
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
 			has_global_flag = show_debug_decisions_flag
 		}
-
 		fire_only_once = no
 		cost = 0
-
 		complete_effect = {
 			if = {
 				limit = {
@@ -512,35 +514,30 @@ debug_decisions = {
 						option = SWE_DEMOCRATIC_DEM_ALT
 					}
 				}
-
 				add_political_power = 1000
 			}
 		}
-
 		ai_will_do = {
 			base = 0
 		}
-
 	}
-
 	add_random_nationality = {
 		available = {
 			num_of_operatives > 0
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
 			has_global_flag = show_debug_decisions_flag
 		}
-
 		fire_only_once = no
 		cost = 0
-
 		complete_effect = {
 			random_country = {
 				limit = {
-					NOT = { tag = FROM }
+					NOT = {
+						tag = FROM
+					}
 				}
 				FROM = {
 					random_operative = {
@@ -549,36 +546,29 @@ debug_decisions = {
 				}
 			}
 		}
-
 		ai_will_do = {
 			base = 0
 		}
-
 	}
-
-	slot_machine = { # we pegi 18 now
+	slot_machine = {
+		# we pegi 18 now
 		available = {
 			is_ai = no
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
 			has_global_flag = show_debug_decisions_flag
 		}
-
 		days_remove = 777
-
 		modifier = {
 			operative_slot = 99
 		}
 	}
-
 	decryption_tech_1 = {
 		available = {
 			is_ai = no
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
@@ -589,12 +579,10 @@ debug_decisions = {
 			decryption = 1
 		}
 	}
-
 	decryption_tech_2 = {
 		available = {
 			is_ai = no
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
@@ -605,12 +593,10 @@ debug_decisions = {
 			decryption = 1
 		}
 	}
-
 	decryption_tech_3 = {
 		available = {
 			is_ai = no
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
@@ -621,12 +607,10 @@ debug_decisions = {
 			decryption = 1
 		}
 	}
-
 	encryption_tech_1 = {
 		available = {
 			is_ai = no
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
@@ -637,12 +621,10 @@ debug_decisions = {
 			encryption = 1
 		}
 	}
-
 	encryption_tech_2 = {
 		available = {
 			is_ai = no
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
@@ -653,12 +635,10 @@ debug_decisions = {
 			encryption = 1
 		}
 	}
-
 	encryption_tech_3 = {
 		available = {
 			is_ai = no
 		}
-
 		visible = {
 			is_ai = no
 			is_debug = yes
@@ -672,27 +652,25 @@ debug_decisions = {
 }
 
 east_continent_debug_decisions = {
-
 	debug_white_civil_war_decision = {
 		allowed = {
 			always = yes
 		}
-		
 		visible = {
 			always = yes
 		}
-		
 		available = {
 			tag = WPE
 			country_exists = WPE
-			NOT = { has_global_flag = white_civil_war_happens }
+			NOT = {
+				has_global_flag = white_civil_war_happens
+			}
 			WPE = {
 				all_core_state = {
 					is_owned_by = WPE
 				}
 			}
 		}
-		
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: decision debug_white_civil_war_decision"
 			country_event = white_civil_war.1
@@ -701,20 +679,18 @@ east_continent_debug_decisions = {
 }
 
 northwest_continent_debug_decisions = {
-
 	debug_release_fontaine_decision = {
 		allowed = {
 			always = yes
 		}
-		
 		visible = {
 			always = yes
 		}
-		
 		available = {
-			NOT = { country_exists = FON }
+			NOT = {
+				country_exists = FON
+			}
 		}
-		
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: decision debug_release_fontaine_decision"
 			every_state = {
@@ -738,16 +714,28 @@ northwest_continent_debug_decisions = {
 				}
 				effect_tooltip = {
 					add_core_of = FON
-					FON = { transfer_state = PREV }
+					FON = {
+						transfer_state = PREV
+					}
 				}
 				hidden_effect = {
 					if = {
-						limit = { NOT = { is_core_of = FON } }
+						limit = {
+							NOT = {
+								is_core_of = FON
+							}
+						}
 						add_core_of = FON
 					}
 					if = {
-						limit = { NOT = { is_controlled_by = FON } }
-						FON = { transfer_state = PREV }
+						limit = {
+							NOT = {
+								is_controlled_by = FON
+							}
+						}
+						FON = {
+							transfer_state = PREV
+						}
 					}
 				}
 			}

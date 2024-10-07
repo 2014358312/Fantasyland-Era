@@ -1,11 +1,9 @@
 ﻿capital = 2
-
 set_research_slots = 2
 set_convoys = 80
 set_stability = 0.65
 set_war_support = 0.35
-starting_train_buffer = 2.0
-
+starting_train_buffer = 2
 set_technology = {
 	basic_train = 1
 	### Infantry ###
@@ -14,22 +12,23 @@ set_technology = {
 	tech_support = 1
 	tech_engineers = 1
 }
+
 recruit_character = PLA_Neptune
-
-
+recruit_character = PLA_Histoire
+recruit_character = PLA_Nepgear
+recruit_character = PLA_Famiton
 create_faction = four_goddesses_union
 add_to_faction = ROOT
 add_to_faction = LOW
 add_to_faction = LAS
 add_to_faction = LEA
-
 add_ideas = FGU_goddesses_peace_treaty
 every_other_country = {
-	limit = { is_in_faction_with = ROOT }
+	limit = {
+		is_in_faction_with = ROOT
+	}
 	add_ideas = FGU_goddesses_peace_treaty
 }
-
-
 
 set_politics = {
 	ruling_party = neutrality
@@ -42,4 +41,3 @@ set_popularities = {
 	communism = 1
 	fascism = 1
 }
-
