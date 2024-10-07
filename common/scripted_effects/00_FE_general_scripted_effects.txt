@@ -507,3 +507,55 @@ create_temp_army = {
 		clear_variable = troop_num
 	}
 }
+
+initialize_san_magnolia_party_long_name = {
+	if = {
+		limit = { date < 1000.01.15 }
+		set_party_name = {
+			ideology = communism
+			name = SMA_communism_party
+			long_name = SMA_communism_party_character_long
+		}
+		set_party_name = {
+			ideology = democratic
+			name = SMA_democratic_party
+			long_name = SMA_democratic_party_character_long
+		}
+		set_party_name = {
+			ideology = neutrality
+			name = SMA_neutrality_party
+			long_name = SMA_neutrality_party_character_long
+		}
+		set_party_name = {
+			ideology = fascism
+			name = SMA_fascism_party
+			long_name = SMA_fascism_party_character_long
+		}
+	}
+}
+
+initialize_landsol_party_long_name = {
+	if = {
+		limit = { date < 1000.01.15 }
+		set_party_name = {
+			ideology = communism
+			name = LAN_communism_party
+			long_name = LAN_communism_party_character_long
+		}
+		set_party_name = {
+			ideology = democratic
+			name = LAN_democratic_party
+			long_name = LAN_democratic_party_character_long
+		}
+		set_party_name = {
+			ideology = neutrality
+			name = LAN_neutrality_party
+			long_name = LAN_neutrality_party_character_long
+		}
+		set_party_name = {
+			ideology = fascism
+			name = LAN_fascism_party
+			long_name = LAN_fascism_party_character_long
+		}
+	}
+}

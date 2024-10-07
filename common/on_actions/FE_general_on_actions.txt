@@ -4,7 +4,7 @@ on_actions = {
 			random_country = {
 				set_global_flag = STRIKE_CROSSING_SEA_BRIDGE_UNDER_CONSTRUCTION
 			}
-			######
+			############
 			every_country = {
 				limit = {
 					#NOT = { TAG = EYP }
@@ -41,12 +41,12 @@ on_actions = {
 				}
 				set_country_flag = ROOT_has_air_force_command_flag
 			}
-			######
+			############
 			every_state = {
 				limit = { is_core_of = var:THIS.controller }
 				cancel_resistance = yes
 			}
-			######
+			############
 			every_country = {
 				if = {
 					limit = { has_tech = advanced_infantry_weapons }
@@ -70,7 +70,7 @@ on_actions = {
 					set_variable = { infantry_equipment_level_var = 1 }
 				}
 			}
-			######
+			############
 			if = {
 				limit = { has_start_date > 1000.01.01 }
 				every_country = {
@@ -117,7 +117,7 @@ on_actions = {
 					clr_country_flag = ROOT_has_air_combat_unit_flag
 				}
 			}
-			######
+			############
 			every_country = {
 				limit = {
 					OR = {
@@ -127,7 +127,7 @@ on_actions = {
 				}
 				set_country_flag = unknown_country_flag
 			}
-			######
+			############
 			every_country = {
 				limit = {
 					NOT = { has_country_flag = unknown_country_flag }
@@ -136,12 +136,15 @@ on_actions = {
 				}
 				create_temp_army = yes
 			}
-			######
+			############
 			every_country = {
 				limit = { NOT = { tag = UMA } }
 				set_technology = { cavalry_tech = 1 popup = no }
 			}
-			######
+			############
+			SMA = { initialize_san_magnolia_party_long_name = yes }
+			LAN = { initialize_landsol_party_long_name = yes }
+			############
 		}
 	}
 	
