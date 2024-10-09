@@ -1,0 +1,49 @@
+ideas = {
+	hidden_ideas = {
+	}
+	country = {
+		generic_pregnant_act = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			available = {
+				has_country_flag = generic_pregnant_act_flag
+			}
+			cancel = {
+			}
+			traits = {
+			}
+			modifier = {
+				conscription = 0.33
+				production_speed_buildings_factor = 0.33
+				industrial_capacity_factory = 0.33
+				industrial_capacity_dockyard = 0.33			
+				training_time_factor = -0.33
+			}
+			targeted_modifier = {
+			}
+			equipment_bonus = {
+			}
+			research_bonus = {
+			}
+			rule = {
+			}
+			on_add = {
+				hidden_effect = {
+					set_country_flag = {
+						flag = generic_pregnant_act_flag
+						days = 3
+						value = 1
+					}
+					#come on, is this idea serious?
+				}
+			}
+			on_remove = {
+			}
+		}
+	}
+}
