@@ -9,115 +9,115 @@
 #!gfx:interface\FE_goals.gfx
 
 focus_tree = {
-    id = landsol_focus
-    country = {
-        factor = 0
-        modifier = {
-            add = 10
-            tag = LAN
-        }
-    }
-    default = no
+	id = landsol_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = LAN
+		}
+	}
+	default = no
 
-    focus = { 
-        id = LAN_into_millennium
-        icon = GFX_goal_generic_collaborate_local_elites
-        x = 10
-        y = 0
-        cost = 4
-        available = {
-            is_subject = no
-        }
+	focus = { 
+		id = LAN_into_millennium
+		icon = GFX_goal_generic_collaborate_local_elites
+		x = 10
+		y = 0
+		cost = 4
+		available = {
+			is_subject = no
+		}
 		select_effect = {
 			set_country_flag = LAN_into_millennium_flag
 		}
-        completion_reward = {
-            clr_country_flag = LAN_into_millennium_flag
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		completion_reward = {
+			clr_country_flag = LAN_into_millennium_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	
 	focus = { 
-        id = LAN_after_celebration
-        icon = GFX_goal_generic_collaborate_local_elites
+		id = LAN_after_celebration
+		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = LAN_into_millennium }
 		relative_position_id = LAN_into_millennium
-        x = 0
-        y = 1
-        cost = 0
-        available = {
-            always = no
-        }
-        completion_reward = {
-            
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		x = 0
+		y = 1
+		cost = 0
+		available = {
+			always = no
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	
 	focus = { 
-        id = LAN_call_dice
-        icon = GFX_goal_generic_collaborate_local_elites
+		id = LAN_call_dice
+		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = LAN_after_celebration }
 		relative_position_id = LAN_after_celebration
-        x = 0
-        y = 1
-        cost = 1
-        available = {
-            
-        }
-        completion_reward = {
-            
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		x = 0
+		y = 1
+		cost = 1
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	
 	focus = { 
-        id = LAN_maintain_tiam_relation
-        icon = GFX_goal_generic_collaborate_local_elites
+		id = LAN_maintain_tiam_relation
+		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = LAN_after_celebration }
 		mutually_exclusive = { focus = LAN_basic_principles_of_warfare }
 		relative_position_id = LAN_after_celebration
-        x = -4
-        y = 1
-        cost = 3
-        available = {
-            NOT = { has_completed_focus = LAN_call_dice }
-        }
-        completion_reward = {
-            TIA = {
+		x = -4
+		y = 1
+		cost = 3
+		available = {
+			NOT = { has_completed_focus = LAN_call_dice }
+		}
+		completion_reward = {
+			TIA = {
 				country_event = { id = germany.75 days = 1 }
 				custom_effect_tooltip = needs_approval
 			}
-            effect_tooltip = {
+			effect_tooltip = {
 				subtract_from_variable = { global.EYP_war_escalation_level_LAN_action = 1 }
 				custom_effect_tooltip = war_escalation_level_down_tt
 				EYP_escalate_the_war_effect = yes
 			}
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	
 	focus = { 
-        id = LAN_basic_principles_of_warfare
-        icon = GFX_goal_generic_collaborate_local_elites
+		id = LAN_basic_principles_of_warfare
+		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = LAN_after_celebration }
 		mutually_exclusive = { focus = LAN_maintain_tiam_relation }
 		relative_position_id = LAN_after_celebration
-        x = -2
-        y = 1
-        cost = 3
-        available = {
-            NOT = { has_completed_focus = LAN_call_dice }
-        }
-        completion_reward = {
+		x = -2
+		y = 1
+		cost = 3
+		available = {
+			NOT = { has_completed_focus = LAN_call_dice }
+		}
+		completion_reward = {
 			AIL = {
 				swap_ideas = {
 					remove_idea = AIL_if_final_word
@@ -127,87 +127,87 @@ focus_tree = {
 			subtract_from_variable = { global.EYP_war_escalation_level_LAN_action = 1 }
 			custom_effect_tooltip = war_escalation_level_down_tt
 			EYP_escalate_the_war_effect = yes
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	
 	focus = { 
-        id = LAN_more_troops
-        icon = GFX_goal_generic_collaborate_local_elites
+		id = LAN_more_troops
+		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = LAN_after_celebration }
 		mutually_exclusive = { focus = LAN_officer_rotate }
 		relative_position_id = LAN_after_celebration
-        x = 2
-        y = 1
-        cost = 3
-        available = {
-            NOT = { has_completed_focus = LAN_call_dice }
-        }
-        completion_reward = {
-            
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		x = 2
+		y = 1
+		cost = 3
+		available = {
+			NOT = { has_completed_focus = LAN_call_dice }
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	
 	focus = { 
-        id = LAN_officer_rotate
-        icon = GFX_goal_generic_collaborate_local_elites
+		id = LAN_officer_rotate
+		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = LAN_after_celebration }
 		mutually_exclusive = { focus = LAN_more_troops }
 		relative_position_id = LAN_after_celebration
-        x = 4
-        y = 1
-        cost = 3
-        available = {
-            NOT = { has_completed_focus = LAN_call_dice }
-        }
-        completion_reward = {
-            
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		x = 4
+		y = 1
+		cost = 3
+		available = {
+			NOT = { has_completed_focus = LAN_call_dice }
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
 	focus = { 
-        id = LAN_status_quo
-        icon = GFX_goal_generic_collaborate_local_elites
+		id = LAN_status_quo
+		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = LAN_call_dice }
 		relative_position_id = LAN_call_dice
-        x = -5
-        y = 1
-        cost = 2
-        available = {
-            always = no
-        }
-        completion_reward = {
-            
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		x = -5
+		y = 1
+		cost = 2
+		available = {
+			always = no
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
 	focus = { 
-        id = LAN_military_first
-        icon = GFX_goal_generic_collaborate_local_elites
+		id = LAN_military_first
+		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = LAN_call_dice }
 		relative_position_id = LAN_call_dice
-        x = 5
-        y = 1
-        cost = 2
-        available = {
-            always = no
-        }
-        completion_reward = {
-            
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		x = 5
+		y = 1
+		cost = 2
+		available = {
+			always = no
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

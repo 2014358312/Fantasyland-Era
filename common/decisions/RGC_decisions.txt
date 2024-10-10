@@ -36,6 +36,11 @@ RGC_fate_of_royal_decision_category = {
 		visible = {
 			NOT = {
 				has_country_flag = RGC_fate_of_royal_decided_flag
+				focus_progress = {
+					focus = RGC_republic_forever
+					progress > 0
+				}
+				has_completed_focus = RGC_republic_forever
 			}
 		}
 		available = {
@@ -50,6 +55,7 @@ RGC_fate_of_royal_decision_category = {
 		fire_only_once = yes
 		complete_effect = {
 			custom_effect_tooltip = RGC_delphine_choose_victoria_tt
+			country_event = victoria.1
 			remove_ideas = RGC_fate_of_royal
 			set_country_flag = RGC_fate_of_royal_decided_flag
 		}
@@ -80,6 +86,7 @@ RGC_fate_of_royal_decision_category = {
 		fire_only_once = yes
 		complete_effect = {
 			custom_effect_tooltip = RGC_delphine_choose_theresia_tt
+			country_event = victoria.2
 			remove_ideas = RGC_fate_of_royal
 			set_country_flag = RGC_fate_of_royal_decided_flag
 		}
@@ -110,6 +117,7 @@ RGC_fate_of_royal_decision_category = {
 		fire_only_once = yes
 		complete_effect = {
 			custom_effect_tooltip = RGC_delphine_choose_tracy_tt
+			country_event = victoria.3
 			remove_ideas = RGC_fate_of_royal
 			set_country_flag = RGC_fate_of_royal_decided_flag
 		}

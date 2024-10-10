@@ -5,7 +5,7 @@
 		factor = 0
 		modifier = {
 			add = 100
-		    tag = DKA
+			tag = DKA
 		}
 	}
 	default = no
@@ -285,9 +285,9 @@ focus = {
 		prerequisite = { focus =DKA_The_Longest_Night }
 		relative_position_id = DKA_The_Longest_Night
 		mutually_exclusive = { focus =DKA_believe_in_demi-human}
-	    x = 1
+		x = 1
 		y = 1
-	    cost = 10
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -313,14 +313,14 @@ focus = {
 		}
 	}
 	###处理反对党
-    focus = {
+	focus = {
 		id = DKA_Dealing_with_opposition_parties
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
 		prerequisite = { focus =DKA_Rearmament }
 		relative_position_id = DKA_Rearmament
-	    x = -3
+		x = -3
 		y = 1
-	    cost = 10
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -346,9 +346,9 @@ focus = {
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
 		prerequisite = { focus =DKA_Rearmament }
 		relative_position_id = DKA_Rearmament
-	    x = 3
+		x = 3
 		y = 1
-	    cost = 10
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -376,9 +376,9 @@ focus = {
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
 		prerequisite = { focus =DKA_Rearmament }
 		relative_position_id = DKA_Rearmament
-	    x = 0
+		x = 0
 		y = 1
-	    cost = 10
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -407,9 +407,9 @@ focus = {
 		prerequisite = { focus =DKA_Establish_a_Military_Committee }
 		prerequisite = { focus =DKA_Suppressing_Resistance_demi-human }
 		relative_position_id = DKA_Rearmament
-	    x = -2.5
+		x = -2.5
 		y = 2
-	    cost = 10
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -470,7 +470,7 @@ focus = {
 	completion_reward = {
 		declare_war_on  = { target = BET type =annex_everything }
 		add_timed_idea = { idea =Attack_on_the_Kingdom_of_Bertom days = 120 }
-      }
+	  }
    }
 ##向PAT宣战
    focus = {
@@ -500,7 +500,7 @@ focus = {
 	completion_reward = {
 		declare_war_on  = { target = PAT type =annex_everything }
 		add_timed_idea = { idea =Attack_on_the_Kingdom_of_paretia days = 120 }
-      }
+	  }
    }
 ###向ALC宣战
    focus = {
@@ -530,7 +530,7 @@ focus = {
 	completion_reward = {
 		declare_war_on  = { target = ALC type =annex_everything }
 		add_timed_idea = { idea =Attack_on_the_Kingdom_of_Aruka days = 120 }
-      }
+	  }
    }
 ##宣扬我们的胜利
    focus = {
@@ -558,7 +558,7 @@ focus = {
 		}
 	completion_reward = {
 		add_ideas =our_victory
-      }
+	  }
 	}
 	##确认接下来的道路
 	focus = {
@@ -853,7 +853,7 @@ focus = {
 		}
 		army_experience =100
 		air_experience = 100
-      }
+	  }
    }
    ###向穆露奈伊特帝国宣战
    focus = {
@@ -882,7 +882,7 @@ focus = {
 	completion_reward = {
 		declare_war_on  = { target = ALC type =annex_everything }
 		add_timed_idea = { idea =Attack_on_the_Kingdom_of_Aruka days = 120 }
-      }
+	  }
    }
    ##否认缓冲区
    focus = {
@@ -911,7 +911,7 @@ focus = {
 	completion_reward = {
 		declare_war_on  = { target = ALC type =annex_everything }
 		add_timed_idea = { idea =Attack_on_the_Kingdom_of_Aruka days = 120 }
-      }
+	  }
    }
 
 ###向提亚穆帝国迈进
@@ -941,7 +941,7 @@ focus = {
 	completion_reward = {
 		declare_war_on  = { target = ALC type =annex_everything }
 		add_timed_idea = { idea =Attack_on_the_Kingdom_of_Aruka days = 120 }
-      }
+	  }
    }
    ###同化ALC
    focus = {
@@ -970,7 +970,7 @@ focus = {
 		}
 	completion_reward = {
 		add_timed_idea = { idea =assimilation_Kingdom_of_Aruka days = 30}
-      }
+	  }
 	}  
 	##同化BET
 	focus = {
@@ -1243,12 +1243,12 @@ focus = {
 			complete_tooltip = {
 							}
 			completion_reward = {
-	     MUL={
+		 MUL={
 			add_opinion_modifier = { target = DKA modifier=mul_dka_diplomatic_focus }
-	    }
+		}
 		 }
 						  }
-     ###陆军法案
+	 ###陆军法案
 	  focus = {
 			id = DKA_army_expansion_law
 			icon = GFX_goal_generic_army_doctrines
@@ -1321,11 +1321,11 @@ focus = {
 										}
 		##运输装备现代化
 	focus = {
-	    id = DKA_Modernization_of_transportation_equipment
-	     icon = GFX_goal_generic_small_arms
-	     prerequisite = { focus = DKA_army_expansion_law }
-	     x = 1
-	     y = 1
+		id = DKA_Modernization_of_transportation_equipment
+		 icon = GFX_goal_generic_small_arms
+		 prerequisite = { focus = DKA_army_expansion_law }
+		 x = 1
+		 y = 1
 	  	relative_position_id = DKA_army_expansion_law
 																	
 		cost = 10
@@ -1359,7 +1359,7 @@ focus = {
 	###关注坦克																	
 	focus = {
 	id = DKA_Follow_Tank
-    icon = GFX_goal_generic_army_tanks
+	icon = GFX_goal_generic_army_tanks
 	prerequisite = { focus = DKA_Modernization_of_transportation_equipment focus = DKA_small_arms_modernization}
 	x = -1
 	y = 1

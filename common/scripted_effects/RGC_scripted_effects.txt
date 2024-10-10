@@ -1,0 +1,128 @@
+RGC_king_victoria = {
+	if = {
+		limit = { democratic < 0.50 }
+		set_political_party = {
+			ideology = democratic
+			popularity = 50
+		}
+	}
+	else = {
+		add_popularity = {
+			ideology = democratic
+			popuparity = 0.10
+		}
+	}
+	set_politics = {
+		ruling_party = democratic
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	RGC_Alexandrina_Vina_Victoria = {
+		add_country_leader_role = {
+			country_leader = {
+				ideology = royal_constitutionalism_subtype
+				expire = "1965.1.1.1"
+				traits = { DEN_freedom_council_traits }
+			}
+			promote_leader = yes
+		}
+		set_portraits = {
+			civilian = {
+				large = GFX_Portrait_RGC_Alexandrina_Vina_Victoria_king
+			}
+			army = {
+				large = GFX_Portrait_RGC_Alexandrina_Vina_Victoria_king
+			}
+		}
+	}
+}
+
+RGC_king_theresia_neutrality = {
+	if = {
+		limit = { neutrality < 0.50 }
+		set_political_party = {
+			ideology = neutrality
+			popularity = 50
+		}
+	}
+	else = {
+		add_popularity = {
+			ideology = neutrality
+			popuparity = 0.10
+		}
+	}
+	set_politics = {
+		ruling_party = neutrality
+		elections_allowed = no
+	}
+	RGC_Theresia = {
+		add_country_leader_role = {
+			country_leader = {
+				ideology = aristocratic_monarchy_subtype
+				expire = "1965.1.1.1"
+				traits = { spiritual_leader }
+			}
+			promote_leader = yes
+		}
+	}
+}
+
+RGC_king_theresia_democratic = {
+	if = {
+		limit = { democratic < 0.50 }
+		set_political_party = {
+			ideology = democratic
+			popularity = 50
+		}
+	}
+	else = {
+		add_popularity = {
+			ideology = democratic
+			popuparity = 0.10
+		}
+	}
+	set_politics = {
+		ruling_party = democratic
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	RGC_Theresia = {
+		add_country_leader_role = {
+			country_leader = {
+				ideology = royal_constitutionalism_subtype
+				expire = "1965.1.1.1"
+				traits = { DEN_freedom_council_traits }
+			}
+			promote_leader = yes
+		}
+		set_portraits = {
+			civilian = {
+				large = GFX_Portrait_RGC_Theresia_democratic
+			}
+			army = {
+				large = GFX_Portrait_RGC_Theresia_democratic
+			}
+		}
+	}
+}
+
+RGC_king_tracy = {
+	add_popularity = {
+		ideology = fascism
+		popuparity = 0.20
+	}
+	set_politics = {
+		ruling_party = fascism
+		elections_allowed = no
+	}
+	RGC_Tracy = {
+		add_country_leader_role = {
+			country_leader = {
+				ideology = individual_dictatorship_subtype
+				expire = "1965.1.1.1"
+				traits = { syncretic_revanchist }
+			}
+			promote_leader = yes
+		}
+	}
+}

@@ -8,30 +8,51 @@
 ### search_filters = {FOCUS_FILTER_USA_CONGRESS}
 
 focus_tree = {
-    id = victorian_focus
-    country = {
-        factor = 0
-        modifier = {
-            add = 10
-            tag = RGC
-        }
-    }
-    default = no
+	id = victorian_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = RGC
+		}
+	}
+	default = no
 
-    focus = {
-        id = RGC_crown_to_victoria
-        icon = GFX_goal_generic_collaborate_local_elites
-        x = 10
-        y = 0
-        cost = 10
-        available = {
-            always = no 
-        }
-        completion_reward = {
-            add_political_power = 150
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+	focus = {
+		id = RGC_crown_come_back
+		icon = GFX_goal_generic_collaborate_local_elites
+		x = 10
+		y = 0
+		cost = 10
+		available = {
+			has_country_flag = RGC_fate_of_royal_decided_flag
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = RGC_republic_forever
+		icon = GFX_goal_generic_collaborate_local_elites
+		x = 8
+		y = 0
+		cost = 10
+		available = {
+			has_government = democratic
+		}
+		select_effect = {
+			set_country_flag = RGC_republic_forever_flag
+		}
+		completion_reward = {
+			add_political_power = 150
+			clr_country_flag = RGC_republic_forever_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

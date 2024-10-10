@@ -14,28 +14,28 @@
 ### search_filters = {FOCUS_FILTER_INTERNAL_AFFAIRS}
 
 focus_tree = {
-    id = san_magnolia_focus
-    country = {
-        factor = 0
-        modifier = {
-            add = 10
-            tag = SMA
-        }
-    }
-    default = no
+	id = san_magnolia_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SMA
+		}
+	}
+	default = no
 
-    focus = {
-        id = SMA_rebuild_industry
-        icon = GFX_goal_generic_collaborate_local_elites
-        x = 5
-        y = 0
-        cost = 5
-        available = {
-            
-        }
+	focus = {
+		id = SMA_rebuild_industry
+		icon = GFX_goal_generic_collaborate_local_elites
+		x = 5
+		y = 0
+		cost = 5
+		available = {
+			
+		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}
-        completion_reward = {
-            add_tech_bonus = {
+		completion_reward = {
+			add_tech_bonus = {
 				name = SMA_rebuild_industry
 				bonus = 3.0
 				uses = 1
@@ -45,832 +45,832 @@ focus_tree = {
 				idea = SMA_rebuild_industry
 				years = 2
 			}
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_confiscate_industrial_equipment
-        icon = GFX_goal_generic_production
+	focus = {
+		id = SMA_confiscate_industrial_equipment
+		icon = GFX_goal_generic_production
 		prerequisite = { focus = SMA_rebuild_industry }
 		relative_position_id = SMA_rebuild_industry
-        x = -3
-        y = 1
-        cost = 5
-        available = {
-            
-        }
-        completion_reward = {
-            add_political_power = 150
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		x = -3
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_national_defense_industry
-        icon = GFX_focus_SMA_national_defense_industry
+	focus = {
+		id = SMA_national_defense_industry
+		icon = GFX_focus_SMA_national_defense_industry
 		prerequisite = { focus = SMA_rebuild_industry }
 		relative_position_id = SMA_rebuild_industry
-        x = 3
-        y = 1
-        cost = 5
-        available = {
-            
-        }
-        completion_reward = {
-            add_political_power = 150
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		x = 3
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_rebuild_army
-        icon = GFX_focus_SMA_rebuild_army
-        x = 16
-        y = 0
-        cost = 5
-        available = {
+	focus = {
+		id = SMA_rebuild_army
+		icon = GFX_focus_SMA_rebuild_army
+		x = 16
+		y = 0
+		cost = 5
+		available = {
 			SMA_roxy_leading_military = yes
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            country_lock_all_division_template = no
+		completion_reward = {
+			country_lock_all_division_template = no
 			custom_effect_tooltip = SMA_rebuild_army_tt
 			hidden_effect = {
 				
 			}
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_restart_production_line
-        icon = GFX_goal_generic_production2
+	focus = {
+		id = SMA_restart_production_line
+		icon = GFX_goal_generic_production2
 		prerequisite = { focus = SMA_rebuild_army }
 		relative_position_id = SMA_rebuild_army
-        x = -2
-        y = 1
-        cost = 5
-        available = {
+		x = -2
+		y = 1
+		cost = 5
+		available = {
 			SMA_roxy_leading_military = yes
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_strict_recruitment_system_for_soldiers
-        icon = GFX_goal_generic_army_cooperation
+	focus = {
+		id = SMA_strict_recruitment_system_for_soldiers
+		icon = GFX_goal_generic_army_cooperation
 		prerequisite = { focus = SMA_rebuild_army }
 		relative_position_id = SMA_rebuild_army
-        x = 0
-        y = 1
-        cost = 5
-        available = {
+		x = 0
+		y = 1
+		cost = 5
+		available = {
 			SMA_roxy_leading_military = yes
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_restrained_diplomacy
-        icon = GFX_goal_molotov_ribbentrop_pact
+	focus = {
+		id = SMA_restrained_diplomacy
+		icon = GFX_goal_molotov_ribbentrop_pact
 		prerequisite = { focus = SMA_rebuild_army }
 		relative_position_id = SMA_rebuild_army
-        x = 2
-        y = 1
-        cost = 5
-        available = {
+		x = 2
+		y = 1
+		cost = 5
+		available = {
 			SMA_roxy_leading_military = yes
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_production_of_simple_equipment
-        icon = GFX_goal_generic_small_arms
+	focus = {
+		id = SMA_production_of_simple_equipment
+		icon = GFX_goal_generic_small_arms
 		prerequisite = { focus = SMA_restart_production_line }
 		mutually_exclusive = { focus = SMA_emphasis_on_quality }
 		relative_position_id = SMA_restart_production_line
-        x = -1
-        y = 1
-        cost = 5
-        available = {
+		x = -1
+		y = 1
+		cost = 5
+		available = {
 			SMA_roxy_leading_military = yes
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_emphasis_on_quality
-        icon = GFX_goal_generic_build_tank
+	focus = {
+		id = SMA_emphasis_on_quality
+		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = SMA_restart_production_line }
 		prerequisite = { focus = SMA_strict_recruitment_system_for_soldiers }
 		mutually_exclusive = { focus = SMA_production_of_simple_equipment }
 		relative_position_id = SMA_restart_production_line
-        x = 1
-        y = 1
-        cost = 5
-        available = {
+		x = 1
+		y = 1
+		cost = 5
+		available = {
 			SMA_roxy_leading_military = yes
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_the_highest_quality_warrior
-        icon = GFX_goal_generic_army_guy2
+	focus = {
+		id = SMA_the_highest_quality_warrior
+		icon = GFX_goal_generic_army_guy2
 		prerequisite = { focus = SMA_strict_recruitment_system_for_soldiers }
 		prerequisite = { focus = SMA_restrained_diplomacy }
 		mutually_exclusive = { focus = SMA_reinforcement_space_advantage }
 		relative_position_id = SMA_restrained_diplomacy
-        x = -1
-        y = 1
-        cost = 5
-        available = {
+		x = -1
+		y = 1
+		cost = 5
+		available = {
 			SMA_roxy_leading_military = yes
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_reinforcement_space_advantage
-        icon = GFX_focus_SWE_hedgehog_defense
+	focus = {
+		id = SMA_reinforcement_space_advantage
+		icon = GFX_focus_SWE_hedgehog_defense
 		prerequisite = { focus = SMA_restrained_diplomacy }
 		mutually_exclusive = { focus = SMA_the_highest_quality_warrior }
 		relative_position_id = SMA_restrained_diplomacy
-        x = 1
-        y = 1
-        cost = 5
-        available = {
+		x = 1
+		y = 1
+		cost = 5
+		available = {
 			SMA_roxy_leading_military = yes
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_roxy_military_reform
-        icon = GFX_focus_SMA_rebuild_army
+	focus = {
+		id = SMA_roxy_military_reform
+		icon = GFX_focus_SMA_rebuild_army
 		prerequisite = { focus = SMA_strict_recruitment_system_for_soldiers }
 		relative_position_id = SMA_strict_recruitment_system_for_soldiers
-        x = 0
-        y = 2
-        cost = 5
-        available = {
+		x = 0
+		y = 2
+		cost = 5
+		available = {
 			SMA_roxy_leading_military = yes
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_military_business
-        icon = GFX_focus_SWE_defense_act
+	focus = {
+		id = SMA_military_business
+		icon = GFX_focus_SWE_defense_act
 		prerequisite = { focus = SMA_roxy_military_reform }
 		relative_position_id = SMA_roxy_military_reform
-        x = -11
-        y = 1
-        cost = 5
-        available = {
+		x = -11
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_unemployed_person
-        icon = GFX_focus_SMA_unemployed_person
+	focus = {
+		id = SMA_unemployed_person
+		icon = GFX_focus_SMA_unemployed_person
 		prerequisite = { focus = SMA_roxy_military_reform }
 		relative_position_id = SMA_roxy_military_reform
-        x = -9
-        y = 1
-        cost = 5
-        available = {
+		x = -9
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            custom_effect_tooltip = SMA_unemployed_person_tt
+		completion_reward = {
+			custom_effect_tooltip = SMA_unemployed_person_tt
 			activate_mission = SMA_coup_to_roxy_mission
 			unlock_decision_tooltip = SMA_force_roxy_to_resign
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_speed_is_power
-        icon = GFX_goal_generic_doctrine_tank_warfare
+	focus = {
+		id = SMA_speed_is_power
+		icon = GFX_goal_generic_doctrine_tank_warfare
 		prerequisite = { focus = SMA_roxy_military_reform }
 		mutually_exclusive = { focus = SMA_prepared_strike focus = SMA_consolidate_whole_country }
 		relative_position_id = SMA_roxy_military_reform
-        x = -7
-        y = 1
-        cost = 5
-        available = {
+		x = -7
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_prepared_strike
-        icon = GFX_goal_generic_army_grand_battleplan
+	focus = {
+		id = SMA_prepared_strike
+		icon = GFX_goal_generic_army_grand_battleplan
 		prerequisite = { focus = SMA_roxy_military_reform }
 		mutually_exclusive = { focus = SMA_speed_is_power focus = SMA_consolidate_whole_country }
 		relative_position_id = SMA_roxy_military_reform
-        x = 0
-        y = 1
-        cost = 5
-        available = {
+		x = 0
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_consolidate_whole_country
-        icon = GFX_focus_generic_full_social_mobilization
+	focus = {
+		id = SMA_consolidate_whole_country
+		icon = GFX_focus_generic_full_social_mobilization
 		prerequisite = { focus = SMA_roxy_military_reform }
 		mutually_exclusive = { focus = SMA_speed_is_power focus = SMA_prepared_strike }
 		relative_position_id = SMA_roxy_military_reform
-        x = 7
-        y = 1
-        cost = 5
-        available = {
+		x = 7
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_improve_power_source
-        icon = GFX_focus_FIN_expand_air_force_academy
+	focus = {
+		id = SMA_improve_power_source
+		icon = GFX_focus_FIN_expand_air_force_academy
 		prerequisite = { focus = SMA_speed_is_power }
 		relative_position_id = SMA_speed_is_power
-        x = 0
-        y = 1
-        cost = 5
-        available = {
+		x = 0
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_compress_folding_space_technology
-        icon = GFX_focus_SMA_rebuild_army
+	focus = {
+		id = SMA_compress_folding_space_technology
+		icon = GFX_focus_SMA_rebuild_army
 		prerequisite = { focus = SMA_improve_power_source }
 		relative_position_id = SMA_improve_power_source
-        x = -1
-        y = 1
-        cost = 5
-        available = {
+		x = -1
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_building_motorized_infantry
-        icon = GFX_goal_generic_army_motorized
+	focus = {
+		id = SMA_building_motorized_infantry
+		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = SMA_improve_power_source }
 		relative_position_id = SMA_improve_power_source
-        x = 1
-        y = 1
-        cost = 5
-        available = {
+		x = 1
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_assault_vanguard
-        icon = GFX_focus_generic_army_tanks2
+	focus = {
+		id = SMA_assault_vanguard
+		icon = GFX_focus_generic_army_tanks2
 		prerequisite = { focus = SMA_improve_power_source }
 		relative_position_id = SMA_improve_power_source
-        x = 0
-        y = 2
-        cost = 5
-        available = {
+		x = 0
+		y = 2
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_expand_field_of_military_production
-        icon = GFX_focus_generic_modernize_industry
+	focus = {
+		id = SMA_expand_field_of_military_production
+		icon = GFX_focus_generic_modernize_industry
 		prerequisite = { focus = SMA_speed_is_power }
 		relative_position_id = SMA_speed_is_power
-        x = 2
-        y = 1
-        cost = 5
-        available = {
+		x = 2
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_establish_special_force
-        icon = GFX_goal_generic_special_forces
+	focus = {
+		id = SMA_establish_special_force
+		icon = GFX_goal_generic_special_forces
 		prerequisite = {
 			focus = SMA_speed_is_power
 			focus = SMA_prepared_strike
 		}
 		relative_position_id = SMA_roxy_military_reform
-        x = -3
-        y = 2
-        cost = 5
-        available = {
+		x = -3
+		y = 2
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_new_subjects_in_military_academies
-        icon = GFX_focus_generic_military_academy
+	focus = {
+		id = SMA_new_subjects_in_military_academies
+		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = SMA_expand_field_of_military_production }
 		prerequisite = { focus = SMA_establish_special_force }
 		relative_position_id = SMA_expand_field_of_military_production
-        x = 1
-        y = 1
-        cost = 5
-        available = {
+		x = 1
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_battlefield_training
-        icon = GFX_goal_generic_military_sphere
+	focus = {
+		id = SMA_battlefield_training
+		icon = GFX_goal_generic_military_sphere
 		prerequisite = { focus = SMA_new_subjects_in_military_academies }
 		relative_position_id = SMA_new_subjects_in_military_academies
-        x = 0
-        y = 1
-        cost = 5
-        available = {
+		x = 0
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_connecting_military_facilities
-        icon = GFX_goal_generic_construct_infrastructure
+	focus = {
+		id = SMA_connecting_military_facilities
+		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = SMA_prepared_strike }
 		relative_position_id = SMA_prepared_strike
-        x = 0
-        y = 1
-        cost = 5
-        available = {
+		x = 0
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_recon_battalion
-        icon = GFX_focus_prc_infiltration
+	focus = {
+		id = SMA_recon_battalion
+		icon = GFX_focus_prc_infiltration
 		prerequisite = { focus = SMA_connecting_military_facilities }
 		relative_position_id = SMA_connecting_military_facilities
-        x = 0
-        y = 2
-        cost = 5
-        available = {
+		x = 0
+		y = 2
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_compensate_for_the_needs_of_military_officers
-        icon = GFX_focus_generic_military_mission
+	focus = {
+		id = SMA_compensate_for_the_needs_of_military_officers
+		icon = GFX_focus_generic_military_mission
 		prerequisite = {
 			focus = SMA_prepared_strike
 			focus = SMA_consolidate_whole_country
 		}
 		relative_position_id = SMA_roxy_military_reform
-        x = 2
-        y = 2
-        cost = 5
-        available = {
+		x = 2
+		y = 2
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_the_legion_of_transcendents
-        icon = GFX_focus_SMA_rebuild_army
+	focus = {
+		id = SMA_the_legion_of_transcendents
+		icon = GFX_focus_SMA_rebuild_army
 		prerequisite = { focus = SMA_establish_special_force }
 		prerequisite = { focus = SMA_compensate_for_the_needs_of_military_officers }
 		relative_position_id = SMA_establish_special_force
-        x = 2
-        y = 1
-        cost = 5
-        available = {
+		x = 2
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_improvement_of_teleportation_spells
-        icon = GFX_focus_SMA_rebuild_army
+	focus = {
+		id = SMA_improvement_of_teleportation_spells
+		icon = GFX_focus_SMA_rebuild_army
 		prerequisite = { focus = SMA_the_legion_of_transcendents }
 		relative_position_id = SMA_the_legion_of_transcendents
-        x = -1
-        y = 1
-        cost = 5
-        available = {
+		x = -1
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_criticize_radical_thinking
-        icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+	focus = {
+		id = SMA_criticize_radical_thinking
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
 		prerequisite = { focus = SMA_connecting_military_facilities }
 		prerequisite = { focus = SMA_compensate_for_the_needs_of_military_officers }
 		relative_position_id = SMA_connecting_military_facilities
-        x = 1
-        y = 1
-        cost = 5
-        available = {
+		x = 1
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_in_unison
-        icon = GFX_goal_generic_national_unity
+	focus = {
+		id = SMA_in_unison
+		icon = GFX_goal_generic_national_unity
 		prerequisite = { focus = SMA_criticize_radical_thinking }
 		relative_position_id = SMA_criticize_radical_thinking
-        x = 1
-        y = 1
-        cost = 5
-        available = {
+		x = 1
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_universal_training
-        icon = GFX_goal_generic_arctic_warfare
+	focus = {
+		id = SMA_universal_training
+		icon = GFX_goal_generic_arctic_warfare
 		prerequisite = { focus = SMA_consolidate_whole_country }
 		relative_position_id = SMA_consolidate_whole_country
-        x = -3
-        y = 1
-        cost = 5
-        available = {
+		x = -3
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_standardize_the_scale_of_organizational_structure
-        icon = GFX_focus_generic_little_entente
+	focus = {
+		id = SMA_standardize_the_scale_of_organizational_structure
+		icon = GFX_focus_generic_little_entente
 		prerequisite = { focus = SMA_universal_training }
 		relative_position_id = SMA_universal_training
-        x = 0
-        y = 1
-        cost = 5
-        available = {
+		x = 0
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_loyalty_and_unity
-        icon = GFX_focus_hol_united_netherlands
+	focus = {
+		id = SMA_loyalty_and_unity
+		icon = GFX_focus_hol_united_netherlands
 		prerequisite = { focus = SMA_standardize_the_scale_of_organizational_structure }
 		relative_position_id = SMA_standardize_the_scale_of_organizational_structure
-        x = 0
-        y = 1
-        cost = 5
-        available = {
+		x = 0
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_expand_military_production
-        icon = GFX_goal_generic_construct_mil_factory
+	focus = {
+		id = SMA_expand_military_production
+		icon = GFX_goal_generic_construct_mil_factory
 		prerequisite = { focus = SMA_consolidate_whole_country }
 		relative_position_id = SMA_consolidate_whole_country
-        x = -1
-        y = 1
-        cost = 5
-        available = {
+		x = -1
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_assembly_line
-        icon = GFX_focus_CHL_domestic_production_of_the_willys_mb
+	focus = {
+		id = SMA_assembly_line
+		icon = GFX_focus_CHL_domestic_production_of_the_willys_mb
 		prerequisite = { focus = SMA_expand_military_production }
 		relative_position_id = SMA_expand_military_production
-        x = 0
-        y = 1
-        cost = 5
-        available = {
+		x = 0
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_reserve_troops_source
-        icon = GFX_goal_generic_conscription
+	focus = {
+		id = SMA_reserve_troops_source
+		icon = GFX_goal_generic_conscription
 		prerequisite = { focus = SMA_expand_military_production }
 		relative_position_id = SMA_expand_military_production
-        x = 1
-        y = 2
-        cost = 5
-        available = {
+		x = 1
+		y = 2
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-    focus = {
-        id = SMA_ensure_logistics_support
-        icon = GFX_focus_generic_supply_line
+	focus = {
+		id = SMA_ensure_logistics_support
+		icon = GFX_focus_generic_supply_line
 		prerequisite = { focus = SMA_consolidate_whole_country }
 		relative_position_id = SMA_consolidate_whole_country
-        x = 1
-        y = 1
-        cost = 5
-        available = {
+		x = 1
+		y = 1
+		cost = 5
+		available = {
 			SMA_is_army_reforming = yes
-        }
+		}
 		search_filters = {  }
-        completion_reward = {
-            army_experience = 5
+		completion_reward = {
+			army_experience = 5
 			add_political_power = 50
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }
