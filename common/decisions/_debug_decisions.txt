@@ -741,4 +741,99 @@ northwest_continent_debug_decisions = {
 			}
 		}
 	}
+	debug_release_Belzec_decision = {
+		allowed = {
+			always = yes
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			NOT = {
+				country_exists = BEL
+			}
+		}
+		complete_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 235
+						state = 236
+						state = 237
+						state = 234
+						state = 264
+						state = 265
+						state = 233
+						state = 263
+						state = 262
+						state = 232
+						state = 231
+						state = 266
+						state = 238
+					}
+				}
+				effect_tooltip = {
+					add_core_of = BEL
+					FON = {
+						transfer_state = PREV
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							NOT = {
+								is_core_of = BEL
+							}
+						}
+						add_core_of = BEL
+					}
+					if = {
+						limit = {
+							NOT = {
+								is_controlled_by = BEL
+							}
+						}
+						BEL = {
+							transfer_state = PREV
+						}
+					}
+				}
+			}
+			set_nationality = {
+				target_country = BEL
+				character = TIA_Aqua
+			}
+			add_country_leader_role = {
+				character = TIA_Aqua
+				promote_leader = yes
+				country_leader = {
+					ideology = despotism
+					expire = "1965.1.1.1"
+					traits = {
+						Water_Goddess_Aqua
+					}
+				}
+			}
+		}
+	}
+	debug_fon_bel_war_sprit = {
+		allowed = {
+			always = yes
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			country_exists = BEL
+			country_exists = FON
+		}
+		complete_effect = {
+			FON = {
+				add_ideas = Water_Goddness_civil_war_fon
+			}
+			BEL = {
+				add_ideas = Water_Goddness_civil_war_bel
+			}
+		}
+	}
 }

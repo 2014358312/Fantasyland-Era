@@ -1,16 +1,13 @@
 ideas = {
-
 	country = {
 		add_production_efficiency = {
 			allowed = {
 				always = no
 			}
 			removal_cost = -1
-			
 			allowed_civil_war = {
 				always = yes
 			}
-			
 			modifier = {
 				production_factory_efficiency_gain_factor = 100
 			}
@@ -20,15 +17,44 @@ ideas = {
 				always = no
 			}
 			removal_cost = -1
-			
 			allowed_civil_war = {
 				always = yes
 			}
-						
 			modifier = {
 				production_factory_efficiency_gain_factor = -100
 			}
 		}
+		Water_Goddness_civil_war_bel = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = FON
+				#战斗修正种类
+				attack_bonus_against = 1
+				defense_bonus_against = 1
+				trade_cost_for_target_factor = 1
+			}
+		}
+		Water_Goddness_civil_war_fon = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = BEL
+				#战斗修正种类
+				attack_bonus_against = 1
+				defense_bonus_against = 1
+				trade_cost_for_target_factor = 1
+			}
+		}
 	}
-
 }
