@@ -1,4 +1,4 @@
-RGC_civil_war_decision_category = {
+RGC_prepare_civil_war_decision_category = {
 	RGC_choose_republic_side = {
 		icon = generic_decision
 		allowed = {
@@ -78,13 +78,12 @@ RGC_civil_war_decision_category = {
 		is_good = no
 		fire_only_once = yes
 		activation = { always = no }
-		complete_effect = {
-			custom_effect_tooltip = RGC_civil_war_mission_tt
-		}
 		timeout_effect = {
-			country_event = victoria.5
-			remove_ideas = RGC_emergency_state
-			remove_ideas = RGC_brink_of_civil_war
+			country_event = victoria.6
+			effect_tooltip = {
+				remove_ideas = RGC_emergency_state
+				remove_ideas = RGC_brink_of_civil_war
+			}
 		}
 		ai_will_do = {
 			factor = 200
@@ -124,12 +123,6 @@ RGC_fate_of_royal_decision_category = {
 				custom_effect_tooltip = RGC_choice_of_delphine_tt2
 			}
 			else = { custom_effect_tooltip = RGC_choice_of_delphine_tt3 }
-			if = {
-				limit = {
-					NOT = { has_completed_focus = RGC_republic_forever }
-				}
-				complete_national_focus = RGC_republic_forever
-			}
 			country_event = victoria.5
 			add_political_power = -25
 			remove_ideas = RGC_fate_of_royal
@@ -147,18 +140,16 @@ RGC_fate_of_royal_decision_category = {
 		visible = {
 			NOT = {
 				has_country_flag = RGC_fate_of_royal_decided_flag
-				focus_progress = {
-					focus = RGC_republic_forever
-					progress > 0
-				}
-				has_completed_focus = RGC_republic_forever
 			}
 		}
 		available = {
 			has_idea = RGC_fate_of_royal
 			has_active_mission = RGC_choice_of_delphine_mission
-			check_variable = {
-				days_mission_timeout@RGC_choice_of_delphine_mission > 7
+			custom_trigger_tooltip = {
+				tooltip = RGC_choice_of_delphine_mission_timeout_ttt
+				check_variable = {
+					days_mission_timeout@RGC_choice_of_delphine_mission > 7
+				}
 			}
 		}
 		cost = 25
@@ -184,19 +175,24 @@ RGC_fate_of_royal_decision_category = {
 		}
 		visible = {
 			NOT = {
+				has_global_flag = victorian_civil_war_happen
 				has_country_flag = RGC_fate_of_royal_decided_flag
-				focus_progress = {
-					focus = RGC_republic_forever
-					progress > 0
-				}
-				has_completed_focus = RGC_republic_forever
 			}
 		}
 		available = {
 			has_idea = RGC_fate_of_royal
 			has_active_mission = RGC_choice_of_delphine_mission
-			check_variable = {
-				days_mission_timeout@RGC_choice_of_delphine_mission > 7
+			custom_trigger_tooltip = {
+				tooltip = RGC_choice_of_delphine_mission_timeout_ttt
+				check_variable = {
+					days_mission_timeout@RGC_choice_of_delphine_mission > 7
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = RGC_civil_war_mission_timeout_ttt
+				check_variable = {
+					days_mission_timeout@RGC_civil_war_mission > 90
+				}
 			}
 		}
 		cost = 25
@@ -222,19 +218,24 @@ RGC_fate_of_royal_decision_category = {
 		}
 		visible = {
 			NOT = {
+				has_global_flag = victorian_civil_war_happen
 				has_country_flag = RGC_fate_of_royal_decided_flag
-				focus_progress = {
-					focus = RGC_republic_forever
-					progress > 0
-				}
-				has_completed_focus = RGC_republic_forever
 			}
 		}
 		available = {
 			has_idea = RGC_fate_of_royal
 			has_active_mission = RGC_choice_of_delphine_mission
-			check_variable = {
-				days_mission_timeout@RGC_choice_of_delphine_mission > 7
+			custom_trigger_tooltip = {
+				tooltip = RGC_choice_of_delphine_mission_timeout_ttt
+				check_variable = {
+					days_mission_timeout@RGC_choice_of_delphine_mission > 7
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = RGC_civil_war_mission_timeout_ttt
+				check_variable = {
+					days_mission_timeout@RGC_civil_war_mission > 90
+				}
 			}
 		}
 		cost = 25
@@ -260,19 +261,24 @@ RGC_fate_of_royal_decision_category = {
 		}
 		visible = {
 			NOT = {
+				has_global_flag = victorian_civil_war_happen
 				has_country_flag = RGC_fate_of_royal_decided_flag
-				focus_progress = {
-					focus = RGC_republic_forever
-					progress > 0
-				}
-				has_completed_focus = RGC_republic_forever
 			}
 		}
 		available = {
 			has_idea = RGC_fate_of_royal
 			has_active_mission = RGC_choice_of_delphine_mission
-			check_variable = {
-				days_mission_timeout@RGC_choice_of_delphine_mission > 7
+			custom_trigger_tooltip = {
+				tooltip = RGC_choice_of_delphine_mission_timeout_ttt
+				check_variable = {
+					days_mission_timeout@RGC_choice_of_delphine_mission > 7
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = RGC_civil_war_mission_timeout_ttt
+				check_variable = {
+					days_mission_timeout@RGC_civil_war_mission > 90
+				}
 			}
 		}
 		cost = 25
@@ -289,5 +295,11 @@ RGC_fate_of_royal_decision_category = {
 		ai_will_do = {
 			factor = 200
 		}
+	}
+}
+
+RGC_civil_war_decision_category = {
+	RGC_1 = {
+	
 	}
 }

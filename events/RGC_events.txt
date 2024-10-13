@@ -21,7 +21,7 @@ country_event = {
 	}
 
 	option = {
-		name = generic.1.a
+		name = victoria.1.a
 		effect_tooltip = {
 			add_ideas = RGC_king_alexandrina
 			remove_mission = RGC_choice_of_delphine_mission
@@ -50,7 +50,7 @@ country_event = {
 	}
 
 	option = {
-		name = generic.2.a
+		name = victoria.2.a
 		effect_tooltip = {
 			add_ideas = RGC_king_theresia
 			remove_mission = RGC_choice_of_delphine_mission
@@ -83,7 +83,7 @@ country_event = {
 	}
 
 	option = {
-		name = generic.2.a
+		name = victoria.3.a
 		effect_tooltip = {
 			add_ideas = RGC_king_tracy
 			remove_mission = RGC_choice_of_delphine_mission
@@ -112,7 +112,7 @@ country_event = {
 	}
 
 	option = {
-		name = generic.2.a
+		name = victoria.4.a
 		effect_tooltip = {
 			add_ideas = RGC_king_loughshinny
 			remove_mission = RGC_choice_of_delphine_mission
@@ -142,7 +142,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = generic.5.a
+		name = victoria.5.a
 	}
 }
 
@@ -156,65 +156,39 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
+	}
+
+	option = {
+		name = victoria.6.a
 		hidden_effect = {
-			
+			remove_ideas = RGC_emergency_state
+			remove_ideas = RGC_brink_of_civil_war
 		}
+		RGC_start_civil_war = yes
 	}
-
+	
 	option = {
-		name = generic.5.a
-		#same as victoria.6.a
+		name = victoria.6.b
+		trigger = { NOT = { has_idea = RGC_king_loughshinny } }
+		RGC_start_civil_war = yes
+		hidden_effect = {
+			remove_ideas = RGC_emergency_state
+			remove_ideas = RGC_brink_of_civil_war
+		}
+		TAR = { change_tag_from = ROOT }
 	}
-
+	
 	option = {
-		name = generic.5.b
-		#same as victoria.7.a
-	}
-
-	option = {
-		name = generic.5.c
-		#same as victoria.8.a
-	}
-}
-
-# civil war comes - duke
-country_event = {
-	id = victoria.7
-	title = victoria.7.t
-	desc = victoria.7.desc
-	picture = GFX_report_event_generic_read_write
-
-	is_triggered_only = yes
-
-	option = {
-		name = generic.7.a
-	}
-}
-
-# civil war comes - tara
-country_event = {
-	id = victoria.8
-	title = victoria.8.t
-	desc = victoria.8.desc
-	picture = GFX_report_event_generic_read_write
-
-	is_triggered_only = yes
-
-	option = {
-		name = generic.8.a
-	}
-}
-
-# civil war comes - sarkaz
-country_event = {
-	id = victoria.9
-	title = victoria.9.t
-	desc = victoria.9.desc
-	picture = GFX_report_event_generic_read_write
-
-	is_triggered_only = yes
-
-	option = {
-		name = generic.9.a
+		name = victoria.6.c
+		trigger = {
+			NOT = { has_idea = RGC_king_theresia }
+			NOT = { has_idea = RGC_king_tracy }
+		}
+		RGC_start_civil_war = yes
+		hidden_effect = {
+			remove_ideas = RGC_emergency_state
+			remove_ideas = RGC_brink_of_civil_war
+		}
+		KDE = { change_tag_from = ROOT }
 	}
 }

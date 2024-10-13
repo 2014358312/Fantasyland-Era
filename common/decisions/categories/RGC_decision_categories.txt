@@ -2,7 +2,7 @@
 ###   RGC  ###
 ##############
 
-RGC_civil_war_decision_category = {
+RGC_prepare_civil_war_decision_category = {
 	icon = generic_crisis
 	picture = GFX_decision_cat_picture_RGC_fate_of_royal
 	allowed = { original_tag = RGC }
@@ -12,6 +12,22 @@ RGC_civil_war_decision_category = {
 	}
 
 	scripted_gui = RGC_victoria_selection_of_king_ui
+
+	priority = 100
+}
+
+RGC_civil_war_decision_category = {
+	icon = spr_the_inevitable_civil_war
+	picture = GFX_decision_cat_picture_RGC_fate_of_royal
+	allowed = { RGC_is_victoiran_country = yes }
+	visible = {
+		has_global_flag = victorian_civil_war_happen
+		has_country_flag = RGC_victorian_civil_war_member_flag
+	}
+
+	scripted_gui = RGC_victoria_selection_of_king_ui
+	
+	visible_when_empty = yes
 
 	priority = 100
 }
