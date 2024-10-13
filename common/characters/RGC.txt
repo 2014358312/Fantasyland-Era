@@ -7,7 +7,7 @@ characters = {
 				small = GFX_idea_advisor_RGC_Darjeeling
 			}
 			army = {
-				large = GFX_Portrait_RGC_Darjeeling
+				large = GFX_Portrait_RGC_Darjeeling_military
 				small = GFX_idea_advisor_RGC_Darjeeling
 			}
 		}
@@ -46,6 +46,15 @@ characters = {
 				base = 1.000
 			}
 		}
+		field_marshal = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
 	}
 
 	RGC_Delphine_Windermere = {
@@ -56,7 +65,7 @@ characters = {
 				small = GFX_idea_advisor_RGC_Delphine_Windermere
 			}
 			army = {
-				large = GFX_Portrait_RGC_Delphine_Windermere
+				large = GFX_Portrait_RGC_Delphine_Windermere_military
 				small = GFX_idea_advisor_RGC_Delphine_Windermere
 			}
 		}
@@ -65,6 +74,15 @@ characters = {
 			traits = { reluctant_agent legitimate_heir }
 			expire = "1965.1.1.1"
 			id = -1
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
 		}
 	}
 
@@ -86,6 +104,19 @@ characters = {
 			expire = "1965.1.1.1"
 			id = -1
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = RGC_Heidi_Thomson
+			allowed = { original_tag = RGC }
+			available = {
+				is_country_leader = no
+			}
+			cost = 150
+			traits = { editor }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	RGC_Rita_Skamandros = {
@@ -96,7 +127,7 @@ characters = {
 				small = GFX_idea_advisor_RGC_Rita_Skamandros
 			}
 			army = {
-				large = GFX_Portrait_RGC_Rita_Skamandros
+				large = GFX_Portrait_RGC_Rita_Skamandros_military
 				small = GFX_idea_advisor_RGC_Rita_Skamandros
 			}
 		}
@@ -105,6 +136,28 @@ characters = {
 			traits = { BRA_head_of_political_police }
 			expire = "1965.1.1.1"
 			id = -1
+		}
+		advisor = {
+			slot = theorist
+			idea_token = RGC_Rita_Skamandros
+			allowed = { original_tag = RGC }
+			available = {
+				is_country_leader = no
+			}
+			cost = 150
+			traits = { superior_firepower_expert }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		field_marshal = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
 		}
 	}
 
@@ -124,6 +177,15 @@ characters = {
 			expire = "1965.1.1.1"
 			id = -1
 		}
+		field_marshal = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
 	}
 
 	RGC_Wesley_Willington = {
@@ -141,6 +203,15 @@ characters = {
 			traits = { iron_duke }
 			expire = "1965.1.1.1"
 			id = -1
+		}
+		field_marshal = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
 		}
 	}
 
@@ -194,9 +265,246 @@ characters = {
 				small = GFX_idea_advisor_RGC_Tracy
 			}
 			army = {
-				large = GFX_Portrait_RGC_Tracy
+				large = GFX_Portrait_RGC_Tracy_military
 				small = GFX_idea_advisor_RGC_Tracy
 			}
+		}
+		country_leader = {
+			ideology = individual_dictatorship_subtype
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		field_marshal = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+	
+	RGC_Assam = {
+		name = Assam
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_RGC_Assam
+				small = GFX_idea_advisor_RGC_Assam
+			}
+			army = {
+				large = GFX_Portrait_RGC_Assam
+				small = GFX_idea_advisor_RGC_Assam
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+	
+	RGC_Orange_Pekoe = {
+		name = Orange_Pekoe
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_RGC_Orange_Pekoe
+				small = GFX_idea_advisor_RGC_Orange_Pekoe
+			}
+			army = {
+				large = GFX_Portrait_RGC_Orange_Pekoe
+				small = GFX_idea_advisor_RGC_Orange_Pekoe
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = RGC_Orange_Pekoe
+			allowed = { original_tag = RGC }
+			available = {
+				
+			}
+			cost = 100
+			traits = { army_chief_planning_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	RGC_Plunket = {
+		name = Plunket
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_RGC_Plunket
+				small = GFX_idea_advisor_RGC_Plunket
+			}
+			army = {
+				large = GFX_Portrait_RGC_Plunket
+				small = GFX_idea_advisor_RGC_Plunket
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = RGC_Plunket
+			allowed = { original_tag = RGC }
+			available = {
+				
+			}
+			cost = 150
+			traits = { army_chief_morale_3 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+	
+	RGC_Ahdemoni = {
+		name = Ahdemoni
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_RGC_Ahdemoni
+				small = GFX_idea_advisor_RGC_Ahdemoni
+			}
+			army = {
+				large = GFX_Portrait_RGC_Ahdemoni
+				small = GFX_idea_advisor_RGC_Ahdemoni
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = RGC_Ahdemoni
+			allowed = { original_tag = RGC }
+			available = {
+				
+			}
+			cost = 150
+			traits = { SWI_intelligence_officer }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	RGC_Rosehip = {
+		name = Rosehip
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_RGC_Rosehip
+				small = GFX_idea_advisor_RGC_Rosehip
+			}
+			army = {
+				large = GFX_Portrait_RGC_Rosehip
+				small = GFX_idea_advisor_RGC_Rosehip
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = RGC_Rosehip
+			allowed = { original_tag = RGC }
+			available = {
+				
+			}
+			cost = 150
+			traits = { grand_battle_plan_expert }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	RGC_Anne_Wellesley = {
+		name = Anne_Wellesley
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_RGC_Anne_Wellesley
+				small = GFX_idea_advisor_RGC_Anne_Wellesley
+			}
+			army = {
+				large = GFX_Portrait_RGC_Anne_Wellesley
+				small = GFX_idea_advisor_RGC_Anne_Wellesley
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = RGC_Anne_Wellesley
+			allowed = { original_tag = RGC }
+			available = {
+				
+			}
+			cost = 150
+			traits = { army_infantry_3 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		field_marshal = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+	
+	RGC_Loughshinny_Dublinn = {
+		name = Loughshinny_Dublinn
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_RGC_Loughshinny_Dublinn
+				small = GFX_idea_advisor_RGC_Loughshinny_Dublinn
+			}
+			army = {
+				large = GFX_Portrait_RGC_Loughshinny_Dublinn_military
+				small = GFX_idea_advisor_RGC_Loughshinny_Dublinn
+			}
+		}
+	}
+	
+	RGC_Eblana_Dublinn = {
+		name = Eblana_Dublinn
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_RGC_Eblana_Dublinn
+				small = GFX_idea_advisor_RGC_Eblana_Dublinn
+			}
+			army = {
+				large = GFX_Portrait_RGC_Eblana_Dublinn_military
+				small = GFX_idea_advisor_RGC_Eblana_Dublinn
+			}
+		}
+		country_leader = {
+			ideology = personalist_despotism_subtype
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		field_marshal = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
 		}
 	}
 }

@@ -1,6 +1,20 @@
-################
-#####   RGC  ######
-################
+##############
+###   RGC  ###
+##############
+
+RGC_civil_war_decision_category = {
+	icon = generic_crisis
+	picture = GFX_decision_cat_picture_RGC_fate_of_royal
+	allowed = { original_tag = RGC }
+	visible = {
+		NOT = { has_global_flag = victorian_civil_war_happen }
+		NOT = { has_global_flag = victorian_civil_war_avoid }
+	}
+
+	scripted_gui = RGC_victoria_selection_of_king_ui
+
+	priority = 100
+}
 
 RGC_fate_of_royal_decision_category = {
 	icon = eng_appeal_to_imperial_loyalists
@@ -8,6 +22,6 @@ RGC_fate_of_royal_decision_category = {
 	allowed = { original_tag = RGC }
 	visible = { has_idea = RGC_fate_of_royal }
 
-	priority = 100
+	priority = 90
 }
 

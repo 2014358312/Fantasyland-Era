@@ -293,23 +293,6 @@ debug_decisions = {
 				tech_engineers2 = 1
 				popup = no
 			}
-			if = {
-				limit = {
-					tag = ITA
-				}
-				complete_national_focus = ITA_italian_tankettes
-				complete_national_focus = ITA_self_propelled_guns
-				complete_national_focus = ITA_end_fiat_ansaldo_duopoly
-				complete_national_focus = ITA_ferrea_mole_ferreo_cuore
-			}
-			else_if = {
-				limit = {
-					tag = SOV
-				}
-				complete_national_focus = SOV_superior_war_machines
-				complete_national_focus = SOV_soviet_artillery
-				complete_national_focus = SOV_they_will_know_fear
-			}
 		}
 	}
 	add_efficiency_growth_debug = {
@@ -467,10 +450,10 @@ debug_decisions = {
 			base = 0
 		}
 	}
-	FRA_capture_operative_debug = {
+	capture_operative_debug = {
 		available = {
 			NOT = {
-				TAG = FRA
+				TAG = LAN
 			}
 			num_of_operatives > 0
 		}
@@ -487,34 +470,8 @@ debug_decisions = {
 					is_operative_captured = no
 				}
 				capture_operative = {
-					captured_by = FRA
+					captured_by = LAN
 				}
-			}
-		}
-		ai_will_do = {
-			base = 0
-		}
-	}
-	harm_operative_debug = {
-		available = {
-			#num_of_operatives > 0
-		}
-		visible = {
-			is_ai = no
-			is_debug = yes
-			has_global_flag = show_debug_decisions_flag
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			if = {
-				limit = {
-					has_game_rule = {
-						rule = SWE_ai_behavior
-						option = SWE_DEMOCRATIC_DEM_ALT
-					}
-				}
-				add_political_power = 1000
 			}
 		}
 		ai_will_do = {
@@ -676,6 +633,56 @@ east_continent_debug_decisions = {
 			country_event = white_civil_war.1
 		}
 	}
+	debug_release_tara_decision = {
+		allowed = {
+			always = yes
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			NOT = { country_exists = TAR }
+			hidden_trigger = {
+				NOT = {
+					has_global_flag = victorian_civil_war_happen
+					has_global_flag = victorian_civil_war_avoid
+				}
+			}
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision debug_release_tara_decision"
+			every_state = {
+				limit = { is_core_of = TAR }
+				set_demilitarized_zone = no
+				TAR = { transfer_state = PREV }
+			}
+		}
+	}
+	debug_release_katzdale_decision = {
+		allowed = {
+			always = yes
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			NOT = { country_exists = KDE }
+			hidden_trigger = {
+				NOT = {
+					has_global_flag = victorian_civil_war_happen
+					has_global_flag = victorian_civil_war_avoid
+				}
+			}
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision debug_release_katzdale_decision"
+			every_state = {
+				limit = { is_core_of = KDE }
+				set_demilitarized_zone = no
+				KDE = { transfer_state = PREV }
+			}
+		}
+	}
 }
 
 northwest_continent_debug_decisions = {
@@ -727,21 +734,14 @@ northwest_continent_debug_decisions = {
 						}
 						add_core_of = FON
 					}
-					if = {
-						limit = {
-							NOT = {
-								is_controlled_by = FON
-							}
-						}
-						FON = {
-							transfer_state = PREV
-						}
+					FON = {
+						transfer_state = PREV
 					}
 				}
 			}
 		}
 	}
-	debug_release_Belzec_decision = {
+	debug_release_belzec_decision = {
 		allowed = {
 			always = yes
 		}
@@ -754,6 +754,7 @@ northwest_continent_debug_decisions = {
 			}
 		}
 		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision debug_release_belzec_decision"
 			every_state = {
 				limit = {
 					OR = {
@@ -774,7 +775,7 @@ northwest_continent_debug_decisions = {
 				}
 				effect_tooltip = {
 					add_core_of = BEL
-					FON = {
+					BEL = {
 						transfer_state = PREV
 					}
 				}
@@ -787,30 +788,34 @@ northwest_continent_debug_decisions = {
 						}
 						add_core_of = BEL
 					}
-					if = {
-						limit = {
-							NOT = {
-								is_controlled_by = BEL
-							}
-						}
-						BEL = {
-							transfer_state = PREV
-						}
+					BEL = {
+						transfer_state = PREV
 					}
 				}
 			}
-			set_nationality = {
-				target_country = BEL
-				character = TIA_Aqua
+			every_country = {
+				limit = { has_character = TIA_Aqua }
+				TIA_Aqua = { set_nationality = BEL }
 			}
-			add_country_leader_role = {
-				character = TIA_Aqua
-				promote_leader = yes
-				country_leader = {
-					ideology = despotism
-					expire = "1965.1.1.1"
-					traits = {
-						Water_Goddess_Aqua
+			hidden_effect = {
+				every_country = {
+					limit = { has_character = TIA_Aqua }
+					if = {
+						limit = { NOT = { has_government = neutrality } }
+						set_politics = {
+							ruling_party = neutrality
+						}
+					}
+					add_country_leader_role = {
+						character = TIA_Aqua
+						country_leader = {
+							ideology = neutrality_subtype
+							expire = "1965.1.1.1"
+							traits = {
+								Water_Goddess_Aqua
+							}
+						}
+						promote_leader = yes
 					}
 				}
 			}
@@ -828,6 +833,7 @@ northwest_continent_debug_decisions = {
 			country_exists = FON
 		}
 		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision debug_fon_bel_war_sprit"
 			FON = {
 				add_ideas = Water_Goddness_civil_war_fon
 			}

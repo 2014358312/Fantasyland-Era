@@ -1,0 +1,69 @@
+on_actions = {
+	on_daily_RGC = {
+		effect = {
+			if = {
+				limit = { has_active_mission = RGC_civil_war_mission }
+				if = {
+					limit = { check_variable = { RGC_duke_aggressiveness > 66 } }
+					add_days_mission_timeout = {
+						mission = RGC_civil_war_mission
+						days = -3
+					}
+				}
+				else_if = {
+					limit = { check_variable = { RGC_duke_aggressiveness > 33 } }
+					add_days_mission_timeout = {
+						mission = RGC_civil_war_mission
+						days = -2
+					}
+				}
+				else_if = {
+					add_days_mission_timeout = {
+						mission = RGC_civil_war_mission
+						days = -1
+					}
+				}
+				if = {
+					limit = { check_variable = { RGC_tara_aggressiveness > 66 } }
+					add_days_mission_timeout = {
+						mission = RGC_civil_war_mission
+						days = -3
+					}
+				}
+				else_if = {
+					limit = { check_variable = { RGC_tara_aggressiveness > 33 } }
+					add_days_mission_timeout = {
+						mission = RGC_civil_war_mission
+						days = -2
+					}
+				}
+				else_if = {
+					add_days_mission_timeout = {
+						mission = RGC_civil_war_mission
+						days = -1
+					}
+				}
+				if = {
+					limit = { check_variable = { RGC_sarkaz_aggressiveness > 66 } }
+					add_days_mission_timeout = {
+						mission = RGC_civil_war_mission
+						days = -3
+					}
+				}
+				else_if = {
+					limit = { check_variable = { RGC_sarkaz_aggressiveness > 33 } }
+					add_days_mission_timeout = {
+						mission = RGC_civil_war_mission
+						days = -2
+					}
+				}
+				else_if = {
+					add_days_mission_timeout = {
+						mission = RGC_civil_war_mission
+						days = -1
+					}
+				}
+			}
+		}
+	}
+}

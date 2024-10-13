@@ -4,6 +4,7 @@
 
 add_namespace = victoria
 
+# we choose Alexandrina as our new era king
 country_event = {
 	id = victoria.1
 	title = victoria.1.t
@@ -11,12 +12,28 @@ country_event = {
 	picture = GFX_report_event_generic_read_write
 
 	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_ideas = RGC_king_alexandrina
+			remove_mission = RGC_choice_of_delphine_mission
+		}
+	}
 
 	option = {
 		name = generic.1.a
+		effect_tooltip = {
+			add_ideas = RGC_king_alexandrina
+			remove_mission = RGC_choice_of_delphine_mission
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.10
+		}
 	}
 }
 
+# we choose Theresia as our new era king
 country_event = {
 	id = victoria.2
 	title = victoria.2.t
@@ -24,12 +41,32 @@ country_event = {
 	picture = GFX_report_event_generic_read_write
 
 	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_ideas = RGC_king_theresia
+			remove_mission = RGC_choice_of_delphine_mission
+		}
+	}
 
 	option = {
 		name = generic.2.a
+		effect_tooltip = {
+			add_ideas = RGC_king_theresia
+			remove_mission = RGC_choice_of_delphine_mission
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.05
+		}
 	}
 }
 
+# we choose Tracy as our new era king
 country_event = {
 	id = victoria.3
 	title = victoria.3.t
@@ -37,8 +74,147 @@ country_event = {
 	picture = GFX_report_event_generic_read_write
 
 	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_ideas = RGC_king_tracy
+			remove_mission = RGC_choice_of_delphine_mission
+		}
+	}
 
 	option = {
-		name = generic.3.a
+		name = generic.2.a
+		effect_tooltip = {
+			add_ideas = RGC_king_tracy
+			remove_mission = RGC_choice_of_delphine_mission
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.10
+		}
+	}
+}
+
+# we choose Loughshinny as our new era king
+country_event = {
+	id = victoria.4
+	title = victoria.4.t
+	desc = victoria.4.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_ideas = RGC_king_loughshinny
+			remove_mission = RGC_choice_of_delphine_mission
+		}
+	}
+
+	option = {
+		name = generic.2.a
+		effect_tooltip = {
+			add_ideas = RGC_king_loughshinny
+			remove_mission = RGC_choice_of_delphine_mission
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.02
+		}
+	}
+}
+
+# we choose to keep absolute republic
+country_event = {
+	id = victoria.5
+	title = victoria.5.t
+	desc = victoria.5.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = generic.5.a
+	}
+}
+
+# civil war comes
+country_event = {
+	id = victoria.6
+	title = victoria.6.t
+	desc = victoria.6.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+
+	option = {
+		name = generic.5.a
+		#same as victoria.6.a
+	}
+
+	option = {
+		name = generic.5.b
+		#same as victoria.7.a
+	}
+
+	option = {
+		name = generic.5.c
+		#same as victoria.8.a
+	}
+}
+
+# civil war comes - duke
+country_event = {
+	id = victoria.7
+	title = victoria.7.t
+	desc = victoria.7.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = generic.7.a
+	}
+}
+
+# civil war comes - tara
+country_event = {
+	id = victoria.8
+	title = victoria.8.t
+	desc = victoria.8.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = generic.8.a
+	}
+}
+
+# civil war comes - sarkaz
+country_event = {
+	id = victoria.9
+	title = victoria.9.t
+	desc = victoria.9.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = generic.9.a
 	}
 }

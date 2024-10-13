@@ -28,8 +28,12 @@ add_ideas = {
 
 every_controlled_state = {
 	limit = {
-		is_capital = no
-		NOT = { any_neighbor_state = { is_capital = yes } }
+		OR = {
+			is_core_of = KDE
+			is_core_of = TAR
+			any_neighbor_state = { is_controlled_by = WDM }
+			any_neighbor_state = { is_controlled_by = WGN }
+		}
 	}
 	set_demilitarized_zone = yes
 }
@@ -86,14 +90,23 @@ if = {
 
 activate_mission = RGC_choice_of_delphine_mission
 
+set_variable = { RGC_duke_aggressiveness = 16 }
+set_variable = { RGC_tara_aggressiveness = 24 }
+set_variable = { RGC_sarkaz_aggressiveness = 33 }
+activate_mission = RGC_civil_war_mission
+
 recruit_character = RGC_Darjeeling
 recruit_character = RGC_Delphine_Windermere
 recruit_character = RGC_Heidi_Thomson
 recruit_character = RGC_Rita_Skamandros
 recruit_character = RGC_Violet_Evergarden
 recruit_character = RGC_Alexandrina_Vina_Victoria
-recruit_character = RGC_Theresia
-recruit_character = RGC_Tracy
+recruit_character = RGC_Assam
+recruit_character = RGC_Orange_Pekoe
+recruit_character = RGC_Plunket
+recruit_character = RGC_Rosehip
+recruit_character = RGC_Anne_Wellesley
+recruit_character = RGC_Loughshinny_Dublinn
 
 
 set_politics = {

@@ -1,3 +1,97 @@
+RGC_civil_war_decision_category = {
+	RGC_choose_republic_side = {
+		icon = generic_decision
+		allowed = {
+			original_tag = RGC
+		}
+		available = {
+			NOT = { check_variable = { RGC_civil_war_side = 0 } }
+		}
+		cost = 0
+		days_re_enable = 1
+		fire_only_once = no
+		complete_effect = {
+			set_variable = { RGC_civil_war_side = 0 }
+		}
+	}
+	
+	RGC_choose_duke_side = {
+		icon = generic_decision
+		allowed = {
+			original_tag = RGC
+		}
+		available = {
+			NOT = { check_variable = { RGC_civil_war_side = 1 } }
+		}
+		cost = 0
+		days_re_enable = 1
+		fire_only_once = no
+		complete_effect = {
+			set_variable = { RGC_civil_war_side = 1 }
+		}
+	}
+	
+	RGC_choose_tara_side = {
+		icon = generic_decision
+		allowed = {
+			original_tag = RGC
+		}
+		available = {
+			NOT = { check_variable = { RGC_civil_war_side = 2 } }
+		}
+		cost = 0
+		days_re_enable = 1
+		fire_only_once = no
+		complete_effect = {
+			set_variable = { RGC_civil_war_side = 2 }
+		}
+	}
+	
+	RGC_choose_sarkaz_side = {
+		icon = generic_decision
+		allowed = {
+			original_tag = RGC
+		}
+		available = {
+			NOT = { check_variable = { RGC_civil_war_side = 3 } }
+		}
+		cost = 0
+		days_re_enable = 1
+		fire_only_once = no
+		complete_effect = {
+			set_variable = { RGC_civil_war_side = 3 }
+		}
+	}
+	
+	RGC_civil_war_mission = {
+		icon = generic_ignite_civil_war
+		allowed = { tag = RGC }
+		available = {
+			hidden_trigger = {
+				OR = {
+					has_global_flag = victorian_civil_war_happen
+					has_global_flag = victorian_civil_war_avoid
+				}
+			}
+		}
+		days_mission_timeout = 540
+		is_good = no
+		fire_only_once = yes
+		activation = { always = no }
+		complete_effect = {
+			custom_effect_tooltip = RGC_civil_war_mission_tt
+		}
+		timeout_effect = {
+			country_event = victoria.5
+			remove_ideas = RGC_emergency_state
+			remove_ideas = RGC_brink_of_civil_war
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}
+
 RGC_fate_of_royal_decision_category = {
 	RGC_choice_of_delphine_mission = {
 		icon = eng_install_government
@@ -8,20 +102,37 @@ RGC_fate_of_royal_decision_category = {
 				always = yes
 			}
 			has_idea = RGC_fate_of_royal
+			hidden_trigger = {
+				NOT = { has_country_flag = RGC_fate_of_royal_decided_flag }
+			}
 		}
 		days_mission_timeout = 90
 		selectable_mission = yes
+		cost = 25
 		is_good = no
 		fire_only_once = yes
 		activation = { always = no }
 		complete_effect = {
 			custom_effect_tooltip = RGC_choice_of_delphine_tt
 			add_political_power = 25
+			country_event = victoria.5
 			remove_ideas = RGC_fate_of_royal
 		}
 		timeout_effect = {
-			custom_effect_tooltip = RGC_choice_of_delphine_tt2
+			if = {
+				limit = { has_country_flag = RGC_fate_of_royal_decided_flag }
+				custom_effect_tooltip = RGC_choice_of_delphine_tt2
+			}
+			else = { custom_effect_tooltip = RGC_choice_of_delphine_tt3 }
+			if = {
+				limit = {
+					NOT = { has_completed_focus = RGC_republic_forever }
+				}
+				complete_national_focus = RGC_republic_forever
+			}
+			country_event = victoria.5
 			add_political_power = -25
+			remove_ideas = RGC_fate_of_royal
 		}
 		ai_will_do = {
 			factor = 200
@@ -47,17 +158,57 @@ RGC_fate_of_royal_decision_category = {
 			has_idea = RGC_fate_of_royal
 			has_active_mission = RGC_choice_of_delphine_mission
 			check_variable = {
-				days_mission_timeout@EYP_hundred_day_crisis_mission > 7
+				days_mission_timeout@RGC_choice_of_delphine_mission > 7
 			}
 		}
 		cost = 25
 		days_remove = 7
 		fire_only_once = yes
 		complete_effect = {
+			set_country_flag = RGC_fate_of_royal_decided_flag
+		}
+		remove_effect = {
 			custom_effect_tooltip = RGC_delphine_choose_victoria_tt
 			country_event = victoria.1
 			remove_ideas = RGC_fate_of_royal
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	RGC_delphine_choose_loughshinny = {
+		icon = eng_abdication_crisis
+		allowed = {
+			original_tag = RGC
+		}
+		visible = {
+			NOT = {
+				has_country_flag = RGC_fate_of_royal_decided_flag
+				focus_progress = {
+					focus = RGC_republic_forever
+					progress > 0
+				}
+				has_completed_focus = RGC_republic_forever
+			}
+		}
+		available = {
+			has_idea = RGC_fate_of_royal
+			has_active_mission = RGC_choice_of_delphine_mission
+			check_variable = {
+				days_mission_timeout@RGC_choice_of_delphine_mission > 7
+			}
+		}
+		cost = 25
+		days_remove = 7
+		fire_only_once = yes
+		complete_effect = {
 			set_country_flag = RGC_fate_of_royal_decided_flag
+		}
+		remove_effect = {
+			custom_effect_tooltip = RGC_delphine_choose_loughshinny_tt
+			country_event = victoria.4
+			remove_ideas = RGC_fate_of_royal
 		}
 		ai_will_do = {
 			factor = 200
@@ -72,23 +223,30 @@ RGC_fate_of_royal_decision_category = {
 		visible = {
 			NOT = {
 				has_country_flag = RGC_fate_of_royal_decided_flag
+				focus_progress = {
+					focus = RGC_republic_forever
+					progress > 0
+				}
+				has_completed_focus = RGC_republic_forever
 			}
 		}
 		available = {
 			has_idea = RGC_fate_of_royal
 			has_active_mission = RGC_choice_of_delphine_mission
 			check_variable = {
-				days_mission_timeout@EYP_hundred_day_crisis_mission > 7
+				days_mission_timeout@RGC_choice_of_delphine_mission > 7
 			}
 		}
 		cost = 25
 		days_remove = 7
 		fire_only_once = yes
 		complete_effect = {
+			set_country_flag = RGC_fate_of_royal_decided_flag
+		}
+		remove_effect = {
 			custom_effect_tooltip = RGC_delphine_choose_theresia_tt
 			country_event = victoria.2
 			remove_ideas = RGC_fate_of_royal
-			set_country_flag = RGC_fate_of_royal_decided_flag
 		}
 		ai_will_do = {
 			factor = 200
@@ -103,23 +261,30 @@ RGC_fate_of_royal_decision_category = {
 		visible = {
 			NOT = {
 				has_country_flag = RGC_fate_of_royal_decided_flag
+				focus_progress = {
+					focus = RGC_republic_forever
+					progress > 0
+				}
+				has_completed_focus = RGC_republic_forever
 			}
 		}
 		available = {
 			has_idea = RGC_fate_of_royal
 			has_active_mission = RGC_choice_of_delphine_mission
 			check_variable = {
-				days_mission_timeout@EYP_hundred_day_crisis_mission > 7
+				days_mission_timeout@RGC_choice_of_delphine_mission > 7
 			}
 		}
 		cost = 25
 		days_remove = 7
 		fire_only_once = yes
 		complete_effect = {
+			set_country_flag = RGC_fate_of_royal_decided_flag
+		}
+		remove_effect = {
 			custom_effect_tooltip = RGC_delphine_choose_tracy_tt
 			country_event = victoria.3
 			remove_ideas = RGC_fate_of_royal
-			set_country_flag = RGC_fate_of_royal_decided_flag
 		}
 		ai_will_do = {
 			factor = 200
