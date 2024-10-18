@@ -43,18 +43,28 @@ on_actions = {
 			}
 			############
 			every_state = {
-				limit = { is_core_of = var:THIS.controller }
+				limit = {
+					is_core_of = var:THIS.controller
+				}
 				cancel_resistance = yes
 			}
 			############
 			every_country = {
 				if = {
-					limit = { has_tech = advanced_infantry_weapons }
-					set_variable = { infantry_equipment_level_var = 4 }
+					limit = {
+						has_tech = advanced_infantry_weapons
+					}
+					set_variable = {
+						infantry_equipment_level_var = 4
+					}
 				}
 				else_if = {
-					limit = { has_tech = improved_infantry_weapons }
-					set_variable = { infantry_equipment_level_var = 3 }
+					limit = {
+						has_tech = improved_infantry_weapons
+					}
+					set_variable = {
+						infantry_equipment_level_var = 3
+					}
 				}
 				else_if = {
 					limit = {
@@ -63,19 +73,29 @@ on_actions = {
 							has_tech = magic_infantry_weapons1
 						}
 					}
-					set_variable = { infantry_equipment_level_var = 2 }
+					set_variable = {
+						infantry_equipment_level_var = 2
+					}
 				}
 				else_if = {
-					limit = { has_tech = infantry_weapons }
-					set_variable = { infantry_equipment_level_var = 1 }
+					limit = {
+						has_tech = infantry_weapons
+					}
+					set_variable = {
+						infantry_equipment_level_var = 1
+					}
 				}
 			}
 			############
 			if = {
-				limit = { has_start_date > 1000.01.01 }
+				limit = {
+					has_start_date > 1000.01.01
+				}
 				every_country = {
 					if = {
-						limit = { has_country_flag = ROOT_has_land_combat_unit_flag }
+						limit = {
+							has_country_flag = ROOT_has_land_combat_unit_flag
+						}
 						meta_effect = {
 							text = {
 								load_oob = "[TAG]_1000_nsb"
@@ -84,7 +104,9 @@ on_actions = {
 						}
 					}
 					if = {
-						limit = { has_country_flag = ROOT_has_naval_combat_unit_flag }
+						limit = {
+							has_country_flag = ROOT_has_naval_combat_unit_flag
+						}
 						meta_effect = {
 							text = {
 								load_oob = "[TAG]_1000_naval_mtg"
@@ -93,7 +115,9 @@ on_actions = {
 						}
 					}
 					if = {
-						limit = { has_country_flag = ROOT_has_air_combat_unit_flag }
+						limit = {
+							has_country_flag = ROOT_has_air_combat_unit_flag
+						}
 						meta_effect = {
 							text = {
 								load_oob = "[TAG]_1000_air_bba"
@@ -105,24 +129,31 @@ on_actions = {
 			}
 			every_country = {
 				if = {
-					limit = { has_country_flag = ROOT_has_land_combat_unit_flag }
+					limit = {
+						has_country_flag = ROOT_has_land_combat_unit_flag
+					}
 					clr_country_flag = ROOT_has_land_combat_unit_flag
 				}
 				if = {
-					limit = { has_country_flag = ROOT_has_naval_combat_unit_flag }
+					limit = {
+						has_country_flag = ROOT_has_naval_combat_unit_flag
+					}
 					clr_country_flag = ROOT_has_naval_combat_unit_flag
 				}
 				if = {
-					limit = { has_country_flag = ROOT_has_air_combat_unit_flag }
+					limit = {
+						has_country_flag = ROOT_has_air_combat_unit_flag
+					}
 					clr_country_flag = ROOT_has_air_combat_unit_flag
 				}
 			}
 			############
-			every_country = {
+			every_possible_country = {
 				limit = {
 					OR = {
 						tag = HBG
 						tag = ANA
+						tag = MDK
 					}
 				}
 				set_country_flag = unknown_country_flag
@@ -130,29 +161,50 @@ on_actions = {
 			############
 			every_country = {
 				limit = {
-					NOT = { has_country_flag = unknown_country_flag }
-					has_army_size = { size < 1 }		#calculate number of division in the army
+					NOT = {
+						has_country_flag = unknown_country_flag
+					}
+					has_army_size = {
+						size < 1
+					}
+					#calculate number of division in the army
 					#has_army_manpower = { size < 1 }	#calculate number of serving in the army
 				}
 				create_temp_army = yes
 			}
 			############
 			every_country = {
-				limit = { NOT = { tag = UMA } }
-				set_technology = { cavalry_tech = 1 popup = no }
+				limit = {
+					NOT = {
+						tag = UMA
+					}
+				}
+				set_technology = {
+					cavalry_tech = 1
+					popup = no
+				}
 			}
 			############
-			SMA = { initialize_san_magnolia_party_long_name = yes }
-			LAN = { initialize_landsol_party_long_name = yes }
+			SMA = {
+				initialize_san_magnolia_party_long_name = yes
+			}
+			LAN = {
+				initialize_landsol_party_long_name = yes
+			}
 			############
 		}
 	}
-	
 	on_state_control_changed = {
 		effect = {
 			if = {
-				limit = { FROM.FROM = { is_core_of = ROOT } }
-				FROM.FROM = { cancel_resistance = yes }
+				limit = {
+					FROM.FROM = {
+						is_core_of = ROOT
+					}
+				}
+				FROM.FROM = {
+					cancel_resistance = yes
+				}
 			}
 		}
 	}
