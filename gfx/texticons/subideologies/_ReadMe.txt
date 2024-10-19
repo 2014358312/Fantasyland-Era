@@ -1,0 +1,2 @@
+1.确保图片大小为315px*92px。
+3.本地化参照00_FE_parties_l_simp_chinese.yml中的militarism_subtype_desc词条，不用管两边的\n数量，全部复制后直接替换GFX即可。
