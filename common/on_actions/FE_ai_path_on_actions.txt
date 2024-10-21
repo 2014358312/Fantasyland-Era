@@ -1,0 +1,78 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			RGC = {
+				if = {
+					limit = {
+						OR = {
+							AND = {
+								is_historical_focus_on = no
+								has_game_rule = {
+									rule = RGC_ai_election_of_king_behavior
+									option = DEFAULT
+								}
+							}
+							has_game_rule = {
+								rule = RGC_ai_election_of_king_behavior
+								option = RANDOM
+							}
+						}
+					}
+					random_list = {
+						20 = { set_country_flag = RGC_AI_RANDOM_VICTORIA }
+						20 = { set_country_flag = RGC_AI_RANDOM_DUBLINN }
+						20 = { set_country_flag = RGC_AI_RANDOM_THERESIA }
+						20 = { set_country_flag = RGC_AI_RANDOM_TRACY }
+						20 = { set_country_flag = RGC_AI_RANDOM_WINDERMERE }
+					}
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = RGC_ai_election_of_king_behavior
+							option = ALEXANDRINA_VINA_VICTORIA
+						}
+					}
+					set_country_flag = RGC_AI_OPTION_VICTORIA
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = RGC_ai_election_of_king_behavior
+							option = LOUGHSHINNY_DUBLINN
+						}
+					}
+					set_country_flag = RGC_AI_OPTION_DUBLINN
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = RGC_ai_election_of_king_behavior
+							option = THERESIA
+						}
+					}
+					set_country_flag = RGC_AI_OPTION_THERESIA
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = RGC_ai_election_of_king_behavior
+							option = TRACY
+						}
+					}
+					set_country_flag = RGC_AI_OPTION_TRACY
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = RGC_ai_election_of_king_behavior
+							option = DELPHINE_WINDERMERE
+						}
+					}
+					set_country_flag = RGC_AI_OPTION_WINDERMERE
+				}
+				else = { set_country_flag = RGC_AI_OPTION_VICTORIA }
+			}
+		}
+	}
+}

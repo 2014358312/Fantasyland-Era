@@ -128,7 +128,30 @@ RGC_fate_of_royal_decision_category = {
 			remove_ideas = RGC_fate_of_royal
 		}
 		ai_will_do = {
-			factor = 200
+			base = 0
+			modifier = {
+				add = 25
+				OR = {
+					has_country_flag = RGC_AI_OPTION_WINDERMERE
+					has_country_flag = RGC_AI_RANDOM_WINDERMERE
+				}
+				has_political_power > 24
+			}
+			modifier = {
+				add = 25
+				OR = {
+					has_country_flag = RGC_AI_OPTION_WINDERMERE
+					has_country_flag = RGC_AI_RANDOM_WINDERMERE
+				}
+				check_variable = { days_mission_timeout@RGC_choice_of_delphine_mission < 50 }
+			}
+			modifier = {
+				add = 50
+				OR = {
+					has_country_flag = RGC_AI_OPTION_WINDERMERE
+					has_country_flag = RGC_AI_RANDOM_WINDERMERE
+				}
+			}
 		}
 	}
 	
@@ -164,7 +187,14 @@ RGC_fate_of_royal_decision_category = {
 			remove_ideas = RGC_fate_of_royal
 		}
 		ai_will_do = {
-			factor = 200
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_country_flag = RGC_AI_OPTION_VICTORIA
+					has_country_flag = RGC_AI_RANDOM_VICTORIA
+				}
+			}
 		}
 	}
 	
@@ -207,7 +237,14 @@ RGC_fate_of_royal_decision_category = {
 			remove_ideas = RGC_fate_of_royal
 		}
 		ai_will_do = {
-			factor = 200
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_country_flag = RGC_AI_OPTION_DUBLINN
+					has_country_flag = RGC_AI_RANDOM_DUBLINN
+				}
+			}
 		}
 	}
 	
@@ -250,7 +287,14 @@ RGC_fate_of_royal_decision_category = {
 			remove_ideas = RGC_fate_of_royal
 		}
 		ai_will_do = {
-			factor = 200
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_country_flag = RGC_AI_OPTION_THERESIA
+					has_country_flag = RGC_AI_RANDOM_THERESIA
+				}
+			}
 		}
 	}
 	
@@ -293,7 +337,14 @@ RGC_fate_of_royal_decision_category = {
 			remove_ideas = RGC_fate_of_royal
 		}
 		ai_will_do = {
-			factor = 200
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_country_flag = RGC_AI_OPTION_TRACY
+					has_country_flag = RGC_AI_RANDOM_TRACY
+				}
+			}
 		}
 	}
 }
