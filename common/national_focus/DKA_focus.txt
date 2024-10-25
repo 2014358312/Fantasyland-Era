@@ -316,9 +316,37 @@ focus = {
 	focus = {
 		id = DKA_Dealing_with_opposition_parties
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
-		prerequisite = { focus =DKA_Rearmament }
-		relative_position_id = DKA_Rearmament
-		x = -3
+		prerequisite = { focus =DKA_Establish_a_Political_Bureau }
+		relative_position_id = DKA_Establish_a_Political_Bureau
+		x = -2
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+			}
+		available = {
+			}
+			bypass = {
+			}
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
+		complete_tooltip = {
+			}
+		completion_reward = {
+			add_war_support =0.1
+		}
+	}
+	###提拔元老
+	focus = {
+		id = DKA_Promote_elders
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus =DKA_Establish_a_Political_Bureau }
+		relative_position_id = DKA_Establish_a_Political_Bureau
+		x = 0
 		y = 1
 		cost = 10
 
@@ -374,8 +402,8 @@ focus = {
 	focus = {
 		id = DKA_Establish_a_Military_Committee
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
-		prerequisite = { focus =DKA_Rearmament }
-		relative_position_id = DKA_Rearmament
+		prerequisite = { focus =DKA_Motivational_spirit }
+		relative_position_id = DKA_Motivational_spirit
 		x = 0
 		y = 1
 		cost = 10
@@ -1037,6 +1065,33 @@ focus = {
 				x = 0
 				y = 1
 				relative_position_id =DKA_Declare_allegiance_to_Ariel
+			
+				cost = 6
+			
+				ai_will_do = {
+				   factor = 1
+			   }
+			
+				available = {
+			   }
+			
+				bypass = {
+			
+			   }
+			
+				completion_reward = {
+				   add_war_support = 0.1
+				   army_experience =20
+				   add_timed_idea = { idea =Rearmament days = 150 }
+			   }
+			   }
+	##激励精神	   
+			   focus = {
+				id = DKA_Motivational_spirit
+				prerequisite = { focus = DKA_Rearmament }
+				x = 0
+				y = 1
+				relative_position_id = DKA_Rearmament
 			
 				cost = 6
 			
