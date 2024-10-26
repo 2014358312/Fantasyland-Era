@@ -74,7 +74,7 @@ focus = {
 	search_filters = { FOCUS_FILTER_POLITICAL }
 	completion_reward = {
 		add_political_power =150
-		news_event = { id =  DKA.The_Longest_Night_1 }
+		news_event = { id =DKA.1 }
 
 	}
 }
@@ -438,7 +438,7 @@ focus = {
 		prerequisite = { focus =DKA_Suppressing_Resistance_demi-human }
 		relative_position_id = DKA_Rearmament
 		x = -2.5
-		y = 2
+		y = 9
 		cost = 10
 
 		ai_will_do = {
@@ -1111,7 +1111,7 @@ focus = {
 				completion_reward = {
 				   add_war_support = 0.1
 				   army_experience =20
-				   news_event = { id=DKA.A_speech_2 }
+				   news_event = { id= DKA.2}
 
 			   }
 	  }
@@ -1119,7 +1119,8 @@ focus = {
 	    focus= {
 		id = DKA_Persist_in_prioritizing_strength
 		prerequisite = { focus = DKA_Establish_a_Military_Committee }
-		x = 0
+		mutually_exclusive = { focus =DKA_Change_mindset}
+		x = -1
 		y = 1
 		relative_position_id =DKA_Establish_a_Military_Committee
 	
@@ -1139,10 +1140,193 @@ focus = {
 		completion_reward = {
 		   add_war_support = 0.1
 		   army_experience =20
-		   news_event = { id = DKA.A_speech }
-
 	   }
 	   }
+	   ##转变思路
+	   focus= {
+		id = DKA_Change_mindset
+		prerequisite = { focus = DKA_Establish_a_Military_Committee }
+		mutually_exclusive = { focus =DKA_Persist_in_prioritizing_strength}
+		x = 1
+		y = 1
+		relative_position_id =DKA_Establish_a_Military_Committee
+	
+		cost = 6
+	
+		ai_will_do = {
+		   factor = 1
+	   }
+	
+		available = {
+	   }
+	
+		bypass = {
+	
+	   }
+	
+		completion_reward = {
+		   add_war_support = 0.1
+		   army_experience =20
+	   }
+	   }
+	   ##脑子是个好东西
+	   focus= {
+		id = DKA_The_brain_is_a_good_thing
+		prerequisite = { focus = DKA_Change_mindset }
+		x = 0
+		y = 1
+		relative_position_id =DKA_Change_mindset
+	
+		cost = 6
+	
+		ai_will_do = {
+		   factor = 1
+	   }
+	
+		available = {
+	   }
+	
+		bypass = {
+	
+	   }
+	
+		completion_reward = {
+		   add_war_support = 0.1
+		   army_experience =20
+	   }
+	   }
+	   ##解放思想
+	   focus= {
+		id = DKA_emancipate
+		prerequisite = { focus = DKA_The_brain_is_a_good_thing }
+		x = 0
+		y = 1
+		relative_position_id =DKA_The_brain_is_a_good_thing
+	
+		cost = 6
+	
+		ai_will_do = {
+		   factor = 1
+	   }
+	
+		available = {
+	   }
+	
+		bypass = {
+	
+	   }
+	
+		completion_reward = {
+		   add_war_support = 0.1
+		   army_experience =20
+	   }
+	   }
+	   ##锻炼思维
+	   focus= {
+		id = DKA_Exercise_thinking
+		prerequisite = { focus = DKA_emancipate }
+		x = 0
+		y = 1
+		relative_position_id =DKA_emancipate
+	
+		cost = 6
+	
+		ai_will_do = {
+		   factor = 1
+	   }
+	
+		available = {
+	   }
+	
+		bypass = {
+	
+	   }
+	
+		completion_reward = {
+		   add_war_support = 0.1
+		   army_experience =20
+	   }
+	   }
+	    ##成立科学院
+		focus= {
+			id = DKA_Establishment_of_the_Academy_of_Sciences
+			prerequisite = { focus = DKA_emancipate }
+			x = -1
+			y = 1
+			relative_position_id =DKA_emancipate
+		
+			cost = 6
+		
+			ai_will_do = {
+			   factor = 1
+		   }
+		
+			available = {
+		   }
+		
+			bypass = {
+		
+		   }
+		
+			completion_reward = {
+			   add_war_support = 0.1
+			   army_experience =20
+		   }
+		   }
+		   ##巧用力气
+		   focus= {
+			id = DKA_Clever_use_of_strength
+			prerequisite = { focus = DKA_emancipate }
+			mutually_exclusive = { focus = DKA_Negating_strength}
+			x = 1
+			y = 1
+			relative_position_id =DKA_emancipate
+		
+			cost = 6
+		
+			ai_will_do = {
+			   factor = 1
+		   }
+		
+			available = {
+		   }
+		
+			bypass = {
+		
+		   }
+		
+			completion_reward = {
+			   add_war_support = 0.1
+			   army_experience =20
+		   }
+		   }
+		   ##否定力气
+		   focus= {
+			id = DKA_Negating_strength
+			prerequisite = { focus = DKA_emancipate }
+			mutually_exclusive = { focus = DKA_Clever_use_of_strength}
+			x = 2
+			y = 1
+			relative_position_id =DKA_emancipate
+		
+			cost = 6
+		
+			ai_will_do = {
+			   factor = 1
+		   }
+		
+			available = {
+		   }
+		
+			bypass = {
+		
+		   }
+		
+			completion_reward = {
+			   add_war_support = 0.1
+			   army_experience =20
+		   }
+		   }
 			##向爱丽儿效忠
 			   focus = {
 				id = DKA_Declare_allegiance_to_Ariel
@@ -1211,7 +1395,7 @@ focus = {
 						prerequisite = { focus =DKA_Suppressing_Resistance_demi-human }
 						relative_position_id = DKA_Rearmament
 						x = 2
-						y = 2
+						y = 9
 						cost = 10
 				
 						ai_will_do = {
