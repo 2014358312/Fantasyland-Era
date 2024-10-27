@@ -13,4 +13,31 @@ characters = {
 			id = -1
 		}
 	}
+
+	WPE_Ilf_Snow = {
+		name = Ilf_Snow
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Ilf_Snow
+				small = GFX_idea_advisor_WPE_Ilf_Snow
+			}
+			army = {
+				large = GFX_Portrait_WPE_Ilf_Snow
+				small = GFX_idea_advisor_WPE_Ilf_Snow
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WPE_Ilf_Snow
+			allowed = {
+				original_tag = WPE
+			}
+			can_be_fired = no
+			traits = { forsvarsminister }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
 }
