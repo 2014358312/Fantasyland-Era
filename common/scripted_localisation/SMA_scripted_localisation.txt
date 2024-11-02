@@ -12,3 +12,95 @@ defined_text = {
     }
 	text = { localization_key = flower_power_trait_tt }
 }
+
+defined_text = {
+	name = GETWarSupportExpectation
+	text = {
+		trigger = {
+			NOT = { has_war_support < var:war_support_expectation_value }
+		}
+		localization_key = G_color
+	}
+	text = {
+		trigger = {
+			has_war_support < var:war_support_expectation_value
+			NOT = { has_war_support < 0.50 }
+		}
+		localization_key = O_color
+	}
+	text = {
+		trigger = {
+			has_war_support < 0.50
+		}
+		localization_key = R_color
+	}
+	text = { localization_key = Y_color }
+}
+
+defined_text = {
+	name = GETRevengeCostMethod
+	text = {
+		trigger = {
+			SMA_use_war_support_cost = yes
+		}
+		localization_key = revenge_cost_dynamic_modifier
+	}
+	text = {
+		trigger = {
+			SMA_use_political_power_cost = yes
+		}
+		localization_key = revenge_cost_political_power
+	}
+	text = { localization_key = revenge_cost_dynamic_modifier }
+}
+
+defined_text = {
+	name = GETCostWS5PP25
+	text = {
+		trigger = {
+			SMA_use_war_support_cost = yes
+		}
+		localization_key = decision_cost_WS_5
+	}
+	text = {
+		trigger = {
+			SMA_use_political_power_cost = yes
+		}
+		localization_key = decision_cost_PP_25
+	}
+	text = { localization_key = generic_null }
+}
+
+defined_text = {
+	name = GETCostWS5PP25Blocked
+	text = {
+		trigger = {
+			SMA_use_war_support_cost = yes
+		}
+		localization_key = decision_cost_WS_5_blocked
+	}
+	text = {
+		trigger = {
+			SMA_use_political_power_cost = yes
+		}
+		localization_key = decision_cost_PP_25_blocked
+	}
+	text = { localization_key = generic_null }
+}
+
+defined_text = {
+	name = GETCostWS5PP25Tooltip
+	text = {
+		trigger = {
+			SMA_use_war_support_cost = yes
+		}
+		localization_key = decision_cost_WS_5_tooltip
+	}
+	text = {
+		trigger = {
+			SMA_use_political_power_cost = yes
+		}
+		localization_key = decision_cost_PP_25_tooltip
+	}
+	text = { localization_key = generic_null }
+}

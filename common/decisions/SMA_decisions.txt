@@ -101,15 +101,197 @@ SMA_army_reform_decision_category = {
 }
 
 SMA_fascism_influence_decision_category = {
-	SMA_use_chivalry_influence = {
-		icon = generic_protection
-		allowed = {
-			original_tag = SMA
+	SMA_develop_war_support_small = {
+		icon = generic_political_rally
+		available = { has_war_support < var:war_support_expectation_value }
+		custom_cost_trigger = {
+			has_stability > 0.05
 		}
-		visible = {
-			
+		custom_cost_text = decision_cost_S_5
+		fire_only_once = no
+		days_re_enable = 30
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			hidden_effect = {
+				add_stability = -0.05
+			}
+			add_war_support = 0.05
 		}
-		available = { hidden_trigger = { always = no } }
+	}
+	
+	SMA_develop_war_support_medium = {
+		icon = generic_political_discourse
+		available = { has_war_support < var:war_support_expectation_value }
+		custom_cost_trigger = {
+			has_stability > 0.10
+		}
+		custom_cost_text = decision_cost_S_10
+		fire_only_once = no
+		days_re_enable = 60
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			hidden_effect = {
+				add_stability = -0.10
+			}
+			add_war_support = 0.10
+		}
+	}
+	
+	SMA_develop_war_support_high = {
+		icon = generic_political_address
+		available = { has_war_support < var:war_support_expectation_value }
+		custom_cost_trigger = {
+			has_stability > 0.15
+		}
+		custom_cost_text = decision_cost_S_15
+		fire_only_once = no
+		days_re_enable = 90
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			hidden_effect = {
+				add_stability = -0.15
+			}
+			add_war_support = 0.15
+		}
+	}
+	
+	SMA_government_crisis = {
+		icon = oppression
+		available = { NOT = { has_war_support < var:war_support_expectation_value } }
+		activation = {
+			has_war_support < var:war_support_expectation_value
+		}
+		fixed_random_seed = no
+		days_mission_timeout = 120
+		fire_only_once = no
+		is_good = no
+		ai_will_do = { factor = 1 }
+		timeout_effect = {
+			custom_effect_tooltip = SMA_modify_chivalric_order
+			add_to_variable = { SMA_SOR_party_popularity_stability_factor_var = -0.10 tooltip = party_popularity_stability_factor_tt }
+		}
+	}
+	
+	SMA_change_cost_method = {
+		icon = generic_consumer_goods
+		available = { always = yes }
 		cost = 0
+		fire_only_once = no
+		days_re_enable = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			if = {
+				limit = { SMA_use_war_support_cost = yes }
+				set_variable = { revenge_cost_method = 2 }
+				custom_effect_tooltip = SMA_change_cost_method_tt1
+			}
+			else_if = {
+				limit = { SMA_use_political_power_cost = yes }
+				set_variable = { revenge_cost_method = 1 }
+				custom_effect_tooltip = SMA_change_cost_method_tt2
+			}
+		}
+	}
+	
+	SMA_issues_securities = {
+		icon = eng_trade_unions_support
+		available = { has_war = no }
+		custom_cost_trigger = {
+			if = {
+				limit = { SMA_use_war_support_cost = yes }
+				NOT = { has_war_support < 0.05 }
+			}
+			else_if = {
+				limit = { SMA_use_political_power_cost = yes }
+				NOT = { has_political_power < 25 }
+			}
+			else = { always = no }
+		}
+		custom_cost_text = decision_cost_WS_5_PP_25
+		fire_only_once = no
+		days_remove = 45
+		days_re_enable = 60
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = { SMA_use_war_support_cost = yes }
+					if = {
+						limit = {
+							NOT = { check_variable = { SMA_CO_war_support_factor_var < 0.05 } }
+						}
+						subtract_from_variable = { SMA_CO_war_support_factor_var = 0.05 }
+					}
+					else = { add_war_support = -0.05 }
+				}
+				else_if = {
+					limit = { SMA_use_political_power_cost = yes }
+					add_political_power = -25
+				}
+			}
+			custom_effect_tooltip = SMA_modify_chivalric_order
+			add_to_variable = { SMA_CO_consumer_goods_factor_var = -0.10 tooltip = consumer_goods_factor_tt }
+			custom_effect_tooltip = blank_null
+		}
+		remove_effect = {
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.02
+			}
+			custom_effect_tooltip = SMA_modify_chivalric_order
+			add_to_variable = { SMA_CO_consumer_goods_factor_var = 0.05 tooltip = consumer_goods_factor_tt }
+			custom_effect_tooltip = blank_null
+		}
+	}
+	
+	SMA_expropriate_production_lines = {
+		icon = eng_trade_unions_support
+		available = { has_war = no }
+		custom_cost_trigger = {
+			if = {
+				limit = { SMA_use_war_support_cost = yes }
+				NOT = { has_war_support < 0.05 }
+			}
+			else_if = {
+				limit = { SMA_use_political_power_cost = yes }
+				NOT = { has_political_power < 25 }
+			}
+			else = { always = no }
+		}
+		custom_cost_text = decision_cost_WS_5_PP_25
+		fire_only_once = no
+		days_remove = 60
+		days_re_enable = 75
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = { SMA_use_war_support_cost = yes }
+					if = {
+						limit = {
+							NOT = { check_variable = { SMA_CO_war_support_factor_var < 0.05 } }
+						}
+						subtract_from_variable = { SMA_CO_war_support_factor_var = 0.05 }
+					}
+					else = { add_war_support = -0.05 }
+				}
+				else_if = {
+					limit = { SMA_use_political_power_cost = yes }
+					add_political_power = -25
+				}
+			}
+			custom_effect_tooltip = SMA_modify_chivalric_order
+			add_to_variable = { SMA_CO_industrial_capacity_factory_var = 0.10 tooltip = industrial_capacity_factory_tt }
+			custom_effect_tooltip = blank_null
+		}
+		remove_effect = {
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.02
+			}
+			custom_effect_tooltip = SMA_modify_chivalric_order
+			add_to_variable = { SMA_CO_industrial_capacity_factory_var = -0.05 tooltip = industrial_capacity_factory_tt }
+			custom_effect_tooltip = blank_null
+		}
 	}
 }
