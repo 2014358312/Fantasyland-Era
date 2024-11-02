@@ -1,14 +1,38 @@
 characters = {
 	AIL_Neuro_sama = {
-		name = Neuro_sama
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_AIL_Neuro_sama
-				small = GFX_idea_advisor_AIL_Neuro_sama
+		instance = {
+			allowed = { is_debug = yes }
+			name = Neuro_sama
+			portraits = {
+				civilian = {
+					large = GFX_Portrait_AIL_Neuro_sama
+					small = GFX_idea_advisor_AIL_Neuro_sama
+				}
+				army = {
+					large = GFX_Portrait_AIL_Neuro_sama
+					small = GFX_idea_advisor_AIL_Neuro_sama
+				}
 			}
-			army = {
-				large = GFX_Portrait_AIL_Neuro_sama
-				small = GFX_idea_advisor_AIL_Neuro_sama
+			country_leader = {
+				ideology = hive_mind_n_subtype
+				traits = { neuro_sama_blue }
+				desc = "POLITICS_NEURO_SAMA_DESC"
+				expire = "2200.1.1.1"
+				id = -1
+			}
+		}
+		instance = {
+			allowed = { is_debug = no }
+			name = Neuro_sama
+			portraits = {
+				civilian = {
+					large = GFX_Portrait_AIL_Neuro_sama
+					small = GFX_idea_advisor_AIL_Neuro_sama
+				}
+				army = {
+					large = GFX_Portrait_AIL_Neuro_sama
+					small = GFX_idea_advisor_AIL_Neuro_sama
+				}
 			}
 		}
 	}

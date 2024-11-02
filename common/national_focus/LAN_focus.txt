@@ -6,7 +6,7 @@
 ### search_filters = {FOCUS_FILTER_MANPOWER}
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 ### search_filters = {FOCUS_FILTER_USA_CONGRESS}
-#!gfx:interface\FE_goals.gfx
+#!gfx:interface\goals\FE_country_goals.gfx
 
 focus_tree = {
 	id = landsol_focus
@@ -259,6 +259,394 @@ focus_tree = {
 		cost = 2
 		available = {
 			always = no
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+
+	focus = { 
+		id = LAN_vein_of_republic
+		icon = GFX_goal_generic_collaborate_local_elites
+		x = 30
+		y = 0
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_industry_inprovement_plan
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_vein_of_republic }
+		relative_position_id = LAN_vein_of_republic
+		x = -4
+		y = 1
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_revitalize_old_industrial_bases
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_industry_inprovement_plan }
+		relative_position_id = LAN_industry_inprovement_plan
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_lift_restriction_order
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_industry_inprovement_plan }
+		relative_position_id = LAN_industry_inprovement_plan
+		x = -2
+		y = 1
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_rebuilding_western_region
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = {
+			focus = LAN_revitalize_old_industrial_bases
+		}
+		relative_position_id = LAN_revitalize_old_industrial_bases
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			add_to_variable = { LAN_next_ten_year_plan_progress_var = 1 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_responsibility_contracting_system
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_industry_inprovement_plan }
+		relative_position_id = LAN_industry_inprovement_plan
+		x = -3
+		y = 2
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			add_to_variable = { LAN_next_ten_year_plan_progress_var = 1 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_northern_inland_port_draft
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_industry_inprovement_plan }
+		relative_position_id = LAN_industry_inprovement_plan
+		x = 2
+		y = 1
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_expanding_southern_ports
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_industry_inprovement_plan }
+		relative_position_id = LAN_industry_inprovement_plan
+		x = 4
+		y = 1
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_large_shipyard
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = {
+			focus = LAN_northern_inland_port_draft
+			focus = LAN_expanding_southern_ports
+		}
+		relative_position_id = LAN_northern_inland_port_draft
+		x = 1
+		y = 1
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			add_to_variable = { LAN_next_ten_year_plan_progress_var = 1 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_next_ten_year_plan
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = {
+			focus = LAN_responsibility_contracting_system
+			focus = LAN_rebuilding_western_region
+			focus = LAN_large_shipyard
+		}
+		relative_position_id = LAN_rebuilding_western_region
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = LAN_next_ten_year_plan_ttt
+				check_variable = { LAN_next_ten_year_plan_progress_var > 1 }
+			}
+			OR = {
+				arms_factory > 10
+				dockyard > 10
+			}
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_foreign_support_programme
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_vein_of_republic }
+		relative_position_id = LAN_vein_of_republic
+		x = 4
+		y = 1
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_star_of_eden
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_foreign_support_programme }
+		relative_position_id = LAN_foreign_support_programme
+		x = -3
+		y = 2
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_influence_autonomous_prefecture
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_foreign_support_programme }
+		relative_position_id = LAN_foreign_support_programme
+		x = -2
+		y = 1
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_open_nebulis_trade
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_influence_autonomous_prefecture }
+		relative_position_id = LAN_influence_autonomous_prefecture
+		x = 1
+		y = 1  
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_armor_train_to_northern
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_foreign_support_programme }
+		relative_position_id = LAN_foreign_support_programme
+		x = 0
+		y = 1  
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_serect_military_transportation
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_foreign_support_programme }
+		relative_position_id = LAN_foreign_support_programme
+		x = 2
+		y = 1  
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_boyancia_plan
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_serect_military_transportation }
+		relative_position_id = LAN_serect_military_transportation
+		x = -1
+		y = 1  
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_trade_across_sea
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_foreign_support_programme }
+		relative_position_id = LAN_foreign_support_programme
+		x = 3
+		y = 2 
+		cost = 4
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_landsol_customs_union
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = {
+			focus = LAN_star_of_eden
+			focus = LAN_influence_autonomous_prefecture
+			focus = LAN_open_nebulis_trade
+			focus = LAN_armor_train_to_northern
+			focus = LAN_serect_military_transportation
+			focus = LAN_boyancia_plan
+			focus = LAN_trade_across_sea
+		}
+		relative_position_id = LAN_foreign_support_programme
+		x = 0
+		y = 3
+		cost = 4
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = LAN_landsol_customs_union_ttt
+				check_variable = { LAN_foreign_support_programme_progress > 3 }
+			}
 		}
 		completion_reward = {
 			
