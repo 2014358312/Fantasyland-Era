@@ -18,63 +18,6 @@ focus_tree = {
 		}
 	}
 	default = no
-	
-	focus = { 
-		id = LAN_future_of_military
-		icon = GFX_goal_generic_collaborate_local_elites
-		x = 5
-		y = 0
-		cost = 1
-		available = {
-			
-		}
-		completion_reward = {
-			
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = { 
-		id = LAN_army_left
-		icon = GFX_goal_generic_collaborate_local_elites
-		prerequisite = { focus = LAN_future_of_military }
-		mutually_exclusive = { focus = LAN_army_right }
-		relative_position_id = LAN_future_of_military
-		x = -1
-		y = 1
-		cost = 1
-		available = {
-			
-		}
-		completion_reward = {
-			
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = { 
-		id = LAN_army_right
-		icon = GFX_goal_generic_collaborate_local_elites
-		prerequisite = { focus = LAN_future_of_military }
-		mutually_exclusive = { focus = LAN_army_left }
-		relative_position_id = LAN_future_of_military
-		x = 1
-		y = 1
-		cost = 1
-		available = {
-			
-		}
-		completion_reward = {
-			
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
 
 	focus = { 
 		id = LAN_into_millennium
@@ -267,13 +210,134 @@ focus_tree = {
 			factor = 1
 		}
 	}
-	
-	
+
+	focus = { 
+		id = LAN_new_era_action
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = {
+			focus = LAN_status_quo
+			focus = LAN_military_first
+		}
+		relative_position_id = LAN_status_quo
+		x = 5
+		y = 1
+		cost = 2
+		available = {
+			always = no
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_our_people_in_umamusume
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_new_era_action }
+		relative_position_id = LAN_new_era_action
+		x = 3
+		y = 1
+		cost = 2
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_newland_friends
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_our_people_in_umamusume }
+		mutually_exclusive = { focus = LAN_newland_collaborator }
+		relative_position_id = LAN_our_people_in_umamusume
+		x = -1
+		y = 1
+		cost = 2
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_newland_collaborator
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_our_people_in_umamusume }
+		mutually_exclusive = { focus = LAN_newland_friends }
+		relative_position_id = LAN_our_people_in_umamusume
+		x = 1
+		y = 1
+		cost = 2
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_sea_warning_mechanism
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_newland_collaborator }
+		relative_position_id = LAN_newland_collaborator
+		x = 1
+		y = 1
+		cost = 2
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_newland_union
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = {
+			focus = LAN_newland_friends
+			focus = LAN_newland_collaborator
+		}
+		relative_position_id = LAN_newland_friends
+		x = 1
+		y = 1
+		cost = 2
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
 	focus = { 
 		id = LAN_vein_of_republic
 		icon = GFX_goal_generic_collaborate_local_elites
-		x = 30
+		relative_position_id = LAN_into_millennium
+		x = 15
 		y = 0
 		cost = 4
 		available = {
@@ -647,6 +711,64 @@ focus_tree = {
 				tooltip = LAN_landsol_customs_union_ttt
 				check_variable = { LAN_foreign_support_programme_progress > 3 }
 			}
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = { 
+		id = LAN_future_of_military
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id =  LAN_vein_of_republic
+		x = 0
+		y = 5
+		cost = 1
+		available = {
+			always = no
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = { 
+		id = LAN_army_left
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_future_of_military }
+		mutually_exclusive = { focus = LAN_army_right }
+		relative_position_id = LAN_future_of_military
+		x = -1
+		y = 1
+		cost = 1
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = { 
+		id = LAN_army_right
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = LAN_future_of_military }
+		mutually_exclusive = { focus = LAN_army_left }
+		relative_position_id = LAN_future_of_military
+		x = 1
+		y = 1
+		cost = 1
+		available = {
+			
 		}
 		completion_reward = {
 			

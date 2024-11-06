@@ -3,6 +3,22 @@ on_actions = {
 		effect = {
 			GSK = {
 				release = HBG
+				swap_ideas = {
+					remove_idea = GSK_hakurei_great_barrier_protection_2
+					add_idea = GSK_hakurei_great_barrier_protection
+				}
+			}
+			HBG = {
+				every_core_state = {
+					add_building_construction = {
+						type = bunker
+						level = 10
+						instant_build = yes
+						province = {
+							all_provinces = yes
+						}
+					}
+				}
 			}
 		}
 	}
