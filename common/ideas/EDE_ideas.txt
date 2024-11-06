@@ -1,0 +1,114 @@
+ideas = {
+	hidden_ideas = {
+	}
+	country = {
+		EDE_if_birthplace_of_magic = {
+			picture = yokosuka_naval_arsenal
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			available = {
+			}
+			cancel = {
+			}
+			traits = {
+			}
+			modifier = {
+				political_power_factor = -0.05
+				stability_factor = 0.05
+				drift_defence_factor = 0.50
+			}
+			targeted_modifier = {
+			}
+			equipment_bonus = {
+			}
+			research_bonus = {
+			}
+			rule = {
+			}
+			on_add = {
+			}
+			on_remove = {
+			}
+		}
+		
+		EDE_ideological_shock = {
+			picture = POL_ideology_drift_defence
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.10
+				drift_defence_factor = -0.25
+				political_advisor_cost_factor = -0.10
+				mobilization_laws_cost_factor = -0.10
+				trade_laws_cost_factor = -0.10
+				economy_cost_factor = -0.10
+			}
+		}
+		
+		EDE_high_cost_of_land_fake = {
+			name = EDE_high_cost_of_land_dynamic_modifier
+			picture = CHL_cge
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			available = {
+				always = no
+			}
+			modifier = {
+				custom_modifier_tooltip = EDE_high_cost_of_land_tt
+				consumer_goods_factor = 0.04
+			}
+		}
+		
+		EDE_defence_army_fake = {
+			name = EDE_defence_army_dynamic_modifier
+			picture = CHL_carabineros_de_chile_neutrality
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			available = {
+				always = no
+			}
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+			}
+		}
+		
+		EDE_exchange_student_fake = {
+			name = EDE_exchange_student_dynamic_modifier
+			picture = yarrow_shipbuilders
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			available = {
+				always = no
+			}
+			modifier = {
+				research_speed_factor = 0.07
+			}
+		}
+	}
+}
