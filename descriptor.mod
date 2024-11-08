@@ -2,6 +2,8 @@ version="1.0"
 tags={
 	"Utilities"
 	"Map"
+	"Translation"
+	"Graphics"
 }
 name="Fantasyland Era"
 replace_path="common/abilities"
