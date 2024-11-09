@@ -19,7 +19,6 @@ guiTypes = {
 			quadTextureSprite ="GFX_frontend_bg"
 			alwaystransparent = yes
 		}
-		
 	}
 	
 	containerWindowType = {
@@ -121,24 +120,30 @@ guiTypes = {
 		animation_time = 1000
 		size = { width = 256 height = 768}
 		
-		iconType =
-		{
+		iconType = {
 			name ="frontend_game_logo"
 			spriteType = "GFX_frontend_game_logo"
 			position = { x= 20 y = 20 }
-		}
+			scale = 0.5
+		}		
 		
+		iconType =
+		{
+			name ="FE_int_logo"
+			spriteType = "GFX_FE_logo"
+			position = { x= 250 y = 20 }
+			scale = 0.70
+		}	
 	}
 	
 	### MAIN MENU PANEL (upperright)
 	containerWindowType = {
 		name ="mainmenu_panel_upperright"
-		position = { x=0 y =-1 }
-		show_position = { x=-256 y =-1 }
+		position = { x=-256 y =-1 }
+		show_position = { x=0 y =-1 }
 		animation_type = decelerated
 		animation_time = 1000					
 		size = { width = 256 height = 768}
-		Orientation = upper_right
 
 		ButtonType = {
 			name = "achievements_button"
@@ -151,40 +156,71 @@ guiTypes = {
 		{
 			name ="frontend_dev_logo"
 			spriteType = "GFX_frontend_dev_logo"
-			position = { x= 15 y = 350 }
+			position = { x= 25 y = 100 }
+			scale = 0.70
 		}
 		
 		iconType =
 		{
 			name ="pdx_int_logo"
 			spriteType = "GFX_pdx_int_logo"
-			position = { x= 135 y = 350 }
-		}		
-		
-		iconType =
-		{
-			name ="FE_int_logo"
-			spriteType = "GFX_FE_logo"
-			position = { x= -250 y = 0 }
-		}		
+			position = { x= 125 y = 100 }
+		}	
 	}		
 
 	### SINGLE PLAYER MENU
 	containerWindowType = {
 		name = "mainmenu_single_player"
-		position = { x=0 y =0}
+		position = { x=100 y =0}
 		size = { width = 320 height = 395}
-		Orientation = CENTER
-		Origo = center	
-				
-		background = {
-			name = "Background"		
-			quadTextureSprite ="GFX_tiled_window"
+		Orientation = CENTER_LEFT
+		#Origo = center	
+		
+		containerWindowType = {
+			name = "mainmenu_single_player_mainmenu_yuzusoft"
+			position = { x = -100 y = -770 }
+			iconType = {
+				name = "yuzusoft_sidebar"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_FE_main_view_yuzusoft_sidebar"
+			}
+			 
+			iconType = {
+				name = "yuzusoft_sidebar_strap"
+				position = { x = 96 y = 520 }
+				spriteType = "GFX_FE_main_view_yuzusoft_sidebar_strap"
+			}
+			containerWindowType = {
+				name = "mainmenu_yuzusoft_cover_icon"
+				iconType = {
+					name ="frontend_game_logo"
+					spriteType = "GFX_frontend_game_logo"
+					position = { x= 20 y = 250 }
+					scale = 0.5
+				}		
+				iconType = {
+					name ="FE_int_logo"
+					spriteType = "GFX_FE_logo"
+					position = { x= 250 y = 250 }
+					scale = 0.70
+				}	
+				iconType = {
+					name ="frontend_dev_logo"
+					spriteType = "GFX_frontend_dev_logo"
+					position = { x= 25 y = 330 }
+					scale = 0.70
+				}
+				iconType = {
+					name ="pdx_int_logo"
+					spriteType = "GFX_pdx_int_logo"
+					position = { x= 125 y = 330 }
+				}	
+			}
 		}
 		
 		ButtonType = {
 			name = "sp_continue_button"
-			position = { x = 16 y = 18 }
+			position = { x = 16 y = -125 }
 			quadTextureSprite ="GFX_main_lobby_button"	
 			buttonText = "FE_CONTINUE"
 			buttonFont = "hoi_24header"
@@ -195,7 +231,7 @@ guiTypes = {
 		iconType = {
 			name = "sp_continue_flag_left"
 			quadTextureSprite ="GFX_flag_small2_not_masked"
-			position = { x= 35 y = 22 }
+			position = { x= 35 y = -121 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -203,7 +239,7 @@ guiTypes = {
 		iconType = {
 			name = "sp_continue_flag_left_overlay"
 			quadTextureSprite ="GFX_flag_small2_not_masked"
-			position = { x= 35 y = 22 }
+			position = { x= 35 y = -121 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -211,7 +247,7 @@ guiTypes = {
 		iconType = {
 			name = "sp_continue_flag_right"
 			quadTextureSprite ="GFX_flag_small2_not_masked"
-			position = { x= 245 y = 22 }
+			position = { x= 245 y = -121 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -219,14 +255,14 @@ guiTypes = {
 		iconType = {
 			name = "sp_continue_flag_right_overlay"
 			quadTextureSprite ="GFX_flag_small2_not_masked"
-			position = { x= 245 y = 22 }
+			position = { x= 245 y = -121 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
 		
 		ButtonType = {
 			name = "sp_new_button"
-			position = { x = 16 y = 58 }
+			position = { x = 16 y = -50 }
 			quadTextureSprite ="GFX_main_lobby_button"	
 			buttonText = "FE_NEW"
 			buttonFont = "hoi_24header"
@@ -236,7 +272,7 @@ guiTypes = {
 		
 		ButtonType = {
 			name = "sp_load_button"
-			position = {  x = 16 y = 98 }
+			position = {  x = 16 y = 25 }
 			quadTextureSprite ="GFX_main_lobby_button"	
 			buttonText = "MENU_BAR_LOAD"
 			buttonFont = "hoi_24header"
@@ -246,7 +282,7 @@ guiTypes = {
 		
 		ButtonType = {
 			name = "sp_tutorial_button"
-			position = { x = 16 y = 138}
+			position = { x = 16 y = 100}
 			quadTextureSprite ="GFX_main_lobby_button"	
 			buttonText = "FE_TUTORIAL"
 			buttonFont = "hoi_24header"
@@ -256,7 +292,7 @@ guiTypes = {
 		
 		ButtonType = {
 			name = "sp_back_button"
-			position = { x = 16 y = 218 }
+			position = { x = 16 y = 250 }
 			quadTextureSprite ="GFX_main_lobby_button"	
 			buttonText = "BACK"
 			buttonFont = "hoi_24header"
@@ -271,22 +307,59 @@ guiTypes = {
 		name ="mainmenu_panel_bottom"
 		position = { x=0 y =0}
 		size = { width = 820 height = 435 }
-		Orientation = CENTER
-		Origo = center		
+		Orientation = CENTER_LEFT
+		#Origo = center		
+		
+		containerWindowType = {
+			name = "mainmenu_bottom_mainmenu_yuzusoft"
+			position = { x = 0 y = -770 }
+			iconType = {
+				name = "yuzusoft_sidebar"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_FE_main_view_yuzusoft_sidebar"
+			}
+			 
+			iconType = {
+				name = "yuzusoft_sidebar_strap"
+				position = { x = 96 y = 520 }
+				spriteType = "GFX_FE_main_view_yuzusoft_sidebar_strap"
+			}
+			containerWindowType = {
+				name = "mainmenu_yuzusoft_cover_icon"
+				iconType = {
+					name ="frontend_game_logo"
+					spriteType = "GFX_frontend_game_logo"
+					position = { x= 20 y = 250 }
+					scale = 0.5
+				}		
+				iconType = {
+					name ="FE_int_logo"
+					spriteType = "GFX_FE_logo"
+					position = { x= 250 y = 250 }
+					scale = 0.70
+				}	
+				iconType = {
+					name ="frontend_dev_logo"
+					spriteType = "GFX_frontend_dev_logo"
+					position = { x= 25 y = 330 }
+					scale = 0.70
+				}
+				iconType = {
+					name ="pdx_int_logo"
+					spriteType = "GFX_pdx_int_logo"
+					position = { x= 125 y = 330 }
+				}	
+			}
+		}
 
 		positionType = {
 			name = "subscription_size"
 			position = { x = 320 y = 563 }
 		}
-				
-		background = {
-			name = "Background"		
-			quadTextureSprite ="GFX_tiled_window"
-		}
 			
 		ButtonType = {
 			name = "single_player_button"
-			position = { x = 16 y = 18 }
+			position = { x = 116 y = -200 }
 			quadTextureSprite ="GFX_main_lobby_button"
 			font = "hoi_24header"			
 			text = "FE_SINGLE_PLAYER"				
@@ -296,7 +369,7 @@ guiTypes = {
 
 		ButtonType = {
 			name = "multi_player_button"
-			position = { x = 16 y = 58}
+			position = { x = 116 y = -125}
 			quadTextureSprite ="GFX_main_lobby_button"
 			font = "hoi_24header"			
 			text = "FE_MULTI_PLAYER"			
@@ -304,15 +377,15 @@ guiTypes = {
 			oversound = ui_menu_over
 		}
 		
-		iconType = {
-			name = "FE_gamesetup"
-			position = { x = 555 y = 217 }
-			spriteType = "GFX_FE_gamesetup_icon"
-			centerposition = yes
-			alwaysTransparent = yes
-		}
+		#iconType = {
+		#	name = "FE_gamesetup"
+		#	position = { x = 555 y = 217 }
+		#	spriteType = "GFX_FE_gamesetup_icon"
+		#	centerposition = yes
+		#	alwaysTransparent = yes
+		#}
 
-		@warn_icon_x = 280
+		@warn_icon_x = 380
 		iconType = {
 			name = "single_player_button_warn"
 			position = { x = @warn_icon_x y = 22 }
@@ -322,9 +395,9 @@ guiTypes = {
 		instantTextBoxType = {
 
 			name ="version_label"
-			position = { x = 35 y = 396 }
+			position = { x = 135 y = 400 }
 			textureFile = ""
-			font = "hoi_18b"
+			font = "hoi_18mbs"
 			borderSize = {x = 0 y = 0}
 			text = "ALPHA"	
 			format = centre
@@ -332,10 +405,15 @@ guiTypes = {
 			maxHeight = 20	
 		}
 		
+
+		positionType = {
+			name = "version_label_subscription_position"
+			position = { x = 135 y = 524 }
+		}
 		
 		ButtonType = {
 			name = "settings_button"
-			position = { x = 16 y = 98 }
+			position = { x = 116 y = -50 }
 			quadTextureSprite ="GFX_main_lobby_button"	
 			buttonText = "OPTIONS"
 			buttonFont = "hoi_24header"
@@ -345,7 +423,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "career_profile_button"
-			position = { x = 16 y = 138 }
+			position = { x = 116 y = 25 }
 			quadTextureSprite ="GFX_main_lobby_button"
 			buttonText = "MENU_BAR_CAREER_PROFILE"
 			buttonFont = "hoi_24header"
@@ -364,7 +442,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "friends_button"
-			position = { x = 16 y = 178 }
+			position = { x = 116 y = 100 }
 			quadTextureSprite ="GFX_main_lobby_button"
 			buttonText = "MENU_BAR_FRIENDS"
 			buttonFont = "hoi_24header"
@@ -374,7 +452,7 @@ guiTypes = {
 
 		ButtonType = {
 			name = "credits_button"
-			position = {  x = 16 y = 218 }
+			position = {  x = 116 y = 175 }
 			quadTextureSprite ="GFX_main_lobby_button"	
 			buttonText = "FE_CREDITS"
 			buttonFont = "hoi_24header"
@@ -384,7 +462,7 @@ guiTypes = {
 		
 		ButtonType = {
 			name = "nudge_button"
-			position = { x = 16 y = 258 }
+			position = { x = 116 y = 250 }
 			quadTextureSprite ="GFX_main_lobby_button"	
 			buttonText = "Nudge!"
 			buttonFont = "hoi_24header"
@@ -392,7 +470,7 @@ guiTypes = {
 
 		ButtonType = {
 			name = "exit_button"
-			position = { x = 16 y = 300 }
+			position = { x = 116 y = 325 }
 			quadTextureSprite ="GFX_main_lobby_button"
 			font = "hoi_24header"			
 			text = "FE_EXIT"			
@@ -404,10 +482,9 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "mainmenu_social_buttons"
-		position = { x=-50 y=25 }	
+		position = { x=0 y=0 }	
 		size = { width = 240 height = 90 }
-		Orientation = center	
-		origo = center
+		Orientation = CENTER_LEFT
 		
 		positionType = {
 			name = "position_without_social_gui"
@@ -468,10 +545,10 @@ guiTypes = {
 				pdx_tooltip = "SOCIAL_NEW_FRIEND"
 			}
 		}
-		
+		@link_button_y = 250
 		ButtonType = {
 			name = "homepage_button"
-			position = { x=-274 y=0 }
+			position = { x=116 y=@link_button_y }
 			quadTextureSprite ="homepage"
 			clicksound = click_default
 			pdx_tooltip = "MENU_HOMEPAGE"
@@ -479,7 +556,7 @@ guiTypes = {
 		}
 		ButtonType = {
 			name = "forum_button"
-			position = { x=-238 y=0 }
+			position = { x=152 y=@link_button_y }
 			quadTextureSprite ="forum"
 			clicksound = click_default
 			pdx_tooltip = "MENU_FORUM"
@@ -488,7 +565,7 @@ guiTypes = {
 		}
 		ButtonType = {
 			name = "facebook_button"
-			position = { x=-202 y=0 }
+			position = { x=188 y=@link_button_y }
 			quadTextureSprite ="facebook"
 			clicksound = click_default
 			pdx_tooltip = "MENU_FACEBOOK"
@@ -497,7 +574,7 @@ guiTypes = {
 		}
 		ButtonType = {
 			name = "twitter_button"
-			position = { x=-166 y=0 }
+			position = { x=224 y=@link_button_y }
 			quadTextureSprite ="twitter"
 			#clicksound = click_default
 			pdx_tooltip = "MENU_TWITTER"
@@ -506,7 +583,7 @@ guiTypes = {
 		}
 		ButtonType = {
 			name = "instagram_button"
-			position = { x=-130 y=0 }
+			position = { x=260 y=@link_button_y }
 			quadTextureSprite ="instagram"
 			#clicksound = click_default
 			pdx_tooltip = "MENU_INSTAGRAM"
@@ -515,7 +592,7 @@ guiTypes = {
 		}
 		ButtonType = {
 			name = "discord_button"
-			position = { x=-94 y=0 }
+			position = { x=296 y=@link_button_y }
 			quadTextureSprite ="discord"
 			#clicksound = click_default
 			pdx_tooltip = "MENU_DISCORD"
@@ -525,7 +602,7 @@ guiTypes = {
 
 		ButtonType = {
 			name = "youtube_button"
-			position = { x=-58 y=0 }
+			position = { x=332 y=@link_button_y }
 			quadTextureSprite ="youtube"
 			#clicksound = click_default
 			pdx_tooltip = "MENU_YOUTUBE"
@@ -534,7 +611,7 @@ guiTypes = {
 		}
 		ButtonType = {
 			name = "privacy_policy_button"
-			position = { x=-22 y=0 } 
+			position = { x=368 y=@link_button_y } 
 			quadTextureSprite ="privacy"
 			#clicksound = click_default
 			pdx_tooltip = "MENU_PRIVACY_POLICY"
