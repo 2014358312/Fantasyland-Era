@@ -314,6 +314,92 @@ focus = {
 			add_stability = 0.05
 		}
 	}
+	##向爱丽儿效忠
+	focus = {
+		id = DKA_Declare_allegiance_to_Ariel
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus =DKA_support_old_king }
+		relative_position_id = DKA_support_old_king
+		x = 0
+		y = 1
+		cost = 10
+	
+		ai_will_do = {
+			factor = 1
+			}
+		available = {
+			}
+			bypass = {
+			}
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
+		complete_tooltip = {
+			}
+		completion_reward = {
+			add_popularity = { ideology = fascism   popularity = 0.2 } 
+			add_stability = 0.05
+			add_political_power = 150
+		  }
+		}
+		##建立政治局
+		focus = {
+			id = DKA_Establish_a_Political_Bureau
+			icon = GFX_focus_chi_cooperation_with_the_nationalists
+			prerequisite = { focus = DKA_Declare_allegiance_to_Ariel }
+			relative_position_id =  DKA_Declare_allegiance_to_Ariel
+			x = -2
+			y = 1
+			cost = 10
+		
+			ai_will_do = {
+				factor = 1
+				}
+			available = {
+				}
+				bypass = {
+				}
+		
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+		
+			complete_tooltip = {
+				}
+			completion_reward = {
+				create_intelligence_agency = yes
+				add_ideas = ITA_servizio_informazione_militare_ns
+			  }
+			}
+			##重整军备	
+			focus = {
+				id = DKA_Rearmament
+				prerequisite = { focus =DKA_Declare_allegiance_to_Ariel }
+				x = 0
+				y = 1
+				relative_position_id =DKA_Declare_allegiance_to_Ariel
+			
+				cost = 6
+			
+				ai_will_do = {
+				   factor = 1
+			   }
+			
+				available = {
+			   }
+			
+				bypass = {
+			
+			   }
+			
+				completion_reward = {
+				   add_war_support = 0.1
+				   army_experience =20
+				   add_timed_idea = { idea =Rearmament days = 150 }
+			   }
+		 }
 	###处理反对党
 	focus = {
 		id = DKA_Dealing_with_opposition_parties
@@ -399,36 +485,7 @@ focus = {
 			remove_ideas =The_resistance_of_the_Asian_ethnic_group
 			add_stability = -0.15
 		}
-	}
-	###成立军事委员会
-	focus = {
-		id = DKA_Establish_a_Military_Committee
-		icon = GFX_focus_chi_cooperation_with_the_nationalists
-		prerequisite = { focus =DKA_Motivational_spirit }
-		relative_position_id = DKA_Motivational_spirit
-		x = 0
-		y = 1
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-			}
-		available = {
-			}
-			bypass = {
-			}
-	
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-	
-		complete_tooltip = {
-			}
-		completion_reward = {
-			add_research_slot = 1
-			add_command_power =150
-		}
-	}
+	}	
 ##准备北伐
 	focus = {
 		id = DKA_Preparing_for_the_Northern_Expedition
@@ -1060,33 +1117,6 @@ focus = {
 				add_timed_idea = { idea =assimilation_Kingdom_of_Paretia days = 30 }
 			  }
 			}	
-			##重整军备	
-			focus = {
-				id = DKA_Rearmament
-				prerequisite = { focus =DKA_Declare_allegiance_to_Ariel }
-				x = 0
-				y = 1
-				relative_position_id =DKA_Declare_allegiance_to_Ariel
-			
-				cost = 6
-			
-				ai_will_do = {
-				   factor = 1
-			   }
-			
-				available = {
-			   }
-			
-				bypass = {
-			
-			   }
-			
-				completion_reward = {
-				   add_war_support = 0.1
-				   army_experience =20
-				   add_timed_idea = { idea =Rearmament days = 150 }
-			   }
-			   }
 	##激励精神	   
 			   focus = {
 				id = DKA_Motivational_spirit
@@ -1115,6 +1145,35 @@ focus = {
 
 			   }
 	  }
+	  	###成立军事委员会
+	focus = {
+		id = DKA_Establish_a_Military_Committee
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus =DKA_Motivational_spirit }
+		relative_position_id = DKA_Motivational_spirit
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+			}
+		available = {
+			}
+			bypass = {
+			}
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
+		complete_tooltip = {
+			}
+		completion_reward = {
+			add_research_slot = 1
+			add_command_power =150
+		}
+	}
 	  ##坚持力量优先
 	    focus= {
 		id = DKA_Persist_in_prioritizing_strength
@@ -1142,6 +1201,37 @@ focus = {
 		   army_experience =20
 	   }
 	   }
+##女王的指示
+	   focus = {
+		id = DKA_The_Queens_Instructions	
+		prerequisite = {  focus =DKA_Persist_in_prioritizing_strength}
+		x=0
+		y = 1
+		relative_position_id =DKA_Persist_in_prioritizing_strength
+																																							
+		cost = 10
+																																							
+		ai_will_do = {
+		factor = 2
+						}
+																																						
+		available = {
+																																							
+						}
+																																							
+		bypass = {
+																																							
+								}
+																																							
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+																																							
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			
+											}
+										}	
 	   ##转变思路
 	   focus= {
 		id = DKA_Change_mindset
@@ -1251,7 +1341,7 @@ focus = {
 		focus= {
 			id = DKA_Establishment_of_the_Academy_of_Sciences
 			prerequisite = { focus = DKA_emancipate }
-			x = -1
+			x = -2
 			y = 1
 			relative_position_id =DKA_emancipate
 		
@@ -1278,7 +1368,7 @@ focus = {
 			id = DKA_Clever_use_of_strength
 			prerequisite = { focus = DKA_emancipate }
 			mutually_exclusive = { focus = DKA_Negating_strength}
-			x = 1
+			x = 2
 			y = 1
 			relative_position_id =DKA_emancipate
 		
@@ -1305,7 +1395,7 @@ focus = {
 			id = DKA_Negating_strength
 			prerequisite = { focus = DKA_emancipate }
 			mutually_exclusive = { focus = DKA_Clever_use_of_strength}
-			x = 2
+			x = 4
 			y = 1
 			relative_position_id =DKA_emancipate
 		
@@ -1327,65 +1417,6 @@ focus = {
 			   army_experience =20
 		   }
 		   }
-			##向爱丽儿效忠
-			   focus = {
-				id = DKA_Declare_allegiance_to_Ariel
-				icon = GFX_focus_chi_cooperation_with_the_nationalists
-				prerequisite = { focus =DKA_support_old_king }
-				relative_position_id = DKA_support_old_king
-				x = 0
-				y = 1
-				cost = 10
-			
-				ai_will_do = {
-					factor = 1
-					}
-				available = {
-					}
-					bypass = {
-					}
-			
-				cancel_if_invalid = yes
-				continue_if_invalid = no
-				available_if_capitulated = no
-			
-				complete_tooltip = {
-					}
-				completion_reward = {
-					add_popularity = { ideology = fascism   popularity = 0.2 } 
-					add_stability = 0.05
-					add_political_power = 150
-				  }
-				}
-		##建立政治局
-			focus = {
-					id = DKA_Establish_a_Political_Bureau
-					icon = GFX_focus_chi_cooperation_with_the_nationalists
-					prerequisite = { focus = DKA_Declare_allegiance_to_Ariel }
-					relative_position_id =  DKA_Declare_allegiance_to_Ariel
-					x = -2
-					y = 1
-					cost = 10
-				
-					ai_will_do = {
-						factor = 1
-						}
-					available = {
-						}
-						bypass = {
-						}
-				
-					cancel_if_invalid = yes
-					continue_if_invalid = no
-					available_if_capitulated = no
-				
-					complete_tooltip = {
-						}
-					completion_reward = {
-						create_intelligence_agency = yes
-						add_ideas = ITA_servizio_informazione_militare_ns
-					  }
-					}
 		##准备南征
 			focus = {
 						id = DKA_Preparing_for_the_Southern_Expedition
@@ -1787,6 +1818,6 @@ focus = {
 			completion_reward = {
 				
 												}
-											}										
-					   }				   	
-
+		}		
+																				
+	}				   	
