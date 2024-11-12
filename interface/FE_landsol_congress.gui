@@ -1,3 +1,6 @@
+@congress_speaker_X = 600
+@congress_speaker_Y = 30
+
 guiTypes = {
 
 	containerWindowType = {
@@ -63,7 +66,7 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "landsol_congress_main"
-		position = { x = 400 y = 200 }
+		position = { x = 540 y = 80 }#540
 		size = { width = 1024 height = 768 }
 		
 		background = {
@@ -83,17 +86,191 @@ guiTypes = {
 		}
 		
 		containerWindowType = {
-			name = "landsol_congress_common"
-			position = { x = 200 y = 200 }
+			name = "landsol_congress_council_main"
+			position = { x = 37 y = 50 }
+			size = { width = 826 height = 330 }
 			
-			gridboxtype = {
-				name = "congressStateDiaContainer"
-				position = { x = 0 y = 0 }
-				size = { width = 100%% height = 100%% }
-				slotsize = { width = 100%% height = 0 }
-				max_slots_horizontal = 1
-				add_horizontal = no
+			background = {
+				name = "background"
+				quadTextureSprite = "GFX_tiled_window_gameui_pure_border"
 			}
+		
+			containerWindowType = {
+				name = "landsol_congress_council"
+				position = { x = 125 y = 60 }
+				
+				gridboxtype = {
+					name = "congressCouncilDiaContainer"
+					position = { x = 0 y = 0 }
+					size = { width = 100%% height = 100%% }
+					slotsize = { width = 100%% height = 0 }
+					max_slots_horizontal = 1
+					add_horizontal = no
+				}
+				
+				gridboxtype = {
+					name = "congressCouncilListContainer"
+					position = { x = 60 y = 100 }
+					size = { width = 100%% height = 100%% }
+					slotsize = { width = 100 height = 20 }
+					max_slots_horizontal = 3
+				}
+				
+				iconType = { 
+					name = "congressCouncilListCurrent"
+					position = { x = 65 y = 75 }
+					quadTextureSprite = "GFX_landsol_congress_leader_frame"
+					scale = 1.5
+				}
+				
+				buttonType = { 
+					name = "congressCouncilUnionPrevious"
+					position = { x = 50 y = 125 }
+					quadTextureSprite = "GFX_landsol_congress_button_previous"
+				}
+				
+				buttonType = { 
+					name = "congressCouncilUnionNext"
+					position = { x = 150 y = 125 }
+					quadTextureSprite = "GFX_landsol_congress_button_next"
+				}
+	
+				instantTextboxType = {
+					name = "council_current_position"
+					position = { x = -15 y = 211 }
+					font = "hoi_18mbs"
+					text = "[GETCouncilCurrentUnion]"
+					format = center
+					maxWidth = 250
+					#alwaystransparent = yes
+				}
+			}
+			
+			containerWindowType = {
+				name = "landsol_congress_council_current_commissioner"
+				position = { x = 400 y = @congress_speaker_Y }
+				
+				iconType = { 
+					name = "commissioner_frame"
+					quadTextureSprite = "GFX_landsol_congress_leader_frame"
+				}
+				
+				iconType = { 
+					name = "commissioner"
+					position = { x = 6 y = 6 }
+					quadTextureSprite = "GFX_Portrait_LAN_Claire_Boyancia"
+					#######pdx_tooltip = "[?landsol_congress_national_member]"
+				}
+	
+				instantTextboxType = {
+					name = "council_current_position"
+					position = { x = 0 y = 241 }
+					font = "hoi_18mbs"
+					text = "council_current_position"
+					format = center
+					maxWidth = 167
+					alwaystransparent = yes
+				}
+			}
+			
+			containerWindowType = {
+				name = "landsol_congress_council_speaker"
+				position = { x = @congress_speaker_X y = @congress_speaker_Y }
+				
+				iconType = { 
+					name = "speaker_frame"
+					quadTextureSprite = "GFX_landsol_congress_leader_frame"
+				}
+				
+				iconType = { 
+					name = "speaker"
+					position = { x = 6 y = 6 }
+					quadTextureSprite = "GFX_Portrait_LAN_Claire_Boyancia"
+					pdx_tooltip = council_speaker_tt
+				}
+	
+				instantTextboxType = {
+					name = "council_position"
+					position = { x = 0 y = 241 }
+					font = "hoi_18mbs"
+					text = "council_speaker"
+					format = center
+					maxWidth = 167
+					alwaystransparent = yes
+				}
+			}
+		}
+		
+		containerWindowType = {
+			name = "landsol_congress_common_main"
+			position = { x = 37 y = 400 }
+			size = { width = 826 height = 330 }
+			
+			background = {
+				name = "background"
+				quadTextureSprite = "GFX_tiled_window_gameui_pure_border"
+			}
+		
+			containerWindowType = {
+				name = "landsol_congress_common"
+				position = { x = 100 y = 25 }
+				
+				gridboxtype = {
+					name = "congressStateDiaContainer"
+					position = { x = 0 y = 0 }
+					size = { width = 100%% height = 100%% }
+					slotsize = { width = 100%% height = 0 }
+					max_slots_horizontal = 1
+					add_horizontal = no
+				}
+			}
+		
+			containerWindowType = {
+				name = "landsol_congress_state_speaker"
+				position = { x = @congress_speaker_X y = @congress_speaker_Y }
+				
+				iconType = { 
+					name = "speaker_frame"
+					quadTextureSprite = "GFX_landsol_congress_leader_frame"
+				}
+				
+				iconType = { 
+					name = "speaker"
+					position = { x = 6 y = 6 }
+					quadTextureSprite = "GFX_Portrait_LAN_Momochi_Kiruya_alt2"
+					pdx_tooltip = state_speaker_tt
+				}
+				
+				instantTextboxType = {
+					name = "state_position"
+					position = { x = 0 y = 241 }
+					font = "hoi_18mbs"
+					text = "state_speaker"
+					format = center
+					maxWidth = 167
+					alwaystransparent = yes
+				}
+			}
+		}
+	}
+	
+	containerWindowType = {
+		name = "congressCouncilContainer"
+		position = { x = 0 y = 0 }
+
+		buttonType = { 
+			name = "congressCouncilSeatGUI"
+			quadTextureSprite = "GFX_landsol_congress_seat_council"
+		}
+	}
+	
+	containerWindowType = {
+		name = "congressCouncilMemberContainer"
+		position = { x = 0 y = 0 }
+
+		iconType = { 
+			name = "congressCouncilMemberGUI"
+			quadTextureSprite = "GFX_idea_ARG_british_influences"
 		}
 	}
 	

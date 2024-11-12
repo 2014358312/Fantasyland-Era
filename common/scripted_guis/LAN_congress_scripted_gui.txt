@@ -37,6 +37,19 @@ scripted_gui = {
 		visible = { has_country_flag = LAN_landsol_congress_main_flag }
 
 		dynamic_lists = {
+			congressCouncilDiaContainer = {
+				array = congressCouncilX
+				change_scope = no
+				entry_container = congressCouncilContainer
+				index = council_seat_idx
+			}
+			congressCouncilListContainer = {
+				array = congressCouncilMemberArray
+				change_scope = no
+				entry_container = congressCouncilMemberContainer
+				index = council_member_idx
+				value = council_member_idv
+			}
 			congressStateDiaContainer = {
 				array = congressStateX
 				change_scope = no
@@ -46,16 +59,160 @@ scripted_gui = {
 		}
 
 		properties = {
+			congressCouncilSeatGUI = {
+				x = congressCouncilX^council_seat_idx
+				y = congressCouncilY^council_seat_idx
+				frame = congressCouncilFrame^council_seat_idx
+			}
 			congressStateSeatGUI = {
 				x = congressStateX^state_seat_idx
 				y = congressStateY^state_seat_idx
 				frame = congressStateFrame^state_seat_idx
+			}
+			congressCouncilMemberGUI = {
+				image = "GFX_landsol_congress_council_union_[?council_member_idv]"
+			}
+			congressCouncilListCurrent = {
+				image = "GFX_landsol_congress_council_union_[?current_member]"
+			}
+			commissioner = {
+				image = "GFX_landsol_congress_council_member_[?current_member]"
 			}
 		}
 		
 		effects = {
 			close_button_click = {
 				clr_country_flag = LAN_landsol_congress_main_flag
+			}
+			congressCouncilSeatGUI_click = {
+				for_each_loop = {
+					array = congressCouncilFrame
+					value = status
+					index = i
+
+					if = {
+						limit = { check_variable = { status = 2 } }
+						set_variable = { congressCouncilFrame^i = 1 }
+					}
+					if = {
+						limit = { check_variable = { status = 4 } }
+						set_variable = { congressCouncilFrame^i = 3 }
+					}
+				}
+				if = {
+					limit = { check_variable = { congressCouncilFrame^council_seat_idx = 1 } }
+					set_variable = { congressCouncilFrame^council_seat_idx = 2 }
+				}
+				else_if = {
+					limit = { check_variable = { congressCouncilFrame^council_seat_idx = 3 } }
+					set_variable = { congressCouncilFrame^council_seat_idx = 4 }
+				}
+				
+				set_temp_variable = { current_icon_member = council_seat_idx }
+				set_temp_variable = { current_icon_member_previous = current_icon_member }
+				subtract_from_temp_variable = { current_icon_member_previous = 1 }
+				if = {
+					limit = { check_variable = { current_icon_member_previous < 0 } }
+					set_temp_variable = { current_icon_member_previous = 9 }
+				}
+				set_temp_variable = { current_icon_member_next = current_icon_member }
+				add_to_temp_variable = { current_icon_member_next = 1 }
+				if = {
+					limit = { check_variable = { current_icon_member_next > 9 } }
+					set_temp_variable = { current_icon_member_next = 0 }
+				}
+				set_variable = { congressCouncilMemberArray^0 = current_icon_member_previous }
+				set_variable = { congressCouncilMemberArray^1 = current_icon_member }
+				set_variable = { congressCouncilMemberArray^2 = current_icon_member_next }
+				
+				set_variable = { current_member = current_icon_member }
+			}
+			congressCouncilUnionPrevious_click = {
+				subtract_from_variable = { congressCouncilMemberArray^0 = 1 }
+				subtract_from_variable = { congressCouncilMemberArray^1 = 1 }
+				subtract_from_variable = { congressCouncilMemberArray^2 = 1 }
+				if = {
+					limit = { check_variable = { congressCouncilMemberArray^0 < 0 } }
+					set_variable = { congressCouncilMemberArray^0 = 9 }
+				}
+				if = {
+					limit = { check_variable = { congressCouncilMemberArray^1 < 0 } }
+					set_variable = { congressCouncilMemberArray^1 = 9 }
+				}
+				if = {
+					limit = { check_variable = { congressCouncilMemberArray^2 < 0 } }
+					set_variable = { congressCouncilMemberArray^2 = 9 }
+				}
+				
+				set_temp_variable = { current_union = congressCouncilMemberArray^1 }
+				
+				for_each_loop = {
+					array = congressCouncilFrame
+					value = status
+					index = i
+
+					if = {
+						limit = { check_variable = { status = 2 } }
+						set_variable = { congressCouncilFrame^i = 1 }
+					}
+					if = {
+						limit = { check_variable = { status = 4 } }
+						set_variable = { congressCouncilFrame^i = 3 }
+					}
+				}
+				if = {
+					limit = { check_variable = { congressCouncilFrame^current_union = 1 } }
+					set_variable = { congressCouncilFrame^current_union = 2 }
+				}
+				else_if = {
+					limit = { check_variable = { congressCouncilFrame^current_union = 3 } }
+					set_variable = { congressCouncilFrame^current_union = 4 }
+				}
+				
+				set_variable = { current_member = current_union }
+			}
+			congressCouncilUnionNext_click = {
+				add_to_variable = { congressCouncilMemberArray^0 = 1 }
+				add_to_variable = { congressCouncilMemberArray^1 = 1 }
+				add_to_variable = { congressCouncilMemberArray^2 = 1 }
+				if = {
+					limit = { check_variable = { congressCouncilMemberArray^0 > 9 } }
+					set_variable = { congressCouncilMemberArray^0 = 0 }
+				}
+				if = {
+					limit = { check_variable = { congressCouncilMemberArray^1 > 9 } }
+					set_variable = { congressCouncilMemberArray^1 = 0 }
+				}
+				if = {
+					limit = { check_variable = { congressCouncilMemberArray^2 > 9 } }
+					set_variable = { congressCouncilMemberArray^2 = 0 }
+				}
+				
+				set_temp_variable = { current_union = congressCouncilMemberArray^1 }
+				for_each_loop = {
+					array = congressCouncilFrame
+					value = status
+					index = i
+
+					if = {
+						limit = { check_variable = { status = 2 } }
+						set_variable = { congressCouncilFrame^i = 1 }
+					}
+					if = {
+						limit = { check_variable = { status = 4 } }
+						set_variable = { congressCouncilFrame^i = 3 }
+					}
+				}
+				if = {
+					limit = { check_variable = { congressCouncilFrame^current_union = 1 } }
+					set_variable = { congressCouncilFrame^current_union = 2 }
+				}
+				else_if = {
+					limit = { check_variable = { congressCouncilFrame^current_union = 3 } }
+					set_variable = { congressCouncilFrame^current_union = 4 }
+				}
+				
+				set_variable = { current_member = current_union }
 			}
 		}
 	}

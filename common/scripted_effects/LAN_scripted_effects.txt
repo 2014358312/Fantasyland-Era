@@ -40,6 +40,96 @@ LAN_bop_right_large = {
 	}
 }
 
+LAN_initialize_congress_council = {
+	set_variable = { landsol_congress_council_sup = 6 }
+	set_variable = { landsol_congress_council_frame = landsol_congress_council_sup }
+	add_to_variable = { landsol_congress_council_frame = 1 }
+	
+	###GUI
+	###Only displaying the number of members from different guilds, 
+	###so there is no need to make any further changes.
+	clear_array = congressCouncilFrame
+	resize_array = {
+		array = congressCouncilFrame
+		value = 1
+		size = landsol_congress_council_member
+	}
+	
+	@congressCouncilYLine = 10
+	clear_array = congressCouncilX
+	clear_array = congressCouncilY
+	add_to_array = { congressCouncilX = 0 }
+	add_to_array = { congressCouncilY = @congressCouncilYLine }
+	add_to_array = { congressCouncilX = 20 }
+	add_to_array = { congressCouncilY = @congressCouncilYLine }
+	add_to_array = { congressCouncilX = 40 }
+	add_to_array = { congressCouncilY = @congressCouncilYLine }
+	add_to_array = { congressCouncilX = 60 }
+	add_to_array = { congressCouncilY = @congressCouncilYLine }
+	add_to_array = { congressCouncilX = 80 }
+	add_to_array = { congressCouncilY = @congressCouncilYLine }
+	add_to_array = { congressCouncilX = 100 }
+	add_to_array = { congressCouncilY = @congressCouncilYLine }
+	add_to_array = { congressCouncilX = 120 }
+	add_to_array = { congressCouncilY = @congressCouncilYLine }
+	add_to_array = { congressCouncilX = 140 }
+	add_to_array = { congressCouncilY = @congressCouncilYLine }
+	add_to_array = { congressCouncilX = 160 }
+	add_to_array = { congressCouncilY = @congressCouncilYLine }
+	add_to_array = { congressCouncilX = 180 }
+	add_to_array = { congressCouncilY = @congressCouncilYLine }
+	
+	LAN_initialize_congress_council_member = yes
+	LAN_initialize_congress_council_attitude = yes
+}
+
+LAN_initialize_congress_council_member = {
+	clear_array = congressCouncilMemberArray
+	for_loop_effect = {
+		start = 0
+		#loop do not include end number
+		end = 3
+		value = member_id
+		add_to_array = { congressCouncilMemberArray = member_id }
+	}
+}
+	
+LAN_initialize_congress_council_attitude = {
+	set_variable = { congressCouncilFrame^0 = 3 }
+	set_variable = { congressCouncilFrame^1 = 2 } # choose this icon on start
+	set_variable = { congressCouncilFrame^2 = 1 }
+	set_variable = { congressCouncilFrame^3 = 3 }
+	set_variable = { congressCouncilFrame^4 = 3 }
+	set_variable = { congressCouncilFrame^5 = 1 }
+	set_variable = { congressCouncilFrame^6 = 3 }
+	set_variable = { congressCouncilFrame^7 = 1 }
+	set_variable = { congressCouncilFrame^8 = 1 }
+	set_variable = { congressCouncilFrame^9 = 1 }
+}
+
+LAN_congress_council_0_attitude_support = {
+	custom_effect_tooltip = LAN_congress_council_0_attitude_support_tt
+	if = {
+		limit = { LAN_congress_council_0_attitude_is_support_now = no }
+		LAN_congress_council_support_add = yes
+		subtract_from_variable = { congressCouncilFrame^0 = 2 }
+	}
+}
+
+LAN_congress_council_support_add = {
+	custom_effect_tooltip = LAN_congress_council_support_add_tt
+	add_to_variable = { landsol_congress_council_sup = 1 }
+	set_variable = { landsol_congress_council_frame = landsol_congress_council_sup }
+	add_to_variable = { landsol_congress_council_frame = 1 }
+}
+
+LAN_congress_council_support_sub = {
+	custom_effect_tooltip = LAN_congress_council_support_sub_tt
+	subtract_from_variable = { landsol_congress_council_sup = 1 }
+	set_variable = { landsol_congress_council_frame = landsol_congress_council_sup }
+	add_to_variable = { landsol_congress_council_frame = 1 }
+}
+
 LAN_initialize_congress_state = {
 	###decision
 	set_variable_to_random = {
@@ -409,12 +499,6 @@ LAN_congress_national_support_small = {
 	custom_effect_tooltip = LAN_congress_national_support_small_tt
 	set_temp_variable = { congress_national_current_change = 15 }
 	LAN_change_congress_national = yes
-}
-
-LAN_congress_council_support_small = {
-	custom_effect_tooltip = LAN_congress_council_support_small_tt
-	add_to_variable = { landsol_congress_council_sup = 1 }
-	set_variable = { landsol_congress_council_frame = landsol_congress_council_sup }
 }
 
 LAN_annex_crossbell_autonomous_prefecture = {
