@@ -1,5 +1,7 @@
 @congress_speaker_X = 600
 @congress_speaker_Y = 30
+@congress_side_icon_X = 20
+@congress_side_icon_Y = 17
 
 guiTypes = {
 
@@ -74,6 +76,16 @@ guiTypes = {
 			quadTextureSprite ="GFX_tiled_plain_bg"
 		}
 		
+		instantTextboxType = {
+			name = "state_summary"
+			position = { x = 40 y = 10 }
+			font = "hoi_30header"
+			text = "LAN_republican_congress_decision_category"
+			format = center
+			maxWidth = 924
+			#alwaystransparent = yes
+		}
+		
 		buttonType = {
 			name = "close_button"
 			position = { x = -50 y = 5 }
@@ -93,6 +105,12 @@ guiTypes = {
 			background = {
 				name = "background"
 				quadTextureSprite = "GFX_tiled_window_gameui_pure_border"
+			}
+			
+			iconType = { 
+				name = "congressCouncilIcon"
+				position = { x = @congress_side_icon_X y = @congress_side_icon_Y }
+				quadTextureSprite = "GFX_landsol_congress_council_side_icon"
 			}
 		
 			containerWindowType = {
@@ -209,6 +227,12 @@ guiTypes = {
 			background = {
 				name = "background"
 				quadTextureSprite = "GFX_tiled_window_gameui_pure_border"
+			}
+			
+			iconType = { 
+				name = "congressStateIcon"
+				position = { x = @congress_side_icon_X y = @congress_side_icon_Y }
+				quadTextureSprite = "GFX_landsol_congress_state_side_icon"
 			}
 		
 			containerWindowType = {
