@@ -157,7 +157,7 @@ guiTypes = {
 					name = "council_current_position"
 					position = { x = -15 y = 211 }
 					font = "hoi_18mbs"
-					text = "[GETCouncilCurrentUnion]"
+					text = landsol_union_tt
 					format = center
 					maxWidth = 250
 					#alwaystransparent = yes
@@ -177,7 +177,7 @@ guiTypes = {
 					name = "commissioner"
 					position = { x = 6 y = 6 }
 					quadTextureSprite = "GFX_Portrait_LAN_Claire_Boyancia"
-					#######pdx_tooltip = "[?landsol_congress_national_member]"
+					pdx_tooltip = "landsol_union_commissioner_tt"
 				}
 	
 				instantTextboxType = {
@@ -229,7 +229,7 @@ guiTypes = {
 				quadTextureSprite = "GFX_tiled_window_gameui_pure_border"
 			}
 			
-			iconType = { 
+			iconType = {
 				name = "congressStateIcon"
 				position = { x = @congress_side_icon_X y = @congress_side_icon_Y }
 				quadTextureSprite = "GFX_landsol_congress_state_side_icon"
@@ -253,7 +253,7 @@ guiTypes = {
 				name = "landsol_congress_state_speaker"
 				position = { x = @congress_speaker_X y = @congress_speaker_Y }
 				
-				iconType = { 
+				iconType = {
 					name = "speaker_frame"
 					quadTextureSprite = "GFX_landsol_congress_leader_frame"
 				}
@@ -285,6 +285,7 @@ guiTypes = {
 		buttonType = { 
 			name = "congressCouncilSeatGUI"
 			quadTextureSprite = "GFX_landsol_congress_seat_council"
+			pdx_tooltip = landsol_union_commissioner_tt
 		}
 	}
 	
@@ -294,7 +295,8 @@ guiTypes = {
 
 		iconType = { 
 			name = "congressCouncilMemberGUI"
-			quadTextureSprite = "GFX_idea_ARG_british_influences"
+			pdx_tooltip = landsol_union_commissioner_tt
+			pdx_tooltip_delayed = LAN_union_commissioner_desc_tt
 		}
 	}
 	
