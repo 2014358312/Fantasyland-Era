@@ -1,0 +1,20 @@
+WSG_balance_of_power_decision_category = {
+	WSG_bop_monthly_trust_change_mission = {
+		icon = generic_train
+		allowed = { tag = WSG }
+		available = { hidden_trigger = { always = no } }
+		days_mission_timeout = 30
+		is_good = yes
+		fire_only_once = no
+		activation = { always = no }
+		timeout_effect = {
+			#random_list = {
+			#	
+			#}
+			activate_mission = WSG_bop_monthly_trust_change_mission
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

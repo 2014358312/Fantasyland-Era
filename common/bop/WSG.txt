@@ -1,0 +1,155 @@
+WSG_balance_of_power = {
+	initial_value = -0.10
+	left_side = WSG_economy_bad_side
+	right_side = WSG_economy_good_side
+	decision_category = WSG_balance_of_power_decision_category
+	range = {
+		id = WSG_balance_range
+		min = -0.10
+		max = 0.10
+		modifier = {
+			
+		}
+	}
+	
+	side = {
+		id = WSG_economy_bad_side
+		icon = GFX_bop_WSG_[GetWarshipgirlsLeaderBopIcon]_bad_side
+		range = {
+			id = WSG_economy_bad_side_very_low_trust
+			min = -1.00
+			max = -0.60
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.1
+				political_power_factor = -0.2
+			}
+			on_activate = {
+			}
+		}
+		range = {
+			id = WSG_economy_bad_side_low_trust
+			min = -0.60
+			max = -0.10
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				political_power_factor = -0.1
+			}
+		}
+	}
+	
+	side = {
+		id = WSG_economy_good_side
+		icon = GFX_bop_WSG_[GetWarshipgirlsLeaderBopIcon]_good_side
+		range = {
+			id = WSG_economy_good_side_high_trust
+			min = 0.10
+			max = 0.60
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				conscription_factor = 0.05
+			}
+		}
+		range = {
+			id = WSG_economy_good_side_very_high_trust
+			min = 0.60
+			max = 1.00
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				conscription_factor = 0.1
+			}
+		}
+	}
+	
+	side = {
+		id = WSG_political_bad_side
+		icon = GFX_bop_WSG_[GetWarshipgirlsLeaderBopIcon]_bad_side
+		range = {
+			id = WSG_political_bad_side_very_low_trust
+			min = -1.00
+			max = -0.60
+			modifier = {
+				stability_weekly = -0.01
+			}
+			on_activate = {
+			}
+		}
+		range = {
+			id = WSG_political_bad_side_low_trust
+			min = -0.60
+			max = -0.10
+			modifier = {
+				stability_weekly = -0.005
+			}
+		}
+	}
+	
+	side = {
+		id = WSG_political_good_side
+		icon = GFX_bop_WSG_[GetWarshipgirlsLeaderBopIcon]_good_side
+		range = {
+			id = WSG_political_good_side_high_trust
+			min = 0.10
+			max = 0.60
+			modifier = {
+				stability_weekly = 0.005
+			}
+		}
+		range = {
+			id = WSG_political_good_side_very_high_trust
+			min = 0.60
+			max = 1.00
+			modifier = {
+				stability_weekly = 0.01
+			}
+		}
+	}
+	
+	side = {
+		id = WSG_military_bad_side
+		icon = GFX_bop_WSG_[GetWarshipgirlsLeaderBopIcon]_bad_side
+		range = {
+			id = WSG_military_bad_side_very_low_trust
+			min = -1.00
+			max = -0.60
+			modifier = {
+				army_attack_factor = -0.20
+			}
+			on_activate = {
+			}
+		}
+		range = {
+			id = WSG_military_bad_side_low_trust
+			min = -0.60
+			max = -0.10
+			modifier = {
+				army_attack_factor = -0.10
+			}
+		}
+	}
+	
+	side = {
+		id = WSG_military_good_side
+		icon = GFX_bop_WSG_[GetWarshipgirlsLeaderBopIcon]_good_side
+		range = {
+			id = WSG_military_good_side_high_trust
+			min = 0.10
+			max = 0.60
+			modifier = {
+				army_attack_factor = 0.10
+			}
+		}
+		range = {
+			id = WSG_military_good_side_very_high_trust
+			min = 0.60
+			max = 1.00
+			modifier = {
+				army_attack_factor = 0.20
+			}
+		}
+	}
+}
+

@@ -1,0 +1,47 @@
+﻿capital = 696
+
+set_research_slots = 4
+set_convoys = 800
+set_stability = 0.10
+set_war_support = 0.60
+starting_train_buffer = 2.0
+
+set_technology = {
+	basic_train = 1
+	### Infantry ###
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+}
+
+add_ideas = {
+	WSG_two_principles
+}
+
+recruit_character = WSG_Lexington
+recruit_character = WSG_Lion
+recruit_character = WSG_YiXian
+recruit_character = WSG_Bismarck
+
+set_power_balance = {
+	id = WSG_balance_of_power
+	left_side = WSG_economy_bad_side
+	right_side = WSG_economy_good_side
+	set_value = -0.15
+}
+set_variable = { WSG_bop_located_var = 1 }
+activate_mission = WSG_bop_monthly_trust_change_mission
+
+set_politics = {
+	ruling_party = communism
+	elections_allowed = no
+}
+
+set_popularities = {
+	communism = 66
+	democratic = 20
+	neutrality = 10
+	fascism = 4
+}
+
