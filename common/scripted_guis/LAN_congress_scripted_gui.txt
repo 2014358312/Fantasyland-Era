@@ -26,7 +26,14 @@ scripted_gui = {
 					limit = { has_country_flag = LAN_landsol_congress_main_flag }
 					clr_country_flag = LAN_landsol_congress_main_flag
 				}
-				else = { set_country_flag = LAN_landsol_congress_main_flag }
+				else = {
+					set_country_flag = LAN_landsol_congress_main_flag
+					if = {
+						limit = { NOT = { has_country_flag = LAN_congress_gui_initialized_flag } }
+						LAN_initialize_congress_council_member = yes
+						set_country_flag = LAN_congress_gui_initialized_flag
+					}
+				}
 			}
 		}
 	}
@@ -70,14 +77,12 @@ scripted_gui = {
 				frame = congressStateFrame^state_seat_idx
 			}
 			congressCouncilMemberGUI = {
-				image = "GFX_landsol_congress_council_union_[?council_member_idv]"
-			}
-			congressCouncilListCurrent = {
-				image = "GFX_landsol_congress_council_union_[?current_member]"
+				image = "GFX_landsol_congress_council_union"
+				frame = congressCouncilMemberArray^council_member_idx
 			}
 			commissioner = {
 				image = "GFX_landsol_congress_council_member_[?current_member]"
-			}##建议改成一张图连着的，类似美国GUI
+			}
 		}
 		
 		effects = {
@@ -108,43 +113,34 @@ scripted_gui = {
 					set_variable = { congressCouncilFrame^council_seat_idx = 4 }
 				}
 				
-				set_temp_variable = { current_icon_member = council_seat_idx }
-				set_temp_variable = { current_icon_member_previous = current_icon_member }
-				subtract_from_temp_variable = { current_icon_member_previous = 1 }
-				if = {
-					limit = { check_variable = { current_icon_member_previous < 0 } }
-					set_temp_variable = { current_icon_member_previous = 9 }
-				}
-				set_temp_variable = { current_icon_member_next = current_icon_member }
-				add_to_temp_variable = { current_icon_member_next = 1 }
-				if = {
-					limit = { check_variable = { current_icon_member_next > 9 } }
-					set_temp_variable = { current_icon_member_next = 0 }
-				}
-				set_variable = { congressCouncilMemberArray^0 = current_icon_member_previous }
-				set_variable = { congressCouncilMemberArray^1 = current_icon_member }
-				set_variable = { congressCouncilMemberArray^2 = current_icon_member_next }
-				
+				set_variable = { current_icon_member = council_seat_idx }
 				set_variable = { current_member = current_icon_member }
+				clear_array = congressCouncilMemberArray
+				for_loop_effect = {
+					start = 0
+					end = 3
+					
+					set_variable = { temp_current_icon_member = current_icon_member }
+					if = {
+						limit = { check_variable = { temp_current_icon_member < 1 } }
+						add_to_variable = { temp_current_icon_member = 10 }
+					}
+					else_if = {
+						limit = { check_variable = { temp_current_icon_member > 10 } }
+						subtract_from_variable = { temp_current_icon_member = 10 }
+					}
+					add_to_array = { congressCouncilMemberArray = temp_current_icon_member }
+					add_to_variable = { current_icon_member = 1 }
+				}
+				clear_variable = current_icon_member
+				clear_variable = temp_current_icon_member
 			}
 			congressCouncilUnionPrevious_click = {
 				subtract_from_variable = { congressCouncilMemberArray^0 = 1 }
 				subtract_from_variable = { congressCouncilMemberArray^1 = 1 }
 				subtract_from_variable = { congressCouncilMemberArray^2 = 1 }
-				if = {
-					limit = { check_variable = { congressCouncilMemberArray^0 < 0 } }
-					set_variable = { congressCouncilMemberArray^0 = 9 }
-				}
-				if = {
-					limit = { check_variable = { congressCouncilMemberArray^1 < 0 } }
-					set_variable = { congressCouncilMemberArray^1 = 9 }
-				}
-				if = {
-					limit = { check_variable = { congressCouncilMemberArray^2 < 0 } }
-					set_variable = { congressCouncilMemberArray^2 = 9 }
-				}
 				
-				set_temp_variable = { current_union = congressCouncilMemberArray^1 }
+				set_temp_variable = { current_union = congressCouncilMemberArray^0 }
 				
 				for_each_loop = {
 					array = congressCouncilFrame
@@ -167,6 +163,19 @@ scripted_gui = {
 				else_if = {
 					limit = { check_variable = { congressCouncilFrame^current_union = 3 } }
 					set_variable = { congressCouncilFrame^current_union = 4 }
+				}
+				
+				if = {
+					limit = { check_variable = { congressCouncilMemberArray^0 < 1 } }
+					add_to_variable = { congressCouncilMemberArray^0 = 10 }
+				}
+				if = {
+					limit = { check_variable = { congressCouncilMemberArray^1 < 1 } }
+					add_to_variable = { congressCouncilMemberArray^1 = 10 }
+				}
+				if = {
+					limit = { check_variable = { congressCouncilMemberArray^2 < 1 } }
+					add_to_variable = { congressCouncilMemberArray^2 = 10 }
 				}
 				
 				set_variable = { current_member = current_union }
@@ -175,20 +184,14 @@ scripted_gui = {
 				add_to_variable = { congressCouncilMemberArray^0 = 1 }
 				add_to_variable = { congressCouncilMemberArray^1 = 1 }
 				add_to_variable = { congressCouncilMemberArray^2 = 1 }
+				
+				set_temp_variable = { current_union = congressCouncilMemberArray^0 }
+				
 				if = {
-					limit = { check_variable = { congressCouncilMemberArray^0 > 9 } }
-					set_variable = { congressCouncilMemberArray^0 = 0 }
-				}
-				if = {
-					limit = { check_variable = { congressCouncilMemberArray^1 > 9 } }
-					set_variable = { congressCouncilMemberArray^1 = 0 }
-				}
-				if = {
-					limit = { check_variable = { congressCouncilMemberArray^2 > 9 } }
-					set_variable = { congressCouncilMemberArray^2 = 0 }
+					limit = { check_variable = { current_union > 9 } }
+					subtract_from_temp_variable = { current_union = 10 }
 				}
 				
-				set_temp_variable = { current_union = congressCouncilMemberArray^1 }
 				for_each_loop = {
 					array = congressCouncilFrame
 					value = status
@@ -210,6 +213,19 @@ scripted_gui = {
 				else_if = {
 					limit = { check_variable = { congressCouncilFrame^current_union = 3 } }
 					set_variable = { congressCouncilFrame^current_union = 4 }
+				}
+				
+				if = {
+					limit = { check_variable = { congressCouncilMemberArray^0 > 10 } }
+					subtract_from_variable = { congressCouncilMemberArray^0 = 10 }
+				}
+				if = {
+					limit = { check_variable = { congressCouncilMemberArray^1 > 10 } }
+					subtract_from_variable = { congressCouncilMemberArray^1 = 10 }
+				}
+				if = {
+					limit = { check_variable = { congressCouncilMemberArray^2 > 10 } }
+					subtract_from_variable = { congressCouncilMemberArray^2 = 10 }
 				}
 				
 				set_variable = { current_member = current_union }

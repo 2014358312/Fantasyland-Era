@@ -14,14 +14,14 @@ guiTypes = {
 		iconType = {
 			name = "state_icon"
 			spriteType = "GFX_landsol_congress_state_icon"
-			position = { x = 100 y = 71 }
+			position = { x = 50 y = 71 }
 		}
 		
 		instantTextboxType = {
 			name = "state_summary"
-			position = { x = 100 y = 131 }
+			position = { x = 50 y = 131 }
 			font = "hoi_18mbs"
-			text = "[?landsol_congress_state_sup|.0]/[?landsol_congress_state_member|.0]"
+			text = state_summary_tt
 			format = center
 			maxWidth = 94
 			alwaystransparent = yes
@@ -30,30 +30,30 @@ guiTypes = {
 		iconType = {
 			name = "council_icon"
 			spriteType = "GFX_landsol_congress_council_icon"
-			position = { x = 215 y = 98 }
+			position = { x = 200 y = 98 }
 		}
 		
 		instantTextboxType = {
 			name = "council_summary"
-			position = { x = 215 y = 131 }
+			position = { x = 162 y = 131 }
 			font = "hoi_18mbs"
-			text = "[?landsol_congress_council_sup|.0]/[?landsol_congress_council_member|.0]"
+			text = council_summary_tt
 			format = center
-			maxWidth = 55
+			maxWidth = 131
 			alwaystransparent = yes
 		}
 			
 		iconType = {
 			name = "national_icon"
 			spriteType = "GFX_landsol_congress_national_icon"
-			position = { x = 300 y = 50 }
+			position = { x = 310 y = 50 }
 		}
 	
 		instantTextboxType = {
 			name = "national_summary"
-			position = { x = 300 y = 131 }
+			position = { x = 310 y = 131 }
 			font = "hoi_18mbs"
-			text = "[?landsol_congress_national_sup|.0]/[?landsol_congress_national_member|.0]"
+			text = national_summary_tt
 			format = center
 			maxWidth = 131
 			alwaystransparent = yes
@@ -134,14 +134,7 @@ guiTypes = {
 					max_slots_horizontal = 3
 				}
 				
-				iconType = { 
-					name = "congressCouncilListCurrent"
-					position = { x = 65 y = 75 }
-					quadTextureSprite = "GFX_landsol_congress_leader_frame"
-					scale = 1.5
-				}
-				
-				buttonType = { 
+				buttonType = {
 					name = "congressCouncilUnionPrevious"
 					position = { x = 50 y = 125 }
 					quadTextureSprite = "GFX_landsol_congress_button_previous"
@@ -160,7 +153,7 @@ guiTypes = {
 					text = landsol_union_tt
 					format = center
 					maxWidth = 250
-					#alwaystransparent = yes
+					alwaystransparent = yes
 				}
 			}
 			
@@ -282,10 +275,11 @@ guiTypes = {
 		name = "congressCouncilContainer"
 		position = { x = 0 y = 0 }
 
-		buttonType = { 
+		buttonType = {
 			name = "congressCouncilSeatGUI"
 			quadTextureSprite = "GFX_landsol_congress_seat_council"
-			pdx_tooltip = landsol_union_commissioner_tt
+			pdx_tooltip = landsol_union_seat_tt
+			pdx_tooltip_delayed = landsol_union_seat_desc_tt
 		}
 	}
 	
@@ -295,8 +289,8 @@ guiTypes = {
 
 		iconType = { 
 			name = "congressCouncilMemberGUI"
-			pdx_tooltip = landsol_union_commissioner_tt
-			pdx_tooltip_delayed = LAN_union_commissioner_desc_tt
+			pdx_tooltip = landsol_union_no_icon_seat_tt
+			pdx_tooltip_delayed = landsol_union_no_icon_seat_desc_tt
 		}
 	}
 	

@@ -28,7 +28,59 @@ defined_text = {
 }
 
 defined_text = {
-    name = GetCouncilCurrentUnionCommissioner
+    name = GETCouncilCurrentUnionSeat
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { seat = council_seat_idx } }
+			}
+		}
+		localization_key = landsol_union
+	}
+	text = { localization_key = something_with_wrong_mtt }
+}
+
+defined_text = {
+    name = GETCouncilCurrentUnionSeatNoIcon
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { seat_no_icon = council_member_idv } }
+			}
+		}
+		localization_key = landsol_union_no_icon
+	}
+	text = { localization_key = something_with_wrong_mtt }
+}
+
+defined_text = {
+    name = GETCouncilCurrentUnionDesc
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { seatdesc = council_seat_idx } }
+			}
+		}
+		localization_key = landsol_union_desc
+	}
+	text = { localization_key = something_with_wrong_mtt }
+}
+
+defined_text = {
+    name = GETCouncilCurrentUnionSeatNoIconDesc
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { seatnoicondesc = council_member_idv } }
+			}
+		}
+		localization_key = landsol_union_no_icon_desc
+	}
+	text = { localization_key = something_with_wrong_mtt }
+}
+
+defined_text = {
+    name = GETCouncilCurrentUnionCommissioner
 	text = {
 		trigger = {
 			LAN = { check_variable = { current_member = 0 } }

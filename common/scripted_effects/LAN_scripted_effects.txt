@@ -79,25 +79,20 @@ LAN_initialize_congress_council = {
 	add_to_array = { congressCouncilX = 180 }
 	add_to_array = { congressCouncilY = @congressCouncilYLine }
 	
-	LAN_initialize_congress_council_member = yes
 	LAN_initialize_congress_council_attitude = yes
 }
 
 LAN_initialize_congress_council_member = {
 	clear_array = congressCouncilMemberArray
-	for_loop_effect = {
-		start = 0
-		#loop do not include end number
-		end = 3
-		value = member_id
-		add_to_array = { congressCouncilMemberArray = member_id }
-	}
+	add_to_array = { congressCouncilMemberArray = 10 }
+	add_to_array = { congressCouncilMemberArray = 1 }
+	add_to_array = { congressCouncilMemberArray = 2 }
 	set_variable = { current_member = 1 }
 }
 	
 LAN_initialize_congress_council_attitude = {
-	set_variable = { congressCouncilFrame^0 = 3 }
-	set_variable = { congressCouncilFrame^1 = 2 } # choose this icon on start
+	set_variable = { congressCouncilFrame^0 = 4 } # choose this icon on start
+	set_variable = { congressCouncilFrame^1 = 1 }
 	set_variable = { congressCouncilFrame^2 = 1 }
 	set_variable = { congressCouncilFrame^3 = 3 }
 	set_variable = { congressCouncilFrame^4 = 3 }
@@ -200,16 +195,76 @@ LAN_congress_council_9_attitude_support = {
 
 LAN_congress_council_random_attitude_support = {
 	random_list = {
-		10 = { LAN_congress_council_0_attitude_support = yes }
-		10 = { LAN_congress_council_1_attitude_support = yes }
-		10 = { LAN_congress_council_2_attitude_support = yes }
-		10 = { LAN_congress_council_3_attitude_support = yes }
-		10 = { LAN_congress_council_4_attitude_support = yes }
-		10 = { LAN_congress_council_5_attitude_support = yes }
-		10 = { LAN_congress_council_6_attitude_support = yes }
-		10 = { LAN_congress_council_7_attitude_support = yes }
-		10 = { LAN_congress_council_8_attitude_support = yes }
-		10 = { LAN_congress_council_9_attitude_support = yes }
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_0_attitude_is_support_now = yes
+			}
+			LAN_congress_council_0_attitude_support = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_1_attitude_is_support_now = yes
+			}
+			LAN_congress_council_1_attitude_support = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_2_attitude_is_support_now = yes
+			}
+			LAN_congress_council_2_attitude_support = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_3_attitude_is_support_now = yes
+			}
+			LAN_congress_council_3_attitude_support = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_4_attitude_is_support_now = yes
+			}
+			LAN_congress_council_4_attitude_support = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_5_attitude_is_support_now = yes
+			}
+			LAN_congress_council_5_attitude_support = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_6_attitude_is_support_now = yes
+			}
+			LAN_congress_council_6_attitude_support = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_7_attitude_is_support_now = yes
+			}
+			LAN_congress_council_7_attitude_support = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_8_attitude_is_support_now = yes
+			}
+			LAN_congress_council_8_attitude_support = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_9_attitude_is_support_now = yes
+			}
+			LAN_congress_council_9_attitude_support = yes
+		}
 	}
 }
 
@@ -305,28 +360,86 @@ LAN_congress_council_9_attitude_against = {
 
 LAN_congress_council_random_attitude_against = {
 	random_list = {
-		10 = { LAN_congress_council_0_attitude_against = yes }
-		10 = { LAN_congress_council_1_attitude_against = yes }
-		10 = { LAN_congress_council_2_attitude_against = yes }
-		10 = { LAN_congress_council_3_attitude_against = yes }
-		10 = { LAN_congress_council_4_attitude_against = yes }
-		10 = { LAN_congress_council_5_attitude_against = yes }
-		10 = { LAN_congress_council_6_attitude_against = yes }
-		10 = { LAN_congress_council_7_attitude_against = yes }
-		10 = { LAN_congress_council_8_attitude_against = yes }
-		10 = { LAN_congress_council_9_attitude_against = yes }
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_0_attitude_is_support_now = no
+			}
+			LAN_congress_council_0_attitude_against = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_1_attitude_is_support_now = no
+			}
+			LAN_congress_council_1_attitude_against = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_2_attitude_is_support_now = no
+			}
+			LAN_congress_council_2_attitude_against = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_3_attitude_is_support_now = no
+			}
+			LAN_congress_council_3_attitude_against = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_4_attitude_is_support_now = no
+			}
+			LAN_congress_council_4_attitude_against = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_5_attitude_is_support_now = no
+			}
+			LAN_congress_council_5_attitude_against = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_6_attitude_is_support_now = no
+			}
+			LAN_congress_council_6_attitude_against = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_7_attitude_is_support_now = no
+			}
+			LAN_congress_council_7_attitude_against = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_8_attitude_is_support_now = no
+			}
+			LAN_congress_council_8_attitude_against = yes
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				LAN_congress_council_9_attitude_is_support_now = no
+			}
+			LAN_congress_council_9_attitude_against = yes
+		}
 	}
 }
 
 LAN_congress_council_support_add = {
-	custom_effect_tooltip = LAN_congress_council_support_add_tt
 	add_to_variable = { landsol_congress_council_sup = 1 }
 	set_variable = { landsol_congress_council_frame = landsol_congress_council_sup }
 	add_to_variable = { landsol_congress_council_frame = 1 }
 }
 
 LAN_congress_council_support_sub = {
-	custom_effect_tooltip = LAN_congress_council_support_sub_tt
 	subtract_from_variable = { landsol_congress_council_sup = 1 }
 	set_variable = { landsol_congress_council_frame = landsol_congress_council_sup }
 	add_to_variable = { landsol_congress_council_frame = 1 }
@@ -343,6 +456,8 @@ LAN_initialize_party_seats = {
 	
 	set_variable = { landsol_congress_state_unit = landsol_congress_state_member }
 	divide_variable = { landsol_congress_state_unit = 21 }
+	
+	LAN_congress_state_get_support_from_independent = yes
 }
 
 LAN_initialize_congress_state = {
@@ -361,21 +476,43 @@ LAN_initialize_congress_state = {
 	###GUI
 	###Only displaying the number of members from different guilds, 
 	###so there is no need to make any further changes.
+	
+	# Generate partial sums t1 = (P1), t2 = (P1 + P2)
+	# so that we can use resize_array to fill our array with the right number of seats for each party
+	set_temp_variable = { t1 = party_union_seats }
+	set_temp_variable = { t2 = independent_seats }
+	set_temp_variable = { t3 = party_troop_seats }
+
+	add_to_temp_variable = { t2 = t1 }
+	add_to_temp_variable = { t3 = t2 }
+	
 	clear_array = congressStateFrame
 	resize_array = {
 		array = congressStateFrame
 		value = 1
-		size = party_union_seats
+		size = t1
 	}
 	resize_array = {
 		array = congressStateFrame
 		value = 3
-		size = independent_seats
+		size = t2
 	}
 	resize_array = {
 		array = congressStateFrame
 		value = 2
-		size = party_troop_seats
+		size = t3
+	}
+	
+	if = {
+		limit = { is_debug = yes }
+		log = "[GetDateText]: [Root.GetName]: The detail of congress of state is:"
+		for_each_loop = {
+			array = congressStateFrame
+			index = i
+			value = v 
+			
+			log = "value of [?i] is: [?v]"
+		}
 	}
 	
 	clear_array = congressStateX
@@ -714,17 +851,7 @@ LAN_congress_state_get_support_from_independent = {
 LAN_initialize_congress_national = {
 	LAN_congress_national_base = yes
 	
-	set_variable_to_random = {
-		var = landsol_congress_national_sup
-		min = 0
-		max = 468
-		integer = yes
-	}
-	clamp_variable = {
-		var = landsol_congress_national_sup
-		min = 0
-		max = landsol_congress_national_member
-	}
+	set_variable = { landsol_congress_national_sup = 220 }
 	
 	LAN_congress_national_support_small = yes
 }
