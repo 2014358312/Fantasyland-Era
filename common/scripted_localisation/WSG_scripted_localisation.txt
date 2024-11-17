@@ -1,4 +1,135 @@
 defined_text = {
+    name = GetAdmiralStatusName
+	text = {
+		trigger = {
+			has_idea = WSG_admiral
+		}
+		localization_key = WSG_admiral_title_text
+	}
+	text = { localization_key = WSG_no_admiral_title_text }
+}
+
+defined_text = {
+    name = GetAdmiralName
+	text = {
+		trigger = {
+			has_idea = WSG_admiral
+		}
+		localization_key = WSG_Admiral
+	}
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = WSG_Lexington
+				ruling_only = yes
+			}
+			NOT = { has_idea = WSG_admiral }
+		}
+		localization_key = Lexington
+	}
+	text = { localization_key = empty_key }
+}
+
+defined_text = {
+	name = GetWSGAscendedAdvisorName1
+	text = { trigger = { check_variable = { WSG_ascended_advisor_1 = 1 } } localization_key = Lexington }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_1 = 2 } } localization_key = Vittorio_Veneto }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_1 = 3 } } localization_key = Yubari }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_1 = 4 } } localization_key = Hood }
+	text = { #NO ONE
+		localization_key = empty_key
+	}
+}
+
+defined_text = {
+	name = GetWSGAscendedAdvisorName2
+	text = { trigger = { check_variable = { WSG_ascended_advisor_2 = 1 } } localization_key = Lexington }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_2 = 2 } } localization_key = Vittorio_Veneto }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_2 = 3 } } localization_key = Yubari }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_2 = 4 } } localization_key = Hood }
+	text = { #NO ONE
+		localization_key = empty_key
+	}
+}
+
+defined_text = {
+	name = GetWSGAscendedAdvisorName3
+	text = { trigger = { check_variable = { WSG_ascended_advisor_3 = 1 } } localization_key = Lexington }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_3 = 2 } } localization_key = Vittorio_Veneto }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_3 = 3 } } localization_key = Yubari }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_3 = 4 } } localization_key = Hood }
+	text = { #NO ONE
+		localization_key = empty_key
+	}
+}
+
+defined_text = {
+	name = GetWSGAscendedAdvisorTraitName1
+	text = { trigger = { check_variable = { WSG_ascended_advisor_1 = 1 } } localization_key = secretary_ship }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_1 = 2 } } localization_key = captain_of_military_police }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_1 = 3 } } localization_key = academician_of_DAS }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_1 = 4 } } localization_key = royal_agent }
+	text = { #NO ONE
+		localization_key = empty_key
+	}
+}
+
+defined_text = {
+	name = GetWSGAscendedAdvisorTraitName2
+	text = { trigger = { check_variable = { WSG_ascended_advisor_2 = 1 } } localization_key = secretary_ship }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_2 = 2 } } localization_key = captain_of_military_police }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_2 = 3 } } localization_key = academician_of_DAS }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_2 = 4 } } localization_key = royal_agent }
+	text = { #NO ONE
+		localization_key = empty_key
+	}
+}
+
+defined_text = {
+	name = GetWSGAscendedAdvisorTraitName3
+	text = { trigger = { check_variable = { WSG_ascended_advisor_3 = 1 } } localization_key = secretary_ship }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_3 = 2 } } localization_key = captain_of_military_police }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_3 = 3 } } localization_key = academician_of_DAS }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_3 = 4 } } localization_key = royal_agent }
+	text = { #NO ONE
+		localization_key = empty_key
+	}
+}
+
+defined_text = {
+	name = GetWSGAscendedAdvisorTrait1
+	text = { trigger = { check_variable = { WSG_ascended_advisor_1 = 1 } } localization_key = idea_desc|WSG_secretary_ship_idea }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_1 = 2 } } localization_key = idea_desc|WSG_captain_of_military_police_idea }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_1 = 3 } } localization_key = idea_desc|WSG_academician_of_DAS_idea }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_1 = 4 } } localization_key = idea_desc|WSG_royal_agent_idea }
+	text = { #NO ONE
+		localization_key = empty_key
+	}
+}
+
+defined_text = {
+	name = GetWSGAscendedAdvisorTrait2
+	text = { trigger = { check_variable = { WSG_ascended_advisor_2 = 1 } } localization_key = idea_desc|WSG_secretary_ship_idea }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_2 = 2 } } localization_key = idea_desc|WSG_captain_of_military_police_idea }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_2 = 3 } } localization_key = idea_desc|WSG_academician_of_DAS_idea }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_2 = 4 } } localization_key = idea_desc|WSG_royal_agent_idea }
+	text = { #NO ONE
+		localization_key = empty_key
+	}
+}
+
+defined_text = {
+	name = GetWSGAscendedAdvisorTrait3
+	text = { trigger = { check_variable = { WSG_ascended_advisor_3 = 1 } } localization_key = idea_desc|WSG_secretary_ship_idea }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_3 = 2 } } localization_key = idea_desc|WSG_captain_of_military_police_idea }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_3 = 3 } } localization_key = idea_desc|WSG_academician_of_DAS_idea }
+	text = { trigger = { check_variable = { WSG_ascended_advisor_3 = 4 } } localization_key = idea_desc|WSG_royal_agent_idea }
+	text = { #NO ONE
+		localization_key = empty_key
+	}
+}
+
+defined_text = {
     name = GetWarshipgirlsLeaderBopLocated
 	text = { trigger = { check_variable = { WSG_bop_located_var = 1 } } localization_key = economy_area }
 	text = { trigger = { check_variable = { WSG_bop_located_var = 2 } } localization_key = political_area }

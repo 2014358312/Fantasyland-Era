@@ -1,0 +1,45 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_USA_CONGRESS}
+
+focus_tree = {
+	id = WSG_focus_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = WSG
+		}
+	}
+	default = no
+	
+	continuous_focus_position = { x = 500 y = 1300 }
+	
+	inlay_window = {
+		id = wsg_inner_circle_inlay_window
+		position = { x = 500 y = 150 }
+	}
+
+	focus = { 
+		id = WSG_nihao
+		icon = GFX_goal_generic_collaborate_local_elites
+		x = 10
+		y = 0
+		cost = 10
+		available = {
+			always = no 
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

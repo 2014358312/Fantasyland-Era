@@ -1,6 +1,123 @@
 ideas = {
 	hidden_ideas = {
+		WSG_secretary_ship_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					check_variable = { WSG_ascended_advisor_1 = 1 }
+					check_variable = { WSG_ascended_advisor_2 = 1 }
+					check_variable = { WSG_ascended_advisor_3 = 1 }
+					check_variable = { WSG_ascended_advisor_4 = 1 }
+					check_variable = { WSG_ascended_advisor_5 = 1 }
+					check_variable = { WSG_ascended_advisor_6 = 1 }
+					check_variable = { WSG_ascended_advisor_7 = 1 }
+				}
+			}
+			
+			modifier = {
+				stability_factor = 0.10
+				political_power_factor = 0.10
+			}
+		}
 		
+		WSG_captain_of_military_police_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					check_variable = { WSG_ascended_advisor_1 = 2 }
+					check_variable = { WSG_ascended_advisor_2 = 2 }
+					check_variable = { WSG_ascended_advisor_3 = 2 }
+					check_variable = { WSG_ascended_advisor_4 = 2 }
+					check_variable = { WSG_ascended_advisor_5 = 2 }
+					check_variable = { WSG_ascended_advisor_6 = 2 }
+					check_variable = { WSG_ascended_advisor_7 = 2 }
+				}
+			}
+			
+			modifier = {
+				resistance_damage_to_garrison = -0.15
+				foreign_subversive_activites = -0.2
+				non_core_manpower = 0.04
+				stability_factor = 0.1
+			}
+		}
+		
+		WSG_academician_of_DAS_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					check_variable = { WSG_ascended_advisor_1 = 3 }
+					check_variable = { WSG_ascended_advisor_2 = 3 }
+					check_variable = { WSG_ascended_advisor_3 = 3 }
+					check_variable = { WSG_ascended_advisor_4 = 3 }
+					check_variable = { WSG_ascended_advisor_5 = 3 }
+					check_variable = { WSG_ascended_advisor_6 = 3 }
+					check_variable = { WSG_ascended_advisor_7 = 3 }
+				}
+			}
+			
+			modifier = {
+				research_speed_factor = 0.06
+				special_project_speed_factor = 0.10
+			}
+		}
+		
+		WSG_royal_agent_idea = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			available = {
+				OR = {
+					check_variable = { WSG_ascended_advisor_1 = 4 }
+					check_variable = { WSG_ascended_advisor_2 = 4 }
+					check_variable = { WSG_ascended_advisor_3 = 4 }
+					check_variable = { WSG_ascended_advisor_4 = 4 }
+					check_variable = { WSG_ascended_advisor_5 = 4 }
+					check_variable = { WSG_ascended_advisor_6 = 4 }
+					check_variable = { WSG_ascended_advisor_7 = 4 }
+				}
+			}
+			
+			modifier = {
+				subversive_activites_upkeep = -0.35
+				war_support_factor = 0.1
+				decryption_factor = 0.1
+			}
+		}
 	}
 	
 	country = {
@@ -42,5 +159,21 @@ ideas = {
 		}
 		
 		
+		WSG_admiral = {
+			picture = GFX_idea_WSG_admiral
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			available = {}
+			
+			traits = { unite_under_admiral }
+		}
 	}
 }
