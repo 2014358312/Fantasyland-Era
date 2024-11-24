@@ -3,14 +3,72 @@ characters = {
 		name = Uruha_Rushia
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/WPE/Uruha_Rushia.dds"
+				large = GFX_Portrait_WPE_Uruha_Rushia
+				small = GFX_idea_advisor_WPE_Uruha_Rushia
 			}
 		}
 		country_leader = {
 			ideology = silent_conservatism_subtype
-			traits = { trapped_in_scandal  }
+			traits = { trapped_in_scandal }
 			expire = "1965.1.1.1"
 			id = -1
+		}
+	}
+	
+	WPE_Tokino_Sora = {
+		name = Tokino_Sora
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Tokino_Sora
+				small = GFX_idea_advisor_WPE_Tokino_Sora
+			}
+		}
+		country_leader = {
+			ideology = communism_subtype
+			traits = { }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WPE_Tokino_Sora
+			allowed = {
+				original_tag = WPE
+			}
+			available = {
+				is_country_leader = no
+			}
+			traits = { popular_figurehead }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	WPE_Houshou_Marine = {
+		name = Houshou_Marine
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Houshou_Marine
+				small = GFX_idea_advisor_WPE_Houshou_Marine
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = navy
+			idea_token = WPE_Houshou_Marine
+			allowed = {
+				original_tag = WPE
+			}
+			available = {
+				is_country_leader = no
+			}
+			traits = { navy_fleet_logistics_3 }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
 		}
 	}
 
@@ -26,6 +84,12 @@ characters = {
 				small = GFX_idea_advisor_WPE_Ilf_Snow
 			}
 		}
+		country_leader = {
+			ideology = neutrality_subtype
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = -1
+		}
 		advisor = {
 			slot = political_advisor
 			idea_token = WPE_Ilf_Snow
@@ -33,7 +97,144 @@ characters = {
 				original_tag = WPE
 			}
 			can_be_fired = no
-			traits = { forsvarsminister }
+			traits = { logistics_defense_minister }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	WPE_Lyco = {
+		name = Lyco
+		portraits = {
+			civilian = {
+				small = GFX_idea_advisor_WPE_Lyco
+			}
+			army = {
+				small = GFX_idea_advisor_WPE_Lyco
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WPE_Lyco
+			allowed = {
+				original_tag = WPE
+			}
+			can_be_fired = no
+			traits = { genius_scientist }
+			research_bonus = {
+				electronics = 0.10
+			}
+			modifier = {
+				special_project_facility_supply_consumption_factor = -0.05
+				#sp_tag_radar_speed_factor = 0.05
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	WPE_Martini_Henry = {
+		name = Martini_Henry
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Martini_Henry
+				small = GFX_idea_advisor_WPE_Martini_Henry
+			}
+			army = {
+				large = GFX_Portrait_WPE_Martini_Henry
+				small = GFX_idea_advisor_WPE_Martini_Henry
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = WPE_Martini_Henry
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { army_chief_entrenchment_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	WPE_Helianthus = {
+		name = Helianthus
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Helianthus
+				small = GFX_idea_advisor_WPE_Helianthus
+			}
+			army = {
+				large = GFX_Portrait_WPE_Helianthus
+				small = GFX_idea_advisor_WPE_Helianthus
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WPE_Helianthus
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { superior_agent }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	WPE_Dandelion = {
+		name = Dandelion
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Dandelion
+				small = GFX_idea_advisor_WPE_Dandelion
+			}
+			army = {
+				large = GFX_Portrait_WPE_Dandelion
+				small = GFX_idea_advisor_WPE_Dandelion
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WPE_Dandelion_political_advisor
+			allowed = {
+				original_tag = WPE
+				not_already_hired_except_as = political_advisor
+			}
+			traits = { internet_giantess }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = WPE_Dandelion_high_command
+			allowed = {
+				original_tag = WPE
+			}
+			available = {
+				is_country_leader = no
+				not_already_hired_except_as = high_command
+				custom_trigger_tooltip = {
+					tooltip = WPE_Dandelion_character_idea_ttt
+					ROOT = { NOT = { has_idea_with_trait = electronic_warfare_expert } }
+				}
+			}
+			traits = { army_radio_intelligence_3 }
+			modifier = {
+				decryption_power_factor = 0.10
+				intel_from_combat_factor = 0.10
+			}
 			cost = 150
 			ai_will_do = {
 				factor = 1

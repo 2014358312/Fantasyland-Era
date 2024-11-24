@@ -1,0 +1,39 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			RAT = {
+				every_character = {
+					set_character_flag = RAT_character_flag
+				}
+				### all DEM employees are initially located within the WPE,
+				### and prior to the civil war, the company's main assets would be transferred to the newland.
+				RAT_Issac_Ray_Pelham_Westcott = { set_nationality = WPE }
+				RAT_Ellen_Mira_Mathers = { set_nationality = WPE }
+				RAT_Takamiya_Mana = { set_nationality = WPE }
+				RAT_Nibeelcole = { set_nationality = WPE }
+				RAT_Tobiichi_Origami = { set_nationality = WPE }
+				
+				### all wandering Spirits are scattered throughout the newland on startup,
+				### Takamiya Mio was in WPE, preparing to travel alone to the newland to awaken them.
+				RAT_Takamiya_Mio = { set_nationality = WPE }
+				WPE = {
+					set_country_flag = WPE_DEM_stay_flag
+					activate_advisor = RAT_Issac_Ray_Pelham_Westcott
+					activate_advisor = RAT_Murasame_Reine
+				}
+				for_loop_effect = {
+					end = 15
+					
+					random_country = {
+						limit = { is_newland_country = yes }
+						PREV = {
+							random_character = {
+								set_nationality = PREV
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

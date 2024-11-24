@@ -4,8 +4,8 @@ ideas = {
 	}
 	
 	country = {
-		WPE_unpopular_government = {
-			picture = FRA_down_marianne
+		WPE_northern_guard = {
+			picture = ast_naval_auxiliary_patrol
 			allowed = {
 				always = no
 			}
@@ -23,8 +23,7 @@ ideas = {
 			traits = {}
 			
 			modifier = {
-				political_power_gain = -0.50
-				stability_factor = -0.50
+				drift_defence_factor = 0.50
 			}
 			
 			targeted_modifier = {}
@@ -33,35 +32,16 @@ ideas = {
 			
 			research_bonus = {}
 			
-			rule = {}
+			rule = {
+				can_create_factions = yes
+			}
 			
 			on_add = {}
 			
 			on_remove = {}
 		}
 		
-		WPE_unloyal_military = {
-			picture = SPR_disbanded_army
-			allowed = {
-				always = no
-			}
-			
-			allowed_civil_war = {
-				always = no
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				experience_gain_army_factor = -0.80
-				experience_gain_navy_factor = -0.40
-				experience_gain_air_factor = -0.40
-				war_support_factor = 0.25
-				custom_modifier_tooltip = SPR_military_disloyalty_tt
-			}
-		}
-		
-		WPE_unstable_economy = {
+		WPE_disappeared_twenty_years = {
 			picture = generic_economic_crisis
 			allowed = {
 				always = no
@@ -76,6 +56,46 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = 0.50
 				production_speed_buildings_factor = -0.50
+			}
+		}
+		
+		WPE_failed_democracy = {
+			picture = FRA_down_marianne
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.20
+				stability_factor = -0.40
+			}
+		}
+		
+		WPE_corruption_in_military = {
+			picture = ARG_political_corruption_modifier
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.25
+				experience_gain_army_factor = -0.80
+				experience_gain_navy_factor = -0.40
+				experience_gain_air_factor = -0.40
+				war_support_factor = 0.25
+				custom_modifier_tooltip = SPR_military_disloyalty_tt
 			}
 		}
 		
@@ -107,6 +127,94 @@ ideas = {
 					build_cost_ic = -0.10
 					instant = yes
 				 }
+			}
+		}
+	}
+	
+	industrial_concern = {
+		WPE_Dandelion_industrial_concern_idea = { 
+			name = Dandelion
+			picture = advisor_WPE_Dandelion
+			allowed = {
+				original_tag = WPE
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = WPE_Dandelion_industrial_concern_idea_ttt
+					ROOT = {
+						NOT = { has_idea = WPE_Dandelion_political_advisor }
+						NOT = { has_idea = WPE_Dandelion_high_command }
+					}
+				}
+			}
+			cost = 150
+			traits = { electronic_warfare_expert }
+			modifier = {
+				civilian_intel_factor = 0.2
+				civilian_intel_decryption_bonus = 10
+			}
+			research_bonus = {
+				electronics = 0.20
+			}
+		}
+		
+		sangvis_ferri = {
+			picture = WPE_SF
+			allowed = {
+				original_tag = WPE
+			}
+			available = {
+				has_character = WPE_Lyco
+				WPE_Lyco = { is_character_slot = political_advisor }
+			}
+			cost = 150
+			traits = { industrial_concern }
+			modifier = {
+				industrial_capacity_factory = 0.10
+			}
+			research_bonus = {
+				electronics = 0.10
+				industry = 0.05
+			}
+			allowed_to_remove = {
+				NOT = { has_character = WPE_Lyco }
+				hidden_trigger = { always = no }
+			}
+			cancel_if_invalid = no
+		}
+		
+		DEM = {
+			name = DEM_organization
+			picture = RAT_DEM
+			allowed = {
+				OR = {
+					original_tag = RAT
+					original_tag = WPE
+					is_newland_country = yes
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = RAT
+					AND = {
+						original_tag = WPE
+						WPE = { has_country_flag = WPE_DEM_stay_flag }
+					}
+					always = no
+				}
+				always = no
+			}
+			available = {
+				has_character = RAT_Issac_Ray_Pelham_Westcott
+			}
+			cost = 150
+			traits = { industrial_concern }
+			modifier = {
+				industrial_capacity_factory = 0.10
+			}
+			research_bonus = {
+				electronics = 0.10
+				industry = 0.05
 			}
 		}
 	}

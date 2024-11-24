@@ -1,0 +1,20 @@
+scripted_gui = {
+	hiddenfocusview = {
+		context_type = diplomacy_target_context
+		parent_window_name = "nationalfocusview"
+		window_name = "hiddenfocusview"
+
+		ai_enabled = { always = no }
+		
+		visible = {
+			OR = {
+				ROOT = { has_country_flag = unknown_country_flag }
+				FROM = { has_country_flag = unknown_country_flag }
+				AND = {
+					ROOT = { TAG = LAN }
+					FROM = { TAG = SMA }
+				}
+			}
+		}
+	}
+}

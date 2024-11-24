@@ -4,6 +4,260 @@
 
 add_namespace = white_pole
 add_namespace = white_civil_war
+country_event = {
+	id = white_pole.6
+	title = white_pole.6.t
+	desc = white_pole.6.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event white_pole.6"
+		hidden_effect = {
+			RAT_Takamiya_Mio = {
+				set_can_be_fired_in_advisor_role = {
+					slot = political_advisor
+					value = yes
+				}
+				set_character_flag = character_no_visible_flag
+			}
+			remove_ideas = RAT_Takamiya_Mio
+			country_event = { id = white_pole.7 days = 14 random = 7 }
+		}
+	}
+
+	option = {
+		name = white_pole.8.a
+		effect_tooltip = {
+			RAT_Takamiya_Mio = {
+				set_can_be_fired_in_advisor_role = {
+					slot = theorist
+					value = yes
+				}
+			}
+			remove_ideas = RAT_Takamiya_Mio
+		}
+		hidden_effect = {
+			random_country = {
+				limit = { is_newland_country = yes }
+				PREV = {
+					RAT_Takamiya_Mio = {
+						set_nationality = PREV
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = white_pole.7
+	title = white_pole.7.t
+	desc = white_pole.7.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event white_pole.7"
+		hidden_effect = {
+			WPE_Ilf_Snow = {
+				set_can_be_fired_in_advisor_role = {
+					slot = political_advisor
+					value = yes
+				}
+				set_character_flag = character_no_available_flag
+			}
+			remove_ideas = WPE_Ilf_Snow
+			country_event = { id = white_pole.8 days = 14 random = 7 }
+		}
+	}
+
+	option = {
+		name = white_pole.7.a
+		effect_tooltip = {
+			WPE_Ilf_Snow = {
+				set_can_be_fired_in_advisor_role = {
+					slot = political_advisor
+					value = yes
+				}
+			}
+			remove_ideas = WPE_Ilf_Snow
+		}
+	}
+}
+
+country_event = {
+	id = white_pole.8
+	title = white_pole.8.t
+	desc = white_pole.8.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event white_pole.8"
+		hidden_effect = {
+			RAT_Issac_Ray_Pelham_Westcott = {
+				set_can_be_fired_in_advisor_role = {
+					slot = political_advisor
+					value = yes
+				}
+				set_character_flag = character_no_visible_flag
+			}
+			remove_ideas = RAT_Issac_Ray_Pelham_Westcott
+			country_event = { id = white_pole.9 days = 14 random = 7 }
+		}
+	}
+
+	option = {
+		name = white_pole.8.a
+		effect_tooltip = {
+			RAT_Issac_Ray_Pelham_Westcott = {
+				set_can_be_fired_in_advisor_role = {
+					slot = political_advisor
+					value = yes
+				}
+			}
+			remove_ideas = RAT_Issac_Ray_Pelham_Westcott
+		}
+	}
+}
+
+country_event = {
+	id = white_pole.9
+	title = white_pole.9.t
+	desc = white_pole.9.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event white_pole.9"
+		hidden_effect = {
+			every_possible_country = {
+				limit = { has_country_flag = WPE_DEM_stay_flag }
+				clr_country_flag = WPE_DEM_stay_flag
+			}
+		}
+	}
+
+	option = {
+		name = white_pole.9.a
+		custom_effect_tooltip = white_pole_9_a_tt
+	}
+}
+
+country_event = {
+	id = white_pole.10
+	title = white_pole.10.t
+	desc = white_pole.10.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event white_pole.10"
+	}
+	
+	option = {
+		name = white_pole.10.a
+		custom_effect_tooltip = white_pole_10_a_tt
+		hidden_effect = {
+			set_variable = { ROOT.fascist_support_before_change = ROOT.party_popularity@fascism }
+			set_variable = { ROOT.neutrality_support_before_change = ROOT.party_popularity@neutrality }
+			set_variable = { ROOT.neutrality_support_after_change = ROOT.neutrality_support_before_change }
+			add_to_variable = { ROOT.neutrality_support_after_change = ROOT.fascist_support_before_change }
+			add_popularity = {
+				ideology = fascism
+				popularity = -1.00
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = -1.00
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = ROOT.neutrality_support_after_change
+			}
+			clear_variable = ROOT.fascist_support_before_change
+			clear_variable = ROOT.neutrality_support_after_change
+			WPE_Ilf_Snow = {
+				remove_trait = {
+					slot = political_advisor
+					trait = logistics_defense_minister
+				}
+				add_trait = {
+					slot = political_advisor
+					trait = logistics_defense_minister_improve
+				}
+			}
+		}
+		add_war_support = 0.05
+	}
+}
+
+country_event = {
+	id = white_pole.11
+	title = white_pole.11.t
+	desc = white_pole.11.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event white_pole.11"
+	}
+
+	option = {
+		name = white_pole.11.a
+		remove_country_leader_trait = {
+			ideology = silent_conservatism_subtype
+			trait = trapped_in_scandal
+		}
+		remove_country_leader_role = {
+			character = WPE_Uruha_Rushia
+			ideology = silent_conservatism_subtype
+		}
+		add_country_leader_role = {
+			character = WPE_Tokino_Sora
+			country_leader = {
+				ideology = interim_government_d_subtype
+				traits = { conservative_grandee }
+				expire = "1965.1.1.1"
+				id = -1
+			}
+			promote_leader = yes
+		}
+		add_stability = 0.05
+		add_political_power = 25
+	}
+
+	option = {
+		name = white_pole.11.b
+		remove_country_leader_trait = {
+			ideology = silent_conservatism_subtype
+			trait = trapped_in_scandal
+		}
+		remove_country_leader_role = {
+			character = WPE_Uruha_Rushia
+			ideology = silent_conservatism_subtype
+		}
+		add_country_leader_role = {
+			character = WPE_Houshou_Marine
+			country_leader = {
+				ideology = interim_government_d_subtype
+				traits = { girl_of_naval_marshal }
+				expire = "1965.1.1.1"
+				id = -1
+			}
+			promote_leader = yes
+		}
+		add_war_support = 0.05
+		add_command_power = 25
+	}
+}
 
 country_event = {
 	id = white_civil_war.1
