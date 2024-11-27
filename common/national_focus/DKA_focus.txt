@@ -1231,7 +1231,131 @@ focus = {
 		completion_reward = {
 			
 											}
-										}	
+			}	
+	##全民健身运动
+			focus = {
+				id = DKA_National_Fitness_Campaign	
+				prerequisite = {  focus =DKA_The_Queens_Instructions}
+				x=0
+				y = 1
+				relative_position_id =DKA_The_Queens_Instructions
+																																									
+				cost = 10
+																																									
+				ai_will_do = {
+				factor = 2
+								}
+																																								
+				available = {
+																																									
+								}
+																																									
+				bypass = {
+																																									
+										}
+																																									
+				cancel_if_invalid = yes
+				continue_if_invalid = no
+				available_if_capitulated = no
+																																									
+				search_filters = { FOCUS_FILTER_RESEARCH }
+				completion_reward = {
+					
+													}
+		}
+##更加专业化的训练
+focus = {
+	id = DKA_More_specialized_training	
+	prerequisite = {  focus =DKA_National_Fitness_Campaign}
+	x=0
+	y = 1
+	relative_position_id =DKA_National_Fitness_Campaign
+																																						
+	cost = 10
+																																						
+	ai_will_do = {
+	factor = 2
+					}
+																																					
+	available = {
+																																						
+					}
+																																						
+	bypass = {
+																																						
+							}
+																																						
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+																																						
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	completion_reward = {
+		
+										}
+		}	
+	##组织奥林匹克委员会
+focus = {
+	id = DKA_Organizing_the_Olympic_Committee	
+	prerequisite = {  focus =DKA_National_Fitness_Campaign}
+	x=-2
+	y = 1
+	relative_position_id =DKA_National_Fitness_Campaign
+																																						
+	cost = 10
+																																						
+	ai_will_do = {
+	factor = 2
+					}
+																																					
+	available = {
+																																						
+					}
+																																						
+	bypass = {
+																																						
+							}
+																																						
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+																																						
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	completion_reward = {
+		
+										}
+		}		
+		##组织第一次奥林匹克运动会
+focus = {
+	id = DKA_Organizing_the_First_Olympic_Games	
+	prerequisite = {  focus =DKA_Organizing_the_Olympic_Committee}
+	x=0
+	y = 1
+	relative_position_id =DKA_Organizing_the_Olympic_Committee
+																																						
+	cost = 10
+																																						
+	ai_will_do = {
+	factor = 2
+					}
+																																					
+	available = {
+																																						
+					}
+																																						
+	bypass = {
+																																						
+							}
+																																						
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+																																						
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	completion_reward = {
+		
+										}
+		}		
 	   ##转变思路
 	   focus= {
 		id = DKA_Change_mindset
