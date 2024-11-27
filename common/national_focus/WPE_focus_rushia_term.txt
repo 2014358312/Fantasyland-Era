@@ -1,0 +1,650 @@
+@focus_time_tier_1 = 1
+@focus_time_tier_2 = 2
+@focus_time_tier_3 = 3
+@focus_time_tier_4 = 4
+@focus_time_tier_5 = 5
+
+shared_focus = {
+	id = WPE_tail_of_rushia_term
+	icon = GFX_focus_generic_concessions
+	allow_branch = {
+		tag = WPE
+		WPE = {
+			NOT = { has_country_flag = WPE_millennium_election_over_flag }
+			has_country_leader = {
+				character = WPE_Uruha_Rushia
+				ruling_only = yes
+			}
+		}
+	}
+	#prerequisite = { focus =  }
+	#mutually_exclusive = { focus =  }
+	#relative_position_id = 
+	x = 5
+	y = 0
+	cost = @focus_time_tier_5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		has_country_leader = {
+			character = WPE_Uruha_Rushia
+			ruling_only = yes
+		}
+		if = {
+			limit = { has_country_flag = WPE_tail_of_rushia_term_in_progress_flag }
+			set_temp_variable = { temp_focus_days = @focus_time_tier_5 } #For tooltip purposes
+			multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_focus_in_progress_ott
+					CHARACTER = Uruha_Rushia
+					FLAG_DAYS = [?WPE_tail_of_rushia_term_in_progress_flag:days]
+				}
+				always = no 
+			}
+		}
+		else = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_election_focuses_no_available_ott
+					CHARACTER = Uruha_Rushia
+				}
+				always = no
+			}
+		}
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	select_effect = {
+		set_country_flag = WPE_tail_of_rushia_term_flag
+	}
+	completion_reward = {
+		clr_country_flag = WPE_tail_of_rushia_term_flag
+		add_political_power = 25
+		country_event = white_pole.4
+		hidden_effect = {
+			country_event = { id = white_pole.5 }
+		}
+		set_variable = { WPE_rushia_term_var = 0 }
+	}
+}
+
+shared_focus = {
+	id = WPE_rushia_smooth_wave
+	icon = GFX_focus_BRA_end_the_state_of_emergency
+	prerequisite = { focus = WPE_tail_of_rushia_term }
+	relative_position_id = WPE_tail_of_rushia_term
+	x = -2
+	y = 1
+	cost = @focus_time_tier_4
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		has_country_leader = {
+			character = WPE_Uruha_Rushia
+			ruling_only = yes
+		}
+		if = {
+			limit = { has_country_flag = WPE_rushia_smooth_wave_in_progress_flag }
+			set_temp_variable = { temp_focus_days = @focus_time_tier_4 } #For tooltip purposes
+			multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_focus_in_progress_ott
+					CHARACTER = Uruha_Rushia
+					FLAG_DAYS = [?WPE_rushia_smooth_wave_in_progress_flag:days]
+				}
+				always = no 
+			}
+		}
+		else = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_election_focuses_no_available_ott
+					CHARACTER = Uruha_Rushia
+				}
+				always = no
+			}
+		}
+	}
+	completion_reward = {
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		add_political_power = -10
+		hidden_effect = {
+			country_event = { id = white_pole.5 }
+		}
+	}
+}
+
+shared_focus = {
+	id = WPE_rushia_transfer_attention
+	icon = GFX_goal_generic_propaganda
+	prerequisite = { focus = WPE_rushia_smooth_wave }
+	relative_position_id = WPE_rushia_smooth_wave
+	x = -1
+	y = 1
+	cost = @focus_time_tier_4
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		has_country_leader = {
+			character = WPE_Uruha_Rushia
+			ruling_only = yes
+		}
+		if = {
+			limit = { has_country_flag = WPE_rushia_transfer_attention_in_progress_flag }
+			set_temp_variable = { temp_focus_days = @focus_time_tier_4 } #For tooltip purposes
+			multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_focus_in_progress_ott
+					CHARACTER = Uruha_Rushia
+					FLAG_DAYS = [?WPE_rushia_transfer_attention_in_progress_flag:days]
+				}
+				always = no 
+			}
+		}
+		else = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_election_focuses_no_available_ott
+					CHARACTER = Uruha_Rushia
+				}
+				always = no
+			}
+		}
+	}
+	completion_reward = {
+		add_political_power = -10
+		hidden_effect = {
+			country_event = { id = white_pole.5 }
+		}
+	}
+}
+
+shared_focus = {
+	id = WPE_rushia_continue_prise_control
+	icon = GFX_focus_CONGO_gold_and_diamonds
+	prerequisite = { focus = WPE_tail_of_rushia_term }
+	relative_position_id = WPE_tail_of_rushia_term
+	x = 0
+	y = 1
+	cost = @focus_time_tier_4
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		has_country_leader = {
+			character = WPE_Uruha_Rushia
+			ruling_only = yes
+		}
+		if = {
+			limit = { has_country_flag = WPE_rushia_continue_prise_control_in_progress_flag }
+			set_temp_variable = { temp_focus_days = @focus_time_tier_4 } #For tooltip purposes
+			multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_focus_in_progress_ott
+					CHARACTER = Uruha_Rushia
+					FLAG_DAYS = [?WPE_rushia_continue_prise_control_in_progress_flag:days]
+				}
+				always = no 
+			}
+		}
+		else = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_election_focuses_no_available_ott
+					CHARACTER = Uruha_Rushia
+				}
+				always = no
+			}
+		}
+	}
+	completion_reward = {
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		add_political_power = -10
+		hidden_effect = {
+			country_event = { id = white_pole.5 }
+		}
+	}
+}
+
+shared_focus = {
+	id = WPE_rushia_seeking_parliamentary_cooperation
+	icon = GFX_focus_ARG_strengthening_the_concordancia
+	prerequisite = { focus = WPE_rushia_continue_prise_control }
+	relative_position_id = WPE_rushia_continue_prise_control
+	x = 0
+	y = 1
+	cost = @focus_time_tier_4
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		has_country_leader = {
+			character = WPE_Uruha_Rushia
+			ruling_only = yes
+		}
+		if = {
+			limit = { has_country_flag = WPE_rushia_seeking_parliamentary_cooperation_in_progress_flag }
+			set_temp_variable = { temp_focus_days = @focus_time_tier_4 } #For tooltip purposes
+			multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_focus_in_progress_ott
+					CHARACTER = Uruha_Rushia
+					FLAG_DAYS = [?WPE_rushia_seeking_parliamentary_cooperation_in_progress_flag:days]
+				}
+				always = no 
+			}
+		}
+		else = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_election_focuses_no_available_ott
+					CHARACTER = Uruha_Rushia
+				}
+				always = no
+			}
+		}
+	}
+	completion_reward = {
+		add_political_power = -10
+		country_event = white_pole.3
+		hidden_effect = {
+			country_event = { id = white_pole.5 }
+		}
+	}
+}
+
+shared_focus = {
+	id = WPE_rushia_hit_corruption
+	icon = GFX_focus_ARG_anti_corruption_policies
+	prerequisite = { focus = WPE_tail_of_rushia_term }
+	relative_position_id = WPE_tail_of_rushia_term
+	x = 2
+	y = 1
+	cost = @focus_time_tier_4
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		has_country_leader = {
+			character = WPE_Uruha_Rushia
+			ruling_only = yes
+		}
+		if = {
+			limit = { has_country_flag = WPE_rushia_hit_corruption_in_progress_flag }
+			set_temp_variable = { temp_focus_days = @focus_time_tier_4 } #For tooltip purposes
+			multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_focus_in_progress_ott
+					CHARACTER = Uruha_Rushia
+					FLAG_DAYS = [?WPE_rushia_hit_corruption_in_progress_flag:days]
+				}
+				always = no 
+			}
+		}
+		else = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_election_focuses_no_available_ott
+					CHARACTER = Uruha_Rushia
+				}
+				always = no
+			}
+		}
+	}
+	completion_reward = {
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		add_political_power = -10
+		hidden_effect = {
+			country_event = { id = white_pole.5 }
+		}
+	}
+}
+
+shared_focus = {
+	id = WPE_rushia_searching_for_loyalists
+	icon = GFX_focus_BRA_ethical_internationalism
+	prerequisite = { focus = WPE_rushia_hit_corruption }
+	relative_position_id = WPE_rushia_hit_corruption
+	x = 1
+	y = 1
+	cost = @focus_time_tier_4
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		has_country_leader = {
+			character = WPE_Uruha_Rushia
+			ruling_only = yes
+		}
+		if = {
+			limit = { has_country_flag = WPE_rushia_searching_for_loyalists_in_progress_flag }
+			set_temp_variable = { temp_focus_days = @focus_time_tier_4 } #For tooltip purposes
+			multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_focus_in_progress_ott
+					CHARACTER = Uruha_Rushia
+					FLAG_DAYS = [?WPE_rushia_searching_for_loyalists_in_progress_flag:days]
+				}
+				always = no 
+			}
+		}
+		else = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_election_focuses_no_available_ott
+					CHARACTER = Uruha_Rushia
+				}
+				always = no
+			}
+		}
+	}
+	completion_reward = {
+		add_political_power = -10
+		hidden_effect = {
+			country_event = { id = white_pole.5 }
+		}
+	}
+}
+
+shared_focus = {
+	id = WPE_rushia_resign
+	icon = GFX_focus_generic_concessions
+	allow_branch = {
+		tag = WPE
+		WPE = {
+			NOT = { has_country_flag = WPE_millennium_election_over_flag }
+			OR = {
+				has_country_leader = {
+					character = WPE_Tokino_Sora
+					ruling_only = yes
+				}
+				has_country_leader = {
+					character = WPE_Houshou_Marine
+					ruling_only = yes
+				}
+			}
+		}
+	}
+	x = 5
+	y = 0
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+		add_stability = -0.10
+	}
+}
+
+shared_focus = {
+	id = WPE_succession_of_sora_term
+	icon = GFX_goal_support_democracy
+	prerequisite = { focus = WPE_rushia_resign }
+	mutually_exclusive = { focus = WPE_succession_of_marine_term }
+	relative_position_id = WPE_rushia_resign
+	x = -4
+	y = 1
+	cost = 2
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		has_country_leader = {
+			character = WPE_Tokino_Sora
+			ruling_only = yes
+		}
+	}
+	bypass = {
+
+	}
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = WPE_succession_of_marine_term
+	icon = GFX_focus_generic_strike_at_democracy2
+	prerequisite = { focus = WPE_rushia_resign }
+	mutually_exclusive = { focus = WPE_succession_of_sora_term }
+	relative_position_id = WPE_rushia_resign
+	x = 4
+	y = 1
+	cost = 2
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		has_country_leader = {
+			character = WPE_Houshou_Marine
+			ruling_only = yes
+		}
+	}
+	bypass = {
+	
+	}
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = WPE_legacy_of_rushia
+	icon = GFX_focus_AUS_lawmaking_leniency
+	prerequisite = {
+		focus = WPE_succession_of_sora_term
+		focus = WPE_succession_of_marine_term
+	}
+	relative_position_id = WPE_rushia_resign
+	x = 0
+	y = 2
+	cost = 2
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		OR = {
+			has_country_leader = {
+				character = WPE_Tokino_Sora
+				ruling_only = yes
+			}
+			has_country_leader = {
+				character = WPE_Houshou_Marine
+				ruling_only = yes
+			}
+		}
+	}
+	bypass = {
+	
+	}
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = WPE_support_rushia
+	icon = GFX_focus_generic_concessions
+	prerequisite = { focus = WPE_legacy_of_rushia }
+	mutually_exclusive = { focus = WPE_against_rushia }
+	relative_position_id = WPE_legacy_of_rushia
+	x = -1
+	y = 1
+	cost = 2
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		OR = {
+			has_country_leader = {
+				character = WPE_Tokino_Sora
+				ruling_only = yes
+			}
+			has_country_leader = {
+				character = WPE_Houshou_Marine
+				ruling_only = yes
+			}
+		}
+	}
+	bypass = {
+	
+	}
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = WPE_against_rushia
+	icon = GFX_focus_generic_concessions
+	prerequisite = { focus = WPE_legacy_of_rushia }
+	mutually_exclusive = { focus = WPE_support_rushia }
+	relative_position_id = WPE_legacy_of_rushia
+	x = 1
+	y = 1
+	cost = 2
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		OR = {
+			has_country_leader = {
+				character = WPE_Tokino_Sora
+				ruling_only = yes
+			}
+			has_country_leader = {
+				character = WPE_Houshou_Marine
+				ruling_only = yes
+			}
+		}
+	}
+	bypass = {
+	
+	}
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = WPE_millennium_election
+	icon = GFX_focus_ARG_the_clean_election
+	prerequisite = {
+		focus = WPE_rushia_transfer_attention
+		focus = WPE_rushia_seeking_parliamentary_cooperation
+		focus = WPE_rushia_searching_for_loyalists
+		focus = WPE_succession_of_sora_term
+		focus = WPE_succession_of_marine_term
+	}
+	x = 5
+	y = 3
+	offset = {
+		x = 0
+		y = 1
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					character = WPE_Uruha_Rushia
+					ruling_only = yes
+				}
+			}
+		}
+	}
+	cost = 48
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = WPE_millennium_election_ttt2
+			NOT = { has_country_flag = WPE_millennium_election_over_flag }
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = WPE_Uruha_Rushia
+					ruling_only = yes
+				}
+			}
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_millennium_election_ttt
+					COUNTRY_LEADER = Uruha_Rushia
+				}
+				has_completed_focus = WPE_rushia_transfer_attention
+				has_completed_focus = WPE_rushia_seeking_parliamentary_cooperation
+				has_completed_focus = WPE_rushia_searching_for_loyalists
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_leader = {
+					character = WPE_Tokino_Sora
+					ruling_only = yes
+				}
+			}
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_millennium_election_ttt
+					COUNTRY_LEADER = Tokino_Sora
+				}
+				has_completed_focus = WPE_succession_of_sora_term
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_leader = {
+					character = WPE_Houshou_Marine
+					ruling_only = yes
+				}
+			}
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_millennium_election_ttt
+					COUNTRY_LEADER = Houshou_Marine
+				}
+				has_completed_focus = WPE_succession_of_marine_term
+			}
+		}
+	}
+	cancel_if_invalid = no
+	continue_if_invalid = yes
+	select_effect = {
+		set_country_flag = WPE_millennium_election_flag
+	}
+	completion_reward = {
+		custom_effect_tooltip = WPE_millennium_election_tt
+	}
+}

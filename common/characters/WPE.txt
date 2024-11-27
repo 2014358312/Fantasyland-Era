@@ -1,4 +1,58 @@
 characters = {
+	WPE_Promaya_Zatzatski = {
+		name = Promaya_Zatzatski
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Promaya_Zatzatski
+				small = GFX_idea_advisor_WPE_Promaya_Zatzatski
+			}
+			army = {
+				large = GFX_Portrait_WPE_Promaya_Zatzatski
+				small = GFX_idea_advisor_WPE_Promaya_Zatzatski
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = WPE_Promaya_Zatzatski_head_of_government
+			allowed = {
+				original_tag = WPE
+			}
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { aggressive_defense_minister head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = WPE_Promaya_Zatzatski_high_command
+			allowed = {
+				original_tag = WPE
+			}
+			available = {
+				is_country_leader = no
+			}
+			traits = { army_infantry_3 }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+			visible = {  }
+		}
+	}
+	
 	WPE_Uruha_Rushia = {
 		name = Uruha_Rushia
 		portraits = {
@@ -91,14 +145,18 @@ characters = {
 			id = -1
 		}
 		advisor = {
-			slot = political_advisor
+			slot = head_of_government
 			idea_token = WPE_Ilf_Snow
 			allowed = {
 				original_tag = WPE
 			}
+			visible = {
+				NOT = { has_character_flag = character_no_visible_flag }
+			}
+			available = { no_head_of_gov_trigger = yes }
 			can_be_fired = no
-			traits = { logistics_defense_minister }
-			cost = 150
+			traits = { logistics_defense_minister head_of_government_trait }
+			cost = 0
 			ai_will_do = {
 				factor = 1
 			}
@@ -120,6 +178,14 @@ characters = {
 			idea_token = WPE_Lyco
 			allowed = {
 				original_tag = WPE
+			}
+			visible = {
+				NOT = { has_character_flag = character_no_visible_flag }
+			}
+			available = {
+				hidden_trigger = {
+					NOT = { has_character_flag = character_no_available_flag }
+				}
 			}
 			can_be_fired = no
 			traits = { genius_scientist }
@@ -239,6 +305,192 @@ characters = {
 			ai_will_do = {
 				factor = 1
 			}
+		}
+	}
+
+	WPE_Hoshimachi_Suisei = {
+		name = Hoshimachi_Suisei
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Hoshimachi_Suisei
+				small = GFX_idea_advisor_WPE_Hoshimachi_Suisei
+			}
+			army = {
+				large = GFX_Portrait_WPE_Hoshimachi_Suisei
+				small = GFX_idea_advisor_WPE_Hoshimachi_Suisei
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WPE_Hoshimachi_Suisei
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { liberal_democratic_paragon }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	WPE_Minato_Aqua = {
+		name = Minato_Aqua
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Minato_Aqua
+				small = GFX_idea_advisor_WPE_Minato_Aqua
+			}
+			army = {
+				large = GFX_Portrait_WPE_Minato_Aqua
+				small = GFX_idea_advisor_WPE_Minato_Aqua
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WPE_Minato_Aqua
+			allowed = {
+				original_tag = WPE
+			}
+			visible = {
+				NOT = { has_character_flag = character_no_visible_flag }
+			}
+			available = {
+				hidden_trigger = {
+					NOT = { has_character_flag = character_no_available_flag }
+				}
+			}
+			can_be_fired = no
+			traits = { SWE_solidified_mandate_upgraded }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	WPE_Shirakami_Fubuki = {
+		name = Shirakami_Fubuki
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Shirakami_Fubuki
+				small = GFX_idea_advisor_WPE_Shirakami_Fubuki
+			}
+			army = {
+				large = GFX_Portrait_WPE_Shirakami_Fubuki
+				small = GFX_idea_advisor_WPE_Shirakami_Fubuki
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WPE_Shirakami_Fubuki
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { captain_of_industry }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	WPE_Natsuiro_Matsuri = {
+		name = Natsuiro_Matsuri
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Natsuiro_Matsuri
+				small = GFX_idea_advisor_WPE_Natsuiro_Matsuri
+			}
+			army = {
+				large = GFX_Portrait_WPE_Natsuiro_Matsuri
+				small = GFX_idea_advisor_WPE_Natsuiro_Matsuri
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WPE_Natsuiro_Matsuri
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { armaments_organizer }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	WPE_Shirogane_Noel = {
+		name = Shirogane_Noel
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Shirogane_Noel
+				small = GFX_idea_advisor_WPE_Shirogane_Noel
+			}
+			army = {
+				large = GFX_Portrait_WPE_Shirogane_Noel
+				small = GFX_idea_advisor_WPE_Shirogane_Noel
+			}
+		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = WPE_Shirogane_Noel
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { air_chief_ground_support_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+			visible = {  }
+		}
+	}
+
+	WPE_Suomi = {
+		name = Suomi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Suomi
+				small = GFX_idea_advisor_WPE_Suomi
+			}
+			army = {
+				large = GFX_Portrait_WPE_Suomi
+				small = GFX_idea_advisor_WPE_Suomi
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = WPE_Suomi
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { army_commando_3 }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+			visible = {  }
 		}
 	}
 }

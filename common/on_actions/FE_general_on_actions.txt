@@ -168,6 +168,15 @@ on_actions = {
 			SMA = { initialize_san_magnolia_party_long_name = yes }
 			LAN = { initialize_landsol_party_long_name = yes }
 			############
+			every_possible_country = {
+				limit = {
+					amount_taken_ideas = {
+						amount < 1
+						slots = { head_of_government }
+					}
+				}
+				activate_advisor = generic_head_of_government_none
+			}
 		}
 	}
 	on_state_control_changed = {

@@ -6,6 +6,8 @@ set_stability = 0.65
 set_war_support = 0.35
 starting_train_buffer = 2.0
 
+set_oob = WPE_1000_nsb
+
 set_technology = {
 	basic_train = 1
 	### Infantry ###
@@ -67,6 +69,7 @@ add_ideas = {
 	sangvis_ferri
 }
 
+recruit_character = WPE_Promaya_Zatzatski
 recruit_character = WPE_Uruha_Rushia
 recruit_character = WPE_Tokino_Sora
 recruit_character = WPE_Houshou_Marine
@@ -75,11 +78,21 @@ recruit_character = WPE_Lyco
 recruit_character = WPE_Martini_Henry
 recruit_character = WPE_Helianthus
 recruit_character = WPE_Dandelion
+recruit_character = WPE_Hoshimachi_Suisei
+recruit_character = WPE_Minato_Aqua
+recruit_character = WPE_Shirakami_Fubuki
+recruit_character = WPE_Natsuiro_Matsuri
+recruit_character = WPE_Shirogane_Noel
+recruit_character = WPE_Suomi
 
 activate_advisor = WPE_Ilf_Snow
 activate_advisor = WPE_Lyco
+activate_advisor = WPE_Minato_Aqua
 
-
+activate_shine_on_focus = WPE_tail_of_rushia_term
+set_country_flag = { flag = WPE_tail_of_rushia_term_in_progress_flag days = 36 value = 1 }
+country_event = { id = white_pole.5 days = 35 hours = 12 }
+set_variable = { WPE_rushia_status_var = 2 }
 
 set_politics = {
 	ruling_party = democratic

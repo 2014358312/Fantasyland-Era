@@ -4,6 +4,236 @@
 
 add_namespace = white_pole
 add_namespace = white_civil_war
+
+country_event = {
+	id = white_pole.1
+	title = white_pole.1.t
+	desc = white_pole.1.desc
+	picture = GFX_report_event_EYP_01
+
+	trigger = {
+		tag = WPE
+		has_country_leader = {
+			character = WPE_Uruha_Rushia
+			ruling_only = yes
+		}
+		NOT = { has_country_flag = WPE_millennium_election_over_flag }
+		check_variable = { WPE_rushia_status_var > 4 }
+	}
+	
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { id = white_pole.11 days = 5 random = 5 }
+			country_event = white_pole.2
+		}
+	}
+	
+	option = {
+		name = white_pole.1.a
+		custom_effect_tooltip = white_pole_1_a_tt
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.08
+		}
+		ROOT_transfer_fascist_support_to_neutrality = yes
+	}
+}
+
+country_event = {
+	id = white_pole.2
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event white_pole.2"
+		hidden_effect = {
+			if = {
+				limit = { has_shine_effect_on_focus = WPE_tail_of_rushia_term }
+				deactivate_shine_on_focus = WPE_tail_of_rushia_term
+			}
+			else_if = {
+				limit = { has_shine_effect_on_focus = WPE_rushia_smooth_wave }
+				deactivate_shine_on_focus = WPE_rushia_smooth_wave
+			}
+			else_if = {
+				limit = { has_shine_effect_on_focus = WPE_rushia_continue_prise_control }
+				deactivate_shine_on_focus = WPE_rushia_continue_prise_control
+			}
+			else_if = {
+				limit = { has_shine_effect_on_focus = WPE_rushia_hit_corruption }
+				deactivate_shine_on_focus = WPE_rushia_hit_corruption
+			}
+			else_if = {
+				limit = { has_shine_effect_on_focus = WPE_rushia_transfer_attention }
+				deactivate_shine_on_focus = WPE_rushia_transfer_attention
+			}
+			else_if = {
+				limit = { has_shine_effect_on_focus = WPE_rushia_seeking_parliamentary_cooperation }
+				deactivate_shine_on_focus = WPE_rushia_seeking_parliamentary_cooperation
+			}
+			else_if = {
+				limit = { has_shine_effect_on_focus = WPE_rushia_searching_for_loyalists }
+				deactivate_shine_on_focus = WPE_rushia_searching_for_loyalists
+			}
+		}
+	}
+}
+
+country_event = {
+	id = white_pole.3
+	title = white_pole.3.t
+	desc = white_pole.3.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	option = {
+		name = white_pole.3.a
+	}
+}
+
+country_event = {
+	id = white_pole.4
+	title = white_pole.4.t
+	desc = white_pole.4.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event white_pole.4"
+	}
+	
+	option = {
+		name = white_pole.4.a
+		add_political_power = 25
+	}
+}
+
+country_event = {
+	id = white_pole.5
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event white_pole.5"
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_leader = {
+						character = WPE_Uruha_Rushia
+						ruling_only = yes
+					}
+				}
+				if = {
+					limit = { has_shine_effect_on_focus = WPE_tail_of_rushia_term }
+					deactivate_shine_on_focus = WPE_tail_of_rushia_term
+					complete_national_focus = WPE_tail_of_rushia_term
+				}
+				else_if = {
+					limit = { has_shine_effect_on_focus = WPE_rushia_smooth_wave }
+					deactivate_shine_on_focus = WPE_rushia_smooth_wave
+					complete_national_focus = WPE_rushia_smooth_wave
+				}
+				else_if = {
+					limit = { has_shine_effect_on_focus = WPE_rushia_continue_prise_control }
+					deactivate_shine_on_focus = WPE_rushia_continue_prise_control
+					complete_national_focus = WPE_rushia_continue_prise_control
+				}
+				else_if = {
+					limit = { has_shine_effect_on_focus = WPE_rushia_hit_corruption }
+					deactivate_shine_on_focus = WPE_rushia_hit_corruption
+					complete_national_focus = WPE_rushia_hit_corruption
+				}
+				else_if = {
+					limit = { has_shine_effect_on_focus = WPE_rushia_transfer_attention }
+					deactivate_shine_on_focus = WPE_rushia_transfer_attention
+					complete_national_focus = WPE_rushia_transfer_attention
+				}
+				else_if = {
+					limit = { has_shine_effect_on_focus = WPE_rushia_seeking_parliamentary_cooperation }
+					deactivate_shine_on_focus = WPE_rushia_seeking_parliamentary_cooperation
+					complete_national_focus = WPE_rushia_seeking_parliamentary_cooperation
+				}
+				else_if = {
+					limit = { has_shine_effect_on_focus = WPE_rushia_searching_for_loyalists }
+					deactivate_shine_on_focus = WPE_rushia_searching_for_loyalists
+					complete_national_focus = WPE_rushia_searching_for_loyalists
+				}
+				add_to_variable = { WPE_rushia_term_var = 1 }
+				if = {
+					limit = { check_variable = { WPE_rushia_term_var < 6 } }
+					random_list = {
+						1 = {
+							modifier = {
+								factor = 0
+								has_completed_focus = WPE_rushia_smooth_wave
+							}
+							activate_shine_on_focus = WPE_rushia_smooth_wave
+							set_country_flag = { flag = WPE_rushia_smooth_wave_in_progress_flag days = 29 value = 1 }
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								has_completed_focus = WPE_rushia_continue_prise_control
+							}
+							activate_shine_on_focus = WPE_rushia_continue_prise_control
+							set_country_flag = { flag = WPE_rushia_continue_prise_control_in_progress_flag days = 29 value = 1 }
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								has_completed_focus = WPE_rushia_hit_corruption
+							}
+							activate_shine_on_focus = WPE_rushia_hit_corruption
+							set_country_flag = { flag = WPE_rushia_hit_corruption_in_progress_flag days = 29 value = 1 }
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									NOT = { has_completed_focus = WPE_rushia_smooth_wave }
+									has_completed_focus = WPE_rushia_transfer_attention
+								}
+							}
+							activate_shine_on_focus = WPE_rushia_transfer_attention
+							set_country_flag = { flag = WPE_rushia_transfer_attention_in_progress_flag days = 29 value = 1 }
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									NOT = { has_completed_focus = WPE_rushia_continue_prise_control }
+									has_completed_focus = WPE_rushia_seeking_parliamentary_cooperation
+								}
+							}
+							activate_shine_on_focus = WPE_rushia_seeking_parliamentary_cooperation
+							set_country_flag = { flag = WPE_rushia_seeking_parliamentary_cooperation_in_progress_flag days = 29 value = 1 }
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								OR = {
+									NOT = { has_completed_focus = WPE_rushia_hit_corruption }
+									has_completed_focus = WPE_rushia_searching_for_loyalists
+								}
+							}
+							activate_shine_on_focus = WPE_rushia_searching_for_loyalists
+							set_country_flag = { flag = WPE_rushia_searching_for_loyalists_in_progress_flag days = 29 value = 1 }
+						}
+					}
+				}
+				else_if = {
+					limit = { check_variable = { WPE_rushia_term_var > 5 } }
+					clear_variable = WPE_rushia_term_var
+				}
+			}
+		}
+	}
+}
+
 country_event = {
 	id = white_pole.6
 	title = white_pole.6.t
@@ -43,6 +273,7 @@ country_event = {
 				limit = { is_newland_country = yes }
 				PREV = {
 					RAT_Takamiya_Mio = {
+						clr_character_flag = character_no_visible_flag
 						set_nationality = PREV
 					}
 				}
@@ -62,29 +293,32 @@ country_event = {
 	immediate = {
 		log = "[GetDateText]: [Root.GetName]: event white_pole.7"
 		hidden_effect = {
-			WPE_Ilf_Snow = {
-				set_can_be_fired_in_advisor_role = {
-					slot = political_advisor
-					value = yes
-				}
-				set_character_flag = character_no_available_flag
-			}
-			remove_ideas = WPE_Ilf_Snow
+			deactivate_advisor = WPE_Ilf_Snow
 			country_event = { id = white_pole.8 days = 14 random = 7 }
+			activate_advisor = WPE_Promaya_Zatzatski_head_of_government
 		}
 	}
 
 	option = {
 		name = white_pole.7.a
 		effect_tooltip = {
-			WPE_Ilf_Snow = {
-				set_can_be_fired_in_advisor_role = {
-					slot = political_advisor
-					value = yes
-				}
-			}
-			remove_ideas = WPE_Ilf_Snow
+			deactivate_advisor = WPE_Ilf_Snow
+			activate_advisor = WPE_Promaya_Zatzatski_head_of_government
 		}
+	}
+}
+
+country_event = {
+	id = white_pole.111
+	title = white_pole.7.t
+	desc = white_pole.7.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = white_pole.7.a
+		activate_advisor = WPE_Ilf_Snow
 	}
 }
 
@@ -164,32 +398,15 @@ country_event = {
 	option = {
 		name = white_pole.10.a
 		custom_effect_tooltip = white_pole_10_a_tt
+		ROOT_transfer_fascist_support_to_neutrality = yes
 		hidden_effect = {
-			set_variable = { ROOT.fascist_support_before_change = ROOT.party_popularity@fascism }
-			set_variable = { ROOT.neutrality_support_before_change = ROOT.party_popularity@neutrality }
-			set_variable = { ROOT.neutrality_support_after_change = ROOT.neutrality_support_before_change }
-			add_to_variable = { ROOT.neutrality_support_after_change = ROOT.fascist_support_before_change }
-			add_popularity = {
-				ideology = fascism
-				popularity = -1.00
-			}
-			add_popularity = {
-				ideology = neutrality
-				popularity = -1.00
-			}
-			add_popularity = {
-				ideology = neutrality
-				popularity = ROOT.neutrality_support_after_change
-			}
-			clear_variable = ROOT.fascist_support_before_change
-			clear_variable = ROOT.neutrality_support_after_change
 			WPE_Ilf_Snow = {
 				remove_trait = {
-					slot = political_advisor
+					slot = head_of_government
 					trait = logistics_defense_minister
 				}
 				add_trait = {
-					slot = political_advisor
+					slot = head_of_government
 					trait = logistics_defense_minister_improve
 				}
 			}
@@ -208,6 +425,9 @@ country_event = {
 	
 	immediate = {
 		log = "[GetDateText]: [Root.GetName]: event white_pole.11"
+		hidden_effect = {
+			country_event = white_pole.2
+		}
 	}
 
 	option = {
@@ -232,6 +452,7 @@ country_event = {
 		}
 		add_stability = 0.05
 		add_political_power = 25
+		reload_focus_tree = yes
 	}
 
 	option = {
@@ -256,6 +477,101 @@ country_event = {
 		}
 		add_war_support = 0.05
 		add_command_power = 25
+		reload_focus_tree = yes
+	}
+}
+
+country_event = {
+	id = white_pole.12
+	title = white_pole.12.t
+	desc = white_pole.12.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event white_pole.12"
+	}
+	
+	option = {
+		name = white_pole.12.a
+		set_can_be_fired_in_advisor_role = {
+			character = WPE_Minato_Aqua
+			slot = political_advisor
+			value = yes
+		}
+		remove_ideas = WPE_Minato_Aqua
+		WPE_Minato_Aqua = {
+			set_character_flag = character_no_visible_flag
+			effect_tooltip = { remove_advisor_role = { slot = political_advisor } }
+		}
+	}
+}
+
+country_event = {
+	id = white_pole.13
+	title = white_pole.13.t
+	desc = white_pole.13.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event white_pole.13"
+		hidden_effect = {
+			WPE_Lyco = {
+				set_can_be_fired_in_advisor_role = {
+					slot = political_advisor
+					value = yes
+				}
+				set_character_flag = character_no_available_flag
+			}
+			remove_ideas = WPE_Lyco
+			country_event = { id = white_pole.14 days = 7 }
+		}
+	}
+
+	option = {
+		name = white_pole.13.a
+		effect_tooltip = {
+			WPE_Lyco = {
+				set_can_be_fired_in_advisor_role = {
+					slot = political_advisor
+					value = yes
+				}
+			}
+			remove_ideas = WPE_Lyco
+		}
+	}
+}
+
+country_event = {
+	id = white_pole.14
+	title = white_pole.14.t
+	desc = white_pole.14.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event white_pole.14"
+		hidden_effect = {
+			WPE_Lyco = {
+				clr_character_flag = character_no_available_flag
+				set_character_flag = character_no_visible_flag
+				remove_advisor_role = { slot = political_advisor }
+			}
+		}
+	}
+	
+	option = {
+		name = white_pole.14.a
+		custom_effect_tooltip = {
+			localization_key = kill_character_tt
+			KILLED_CHARACTER = Lyco
+		}
+		custom_effect_tooltip = no_available_industrial_concern
+		show_ideas_tooltip = sangvis_ferri
 	}
 }
 

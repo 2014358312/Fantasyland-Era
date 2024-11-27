@@ -1,0 +1,34 @@
+defined_text = {
+    name = GetRushiaStatus
+	text = {
+		trigger = {
+			check_variable = { WPE_rushia_status_var > 4 }
+		}
+		localization_key = rushia_status_very_high
+    }
+	text = {
+		trigger = {
+			check_variable = { WPE_rushia_status_var > 3 }
+		}
+		localization_key = rushia_status_high
+    }
+	text = {
+		trigger = {
+			check_variable = { WPE_rushia_status_var > 2 }
+		}
+		localization_key = rushia_status_medium
+    }
+	text = {
+		trigger = {
+			check_variable = { WPE_rushia_status_var > 1 }
+		}
+		localization_key = rushia_status_low
+    }
+	text = {
+		trigger = {
+			check_variable = { WPE_rushia_status_var > 0 }
+		}
+		localization_key = rushia_status_very_low
+    }
+	text = { localization_key = general_null }
+}
