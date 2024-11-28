@@ -87,14 +87,11 @@ def main(localDirPath):
 			for line in ignoreList:
 				f.write(line + "\n")
 	print(f"fileList: {fileList}\nfileNameList: {fileNameList}\nignoreList: {ignoreList}\nulList: {ulList}")
+	messagebox.showinfo("提示", "注册完成，文件已生成在本程序所在目录下")
 
 
 if __name__ == "__main__":
 	localDirPath = os.path.dirname(__file__)
 	print(localDirPath)
-	messagebox.showinfo("提示", "注册完成，文件已生成在本程序所在目录下")
-	#if "gfx" in localDirPath:
-	#	main(localDirPath)
-	#	messagebox.showinfo("提示", "注册完成，文件已生成在本程序所在目录下")
-	#else:
-	#	messagebox.showerror("错误", "本程序当前仅支持dds或png格式，现所在文件夹不含dds或png格式文件，")
+	main(localDirPath)
+	#messagebox.showerror("错误", "本程序当前仅支持dds或png格式，现所在文件夹不含dds或png格式文件，")	
