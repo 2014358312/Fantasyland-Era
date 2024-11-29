@@ -6,7 +6,7 @@
 
 shared_focus = {
 	id = WPE_tail_of_rushia_term
-	icon = GFX_focus_generic_concessions
+	icon = GFX_goal_generic_more_territorial_claims
 	allow_branch = {
 		tag = WPE
 		WPE = {
@@ -371,7 +371,7 @@ shared_focus = {
 
 shared_focus = {
 	id = WPE_rushia_resign
-	icon = GFX_focus_generic_concessions
+	icon = GFX_focus_WPE_rushia_resign
 	allow_branch = {
 		tag = WPE
 		WPE = {
@@ -410,7 +410,7 @@ shared_focus = {
 
 shared_focus = {
 	id = WPE_succession_of_sora_term
-	icon = GFX_goal_support_democracy
+	icon = GFX_focus_WPE_succession_of_sora_term
 	prerequisite = { focus = WPE_rushia_resign }
 	mutually_exclusive = { focus = WPE_succession_of_marine_term }
 	relative_position_id = WPE_rushia_resign
@@ -536,7 +536,7 @@ shared_focus = {
 
 shared_focus = {
 	id = WPE_succession_of_marine_term
-	icon = GFX_focus_generic_strike_at_democracy2
+	icon = GFX_focus_WPE_succession_of_marine_term
 	prerequisite = { focus = WPE_rushia_resign }
 	mutually_exclusive = { focus = WPE_succession_of_sora_term }
 	relative_position_id = WPE_rushia_resign
@@ -662,7 +662,7 @@ shared_focus = {
 
 shared_focus = {
 	id = WPE_legacy_of_rushia
-	icon = GFX_focus_AUS_lawmaking_leniency
+	icon = GFX_focus_WPE_legacy_of_rushia
 	prerequisite = {
 		focus = WPE_succession_of_sora_term
 		focus = WPE_succession_of_marine_term
@@ -696,7 +696,7 @@ shared_focus = {
 
 shared_focus = {
 	id = WPE_support_rushia
-	icon = GFX_focus_generic_concessions
+	icon = GFX_focus_WPE_support_rushia
 	prerequisite = { focus = WPE_legacy_of_rushia }
 	mutually_exclusive = { focus = WPE_against_rushia }
 	relative_position_id = WPE_legacy_of_rushia
@@ -728,7 +728,7 @@ shared_focus = {
 
 shared_focus = {
 	id = WPE_against_rushia
-	icon = GFX_focus_generic_concessions
+	icon = GFX_focus_WPE_against_rushia
 	prerequisite = { focus = WPE_legacy_of_rushia }
 	mutually_exclusive = { focus = WPE_support_rushia }
 	relative_position_id = WPE_legacy_of_rushia
@@ -765,25 +765,10 @@ shared_focus = {
 		focus = WPE_rushia_transfer_attention
 		focus = WPE_rushia_seeking_parliamentary_cooperation
 		focus = WPE_rushia_searching_for_loyalists
-		focus = WPE_sora_provide_assurance
-		focus = WPE_sora_review_military_budget
-		focus = WPE_marine_eliminate_unstable_factors
-		focus = WPE_marine_military_engineering_bidding
 	}
-	x = 5
+	relative_position_id = WPE_tail_of_rushia_term
+	x = 0
 	y = 3
-	offset = {
-		x = 0
-		y = 1
-		trigger = {
-			NOT = {
-				has_country_leader = {
-					character = WPE_Uruha_Rushia
-					ruling_only = yes
-				}
-			}
-		}
-	}
 	cost = 48
 	ai_will_do = {
 		factor = 1
@@ -793,85 +778,84 @@ shared_focus = {
 			tooltip = WPE_millennium_election_ttt2
 			NOT = { has_country_flag = WPE_millennium_election_over_flag }
 		}
-		if = {
-			limit = {
-				has_country_leader = {
-					character = WPE_Uruha_Rushia
-					ruling_only = yes
-				}
-			}
+		has_country_leader = {
+			character = WPE_Uruha_Rushia
+			ruling_only = yes
+		}
+	}
+	select_effect = {
+		set_country_flag = WPE_millennium_election_flag
+	}
+	completion_reward = {
+		custom_effect_tooltip = WPE_millennium_election_tt
+	}
+}
+
+shared_focus = {
+	id = WPE_millennium_election_improve
+	text = WPE_millennium_election
+	icon = GFX_focus_ARG_the_clean_election
+	prerequisite = {
+		focus = WPE_sora_provide_assurance
+		focus = WPE_sora_review_military_budget
+		focus = WPE_marine_eliminate_unstable_factors
+		focus = WPE_marine_military_engineering_bidding
+	}
+	relative_position_id = WPE_rushia_resign
+	x = 0
+	y = 4
+	cost = 1
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = WPE_millennium_election_ttt2
+			NOT = { has_country_flag = WPE_millennium_election_over_flag }
+		}
+		OR = {
 			has_country_leader = {
-				character = WPE_Uruha_Rushia
+				character = WPE_Tokino_Sora
 				ruling_only = yes
 			}
-			custom_override_tooltip = {
-				tooltip = {
-					localization_key = WPE_millennium_election_ttt
-					COUNTRY_LEADER = Uruha_Rushia
-				}
-				has_completed_focus = WPE_rushia_transfer_attention
-				has_completed_focus = WPE_rushia_seeking_parliamentary_cooperation
-				has_completed_focus = WPE_rushia_searching_for_loyalists
+			has_country_leader = {
+				character = WPE_Houshou_Marine
+				ruling_only = yes
 			}
 		}
-		else_if = {
+		if = {
 			limit = {
-				OR = {
-					has_country_leader = {
-						character = WPE_Tokino_Sora
-						ruling_only = yes
-					}
-					has_country_leader = {
-						character = WPE_Houshou_Marine
-						ruling_only = yes
-					}
-				}
-			}
-			OR = {
 				has_country_leader = {
 					character = WPE_Tokino_Sora
 					ruling_only = yes
 				}
+			}
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_millennium_election_ttt
+					COUNTRY_LEADER = Tokino_Sora
+				}
+				has_completed_focus = WPE_sora_provide_assurance
+				has_completed_focus = WPE_sora_review_military_budget
+			}
+		}
+		else_if = {
+			limit = {
 				has_country_leader = {
 					character = WPE_Houshou_Marine
 					ruling_only = yes
 				}
 			}
-			if = {
-				limit = {
-					has_country_leader = {
-						character = WPE_Tokino_Sora
-						ruling_only = yes
-					}
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = WPE_millennium_election_ttt
+					COUNTRY_LEADER = Houshou_Marine
 				}
-				custom_override_tooltip = {
-					tooltip = {
-						localization_key = WPE_millennium_election_ttt
-						COUNTRY_LEADER = Tokino_Sora
-					}
-					has_completed_focus = WPE_sora_provide_assurance
-					has_completed_focus = WPE_sora_review_military_budget
-				}
-			}
-			else_if = {
-				limit = {
-					has_country_leader = {
-						character = WPE_Houshou_Marine
-						ruling_only = yes
-					}
-				}
-				custom_override_tooltip = {
-					tooltip = {
-						localization_key = WPE_millennium_election_ttt
-						COUNTRY_LEADER = Houshou_Marine
-					}
-					has_completed_focus = WPE_marine_eliminate_unstable_factors
-					has_completed_focus = WPE_marine_military_engineering_bidding
-				}
+				has_completed_focus = WPE_marine_eliminate_unstable_factors
+				has_completed_focus = WPE_marine_military_engineering_bidding
 			}
 		}
 	}
-	cancel_if_invalid = no
 	continue_if_invalid = yes
 	select_effect = {
 		set_country_flag = WPE_millennium_election_flag
