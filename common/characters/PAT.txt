@@ -1,16 +1,154 @@
 characters = {
-	PAT_Orphans_Il_Palettia = {
-		name = Orphans_Il_Palettia
+	PAT_Orphans_II_Palettia = {
+		name = Orphans_II_Palettia
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/PAT/PAT_Orphans_Il_Palettia.dds"
+				large = GFX_Portrait_PAT_Orphans_II_Palettia
 			}
 		}
 		country_leader = {
-			ideology = despotism
-			traits = {  }
+			ideology = absolutism_subtype
+			traits = { agricultural_scientist }
 			expire = "1965.1.1.1"
 			id = -1
+		}
+	}
+	
+	PAT_Anisufia_win_Parettia = {
+		name = Anisufia_win_Parettia
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_PAT_Anisufia_win_Parettia
+				small = GFX_idea_advisor_PAT_Anisufia_win_Parettia
+			}
+			army = {
+				large = GFX_Portrait_PAT_Anisufia_win_Parettia_alt2
+				small = GFX_idea_advisor_PAT_Anisufia_win_Parettia_alt2
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = PAT_Anisufia_win_Parettia_political_advisor
+			allowed = { original_tag = PAT }
+			available = {
+				not_already_hired_except_as = political_advisor
+			}
+			cost = 150
+			traits = { magic_device_pioneer }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = PAT_Anisufia_win_Parettia_high_command
+			allowed = { original_tag = PAT }
+			available = {
+				not_already_hired_except_as = high_command
+			}
+			cost = 150
+			traits = { air_air_superiority_3 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { brilliant_strategist }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+	
+	PAT_Yufiria_Mazenta = {
+		name = Yufiria_Mazenta
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_PAT_Yufiria_Mazenta
+				small = GFX_idea_advisor_PAT_Yufiria_Mazenta
+			}
+			army = {
+				large = GFX_Portrait_PAT_Yufiria_Mazenta_alt2
+				small = GFX_idea_advisor_PAT_Yufiria_Mazenta_alt2
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = PAT_Yufiria_Mazenta_political_advisor
+			allowed = { original_tag = PAT }
+			available = {
+				not_already_hired_except_as = political_advisor
+				is_country_leader = no
+			}
+			cost = 150
+			traits = { faction_connection }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = PAT_Yufiria_Mazenta_air_chief
+			allowed = { original_tag = PAT }
+			available = {
+				not_already_hired_except_as = air_chief
+				is_country_leader = no
+			}
+			cost = 150
+			traits = { air_chief_ground_support_3 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { brilliant_strategist }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+	
+	PAT_Algard_von_Palettia = {
+		name = Algard_von_Palettia
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_PAT_Algard_von_Palettia
+				small = GFX_idea_advisor_PAT_Algard_von_Palettia
+			}
+			army = {
+				large = GFX_Portrait_PAT_Algard_von_Palettia
+				small = GFX_idea_advisor_PAT_Algard_von_Palettia
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = PAT_Algard_von_Palettia
+			allowed = { original_tag = PAT }
+			available = {
+				is_country_leader = no
+			}
+			cost = 150
+			traits = { hawk }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
 		}
 	}
 }

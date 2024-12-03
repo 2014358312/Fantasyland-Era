@@ -252,13 +252,12 @@ country_event = {
 				}
 				set_character_flag = character_no_visible_flag
 			}
-			remove_ideas = RAT_Takamiya_Mio
-			country_event = { id = white_pole.7 days = 14 random = 7 }
+			deactivate_advisor = RAT_Murasame_Reine
 		}
 	}
 
 	option = {
-		name = white_pole.8.a
+		name = white_pole.6.a
 		effect_tooltip = {
 			RAT_Takamiya_Mio = {
 				set_can_be_fired_in_advisor_role = {
@@ -266,7 +265,7 @@ country_event = {
 					value = yes
 				}
 			}
-			remove_ideas = RAT_Takamiya_Mio
+			deactivate_advisor = RAT_Murasame_Reine
 		}
 		hidden_effect = {
 			random_country = {
@@ -294,7 +293,6 @@ country_event = {
 		log = "[GetDateText]: [Root.GetName]: event white_pole.7"
 		hidden_effect = {
 			deactivate_advisor = WPE_Ilf_Snow
-			country_event = { id = white_pole.8 days = 14 random = 7 }
 			activate_advisor = WPE_Promaya_Zatzatski_head_of_government
 		}
 	}
@@ -305,20 +303,6 @@ country_event = {
 			deactivate_advisor = WPE_Ilf_Snow
 			activate_advisor = WPE_Promaya_Zatzatski_head_of_government
 		}
-	}
-}
-
-country_event = {
-	id = white_pole.111
-	title = white_pole.7.t
-	desc = white_pole.7.desc
-	picture = GFX_report_event_EYP_01
-
-	is_triggered_only = yes
-
-	option = {
-		name = white_pole.7.a
-		activate_advisor = WPE_Ilf_Snow
 	}
 }
 
@@ -340,8 +324,7 @@ country_event = {
 				}
 				set_character_flag = character_no_visible_flag
 			}
-			remove_ideas = RAT_Issac_Ray_Pelham_Westcott
-			country_event = { id = white_pole.9 days = 14 random = 7 }
+			deactivate_advisor = RAT_Issac_Ray_Pelham_Westcott
 		}
 	}
 
@@ -354,7 +337,7 @@ country_event = {
 					value = yes
 				}
 			}
-			remove_ideas = RAT_Issac_Ray_Pelham_Westcott
+			deactivate_advisor = RAT_Issac_Ray_Pelham_Westcott
 		}
 	}
 }
@@ -516,7 +499,7 @@ country_event = {
 			slot = political_advisor
 			value = yes
 		}
-		remove_ideas = WPE_Minato_Aqua
+		deactivate_advisor = WPE_Minato_Aqua
 		WPE_Minato_Aqua = {
 			set_character_flag = character_no_visible_flag
 			effect_tooltip = { remove_advisor_role = { slot = political_advisor } }
@@ -542,7 +525,7 @@ country_event = {
 				}
 				set_character_flag = character_no_available_flag
 			}
-			remove_ideas = WPE_Lyco
+			deactivate_advisor = WPE_Lyco
 			country_event = { id = white_pole.14 days = 7 }
 		}
 	}
@@ -556,7 +539,7 @@ country_event = {
 					value = yes
 				}
 			}
-			remove_ideas = WPE_Lyco
+			deactivate_advisor = WPE_Lyco
 		}
 	}
 }
