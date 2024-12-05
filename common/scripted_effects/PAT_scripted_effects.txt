@@ -1,0 +1,1610 @@
+PAT_initialize_successor_to_the_throne_gui = {
+	PAT_initialize_Yufiria_level = yes
+	PAT_initialize_Algard_level = yes
+	PAT_calculate_successor_score = yes
+	clear_array = PAT_talented_king_Yufiria_array
+	clear_array = PAT_talented_king_Yufiria_array_value_status
+	clear_array = PAT_talented_king_Yufiria_array_value
+	clear_array = PAT_talented_king_Algard_array
+	clear_array = PAT_talented_king_Algard_array_value_status
+	clear_array = PAT_talented_king_Algard_array_value
+	set_variable = { PAT_talented_king_Yufiria_num = 1 }
+	add_to_array = { PAT_talented_king_Yufiria_array = general_null }
+	add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:Y_color }
+	add_to_array = { PAT_talented_king_Yufiria_array_value = 999 } #NO USE OF INDEX 0
+	add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_RESEARCH_SPEED_FACTOR }
+	add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+	add_to_array = { PAT_talented_king_Yufiria_array_value = 0.05 }
+	set_variable = { PAT_talented_king_Algard_num = 1 }
+	add_to_array = { PAT_talented_king_Algard_array = general_null }
+	add_to_array = { PAT_talented_king_Algard_array_value_status = token:Y_color }
+	add_to_array = { PAT_talented_king_Algard_array_value = 999 } #NO USE OF INDEX 0
+	add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_COMPLIANCE_GROWTH }
+	add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+	add_to_array = { PAT_talented_king_Algard_array_value = 0.05 }
+}
+
+PAT_initialize_Yufiria_level = {
+	set_variable = { PAT_talented_king_Yufiria_d_level_var = 3 }
+	set_variable = { PAT_talented_king_Yufiria_m_level_var = 2 }
+	set_variable = { PAT_talented_king_Yufiria_a_level_var = 2 }
+	set_variable = { PAT_talented_king_Yufiria_s_level_var = 1 }
+	set_variable = { PAT_talented_king_Yufiria_k_level_var = 4 }
+	set_variable = { PAT_talented_king_Yufiria_r_level_var = 3 }
+}
+
+PAT_initialize_Algard_level = {
+	set_variable = { PAT_talented_king_Algard_d_level_var = 1 }
+	set_variable = { PAT_talented_king_Algard_m_level_var = 3 }
+	set_variable = { PAT_talented_king_Algard_a_level_var = 3 }
+	set_variable = { PAT_talented_king_Algard_s_level_var = 3 }
+	set_variable = { PAT_talented_king_Algard_k_level_var = 1 }
+	set_variable = { PAT_talented_king_Algard_r_level_var = 4 }
+}
+
+PAT_calculate_successor_score = {
+	set_variable = { PAT_Yufiria_score = PAT_talented_king_Yufiria_d_level_var }
+	add_to_variable = { PAT_Yufiria_score = PAT_talented_king_Yufiria_m_level_var }
+	add_to_variable = { PAT_Yufiria_score = PAT_talented_king_Yufiria_a_level_var }
+	add_to_variable = { PAT_Yufiria_score = PAT_talented_king_Yufiria_s_level_var }
+	add_to_variable = { PAT_Yufiria_score = PAT_talented_king_Yufiria_k_level_var }
+	add_to_variable = { PAT_Yufiria_score = PAT_talented_king_Yufiria_r_level_var }
+	add_to_variable = { PAT_Yufiria_score = PAT_talented_king_Yufiria_r_level_var }
+	set_variable = { PAT_Algard_score = PAT_talented_king_Algard_d_level_var }
+	add_to_variable = { PAT_Algard_score = PAT_talented_king_Algard_m_level_var }
+	add_to_variable = { PAT_Algard_score = PAT_talented_king_Algard_a_level_var }
+	add_to_variable = { PAT_Algard_score = PAT_talented_king_Algard_s_level_var }
+	add_to_variable = { PAT_Algard_score = PAT_talented_king_Algard_k_level_var }
+	add_to_variable = { PAT_Algard_score = PAT_talented_king_Algard_r_level_var }
+	add_to_variable = { PAT_Algard_score = PAT_talented_king_Algard_r_level_var }
+}
+
+PAT_successor_yufiria_check_modifier_d = {
+	if = {
+		limit = {
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_TRADE_OPINION_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_TRADE_OPINION_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:Y_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0 }
+	}
+	else = {
+		for_loop_effect = {
+			start = 0
+			end = PAT_talented_king_Yufiria_num
+			compare = less_than_or_equals
+			value = i
+
+			if = {
+				limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_TRADE_OPINION_FACTOR } }
+				set_variable = { PAT_talented_king_Yufiria_current_index = i }
+			}
+		}
+	}
+}
+
+PAT_successor_yufiria_add_modifier_d = {
+	custom_effect_tooltip = {
+		localization_key = PAT_successor_to_the_throne_level_up_tt
+		CHARACTER = Yufiria_Mazenta
+		AREA = PAT_successor_to_the_throne_area_diplomacy
+	}
+	if = {
+		limit = { check_variable = { PAT_talented_king_Yufiria_d_level_var = 4 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Yufiria_Mazenta
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_array_value^PAT_talented_king_Yufiria_current_index = 0.10 tooltip = trade_opinion_factor_tt }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_talented_king_Yufiria_d_level_var = 3 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Yufiria_Mazenta
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_array_value^PAT_talented_king_Yufiria_current_index = 0.10 tooltip = trade_opinion_factor_tt }
+	}
+	custom_effect_tooltip = blank_null
+	clear_variable = PAT_talented_king_Yufiria_current_index
+}
+
+PAT_successor_yufiria_extra_to_modifier_d = {
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_m_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_WAR_SUPPORT_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_WAR_SUPPORT_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_military
+			}
+			add_to_variable = { PAT_dummy_var = 0.20 tooltip = war_support_factor_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_a_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_STABILITY_WAR_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_STABILITY_WAR_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0.15 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_administration
+			}
+			add_to_variable = { PAT_dummy_var = 0.15 tooltip = war_stability_factor_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_s_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_OPERATIVE_SLOT
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_OPERATIVE_SLOT }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 2 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_strategy
+			}
+			add_to_variable = { PAT_dummy_var = 2 tooltip = operative_slot_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_k_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_RESOURCE_TRADE_COST_BONUS_PER_FACTORY
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_RESOURCE_TRADE_COST_BONUS_PER_FACTORY }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 2 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_knowledge
+			}
+			add_to_variable = { PAT_dummy_var = 2 tooltip = resource_trade_cost_bonus_per_factory_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+}
+
+PAT_successor_yufiria_check_modifier_m = {
+	if = {
+		limit = {
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_CONSCRIPTION_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_CONSCRIPTION_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:Y_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0 }
+	}
+	else = {
+		for_loop_effect = {
+			start = 0
+			end = PAT_talented_king_Yufiria_num
+			compare = less_than_or_equals
+			value = i
+
+			if = {
+				limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_CONSCRIPTION_FACTOR } }
+				set_variable = { PAT_talented_king_Yufiria_current_index = i }
+			}
+		}
+	}
+}
+
+PAT_successor_yufiria_add_modifier_m = {
+	custom_effect_tooltip = {
+		localization_key = PAT_successor_to_the_throne_level_up_tt
+		CHARACTER = Yufiria_Mazenta
+		AREA = PAT_successor_to_the_throne_area_military
+	}
+	if = {
+		limit = { check_variable = { PAT_talented_king_Yufiria_m_level_var = 4 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Yufiria_Mazenta
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_array_value^PAT_talented_king_Yufiria_current_index = 0.01 tooltip = conscription_tt }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_talented_king_Yufiria_m_level_var = 3 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Yufiria_Mazenta
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_array_value^PAT_talented_king_Yufiria_current_index = 0.01 tooltip = conscription_tt }
+	}
+	custom_effect_tooltip = blank_null
+	clear_variable = PAT_talented_king_Yufiria_current_index
+}
+
+PAT_successor_yufiria_extra_to_modifier_m = {
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_d_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_WAR_SUPPORT_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_WAR_SUPPORT_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_diplomacy
+			}
+			add_to_variable = { PAT_dummy_var = 0.20 tooltip = war_support_factor_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_a_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_SUPPLY_CONSUMPTION_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_SUPPLY_CONSUMPTION_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = -0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_administration
+			}
+			add_to_variable = { PAT_dummy_var = -0.20 tooltip = supply_consumption_factor_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_s_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_GLOBAL_NON_CORE_MANPOWER
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_GLOBAL_NON_CORE_MANPOWER }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0.10 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_strategy
+			}
+			add_to_variable = { PAT_dummy_var = 0.10 tooltip = non_core_manpower_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_k_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_XP_GAIN_MILITARY_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_XP_GAIN_MILITARY_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_knowledge
+			}
+			add_to_variable = { PAT_dummy_var = 0.20 tooltip = experience_gain_military_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+}
+
+PAT_successor_yufiria_check_modifier_a = {
+	if = {
+		limit = {
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_POLITICAL_POWER_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_POLITICAL_POWER_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0 }
+	}
+	else = {
+		for_loop_effect = {
+			start = 0
+			end = PAT_talented_king_Yufiria_num
+			compare = less_than_or_equals
+			value = i
+
+			if = {
+				limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_POLITICAL_POWER_FACTOR } }
+				set_variable = { PAT_talented_king_Yufiria_current_index = i }
+			}
+		}
+	}
+}
+
+PAT_successor_yufiria_add_modifier_a = {
+	custom_effect_tooltip = {
+		localization_key = PAT_successor_to_the_throne_level_up_tt
+		CHARACTER = Yufiria_Mazenta
+		AREA = PAT_successor_to_the_throne_area_administration
+	}
+	if = {
+		limit = { check_variable = { PAT_talented_king_Yufiria_a_level_var = 4 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Yufiria_Mazenta
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_array_value^PAT_talented_king_Yufiria_current_index = 0.10 tooltip = political_power_factor_tt }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_talented_king_Yufiria_a_level_var = 3 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Yufiria_Mazenta
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_array_value^PAT_talented_king_Yufiria_current_index = 0.10 tooltip = political_power_factor_tt }
+	}
+	custom_effect_tooltip = blank_null
+	clear_variable = PAT_talented_king_Yufiria_current_index
+}
+
+PAT_successor_yufiria_extra_to_modifier_a = {
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_d_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_STABILITY_WAR_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_STABILITY_WAR_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0.15 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_diplomacy
+			}
+			add_to_variable = { PAT_dummy_var = 0.15 tooltip = war_support_factor_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_m_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_SUPPLY_CONSUMPTION_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_SUPPLY_CONSUMPTION_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = -0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_military
+			}
+			add_to_variable = { PAT_dummy_var = -0.20 tooltip = supply_consumption_factor_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_s_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:IC_FROM_SUBJECT
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:IC_FROM_SUBJECT }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0.30 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_strategy
+			}
+			add_to_variable = { PAT_dummy_var = 0.30 tooltip = ic_from_subject_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_k_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_PRODUCTION_SPEED_BUILDINGS_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_PRODUCTION_SPEED_BUILDINGS_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0.10 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_knowledge
+			}
+			add_to_variable = { PAT_dummy_var = 0.10 tooltip = production_speed_buildings_factor_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+}
+
+PAT_successor_yufiria_check_modifier_s = {
+	if = {
+		limit = {
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_INTEL_NETWORK_GAIN_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_INTEL_NETWORK_GAIN_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0 }
+	}
+	else = {
+		for_loop_effect = {
+			start = 0
+			end = PAT_talented_king_Yufiria_num
+			compare = less_than_or_equals
+			value = i
+
+			if = {
+				limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_INTEL_NETWORK_GAIN_FACTOR } }
+				set_variable = { PAT_talented_king_Yufiria_current_index = i }
+			}
+		}
+	}
+}
+
+PAT_successor_yufiria_add_modifier_s = {
+	custom_effect_tooltip = {
+		localization_key = PAT_successor_to_the_throne_level_up_tt
+		CHARACTER = Yufiria_Mazenta
+		AREA = PAT_successor_to_the_throne_area_strategy
+	}
+	if = {
+		limit = { check_variable = { PAT_talented_king_Yufiria_s_level_var = 4 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Yufiria_Mazenta
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_array_value^PAT_talented_king_Yufiria_current_index = 0.15 tooltip = intel_network_gain_factor_tt }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_talented_king_Yufiria_s_level_var = 3 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Yufiria_Mazenta
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_array_value^PAT_talented_king_Yufiria_current_index = 0.15 tooltip = intel_network_gain_factor_tt }
+	}
+	custom_effect_tooltip = blank_null
+	clear_variable = PAT_talented_king_Yufiria_current_index
+}
+
+PAT_successor_yufiria_extra_to_modifier_s = {
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_d_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_OPERATIVE_SLOT
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_OPERATIVE_SLOT }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 2 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_diplomacy
+			}
+			add_to_variable = { PAT_dummy_var = 2 tooltip = operative_slot_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_m_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_GLOBAL_NON_CORE_MANPOWER
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_GLOBAL_NON_CORE_MANPOWER }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0.10 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_military
+			}
+			add_to_variable = { PAT_dummy_var = 0.10 tooltip = non_core_manpower_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_a_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:IC_FROM_SUBJECT
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:IC_FROM_SUBJECT }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0.30 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_administration
+			}
+			add_to_variable = { PAT_dummy_var = 0.30 tooltip = ic_from_subject_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_k_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_RESISTANCE_TARGET
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_RESISTANCE_TARGET }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = -0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_knowledge
+			}
+			add_to_variable = { PAT_dummy_var = -0.20 tooltip = resistance_target_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+}
+
+PAT_successor_yufiria_check_modifier_k = {
+	if = {
+		limit = {
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_RESEARCH_SPEED_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_RESEARCH_SPEED_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0 }
+	}
+	else = {
+		for_loop_effect = {
+			start = 0
+			end = PAT_talented_king_Yufiria_num
+			compare = less_than_or_equals
+			value = i
+
+			if = {
+				limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_RESEARCH_SPEED_FACTOR } }
+				set_variable = { PAT_talented_king_Yufiria_current_index = i }
+			}
+		}
+	}
+}
+
+PAT_successor_yufiria_add_modifier_k = {
+	custom_effect_tooltip = {
+		localization_key = PAT_successor_to_the_throne_level_up_tt
+		CHARACTER = Yufiria_Mazenta
+		AREA = PAT_successor_to_the_throne_area_knowledge
+	}
+	if = {
+		limit = { check_variable = { PAT_talented_king_Yufiria_k_level_var = 4 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Yufiria_Mazenta
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_array_value^PAT_talented_king_Yufiria_current_index = 0.05 tooltip = research_speed_factor_tt }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_talented_king_Yufiria_k_level_var = 3 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Yufiria_Mazenta
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_array_value^PAT_talented_king_Yufiria_current_index = 0.05 tooltip = research_speed_factor_tt }
+	}
+	custom_effect_tooltip = blank_null
+	clear_variable = PAT_talented_king_Yufiria_current_index
+}
+
+PAT_successor_yufiria_extra_to_modifier_k = {
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_d_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_RESOURCE_TRADE_COST_BONUS_PER_FACTORY
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_RESOURCE_TRADE_COST_BONUS_PER_FACTORY }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 2 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_diplomacy
+			}
+			add_to_variable = { PAT_dummy_var = 2 tooltip = resource_trade_cost_bonus_per_factory_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_m_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_XP_GAIN_MILITARY_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_XP_GAIN_MILITARY_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_military
+			}
+			add_to_variable = { PAT_dummy_var = 0.20 tooltip = experience_gain_military_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_a_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_PRODUCTION_SPEED_BUILDINGS_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_PRODUCTION_SPEED_BUILDINGS_FACTOR }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = 0.10 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_administration
+			}
+			add_to_variable = { PAT_dummy_var = 0.10 tooltip = ic_from_subject_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Yufiria_s_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Yufiria_array
+					value = token:MODIFIER_RESISTANCE_TARGET
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
+		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_RESISTANCE_TARGET }
+		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = -0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Yufiria_Mazenta
+				AREA = PAT_successor_to_the_throne_area_strategy
+			}
+			add_to_variable = { PAT_dummy_var = -0.20 tooltip = resistance_target_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+}
+
+PAT_successor_algard_check_modifier_d = {
+	if = {
+		limit = {
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_TRADE_OPINION_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_TRADE_OPINION_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:Y_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0 }
+	}
+	else = {
+		for_loop_effect = {
+			start = 0
+			end = PAT_talented_king_Algard_num
+			compare = less_than_or_equals
+			value = i
+
+			if = {
+				limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_TRADE_OPINION_FACTOR } }
+				set_variable = { PAT_talented_king_Algard_current_index = i }
+			}
+		}
+	}
+}
+
+PAT_successor_algard_add_modifier_d = {
+	custom_effect_tooltip = {
+		localization_key = PAT_successor_to_the_throne_level_up_tt
+		CHARACTER = Algard_von_Palettia
+		AREA = PAT_successor_to_the_throne_area_diplomacy
+	}
+	if = {
+		limit = { check_variable = { PAT_talented_king_Algard_d_level_var = 4 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Algard_von_Palettia
+		}
+		add_to_variable = { PAT_talented_king_Algard_array_value^PAT_talented_king_Algard_current_index = 0.10 tooltip = trade_opinion_factor_tt }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_talented_king_Algard_d_level_var = 3 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Algard_von_Palettia
+		}
+		add_to_variable = { PAT_talented_king_Algard_array_value^PAT_talented_king_Algard_current_index = 0.10 tooltip = trade_opinion_factor_tt }
+	}
+	custom_effect_tooltip = blank_null
+	clear_variable = PAT_talented_king_Algard_current_index
+}
+
+PAT_successor_algard_extra_to_modifier_d = {
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_m_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_WAR_SUPPORT_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_WAR_SUPPORT_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_military
+			}
+			add_to_variable = { PAT_dummy_var = 0.20 tooltip = war_support_factor_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_a_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_STABILITY_WAR_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_STABILITY_WAR_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0.15 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_administration
+			}
+			add_to_variable = { PAT_dummy_var = 0.15 tooltip = war_stability_factor_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_s_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_OPERATIVE_SLOT
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_OPERATIVE_SLOT }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 2 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_strategy
+			}
+			add_to_variable = { PAT_dummy_var = 2 tooltip = operative_slot_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_k_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_RESOURCE_TRADE_COST_BONUS_PER_FACTORY
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_RESOURCE_TRADE_COST_BONUS_PER_FACTORY }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 2 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_knowledge
+			}
+			add_to_variable = { PAT_dummy_var = 2 tooltip = resource_trade_cost_bonus_per_factory_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+}
+
+PAT_successor_algard_check_modifier_m = {
+	if = {
+		limit = {
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_CONSCRIPTION_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_CONSCRIPTION_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:Y_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0 }
+	}
+	else = {
+		for_loop_effect = {
+			start = 0
+			end = PAT_talented_king_Algard_num
+			compare = less_than_or_equals
+			value = i
+
+			if = {
+				limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_CONSCRIPTION_FACTOR } }
+				set_variable = { PAT_talented_king_Algard_current_index = i }
+			}
+		}
+	}
+}
+
+PAT_successor_algard_add_modifier_m = {
+	custom_effect_tooltip = {
+		localization_key = PAT_successor_to_the_throne_level_up_tt
+		CHARACTER = Algard_von_Palettia
+		AREA = PAT_successor_to_the_throne_area_military
+	}
+	if = {
+		limit = { check_variable = { PAT_talented_king_Algard_m_level_var = 4 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Algard_von_Palettia
+		}
+		add_to_variable = { PAT_talented_king_Algard_array_value^PAT_talented_king_Algard_current_index = 0.01 tooltip = conscription_tt }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_talented_king_Algard_m_level_var = 3 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Algard_von_Palettia
+		}
+		add_to_variable = { PAT_talented_king_Algard_array_value^PAT_talented_king_Algard_current_index = 0.01 tooltip = conscription_tt }
+	}
+	custom_effect_tooltip = blank_null
+	clear_variable = PAT_talented_king_Algard_current_index
+}
+
+PAT_successor_algard_extra_to_modifier_m = {
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_d_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_WAR_SUPPORT_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_WAR_SUPPORT_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_diplomacy
+			}
+			add_to_variable = { PAT_dummy_var = 0.20 tooltip = war_support_factor_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_a_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_SUPPLY_CONSUMPTION_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_SUPPLY_CONSUMPTION_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = -0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_administration
+			}
+			add_to_variable = { PAT_dummy_var = -0.20 tooltip = supply_consumption_factor_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_s_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_GLOBAL_NON_CORE_MANPOWER
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_GLOBAL_NON_CORE_MANPOWER }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0.10 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_strategy
+			}
+			add_to_variable = { PAT_dummy_var = 0.10 tooltip = non_core_manpower_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_k_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_XP_GAIN_MILITARY_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_XP_GAIN_MILITARY_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_knowledge
+			}
+			add_to_variable = { PAT_dummy_var = 0.20 tooltip = experience_gain_military_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+}
+
+PAT_successor_algard_check_modifier_a = {
+	if = {
+		limit = {
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_POLITICAL_POWER_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_POLITICAL_POWER_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0 }
+	}
+	else = {
+		for_loop_effect = {
+			start = 0
+			end = PAT_talented_king_Algard_num
+			compare = less_than_or_equals
+			value = i
+
+			if = {
+				limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_POLITICAL_POWER_FACTOR } }
+				set_variable = { PAT_talented_king_Algard_current_index = i }
+			}
+		}
+	}
+}
+
+PAT_successor_algard_add_modifier_a = {
+	custom_effect_tooltip = {
+		localization_key = PAT_successor_to_the_throne_level_up_tt
+		CHARACTER = Algard_von_Palettia
+		AREA = PAT_successor_to_the_throne_area_administration
+	}
+	if = {
+		limit = { check_variable = { PAT_talented_king_Algard_a_level_var = 4 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Algard_von_Palettia
+		}
+		add_to_variable = { PAT_talented_king_Algard_array_value^PAT_talented_king_Algard_current_index = 0.10 tooltip = political_power_factor_tt }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_talented_king_Algard_a_level_var = 3 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Algard_von_Palettia
+		}
+		add_to_variable = { PAT_talented_king_Algard_array_value^PAT_talented_king_Algard_current_index = 0.10 tooltip = political_power_factor_tt }
+	}
+	custom_effect_tooltip = blank_null
+	clear_variable = PAT_talented_king_Algard_current_index
+}
+
+PAT_successor_algard_extra_to_modifier_a = {
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_d_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_STABILITY_WAR_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_STABILITY_WAR_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0.15 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_diplomacy
+			}
+			add_to_variable = { PAT_dummy_var = 0.15 tooltip = war_support_factor_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_m_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_SUPPLY_CONSUMPTION_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_SUPPLY_CONSUMPTION_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = -0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_military
+			}
+			add_to_variable = { PAT_dummy_var = -0.20 tooltip = supply_consumption_factor_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_s_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:IC_FROM_SUBJECT
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:IC_FROM_SUBJECT }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0.30 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_strategy
+			}
+			add_to_variable = { PAT_dummy_var = 0.30 tooltip = ic_from_subject_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_k_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_PRODUCTION_SPEED_BUILDINGS_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_PRODUCTION_SPEED_BUILDINGS_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0.10 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_knowledge
+			}
+			add_to_variable = { PAT_dummy_var = 0.10 tooltip = production_speed_buildings_factor_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+}
+
+PAT_successor_algard_check_modifier_s = {
+	if = {
+		limit = {
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_INTEL_NETWORK_GAIN_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_INTEL_NETWORK_GAIN_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0 }
+	}
+	else = {
+		for_loop_effect = {
+			start = 0
+			end = PAT_talented_king_Algard_num
+			compare = less_than_or_equals
+			value = i
+
+			if = {
+				limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_INTEL_NETWORK_GAIN_FACTOR } }
+				set_variable = { PAT_talented_king_Algard_current_index = i }
+			}
+		}
+	}
+}
+
+PAT_successor_algard_add_modifier_s = {
+	custom_effect_tooltip = {
+		localization_key = PAT_successor_to_the_throne_level_up_tt
+		CHARACTER = Algard_von_Palettia
+		AREA = PAT_successor_to_the_throne_area_strategy
+	}
+	if = {
+		limit = { check_variable = { PAT_talented_king_Algard_s_level_var = 4 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Algard_von_Palettia
+		}
+		add_to_variable = { PAT_talented_king_Algard_array_value^PAT_talented_king_Algard_current_index = 0.15 tooltip = intel_network_gain_factor_tt }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_talented_king_Algard_s_level_var = 3 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Algard_von_Palettia
+		}
+		add_to_variable = { PAT_talented_king_Algard_array_value^PAT_talented_king_Algard_current_index = 0.15 tooltip = intel_network_gain_factor_tt }
+	}
+	custom_effect_tooltip = blank_null
+	clear_variable = PAT_talented_king_Algard_current_index
+}
+
+PAT_successor_algard_extra_to_modifier_s = {
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_d_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_OPERATIVE_SLOT
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_OPERATIVE_SLOT }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 2 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_diplomacy
+			}
+			add_to_variable = { PAT_dummy_var = 2 tooltip = operative_slot_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_m_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_GLOBAL_NON_CORE_MANPOWER
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_GLOBAL_NON_CORE_MANPOWER }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0.10 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_military
+			}
+			add_to_variable = { PAT_dummy_var = 0.10 tooltip = non_core_manpower_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_a_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:IC_FROM_SUBJECT
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:IC_FROM_SUBJECT }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0.30 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_administration
+			}
+			add_to_variable = { PAT_dummy_var = 0.30 tooltip = ic_from_subject_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_k_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_RESISTANCE_TARGET
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_RESISTANCE_TARGET }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = -0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_knowledge
+			}
+			add_to_variable = { PAT_dummy_var = -0.20 tooltip = resistance_target_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+}
+
+PAT_successor_algard_check_modifier_k = {
+	if = {
+		limit = {
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_RESEARCH_SPEED_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_RESEARCH_SPEED_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0 }
+	}
+	else = {
+		for_loop_effect = {
+			start = 0
+			end = PAT_talented_king_Algard_num
+			compare = less_than_or_equals
+			value = i
+
+			if = {
+				limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_RESEARCH_SPEED_FACTOR } }
+				set_variable = { PAT_talented_king_Algard_current_index = i }
+			}
+		}
+	}
+}
+
+PAT_successor_algard_add_modifier_k = {
+	custom_effect_tooltip = {
+		localization_key = PAT_successor_to_the_throne_level_up_tt
+		CHARACTER = Algard_von_Palettia
+		AREA = PAT_successor_to_the_throne_area_prestige
+	}
+	if = {
+		limit = { check_variable = { PAT_talented_king_Algard_k_level_var = 4 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Algard_von_Palettia
+		}
+		add_to_variable = { PAT_talented_king_Algard_array_value^PAT_talented_king_Algard_current_index = 0.05 tooltip = research_speed_factor_tt }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_talented_king_Algard_k_level_var = 3 } }
+		custom_effect_tooltip = {
+			localization_key = PAT_successor_to_the_throne_add_modifier_tt
+			CHARACTER = Algard_von_Palettia
+		}
+		add_to_variable = { PAT_talented_king_Algard_array_value^PAT_talented_king_Algard_current_index = 0.05 tooltip = research_speed_factor_tt }
+	}
+	custom_effect_tooltip = blank_null
+	clear_variable = PAT_talented_king_Algard_current_index
+}
+
+PAT_successor_algard_extra_to_modifier_k = {
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_d_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_RESOURCE_TRADE_COST_BONUS_PER_FACTORY
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_RESOURCE_TRADE_COST_BONUS_PER_FACTORY }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 2 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_diplomacy
+			}
+			add_to_variable = { PAT_dummy_var = 2 tooltip = resource_trade_cost_bonus_per_factory_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_m_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_XP_GAIN_MILITARY_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_XP_GAIN_MILITARY_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_military
+			}
+			add_to_variable = { PAT_dummy_var = 0.20 tooltip = experience_gain_military_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_a_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_PRODUCTION_SPEED_BUILDINGS_FACTOR
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_PRODUCTION_SPEED_BUILDINGS_FACTOR }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = 0.10 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_administration
+			}
+			add_to_variable = { PAT_dummy_var = 0.10 tooltip = ic_from_subject_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+	if = {
+		limit = {
+			check_variable = { PAT_talented_king_Algard_s_level_var = 5 }
+			NOT = {
+				is_in_array = {
+					array = PAT_talented_king_Algard_array
+					value = token:MODIFIER_RESISTANCE_TARGET
+				}
+			}
+		}
+		add_to_variable = { PAT_talented_king_Algard_num = 1 }
+		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_RESISTANCE_TARGET }
+		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+		add_to_array = { PAT_talented_king_Algard_array_value = -0.20 }
+		effect_tooltip = {
+			custom_effect_tooltip = {
+				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
+				CHARACTER = Algard_von_Palettia
+				AREA = PAT_successor_to_the_throne_area_strategy
+			}
+			add_to_variable = { PAT_dummy_var = -0.20 tooltip = resistance_target_tt }
+		}
+		custom_effect_tooltip = blank_null
+	}
+}

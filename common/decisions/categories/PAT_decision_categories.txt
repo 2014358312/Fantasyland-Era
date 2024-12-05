@@ -1,0 +1,26 @@
+################
+#####   PAT  ######
+################
+
+PAT_successor_to_the_throne_decision_category = {
+	icon = power_struggle
+	allowed = { original_tag = PAT }
+	visible = {
+		has_country_flag = PAT_successor_to_the_throne_flag
+		NOT = {
+			has_country_leader = {
+				character = PAT_Yufiria_Mazenta
+				ruling_only = yes
+			}
+			has_country_leader = {
+				character = PAT_Algard_von_Palettia
+				ruling_only = yes
+			}
+		}
+	}
+	
+	scripted_gui = PAT_successor_detail_ui
+
+	priority = 100
+}
+

@@ -1,0 +1,574 @@
+PAT_successor_to_the_throne_decision_category = {
+	PAT_successor_to_the_throne_mission = {
+		icon = eng_ally_imperialist_coup
+		allowed = { original_tag = PAT }
+		available = { hidden_trigger = { always = no } }
+		days_mission_timeout = 180
+		is_good = yes
+		fire_only_once = yes
+		activation = { always = no }
+		timeout_effect = {
+			#complete_national_focus = PAT_choice_of_king
+			custom_effect_tooltip = PAT_successor_to_the_throne_mission_tt
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	PAT_successor_to_the_throne_reputation_decision = {
+		icon = eng_propaganda_campaigns
+		allowed = { original_tag = PAT }
+		visible = {
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				check_variable = { PAT_talented_king_Yufiria_r_level_var < 10 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				check_variable = { PAT_talented_king_Algard_r_level_var < 10 }
+			}
+			else = { is_debug = yes }
+		}
+		available = {
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = PAT_successor_to_the_throne_show_ott
+						CHARACTER = Yufiria_Mazenta
+					}
+				}
+				check_variable = { PAT_talented_king_Yufiria_d_level_var < 10 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_algard_flag }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = PAT_successor_to_the_throne_show_ott
+						CHARACTER = Algard_von_Palettia
+					}
+				}
+				check_variable = { PAT_talented_king_Algard_d_level_var < 10 }
+			}
+			else = { always = no }
+			NOT = { has_country_flag = PAT_current_successor_is_learning_flag }
+			NOT = { has_country_flag = PAT_current_successor_is_showing_up_flag }
+		}
+		cost = 0
+		days_remove = 15
+		complete_effect = {
+			set_country_flag = PAT_current_successor_is_showing_up_flag
+		}
+		remove_effect = {
+			clr_country_flag = PAT_current_successor_is_showing_up_flag
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				custom_effect_tooltip = {
+					localization_key = PAT_successor_to_the_throne_show_up_tt
+					CHARACTER = Yufiria_Mazenta
+				}
+				if = {
+					limit = {
+						check_variable = { PAT_talented_king_Yufiria_r_level_var = 4 }
+						NOT = {
+							is_in_array = {
+								array = PAT_talented_king_Yufiria_array
+								value = token:MODIFIER_COMPLIANCE_GAIN_ADD
+							}
+						}
+					}
+					add_to_variable = { PAT_talented_king_Algard_num = 1 }
+					add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_COMPLIANCE_GAIN_ADD }
+					add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
+					add_to_array = { PAT_talented_king_Yufiria_array_value = 0.05 }
+					effect_tooltip = {
+						custom_effect_tooltip = {
+							localization_key = PAT_successor_to_the_throne_add_modifier_tt
+							CHARACTER = Yufiria_Mazenta
+						}
+						add_to_variable = { PAT_dummy_var = 0.05 tooltip = modifier_compliance_gain_tt }
+					}
+				}
+				add_to_variable = { PAT_talented_king_Yufiria_r_level_var = 1 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_algard_flag }
+				custom_effect_tooltip = {
+					localization_key = PAT_successor_to_the_throne_show_up_tt
+					CHARACTER = Algard_von_Palettia
+				}
+				if = {
+					limit = {
+						check_variable = { PAT_talented_king_Algard_r_level_var = 4 }
+						NOT = {
+							is_in_array = {
+								array = PAT_talented_king_Algard_array
+								value = token:MODIFIER_COMPLIANCE_GAIN_ADD
+							}
+						}
+					}
+					add_to_variable = { PAT_talented_king_Algard_num = 1 }
+					add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_COMPLIANCE_GAIN_ADD }
+					add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
+					add_to_array = { PAT_talented_king_Algard_array_value = 0.05 }
+					effect_tooltip = {
+						custom_effect_tooltip = {
+							localization_key = PAT_successor_to_the_throne_add_modifier_tt
+							CHARACTER = Algard_von_Palettia
+						}
+						add_to_variable = { PAT_dummy_var = 0.05 tooltip = modifier_compliance_gain_tt }
+					}
+				}
+				add_to_variable = { PAT_talented_king_Algard_r_level_var = 1 }
+			}
+			else = { custom_effect_tooltip = something_with_wrong_ttt }
+			custom_effect_tooltip = blank_null
+			PAT_calculate_successor_score = yes
+		}
+		cancel_trigger = {
+			OR = {
+				has_country_leader = {
+					character = PAT_Yufiria_Mazenta
+					ruling_only = yes
+				}
+				has_country_leader = {
+					character = PAT_Algard_von_Palettia
+					ruling_only = yes
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 25
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PAT_successor_to_the_throne_diplomacy_decision = {
+		icon = hol_war_on_pacifism
+		allowed = { original_tag = PAT }
+		visible = {
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				check_variable = { PAT_talented_king_Yufiria_d_level_var < 5 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				check_variable = { PAT_talented_king_Algard_d_level_var < 5 }
+			}
+			else = { is_debug = yes }
+		}
+		available = {
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = PAT_successor_to_the_throne_learning_ott
+						CHARACTER = Yufiria_Mazenta
+						AREA = PAT_successor_to_the_throne_area_diplomacy
+					}
+				}
+				check_variable = { PAT_talented_king_Yufiria_d_level_var < 5 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_algard_flag }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = PAT_successor_to_the_throne_learning_ott
+						CHARACTER = Algard_von_Palettia
+						AREA = PAT_successor_to_the_throne_area_diplomacy
+					}
+				}
+				check_variable = { PAT_talented_king_Algard_d_level_var < 5 }
+			}
+			else = { always = no }
+			NOT = { has_country_flag = PAT_current_successor_is_learning_flag }
+			NOT = { has_country_flag = PAT_current_successor_is_showing_up_flag }
+		}
+		cost = 0
+		days_remove = 25
+		complete_effect = {
+			set_country_flag = PAT_current_successor_is_learning_flag
+		}
+		remove_effect = {
+			clr_country_flag = PAT_current_successor_is_learning_flag
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				PAT_successor_yufiria_check_modifier_d = yes
+				PAT_successor_yufiria_add_modifier_d = yes
+				PAT_successor_yufiria_extra_to_modifier_d = yes
+				add_to_variable = { PAT_talented_king_Yufiria_d_level_var = 1 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_algard_flag }
+				PAT_successor_algard_check_modifier_d = yes
+				PAT_successor_algard_add_modifier_d = yes
+				PAT_successor_algard_extra_to_modifier_d = yes
+				add_to_variable = { PAT_talented_king_Algard_d_level_var = 1 }
+			}
+			else = { custom_effect_tooltip = something_with_wrong_ttt }
+			PAT_calculate_successor_score = yes
+		}
+		cancel_trigger = {
+			OR = {
+				has_country_leader = {
+					character = PAT_Yufiria_Mazenta
+					ruling_only = yes
+				}
+				has_country_leader = {
+					character = PAT_Algard_von_Palettia
+					ruling_only = yes
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 25
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PAT_successor_to_the_throne_military_decision = {
+		icon = generic_protection
+		allowed = { original_tag = PAT }
+		visible = {
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				check_variable = { PAT_talented_king_Yufiria_d_level_var < 5 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				check_variable = { PAT_talented_king_Algard_d_level_var < 5 }
+			}
+			else = { is_debug = yes }
+		}
+		available = {
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = PAT_successor_to_the_throne_learning_ott
+						CHARACTER = Yufiria_Mazenta
+						AREA = PAT_successor_to_the_throne_area_military
+					}
+				}
+				check_variable = { PAT_talented_king_Yufiria_m_level_var < 5 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_algard_flag }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = PAT_successor_to_the_throne_learning_ott
+						CHARACTER = Algard_von_Palettia
+						AREA = PAT_successor_to_the_throne_area_military
+					}
+				}
+				check_variable = { PAT_talented_king_Algard_m_level_var < 5 }
+			}
+			else = { always = no }
+			NOT = { has_country_flag = PAT_current_successor_is_learning_flag }
+			NOT = { has_country_flag = PAT_current_successor_is_showing_up_flag }
+		}
+		cost = 0
+		days_remove = 25
+		complete_effect = {
+			set_country_flag = PAT_current_successor_is_learning_flag
+		}
+		remove_effect = {
+			clr_country_flag = PAT_current_successor_is_learning_flag
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				PAT_successor_yufiria_check_modifier_m = yes
+				PAT_successor_yufiria_add_modifier_m = yes
+				PAT_successor_yufiria_extra_to_modifier_m = yes
+				add_to_variable = { PAT_talented_king_Yufiria_m_level_var = 1 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_algard_flag }
+				PAT_successor_algard_check_modifier_m = yes
+				PAT_successor_algard_add_modifier_m = yes
+				PAT_successor_algard_extra_to_modifier_m = yes
+				add_to_variable = { PAT_talented_king_Algard_m_level_var = 1 }
+			}
+			else = { custom_effect_tooltip = something_with_wrong_ttt }
+			PAT_calculate_successor_score = yes
+		}
+		cancel_trigger = {
+			OR = {
+				has_country_leader = {
+					character = PAT_Yufiria_Mazenta
+					ruling_only = yes
+				}
+				has_country_leader = {
+					character = PAT_Algard_von_Palettia
+					ruling_only = yes
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 25
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PAT_successor_to_the_throne_administration_decision = {
+		icon = SWI_no_elected_president
+		allowed = { original_tag = PAT }
+		visible = {
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				check_variable = { PAT_talented_king_Yufiria_d_level_var < 5 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				check_variable = { PAT_talented_king_Algard_d_level_var < 5 }
+			}
+			else = { is_debug = yes }
+		}
+		available = {
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = PAT_successor_to_the_throne_learning_ott
+						CHARACTER = Yufiria_Mazenta
+						AREA = PAT_successor_to_the_throne_area_administration
+					}
+				}
+				check_variable = { PAT_talented_king_Yufiria_a_level_var < 5 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_algard_flag }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = PAT_successor_to_the_throne_learning_ott
+						CHARACTER = Algard_von_Palettia
+						AREA = PAT_successor_to_the_throne_area_administration
+					}
+				}
+				check_variable = { PAT_talented_king_Algard_a_level_var < 5 }
+			}
+			else = { always = no }
+			NOT = { has_country_flag = PAT_current_successor_is_learning_flag }
+			NOT = { has_country_flag = PAT_current_successor_is_showing_up_flag }
+		}
+		cost = 0
+		days_remove = 25
+		complete_effect = {
+			set_country_flag = PAT_current_successor_is_learning_flag
+		}
+		remove_effect = {
+			clr_country_flag = PAT_current_successor_is_learning_flag
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				PAT_successor_yufiria_check_modifier_a = yes
+				PAT_successor_yufiria_add_modifier_a = yes
+				PAT_successor_yufiria_extra_to_modifier_a = yes
+				add_to_variable = { PAT_talented_king_Yufiria_a_level_var = 1 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_algard_flag }
+				PAT_successor_algard_check_modifier_a = yes
+				PAT_successor_algard_add_modifier_a = yes
+				PAT_successor_algard_extra_to_modifier_a = yes
+				add_to_variable = { PAT_talented_king_Algard_a_level_var = 1 }
+			}
+			else = { custom_effect_tooltip = something_with_wrong_ttt }
+			PAT_calculate_successor_score = yes
+		}
+		cancel_trigger = {
+			OR = {
+				has_country_leader = {
+					character = PAT_Yufiria_Mazenta
+					ruling_only = yes
+				}
+				has_country_leader = {
+					character = PAT_Algard_von_Palettia
+					ruling_only = yes
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 25
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PAT_successor_to_the_throne_strategy_decision = {
+		icon = SWI_expand_covert_operations
+		allowed = { original_tag = PAT }
+		visible = {
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				check_variable = { PAT_talented_king_Yufiria_d_level_var < 5 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				check_variable = { PAT_talented_king_Algard_d_level_var < 5 }
+			}
+			else = { is_debug = yes }
+		}
+		available = {
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = PAT_successor_to_the_throne_learning_ott
+						CHARACTER = Yufiria_Mazenta
+						AREA = PAT_successor_to_the_throne_area_strategy
+					}
+				}
+				check_variable = { PAT_talented_king_Yufiria_s_level_var < 5 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_algard_flag }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = PAT_successor_to_the_throne_learning_ott
+						CHARACTER = Algard_von_Palettia
+						AREA = PAT_successor_to_the_throne_area_strategy
+					}
+				}
+				check_variable = { PAT_talented_king_Algard_s_level_var < 5 }
+			}
+			else = { always = no }
+			NOT = { has_country_flag = PAT_current_successor_is_learning_flag }
+			NOT = { has_country_flag = PAT_current_successor_is_showing_up_flag }
+		}
+		cost = 0
+		days_remove = 25
+		complete_effect = {
+			set_country_flag = PAT_current_successor_is_learning_flag
+		}
+		remove_effect = {
+			clr_country_flag = PAT_current_successor_is_learning_flag
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				PAT_successor_yufiria_check_modifier_s = yes
+				PAT_successor_yufiria_add_modifier_s = yes
+				PAT_successor_yufiria_extra_to_modifier_s = yes
+				add_to_variable = { PAT_talented_king_Yufiria_s_level_var = 1 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_algard_flag }
+				PAT_successor_algard_check_modifier_s = yes
+				PAT_successor_algard_add_modifier_s = yes
+				PAT_successor_algard_extra_to_modifier_s = yes
+				add_to_variable = { PAT_talented_king_Algard_s_level_var = 1 }
+			}
+			else = { custom_effect_tooltip = something_with_wrong_ttt }
+			PAT_calculate_successor_score = yes
+		}
+		cancel_trigger = {
+			OR = {
+				has_country_leader = {
+					character = PAT_Yufiria_Mazenta
+					ruling_only = yes
+				}
+				has_country_leader = {
+					character = PAT_Algard_von_Palettia
+					ruling_only = yes
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 25
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PAT_successor_to_the_throne_knowledge_decision = {
+		icon = generic_break_treaty
+		allowed = { original_tag = PAT }
+		visible = {
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				check_variable = { PAT_talented_king_Yufiria_d_level_var < 5 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				check_variable = { PAT_talented_king_Algard_d_level_var < 5 }
+			}
+			else = { is_debug = yes }
+		}
+		available = {
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = PAT_successor_to_the_throne_learning_ott
+						CHARACTER = Yufiria_Mazenta
+						AREA = PAT_successor_to_the_throne_area_knowledge
+					}
+				}
+				check_variable = { PAT_talented_king_Yufiria_k_level_var < 5 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_algard_flag }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = PAT_successor_to_the_throne_learning_ott
+						CHARACTER = Algard_von_Palettia
+						AREA = PAT_successor_to_the_throne_area_knowledge
+					}
+				}
+				check_variable = { PAT_talented_king_Algard_k_level_var < 5 }
+			}
+			else = { always = no }
+			NOT = { has_country_flag = PAT_current_successor_is_learning_flag }
+			NOT = { has_country_flag = PAT_current_successor_is_showing_up_flag }
+		}
+		cost = 0
+		days_remove = 25
+		complete_effect = {
+			set_country_flag = PAT_current_successor_is_learning_flag
+		}
+		remove_effect = {
+			clr_country_flag = PAT_current_successor_is_learning_flag
+			if = {
+				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+				PAT_successor_yufiria_check_modifier_k = yes
+				PAT_successor_yufiria_add_modifier_k = yes
+				PAT_successor_yufiria_extra_to_modifier_k = yes
+				add_to_variable = { PAT_talented_king_Yufiria_k_level_var = 1 }
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_successor_support_algard_flag }
+				PAT_successor_algard_check_modifier_k = yes
+				PAT_successor_algard_add_modifier_k = yes
+				PAT_successor_algard_extra_to_modifier_k = yes
+				add_to_variable = { PAT_talented_king_Algard_k_level_var = 1 }
+			}
+			else = { custom_effect_tooltip = something_with_wrong_ttt }
+			PAT_calculate_successor_score = yes
+		}
+		cancel_trigger = {
+			OR = {
+				has_country_leader = {
+					character = PAT_Yufiria_Mazenta
+					ruling_only = yes
+				}
+				has_country_leader = {
+					character = PAT_Algard_von_Palettia
+					ruling_only = yes
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 25
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+
