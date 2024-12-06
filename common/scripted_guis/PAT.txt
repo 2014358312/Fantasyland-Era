@@ -4,7 +4,10 @@ scripted_gui = {
 		context_type = decision_category
 		window_name = "PAT_successor_detail"
 		visible = {
-			always = yes
+			OR = {
+				has_country_flag = PAT_successor_support_yufiria_flag
+				has_country_flag = PAT_successor_support_algard_flag
+			}
 		}
 	}
 }

@@ -8,11 +8,49 @@ PAT_successor_to_the_throne_decision_category = {
 		fire_only_once = yes
 		activation = { always = no }
 		timeout_effect = {
-			#complete_national_focus = PAT_choice_of_king
+			complete_national_focus = PAT_heir_choice_from_king
 			custom_effect_tooltip = PAT_successor_to_the_throne_mission_tt
+			hidden_effect = {
+				PAT_settle_successor_modifier = yes
+			}
+			if = {
+				limit = { check_variable = { PAT_Yufiria_score = PAT_Algard_score } }
+				country_event = { id = paretia.5 days = 1 }
+			}
+			else = {
+				PAT_add_successor_modifier = yes
+				country_event = { id = paretia.6 days = 3 }
+			}
 		}
 		ai_will_do = {
 			factor = 200
+		}
+	}
+	
+	PAT_successor_to_the_throne_debug_decision = {
+		icon = eng_ally_imperialist_coup
+		allowed = { original_tag = PAT }
+		visible = {
+			is_debug = yes
+			has_active_mission = PAT_successor_to_the_throne_mission
+		}
+		available = { is_ai = no }
+		fire_only_once = yes
+		complete_effect = {
+			complete_national_focus = PAT_heir_choice_from_king
+			custom_effect_tooltip = PAT_successor_to_the_throne_mission_tt
+			hidden_effect = {
+				PAT_settle_successor_modifier = yes
+			}
+			if = {
+				limit = { check_variable = { PAT_Yufiria_score = PAT_Algard_score } }
+				country_event = { id = paretia.5 days = 1 }
+			}
+			else = {
+				PAT_add_successor_modifier = yes
+				country_event = { id = paretia.6 days = 3 }
+			}
+			remove_mission = PAT_successor_to_the_throne_mission
 		}
 	}
 	
@@ -29,8 +67,13 @@ PAT_successor_to_the_throne_decision_category = {
 				check_variable = { PAT_talented_king_Algard_r_level_var < 10 }
 			}
 			else = { is_debug = yes }
+			OR = {
+				has_country_flag = PAT_successor_support_yufiria_flag
+				has_country_flag = PAT_successor_support_algard_flag
+			}
 		}
 		available = {
+			has_active_mission = PAT_successor_to_the_throne_mission
 			if = {
 				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
 				custom_override_tooltip = {
@@ -159,8 +202,14 @@ PAT_successor_to_the_throne_decision_category = {
 				check_variable = { PAT_talented_king_Algard_d_level_var < 5 }
 			}
 			else = { is_debug = yes }
+			OR = {
+				has_country_flag = PAT_successor_support_yufiria_flag
+				has_country_flag = PAT_successor_support_algard_flag
+			}
 		}
 		available = {
+			has_completed_focus = PAT_heir_exercise_diplomacy
+			has_active_mission = PAT_successor_to_the_throne_mission
 			if = {
 				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
 				custom_override_tooltip = {
@@ -244,8 +293,14 @@ PAT_successor_to_the_throne_decision_category = {
 				check_variable = { PAT_talented_king_Algard_d_level_var < 5 }
 			}
 			else = { is_debug = yes }
+			OR = {
+				has_country_flag = PAT_successor_support_yufiria_flag
+				has_country_flag = PAT_successor_support_algard_flag
+			}
 		}
 		available = {
+			has_completed_focus = PAT_heir_exercise_military
+			has_active_mission = PAT_successor_to_the_throne_mission
 			if = {
 				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
 				custom_override_tooltip = {
@@ -329,8 +384,14 @@ PAT_successor_to_the_throne_decision_category = {
 				check_variable = { PAT_talented_king_Algard_d_level_var < 5 }
 			}
 			else = { is_debug = yes }
+			OR = {
+				has_country_flag = PAT_successor_support_yufiria_flag
+				has_country_flag = PAT_successor_support_algard_flag
+			}
 		}
 		available = {
+			has_completed_focus = PAT_heir_exercise_administration
+			has_active_mission = PAT_successor_to_the_throne_mission
 			if = {
 				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
 				custom_override_tooltip = {
@@ -414,8 +475,14 @@ PAT_successor_to_the_throne_decision_category = {
 				check_variable = { PAT_talented_king_Algard_d_level_var < 5 }
 			}
 			else = { is_debug = yes }
+			OR = {
+				has_country_flag = PAT_successor_support_yufiria_flag
+				has_country_flag = PAT_successor_support_algard_flag
+			}
 		}
 		available = {
+			has_completed_focus = PAT_heir_exercise_strategy
+			has_active_mission = PAT_successor_to_the_throne_mission
 			if = {
 				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
 				custom_override_tooltip = {
@@ -499,8 +566,14 @@ PAT_successor_to_the_throne_decision_category = {
 				check_variable = { PAT_talented_king_Algard_d_level_var < 5 }
 			}
 			else = { is_debug = yes }
+			OR = {
+				has_country_flag = PAT_successor_support_yufiria_flag
+				has_country_flag = PAT_successor_support_algard_flag
+			}
 		}
 		available = {
+			has_completed_focus = PAT_heir_exercise_knowledge
+			has_active_mission = PAT_successor_to_the_throne_mission
 			if = {
 				limit = { has_country_flag = PAT_successor_support_yufiria_flag }
 				custom_override_tooltip = {
@@ -572,3 +645,241 @@ PAT_successor_to_the_throne_decision_category = {
 	}
 }
 
+PAT_balance_of_power_decision_category = {
+	PAT_tetrarchy_bop_1 = {
+		icon = generic_army_support
+		allowed = { original_tag = PAT }
+		cost = 25
+		fire_only_once = no
+		days_re_enable = 30
+		complete_effect = {
+			army_experience = 20
+			add_power_balance_value = {
+				id = PAT_balance_of_power
+				value = 0.05
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_power_balance = {
+					id = PAT_balance_of_power
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 25
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PAT_tetrarchy_bop_2 = {
+		icon = eng_blackshirt_speech
+		allowed = { original_tag = PAT }
+		cost = 25
+		fire_only_once = no
+		days_re_enable = 45
+		complete_effect = {
+			add_war_support = 0.05
+			add_power_balance_value = {
+				id = PAT_balance_of_power
+				value = 0.10
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_power_balance = {
+					id = PAT_balance_of_power
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 25
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PAT_tetrarchy_bop_3 = {
+		icon = eng_install_government
+		allowed = { original_tag = PAT }
+		custom_cost_trigger = {
+			has_stability > 0.05
+		}
+		custom_cost_text = decision_cost_S_5
+		fire_only_once = no
+		days_re_enable = 60
+		complete_effect = {
+			hidden_effect = {
+				add_stability = -0.05
+			}
+			add_political_power = 100
+			add_power_balance_value = {
+				id = PAT_balance_of_power
+				value = 0.15
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_power_balance = {
+					id = PAT_balance_of_power
+				}
+			}
+		}
+		cancel_effect = {
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PAT_tetrarchy_bop_4 = {
+		icon = SWI_dismiss_council
+		allowed = { original_tag = PAT }
+		cost = 100
+		fire_only_once = no
+		days_re_enable = 90
+		complete_effect = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_power_balance_value = {
+				id = PAT_balance_of_power
+				value = 0.20
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_power_balance = {
+					id = PAT_balance_of_power
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PAT_tetrarchy_bop_5 = {
+		icon = POL_looming_peasants_strike
+		allowed = { original_tag = PAT }
+		cost = 100
+		fire_only_once = no
+		days_re_enable = 30
+		complete_effect = {
+			add_manpower = 1000
+			add_power_balance_value = {
+				id = PAT_balance_of_power
+				value = -0.05
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_power_balance = {
+					id = PAT_balance_of_power
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PAT_tetrarchy_bop_6 = {
+		icon = hol_exchange_intelligence_data
+		allowed = { original_tag = PAT }
+		cost = 150
+		fire_only_once = no
+		days_re_enable = 60
+		complete_effect = {
+			add_stability = 0.08
+			add_power_balance_value = {
+				id = PAT_balance_of_power
+				value = -0.10
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_power_balance = {
+					id = PAT_balance_of_power
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PAT_tetrarchy_bop_7 = {
+		icon = generic_research
+		allowed = { original_tag = PAT }
+		cost = 200
+		fire_only_once = no
+		days_re_enable = 90
+		complete_effect = {
+			#add_tech_bonus = {
+			#	name = PAT_tetrarchy_bop_7
+			#	bonus = 0.75
+			#	uses = 1
+			#	category = industry
+			#}
+			custom_effect_tooltip = PAT_tetrarchy_bop_7_tt
+			add_power_balance_value = {
+				id = PAT_balance_of_power
+				value = -0.15
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_power_balance = {
+					id = PAT_balance_of_power
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 200
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PAT_tetrarchy_bop_8 = {
+		icon = generic_welfare
+		allowed = { original_tag = PAT }
+		cost = 300
+		fire_only_once = no
+		days_re_enable = 120
+		complete_effect = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_power_balance_value = {
+				id = PAT_balance_of_power
+				value = -0.20
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_power_balance = {
+					id = PAT_balance_of_power
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 300
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

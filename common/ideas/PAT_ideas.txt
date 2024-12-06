@@ -1,5 +1,29 @@
 ideas = {
 	hidden_ideas = {
+		PAT_talented_king_subject_idea = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				PAT = {
+					has_dynamic_modifier = {
+						modifier = PAT_talented_king_dynamic_modifier
+					}
+					NOT = {
+						check_variable = {
+							PAT_TK_ic_from_subject_var = 0
+						}
+					}
+				}
+			}
+			modifier = {
+				cic_to_overlord_factor = 0.20
+				mic_to_overlord_factor = 0.20
+			}
+		}
 	}
 	country = {
 		PAT_peace_act = {
@@ -100,6 +124,19 @@ ideas = {
 			modifier = {
 				stability_factor = 0.1
 				drift_defence_factor = 0.5
+			}
+		}
+		
+		PAT_national_intelligence_section = {
+			picture = generic_spy_intel
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				operative_slot = 1
 			}
 		}
 	}

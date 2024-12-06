@@ -1,0 +1,29 @@
+on_actions = {
+	on_puppet = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = PAT
+						has_dynamic_modifier = {
+							modifier = PAT_talented_king_dynamic_modifier
+						}
+						NOT = {
+							check_variable = {
+								PAT_TK_ic_from_subject_var = 0
+							}
+						}
+					}
+					ROOT = {
+						NOT = {
+							has_idea = PAT_talented_king_subject_idea
+						}
+					}
+				}
+				ROOT = {
+					add_ideas = PAT_talented_king_subject_idea
+				}
+			}
+		}
+	}
+}

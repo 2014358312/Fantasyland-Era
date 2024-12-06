@@ -31,6 +31,17 @@ PAT_initialize_Yufiria_level = {
 	set_variable = { PAT_talented_king_Yufiria_s_level_var = 1 }
 	set_variable = { PAT_talented_king_Yufiria_k_level_var = 4 }
 	set_variable = { PAT_talented_king_Yufiria_r_level_var = 3 }
+	
+	set_variable = { PAT_talented_king_d_cost_var = PAT_talented_king_Yufiria_d_level_var }
+	multiply_variable = { PAT_talented_king_d_cost_var = 25 }
+	set_variable = { PAT_talented_king_m_cost_var = PAT_talented_king_Yufiria_m_level_var }
+	multiply_variable = { PAT_talented_king_m_cost_var = 25 }
+	set_variable = { PAT_talented_king_a_cost_var = PAT_talented_king_Yufiria_a_level_var }
+	multiply_variable = { PAT_talented_king_a_cost_var = 25 }
+	set_variable = { PAT_talented_king_s_cost_var = PAT_talented_king_Yufiria_s_level_var }
+	multiply_variable = { PAT_talented_king_s_cost_var = 25 }
+	set_variable = { PAT_talented_king_k_cost_var = PAT_talented_king_Yufiria_k_level_var }
+	multiply_variable = { PAT_talented_king_k_cost_var = 25 }
 }
 
 PAT_initialize_Algard_level = {
@@ -40,6 +51,43 @@ PAT_initialize_Algard_level = {
 	set_variable = { PAT_talented_king_Algard_s_level_var = 3 }
 	set_variable = { PAT_talented_king_Algard_k_level_var = 1 }
 	set_variable = { PAT_talented_king_Algard_r_level_var = 4 }
+	
+}
+
+PAT_calculate_successor_cost = {
+	if = {
+		limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+		set_variable = { PAT_talented_king_d_cost_var = PAT_talented_king_Yufiria_d_level_var }
+		multiply_variable = { PAT_talented_king_d_cost_var = 25 }
+		set_variable = { PAT_talented_king_m_cost_var = PAT_talented_king_Yufiria_m_level_var }
+		multiply_variable = { PAT_talented_king_m_cost_var = 25 }
+		set_variable = { PAT_talented_king_a_cost_var = PAT_talented_king_Yufiria_a_level_var }
+		multiply_variable = { PAT_talented_king_a_cost_var = 25 }
+		set_variable = { PAT_talented_king_s_cost_var = PAT_talented_king_Yufiria_s_level_var }
+		multiply_variable = { PAT_talented_king_s_cost_var = 25 }
+		set_variable = { PAT_talented_king_k_cost_var = PAT_talented_king_Yufiria_k_level_var }
+		multiply_variable = { PAT_talented_king_k_cost_var = 25 }
+	}
+	else_if = {
+		limit = { has_country_flag = PAT_successor_support_algard_flag }
+		set_variable = { PAT_talented_king_d_cost_var = PAT_talented_king_Algard_d_level_var }
+		multiply_variable = { PAT_talented_king_d_cost_var = 25 }
+		set_variable = { PAT_talented_king_m_cost_var = PAT_talented_king_Algard_m_level_var }
+		multiply_variable = { PAT_talented_king_m_cost_var = 25 }
+		set_variable = { PAT_talented_king_a_cost_var = PAT_talented_king_Algard_a_level_var }
+		multiply_variable = { PAT_talented_king_a_cost_var = 25 }
+		set_variable = { PAT_talented_king_s_cost_var = PAT_talented_king_Algard_s_level_var }
+		multiply_variable = { PAT_talented_king_s_cost_var = 25 }
+		set_variable = { PAT_talented_king_k_cost_var = PAT_talented_king_Algard_k_level_var }
+		multiply_variable = { PAT_talented_king_k_cost_var = 25 }
+	}
+	else = {
+		set_variable = { PAT_talented_king_d_cost_var = 2001 }
+		set_variable = { PAT_talented_king_m_cost_var = 2001 }
+		set_variable = { PAT_talented_king_a_cost_var = 2001 }
+		set_variable = { PAT_talented_king_s_cost_var = 2001 }
+		set_variable = { PAT_talented_king_k_cost_var = 2001 }
+	}
 }
 
 PAT_calculate_successor_score = {
@@ -74,17 +122,15 @@ PAT_successor_yufiria_check_modifier_d = {
 		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:Y_color }
 		add_to_array = { PAT_talented_king_Yufiria_array_value = 0 }
 	}
-	else = {
-		for_loop_effect = {
-			start = 0
-			end = PAT_talented_king_Yufiria_num
-			compare = less_than_or_equals
-			value = i
+	for_loop_effect = {
+		start = 0
+		end = PAT_talented_king_Yufiria_num
+		compare = less_than_or_equals
+		value = i
 
-			if = {
-				limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_TRADE_OPINION_FACTOR } }
-				set_variable = { PAT_talented_king_Yufiria_current_index = i }
-			}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_TRADE_OPINION_FACTOR } }
+			set_variable = { PAT_talented_king_Yufiria_current_index = i }
 		}
 	}
 }
@@ -201,7 +247,7 @@ PAT_successor_yufiria_extra_to_modifier_d = {
 		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
 		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_RESOURCE_TRADE_COST_BONUS_PER_FACTORY }
 		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
-		add_to_array = { PAT_talented_king_Yufiria_array_value = 2 }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = -2 }
 		effect_tooltip = {
 			custom_effect_tooltip = {
 				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
@@ -229,17 +275,15 @@ PAT_successor_yufiria_check_modifier_m = {
 		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:Y_color }
 		add_to_array = { PAT_talented_king_Yufiria_array_value = 0 }
 	}
-	else = {
-		for_loop_effect = {
-			start = 0
-			end = PAT_talented_king_Yufiria_num
-			compare = less_than_or_equals
-			value = i
+	for_loop_effect = {
+		start = 0
+		end = PAT_talented_king_Yufiria_num
+		compare = less_than_or_equals
+		value = i
 
-			if = {
-				limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_CONSCRIPTION_FACTOR } }
-				set_variable = { PAT_talented_king_Yufiria_current_index = i }
-			}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_CONSCRIPTION_FACTOR } }
+			set_variable = { PAT_talented_king_Yufiria_current_index = i }
 		}
 	}
 }
@@ -384,17 +428,15 @@ PAT_successor_yufiria_check_modifier_a = {
 		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
 		add_to_array = { PAT_talented_king_Yufiria_array_value = 0 }
 	}
-	else = {
-		for_loop_effect = {
-			start = 0
-			end = PAT_talented_king_Yufiria_num
-			compare = less_than_or_equals
-			value = i
+	for_loop_effect = {
+		start = 0
+		end = PAT_talented_king_Yufiria_num
+		compare = less_than_or_equals
+		value = i
 
-			if = {
-				limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_POLITICAL_POWER_FACTOR } }
-				set_variable = { PAT_talented_king_Yufiria_current_index = i }
-			}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_POLITICAL_POWER_FACTOR } }
+			set_variable = { PAT_talented_king_Yufiria_current_index = i }
 		}
 	}
 }
@@ -539,17 +581,15 @@ PAT_successor_yufiria_check_modifier_s = {
 		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
 		add_to_array = { PAT_talented_king_Yufiria_array_value = 0 }
 	}
-	else = {
-		for_loop_effect = {
-			start = 0
-			end = PAT_talented_king_Yufiria_num
-			compare = less_than_or_equals
-			value = i
+	for_loop_effect = {
+		start = 0
+		end = PAT_talented_king_Yufiria_num
+		compare = less_than_or_equals
+		value = i
 
-			if = {
-				limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_INTEL_NETWORK_GAIN_FACTOR } }
-				set_variable = { PAT_talented_king_Yufiria_current_index = i }
-			}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_INTEL_NETWORK_GAIN_FACTOR } }
+			set_variable = { PAT_talented_king_Yufiria_current_index = i }
 		}
 	}
 }
@@ -694,17 +734,15 @@ PAT_successor_yufiria_check_modifier_k = {
 		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
 		add_to_array = { PAT_talented_king_Yufiria_array_value = 0 }
 	}
-	else = {
-		for_loop_effect = {
-			start = 0
-			end = PAT_talented_king_Yufiria_num
-			compare = less_than_or_equals
-			value = i
+	for_loop_effect = {
+		start = 0
+		end = PAT_talented_king_Yufiria_num
+		compare = less_than_or_equals
+		value = i
 
-			if = {
-				limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_RESEARCH_SPEED_FACTOR } }
-				set_variable = { PAT_talented_king_Yufiria_current_index = i }
-			}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_RESEARCH_SPEED_FACTOR } }
+			set_variable = { PAT_talented_king_Yufiria_current_index = i }
 		}
 	}
 }
@@ -749,7 +787,7 @@ PAT_successor_yufiria_extra_to_modifier_k = {
 		add_to_variable = { PAT_talented_king_Yufiria_num = 1 }
 		add_to_array = { PAT_talented_king_Yufiria_array = token:MODIFIER_RESOURCE_TRADE_COST_BONUS_PER_FACTORY }
 		add_to_array = { PAT_talented_king_Yufiria_array_value_status = token:G_color }
-		add_to_array = { PAT_talented_king_Yufiria_array_value = 2 }
+		add_to_array = { PAT_talented_king_Yufiria_array_value = -2 }
 		effect_tooltip = {
 			custom_effect_tooltip = {
 				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
@@ -804,7 +842,7 @@ PAT_successor_yufiria_extra_to_modifier_k = {
 				CHARACTER = Yufiria_Mazenta
 				AREA = PAT_successor_to_the_throne_area_administration
 			}
-			add_to_variable = { PAT_dummy_var = 0.10 tooltip = ic_from_subject_tt }
+			add_to_variable = { PAT_dummy_var = 0.10 tooltip = production_speed_buildings_factor_tt }
 		}
 		custom_effect_tooltip = blank_null
 	}
@@ -849,17 +887,15 @@ PAT_successor_algard_check_modifier_d = {
 		add_to_array = { PAT_talented_king_Algard_array_value_status = token:Y_color }
 		add_to_array = { PAT_talented_king_Algard_array_value = 0 }
 	}
-	else = {
-		for_loop_effect = {
-			start = 0
-			end = PAT_talented_king_Algard_num
-			compare = less_than_or_equals
-			value = i
+	for_loop_effect = {
+		start = 0
+		end = PAT_talented_king_Algard_num
+		compare = less_than_or_equals
+		value = i
 
-			if = {
-				limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_TRADE_OPINION_FACTOR } }
-				set_variable = { PAT_talented_king_Algard_current_index = i }
-			}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_TRADE_OPINION_FACTOR } }
+			set_variable = { PAT_talented_king_Algard_current_index = i }
 		}
 	}
 }
@@ -976,7 +1012,7 @@ PAT_successor_algard_extra_to_modifier_d = {
 		add_to_variable = { PAT_talented_king_Algard_num = 1 }
 		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_RESOURCE_TRADE_COST_BONUS_PER_FACTORY }
 		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
-		add_to_array = { PAT_talented_king_Algard_array_value = 2 }
+		add_to_array = { PAT_talented_king_Algard_array_value = -2 }
 		effect_tooltip = {
 			custom_effect_tooltip = {
 				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
@@ -1004,17 +1040,15 @@ PAT_successor_algard_check_modifier_m = {
 		add_to_array = { PAT_talented_king_Algard_array_value_status = token:Y_color }
 		add_to_array = { PAT_talented_king_Algard_array_value = 0 }
 	}
-	else = {
-		for_loop_effect = {
-			start = 0
-			end = PAT_talented_king_Algard_num
-			compare = less_than_or_equals
-			value = i
+	for_loop_effect = {
+		start = 0
+		end = PAT_talented_king_Algard_num
+		compare = less_than_or_equals
+		value = i
 
-			if = {
-				limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_CONSCRIPTION_FACTOR } }
-				set_variable = { PAT_talented_king_Algard_current_index = i }
-			}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_CONSCRIPTION_FACTOR } }
+			set_variable = { PAT_talented_king_Algard_current_index = i }
 		}
 	}
 }
@@ -1159,17 +1193,15 @@ PAT_successor_algard_check_modifier_a = {
 		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
 		add_to_array = { PAT_talented_king_Algard_array_value = 0 }
 	}
-	else = {
-		for_loop_effect = {
-			start = 0
-			end = PAT_talented_king_Algard_num
-			compare = less_than_or_equals
-			value = i
+	for_loop_effect = {
+		start = 0
+		end = PAT_talented_king_Algard_num
+		compare = less_than_or_equals
+		value = i
 
-			if = {
-				limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_POLITICAL_POWER_FACTOR } }
-				set_variable = { PAT_talented_king_Algard_current_index = i }
-			}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_POLITICAL_POWER_FACTOR } }
+			set_variable = { PAT_talented_king_Algard_current_index = i }
 		}
 	}
 }
@@ -1314,17 +1346,15 @@ PAT_successor_algard_check_modifier_s = {
 		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
 		add_to_array = { PAT_talented_king_Algard_array_value = 0 }
 	}
-	else = {
-		for_loop_effect = {
-			start = 0
-			end = PAT_talented_king_Algard_num
-			compare = less_than_or_equals
-			value = i
+	for_loop_effect = {
+		start = 0
+		end = PAT_talented_king_Algard_num
+		compare = less_than_or_equals
+		value = i
 
-			if = {
-				limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_INTEL_NETWORK_GAIN_FACTOR } }
-				set_variable = { PAT_talented_king_Algard_current_index = i }
-			}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_INTEL_NETWORK_GAIN_FACTOR } }
+			set_variable = { PAT_talented_king_Algard_current_index = i }
 		}
 	}
 }
@@ -1469,17 +1499,15 @@ PAT_successor_algard_check_modifier_k = {
 		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
 		add_to_array = { PAT_talented_king_Algard_array_value = 0 }
 	}
-	else = {
-		for_loop_effect = {
-			start = 0
-			end = PAT_talented_king_Algard_num
-			compare = less_than_or_equals
-			value = i
+	for_loop_effect = {
+		start = 0
+		end = PAT_talented_king_Algard_num
+		compare = less_than_or_equals
+		value = i
 
-			if = {
-				limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_RESEARCH_SPEED_FACTOR } }
-				set_variable = { PAT_talented_king_Algard_current_index = i }
-			}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_RESEARCH_SPEED_FACTOR } }
+			set_variable = { PAT_talented_king_Algard_current_index = i }
 		}
 	}
 }
@@ -1488,7 +1516,7 @@ PAT_successor_algard_add_modifier_k = {
 	custom_effect_tooltip = {
 		localization_key = PAT_successor_to_the_throne_level_up_tt
 		CHARACTER = Algard_von_Palettia
-		AREA = PAT_successor_to_the_throne_area_prestige
+		AREA = PAT_successor_to_the_throne_area_knowledge
 	}
 	if = {
 		limit = { check_variable = { PAT_talented_king_Algard_k_level_var = 4 } }
@@ -1524,7 +1552,7 @@ PAT_successor_algard_extra_to_modifier_k = {
 		add_to_variable = { PAT_talented_king_Algard_num = 1 }
 		add_to_array = { PAT_talented_king_Algard_array = token:MODIFIER_RESOURCE_TRADE_COST_BONUS_PER_FACTORY }
 		add_to_array = { PAT_talented_king_Algard_array_value_status = token:G_color }
-		add_to_array = { PAT_talented_king_Algard_array_value = 2 }
+		add_to_array = { PAT_talented_king_Algard_array_value = -2 }
 		effect_tooltip = {
 			custom_effect_tooltip = {
 				localization_key = PAT_successor_to_the_throne_extra_modifier_tt
@@ -1579,7 +1607,7 @@ PAT_successor_algard_extra_to_modifier_k = {
 				CHARACTER = Algard_von_Palettia
 				AREA = PAT_successor_to_the_throne_area_administration
 			}
-			add_to_variable = { PAT_dummy_var = 0.10 tooltip = ic_from_subject_tt }
+			add_to_variable = { PAT_dummy_var = 0.10 tooltip = production_speed_buildings_factor_tt }
 		}
 		custom_effect_tooltip = blank_null
 	}
@@ -1606,5 +1634,278 @@ PAT_successor_algard_extra_to_modifier_k = {
 			add_to_variable = { PAT_dummy_var = -0.20 tooltip = resistance_target_tt }
 		}
 		custom_effect_tooltip = blank_null
+	}
+}
+
+PAT_settle_successor_modifier = {
+	for_each_loop = {
+		array = PAT_talented_king_Yufiria_array
+		index = i
+		
+		log = "asdfg    [?i]: [?PAT_talented_king_Yufiria_array_value^i] and [?PAT_talented_king_Yufiria_array^i.GetTokenKey]"
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_COMPLIANCE_GAIN_ADD } }
+			set_variable = { PAT_TK_Yufiria_compliance_gain_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_TRADE_OPINION_FACTOR } }
+			set_variable = { PAT_TK_Yufiria_trade_opinion_factor_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_CONSCRIPTION_FACTOR } }
+			set_variable = { PAT_TK_Yufiria_conscription_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_POLITICAL_POWER_FACTOR } }
+			set_variable = { PAT_TK_Yufiria_political_power_factor_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_INTEL_NETWORK_GAIN_FACTOR } }
+			set_variable = { PAT_TK_Yufiria_intel_network_gain_factor_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_RESEARCH_SPEED_FACTOR } }
+			set_variable = { PAT_TK_Yufiria_research_speed_factor_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_WAR_SUPPORT_FACTOR } }
+			set_variable = { PAT_TK_Yufiria_war_support_factor_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_STABILITY_WAR_FACTOR } }
+			set_variable = { PAT_TK_Yufiria_war_stability_factor_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_OPERATIVE_SLOT } }
+			set_variable = { PAT_TK_Yufiria_operative_slot_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_RESOURCE_TRADE_COST_BONUS_PER_FACTORY } }
+			set_variable = { PAT_TK_Yufiria_resource_trade_cost_bonus_per_factory_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_SUPPLY_CONSUMPTION_FACTOR } }
+			set_variable = { PAT_TK_Yufiria_supply_consumption_factor_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_GLOBAL_NON_CORE_MANPOWER } }
+			set_variable = { PAT_TK_Yufiria_non_core_manpower_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_XP_GAIN_MILITARY_FACTOR } }
+			set_variable = { PAT_TK_Yufiria_experience_gain_military_factor_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:IC_FROM_SUBJECT } }
+			set_variable = { PAT_TK_Yufiria_ic_from_subject_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_RESISTANCE_TARGET } }
+			set_variable = { PAT_TK_Yufiria_resistance_target_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_PRODUCTION_SPEED_BUILDINGS_FACTOR } }
+			set_variable = { PAT_TK_Yufiria_production_speed_buildings_factor_var = PAT_talented_king_Yufiria_array_value^i }
+		}
+	}
+	for_each_loop = {
+		array = PAT_talented_king_Algard_array
+		index = i
+		
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_COMPLIANCE_GAIN_ADD } }
+			set_variable = { PAT_TK_Algard_compliance_gain_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_TRADE_OPINION_FACTOR } }
+			set_variable = { PAT_TK_Algard_trade_opinion_factor_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_CONSCRIPTION_FACTOR } }
+			set_variable = { PAT_TK_Algard_conscription_target_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_POLITICAL_POWER_FACTOR } }
+			set_variable = { PAT_TK_Algard_political_power_factor_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_INTEL_NETWORK_GAIN_FACTOR } }
+			set_variable = { PAT_TK_Algard_intel_network_gain_factor_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_RESEARCH_SPEED_FACTOR } }
+			set_variable = { PAT_TK_Algard_research_speed_factor_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_WAR_SUPPORT_FACTOR } }
+			set_variable = { PAT_TK_Algard_war_support_factor_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_STABILITY_WAR_FACTOR } }
+			set_variable = { PAT_TK_Algard_war_stability_factor_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_OPERATIVE_SLOT } }
+			set_variable = { PAT_TK_Algard_operative_slot_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_RESOURCE_TRADE_COST_BONUS_PER_FACTORY } }
+			set_variable = { PAT_TK_Algard_resource_trade_cost_bonus_per_factory_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_SUPPLY_CONSUMPTION_FACTOR } }
+			set_variable = { PAT_TK_Algard_supply_consumption_factor_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_GLOBAL_NON_CORE_MANPOWER } }
+			set_variable = { PAT_TK_Algard_non_core_manpower_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_XP_GAIN_MILITARY_FACTOR } }
+			set_variable = { PAT_TK_Algard_experience_gain_military_factor_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:IC_FROM_SUBJECT } }
+			set_variable = { PAT_TK_Algard_ic_from_subject_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_RESISTANCE_TARGET } }
+			set_variable = { PAT_TK_Algard_resistance_target_var = PAT_talented_king_Algard_array_value^i }
+		}
+		if = {
+			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_PRODUCTION_SPEED_BUILDINGS_FACTOR } }
+			set_variable = { PAT_TK_Algard_production_speed_buildings_factor_var = PAT_talented_king_Algard_array_value^i }
+		}
+	}
+}
+
+PAT_add_successor_modifier = {
+	if = {
+		limit = { check_variable = { PAT_Yufiria_score > PAT_Algard_score } }
+		set_variable = { PAT_TK_compliance_gain_var = PAT_TK_Yufiria_compliance_gain_var }
+		set_variable = { PAT_TK_trade_opinion_factor_var = PAT_TK_Yufiria_trade_opinion_factor_var }
+		set_variable = { PAT_TK_conscription_var = PAT_TK_Yufiria_conscription_var }
+		set_variable = { PAT_TK_political_power_factor_var = PAT_TK_Yufiria_political_power_factor_var }
+		set_variable = { PAT_TK_intel_network_gain_factor_var = PAT_TK_Yufiria_intel_network_gain_factor_var }
+		set_variable = { PAT_TK_research_speed_factor_var = PAT_TK_Yufiria_research_speed_factor_var }
+		set_variable = { PAT_TK_war_support_factor_var = PAT_TK_Yufiria_war_support_factor_var }
+		set_variable = { PAT_TK_war_stability_factor_var = PAT_TK_Yufiria_war_stability_factor_var }
+		set_variable = { PAT_TK_operative_slot_var = PAT_TK_Yufiria_operative_slot_var }
+		set_variable = { PAT_TK_resource_trade_cost_bonus_per_factory_var = PAT_TK_Yufiria_resource_trade_cost_bonus_per_factory_var }
+		set_variable = { PAT_TK_supply_consumption_factor_var = PAT_TK_Yufiria_supply_consumption_factor_var }
+		set_variable = { PAT_TK_non_core_manpower_var = PAT_TK_Yufiria_non_core_manpower_var }
+		set_variable = { PAT_TK_experience_gain_military_factor_var = PAT_TK_Yufiria_experience_gain_military_factor_var }
+		set_variable = { PAT_TK_ic_from_subject_var = PAT_TK_Yufiria_ic_from_subject_var }
+		set_variable = { PAT_TK_resistance_target_var = PAT_TK_Yufiria_resistance_target_var }
+		set_variable = { PAT_TK_production_speed_buildings_factor_var = PAT_TK_Yufiria_production_speed_buildings_factor_var }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_Yufiria_score < PAT_Algard_score } }
+		set_variable = { PAT_TK_compliance_gain_var = PAT_TK_Algard_compliance_gain_var }
+		set_variable = { PAT_TK_trade_opinion_factor_var = PAT_TK_Algard_trade_opinion_factor_var }
+		set_variable = { PAT_TK_conscription_var = PAT_TK_Algard_conscription_var }
+		set_variable = { PAT_TK_political_power_factor_var = PAT_TK_Algard_political_power_factor_var }
+		set_variable = { PAT_TK_intel_network_gain_factor_var = PAT_TK_Algard_intel_network_gain_factor_var }
+		set_variable = { PAT_TK_research_speed_factor_var = PAT_TK_Algard_research_speed_factor_var }
+		set_variable = { PAT_TK_war_support_factor_var = PAT_TK_Algard_war_support_factor_var }
+		set_variable = { PAT_TK_war_stability_factor_var = PAT_TK_Algard_war_stability_factor_var }
+		set_variable = { PAT_TK_operative_slot_var = PAT_TK_Algard_operative_slot_var }
+		set_variable = { PAT_TK_resource_trade_cost_bonus_per_factory_var = PAT_TK_Algard_resource_trade_cost_bonus_per_factory_var }
+		set_variable = { PAT_TK_supply_consumption_factor_var = PAT_TK_Algard_supply_consumption_factor_var }
+		set_variable = { PAT_TK_non_core_manpower_var = PAT_TK_Algard_non_core_manpower_var }
+		set_variable = { PAT_TK_experience_gain_military_factor_var = PAT_TK_Algard_experience_gain_military_factor_var }
+		set_variable = { PAT_TK_ic_from_subject_var = PAT_TK_Algard_ic_from_subject_var }
+		set_variable = { PAT_TK_resistance_target_var = PAT_TK_Algard_resistance_target_var }
+		set_variable = { PAT_TK_production_speed_buildings_factor_var = PAT_TK_Algard_production_speed_buildings_factor_var }
+	}
+}
+
+PAT_over_successor_to_the_throne = {
+	if = {
+		limit = { check_variable = { PAT_Yufiria_score > PAT_Algard_score } }
+		if = {
+			limit = { has_country_flag = PAT_successor_support_algard_flag }
+			add_political_power = -150
+		}
+		set_character_name = {
+			character = PAT_Yufiria_Mazenta
+			name = Yufiria_Fizu_Parettia
+		}
+		set_portraits = {
+		character = PAT_Yufiria_Mazenta
+			civilian = { large = GFX_Portrait_PAT_Yufiria_Mazenta_alt }
+		}
+		add_country_leader_role = {
+			character = PAT_Yufiria_Mazenta
+			country_leader = {
+				ideology = neutrality_subtype
+				traits = { PAT_talented_king }
+				expire = "1965.1.1.1"
+			}
+			promote_leader = yes
+		}
+	}
+	else_if = {
+		limit = { check_variable = { PAT_Yufiria_score < PAT_Algard_score } }
+		if = {
+			limit = { has_country_flag = PAT_successor_support_yufiria_flag }
+			add_political_power = -150
+		}
+		add_country_leader_role = {
+			character = PAT_Algard_von_Palettia
+			country_leader = {
+				ideology = neutrality_subtype
+				traits = { PAT_talented_king }
+				expire = "1965.1.1.1"
+			}
+			promote_leader = yes
+		}
+	}
+	# if the scores are tied, 
+	# there will be an event before that to determine the true winner.
+	
+	clr_country_flag = PAT_successor_to_the_throne_flag
+	hidden_effect = {
+		add_dynamic_modifier = {
+			modifier = PAT_talented_king_dynamic_modifier
+		}
+		if = {
+			limit = {
+				PAT = {
+					NOT = {
+						check_variable = {
+							PAT_TK_ic_from_subject_var = 0
+						}
+					}
+				}
+			}
+			every_other_country = {
+				limit = { is_subject_of = ROOT }
+				add_ideas = PAT_talented_king_subject_idea
+			}
+		}
+	}
+}
+
+PAT_initialize_tetrarchy_bop = {
+	set_politics = {
+		ruling_party = neutrality
+		elections_allowed = no
+	}
+	set_country_flag = PAT_tetrarchy_flag
+	add_country_leader_role = {
+		character = PAT_Algard_von_Palettia
+		country_leader = {
+			ideology = neutrality_subtype
+			traits = { inexperienced_imperialist } #autocratic_imperialist
+			expire = "1965.1.1.1"
+		}
+		promote_leader = yes
+	}
+	activate_advisor = PAT_Yufiria_Mazenta_head_of_government
+	set_power_balance = {
+		id = PAT_balance_of_power
+		left_side = PAT_yufiria_left_side
+		right_side = PAT_algard_right_side
 	}
 }

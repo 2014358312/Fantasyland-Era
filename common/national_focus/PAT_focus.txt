@@ -6,6 +6,13 @@
 ### search_filters = {FOCUS_FILTER_MANPOWER}
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 ### search_filters = {FOCUS_FILTER_USA_CONGRESS}
+#!gfx:interface\goals\FE_country_goals.gfx
+@focus_time_tier_1 = 1
+@focus_time_tier_2 = 2
+@focus_time_tier_3 = 3
+@focus_time_tier_4 = 4
+@focus_time_tier_5 = 5
+@focus_time_tier_10 = 10
 
 focus_tree = {
 	id = paretian_focus
@@ -17,18 +24,400 @@ focus_tree = {
 		}
 	}
 	default = no
+	
+	continuous_focus_position = { x = 50 y = 2600 }
 
 	focus = {
-		id = PAT_blank_focus
+		id = PAT_king_forever
 		icon = GFX_goal_generic_collaborate_local_elites
 		x = 10
 		y = 0
-		cost = 10
+		cost = @focus_time_tier_2
 		available = {
-			always = no 
+			is_subject = no
+			has_government = neutrality
 		}
 		completion_reward = {
 			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_wedding_condition
+		icon = GFX_goal_generic_collaborate_local_elites
+		dynamic = yes
+		prerequisite = { focus = PAT_king_forever }
+		relative_position_id = PAT_king_forever
+		x = 0
+		y = 1
+		cost = @focus_time_tier_2
+		available = {
+		}
+		completion_reward = {
+			add_stability = 0.10
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_wedding_progress_1
+		icon = GFX_goal_generic_collaborate_local_elites
+		dynamic = yes
+		prerequisite = { focus = PAT_wedding_condition }
+		relative_position_id = PAT_wedding_condition
+		x = -2
+		y = 1
+		cost = @focus_time_tier_1
+		available = {
+		}
+		completion_reward = {
+			if = {
+				limit = { has_intelligence_agency = no }
+				create_intelligence_agency = {
+					name = "Guardians of the Shadow"
+					icon = GFX_intelligence_agency_logo_BEL_vsse
+				}
+				add_political_power = -50
+			}
+			gain_random_agency_upgrade = yes
+			add_ideas = PAT_national_intelligence_section
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_wedding_progress_2
+		icon = GFX_goal_generic_collaborate_local_elites
+		dynamic = yes
+		prerequisite = { focus = PAT_wedding_condition }
+		relative_position_id = PAT_wedding_condition
+		x = 0
+		y = 1
+		cost = @focus_time_tier_1
+		available = {
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_wedding_progress_3
+		icon = GFX_goal_generic_collaborate_local_elites
+		dynamic = yes
+		prerequisite = { focus = PAT_wedding_condition }
+		relative_position_id = PAT_wedding_condition
+		x = 2
+		y = 1
+		cost = @focus_time_tier_1
+		available = {
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 70
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_border_crisis
+		icon = GFX_goal_generic_collaborate_local_elites
+		dynamic = yes
+		prerequisite = { focus = PAT_wedding_progress_1 }
+		prerequisite = { focus = PAT_wedding_progress_2 }
+		prerequisite = { focus = PAT_wedding_progress_3 }
+		relative_position_id = PAT_wedding_condition
+		x = 0
+		y = 2
+		cost = @focus_time_tier_5
+		available = {
+			always = no
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_evaluate_heir
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = PAT_border_crisis }
+		relative_position_id = PAT_border_crisis
+		allow_branch = {
+			OR = {
+				AND = {
+					NOT = { has_country_flag = PAT_overly_easy_coup_flag }
+					is_debug = no
+				}
+				is_debug = yes
+			}
+		}
+		x = -6
+		y = 1
+		offset = {
+			x = 6
+			y = 0
+			trigger = {
+				NOT = { has_country_flag = PAT_overly_easy_coup_flag }
+				is_debug = no
+			}
+		}
+		cost = @focus_time_tier_5
+		available = {
+			
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+			set_country_flag = PAT_successor_to_the_throne_flag
+			unlock_decision_category_tooltip = PAT_successor_to_the_throne_decision_category
+			hidden_effect = {
+				PAT_initialize_successor_to_the_throne_gui = yes
+			}
+			activate_mission = PAT_successor_to_the_throne_mission
+			country_event = { id = paretia.4 days = 3 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_heir_exercise_administration
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = PAT_evaluate_heir }
+		relative_position_id = PAT_evaluate_heir
+		x = -2
+		y = 1
+		cost = @focus_time_tier_2
+		available = {
+			has_active_mission = PAT_successor_to_the_throne_mission
+			NOT = { has_completed_focus = PAT_heir_choice_from_king }
+		}
+		completion_reward = {
+			unlock_decision_tooltip = PAT_successor_to_the_throne_administration_decision
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_heir_exercise_knowledge
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = PAT_evaluate_heir }
+		relative_position_id = PAT_evaluate_heir
+		x = -1
+		y = 2
+		cost = @focus_time_tier_2
+		available = {
+			has_active_mission = PAT_successor_to_the_throne_mission
+			NOT = { has_completed_focus = PAT_heir_choice_from_king }
+		}
+		completion_reward = {
+			unlock_decision_tooltip = PAT_successor_to_the_throne_knowledge_decision
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_heir_exercise_strategy
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = PAT_evaluate_heir }
+		relative_position_id = PAT_evaluate_heir
+		x = 0
+		y = 1
+		cost = @focus_time_tier_2
+		available = {
+			has_active_mission = PAT_successor_to_the_throne_mission
+			NOT = { has_completed_focus = PAT_heir_choice_from_king }
+		}
+		completion_reward = {
+			unlock_decision_tooltip = PAT_successor_to_the_throne_strategy_decision
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_heir_exercise_diplomacy
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = PAT_evaluate_heir }
+		relative_position_id = PAT_evaluate_heir
+		x = 1
+		y = 2
+		cost = @focus_time_tier_2
+		available = {
+			has_active_mission = PAT_successor_to_the_throne_mission
+			NOT = { has_completed_focus = PAT_heir_choice_from_king }
+		}
+		completion_reward = {
+			unlock_decision_tooltip = PAT_successor_to_the_throne_diplomacy_decision
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_heir_exercise_military
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = PAT_evaluate_heir }
+		relative_position_id = PAT_evaluate_heir
+		x = 2
+		y = 1
+		cost = @focus_time_tier_2
+		available = {
+			has_active_mission = PAT_successor_to_the_throne_mission
+			NOT = { has_completed_focus = PAT_heir_choice_from_king }
+		}
+		completion_reward = {
+			unlock_decision_tooltip = PAT_successor_to_the_throne_military_decision
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_heir_choice_from_king
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = {
+			focus = PAT_heir_exercise_diplomacy
+			focus = PAT_heir_exercise_knowledge
+			focus = PAT_heir_exercise_administration
+			focus = PAT_heir_exercise_military
+			focus = PAT_heir_exercise_strategy
+		}
+		relative_position_id = PAT_evaluate_heir
+		x = 0
+		y = 3
+		cost = 25
+		available = {
+			always = no
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_reform_wind
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = PAT_heir_choice_from_king }
+		relative_position_id = PAT_heir_choice_from_king
+		x = -2
+		y = 1
+		cost = @focus_time_tier_10
+		available = {
+			has_country_leader = {
+				character = PAT_Yufiria_Mazenta
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_after_crisis
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = PAT_border_crisis }
+		relative_position_id = PAT_border_crisis
+		allow_branch = {
+			OR = {
+				AND = {
+					has_country_flag = PAT_overly_easy_coup_flag
+					is_debug = no
+				}
+				is_debug = yes
+			}
+		}
+		x = 6
+		y = 1
+		offset = {
+			x = -6
+			y = 0
+			trigger = {
+				has_country_flag = PAT_overly_easy_coup_flag
+				is_debug = no
+			}
+		}
+		cost = @focus_time_tier_5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_liberation_front
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = PAT_after_crisis }
+		relative_position_id = PAT_after_crisis
+		x = -2
+		y = 1
+		cost = @focus_time_tier_2
+		available = {
+			is_exiled_in = ANA
+		}
+		completion_reward = {
+			add_stability = -0.10
+			add_popularity = {
+				ideology = communism
+				popularity = 0.10
+			}
+			add_offsite_building = { type = arms_factory level = 1 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = PAT_elf_covenanter
+		icon = GFX_goal_generic_collaborate_local_elites
+		prerequisite = { focus = PAT_liberation_front }
+		relative_position_id = PAT_liberation_front
+		x = -1
+		y = 1
+		cost = @focus_time_tier_2
+		available = {
+			is_exiled_in = ANA
+		}
+		completion_reward = {
+			add_political_power = 50
 		}
 		ai_will_do = {
 			factor = 1

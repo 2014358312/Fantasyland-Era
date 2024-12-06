@@ -842,4 +842,125 @@ northwest_continent_debug_decisions = {
 			}
 		}
 	}
+	debug_paretian_heir_yufiria = {
+		allowed = {
+			always = yes
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			PAT = {
+				exists = yes
+				NOT = {
+					has_country_leader = {
+						character = PAT_Yufiria_Mazenta
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = PAT_Algard_von_Palettia
+						ruling_only = yes
+					}
+				}
+			}
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision debug_paretian_heir_yufiria"
+			PAT = {
+				clr_country_flag = PAT_successor_support_algard_flag
+				set_country_flag = PAT_successor_to_the_throne_flag
+				custom_effect_tooltip = {
+					localization_key = PAT_successor_support_one_tt
+					CHARACTER = Yufiria_Mazenta
+				}
+				set_country_flag = PAT_successor_support_yufiria_flag
+				if = {
+					limit = { NOT = { has_variable = PAT_talented_king_Yufiria_num } }
+					PAT_initialize_successor_to_the_throne_gui = yes
+				}
+				if = {
+					limit = { has_active_mission = PAT_successor_to_the_throne_mission }
+					add_days_mission_timeout = {
+						mission = PAT_successor_to_the_throne_mission
+						days = 180
+					}
+				}
+				else = { activate_mission = PAT_successor_to_the_throne_mission }
+			}
+		}
+	}
+	debug_paretian_heir_algard = {
+		allowed = {
+			always = yes
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			PAT = {
+				exists = yes
+				NOT = {
+					has_country_leader = {
+						character = PAT_Yufiria_Mazenta
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = PAT_Algard_von_Palettia
+						ruling_only = yes
+					}
+				}
+			}
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision debug_paretian_heir_algard"
+			PAT = {
+				clr_country_flag = PAT_successor_support_yufiria_flag
+				set_country_flag = PAT_successor_to_the_throne_flag
+				custom_effect_tooltip = {
+					localization_key = PAT_successor_support_one_tt
+					CHARACTER = Algard_von_Palettia
+				}
+				set_country_flag = PAT_successor_support_algard_flag
+				if = {
+					limit = { NOT = { has_variable = PAT_talented_king_Algard_num } }
+					PAT_initialize_successor_to_the_throne_gui = yes
+				}
+				if = {
+					limit = { has_active_mission = PAT_successor_to_the_throne_mission }
+					add_days_mission_timeout = {
+						mission = PAT_successor_to_the_throne_mission
+						days = 180
+					}
+				}
+				else = { activate_mission = PAT_successor_to_the_throne_mission }
+			}
+		}
+	}
+	debug_paretian_heir_national_focus = {
+		allowed = {
+			always = yes
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			PAT = {
+				exists = yes
+				NOT = {
+					has_country_leader = {
+						character = PAT_Yufiria_Mazenta
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = PAT_Algard_von_Palettia
+						ruling_only = yes
+					}
+				}
+			}
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision debug_paretian_heir_national_focus"
+			complete_national_focus = PAT_evaluate_heir
+		}
+	}
 }
