@@ -1294,6 +1294,70 @@ focus = {
 		
 										}
 		}	
+		##向知识分子妥协
+focus = {
+	id = DKA_Compromise_with_intellectuals	
+	prerequisite = {  focus =DKA_National_Fitness_Campaign}
+	mutually_exclusive = { focus = DKA_Thoroughly_suppress}
+	x=-4
+	y = 1
+	relative_position_id =DKA_National_Fitness_Campaign
+																																						
+	cost = 10
+																																						
+	ai_will_do = {
+	factor = 2
+					}
+																																					
+	available = {
+																																						
+					}
+																																						
+	bypass = {
+																																						
+							}
+																																						
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+																																						
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	completion_reward = {
+		
+										}
+		}	
+		##彻底的打压
+focus = {
+	id = DKA_Thoroughly_suppress	
+	prerequisite = {  focus =DKA_National_Fitness_Campaign}
+	mutually_exclusive = { focus = DKA_Compromise_with_intellectuals}
+	x=-6
+	y = 1
+	relative_position_id =DKA_National_Fitness_Campaign
+																																						
+	cost = 10
+																																						
+	ai_will_do = {
+	factor = 2
+					}
+																																					
+	available = {
+																																						
+					}
+																																						
+	bypass = {
+																																						
+							}
+																																						
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+																																						
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	completion_reward = {
+		
+										}
+		}	
 	##组织奥林匹克委员会
 focus = {
 	id = DKA_Organizing_the_Olympic_Committee	
@@ -1465,7 +1529,7 @@ focus = {
 		 focus= {
 			id = DKA_Organize_the_first_innovation_and_entrepreneurship_competition
 			prerequisite = { focus = DKA_Exercise_thinking }
-			x = 2
+			x = 0
 			y = 1
 			relative_position_id =DKA_Exercise_thinking
 		
@@ -1548,6 +1612,32 @@ focus = {
 			x = 6
 			y = 1
 			relative_position_id =DKA_emancipate
+		
+			cost = 6
+		
+			ai_will_do = {
+			   factor = 1
+		   }
+		
+			available = {
+		   }
+		
+			bypass = {
+		
+		   }
+		
+			completion_reward = {
+			   add_war_support = 0.1
+			   army_experience =20
+		   }
+		   }
+		   ###一切的开始？
+		   focus= {
+			id = DKA_The_Beginning_of_Everything
+			prerequisite = { focus = DKA_Organize_the_first_innovation_and_entrepreneurship_competition focus = DKA_Organizing_the_First_Olympic_Games	 }
+			x = -3
+			y = 1
+			relative_position_id =DKA_Organize_the_first_innovation_and_entrepreneurship_competition
 		
 			cost = 6
 		
@@ -1968,6 +2058,39 @@ focus = {
 			completion_reward = {
 				
 												}
-		}		
-																				
+		}	
+		########################################工业线########################################
+		###整顿混乱产业
+		focus = {
+			id = DKA_Rectify_chaotic_industries
+			icon = GFX_goal_generic_major_alliance
+			available = {  has_completed_focus =DKA_The_Longest_Night}
+			x = 40
+			y = 0
+		
+			cost = 3
+		
+			ai_will_do = {
+				factor = 1
+			}
+		
+			available = {
+		
+			}
+		
+			bypass = {
+		
+			}
+		
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+		
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			completion_reward = {
+				add_political_power =150
+				country_event = DKA.1
+		
+			}
+		}																	
 	}				   	
