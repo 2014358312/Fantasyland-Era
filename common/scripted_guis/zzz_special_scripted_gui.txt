@@ -7,14 +7,45 @@ scripted_gui = {
 		ai_enabled = { always = no }
 		
 		visible = {
-			OR = {
-				ROOT = { has_country_flag = unknown_country_flag }
-				FROM = { has_country_flag = unknown_country_flag }
-				AND = {
-					ROOT = { TAG = LAN }
-					FROM = { TAG = SMA }
-				}
-			}
+#			if = {
+#				limit = {
+#					ROOT = { tag = LAN }
+#					FROM = { tag = SMA }
+#				}
+#				NOT = { tag = ROOT }
+#				FROM = { tag = SMA }
+#			}
+#			else_if = {
+#				limit = {
+#					ROOT = { NOT = { has_country_flag = unknown_country_flag } }
+#					FROM = { NOT = { has_country_flag = unknown_country_flag } }
+#				}
+#				always = no
+#			}
+#			else_if = {
+#				limit = {
+#					ROOT = { NOT = { has_country_flag = unknown_country_flag } }
+#					FROM = { has_country_flag = unknown_country_flag }
+#				}
+#				NOT = { tag = ROOT }
+#				FROM = { has_country_flag = unknown_country_flag }
+#			}
+#			else_if = {
+#				limit = {
+#					ROOT = { has_country_flag = unknown_country_flag } }
+#					FROM = { NOT = { has_country_flag = unknown_country_flag } }
+#				}
+#				tag = ROOT
+#			}
+#			else_if = {
+#				limit = {
+#					ROOT = { has_country_flag = unknown_country_flag }
+#					FROM = { has_country_flag = unknown_country_flag }
+#				}
+#				always = yes
+#			}
+#			else = { always = no }
+			always = no
 		}
 	}
 }
