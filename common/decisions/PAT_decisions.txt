@@ -27,6 +27,31 @@ PAT_successor_to_the_throne_decision_category = {
 		}
 	}
 	
+	PAT_successor_to_the_throne_yufiria_ai_mission = {
+		icon = eng_ally_imperialist_coup
+		allowed = { original_tag = PAT }
+		available = {
+			NOT = { has_active_mission = PAT_successor_to_the_throne_mission }
+		}
+		days_mission_timeout = 15
+		is_good = no
+		fire_only_once = no
+		activation = { always = no }
+		timeout_effect = {
+			hidden_effect = {
+				PAT_settle_successor_modifier = yes
+			}
+			
+			if = {
+				limit = { has_active_mission = PAT_successor_to_the_throne_mission }
+				activate_mission = PAT_successor_to_the_throne_yufiria_ai_mission
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
 	PAT_successor_to_the_throne_debug_decision = {
 		icon = eng_ally_imperialist_coup
 		allowed = { original_tag = PAT }
