@@ -1,0 +1,39 @@
+WPE_calculate_kujo_alisa_array = {
+	for_each_loop = {
+		array = WPE_kujo_alisa_available_foci_array
+		index = i
+		value = v
+		
+		set_variable = { WPE_kujo_alisa_available_foci_array_sum = i }
+		add_to_variable = { WPE_kujo_alisa_available_foci_array_sum = 1 }
+	}
+	if = {
+		limit = { NOT = { check_variable = { WPE_kujo_alisa_available_foci_array_sum = 1 } } }
+		set_variable_to_random = {
+			var = WPE_kujo_alisa_available_foci_array_num
+			max = 60
+			integer = yes
+		}
+		modulo_variable = { WPE_kujo_alisa_available_foci_array_num = WPE_kujo_alisa_available_foci_array_sum }
+		if = {
+			limit = { check_variable = { WPE_kujo_alisa_available_foci_array_num = 0 } }
+			WPE_calculate_kujo_alisa_array = yes
+		}
+		else = {
+			for_each_loop = {
+				array = WPE_kujo_alisa_available_foci_array
+				index = i
+				value = v
+				
+				if = {
+					limit = { check_variable = { i = WPE_kujo_alisa_available_foci_array_num } }
+					set_variable = { WPE_kujo_alisa_next_focus_var = WPE_kujo_alisa_available_foci_array_num }
+					remove_from_array = { WPE_kujo_alisa_available_foci_array = WPE_kujo_alisa_available_foci_array^i }
+				}
+			}
+			log = "1-[?WPE_kujo_alisa_next_focus_var]-1"
+			log = "2-[?WPE_kujo_alisa_next_focus_var.GetTokenKey]-2"
+			log = "3-[?WPE_kujo_alisa_next_focus_var.GetTokenLocalizedKey]-3"
+		}
+	}
+}
