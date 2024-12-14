@@ -1,0 +1,113 @@
+defined_text = {
+	name = VL_picture
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { secondary_portrait = token:GFX_Portrait_[SECONDARY] } }
+				SECONDARY = "[?FE_secondary.GetTokenKey]"
+			}
+		}
+		localization_key = "[?secondary_portrait.GetTokenLocalizedKey]"
+	}
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = VL_name
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { secondary_name = token:SECONDARY_[SECONDARY]_name } }
+				SECONDARY = "[?FE_secondary.GetTokenKey]"
+			}
+		}
+		localization_key = "[?secondary_name.GetTokenLocalizedKey]"
+	}
+	text = { localization_key = VL_name }
+}
+
+defined_text = {
+	name = VL_trait
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { secondary_trait = token:SECONDARY_[SECONDARY]_trait } }
+				SECONDARY = "[?FE_secondary.GetTokenKey]"
+			}
+		}
+		localization_key = "[?secondary_trait.GetTokenLocalizedKey]"
+	}
+	text = { localization_key = VL_trait }
+}
+
+defined_text = {
+	name = VL_desc
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { secondary_desc = token:SECONDARY_[SECONDARY]_desc } }
+				SECONDARY = "[?FE_secondary.GetTokenKey]"
+			}
+		}
+		localization_key = "[?secondary_desc.GetTokenLocalizedKey]"
+	}
+	text = { localization_key = VL_desc }
+}
+
+defined_text = {
+	name = GetVLStatus
+	text = {
+		trigger = { FROM = { check_variable = { VL_status_var = 1 } } }
+		localization_key = VL_Queen
+	}
+	text = {
+		trigger = { FROM = { check_variable = { VL_status_var = 2 } } }
+		localization_key = VL_Prime_Minister
+	}
+	text = {
+		trigger = { FROM = { check_variable = { VL_status_var = 3 } } }
+		localization_key = VL_Marshal
+	}
+	text = {
+		trigger = { FROM = { check_variable = { VL_status_var = 4 } } }
+		localization_key = VL_Premier
+	}
+	text = {
+		trigger = { FROM = { check_variable = { VL_status_var = 5 } } }
+		localization_key = VL_President
+	}
+	text = {
+		trigger = { FROM = { check_variable = { VL_status_var = 6 } } }
+		localization_key = VL_Vice_President
+	}
+	text = {
+		trigger = { FROM = { check_variable = { VL_status_var = 7 } } }
+		localization_key = VL_Speaker_of_House_of_Representatives
+	}
+	text = {
+		trigger = { FROM = { check_variable = { VL_status_var = 8 } } }
+		localization_key = VL_Cabinet_Secretary
+	}
+	text = {
+		trigger = { FROM = { check_variable = { VL_status_var = 9 } } }
+		localization_key = VL_Vice_Fuhrer
+	}
+	text = {
+		trigger = { FROM = { check_variable = { VL_status_var = 10 } } }
+		localization_key = VL_King
+	}
+	text = {
+		trigger = { FROM = { check_variable = { VL_status_var = 11 } } }
+		localization_key = VL_Foreign_Secretary
+	}
+	text = {
+		trigger = { FROM = { check_variable = { VL_status_var = 12 } } }
+		localization_key = VL_Reichskanzler
+	}
+	text = {
+		trigger = { FROM = { check_variable = { VL_status_var = 13 } } }
+		localization_key = VL_Network_Manager
+	}
+	text = { localization_key = VL_normal_status }
+}
+

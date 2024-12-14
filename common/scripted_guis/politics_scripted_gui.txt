@@ -1,0 +1,101 @@
+scripted_gui = {
+	disbop = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "balance_of_power_disallow"
+		
+		visible = { has_any_power_balance = no }
+	}
+}
+
+scripted_gui = {
+	subideology_notice = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "ruling_party_detail"
+		
+		visible = { always = yes }
+	}
+}
+
+scripted_gui = {
+	diplomacy_subideology_notice = {
+		context_type = selected_country_context
+		parent_window_token = selected_country_view_diplomacy
+		window_name = "diplomacy_subideology_container"
+
+		#ai_enabled = { always = no }
+		
+		visible = { always = yes }
+	}
+}
+
+scripted_gui = {
+	vice_leader_situation = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "vice_leader"
+		
+		visible = { always = yes }
+		
+		properties = {
+			vice_leader_picture = {
+				image = "[VL_picture]"
+			}
+		}
+	}
+}
+
+scripted_gui = {
+	diplomacy_vice_leader_situation = {
+		context_type = selected_country_context
+		parent_window_token = selected_country_view_diplomacy
+		window_name = "diplomacy_vice_leader"
+		
+		visible = { always = yes }
+		
+		properties = {
+			vice_leader_portrait = {
+				image = "[VL_picture]"
+			}
+		}
+	}
+}
+
+scripted_gui = {
+	politics_special_mechanism = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "country_special_mechanism"
+		
+		visible = { always = yes }
+		
+		triggers = {
+			country_special_icon_visible = {
+				always = yes
+			}
+		}
+	}
+}
+
+scripted_gui = {
+	diplomacy_unknown_notice = {
+		context_type = selected_country_context
+		parent_window_token = selected_country_view_diplomacy
+		window_name = "diplomacy_unknown"
+
+		#ai_enabled = { always = no }
+		
+		visible = {
+			FROM = {
+				has_country_flag = unknown_country_flag
+			}
+		}
+
+		properties = {
+			diplomacy_unknown_pic = {
+				image = [GetDiplomacyUnknownPic]
+			}
+		}
+	}
+}

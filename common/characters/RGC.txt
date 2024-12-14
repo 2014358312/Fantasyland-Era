@@ -75,6 +75,22 @@ characters = {
 			expire = "1965.1.1.1"
 			id = -1
 		}
+		advisor = {
+			slot = head_of_government
+			idea_token = RGC_Delphine_Windermere_head_of_government
+			allowed = { original_tag = RGC }
+			can_be_fired = no
+			traits = { military_liaison_officer head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				base = 1.000
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:RGC_Delphine_Windermere_head_of_government }
+				}
+			}
+		}
 		corps_commander = {
 			traits = { }
 			skill = 1

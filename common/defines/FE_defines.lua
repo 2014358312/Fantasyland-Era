@@ -16,3 +16,7 @@ NDefines.NGraphics.SUN_INTENSITY = 0.9
 NDefines_Graphics.NGraphics.BLOOM_SCALE = 0.0
 NDefines.NGraphics.COUNTRY_COLOR_SATURATION_MODIFIER = 0.9
 NDefines.NGraphics.GRADIENT_BORDERS_CAMERA_DISTANCE_OVERRIDE_COUNTRY = 0.08
+-- modify national spirit slot
+NDefines_Graphics.NGraphics.POLITICAL_GRID_SMALL_BOX_LIMIT = 8				-- Limit for gridbox in political view before it will be replaced with extended gridbox
+-- modify state building slot
+NDefines.NBuildings.MAX_SHARED_SLOTS = 50									-- Max slots shared by factories

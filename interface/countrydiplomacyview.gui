@@ -239,13 +239,13 @@ guiTypes = {
 				iconType = {
 					name = "top_bg"
 					spriteType = "GFX_diplo_upper_diplo_bg"
-					position = { x = 138 y = 0 }
+					position = { x = 268 y = 0 }
 					alwaystransparent = yes
 				}
 
 				containerWindowType = {
 					name = "political_pie_chart"
-					position = { x = 141 y = 9 }
+					position = { x = 271 y = 10 }
 					size = { width=330 height=30 }
 					clipping = no
 
@@ -264,7 +264,7 @@ guiTypes = {
 
 				containerWindowType = {
 					name = "ruling_party_info"
-					position = { x = 258 y = 25 }
+					position = { x = 380 y = 25 }
 					size = { width = 255 height = 60 }
 					clipping = no
 
@@ -273,7 +273,7 @@ guiTypes = {
 						position = { x = 5 y = -10 }
 						font = "hoi_16mbs"
 						text = "party"
-						maxWidth = 245
+						maxWidth = 140
 						maxHeight = 20
 						fixedsize = yes
 					}
@@ -283,8 +283,8 @@ guiTypes = {
 						position = { x = 5 y = 5 }
 						font = "hoi_16mbs"
 						text = "ideology"
-						maxWidth = 245
-						maxHeight = 30
+						maxWidth = 140
+						maxHeight = 50
 					}
 
 					instantTextboxType = {
@@ -292,14 +292,14 @@ guiTypes = {
 						position = { x = 5 y = 35 }
 						font = "hoi_16mbs"
 						text = "elections"
-						maxWidth = 245
+						maxWidth = 140
 						maxHeight = 20
 					}
 				}
 
 				containerWindowType = {
 					name = "active_national_focus_info"
-					position = { x = 144 y = 88 }
+					position = { x = 18 y = 174 }
 					size = { width = 330 height = 50 }
 					clipping = no
 
@@ -349,7 +349,7 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "relations_info"
-				position = { x = 11 y = 355 }
+				position = { x = 11 y = 480 }
 				size = { width = 268 height = -50 }
 				margin = { top = 8 bottom = 8}
 				verticalScrollbar = "right_vertical_slider"
@@ -374,7 +374,7 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "diplomatic_actions"
-				position = { x = 272 y = 355 }
+				position = { x = 272 y = 480 }
 				size = { width = 265 height = -50 }
 				verticalScrollbar = "right_vertical_slider"
 				scroll_wheel_factor = 40
@@ -402,7 +402,7 @@ guiTypes = {
 			}
 			containerWindowType = {
 				name = "national_spirit_info"
-				position = { x = 17 y = 285 }
+				position = { x = 17 y = 370 }
 				size = { width = 530 height = 70 }
 
 				iconType = {
@@ -414,7 +414,7 @@ guiTypes = {
 
 				instantTextBoxType = {
 					name = "spirit_title"
-					position = { x = 0 y = 0 }
+					position = { x = 10 y = 0 }
 					font = "hoi_18mbs"
 					borderSize = {x = 0 y = 0}
 					text = "FE_COUNTRY_SPIRIT"
@@ -424,8 +424,8 @@ guiTypes = {
 
 				containerWindowType = {
 					name = "national_spirit_container"
-					position = { x = -380 y = -5 }
-					size = { width = 375 height = 74 }
+					position = { x = -515 y = 25 }
+					size = { width = 500 height = 74 }
 					verticalScrollbar = "right_vertical_slider"
 					orientation = upper_right
 
@@ -436,18 +436,18 @@ guiTypes = {
 
 					gridboxtype = {
 						name = "national_spirit_ideas_grid"
-						position = { x = 0 y = 2 }
-						size = { width = 360 height = 68 }
-						slotsize = { width = 60 height = 68 }
-						max_slots = { x = 6 y = 1 }
+						position = { x = -5 y = 0 }
+						size = { width = 360 height = 74 }
+						slotsize = { width = 60 height = 74 }
+						max_slots = { x = 8 y = 100 }
 						format = "UPPER_LEFT"
 					}
 					gridboxtype = {
 						name = "nat_spirit_ideas_grid_over_defined"
-						position = { x = 10 y = 2 }
+						position = { x = 10 y = 0 }
 						size = { width = 330 height = 68 }
-						slotsize = { width = 33 height = 34 }
-						max_slots_horizontal = 10
+						slotsize = { width = 33 height = 38 }
+						max_slots_horizontal = 14
 						format = "UPPER_LEFT"
 					}
 				}
@@ -5102,12 +5102,128 @@ guiTypes = {
 	}
 	
 	containerWindowType = {
+		name = "diplomacy_vice_leader"
+		position = { x = 147 y = 110 }
+		
+#		iconType = {
+#			name = "vice_leader_picture"
+#			position = { x = 183 y = 58 }
+#			pdx_tooltip = VL_state_tt
+#			pdx_tooltip_delayed = VL_desc_tt
+#		}
+#		
+#		iconType = {
+#			name = "vice_leader_frame"
+#			spriteType = "GFX_pol_leader_frame"
+#			position = { x = 175 y = 44 }		
+#			alwaystransparent = yes
+#		}
+#		
+#		instantTextboxType = {
+#			name = "vice_leader_name"
+#			position = { x = 183 y = 262 }
+#			font = "hoi_18mbs"
+#			text = "[VL_name]"
+#			pdx_tooltip = VL_state_tt
+#			pdx_tooltip_delayed = VL_desc_tt
+#			maxWidth = 155
+#			maxHeight = 36
+#			format = center
+#			vertical_alignment = center
+#		}
+				
+		iconType = {
+			name = "vice_leader_portrait"
+			position = { x = 0 y = 10 }
+			spriteType = "GFX_leader_unknown"
+			scale = 0.74
+			pdx_tooltip = VL_Dip_state_tt
+			pdx_tooltip_delayed = VL_desc_tt
+		}
+		
+		iconType = {
+			name = "diplo_vice_leader_frame"
+			position = { x = -7 y = 0 }
+			spriteType = "GFX_diplo_leader_frame"
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "diplo_leader_status_icon"
+			position = { x = 127 y = 100 }
+			spriteType = "GFX_generic_text_bg_88"
+		}
+		
+		instantTextboxType = {
+			name = "diplo_leader_status"
+			position = { x = 129 y = 94 }
+			font = "hoi_18mbs"
+			text = "Country_Header"
+			maxWidth = 82
+			maxHeight = 36
+			format = center
+			vertical_alignment = center
+			fixedsize = yes
+		}
+		
+		iconType = {
+			name = "diplo_leader_name_icon"
+			position = { x = 230 y = 100 }
+			spriteType = "GFX_generic_text_bg_154"
+		}
+		
+		instantTextboxType = {
+			name = "diplo_leader_name"
+			position = { x = 235 y = 104 }
+			font = "hoi_18mbs"
+			text = "L_name_tt"
+			maxWidth = 145
+			maxHeight = 36
+			fixedsize = yes
+		}
+		
+		iconType = {
+			name = "diplo_vice_leader_status_icon"
+			position = { x = 127 y = 135 }
+			spriteType = "GFX_generic_text_bg_88"
+		}
+		
+		instantTextboxType = {
+			name = "diplo_vice_leader_status"
+			position = { x = 129 y = 129 }
+			font = "hoi_18mbs"
+			text = "Country_Vice_Header"
+			maxWidth = 82
+			maxHeight = 36
+			format = center
+			vertical_alignment = center
+			fixedsize = yes
+		}
+		
+		iconType = {
+			name = "diplo_vice_leader_name_icon"
+			position = { x = 230 y = 135 }
+			spriteType = "GFX_generic_text_bg_154"
+		}
+		
+		instantTextboxType = {
+			name = "diplo_vice_leader_name"
+			position = { x = 235 y = 139 }
+			font = "hoi_18mbs"
+			text = "[VL_name]"
+			maxWidth = 145
+			maxHeight = 36
+			fixedsize = yes
+		}
+	}
+	
+	containerWindowType = {
 		name = "diplomacy_subideology_container"
-		position = { x = 263 y = 155 }
+		position = { x = 372 y = 45 }
 		
 		instantTextboxType = {
 			name = "dip_subideology_name"
-			position = { x = 0 y = 0 }
+			position = { x = 13 y = 110 }
 			font = "hoi_16mbs"
 			text = "[GetRulingIdeologySubtype]"
 			pdx_tooltip = "[GetRulingIdeologySubtype]"
@@ -5115,6 +5231,18 @@ guiTypes = {
 			maxHeight = 20
 			fixedsize = yes
 			alwaystransparent = yes
+		}
+	}
+	
+	containerWindowType = {
+		name = "diplomacy_placeholder"
+		position = { x = 147 y = 110 }
+		
+		iconType = {
+			name = "diplo_placeholder_icon"
+			position = { x = 265 y = 185 }
+			spriteType = "GFX_diplo_placeholder"
+			pdx_tooltip = diplo_placeholder_tt
 		}
 	}
 }
