@@ -23,7 +23,7 @@ characters = {
 		}
 		advisor = {
 			slot = head_of_government
-			idea_token = PAT_Glantz_Mazenta
+			idea_token = PAT_Glantz_Mazenta_head_of_government
 			allowed = { original_tag = PAT }
 			available = {
 				no_head_of_gov_trigger = yes
@@ -33,6 +33,12 @@ characters = {
 			traits = { BRA_political_fox head_of_government_trait }
 			ai_will_do = {
 				base = 1.000
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:PAT_Glantz_Mazenta_head_of_government }
+					set_variable = { VL_status_var = 12 }
+				}
 			}
 		}
 	}

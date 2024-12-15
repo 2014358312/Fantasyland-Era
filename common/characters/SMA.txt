@@ -346,6 +346,23 @@ characters = {
 			id = -1
 		}
 		advisor = {
+			slot = head_of_government
+			idea_token = SMA_Roxy_Migurdia_head_of_government
+			allowed = { original_tag = SMA }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				base = 1.000
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:SMA_Roxy_Migurdia_head_of_government }
+				}
+			}
+		}
+		advisor = {
 			slot = high_command
 			ledger = army
 			idea_token = SMA_Roxy_Migurdia
@@ -358,6 +375,202 @@ characters = {
 			traits = { commander_in_chief_for_military_reconstruction }
 			ai_will_do = {
 				base = 1.000
+			}
+		}
+	}
+
+	SMA_Alexia_Midgar = {
+		name = Alexia_Midgar
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Alexia_Midgar
+				small = GFX_idea_advisor_SMA_Alexia_Midgar
+			}
+			army = {
+				large = GFX_Portrait_SMA_Alexia_Midgar
+				small = GFX_idea_advisor_SMA_Alexia_Midgar
+			}
+		}
+	}
+
+	SMA_Claire_Kagenou = {
+		name = Claire_Kagenou
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Claire_Kagenou
+				small = GFX_idea_advisor_SMA_Claire_Kagenou
+			}
+			army = {
+				large = GFX_Portrait_SMA_Claire_Kagenou
+				small = GFX_idea_advisor_SMA_Claire_Kagenou
+			}
+		}
+	}
+
+	SMA_Elisabeth = {
+		name = Elisabeth
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Elisabeth
+				small = GFX_idea_advisor_SMA_Elisabeth
+			}
+			army = {
+				large = GFX_Portrait_SMA_Elisabeth
+				small = GFX_idea_advisor_SMA_Elisabeth
+			}
+		}
+	}
+
+	SMA_ES_Beta = {
+		name = ES_Beta
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_ES_Beta
+				small = GFX_idea_advisor_SMA_ES_Beta
+			}
+			army = {
+				large = GFX_Portrait_SMA_ES_Beta
+				small = GFX_idea_advisor_SMA_ES_Beta
+			}
+		}
+	}
+
+	SMA_ES_Delta = {
+		name = ES_Delta
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_ES_Delta
+				small = GFX_idea_advisor_SMA_ES_Delta
+			}
+			army = {
+				large = GFX_Portrait_SMA_ES_Delta
+				small = GFX_idea_advisor_SMA_ES_Delta
+			}
+		}
+	}
+
+	SMA_ES_Epsilon = {
+		name = ES_Epsilon
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_ES_Epsilon
+				small = GFX_idea_advisor_SMA_ES_Epsilon
+			}
+			army = {
+				large = GFX_Portrait_SMA_ES_Epsilon
+				small = GFX_idea_advisor_SMA_ES_Epsilon
+			}
+		}
+	}
+
+	SMA_ES_Eta = {
+		name = ES_Eta
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_ES_Eta
+				small = GFX_idea_advisor_SMA_ES_Eta
+			}
+			army = {
+				large = GFX_Portrait_SMA_ES_Eta
+				small = GFX_idea_advisor_SMA_ES_Eta
+			}
+		}
+	}
+
+	SMA_ES_Gamma = {
+		name = ES_Gamma
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_ES_Gamma
+				small = GFX_idea_advisor_SMA_ES_Gamma
+			}
+			army = {
+				large = GFX_Portrait_SMA_ES_Gamma
+				small = GFX_idea_advisor_SMA_ES_Gamma
+			}
+		}
+	}
+
+	SMA_Iris_Midgar = {
+		name = Iris_Midgar
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Iris_Midgar
+				small = GFX_idea_advisor_SMA_Iris_Midgar
+			}
+			army = {
+				large = GFX_Portrait_SMA_Iris_Midgar
+				small = GFX_idea_advisor_SMA_Iris_Midgar
+			}
+		}
+	}
+
+	SMA_Niu = {
+		name = Niu
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Niu
+				small = GFX_idea_advisor_SMA_Niu
+			}
+			army = {
+				large = GFX_Portrait_SMA_Niu
+				small = GFX_idea_advisor_SMA_Niu
+			}
+		}
+	}
+
+	SMA_Rose_Oriana = {
+		name = Rose_Oriana
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Rose_Oriana
+				small = GFX_idea_advisor_SMA_Rose_Oriana
+			}
+			army = {
+				large = GFX_Portrait_SMA_Rose_Oriana
+				small = GFX_idea_advisor_SMA_Rose_Oriana
+			}
+		}
+	}
+
+	SMA_Sherry_Barnett = {
+		name = Sherry_Barnett
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Sherry_Barnett
+				small = GFX_idea_advisor_SMA_Sherry_Barnett
+			}
+			army = {
+				large = GFX_Portrait_SMA_Sherry_Barnett
+				small = GFX_idea_advisor_SMA_Sherry_Barnett
+			}
+		}
+	}
+
+	SMA_Victoria = {
+		name = Victoria
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Victoria
+				small = GFX_idea_advisor_SMA_Victoria
+			}
+			army = {
+				large = GFX_Portrait_SMA_Victoria
+				small = GFX_idea_advisor_SMA_Victoria
+			}
+		}
+	}
+
+	SMA_Yukime = {
+		name = Yukime
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Yukime
+				small = GFX_idea_advisor_SMA_Yukime
+			}
+			army = {
+				large = GFX_Portrait_SMA_Yukime
+				small = GFX_idea_advisor_SMA_Yukime
 			}
 		}
 	}

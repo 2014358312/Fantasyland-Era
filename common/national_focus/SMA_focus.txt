@@ -102,10 +102,9 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			country_lock_all_division_template = no
-			custom_effect_tooltip = SMA_rebuild_army_tt
-			hidden_effect = {
-				
-			}
+			unlock_decision_category_tooltip = SMA_army_reform_decision_category
+			custom_effect_tooltip = SMA_modify_army_modifier
+			add_to_variable = { SMA_DA_war_support_factor_var = 0.05 tooltip = war_support_factor_tt }
 		}
 		ai_will_do = {
 			factor = 1
@@ -126,8 +125,40 @@ focus_tree = {
 		}
 		search_filters = {  }
 		completion_reward = {
-			army_experience = 5
-			add_political_power = 50
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					all_neighbor_state = { is_owned_by = ROOT }
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					all_neighbor_state = { is_owned_by = ROOT }
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -148,8 +179,9 @@ focus_tree = {
 		}
 		search_filters = {  }
 		completion_reward = {
-			army_experience = 5
-			add_political_power = 50
+			custom_effect_tooltip = SMA_modify_army_modifier
+			add_to_variable = { SMA_DA_conscription_factor_var = 0.10 tooltip = conscription_factor_tt }
+			add_to_variable = { SMA_DA_army_org_factor_var = 0.15 tooltip = army_org_factor_tt }
 		}
 		ai_will_do = {
 			factor = 1
