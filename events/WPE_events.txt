@@ -164,7 +164,7 @@ country_event = {
 				}
 				add_to_variable = { WPE_rushia_term_var = 1 }
 				if = {
-					limit = { check_variable = { WPE_rushia_term_var < 6 } }
+					limit = { check_variable = { WPE_rushia_term_var < 7 } }
 					random_list = {
 						1 = {
 							modifier = {
@@ -224,9 +224,13 @@ country_event = {
 							set_country_flag = { flag = WPE_rushia_searching_for_loyalists_in_progress_flag days = 29 value = 1 }
 						}
 					}
+					random = {
+						chance = 50
+						add_to_variable = { WPE_rushia_status_var = 1 }
+					}
 				}
 				else_if = {
-					limit = { check_variable = { WPE_rushia_term_var > 5 } }
+					limit = { check_variable = { WPE_rushia_term_var > 6 } }
 					clear_variable = WPE_rushia_term_var
 				}
 			}
@@ -247,7 +251,7 @@ country_event = {
 		hidden_effect = {
 			RAT_Takamiya_Mio = {
 				set_can_be_fired_in_advisor_role = {
-					slot = political_advisor
+					slot = theorist
 					value = yes
 				}
 				set_character_flag = character_no_visible_flag
@@ -273,7 +277,7 @@ country_event = {
 				PREV = {
 					RAT_Takamiya_Mio = {
 						clr_character_flag = character_no_visible_flag
-						set_nationality = PREV
+						set_nationality = PREV.PREV
 					}
 				}
 			}
@@ -292,7 +296,7 @@ country_event = {
 	immediate = {
 		log = "[GetDateText]: [Root.GetName]: event white_pole.7"
 		hidden_effect = {
-			deactivate_advisor = WPE_Ilf_Snow
+			deactivate_advisor = WPE_Ilf_Snow_head_of_government
 			activate_advisor = WPE_Promaya_Zatzatski_head_of_government
 		}
 	}
@@ -300,7 +304,7 @@ country_event = {
 	option = {
 		name = white_pole.7.a
 		effect_tooltip = {
-			deactivate_advisor = WPE_Ilf_Snow
+			deactivate_advisor = WPE_Ilf_Snow_head_of_government
 			activate_advisor = WPE_Promaya_Zatzatski_head_of_government
 		}
 	}
@@ -388,9 +392,17 @@ country_event = {
 					slot = head_of_government
 					trait = logistics_defense_minister
 				}
+				remove_trait = {
+					slot = head_of_government
+					trait = head_of_government_trait
+				}
 				add_trait = {
 					slot = head_of_government
 					trait = logistics_defense_minister_improve
+				}
+				add_trait = {
+					slot = head_of_government
+					trait = head_of_government_trait
 				}
 			}
 		}
@@ -443,6 +455,12 @@ country_event = {
 				refund_political_power = no
 			}
 			complete_national_focus = WPE_rushia_resign
+			if = {
+				limit = { check_variable = { WPE_kujo_alisa_available_foci_array^num = 0 } }
+				add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_wait_for_good_news }
+				add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
+				WPE_calculate_kujo_alisa_array = yes
+			}
 		}
 	}
 
@@ -476,6 +494,12 @@ country_event = {
 				refund_political_power = no
 			}
 			complete_national_focus = WPE_rushia_resign
+			if = {
+				limit = { check_variable = { WPE_kujo_alisa_available_foci_array^num = 0 } }
+				add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_wait_for_good_news }
+				add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
+				WPE_calculate_kujo_alisa_array = yes
+			}
 		}
 	}
 }
@@ -586,9 +610,11 @@ country_event = {
 		log = "[GetDateText]: [Root.GetName]: event white_pole.15"
 		hidden_effect = {
 			set_country_flag = WPE_candidate_Alisa_Mikhaylovna_Kujo_flag
-			activate_shine_on_focus = WPE_candidate_kujo_alisa
+			add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_candidate_kujo_alisa }
+			add_to_array = { WPE_kujo_alisa_available_foci_time_array = 35 }
 			set_country_flag = { flag = WPE_candidate_kujo_alisa_in_progress_flag days = 36 value = 1 }
 			reload_focus_tree_hide = yes
+			WPE_calculate_kujo_alisa_array = yes
 		}
 	}
 	

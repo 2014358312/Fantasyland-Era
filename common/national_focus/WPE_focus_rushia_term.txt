@@ -67,9 +67,8 @@ shared_focus = {
 		add_political_power = 25
 		country_event = white_pole.4
 		hidden_effect = {
-			country_event = { id = white_pole.5 }
+			country_event = { id = white_pole.5 days = 28 }
 		}
-		set_variable = { WPE_rushia_term_var = 0 }
 	}
 }
 
@@ -119,7 +118,7 @@ shared_focus = {
 		}
 		add_political_power = -10
 		hidden_effect = {
-			country_event = { id = white_pole.5 }
+			country_event = { id = white_pole.5 days = 28 }
 		}
 	}
 }
@@ -166,7 +165,7 @@ shared_focus = {
 	completion_reward = {
 		add_political_power = -10
 		hidden_effect = {
-			country_event = { id = white_pole.5 }
+			country_event = { id = white_pole.5 days = 28 }
 		}
 	}
 }
@@ -217,7 +216,7 @@ shared_focus = {
 		}
 		add_political_power = -10
 		hidden_effect = {
-			country_event = { id = white_pole.5 }
+			country_event = { id = white_pole.5 days = 28 }
 		}
 	}
 }
@@ -265,7 +264,7 @@ shared_focus = {
 		add_political_power = -10
 		country_event = white_pole.3
 		hidden_effect = {
-			country_event = { id = white_pole.5 }
+			country_event = { id = white_pole.5 days = 28 }
 		}
 	}
 }
@@ -316,7 +315,7 @@ shared_focus = {
 		}
 		add_political_power = -10
 		hidden_effect = {
-			country_event = { id = white_pole.5 }
+			country_event = { id = white_pole.5 days = 28 }
 		}
 	}
 }
@@ -363,7 +362,7 @@ shared_focus = {
 	completion_reward = {
 		add_political_power = -10
 		hidden_effect = {
-			country_event = { id = white_pole.5 }
+			country_event = { id = white_pole.5 days = 28 }
 		}
 	}
 }
@@ -824,15 +823,13 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 	completion_reward = {
-		add_to_array = { WPE_kujo_alisa_available_foci_array = 114514 } #we don't need this index.
+		add_political_power = -25
 		add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_promise }
+		add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
 		add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_attack_economy }
+		add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
 		add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_reform_military_doctrine }
-		set_variable = { WPE_kujo_alisa_available_foci_array_sum = 4 }
-		
-		hidden_effect = {
-			country_event = { id = white_pole.16 days = 1 }
-		}
+		add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
 	}
 }
 
@@ -876,6 +873,12 @@ shared_focus = {
 		add_popularity = {
 			ideology = communism
 			popularity = 0.05
+		}
+		add_political_power = -25
+		if = {
+			limit = { has_completed_focus = WPE_kujo_alisa_attack_economy }
+			add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_collaboration_project_with_albion }
+			add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
 		}
 	}
 }
@@ -921,6 +924,16 @@ shared_focus = {
 			ideology = communism
 			popularity = 0.05
 		}
+		if = {
+			limit = { has_completed_focus = WPE_kujo_alisa_promise }
+			add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_collaboration_project_with_albion }
+			add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
+		}
+		if = {
+			limit = { has_completed_focus = WPE_kujo_alisa_reform_military_doctrine }
+			add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_military_orders }
+			add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
+		}
 	}
 }
 
@@ -964,6 +977,11 @@ shared_focus = {
 		add_popularity = {
 			ideology = communism
 			popularity = 0.05
+		}
+		if = {
+			limit = { has_completed_focus = WPE_kujo_alisa_attack_economy }
+			add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_military_orders }
+			add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
 		}
 	}
 }
@@ -1010,6 +1028,28 @@ shared_focus = {
 			ideology = communism
 			popularity = 0.05
 		}
+		if = {
+			limit = {
+				has_completed_focus = WPE_kujo_alisa_military_orders
+				OR = {
+					has_country_leader = {
+						character = WPE_Tokino_Sora
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = WPE_Houshou_Marine
+						ruling_only = yes
+					}
+				}
+			}
+			add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_wait_for_good_news }
+			add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
+			if = {
+				limit = { check_variable = { WPE_kujo_alisa_available_foci_array^num = 1 } }
+				clr_variable = WPE_kujo_alisa_next_focus_var
+				WPE_calculate_kujo_alisa_array = yes
+			}
+		}
 	}
 }
 
@@ -1054,6 +1094,28 @@ shared_focus = {
 		add_popularity = {
 			ideology = communism
 			popularity = 0.05
+		}
+		if = {
+			limit = {
+				has_completed_focus = WPE_kujo_alisa_collaboration_project_with_albion
+				OR = {
+					has_country_leader = {
+						character = WPE_Tokino_Sora
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = WPE_Houshou_Marine
+						ruling_only = yes
+					}
+				}
+			}
+			add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_wait_for_good_news }
+			add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
+			if = {
+				limit = { check_variable = { WPE_kujo_alisa_available_foci_array^num = 1 } }
+				clr_variable = WPE_kujo_alisa_next_focus_var
+				WPE_calculate_kujo_alisa_array = yes
+			}
 		}
 	}
 }
