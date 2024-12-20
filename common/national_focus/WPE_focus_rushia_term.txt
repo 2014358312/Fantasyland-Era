@@ -1044,11 +1044,6 @@ shared_focus = {
 			}
 			add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_wait_for_good_news }
 			add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
-			if = {
-				limit = { check_variable = { WPE_kujo_alisa_available_foci_array^num = 1 } }
-				clr_variable = WPE_kujo_alisa_next_focus_var
-				WPE_calculate_kujo_alisa_array = yes
-			}
 		}
 	}
 }
@@ -1111,11 +1106,6 @@ shared_focus = {
 			}
 			add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_wait_for_good_news }
 			add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
-			if = {
-				limit = { check_variable = { WPE_kujo_alisa_available_foci_array^num = 1 } }
-				clr_variable = WPE_kujo_alisa_next_focus_var
-				WPE_calculate_kujo_alisa_array = yes
-			}
 		}
 	}
 }

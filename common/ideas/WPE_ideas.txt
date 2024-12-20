@@ -77,6 +77,25 @@ ideas = {
 			}
 		}
 		
+		WPE_failed_democracy_alternate = {
+			name = WPE_failed_democracy
+			picture = FRA_down_marianne
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.50
+				stability_factor = -0.40
+			}
+		}
+		
 		WPE_corruption_in_military = {
 			picture = ARG_political_corruption_modifier
 			allowed = {
@@ -105,10 +124,10 @@ ideas = {
 				always = no
 			}
 			allowed_civil_war = {
-				always = no
+				has_character = WPE_Ilf_Snow
 			}
 			available = {
-				has_idea = WPE_Ilf_Snow
+				has_character = WPE_Ilf_Snow
 			}
 			removal_cost = -1
 			modifier = {
@@ -138,6 +157,9 @@ ideas = {
 			allowed = {
 				original_tag = WPE
 			}
+			allowed_civil_war = {
+				has_character = WPE_Dandelion
+			}
 			available = {
 				custom_trigger_tooltip = {
 					tooltip = WPE_Dandelion_industrial_concern_idea_ttt
@@ -163,6 +185,16 @@ ideas = {
 			allowed = {
 				original_tag = WPE
 			}
+			allowed_civil_war = {
+				has_country_flag = WPE_sangvis_lucia_flag
+			}
+			visible = {
+				if = {
+					limit = { has_character = WPE_Lyco }
+					WPE_Lyco = { NOT = { has_character_flag = character_no_visible_flag } }
+				}
+				else = { always = no }
+			}
 			available = {
 				has_character = WPE_Lyco
 				WPE_Lyco = { is_character_slot = political_advisor }
@@ -177,8 +209,13 @@ ideas = {
 				industry = 0.05
 			}
 			allowed_to_remove = {
-				NOT = { has_character = WPE_Lyco }
-				hidden_trigger = { always = no }
+				if = {
+					limit = { WPE_Lyco = { is_character_slot = political_advisor } }
+					NOT = { has_character = WPE_Lyco }
+				}
+				else = {
+					hidden_trigger = { has_country_flag = WPE_sangvis_lucia_flag }
+				}
 			}
 			cancel_if_invalid = no
 		}
@@ -192,6 +229,9 @@ ideas = {
 					original_tag = WPE
 					is_newland_country = yes
 				}
+			}
+			allowed_civil_war = {
+				NOT = { original_tag = WPE }
 			}
 			visible = {
 				OR = {

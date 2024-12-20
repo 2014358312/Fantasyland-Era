@@ -85,13 +85,32 @@ recruit_character = WPE_Natsuiro_Matsuri
 recruit_character = WPE_Shirogane_Noel
 recruit_character = WPE_Suomi
 recruit_character = WPE_Alisa_Mikhaylovna_Kujo
+recruit_character = WPE_Eliza
+recruit_character = WPE_Agent
+recruit_character = WPE_Fedorov
+recruit_character = WPE_Tatenashi_Sarashiki
+
+WPE_Fedorov = { set_character_flag = character_no_visible_flag } #this for gov
+
+WPE_Lyco = { set_character_flag = WPE_sangvis_member_flag }
+WPE_Eliza = { set_character_flag = WPE_sangvis_member_flag }
+WPE_Agent = {
+	set_character_flag = WPE_sangvis_member_flag
+	set_character_flag = character_no_visible_flag #this for gov
+}
+
+WPE_Ilf_Snow = { set_character_flag = WPE_military_member_flag }
+WPE_Tatenashi_Sarashiki = {
+	set_character_flag = WPE_military_member_flag
+	set_character_flag = character_no_visible_flag #this for gov
+}
 
 activate_advisor = WPE_Ilf_Snow_head_of_government
 activate_advisor = WPE_Lyco
 activate_advisor = WPE_Minato_Aqua
 
 activate_shine_on_focus = WPE_tail_of_rushia_term
-set_country_flag = { flag = WPE_tail_of_rushia_term_in_progress_flag days = 35 value = 1 }
+set_country_flag = { flag = WPE_tail_of_rushia_term_in_progress_flag days = 36 value = 1 }
 country_event = { id = white_pole.5 days = 35 hours = 12 }
 set_variable = { WPE_rushia_status_var = 2 }
 

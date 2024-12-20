@@ -7,6 +7,54 @@ reload_focus_tree_hide = { mark_focus_tree_layout_dirty = yes }
 
 every_country_reload_focus_tree = { every_country = { mark_focus_tree_layout_dirty = yes } }
 
+ROOT_transfer_communist_support_to_neutrality = {
+	custom_effect_tooltip = ROOT_transfer_communist_support_to_neutrality_tt
+	hidden_effect = {
+		set_variable = { ROOT.communist_support_before_change = ROOT.party_popularity@communism }
+		set_variable = { ROOT.neutrality_support_before_change = ROOT.party_popularity@neutrality }
+		set_variable = { ROOT.neutrality_support_after_change = ROOT.neutrality_support_before_change }
+		add_to_variable = { ROOT.neutrality_support_after_change = ROOT.communist_support_before_change }
+		add_popularity = {
+			ideology = communism
+			popularity = -1.00
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = -1.00
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = ROOT.neutrality_support_after_change
+		}
+		clear_variable = ROOT.communist_support_before_change
+		clear_variable = ROOT.neutrality_support_after_change
+	}
+}
+
+ROOT_transfer_democratic_support_to_neutrality = {
+	custom_effect_tooltip = ROOT_transfer_democratic_support_to_neutrality_tt
+	hidden_effect = {
+		set_variable = { ROOT.democratic_support_before_change = ROOT.party_popularity@democratic }
+		set_variable = { ROOT.neutrality_support_before_change = ROOT.party_popularity@neutrality }
+		set_variable = { ROOT.neutrality_support_after_change = ROOT.neutrality_support_before_change }
+		add_to_variable = { ROOT.neutrality_support_after_change = ROOT.democratic_support_before_change }
+		add_popularity = {
+			ideology = democratic
+			popularity = -1.00
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = -1.00
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = ROOT.neutrality_support_after_change
+		}
+		clear_variable = ROOT.democratic_support_before_change
+		clear_variable = ROOT.neutrality_support_after_change
+	}
+}
+
 ROOT_transfer_fascist_support_to_neutrality = {
 	custom_effect_tooltip = ROOT_transfer_fascist_support_to_neutrality_tt
 	hidden_effect = {

@@ -46,3 +46,236 @@ WPE_calculate_kujo_alisa_array = {
 		}
 	}
 }
+
+WPE_clear_character_before_civil_war = {
+	deactivate_advisor = WPE_Ilf_Snow_head_of_government
+	activate_advisor = generic_head_of_government_none
+	deactivate_advisor = WPE_Lyco
+	deactivate_advisor = WPE_Minato_Aqua
+	deactivate_advisor = RAT_Issac_Ray_Pelham_Westcott
+	deactivate_advisor = RAT_Murasame_Reine
+	remove_ideas = {
+		WPE_northern_guard
+		WPE_disappeared_twenty_years
+		WPE_failed_democracy
+		WPE_failed_democracy_alternate
+		WPE_corruption_in_military
+		WPE_coventry_snow_program
+	}
+	every_possible_country = {
+		limit = { has_country_flag = WPE_DEM_stay_flag }
+		clr_country_flag = WPE_DEM_stay_flag
+	}
+}
+
+WPE_reassign_roles = {
+	if = {
+		limit = { NOT = { has_country_flag = WPE_federation_lucia_flag } }
+		every_character = {
+			limit = {
+				NOT = {
+					has_character_flag = WPE_sangvis_member_flag
+					has_character_flag = WPE_military_member_flag
+				}
+			}
+			set_nationality = WPF
+		}
+	}
+	if = {
+		limit = { NOT = { has_country_flag = WPE_sangvis_lucia_flag } }
+		every_character = {
+			limit = { has_character_flag = WPE_sangvis_member_flag }
+			set_nationality = WPI
+		}
+	}
+	if = {
+		limit = { NOT = { has_country_flag = WPE_military_lucia_flag } }
+		every_character = {
+			limit = { has_character_flag = WPE_military_member_flag }
+			set_nationality = WPA
+		}
+	}
+	WPF = {
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = communism
+			name = WPF_communism_party
+			long_name = WPF_communism_party
+		}
+		set_party_name = {
+			ideology = democratic
+			name = WPF_democratic_party
+			long_name = WPF_democratic_party
+		}
+		set_party_name = {
+			ideology = neutrality
+			name = WPF_neutrality_party
+			long_name = WPF_neutrality_party
+		}
+		set_party_name = {
+			ideology = fascism
+			name = WPF_fascism_party
+			long_name = WPF_fascism_party
+		}
+		set_popularities = {
+			communism = WPE.communist_support_before_change
+			democratic = WPE.democratic_support_before_change
+			fascism = WPE.fascist_support_before_change
+			neutrality = WPE.neutrality_support_before_change
+		}
+		if = {
+			limit = { has_character = WPE_Promaya_Zatzatski }
+			WPE_Promaya_Zatzatski = {
+				add_country_leader_role = {
+					country_leader = {
+						ideology = democratic_subtype
+						expire = "1965.1.1.1"
+						traits = { cornered_fox }
+					}
+					promote_leader = yes
+				}
+			}
+		}
+		if = {
+			limit = { has_character = WPE_Fedorov }
+			WPE_Fedorov = { clr_character_flag = character_no_visible_flag }
+			activate_advisor = WPE_Fedorov_head_of_government
+		}
+	}
+	WPI = {
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = communism
+			name = WPI_communism_party
+			long_name = WPI_communism_party
+		}
+		set_party_name = {
+			ideology = democratic
+			name = WPI_democratic_party
+			long_name = WPI_democratic_party
+		}
+		set_party_name = {
+			ideology = neutrality
+			name = WPI_neutrality_party
+			long_name = WPI_neutrality_party
+		}
+		set_party_name = {
+			ideology = fascism
+			name = WPI_fascism_party
+			long_name = WPI_fascism_party
+		}
+		set_popularities = {
+			communism = 0
+			democratic = 0
+			neutrality = 20
+			fascism = 80
+		}
+		if = {
+			limit = { has_character = WPE_Eliza }
+			WPE_Eliza = {
+				add_country_leader_role = {
+					country_leader = {
+						ideology = communism_subtype
+						expire = "1965.1.1.1"
+						traits = { }
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = {
+						ideology = democratic_subtype
+						expire = "1965.1.1.1"
+						traits = { }
+					}
+					promote_leader = yes
+				}#During the process of playing this TAG, it is generally not likely to turn into these two colors.
+				add_country_leader_role = {
+					country_leader = {
+						ideology = machine_intelligence_n_subtype
+						expire = "1965.1.1.1"
+						traits = { GER_supreme_leader }
+					}
+					promote_leader = yes
+				}
+				add_country_leader_role = {
+					country_leader = {
+						ideology = machine_intelligence_f_subtype
+						expire = "1965.1.1.1"
+						traits = { GER_supreme_leader }
+					}
+					promote_leader = yes
+				}
+			}
+		}
+		if = {
+			limit = { has_character = WPE_Agent }
+			WPE_Agent = { clr_character_flag = character_no_visible_flag }
+			activate_advisor = WPE_Agent_head_of_government
+		}
+	}
+	WPA = {
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = communism
+			name = WPA_communism_party
+			long_name = WPA_communism_party
+		}
+		set_party_name = {
+			ideology = democratic
+			name = WPA_democratic_party
+			long_name = WPA_democratic_party
+		}
+		set_party_name = {
+			ideology = neutrality
+			name = WPA_neutrality_party
+			long_name = WPA_neutrality_party
+		}
+		set_party_name = {
+			ideology = fascism
+			name = WPA_fascism_party
+			long_name = WPA_fascism_party
+		}
+		set_popularities = {
+			communism = 2
+			democratic = 5
+			fascism = 20
+			neutrality = 73
+		}
+		#ROOT_transfer_communist_support_to_neutrality = yes
+		#ROOT_transfer_democratic_support_to_neutrality = yes
+		if = {
+			limit = { has_character = WPE_Ilf_Snow }
+			WPE_Ilf_Snow = {
+				set_character_flag = character_no_visible_flag
+				add_country_leader_role = {
+					country_leader = {
+						ideology = militarism_subtype
+						expire = "1965.1.1.1"
+						traits = { revolutionary_general }
+					}
+					promote_leader = yes
+				}
+			}
+		}
+		if = {
+			limit = { has_character = WPE_Tatenashi_Sarashiki }
+			WPE_Fedorov = { clr_character_flag = character_no_visible_flag }
+			activate_advisor = WPE_Tatenashi_Sarashiki_head_of_government
+		}
+	}
+	WPE = {
+		clear_variable = THIS.communist_support_before_change
+		clear_variable = THIS.democratic_support_before_change
+		clear_variable = THIS.fascist_support_before_change
+		clear_variable = THIS.neutrality_support_before_change
+	}
+}
