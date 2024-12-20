@@ -1,0 +1,46 @@
+﻿###########################
+# FE News Events
+###########################
+
+add_namespace = FE_news
+
+### Landsol carrier sunk
+news_event = {
+	id = FE_news.1
+	title = FE_news.1.t
+	desc = FE_news.1.desc
+	picture = GFX_news_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = FE_news.1.a
+		trigger = {
+			original_tag = LAN
+		}
+	}
+	option = {
+		name = FE_news.1.b
+		trigger = {
+			NOT = { original_tag = LAN }
+			has_war_with = LAN
+		}
+	}
+	option = {
+		name = FE_news.1.c
+		trigger = {
+			NOT = { original_tag = LAN }
+			NOT = { has_war_with = LAN }
+			LAN = { has_government = ROOT }
+		}
+	}
+	option = {
+		name = FE_news.1.d
+		trigger = {
+			NOT = { original_tag = LAN }
+			NOT = { has_war_with = LAN }
+			NOT = { LAN = { has_government = ROOT } }
+		}
+	}
+}
+

@@ -1,0 +1,41 @@
+scripted_gui = {
+	global_statistics_container = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "GLOBAL_statistics_container"
+		
+		visible = { has_global_flag = global_statistics_open_flag }
+		
+		dynamic_lists = {
+			classification_gridbox = {
+				array = THIS.classification_array
+				value = c_v
+				index = c_i
+				entry_container = classification_list_window
+			}
+			
+			rank_gridbox = {
+				array = global.global_rank_array
+				change_scope = yes
+				entry_container = global_rank_list_window
+			}
+		}
+		
+		properties = {
+			icon = {
+				image = GFX_global_statistics_index
+				frame = c_v
+			}
+		}
+		
+		effects = {
+			close_button_click = {
+				clr_global_flag = global_statistics_open_flag
+			}
+			frame_click = {
+				set_variable = { classification_target = c_v }
+				GLOBAL_statistics_load_countries = yes
+			}
+		}
+	}
+}

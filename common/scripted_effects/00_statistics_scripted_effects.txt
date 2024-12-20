@@ -1,0 +1,102 @@
+GLOBAL_statistics_refresh_countries = {
+	hidden_effect = {
+		if = {
+			limit = { has_global_flag = global_statistics_open_flag }
+			clr_global_flag = global_statistics_open_flag
+		}
+		else = {
+			set_global_flag = global_statistics_open_flag
+			GLOBAL_statistics_load_countries = yes
+		}
+	}
+}
+
+GLOBAL_statistics_clear_all_array = {
+	clear_array = global.global_rank_array
+	clear_array = global.industry_power_array
+	clear_array = global.army_power_array
+}
+
+GLOBAL_statistics_clear_all_unknown_area = {
+	for_each_scope_loop = {
+		array = global.global_rank_array
+		
+		set_variable = { ranking_level = global.rank_index }
+		add_to_variable = { global.rank_index = 1 }
+	}
+	subtract_from_variable = { global.rank_index = 1 }
+	while_loop_effect = {
+		limit = {
+			check_variable = {
+				var = global.rank_index
+				value = 0
+				compare = greater_than_or_equals
+			}
+		}
+		every_country = {
+			limit = {
+				has_country_flag = unknown_country_flag
+				check_variable = { ranking_level = global.rank_index }
+			}
+			if = {
+				limit = { check_variable = { global.global_rank_array^num > 0 } }
+				remove_from_array = {
+					array = global.global_rank_array
+					index = THIS.ranking_level
+				}
+			}
+			if = {
+				limit = { check_variable = { global.industry_power_array^num > 0 } }
+				remove_from_array = {
+					array = global.industry_power_array
+					index = THIS.ranking_level
+				}
+			}
+			if = {
+				limit = { check_variable = { global.army_power_array^num > 0 } }
+				remove_from_array = {
+					array = global.army_power_array
+					index = THIS.ranking_level
+				}
+			}
+		}
+		subtract_from_variable = { global.rank_index = 1 }
+	}
+	clear_variable = global.rank_index
+}
+
+GLOBAL_statistics_load_countries = {
+	GLOBAL_statistics_clear_all_array = yes
+	if = {
+		limit = { check_variable = { classification_target = 2 } }
+		get_sorted_scored_countries = {
+			scorer = deployed_army_manpower_k_rank_scorer
+			array = global.global_rank_array
+			scores = global.army_power_array
+		}
+	}
+	else = {
+		get_sorted_scored_countries = {
+			scorer = industry_power_rank_scorer
+			array = global.global_rank_array
+			scores = global.industry_power_array
+		}
+	}
+	GLOBAL_statistics_clear_all_unknown_area = yes
+	for_each_scope_loop = {
+		array = global.global_rank_array
+		
+		set_variable = { industry_value = var:num_of_factories }
+		set_variable = { deployed_army_manpower_k_value = var:deployed_army_manpower_k }
+		if = {
+			limit = { ROOT = { check_variable = { classification_target = 2 } } }
+			set_variable = { deployed_army_manpower_k_value = global.army_power_array^global.rank_index }
+		}
+		else = {
+			set_variable = { industry_value = global.industry_power_array^global.rank_index }
+		}
+		add_to_variable = { global.rank_index = 1 }
+		set_variable = { ranking_level = global.rank_index }
+	}
+	clear_variable = global.rank_index
+}

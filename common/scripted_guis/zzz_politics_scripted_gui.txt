@@ -72,7 +72,13 @@ scripted_gui = {
 		
 		triggers = {
 			country_special_icon_visible = {
-				always = yes
+				is_debug = no
+			}
+		}
+
+		effects = {
+			country_special_gui_click = {
+				GLOBAL_statistics_refresh_countries = yes
 			}
 		}
 	}

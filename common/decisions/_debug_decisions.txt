@@ -617,7 +617,6 @@ east_continent_debug_decisions = {
 			always = yes
 		}
 		available = {
-			tag = WPE
 			country_exists = WPE
 			NOT = {
 				has_global_flag = white_civil_war_happens
@@ -630,7 +629,7 @@ east_continent_debug_decisions = {
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: decision debug_white_civil_war_decision"
-			country_event = white_civil_war.1
+			WPE = { country_event = white_civil_war.1 }
 		}
 	}
 	debug_release_tara_decision = {
@@ -960,7 +959,7 @@ northwest_continent_debug_decisions = {
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: decision debug_paretian_heir_national_focus"
-			complete_national_focus = PAT_evaluate_heir
+			PAT = { complete_national_focus = PAT_evaluate_heir }
 		}
 	}
 }

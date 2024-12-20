@@ -1,0 +1,27 @@
+industry_power_rank_scorer = {
+	targets = {
+		target_array = global.countries
+		targets_dynamic = yes
+		target_non_existing = no
+		score = {
+			base = 0
+			modifier = {
+				add = num_of_factories
+			}
+		}
+	}
+}
+
+deployed_army_manpower_k_rank_scorer = {
+	targets = {
+		target_array = global.countries
+		targets_dynamic = yes
+		target_non_existing = no
+		score = {
+			base = 0
+			modifier = {
+				add = deployed_army_manpower_k
+			}
+		}
+	}
+}
