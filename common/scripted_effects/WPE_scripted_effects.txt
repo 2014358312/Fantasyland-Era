@@ -144,6 +144,10 @@ WPE_reassign_roles = {
 			WPE_Fedorov = { clr_character_flag = character_no_visible_flag }
 			activate_advisor = WPE_Fedorov_head_of_government
 		}
+		load_focus_tree = {
+			tree = white_hole_focus
+			keep_completed = yes
+		}
 	}
 	WPI = {
 		set_politics = {
@@ -218,6 +222,10 @@ WPE_reassign_roles = {
 			WPE_Agent = { clr_character_flag = character_no_visible_flag }
 			activate_advisor = WPE_Agent_head_of_government
 		}
+		load_focus_tree = {
+			tree = white_hole_focus
+			keep_completed = yes
+		}
 	}
 	WPA = {
 		set_politics = {
@@ -272,6 +280,10 @@ WPE_reassign_roles = {
 			activate_advisor = WPE_Tatenashi_Sarashiki_head_of_government
 		}
 		add_ideas = WPE_coventry_snow_program
+		load_focus_tree = {
+			tree = white_hole_focus
+			keep_completed = yes
+		}
 	}
 	WPE = {
 		clear_variable = THIS.communist_support_before_change
@@ -280,3 +292,11 @@ WPE_reassign_roles = {
 		clear_variable = THIS.neutrality_support_before_change
 	}
 }
+
+WPE_start_civil_war = {
+	set_country_flag = WPE_millennium_election_over_flag
+	set_global_flag = white_civil_war_happens
+	reload_focus_tree = yes
+}
+
+

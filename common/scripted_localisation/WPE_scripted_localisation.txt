@@ -49,3 +49,38 @@ defined_text = {
     }
 	text = { localization_key = general_null }
 }
+
+defined_text = {
+    name = GetWPECivilWarPlayerDesc
+	text = {
+		trigger = {
+			has_country_flag = WPE_military_lucia_flag
+			NOT = {
+				has_country_flag = WPE_federation_lucia_flag
+				has_country_flag = WPE_sangvis_lucia_flag
+			}
+		}
+		localization_key = WPE_civil_war_day_military_desc
+    }
+	text = {
+		trigger = {
+			has_country_flag = WPE_federation_lucia_flag
+			NOT = {
+				has_country_flag = WPE_sangvis_lucia_flag
+				has_country_flag = WPE_military_lucia_flag
+			}
+		}
+		localization_key = WPE_civil_war_day_federation_desc
+    }
+	text = {
+		trigger = {
+			has_country_flag = WPE_sangvis_lucia_flag
+			NOT = {
+				has_country_flag = WPE_federation_lucia_flag
+				has_country_flag = WPE_military_lucia_flag
+			}
+		}
+		localization_key = WPE_civil_war_day_sangvis_desc
+    }
+	text = { localization_key = WPE_civil_war_day_general_desc }
+}

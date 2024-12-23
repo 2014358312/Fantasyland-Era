@@ -5,60 +5,66 @@
 @focus_time_tier_5 = 5
 
 shared_focus = {
-	id = WPE_tail_of_rushia_term
-	icon = GFX_goal_generic_more_territorial_claims
-	allow_branch = {
-		tag = WPE
-		WPE = {
+	id = WPE_civil_war_day
+	icon = {
+		trigger = {
+			has_country_flag = WPE_military_lucia_flag
 			NOT = {
-				has_country_flag = WPE_millennium_election_over_flag
-				has_global_flag = white_civil_war_happens
-			}
-			has_country_leader = {
-				character = WPE_Uruha_Rushia
-				ruling_only = yes
+				has_country_flag = WPE_federation_lucia_flag
+				has_country_flag = WPE_sangvis_lucia_flag
 			}
 		}
+		value = GFX_focus_WPE_civil_war_military_side
+	}
+	icon = {
+		trigger = {
+			has_country_flag = WPE_federation_lucia_flag
+			NOT = {
+				has_country_flag = WPE_sangvis_lucia_flag
+				has_country_flag = WPE_military_lucia_flag
+			}
+		}
+		value = GFX_focus_WPE_civil_war_federation_side
+	}
+	icon = {
+		trigger = {
+			has_country_flag = WPE_sangvis_lucia_flag
+			NOT = {
+				has_country_flag = WPE_federation_lucia_flag
+				has_country_flag = WPE_military_lucia_flag
+			}
+		}
+		value = GFX_focus_WPE_civil_war_sangvis_side
+	}
+	icon = {
+		value = GFX_goal_generic_defence_army
+	}
+	dynamic = yes
+	allow_branch = {
+		original_tag = WPE
+		WPE = {
+			has_country_flag = WPE_millennium_election_over_flag
+			has_global_flag = white_civil_war_happens
+			NOT = { has_global_flag = white_civil_war_ends }
+		}
+		has_civil_war = yes
 	}
 	#prerequisite = { focus =  }
 	#mutually_exclusive = { focus =  }
 	#relative_position_id = 
 	x = 5
 	y = 0
-	cost = @focus_time_tier_5
+	cost = 0
 	ai_will_do = {
 		factor = 1
 	}
 	available = {
-		has_country_leader = {
-			character = WPE_Uruha_Rushia
-			ruling_only = yes
-		}
-		if = {
-			limit = { has_country_flag = WPE_tail_of_rushia_term_in_progress_flag }
-			set_temp_variable = { temp_focus_days = @focus_time_tier_5 } #For tooltip purposes
-			multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
-			custom_override_tooltip = {
-				tooltip = {
-					localization_key = WPE_focus_in_progress_ott
-					CHARACTER = Uruha_Rushia
-					FLAG_DAYS = [?WPE_tail_of_rushia_term_in_progress_flag:days]
-				}
-				always = no 
-			}
-		}
-		else = {
-			custom_override_tooltip = {
-				tooltip = {
-					localization_key = WPE_election_focuses_no_available_ott
-					CHARACTER = Uruha_Rushia
-				}
-				always = no
-			}
-		}
 	}
 	bypass = {
-
+		if = {
+			limit = { is_ai = yes }
+			has_civil_war = yes
+		}
 	}
 	cancel_if_invalid = yes
 	continue_if_invalid = no
@@ -68,10 +74,7 @@ shared_focus = {
 	}
 	completion_reward = {
 		add_political_power = 25
-		country_event = white_pole.4
-		hidden_effect = {
-			country_event = { id = white_pole.5 days = 28 }
-		}
+		
 	}
 }
 
@@ -376,10 +379,7 @@ shared_focus = {
 	allow_branch = {
 		tag = WPE
 		WPE = {
-			NOT = {
-				has_country_flag = WPE_millennium_election_over_flag
-				has_global_flag = white_civil_war_happens
-			}
+			NOT = { has_country_flag = WPE_millennium_election_over_flag }
 			OR = {
 				has_country_leader = {
 					character = WPE_Tokino_Sora
@@ -768,10 +768,7 @@ shared_focus = {
 	allow_branch = {
 		tag = WPE
 		WPE = {
-			NOT = {
-				has_country_flag = WPE_millennium_election_over_flag
-				has_global_flag = white_civil_war_happens
-			}
+			NOT = { has_country_flag = WPE_millennium_election_over_flag }
 			has_country_flag = WPE_candidate_Alisa_Mikhaylovna_Kujo_flag
 		}
 	}
@@ -1125,10 +1122,7 @@ shared_focus = {
 	allow_branch = {
 		tag = WPE
 		WPE = {
-			NOT = {
-				has_country_flag = WPE_millennium_election_over_flag
-				has_global_flag = white_civil_war_happens
-			}
+			NOT = { has_country_flag = WPE_millennium_election_over_flag }
 			OR = {
 				has_country_leader = {
 					character = WPE_Tokino_Sora
@@ -1189,10 +1183,7 @@ shared_focus = {
 	allow_branch = {
 		tag = WPE
 		WPE = {
-			NOT = {
-				has_country_flag = WPE_millennium_election_over_flag
-				has_global_flag = white_civil_war_happens
-			}
+			NOT = { has_country_flag = WPE_millennium_election_over_flag }
 			has_country_leader = {
 				character = WPE_Uruha_Rushia
 				ruling_only = yes
@@ -1285,10 +1276,7 @@ shared_focus = {
 	allow_branch = {
 		tag = WPE
 		WPE = {
-			NOT = {
-				has_country_flag = WPE_millennium_election_over_flag
-				has_global_flag = white_civil_war_happens
-			}
+			NOT = { has_country_flag = WPE_millennium_election_over_flag }
 			OR = {
 				has_country_leader = {
 					character = WPE_Tokino_Sora

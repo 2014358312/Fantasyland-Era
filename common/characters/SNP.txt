@@ -13,4 +13,41 @@ characters = {
 			id = -1
 		}
 	}
+	
+	SNP_Chkalov = {
+		name = Chkalov
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SNP_Chkalov
+				small = GFX_idea_advisor_SNP_Chkalov
+			}
+			army = {
+				large = GFX_Portrait_SNP_Chkalov_scientist
+				small = GFX_idea_advisor_SNP_Chkalov
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = SNP_Chkalov_head_of_government
+			allowed = { original_tag = SNP }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { SWE_anti_nazi_interdisciplinary_social_scientist head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				base = 1.000
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:SNP_Chkalov_head_of_government }
+				}
+			}
+		}
+		scientist = {
+			traits = { scientist_trait_aircraft_specialist scientist_trait_rocketry_specialist scientist_trait_bright scientist_trait_resourceful }
+			skills = {
+				specialization_air = 1
+			}
+		}
+	}
 }

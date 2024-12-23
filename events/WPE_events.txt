@@ -729,6 +729,19 @@ country_event = {
 				}
 				set_state_flag = WPE_sangvis_startup_flag
 			}
+			every_possible_country = {
+				limit = {
+					original_tag = WPE
+					NOT = { tag = WPE }
+				}
+				every_state = {
+					limit = {
+						is_core_of = WPE
+						NOT = { is_core_of = PREV }
+					}
+					add_core_of = PREV
+				}
+			}
 		}
 	}
 
@@ -782,6 +795,7 @@ country_event = {
 				add_civil_war_target = WPA
 			}
 		}
+		WPE_start_civil_war = yes
 	}
 
 	option = { #follow general step
@@ -839,6 +853,7 @@ country_event = {
 				add_civil_war_target = WPA
 			}
 		}
+		WPE_start_civil_war = yes
 	}
 
 	option = { #for my father
@@ -896,5 +911,6 @@ country_event = {
 				add_civil_war_target = WPA
 			}
 		}
+		WPE_start_civil_war = yes
 	}
 }
