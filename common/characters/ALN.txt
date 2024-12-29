@@ -51,10 +51,30 @@ characters = {
 			id = -1
 		}
 		country_leader = {
-			ideology = rexism
+			ideology = fascism_subtype
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = -1
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = ALN_Elizabeth_Rose_Bloodflame_head_of_government
+			allowed = {
+				original_tag = WPE
+			}
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { SWE_former_autocrat head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:ALN_Elizabeth_Rose_Bloodflame_head_of_government }
+				}
+			}
 		}
 	}
 	

@@ -600,6 +600,7 @@ country_event = {
 				set_character_flag = character_no_visible_flag
 				remove_advisor_role = { slot = political_advisor }
 			}
+			country_event = { id = white_civil_war.1 days = 4 }
 		}
 	}
 	
@@ -611,6 +612,10 @@ country_event = {
 		}
 		custom_effect_tooltip = no_available_industrial_concern
 		show_ideas_tooltip = sangvis_ferri
+		if = {
+			limit = { has_idea = sangvis_ferri }
+			remove_ideas = sangvis_ferri
+		}
 	}
 }
 

@@ -3,6 +3,7 @@
 ###########################
 
 add_namespace = revolutionary_albion
+add_namespace = albion_unification_war
 
 country_event = {
 	id = revolutionary_albion.1
@@ -24,5 +25,85 @@ country_event = {
 				modifier = RSL_forgotten_south_state_dynamic_modifier
 			}
 		}
+	}
+}
+
+
+country_event = {
+	id = albion_unification_war.1
+	title = albion_unification_war.1.t
+	desc = albion_unification_war.1.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = albion_unification_war.1.a
+		event_target:albion_unification_attacker = {
+			declare_war_on = {
+				target = event_target:albion_unification_defender
+				type = civil_war
+			}
+			add_civil_war_target = event_target:albion_unification_attacker
+			add_civil_war_target = event_target:albion_unification_defender
+		}
+	}
+}
+
+country_event = {
+	id = albion_unification_war.2
+	title = albion_unification_war.2.t
+	desc = albion_unification_war.2.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_war_support = 0.10
+			save_global_event_target_as = albion_unification_attacker
+			every_other_country = {
+				limit = { has_country_flag = ALN_albion_unification_member_flag }
+				country_event = { id = albion_unification_war.3 hours = 2 }
+			}
+		}
+	}
+
+	option = {
+		name = albion_unification_war.2.a
+		effect_tooltip = {
+			add_war_support = 0.10
+		}
+		activate_mission_tooltip = ALN_countdown_of_unification_war_mission
+	}
+}
+
+country_event = {
+	id = albion_unification_war.3
+	title = albion_unification_war.3.t
+	desc = albion_unification_war.3.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_war_support = 0.05
+			save_global_event_target_as = albion_unification_defender
+			event_target:albion_unification_attacker = {
+				activate_mission = ALN_countdown_of_unification_war_mission
+			}
+			event_target:albion_unification_defender = {
+				activate_mission = ALN_countdown_of_unification_war_mission_fake
+			}
+		}
+	}
+
+	option = {
+		name = albion_unification_war.2.a
+		effect_tooltip = {
+			add_war_support = 0.05
+		}
+		activate_mission_tooltip = ALN_countdown_of_unification_war_mission_fake
 	}
 }

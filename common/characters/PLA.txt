@@ -18,15 +18,35 @@ characters = {
 		name = Histoire
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/PLA/Histoire.dds"
+				large = GFX_Portrait_PLA_Histoire
+				small = GFX_idea_advisor_PLA_Histoire
 			}
 		}
 		country_leader = {
 			ideology = royal_constitutionalism_subtype
-			traits = {
-			}
+			traits = { historian }
 			expire = "1965.1.1.1"
 			id = -1
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = PLA_Histoire_head_of_government
+			allowed = {
+				original_tag = PLA
+			}
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { historian head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:PLA_Histoire_head_of_government }
+				}
+			}
 		}
 	}
 	PLA_Nepgear = {

@@ -1,0 +1,109 @@
+ALN_balance_of_power_decision_category = {
+	
+	ALN_countdown_of_unification_war_debug = {
+		icon = generic_train
+		allowed = {
+			OR = {
+				original_tag = ALN
+				original_tag = RSL
+			}
+		}
+		available = {
+			is_debug = yes
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_power_balance_value = {
+				id = ALN_balance_of_power
+				value = 1.0
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}
+
+operations = {
+	ALN_countdown_of_unification_war_mission = {
+		icon = generic_train
+		allowed = {
+			OR = {
+				original_tag = ALN
+				original_tag = RSL
+			}
+		}
+		available = {
+			NOT = { has_power_balance = { id = ALN_balance_of_power } }
+			is_power_balance_in_range = {
+				id = ALN_balance_of_power
+				range < ALN_defcon_0_status
+			}
+		}
+		days_mission_timeout = 15
+		is_good = no
+		fire_only_once = no
+		activation = { always = no }
+		timeout_effect = {
+			country_event = {
+				id = albion_unification_war.1
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	ALN_countdown_of_unification_war_mission_fake = {
+		icon = generic_train
+		allowed = {
+			OR = {
+				original_tag = ALN
+				original_tag = RSL
+			}
+		}
+		available = {
+			NOT = { has_power_balance = { id = ALN_balance_of_power } }
+			is_power_balance_in_range = {
+				id = ALN_balance_of_power
+				range < ALN_defcon_0_status
+			}
+		}
+		days_mission_timeout = 15
+		is_good = no
+		fire_only_once = no
+		activation = { always = no }
+		timeout_effect = {
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	ALN_countdown_of_unification_war_button = {
+		icon = generic_train
+		allowed = {
+			OR = {
+				original_tag = ALN
+				original_tag = RSL
+			}
+		}
+		available = {
+			has_active_mission = ALN_countdown_of_unification_war_mission
+			is_power_balance_in_range = {
+				id = ALN_balance_of_power
+				range = ALN_defcon_0_status
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_timed_idea = {
+				idea = ALN_strike_first_idea
+				days = 45
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}

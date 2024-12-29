@@ -61,6 +61,7 @@ WPE_clear_character_before_civil_war = {
 		WPE_failed_democracy_alternate
 		WPE_corruption_in_military
 		WPE_coventry_snow_program
+		sangvis_ferri
 	}
 	every_possible_country = {
 		limit = { has_country_flag = WPE_DEM_stay_flag }
@@ -222,6 +223,7 @@ WPE_reassign_roles = {
 			WPE_Agent = { clr_character_flag = character_no_visible_flag }
 			activate_advisor = WPE_Agent_head_of_government
 		}
+		WPE_initialize_sangvis_ferri_net_modifier = yes
 		load_focus_tree = {
 			tree = white_hole_focus
 			keep_completed = yes
@@ -275,9 +277,9 @@ WPE_reassign_roles = {
 			}
 		}
 		if = {
-			limit = { has_character = WPE_Tatenashi_Sarashiki }
-			WPE_Fedorov = { clr_character_flag = character_no_visible_flag }
-			activate_advisor = WPE_Tatenashi_Sarashiki_head_of_government
+			limit = { has_character = WPE_Sarashiki_Tatenashi }
+			WPE_Sarashiki_Tatenashi = { clr_character_flag = character_no_visible_flag }
+			activate_advisor = WPE_Sarashiki_Tatenashi_head_of_government
 		}
 		add_ideas = WPE_coventry_snow_program
 		load_focus_tree = {
@@ -299,4 +301,130 @@ WPE_start_civil_war = {
 	reload_focus_tree = yes
 }
 
+WPE_initialize_sangvis_ferri_net_modifier = {
+	set_variable = { WPE_SFN_army_chief_positive_base_var = 0.30 }
+	set_variable = { WPE_SFN_army_chief_negative_base_var = WPE_SFN_army_chief_positive_base_var }
+	set_variable = { WPE_SFN_air_chief_positive_base_var = 0.30 }
+	set_variable = { WPE_SFN_air_chief_negative_base_var = WPE_SFN_air_chief_positive_base_var }
+	set_variable = { WPE_SFN_navy_chief_positive_base_var = 0.30 }
+	set_variable = { WPE_SFN_navy_chief_negative_base_var = WPE_SFN_navy_chief_positive_base_var }
+	set_variable = { WPE_SFN_base_var = 0 }
+}
 
+WPE_refresh_sangvis_ferri_net_modifier = {
+	set_variable = { WPE_SFN_base_factor_var = 0.05 }
+	multiply_variable = { WPE_SFN_base_factor_var = WPE_SFN_base_var }
+	set_variable = { WPE_SFN_army_chief_positive_var = WPE_SFN_army_chief_positive_base_var }
+	set_variable = { WPE_SFN_army_chief_negative_var = WPE_SFN_army_chief_negative_base_var }
+	set_variable = { WPE_SFN_air_chief_positive_var = WPE_SFN_air_chief_positive_base_var }
+	set_variable = { WPE_SFN_air_chief_negative_var = WPE_SFN_air_chief_negative_base_var }
+	set_variable = { WPE_SFN_navy_chief_positive_var = WPE_SFN_navy_chief_positive_base_var }
+	set_variable = { WPE_SFN_navy_chief_negative_var = WPE_SFN_navy_chief_negative_base_var }
+	
+	if = {
+		limit = { has_country_flag = WPE_Sangvis_Ferri_Net_army_chief_flag }
+		subtract_from_variable = { WPE_SFN_army_chief_positive_var = WPE_SFN_base_factor_var }
+		subtract_from_variable = { WPE_SFN_army_chief_negative_var = WPE_SFN_base_factor_var }
+		multiply_variable = { WPE_SFN_army_chief_negative_var = -1 }
+	}
+	else = {
+		set_variable = { WPE_SFN_army_chief_positive_var = 0 }
+		set_variable = { WPE_SFN_army_chief_negative_var = 0 }
+	}
+	if = {
+		limit = { has_country_flag = WPE_Sangvis_Ferri_Net_air_chief_flag }
+		subtract_from_variable = { WPE_SFN_air_chief_positive_var = WPE_SFN_base_factor_var }
+		subtract_from_variable = { WPE_SFN_air_chief_negative_var = WPE_SFN_base_factor_var }
+		multiply_variable = { WPE_SFN_air_chief_negative_var = -1 }
+	}
+	else = {
+		set_variable = { WPE_SFN_air_chief_positive_var = 0 }
+		set_variable = { WPE_SFN_air_chief_negative_var = 0 }
+	}
+	if = {
+		limit = { has_country_flag = WPE_Sangvis_Ferri_Net_navy_chief_flag }
+		subtract_from_variable = { WPE_SFN_navy_chief_positive_var = WPE_SFN_base_factor_var }
+		subtract_from_variable = { WPE_SFN_navy_chief_negative_var = WPE_SFN_base_factor_var }
+		multiply_variable = { WPE_SFN_navy_chief_negative_var = -1 }
+	}
+	else = {
+		set_variable = { WPE_SFN_navy_chief_positive_var = 0 }
+		set_variable = { WPE_SFN_navy_chief_negative_var = 0 }
+	}
+}
+
+WPE_expand_sangvis_ferri_net_power = {
+	ROOT = {
+		WPE_refresh_sangvis_ferri_net_modifier = yes
+		add_to_variable = { WPE_SFN_base_var = 1 }
+		WPE_sangvis_ferri_redistribute_computility = yes
+		set_variable = { WPE_WSFNP_temp_var = 1 }
+		if = {
+			limit = {
+				check_variable = { WPE_SFN_base_var > 0 }
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = WPE_sangvis_ferri_net_dynamic_modifier
+					}
+				}
+			}
+			add_dynamic_modifier = {
+				modifier = WPE_sangvis_ferri_net_dynamic_modifier
+			}
+		}
+	}
+}
+
+WPE_withdraw_sangvis_ferri_net_power = {
+	ROOT = {
+		if = {
+			limit = { check_variable = { WPE_WSFNP_temp_var = 1 } }
+			subtract_from_variable = { WPE_SFN_base_var = 1 }
+			set_variable = { WPE_WSFNP_temp_var = 0 }
+		}
+		WPE_sangvis_ferri_redistribute_computility = yes
+		subtract_from_variable = { WPE_SFN_base_var = 1 }
+		WPE_refresh_sangvis_ferri_net_modifier = yes
+		if = {
+			limit = {
+				check_variable = { WPE_SFN_base_var < 0 }
+				has_dynamic_modifier = {
+					modifier = WPE_sangvis_ferri_net_dynamic_modifier
+				}
+			}
+			remove_dynamic_modifier = {
+				modifier = WPE_sangvis_ferri_net_dynamic_modifier
+			}
+			WPE_initialize_sangvis_ferri_net_modifier = yes
+		}
+	}
+}
+
+WPE_sangvis_ferri_redistribute_computility = {
+	ROOT = {
+		meta_effect = {
+			text = {
+				remove_ideas = {
+					WPE_sangvis_ferri_finite_computility_0
+					WPE_sangvis_ferri_finite_computility_1
+					WPE_sangvis_ferri_finite_computility_2
+					WPE_sangvis_ferri_finite_computility_3
+					WPE_sangvis_ferri_finite_computility_4
+					WPE_sangvis_ferri_finite_computility_5
+					WPE_sangvis_ferri_finite_computility_6
+				}
+				if = {
+					limit = {
+						check_variable = {
+							var = WPE_SFN_base_var
+							value = 0
+							compare = greater_than_or_equals
+						}
+					}
+					add_ideas = WPE_sangvis_ferri_finite_computility_[LEVEL_AFTER]
+				}
+			}
+			LEVEL_AFTER = "[?ROOT.WPE_SFN_base_var]"
+		}
+	}
+}

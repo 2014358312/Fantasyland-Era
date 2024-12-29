@@ -8,7 +8,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology = despotism
+			ideology = absolutism_subtype
 			traits = {
 			}
 			expire = "1965.1.1.1"
@@ -225,6 +225,7 @@ characters = {
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/TIA/TIA_Hinai_Paulette.dds"
+				small = GFX_idea_advisor_TIA_Tiona_Rudolvon
 			}
 		}
 		field_marshal = {
@@ -239,11 +240,25 @@ characters = {
 			planning_skill = 3
 			logistics_skill = 4
 		}
-		country_leader = {
-			ideology = nazism
-			traits = {
+		advisor = {
+			slot = head_of_government
+			idea_token = TIA_Hinai_Paulette_head_of_government
+			allowed = {
+				original_tag = TIA
 			}
-			expire = "1965.1.1.1"
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { moderate_reformist head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:TIA_Hinai_Paulette_head_of_government }
+				}
+			}
 		}
 	}
 	TIA_Minokasa_Nagi = {

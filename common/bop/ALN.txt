@@ -1,0 +1,81 @@
+ALN_balance_of_power = {
+	initial_value = 0.20
+	left_side = ALN_peace_side
+	right_side = ALN_war_side
+	decision_category = ALN_balance_of_power_decision_category
+	range = {
+		id = ALN_defcon_3_status
+		min = -0.2
+		max = 0.2
+		modifier = {
+			political_power_cost = 0.05
+		}
+	}
+	
+	side = {
+		id = ALN_peace_side
+		icon = GFX_idea_SWI_spirit_of_helvetia_passive_peace
+		range = {
+			id = ALN_defcon_5_status
+			min = -1.0
+			max = -0.6
+			modifier = {
+				stability_weekly = 0.03
+			}
+		}
+		range = {
+			id = ALN_defcon_4_status
+			min = -0.6
+			max = -0.2
+			modifier = {
+				stability_weekly = 0.02
+			}
+		}
+	}
+	
+	side = {
+		id = ALN_war_side
+		icon = GFX_idea_SWI_spirit_of_helvetia_passive_war
+		range = {
+			id = ALN_defcon_2_status
+			min = 0.2
+			max = 0.6
+			modifier = {
+				war_support_weekly = 0.01
+			}
+		}
+		range = {
+			id = ALN_defcon_1_status
+			min = 0.6
+			max = 0.85
+			modifier = {
+				war_support_weekly = 0.01
+			}
+		}
+		range = {
+			id = ALN_defcon_0_status
+			min = 0.85
+			max = 1.0
+			modifier = {
+			}
+			on_activate = {
+				#country_event = {
+				#	id = albion_unification_war.2
+				#}
+			}
+			on_deactivate = {
+				#if = {
+				#	limit = { has_active_mission = ALN_countdown_of_unification_war_mission }
+				#	remove_mission = ALN_countdown_of_unification_war_mission
+				#	add_war_support = -0.10
+				#}
+				#if = {
+				#	limit = { has_active_mission = ALN_countdown_of_unification_war_mission_fake }
+				#	remove_mission = ALN_countdown_of_unification_war_mission_fake
+				#	add_war_support = -0.05
+				#}
+			}
+		}
+	}
+}
+

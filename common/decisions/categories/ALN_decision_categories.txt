@@ -1,0 +1,19 @@
+###################
+#####   ALN   #####
+###################
+
+ALN_balance_of_power_decision_category = {
+	allowed = {
+		OR = {
+			original_tag = ALN
+			original_tag = RSL
+		}
+	}
+	visible = {
+		has_power_balance = { id = ALN_balance_of_power }
+		is_power_balance_in_range = {
+			id = ALN_balance_of_power
+			range < ALN_defcon_0_status
+		}
+	}
+}
