@@ -286,3 +286,91 @@ adjacency_rule =
 	icon = 214
 	offset = { 5 0 0 }
 }
+
+adjacency_rule =
+{
+	name = "WEST_UNION_BRIDGE"
+
+	contested = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	enemy = {
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	friend = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	neutral = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	
+	required_provinces = { 444 14218 }
+
+	is_disabled = {
+		OR = {
+			has_global_flag = WEST_UNION_BRIDGE_BLOCKED
+			has_global_flag = WEST_UNION_BRIDGE_DISABLED
+			has_country_flag = WEST_UNION_BRIDGE_BLOCKED_FOR_COUNTRY
+		}
+		tooltip = disable_bridge_tt
+	}
+	
+	icon = 11518
+	offset = { -7 0 5 }
+}
+
+adjacency_rule =
+{
+	name = "EAST_UNION_BRIDGE"
+
+	contested = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	enemy = {
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	friend = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	neutral = {
+		army = yes
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	
+	required_provinces = { 14218 2413 }
+
+	is_disabled = {
+		OR = {
+			has_global_flag = WEST_UNION_BRIDGE_BLOCKED
+			has_global_flag = WEST_UNION_BRIDGE_DISABLED
+			has_country_flag = WEST_UNION_BRIDGE_BLOCKED_FOR_COUNTRY
+		}
+		tooltip = disable_bridge_tt
+	}
+	
+	icon = 8772
+	offset = { -2 0 8 }
+}

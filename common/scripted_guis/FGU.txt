@@ -1,0 +1,36 @@
+scripted_gui = {
+
+	FGU_anti_terrorism_war_mean_ui = {
+		context_type = decision_category
+		window_name = "anti_terrorism_war_mean"
+		visible = {
+			is_game_goddess_country = yes
+		}
+		
+		effects = {
+			title_button_click = {
+				if = {
+					limit = { has_country_flag = FGU_anti_terrorism_war_ui_flag }
+					clr_country_flag = FGU_anti_terrorism_war_ui_flag
+				}
+				else = { set_country_flag = FGU_anti_terrorism_war_ui_flag }
+			}
+		}
+	}
+
+	FGU_anti_terrorism_war_main_ui = {
+		context_type = player_context
+		window_name = "anti_terrorism_war_main"
+		visible = {
+			is_game_goddess_country = yes
+			has_country_flag = FGU_anti_terrorism_war_ui_flag
+		}
+		
+		effects = {
+			close_button_click = {
+				clr_country_flag = FGU_anti_terrorism_war_ui_flag
+			}
+		}
+	}
+}
+
