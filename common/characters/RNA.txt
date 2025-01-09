@@ -1,0 +1,57 @@
+characters = {
+	RNA_Carlotta_Montelli = {
+		name = Carlotta_Montelli
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_RNA_Carlotta_Montelli
+				small = GFX_idea_advisor_RNA_Carlotta_Montelli
+			}
+			army = {
+				large = GFX_Portrait_RNA_Carlotta_Montelli
+				small = GFX_idea_advisor_RNA_Carlotta_Montelli
+			}
+		}
+		country_leader = {
+			ideology = christian_conservatism_subtype
+			traits = { poker_face }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+	
+	RNA_Phoebe = {
+		name = Phoebe
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_RNA_Phoebe
+				small = GFX_idea_advisor_RNA_Phoebe
+			}
+			army = {
+				large = GFX_Portrait_RNA_Phoebe
+				small = GFX_idea_advisor_RNA_Phoebe
+			}
+		}
+		country_leader = {
+			ideology = theocracy_subtype
+			traits = { cardinal_bishop_of_rinascita }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = RNA_Phoebe_head_of_government
+			allowed = { original_tag = RNA }
+			can_be_fired = no
+			traits = { archbishop_of_rinascita head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				base = 1.000
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:RNA_Phoebe_head_of_government }
+				}
+			}
+		}
+	}
+}

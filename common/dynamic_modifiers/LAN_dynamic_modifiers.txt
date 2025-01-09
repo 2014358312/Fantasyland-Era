@@ -41,3 +41,70 @@ LAN_landsol_influence_dynamic_modifier = {
 	max_fuel_factor = LAN_LI_max_fuel_factor_var
 	consumer_goods_factor = LAN_LI_consumer_goods_factor_var
 }
+
+LAN_royal_army_dynamic_modifier = {
+	enable = { always = yes }
+	icon = GFX_idea_LAN_royal_army
+
+	experience_gain_army_factor = LAN_RA_experience_gain_army_factor_var
+	army_artillery_attack_factor = LAN_RA_army_artillery_attack_factor_var #0.05
+	army_artillery_defence_factor = LAN_RA_army_artillery_defence_factor_var #0.05
+	special_forces_attack_factor = LAN_RA_special_forces_attack_factor_var #0.05
+	special_forces_defence_factor = LAN_RA_special_forces_defence_factor_var #0.05
+	required_garrison_factor = LAN_RA_required_garrison_factor_var #-0.15
+	
+	no_supply_grace = LAN_RA_no_supply_grace_var
+	river_crossing_factor = LAN_RA_river_crossing_factor_var
+}
+
+LAN_royal_navy_dynamic_modifier = {
+	enable = { always = yes }
+	icon = GFX_idea_LAN_royal_navy
+
+	consumer_goods_factor = LAN_RN_consumer_goods_factor_var #-0.30
+	navy_max_range_factor = LAN_RN_navy_max_range_factor_var #1.0
+	experience_gain_navy_factor = LAN_RN_experience_gain_navy_factor_var #-0.50
+	sortie_efficiency = LAN_RN_sortie_efficiency_var #-0.20
+	
+	transport_capacity = LAN_RN_transport_capacity_var
+	amphibious_invasion = LAN_RN_amphibious_invasion_var
+	naval_coordination = LAN_RN_naval_coordination_var
+	
+	navy_capital_ship_attack_factor = LAN_RN_navy_capital_ship_attack_factor_var
+	navy_capital_ship_defence_factor = LAN_RN_navy_capital_ship_defence_factor_var
+	navy_carrier_air_targetting_factor = LAN_RN_navy_carrier_air_targetting_factor_var
+}
+
+LAN_royal_air_force_dynamic_modifier = {
+	enable = { always = yes }
+
+	icon = GFX_idea_LAN_royal_air_force
+	
+	experience_gain_air_factor = LAN_RAF_experience_gain_air_factor_var
+	air_ace_generation_chance_factor = LAN_RAF_air_ace_generation_chance_factor_var #0.1
+	air_superiority_bonus_in_combat = LAN_RAF_air_superiority_bonus_in_combat_var #0.05
+
+	air_doctrine_cost_factor = LAN_RAF_air_doctrine_cost_factor_var #0.1
+	air_nav_efficiency = LAN_RAF_air_nav_efficiency_var #-0.1
+	air_night_penalty = LAN_RAF_air_night_penalty_var #-0.15
+	air_weather_penalty = LAN_RAF_air_weather_penalty_var #-0.15
+	air_accidents_factor = LAN_RAF_air_accidents_factor_var #0.05
+	
+	air_cas_efficiency = LAN_RAF_air_cas_efficiency_var
+	paradrop_organization_factor = LAN_RAF_paradrop_organization_factor_var
+}
+
+LAN_interventional_policies_dynamic_modifier = {
+	enable = { always = yes }
+
+	icon = GFX_idea_LAN_royal_air_force
+	
+	embargo_threshold_factor = LAN_IP_embargo_threshold_factor_var #-1.00
+	embargo_cost_factor = LAN_IP_embargo_cost_factor_var #-0.50
+	command_power_gain_mult = LAN_IP_command_power_gain_mult_var
+	planning_speed = LAN_IP_planning_speed_var
+	special_forces_cap = LAN_IP_special_forces_cap_var
+	send_volunteer_size = LAN_IP_send_volunteer_size_var
+	air_volunteer_cap = LAN_IP_air_volunteer_cap_var
+	max_dig_in_factor = LAN_IP_max_dig_in_factor_var
+}

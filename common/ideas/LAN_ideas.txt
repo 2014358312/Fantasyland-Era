@@ -506,5 +506,591 @@ ideas = {
 				}
 			}
 		}
+		
+		LAN_royal_army_fake = {
+			picture = LAN_royal_army
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { always = no }
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_artillery_attack_factor = 0.05
+				army_artillery_defence_factor = 0.05
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
+				required_garrison_factor = -0.15
+			}
+		}
+		
+		LAN_royal_air_force_fake = {
+			picture = LAN_royal_air_force
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { always = no }
+			
+			removal_cost = -1
+			
+			modifier = {
+				air_ace_generation_chance_factor = 0.1
+				air_superiority_bonus_in_combat = 0.05
+				air_doctrine_cost_factor = 0.1
+				air_nav_efficiency = -0.1
+				air_night_penalty = -0.15
+				air_weather_penalty = -0.15
+				air_accidents_factor = 0.05
+			}
+		}
+		
+		LAN_royal_navy_fake = {
+			picture = LAN_royal_navy
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { always = no }
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.30
+				navy_max_range_factor = 1.0
+				experience_gain_navy_factor = -0.50
+				sortie_efficiency = -0.20
+			}
+		}
+		
+		LAN_overseas_power_projection_subject = {
+			picture = yug_federal_defense_council
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_core_defence_factor = 0.03
+				production_speed_bunker_factor = 0.05
+			}
+		}
+		
+		LAN_fortify_the_empire_1 = {
+			name = LAN_fortify_the_empire
+			picture = generic_fortify_the_borders
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_bunker_factor = 0.05
+				production_speed_coastal_bunker_factor = 0.05
+			}
+		}
+		
+		LAN_fortify_the_empire_2 = {
+			name = LAN_fortify_the_empire
+			picture = generic_fortify_the_borders
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_bunker_factor = 0.1
+				production_speed_coastal_bunker_factor = 0.1
+			}
+		}
+		
+		LAN_fiscal_tightening_policy = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_goods_red_bonus
+			
+			modifier = {
+				consumer_goods_factor = -0.15
+			}
+		}
+		
+		LAN_miracle_weapon = {
+			picture = SWE_wargames
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = -0.10
+			}
+			
+			research_bonus = {
+				nuclear = 0.02
+			}
+		}
+		
+		LAN_armory_1 = {
+			name = LAN_armory
+			picture = army_ordnance_department
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}
+		}
+		
+		LAN_armory_2 = {
+			name = LAN_armory
+			picture = army_ordnance_department
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.10
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+		
+		LAN_armory_2_1 = {
+			name = LAN_armory
+			picture = army_ordnance_department
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.10
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				armor = {
+					ap_attack = 0.25
+					instant = yes
+				}
+			}
+		}
+		
+		LAN_armory_2_2 = {
+			name = LAN_armory
+			picture = army_ordnance_department
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				supply_node_range = 0.10
+				attrition = -0.10
+			}
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.10
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+		
+		LAN_armory_2_3 = {
+			name = LAN_armory
+			picture = army_ordnance_department
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.10
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				artillery_equipment = {
+					soft_attack = 0.20
+					reliability = -0.10
+					instant = yes
+				}
+			}
+		}
+		
+		LAN_armory_2_12 = {
+			name = LAN_armory
+			picture = army_ordnance_department
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				supply_node_range = 0.10
+				attrition = -0.10
+			}
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.10
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				armor = {
+					ap_attack = 0.25
+					instant = yes
+				}
+			}
+		}
+		
+		LAN_armory_2_23 = {
+			name = LAN_armory
+			picture = army_ordnance_department
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				supply_node_range = 0.10
+				attrition = -0.10
+			}
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.10
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				artillery_equipment = {
+					soft_attack = 0.20
+					reliability = -0.10
+					instant = yes
+				}
+			}
+		}
+		
+		LAN_armory_2_13 = {
+			name = LAN_armory
+			picture = army_ordnance_department
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.10
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				armor = {
+					ap_attack = 0.25
+					instant = yes
+				}
+				artillery_equipment = {
+					soft_attack = 0.20
+					reliability = -0.10
+					instant = yes
+				}
+			}
+		}
+		
+		LAN_armory_3 = {
+			name = LAN_armory
+			picture = army_ordnance_department
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				supply_node_range = 0.10
+				attrition = -0.10
+			}
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.10
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				armor = {
+					ap_attack = 0.25
+					instant = yes
+				}
+				artillery_equipment = {
+					soft_attack = 0.20
+					reliability = -0.10
+					instant = yes
+				}
+			}
+		}
+		
+		LAN_convert_industry_1 = {
+			name = LAN_convert_industry
+			picture = generic_improved_industries
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conversion_cost_civ_to_mil_factor = -0.25
+				equipment_conversion_speed = 0.20
+			}
+		}
+		
+		LAN_convert_industry_2 = {
+			name = LAN_convert_industry
+			picture = generic_improved_industries
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conversion_cost_civ_to_mil_factor = -0.25
+				equipment_conversion_speed = 0.20
+				production_speed_infrastructure_factor = 0.10
+				production_speed_rail_way_factor = 0.20
+			}
+		}
+		
+		LAN_convert_industry_3 = {
+			name = LAN_convert_industry
+			picture = generic_improved_industries
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conversion_cost_civ_to_mil_factor = -0.25
+				equipment_conversion_speed = 0.20
+				production_speed_infrastructure_factor = 0.10
+				production_speed_rail_way_factor = 0.20
+				invasion_preparation = -0.10
+			}
+			
+			equipment_bonus = {
+				convoy = {
+					build_cost_ic = 0.05
+					lg_attack = 1.00
+					instant = yes
+				}
+			}
+		}
+		
+		LAN_activate_war_machine = {
+			picture = generic_war_preparation
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_arms_factory_factor = 0.10
+			}
+		}
+		
+		LAN_victory_ship = {
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { always = no }
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				convoy = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}
+		}
+		
+		LAN_interventional_policies_idea_fake = {
+			picture = SOV_purged_junior_navy_officers
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { always = no }
+			
+			removal_cost = -1
+			
+			modifier = {
+				embargo_threshold_factor = -1.00
+				embargo_cost_factor = -0.50
+			}
+		}
+		
+		LAN_naval_construction_plan = {
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { always = no }
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				ship_hull_carrier = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				ship_hull_cruiser = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				ship_hull_heavy = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				ship_hull_light = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				ship_hull_submarine = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}
+		}
 	}
 }

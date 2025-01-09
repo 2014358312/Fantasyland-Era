@@ -77,12 +77,44 @@ set_variable = { LAN_RP_political_power_factor_var = -0.10 }
 
 add_dynamic_modifier = { modifier = LAN_landsol_influence_dynamic_modifier }
 
+#ROYAL ARMY
+set_variable = { LAN_RA_army_artillery_attack_factor_var = 0.05 }
+set_variable = { LAN_RA_army_artillery_defence_factor_var = 0.05 }
+set_variable = { LAN_RA_special_forces_attack_factor_var = 0.05 }
+set_variable = { LAN_RA_special_forces_defence_factor_var = 0.05 }
+set_variable = { LAN_RA_required_garrison_factor_var = -0.15 }
+#add_dynamic_modifier = { modifier = LAN_royal_army_dynamic_modifier }
+
+#ROYAL NAVY
+set_variable = { LAN_RN_consumer_goods_factor_var = -0.30 }
+set_variable = { LAN_RN_navy_max_range_factor_var = 1.0 }
+set_variable = { LAN_RN_experience_gain_navy_factor_var = -0.50 }
+set_variable = { LAN_RN_sortie_efficiency_var = -0.20 }
+#add_dynamic_modifier = { modifier = LAN_royal_navy_dynamic_modifier }
+
+#ROYAL AIR FORCE
+set_variable = { LAN_RAF_air_ace_generation_chance_factor_var = 0.1 }
+set_variable = { LAN_RAF_air_superiority_bonus_in_combat_var = 0.05 }
+set_variable = { LAN_RAF_air_doctrine_cost_factor_var = 0.1 }
+set_variable = { LAN_RAF_air_nav_efficiency_var = -0.1 }
+set_variable = { LAN_RAF_air_night_penalty_var = -0.15 }
+set_variable = { LAN_RAF_air_weather_penalty_var = -0.15 }
+set_variable = { LAN_RAF_air_accidents_factor_var = 0.05 }
+#add_dynamic_modifier = { modifier = LAN_royal_air_force_dynamic_modifier }
+
+set_variable = { LAN_IP_embargo_threshold_factor_var = -1 }
+set_variable = { LAN_IP_embargo_cost_factor_var = 0.5 }
+#add_dynamic_modifier = { modifier = LAN_interventional_policies_dynamic_modifier }
+
 add_ideas = {
 	LAN_birthplace_of_republican_revolution
 	LAN_astraea
 	LAN_weak_infrastructure
 	LAN_retire_navy
 	LAN_ban_computer
+	LAN_royal_army_fake
+	LAN_royal_air_force_fake
+	LAN_royal_navy_fake
 	LAN_military_anomaly
 	LAN_republican_congress_fake
 }
@@ -183,7 +215,7 @@ recruit_character = LAN_Tanno_Nanaka
 recruit_character = LAN_Todo_Akino
 recruit_character = LAN_Tono_Homare
 recruit_character = LAN_Utsushimi_Neneka
-
+activate_advisor = LAN_Senri_Mana_head_of_government
 recruit_character = LAN_Sakai_Naoto
 
 country_event = { id = landsol.1 days = 28 }

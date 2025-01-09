@@ -1,7 +1,7 @@
 import os,sys,string
 from tkinter import *
 
-files_path = r"E:/Mod/00_LocalMod/Fantasyland Era/history/states/"
+files_path = r"../../history/states/"
 
 def calc_prov(files_path):
 	provincesList = []

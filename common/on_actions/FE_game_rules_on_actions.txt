@@ -1,4 +1,5 @@
 on_actions = {
+	#ai paths
 	on_startup = {
 		effect = {
 			RGC = {
@@ -72,6 +73,56 @@ on_actions = {
 					set_country_flag = RGC_AI_OPTION_WINDERMERE
 				}
 				else = { set_country_flag = RGC_AI_OPTION_VICTORIA }
+			}
+		}
+	}
+	#meme mode
+	on_startup = {
+		effect = {
+			ANA = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = doki_doki_literature_club
+							option = LITERATURE_CLUB_CREATED
+						}
+					}
+					set_country_flag = ANA_doki_doki_literature_club_flag
+					set_popularities = {
+						democratic = 100
+					}
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = no
+					}
+					set_party_name = {
+						ideology = democratic
+						name = ANA_literature_club_party
+					}
+					ANA_Monika = {
+						add_country_leader_role = {
+							country_leader = {
+								ideology = democratic_subtype
+								traits = { minister_of_literature_club }
+								expire = "1965.1.1.1"
+								id = -1
+							}
+							promote_leader = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	on_daily_ANA = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = ANA_doki_doki_literature_club_flag
+					is_ai = yes
+					any_other_country = { is_ai = no }
+				}
+				random_other_country = { PREV = { change_tag_from = PREV } }
 			}
 		}
 	}

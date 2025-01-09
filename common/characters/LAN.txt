@@ -895,7 +895,7 @@ characters = {
 			idea_token = LAN_Kirihara_Kasumi
 			allowed = { original_tag = LAN }
 			available = {
-				
+				has_completed_focus = LAN_mi6
 			}
 			cost = 150
 			traits = { detective_in_capital }
@@ -1654,16 +1654,23 @@ characters = {
 			id = -1
 		}
 		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Senri_Mana
-			allowed = { original_tag = LAN }
-			available = {
-				is_country_leader = no
+			slot = head_of_government
+			idea_token = LAN_Senri_Mana_head_of_government
+			allowed = {
+				original_tag = LAN
 			}
-			cost = 150
-			traits = {  }
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { JUNO_national_socialist_vanguard head_of_government_trait }
+			cost = 0
 			ai_will_do = {
-				base = 1.000
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:LAN_Senri_Mana_head_of_government }
+				}
 			}
 		}
 		field_marshal = {
