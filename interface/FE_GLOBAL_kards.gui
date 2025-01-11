@@ -1,0 +1,117 @@
+
+
+guiTypes = {
+
+	containerWindowType = {
+		name = "GLOBAL_kards_main"
+		position = { x = -450 y = -7 }
+		size = { width = 150 height = 150 }
+		orientation = UPPER_RIGHT
+		scale = 0.05
+		
+		background = {
+			name = "background"
+		}
+		
+		buttonType = {
+			name = "close_button"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_global_kards_logo"
+			buttonFont = "Main_14_black"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+	}
+
+	containerWindowType = {
+		name = "GLOBAL_kards_container"
+		position = { x = 0 y = 0 }
+		size = { width = 100%% height = 100%% }
+		
+		background = {
+			name = "background"
+			quadTextureSprite = "GFX_global_kards_desktop_ger"
+		}
+		
+		iconType = {
+			name = "desktop"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_global_kards_desktop_ger"
+		}
+		
+		containerWindowType = {
+			name = "decks_list"
+			position = { x = 450 y = -350 }
+			size = { width = 75%% height = 100%% }
+			orientation = LOWER_LEFT
+			horizontalScrollbar = bottom_horizontal_slider
+			scroll_wheel_factor = 40
+			smooth_scrolling = yes
+			
+			background = {
+				name = "Background"
+			}
+			
+			gridBoxType = {
+				name = "cards_gridbox"
+				position = { x = 0 y = 1 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 200 height = 100 }
+				max_slots_vertical = 1
+				format = "UPPER_LEFT"
+			}
+		}
+		
+		buttonType = {
+			name = "close_button"
+			position = { x = -50 y = 5 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+		
+		instantTextboxType = {
+			name = "title"
+			position = { x = 50 y = -300 }
+			font = "hoi_36header"
+			format = center
+			text = "夜刀神十香大元帅"
+			maxWidth = 300
+			orientation = LOWER_LEFT
+		}
+	}
+
+	containerWindowType = {
+		name = "cards_list_window"
+		position = { x = 0 y = 0 }
+		size = { width = 200 height = 350 }
+		
+		containerWindowType = {
+			name = "hands_list"
+			position = { x = 0 y = -300 }
+			size = { width = 200 height = 300 }
+			orientation = LOWER_LEFT
+			
+			background = {
+				name = "Background"
+			}
+			
+			iconType = {
+				name = "card"
+				position = { x = 0 y = 0 }
+				quadTextureSprite = "GFX_global_kards_cards_0"
+				scale = 0.4
+			}
+		}
+		
+		#iconType = {
+		#	name = "card"
+		#	position = { x = 3 y = 2 }
+		#	quadTextureSprite = "GFX_global_kards_cards_0"
+		#	scale = 0.4
+		#}
+	}
+}
