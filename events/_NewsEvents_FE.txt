@@ -13,6 +13,8 @@ news_event = {
 	
 	is_triggered_only = yes
 	
+	fire_only_once = yes
+	
 	option = {
 		name = FE_news.1.a
 		trigger = {
@@ -41,6 +43,39 @@ news_event = {
 			NOT = { has_war_with = LAN }
 			NOT = { LAN = { has_government = ROOT } }
 		}
+	}
+}
+
+#election in San Magnolia - democratic
+news_event = {
+	id = FE_news.2
+	title = FE_news.2.t
+	desc = FE_news.2.desc
+	picture = GFX_news_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FE_news.2.a
+	}
+}
+
+#election in San Magnolia - fascism
+news_event = {
+	id = FE_news.3
+	title = FE_news.3.t
+	desc = FE_news.3.desc
+	picture = GFX_news_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FE_news.3.a
+		
 	}
 }
 

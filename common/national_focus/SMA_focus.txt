@@ -26,8 +26,8 @@ focus_tree = {
 
 	focus = {
 		id = SMA_rebuild_industry
-		icon = GFX_goal_generic_collaborate_local_elites
-		x = 5
+		icon = GFX_focus_generic_currency_reforms
+		x = 9
 		y = 0
 		cost = 5
 		available = {
@@ -52,11 +52,32 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SMA_confiscate_industrial_equipment
-		icon = GFX_goal_generic_production
-		prerequisite = { focus = SMA_rebuild_industry }
+		id = SMA_national_defense_industry
+		icon = GFX_focus_SMA_national_defense_industry
 		relative_position_id = SMA_rebuild_industry
-		x = -3
+		x = 6
+		y = 0
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_isuzu_plan
+		icon = GFX_focus_SMA_isuzu_plan
+		prerequisite = {
+			focus = SMA_rebuild_industry
+			focus = SMA_national_defense_industry
+		}
+		relative_position_id = SMA_rebuild_industry
+		x = -7
 		y = 1
 		cost = 5
 		available = {
@@ -71,10 +92,268 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SMA_national_defense_industry
-		icon = GFX_focus_SMA_national_defense_industry
-		prerequisite = { focus = SMA_rebuild_industry }
+		id = SMA_receive_nature
+		icon = GFX_goal_generic_agriculture
+		prerequisite = { focus = SMA_isuzu_plan }
+		relative_position_id = SMA_isuzu_plan
+		x = -2
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_labor_department
+		icon = GFX_goal_generic_union_agreement
+		prerequisite = { focus = SMA_isuzu_plan }
+		relative_position_id = SMA_isuzu_plan
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_protect_lowest_payment
+		icon = GFX_focus_generic_full_employment
+		prerequisite = { focus = SMA_isuzu_plan }
+		relative_position_id = SMA_isuzu_plan
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_education_law
+		icon = GFX_focus_generic_university_1
+		prerequisite = { focus = SMA_labor_department }
+		relative_position_id = SMA_labor_department
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_water_conservancy_project
+		icon = GFX_focus_generic_hydroelectric_energy
+		prerequisite = { focus = SMA_education_law }
+		prerequisite = { focus = SMA_receive_nature }
+		relative_position_id = SMA_education_law
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_broadcasting_and_promotion
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = SMA_education_law }
+		prerequisite = { focus = SMA_protect_lowest_payment }
+		relative_position_id = SMA_education_law
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_expand_power_of_worker
+		icon = GFX_goal_generic_workers_rights
+		prerequisite = { focus = SMA_water_conservancy_project }
+		prerequisite = { focus = SMA_broadcasting_and_promotion }
+		relative_position_id = SMA_education_law
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_barnett_plan
+		icon = GFX_focus_SMA_barnett_plan
+		prerequisite = {
+			focus = SMA_rebuild_industry
+			focus = SMA_national_defense_industry
+		}
 		relative_position_id = SMA_rebuild_industry
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_expand_functions_of_railway_bureau
+		icon = GFX_focus_POL_warsaw_main_station
+		prerequisite = { focus = SMA_barnett_plan }
+		relative_position_id = SMA_barnett_plan
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_speed_up_programme
+		icon = GFX_focus_generic_railroad
+		prerequisite = { focus = SMA_expand_functions_of_railway_bureau }
+		relative_position_id = SMA_expand_functions_of_railway_bureau
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_more_transfer
+		icon = GFX_focus_generic_improve_roads
+		prerequisite = { focus = SMA_expand_functions_of_railway_bureau }
+		prerequisite = { focus = SMA_research_department }
+		relative_position_id = SMA_expand_functions_of_railway_bureau
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_cross_mountains
+		icon = GFX_focus_generic_road_investment
+		prerequisite = { focus = SMA_speed_up_programme }
+		relative_position_id = SMA_speed_up_programme
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_energy_proposal
+		icon = GFX_focus_generic_energy
+		prerequisite = { focus = SMA_speed_up_programme }
+		prerequisite = { focus = SMA_more_transfer }
+		relative_position_id = SMA_speed_up_programme
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_standardization
+		icon = GFX_focus_generic_tank_assembly
+		prerequisite = {
+			focus = SMA_more_transfer
+			focus = SMA_civilian_area_first
+		}
+		relative_position_id = SMA_speed_up_programme
 		x = 3
 		y = 1
 		cost = 5
@@ -90,9 +369,458 @@ focus_tree = {
 	}
 
 	focus = {
+		id = SMA_railway_drives_economy
+		icon = GFX_goal_generic_railroad
+		prerequisite = { focus = SMA_cross_mountains }
+		prerequisite = { focus = SMA_energy_proposal }
+		prerequisite = { focus = SMA_standardization }
+		relative_position_id = SMA_energy_proposal
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_connect_country
+		icon = GFX_goal_generic_railway_construction
+		prerequisite = { focus = SMA_protect_lowest_payment }
+		prerequisite = { focus = SMA_expand_functions_of_railway_bureau }
+		relative_position_id = SMA_expand_functions_of_railway_bureau
+		x = -3
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_eta_plan
+		icon = GFX_focus_SMA_eta_plan
+		prerequisite = {
+			focus = SMA_rebuild_industry
+			focus = SMA_national_defense_industry
+		}
+		relative_position_id = SMA_national_defense_industry
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_research_department
+		icon = GFX_focus_research2
+		prerequisite = {
+			focus = SMA_barnett_plan
+			focus = SMA_eta_plan
+		}
+		relative_position_id = SMA_eta_plan
+		x = -3
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_civilian_area_first
+		icon = GFX_goal_generic_loans
+		prerequisite = {
+			focus = SMA_research_department
+			focus = SMA_ministry_of_construction
+		}
+		mutually_exclusive = { focus = SMA_milistry_area_first }
+		relative_position_id = SMA_research_department
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_ministry_of_construction
+		icon = GFX_focus_generic_industrialists
+		prerequisite = { focus = SMA_eta_plan }
+		relative_position_id = SMA_eta_plan
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_milistry_area_first
+		icon = GFX_focus_generic_military_industry
+		prerequisite = { focus = SMA_ministry_of_construction }
+		mutually_exclusive = { focus = SMA_civilian_area_first }
+		relative_position_id = SMA_ministry_of_construction
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_generalization
+		icon = GFX_focus_generic_industry_3
+		prerequisite = {
+			focus = SMA_civilian_area_first
+			focus = SMA_milistry_area_first
+		}
+		relative_position_id = SMA_milistry_area_first
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			has_completed_focus = SMA_eta_plan
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_production_department
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = SMA_ministry_of_construction }
+		relative_position_id = SMA_ministry_of_construction
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_take_magic_device_seriously
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = SMA_production_department }
+		relative_position_id = SMA_production_department
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_self_sufficient
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = SMA_generalization }
+		prerequisite = { focus = SMA_take_magic_device_seriously }
+		relative_position_id = SMA_take_magic_device_seriously
+		x = -2
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_sieghart_plan
+		icon = GFX_focus_SMA_sieghart_plan
+		prerequisite = { focus = SMA_national_defense_industry }
+		relative_position_id = SMA_national_defense_industry
+		x = 7
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_ministry_of_military_industry
+		icon = GFX_goal_generic_industry_reallocation
+		prerequisite = { focus = SMA_sieghart_plan }
+		relative_position_id = SMA_sieghart_plan
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_build_factories
+		icon = GFX_goal_generic_factory_complex
+		prerequisite = { focus = SMA_sieghart_plan }
+		relative_position_id = SMA_sieghart_plan
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_authorize_partner_enterprise
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = SMA_ministry_of_military_industry }
+		relative_position_id = SMA_ministry_of_military_industry
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_heavy_weapon
+		icon = GFX_goal_generic_heavy_industry
+		prerequisite = { focus = SMA_authorize_partner_enterprise }
+		relative_position_id = SMA_authorize_partner_enterprise
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_mid_term_bonds
+		icon = GFX_focus_SWI_issue_war_bonds
+		prerequisite = {
+			focus = SMA_ministry_of_military_industry
+			focus = SMA_build_factories
+		}
+		relative_position_id = SMA_ministry_of_military_industry
+		x = 1
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_defend_point
+		icon = GFX_goal_generic_castle
+		prerequisite = { focus = SMA_build_factories }
+		relative_position_id = SMA_build_factories
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_vigorously_invest_in_defense_industry
+		icon = GFX_focus_generic_modernize_industry
+		prerequisite = { focus = SMA_defend_point }
+		relative_position_id = SMA_defend_point
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_experience_of_large_programme
+		icon = GFX_focus_usa_build_the_pentagon
+		prerequisite = {
+			focus = SMA_ministry_of_construction
+			focus = SMA_ministry_of_military_industry
+		}
+		relative_position_id = SMA_ministry_of_military_industry
+		x = -3
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_one_heart
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = SMA_heavy_weapon }
+		prerequisite = { focus = SMA_mid_term_bonds }
+		prerequisite = { focus = SMA_vigorously_invest_in_defense_industry }
+		relative_position_id = SMA_mid_term_bonds
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_the_great_rejuvenation
+		icon = GFX_focus_SMA_the_great_rejuvenation
+		prerequisite = {
+			focus = SMA_expand_power_of_worker
+			focus = SMA_railway_drives_economy
+			focus = SMA_self_sufficient
+			focus = SMA_one_heart
+		}
+		relative_position_id = SMA_rebuild_industry
+		x = 3
+		y = 6
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
 		id = SMA_rebuild_army
 		icon = GFX_focus_SMA_rebuild_army
-		x = 16
+		x = 38
 		y = 0
 		cost = 5
 		available = {
@@ -349,10 +1077,13 @@ focus_tree = {
 	focus = {
 		id = SMA_military_business
 		icon = GFX_focus_SWE_defense_act
-		prerequisite = { focus = SMA_roxy_military_reform }
+		prerequisite = {
+			focus = SMA_vigorously_invest_in_defense_industry
+			focus = SMA_roxy_military_reform
+		}
 		relative_position_id = SMA_roxy_military_reform
-		x = -11
-		y = 1
+		x = -13
+		y = 2
 		cost = 5
 		available = {
 			SMA_is_army_reforming = yes
@@ -372,7 +1103,7 @@ focus_tree = {
 		icon = GFX_focus_SMA_unemployed_person
 		prerequisite = { focus = SMA_roxy_military_reform }
 		relative_position_id = SMA_roxy_military_reform
-		x = -9
+		x = -10
 		y = 1
 		cost = 5
 		available = {
@@ -920,6 +1651,133 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 5
 			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_hide_wound
+		icon = GFX_goal_generic_a_holiday
+		x = 56
+		y = 0
+		cost = 3
+		available = {
+			is_subject = no
+			NOT = { has_completed_focus = SMA_fate_of_night }
+		}
+		search_filters = {  }
+		completion_reward = {
+			army_experience = 5
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cancel = { has_completed_focus = SMA_fate_of_night }
+	}
+
+	focus = {
+		id = SMA_special_class
+		icon = GFX_focus_generic_infiltration
+		relative_position_id = SMA_hide_wound
+		x = 2
+		y = 0
+		cost = 3
+		available = {
+			is_subject = no
+			NOT = { has_completed_focus = SMA_fate_of_night }
+		}
+		search_filters = {  }
+		completion_reward = {
+			army_experience = 5
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cancel = { has_completed_focus = SMA_fate_of_night }
+	}
+
+	focus = {
+		id = SMA_rifle_and_sword
+		icon = GFX_focus_GER_afrikakorps
+		relative_position_id = SMA_hide_wound
+		x = 4
+		y = 0
+		cost = 3
+		available = {
+			is_subject = no
+			NOT = { has_completed_focus = SMA_fate_of_night }
+		}
+		search_filters = {  }
+		completion_reward = {
+			army_experience = 5
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cancel = { has_completed_focus = SMA_fate_of_night }
+	}
+
+	focus = {
+		id = SMA_fate_of_night
+		icon = GFX_focus_generic_diplomatic_treaty
+		prerequisite = { focus = SMA_hide_wound }
+		prerequisite = { focus = SMA_special_class }
+		prerequisite = { focus = SMA_rifle_and_sword }
+		relative_position_id = SMA_special_class
+		x = 0
+		y = 1
+		cost = 0
+		available = {
+			always = no
+		}
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_government_of_knight
+		icon = GFX_focus_ITA_generic_fascist_workers
+		prerequisite = { focus = SMA_fate_of_night }
+		relative_position_id = SMA_fate_of_night
+		x = -2
+		y = 1
+		cost = 5
+		available = {
+			has_government = fascism
+		}
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_government_of_democracy
+		icon = GFX_focus_FIN_a_cry_for_help_2
+		prerequisite = { focus = SMA_fate_of_night }
+		relative_position_id = SMA_fate_of_night
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+			has_government = democratic
+		}
+		search_filters = {  }
+		completion_reward = {
+			
 		}
 		ai_will_do = {
 			factor = 1

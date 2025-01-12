@@ -1,4 +1,36 @@
 guiTypes = {
+	
+	containerWindowType = {
+		name = "vice_leader"
+		position = { x = 0 y = 0 }
+		
+		iconType = {
+			name = "vice_leader_picture"
+			position = { x = 183 y = 58 }
+			pdx_tooltip = VL_state_tt
+			pdx_tooltip_delayed = VL_desc_tt
+		}
+		
+		iconType = {
+			name = "vice_leader_frame"
+			spriteType = "GFX_pol_leader_frame"
+			position = { x = 175 y = 44 }		
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "vice_leader_name"
+			position = { x = 183 y = 262 }
+			font = "hoi_18mbs"
+			text = "[VL_name]"
+			pdx_tooltip = VL_state_tt
+			pdx_tooltip_delayed = VL_desc_tt
+			maxWidth = 155
+			maxHeight = 36
+			format = center
+			vertical_alignment = center
+		}
+	}
 
 	containerWindowType = {
 		name = "countrypoliticsview"
@@ -301,6 +333,75 @@ guiTypes = {
 #			position = { x = 482 y = 246 }
 #			quadTextureSprite = "GFX_subject_button"
 #		}
+		containerWindowType = {
+			name = "national_spirit"
+			position = { x = -80 y = 404 }
+			size = { width = 360 height = 50 }
+			clipping = no
+						
+			instantTextboxType = {
+				name = "title"
+				position = { x = 110 y = -5 }
+				font = "hoi_18mbs"
+				text = "POLITICS_NATIONAL_SPIRIT"
+				maxWidth = 200
+				maxHeight = 20
+				alwaystransparent = yes
+			}
+			
+			
+			containerWindowType = {
+				name = "national_spirit_container"
+				position = { x = 99 y = 18 }
+				size = { width = 514 height = 74 }
+				verticalScrollbar = "right_vertical_slider"
+				
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_tiled_window_transparent"
+				}
+				
+				gridboxtype = {
+					name = "spirit_grid"
+					position = { x = 1 y = 0 }
+					size = { width = 360 height = 74 }
+					slotsize = { width = 60 height = 74 }
+					max_slots = { x = 8 y = 100 }
+					format = "UPPER_LEFT"
+				}
+				gridboxtype = {
+					name = "spirit_grid_over_defined"
+					position = { x = 20 y = 0 }
+					size = { width = 330 height = 68 }
+					slotsize = { width = 33 height = 38 }
+					max_slots_horizontal = 14
+					format = "UPPER_LEFT"
+				}
+			}
+		}
+		iconType = {
+			name = "leader"
+			position = { x = 18 y = 58 }
+			spriteType = "GFX_leader_unknown"
+		}
+		
+		iconType = {
+			name = "leader_frame"
+			spriteType = "GFX_pol_leader_frame"
+			position = { x = 10 y = 44 }		
+			alwaystransparent = yes
+		}
+
+		instantTextboxType = {
+			name = "leader_name"
+			position = { x = 18 y = 262 }
+			font = "hoi_18mbs"
+			text = "leader_name"
+			maxWidth = 155
+			maxHeight = 36
+			format = center
+			vertical_alignment = center
+		}
 		
 		containerWindowType = {
 			name = "active_goal"
@@ -405,75 +506,6 @@ guiTypes = {
 				spriteType = "GFX_pol_goal_progress_frame"
 				alwaystransparent = yes
 			}			
-		}
-		containerWindowType = {
-			name = "national_spirit"
-			position = { x = -80 y = 404 }
-			size = { width = 360 height = 50 }
-			clipping = no
-						
-			instantTextboxType = {
-				name = "title"
-				position = { x = 110 y = -5 }
-				font = "hoi_18mbs"
-				text = "POLITICS_NATIONAL_SPIRIT"
-				maxWidth = 200
-				maxHeight = 20
-				alwaystransparent = yes
-			}
-			
-			
-			containerWindowType = {
-				name = "national_spirit_container"
-				position = { x = 99 y = 18 }
-				size = { width = 514 height = 74 }
-				verticalScrollbar = "right_vertical_slider"
-				
-				background = {
-					name = "Background"
-					quadTextureSprite ="GFX_tiled_window_transparent"
-				}
-				
-				gridboxtype = {
-					name = "spirit_grid"
-					position = { x = 1 y = 0 }
-					size = { width = 360 height = 74 }
-					slotsize = { width = 60 height = 74 }
-					max_slots = { x = 8 y = 100 }
-					format = "UPPER_LEFT"
-				}
-				gridboxtype = {
-					name = "spirit_grid_over_defined"
-					position = { x = 20 y = 0 }
-					size = { width = 330 height = 68 }
-					slotsize = { width = 33 height = 38 }
-					max_slots_horizontal = 14
-					format = "UPPER_LEFT"
-				}
-			}
-		}
-		iconType = {
-			name = "leader"
-			position = { x = 18 y = 58 }
-			spriteType = "GFX_leader_unknown"
-		}
-		
-		iconType = {
-			name = "leader_frame"
-			spriteType = "GFX_pol_leader_frame"
-			position = { x = 10 y = 44 }		
-			alwaystransparent = yes
-		}
-
-		instantTextboxType = {
-			name = "leader_name"
-			position = { x = 18 y = 262 }
-			font = "hoi_18mbs"
-			text = "leader_name"
-			maxWidth = 155
-			maxHeight = 36
-			format = center
-			vertical_alignment = center
 		}
 		
 		containerWindowType = {
@@ -1775,38 +1807,6 @@ guiTypes = {
 			alwaystransparent = yes
 		}		
 		
-	}
-	
-	containerWindowType = {
-		name = "vice_leader"
-		position = { x = 0 y = 0 }
-		
-		iconType = {
-			name = "vice_leader_picture"
-			position = { x = 183 y = 58 }
-			pdx_tooltip = VL_state_tt
-			pdx_tooltip_delayed = VL_desc_tt
-		}
-		
-		iconType = {
-			name = "vice_leader_frame"
-			spriteType = "GFX_pol_leader_frame"
-			position = { x = 175 y = 44 }		
-			alwaystransparent = yes
-		}
-		
-		instantTextboxType = {
-			name = "vice_leader_name"
-			position = { x = 183 y = 262 }
-			font = "hoi_18mbs"
-			text = "[VL_name]"
-			pdx_tooltip = VL_state_tt
-			pdx_tooltip_delayed = VL_desc_tt
-			maxWidth = 155
-			maxHeight = 36
-			format = center
-			vertical_alignment = center
-		}
 	}
 	
 	containerWindowType = {

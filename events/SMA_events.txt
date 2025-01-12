@@ -5,6 +5,139 @@
 add_namespace = san_magnolia
 
 country_event = {
+	id = san_magnolia.1
+	title = san_magnolia.1.t
+	desc = san_magnolia.1.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SMA
+		date > 1000.1.1
+		date < 1001.1.1
+		NOT = { has_completed_focus = SMA_fate_of_night }
+	}
+
+	option = {
+		name = san_magnolia.1.a
+		ai_chance = {
+			base = 10
+		}
+		complete_national_focus = SMA_fate_of_night
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.1
+		}
+		effect_tooltip = {
+			retire_ideology_leader = fascism
+		}
+		hidden_effect = {
+			remove_country_leader_role = {
+				character = SMA_Yuuki_Asuna
+				ideology = fascism_subtype
+			}
+			remove_country_leader_role = {
+				character = GIA_Richard_Turner
+				ideology = interim_government_d_subtype
+			}
+			add_country_leader_role = {
+				character = SMA_Freed_Reinhardt
+				country_leader = {
+					ideology = social_conservatism_subtype
+					traits = { legitimate_heir }
+					expire = "1965.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+			every_country = {
+				limit = { is_ai = no }
+				news_event = {
+					id = FE_news.3
+				#	days = 10
+				#	random_hours = 12
+					random_days = 5
+				}
+			}
+		}
+		add_country_leader_role = {
+			character = SMA_Iris_Midgar
+			country_leader = {
+				ideology = corporatism_subtype
+				traits = { radical_officer }
+				expire = "1965.1.1.1"
+				id = -1
+			}
+			promote_leader = yes
+		}
+	}
+
+	option = {
+		name = san_magnolia.1.b
+		ai_chance = {
+			base = 2
+		}
+		complete_national_focus = SMA_fate_of_night
+		effect_tooltip = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			retire_ideology_leader = democratic
+		}
+		set_party_name = {
+			ideology = democratic
+			name = SMA_democratic_party_empire_heir
+			long_name = SMA_democratic_party_empire_heir
+		}
+		hidden_effect = {
+			remove_country_leader_role = {
+				character = SMA_Yuuki_Asuna
+				ideology = fascism_subtype
+			}
+			remove_country_leader_role = {
+				character = GIA_Richard_Turner
+				ideology = interim_government_d_subtype
+			}
+			add_country_leader_role = {
+				character = SMA_Iris_Midgar
+				country_leader = {
+					ideology = corporatism_subtype
+					traits = { radical_officer }
+					expire = "1965.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+			every_country = {
+				limit = { is_ai = no }
+				news_event = {
+					id = FE_news.2
+					random_days = 5
+				}
+			}
+		}
+		add_country_leader_role = {
+			character = SMA_Freed_Reinhardt
+			country_leader = {
+				ideology = social_conservatism_subtype
+				traits = { legitimate_heir }
+				expire = "1965.1.1.1"
+				id = -1
+			}
+			promote_leader = yes
+		}
+	}
+}
+
+country_event = {
 	id = san_magnolia.11
 	title = san_magnolia.11.t
 	desc = san_magnolia.11.desc

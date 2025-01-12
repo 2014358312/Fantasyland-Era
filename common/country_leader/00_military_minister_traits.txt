@@ -43,6 +43,29 @@
 
 leader_traits = {
 	### Military Minister Traits
+	
+	commander_in_chief_for_military_reconstruction = {
+		random = no
+		
+		land_doctrine_cost_factor = -0.20
+		training_time_factor = -0.20
+		army_spirit_category_type_cost_factor = -0.50
+		unit_infantry_design_cost_factor = -0.40
+		justify_war_goal_time = 0.80
+		org_loss_when_moving = 0.40
+		experience_gain_army = 0.10
+
+		command_cap_increase = @tier2_cp_cap_increase
+		command_power = @tier2_cp_cost
+
+		ai_will_do = {
+			factor = @army_chief_factor_2
+			modifier = {
+				factor = 0
+				command_power < @tier2_cp_cost
+			}
+		}
+	}
 
 	# 1 is worst, 3 is best
 
