@@ -46,6 +46,7 @@
 #
 #		}
 #	}
+###############################政治线中线################################################
 ###最漫长的一夜
 focus = {
 	id = DKA_The_Longest_Night
@@ -76,208 +77,6 @@ focus = {
 		add_political_power =150
 		country_event = DKA.1
 
-	}
-}
-###相信亚人
-focus = {
-	id = DKA_believe_in_demi-human
-	icon = GFX_goal_generic_major_alliance
-	prerequisite = { focus =DKA_The_Longest_Night }
-	relative_position_id = DKA_The_Longest_Night
-	mutually_exclusive = { focus =DKA_support_old_king}
-	x = 6
-	y = 1
-	cost = 10
-
-	ai_will_do = {
-		factor = 1
-	}
-
-	available = {
-
-	}
-
-	bypass = {
-
-	}
-
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
-
-	search_filters = { FOCUS_FILTER_POLITICAL }
-	completion_reward = {
-		add_political_power = 120
-		add_popularity = { ideology = communism popularity = 0.1 } 
-		add_stability = -0.1
-	}
-}
-##某神秘力量的降临
-focus = {
-	id = DKA_The_descent_of_a_mysterious_force
-	icon = GFX_focus_prc_maoism
-	prerequisite = { focus =DKA_believe_in_demi-human }
-	relative_position_id = DKA_believe_in_demi-human
-	x = 0
-	y = 1
-	cost = 10
-
-	ai_will_do = {
-		factor = 1
-	}
-
-	available = {
-
-	}
-
-	bypass = {
-
-	}
-
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
-
-	search_filters = { FOCUS_FILTER_POLITICAL }
-	completion_reward = {
-		add_political_power = 120
-		add_popularity = { ideology = communism popularity = 0.1 } 
-		add_stability = -0.1
-	}
-}
-###宣传解放思想
-focus = {
-	id = DKA_Promote_the_liberation_of_the_mind
-	icon = GFX_goal_generic_major_alliance
-	prerequisite = { focus =DKA_The_descent_of_a_mysterious_force }
-	relative_position_id = DKA_The_descent_of_a_mysterious_force
-	x = 0
-	y = 1
-	cost = 10
-
-	ai_will_do = {
-		factor = 1
-	}
-
-	available = {
-
-	}
-
-	bypass = {
-
-	}
-
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
-
-	search_filters = { FOCUS_FILTER_POLITICAL }
-	completion_reward = {
-		add_political_power = 120
-		add_popularity = { ideology = communism popularity = 0.1 } 
-		add_stability = -0.1
-	}
-}
-###争取军队的支持
-focus = {
-	id = DKA_Strive_for_the_support_of_the_military
-	icon = GFX_goal_generic_major_alliance
-	prerequisite = { focus =DKA_believe_in_demi-human}
-	relative_position_id = DKA_believe_in_demi-human
-	x = 2
-	y = 1
-	cost = 10
-
-	ai_will_do = {
-		factor = 1
-	}
-
-	available = {
-
-	}
-
-	bypass = {
-
-	}
-
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
-
-	search_filters = { FOCUS_FILTER_POLITICAL }
-	completion_reward = {
-		add_political_power = 120
-		add_popularity = { ideology = communism popularity = 0.1 } 
-		add_stability = -0.1
-	}
-}
-###面向群众
-focus = {
-	id = DKA_Targeting_the_public
-	icon = GFX_goal_generic_major_alliance
-	prerequisite = { focus =DKA_Strive_for_the_support_of_the_military}
-	prerequisite = { focus =DKA_Promote_the_liberation_of_the_mind}
-	relative_position_id = DKA_Strive_for_the_support_of_the_military
-	x = 1
-	y = 1
-	cost = 10
-
-	ai_will_do = {
-		factor = 1
-	}
-
-	available = {
-
-	}
-
-	bypass = {
-
-	}
-
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
-
-	search_filters = { FOCUS_FILTER_POLITICAL }
-	completion_reward = {
-		add_political_power = 120
-		add_popularity = { ideology = communism popularity = 0.1 } 
-		add_stability = -0.1
-	}
-}
-###面向高层
-focus = {
-	id = DKA_Targeting_senior_management
-	icon = GFX_goal_generic_major_alliance
-	prerequisite = { focus =DKA_Strive_for_the_support_of_the_military}
-	prerequisite = { focus =DKA_Promote_the_liberation_of_the_mind}
-	relative_position_id = DKA_Strive_for_the_support_of_the_military
-	mutually_exclusive = { focus =DKA_Targeting_the_public}
-	x = -1
-	y = 1
-	cost = 10
-
-	ai_will_do = {
-		factor = 1
-	}
-
-	available = {
-
-	}
-
-	bypass = {
-
-	}
-
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
-
-	search_filters = { FOCUS_FILTER_POLITICAL }
-	completion_reward = {
-		add_political_power = 120
-		add_popularity = { ideology = communism popularity = 0.1 } 
-		add_stability = -0.1
 	}
 }
 ###支持旧王
@@ -1789,6 +1588,210 @@ focus = {
 		}
 		 }
 						  }
+################################政治右线#######################						  
+	###相信亚人
+focus = {
+	id = DKA_believe_in_demi-human
+	icon = GFX_goal_generic_major_alliance
+	prerequisite = { focus =DKA_The_Longest_Night }
+	relative_position_id = DKA_The_Longest_Night
+	mutually_exclusive = { focus =DKA_support_old_king}
+	x = 6
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		add_political_power = 120
+		add_popularity = { ideology = communism popularity = 0.1 } 
+		add_stability = -0.1
+	}
+}
+##某神秘力量的降临
+focus = {
+	id = DKA_The_descent_of_a_mysterious_force
+	icon = GFX_focus_prc_maoism
+	prerequisite = { focus =DKA_believe_in_demi-human }
+	relative_position_id = DKA_believe_in_demi-human
+	x = 0
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		add_political_power = 120
+		add_popularity = { ideology = communism popularity = 0.1 } 
+		add_stability = -0.1
+	}
+}
+###宣传解放思想
+focus = {
+	id = DKA_Promote_the_liberation_of_the_mind
+	icon = GFX_goal_generic_major_alliance
+	prerequisite = { focus =DKA_The_descent_of_a_mysterious_force }
+	relative_position_id = DKA_The_descent_of_a_mysterious_force
+	x = 0
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		add_political_power = 120
+		add_popularity = { ideology = communism popularity = 0.1 } 
+		add_stability = -0.1
+	}
+}
+###争取军队的支持
+focus = {
+	id = DKA_Strive_for_the_support_of_the_military
+	icon = GFX_goal_generic_major_alliance
+	prerequisite = { focus =DKA_believe_in_demi-human}
+	relative_position_id = DKA_believe_in_demi-human
+	x = 2
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		add_political_power = 120
+		add_popularity = { ideology = communism popularity = 0.1 } 
+		add_stability = -0.1
+	}
+}
+###面向群众
+focus = {
+	id = DKA_Targeting_the_public
+	icon = GFX_goal_generic_major_alliance
+	prerequisite = { focus =DKA_Strive_for_the_support_of_the_military}
+	prerequisite = { focus =DKA_Promote_the_liberation_of_the_mind}
+	relative_position_id = DKA_Strive_for_the_support_of_the_military
+	x = 1
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		add_political_power = 120
+		add_popularity = { ideology = communism popularity = 0.1 } 
+		add_stability = -0.1
+	}
+}
+###面向高层
+focus = {
+	id = DKA_Targeting_senior_management
+	icon = GFX_goal_generic_major_alliance
+	prerequisite = { focus =DKA_Strive_for_the_support_of_the_military}
+	prerequisite = { focus =DKA_Promote_the_liberation_of_the_mind}
+	relative_position_id = DKA_Strive_for_the_support_of_the_military
+	mutually_exclusive = { focus =DKA_Targeting_the_public}
+	x = -1
+	y = 1
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		add_political_power = 120
+		add_popularity = { ideology = communism popularity = 0.1 } 
+		add_stability = -0.1
+	}
+}					  
+	#########################军事线##############################					  
 	 ###陆军法案
 	  focus = {
 			id = DKA_army_expansion_law
