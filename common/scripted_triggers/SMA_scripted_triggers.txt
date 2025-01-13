@@ -67,3 +67,50 @@ SMA_use_war_support_cost = {
 SMA_use_political_power_cost = {
 	check_variable = { revenge_cost_method = 2 }
 }
+
+SMA_check_program_status = {
+	custom_trigger_tooltip = {
+		tooltip = SMA_industry_program_ttt
+		check_variable = { SMA_industry_program_var = 0 }
+	}
+}
+
+SMA_isuzu_plan_in_progress = {
+	custom_override_tooltip = {
+		tooltip = {
+			localization_key = SMA_industry_program_ott
+			PLAN = SMA_isuzu_plan
+		}
+		check_variable = { SMA_industry_program_var = 1 }
+	}
+}
+
+SMA_barnett_plan_in_progress = {
+	custom_override_tooltip = {
+		tooltip = {
+			localization_key = SMA_industry_program_ott
+			PLAN = SMA_barnett_plan
+		}
+		check_variable = { SMA_industry_program_var = 2 }
+	}
+}
+
+SMA_eta_plan_in_progress = {
+	custom_override_tooltip = {
+		tooltip = {
+			localization_key = SMA_industry_program_ott
+			PLAN = SMA_eta_plan
+		}
+		check_variable = { SMA_industry_program_var = 3 }
+	}
+}
+
+SMA_sieghart_plan_in_progress = {
+	custom_override_tooltip = {
+		tooltip = {
+			localization_key = SMA_industry_program_ott
+			PLAN = SMA_sieghart_plan
+		}
+		check_variable = { SMA_industry_program_var = 4 }
+	}
+}

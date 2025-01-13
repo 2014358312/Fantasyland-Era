@@ -81,10 +81,16 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_check_program_status = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			if = {
+				limit = { check_variable = { SMA_industry_program_var = 0 } }
+				set_variable = { SMA_industry_program_var = 1 }
+			}
+			add_to_array = { SMA_industry_program_array = 1 }
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SMA_Kobori
 		}
 		ai_will_do = {
 			factor = 1
@@ -100,7 +106,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_isuzu_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -119,7 +125,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_isuzu_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -138,7 +144,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_isuzu_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -157,7 +163,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_isuzu_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -177,7 +183,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_isuzu_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -197,7 +203,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_isuzu_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -217,10 +223,10 @@ focus_tree = {
 		y = 2
 		cost = 5
 		available = {
-			
+			SMA_isuzu_plan_in_progress = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			set_variable = { SMA_industry_program_var = 0 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -239,10 +245,11 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_check_program_status = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SMA_Sherry_Barnett
 		}
 		ai_will_do = {
 			factor = 1
@@ -258,7 +265,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_barnett_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -277,7 +284,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_barnett_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -297,7 +304,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_barnett_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -316,7 +323,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_barnett_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -336,7 +343,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_barnett_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -358,7 +365,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_barnett_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -379,10 +386,10 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_barnett_plan_in_progress = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			set_variable = { SMA_industry_program_var = 0 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -421,10 +428,11 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_check_program_status = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SMA_ES_Eta
 		}
 		ai_will_do = {
 			factor = 1
@@ -485,7 +493,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_eta_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -505,7 +513,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_eta_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -527,7 +535,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			has_completed_focus = SMA_eta_plan
+			SMA_eta_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -546,7 +554,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_eta_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -565,7 +573,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_eta_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -585,10 +593,10 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_eta_plan_in_progress = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			set_variable = { SMA_industry_program_var = 0 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -604,10 +612,11 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_check_program_status = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SMA_Elesis_Sieghart
 		}
 		ai_will_do = {
 			factor = 1
@@ -623,7 +632,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_sieghart_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -642,7 +651,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_sieghart_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -661,7 +670,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_sieghart_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -680,7 +689,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_sieghart_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -702,7 +711,7 @@ focus_tree = {
 		y = 2
 		cost = 5
 		available = {
-			
+			SMA_sieghart_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -721,7 +730,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_sieghart_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -740,7 +749,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_sieghart_plan_in_progress = yes
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -783,10 +792,10 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			SMA_sieghart_plan_in_progress = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			set_variable = { SMA_industry_program_var = 0 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -810,7 +819,8 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = 150
+			custom_effect_tooltip = SMA_the_great_rejuvenation_tt
+			
 		}
 		ai_will_do = {
 			factor = 1
