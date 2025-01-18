@@ -192,6 +192,27 @@ SMA_fascism_influence_decision_category = {
 			}
 		}
 	}
+
+	SMA_repay_principal_and_interest_mission = {
+		icon = generic_train
+		allowed = { tag = SMA }
+		available = { has_political_power > 50 }
+		activation = { always = no }
+		days_mission_timeout = 180
+		is_good = no
+		selectable_mission = yes
+		fire_only_once = no
+		complete_effect = {
+			add_political_power = -50
+			set_country_flag = SMA_can_repay_principal_and_interest_flag
+		}
+		timeout_effect = {
+			custom_effect_tooltip = SMA_repay_principal_and_interest_mission_tt
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
 	
 	SMA_issues_securities = {
 		icon = eng_trade_unions_support
@@ -209,7 +230,7 @@ SMA_fascism_influence_decision_category = {
 		}
 		custom_cost_text = decision_cost_WS_5_PP_25
 		fire_only_once = no
-		days_remove = 45
+		days_remove = 180
 		days_re_enable = 60
 		ai_will_do = { factor = 1 }
 		complete_effect = {
@@ -231,16 +252,35 @@ SMA_fascism_influence_decision_category = {
 			}
 			custom_effect_tooltip = SMA_modify_chivalric_order
 			add_to_variable = { SMA_CO_consumer_goods_factor_var = -0.10 tooltip = consumer_goods_factor_tt }
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = blank_null
+			activate_mission = SMA_repay_principal_and_interest_mission
 		}
 		remove_effect = {
 			add_popularity = {
 				ideology = ROOT
 				popularity = 0.02
 			}
-			custom_effect_tooltip = SMA_modify_chivalric_order
-			add_to_variable = { SMA_CO_consumer_goods_factor_var = 0.05 tooltip = consumer_goods_factor_tt }
-			custom_effect_tooltip = generic_skip_one_line_tt
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = SMA_can_repay_principal_and_interest_flag }
+					add_to_variable = { SMA_CO_consumer_goods_factor_var = 0.10 tooltip = consumer_goods_factor_tt }
+				}
+				else = {
+					add_to_variable = { SMA_CO_consumer_goods_factor_var = 0.125 tooltip = consumer_goods_factor_tt }
+					custom_effect_tooltip = generic_skip_one_line_tt
+					add_stability = -0.025
+				}
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = SMA_modify_chivalric_order
+				add_to_variable = { SMA_CO_consumer_goods_factor_var = 0.10 tooltip = consumer_goods_factor_tt }
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = SMA_issues_securities_tt
+				add_stability = -0.025
+				custom_effect_tooltip = SMA_modify_chivalric_order
+				add_to_variable = { SMA_CO_consumer_goods_factor_var = 0.025 tooltip = consumer_goods_factor_tt }
+				
+			}
 		}
 	}
 	

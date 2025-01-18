@@ -49,6 +49,9 @@ set_variable = { SMA_CO_political_power_factor_var = 0.10 }
 set_variable = { SMA_CO_fascism_drift_var = 0.05 }
 #add_dynamic_modifier = { modifier = SMA_chivalric_order_dynamic_modifier }
 
+set_variable = { SMA_NDI_military_industrial_organization_funds_gain_var = 0.05 }
+#add_dynamic_modifier = { modifier = SMA_national_defense_industry_fascism_dynamic_modifier }
+
 
 create_intelligence_agency = {
 	name = "San Magnolian Special Intelligence"
@@ -62,6 +65,10 @@ add_ideas = {
 	SMA_on_the_ruin
 	SMA_decadent_army_fake
 	SMA_chivalric_order_fake
+}
+add_timed_idea = {
+	idea = SMA_rebuild_industry_base
+	days = 69
 }
 
 recruit_character = GIA_Richard_Turner

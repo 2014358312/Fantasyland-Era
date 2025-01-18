@@ -459,3 +459,46 @@ SMA_army_reform_new = {
 SMA_rename_state = {
 	86 = { set_state_name = SMA_modify_roxy_army_reform_tt }
 }
+
+SMA_take_shelter_from_rain = {
+	add_to_variable = { SMA_industry_ruin_var = 1 }
+	effect_tooltip = {
+		custom_effect_tooltip = SMA_take_shelter_from_rain_tt
+		swap_ideas = {
+			remove_idea = SMA_on_the_ruin
+			add_idea = SMA_on_the_ruin_11
+		}
+	}
+	if = {
+		limit = { check_variable = { SMA_industry_ruin_var = 2 } }
+		if = {
+			limit = { has_idea = SMA_on_the_ruin_11 }
+			swap_ideas = {
+				remove_idea = SMA_on_the_ruin_11
+				add_idea = SMA_on_the_ruin_12
+			}
+		}
+		else_if = {
+			limit = { has_idea = SMA_on_the_ruin_12 }
+			swap_ideas = {
+				remove_idea = SMA_on_the_ruin_12
+				add_idea = SMA_on_the_ruin_2
+			}
+		}
+		else_if = {
+			limit = { has_idea = SMA_on_the_ruin_01 }
+			swap_ideas = {
+				remove_idea = SMA_on_the_ruin_01
+				add_idea = SMA_on_the_ruin_02
+			}
+		}
+		else_if = {
+			limit = { has_idea = SMA_on_the_ruin_02 }
+			remove_ideas = SMA_on_the_ruin_02
+		}
+	}
+	if = {
+		limit = { check_variable = { SMA_industry_ruin_var > 1 } }
+		set_variable = { SMA_industry_ruin_var = 0 }
+	}
+}

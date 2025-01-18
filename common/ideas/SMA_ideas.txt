@@ -88,6 +88,8 @@ ideas = {
 				always = no
 			}
 			
+			available = { num_of_factories < 101 }
+			
 			removal_cost = -1
 			
 			modifier = {
@@ -96,6 +98,162 @@ ideas = {
 				production_factory_efficiency_gain_factor = -0.30
 				line_change_production_efficiency_factor = -0.15
 			}
+			
+			research_bonus = {
+				computing_tech = -0.10
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					if = {
+						limit = {
+							NOT = { num_of_factories < 101 }
+							NOT = { has_completed_focus = SMA_research_department }
+						}
+						add_ideas = SMA_on_the_ruin_2
+					}
+				}
+			}
+		}
+		
+		SMA_on_the_ruin_01 = {
+			name = SMA_on_the_ruin
+			picture = POL_disjointed_industry
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { num_of_factories < 101 }
+			
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = -0.20
+				industrial_capacity_dockyard = -0.20
+				production_factory_efficiency_gain_factor = -0.20
+				line_change_production_efficiency_factor = -0.10
+			}
+		}
+		
+		SMA_on_the_ruin_02 = {
+			name = SMA_on_the_ruin
+			picture = POL_disjointed_industry
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { num_of_factories < 101 }
+			
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = -0.10
+				industrial_capacity_dockyard = -0.10
+				production_factory_efficiency_gain_factor = -0.10
+				line_change_production_efficiency_factor = -0.05
+			}
+		}
+		
+		SMA_on_the_ruin_11 = {
+			name = SMA_on_the_ruin
+			picture = POL_disjointed_industry
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { num_of_factories < 101 }
+			
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = -0.20
+				industrial_capacity_dockyard = -0.20
+				production_factory_efficiency_gain_factor = -0.20
+				line_change_production_efficiency_factor = -0.10
+			}
+			
+			research_bonus = {
+				computing_tech = -0.10
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					if = {
+						limit = { NOT = { num_of_factories < 101 } }
+						set_country_flag = SMA_industry_well_done_flag
+						if = {
+							limit = { NOT = { has_completed_focus = SMA_research_department } }
+							add_ideas = SMA_on_the_ruin_2
+						}
+					}
+				}
+			}
+		}
+		
+		SMA_on_the_ruin_12 = {
+			name = SMA_on_the_ruin
+			picture = POL_disjointed_industry
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			available = { num_of_factories < 101 }
+			
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = -0.10
+				industrial_capacity_dockyard = -0.10
+				production_factory_efficiency_gain_factor = -0.10
+				line_change_production_efficiency_factor = -0.05
+			}
+			
+			research_bonus = {
+				computing_tech = -0.10
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					if = {
+						limit = { NOT = { num_of_factories < 101 } }
+						set_country_flag = SMA_industry_well_done_flag
+						if = {
+							limit = { NOT = { has_completed_focus = SMA_research_department } }
+							add_ideas = SMA_on_the_ruin_2
+						}
+					}
+				}
+			}
+		}
+		
+		SMA_on_the_ruin_2 = {
+			name = SMA_on_the_ruin
+			picture = POL_disjointed_industry
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
 			
 			research_bonus = {
 				computing_tech = -0.10
@@ -226,7 +384,8 @@ ideas = {
 			}
 		}
 		
-		SMA_rebuild_industry = {
+		SMA_rebuild_industry_base = {
+			name = SMA_rebuild_industry_act
 			picture = man_five_year_plan_industry
 			allowed = {
 				always = no
@@ -239,11 +398,65 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_cost = 0.20
-				production_speed_buildings_factor = 0.15
-				consumer_goods_factor = -0.33
-				stability_factor = -0.10
+				production_factory_efficiency_gain_factor = 0.05
 			}
 		}
+		
+		SMA_rebuild_industry_improve = {
+			name = SMA_rebuild_industry_act
+			picture = man_five_year_plan_industry
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.10
+				production_factory_efficiency_gain_factor = 0.10
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		
+		SMA_education_law = {
+			picture = generic_research_bonus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+		
+#		SMA_rebuild_industry = {
+#			picture = man_five_year_plan_industry
+#			allowed = {
+#				always = no
+#			}
+#			
+#			allowed_civil_war = {
+#				always = no
+#			}
+#			
+#			removal_cost = -1
+#			
+#			modifier = {
+#				political_power_cost = 0.20
+#				production_speed_buildings_factor = 0.15
+#				consumer_goods_factor = -0.33
+#				stability_factor = -0.10
+#			}
+#		}
 	}
 }
