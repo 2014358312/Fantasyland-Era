@@ -601,6 +601,18 @@ characters = {
 				small = GFX_idea_advisor_SMA_Elisabeth
 			}
 		}
+		advisor = {
+			slot = theorist
+			idea_token = SMA_Elisabeth
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 150
+			traits = { grand_battle_plan_expert }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	SMA_ES_Beta = {
@@ -613,6 +625,18 @@ characters = {
 			army = {
 				large = GFX_Portrait_SMA_ES_Beta
 				small = GFX_idea_advisor_SMA_ES_Beta
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SMA_ES_Beta
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 150
+			traits = { ICE_judge_and_editor }
+			ai_will_do = {
+				base = 1.000
 			}
 		}
 	}
@@ -629,6 +653,34 @@ characters = {
 				small = GFX_idea_advisor_SMA_ES_Delta
 			}
 		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = SMA_ES_Delta
+			allowed = { original_tag = SMA }
+			available = {
+				if = {
+					limit = { SMA_roxy_leading_military = yes }
+					SMA_roxy_is_rebuilding_army = yes
+				}
+			}
+			cost = 100
+			traits = { army_infantry_2 }
+			on_add = { SMA_roxy_appoint = yes } 
+			on_remove = { SMA_roxy_remove = yes }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		field_marshal = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
 	}
 
 	SMA_ES_Epsilon = {
@@ -641,6 +693,25 @@ characters = {
 			army = {
 				large = GFX_Portrait_SMA_ES_Epsilon
 				small = GFX_idea_advisor_SMA_ES_Epsilon
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = SMA_ES_Epsilon
+			allowed = { original_tag = SMA }
+			available = {
+				if = {
+					limit = { SMA_roxy_leading_military = yes }
+					SMA_roxy_is_rebuilding_army = yes
+				}
+			}
+			cost = 150
+			traits = { air_tactical_bombing_3 }
+			on_add = { SMA_roxy_appoint = yes } 
+			on_remove = { SMA_roxy_remove = yes }
+			ai_will_do = {
+				base = 1.000
 			}
 		}
 	}
@@ -684,18 +755,141 @@ characters = {
 				small = GFX_idea_advisor_SMA_ES_Gamma
 			}
 		}
+		advisor = {
+			slot = theorist
+			idea_token = SMA_ES_Gamma
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 150
+			traits = { blitzkrieg_theorist }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	SMA_ES_Zeta = {
+		name = ES_Zeta
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_ES_Zeta
+				small = GFX_idea_advisor_SMA_ES_Zeta
+			}
+			army = {
+				large = GFX_Portrait_SMA_ES_Zeta
+				small = GFX_idea_advisor_SMA_ES_Zeta
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SMA_ES_Zeta
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 150
+			traits = { SWI_intelligence_officer }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	SMA_ES_Lambda = {
+		name = ES_Lambda
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_ES_Lambda
+				small = GFX_idea_advisor_SMA_ES_Lambda
+			}
+			army = {
+				large = GFX_Portrait_SMA_ES_Lambda
+				small = GFX_idea_advisor_SMA_ES_Lambda
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = SMA_ES_Lambda
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 100
+			traits = { air_warfare_theorist }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
 	}
 
 	SMA_Iris_Midgar = {
 		name = Iris_Midgar
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_SMA_Iris_Midgar
-				small = GFX_idea_advisor_SMA_Iris_Midgar
+				large = GFX_Portrait_SMA_Iris_Midgar_alt
+				small = GFX_idea_advisor_SMA_Iris_Midgar_alt
 			}
 			army = {
 				large = GFX_Portrait_SMA_Iris_Midgar
 				small = GFX_idea_advisor_SMA_Iris_Midgar
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SMA_Iris_Midgar
+			allowed = { original_tag = SMA }
+			visible = { is_country_leader = no }
+			available = { is_country_leader = no }
+			cost = 150
+			traits = { hawk }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	SMA_Aurora_Violet = {
+		name = Aurora_Violet
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Aurora_Violet
+				small = GFX_idea_advisor_SMA_Aurora_Violet
+			}
+			army = {
+				large = GFX_Portrait_SMA_Aurora_Violet
+				small = GFX_idea_advisor_SMA_Aurora_Violet
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = SMA_Aurora_Violet
+			allowed = { original_tag = SMA }
+			available = {
+				if = {
+					limit = { SMA_roxy_leading_military = yes }
+					SMA_roxy_is_rebuilding_army = yes
+				}
+			}
+			cost = 150
+			traits = { air_air_combat_training_3 }
+			modifier = {
+				air_mission_efficiency = -0.05
+				air_range_factor = -0.20
+				air_fuel_consumption_factor = -0.25
+			}
+			on_add = { SMA_roxy_appoint = yes } 
+			on_remove = { SMA_roxy_remove = yes }
+			ai_will_do = {
+				base = 1.000
 			}
 		}
 	}
@@ -712,6 +906,16 @@ characters = {
 				small = GFX_idea_advisor_SMA_Niu
 			}
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SMA_Niu
+			allowed = { original_tag = SMA }
+			cost = 150
+			traits = { nkvd_rezident }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	SMA_Rose_Oriana = {
@@ -725,6 +929,15 @@ characters = {
 				large = GFX_Portrait_SMA_Rose_Oriana
 				small = GFX_idea_advisor_SMA_Rose_Oriana
 			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
 		}
 	}
 
@@ -767,6 +980,15 @@ characters = {
 				small = GFX_idea_advisor_SMA_Victoria
 			}
 		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
 	}
 
 	SMA_Yukime = {
@@ -780,6 +1002,15 @@ characters = {
 				large = GFX_Portrait_SMA_Yukime
 				small = GFX_idea_advisor_SMA_Yukime
 			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
 		}
 	}
 
@@ -809,6 +1040,17 @@ characters = {
 				small = GFX_idea_advisor_SMA_Amaori_Natore
 			}
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SMA_Amaori_Natore
+			allowed = { original_tag = SMA }
+			available = { has_intelligence_agency = yes }
+			cost = 150
+			traits = { mastermind_code_cracker }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	SMA_Easter_Lindbergh = {
@@ -821,6 +1063,16 @@ characters = {
 			army = {
 				large = GFX_Portrait_SMA_Easter_Lindbergh
 				small = GFX_idea_advisor_SMA_Easter_Lindbergh
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SMA_Easter_Lindbergh
+			allowed = { original_tag = SMA }
+			cost = 150
+			traits = { famous_detective }
+			ai_will_do = {
+				base = 1.000
 			}
 		}
 	}
@@ -837,6 +1089,18 @@ characters = {
 				small = GFX_idea_advisor_SMA_Freed_Reinhardt
 			}
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SMA_Freed_Reinhardt
+			allowed = { original_tag = SMA }
+			visible = { is_country_leader = no }
+			available = { is_country_leader = no }
+			cost = 150
+			traits = { appeaser }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	SMA_Henrietta_von_Witzleben = {
@@ -851,6 +1115,34 @@ characters = {
 				small = GFX_idea_advisor_SMA_Henrietta_von_Witzleben
 			}
 		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = SMA_Henrietta_von_Witzleben
+			allowed = { original_tag = SMA }
+			available = {
+				if = {
+					limit = { SMA_roxy_leading_military = yes }
+					SMA_roxy_is_rebuilding_army = yes
+				}
+			}
+			cost = 150
+			traits = { army_armored_3 }
+			on_add = { SMA_roxy_appoint = yes } 
+			on_remove = { SMA_roxy_remove = yes }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
 	}
 
 	SMA_Mizunomi_Wakaba = {
@@ -863,6 +1155,18 @@ characters = {
 			army = {
 				large = GFX_Portrait_SMA_Mizunomi_Wakaba
 				small = GFX_idea_advisor_SMA_Mizunomi_Wakaba
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = SMA_Mizunomi_Wakaba
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 100
+			traits = { naval_theorist }
+			ai_will_do = {
+				base = 1.000
 			}
 		}
 	}
@@ -879,6 +1183,18 @@ characters = {
 				small = GFX_idea_advisor_SMA_Lily
 			}
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SMA_Lily
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 100
+			traits = { lieutenant_of_industry }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	SMA_Sofia_Nova = {
@@ -893,6 +1209,34 @@ characters = {
 				small = GFX_idea_advisor_SMA_Sofia_Nova
 			}
 		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = SMA_Sofia_Nova
+			allowed = { original_tag = SMA }
+			available = {
+				if = {
+					limit = { SMA_roxy_leading_military = yes }
+					SMA_roxy_is_rebuilding_army = yes
+				}
+			}
+			cost = 100
+			traits = { army_radio_intelligence_2 }
+			on_add = { SMA_roxy_appoint = yes } 
+			on_remove = { SMA_roxy_remove = yes }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
 	}
 
 	SMA_Sylvia_von_Haynes = {
@@ -905,6 +1249,18 @@ characters = {
 			army = {
 				large = GFX_Portrait_SMA_Sylvia_von_Haynes
 				small = GFX_idea_advisor_SMA_Sylvia_von_Haynes
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SMA_Sylvia_von_Haynes
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 150
+			traits = { war_industrialist }
+			ai_will_do = {
+				base = 1.000
 			}
 		}
 	}
