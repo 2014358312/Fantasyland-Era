@@ -42,10 +42,10 @@ on_actions = {
 				set_country_flag = ROOT_has_air_force_command_flag
 			}
 			############
-			every_state = {
-				limit = { is_core_of = var:THIS.controller }
-				cancel_resistance = yes
-			}
+			#every_state = {
+			#	limit = { is_core_of = var:THIS.controller }
+			#	cancel_resistance = yes
+			#}
 			############
 			every_country = {
 				if = {
@@ -184,16 +184,16 @@ on_actions = {
 	}
 	on_state_control_changed = {
 		effect = {
-			if = {
-				limit = {
-					FROM.FROM = {
-						is_core_of = ROOT
-					}
-				}
-				FROM.FROM = {
-					cancel_resistance = yes
-				}
-			}
+			#if = {
+			#	limit = {
+			#		FROM.FROM = {
+			#			is_core_of = ROOT
+			#		}
+			#	}
+			#	FROM.FROM = {
+			#		cancel_resistance = yes
+			#	}
+			#}
 		}
 	}
 }
