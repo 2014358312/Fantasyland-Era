@@ -502,3 +502,210 @@ SMA_take_shelter_from_rain = {
 		set_variable = { SMA_industry_ruin_var = 0 }
 	}
 }
+
+SMA_new_iron_wall_in_progress = {
+	add_to_variable = { SMA_new_iron_wall_step = 1 }
+}
+
+SMA_new_iron_wall_1 = {
+	SMA_new_iron_wall_in_progress = yes
+	meta_effect = {
+		text = { set_country_flag = SMA_connect_country_step_[STEP]_flag }
+		STEP = "[?SMA_new_iron_wall_step|.0]"
+	}
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					has_country_flag = SMA_research_department_step_1_flag
+					has_country_flag = SMA_experience_of_large_programme_step_2_flag
+				}
+				AND = {
+					has_country_flag = SMA_experience_of_large_programme_step_1_flag
+					has_country_flag = SMA_research_department_step_2_flag
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = SMA_research_department_step_1_flag }
+			swap_ideas = {
+				remove_idea = SMA_after_iron_wall_fallen_023
+				add_idea = SMA_after_iron_wall_fallen
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = SMA_experience_of_large_programme_step_1_flag }
+			swap_ideas = {
+				remove_idea = SMA_after_iron_wall_fallen_032
+				add_idea = SMA_after_iron_wall_fallen
+			}
+		}
+		else = { custom_effect_tooltip = something_with_wrong_tt }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = SMA_research_department_step_1_flag
+				has_country_flag = SMA_experience_of_large_programme_step_1_flag
+			}
+		}
+		if = {
+			limit = { has_country_flag = SMA_research_department_step_1_flag }
+			swap_ideas = {
+				remove_idea = SMA_after_iron_wall_fallen_02
+				add_idea = SMA_after_iron_wall_fallen_021
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = SMA_experience_of_large_programme_step_1_flag }
+			swap_ideas = {
+				remove_idea = SMA_after_iron_wall_fallen_03
+				add_idea = SMA_after_iron_wall_fallen_031
+			}
+		}
+	}
+	else = {
+		swap_ideas = {
+			remove_idea = SMA_after_iron_wall_fallen_0
+			add_idea = SMA_after_iron_wall_fallen_01
+		}
+	}
+}
+
+SMA_new_iron_wall_2 = {
+	SMA_new_iron_wall_in_progress = yes
+	meta_effect = {
+		text = { set_country_flag = SMA_research_department_step_[STEP]_flag }
+		STEP = "[?SMA_new_iron_wall_step|.0]"
+	}
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					has_country_flag = SMA_connect_country_step_1_flag
+					has_country_flag = SMA_experience_of_large_programme_step_2_flag
+				}
+				AND = {
+					has_country_flag = SMA_experience_of_large_programme_step_1_flag
+					has_country_flag = SMA_connect_country_step_2_flag
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = SMA_connect_country_step_1_flag }
+			swap_ideas = {
+				remove_idea = SMA_after_iron_wall_fallen_013
+				add_idea = SMA_after_iron_wall_fallen
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = SMA_experience_of_large_programme_step_1_flag }
+			swap_ideas = {
+				remove_idea = SMA_after_iron_wall_fallen_031
+				add_idea = SMA_after_iron_wall_fallen
+			}
+		}
+		else = { custom_effect_tooltip = something_with_wrong_tt }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = SMA_connect_country_step_1_flag
+				has_country_flag = SMA_experience_of_large_programme_step_1_flag
+			}
+		}
+		if = {
+			limit = { has_country_flag = SMA_connect_country_step_1_flag }
+			swap_ideas = {
+				remove_idea = SMA_after_iron_wall_fallen_01
+				add_idea = SMA_after_iron_wall_fallen_012
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = SMA_experience_of_large_programme_step_1_flag }
+			swap_ideas = {
+				remove_idea = SMA_after_iron_wall_fallen_03
+				add_idea = SMA_after_iron_wall_fallen_032
+			}
+		}
+	}
+	else = {
+		swap_ideas = {
+			remove_idea = SMA_after_iron_wall_fallen_0
+			add_idea = SMA_after_iron_wall_fallen_02
+		}
+	}
+}
+
+SMA_new_iron_wall_3 = {
+	SMA_new_iron_wall_in_progress = yes
+	meta_effect = {
+		text = { set_country_flag = SMA_experience_of_large_programme_step_[STEP]_flag }
+		STEP = "[?SMA_new_iron_wall_step|.0]"
+	}
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					has_country_flag = SMA_connect_country_step_1_flag
+					has_country_flag = SMA_research_department_step_2_flag
+				}
+				AND = {
+					has_country_flag = SMA_research_department_step_1_flag
+					has_country_flag = SMA_connect_country_step_2_flag
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = SMA_connect_country_step_1_flag }
+			swap_ideas = {
+				remove_idea = SMA_after_iron_wall_fallen_012
+				add_idea = SMA_after_iron_wall_fallen
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = SMA_research_department_step_1_flag }
+			swap_ideas = {
+				remove_idea = SMA_after_iron_wall_fallen_021
+				add_idea = SMA_after_iron_wall_fallen
+			}
+		}
+		else = { custom_effect_tooltip = something_with_wrong_tt }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = SMA_connect_country_step_1_flag
+				has_country_flag = SMA_research_department_step_1_flag
+			}
+		}
+		if = {
+			limit = { has_country_flag = SMA_connect_country_step_1_flag }
+			swap_ideas = {
+				remove_idea = SMA_after_iron_wall_fallen_01
+				add_idea = SMA_after_iron_wall_fallen_013
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = SMA_research_department_step_1_flag }
+			swap_ideas = {
+				remove_idea = SMA_after_iron_wall_fallen_02
+				add_idea = SMA_after_iron_wall_fallen_023
+			}
+		}
+	}
+	else = {
+		swap_ideas = {
+			remove_idea = SMA_after_iron_wall_fallen_0
+			add_idea = SMA_after_iron_wall_fallen_03
+		}
+	}
+}
+
+SMA_upgrade_the_great_rejuvenation = {
+	custom_effect_tooltip = SMA_upgrade_the_great_rejuvenation_tt
+	add_to_variable = { SMA_the_great_rejuvenation_pp_var = 25 }
+	add_to_variable = { SMA_the_great_rejuvenation_s_var = 0.05 }
+	add_to_variable = { SMA_the_great_rejuvenation_ws_var = 0.05 }
+	add_to_variable = { SMA_the_great_rejuvenation_idea_var = 1 }
+}

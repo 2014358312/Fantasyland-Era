@@ -24,6 +24,18 @@ focus_tree = {
 	}
 	default = no
 
+	shortcut = {
+		name = SMA_rebuild_industry_shortcut
+		target = SMA_rebuild_industry 
+		scroll_wheel_factor = 0.60
+	}
+
+	shortcut = {
+		name = SMA_rebuild_army_shortcut
+		target = SMA_rebuild_army
+		scroll_wheel_factor = 0.70
+	}
+
 	focus = {
 		id = SMA_rebuild_industry
 		icon = GFX_focus_generic_currency_reforms
@@ -301,6 +313,11 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = SMA_modify_industry_modifier
 			add_to_variable = { SMA_NDI_communism_drift_var = 0.02 tooltip = communism_drift_tt }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { NOT = { has_completed_focus = SMA_the_great_rejuvenation } }
+				SMA_upgrade_the_great_rejuvenation = yes
+			}
 			set_variable = { SMA_industry_program_var = 0 }
 		}
 		ai_will_do = {
@@ -473,6 +490,10 @@ focus_tree = {
 			SMA_democratic_party_active = yes
 		}
 		completion_reward = {
+			if = {
+				limit = { NOT = { has_completed_focus = SMA_the_great_rejuvenation } }
+				SMA_upgrade_the_great_rejuvenation = yes
+			}
 			set_variable = { SMA_industry_program_var = 0 }
 		}
 		ai_will_do = {
@@ -493,7 +514,7 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = 150
+			SMA_new_iron_wall_1 = yes
 		}
 		ai_will_do = {
 			factor = 1
@@ -577,6 +598,7 @@ focus_tree = {
 					remove_ideas = SMA_on_the_ruin_2
 				}
 			}
+			SMA_new_iron_wall_2 = yes
 			add_research_slot = 1
 		}
 		ai_will_do = {
@@ -735,6 +757,11 @@ focus_tree = {
 			}
 			custom_effect_tooltip = SMA_modify_industry_modifier
 			add_to_variable = { SMA_NDI_local_resources_factor_var = 0.10 tooltip = local_resources_factor_tt }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { NOT = { has_completed_focus = SMA_the_great_rejuvenation } }
+				SMA_upgrade_the_great_rejuvenation = yes
+			}
 			set_variable = { SMA_industry_program_var = 0 }
 		}
 		ai_will_do = {
@@ -780,6 +807,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_SMA_REBUILD_INDUSTRY }
 		completion_reward = {
 			SMA_take_shelter_from_rain = yes
+			custom_effect_tooltip = SMA_modify_industry_modifier
+			add_to_variable = { SMA_NDI_mobilization_laws_cost_factor_var = -0.10 tooltip = mobilization_laws_cost_factor_tt }
 		}
 		ai_will_do = {
 			factor = 1
@@ -920,7 +949,21 @@ focus_tree = {
 			SMA_fascist_party_active = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			custom_effect_tooltip = modify_tank_mio
+			mio:SMA_Amber_tanks_organization = {
+				add_mio_size = 1
+				unlock_mio_trait_tooltip = SMA_mio_trait_authorize_partner_enterprise_tank
+				unlock_mio_trait_tooltip = SMA_mio_trait_authorize_partner_enterprise_tank_2
+				unlock_mio_trait_tooltip = SMA_mio_trait_authorize_partner_enterprise_tank_3
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = modify_materiel_mio
+			mio:SMA_Amber_materiel_organization = {
+				add_mio_size = 1
+				unlock_mio_trait_tooltip = SMA_mio_trait_authorize_partner_enterprise_materiel
+				unlock_mio_trait_tooltip = SMA_mio_trait_authorize_partner_enterprise_materiel_2
+				unlock_mio_trait_tooltip = SMA_mio_trait_authorize_partner_enterprise_materiel_3
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -940,7 +983,13 @@ focus_tree = {
 			SMA_fascist_party_active = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			add_tech_bonus = {
+				name = SMA_heavy_weapon
+				bonus = 1.0
+				uses = 2
+				category = artillery
+				category = armor
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -981,9 +1030,51 @@ focus_tree = {
 		available = {
 			SMA_sieghart_plan_in_progress = yes
 			SMA_fascist_party_active = yes
+			LAN = {
+				OR = {
+					AND = {
+						exists = yes
+						NOT = {
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+					exists = no
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
 		}
 		completion_reward = {
-			add_political_power = 150
+			if = {
+				limit = {
+					LAN = {
+						exists = yes
+						NOT = {
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				every_controlled_state = {
+					limit = { supply_node > 0 }
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = {
+							limit_to_supply_node = yes
+							limit_to_border_country = LAN
+						}
+					}
+				}
+			}
+			else = {
+				add_political_power = 50
+				custom_effect_tooltip = SMA_modify_industry_modifier
+				add_to_variable = { SMA_NDI_production_speed_bunker_factor_var = 0.15 tooltip = production_speed_bunker_factor_tt }
+				add_to_variable = { SMA_NDI_production_speed_supply_node_factor_var = 0.05 tooltip = production_speed_supply_node_factor }
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1003,7 +1094,42 @@ focus_tree = {
 			SMA_fascist_party_active = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			custom_effect_tooltip = SMA_modify_industry_modifier
+			add_to_variable = { SMA_NDI_industrial_capacity_factory_var = 0.10 tooltip = industrial_capacity_factory_tt }
+			add_to_variable = { SMA_NDI_industrial_capacity_dockyard_var = 0.05 tooltip = industrial_capacity_dockyard_tt }
+			add_to_variable = { SMA_NDI_production_speed_arms_factory_factor_var = 0.10 tooltip = production_speed_arms_factory_factor_tt }
+			add_to_variable = { SMA_NDI_production_speed_dockyard_factor_var = 0.10 tooltip = production_speed_dockyard_factor_tt }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1025,7 +1151,125 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = 150
+			SMA_new_iron_wall_3 = yes
+			if = {
+				limit = {
+					nuclear_facility < 1
+					naval_facility < 1
+					air_facility < 1
+					land_facility < 1
+				}
+				random_list = {
+					10 = {
+						random_owned_controlled_state = {
+							limit = {
+								any_neighbor_state = { is_capital = yes }
+								all_neighbor_state = { is_fully_controlled_by = ROOT }
+							}
+							add_building_construction = {
+								type = nuclear_facility
+								level = 1
+								instant_build = yes
+								province = {
+									limit_to_supply_node = yes
+								}
+							}
+						}
+					}
+					20 = {
+						random_owned_controlled_state = {
+							limit = {
+								any_neighbor_state = { is_capital = yes }
+								all_neighbor_state = { is_fully_controlled_by = ROOT }
+							}
+							add_building_construction = {
+								type = naval_facility
+								level = 1
+								instant_build = yes
+								province = {
+									limit_to_supply_node = yes
+								}
+							}
+						}
+					}
+					30 = {
+						random_owned_controlled_state = {
+							limit = {
+								any_neighbor_state = { is_capital = yes }
+								all_neighbor_state = { is_fully_controlled_by = ROOT }
+							}
+							add_building_construction = {
+								type = air_facility
+								level = 1
+								instant_build = yes
+								province = {
+									limit_to_supply_node = yes
+								}
+							}
+						}
+					}
+					40 = {
+						random_owned_controlled_state = {
+							limit = {
+								any_neighbor_state = { is_capital = yes }
+								all_neighbor_state = { is_fully_controlled_by = ROOT }
+							}
+							add_building_construction = {
+								type = land_facility
+								level = 1
+								instant_build = yes
+								province = {
+									limit_to_supply_node = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			else = {
+				random_list = {
+					25 = {
+						modifier = {
+							factor = 0
+							nuclear_facility < 1
+						}
+						add_breakthrough_points = {
+							specialization = specialization_nuclear
+							value = 1
+						}
+					}
+					25 = {
+						modifier = {
+							factor = 0
+							naval_facility < 1
+						}
+						add_breakthrough_points = {
+							specialization = specialization_naval
+							value = 1
+						}
+					}
+					25 = {
+						modifier = {
+							factor = 0
+							air_facility < 1
+						}
+						add_breakthrough_points = {
+							specialization = specialization_air
+							value = 1
+						}
+					}
+					25 = {
+						modifier = {
+							factor = 0
+							land_facility < 1
+						}
+						add_breakthrough_points = {
+							specialization = specialization_land
+							value = 1
+						}
+					}
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1047,6 +1291,12 @@ focus_tree = {
 			SMA_fascist_party_active = yes
 		}
 		completion_reward = {
+			add_political_power = 120
+			add_war_support = 0.10
+			if = {
+				limit = { NOT = { has_completed_focus = SMA_the_great_rejuvenation } }
+				SMA_upgrade_the_great_rejuvenation = yes
+			}
 			set_variable = { SMA_industry_program_var = 0 }
 		}
 		ai_will_do = {
@@ -1072,7 +1322,13 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = SMA_the_great_rejuvenation_tt
-			
+			add_political_power = SMA_the_great_rejuvenation_pp_var
+			add_stability = SMA_the_great_rejuvenation_s_var
+			add_war_support = SMA_the_great_rejuvenation_ws_var
+			add_timed_idea = {
+				idea = SMA_the_great_rejuvenation
+				years = SMA_the_great_rejuvenation_idea_var
+			}
 		}
 		ai_will_do = {
 			factor = 1

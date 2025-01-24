@@ -3,20 +3,51 @@ characters = {
 		name = Elletear_Lou_Nebulis_IX
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/NEB/Elletear_Lou_Nebulis.dds"
+				large = GFX_Portrait_NEB_Elletear_Lou_Nebulis
+				small = GFX_idea_advisor_NEB_Elletear_Lou_Nebulis
 			}
 		}
 		country_leader = {
 			ideology = theocratic_republicanism_subtype
-			traits = {  }
+			traits = { master_of_politics }
 			expire = "1965.1.1.1"
 			id = -1
 		}
 		country_leader = {
 			ideology = theocratic_monarchy_subtype
-			traits = {  }
+			traits = { master_of_politics }
 			expire = "1965.1.1.1"
 			id = -1
+		}
+	}
+	
+	NEB_Lieselotte_Riefenstahl = {
+		name = Lieselotte_Riefenstahl
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Lieselotte_Riefenstahl
+				small = GFX_idea_advisor_NEB_Lieselotte_Riefenstahl
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = NEB_Lieselotte_Riefenstahl_head_of_government
+			allowed = {
+				original_tag = NEB
+			}
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { controversial_figurehead head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:NEB_Lieselotte_Riefenstahl_head_of_government }
+				}
+			}
 		}
 	}
 }

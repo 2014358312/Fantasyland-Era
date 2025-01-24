@@ -14,6 +14,40 @@ characters = {
 		}
 	}
 	
+	NUB_Toyama_Kasumi = {
+		name = Toyama_Kasumi
+		portraits = {
+			civilian = {
+				large = GFX_portrait_NUB_Toyama_Kasumi
+				small = GFX_idea_advisor_NUB_Toyama_Kasumi
+			}
+			army = {
+				large = GFX_portrait_NUB_Toyama_Kasumi
+				small = GFX_idea_advisor_NUB_Toyama_Kasumi
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = NUB_Toyama_Kasumi_head_of_government
+			allowed = {
+				original_tag = NUB
+			}
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { extraordinary_star head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:NUB_Toyama_Kasumi_head_of_government }
+				}
+			}
+		}
+	}
+	
 	NUB_Chihaya_Anon = {
 		name = Chihaya_Anon
 		portraits = {
@@ -133,7 +167,6 @@ characters = {
 			available = {
 				is_country_leader = no
 			}
-			can_be_fired = no
 			traits = {
 				
 			}
