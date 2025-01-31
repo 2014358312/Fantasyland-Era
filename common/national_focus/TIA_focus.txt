@@ -45,13 +45,25 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			has_country_flag = TIA_focus_cannot_completed
 		}
 		prerequisite = {
 			focus = TIA_dream
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_political_power = -50
+			custom_effect_tooltip = TIA_before_event_decide
+			if = {
+				limit = {
+					has_country_flag = TIA.1_A 
+				}
+				complete_national_focus = TIA_Make_change
+			}
+			if = {
+				limit = {
+					has_country_flag = TIA.1_B 
+				}
+				complete_national_focus = TIA_prank
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -64,7 +76,7 @@ focus_tree = {
 		relative_position_id = TIA_Choice
 		x = -9
 		y = 1
-		cost = 5
+		cost = 1
 		mutually_exclusive = {
 			focus = TIA_prank
 		}
@@ -72,7 +84,8 @@ focus_tree = {
 			focus = TIA_Make_change
 		}
 		available = {
-			has_country_flag = TIA.1_C
+			has_country_flag = TIA_focus_cannot_completed
+			has_country_flag = TIA_cannot_keep_then
 		}
 		prerequisite = {
 			focus = TIA_Choice
@@ -241,7 +254,7 @@ focus_tree = {
 		relative_position_id = TIA_Choice
 		x = 9
 		y = 1
-		cost = 5
+		cost = 1
 		mutually_exclusive = {
 			focus = TIA_prank
 		}
@@ -249,7 +262,7 @@ focus_tree = {
 			focus = TIA_Aqua_descend_Axel
 		}
 		available = {
-			has_country_flag = TIA.1_A
+			has_country_flag = TIA_focus_cannot_completed
 		}
 		prerequisite = {
 			focus = TIA_Choice
@@ -329,7 +342,7 @@ focus_tree = {
 		relative_position_id = TIA_Make_change
 		x = 0
 		y = 2
-		cost = 5
+		cost = 1
 		available = {
 			has_country_flag = TIA_focus_cannot_completed
 		}
@@ -357,7 +370,7 @@ focus_tree = {
 		relative_position_id = TIA_Transform_campus_life
 		x = -2
 		y = 1
-		cost = 5
+		cost = 1
 		available = {
 			has_country_flag = TIA_focus_cannot_completed
 		}
@@ -392,7 +405,7 @@ focus_tree = {
 		relative_position_id = TIA_Transform_campus_life
 		x = 2
 		y = 1
-		cost = 5
+		cost = 1
 		available = {
 			has_country_flag = TIA_focus_cannot_completed
 		}
@@ -413,7 +426,7 @@ focus_tree = {
 		relative_position_id = TIA_Transform_campus_life
 		x = 0
 		y = 1
-		cost = 5
+		cost = 1
 		available = {
 			has_country_flag = TIA_focus_cannot_completed
 		}
@@ -434,7 +447,7 @@ focus_tree = {
 		relative_position_id = TIA_Transform_campus_life
 		x = -4
 		y = 1
-		cost = 5
+		cost = 1
 		available = {
 			has_country_flag = TIA_focus_cannot_completed
 		}
@@ -455,7 +468,7 @@ focus_tree = {
 		relative_position_id = TIA_Transform_campus_life
 		x = 0
 		y = 2
-		cost = 5
+		cost = 1
 		available = {
 			has_country_flag = TIA_focus_cannot_completed
 		}
@@ -589,7 +602,7 @@ focus_tree = {
 		relative_position_id = TIA_Transform_campus_life
 		x = 4
 		y = 1
-		cost = 5
+		cost = 1
 		available = {
 			has_country_flag = TIA_focus_cannot_completed
 		}
@@ -615,7 +628,7 @@ focus_tree = {
 		relative_position_id = TIA_Join_equestrian_club
 		x = -1
 		y = 1
-		cost = 5
+		cost = 1
 		available = {
 			has_country_flag = TIA_focus_cannot_completed
 		}
@@ -639,7 +652,7 @@ focus_tree = {
 		relative_position_id = TIA_Bento_kendo_tournament
 		x = -1
 		y = 1
-		cost = 5
+		cost = 1
 		available = {
 			has_country_flag = TIA_focus_cannot_completed
 			ALC = {
@@ -666,7 +679,7 @@ focus_tree = {
 		relative_position_id = TIA_Bad_news_from_neighboring
 		x = -1
 		y = 1
-		cost = 5
+		cost = 1
 		available = {
 			has_country_flag = TIA_focus_cannot_completed
 		}
@@ -687,7 +700,7 @@ focus_tree = {
 		relative_position_id = TIA_Bad_news_from_neighboring
 		x = 1
 		y = 1
-		cost = 5
+		cost = 1
 		available = {
 			has_country_flag = TIA_focus_cannot_completed
 		}
@@ -708,7 +721,7 @@ focus_tree = {
 		relative_position_id = TIA_Bad_news_from_neighboring
 		x = 0
 		y = 2
-		cost = 5
+		cost = 1
 		available = {
 			has_country_flag = TIA_focus_cannot_completed
 		}
@@ -732,7 +745,7 @@ focus_tree = {
 		relative_position_id = TIA_Choice
 		x = 0
 		y = 1
-		cost = 5
+		cost = 1
 		mutually_exclusive = {
 			focus = TIA_Make_change
 		}
@@ -740,7 +753,7 @@ focus_tree = {
 			focus = TIA_Aqua_descend_Axel
 		}
 		available = {
-			has_country_flag = TIA.1_B
+			has_country_flag = TIA_focus_cannot_completed
 		}
 		prerequisite = {
 			focus = TIA_Choice
@@ -759,9 +772,9 @@ focus_tree = {
 		relative_position_id = TIA_prank
 		x = 0
 		y = 1
-		cost = 5
+		cost = 1
 		available = {
-			has_country_flag = TIA.1_B
+			has_country_flag = TIA_focus_cannot_completed
 		}
 		prerequisite = {
 			focus = TIA_prank
@@ -780,9 +793,9 @@ focus_tree = {
 		relative_position_id = TIA_Financial_crisis
 		x = 0
 		y = 1
-		cost = 5
+		cost = 1
 		available = {
-			has_country_flag = TIA.1_B
+			has_country_flag = TIA_focus_cannot_completed
 		}
 		prerequisite = {
 			focus = TIA_Financial_crisis
@@ -801,9 +814,9 @@ focus_tree = {
 		relative_position_id = TIA_Plague_rampant
 		x = 0
 		y = 1
-		cost = 5
+		cost = 1
 		available = {
-			has_country_flag = TIA.1_B
+			has_country_flag = TIA_focus_cannot_completed
 		}
 		prerequisite = {
 			focus = TIA_Plague_rampant
@@ -822,9 +835,9 @@ focus_tree = {
 		relative_position_id = TIA_Everything_happened_as_it_happened_in_dream
 		x = 0
 		y = 1
-		cost = 5
+		cost = 1
 		available = {
-			has_country_flag = TIA.1_B
+			has_country_flag = TIA_focus_cannot_completed
 		}
 		prerequisite = {
 			focus = TIA_Everything_happened_as_it_happened_in_dream
@@ -1255,7 +1268,7 @@ focus_tree = {
 		relative_position_id = TIA_StCyrs_Flow_reform
 		x = 0
 		y = 1
-		cost = 5
+		cost = 1
 		prerequisite = {
 			focus = TIA_StCyrs_Flow_reform
 		}

@@ -5,7 +5,7 @@
 add_namespace = TIA
 add_namespace = tiam
 
-country_event = {
+country_event = { #启示
 	id = TIA.1
 	title = TIA.1.t
 	desc = TIA.1.desc
@@ -17,12 +17,10 @@ country_event = {
 
 	option = {
 		name = TIA.1.a
-		complete_national_focus = TIA_Choice
 		set_country_flag = TIA.1_A 
 	}
 	option = {
 		name = TIA.1.b
-		complete_national_focus = TIA_Choice
 		set_country_flag = TIA.1_B 
 	}
 }
@@ -139,6 +137,20 @@ country_event = { #舞会事件
 	}
 }
 
+country_event = { #剑术大会便当
+	id = TIA.9
+	title = TIA.9.t
+	desc = TIA.9.desc
+	picture = GFX_report_event_TIA_guillotine
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.9.a
+		hidden_effect = {
+			complete_national_focus = TIA_Bento_kendo_tournament
+		}
+	}
+}
 country_event = {
 	id = tiam.101
 	
