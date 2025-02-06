@@ -59,6 +59,26 @@ news_event = {
 	
 	option = {
 		name = FE_news.2.a
+		trigger = {
+			original_tag = SMA
+		}
+	}
+	
+	option = {
+		name = FE_news.2.b
+		trigger = {
+			original_tag = LAN
+		}
+	}
+	
+	option = {
+		name = FE_news.2.c
+		trigger = {
+			NOT = {
+				original_tag = SMA
+				original_tag = LAN
+			}
+		}
 	}
 }
 
@@ -67,7 +87,7 @@ news_event = {
 	id = FE_news.3
 	title = FE_news.3.t
 	desc = FE_news.3.desc
-	picture = GFX_news_event_generic_parliament
+	picture = GFX_news_event_generic_07
 	
 	is_triggered_only = yes
 	
@@ -75,6 +95,83 @@ news_event = {
 	
 	option = {
 		name = FE_news.3.a
+		trigger = {
+			original_tag = SMA
+		}
+	}
+	
+	option = {
+		name = FE_news.3.b
+		trigger = {
+			NOT = { original_tag = SMA }
+		}
+	}
+}
+
+#May Street Tragedy in Nebulis
+news_event = {
+	id = FE_news.4
+	title = FE_news.4.t
+	desc = FE_news.4.desc
+	picture = GFX_news_event_generic_05
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FE_news.4.a
+		
+	}
+}
+
+#Nebulis formalize the Constitution
+news_event = {
+	id = FE_news.5
+	title = FE_news.5.t
+	desc = FE_news.5.desc
+	picture = GFX_news_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FE_news.5.a
+		
+	}
+}
+
+#Lord Lieselotte Riefenstahl resign as Premier
+news_event = {
+	id = FE_news.6
+	title = FE_news.6.t
+	desc = FE_news.6.desc
+	picture = GFX_news_event_celebration_of_furina
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FE_news.6.a
+		
+	}
+}
+
+#White Civil War
+news_event = {
+	id = FE_news.7
+	title = FE_news.7.t
+	desc = FE_news.7.desc
+	picture = GFX_news_event_celebration_of_furina
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FE_news.6.a
 		
 	}
 }
