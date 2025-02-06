@@ -121,6 +121,10 @@ SMA_rebuild_industry_decision_category = {
 		allowed = {
 			original_tag = SMA
 		}
+		visible = {
+			check_variable = { SMA_construction_bidding_times < 3 }
+			has_war = no
+		}
 		available = {
 			has_completed_focus = SMA_ministry_of_construction
 			custom_trigger_tooltip = {
