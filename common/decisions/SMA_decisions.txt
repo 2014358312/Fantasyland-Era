@@ -100,6 +100,80 @@ SMA_army_reform_decision_category = {
 	}
 }
 
+SMA_rebuild_industry_decision_category = {
+	
+	SMA_construction_bidding = {
+		icon = generic_protection
+		state_target = yes
+		on_map_mode = map_only
+		target_root_trigger = {
+			has_completed_focus = SMA_ministry_of_construction
+			check_variable = { SMA_construction_bidding_times < 3 }
+			TAG = SMA
+			has_war = no
+		}
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				NOT = { has_dynamic_modifier = { modifier = SMA_construction_bidding_state_dynamic_modifier } }
+			}
+		}
+		allowed = {
+			original_tag = SMA
+		}
+		available = {
+			has_completed_focus = SMA_ministry_of_construction
+			custom_trigger_tooltip = {
+				tooltip = SMA_construction_bidding_ttt
+				check_variable = { SMA_construction_bidding_times < 3 }
+			}
+			FROM = {
+				is_core_of = ROOT
+				is_owned_by = ROOT
+			}
+		}
+		cost = 10
+		fire_only_once = yes
+		days_remove = 70
+		complete_effect = {
+			FROM = { add_dynamic_modifier = { modifier = SMA_construction_bidding_state_dynamic_modifier } }
+			add_to_variable = { SMA_construction_bidding_times = 1 }
+		}
+		modifier = { consumer_goods_factor = -0.10 }
+		remove_effect = {
+			add_popularity = {
+				ideology = ROOT
+				popularity = -0.05
+			}
+			custom_effect_tooltip = SMA_modify_industry_modifier
+			add_to_variable = { SMA_NDI_production_speed_buildings_factor_var = 0.05 tooltip = production_speed_buildings_factor_tt }
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	
+	SMA_upgrade_the_NRB = {
+		icon = generic_political_rally
+		available = {
+			has_completed_focus = SMA_expand_functions_of_railway_bureau
+			has_idea = SMA_national_railway_bureau
+		}
+		cost = 80
+		days_remove = 70
+		fire_only_once = yes
+		modifier = { consumer_goods_factor = 0.10 }
+		remove_effect = {
+			set_country_flag = SMA_upgrade_the_NRB_flag
+			swap_ideas = {
+				remove_idea = SMA_national_railway_bureau
+				add_idea = SMA_national_railway_bureau_upgraded
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+}
+
 SMA_fascism_influence_decision_category = {
 	SMA_develop_war_support_small = {
 		icon = generic_political_rally

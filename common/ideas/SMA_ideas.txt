@@ -752,6 +752,34 @@ ideas = {
 			}
 		}
 		
+		SMA_standardization = {
+			picture = generic_research_bonus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				mechanized_equipment = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				train_equipment = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}
+		}
+		
 #		SMA_rebuild_industry = {
 #			picture = man_five_year_plan_industry
 #			allowed = {
@@ -792,6 +820,58 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.20
 				production_factory_max_efficiency_factor = 0.20
 				research_speed_factor = 0.10
+			}
+		}
+	}
+	
+	industrial_concern = {
+		SMA_national_railway_bureau = {
+			picture = advisor_WPE_Dandelion
+			allowed = {
+				original_tag = SMA
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			visible = {
+				NOT = { has_country_flag = SMA_upgrade_the_NRB_flag }
+			}
+			available = {
+				has_completed_focus = SMA_expand_functions_of_railway_bureau
+			}
+			cost = 100
+			traits = { railway_company }
+			research_bonus = {
+				train_tech = 0.15
+			}
+		}
+		
+		SMA_national_railway_bureau_upgraded = {
+			name = SMA_national_railway_bureau
+			picture = advisor_WPE_Dandelion
+			allowed = {
+				original_tag = SMA
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			visible = {
+				has_country_flag = SMA_upgrade_the_NRB_flag
+			}
+			available = {
+				has_completed_focus = SMA_expand_functions_of_railway_bureau
+			}
+			cost = 100
+			traits = { improved_railway_company }
+			research_bonus = {
+				train_tech = 0.15
+			}
+			equipment_bonus = {
+				train_equipment_2 = {
+					build_cost_ic = -0.15 
+					armor_value = 0.1
+					instant = yes
+				}
 			}
 		}
 	}

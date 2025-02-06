@@ -141,11 +141,7 @@ focus_tree = {
 			SMA_communist_party_active = yes
 		}
 		completion_reward = {
-			if = {
-				limit = { check_variable = { SMA_industry_program_var = 0 } }
-				set_variable = { SMA_industry_program_var = 1 }
-			}
-			add_to_array = { SMA_industry_program_array = 1 }
+			set_variable = { SMA_industry_program_var = 1 }
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = SMA_Kobori
 			add_popularity = {
@@ -171,8 +167,26 @@ focus_tree = {
 			SMA_communist_party_active = yes
 		}
 		completion_reward = {
-			custom_effect_tooltip = SMA_modify_industry_modifier
-
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 1
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -192,7 +206,9 @@ focus_tree = {
 			SMA_communist_party_active = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			custom_effect_tooltip = SMA_modify_industry_modifier
+			add_to_variable = { SMA_NDI_consumer_goods_factor_var = 0.05 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { SMA_NDI_production_speed_buildings_factor_var = 0.10 tooltip = production_speed_buildings_factor_tt }
 		}
 		ai_will_do = {
 			factor = 1
@@ -212,7 +228,11 @@ focus_tree = {
 			SMA_communist_party_active = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			custom_effect_tooltip = SMA_modify_industry_modifier
+			add_to_variable = { SMA_NDI_consumer_goods_factor_var = 0.05 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { SMA_NDI_production_factory_max_efficiency_factor_var = 0.05 tooltip = production_factory_max_efficiency_factor_tt }
+			add_to_variable = { SMA_NDI_production_factory_efficiency_gain_factor_var = 0.05 tooltip = production_factory_efficiency_gain_factor_tt }
+			add_to_variable = { SMA_NDI_production_factory_start_efficiency_factor_var = 0.05 tooltip = production_factory_start_efficiency_factor_tt }
 		}
 		ai_will_do = {
 			factor = 1
@@ -244,6 +264,8 @@ focus_tree = {
 				}
 			}
 			SMA_take_shelter_from_rain = yes
+			custom_effect_tooltip = SMA_modify_industry_modifier
+			add_to_variable = { SMA_NDI_consumer_goods_factor_var = 0.05 tooltip = consumer_goods_factor_tt }
 		}
 		ai_will_do = {
 			factor = 1
@@ -265,6 +287,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 150
+			#this place should build two or more dams.
 		}
 		ai_will_do = {
 			factor = 1
@@ -341,6 +364,7 @@ focus_tree = {
 			SMA_democratic_party_active = yes
 		}
 		completion_reward = {
+			set_variable = { SMA_industry_program_var = 2 }
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = SMA_Sherry_Barnett
 		}
@@ -362,7 +386,29 @@ focus_tree = {
 			SMA_democratic_party_active = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = SMA_national_railway_bureau
+			unlock_decision_tooltip = {
+				decision = SMA_upgrade_the_NRB
+				show_effect_tooltip = yes
+				show_modifiers = yes
+			}
+			capital_scope = {
+				if = {
+					limit = { infrastructure < 5 }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					add_dynamic_modifier = {
+						modifier = SMA_efficient_scheduling_capability_state_dynamic_modifier
+					}
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -382,7 +428,15 @@ focus_tree = {
 			SMA_democratic_party_active = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			add_equipment_to_stockpile = {
+				type = train_equipment
+				amount = 50
+				producer = ROOT
+			}
+			custom_effect_tooltip = SMA_modify_industry_modifier
+			add_to_variable = { SMA_NDI_army_speed_factor_var tooltip = army_apeed_factor_tt }
+			
+			#this place should build some new railway.
 		}
 		ai_will_do = {
 			factor = 1
@@ -403,7 +457,14 @@ focus_tree = {
 			SMA_democratic_party_active = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			add_tech_bonus = {
+				name = SMA_more_transfer
+				bonus = 3.0
+				uses = 1
+				category = train_tech
+				category = motorized_equipment
+				category = cat_mechanized_equipment
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -468,7 +529,11 @@ focus_tree = {
 			SMA_democratic_party_active = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			add_ideas = SMA_standardization
+			custom_effect_tooltip = SMA_modify_industry_modifier
+			add_to_variable = { SMA_NDI_equipment_conversion_speed_var = 0.25 tooltip = equipment_conversion_speed_tt }
+			add_to_variable = { SMA_NDI_conversion_cost_civ_to_mil_factor_var = -0.05 tooltip = conversion_cost_civ_to_mil_factor_tt }
+			add_to_variable = { SMA_NDI_conversion_cost_mil_to_civ_factor_var = -0.05 tooltip = conversion_cost_mil_to_civ_factor_tt }
 		}
 		ai_will_do = {
 			factor = 1
@@ -537,6 +602,7 @@ focus_tree = {
 			SMA_neutrality_party_active = yes
 		}
 		completion_reward = {
+			set_variable = { SMA_industry_program_var = 3 }
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = SMA_ES_Eta
 		}
@@ -622,7 +688,28 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = 150
+			custom_effect_tooltip = SMA_modify_industry_modifier
+			add_to_variable = { SMA_NDI_production_speed_arms_factory_factor_var = -0.05 tooltip = production_speed_arms_factory_factor_tt }
+			add_to_variable = { SMA_NDI_production_speed_industrial_complex_factor_var = 0.05 tooltip = production_speed_industrial_complex_factor_tt }
+			add_to_variable = { SMA_NDI_consumer_goods_factor_var = -0.10 tooltip = consumer_goods_factor_tt }
+			add_to_variable = { SMA_NDI_conversion_cost_civ_to_mil_factor_var = 0.10 tooltip = conversion_cost_civ_to_mil_factor_tt }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_stability = 0.02
 		}
 		ai_will_do = {
 			factor = 1
@@ -642,7 +729,18 @@ focus_tree = {
 			SMA_neutrality_party_active = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			add_tech_bonus = {
+				name = SMA_ministry_of_construction
+				bonus = 1.0
+				uses = 1
+				category = construction_tech
+			}
+			custom_effect_tooltip = SMA_ministry_of_construction_tt
+			custom_effect_tooltip = SMA_ministry_of_construction_tt2
+			effect_tooltip = {
+				custom_effect_tooltip = SMA_modify_industry_modifier
+				add_to_variable = { SMA_NDI_production_speed_buildings_factor_var = 0.05 tooltip = production_speed_buildings_factor_tt }
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -661,9 +759,30 @@ focus_tree = {
 		available = {
 			SMA_eta_plan_in_progress = yes
 			SMA_neutrality_party_active = yes
+			has_war_support > 0.50
 		}
 		completion_reward = {
-			add_political_power = 150
+			custom_effect_tooltip = SMA_modify_industry_modifier
+			add_to_variable = { SMA_NDI_production_speed_industrial_complex_factor_var = -0.05 tooltip = production_speed_industrial_complex_factor_tt }
+			add_to_variable = { SMA_NDI_production_speed_arms_factory_factor_var = 0.05 tooltip = production_speed_arms_factory_factor_tt }
+			add_to_variable = { SMA_NDI_production_factory_max_efficiency_factor_var = 0.05 tooltip = production_factory_max_efficiency_factor_tt }
+			add_to_variable = { SMA_NDI_conversion_cost_mil_to_civ_factor_var = 0.10 tooltip = conversion_cost_mil_to_civ_factor_tt }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -686,7 +805,17 @@ focus_tree = {
 			SMA_neutrality_party_active = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			custom_effect_tooltip = SMA_generalization_tt
+			custom_effect_tooltip = SMA_modify_industry_modifier
+			add_to_variable = { SMA_NDI_conversion_cost_civ_to_mil_factor_var = -0.05 tooltip = conversion_cost_civ_to_mil_factor_tt }
+			add_to_variable = { SMA_NDI_conversion_cost_mil_to_civ_factor_var = -0.05 tooltip = conversion_cost_mil_to_civ_factor_tt }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SMA_generalization_tt2
+			custom_effect_tooltip = SMA_modify_industry_modifier
+			#add_to_variable = {  }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SMA_generalization_tt3
+			custom_effect_tooltip = SMA_modify_industry_modifier
 		}
 		ai_will_do = {
 			factor = 1
@@ -706,7 +835,15 @@ focus_tree = {
 			SMA_neutrality_party_active = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			add_tech_bonus = {
+				name = SMA_production_department
+				bonus = 1.0
+				uses = 1
+				category = cat_production
+			}
+			custom_effect_tooltip = SMA_modify_industry_modifier
+			add_to_variable = { SMA_NDI_production_factory_max_efficiency_factor_var = 0.05 tooltip = production_factory_max_efficiency_factor_tt }
+			add_to_variable = { SMA_NDI_production_factory_efficiency_gain_factor_var = 0.05 tooltip = production_factory_efficiency_gain_factor_tt }
 		}
 		ai_will_do = {
 			factor = 1
@@ -728,6 +865,9 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_SMA_REBUILD_INDUSTRY }
 		completion_reward = {
 			SMA_take_shelter_from_rain = yes
+			custom_effect_tooltip = SMA_modify_industry_modifier
+			add_to_variable = { SMA_NDI_production_factory_efficiency_gain_factor_var = 0.05 tooltip = production_factory_efficiency_gain_factor_tt }
+			add_to_variable = { SMA_NDI_production_lack_of_resource_penalty_factor_var = 0.05 tooltip = production_lack_of_resource_penalty_factor_tt }
 		}
 		ai_will_do = {
 			factor = 1
@@ -782,6 +922,7 @@ focus_tree = {
 			SMA_fascist_party_active = yes
 		}
 		completion_reward = {
+			set_variable = { SMA_industry_program_var = 4 }
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = SMA_Elesis_Sieghart
 			unlock_decision_tooltip = SMA_issues_securities
@@ -808,7 +949,9 @@ focus_tree = {
 		completion_reward = {
 			SMA_take_shelter_from_rain = yes
 			custom_effect_tooltip = SMA_modify_industry_modifier
-			add_to_variable = { SMA_NDI_mobilization_laws_cost_factor_var = -0.10 tooltip = mobilization_laws_cost_factor_tt }
+			#add_to_variable = { SMA_NDI_mobilization_laws_cost_factor_var = -0.10 tooltip = mobilization_laws_cost_factor_tt }
+			add_to_variable = { SMA_NDI_mobilization_speed_var = 0.10 tooltip = mobilization_speed_tt }
+			add_to_variable = { SMA_NDI_production_speed_arms_factory_factor_var = 0.05 tooltip = production_speed_arms_factory_factor_tt }
 		}
 		ai_will_do = {
 			factor = 1

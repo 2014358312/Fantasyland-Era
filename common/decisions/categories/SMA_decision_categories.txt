@@ -2,13 +2,15 @@
 #####   SMA   #####
 ###################
 
-SMA_balance_of_power_decision_category = {
+SMA_rebuild_industry_decision_category = {
 	allowed = {
 		original_tag = SMA
 	}
 	visible = {
-		has_power_balance = { id = SMA_balance_of_power }
+		NOT = { has_completed_focus = SMA_the_great_rejuvenation }
 	}
+
+	priority = 10
 }
 
 SMA_army_reform_decision_category = {
@@ -18,6 +20,8 @@ SMA_army_reform_decision_category = {
 	visible = {
 		SMA_is_army_reforming = yes
 	}
+
+	priority = 9
 }
 
 SMA_fascism_influence_decision_category = {
@@ -28,5 +32,16 @@ SMA_fascism_influence_decision_category = {
 		has_dynamic_modifier = {
 			modifier = SMA_chivalric_order_dynamic_modifier
 		}
+	}
+
+	priority = 8
+}
+
+SMA_balance_of_power_decision_category = {
+	allowed = {
+		original_tag = SMA
+	}
+	visible = {
+		has_power_balance = { id = SMA_balance_of_power }
 	}
 }
