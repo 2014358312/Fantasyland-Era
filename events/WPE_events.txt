@@ -484,6 +484,10 @@ country_event = {
 			character = WPE_Uruha_Rushia
 			ideology = silent_conservatism_subtype
 		}
+		every_navy_leader = {
+			limit = { is_character = WPE_Houshou_Marine }
+			remove_unit_leader = yes
+		}
 		add_country_leader_role = {
 			character = WPE_Houshou_Marine
 			country_leader = {
@@ -512,6 +516,10 @@ country_event = {
 			complete_national_focus = WPE_rushia_resign
 			if = {
 				limit = { check_variable = { WPE_kujo_alisa_available_foci_array^num = 0 } }
+				if = {
+					limit = { is_debug = yes }
+					add_political_power = 1000
+				}
 				add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_wait_for_good_news }
 				add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
 				WPE_calculate_kujo_alisa_array = yes

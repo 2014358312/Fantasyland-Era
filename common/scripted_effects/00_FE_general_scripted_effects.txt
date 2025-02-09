@@ -413,29 +413,20 @@ Trade_act_level_down = {
 }
 
 this_character_remove_all_role = { #Not used in ~
+	remove_any_country_role_from_character = yes
+	this_character_remove_all_unit_leader_role = yes
+}
+
+this_character_remove_all_unit_leader_role = { #Not used in ~
 	if = {
-		limit = { is_advisor = yes }
-		remove_advisor_role = { slot = political_advisor }
-	}
-	if = {
-		limit = { is_theorist = yes }
-		remove_advisor_role = { slot = theorist }
-	}
-	if = {
-		limit = { is_army_chief = yes }
-		remove_advisor_role = { slot = army_chief }
-	}
-	if = {
-		limit = { is_navy_chief = yes }
-		remove_advisor_role = { slot = navy_chief }
-	}
-	if = {
-		limit = { is_air_chief = yes }
-		remove_advisor_role = { slot = air_chief }
-	}
-	if = {
-		limit = { is_high_command = yes }
-		remove_advisor_role = { slot = high_command }
+		limit = {
+			OR = {
+				is_field_marshal = yes
+				is_corps_commander = yes
+				is_navy_leader = yes
+			}
+		}
+		remove_unit_leader_role = yes
 	}
 }
 

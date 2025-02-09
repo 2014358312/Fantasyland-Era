@@ -9,7 +9,11 @@ DEBUG_wpe_secondary = {
 	if = {
 		limit = { is_debug = yes }
 	}
-	CRB = { activate_advisor = CRB_Minamiya_Natsuki_head_of_government }
+	
+	every_navy_leader = {
+		limit = { is_character = WPE_Houshou_Marine }
+		remove_unit_leader = yes
+	}
 	clear_DEBUG_decisions_flag = yes
 }
 
