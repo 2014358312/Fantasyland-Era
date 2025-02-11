@@ -232,5 +232,33 @@ scripted_gui = {
 			}
 		}
 	}
-}
+	
+	landsol_industry_decision_ui = {
+		context_type = decision_category
+		window_name = "landsol_industry_main"
+		visible = { always = yes }
+
+		dynamic_lists = {
+			IndustryTab = {
+				array = industry_tab
+				change_scope = no
+				entry_container = industryTabContainer
+				index = industry_tab_idx
+				value = industry_tab_idv
+			}
+		}
+
+		properties = {
+			industryIcon = {
+				image = "GFX_landsol_industry_icon_[?industry_icon_var]"
+			}
+		}
+		
+		effects = {
+			tab_click = {
+				set_variable = { industry_icon_var = industry_tab_idx }
+				set_variable = { industry_tab_var = industry_tab_idx }
+			}
+		}
+	}
 

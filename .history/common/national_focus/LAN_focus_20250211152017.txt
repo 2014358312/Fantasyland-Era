@@ -1761,8 +1761,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = LAN_who_is_our_friend
-		icon = GFX_goal_general_unknown
+		id = LAN_support_cannda
+		icon = GFX_focus_LAN_support_cannda_military
 		prerequisite = { focus = LAN_intervene_westland }
 		relative_position_id = LAN_intervene_westland
 		x = -3
@@ -1770,7 +1770,7 @@ focus_tree = {
 		cost = 5
 		available = {
 			any_other_country = {
-				
+				original_tag = CAN
 				OR = {
 					is_subject_of = ROOT
 					is_in_faction_with = ROOT
@@ -1788,8 +1788,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = LAN_and_who_is_our_enemy
-		icon = GFX_goal_general_unknown
+		id = LAN_freedom_of_irsh_free_army
+		icon = GFX_focus_generic_befriend_ireland
 		prerequisite = { focus = LAN_intervene_westland }
 		relative_position_id = LAN_intervene_westland
 		x = -1
@@ -1807,7 +1807,71 @@ focus_tree = {
 	}
 
 	focus = {
-		id = LAN_homeline
+		id = LAN_unification_for_loyalty
+		icon = GFX_focus_ARG_the_american_push
+		prerequisite = { focus = LAN_support_cannda }
+		prerequisite = { focus = LAN_freedom_of_irsh_free_army }
+		mutually_exclusive = { focus = LAN_continuing_old_policies }
+		relative_position_id = LAN_support_cannda
+		x = 0
+		y = 1
+		cost = 5
+		available = {}
+		ai_will_do = {
+			base = 1
+		}
+		bypass = {}
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = LAN_continuing_old_policies
+		icon = GFX_focus_USA_harding_unity_dream
+		prerequisite = { focus = LAN_support_cannda }
+		prerequisite = { focus = LAN_freedom_of_irsh_free_army }
+		mutually_exclusive = { focus = LAN_unification_for_loyalty }
+		relative_position_id = LAN_support_cannda
+		x = 2
+		y = 1
+		cost = 5
+		available = {}
+		ai_will_do = {
+			base = 1
+		}
+		bypass = {}
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = LAN_threat_from_south
+		icon = GFX_focus_generic_south_america
+		prerequisite = {
+			focus = LAN_unification_for_loyalty
+			focus = LAN_continuing_old_policies
+		}
+		relative_position_id = LAN_unification_for_loyalty
+		x = 1
+		y = 1
+		cost = 5
+		available = {}
+		ai_will_do = {
+			base = 1
+		}
+		bypass = {}
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = LAN_consolidate_gibraltar
 		icon = GFX_focus_generic_coastal_fort
 		prerequisite = { focus = LAN_intervene_homeland }
 		relative_position_id = LAN_intervene_homeland
@@ -1826,50 +1890,36 @@ focus_tree = {
 			custom_effect_tooltip = LAN_modifier_interventional_policies_tt
 			add_to_variable = { LAN_IP_max_dig_in_factor_var = 0.05 tooltip = max_dig_in_factor_tt }
 			custom_effect_tooltip = generic_skip_one_line_tt
-			
+			118 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = {
+						all_provinces = yes
+						limit_to_victory_point = yes
+					}
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					instant_build = yes
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = LAN_operation_torch
 		icon = GFX_focus_SWE_coastal_support
-		prerequisite = { focus = LAN_homeline }
-		relative_position_id = LAN_homeline
-		x = -1
-		y = 1
-		cost = 5
-		available = {
-			118 = { is_controlled_by = ROOT }
-		}
-		ai_will_do = {
-			base = 1
-		}
-		bypass = {}
-		search_filters = {  }
-		completion_reward = {
-			
-		}
-	}
-
-	focus = {
-		id = LAN_unavoid_war
-		icon = {
-			trigger = {
-				SMA = {
-					NOT = {
-						has_government = neutrality
-					}
-				}
-			}
-			value = GFX_focus_rom_abdicate
-		}
-		icon = {
-			value = GFX_focus_attack_france
-		}
-		prerequisite = { focus = LAN_operation_torch }
-		relative_position_id = LAN_operation_torch
+		prerequisite = { focus = LAN_consolidate_gibraltar }
+		relative_position_id = LAN_consolidate_gibraltar
 		x = 0
-		y = 2
+		y = 1
 		cost = 5
 		available = {}
 		ai_will_do = {
@@ -1883,16 +1933,27 @@ focus_tree = {
 	}
 
 	focus = {
-		id = LAN_land_union
-		icon = GFX_goal_generic_solidarity
-		prerequisite = { focus = LAN_homeline }
-		relative_position_id = LAN_homeline
-		x = 0
-		y = 2
-		cost = 5
-		available = {
-			118 = { is_controlled_by = ROOT }
+		id = LAN_wind_blow_in_atlantic
+		icon = {
+			trigger = {
+				GSK = {
+					NOT = {
+						has_government = totalist
+						has_government = radical_socialist
+					}
+				}
+			}
+			value = GFX_focus_rom_abdicate
 		}
+		icon = {
+			value = GFX_focus_attack_france
+		}
+		prerequisite = { focus = LAN_operation_torch }
+		relative_position_id = LAN_operation_torch
+		x = 0
+		y = 1
+		cost = 5
+		available = {}
 		ai_will_do = {
 			base = 1
 		}

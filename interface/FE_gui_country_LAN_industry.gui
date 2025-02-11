@@ -1,0 +1,68 @@
+@congress_speaker_X = 600
+@congress_speaker_Y = 30
+@congress_side_icon_X = 20
+@congress_side_icon_Y = 17
+
+guiTypes = {
+	
+	containerWindowType = {
+		name = "landsol_industry_main"
+		position = { x = 0 y = 0 }
+		size = { width = 100%% height = 768 }
+		
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_plain_bg"
+		}
+		
+		containerWindowType = {
+			name = "landsol_industry_tab_container"
+			position = { x = 0 y = 10 }
+			size = { width = 100%% height = 135 }
+			
+			background = {
+				name = "background"
+			}
+		
+			containerWindowType = {
+				name = "landsol_industry_tab"
+				position = { x = 0 y = 5 }
+				
+				gridboxtype = {
+					name = "IndustryTab"
+					position = { x = 20 y = 0 }
+					size = { width = 60 height = 80 }
+					slotsize = { width = 65 height = 80 }
+					max_slots_vertical = 1
+				}
+			}
+		}
+		
+		containerWindowType = {
+			name = "landsol_industry_icon"
+			position = { x = 0 y = 100 }
+			size = { width = 100%% height = 330 }
+			
+			background = {
+				name = "background"
+			}
+			
+			iconType = {
+				name = "industryIcon"
+				position = { x = 0 y = 0 }
+			}
+		}
+	}
+	
+	containerWindowType = {
+		name = "industryTabContainer"
+		position = { x = 0 y = 0 }
+
+		buttonType = {
+			name = "tab"
+			quadTextureSprite = "GFX_idea_generic_pregnant_act"
+			position = { x = 5 y = 5 }
+			pdx_tooltip = industry_tab_tt
+		}
+	}
+}
