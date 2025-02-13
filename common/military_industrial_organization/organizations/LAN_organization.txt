@@ -1,0 +1,211 @@
+##################
+#### CONSTANTS ###
+##################
+
+### TANKS
+#POSITION
+@tank_1_X = 9
+@tank_1_Y = 2
+@tank_2_X = 9
+@tank_2_Y = 3
+@tank_3_X = 9
+@tank_3_Y = 4
+#BONUSES
+@tank_max_speed = 0.05
+@tank_production_capacity_factor = 0.05
+@tank_soft_attack = 0.05
+@tank_production_efficiency_cap_factor = 0.1
+
+### MATERIEL
+#POSITION
+@materiel_1_X = 9
+@materiel_1_Y = 2
+@materiel_2_X = 9
+@materiel_2_Y = 3
+@materiel_3_X = 9
+@materiel_3_Y = 4
+#BONUSES
+@artillery_production_cost_factor = -0.1
+@infantry_equipment_production_cost_factor = -0.1
+@motorized_production_cost_factor = -0.1
+@materiel_production_efficiency_cap_factor = 0.1
+@materiel_production_capacity_factor = 0.1
+
+#####################
+
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
+
+#####################
+LAN_landsol_national_military_factory_tanks_organization = {
+	include = generic_infantry_tank_organization
+	icon = GFX_idea_SMA_amber
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+}
+
+LAN_gourmet_guild_tanks_organization = {
+	include = generic_mobile_tank_organization
+	icon = GFX_idea_SMA_amber
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+}
+
+LAN_diabolos_heavy_tanks_organization = {
+	include = generic_heavy_tank_organization
+	icon = GFX_idea_LAN_diabolos_heavy
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+}
+
+LAN_princess_heart_tanks_organization = {
+	include = generic_tank_refurbishment_plant_organization
+	icon = GFX_idea_SMA_amber
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+}
+
+#####################
+
+ ## #  # ### ###   ## 
+#   #  #  #  #  # #   
+ #  ####  #  ###   #  
+  # #  #  #  #      # 
+##  #  # ### #    ##  
+ 
+#####################
+LAN_carmina_maritime_group_ships_organization = {
+	include = generic_task_force_ship_organization
+	icon = GFX_idea_LAN_carmina_maritime_group
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+}
+
+LAN_labyrinth_institute_ships_organization = {
+	include = generic_submarine_organization
+	icon = GFX_idea_LAN_labyrinth_institute
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+}
+
+LAN_caon_naval_arsenal_ships_organization = {
+	include = generic_escort_ship_organization
+	icon = GFX_idea_LAN_caon_naval_arsenal
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+}
+
+
+##########################
+
+###  #    ##  #  # ###  ## 
+#  # #   #  # ## # #   #   
+###  #   #### # ## ##   #  
+#    #   #  # #  # #     # 
+#    ### #  # #  # ### ##  
+
+##########################
+LAN_kaproni_design_planes_organization = {
+	include = generic_multi_role_aircraft_organization
+	icon = GFX_idea_LAN_kaproni_design
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+}
+
+LAN_thor_power_company_planes_organization = {
+	include = generic_high_agility_fighter_aircraft_organization
+	icon = GFX_idea_LAN_thor_power_company
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+}
+
+LAN_twilight_caravan_design_planes_organization = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_LAN_twilight_caravan_design
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+}
+
+LAN_weissflugel_skyworks_planes_organization = {
+	include = generic_helicopter_organization
+	icon = GFX_idea_LAN_weissflugel_skyworks
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+}
+
+
+################################### 
+
+#   #  ##  ### ### ###  ### ### #   
+## ## #  #  #  #   #  #  #  #   #   
+# # # ####  #  ##  ###   #  ##  #   
+#   # #  #  #  #   #  #  #  #   #   
+#   # #  #  #  ### #  # ### ### ### 
+
+###################################
+LAN_skystar_technology_materiel_organization = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_LAN_skystar_technology
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+}
+
+LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
+	include = generic_artillery_organization
+	icon = GFX_idea_SMA_amber
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+}
+
+LAN_little_lyrical_workshop_materiel_organization = {
+	include = generic_support_equipment_organization
+	icon = GFX_idea_SMA_amber
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+}
+

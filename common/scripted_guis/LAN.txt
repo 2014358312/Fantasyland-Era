@@ -249,6 +249,10 @@ scripted_gui = {
 		}
 
 		properties = {
+			tab = {
+				frame = industry_tab^industry_tab_idx
+				image = "GFX_landsol_industry_tab_[?industry_tab_idx]"
+			}
 			industryIcon = {
 				image = "GFX_landsol_industry_icon_[?industry_icon_var]"
 			}
@@ -258,6 +262,17 @@ scripted_gui = {
 			tab_click = {
 				set_variable = { industry_icon_var = industry_tab_idx }
 				set_variable = { industry_tab_var = industry_tab_idx }
+				for_each_loop = {
+					array = industry_tab
+					value = v
+					index = i
+
+					set_variable = { industry_tab^i = 2 }
+					if = {
+						limit = { check_variable = { i = industry_tab_var } }
+						set_variable = { industry_tab^i = 1 }
+					}
+				}
 			}
 		}
 	}

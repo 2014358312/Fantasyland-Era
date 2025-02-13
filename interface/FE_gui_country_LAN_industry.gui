@@ -8,11 +8,26 @@ guiTypes = {
 	containerWindowType = {
 		name = "landsol_industry_main"
 		position = { x = 0 y = 0 }
-		size = { width = 100%% height = 768 }
+		size = { width = 100%% height = 328 }
 		
 		background = {
 			name = "Background"
-			quadTextureSprite ="GFX_tiled_plain_bg"
+		}
+		
+		containerWindowType = {
+			name = "landsol_industry_icon"
+			position = { x = 0 y = 60 }
+			size = { width = 96%% height = 263 }
+			
+			background = {
+				name = "background"
+				quadTextureSprite = "GFX_tiled_paper_w_frame_bg"
+			}
+			
+			iconType = {
+				name = "industryIcon"
+				position = { x = 17 y = 17 }
+			}
 		}
 		
 		containerWindowType = {
@@ -31,25 +46,10 @@ guiTypes = {
 				gridboxtype = {
 					name = "IndustryTab"
 					position = { x = 20 y = 0 }
-					size = { width = 60 height = 80 }
-					slotsize = { width = 65 height = 80 }
+					size = { width = 90 height = 80 }
+					slotsize = { width = 90 height = 80 }
 					max_slots_vertical = 1
 				}
-			}
-		}
-		
-		containerWindowType = {
-			name = "landsol_industry_icon"
-			position = { x = 0 y = 100 }
-			size = { width = 100%% height = 330 }
-			
-			background = {
-				name = "background"
-			}
-			
-			iconType = {
-				name = "industryIcon"
-				position = { x = 0 y = 0 }
 			}
 		}
 	}
