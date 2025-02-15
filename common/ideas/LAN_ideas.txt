@@ -170,7 +170,7 @@ ideas = {
 	
 	country = {
 		LAN_birthplace_of_republican_revolution = {
-			picture = home_of_revolution
+			picture = generic_victors_of_ww1
 			allowed = {
 				always = no
 			}
@@ -240,6 +240,90 @@ ideas = {
 			}
 		}
 		
+		LAN_weak_infrastructure_1 = {
+			name = LAN_weak_infrastructure
+			picture = tur_balkan_central_bank_wealthy_greece
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.20
+				consumer_goods_factor = 0.08
+				production_speed_buildings_factor = -0.16
+				global_building_slots_factor = -0.16
+			}
+		}
+		
+		LAN_weak_infrastructure_2 = {
+			name = LAN_weak_infrastructure
+			picture = tur_balkan_central_bank_wealthy_greece
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.15
+				consumer_goods_factor = 0.06
+				production_speed_buildings_factor = -0.12
+				global_building_slots_factor = -0.12
+			}
+		}
+		
+		LAN_weak_infrastructure_3 = {
+			name = LAN_weak_infrastructure
+			picture = tur_balkan_central_bank_wealthy_greece
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.10
+				consumer_goods_factor = 0.04
+				production_speed_buildings_factor = -0.08
+				global_building_slots_factor = -0.08
+			}
+		}
+		
+		LAN_weak_infrastructure_4 = {
+			name = LAN_weak_infrastructure
+			picture = tur_balkan_central_bank_wealthy_greece
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.05
+				consumer_goods_factor = 0.02
+				production_speed_buildings_factor = -0.04
+				global_building_slots_factor = -0.04
+			}
+		}
+		
 		LAN_retire_navy = {
 			picture = SOV_conspiracy_in_the_academy_navy
 			allowed = {
@@ -264,6 +348,73 @@ ideas = {
 				naval_equipment = -0.25
 				infantry_weapons = 0.10
 				armor = 0.10
+			}
+		}
+		
+		LAN_retire_navy_1 = {
+			name = LAN_retire_navy
+			picture = SOV_conspiracy_in_the_academy_navy
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_cost_max_ship_hull_carrier = 9500
+				production_cost_max_ship_hull_heavy = 10000
+				production_cost_max_ship_hull_cruiser = 5300
+				production_cost_max_ship_hull_light = 3800
+				production_cost_max_ship_hull_submarine = 1500
+			}
+			
+			research_bonus = {
+				naval_equipment = -0.10
+				infantry_weapons = 0.05
+				armor = 0.05
+			}
+		}
+		
+		LAN_retire_navy_2 = {
+			name = LAN_retire_navy
+			picture = SOV_conspiracy_in_the_academy_navy
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_cost_max_ship_hull_carrier = 9500
+				production_cost_max_ship_hull_heavy = 10000
+				production_cost_max_ship_hull_cruiser = 5300
+				production_cost_max_ship_hull_light = 3800
+				production_cost_max_ship_hull_submarine = 1500
+			}
+		}
+		
+		LAN_pursue_navy_tech = {
+			picture = SOV_conspiracy_in_the_academy_navy
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			research_bonus = {
+				naval_equipment = 0.05
 			}
 		}
 		
@@ -1023,8 +1174,6 @@ ideas = {
 				always = no
 			}
 			
-			available = { always = no }
-			
 			removal_cost = -1
 			
 			equipment_bonus = {
@@ -1065,8 +1214,6 @@ ideas = {
 				always = no
 			}
 			
-			available = { always = no }
-			
 			removal_cost = -1
 			
 			equipment_bonus = {
@@ -1090,6 +1237,77 @@ ideas = {
 					build_cost_ic = -0.10
 					instant = yes
 				}
+			}
+		}
+		
+		LAN_infrastructure_plan = {
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_infrastructure_factor = 0.20
+			}
+		}
+		
+		LAN_war_economic_plan_idea_0 = {
+			name = LAN_war_economic_plan_idea
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		
+		LAN_central_industrial_administration_bureau_idea = {
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			research_bonus = {
+				industry = 0.10
+				electronics = 0.05
+			}
+		}
+		
+		LAN_national_savings_plan = {
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.15
 			}
 		}
 	}

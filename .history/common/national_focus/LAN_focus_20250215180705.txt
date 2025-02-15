@@ -632,51 +632,35 @@ focus_tree = {
 			effect_tooltip = {
 				if = {
 					limit = { NOT = { check_variable = { LAN_northern_inland_port_draft_var = 1 } } }
-					swap_ideas = {
-						remove_idea = LAN_retire_navy
-						add_idea = LAN_retire_navy_1
-					}
-				}
-				else = {
 					if = {
 						limit = { NOT = { has_completed_focus = LAN_large_shipyard } }
 						swap_ideas = {
 							remove_idea = LAN_retire_navy_1
 							add_idea = LAN_retire_navy_2
 						}
-						add_timed_idea = {
-							idea = LAN_pursue_navy_tech
-							days = 365
-						}
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = LAN_retire_navy
+						add_idea = LAN_retire_navy_1
 					}
 				}
 			}
 			hidden_effect = {
 				if = {
-					limit = {
-						NOT = {
-							has_completed_focus = LAN_large_shipyard
-						}
+					limit = { has_idea = LAN_retire_navy }
+					swap_ideas = {
+						remove_idea = LAN_retire_navy
+						add_idea = LAN_retire_navy_1
 					}
-					if = {
-						limit = { has_idea = LAN_retire_navy }
-						swap_ideas = {
-							remove_idea = LAN_retire_navy
-							add_idea = LAN_retire_navy_1
-						}
+				}
+				else_if = {
+					limit = { has_idea = LAN_retire_navy_1 }
+					swap_ideas = {
+						remove_idea = LAN_retire_navy_1
+						add_idea = LAN_retire_navy_2
 					}
-					else_if = {
-						limit = { has_idea = LAN_retire_navy_1 }
-						swap_ideas = {
-							remove_idea = LAN_retire_navy_1
-							add_idea = LAN_retire_navy_2
-						}
-						add_timed_idea = {
-							idea = LAN_pursue_navy_tech
-							days = 365
-						}
-					}
-					set_country_flag = LAN_northern_inland_port_draft_flag
 				}
 			}
 			custom_effect_tooltip = {
@@ -716,22 +700,18 @@ focus_tree = {
 			effect_tooltip = {
 				if = {
 					limit = { NOT = { check_variable = { LAN_expanding_southern_ports_var = 1 } } }
-					swap_ideas = {
-						remove_idea = LAN_retire_navy
-						add_idea = LAN_retire_navy_1
-					}
-				}
-				else = {
 					if = {
 						limit = { NOT = { has_completed_focus = LAN_large_shipyard } }
 						swap_ideas = {
 							remove_idea = LAN_retire_navy_1
 							add_idea = LAN_retire_navy_2
 						}
-						add_timed_idea = {
-							idea = LAN_pursue_navy_tech
-							days = 365
-						}
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = LAN_retire_navy
+						add_idea = LAN_retire_navy_1
 					}
 				}
 			}
@@ -755,21 +735,14 @@ focus_tree = {
 							remove_idea = LAN_retire_navy_1
 							add_idea = LAN_retire_navy_2
 						}
-						add_timed_idea = {
-							idea = LAN_pursue_navy_tech
-							days = 365
-						}
 					}
-					set_country_flag = LAN_expanding_southern_ports_flag
 				}
 			}
 			custom_effect_tooltip = {
 				localization_key = LAN_unlock_industry_inprovement_plan_decision_tt
-				INDUSTRY_TAB = LAN_industry_inprovement_plan_tab_1
+				INDUSTRY_TAB = LAN_industry_inprovement_plan_tab_0
 			}
-			unlock_decision_tooltip = LAN_industry_inprovement_plan_tab_1_12
-			unlock_decision_tooltip = LAN_industry_inprovement_plan_tab_1_13
-			unlock_decision_tooltip = LAN_industry_inprovement_plan_tab_1_14
+			unlock_decision_tooltip = LAN_industry_inprovement_plan_tab_0_3
 		}
 		ai_will_do = {
 			factor = 1
@@ -791,41 +764,6 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			every_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					is_coastal = yes
-					free_building_slots = {
-						building = dockyard
-						size > 1
-						include_locked = yes
-					}
-				}
-				random_select_amount = 3
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
-			custom_effect_tooltip = LAN_large_shipyard_tt
-			if = {
-				limit = {
-					has_country_flag = LAN_northern_inland_port_draft_flag
-					has_country_flag = LAN_expanding_southern_ports_flag
-				}
-				navy_experience = 100
-			}
-			else_if = {
-				limit = {
-					OR = {
-						has_country_flag = LAN_northern_inland_port_draft_flag
-						has_country_flag = LAN_expanding_southern_ports_flag
-					}
-				}
-				navy_experience = 50
-			}
 			custom_effect_tooltip = {
 				localization_key = LAN_unlock_industry_inprovement_plan_decision_tt
 				INDUSTRY_TAB = LAN_industry_inprovement_plan_tab_1
@@ -871,23 +809,6 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			every_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				random_select_amount = 2
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
 			custom_effect_tooltip = {
 				localization_key = LAN_unlock_industry_inprovement_plan_decision_tt
 				INDUSTRY_TAB = LAN_industry_inprovement_plan_tab_1
@@ -1113,8 +1034,8 @@ focus_tree = {
 	focus = {
 		id = LAN_twenty_passed
 		icon = GFX_goal_generic_more_territorial_claims
-		x = 26
-		y = 5
+		x = 14
+		y = 10
 		cost = 0
 		#allow_branch = {
 		#	has_global_flag = global_energy_crisis
