@@ -1,0 +1,260 @@
+##过滤器标签：
+##政治 search_filters = {FOCUS_FILTER_POLITICAL}
+##科研 search_filters = {FOCUS_FILTER_RESEARCH}
+##工业 search_filters = {FOCUS_FILTER_INDUSTRY}
+##稳定度 search_filters = {FOCUS_FILTER_STABILITY}
+##战支 search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+##人力 search_filters = {FOCUS_FILTER_MANPOWER}
+##吞并 search_filters = {FOCUS_FILTER_ANNEXATION}
+
+#!gfx:interface\
+focus_tree = {
+	##load_focus_tree =id_focus_tree##读取更换国策树
+	id = GSK_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 100##权重
+			tag = GSK
+		}
+	}##国家
+	default = no#默认国策树
+	continuous_focus_position = { x = 0 y = 0}#可持续性国策
+	focus = {
+		id = GSK_LEI ##单独国策id/名字例子：tag_xxx
+		#icon = ##在.gfx文件里的图片
+		x = 20
+		y = 0
+
+		cost = 1##天数1点=7天
+		##ai_will_do={
+			##base = 1
+			##modifier={
+			##	条件
+			##	add/factor=X
+			##}
+		##}
+		available = {
+
+		}##条件
+		bypass = {
+
+		}##跳过国策的条件
+		search_filters = {FOCUS_FILTER_MANPOWER}##过滤器
+		completion_reward ={
+			add_offsite_building = { type = industrial_complex level = 5 }
+			consumer_goods_factor = -0.5
+		}##效果
+	}##小国策
+	focus = {
+		id = GSK_TYL##异变的结束##单独国策id/名字例子：tag_xxx
+		#icon = ##在.gfx文件里的图片
+		relative_position_id = GSK_LEI##国策相对上一条国策，xy以相对国策的点进行移动
+		prerequisite ={ focus = GSK_LEI  }##前提国策ID，点完同一括弧内的任意国策可行，例子focus = GSK_XXXfocus = GSK_XX2,复数形式则为点完以上才行
+		mutually_exclusive ={}##互斥国策id
+		##available_if_capitulated =yes/no 投降后是否能点
+		##cancel_if_invalid = yes/no 条件不满足是否取消
+		##continue_if_invalid = yes/no 条件不满足是否继续
+		##will_lead_to_war_with = Tag 正在向哪个国家制造战争借口
+		##allow_branch = {条件}满足什么条件可以显示这个国策及以下国策树，配合mark_focus_tree_layout_dirty=yes效果刷新国策树
+		##例子为allow_branch = {has_completed_focus =GSK_XXX}
+		##国策图标显示，interface文件中的goals.gfx(正常图标)和goals_shine.gfx（闪烁）
+		x = 0
+		y = 1
+		cost = 1##天数1点=7天
+		##ai_will_do={
+			##base = 1
+			##modifier={
+			##	条件
+			##	add/factor=X
+			##}
+		##}
+		available = {
+
+		}##条件
+		bypass = {
+
+		}##跳过国策的条件
+		search_filters = {FOCUS_FILTER_MANPOWER}##过滤器
+		completion_reward ={
+			army_experience =10
+			navy_experience =10
+			add_political_power =30
+		}##效果
+	}
+	focus ={
+		id = GSK_PCYT#异变的庆典
+		relative_position_id = GSK_TYL
+		prerequisite ={ focus = GSK_TYL}
+		x = 0
+		y = 1
+		cost = 3
+		available = {}
+		completion_reward = {
+			add_political_power =10
+			add_timed_idea = { idea = GSK_yibian_jiejue days = 365 }
+		}
+	}
+	##左线，内战
+	focus ={
+		id = GSK_JJW##结界出现了问题，博丽灵梦的消失
+		relative_position_id = GSK_PCYT
+		prerequisite ={ focus = GSK_PCYT }
+		mutually_exclusive ={ focus = GSK_reqT }
+		x = -4
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			
+		}
+	}
+	focus ={
+		id = GSK_Jom##坚持维护结界，维护和平
+		relative_position_id = GSK_JJW
+		prerequisite ={ focus =GSK_JJW }
+		mutually_exclusive ={ focus = GSK_okm }
+		x = -2
+		y = 2
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_toyy##激进派的反抗
+		relative_position_id = GSK_Jom
+		prerequisite ={ focus =GSK_Jom }
+		x = 1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_toma##帮派成立
+		relative_position_id = GSK_Jom
+		prerequisite ={ focus =GSK_Jom }
+		x = -1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_okm##放弃结界，调整内部
+		relative_position_id = GSK_JJW
+		prerequisite ={ focus = GSK_JJW }
+		mutually_exclusive ={ focus = GSK_Jom }
+		x = 2
+		y = 2
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_ziim##寻求八云紫的帮助
+		relative_position_id = GSK_okm
+		prerequisite ={ focus = GSK_okm }
+		x = -1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_oom##寻找博丽的遗产
+		relative_position_id = GSK_okm
+		prerequisite ={ focus = GSK_okm }
+		x = 1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_zhunbei##逐渐危险的政府
+		relative_position_id = GSK_oom
+		prerequisite ={ focus = GSK_oom }
+		x = 0
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =10
+			swap_ideas = { 
+				remove_idea = GSK_hunlun_zhengfu ##原本精神
+				add_idea = GSK_hunlun_zhengfu2 ##覆盖精神
+			 }
+		}
+	}
+	focus ={
+		id = GSK_xiayi##战争的初端
+		relative_position_id = GSK_ziim
+		prerequisite ={ focus = GSK_oom focus = GSK_ziim}
+		x = 0
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =10
+			swap_ideas = { 
+			 }
+		}
+	}
+	focus ={
+		id = GSK_qiyi##部分地区起义！
+		relative_position_id = GSK_xiayi
+		prerequisite ={ focus = xiayi focus = GSK_zhunbei}
+		x = 0.5
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =10
+			swap_ideas = { 
+			 }
+		}
+	}
+	##右侧国策线，为稳定幻想乡
+	focus ={
+		id = GSK_reqT#有什么东西来了/怪事频出
+		relative_position_id = GSK_PCYT
+		prerequisite ={ focus = GSK_PCYT}
+		mutually_exclusive ={ focus = GSK_JJW }
+		x = 4
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	##陆军线
+	focus = {
+		id = GSK_lujun ##单独国策id/名字例子：tag_xxx 修改陆军
+		#icon = ##在.gfx文件里的图片
+		x = 40
+		y = 0
+		cost = 4##天数1点=7天
+		available = {
+		}##条件
+		bypass = {
+		}##跳过国策的条件
+		search_filters = {FOCUS_FILTER_MANPOWER}##过滤器
+		completion_reward ={
+			
+		}##效果
+	}
+}
