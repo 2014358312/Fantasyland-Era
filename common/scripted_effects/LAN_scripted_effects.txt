@@ -971,3 +971,252 @@ LAN_remove_ideology_influence = {
 		remove_ideas = LAN_landsol_ideology_influence_fascism
 	}
 }
+
+LAN_refresh_industry_improvement_plan_cost = {
+	set_variable = { LAN_industry_improvement_plan_cost_small = 30 }
+	set_variable = { LAN_industry_improvement_plan_cost_medium = 50 }
+	set_variable = { LAN_industry_improvement_plan_cost_large = 70 }
+}
+
+LAN_update_infrastructure_level = {
+	if = {
+		limit = { has_idea = LAN_weak_infrastructure_4 }
+		remove_ideas = LAN_weak_infrastructure_4
+	}
+	else_if = {
+		limit = { has_idea = LAN_weak_infrastructure_3 }
+		swap_ideas = {
+			remove_idea = LAN_weak_infrastructure_3
+			add_idea = LAN_weak_infrastructure_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = LAN_weak_infrastructure_2 }
+		swap_ideas = {
+			remove_idea = LAN_weak_infrastructure_2
+			add_idea = LAN_weak_infrastructure_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = LAN_weak_infrastructure_1 }
+		swap_ideas = {
+			remove_idea = LAN_weak_infrastructure_1
+			add_idea = LAN_weak_infrastructure_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = LAN_weak_infrastructure }
+		swap_ideas = {
+			remove_idea = LAN_weak_infrastructure
+			add_idea = LAN_weak_infrastructure_1
+		}
+	}
+}
+
+LAN_war_economic_plan_idea_effect = {
+	set_variable = { LAN_war_economic_plan_level_before = 0 }
+}
+
+LAN_war_economic_plan_idea_add_1_effect = {
+	effect_tooltip = {
+		swap_ideas = {
+			remove_idea = LAN_war_economic_plan_idea
+			add_idea = LAN_war_economic_plan_idea_1
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = { has_idea = LAN_war_economic_plan_idea }
+			remove_ideas = LAN_war_economic_plan_idea
+			add_ideas = LAN_war_economic_plan_idea_1
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_2 }
+			remove_ideas = LAN_war_economic_plan_idea_2
+			add_ideas = LAN_war_economic_plan_idea_12
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_3 }
+			remove_ideas = LAN_war_economic_plan_idea_3
+			add_ideas = LAN_war_economic_plan_idea_13
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_4 }
+			remove_ideas = LAN_war_economic_plan_idea_4
+			add_ideas = LAN_war_economic_plan_idea_14
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_23 }
+			remove_ideas = LAN_war_economic_plan_idea_23
+			add_ideas = LAN_war_economic_plan_idea_123
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_24 }
+			remove_ideas = LAN_war_economic_plan_idea_24
+			add_ideas = LAN_war_economic_plan_idea_124
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_34 }
+			remove_ideas = LAN_war_economic_plan_idea_34
+			add_ideas = LAN_war_economic_plan_idea_134
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_234 }
+			remove_ideas = LAN_war_economic_plan_idea_234
+			add_ideas = LAN_war_economic_plan_idea_1234
+		}
+	}
+}
+
+LAN_war_economic_plan_idea_add_2_effect = {
+	effect_tooltip = {
+		swap_ideas = {
+			remove_idea = LAN_war_economic_plan_idea
+			add_idea = LAN_war_economic_plan_idea_2
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = { has_idea = LAN_war_economic_plan_idea }
+			remove_ideas = LAN_war_economic_plan_idea
+			add_ideas = LAN_war_economic_plan_idea_2
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_1 }
+			remove_ideas = LAN_war_economic_plan_idea_1
+			add_ideas = LAN_war_economic_plan_idea_12
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_3 }
+			remove_ideas = LAN_war_economic_plan_idea_3
+			add_ideas = LAN_war_economic_plan_idea_23
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_4 }
+			remove_ideas = LAN_war_economic_plan_idea_4
+			add_ideas = LAN_war_economic_plan_idea_24
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_13 }
+			remove_ideas = LAN_war_economic_plan_idea_13
+			add_ideas = LAN_war_economic_plan_idea_123
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_14 }
+			remove_ideas = LAN_war_economic_plan_idea_14
+			add_ideas = LAN_war_economic_plan_idea_124
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_34 }
+			remove_ideas = LAN_war_economic_plan_idea_34
+			add_ideas = LAN_war_economic_plan_idea_234
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_134 }
+			remove_ideas = LAN_war_economic_plan_idea_134
+			add_ideas = LAN_war_economic_plan_idea_1234
+		}
+	}
+}
+
+LAN_war_economic_plan_idea_add_3_effect = {
+	effect_tooltip = {
+		swap_ideas = {
+			remove_idea = LAN_war_economic_plan_idea
+			add_idea = LAN_war_economic_plan_idea_3
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = { has_idea = LAN_war_economic_plan_idea }
+			remove_ideas = LAN_war_economic_plan_idea
+			add_ideas = LAN_war_economic_plan_idea_3
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_1 }
+			remove_ideas = LAN_war_economic_plan_idea_1
+			add_ideas = LAN_war_economic_plan_idea_13
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_2 }
+			remove_ideas = LAN_war_economic_plan_idea_2
+			add_ideas = LAN_war_economic_plan_idea_23
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_4 }
+			remove_ideas = LAN_war_economic_plan_idea_4
+			add_ideas = LAN_war_economic_plan_idea_34
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_12 }
+			remove_ideas = LAN_war_economic_plan_idea_12
+			add_ideas = LAN_war_economic_plan_idea_123
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_14 }
+			remove_ideas = LAN_war_economic_plan_idea_14
+			add_ideas = LAN_war_economic_plan_idea_134
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_24 }
+			remove_ideas = LAN_war_economic_plan_idea_24
+			add_ideas = LAN_war_economic_plan_idea_234
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_124 }
+			remove_ideas = LAN_war_economic_plan_idea_124
+			add_ideas = LAN_war_economic_plan_idea_1234
+		}
+	}
+}
+
+LAN_war_economic_plan_idea_add_4_effect = {
+	effect_tooltip = {
+		swap_ideas = {
+			remove_idea = LAN_war_economic_plan_idea
+			add_idea = LAN_war_economic_plan_idea_4
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = { has_idea = LAN_war_economic_plan_idea }
+			remove_ideas = LAN_war_economic_plan_idea
+			add_ideas = LAN_war_economic_plan_idea_4
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_1 }
+			remove_ideas = LAN_war_economic_plan_idea_1
+			add_ideas = LAN_war_economic_plan_idea_14
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_2 }
+			remove_ideas = LAN_war_economic_plan_idea_2
+			add_ideas = LAN_war_economic_plan_idea_24
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_3 }
+			remove_ideas = LAN_war_economic_plan_idea_3
+			add_ideas = LAN_war_economic_plan_idea_34
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_12 }
+			remove_ideas = LAN_war_economic_plan_idea_12
+			add_ideas = LAN_war_economic_plan_idea_124
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_13 }
+			remove_ideas = LAN_war_economic_plan_idea_13
+			add_ideas = LAN_war_economic_plan_idea_134
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_23 }
+			remove_ideas = LAN_war_economic_plan_idea_23
+			add_ideas = LAN_war_economic_plan_idea_234
+		}
+		else_if = {
+			limit = { has_idea = LAN_war_economic_plan_idea_123 }
+			remove_ideas = LAN_war_economic_plan_idea_123
+			add_ideas = LAN_war_economic_plan_idea_1234
+		}
+	}
+}

@@ -1257,8 +1257,7 @@ ideas = {
 			}
 		}
 		
-		LAN_war_economic_plan_idea_0 = {
-			name = LAN_war_economic_plan_idea
+		LAN_war_economic_plan_idea = {
 			picture = liberty_ships_focus
 			allowed = {
 				always = no
@@ -1291,6 +1290,120 @@ ideas = {
 			research_bonus = {
 				industry = 0.10
 				electronics = 0.05
+			}
+		}
+		
+		LAN_central_industrial_administration_bureau_idea_civilian_improve = {
+			name = LAN_central_industrial_administration_bureau_idea
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.15
+				production_speed_industrial_complex_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+			
+			research_bonus = {
+				industry = 0.10
+				electronics = 0.05
+			}
+		}
+		
+		LAN_central_industrial_administration_bureau_idea_military_improve = {
+			name = LAN_central_industrial_administration_bureau_idea
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				line_change_production_efficiency_factor = 0.10
+				production_speed_arms_factory_factor = 0.05
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+			
+			research_bonus = {
+				industry = 0.10
+				electronics = 0.05
+			}
+		}
+		
+		LAN_central_industrial_administration_bureau_idea_politic_improve = {
+			name = LAN_central_industrial_administration_bureau_idea
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.05
+				research_speed_factor = 0.05
+				global_building_slots_factor = 0.10
+			}
+			
+			research_bonus = {
+				industry = 0.10
+				electronics = 0.05
+			}
+		}
+		
+		LAN_superconducting_ore_vein_development_plan = {
+			name = LAN_industry_improvement_plan_tab_0_5
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				local_resources_factor = 0.10
+			}
+		}
+		
+		LAN_expand_air_transportation_network = {
+			name = LAN_industry_improvement_plan_tab_0_10
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_cost_supply_node_factor = -0.2
+				supply_consumption_factor = -0.05
+				supply_node_range = 0.10
 			}
 		}
 		
@@ -1410,6 +1523,301 @@ ideas = {
 			}
 			research_bonus = {
 				electronics = 0.10
+			}
+		}
+	}
+	
+	country = {
+		#If you are a good child, don't learn this.
+		#dynamic modifier is the ultimate answer.
+		LAN_war_economic_plan_idea_1 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.10
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		LAN_war_economic_plan_idea_2 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.10
+				local_resources_factor = 0.05
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		LAN_war_economic_plan_idea_3 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				mobilization_laws_cost_factor = -0.05
+				minimum_training_level = -0.10
+				research_speed_factor = -0.02
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		LAN_war_economic_plan_idea_4 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				party_popularity_stability_factor = -0.05
+				trade_opinion_factor = 0.25
+				cic_construction_boost = 0.15
+				conscription_factor = -0.03
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		LAN_war_economic_plan_idea_12 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.10
+				consumer_goods_factor = 0.10
+				local_resources_factor = 0.05
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		LAN_war_economic_plan_idea_13 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.10
+				mobilization_laws_cost_factor = -0.05
+				minimum_training_level = -0.10
+				research_speed_factor = -0.02
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		LAN_war_economic_plan_idea_14 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.10
+				party_popularity_stability_factor = -0.05
+				trade_opinion_factor = 0.25
+				cic_construction_boost = 0.15
+				conscription_factor = -0.03
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		LAN_war_economic_plan_idea_23 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.10
+				local_resources_factor = 0.05
+				mobilization_laws_cost_factor = -0.05
+				minimum_training_level = -0.10
+				research_speed_factor = -0.02
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		LAN_war_economic_plan_idea_24 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.10
+				local_resources_factor = 0.05
+				party_popularity_stability_factor = -0.05
+				trade_opinion_factor = 0.25
+				cic_construction_boost = 0.15
+				conscription_factor = -0.03
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		LAN_war_economic_plan_idea_34 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				mobilization_laws_cost_factor = -0.05
+				minimum_training_level = -0.10
+				research_speed_factor = -0.02
+				party_popularity_stability_factor = -0.05
+				trade_opinion_factor = 0.25
+				cic_construction_boost = 0.15
+				conscription_factor = -0.03
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		LAN_war_economic_plan_idea_123 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.10
+				consumer_goods_factor = 0.10
+				local_resources_factor = 0.05
+				mobilization_laws_cost_factor = -0.05
+				minimum_training_level = -0.10
+				research_speed_factor = -0.02
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		LAN_war_economic_plan_idea_124 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.10
+				consumer_goods_factor = 0.10
+				local_resources_factor = 0.05
+				party_popularity_stability_factor = -0.05
+				trade_opinion_factor = 0.25
+				cic_construction_boost = 0.15
+				conscription_factor = -0.03
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		LAN_war_economic_plan_idea_134 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.10
+				mobilization_laws_cost_factor = -0.05
+				minimum_training_level = -0.10
+				research_speed_factor = -0.02
+				party_popularity_stability_factor = -0.05
+				trade_opinion_factor = 0.25
+				cic_construction_boost = 0.15
+				conscription_factor = -0.03
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		LAN_war_economic_plan_idea_234 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.10
+				local_resources_factor = 0.05
+				mobilization_laws_cost_factor = -0.05
+				minimum_training_level = -0.10
+				research_speed_factor = -0.02
+				party_popularity_stability_factor = -0.05
+				trade_opinion_factor = 0.25
+				cic_construction_boost = 0.15
+				conscription_factor = -0.03
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		LAN_war_economic_plan_idea_1234 = {
+			name = LAN_war_economic_plan_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.10
+				consumer_goods_factor = 0.10
+				local_resources_factor = 0.05
+				mobilization_laws_cost_factor = -0.05
+				minimum_training_level = -0.10
+				research_speed_factor = -0.02
+				party_popularity_stability_factor = -0.05
+				trade_opinion_factor = 0.25
+				cic_construction_boost = 0.15
+				conscription_factor = -0.03
+				economy_cost_factor = -0.10
+				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
 			}
 		}
 	}

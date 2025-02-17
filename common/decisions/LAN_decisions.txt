@@ -105,8 +105,8 @@ LAN_balance_of_power_decision_category = {
 	}
 }
 
-LAN_industry_inprovement_plan_decision_category = {
-	LAN_industry_inprovement_plan_DEBUG_show_all = {
+LAN_industry_improvement_plan_decision_category = {
+	LAN_industry_improvement_plan_DEBUG_show_all = {
 		visible = {
 			is_debug = yes
 			NOT = { has_country_flag = LAN_DEBUG_industry_decision_flag }
@@ -116,7 +116,7 @@ LAN_industry_inprovement_plan_decision_category = {
 			set_country_flag = LAN_DEBUG_industry_decision_flag
 		}
 	}
-	LAN_industry_inprovement_plan_DEBUG_hide_all = {
+	LAN_industry_improvement_plan_DEBUG_hide_all = {
 		visible = {
 			is_debug = yes
 			has_country_flag = LAN_DEBUG_industry_decision_flag
@@ -126,8 +126,8 @@ LAN_industry_inprovement_plan_decision_category = {
 			clr_country_flag = LAN_DEBUG_industry_decision_flag
 		}
 	}
-	LAN_industry_inprovement_plan_tab_0_0 = {
-		icon = hol_exchange_intelligence_data
+	LAN_industry_improvement_plan_tab_0_0 = {
+		icon = generic_operation
 		visible = {
 			OR = {
 				check_variable = { industry_tab_var = 0 }
@@ -136,23 +136,417 @@ LAN_industry_inprovement_plan_decision_category = {
 		}
 		available = {
 			check_variable = { industry_tab_var = 0 }
+			any_core_state = {
+				is_fully_controlled_by = ROOT
+			}
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		fire_only_once = no
+		cost = var:LAN_industry_improvement_plan_cost_small
+		days_remove = 30
+		days_re_enable = 60
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			every_core_state = {
+				limit = { is_fully_controlled_by = ROOT }
+				random_select_amount = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	LAN_industry_improvement_plan_tab_0_1 = {
+		icon = hol_attract_foreign_investors
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 0 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+			any_core_state = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 0 }
+			any_core_state = {
+				is_fully_controlled_by = ROOT
+				hidden_trigger = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+			}
+			num_of_civilian_factories < 101
+		}
+		fire_only_once = no
+		cost = var:LAN_industry_improvement_plan_cost_small
+		days_remove = 30
+		days_re_enable = 90
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		remove_effect = {
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				random_select_amount = 1
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	LAN_industry_improvement_plan_tab_0_2 = {
+		icon = generic_construction
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 0 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+			OR = {
+				AND = {
+					has_completed_focus = LAN_central_industrial_administration_bureau
+					has_idea = LAN_central_industrial_administration_bureau_idea
+				}
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+			NOT = {
+				has_idea = LAN_central_industrial_administration_bureau_idea_military_improve
+				has_idea = LAN_central_industrial_administration_bureau_idea_politic_improve
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 0 }
+			has_completed_focus = LAN_central_industrial_administration_bureau
+			has_idea = LAN_central_industrial_administration_bureau_idea
 		}
 		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 50
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		modifier = {
+			political_power_cost = 0.10
+		}
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = LAN_central_industrial_administration_bureau_idea
+				add_idea = LAN_central_industrial_administration_bureau_idea_civilian_improve
+			}
+			effect_tooltip = {
+				remove_decision = LAN_industry_improvement_plan_tab_1_4
+				remove_decision = LAN_industry_improvement_plan_tab_2_10
+			}
+		}
 	}
-	LAN_industry_inprovement_plan_tab_0_1 = {
+	LAN_industry_improvement_plan_tab_0_3 = {
+		icon = hol_exchange_intelligence_data
+		state_target = yes
+		targets = { state = 121 }
+		on_map_mode = map_and_decisions_view
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 0 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+			OR = {
+				AND = {
+					has_completed_focus = LAN_revitalize_old_industrial_bases
+					FROM = { is_fully_controlled_by = ROOT }
+				}
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 0 }
+			has_completed_focus = LAN_revitalize_old_industrial_bases
+			FROM = { is_fully_controlled_by = ROOT }
+		}
+		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 30
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		remove_effect = {
+			FROM = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	LAN_industry_improvement_plan_tab_0_4 = {
+		icon = GFX_decision_steel
+		state_target = yes
+		targets = { state = 111 }
+		on_map_mode = map_and_decisions_view
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 0 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+			OR = {
+				AND = {
+					has_completed_focus = LAN_revitalize_old_industrial_bases
+					FROM = { is_fully_controlled_by = ROOT }
+				}
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 0 }
+			has_completed_focus = LAN_revitalize_old_industrial_bases
+			FROM = { is_fully_controlled_by = ROOT }
+		}
+		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 30
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		remove_effect = {
+			FROM = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 24
+				}
+			}
+		}
+	}
+	LAN_industry_improvement_plan_tab_0_5 = {
 		icon = hol_draw_up_staff_plans
 		visible = {
 			OR = {
 				check_variable = { industry_tab_var = 0 }
 				has_country_flag = LAN_DEBUG_industry_decision_flag
 			}
+			OR = {
+				has_completed_focus = LAN_revitalize_old_industrial_bases
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 0 }
+			has_completed_focus = LAN_revitalize_old_industrial_bases
+		}
+		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_large
+		days_remove = 70
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		remove_effect = {
+			add_ideas = LAN_superconducting_ore_vein_development_plan
+			add_tech_bonus = {
+				name = LAN_industry_improvement_plan_tab_0_5
+				bonus = 1
+				uses = 1
+				category = excavation_tech
+			}
+		}
+	}
+	LAN_industry_improvement_plan_tab_0_6 = {
+		icon = generic_political_discourse
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 0 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
 		}
 		available = {
 			check_variable = { industry_tab_var = 0 }
 		}
 		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_0_2 = {
+	LAN_industry_improvement_plan_tab_0_7 = {
+		icon = generic_electricity
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 0 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+			OR = {
+				has_completed_focus = LAN_transport_race
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 0 }
+			has_completed_focus = LAN_transport_race
+		}
+		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_large
+		days_remove = 70
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		modifier = {
+			consumer_goods_factor = 0.10
+		}
+		remove_effect = {
+			LAN_update_infrastructure_level = yes
+			every_core_state = {
+				limit = { is_fully_controlled_by = ROOT }
+				random_select_amount = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	LAN_industry_improvement_plan_tab_0_8 = {
+		icon = GFX_decision_border_war
+		state_target = yes
+		targets = { state = 835 }
+		on_map_mode = map_and_decisions_view
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 0 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+			OR = {
+				AND = {
+					has_completed_focus = LAN_rebuilding_western_region
+					FROM = { is_fully_controlled_by = ROOT }
+				}
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 0 }
+			has_completed_focus = LAN_rebuilding_western_region
+			FROM = { is_fully_controlled_by = ROOT }
+		}
+		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_large
+		days_remove = 70
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		remove_effect = {
+			FROM = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	LAN_industry_improvement_plan_tab_0_9 = {
+		icon = generic_break_treaty
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 0 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 0 }
+		}
+		fire_only_once = yes
+	}
+	LAN_industry_improvement_plan_tab_0_10 = {
+		icon = generic_air
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 0 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+			OR = {
+				has_completed_focus = LAN_rebuilding_western_region
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 0 }
+			has_completed_focus = LAN_rebuilding_western_region
+		}
+		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_large
+		days_remove = 70
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		modifier = { production_speed_supply_node_factor = 1.50 }
+		remove_effect = {
+			add_ideas = LAN_expand_air_transportation_network
+		}
+	}
+	LAN_industry_improvement_plan_tab_0_11 = {
+		icon = gre_investment_decisions
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 0 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+			OR = {
+				AND = {
+					has_completed_focus = LAN_rebuilding_western_region
+					num_of_civilian_factories < 101
+				}
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 0 }
+			has_completed_focus = LAN_rebuilding_western_region
+			num_of_civilian_factories < 101
+		}
+		fire_only_once = no
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 50
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		modifier = { consumer_goods_factor = -0.15 }
+	}
+	LAN_industry_improvement_plan_tab_0_12 = {
 		icon = ger_mefo_bills
 		visible = {
 			OR = {
@@ -165,137 +559,233 @@ LAN_industry_inprovement_plan_decision_category = {
 		}
 		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_0_3 = {
-		icon = ger_mefo_bills
+	LAN_industry_improvement_plan_tab_1_0 = {
+		icon = generic_merge_plant_materiel
 		visible = {
 			OR = {
-				check_variable = { industry_tab_var = 0 }
+				check_variable = { industry_tab_var = 1 }
 				has_country_flag = LAN_DEBUG_industry_decision_flag
 			}
 		}
 		available = {
-			check_variable = { industry_tab_var = 0 }
+			check_variable = { industry_tab_var = 1 }
+			any_core_state = {
+				is_fully_controlled_by = ROOT
+				hidden_trigger = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+			}
+			num_of_military_factories < 101
 		}
-		fire_only_once = yes
+		fire_only_once = no
+		cost = var:LAN_industry_improvement_plan_cost_small
+		days_remove = 30
+		days_re_enable = 120
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		remove_effect = {
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				random_select_amount = 1
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
-	LAN_industry_inprovement_plan_tab_0_4 = {
-		icon = ger_mefo_bills
+	LAN_industry_improvement_plan_tab_1_1 = {
+		icon = SWE_set_navy_budget
 		visible = {
 			OR = {
-				check_variable = { industry_tab_var = 0 }
+				check_variable = { industry_tab_var = 1 }
 				has_country_flag = LAN_DEBUG_industry_decision_flag
 			}
 		}
 		available = {
-			check_variable = { industry_tab_var = 0 }
+			check_variable = { industry_tab_var = 1 }
+			any_core_state = {
+				is_fully_controlled_by = ROOT
+				is_coastal = yes
+				hidden_trigger = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+			}
+			num_of_naval_factories < 101
 		}
-		fire_only_once = yes
+		fire_only_once = no
+		cost = var:LAN_industry_improvement_plan_cost_small
+		days_remove = 30
+		days_re_enable = 90
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		remove_effect = {
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				random_select_amount = 1
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
-	LAN_industry_inprovement_plan_tab_0_5 = {
-		icon = ger_mefo_bills
+	LAN_industry_improvement_plan_tab_1_2 = {
+		icon = generic_merge_plant_materiel
 		visible = {
 			OR = {
-				check_variable = { industry_tab_var = 0 }
+				check_variable = { industry_tab_var = 1 }
 				has_country_flag = LAN_DEBUG_industry_decision_flag
 			}
 		}
 		available = {
-			check_variable = { industry_tab_var = 0 }
+			check_variable = { industry_tab_var = 1 }
+			has_war = no
+			LAN_has_war_economic_plan_idea = yes
 		}
 		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 50
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		remove_effect = {
+			LAN_war_economic_plan_idea_add_1_effect = yes
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = yes
+				LAN_has_war_economic_plan_idea = no
+			}
+		}
+		cancel_effect = {
+			add_political_power = var:LAN_industry_improvement_plan_cost_medium
+		}
 	}
-	LAN_industry_inprovement_plan_tab_0_6 = {
-		icon = ger_mefo_bills
+	LAN_industry_improvement_plan_tab_1_3 = {
+		icon = SWE_set_navy_budget
 		visible = {
 			OR = {
-				check_variable = { industry_tab_var = 0 }
+				check_variable = { industry_tab_var = 1 }
 				has_country_flag = LAN_DEBUG_industry_decision_flag
 			}
 		}
 		available = {
-			check_variable = { industry_tab_var = 0 }
+			check_variable = { industry_tab_var = 1 }
+			has_war = no
+			LAN_has_war_economic_plan_idea = yes
 		}
 		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 50
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		remove_effect = {
+			LAN_war_economic_plan_idea_add_2_effect = yes
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = yes
+				LAN_has_war_economic_plan_idea = no
+			}
+		}
+		cancel_effect = {
+			add_political_power = var:LAN_industry_improvement_plan_cost_medium
+		}
 	}
-	LAN_industry_inprovement_plan_tab_0_7 = {
-		icon = ger_mefo_bills
+	LAN_industry_improvement_plan_tab_1_4 = {
+		icon = generic_merge_plant_materiel
 		visible = {
 			OR = {
-				check_variable = { industry_tab_var = 0 }
+				check_variable = { industry_tab_var = 1 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+			OR = {
+				AND = {
+					has_completed_focus = LAN_central_industrial_administration_bureau
+					has_idea = LAN_central_industrial_administration_bureau_idea
+				}
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+			NOT = {
+				has_idea = LAN_central_industrial_administration_bureau_idea_civilian_improve
+				has_idea = LAN_central_industrial_administration_bureau_idea_politic_improve
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 1 }
+			has_completed_focus = LAN_central_industrial_administration_bureau
+			has_idea = LAN_central_industrial_administration_bureau_idea
+		}
+		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 50
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		modifier = {
+			political_power_cost = 0.10
+		}
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = LAN_central_industrial_administration_bureau_idea
+				add_idea = LAN_central_industrial_administration_bureau_idea_military_improve
+			}
+			effect_tooltip = {
+				remove_decision = LAN_industry_improvement_plan_tab_0_2
+				remove_decision = LAN_industry_improvement_plan_tab_2_10
+			}
+		}
+	}
+	LAN_industry_improvement_plan_tab_1_5 = {
+		icon = SWE_set_navy_budget
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 1 }
 				has_country_flag = LAN_DEBUG_industry_decision_flag
 			}
 		}
 		available = {
-			check_variable = { industry_tab_var = 0 }
+			check_variable = { industry_tab_var = 1 }
 		}
-		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_0_8 = {
-		icon = ger_mefo_bills
-		visible = {
-			OR = {
-				check_variable = { industry_tab_var = 0 }
-				has_country_flag = LAN_DEBUG_industry_decision_flag
-			}
-		}
-		available = {
-			check_variable = { industry_tab_var = 0 }
-		}
-		fire_only_once = yes
-	}
-	LAN_industry_inprovement_plan_tab_0_9 = {
-		icon = ger_mefo_bills
-		visible = {
-			OR = {
-				check_variable = { industry_tab_var = 0 }
-				has_country_flag = LAN_DEBUG_industry_decision_flag
-			}
-		}
-		available = {
-			check_variable = { industry_tab_var = 0 }
-		}
-		fire_only_once = yes
-	}
-	LAN_industry_inprovement_plan_tab_0_10 = {
-		icon = ger_mefo_bills
-		visible = {
-			OR = {
-				check_variable = { industry_tab_var = 0 }
-				has_country_flag = LAN_DEBUG_industry_decision_flag
-			}
-		}
-		available = {
-			check_variable = { industry_tab_var = 0 }
-		}
-		fire_only_once = yes
-	}
-	LAN_industry_inprovement_plan_tab_0_11 = {
-		icon = ger_mefo_bills
-		visible = {
-			OR = {
-				check_variable = { industry_tab_var = 0 }
-				has_country_flag = LAN_DEBUG_industry_decision_flag
-			}
-		}
-		available = {
-			check_variable = { industry_tab_var = 0 }
-		}
-		fire_only_once = yes
-	}
-	LAN_industry_inprovement_plan_tab_0_12 = {
-		icon = ger_mefo_bills
-		visible = {
-			OR = {
-				check_variable = { industry_tab_var = 0 }
-				has_country_flag = LAN_DEBUG_industry_decision_flag
-			}
-		}
-		available = {
-			check_variable = { industry_tab_var = 0 }
-		}
-		fire_only_once = yes
-	}
-	LAN_industry_inprovement_plan_tab_1_0 = {
+	LAN_industry_improvement_plan_tab_1_6 = {
 		icon = generic_merge_plant_materiel
 		visible = {
 			OR = {
@@ -308,7 +798,7 @@ LAN_industry_inprovement_plan_decision_category = {
 		}
 		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_1_1 = {
+	LAN_industry_improvement_plan_tab_1_7 = {
 		icon = SWE_set_navy_budget
 		visible = {
 			OR = {
@@ -320,7 +810,7 @@ LAN_industry_inprovement_plan_decision_category = {
 			check_variable = { industry_tab_var = 1 }
 		}
 	}
-	LAN_industry_inprovement_plan_tab_1_2 = {
+	LAN_industry_improvement_plan_tab_1_8 = {
 		icon = generic_merge_plant_materiel
 		visible = {
 			OR = {
@@ -333,7 +823,7 @@ LAN_industry_inprovement_plan_decision_category = {
 		}
 		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_1_3 = {
+	LAN_industry_improvement_plan_tab_1_9 = {
 		icon = SWE_set_navy_budget
 		visible = {
 			OR = {
@@ -345,7 +835,7 @@ LAN_industry_inprovement_plan_decision_category = {
 			check_variable = { industry_tab_var = 1 }
 		}
 	}
-	LAN_industry_inprovement_plan_tab_1_4 = {
+	LAN_industry_improvement_plan_tab_1_10 = {
 		icon = generic_merge_plant_materiel
 		visible = {
 			OR = {
@@ -358,7 +848,7 @@ LAN_industry_inprovement_plan_decision_category = {
 		}
 		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_1_5 = {
+	LAN_industry_improvement_plan_tab_1_11 = {
 		icon = SWE_set_navy_budget
 		visible = {
 			OR = {
@@ -370,20 +860,7 @@ LAN_industry_inprovement_plan_decision_category = {
 			check_variable = { industry_tab_var = 1 }
 		}
 	}
-	LAN_industry_inprovement_plan_tab_1_6 = {
-		icon = generic_merge_plant_materiel
-		visible = {
-			OR = {
-				check_variable = { industry_tab_var = 1 }
-				has_country_flag = LAN_DEBUG_industry_decision_flag
-			}
-		}
-		available = {
-			check_variable = { industry_tab_var = 1 }
-		}
-		fire_only_once = yes
-	}
-	LAN_industry_inprovement_plan_tab_1_7 = {
+	LAN_industry_improvement_plan_tab_1_12 = {
 		icon = SWE_set_navy_budget
 		visible = {
 			OR = {
@@ -395,20 +872,7 @@ LAN_industry_inprovement_plan_decision_category = {
 			check_variable = { industry_tab_var = 1 }
 		}
 	}
-	LAN_industry_inprovement_plan_tab_1_8 = {
-		icon = generic_merge_plant_materiel
-		visible = {
-			OR = {
-				check_variable = { industry_tab_var = 1 }
-				has_country_flag = LAN_DEBUG_industry_decision_flag
-			}
-		}
-		available = {
-			check_variable = { industry_tab_var = 1 }
-		}
-		fire_only_once = yes
-	}
-	LAN_industry_inprovement_plan_tab_1_9 = {
+	LAN_industry_improvement_plan_tab_1_13 = {
 		icon = SWE_set_navy_budget
 		visible = {
 			OR = {
@@ -420,20 +884,7 @@ LAN_industry_inprovement_plan_decision_category = {
 			check_variable = { industry_tab_var = 1 }
 		}
 	}
-	LAN_industry_inprovement_plan_tab_1_10 = {
-		icon = generic_merge_plant_materiel
-		visible = {
-			OR = {
-				check_variable = { industry_tab_var = 1 }
-				has_country_flag = LAN_DEBUG_industry_decision_flag
-			}
-		}
-		available = {
-			check_variable = { industry_tab_var = 1 }
-		}
-		fire_only_once = yes
-	}
-	LAN_industry_inprovement_plan_tab_1_11 = {
+	LAN_industry_improvement_plan_tab_1_14 = {
 		icon = SWE_set_navy_budget
 		visible = {
 			OR = {
@@ -445,7 +896,7 @@ LAN_industry_inprovement_plan_decision_category = {
 			check_variable = { industry_tab_var = 1 }
 		}
 	}
-	LAN_industry_inprovement_plan_tab_2_0 = {
+	LAN_industry_improvement_plan_tab_2_0 = {
 		icon = generic_research
 		visible = {
 			OR = {
@@ -458,7 +909,7 @@ LAN_industry_inprovement_plan_decision_category = {
 		}
 		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_2_1 = {
+	LAN_industry_improvement_plan_tab_2_1 = {
 		icon = generic_political_rally
 		visible = {
 			OR = {
@@ -471,7 +922,7 @@ LAN_industry_inprovement_plan_decision_category = {
 		}
 		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_2_2 = {
+	LAN_industry_improvement_plan_tab_2_2 = {
 		icon = generic_fundraising
 		visible = {
 			OR = {
@@ -484,7 +935,7 @@ LAN_industry_inprovement_plan_decision_category = {
 		}
 		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_2_3 = {
+	LAN_industry_improvement_plan_tab_2_3 = {
 		icon = gre_faction_management
 		visible = {
 			OR = {
@@ -497,7 +948,97 @@ LAN_industry_inprovement_plan_decision_category = {
 		}
 		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_2_4 = {
+	LAN_industry_improvement_plan_tab_2_4 = {
+		icon = gre_faction_management
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 2 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 2 }
+			has_war = no
+			LAN_has_war_economic_plan_idea = yes
+		}
+		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 50
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		remove_effect = {
+			LAN_war_economic_plan_idea_add_3_effect = yes
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = yes
+				LAN_has_war_economic_plan_idea = no
+			}
+		}
+		cancel_effect = {
+			add_political_power = var:LAN_industry_improvement_plan_cost_medium
+		}
+	}
+	LAN_industry_improvement_plan_tab_2_5 = {
+		icon = generic_research
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 2 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 2 }
+			has_war = no
+			LAN_has_war_economic_plan_idea = yes
+		}
+		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 50
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		remove_effect = {
+			LAN_war_economic_plan_idea_add_4_effect = yes
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = yes
+				LAN_has_war_economic_plan_idea = no
+			}
+		}
+		cancel_effect = {
+			add_political_power = var:LAN_industry_improvement_plan_cost_medium
+		}
+	}
+	LAN_industry_improvement_plan_tab_2_6 = {
+		icon = generic_political_rally
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 2 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 2 }
+		}
+		fire_only_once = yes
+	}
+	LAN_industry_improvement_plan_tab_2_7 = {
+		icon = generic_fundraising
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 2 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 2 }
+		}
+		fire_only_once = yes
+	}
+	LAN_industry_improvement_plan_tab_2_8 = {
 		icon = gre_faction_management
 		visible = {
 			OR = {
@@ -510,7 +1051,20 @@ LAN_industry_inprovement_plan_decision_category = {
 		}
 		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_2_5 = {
+	LAN_industry_improvement_plan_tab_2_9 = {
+		icon = gre_faction_management
+		visible = {
+			OR = {
+				check_variable = { industry_tab_var = 2 }
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+		}
+		available = {
+			check_variable = { industry_tab_var = 2 }
+		}
+		fire_only_once = yes
+	}
+	LAN_industry_improvement_plan_tab_2_10 = {
 		icon = generic_research
 		visible = {
 			OR = {
@@ -523,7 +1077,7 @@ LAN_industry_inprovement_plan_decision_category = {
 		}
 		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_2_6 = {
+	LAN_industry_improvement_plan_tab_2_11 = {
 		icon = generic_political_rally
 		visible = {
 			OR = {
@@ -536,7 +1090,7 @@ LAN_industry_inprovement_plan_decision_category = {
 		}
 		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_2_7 = {
+	LAN_industry_improvement_plan_tab_2_12 = {
 		icon = generic_fundraising
 		visible = {
 			OR = {
@@ -549,7 +1103,7 @@ LAN_industry_inprovement_plan_decision_category = {
 		}
 		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_2_8 = {
+	LAN_industry_improvement_plan_tab_2_13 = {
 		icon = gre_faction_management
 		visible = {
 			OR = {
@@ -562,72 +1116,7 @@ LAN_industry_inprovement_plan_decision_category = {
 		}
 		fire_only_once = yes
 	}
-	LAN_industry_inprovement_plan_tab_2_9 = {
-		icon = gre_faction_management
-		visible = {
-			OR = {
-				check_variable = { industry_tab_var = 2 }
-				has_country_flag = LAN_DEBUG_industry_decision_flag
-			}
-		}
-		available = {
-			check_variable = { industry_tab_var = 2 }
-		}
-		fire_only_once = yes
-	}
-	LAN_industry_inprovement_plan_tab_2_10 = {
-		icon = generic_research
-		visible = {
-			OR = {
-				check_variable = { industry_tab_var = 2 }
-				has_country_flag = LAN_DEBUG_industry_decision_flag
-			}
-		}
-		available = {
-			check_variable = { industry_tab_var = 2 }
-		}
-		fire_only_once = yes
-	}
-	LAN_industry_inprovement_plan_tab_2_11 = {
-		icon = generic_political_rally
-		visible = {
-			OR = {
-				check_variable = { industry_tab_var = 2 }
-				has_country_flag = LAN_DEBUG_industry_decision_flag
-			}
-		}
-		available = {
-			check_variable = { industry_tab_var = 2 }
-		}
-		fire_only_once = yes
-	}
-	LAN_industry_inprovement_plan_tab_2_12 = {
-		icon = generic_fundraising
-		visible = {
-			OR = {
-				check_variable = { industry_tab_var = 2 }
-				has_country_flag = LAN_DEBUG_industry_decision_flag
-			}
-		}
-		available = {
-			check_variable = { industry_tab_var = 2 }
-		}
-		fire_only_once = yes
-	}
-	LAN_industry_inprovement_plan_tab_2_13 = {
-		icon = gre_faction_management
-		visible = {
-			OR = {
-				check_variable = { industry_tab_var = 2 }
-				has_country_flag = LAN_DEBUG_industry_decision_flag
-			}
-		}
-		available = {
-			check_variable = { industry_tab_var = 2 }
-		}
-		fire_only_once = yes
-	}
-	LAN_industry_inprovement_plan_tab_2_14 = {
+	LAN_industry_improvement_plan_tab_2_14 = {
 		icon = gre_faction_management
 		visible = {
 			OR = {
