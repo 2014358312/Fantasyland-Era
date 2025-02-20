@@ -119,6 +119,17 @@ LAN_caon_naval_arsenal_ships_organization = {
 	visible = { FROM = { original_tag = LAN } }
 }
 
+LAN_princeton_north_shipyard_ships_organization = {
+	include = generic_refurbishment_repair_organization
+	icon = GFX_idea_LAN_labyrinth_institute
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		FROM = { original_tag = LAN }
+	}
+	visible = { FROM = { original_tag = LAN } }
+	available = { FROM = { has_country_flag = LAN_princeton_north_shipyard_enabled_flag } }
+}
+
 
 ##########################
 

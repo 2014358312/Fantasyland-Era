@@ -74,6 +74,40 @@ on_actions = {
 					}
 				}
 			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = LAN_weak_infrastructure
+						has_idea = LAN_weak_infrastructure_1
+						has_idea = LAN_weak_infrastructure_2
+						has_idea = LAN_weak_infrastructure_3
+						has_idea = LAN_weak_infrastructure_4
+					}
+					check_variable = {
+						var = total_constructed_infrastructure
+						value = 5
+						compare = greater_than_or_equals
+					}
+				}
+				set_variable = { LAN_total_constructed_infrastructure_level_var = var:total_constructed_infrastructure }
+				while_loop_effect = {
+					limit = {
+						check_variable = {
+							var = LAN_total_constructed_infrastructure_level_var
+							value = 5
+							compare = greater_than_or_equals
+						}
+					}
+					subtract_from_variable = { LAN_total_constructed_infrastructure_level_var = 5 }
+					LAN_update_infrastructure_level = yes
+					if = {
+						limit = { NOT = { has_country_flag = LAN_infrastructure_level_updated_flag } }
+						set_country_flag = LAN_infrastructure_level_updated_flag
+						country_event = landsol.4
+					}
+				}
+				clr_country_flag = LAN_infrastructure_level_updated_flag
+			}
 		}
 	}
 	

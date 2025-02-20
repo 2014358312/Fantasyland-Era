@@ -1423,6 +1423,41 @@ ideas = {
 				political_power_gain = -0.15
 			}
 		}
+		
+		LAN_labor_propaganda_idea = {
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.10
+			}
+		}
+		
+		LAN_repay_transport_bonds = {
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				civilian_factory_use = 5
+			}
+		}
 	}
 	
 	industrial_concern = {
@@ -1450,7 +1485,16 @@ ideas = {
 			allowed_civil_war = {
 				always = no
 			}
+			visible = {
+				OR = {
+					NOT = { has_country_flag = LAN_mercury_industrial_improved_flag }
+					is_debug = yes
+				}
+			}
 			available = {
+				hidden_trigger = {
+					NOT = { has_country_flag = LAN_mercury_industrial_improved_flag }
+				}
 			}
 			cost = 150
 			traits = { railway_company }
@@ -1458,6 +1502,39 @@ ideas = {
 			}
 			research_bonus = {
 				train_tech = 0.10
+			}
+		}
+		
+		LAN_mercury_industrial_improved = {
+			name = LAN_mercury_industrial
+			allowed = {
+				original_tag = LAN
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			visible = {
+				OR = {
+					has_country_flag = LAN_mercury_industrial_improved_flag
+					is_debug = yes
+				}
+			}
+			available = {
+				hidden_trigger = {
+					has_country_flag = LAN_mercury_industrial_improved_flag
+				}
+			}
+			cost = 150
+			traits = { improved_railway_company }
+			equipment_bonus = {
+				train_equipment_2 = {
+					build_cost_ic = -0.15 
+					armor_value = 0.1
+					instant = yes
+				}
+			}
+			research_bonus = {
+				train_tech = 0.15
 			}
 		}
 		
@@ -1469,7 +1546,20 @@ ideas = {
 			allowed_civil_war = {
 				always = no
 			}
+			visible = {
+				OR = {
+					AND = {
+						has_country_flag = LAN_support_mercury_foundation_flag
+						NOT = { has_country_flag = LAN_mercury_refine_improved_flag }
+					}
+					is_debug = yes
+				}
+			}
 			available = {
+				has_country_flag = LAN_support_mercury_foundation_flag
+				hidden_trigger = {
+					NOT = { has_country_flag = LAN_mercury_refine_improved_flag }
+				}
 			}
 			cost = 150
 			traits = { steelworks_and_machining_department }
@@ -1483,6 +1573,47 @@ ideas = {
 			equipment_bonus = {
 				armor = {
 					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+		
+		LAN_mercury_refine_improved = {
+			name = LAN_mercury_refine
+			picture = advisor_WPE_Dandelion
+			allowed = {
+				original_tag = LAN
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			visible = {
+				OR = {
+					AND = {
+						has_country_flag = LAN_support_mercury_foundation_flag
+						has_country_flag = LAN_mercury_refine_improved_flag
+					}
+					is_debug = yes
+				}
+			}
+			available = {
+				has_country_flag = LAN_support_mercury_foundation_flag
+				hidden_trigger = {
+					has_country_flag = LAN_mercury_refine_improved_flag
+				}
+			}
+			cost = 150
+			traits = { refining_and_machining_department }
+			modifier = {
+				industrial_capacity_factory = 0.05
+			}
+			research_bonus = {
+				industry = 0.15
+			}
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.05
+					armor_value = 0.05
 					instant = yes
 				}
 			}
