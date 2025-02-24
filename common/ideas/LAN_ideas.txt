@@ -1421,6 +1421,8 @@ ideas = {
 			
 			modifier = {
 				political_power_gain = -0.15
+				stability_factor = -0.10
+				consumer_goods_factor = -0.15
 			}
 		}
 		
@@ -1548,10 +1550,7 @@ ideas = {
 			}
 			visible = {
 				OR = {
-					AND = {
-						has_country_flag = LAN_support_mercury_foundation_flag
-						NOT = { has_country_flag = LAN_mercury_refine_improved_flag }
-					}
+					NOT = { has_country_flag = LAN_mercury_refine_improved_flag }
 					is_debug = yes
 				}
 			}
@@ -1589,10 +1588,7 @@ ideas = {
 			}
 			visible = {
 				OR = {
-					AND = {
-						has_country_flag = LAN_support_mercury_foundation_flag
-						has_country_flag = LAN_mercury_refine_improved_flag
-					}
+					has_country_flag = LAN_mercury_refine_improved_flag
 					is_debug = yes
 				}
 			}
@@ -1949,6 +1945,158 @@ ideas = {
 				conscription_factor = -0.03
 				economy_cost_factor = -0.10
 				custom_modifier_tooltip = LAN_war_economic_plan_idea_mtt
+			}
+		}
+		
+		LAN_national_savings_plan_1 = {
+			name = LAN_national_savings_plan
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.10
+				consumer_goods_factor = -0.10
+				communism_drift = 0.01
+				production_speed_buildings_factor = 0.10
+			}
+		}
+		
+		LAN_national_savings_plan_2 = {
+			name = LAN_national_savings_plan
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.10
+				stability_factor = -0.05
+				consumer_goods_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		
+		LAN_national_savings_plan_3 = {
+			name = LAN_national_savings_plan
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.05
+				stability_factor = -0.05
+				consumer_goods_factor = -0.10
+				monthly_population = 0.15
+				experience_loss_factor = -0.10
+			}
+		}
+		
+		LAN_national_savings_plan_12 = {
+			name = LAN_national_savings_plan
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				communism_drift = 0.01
+				political_power_gain = -0.05
+				stability_factor = 0.05
+				production_speed_buildings_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		
+		LAN_national_savings_plan_13 = {
+			name = LAN_national_savings_plan
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				communism_drift = 0.01
+				stability_factor = 0.05
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.10
+				monthly_population = 0.15
+				experience_loss_factor = -0.10
+			}
+		}
+		
+		LAN_national_savings_plan_23 = {
+			name = LAN_national_savings_plan
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				monthly_population = 0.15
+				experience_loss_factor = -0.10
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		
+		LAN_national_savings_plan_123 = {
+			name = LAN_national_savings_plan
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				communism_drift = 0.01
+				production_speed_buildings_factor = 0.10
+				monthly_population = 0.15
+				experience_loss_factor = -0.10
+				production_factory_efficiency_gain_factor = 0.05
 			}
 		}
 	}

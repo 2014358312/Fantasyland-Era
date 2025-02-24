@@ -7,13 +7,17 @@ state={
 	manpower=200000
 	state_category = city
 	history={
-		owner = ACC
+		owner = LAN
 		set_variable = { state_id = 623 }
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
 		}
-		add_core_of = ACC
+		add_core_of = LAN
+		add_core_of = NRC
+		add_dynamic_modifier = {
+			modifier = NRC_advisor_for_country_state_dynamic_modifier
+		}
 	}
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

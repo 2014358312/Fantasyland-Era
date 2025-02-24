@@ -477,7 +477,7 @@ LAN_industry_improvement_plan_decision_category = {
 				}
 				custom_effect_tooltip = {
 					localization_key = building_state_modifier|dam
-					INDENT = "    "
+					INDENT = ""
 				}
 			}
 		}
@@ -835,6 +835,9 @@ LAN_industry_improvement_plan_decision_category = {
 	}
 	LAN_industry_improvement_plan_tab_1_5 = {
 		icon = SWE_set_navy_budget
+		state_target = yes
+		targets = { state = 108 }
+		on_map_mode = map_and_decisions_view
 		visible = {
 			OR = {
 				check_variable = { industry_tab_var = 1 }
@@ -848,7 +851,7 @@ LAN_industry_improvement_plan_decision_category = {
 		available = {
 			check_variable = { industry_tab_var = 1 }
 			has_completed_focus = LAN_northern_inland_port_draft
-			108 = { is_fully_controlled_by = ROOT }
+			FROM = { is_fully_controlled_by = ROOT }
 		}
 		fire_only_once = yes
 		cost = var:LAN_industry_improvement_plan_cost_small
@@ -877,7 +880,7 @@ LAN_industry_improvement_plan_decision_category = {
 			}
 		}
 		cancel_trigger = {
-			108 = { NOT = { is_controlled_by = ROOT } }
+			FROM = { NOT = { is_controlled_by = ROOT } }
 		}
 		cancel_effect = {
 			add_political_power = var:LAN_industry_improvement_plan_cost_small
@@ -885,6 +888,9 @@ LAN_industry_improvement_plan_decision_category = {
 	}
 	LAN_industry_improvement_plan_tab_1_6 = {
 		icon = generic_merge_plant_materiel
+		state_target = yes
+		targets = { state = 108 }
+		on_map_mode = map_and_decisions_view
 		visible = {
 			OR = {
 				check_variable = { industry_tab_var = 1 }
@@ -898,7 +904,7 @@ LAN_industry_improvement_plan_decision_category = {
 		available = {
 			check_variable = { industry_tab_var = 1 }
 			has_completed_focus = LAN_northern_inland_port_draft
-			108 = { is_fully_controlled_by = ROOT }
+			FROM = { is_fully_controlled_by = ROOT }
 		}
 		fire_only_once = yes
 		cost = var:LAN_industry_improvement_plan_cost_small
@@ -932,6 +938,9 @@ LAN_industry_improvement_plan_decision_category = {
 	}
 	LAN_industry_improvement_plan_tab_1_7 = {
 		icon = SWE_set_navy_budget
+		state_target = yes
+		targets = { state = 108 }
+		on_map_mode = map_and_decisions_view
 		visible = {
 			OR = {
 				check_variable = { industry_tab_var = 1 }
@@ -945,7 +954,7 @@ LAN_industry_improvement_plan_decision_category = {
 		available = {
 			check_variable = { industry_tab_var = 1 }
 			has_completed_focus = LAN_northern_inland_port_draft
-			108 = { is_fully_controlled_by = ROOT }
+			FROM = { is_fully_controlled_by = ROOT }
 		}
 		fire_only_once = yes
 		cost = var:LAN_industry_improvement_plan_cost_medium
@@ -1177,6 +1186,9 @@ LAN_industry_improvement_plan_decision_category = {
 	}
 	LAN_industry_improvement_plan_tab_1_12 = {
 		icon = SWE_set_navy_budget
+		state_target = yes
+		targets = { state = 144 }
+		on_map_mode = map_and_decisions_view
 		visible = {
 			OR = {
 				check_variable = { industry_tab_var = 1 }
@@ -1185,10 +1197,42 @@ LAN_industry_improvement_plan_decision_category = {
 		}
 		available = {
 			check_variable = { industry_tab_var = 1 }
+			has_completed_focus = LAN_expanding_southern_ports
+			FROM = { is_fully_controlled_by = ROOT }
+		}
+		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 50
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+				prioritize = { 144 }
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 1762
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	LAN_industry_improvement_plan_tab_1_13 = {
 		icon = SWE_set_navy_budget
+		state_target = yes
+		targets = { state = 144 }
+		on_map_mode = map_and_decisions_view
 		visible = {
 			OR = {
 				check_variable = { industry_tab_var = 1 }
@@ -1197,10 +1241,48 @@ LAN_industry_improvement_plan_decision_category = {
 		}
 		available = {
 			check_variable = { industry_tab_var = 1 }
+			has_completed_focus = LAN_expanding_southern_ports
+			FROM = { is_fully_controlled_by = ROOT }
+		}
+		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 50
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		remove_effect = {
+			FROM = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 1762
+				}
+			}
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					has_state_flag = LAN_country_southern_state_flag
+					any_neighbor_state = { state = 144 }
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	LAN_industry_improvement_plan_tab_1_14 = {
 		icon = SWE_set_navy_budget
+		state_target = yes
+		targets = { state = 144 }
+		on_map_mode = map_and_decisions_view
 		visible = {
 			OR = {
 				check_variable = { industry_tab_var = 1 }
@@ -1209,6 +1291,44 @@ LAN_industry_improvement_plan_decision_category = {
 		}
 		available = {
 			check_variable = { industry_tab_var = 1 }
+			has_completed_focus = LAN_expanding_southern_ports
+			FROM = { is_fully_controlled_by = ROOT }
+		}
+		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 50
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		remove_effect = {
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					has_state_flag = LAN_country_southern_state_flag
+				}
+				random_select_amount = 1
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 144 }
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 1762
+				}
+			}
+			add_tech_bonus = {
+				name = LAN_industry_improvement_plan_tab_1_14
+				bonus = 1.0
+				uses = 1
+				category = tp_tech
+			}
 		}
 	}
 	LAN_industry_improvement_plan_tab_2_0 = {
@@ -1487,11 +1607,42 @@ LAN_industry_improvement_plan_decision_category = {
 				check_variable = { industry_tab_var = 2 }
 				has_country_flag = LAN_DEBUG_industry_decision_flag
 			}
+			OR = {
+				AND = {
+					has_completed_focus = LAN_central_industrial_administration_bureau
+					has_idea = LAN_central_industrial_administration_bureau_idea
+				}
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
+			NOT = {
+				has_idea = LAN_central_industrial_administration_bureau_idea_civilian_improve
+				has_idea = LAN_central_industrial_administration_bureau_idea_military_improve
+			}
 		}
 		available = {
-			check_variable = { industry_tab_var = 2 }
+			check_variable = { industry_tab_var = 1 }
+			has_completed_focus = LAN_central_industrial_administration_bureau
+			has_idea = LAN_central_industrial_administration_bureau_idea
 		}
 		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 50
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		modifier = {
+			political_power_cost = 0.10
+		}
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = LAN_central_industrial_administration_bureau_idea
+				add_idea = LAN_central_industrial_administration_bureau_idea_politic_improve
+			}
+			effect_tooltip = {
+				remove_decision = LAN_industry_improvement_plan_tab_0_2
+				remove_decision = LAN_industry_improvement_plan_tab_1_4
+			}
+		}
 	}
 	LAN_industry_improvement_plan_tab_2_11 = {
 		icon = generic_political_rally
@@ -1500,11 +1651,24 @@ LAN_industry_improvement_plan_decision_category = {
 				check_variable = { industry_tab_var = 2 }
 				has_country_flag = LAN_DEBUG_industry_decision_flag
 			}
+			OR = {
+				has_completed_focus = LAN_national_savings_plan
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
 		}
 		available = {
 			check_variable = { industry_tab_var = 2 }
+			has_completed_focus = LAN_national_savings_plan
 		}
 		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 50
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		remove_effect = {
+			LAN_national_savings_plan_1_effect = yes
+		}
 	}
 	LAN_industry_improvement_plan_tab_2_12 = {
 		icon = generic_fundraising
@@ -1513,11 +1677,24 @@ LAN_industry_improvement_plan_decision_category = {
 				check_variable = { industry_tab_var = 2 }
 				has_country_flag = LAN_DEBUG_industry_decision_flag
 			}
+			OR = {
+				has_completed_focus = LAN_national_savings_plan
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
 		}
 		available = {
 			check_variable = { industry_tab_var = 2 }
+			has_completed_focus = LAN_national_savings_plan
 		}
 		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 50
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		remove_effect = {
+			LAN_national_savings_plan_2_effect = yes
+		}
 	}
 	LAN_industry_improvement_plan_tab_2_13 = {
 		icon = gre_faction_management
@@ -1526,11 +1703,24 @@ LAN_industry_improvement_plan_decision_category = {
 				check_variable = { industry_tab_var = 2 }
 				has_country_flag = LAN_DEBUG_industry_decision_flag
 			}
+			OR = {
+				has_completed_focus = LAN_national_savings_plan
+				has_country_flag = LAN_DEBUG_industry_decision_flag
+			}
 		}
 		available = {
 			check_variable = { industry_tab_var = 2 }
+			has_completed_focus = LAN_national_savings_plan
 		}
 		fire_only_once = yes
+		cost = var:LAN_industry_improvement_plan_cost_medium
+		days_remove = 50
+		complete_effect = {
+			LAN_refresh_industry_improvement_plan_cost = yes
+		}
+		remove_effect = {
+			LAN_national_savings_plan_3_effect = yes
+		}
 	}
 	LAN_industry_improvement_plan_tab_2_14 = {
 		icon = gre_faction_management

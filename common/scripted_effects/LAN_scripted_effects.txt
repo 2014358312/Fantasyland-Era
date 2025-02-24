@@ -1226,3 +1226,97 @@ LAN_war_economic_plan_idea_add_4_effect = {
 		}
 	}
 }
+
+LAN_national_savings_plan_1_effect = {
+	effect_tooltip = {
+		swap_ideas = {
+			remove_idea = LAN_national_savings_plan
+			add_idea = LAN_national_savings_plan_1
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = { has_idea = LAN_national_savings_plan }
+			remove_ideas = LAN_national_savings_plan
+			add_ideas = LAN_national_savings_plan_1
+		}
+		else_if = {
+			limit = { has_idea = LAN_national_savings_plan_2 }
+			remove_ideas = LAN_national_savings_plan_2
+			add_ideas = LAN_national_savings_plan_12
+		}
+		else_if = {
+			limit = { has_idea = LAN_national_savings_plan_3 }
+			remove_ideas = LAN_national_savings_plan_3
+			add_ideas = LAN_national_savings_plan_13
+		}
+		else_if = {
+			limit = { has_idea = LAN_national_savings_plan_23 }
+			remove_ideas = LAN_national_savings_plan_23
+			add_ideas = LAN_national_savings_plan_123
+		}
+	}
+}
+
+LAN_national_savings_plan_2_effect = {
+	effect_tooltip = {
+		swap_ideas = {
+			remove_idea = LAN_national_savings_plan
+			add_idea = LAN_national_savings_plan_2
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = { has_idea = LAN_national_savings_plan }
+			remove_ideas = LAN_national_savings_plan
+			add_ideas = LAN_national_savings_plan_2
+		}
+		else_if = {
+			limit = { has_idea = LAN_national_savings_plan_1 }
+			remove_ideas = LAN_national_savings_plan_1
+			add_ideas = LAN_national_savings_plan_12
+		}
+		else_if = {
+			limit = { has_idea = LAN_national_savings_plan_3 }
+			remove_ideas = LAN_national_savings_plan_3
+			add_ideas = LAN_national_savings_plan_23
+		}
+		else_if = {
+			limit = { has_idea = LAN_national_savings_plan_13 }
+			remove_ideas = LAN_national_savings_plan_13
+			add_ideas = LAN_national_savings_plan_123
+		}
+	}
+}
+
+LAN_national_savings_plan_3_effect = {
+	effect_tooltip = {
+		swap_ideas = {
+			remove_idea = LAN_national_savings_plan
+			add_idea = LAN_national_savings_plan_3
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = { has_idea = LAN_national_savings_plan }
+			remove_ideas = LAN_national_savings_plan
+			add_ideas = LAN_national_savings_plan_3
+		}
+		else_if = {
+			limit = { has_idea = LAN_national_savings_plan_1 }
+			remove_ideas = LAN_national_savings_plan_1
+			add_ideas = LAN_national_savings_plan_13
+		}
+		else_if = {
+			limit = { has_idea = LAN_national_savings_plan_2 }
+			remove_ideas = LAN_national_savings_plan_2
+			add_ideas = LAN_national_savings_plan_23
+		}
+		else_if = {
+			limit = { has_idea = LAN_national_savings_plan_12 }
+			remove_ideas = LAN_national_savings_plan_12
+			add_ideas = LAN_national_savings_plan_123
+		}
+	}
+}
+
