@@ -50,4 +50,113 @@ characters = {
 			}
 		}
 	}
+	
+	NEB_Aileen_Lauren_Dautriche = {
+		name = Aileen_Lauren_Dautriche
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Aileen_Lauren_Dautriche
+				small = GFX_idea_advisor_NEB_Aileen_Lauren_Dautriche
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = NEB_Aileen_Lauren_Dautriche_head_of_government
+			allowed = {
+				original_tag = NEB
+			}
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { professional_crisis_solver head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:NEB_Aileen_Lauren_Dautriche_head_of_government }
+				}
+			}
+		}
+	}
+	
+	NEB_Elianna_Bernstein = {
+		name = Elianna_Bernstein
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Elianna_Bernstein
+				small = GFX_idea_advisor_NEB_Elianna_Bernstein
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = NEB_Elianna_Bernstein_head_of_government
+			allowed = {
+				original_tag = NEB
+			}
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes 
+			is_head_of_government = yes}
+			can_be_fired = no
+			traits = { bibliophile_princess political_insulator head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:NEB_Elianna_Bernstein_head_of_government }
+					set_variable = { FE_temp_temp_variable = THIS.id }
+					meta_effect = {
+						text = { set_variable = { FE_temp_temp_temp_variable = [TOKEN] } }
+						TOKEN = [?THIS.GetTokenKey]
+					}
+					log = "FE_temp_variable name: [THIS.GetName]"
+					log = "FE_temp_temp_variable: [?FE_temp_temp_variable]"
+					log = "FE_temp_temp_variable token: [?FE_temp_temp_variable.GetTokenKey]"
+					log = "FE_temp_temp_variable name: [FE_temp_temp_variable.GetName]"
+					log = "FE_temp_temp_temp_variable: [?FE_temp_temp_temp_variable]"
+					log = "FE_temp_temp_temp_variable token: [?FE_temp_temp_temp_variable.GetTokenKey]"
+				}
+			}
+		}
+	}
+	
+	NEB_Alan_Ferrera = {
+		name = Alan_Ferrera
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Alan_Ferrera
+				small = GFX_idea_advisor_NEB_Alan_Ferrera
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Alan_Ferrera_political_advisor
+			allowed = {
+				original_tag = NEB
+			}
+			available = { is_hired_as_advisor = no }
+			traits = { }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = NEB_Alan_Ferrera_army_chief
+			allowed = {
+				original_tag = NEB
+			}
+			available = { is_hired_as_advisor = no }
+			traits = { }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
 }

@@ -1,0 +1,32 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			NRC = {
+				set_variable = { NRC_mission_for_foreign_master_var = LAN }
+				LAN = {
+					set_country_flag = NRC_member_country_of_committee_flag
+					add_ideas = NRC_advisor_for_country_idea
+				}
+				save_global_event_target_as = LAN
+				add_to_array = { NRC_mission_for_foreign_member_array = SMA }
+				add_to_array = { NRC_mission_for_foreign_member_array = RGC }
+				add_to_array = { NRC_mission_for_foreign_member_array = EYP }
+				add_to_array = { NRC_mission_for_foreign_member_array = WPE }
+				add_to_array = { NRC_mission_for_foreign_member_array = Z86 }
+				add_to_array = { NRC_mission_for_foreign_member_array = NEB }
+				add_to_array = { NRC_mission_for_foreign_member_array = NUB }
+				add_to_array = { NRC_mission_for_foreign_member_array = CRB }
+				add_to_array = { NRC_mission_for_foreign_member_array = CET }
+				SMA = { set_country_flag = NRC_member_country_of_committee_flag }
+				RGC = { set_country_flag = NRC_member_country_of_committee_flag }
+				EYP = { set_country_flag = NRC_member_country_of_committee_flag }
+				WPE = { set_country_flag = NRC_member_country_of_committee_flag }
+				Z86 = { set_country_flag = NRC_member_country_of_committee_flag }
+				NEB = { set_country_flag = NRC_member_country_of_committee_flag }
+				NUB = { set_country_flag = NRC_member_country_of_committee_flag }
+				CRB = { set_country_flag = NRC_member_country_of_committee_flag }
+				CET = { set_country_flag = NRC_member_country_of_committee_flag }
+			}
+		}
+	}
+}

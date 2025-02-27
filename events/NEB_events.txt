@@ -1,0 +1,38 @@
+﻿###########################
+# Nebulis Events
+###########################
+
+add_namespace = nebulis
+
+country_event = {
+	id = nebulis.6
+	title = nebulis.6.t
+	desc = nebulis.6.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = nebulis.6.a
+		deactivate_advisor = NEB_Lieselotte_Riefenstahl_head_of_government
+		activate_advisor = NEB_Aileen_Lauren_Dautriche_head_of_government
+		hidden_effect = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = FE_news.6
+			}
+		}
+	}
+
+	option = {
+		name = nebulis.6.b
+		deactivate_advisor = NEB_Lieselotte_Riefenstahl_head_of_government
+		activate_advisor = NEB_Elianna_Bernstein_head_of_government
+		hidden_effect = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = FE_news.14
+			}
+		}
+	}
+}

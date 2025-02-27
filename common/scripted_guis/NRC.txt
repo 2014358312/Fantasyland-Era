@@ -1,0 +1,20 @@
+scripted_gui = {
+
+	NRC_plan_detail_ui = {
+		context_type = decision_category
+		window_name = "NRC_plan_detail"
+		visible = {
+			always = yes
+		}
+		
+		dynamic_lists = {
+			memberContainer = {
+				array = NRC.NRC_mission_for_foreign_member_array
+				change_scope = yes
+				entry_container = NRCmemberDetailContainer
+				index = member_idx
+			}
+		}
+	}
+}
+
