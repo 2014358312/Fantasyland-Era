@@ -302,6 +302,13 @@ guiTypes = {
 					position = { x = 18 y = 174 }
 					size = { width = 330 height = 50 }
 					clipping = no
+					
+					iconType = {
+						name = "Backgroundicon"		
+						spriteType ="GFX_dip_goal_bg"
+						position = { x = 8 y = 0 }
+						scale = 0.80
+					}
 
 					buttonType = {
 						name = "show_national_goal_button"
@@ -5235,14 +5242,20 @@ guiTypes = {
 	}
 	
 	containerWindowType = {
-		name = "diplomacy_placeholder"
-		position = { x = 147 y = 110 }
+		name = "diplomacy_circle"
+		position = { x = 428 y = 282 }
+		size = { width = 105 height = 78 }
 		
-		iconType = {
-			name = "diplo_placeholder_icon"
-			position = { x = 265 y = 185 }
-			spriteType = "GFX_diplo_placeholder"
-			pdx_tooltip = diplo_placeholder_tt
+		background = {
+			name = "Background"
+			spriteType = "GFX_tiled_decisions_bg_small"
 		}
+		
+		#iconType = {
+		#	name = "diplo_placeholder_icon"
+		#	position = { x = 265 y = 185 }
+		#	spriteType = "GFX_diplo_placeholder"
+		#	pdx_tooltip = diplo_placeholder_tt
+		#}
 	}
 }

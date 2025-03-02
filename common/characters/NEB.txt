@@ -96,8 +96,7 @@ characters = {
 				original_tag = NEB
 			}
 			visible = { is_country_leader = no }
-			available = { no_head_of_gov_trigger = yes 
-			is_head_of_government = yes}
+			available = { no_head_of_gov_trigger = yes }
 			can_be_fired = no
 			traits = { bibliophile_princess political_insulator head_of_government_trait }
 			cost = 0
@@ -107,17 +106,17 @@ characters = {
 			on_add = {
 				hidden_effect = {
 					set_variable = { FE_secondary = token:NEB_Elianna_Bernstein_head_of_government }
-					set_variable = { FE_temp_temp_variable = THIS.id }
-					meta_effect = {
-						text = { set_variable = { FE_temp_temp_temp_variable = [TOKEN] } }
-						TOKEN = [?THIS.GetTokenKey]
-					}
-					log = "FE_temp_variable name: [THIS.GetName]"
-					log = "FE_temp_temp_variable: [?FE_temp_temp_variable]"
-					log = "FE_temp_temp_variable token: [?FE_temp_temp_variable.GetTokenKey]"
-					log = "FE_temp_temp_variable name: [FE_temp_temp_variable.GetName]"
-					log = "FE_temp_temp_temp_variable: [?FE_temp_temp_temp_variable]"
-					log = "FE_temp_temp_temp_variable token: [?FE_temp_temp_temp_variable.GetTokenKey]"
+					#set_variable = { FE_temp_temp_variable = THIS.id }
+					#meta_effect = {
+					#	text = { set_variable = { FE_temp_temp_temp_variable = [TOKEN] } }
+					#	TOKEN = [?THIS.GetTokenKey]
+					#}
+					#log = "FE_temp_variable name: [THIS.GetName]"
+					#log = "FE_temp_temp_variable: [?FE_temp_temp_variable]"
+					#log = "FE_temp_temp_variable token: [?FE_temp_temp_variable.GetTokenKey]"
+					#log = "FE_temp_temp_variable name: [FE_temp_temp_variable.GetName]"
+					#log = "FE_temp_temp_temp_variable: [?FE_temp_temp_temp_variable]"
+					#log = "FE_temp_temp_temp_variable token: [?FE_temp_temp_temp_variable.GetTokenKey]"
 				}
 			}
 		}
@@ -133,27 +132,576 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = NEB_Alan_Ferrera_political_advisor
+			idea_token = NEB_Alan_Ferrera
 			allowed = {
 				original_tag = NEB
 			}
-			available = { is_hired_as_advisor = no }
-			traits = { }
-			cost = 0
+			available = { }
+			traits = { NOR_royal_chamberlain }
+			cost = 150
 			ai_will_do = {
 				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	
+	NEB_Charlotte_Evans = {
+		name = Charlotte_Evans
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Charlotte_Evans
+				small = GFX_idea_advisor_NEB_Charlotte_Evans
+			}
+			army = {
+				large = GFX_Portrait_NEB_Charlotte_Evans
+				small = GFX_idea_advisor_NEB_Charlotte_Evans
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Charlotte_Evans
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { head_of_intelligence }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Dorothea_Grimm_Wallenstein = {
+		name = Dorothea_Grimm_Wallenstein
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Dorothea_Grimm_Wallenstein
+				small = GFX_idea_advisor_NEB_Dorothea_Grimm_Wallenstein
+			}
+			army = {
+				large = GFX_Portrait_NEB_Dorothea_Grimm_Wallenstein
+				small = GFX_idea_advisor_NEB_Dorothea_Grimm_Wallenstein
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Dorothea_Grimm_Wallenstein
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { revolutionary_author }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Eris_Seifort = {
+		name = Eris_Seifort
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Eris_Seifort
+				small = GFX_idea_advisor_NEB_Eris_Seifort
+			}
+			army = {
+				large = GFX_Portrait_NEB_Eris_Seifort
+				small = GFX_idea_advisor_NEB_Eris_Seifort
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Eris_Seifort
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { socialite_connections }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	NEB_Eruca_Crawford = {
+		name = Eruca_Crawford
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Eruca_Crawford
+				small = GFX_idea_advisor_NEB_Eruca_Crawford
+			}
+			army = {
+				large = GFX_Portrait_NEB_Eruca_Crawford
+				small = GFX_idea_advisor_NEB_Eruca_Crawford
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = NEB_Eruca_Crawford
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { grand_battle_plan_expert }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Harvey_Crawford = {
+		name = Harvey_Crawford
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Harvey_Crawford
+				small = GFX_idea_advisor_NEB_Harvey_Crawford
+			}
+			army = {
+				large = GFX_Portrait_NEB_Harvey_Crawford
+				small = GFX_idea_advisor_NEB_Harvey_Crawford
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Harvey_Crawford
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { ARG_university_rector }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Iris_Lotze = {
+		name = Iris_Lotze
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Iris_Lotze
+				small = GFX_idea_advisor_NEB_Iris_Lotze
+			}
+			army = {
+				large = GFX_Portrait_NEB_Iris_Lotze
+				small = GFX_idea_advisor_NEB_Iris_Lotze
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	NEB_Kate_Starven = {
+		name = Kate_Starven
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Kate_Starven
+				small = GFX_idea_advisor_NEB_Kate_Starven
+			}
+			army = {
+				large = GFX_Portrait_NEB_Kate_Starven
+				small = GFX_idea_advisor_NEB_Kate_Starven
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = NEB_Kate_Starven
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { army_concealment_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	NEB_Liselotte_Crawford = {
+		name = Liselotte_Crawford
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Liselotte_Crawford
+				small = GFX_idea_advisor_NEB_Liselotte_Crawford
+			}
+			army = {
+				large = GFX_Portrait_NEB_Liselotte_Crawford
+				small = GFX_idea_advisor_NEB_Liselotte_Crawford
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Liselotte_Crawford
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { mild_mannered }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Lorea = {
+		name = Lorea
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Lorea
+				small = GFX_idea_advisor_NEB_Lorea
+			}
+			army = {
+				large = GFX_Portrait_NEB_Lorea
+				small = GFX_idea_advisor_NEB_Lorea
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Lorea
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { lieutenant_of_industry }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Lucrezia = {
+		name = Lucrezia
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Lucrezia
+				small = GFX_idea_advisor_NEB_Lucrezia
+			}
+			army = {
+				large = GFX_Portrait_NEB_Lucrezia
+				small = GFX_idea_advisor_NEB_Lucrezia
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = NEB_Lucrezia
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { air_pilot_training_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	NEB_Maria = {
+		name = Maria
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Maria
+				small = GFX_idea_advisor_NEB_Maria
+			}
+			army = {
+				large = GFX_Portrait_NEB_Maria
+				small = GFX_idea_advisor_NEB_Maria
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Maria
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { quartermaster_trainee }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Miacha_Bastetos = {
+		name = Miacha_Bastetos
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Miacha_Bastetos
+				small = GFX_idea_advisor_NEB_Miacha_Bastetos
+			}
+			army = {
+				large = GFX_Portrait_NEB_Miacha_Bastetos
+				small = GFX_idea_advisor_NEB_Miacha_Bastetos
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Miacha_Bastetos
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { adventurous_daredevil }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Myne = {
+		name = Myne
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Myne
+				small = GFX_idea_advisor_NEB_Myne
+			}
+			army = {
+				large = GFX_Portrait_NEB_Myne
+				small = GFX_idea_advisor_NEB_Myne
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	NEB_Natalia_Evans = {
+		name = Natalia_Evans
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Natalia_Evans
+				small = GFX_idea_advisor_NEB_Natalia_Evans
+			}
+			army = {
+				large = GFX_Portrait_NEB_Natalia_Evans
+				small = GFX_idea_advisor_NEB_Natalia_Evans
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = NEB_Natalia_Evans
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { army_infantry_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	NEB_Ophelia_Millis = {
+		name = Ophelia_Millis
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Ophelia_Millis
+				small = GFX_idea_advisor_NEB_Ophelia_Millis
+			}
+			army = {
+				large = GFX_Portrait_NEB_Ophelia_Millis
+				small = GFX_idea_advisor_NEB_Ophelia_Millis
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Ophelia_Millis
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { national_alchemist }
+			modifier = {
+				political_power_factor = 0.05
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Oscar_Farsas = {
+		name = Oscar_Farsas
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Oscar_Farsas
+				small = GFX_idea_advisor_NEB_Oscar_Farsas
+			}
+			army = {
+				large = GFX_Portrait_NEB_Oscar_Farsas
+				small = GFX_idea_advisor_NEB_Oscar_Farsas
 			}
 		}
 		advisor = {
 			slot = army_chief
 			ledger = army
-			idea_token = NEB_Alan_Ferrera_army_chief
+			idea_token = NEB_Oscar_Farsas
 			allowed = {
 				original_tag = NEB
 			}
-			available = { is_hired_as_advisor = no }
+			available = { }
+			traits = { army_chief_morale_2 }
+			modifier = {
+				army_infantry_defence_factor = 0.05
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal = {
 			traits = { }
-			cost = 0
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	NEB_Roxy_Hart = {
+		name = Roxy_Hart
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Roxy_Hart
+				small = GFX_idea_advisor_NEB_Roxy_Hart
+			}
+			army = {
+				large = GFX_Portrait_NEB_Roxy_Hart
+				small = GFX_idea_advisor_NEB_Roxy_Hart
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	NEB_Sarasa_Feed = {
+		name = Sarasa_Feed
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Sarasa_Feed
+				small = GFX_idea_advisor_NEB_Sarasa_Feed
+			}
+			army = {
+				large = GFX_Portrait_NEB_Sarasa_Feed
+				small = GFX_idea_advisor_NEB_Sarasa_Feed
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Sarasa_Feed
+			allowed = {
+				original_tag = NEB
+			}
+			available = { 
+				NEB_Ophelia_Millis = {
+					NOT = { is_character_slot = political_advisor }
+					#NOT = { has_advisor_role = political_advisor }
+					#In terms of results, their roles seem to be the same…
+				}
+			}
+			traits = { national_alchemist }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Tinasha_Farsas = {
+		name = Tinasha_Farsas
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Tinasha_Farsas_alt
+				small = GFX_idea_advisor_NEB_Tinasha_Farsas_alt
+			}
+			army = {
+				large = GFX_Portrait_NEB_Tinasha_Farsas
+				small = GFX_idea_advisor_NEB_Tinasha_Farsas
+			}
+		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = NEB_Tinasha_Farsas
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { air_chief_ground_support_3 }
+			cost = 150
 			ai_will_do = {
 				factor = 1
 			}
