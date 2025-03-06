@@ -26,6 +26,10 @@ on_actions = {
 				NUB = { set_country_flag = NRC_member_country_of_committee_flag }
 				CRB = { set_country_flag = NRC_member_country_of_committee_flag }
 				CET = { set_country_flag = NRC_member_country_of_committee_flag }
+				every_country = {
+					limit = { has_country_flag = NRC_member_country_of_committee_flag }
+					activate_mission = NRC_mission_for_foreign_mission
+				}
 			}
 		}
 	}

@@ -62,7 +62,7 @@ ideas = {
 		}
 		
 		NEB_household_troops = {
-			picture = CHL_machi_in_the_army
+			picture = MEX_politicised_army
 			allowed = {
 				always = no
 			}
@@ -80,6 +80,701 @@ ideas = {
 				experience_gain_air_factor = 0.50
 				army_chief_cost_factor = 0.20
 				high_command_cost_factor = 0.20
+			}
+		}
+		
+		NEB_committee_exercises_functions = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				custom_modifier_tooltip = NEB_committee_exercises_functions_mtt
+			}
+		}
+	}
+
+	hidden_ideas = {
+		NEB_management_idea_0_0 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = 0.05
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_pp_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_pp_var +0.05"
+					set_variable = { NEB_republican_current_attitude = token:NEB_management_idea_0_0 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_pp_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_pp_var -0.05"
+				}
+			}
+		}
+		
+		NEB_management_idea_0_1 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.15
+				conscription_factor = -0.10
+			}
+			
+			on_add = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.15 }
+					subtract_from_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.15"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.10"
+					set_variable = { NEB_republican_current_attitude = token:NEB_management_idea_0_1 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.15 }
+					add_to_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.15"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.10"
+				}
+			}
+		}
+		
+		NEB_management_idea_0_2 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var +0.05"
+					set_variable = { NEB_republican_current_attitude = token:NEB_management_idea_0_2 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.05"
+				}
+			}
+		}
+		
+		NEB_management_idea_0_3 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.10
+				conscription_factor = 0.05
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.10 }
+					add_to_variable = { NEB_party_management_con_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var +0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var +0.05"
+					set_variable = { NEB_republican_current_attitude = token:NEB_management_idea_0_3 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.10 }
+					subtract_from_variable = { NEB_party_management_con_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.05"
+				}
+			}
+		}
+		
+		NEB_management_idea_0_4 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.10
+				conscription_factor = 0.10
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.10 }
+					add_to_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var +0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var +0.10"
+					set_variable = { NEB_republican_current_attitude = token:NEB_management_idea_0_4 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.10 }
+					subtract_from_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.10"
+				}
+			}
+		}
+		NEB_management_idea_1_0 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = 0.05
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_pp_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_pp_var +0.05"
+					set_variable = { NEB_royalist_current_attitude = token:NEB_management_idea_1_0 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_pp_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_pp_var -0.05"
+				}
+			}
+		}
+		
+		NEB_management_idea_1_1 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.15
+				conscription_factor = -0.10
+			}
+			
+			on_add = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.15 }
+					subtract_from_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.15"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.10"
+					set_variable = { NEB_royalist_current_attitude = token:NEB_management_idea_1_1 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.15 }
+					add_to_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.15"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.10"
+				}
+			}
+		}
+		
+		NEB_management_idea_1_2 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var +0.05"
+					set_variable = { NEB_royalist_current_attitude = token:NEB_management_idea_1_2 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.05"
+				}
+			}
+		}
+		
+		NEB_management_idea_1_3 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.10
+				conscription_factor = 0.05
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.10 }
+					add_to_variable = { NEB_party_management_con_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var +0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var +0.05"
+					set_variable = { NEB_royalist_current_attitude = token:NEB_management_idea_1_3 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.10 }
+					subtract_from_variable = { NEB_party_management_con_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.05"
+				}
+			}
+		}
+		
+		NEB_management_idea_1_4 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.10
+				conscription_factor = 0.10
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.10 }
+					add_to_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var +0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var +0.10"
+					set_variable = { NEB_royalist_current_attitude = token:NEB_management_idea_1_4 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.10 }
+					subtract_from_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.10"
+				}
+			}
+		}
+		NEB_management_idea_2_0 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = 0.05
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_pp_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_pp_var +0.05"
+					set_variable = { NEB_religious_current_attitude = token:NEB_management_idea_2_0 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_pp_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_pp_var -0.05"
+				}
+			}
+		}
+		
+		NEB_management_idea_2_1 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.15
+				conscription_factor = -0.10
+			}
+			
+			on_add = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.15 }
+					subtract_from_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.15"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.10"
+					set_variable = { NEB_religious_current_attitude = token:NEB_management_idea_2_1 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.15 }
+					add_to_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.15"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.10"
+				}
+			}
+		}
+		
+		NEB_management_idea_2_2 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var +0.05"
+					set_variable = { NEB_religious_current_attitude = token:NEB_management_idea_2_2 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.05"
+				}
+			}
+		}
+		
+		NEB_management_idea_2_3 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.10
+				conscription_factor = 0.05
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.10 }
+					add_to_variable = { NEB_party_management_con_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var +0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var +0.05"
+					set_variable = { NEB_religious_current_attitude = token:NEB_management_idea_2_3 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.10 }
+					subtract_from_variable = { NEB_party_management_con_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.05"
+				}
+			}
+		}
+		
+		NEB_management_idea_2_4 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.10
+				conscription_factor = 0.10
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.10 }
+					add_to_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var +0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var +0.10"
+					set_variable = { NEB_religious_current_attitude = token:NEB_management_idea_2_4 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.10 }
+					subtract_from_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.10"
+				}
+			}
+		}
+		NEB_management_idea_3_0 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = 0.05
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_pp_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_pp_var +0.05"
+					set_variable = { NEB_revivalist_current_attitude = token:NEB_management_idea_3_0 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_pp_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_pp_var -0.05"
+				}
+			}
+		}
+		
+		NEB_management_idea_3_1 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.15
+				conscription_factor = -0.10
+			}
+			
+			on_add = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.15 }
+					subtract_from_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.15"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.10"
+					set_variable = { NEB_revivalist_current_attitude = token:NEB_management_idea_3_1 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.15 }
+					add_to_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.15"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.10"
+				}
+			}
+		}
+		
+		NEB_management_idea_3_2 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var +0.05"
+					set_variable = { NEB_revivalist_current_attitude = token:NEB_management_idea_3_2 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.05"
+				}
+			}
+		}
+		
+		NEB_management_idea_3_3 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.10
+				conscription_factor = 0.05
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.10 }
+					add_to_variable = { NEB_party_management_con_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var +0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var +0.05"
+					set_variable = { NEB_revivalist_current_attitude = token:NEB_management_idea_3_3 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.10 }
+					subtract_from_variable = { NEB_party_management_con_var = 0.05 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.05"
+				}
+			}
+		}
+		
+		NEB_management_idea_3_4 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.10
+				conscription_factor = 0.10
+			}
+			
+			on_add = {
+				hidden_effect = {
+					add_to_variable = { NEB_party_management_st_var = 0.10 }
+					add_to_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var +0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var +0.10"
+					set_variable = { NEB_revivalist_current_attitude = token:NEB_management_idea_3_4 }
+				}
+			}
+			
+			on_remove = {
+				hidden_effect = {
+					subtract_from_variable = { NEB_party_management_st_var = 0.10 }
+					subtract_from_variable = { NEB_party_management_con_var = 0.10 }
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var -0.10"
+					log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var -0.10"
+				}
 			}
 		}
 	}

@@ -1,0 +1,66 @@
+scripted_gui = {
+
+	neb_faction_management_decision_ui = {
+		context_type = decision_category
+		window_name = "neb_faction_management_decision_ui_window"
+		visible = {
+			always = yes
+		}
+		
+		triggers = {
+			NEB_republican_modifier_status_visible = {
+				OR = {
+					check_variable = { NEB_faction_managemant_attitude_array^0 = 1 }
+					check_variable = { NEB_faction_managemant_attitude_array^0 = 3 }
+					check_variable = { NEB_faction_managemant_attitude_array^0 = 4 }
+				}
+			}
+			NEB_royalist_modifier_status_visible = {
+				OR = {
+					check_variable = { NEB_faction_managemant_attitude_array^1 = 1 }
+					check_variable = { NEB_faction_managemant_attitude_array^1 = 3 }
+					check_variable = { NEB_faction_managemant_attitude_array^1 = 4 }
+				}
+			}
+			NEB_religious_modifier_status_visible = {
+				OR = {
+					check_variable = { NEB_faction_managemant_attitude_array^2 = 1 }
+					check_variable = { NEB_faction_managemant_attitude_array^2 = 3 }
+					check_variable = { NEB_faction_managemant_attitude_array^2 = 4 }
+				}
+			}
+			NEB_revivalist_modifier_status_visible = {
+				OR = {
+					check_variable = { NEB_faction_managemant_attitude_array^3 = 1 }
+					check_variable = { NEB_faction_managemant_attitude_array^3 = 3 }
+					check_variable = { NEB_faction_managemant_attitude_array^3 = 4 }
+				}
+			}
+			NEB_republican_modifier_status_alt_visible = {
+				OR = {
+					check_variable = { NEB_faction_managemant_attitude_array^0 = 0 }
+					check_variable = { NEB_faction_managemant_attitude_array^0 = 2 }
+				}
+			}
+			NEB_royalist_modifier_status_alt_visible = {
+				OR = {
+					check_variable = { NEB_faction_managemant_attitude_array^1 = 0 }
+					check_variable = { NEB_faction_managemant_attitude_array^1 = 2 }
+				}
+			}
+			NEB_religious_modifier_status_alt_visible = {
+				OR = {
+					check_variable = { NEB_faction_managemant_attitude_array^2 = 0 }
+					check_variable = { NEB_faction_managemant_attitude_array^2 = 2 }
+				}
+			}
+			NEB_revivalist_modifier_status_alt_visible = {
+				OR = {
+					check_variable = { NEB_faction_managemant_attitude_array^3 = 0 }
+					check_variable = { NEB_faction_managemant_attitude_array^3 = 2 }
+				}
+			}
+		}
+	}
+}
+

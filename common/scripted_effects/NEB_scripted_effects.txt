@@ -1,0 +1,599 @@
+NEB_refresh_party_management_status = {
+	hidden_effect = {
+		for_loop_effect = {
+			end = 3
+			compare = less_than_or_equals
+			value = faction
+			
+			for_loop_effect = {
+				end = 4
+				compare = less_than_or_equals
+				value = status
+				
+				if = {
+					limit = {
+						meta_trigger = {
+							text = { has_idea = NEB_management_idea_[PARTY]_[VALUE] }
+							PARTY = "[?faction]"
+							VALUE = "[?status]"
+						}
+					}
+					meta_effect = {
+						text = { remove_ideas = NEB_management_idea_[PARTY]_[VALUE] }
+						PARTY = "[?faction]"
+						VALUE = "[?status]"
+					}
+					log = "[GetDateText]: [ROOT.GetName]: remove ideas NEB_management_idea_[?faction]_[?status]"
+				}
+			}
+			for_each_loop = {
+				array = NEB_faction_managemant_attitude_array
+				index = i
+				
+				if = {
+					limit = { check_variable = { faction = i } }
+					meta_effect = {
+						text = { add_ideas = NEB_management_idea_[PARTY]_[VALUE] }
+						PARTY = "[?faction]"
+						VALUE = "[?NEB_faction_managemant_attitude_array^i]"
+					}
+					log = "[GetDateText]: [ROOT.GetName]: add ideas NEB_management_idea_[?faction]_[?NEB_faction_managemant_attitude_array^i]"
+				}
+			}
+		}
+		log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_pp_var [?NEB_party_management_pp_var|.2]"
+		log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_st_var [?NEB_party_management_st_var|.2]"
+		log = "[GetDateText]: [ROOT.GetName]: var NEB_party_management_con_var [?NEB_party_management_con_var|.2]"
+	}
+}
+
+NEB_republican_attitude_up = {
+	custom_effect_tooltip = {
+		localization_key = NEB_party_attitude_change_tt
+		PARTY = NEB_republican_name_text
+		CHANGE = NEB_attitude_up
+	}
+	if = {
+		limit = { has_idea = NEB_management_idea_0_1 }
+		NEB_republican_become_neutral = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_0_2 }
+		NEB_republican_become_friendly = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_0_3 }
+		NEB_republican_become_loyal = yes
+	}
+	else = { add_political_power = 25 }
+}
+
+NEB_republican_attitude_down = {
+	custom_effect_tooltip = {
+		localization_key = NEB_party_attitude_change_tt
+		PARTY = NEB_republican_name_text
+		CHANGE = NEB_attitude_down
+	}
+	if = {
+		limit = { has_idea = NEB_management_idea_0_4 }
+		NEB_republican_become_friendly = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_0_3 }
+		NEB_republican_become_neutral = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_0_2 }
+		NEB_republican_become_hostile = yes
+	}
+	else = { add_political_power = -25 }
+}
+
+NEB_royalist_attitude_up = {
+	custom_effect_tooltip = {
+		localization_key = NEB_party_attitude_change_tt
+		PARTY = NEB_royalist_name_text
+		CHANGE = NEB_attitude_up
+	}
+	if = {
+		limit = { has_idea = NEB_management_idea_1_1 }
+		NEB_royalist_become_neutral = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_1_2 }
+		NEB_royalist_become_friendly = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_1_3 }
+		NEB_royalist_become_loyal = yes
+	}
+	else = { add_political_power = 25 }
+}
+
+NEB_royalist_attitude_down = {
+	custom_effect_tooltip = {
+		localization_key = NEB_party_attitude_change_tt
+		PARTY = NEB_royalist_name_text
+		CHANGE = NEB_attitude_down
+	}
+	if = {
+		limit = { has_idea = NEB_management_idea_1_4 }
+		NEB_royalist_become_friendly = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_1_3 }
+		NEB_royalist_become_neutral = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_1_2 }
+		NEB_royalist_become_hostile = yes
+	}
+	else = { add_political_power = -25 }
+}
+
+NEB_religious_attitude_up = {
+	custom_effect_tooltip = {
+		localization_key = NEB_party_attitude_change_tt
+		PARTY = NEB_religious_name_text
+		CHANGE = NEB_attitude_up
+	}
+	if = {
+		limit = { has_idea = NEB_management_idea_2_1 }
+		NEB_religious_become_neutral = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_2_2 }
+		NEB_religious_become_friendly = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_2_3 }
+		NEB_religious_become_loyal = yes
+	}
+	else = { add_political_power = 25 }
+}
+
+NEB_religious_attitude_down = {
+	custom_effect_tooltip = {
+		localization_key = NEB_party_attitude_change_tt
+		PARTY = NEB_religious_name_text
+		CHANGE = NEB_attitude_down
+	}
+	if = {
+		limit = { has_idea = NEB_management_idea_2_4 }
+		NEB_religious_become_friendly = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_2_3 }
+		NEB_religious_become_neutral = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_2_2 }
+		NEB_religious_become_hostile = yes
+	}
+	else = { add_political_power = -25 }
+}
+
+NEB_revivalist_attitude_up = {
+	custom_effect_tooltip = {
+		localization_key = NEB_party_attitude_change_tt
+		PARTY = NEB_revivalist_name_text
+		CHANGE = NEB_attitude_up
+	}
+	if = {
+		limit = { has_idea = NEB_management_idea_3_1 }
+		NEB_revivalist_become_neutral = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_3_2 }
+		NEB_revivalist_become_friendly = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_3_3 }
+		NEB_revivalist_become_loyal = yes
+	}
+	else = { add_political_power = 25 }
+}
+
+NEB_revivalist_attitude_down = {
+	custom_effect_tooltip = {
+		localization_key = NEB_party_attitude_change_tt
+		PARTY = NEB_revivalist_name_text
+		CHANGE = NEB_attitude_down
+	}
+	if = {
+		limit = { has_idea = NEB_management_idea_3_4 }
+		NEB_revivalist_become_friendly = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_3_3 }
+		NEB_revivalist_become_neutral = yes
+	}
+	else_if = {
+		limit = { has_idea = NEB_management_idea_3_2 }
+		NEB_revivalist_become_hostile = yes
+	}
+	else = { add_political_power = -25 }
+}
+
+NEB_republican_become_irrelevant = {
+	set_variable = { NEB_faction_managemant_attitude_array^0 = 0 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_republican_name_text
+			ATTITUDE = NEB_faction_attitude_0
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_0_0 } }
+			swap_ideas = {
+				remove_idea = var:NEB_republican_current_attitude
+				add_idea = NEB_management_idea_0_0
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_republican_become_hostile = {
+	set_variable = { NEB_faction_managemant_attitude_array^0 = 1 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_republican_name_text
+			ATTITUDE = NEB_faction_attitude_1
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_0_1 } }
+			swap_ideas = {
+				remove_idea = var:NEB_republican_current_attitude
+				add_idea = NEB_management_idea_0_1
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_republican_become_neutral = {
+	set_variable = { NEB_faction_managemant_attitude_array^0 = 2 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_republican_name_text
+			ATTITUDE = NEB_faction_attitude_2
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_0_2 } }
+			swap_ideas = {
+				remove_idea = var:NEB_republican_current_attitude
+				add_idea = NEB_management_idea_0_2
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_republican_become_friendly = {
+	set_variable = { NEB_faction_managemant_attitude_array^0 = 3 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_republican_name_text
+			ATTITUDE = NEB_faction_attitude_3
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_0_3 } }
+			swap_ideas = {
+				remove_idea = var:NEB_republican_current_attitude
+				add_idea = NEB_management_idea_0_3
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_republican_become_loyal = {
+	set_variable = { NEB_faction_managemant_attitude_array^0 = 4 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_republican_name_text
+			ATTITUDE = NEB_faction_attitude_4
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_0_4 } }
+			swap_ideas = {
+				remove_idea = var:NEB_republican_current_attitude
+				add_idea = NEB_management_idea_0_4
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+
+NEB_royalist_become_irrelevant = {
+	set_variable = { NEB_faction_managemant_attitude_array^1 = 0 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_royalist_name_text
+			ATTITUDE = NEB_faction_attitude_0
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_1_0 } }
+			swap_ideas = {
+				remove_idea = var:NEB_royalist_current_attitude
+				add_idea = NEB_management_idea_1_0
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_royalist_become_hostile = {
+	set_variable = { NEB_faction_managemant_attitude_array^1 = 1 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_royalist_name_text
+			ATTITUDE = NEB_faction_attitude_1
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_1_1 } }
+			swap_ideas = {
+				remove_idea = var:NEB_royalist_current_attitude
+				add_idea = NEB_management_idea_1_1
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_royalist_become_neutral = {
+	set_variable = { NEB_faction_managemant_attitude_array^1 = 2 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_royalist_name_text
+			ATTITUDE = NEB_faction_attitude_2
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_1_2 } }
+			swap_ideas = {
+				remove_idea = var:NEB_royalist_current_attitude
+				add_idea = NEB_management_idea_1_2
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_royalist_become_friendly = {
+	set_variable = { NEB_faction_managemant_attitude_array^1 = 3 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_royalist_name_text
+			ATTITUDE = NEB_faction_attitude_3
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_1_3 } }
+			swap_ideas = {
+				remove_idea = var:NEB_royalist_current_attitude
+				add_idea = NEB_management_idea_1_3
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_royalist_become_loyal = {
+	set_variable = { NEB_faction_managemant_attitude_array^1 = 4 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_royalist_name_text
+			ATTITUDE = NEB_faction_attitude_4
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_1_4 } }
+			swap_ideas = {
+				remove_idea = var:NEB_royalist_current_attitude
+				add_idea = NEB_management_idea_1_4
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+
+NEB_religious_become_irrelevant = {
+	set_variable = { NEB_faction_managemant_attitude_array^2 = 0 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_religious_name_text
+			ATTITUDE = NEB_faction_attitude_0
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_2_0 } }
+			swap_ideas = {
+				remove_idea = var:NEB_religious_current_attitude
+				add_idea = NEB_management_idea_2_0
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_religious_become_hostile = {
+	set_variable = { NEB_faction_managemant_attitude_array^2 = 1 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_religious_name_text
+			ATTITUDE = NEB_faction_attitude_1
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_2_1 } }
+			swap_ideas = {
+				remove_idea = var:NEB_religious_current_attitude
+				add_idea = NEB_management_idea_2_1
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_religious_become_neutral = {
+	set_variable = { NEB_faction_managemant_attitude_array^2 = 2 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_religious_name_text
+			ATTITUDE = NEB_faction_attitude_2
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_2_2 } }
+			swap_ideas = {
+				remove_idea = var:NEB_religious_current_attitude
+				add_idea = NEB_management_idea_2_2
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_religious_become_friendly = {
+	set_variable = { NEB_faction_managemant_attitude_array^2 = 3 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_religious_name_text
+			ATTITUDE = NEB_faction_attitude_3
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_2_3 } }
+			swap_ideas = {
+				remove_idea = var:NEB_religious_current_attitude
+				add_idea = NEB_management_idea_2_3
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_religious_become_loyal = {
+	set_variable = { NEB_faction_managemant_attitude_array^2 = 4 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_religious_name_text
+			ATTITUDE = NEB_faction_attitude_4
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_2_4 } }
+			swap_ideas = {
+				remove_idea = var:NEB_religious_current_attitude
+				add_idea = NEB_management_idea_2_4
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+
+NEB_revivalist_become_irrelevant = {
+	set_variable = { NEB_faction_managemant_attitude_array^3 = 0 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_revivalist_name_text
+			ATTITUDE = NEB_faction_attitude_0
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_3_0 } }
+			swap_ideas = {
+				remove_idea = var:NEB_revivalist_current_attitude
+				add_idea = NEB_management_idea_3_0
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_revivalist_become_hostile = {
+	set_variable = { NEB_faction_managemant_attitude_array^3 = 1 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_revivalist_name_text
+			ATTITUDE = NEB_faction_attitude_1
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_3_1 } }
+			swap_ideas = {
+				remove_idea = var:NEB_revivalist_current_attitude
+				add_idea = NEB_management_idea_3_1
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_revivalist_become_neutral = {
+	set_variable = { NEB_faction_managemant_attitude_array^3 = 2 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_revivalist_name_text
+			ATTITUDE = NEB_faction_attitude_2
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_3_2 } }
+			swap_ideas = {
+				remove_idea = var:NEB_revivalist_current_attitude
+				add_idea = NEB_management_idea_3_2
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_revivalist_become_friendly = {
+	set_variable = { NEB_faction_managemant_attitude_array^3 = 3 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_revivalist_name_text
+			ATTITUDE = NEB_faction_attitude_3
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_3_3 } }
+			swap_ideas = {
+				remove_idea = var:NEB_revivalist_current_attitude
+				add_idea = NEB_management_idea_3_3
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}
+
+NEB_revivalist_become_loyal = {
+	set_variable = { NEB_faction_managemant_attitude_array^3 = 4 }
+	effect_tooltip = {
+		custom_effect_tooltip = {
+			localization_key = NEB_party_attitude_become_tt
+			PARTY = NEB_revivalist_name_text
+			ATTITUDE = NEB_faction_attitude_4
+		}
+		if = {
+			limit = { NOT = { has_idea = NEB_management_idea_3_4 } }
+			swap_ideas = {
+				remove_idea = var:NEB_revivalist_current_attitude
+				add_idea = NEB_management_idea_3_4
+			}
+		}
+	}
+	NEB_refresh_party_management_status = yes
+}

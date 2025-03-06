@@ -19,6 +19,12 @@ characters = {
 			expire = "1965.1.1.1"
 			id = -1
 		}
+		country_leader = {
+			ideology = corporatism_subtype
+			traits = { master_of_politics }
+			expire = "1965.1.1.1"
+			id = -1
+		}
 	}
 	
 	NEB_Lieselotte_Riefenstahl = {
@@ -58,6 +64,12 @@ characters = {
 				large = GFX_Portrait_NEB_Aileen_Lauren_Dautriche
 				small = GFX_idea_advisor_NEB_Aileen_Lauren_Dautriche
 			}
+		}
+		country_leader = {
+			ideology = social_liberalism_subtype
+			traits = { military_bond }
+			expire = "1965.1.1.1"
+			id = -1
 		}
 		advisor = {
 			slot = head_of_government
@@ -132,13 +144,32 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = NEB_Alan_Ferrera
+			idea_token = NEB_Alan_Ferrera_political_advisor
 			allowed = {
 				original_tag = NEB
 			}
-			available = { }
+			available = {
+				not_already_hired_except_as = political_advisor
+			}
 			traits = { NOR_royal_chamberlain }
 			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			ledger = navy
+			idea_token = NEB_Alan_Ferrera_navy_chief
+			allowed = {
+				original_tag = NEB
+			}
+			available = {
+				not_already_hired_except_as = navy_chief
+				has_country_flag = NEB_influence_of_nobles_in_navy_flag
+			}
+			traits = { navy_chief_maneuver_1 }
+			cost = 50
 			ai_will_do = {
 				factor = 1
 			}
@@ -163,19 +194,6 @@ characters = {
 			army = {
 				large = GFX_Portrait_NEB_Charlotte_Evans
 				small = GFX_idea_advisor_NEB_Charlotte_Evans
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = NEB_Charlotte_Evans
-			allowed = {
-				original_tag = NEB
-			}
-			available = { }
-			traits = { head_of_intelligence }
-			cost = 150
-			ai_will_do = {
-				factor = 1
 			}
 		}
 	}
@@ -382,7 +400,7 @@ characters = {
 	}
 
 	NEB_Lorea = {
-		name = Lorea
+		name = NEB_Lorea
 		portraits = {
 			civilian = {
 				large = GFX_Portrait_NEB_Lorea
@@ -400,7 +418,7 @@ characters = {
 				original_tag = NEB
 			}
 			available = { }
-			traits = { lieutenant_of_industry }
+			traits = { war_preparedness_coordinator }
 			cost = 100
 			ai_will_do = {
 				factor = 1
@@ -445,7 +463,7 @@ characters = {
 	}
 
 	NEB_Maria = {
-		name = Maria
+		name = NEB_Maria
 		portraits = {
 			civilian = {
 				large = GFX_Portrait_NEB_Maria
@@ -484,14 +502,15 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = political_advisor
+			slot = high_command
+			ledger = air
 			idea_token = NEB_Miacha_Bastetos
 			allowed = {
 				original_tag = NEB
 			}
 			available = { }
-			traits = { adventurous_daredevil }
-			cost = 150
+			traits = { air_close_air_support_1 }
+			cost = 50
 			ai_will_do = {
 				factor = 1
 			}
@@ -499,7 +518,7 @@ characters = {
 	}
 
 	NEB_Myne = {
-		name = Myne
+		name = NEB_Myne
 		portraits = {
 			civilian = {
 				large = GFX_Portrait_NEB_Myne
@@ -570,15 +589,33 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = NEB_Ophelia_Millis
+			idea_token = NEB_Ophelia_Millis_political_advisor
 			allowed = {
 				original_tag = NEB
 			}
-			available = { }
+			available = {
+				not_already_hired_except_as = political_advisor
+			}
 			traits = { national_alchemist }
 			modifier = {
 				political_power_factor = 0.05
 			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = navy
+			idea_token = NEB_Ophelia_Millis_high_command
+			allowed = {
+				original_tag = NEB
+			}
+			available = {
+				not_already_hired_except_as = high_command
+			}
+			traits = { navy_carrier_3 }
 			cost = 150
 			ai_will_do = {
 				factor = 1
@@ -705,6 +742,785 @@ characters = {
 			ai_will_do = {
 				factor = 1
 			}
+		}
+	}
+
+	NEB_Alicia_Ehnleit = {
+		name = Alicia_Ehnleit
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Alicia_Ehnleit
+				small = GFX_idea_advisor_NEB_Alicia_Ehnleit
+			}
+			army = {
+				large = GFX_Portrait_NEB_Alicia_Ehnleit
+				small = GFX_idea_advisor_NEB_Alicia_Ehnleit
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = NEB_Alicia_Ehnleit
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { army_regrouping_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	NEB_Anne_Shelley = {
+		name = Anne_Shelley
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Anne_Shelley
+				small = GFX_idea_advisor_NEB_Anne_Shelley
+			}
+			army = {
+				large = GFX_Portrait_NEB_Anne_Shelley
+				small = GFX_idea_advisor_NEB_Anne_Shelley
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Anne_Shelley_political_advisor
+			allowed = {
+				original_tag = NEB
+			}
+			visible = {
+				ROOT = {
+					NOT = {
+						has_country_flag = NEB_military_investigation_flag
+					}
+				}
+			}
+			available = { }
+			traits = { AUS_treasurer_of_the_monarchy }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = NEB_Anne_Shelley_high_command
+			allowed = {
+				original_tag = NEB
+			}
+			visible = {
+				ROOT = {
+					has_country_flag = NEB_military_investigation_flag
+				}
+			}
+			available = { }
+			can_be_fired = no
+			traits = { royal_special_military_liaison_officer }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Ayase_Ayatsuji = {
+		name = Ayase_Ayatsuji
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Ayase_Ayatsuji
+				small = GFX_idea_advisor_NEB_Ayase_Ayatsuji
+			}
+			army = {
+				large = GFX_Portrait_NEB_Ayase_Ayatsuji
+				small = GFX_idea_advisor_NEB_Ayase_Ayatsuji
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	NEB_Catarina_Claes = {
+		name = Catarina_Claes
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Catarina_Claes
+				small = GFX_idea_advisor_NEB_Catarina_Claes
+			}
+			army = {
+				large = GFX_Portrait_NEB_Catarina_Claes
+				small = GFX_idea_advisor_NEB_Catarina_Claes
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Catarina_Claes
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { captain_of_industry }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Eleanora_Hillrose = {
+		name = Eleanora_Hillrose
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Eleanora_Hillrose
+				small = GFX_idea_advisor_NEB_Eleanora_Hillrose
+			}
+			army = {
+				large = GFX_Portrait_NEB_Eleanora_Hillrose
+				small = GFX_idea_advisor_NEB_Eleanora_Hillrose
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = NEB_Eleanora_Hillrose
+			allowed = {
+				original_tag = NEB
+			}
+			available = {
+				has_country_flag = NEB_influence_of_nobles_in_army_flag
+			}
+			traits = { army_chief_drill_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Maria_Campbell = {
+		name = Maria_Campbell
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Maria_Campbell
+				small = GFX_idea_advisor_NEB_Maria_Campbell
+			}
+			army = {
+				large = GFX_Portrait_NEB_Maria_Campbell
+				small = GFX_idea_advisor_NEB_Maria_Campbell
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Maria_Campbell
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { silent_workhorse }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Mary_Hunt = {
+		name = Mary_Hunt
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Mary_Hunt
+				small = GFX_idea_advisor_NEB_Mary_Hunt
+			}
+			army = {
+				large = GFX_Portrait_NEB_Mary_Hunt
+				small = GFX_idea_advisor_NEB_Mary_Hunt
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Mary_Hunt
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { agricultural_scholar }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Selena_Berg = {
+		name = Selena_Berg
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Selena_Berg
+				small = GFX_idea_advisor_NEB_Selena_Berg
+			}
+			army = {
+				large = GFX_Portrait_NEB_Selena_Berg
+				small = GFX_idea_advisor_NEB_Selena_Berg
+			}
+		}
+		advisor = {
+			slot = theorist
+			ledger = navy
+			idea_token = NEB_Selena_Berg
+			allowed = {
+				original_tag = NEB
+			}
+			available = {
+				has_country_flag = NEB_influence_of_nobles_in_theorist_flag
+			}
+			traits = { naval_theorist }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Shizuku_Kurogane = {
+		name = Shizuku_Kurogane
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Shizuku_Kurogane
+				small = GFX_idea_advisor_NEB_Shizuku_Kurogane
+			}
+			army = {
+				large = GFX_Portrait_NEB_Shizuku_Kurogane
+				small = GFX_idea_advisor_NEB_Shizuku_Kurogane
+			}
+			navy = {
+				large = GFX_Portrait_NEB_Shizuku_Kurogane
+				small = GFX_idea_advisor_NEB_Shizuku_Kurogane
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = navy
+			idea_token = NEB_Shizuku_Kurogane
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { navy_submarine_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		navy_leader = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	NEB_Sophia_Ascart = {
+		name = Sophia_Ascart
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Sophia_Ascart
+				small = GFX_idea_advisor_NEB_Sophia_Ascart
+			}
+			army = {
+				large = GFX_Portrait_NEB_Sophia_Ascart
+				small = GFX_idea_advisor_NEB_Sophia_Ascart
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Sophia_Ascart
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { head_of_intelligence }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Stella_Vermillion = {
+		name = Stella_Vermillion
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Stella_Vermillion
+				small = GFX_idea_advisor_NEB_Stella_Vermillion
+			}
+			army = {
+				large = GFX_Portrait_NEB_Stella_Vermillion
+				small = GFX_idea_advisor_NEB_Stella_Vermillion
+			}
+		}
+		advisor = {
+			slot = theorist
+			ledger = air
+			idea_token = NEB_Toka_Todo
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { dive_bomber }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	NEB_Susanna_Randall = {
+		name = Susanna_Randall
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Susanna_Randall
+				small = GFX_idea_advisor_NEB_Susanna_Randall
+			}
+			army = {
+				large = GFX_Portrait_NEB_Susanna_Randall
+				small = GFX_idea_advisor_NEB_Susanna_Randall
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Susanna_Randall
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { ICE_judge_and_editor }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Toka_Todo = {
+		name = Toka_Todo
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Toka_Todo
+				small = GFX_idea_advisor_NEB_Toka_Todo
+			}
+			army = {
+				large = GFX_Portrait_NEB_Toka_Todo
+				small = GFX_idea_advisor_NEB_Toka_Todo
+			}
+		}
+		advisor = {
+			slot = theorist
+			ledger = army
+			idea_token = NEB_Toka_Todo
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { blitzkrieg_theorist }
+			cost = 200
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Yumiella_Dolkness = {
+		name = Yumiella_Dolkness
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Yumiella_Dolkness
+				small = GFX_idea_advisor_NEB_Yumiella_Dolkness
+			}
+			army = {
+				large = GFX_Portrait_NEB_Yumiella_Dolkness
+				small = GFX_idea_advisor_NEB_Yumiella_Dolkness
+			}
+			navy = {
+				large = GFX_Portrait_NEB_Yumiella_Dolkness
+				small = GFX_idea_advisor_NEB_Yumiella_Dolkness
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			ledger = navy
+			idea_token = NEB_Yumiella_Dolkness
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { navy_chief_decisive_battle_3 }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	NEB_Akio_Fudo = {
+		name = Akio_Fudo
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Akio_Fudo
+				small = GFX_idea_advisor_NEB_Akio_Fudo
+			}
+			army = {
+				large = GFX_Portrait_NEB_Akio_Fudo
+				small = GFX_idea_advisor_NEB_Akio_Fudo
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = NEB_Akio_Fudo
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { army_logistics_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Arin_Kannazuki = {
+		name = Arin_Kannazuki
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Arin_Kannazuki
+				small = GFX_idea_advisor_NEB_Arin_Kannazuki
+			}
+			army = {
+				large = GFX_Portrait_NEB_Arin_Kannazuki
+				small = GFX_idea_advisor_NEB_Arin_Kannazuki
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = NEB_Arin_Kannazuki
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { air_tactical_bombing_3 }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	NEB_Hijiri_Kasuga = {
+		name = Hijiri_Kasuga
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Hijiri_Kasuga
+				small = GFX_idea_advisor_NEB_Hijiri_Kasuga
+			}
+			army = {
+				large = GFX_Portrait_NEB_Hijiri_Kasuga
+				small = GFX_idea_advisor_NEB_Hijiri_Kasuga
+			}
+		}
+		advisor = {
+			slot = theorist
+			ledger = air
+			idea_token = NEB_Hijiri_Kasuga
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { air_warfare_theorist }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Ilia = {
+		name = NEB_Ilia
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_NEB_Ilia
+			#	small = GFX_idea_advisor_NEB_Ilia
+			#}
+			army = {
+				large = GFX_Portrait_NEB_Ilia_scientist
+				small = GFX_idea_advisor_NEB_Ilia
+			}
+		}
+		scientist = {
+			traits = { }
+			skills = {
+				specialization_air = 1
+			}
+		}
+	}
+
+	NEB_Levi_Kazama = {
+		name = Levi_Kazama
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Levi_Kazama
+				small = GFX_idea_advisor_NEB_Levi_Kazama
+			}
+			army = {
+				large = GFX_Portrait_NEB_Levi_Kazama
+				small = GFX_idea_advisor_NEB_Levi_Kazama
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	NEB_Lieselotte_Sherlock = {
+		name = Lieselotte_Sherlock
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Lieselotte_Sherlock
+				small = GFX_idea_advisor_NEB_Lieselotte_Sherlock
+			}
+			army = {
+				large = GFX_Portrait_NEB_Lieselotte_Sherlock
+				small = GFX_idea_advisor_NEB_Lieselotte_Sherlock
+			}
+			navy = {
+				large = GFX_Portrait_NEB_Lieselotte_Sherlock
+				small = GFX_idea_advisor_NEB_Lieselotte_Sherlock
+			}
+		}
+		navy_leader = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	NEB_Lilith_Asami = {
+		name = Lilith_Asami
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Lilith_Asami
+				small = GFX_idea_advisor_NEB_Lilith_Asami
+			}
+			army = {
+				large = GFX_Portrait_NEB_Lilith_Asami
+				small = GFX_idea_advisor_NEB_Lilith_Asami
+			}
+		}
+		advisor = {
+			slot = theorist
+			ledger = army
+			idea_token = NEB_Lilith_Asami_theorist
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { superior_firepower_expert }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = NEB_Lilith_Asami_army_chief
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { army_chief_offensive_3 }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	NEB_Lugh = {
+		name = NEB_Lugh
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Lugh
+				small = GFX_idea_advisor_NEB_Lugh
+			}
+			army = {
+				large = GFX_Portrait_NEB_Lugh
+				small = GFX_idea_advisor_NEB_Lugh
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Lugh
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { retired_officer }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Mira_Yamana = {
+		name = Mira_Yamana
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Mira_Yamana
+				small = GFX_idea_advisor_NEB_Mira_Yamana
+			}
+			army = {
+				large = GFX_Portrait_NEB_Mira_Yamana
+				small = GFX_idea_advisor_NEB_Mira_Yamana
+			}
+		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = NEB_Mira_Yamana
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { air_chief_safety_3 }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Selina_Sherlock = {
+		name = Selina_Sherlock
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Selina_Sherlock
+				small = GFX_idea_advisor_NEB_Selina_Sherlock
+			}
+			army = {
+				large = GFX_Portrait_NEB_Selina_Sherlock
+				small = GFX_idea_advisor_NEB_Selina_Sherlock
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NEB_Mira_Yamana
+			allowed = {
+				original_tag = NEB
+			}
+			available = { }
+			traits = { liberal_journalist }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	NEB_Sora = {
+		name = NEB_Sora
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_NEB_Sora
+			#	small = GFX_idea_advisor_NEB_Sora
+			#}
+			army = {
+				large = GFX_Portrait_NEB_Sora_scientist
+				small = GFX_idea_advisor_NEB_Sora
+			}
+		}
+		scientist = {
+			traits = { }
+			skills = {
+				specialization_land = 1
+			}
+		}
+	}
+
+	NEB_Yui_Kurata = {
+		name = Yui_Kurata
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEB_Yui_Kurata
+				small = GFX_idea_advisor_NEB_Yui_Kurata
+			}
+			army = {
+				large = GFX_Portrait_NEB_Yui_Kurata
+				small = GFX_idea_advisor_NEB_Yui_Kurata
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
 		}
 	}
 }

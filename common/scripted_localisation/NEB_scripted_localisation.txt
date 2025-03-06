@@ -1,0 +1,728 @@
+defined_text = {
+	name = GetNEBFactionModifierStatus
+	text = {
+		trigger = {
+			check_variable = { NEB_party_management_pp_var = 0 }
+			check_variable = { NEB_party_management_st_var = 0 }
+			check_variable = { NEB_party_management_con_var = 0 }
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			NOT = { check_variable = { NEB_party_management_pp_var = 0 } }
+			check_variable = { NEB_party_management_st_var = 0 }
+			check_variable = { NEB_party_management_con_var = 0 }
+		}
+		localization_key = NEB_committee_exercises_functions_status_1_1
+	}
+	text = {
+		trigger = {
+			check_variable = { NEB_party_management_pp_var = 0 }
+			NOT = { check_variable = { NEB_party_management_st_var = 0 } }
+			check_variable = { NEB_party_management_con_var = 0 }
+		}
+		localization_key = NEB_committee_exercises_functions_status_1_2
+	}
+	text = {
+		trigger = {
+			check_variable = { NEB_party_management_pp_var = 0 }
+			check_variable = { NEB_party_management_st_var = 0 }
+			NOT = { check_variable = { NEB_party_management_con_var = 0 } }
+		}
+		localization_key = NEB_committee_exercises_functions_status_1_3
+	}
+	text = {
+		trigger = {
+			NOT = { check_variable = { NEB_party_management_pp_var = 0 } }
+			NOT = { check_variable = { NEB_party_management_st_var = 0 } }
+			check_variable = { NEB_party_management_con_var = 0 }
+		}
+		localization_key = NEB_committee_exercises_functions_status_2_1
+	}
+	text = {
+		trigger = {
+			NOT = { check_variable = { NEB_party_management_pp_var = 0 } }
+			check_variable = { NEB_party_management_st_var = 0 }
+			NOT = { check_variable = { NEB_party_management_con_var = 0 } }
+		}
+		localization_key = NEB_committee_exercises_functions_status_2_2
+	}
+	text = {
+		trigger = {
+			check_variable = { NEB_party_management_pp_var = 0 }
+			NOT = { check_variable = { NEB_party_management_st_var = 0 } }
+			NOT = { check_variable = { NEB_party_management_con_var = 0 } }
+		}
+		localization_key = NEB_committee_exercises_functions_status_2_3
+	}
+	text = {
+		trigger = {
+			NOT = { check_variable = { NEB_party_management_pp_var = 0 } }
+			NOT = { check_variable = { NEB_party_management_st_var = 0 } }
+			NOT = { check_variable = { NEB_party_management_con_var = 0 } }
+		}
+		localization_key = NEB_committee_exercises_functions_status_3
+	}
+	text = { localization_key = NEB_committee_exercises_functions_status_3 }
+}
+
+defined_text = {
+	name = GetNEBFactionRepublicanAttitude
+	text = {
+		localization_key = NEB_faction_attitude_[?NEB_faction_managemant_attitude_array^0]
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionRoyalistAttitude
+	text = {
+		localization_key = NEB_faction_attitude_[?NEB_faction_managemant_attitude_array^1]
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionReligiousAttitude
+	text = {
+		localization_key = NEB_faction_attitude_[?NEB_faction_managemant_attitude_array^2]
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionRevivalistAttitude
+	text = {
+		localization_key = NEB_faction_attitude_[?NEB_faction_managemant_attitude_array^3]
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionRepublicanModifier
+	text = {
+		localization_key = NEB_faction_modifier_[?NEB_faction_managemant_attitude_array^0]
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionRoyalistModifier
+	text = {
+		localization_key = NEB_faction_modifier_[?NEB_faction_managemant_attitude_array^1]
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionReligiousModifier
+	text = {
+		localization_key = NEB_faction_modifier_[?NEB_faction_managemant_attitude_array^2]
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionRevivalistModifier
+	text = {
+		localization_key = NEB_faction_modifier_[?NEB_faction_managemant_attitude_array^3]
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionRepublicanInfluence
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = [GetNEBFactionRepublicanInfluenceRuling]
+    }
+	text = {
+		localization_key = [GetNEBFactionRepublicanInfluenceOpposition]
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionRoyalistInfluence
+	text = {
+		trigger = {
+			has_government = democratic
+		}
+		localization_key = [GetNEBFactionRoyalistInfluenceRuling]
+    }
+	text = {
+		localization_key = [GetNEBFactionRoyalistInfluenceOpposition]
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionReligiousInfluence
+	text = {
+		trigger = {
+			has_government = neutrality
+		}
+		localization_key = [GetNEBFactionReligiousInfluenceRuling]
+    }
+	text = {
+		localization_key = [GetNEBFactionReligiousInfluenceOpposition]
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionRevivalistInfluence
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = [GetNEBFactionRevivalistInfluenceRuling]
+    }
+	text = {
+		localization_key = [GetNEBFactionRevivalistInfluenceOpposition]
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionRepublicanInfluenceRuling
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 20
+				compare = less_than
+			}
+		}
+		localization_key = R_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 20
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 40
+				compare = less_than
+			}
+		}
+		localization_key = O_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 40
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 60
+				compare = less_than
+			}
+		}
+		localization_key = Y_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 60
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 80
+				compare = less_than
+			}
+		}
+		localization_key = C_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 80
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = G_color
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionRoyalistInfluenceRuling
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 20
+				compare = less_than
+			}
+		}
+		localization_key = R_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 20
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 40
+				compare = less_than
+			}
+		}
+		localization_key = O_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 40
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 60
+				compare = less_than
+			}
+		}
+		localization_key = Y_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 60
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 80
+				compare = less_than
+			}
+		}
+		localization_key = C_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 80
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = G_color
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionReligiousInfluenceRuling
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 20
+				compare = less_than
+			}
+		}
+		localization_key = R_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 20
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 40
+				compare = less_than
+			}
+		}
+		localization_key = O_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 40
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 60
+				compare = less_than
+			}
+		}
+		localization_key = Y_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 60
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 80
+				compare = less_than
+			}
+		}
+		localization_key = C_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 80
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = G_color
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionRevivalistInfluenceRuling
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 20
+				compare = less_than
+			}
+		}
+		localization_key = R_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 20
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 40
+				compare = less_than
+			}
+		}
+		localization_key = O_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 40
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 60
+				compare = less_than
+			}
+		}
+		localization_key = Y_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 60
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 80
+				compare = less_than
+			}
+		}
+		localization_key = C_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 80
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = G_color
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionRepublicanInfluenceOpposition
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 20
+				compare = less_than
+			}
+		}
+		localization_key = G_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 20
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 40
+				compare = less_than
+			}
+		}
+		localization_key = C_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 40
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 60
+				compare = less_than
+			}
+		}
+		localization_key = Y_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 60
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 80
+				compare = less_than
+			}
+		}
+		localization_key = O_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@communism
+				value = 80
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = R_color
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionRoyalistInfluenceOpposition
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 20
+				compare = less_than
+			}
+		}
+		localization_key = G_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 20
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 40
+				compare = less_than
+			}
+		}
+		localization_key = C_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 40
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 60
+				compare = less_than
+			}
+		}
+		localization_key = Y_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 60
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 80
+				compare = less_than
+			}
+		}
+		localization_key = O_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@democratic
+				value = 80
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = R_color
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionReligiousInfluenceOpposition
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 20
+				compare = less_than
+			}
+		}
+		localization_key = G_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 20
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 40
+				compare = less_than
+			}
+		}
+		localization_key = C_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 40
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 60
+				compare = less_than
+			}
+		}
+		localization_key = Y_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 60
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 80
+				compare = less_than
+			}
+		}
+		localization_key = O_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@neutrality
+				value = 80
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = R_color
+    }
+}
+
+defined_text = {
+	name = GetNEBFactionRevivalistInfluenceOpposition
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 20
+				compare = less_than
+			}
+		}
+		localization_key = G_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 20
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 40
+				compare = less_than
+			}
+		}
+		localization_key = C_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 40
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 60
+				compare = less_than
+			}
+		}
+		localization_key = Y_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 60
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 80
+				compare = less_than
+			}
+		}
+		localization_key = O_color
+    }
+	text = {
+		trigger = {
+			check_variable = {
+				var = party_popularity_100@fascism
+				value = 80
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = R_color
+    }
+}

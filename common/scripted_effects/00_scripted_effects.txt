@@ -1,3 +1,15 @@
+#	Example:
+#
+#	example_effect = {
+#		add_political_power = 66
+#		add_popularity = {
+#			ideology = fascism
+#			popularity = 0.33
+#		}
+#	}
+#
+#
+#	In a script file:
 #
 #	effect = {
 #		example_effect = yes
@@ -855,7 +867,6 @@ add_ruling_to_dem = {
 		}
 	}
 }
-
 add_ruling_to_fas = {
 	custom_effect_tooltip = add_ruling_to_fas_tt
 	hidden_effect = {
@@ -951,7 +962,6 @@ add_ruling_to_fas = {
 		}
 	}
 }
-
 add_ruling_to_com = {
 	custom_effect_tooltip = add_ruling_to_com_tt
 	hidden_effect = {
@@ -1047,7 +1057,6 @@ add_ruling_to_com = {
 		}
 	}
 }
-
 add_ruling_to_neu = {
 	custom_effect_tooltip = add_ruling_to_neu_tt
 	hidden_effect = {
@@ -1490,6 +1499,7 @@ find_local_dangerous_fascist = {
 	}
 }
 
+
 # The idea is that you can use these effects to store the party popularities (and, if desired, the ruling party) when puppeting or possibly when starting civil wars, and then use the "restore" effects to reset it after the puppeting has happened, so that you don't have to use the overlord's ideology if you don't want to. 
 get_current_ideology_popularities = {
 	set_variable = { ROOT.communist_support_before_change = ROOT.party_popularity_100@communism }
@@ -1646,4 +1656,10 @@ store_core_states_on_game_start = { #Should be called from history file
 			}
 		}
 	}
+}
+
+set_african_central_bank_variables = {
+	set_variable = { org_africa_central_bank_stability_factor = 0.05}
+	set_variable = { org_africa_central_bank_industrial_complex_factor = 0.1}
+	set_variable = { org_africa_central_bank_infrastructure_factor = 0.1}
 }

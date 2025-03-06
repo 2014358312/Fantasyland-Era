@@ -1,0 +1,36 @@
+﻿###########################
+# FE Generic Events
+###########################
+
+add_namespace = FE_generic
+
+country_event = {
+	id = FE_generic.1
+	title = FE_generic.1.t
+	desc = { 
+		text = FE_generic.1.desc_a
+		trigger = {
+			has_country_flag = ROOT_calc_character_status_num_flag
+		}
+	}
+	desc = {
+		text = FE_generic.1.desc_b
+		trigger = {
+			NOT = { has_country_flag = ROOT_calc_character_status_num_flag }
+		}
+	}
+	picture = GFX_report_event_ALN_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = FE_generic.1.a
+		trigger = { has_country_flag = ROOT_calc_character_status_num_flag }
+		clr_country_flag = ROOT_calc_character_status_num_flag
+	}
+
+	option = {
+		name = FE_generic.1.b
+		trigger = { NOT = { has_country_flag = ROOT_calc_character_status_num_flag } }
+	}
+}

@@ -1,0 +1,308 @@
+@FACTION_TAB_TEXT_X = 50
+@ATTITUDE_TAB_TEXT_X = 155
+@INFLUENCE_TAB_TEXT_X = 270
+@MODIFIER_TAB_TEXT_X = 380
+@HEADERS_Y = 15
+@FACTION_ICONS_X = 10
+@FACTION_NAMES_X = 55
+@REPUBLICAN_TEXT_Y = 55
+@ROYALIST_TEXT_Y = 105
+@RELIGIOUS_TEXT_Y = 155
+@REVIVALIST_TEXT_Y = 205
+@REPUBLICAN_TEXT_MODIFIER_Y = 46
+@ROYALIST_TEXT_MODIFIER_Y = 96
+@RELIGIOUS_TEXT_MODIFIER_Y = 146
+@REVIVALIST_TEXT_MODIFIER_Y = 196
+
+
+guiTypes = {
+
+	containerWindowType = {
+		name = "neb_faction_management_decision_ui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height = 245 }
+		
+		containerWindowType = {
+			name = "neb_faction_tab"
+			position = { x = 0 y = @HEADERS_Y }
+
+			instantTextBoxType = {
+				name  = "faction_name"
+				position = { x = @FACTION_ICONS_X y = 0 }
+				font = "hoi_18mbs"
+				text = "NEB_faction_name_text"
+				format = center
+				maxWidth = 145
+				maxHeight = 24
+			}
+
+			instantTextBoxType = {
+				name  = "faction_attitude"
+				position = { x = @ATTITUDE_TAB_TEXT_X y = 0 }
+				font = "hoi_18mbs"
+				text = "NEB_faction_attitude_text"
+				format = center
+				maxWidth = 110
+				maxHeight = 24
+			}
+
+			instantTextBoxType = {
+				name  = "faction_influence"
+				position = { x = @INFLUENCE_TAB_TEXT_X y = 0 }
+				font = "hoi_18mbs"
+				text = "NEB_faction_influence_text"
+				format = center
+				maxWidth = 110
+				maxHeight = 24
+			}
+
+			instantTextBoxType = {
+				name  = "faction_modifier"
+				position = { x = @MODIFIER_TAB_TEXT_X y = 0 }
+				font = "hoi_18mbs"
+				text = "NEB_faction_modifier_text"
+				format = center
+				maxWidth = 110
+				maxHeight = 24
+			}
+		}
+		
+		containerWindowType = {
+			name = "neb_faction_tab_factions"
+			position = { x = 0 y = 40 }
+			
+			containerWindowType = {
+				name = "neb_faction_icon"
+				position = { x = @FACTION_ICONS_X y = 0 }
+				
+				iconType = {
+					name  = "republican_icon"
+					spriteType = "GFX_decision_NEB_faction_republican"
+					position = { x = 0 y = 5 }
+				}
+				
+				iconType = {
+					name  = "royalist_icon"
+					spriteType = "GFX_decision_NEB_faction_royalist"
+					position = { x = 0 y = 55 }
+				}
+				
+				iconType = {
+					name  = "religious_icon"
+					spriteType = "GFX_decision_NEB_faction_religious"
+					position = { x = 0 y = 105 }
+				}
+				
+				iconType = {
+					name  = "revivalist_icon"
+					spriteType = "GFX_decision_NEB_faction_revivalis"
+					position = { x = 0 y = 155 }
+				}
+			}
+			
+			containerWindowType = {
+				name = "neb_faction_name"
+				position = { x = @FACTION_NAMES_X y = 0 }
+
+				instantTextBoxType = {
+					name  = "republican_name"
+					position = { x = 0 y = 15 }
+					font = "hoi_18mbs"
+					text = "NEB_republican_name_text"
+					format = left
+					maxWidth = 100
+					maxHeight = 24
+				}
+
+				instantTextBoxType = {
+					name  = "royalist_name"
+					position = { x = 0 y = 65 }
+					font = "hoi_18mbs"
+					text = "NEB_royalist_name_text"
+					format = left
+					maxWidth = 100
+					maxHeight = 24
+				}
+
+				instantTextBoxType = {
+					name  = "religious_name"
+					position = { x = 0 y = 115 }
+					font = "hoi_18mbs"
+					text = "NEB_religious_name_text"
+					format = left
+					maxWidth = 100
+					maxHeight = 24
+				}
+
+				instantTextBoxType = {
+					name  = "revivalist_name"
+					position = { x = 0 y = 165 }
+					font = "hoi_18mbs"
+					text = "NEB_revivalist_name_text"
+					format = left
+					maxWidth = 100
+					maxHeight = 24
+				}
+			}
+		}
+		
+		containerWindowType = {
+			name = "neb_faction_tab_attitude"
+			position = { x = @ATTITUDE_TAB_TEXT_X y = 0 }
+
+			instantTextBoxType = {
+				name  = "NEB_republican_attitude_status"
+				position = { x = 0 y = @REPUBLICAN_TEXT_Y }
+				font = "hoi_18mbs"
+				text = "NEB_republican_attitude_status_text"
+				format = center
+				maxwidth = 110
+			}
+
+			instantTextBoxType = {
+				name  = "NEB_royalist_attitude_status"
+				position = { x = 0 y = @ROYALIST_TEXT_Y }
+				font = "hoi_18mbs"
+				text = "NEB_royalist_attitude_status_text"
+				format = center
+				maxwidth = 110
+			}
+
+			instantTextBoxType = {
+				name  = "NEB_religious_attitude_status"
+				position = { x = 0 y = @RELIGIOUS_TEXT_Y }
+				font = "hoi_18mbs"
+				text = "NEB_religious_attitude_status_text"
+				format = center
+				maxwidth = 110
+			}
+
+			instantTextBoxType = {
+				name  = "NEB_revivalist_attitude_status"
+				position = { x = 0 y = @REVIVALIST_TEXT_Y }
+				font = "hoi_18mbs"
+				text = "NEB_revivalist_attitude_status_text"
+				format = center
+				maxwidth = 110
+			}
+		}
+		
+		containerWindowType = {
+			name = "neb_faction_tab_influence"
+			position = { x = @INFLUENCE_TAB_TEXT_X y = 0 }
+
+			instantTextBoxType = {
+				name  = "NEB_republican_influence_status"
+				position = { x = 0 y = @REPUBLICAN_TEXT_Y }
+				font = "hoi_18mbs"
+				text = "NEB_republican_influence_status_text"
+				format = center
+				maxwidth = 110
+			}
+
+			instantTextBoxType = {
+				name  = "NEB_royalist_influence_status"
+				position = { x = 0 y = @ROYALIST_TEXT_Y }
+				font = "hoi_18mbs"
+				text = "NEB_royalist_influence_status_text"
+				format = center
+				maxwidth = 110
+			}
+
+			instantTextBoxType = {
+				name  = "NEB_religious_influence_status"
+				position = { x = 0 y = @RELIGIOUS_TEXT_Y }
+				font = "hoi_18mbs"
+				text = "NEB_religious_influence_status_text"
+				format = center
+				maxwidth = 110
+			}
+
+			instantTextBoxType = {
+				name  = "NEB_revivalist_influence_status"
+				position = { x = 0 y = @REVIVALIST_TEXT_Y }
+				font = "hoi_18mbs"
+				text = "NEB_revivalist_influence_status_text"
+				format = center
+				maxwidth = 110
+			}
+		}
+		
+		containerWindowType = {
+			name = "neb_faction_tab_modifier"
+			position = { x = @MODIFIER_TAB_TEXT_X y = 0 }
+
+			instantTextBoxType = {
+				name  = "NEB_republican_modifier_status"
+				position = { x = 0 y = @REPUBLICAN_TEXT_MODIFIER_Y }
+				font = "hoi_18mbs"
+				text = "NEB_republican_modifier_status_text"
+				format = center
+				maxwidth = 110
+			}
+
+			instantTextBoxType = {
+				name  = "NEB_royalist_modifier_status"
+				position = { x = 0 y = @ROYALIST_TEXT_MODIFIER_Y }
+				font = "hoi_18mbs"
+				text = "NEB_royalist_modifier_status_text"
+				format = center
+				maxwidth = 110
+			}
+
+			instantTextBoxType = {
+				name  = "NEB_religious_modifier_status"
+				position = { x = 0 y = @RELIGIOUS_TEXT_MODIFIER_Y }
+				font = "hoi_18mbs"
+				text = "NEB_religious_modifier_status_text"
+				format = center
+				maxwidth = 110
+			}
+
+			instantTextBoxType = {
+				name  = "NEB_revivalist_modifier_status"
+				position = { x = 0 y = @REVIVALIST_TEXT_MODIFIER_Y }
+				font = "hoi_18mbs"
+				text = "NEB_revivalist_modifier_status_text"
+				format = center
+				maxwidth = 110
+			}
+
+			instantTextBoxType = {
+				name  = "NEB_republican_modifier_status_alt"
+				position = { x = 0 y = @REPUBLICAN_TEXT_Y }
+				font = "hoi_18mbs"
+				text = "NEB_republican_modifier_status_text_alt"
+				format = center
+				maxwidth = 110
+			}
+
+			instantTextBoxType = {
+				name  = "NEB_royalist_modifier_status_alt"
+				position = { x = 0 y = @ROYALIST_TEXT_Y }
+				font = "hoi_18mbs"
+				text = "NEB_royalist_modifier_status_text_alt"
+				format = center
+				maxwidth = 110
+			}
+
+			instantTextBoxType = {
+				name  = "NEB_religious_modifier_status_alt"
+				position = { x = 0 y = @RELIGIOUS_TEXT_Y }
+				font = "hoi_18mbs"
+				text = "NEB_religious_modifier_status_text_alt"
+				format = center
+				maxwidth = 110
+			}
+
+			instantTextBoxType = {
+				name  = "NEB_revivalist_modifier_status_alt"
+				position = { x = 0 y = @REVIVALIST_TEXT_Y }
+				font = "hoi_18mbs"
+				text = "NEB_revivalist_modifier_status_text_alt"
+				format = center
+				maxwidth = 110
+			}
+		}
+	}
+}

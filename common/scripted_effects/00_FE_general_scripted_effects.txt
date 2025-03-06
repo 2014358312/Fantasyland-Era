@@ -622,3 +622,64 @@ initialize_landsol_party_long_name = {
 		}
 	}
 }
+
+check_country_characters_status = {
+	ROOT = {
+		clear_variable = ROOT_num_of_character_var
+		clear_variable = ROOT_num_of_head_of_government_var
+		clear_variable = ROOT_num_of_political_advisor_var
+		clear_variable = ROOT_num_of_theorist_var
+		clear_variable = ROOT_num_of_army_chief_var
+		clear_variable = ROOT_num_of_navy_chief_var
+		clear_variable = ROOT_num_of_air_chief_var
+		clear_variable = ROOT_num_of_high_command_var
+		clear_variable = ROOT_num_of_unit_leader_var
+		clear_variable = ROOT_num_of_corps_commander_var
+		clear_variable = ROOT_num_of_field_marshal_var
+		every_character = {
+			PREV = { add_to_variable = { ROOT_num_of_character_var = 1 } }
+			if = {
+				limit = { is_character_slot = head_of_government }
+				PREV = { add_to_variable = { ROOT_num_of_head_of_government_var = 1 } }
+			}
+			if = {
+				limit = { is_character_slot = political_advisor }
+				PREV = { add_to_variable = { ROOT_num_of_political_advisor_var = 1 } }
+			}
+			if = {
+				limit = { is_character_slot = theorist }
+				PREV = { add_to_variable = { ROOT_num_of_theorist_var = 1 } }
+			}
+			if = {
+				limit = { is_character_slot = army_chief }
+				PREV = { add_to_variable = { ROOT_num_of_army_chief_var = 1 } }
+			}
+			if = {
+				limit = { is_character_slot = navy_chief }
+				PREV = { add_to_variable = { ROOT_num_of_navy_chief_var = 1 } }
+			}
+			if = {
+				limit = { is_character_slot = air_chief }
+				PREV = { add_to_variable = { ROOT_num_of_air_chief_var = 1 } }
+			}
+			if = {
+				limit = { is_character_slot = high_command }
+				PREV = { add_to_variable = { ROOT_num_of_high_command_var = 1 } }
+			}
+			if = {
+				limit = { is_unit_leader = yes }
+				PREV = { add_to_variable = { ROOT_num_of_unit_leader_var = 1 } }
+			}
+			if = {
+				limit = { is_corps_commander = yes }
+				PREV = { add_to_variable = { ROOT_num_of_corps_commander_var = 1 } }
+			}
+			if = {
+				limit = { is_field_marshal = yes }
+				PREV = { add_to_variable = { ROOT_num_of_field_marshal_var = 1 } }
+			}
+		}
+		set_country_flag = ROOT_calc_character_status_num_flag
+		country_event = FE_generic.1
+	}
+}

@@ -57,32 +57,33 @@ guiTypes = {
 			size = { width = 330 height = 70 }
 			clipping = no
 			
-#			background = {
-#				name = "Background"		
-#				spriteType ="GFX_pol_piechart_bg"
-#			}
+			#background = {
+			#	name = "Background"		
+			#	spriteType ="GFX_pol_piechart_bg"
+			#}
 			
 			gridBoxType = {
 				name = "parties_grid"
-				position = { x = 265 y = 64 }
+				position = { x = 265 y = 70 }
 				size = { width = 100%% height = 100%% }
 				slotsize = { width = 230 height = 16 }
 				format = "UPPER_LEFT"
 			}
 			
-			iconType = {
-				name = "temp_faction_occlusion"
-				spriteType = "GFX_pol_temp_faction_occlusion"
-				position = { x = 325 y = 197 }
-			}
+			#iconType = {
+			#	name = "temp_faction_occlusion"
+			#	spriteType = "GFX_pol_temp_faction_occlusion"
+			#	position = { x = 325 y = 197 }
+			#}
 		}
 
 		
 		containerWindowType = {
 			name = "political_pie_chart"
-			position = { x= 434 y = 60 }
+			position = { x= 434 y = 58 }
 			size = { width=100 height=100 }
 			clipping = no
+			scale = 0.99
 
 			iconType = {
 				name = "chart"
@@ -93,7 +94,7 @@ guiTypes = {
 			iconType ={
 				name ="pol_view_bg"
 				spriteType = "GFX_pol_piechart_overlay_63x63"
-				position = { x= -2 y = 1s }
+				position = { x= -2 y = 1 }
 			}
 		}
 		
@@ -125,13 +126,13 @@ guiTypes = {
 			iconType = {
 				name = "temp_ideology_occlusion"
 				spriteType = "GFX_pol_temp_ideology_occlusion"
-				position = { x = -1 y = 88 }
+				position = { x = -2 y = 88 }
 				alwaystransparent = yes
 			}
 			
 			instantTextboxType = {
 				name = "elections"
-				position = { x = 1 y = 99 }
+				position = { x = 1 y = 96 }
 				font = "hoi_16mbs"
 				text = "elections"
 				maxWidth = 180
@@ -142,7 +143,7 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "faction_name"
-				position = { x = 25 y = 263 }
+				position = { x = 25 y = 261 }
 				font = "hoi_18mbs"
 				text = "faction"
 				maxWidth = 155
@@ -339,7 +340,7 @@ guiTypes = {
 				}
 				gridboxtype = {
 					name = "spirit_grid_over_defined"
-					position = { x = 20 y = 0 }
+					position = { x = 5 y = 0 }
 					size = { width = 330 height = 68 }
 					slotsize = { width = 33 height = 38 }
 					max_slots_horizontal = 14
@@ -1783,7 +1784,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "subideology_name"
-			position = { x = 0 y = 88 }
+			position = { x = 0 y = 86 }
 			font = "hoi_18mbs" #was hoi_16mbs
 			text = "[GetRulingIdeologySubtype]"	
 			pdx_tooltip = "[GetRulingIdeologySubtype]"
