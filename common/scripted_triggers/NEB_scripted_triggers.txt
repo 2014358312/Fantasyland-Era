@@ -1,0 +1,18 @@
+NEB_lieselotte_riefenstahl_as_gov = {
+	custom_override_tooltip = {
+		tooltip = {
+			localization_key = character_is_gov_ott
+			CHARACTER = Lieselotte_Riefenstahl
+			POSITION = head_of_government
+		}
+		check_variable = { FE_secondary = token:NEB_Lieselotte_Riefenstahl_head_of_government }
+	}
+}
+
+NEB_constitution_reform_progress = {
+	NEB_lieselotte_riefenstahl_as_gov = yes
+	has_active_mission = NEB_committee_vots_on_constitutional_reform_proposal_mission
+	hidden_trigger = {
+		has_completed_focus = NEB_premier_riefenstahl_013
+	}
+}

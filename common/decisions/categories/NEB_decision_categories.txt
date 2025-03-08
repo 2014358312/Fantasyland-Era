@@ -1,6 +1,6 @@
-################
-#####   NEB  ######
-################
+##################
+#####   NEB  #####
+##################
 
 NEB_faction_management_decision_category = {
 	icon = gre_faction_management
@@ -11,7 +11,22 @@ NEB_faction_management_decision_category = {
 	
 	scripted_gui = neb_faction_management_decision_ui
 
-	priority = 100
+	priority = 5
+
+	visible_when_empty = yes
+}
+
+NEB_constitution_reform_decision_category = {
+	icon = SOV_soviet_academy_of_sciences
+	picture = GFX_decision_cat_picture_generic_industry_plan
+	allowed = { original_tag = NEB }
+	visible = {
+		has_idea = NEB_unofficial_constitution
+	}
+	
+	scripted_gui = neb_constitution_reform_decision_ui
+
+	priority = 10
 
 	visible_when_empty = yes
 }

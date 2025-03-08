@@ -19,13 +19,1489 @@ focus_tree = {
 	default = no
 
 	focus = {
-		id = NEB_ring_from_landsol
-		icon = GFX_goal_generic_collaborate_local_elites
-		x = 10
+		id = NEB_premier_riefenstahl_001
+		text = NEB_riefenstahl_and_constitution
+		icon = GFX_focus_NEB_riefenstahl
+		x = 5
 		y = 0
-		cost = 10
+		cost = 0
 		available = {
-			always = no 
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_premier_riefenstahl_002
+		text = NEB_retain_aristocratic_privileges
+		icon = GFX_focus_BEL_national_redoubt_at_antwerp
+		prerequisite = { focus = NEB_premier_riefenstahl_001 }
+		mutually_exclusive = { focus = NEB_premier_riefenstahl_003 }
+		relative_position_id = NEB_premier_riefenstahl_001
+		x = -3
+		y = 1
+		cost = 4
+		available = {
+			NEB_constitution_reform_progress = yes
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		cancel = {
+			if = {
+				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			}
+			else = { always = no }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_premier_riefenstahl_003
+		text = NEB_land_nationalization
+		icon = GFX_goal_generic_land_reform
+		prerequisite = { focus = NEB_premier_riefenstahl_001 }
+		mutually_exclusive = { focus = NEB_premier_riefenstahl_002 }
+		relative_position_id = NEB_premier_riefenstahl_001
+		x = -1
+		y = 1
+		cost = 4
+		available = {
+			NEB_constitution_reform_progress = yes
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		cancel = {
+			if = {
+				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			}
+			else = { always = no }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_premier_riefenstahl_004
+		text = NEB_national_public_opinion_survey
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = NEB_premier_riefenstahl_001 }
+		relative_position_id = NEB_premier_riefenstahl_001
+		x = 2
+		y = 1
+		cost = 4
+		available = {
+			NEB_constitution_reform_progress = yes
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		cancel = {
+			if = {
+				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			}
+			else = { always = no }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_premier_riefenstahl_005
+		text = NEB_reorganize_religious_court
+		icon = GFX_focus_SWI_helvetic_junta
+		prerequisite = {
+			focus = NEB_premier_riefenstahl_002
+			focus = NEB_premier_riefenstahl_003
+		}
+		mutually_exclusive = { focus = NEB_premier_riefenstahl_006 }
+		relative_position_id = NEB_premier_riefenstahl_002
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			NEB_constitution_reform_progress = yes
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		cancel = {
+			if = {
+				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			}
+			else = { always = no }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_premier_riefenstahl_006
+		text = NEB_amendment_to_separation_of_church_and_state
+		icon = GFX_focus_TUR_ratify_the_six_arrows
+		prerequisite = {
+			focus = NEB_premier_riefenstahl_002
+			focus = NEB_premier_riefenstahl_003
+		}
+		mutually_exclusive = { focus = NEB_premier_riefenstahl_005 }
+		prerequisite = { focus = NEB_premier_riefenstahl_004 }
+		relative_position_id = NEB_premier_riefenstahl_002
+		x = 2
+		y = 1
+		cost = 4
+		available = {
+			NEB_constitution_reform_progress = yes
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		cancel = {
+			if = {
+				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			}
+			else = { always = no }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_premier_riefenstahl_007
+		text = NEB_literacy_campaign
+		icon = GFX_focus_generic_university_1
+		prerequisite = { focus = NEB_premier_riefenstahl_004 }
+		relative_position_id = NEB_premier_riefenstahl_004
+		x = -1
+		y = 1
+		cost = 4
+		available = {
+			NEB_constitution_reform_progress = yes
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		cancel = {
+			if = {
+				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			}
+			else = { always = no }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_premier_riefenstahl_008
+		text = NEB_economic_policy_direction
+		icon = GFX_focus_PER_national_bank
+		prerequisite = { focus = NEB_premier_riefenstahl_004 }
+		relative_position_id = NEB_premier_riefenstahl_004
+		x = 1
+		y = 1
+		cost = 4
+		available = {
+			NEB_constitution_reform_progress = yes
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		cancel = {
+			if = {
+				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			}
+			else = { always = no }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_premier_riefenstahl_009
+		text = NEB_pacify_officer_corps
+		icon = GFX_focus_generic_military_mission
+		prerequisite = {
+			focus = NEB_premier_riefenstahl_005
+			focus = NEB_premier_riefenstahl_006
+		}
+		relative_position_id = NEB_premier_riefenstahl_005
+		x = 1
+		y = 1
+		cost = 4
+		available = {
+			NEB_constitution_reform_progress = yes
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		cancel = {
+			if = {
+				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			}
+			else = { always = no }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_premier_riefenstahl_010
+		text = NEB_traditional_guild_revitalization_plan
+		icon = GFX_focus_RAJ_special_economic_zones
+		prerequisite = { focus = NEB_premier_riefenstahl_004 }
+		relative_position_id = NEB_premier_riefenstahl_004
+		x = 0
+		y = 2
+		cost = 4
+		available = {
+			NEB_constitution_reform_progress = yes
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		cancel = {
+			if = {
+				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			}
+			else = { always = no }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_premier_riefenstahl_011
+		text = NEB_special_authorization_law
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = NEB_premier_riefenstahl_009 }
+		mutually_exclusive = { focus = NEB_premier_riefenstahl_012 }
+		relative_position_id = NEB_premier_riefenstahl_009
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			NEB_constitution_reform_progress = yes
+			OR = {
+				has_completed_focus = NEB_premier_riefenstahl_002
+				has_completed_focus = NEB_premier_riefenstahl_005
+			}
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		cancel = {
+			if = {
+				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			}
+			else = { always = no }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_premier_riefenstahl_012
+		text = NEB_what_is_done_cannot_be_undone
+		icon = GFX_focus_POL_complete_april_constitution
+		prerequisite = { focus = NEB_premier_riefenstahl_009 }
+		prerequisite = { focus = NEB_premier_riefenstahl_010 }
+		mutually_exclusive = { focus = NEB_premier_riefenstahl_011 }
+		relative_position_id = NEB_premier_riefenstahl_009
+		x = 2
+		y = 1
+		cost = 4
+		available = {
+			NEB_constitution_reform_progress = yes
+		}
+		select_effect = {
+			add_political_power = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = when_select_this_focus_tt
+			custom_effect_tooltip = NEB_committee_vots_on_constitutional_reform_proposal_mission_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = when_finish_this_focus_tt
+			effect_tooltip = { add_political_power = 150 }
+		}
+		cancel = {
+			if = {
+				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			}
+			else = { always = no }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_premier_riefenstahl_013
+		text = NEB_autunno_caldo
+		icon = GFX_focus_NEB_autunno_caldo
+		prerequisite = {
+			focus = NEB_premier_riefenstahl_011
+			focus = NEB_premier_riefenstahl_012
+		}
+		relative_position_id = NEB_premier_riefenstahl_011
+		x = 1
+		y = 1
+		cost = 0
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		cancel = {
+			if = {
+				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			}
+			else = { always = no }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_focus
+		text = NEB_military_budget
+		icon = GFX_focus_usa_build_the_pentagon
+		x = 22
+		y = 0
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_001
+		text = NEB_rectify_national_defense_forces
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = NEB_military_focus }
+		relative_position_id = NEB_military_focus
+		x = -7
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_002
+		text = NEB_trench_warfare_system
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = NEB_military_army_001 }
+		relative_position_id = NEB_military_army_001
+		x = -4
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_003
+		text = NEB_land_ginseng_reform
+		icon = GFX_goal_generic_army_command_power
+		prerequisite = { focus = NEB_military_army_001 }
+		relative_position_id = NEB_military_army_001
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_air_001
+		text = NEB_aviation_reform
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = NEB_military_army_001 }
+		relative_position_id = NEB_military_army_001
+		x = 6
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_004
+		text = NEB_ground_communication_network
+		icon = GFX_goal_generic_radar_instillation
+		prerequisite = { focus = NEB_military_army_002 }
+		relative_position_id = NEB_military_army_002
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_005
+		text = NEB_death_descended_from_heavens
+		icon = GFX_goal_generic_dual_purpose_guns
+		prerequisite = { focus = NEB_military_army_002 }
+		relative_position_id = NEB_military_army_002
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_006
+		text = NEB_mechanized_cavalry
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = NEB_military_army_003 }
+		relative_position_id = NEB_military_army_003
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_007
+		text = NEB_tighten_enrollment_requirements_for_military_academy_students
+		icon = GFX_focus_generic_military_dictatorship
+		prerequisite = { focus = NEB_military_army_003 }
+		mutually_exclusive = { focus = NEB_military_army_008 }
+		relative_position_id = NEB_military_army_003
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_008
+		text = NEB_support_youth_officer_alliance
+		icon = GFX_focus_BRA_reach_out_to_military_dem
+		prerequisite = { focus = NEB_military_army_003 }
+		prerequisite = { focus = NEB_military_air_001 }
+		mutually_exclusive = { focus = NEB_military_army_007 }
+		relative_position_id = NEB_military_army_003
+		x = 4
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_air_002
+		text = NEB_establishment_of_aviation_research_institute
+		icon = GFX_focus_generic_air_research_boost
+		prerequisite = { focus = NEB_military_air_001 }
+		relative_position_id = NEB_military_air_001
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_air_003
+		text = NEB_sky_knight
+		icon = GFX_goal_generic_air_CAS_german
+		prerequisite = { focus = NEB_military_air_001 }
+		relative_position_id = NEB_military_air_001
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_009
+		text = NEB_update_infantry_code_of_conduct
+		icon = GFX_goal_generic_army_guy2
+		prerequisite = { focus = NEB_military_army_002 }
+		mutually_exclusive = { focus = NEB_military_army_010 focus = NEB_military_army_011 }
+		relative_position_id = NEB_military_army_002
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_010
+		text = NEB_iron_armored_cavalry_regiment
+		icon = GFX_goal_generic_mechanized_infantry
+		prerequisite = { focus = NEB_military_army_006 }
+		mutually_exclusive = { focus = NEB_military_army_009 focus = NEB_military_army_011 }
+		relative_position_id = NEB_military_army_006
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_011
+		text = NEB_armor_theory
+		icon = GFX_goal_generic_army_tanks3
+		prerequisite = { focus = NEB_military_army_006 }
+		mutually_exclusive = { focus = NEB_military_army_009 focus = NEB_military_army_010 }
+		relative_position_id = NEB_military_army_006
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_012
+		text = NEB_tactical_reform
+		icon = GFX_focus_chi_army_reform
+		prerequisite = {
+			focus = NEB_military_army_007
+			focus = NEB_military_army_008
+		}
+		relative_position_id = NEB_military_army_007
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_air_004
+		text = NEB_train_workers_and_mechanics
+		icon = GFX_focus_generic_industrialists
+		prerequisite = {
+			focus = NEB_military_air_002
+			#focus = NEB_military_army_008
+		}
+		mutually_exclusive = { focus = NEB_military_air_005 }
+		relative_position_id = NEB_military_air_002
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_air_005
+		text = NEB_aviation_design_review_department
+		icon = GFX_goal_generic_design_equipment_standards
+		prerequisite = { focus = NEB_military_air_002 }
+		mutually_exclusive = { focus = NEB_military_air_004 }
+		relative_position_id = NEB_military_air_002
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_013
+		text = NEB_regulations_on_management_of_industrial_war
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = {
+			focus = NEB_military_army_009
+			focus = NEB_military_army_010
+			focus = NEB_military_army_011
+		}
+		relative_position_id = NEB_military_army_010
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_014
+		text = NEB_expand_military_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = NEB_military_army_007 }
+		relative_position_id = NEB_military_army_007
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_015
+		text = NEB_pilot_training_program
+		icon = GFX_focus_SOV_flying_clubs
+		prerequisite = { focus = NEB_military_army_008 }
+		relative_position_id = NEB_military_army_008
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_air_006
+		text = NEB_improving_aircraft_engines
+		icon = GFX_focus_FIN_expand_air_force_academy
+		prerequisite = {
+			focus = NEB_military_air_004
+			focus = NEB_military_air_005
+		}
+		relative_position_id = NEB_military_air_004
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_air_007
+		text = NEB_interspersing_breakthroughs
+		icon = GFX_goal_generic_air_fighter2_new
+		prerequisite = { focus = NEB_military_air_003 }
+		relative_position_id = NEB_military_air_003
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_016
+		text = NEB_building_border_fortresses
+		icon = GFX_goal_generic_barricades
+		prerequisite = { focus = NEB_military_army_004 }
+		prerequisite = { focus = NEB_military_army_013 }
+		relative_position_id = NEB_military_army_004
+		x = 0
+		y = 3
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_017
+		text = NEB_reserve_combat_materials
+		icon = GFX_goal_generic_military_equipment
+		prerequisite = { focus = NEB_military_army_013 }
+		mutually_exclusive = { focus = NEB_military_army_018 }
+		relative_position_id = NEB_military_army_013
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_018
+		text = NEB_airspace_control
+		icon = GFX_goal_generic_air_defense2
+		prerequisite = { focus = NEB_military_army_013 }
+		mutually_exclusive = { focus = NEB_military_army_017 }
+		relative_position_id = NEB_military_army_013
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_019
+		text = NEB_professional_officer_corps
+		icon = GFX_goal_generic_army_high_command
+		prerequisite = { focus = NEB_military_army_012 }
+		prerequisite = {
+			focus = NEB_military_army_014
+			focus = NEB_military_army_015
+		}
+		relative_position_id = NEB_military_army_012
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_air_008
+		text = NEB_strategic_bombing
+		icon = GFX_goal_generic_air_strategic_bomber_new
+		prerequisite = { focus = NEB_military_air_006 }
+		prerequisite = { focus = NEB_military_air_007 }
+		relative_position_id = NEB_military_air_006
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_020
+		text = NEB_compulsory_military_service_act
+		icon = GFX_goal_generic_army_cooperation
+		prerequisite = { focus = NEB_military_army_017 }
+		relative_position_id = NEB_military_army_017
+		x = -2
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_021
+		text = NEB_army_engineering_support_corps
+		icon = GFX_focus_prc_infiltration
+		prerequisite = {
+			focus = NEB_military_army_017
+			focus = NEB_military_army_018
+		}
+		relative_position_id = NEB_military_army_017
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_022
+		text = NEB_motorized_transportation_network
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = NEB_military_army_018 }
+		relative_position_id = NEB_military_army_018
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_023
+		text = NEB_standardization_of_trench_construction
+		icon = GFX_focus_SWE_hedgehog_defense
+		prerequisite = { focus = NEB_military_army_020 }
+		relative_position_id = NEB_military_army_020
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_024
+		text = NEB_frontline_maintenance
+		icon = GFX_goal_generic_medium_industry
+		prerequisite = { focus = NEB_military_army_021 }
+		relative_position_id = NEB_military_army_021
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_025
+		text = NEB_simplified_airport_facilities
+		icon = GFX_goal_generic_airports
+		prerequisite = { focus = NEB_military_army_021 }
+		relative_position_id = NEB_military_army_021
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_026
+		text = NEB_officer_autonomy
+		icon = GFX_goal_generic_intense_warfare
+		prerequisite = { focus = NEB_military_army_022 }
+		relative_position_id = NEB_military_army_022
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_027
+		text = NEB_training_local_militia
+		icon = GFX_goal_generic_defence_army
+		prerequisite = { focus = NEB_military_army_022 }
+		relative_position_id = NEB_military_army_022
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_028
+		text = NEB_reorganize_imperial_guard
+		icon = GFX_focus_GER_expand_ss_security_duties
+		prerequisite = { focus = NEB_military_army_023 }
+		relative_position_id = NEB_military_army_023
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_029
+		text = NEB_heavy_artillery_cluster
+		icon = GFX_goal_generic_army_superior_firepower
+		prerequisite = { focus = NEB_military_army_023 }
+		prerequisite = { focus = NEB_military_army_024 }
+		relative_position_id = NEB_military_army_023
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_030
+		text = NEB_innovative_blasting_technology
+		icon = GFX_focus_generic_reinforcing_the_supply_network
+		prerequisite = {
+			focus = NEB_military_army_024
+			focus = NEB_military_army_025
+		}
+		relative_position_id = NEB_military_army_024
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_031
+		text = NEB_attack_hard_blade
+		icon = GFX_goal_generic_mechanized_wave
+		prerequisite = { focus = NEB_military_army_022 }
+		prerequisite = { focus = NEB_military_army_025 }
+		relative_position_id = NEB_military_army_022
+		x = -1
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_032
+		text = NEB_guerrilla_tactics
+		icon = GFX_goal_generic_arctic_warfare
+		prerequisite = { focus = NEB_military_army_027 }
+		relative_position_id = NEB_military_army_027
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_033
+		text = NEB_elite_commando
+		icon = GFX_focus_ITA_blackshirts
+		prerequisite = { focus = NEB_military_army_028 }
+		relative_position_id = NEB_military_army_028
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_034
+		text = NEB_scouts
+		icon = GFX_goal_generic_recon
+		prerequisite = { focus = NEB_military_army_028 }
+		relative_position_id = NEB_military_army_028
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_035
+		text = NEB_coordination_of_vacant_land
+		icon = GFX_focus_generic_armored_air_support
+		prerequisite = { focus = NEB_military_army_031 }
+		relative_position_id = NEB_military_army_031
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_036
+		text = NEB_widen_battle_front
+		icon = GFX_goal_generic_seize_railway
+		prerequisite = {
+			focus = NEB_military_army_026
+			focus = NEB_military_army_031
+		}
+		relative_position_id = NEB_military_army_026
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_037
+		text = NEB_establish_an_anti_armor_combat_unit
+		icon = GFX_goal_generic_tank_destroyer2
+		prerequisite = { focus = NEB_military_army_032 }
+		relative_position_id = NEB_military_army_032
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_038
+		text = NEB_national_mobilization_order
+		icon = GFX_goal_generic_corporatism
+		prerequisite = { focus = NEB_military_army_033 }
+		relative_position_id = NEB_military_army_033
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_039
+		text = NEB_frontline_strike
+		icon = GFX_focus_SWE_let_fly_all_guns
+		prerequisite = { focus = NEB_military_army_034 }
+		relative_position_id = NEB_military_army_034
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_040
+		text = NEB_focus_on_multiple_rocket_launchers
+		icon = GFX_goal_generic_mobile_artillery_rocket
+		prerequisite = { focus = NEB_military_army_030 }
+		relative_position_id = NEB_military_army_030
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_041
+		text = NEB_total_war
+		icon = GFX_focus_GER_autarky_achieved
+		prerequisite = { focus = NEB_military_army_036 }
+		prerequisite = { focus = NEB_military_army_037 }
+		relative_position_id = NEB_military_army_036
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_042
+		text = NEB_will_first
+		icon = GFX_focus_focus_fra_fascist_threat
+		prerequisite = { focus = NEB_military_army_038 }
+		prerequisite = { focus = NEB_military_army_039 }
+		relative_position_id = NEB_military_army_038
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_043
+		text = NEB_lubricate_a_machine
+		icon = GFX_goal_generic_workers_rights
+		prerequisite = { focus = NEB_military_army_039 }
+		relative_position_id = NEB_military_army_039
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_044
+		text = NEB_underground_industry
+		icon = GFX_focus_focus_fra_maquis
+		prerequisite = { focus = NEB_military_army_041 }
+		relative_position_id = NEB_military_army_041
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_army_045
+		text = NEB_strictly_observe_duty
+		icon = GFX_focus_generic_workers
+		prerequisite = { focus = NEB_military_army_041 }
+		relative_position_id = NEB_military_army_041
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
 		}
 		completion_reward = {
 			add_political_power = 150
