@@ -23,7 +23,7 @@ focus_tree = {
 	focus = {
 		id = GSK_LEI ##单独国策id/名字例子：tag_xxx
 		#icon = ##在.gfx文件里的图片
-		x = 20
+		x = 50
 		y = 0
 
 		cost = 1##天数1点=7天
@@ -101,7 +101,7 @@ focus_tree = {
 		relative_position_id = GSK_PCYT
 		prerequisite ={ focus = GSK_PCYT }
 		mutually_exclusive ={ focus = GSK_reqT }
-		x = -4
+		x = -15
 		y = 1
 		cost = 2
 		available = {}
@@ -114,8 +114,8 @@ focus_tree = {
 		relative_position_id = GSK_JJW
 		prerequisite ={ focus =GSK_JJW }
 		mutually_exclusive ={ focus = GSK_okm }
-		x = -2
-		y = 2
+		x = -6
+		y = 3
 		cost = 2
 		available = {}
 		completion_reward = {
@@ -123,10 +123,10 @@ focus_tree = {
 		}
 	}
 	focus ={
-		id = GSK_toyy##激进派的反抗
+		id = GSK_toyy##激进雏形
 		relative_position_id = GSK_Jom
 		prerequisite ={ focus =GSK_Jom }
-		x = 1
+		x = 5
 		y = 1
 		cost = 2
 		available = {}
@@ -138,6 +138,42 @@ focus_tree = {
 		id = GSK_toma##帮派成立
 		relative_position_id = GSK_Jom
 		prerequisite ={ focus =GSK_Jom }
+		x = -5
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_ygzs##妖怪之山的宣言（妖怪宣言）
+		relative_position_id = GSK_toma
+		prerequisite ={ focus =GSK_toma }
+		x = 0
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_ygcx##妖怪内战（妖怪之山出现）
+		relative_position_id = GSK_ygzs
+		prerequisite ={ focus =GSK_ygzs }
+		x = 1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_yzd##月之都（月都援助）
+		relative_position_id = GSK_ygzs
+		prerequisite ={ focus =GSK_ygzs }
 		x = -1
 		y = 1
 		cost = 2
@@ -147,12 +183,281 @@ focus_tree = {
 		}
 	}
 	focus ={
+		id = GSK_htkj##河童（缴获河童科技，获取装甲师）
+		relative_position_id = GSK_ygcx
+		prerequisite ={ focus =GSK_ygcx focus =GSK_yzd}
+		x = -1
+		y = 1
+		cost = 5
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_zcyp##融会贯通（研究出对面的科技，然后获得装甲加成）
+		relative_position_id = GSK_htkj
+		prerequisite ={ focus =GSK_htkj}
+		x = 0
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_tg##稳定度，新精神
+		relative_position_id = GSK_zcyp
+		prerequisite ={ focus =GSK_zcyp}
+		x = -1
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_xda##妖怪协定
+		relative_position_id = GSK_zcyp
+		prerequisite ={ focus =GSK_zcyp}
+		x = 1
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+
+	focus ={
+		id = GSK_hmg##红雾掀起
+		relative_position_id = GSK_toyy
+		prerequisite ={ focus =GSK_toyy }
+		x = 0
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_hwyb##红雾战争
+		relative_position_id = GSK_hmg
+		prerequisite ={ focus =GSK_hmg }
+		x = 1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_wzh##雾之湖
+		relative_position_id = GSK_hmg
+		prerequisite ={ focus =GSK_hmg }
+		x = -1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_byz##八云
+		relative_position_id = GSK_hwyb
+		prerequisite ={ focus =GSK_hmg focus =GSK_wzh}
+		x = -1
+		y = 1
+		cost = 7
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_rjzl##人里
+		relative_position_id = GSK_byz
+		prerequisite ={ focus =GSK_byz}
+		x = 0
+		y = 1
+		cost = 5
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_inm##重建发展
+		relative_position_id = GSK_rjzl
+		prerequisite ={ focus =GSK_rjzl}
+		x = 1
+		y = 1
+		cost = 5
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_opk##剥削红雾
+		relative_position_id = GSK_rjzl
+		prerequisite ={ focus =GSK_rjzl}
+		x = -1
+		y = 1
+		cost = 5
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+
+	focus ={
+		id = GSK_ddhl##多地混乱
+		relative_position_id = GSK_toyy
+		prerequisite ={ focus =GSK_toyy focus =GSK_toma}
+		mutually_exclusive ={ focus = GSK_hmg }
+		mutually_exclusive ={ focus =GSK_ygzs }
+		x = -5
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_yg##妖怪反叛
+		relative_position_id = GSK_ddhl
+		prerequisite ={ focus =GSK_ddhl }
+		x = 2
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_fmyg##炽燃天火
+		relative_position_id = GSK_yg
+		prerequisite ={ focus =GSK_yg focus =GSK_mfzs}
+		x = 1
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_lldy##魔法协定
+		relative_position_id = GSK_yg
+		prerequisite ={ focus =GSK_yg focus =dx focus =GSK_mfzs}
+		x = -1
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_dx##地下反击
+		relative_position_id = GSK_ddhl
+		prerequisite ={ focus =GSK_ddhl }
+		x = -2
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_zs##解决地下（苍穹落下，当地人力减少，但是提供科技加成）
+		relative_position_id = GSK_dx
+		prerequisite ={ focus =dx focus =GSK_mfzs }
+		x = -1
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_tdxy##天地协定（地下世界投降，地下世界的那几块地资源获取率提升）
+		relative_position_id = GSK_dx
+		prerequisite ={ focus =GSK_yg focus =dx focus =GSK_mfzs }
+		x = 1
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_mfzs##魔法之森
+		relative_position_id = GSK_ddhl
+		prerequisite ={ focus =GSK_ddhl }
+		x = 0
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_cxzh##整合势力
+		relative_position_id = GSK_tdxy
+		prerequisite ={ focus =GSK_tdxy focus =GSK_lldy focus =GSK_fmyg focus =GSK_zs}
+		x = 1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_dgxs##成立议会（类似权利平衡，大火沸腾那种
+		relative_position_id = GSK_cxzh
+		prerequisite ={focus =GSK_cxzh}
+		x = 0
+		y = 1
+		cost = 12
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_hxxy##幻想乡一书（签订协议，要求全国土整合，
+		relative_position_id = GSK_dgxs
+		prerequisite ={focus =GSK_dgxs focus =GSK_tg focus =GSK_xda focus =GSK_inm focus =GSK_opk}
+		x = 0
+		y = 1
+		cost = 1
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+
+	focus ={
 		id = GSK_okm##放弃结界，调整内部
 		relative_position_id = GSK_JJW
 		prerequisite ={ focus = GSK_JJW }
 		mutually_exclusive ={ focus = GSK_Jom }
-		x = 2
-		y = 2
+		x = 6
+		y = 3
 		cost = 2
 		available = {}
 		completion_reward = {
@@ -196,7 +501,7 @@ focus_tree = {
 			swap_ideas = { 
 				remove_idea = GSK_hunlun_zhengfu ##原本精神
 				add_idea = GSK_hunlun_zhengfu2 ##覆盖精神
-			 }
+			 }##单数 但是替换精神
 		}
 	}
 	focus ={
@@ -209,25 +514,22 @@ focus_tree = {
 		available = {}
 		completion_reward = {
 			add_political_power =10
-			swap_ideas = { 
-			 }
+			add_ideas = GSK_zhanzheng##添加精神
 		}
 	}
 	focus ={
 		id = GSK_qiyi##部分地区起义！
 		relative_position_id = GSK_xiayi
 		prerequisite ={ focus = xiayi focus = GSK_zhunbei}
-		x = 0.5
+		x = 1
 		y = 1
 		cost = 2
 		available = {}
 		completion_reward = {
 			add_political_power =10
-			swap_ideas = { 
-			 }
 		}
 	}
-	##右侧国策线，为稳定幻想乡
+	##右侧国策线，为稳定幻想乡（暂时不做）
 	focus ={
 		id = GSK_reqT#有什么东西来了/怪事频出
 		relative_position_id = GSK_PCYT
@@ -243,9 +545,9 @@ focus_tree = {
 	}
 	##陆军线
 	focus = {
-		id = GSK_lujun ##单独国策id/名字例子：tag_xxx 修改陆军
+		id = GSK_lujun ##单独国策id/名字例子：tag_xxx 修改陆军 (我们决策)
 		#icon = ##在.gfx文件里的图片
-		x = 40
+		x = 15
 		y = 0
 		cost = 4##天数1点=7天
 		available = {
@@ -256,5 +558,44 @@ focus_tree = {
 		completion_reward ={
 			
 		}##效果
+	}
+	focus ={
+		id = GSK_lingqi#灵力为主
+		relative_position_id = GSK_lujun
+		prerequisite ={ focus = GSK_lujun}
+		mutually_exclusive ={ focus = GSK_tech focus = GSK_yaoqi}
+		x = 0
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_yaoqi#妖力为主
+		relative_position_id = GSK_lujun
+		prerequisite ={ focus = GSK_lujun}
+		mutually_exclusive ={ focus = GSK_lingqi focus = GSK_tech}
+		x = -6
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_tech#科技为主
+		relative_position_id = GSK_lujun
+		prerequisite ={ focus = GSK_lujun}
+		mutually_exclusive ={ focus = GSK_lingqi focus = GSK_yaoqi}
+		x = 6
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
 	}
 }
