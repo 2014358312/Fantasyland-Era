@@ -1,0 +1,27 @@
+ALP_set_communism_government = {
+	if = {
+		limit = { communism < 0.5 }
+		add_popularity = {
+			ideology = communism
+			popularity = 0.10
+		}
+	}
+	set_politics = {
+		ruling_party = communism
+		elections_allowed = no
+	}
+	effect_tooltip = {
+		add_country_leader_role = {
+			character = ALP_Wang_Yujia
+			country_leader = {
+				ideology = reform_progressivism_subtype
+				traits = { reformer_yujia }
+				expire = "1965.1.1.1"
+				id = -1
+			}
+			promote_leader = yes
+		}
+	}
+	deactivate_advisor = ALP_Shirai_Yuyu_head_of_government
+	activate_advisor = ALP_Kuo_Shenlin_head_of_government
+}

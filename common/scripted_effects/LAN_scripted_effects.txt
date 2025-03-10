@@ -1,3 +1,21 @@
+LAN_reset_degree_of_colonization = {
+	every_country = {
+		clear_variable = ROOT_influence_from_landsol_var
+		if = {
+			limit = { has_idea = LAN_landsol_influence_economy }
+			add_to_variable = { ROOT_influence_from_landsol_var = 1 }
+		}
+		if = {
+			limit = { has_idea = LAN_landsol_influence_military }
+			add_to_variable = { ROOT_influence_from_landsol_var = 1 }
+		}
+		if = {
+			limit = { has_idea = LAN_landsol_influence_political }
+			add_to_variable = { ROOT_influence_from_landsol_var = 1 }
+		}
+	}
+}
+
 LAN_bop_left_large = {
 	add_power_balance_value = {
 		id = LAN_balance_of_power

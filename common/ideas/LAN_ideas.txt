@@ -527,6 +527,7 @@ ideas = {
 							add_to_variable = { consumer_goods_factor = -0.05 }
 						}
 					}
+					add_to_variable = { ROOT_influence_from_landsol_var = 1 }
 				}
 			}
 			
@@ -544,6 +545,7 @@ ideas = {
 							add_to_variable = { consumer_goods_factor = 0.05 }
 						}
 					}
+					subtract_from_variable = { ROOT_influence_from_landsol_var = 1 }
 				}
 			}
 		}
@@ -591,6 +593,7 @@ ideas = {
 							add_to_variable = { LAN_LI_production_factory_efficiency_gain_factor_var = 0.05 }
 						}
 					}
+					add_to_variable = { ROOT_influence_from_landsol_var = 1 }
 				}
 			}
 			
@@ -608,6 +611,7 @@ ideas = {
 							add_to_variable = { LAN_LI_production_factory_efficiency_gain_factor_var = -0.05 }
 						}
 					}
+					subtract_from_variable = { ROOT_influence_from_landsol_var = 1 }
 				}
 			}
 		}
@@ -648,12 +652,14 @@ ideas = {
 							airforce_intel = 10
 						}
 					}
+					add_to_variable = { ROOT_influence_from_landsol_var = 1 }
 				}
 			}
 			
 			on_remove = {
 				hidden_effect = {
 					LAN_remove_ideology_influence = yes
+					subtract_from_variable = { ROOT_influence_from_landsol_var = 1 }
 				}
 			}
 		}
