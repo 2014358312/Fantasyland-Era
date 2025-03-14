@@ -20,7 +20,7 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = ALN_Vertin
-			allowed = { original_tag = ALN }
+			allowed = { ALN_is_former_albion_member = yes }
 			available = {
 				is_country_leader = no
 			}
@@ -60,7 +60,7 @@ characters = {
 			slot = head_of_government
 			idea_token = ALN_Elizabeth_Rose_Bloodflame_head_of_government
 			allowed = {
-				original_tag = WPE
+				ALN_is_former_albion_member = yes
 			}
 			visible = { is_country_leader = no }
 			available = { no_head_of_gov_trigger = yes }
@@ -153,6 +153,23 @@ characters = {
 				small = GFX_idea_advisor_ALN_Bkornblume
 			}
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ALN_Bkornblume
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+				has_intelligence_agency  = yes 
+				custom_trigger_tooltip  = {
+					tooltip  = cyptology_tooltip_tt
+					has_done_agency_upgrade  = upgrade_form_department 
+				}
+			}
+			cost = 150
+			traits = { mastermind_code_cracker }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	ALN_Centurion = {
@@ -167,6 +184,14 @@ characters = {
 				small = GFX_idea_advisor_ALN_Centurion
 			}
 		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
 	}
 
 	ALN_Dikke = {
@@ -179,6 +204,33 @@ characters = {
 			army = {
 				large = GFX_Portrait_ALN_Dikke
 				small = GFX_idea_advisor_ALN_Dikke
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ALN_Dikke_political_advisor
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+				not_already_hired_except_as = political_advisor
+			}
+			cost = 150
+			traits = { chief_justice }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = ALN_Dikke_high_command
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+				not_already_hired_except_as = high_command
+			}
+			cost = 100
+			traits = { army_infantry_2 }
+			ai_will_do = {
+				base = 1.000
 			}
 		}
 	}
@@ -195,6 +247,19 @@ characters = {
 				small = GFX_idea_advisor_ALN_Druvis_III
 			}
 		}
+		advisor = {
+			slot = theorist
+			ledger = army
+			idea_token = ALN_Druvis_III_high_command
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+			}
+			cost = 150
+			traits = { mass_assault_expert }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	ALN_Isolde = {
@@ -209,18 +274,32 @@ characters = {
 				small = GFX_idea_advisor_ALN_Isolde
 			}
 		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
 	}
 
 	ALN_John_Titor = {
 		name = John_Titor
 		portraits = {
-			civilian = {
-				large = GFX_Portrait_ALN_John_Titor
+			#civilian = {
+			#	large = GFX_Portrait_ALN_John_Titor
+			#	small = GFX_idea_advisor_ALN_John_Titor
+			#}
+			army = {
+				large = GFX_Portrait_ALN_John_Titor_scientist
 				small = GFX_idea_advisor_ALN_John_Titor
 			}
-			army = {
-				large = GFX_Portrait_ALN_John_Titor
-				small = GFX_idea_advisor_ALN_John_Titor
+		}
+		scientist = {
+			traits = { scientist_trait_nuclear_warfare_expert scientist_trait_bright }
+			skills = {
+				specialization_nuclear = 1
 			}
 		}
 	}
@@ -237,6 +316,18 @@ characters = {
 				small = GFX_idea_advisor_ALN_Kakania
 			}
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ALN_Kakania
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+			}
+			cost = 150
+			traits = { skillful_diplomat }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	ALN_Leilani = {
@@ -250,6 +341,27 @@ characters = {
 				large = GFX_Portrait_ALN_Leilani
 				small = GFX_idea_advisor_ALN_Leilani
 			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = ALN_Leilani
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+			}
+			cost = 50
+			traits = { army_cavalry_1 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
 		}
 	}
 
@@ -265,6 +377,27 @@ characters = {
 				small = GFX_idea_advisor_ALN_Lilya
 			}
 		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = ALN_Lilya
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+			}
+			cost = 150
+			traits = { air_chief_ground_support_3 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		field_marshal = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
 	}
 
 	ALN_Lorelei = {
@@ -279,6 +412,28 @@ characters = {
 				small = GFX_idea_advisor_ALN_Lorelei
 			}
 		}
+		advisor = {
+			slot = navy_chief
+			ledger = navy
+			idea_token = ALN_Lorelei
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+			}
+			cost = 150
+			traits = { navy_chief_commerce_raiding_3 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		navy_leader = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
 	}
 
 	ALN_Lucy = {
@@ -291,6 +446,18 @@ characters = {
 			army = {
 				large = GFX_Portrait_ALN_Lucy
 				small = GFX_idea_advisor_ALN_Lucy
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ALN_Lucy
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+			}
+			cost = 150
+			traits = { NOR_callous_engineer }
+			ai_will_do = {
+				base = 1.000
 			}
 		}
 	}
@@ -307,18 +474,36 @@ characters = {
 				small = GFX_idea_advisor_ALN_Matilda_Bouanich
 			}
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ALN_Matilda_Bouanich
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+			}
+			cost = 150
+			traits = {  }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	ALN_Medicine_Pocket = {
 		name = Medicine_Pocket
 		portraits = {
-			civilian = {
-				large = GFX_Portrait_ALN_Medicine_Pocket
+			#civilian = {
+			#	large = GFX_Portrait_ALN_Medicine_Pocket
+			#	small = GFX_idea_advisor_ALN_Medicine_Pocket
+			#}
+			army = {
+				large = GFX_Portrait_ALN_Medicine_Pocket_scientist
 				small = GFX_idea_advisor_ALN_Medicine_Pocket
 			}
-			army = {
-				large = GFX_Portrait_ALN_Medicine_Pocket
-				small = GFX_idea_advisor_ALN_Medicine_Pocket
+		}
+		scientist = {
+			traits = { scientist_trait_artillery_specialist scientist_trait_fast_learner }
+			skills = {
+				specialization_land = 1
 			}
 		}
 	}
@@ -335,6 +520,18 @@ characters = {
 				small = GFX_idea_advisor_ALN_Mesmer_Jr
 			}
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ALN_Mesmer_Jr
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+			}
+			cost = 150
+			traits = { psychoanalytic_physician }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	ALN_Ms_Moissan = {
@@ -349,6 +546,18 @@ characters = {
 				small = GFX_idea_advisor_ALN_Ms_Moissan
 			}
 		}
+		#advisor = {
+		#	slot = political_advisor
+		#	idea_token = ALN_Ms_Moissan
+		#	allowed = { ALN_is_former_albion_member = yes }
+		#	available = {
+		#	}
+		#	cost = 150
+		#	traits = {  }
+		#	ai_will_do = {
+		#		base = 1.000
+		#	}
+		#}
 	}
 
 	ALN_Noire = {
@@ -361,6 +570,18 @@ characters = {
 			army = {
 				large = GFX_Portrait_ALN_Noire
 				small = GFX_idea_advisor_ALN_Noire
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ALN_Noire
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+			}
+			cost = 150
+			traits = { JUNO_popular_latinian_poet }
+			ai_will_do = {
+				base = 1.000
 			}
 		}
 	}
@@ -377,6 +598,19 @@ characters = {
 				small = GFX_idea_advisor_ALN_Oliver_Fog
 			}
 		}
+		advisor = {
+			slot = theorist
+			ledger = air
+			idea_token = ALN_Oliver_Fog
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+			}
+			cost = 150
+			traits = { close_air_support_proponent }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	ALN_Regulus = {
@@ -389,6 +623,18 @@ characters = {
 			army = {
 				large = GFX_Portrait_ALN_Regulus
 				small = GFX_idea_advisor_ALN_Regulus
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ALN_Regulus
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+			}
+			cost = 150
+			traits = { propaganda_expert }
+			ai_will_do = {
+				base = 1.000
 			}
 		}
 	}
@@ -405,6 +651,46 @@ characters = {
 				small = GFX_idea_advisor_ALN_Sonetto_army
 			}
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ALN_Sonetto_political_advisor
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+				not_already_hired_except_as = political_advisor
+				custom_trigger_tooltip = {
+					tooltip = ALN_Sonetto_political_advisor_ttt
+					is_assigned = no
+				}
+			}
+			cost = 150
+			traits = { silent_workhorse }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = ALN_Sonetto_army_chief
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+				not_already_hired_except_as = army_chief
+			}
+			cost = 100
+			traits = { army_chief_offensive_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		field_marshal = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
 	}
 
 	ALN_Sotheby = {
@@ -419,18 +705,37 @@ characters = {
 				small = GFX_idea_advisor_ALN_Sotheby
 			}
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ALN_Sotheby
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+				
+			}
+			cost = 150
+			traits = { free_market_economists }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	ALN_Sputnik = {
 		name = Sputnik
 		portraits = {
-			civilian = {
-				large = GFX_Portrait_ALN_Sputnik
+			#civilian = {
+			#	large = GFX_Portrait_ALN_Sputnik
+			#	small = GFX_idea_advisor_ALN_Sputnik
+			#}
+			army = {
+				large = GFX_Portrait_ALN_Sputnik_scientist
 				small = GFX_idea_advisor_ALN_Sputnik
 			}
-			army = {
-				large = GFX_Portrait_ALN_Sputnik
-				small = GFX_idea_advisor_ALN_Sputnik
+		}
+		scientist = {
+			traits = { scientist_trait_aircraft_specialist scientist_trait_resourceful }
+			skills = {
+				specialization_air = 1
 			}
 		}
 	}
@@ -447,6 +752,19 @@ characters = {
 				small = GFX_idea_advisor_ALN_Thirty_Seven
 			}
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ALN_Thirty_Seven
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+				
+			}
+			cost = 150
+			traits = { ICE_revolutionary_educator }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	ALN_Tooth_Fairy = {
@@ -459,6 +777,19 @@ characters = {
 			army = {
 				large = GFX_Portrait_ALN_Tooth_Fairy
 				small = GFX_idea_advisor_ALN_Tooth_Fairy
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ALN_Tooth_Fairy
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+				
+			}
+			cost = 150
+			traits = { AFG_director_of_public_health }
+			ai_will_do = {
+				base = 1.000
 			}
 		}
 	}
@@ -475,18 +806,38 @@ characters = {
 				small = GFX_idea_advisor_ALN_Windsong
 			}
 		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = ALN_Windsong
+			allowed = { ALN_is_former_albion_member = yes }
+			available = {
+				
+			}
+			cost = 100
+			traits = { air_chief_safety_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 	}
 
 	ALN_X = {
 		name = X
 		portraits = {
-			civilian = {
-				large = GFX_Portrait_ALN_X
+			#civilian = {
+			#	large = GFX_Portrait_ALN_X
+			#	small = GFX_idea_advisor_ALN_X
+			#}
+			army = {
+				large = GFX_Portrait_ALN_X_scientist
 				small = GFX_idea_advisor_ALN_X
 			}
-			army = {
-				large = GFX_Portrait_ALN_X
-				small = GFX_idea_advisor_ALN_X
+		}
+		scientist = {
+			traits = { scientist_trait_gifted_engineer scientist_trait_fast_learner }
+			skills = {
+				specialization_naval = 1
 			}
 		}
 	}
