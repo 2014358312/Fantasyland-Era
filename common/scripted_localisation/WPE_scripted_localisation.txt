@@ -37,15 +37,15 @@ defined_text = {
     name = GetWPESnowStatus
 	text = {
 		trigger = {
-			WPE_Ilf_Snow = { has_trait = logistics_defense_minister }
+			WPE_Ilf_Snow = { has_trait = leader_of_modernization_of_heavy_industry }
 		}
-		localization_key = hog_logistics_defense_minister_tt
+		localization_key = hog_leader_of_modernization_of_heavy_industry_tt
     }
 	text = {
 		trigger = {
-			WPE_Ilf_Snow = { has_trait = logistics_defense_minister_improve }
+			WPE_Ilf_Snow = { has_trait = leader_of_modernization_of_heavy_industry_improve }
 		}
-		localization_key = hog_logistics_defense_minister_improve_tt
+		localization_key = hog_leader_of_modernization_of_heavy_industry_improve_tt
     }
 	text = { localization_key = general_null }
 }
@@ -83,4 +83,36 @@ defined_text = {
 		localization_key = WPE_civil_war_day_sangvis_desc
     }
 	text = { localization_key = WPE_civil_war_day_general_desc }
+}
+
+defined_text = {
+    name = GETChoiceOfRushiaDecisionCategoryDesc
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = WPE_Uruha_Rushia
+				ruling_only = yes
+			}
+		}
+		localization_key = WPE_choice_of_rushia_decision_category_desc_rushia
+    }
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = WPE_Tokino_Sora
+				ruling_only = yes
+			}
+		}
+		localization_key = WPE_choice_of_rushia_decision_category_desc_sora
+    }
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = WPE_Houshou_Marine
+				ruling_only = yes
+			}
+		}
+		localization_key = WPE_choice_of_rushia_decision_category_desc_marine
+    }
+	text = { localization_key = general_null }
 }

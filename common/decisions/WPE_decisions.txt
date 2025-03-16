@@ -6,24 +6,25 @@ WPE_choice_of_rushia_decision_category = {
 			hidden_trigger = {
 				always = no
 			}
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = WPE_choice_of_rushia_mission_ttt
-					always = no
-				}
-				WPE_Uruha_Rushia = {
-					NOT = { has_trait = trapped_in_scandal }
-				}
-			}
+			#OR = {
+			#	custom_trigger_tooltip = {
+			#		tooltip = WPE_choice_of_rushia_mission_ttt
+			#		always = no
+			#	}
+			#	WPE_Uruha_Rushia = {
+			#		NOT = { has_trait = trapped_in_scandal }
+			#	}
+			#}
 		}
 		activation = {
-			has_country_leader = {
-				character = WPE_Uruha_Rushia
-				ruling_only = yes
-			}
-			WPE_Uruha_Rushia = {
-				has_trait = trapped_in_scandal
-			}
+			#has_country_leader = {
+			#	character = WPE_Uruha_Rushia
+			#	ruling_only = yes
+			#}
+			#WPE_Uruha_Rushia = {
+			#	has_trait = trapped_in_scandal
+			#}
+			always = no
 		}
 		days_mission_timeout = 320
 		is_good = yes

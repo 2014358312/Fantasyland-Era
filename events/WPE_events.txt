@@ -225,7 +225,7 @@ country_event = {
 						}
 					}
 					random = {
-						chance = 50
+						chance = mtth:WPE_nightmare_of_rushia
 						add_to_variable = { WPE_rushia_status_var = 1 }
 					}
 				}
@@ -297,7 +297,7 @@ country_event = {
 		log = "[GetDateText]: [Root.GetName]: event white_pole.7"
 		hidden_effect = {
 			deactivate_advisor = WPE_Ilf_Snow_head_of_government
-			activate_advisor = WPE_Promaya_Zatzatski_head_of_government
+			activate_advisor = WPE_Suomi_head_of_government
 		}
 	}
 
@@ -305,7 +305,7 @@ country_event = {
 		name = white_pole.7.a
 		effect_tooltip = {
 			deactivate_advisor = WPE_Ilf_Snow_head_of_government
-			activate_advisor = WPE_Promaya_Zatzatski_head_of_government
+			activate_advisor = WPE_Suomi_head_of_government
 		}
 	}
 }
@@ -390,7 +390,7 @@ country_event = {
 			WPE_Ilf_Snow = {
 				remove_trait = {
 					slot = head_of_government
-					trait = logistics_defense_minister
+					trait = leader_of_modernization_of_heavy_industry
 				}
 				remove_trait = {
 					slot = head_of_government
@@ -398,7 +398,7 @@ country_event = {
 				}
 				add_trait = {
 					slot = head_of_government
-					trait = logistics_defense_minister_improve
+					trait = leader_of_modernization_of_heavy_industry_improve
 				}
 				add_trait = {
 					slot = head_of_government
@@ -466,7 +466,13 @@ country_event = {
 			}
 			complete_national_focus = WPE_rushia_resign
 			if = {
-				limit = { check_variable = { WPE_kujo_alisa_available_foci_array^num = 0 } }
+				limit = {
+					check_variable = { WPE_kujo_alisa_available_foci_array^num = 0 }
+					NOT = {
+						has_shine_effect_on_focus = WPE_kujo_alisa_collaboration_project_with_albion
+						has_shine_effect_on_focus = WPE_kujo_alisa_military_orders
+					}
+				}
 				add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_wait_for_good_news }
 				add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
 				WPE_calculate_kujo_alisa_array = yes
@@ -515,10 +521,12 @@ country_event = {
 			}
 			complete_national_focus = WPE_rushia_resign
 			if = {
-				limit = { check_variable = { WPE_kujo_alisa_available_foci_array^num = 0 } }
-				if = {
-					limit = { is_debug = yes }
-					add_political_power = 1000
+				limit = {
+					check_variable = { WPE_kujo_alisa_available_foci_array^num = 0 }
+					NOT = {
+						has_shine_effect_on_focus = WPE_kujo_alisa_collaboration_project_with_albion
+						has_shine_effect_on_focus = WPE_kujo_alisa_military_orders
+					}
 				}
 				add_to_array = { WPE_kujo_alisa_available_foci_array = token:WPE_kujo_alisa_wait_for_good_news }
 				add_to_array = { WPE_kujo_alisa_available_foci_time_array = 28 }
@@ -679,6 +687,14 @@ country_event = {
 
 	is_triggered_only = yes
 	
+	immediate = {
+		hidden_effect = {
+			country_event = { id = white_pole.19 days = 1 }
+			country_event = { id = white_pole.20 days = 5 }
+			country_event = { id = white_pole.21 days = 11 }
+		}
+	}
+	
 	option = {
 		name = white_pole.17.a
 		custom_effect_tooltip = white_pole_17_tt
@@ -702,6 +718,165 @@ country_event = {
 		every_character = {
 			limit = { has_character_flag = character_vtuber_flag }
 			this_character_remove_all_role = yes
+		}
+	}
+}
+
+country_event = {
+	id = white_pole.19
+	title = white_pole.19.t
+	desc = white_pole.19.desc
+	picture = GFX_report_event_EYP_01
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = white_pole.19.a
+		set_party_name = {
+			ideology = communism
+			name = WPF_communism_party
+			long_name = WPF_communism_party
+		}
+		set_party_name = {
+			ideology = democratic
+			name = WPF_democratic_party
+			long_name = WPF_democratic_party
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.15
+		}
+		WPE_Ayase_Eli = {
+			add_country_leader_role = {
+				country_leader = {
+					ideology = classical_liberalism_subtype
+					expire = "1965.1.1.1"
+					traits = { budget_conscious_administrator }
+				}
+				promote_leader = yes
+			}
+		}
+	}
+	
+	option = {
+		name = white_pole.19.b
+		set_party_name = {
+			ideology = communism
+			name = WPF_communism_party
+			long_name = WPF_communism_party
+		}
+		set_party_name = {
+			ideology = democratic
+			name = WPF_democratic_party
+			long_name = WPF_democratic_party
+		}
+		WPE_Ayase_Eli = {
+			add_country_leader_role = {
+				country_leader = {
+					ideology = classical_liberalism_subtype
+					expire = "1965.1.1.1"
+					traits = { budget_conscious_administrator }
+				}
+				promote_leader = yes
+			}
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.15
+		}
+		deactivate_advisor = WPE_Suomi_head_of_government
+		activate_advisor = WPE_Fedorov_head_of_government
+	}
+	
+	option = {
+		name = white_pole.19.c
+		set_party_name = {
+			ideology = communism
+			name = WPF_communism_party
+			long_name = WPF_communism_party
+		}
+		set_party_name = {
+			ideology = democratic
+			name = WPF_democratic_party
+			long_name = WPF_democratic_party
+		}
+		WPE_Ayase_Eli = {
+			add_country_leader_role = {
+				country_leader = {
+					ideology = classical_liberalism_subtype
+					expire = "1965.1.1.1"
+					traits = { budget_conscious_administrator }
+				}
+				promote_leader = yes
+			}
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.15
+		}
+		deactivate_advisor = WPE_Suomi_head_of_government
+		activate_advisor = WPE_Promaya_Zatzatski_head_of_government
+	}
+}
+
+country_event = {
+	id = white_pole.20
+	title = white_pole.20.t
+	desc = white_pole.20.desc
+	picture = GFX_report_event_EYP_01
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = white_pole.20.a
+		set_party_name = {
+			ideology = neutrality
+			name = WPF_neutrality_party
+			long_name = WPF_neutrality_party
+		}
+		WPE_Martini_Henry = {
+			add_country_leader_role = {
+				country_leader = {
+					ideology = militarism_subtype
+					expire = "1965.1.1.1"
+					traits = { rearmer }
+				}
+				promote_leader = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = white_pole.21
+	title = white_pole.21.t
+	desc = white_pole.21.desc
+	picture = GFX_report_event_EYP_01
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = white_pole.21.a
+		set_party_name = {
+			ideology = fascism
+			name = WPF_fascism_party
+			long_name = WPF_fascism_party
+		}
+		WPE_Promaya_Zatzatski = {
+			add_country_leader_role = {
+				country_leader = {
+					ideology = fascism_subtype
+					expire = "1965.1.1.1"
+					traits = { reluctant_veteran }
+				}
+				promote_leader = yes
+			}
 		}
 	}
 }
@@ -741,8 +916,13 @@ country_event = {
 	immediate = {
 		log = "[GetDateText]: [Root.GetName]: event white_civil_war.1"
 		hidden_effect = {
+			remove_mission = WPE_choice_of_rushia_mission
 			get_current_ideology_popularities = yes
-			WPE_clear_character_before_civil_war = yes
+			if = {
+				limit = { date < 1000.2.1 }
+				#only use for debug mode.
+				WPE_clear_character_before_civil_war = yes
+			}
 			every_owned_state = {
 				limit = {
 					OR = {

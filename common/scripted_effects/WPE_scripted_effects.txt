@@ -9,6 +9,7 @@ WPE_calculate_kujo_alisa_array = {
 			}
 			FOCUS = "[?WPE_kujo_alisa_next_focus_var.GetTokenKey]"
 		}
+		log = "[GetDateText]: [Root.GetName]: complete national focus [?WPE_kujo_alisa_next_focus_var.GetTokenLocalizedKey]"
 	}
 	set_variable = { WPE_kujo_alisa_available_foci_array_sum = WPE_kujo_alisa_available_foci_array^num }
 	if = {
@@ -24,6 +25,7 @@ WPE_calculate_kujo_alisa_array = {
 			index = i
 			value = v
 			
+			log = "[GetDateText]: [Root.GetName]: Kujo Alisa focus list member [?WPE_kujo_alisa_available_foci_array^i.GetTokenLocalizedKey]"
 			if = {
 				limit = { check_variable = { i = WPE_kujo_alisa_available_foci_array_num } }
 				set_variable = { WPE_kujo_alisa_next_focus_var = WPE_kujo_alisa_available_foci_array^i }
@@ -43,7 +45,8 @@ WPE_calculate_kujo_alisa_array = {
 			FOCUS = "[?WPE_kujo_alisa_next_focus_var.GetTokenKey]"
 			DAYS = "[?WPE_kujo_alisa_next_focus_time_var]"
 			TEMP_DAYS = "[?WPE_kujo_alisa_next_focus_time_flag_var]"
-		}
+		}	
+		log = "[GetDateText]: [Root.GetName]: Kujo Alisa start focus [?WPE_kujo_alisa_next_focus_var.GetTokenLocalizedKey]"
 	}
 }
 
@@ -99,27 +102,28 @@ WPE_reassign_roles = {
 	WPF = {
 		set_politics = {
 			ruling_party = democratic
-			elections_allowed = no
+			elections_allowed = yes
+			election_frequency = 60
 		}
 		set_party_name = {
 			ideology = communism
-			name = WPF_communism_party
-			long_name = WPF_communism_party
+			name = WPE_communism_party
+			long_name = WPE_communism_party
 		}
 		set_party_name = {
 			ideology = democratic
-			name = WPF_democratic_party
-			long_name = WPF_democratic_party
+			name = WPE_democratic_party
+			long_name = WPE_democratic_party
 		}
 		set_party_name = {
 			ideology = neutrality
-			name = WPF_neutrality_party
-			long_name = WPF_neutrality_party
+			name = WPE_neutrality_party
+			long_name = WPE_neutrality_party
 		}
 		set_party_name = {
 			ideology = fascism
-			name = WPF_fascism_party
-			long_name = WPF_fascism_party
+			name = WPE_fascism_party
+			long_name = WPE_fascism_party
 		}
 		set_popularities = {
 			communism = WPE.communist_support_before_change
@@ -127,24 +131,7 @@ WPE_reassign_roles = {
 			fascism = WPE.fascist_support_before_change
 			neutrality = WPE.neutrality_support_before_change
 		}
-		if = {
-			limit = { has_character = WPE_Promaya_Zatzatski }
-			WPE_Promaya_Zatzatski = {
-				add_country_leader_role = {
-					country_leader = {
-						ideology = democratic_subtype
-						expire = "1965.1.1.1"
-						traits = { cornered_fox }
-					}
-					promote_leader = yes
-				}
-			}
-		}
-		if = {
-			limit = { has_character = WPE_Fedorov }
-			WPE_Fedorov = { clr_character_flag = character_no_visible_flag }
-			activate_advisor = WPE_Fedorov_head_of_government
-		}
+		country_event = { id = white_pole.17 days = 3 }
 		load_focus_tree = {
 			tree = white_hole_focus
 			keep_completed = yes

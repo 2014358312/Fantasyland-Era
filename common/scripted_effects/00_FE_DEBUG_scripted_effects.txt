@@ -10,9 +10,12 @@ DEBUG_wpe_secondary = {
 		limit = { is_debug = yes }
 	}
 	
-	every_navy_leader = {
-		limit = { is_character = WPE_Houshou_Marine }
-		remove_unit_leader = yes
+	for_each_loop = {
+		array = WPE_kujo_alisa_available_foci_array
+		index = i
+		value = v
+		
+		log = "WPE_var: [?WPE_kujo_alisa_available_foci_array^i.GetTokenKey]"
 	}
 	clear_DEBUG_decisions_flag = yes
 }
