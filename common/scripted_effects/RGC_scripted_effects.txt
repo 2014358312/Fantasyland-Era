@@ -282,6 +282,9 @@ RGC_start_civil_war = {
 			}
 		}
 		
+		TAR = { create_temp_army = yes }
+		KDE = { create_temp_army = yes }
+		
 		add_civil_war_target = TAR
 		add_civil_war_target = KDE
 		add_civil_war_target = WGN
@@ -302,6 +305,10 @@ RGC_start_civil_war = {
 				set_variable = { Wesley_status_var = 1 }
 				set_variable = { Eblana_status_var = 1 }
 				set_variable = { Tracy_status_var = 1 }
+			}
+			every_possible_country = {
+				limit = { is_ai = no }
+				news_event = FE_news.15
 			}
 			set_global_flag = victorian_civil_war_happen
 		}

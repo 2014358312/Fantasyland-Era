@@ -12,9 +12,190 @@ NEB_constitution_reform_decision_category = {
 		is_good = yes
 		timeout_effect = {
 			custom_effect_tooltip = NEB_committee_vots_on_constitutional_reform_proposal_mission_tt
+			hidden_effect = {
+				country_event = nebulis.1
+				NEB_constitution_event_killing_effect = yes
+			}
 		}
 		ai_will_do = {
 			factor = 200
+		}
+	}
+	
+	NEB_CR_guide_public_opinion_decision = {
+		icon = GFX_decision_eng_install_government
+		visible = {
+			has_completed_focus = NEB_premier_riefenstahl_001
+			check_variable = {
+				var = NEB_CR_guide_public_opinion
+				value = 3
+				compare = greater_than_or_equals
+			}
+			NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+		}
+		available = {
+			hidden_trigger = { always = no }
+			has_completed_focus = NEB_premier_riefenstahl_004
+			NEB_constitution_reform_progress = yes
+			custom_trigger_tooltip = {
+				tooltip = NEB_CR_guide_public_opinion_decision_ttt
+				check_variable = {
+					var = NEB_CR_guide_public_opinion
+					value = 3
+					compare = less_than
+				}
+			}
+		}
+		cost = 0
+	}
+	
+	NEB_CR_guide_public_opinion_1_decision = {
+		icon = GFX_decision_eng_install_government
+		visible = {
+			has_completed_focus = NEB_premier_riefenstahl_004
+			NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			check_variable = {
+				var = NEB_CR_guide_public_opinion
+				value = 3
+				compare = less_than
+			}
+		}
+		available = {
+			has_completed_focus = NEB_premier_riefenstahl_004
+			NEB_constitution_reform_progress = yes
+			custom_trigger_tooltip = {
+				tooltip = NEB_CR_guide_public_opinion_decision_ttt
+				check_variable = {
+					var = NEB_CR_guide_public_opinion
+					value = 3
+					compare = less_than
+				}
+			}
+		}
+		cost = 15
+		complete_effect = {
+			NEB_constitution_noble_better_medium = yes
+			add_to_variable = { NEB_CR_guide_public_opinion = 1 }
+		}
+	}
+	
+	NEB_CR_guide_public_opinion_2_decision = {
+		icon = GFX_decision_eng_install_government
+		visible = {
+			has_completed_focus = NEB_premier_riefenstahl_004
+			NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			check_variable = {
+				var = NEB_CR_guide_public_opinion
+				value = 3
+				compare = less_than
+			}
+		}
+		available = {
+			has_completed_focus = NEB_premier_riefenstahl_004
+			NEB_constitution_reform_progress = yes
+			custom_trigger_tooltip = {
+				tooltip = NEB_CR_guide_public_opinion_decision_ttt
+				check_variable = {
+					var = NEB_CR_guide_public_opinion
+					value = 3
+					compare = less_than
+				}
+			}
+		}
+		cost = 15
+		complete_effect = {
+			NEB_constitution_civil_service_better_medium = yes
+			add_to_variable = { NEB_CR_guide_public_opinion = 1 }
+		}
+	}
+	
+	NEB_CR_guide_public_opinion_3_decision = {
+		icon = GFX_decision_eng_install_government
+		visible = {
+			has_completed_focus = NEB_premier_riefenstahl_004
+			NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			NEB_constitution_reform_progress = yes
+			check_variable = {
+				var = NEB_CR_guide_public_opinion
+				value = 3
+				compare = less_than
+			}
+		}
+		available = {
+			has_completed_focus = NEB_premier_riefenstahl_004
+			custom_trigger_tooltip = {
+				tooltip = NEB_CR_guide_public_opinion_decision_ttt
+				check_variable = {
+					var = NEB_CR_guide_public_opinion
+					value = 3
+					compare = less_than
+				}
+			}
+		}
+		cost = 15
+		complete_effect = {
+			NEB_constitution_mod_better_medium = yes
+			add_to_variable = { NEB_CR_guide_public_opinion = 1 }
+		}
+	}
+	
+	NEB_CR_guide_public_opinion_4_decision = {
+		icon = GFX_decision_eng_install_government
+		visible = {
+			has_completed_focus = NEB_premier_riefenstahl_004
+			NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			NEB_constitution_reform_progress = yes
+			check_variable = {
+				var = NEB_CR_guide_public_opinion
+				value = 3
+				compare = less_than
+			}
+		}
+		available = {
+			has_completed_focus = NEB_premier_riefenstahl_004
+			custom_trigger_tooltip = {
+				tooltip = NEB_CR_guide_public_opinion_decision_ttt
+				check_variable = {
+					var = NEB_CR_guide_public_opinion
+					value = 3
+					compare = less_than
+				}
+			}
+		}
+		cost = 15
+		complete_effect = {
+			NEB_constitution_church_better_medium = yes
+			add_to_variable = { NEB_CR_guide_public_opinion = 1 }
+		}
+	}
+	
+	NEB_CR_guide_public_opinion_5_decision = {
+		icon = GFX_decision_eng_install_government
+		visible = {
+			has_completed_focus = NEB_premier_riefenstahl_004
+			NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+			check_variable = {
+				var = NEB_CR_guide_public_opinion
+				value = 3
+				compare = less_than
+			}
+		}
+		available = {
+			has_completed_focus = NEB_premier_riefenstahl_004
+			NEB_constitution_reform_progress = yes
+			custom_trigger_tooltip = {
+				tooltip = NEB_CR_guide_public_opinion_decision_ttt
+				check_variable = {
+					var = NEB_CR_guide_public_opinion
+					value = 3
+					compare = less_than
+				}
+			}
+		}
+		cost = 15
+		complete_effect = {
+			NEB_constitution_merchant_better_medium = yes
+			add_to_variable = { NEB_CR_guide_public_opinion = 1 }
 		}
 	}
 }

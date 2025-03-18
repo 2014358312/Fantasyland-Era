@@ -992,6 +992,14 @@ country_event = {
 				WPA = { transfer_state = PREV }
 			}
 			
+			transfer_units_fraction = {
+				target = WPA
+				stockpile_ratio = 0.8
+				army_ratio = 0.7
+				navy_ratio = 0.4
+				air_ratio = 0.7
+			}
+			
 			WPI = {
 				set_cosmetic_tag = WPE_sangvis_lucia
 				set_country_flag = WPE_sangvis_lucia_flag
@@ -1000,6 +1008,8 @@ country_event = {
 				limit = { has_state_flag = WPE_sangvis_startup_flag }
 				WPI = { transfer_state = PREV }
 			}
+			
+			WPI = { create_temp_army = yes }
 			
 			WPE_reassign_roles = yes
 			### first into war then allocate troops ###
@@ -1045,6 +1055,8 @@ country_event = {
 				WPI = { transfer_state = PREV }
 			}
 			
+			WPI = { create_temp_army = yes }
+			
 			WPF = {
 				set_cosmetic_tag = WPE_federation_lucia
 				set_country_flag = WPE_federation_lucia_flag
@@ -1057,6 +1069,14 @@ country_event = {
 					}
 				}
 				WPF = { transfer_state = PREV }
+			}
+			
+			transfer_units_fraction = {
+				target = WPF
+				stockpile_ratio = 0.2
+				army_ratio = 0.3
+				navy_ratio = 0.6
+				air_ratio = 0.3
 			}
 			
 			WPE_reassign_roles = yes
@@ -1103,6 +1123,14 @@ country_event = {
 				WPA = { transfer_state = PREV }
 			}
 			
+			transfer_units_fraction = {
+				target = WPA
+				stockpile_ratio = 0.8
+				army_ratio = 0.7
+				navy_ratio = 0.4
+				air_ratio = 0.7
+			}
+			
 			WPF = {
 				set_cosmetic_tag = WPE_federation_lucia
 				set_country_flag = WPE_federation_lucia_flag
@@ -1116,6 +1144,13 @@ country_event = {
 				}
 				WPF = { transfer_state = PREV }
 			}
+			
+			transfer_units_fraction = {
+				target = WPA
+				size = 1
+			}
+			
+			create_temp_army = yes
 			
 			WPE_reassign_roles = yes
 			### first into war then allocate troops ###

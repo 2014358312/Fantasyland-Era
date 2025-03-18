@@ -13,6 +13,16 @@ NEB_constitution_reform_progress = {
 	NEB_lieselotte_riefenstahl_as_gov = yes
 	has_active_mission = NEB_committee_vots_on_constitutional_reform_proposal_mission
 	hidden_trigger = {
-		has_completed_focus = NEB_premier_riefenstahl_013
+		NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+	}
+}
+
+NEB_fate_of_riefenstahl_has_done = {
+	custom_trigger_tooltip = {
+		tooltip = NEB_riefenstahl_and_constitution_ttt
+		OR = {
+			NOT = { has_completed_focus = NEB_premier_riefenstahl_001 }
+			has_completed_focus = NEB_premier_riefenstahl_013
+		}
 	}
 }

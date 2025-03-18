@@ -26,10 +26,13 @@ focus_tree = {
 		y = 0
 		cost = 0
 		available = {
-			always = no
+			NEB_lieselotte_riefenstahl_as_gov = yes
+			hidden_trigger = {
+				always = no
+			}
 		}
 		completion_reward = {
-			add_political_power = 150
+			custom_effect_tooltip = NEB_riefenstahl_and_constitution_tt
 		}
 		ai_will_do = {
 			factor = 1
@@ -50,12 +53,25 @@ focus_tree = {
 			NEB_constitution_reform_progress = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			NEB_constitution_noble_better_small = yes
+			NEB_constitution_merchant_worse_small = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = NEB_premier_riefenstahl_when_passed_tt
+			custom_effect_tooltip = {
+				localization_key = swap_ideas_tt
+				IDEA = NEB_official_constitution
+			}
+			effect_tooltip = {
+				add_to_variable = { NEB_OC_stability_factor_var = 0.10 tooltip = stability_factor_tt }
+				add_to_variable = { NEB_OC_political_power_gain_var = 0.25 tooltip = political_power_gain_tt }
+				add_to_variable = { NEB_OC_global_building_slots_factor_var = -0.10 tooltip = global_building_slots_factor_tt }
+			}
+			custom_effect_tooltip = blank_null
 		}
 		cancel = {
 			if = {
 				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
-				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				has_completed_focus = NEB_premier_riefenstahl_013
 			}
 			else = { always = no }
 		}
@@ -78,12 +94,26 @@ focus_tree = {
 			NEB_constitution_reform_progress = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			NEB_constitution_merchant_better_medium = yes
+			NEB_constitution_noble_worse_small = yes
+			NEB_constitution_church_worse_small = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = NEB_premier_riefenstahl_when_passed_tt
+			custom_effect_tooltip = {
+				localization_key = swap_ideas_tt
+				IDEA = NEB_official_constitution
+			}
+			effect_tooltip = {
+				add_to_variable = { NEB_OC_stability_factor_var = 0.05 tooltip = stability_factor_tt }
+				add_to_variable = { NEB_OC_global_building_slots_factor_var = 0.20 tooltip = global_building_slots_factor_tt }
+				add_to_variable = { NEB_OC_consumer_goods_factor_var = 0.15 tooltip = consumer_goods_factor_tt }
+			}
+			custom_effect_tooltip = blank_null
 		}
 		cancel = {
 			if = {
 				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
-				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				has_completed_focus = NEB_premier_riefenstahl_013
 			}
 			else = { always = no }
 		}
@@ -105,12 +135,31 @@ focus_tree = {
 			NEB_constitution_reform_progress = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			NEB_constitution_merchant_better_small = yes
+			NEB_constitution_church_better_small = yes
+			NEB_constitution_civil_service_worse_small = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = NEB_CR_guide_public_opinion_1_decision
+			unlock_decision_tooltip = NEB_CR_guide_public_opinion_2_decision
+			unlock_decision_tooltip = NEB_CR_guide_public_opinion_3_decision
+			unlock_decision_tooltip = NEB_CR_guide_public_opinion_4_decision
+			unlock_decision_tooltip = NEB_CR_guide_public_opinion_5_decision
+			custom_effect_tooltip = NEB_CR_guide_public_opinion_decision_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = NEB_premier_riefenstahl_when_passed_tt
+			custom_effect_tooltip = {
+				localization_key = swap_ideas_tt
+				IDEA = NEB_official_constitution
+			}
+			effect_tooltip = {
+				add_to_variable = { NEB_OC_political_power_gain_var = 0.10 tooltip = political_power_gain_tt }
+			}
+			custom_effect_tooltip = blank_null
 		}
 		cancel = {
 			if = {
 				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
-				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				has_completed_focus = NEB_premier_riefenstahl_013
 			}
 			else = { always = no }
 		}
@@ -136,12 +185,38 @@ focus_tree = {
 			NEB_constitution_reform_progress = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			NEB_constitution_church_better_large = yes
+			custom_effect_tooltip = {
+				localization_key = has_completed_focus_tt
+				FOCUS = NEB_retain_aristocratic_privileges
+			}
+			effect_tooltip = {
+				NEB_republican_attitude_down = yes
+				NEB_religious_attitude_up = yes
+			}
+			hidden_effect = {
+				if = {
+					limit = { has_completed_focus = NEB_premier_riefenstahl_002 }
+					NEB_republican_attitude_down = yes
+					NEB_religious_attitude_up = yes
+				}
+			}
+			custom_effect_tooltip = NEB_premier_riefenstahl_when_passed_tt
+			custom_effect_tooltip = tech_effect|NEB_judge_special_operations_team_tech
+			custom_effect_tooltip = {
+				localization_key = swap_ideas_tt
+				IDEA = NEB_official_constitution
+			}
+			effect_tooltip = {
+				add_to_variable = { NEB_OC_resistance_growth_var = -0.10 tooltip = resistance_growth_tt }
+				add_to_variable = { NEB_OC_required_garrison_factor_var = -0.25 tooltip = required_garrison_factor_tt }
+			}
+			custom_effect_tooltip = blank_null
 		}
 		cancel = {
 			if = {
 				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
-				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				has_completed_focus = NEB_premier_riefenstahl_013
 			}
 			else = { always = no }
 		}
@@ -168,12 +243,39 @@ focus_tree = {
 			NEB_constitution_reform_progress = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			NEB_constitution_church_worse_large = yes
+			NEB_constitution_civil_service_better_small = yes
+			NEB_constitution_noble_better_small = yes
+			custom_effect_tooltip = {
+				localization_key = has_completed_focus_tt
+				FOCUS = NEB_land_nationalization
+			}
+			effect_tooltip = {
+				NEB_republican_attitude_up = yes
+				NEB_religious_attitude_down = yes
+			}
+			hidden_effect = {
+				if = {
+					limit = { has_completed_focus = NEB_premier_riefenstahl_003 }
+					NEB_republican_attitude_up = yes
+					NEB_religious_attitude_down = yes
+				}
+			}
+			custom_effect_tooltip = NEB_premier_riefenstahl_when_passed_tt
+			custom_effect_tooltip = {
+				localization_key = swap_ideas_tt
+				IDEA = NEB_official_constitution
+			}
+			effect_tooltip = {
+				add_to_variable = { NEB_OC_political_power_gain_var = 0.20 tooltip = political_power_gain_tt }
+				add_to_variable = { NEB_OC_research_speed_factor_var = 0.05 tooltip = research_speed_factor_tt }
+			}
+			custom_effect_tooltip = blank_null
 		}
 		cancel = {
 			if = {
 				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
-				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				has_completed_focus = NEB_premier_riefenstahl_013
 			}
 			else = { always = no }
 		}
@@ -195,12 +297,27 @@ focus_tree = {
 			NEB_constitution_reform_progress = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			NEB_constitution_merchant_better_medium = yes
+			NEB_constitution_mod_better_small = yes
+			NEB_constitution_noble_worse_large = yes
+			NEB_constitution_civil_service_worse_small = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = NEB_premier_riefenstahl_when_passed_tt
+			custom_effect_tooltip = {
+				localization_key = swap_ideas_tt
+				IDEA = NEB_official_constitution
+			}
+			effect_tooltip = {
+				add_to_variable = { NEB_OC_research_speed_factor_var = 0.10 tooltip = research_speed_factor_tt }
+				add_to_variable = { NEB_OC_production_speed_infrastructure_factor_var = 0.10 tooltip = production_speed_infrastructure_factor_tt }
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = NEB_literacy_campaign_tt
 		}
 		cancel = {
 			if = {
 				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
-				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				has_completed_focus = NEB_premier_riefenstahl_013
 			}
 			else = { always = no }
 		}
@@ -211,8 +328,8 @@ focus_tree = {
 
 	focus = {
 		id = NEB_premier_riefenstahl_008
-		text = NEB_economic_policy_direction
-		icon = GFX_focus_PER_national_bank
+		text = NEB_traditional_guild_revitalization_plan
+		icon = GFX_focus_RAJ_special_economic_zones
 		prerequisite = { focus = NEB_premier_riefenstahl_004 }
 		relative_position_id = NEB_premier_riefenstahl_004
 		x = 1
@@ -222,12 +339,20 @@ focus_tree = {
 			NEB_constitution_reform_progress = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			NEB_constitution_noble_better_medium = yes
+			NEB_constitution_church_better_small = yes
+			NEB_constitution_merchant_worse_medium = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = NEB_traditional_guild_revitalization_plan_tt
+			if = {
+				limit = { NOT = { has_completed_focus = NEB_premier_riefenstahl_010 } }
+				set_country_flag = NEB_traditional_guild_revitalization_plan_flag
+			}
 		}
 		cancel = {
 			if = {
 				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
-				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				has_completed_focus = NEB_premier_riefenstahl_013
 			}
 			else = { always = no }
 		}
@@ -252,12 +377,27 @@ focus_tree = {
 			NEB_constitution_reform_progress = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			NEB_constitution_mod_better_large = yes
+			NEB_constitution_noble_better_small = yes
+			NEB_constitution_civil_service_worse_medium = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = NEB_premier_riefenstahl_when_passed_tt
+			custom_effect_tooltip = {
+				localization_key = swap_ideas_tt
+				IDEA = NEB_official_constitution
+			}
+			effect_tooltip = {
+				add_to_variable = { NEB_OC_production_speed_industrial_complex_factor_var = -0.10 tooltip = production_speed_industrial_complex_factor_tt }
+				add_to_variable = { NEB_OC_production_speed_arms_factory_factor_var = 0.10 tooltip = production_speed_arms_factory_factor_tt }
+				add_to_variable = { NEB_OC_stability_factor_var = 0.10 tooltip = stability_factor_tt }
+				add_to_variable = { NEB_OC_command_power_gain_mult_var = 0.15 tooltip = command_power_gain_mult_tt }
+			}
+			custom_effect_tooltip = blank_null
 		}
 		cancel = {
 			if = {
 				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
-				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				has_completed_focus = NEB_premier_riefenstahl_013
 			}
 			else = { always = no }
 		}
@@ -268,8 +408,8 @@ focus_tree = {
 
 	focus = {
 		id = NEB_premier_riefenstahl_010
-		text = NEB_traditional_guild_revitalization_plan
-		icon = GFX_focus_RAJ_special_economic_zones
+		text = NEB_economic_policy_direction
+		icon = GFX_focus_PER_national_bank
 		prerequisite = { focus = NEB_premier_riefenstahl_004 }
 		relative_position_id = NEB_premier_riefenstahl_004
 		x = 0
@@ -279,12 +419,40 @@ focus_tree = {
 			NEB_constitution_reform_progress = yes
 		}
 		completion_reward = {
-			add_political_power = 150
+			if = {
+				limit = { has_country_flag = NEB_traditional_guild_revitalization_plan_flag }
+				NEB_constitution_merchant_better_small = yes
+			}
+			else = {
+				NEB_constitution_merchant_better_medium = yes
+				NEB_constitution_noble_worse_small = yes
+			}
+			NEB_constitution_church_better_small = yes
+			NEB_constitution_civil_service_worse_small = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = NEB_premier_riefenstahl_when_passed_tt
+			custom_effect_tooltip = {
+				localization_key = swap_ideas_tt
+				IDEA = NEB_official_constitution
+			}
+			effect_tooltip = {
+				add_to_variable = { NEB_OC_trade_laws_cost_factor_var = -0.10 tooltip = trade_laws_cost_factor_tt }
+				add_to_variable = { NEB_OC_economy_cost_factor_var = -0.10 tooltip = economy_cost_factor_tt }
+				if = {
+					limit = { NOT = { has_country_flag = NEB_traditional_guild_revitalization_plan_flag } }
+					add_to_variable = { NEB_OC_resource_trade_cost_bonus_per_factory_var = 1 tooltip = resource_trade_cost_bonus_per_factory_tt }
+					add_to_variable = { NEB_OC_conscription_factor_var = -0.15 tooltip = conscription_factor_tt }
+				}
+				else = {
+					add_to_variable = { NEB_OC_conscription_factor_var = -0.10 tooltip = conscription_factor_tt }
+				}
+			}
+			custom_effect_tooltip = blank_null
 		}
 		cancel = {
 			if = {
 				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
-				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				has_completed_focus = NEB_premier_riefenstahl_013
 			}
 			else = { always = no }
 		}
@@ -309,6 +477,7 @@ focus_tree = {
 				has_completed_focus = NEB_premier_riefenstahl_002
 				has_completed_focus = NEB_premier_riefenstahl_005
 			}
+			always = no
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -316,7 +485,7 @@ focus_tree = {
 		cancel = {
 			if = {
 				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
-				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				has_completed_focus = NEB_premier_riefenstahl_013
 			}
 			else = { always = no }
 		}
@@ -340,22 +509,35 @@ focus_tree = {
 			NEB_constitution_reform_progress = yes
 		}
 		select_effect = {
-			add_political_power = 1
+			remove_mission = NEB_committee_vots_on_constitutional_reform_proposal_mission
+			country_event = nebulis.1
+			NEB_constitution_event_killing_effect = yes
 		}
 		completion_reward = {
 			custom_effect_tooltip = when_select_this_focus_tt
 			custom_effect_tooltip = NEB_committee_vots_on_constitutional_reform_proposal_mission_tt
+			effect_tooltip = {
+				remove_mission = NEB_committee_vots_on_constitutional_reform_proposal_mission
+				country_event = nebulis.1
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = when_finish_this_focus_tt
-			effect_tooltip = { add_political_power = 150 }
+			if = {
+				limit = { NOT = { has_country_flag = NEB_what_is_done_cannot_be_undone_flag } }
+				custom_effect_tooltip = NEB_what_is_done_cannot_be_undone_tt
+			}
+			else = { custom_effect_tooltip = NEB_what_is_done_cannot_be_undone_tt2 }
+			effect_tooltip = { reload_focus_tree = yes }
 		}
 		cancel = {
 			if = {
 				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
-				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				has_completed_focus = NEB_premier_riefenstahl_013
 			}
 			else = { always = no }
 		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
 		ai_will_do = {
 			factor = 1
 		}
@@ -365,6 +547,9 @@ focus_tree = {
 		id = NEB_premier_riefenstahl_013
 		text = NEB_autunno_caldo
 		icon = GFX_focus_NEB_autunno_caldo
+		allow_branch = {
+			has_country_flag = NEB_autunno_caldo_flag
+		}
 		prerequisite = {
 			focus = NEB_premier_riefenstahl_011
 			focus = NEB_premier_riefenstahl_012
@@ -377,12 +562,12 @@ focus_tree = {
 			always = no
 		}
 		completion_reward = {
-			add_political_power = 150
+			custom_effect_tooltip = NEB_autunno_caldo_tt
 		}
 		cancel = {
 			if = {
 				limit = { has_completed_focus = NEB_premier_riefenstahl_013 }
-				NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
+				has_completed_focus = NEB_premier_riefenstahl_013
 			}
 			else = { always = no }
 		}
@@ -419,7 +604,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			
+			NEB_fate_of_riefenstahl_has_done = yes
 		}
 		completion_reward = {
 			add_political_power = 150

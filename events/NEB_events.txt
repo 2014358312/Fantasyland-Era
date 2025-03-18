@@ -5,16 +5,101 @@
 add_namespace = nebulis
 
 country_event = {
+	id = nebulis.1
+	title = nebulis.1.t
+	desc = nebulis.1.desc
+	picture = GFX_report_event_GSK_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = nebulis.1.a
+	}
+}
+
+country_event = {
+	id = nebulis.2
+	title = nebulis.2.t
+	desc = nebulis.2.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = NEB_what_is_done_cannot_be_undone_flag
+		}
+	}
+
+	option = {
+		name = nebulis.2.a
+		effect_tooltip = { complete_national_focus = NEB_premier_riefenstahl_012 }
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_completed_focus = NEB_premier_riefenstahl_012 } }
+				complete_national_focus = NEB_premier_riefenstahl_012
+			}
+			country_event = { id = nebulis.3 days = 8 random_days = 8 }
+		}
+	}
+}
+
+country_event = {
+	id = nebulis.3
+	title = nebulis.3.t
+	desc = nebulis.3.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { id = nebulis.4 days = 1 }
+		}
+	}
+
+	option = {
+		name = nebulis.3.a
+	}
+}
+
+country_event = {
+	id = nebulis.4
+	title = nebulis.4.t
+	desc = nebulis.4.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { id = nebulis.5 days = 1 }
+		}
+	}
+
+	option = {
+		name = nebulis.5.a
+	}
+}
+
+country_event = {
 	id = nebulis.5
 	title = nebulis.5.t
 	desc = nebulis.5.desc
 	picture = GFX_report_event_EYP_01
 
 	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_variable = { NEB_autunno_caldo_month = month }
+		}
+	}
 
 	option = {
 		name = nebulis.5.a
-		
+		set_country_flag = NEB_autunno_caldo_flag
+		reload_focus_tree_hide = yes
 		hidden_effect = {
 			if = {
 				limit = {
@@ -24,7 +109,7 @@ country_event = {
 				}
 				complete_national_focus = NEB_premier_riefenstahl_013
 			}
-			every_country = {
+			every_possible_country = {
 				limit = { is_ai = no }
 				news_event = FE_news.4
 			}
@@ -39,14 +124,114 @@ country_event = {
 	picture = GFX_report_event_EYP_01
 
 	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_variable = { NEB_constitution_noble_var = 0 }
+			NEB_constitution_event_killing_effect = yes
+		}
+	}
 
 	option = {
 		name = nebulis.6.a
+	}
+}
+
+country_event = {
+	id = nebulis.7
+	title = nebulis.7.t
+	desc = nebulis.7.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_variable = { NEB_constitution_civil_service_var = 0 }
+			NEB_constitution_event_killing_effect = yes
+		}
+	}
+
+	option = {
+		name = nebulis.7.a
+	}
+}
+
+country_event = {
+	id = nebulis.8
+	title = nebulis.8.t
+	desc = nebulis.8.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_variable = { NEB_constitution_mod_var = 0 }
+			NEB_constitution_event_killing_effect = yes
+		}
+	}
+
+	option = {
+		name = nebulis.8.a
+	}
+}
+
+country_event = {
+	id = nebulis.9
+	title = nebulis.9.t
+	desc = nebulis.9.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_variable = { NEB_constitution_church_var = 0 }
+			NEB_constitution_event_killing_effect = yes
+		}
+	}
+
+	option = {
+		name = nebulis.9.a
+	}
+}
+
+country_event = {
+	id = nebulis.10
+	title = nebulis.10.t
+	desc = nebulis.10.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_variable = { NEB_constitution_merchant_var = 0 }
+			NEB_constitution_event_killing_effect = yes
+		}
+	}
+
+	option = {
+		name = nebulis.10.a
+	}
+}
+
+country_event = {
+	id = nebulis.11
+	title = nebulis.11.t
+	desc = nebulis.11.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = nebulis.11.a
 		deactivate_advisor = NEB_Lieselotte_Riefenstahl_head_of_government
 		activate_advisor = NEB_Aileen_Lauren_Dautriche_head_of_government
 		NEB_republican_attitude_up = yes
 		hidden_effect = {
-			every_country = {
+			every_possible_country = {
 				limit = { is_ai = no }
 				news_event = FE_news.6
 			}
@@ -54,15 +239,31 @@ country_event = {
 	}
 
 	option = {
-		name = nebulis.6.b
+		name = nebulis.11.b
 		deactivate_advisor = NEB_Lieselotte_Riefenstahl_head_of_government
 		activate_advisor = NEB_Elianna_Bernstein_head_of_government
 		NEB_royalist_attitude_up = yes
 		hidden_effect = {
-			every_country = {
+			every_possible_country = {
 				limit = { is_ai = no }
 				news_event = FE_news.14
 			}
 		}
+	}
+}
+
+country_event = {
+	id = nebulis.12
+	title = nebulis.12.t
+	desc = nebulis.12.desc
+	picture = GFX_report_event_generic_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = nebulis.12.a
+		complete_national_focus = NEB_premier_riefenstahl_001
+		activate_mission = NEB_committee_vots_on_constitutional_reform_proposal_mission
+		custom_effect_tooltip = NEB_committee_vots_on_constitutional_reform_proposal_mission_tt
 	}
 }

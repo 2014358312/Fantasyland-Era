@@ -147,7 +147,7 @@ news_event = {
 	id = FE_news.6
 	title = FE_news.6.t
 	desc = FE_news.6.desc
-	picture = GFX_news_event_celebration_of_furina
+	picture = GFX_news_event_generic_03
 	
 	is_triggered_only = yes
 	
@@ -164,7 +164,7 @@ news_event = {
 	id = FE_news.7
 	title = FE_news.7.t
 	desc = FE_news.7.desc
-	picture = GFX_news_event_celebration_of_furina
+	picture = GFX_news_event_generic_01
 	
 	is_triggered_only = yes
 	
@@ -172,6 +172,129 @@ news_event = {
 	
 	option = {
 		name = FE_news.7.a
+		
+	}
+}
+
+#Astrea initiate Special Military Operations
+news_event = {
+	id = FE_news.8
+	title = FE_news.8.t
+	desc = FE_news.8.desc
+	picture = GFX_news_event_generic_04
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FE_news.8.a
+		trigger = {
+			NOT = {
+				original_tag = LAN
+				original_tag = AIL
+				original_tag = TIA
+			}
+		}
+	}
+	option = {
+		name = FE_news.8.b
+		trigger = {
+			OR = {
+				original_tag = LAN
+				original_tag = AIL
+			}
+		}
+	}
+	option = {
+		name = FE_news.8.c
+		trigger = {
+			original_tag = TIA
+		}
+	}
+}
+
+#Victoria choose republic
+news_event = {
+	id = FE_news.9
+	title = FE_news.9.t
+	desc = FE_news.9.desc
+	picture = GFX_news_event_celebration_of_furina
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FE_news.9.a
+		
+	}
+}
+
+#Victoria Alexandrina as their new era king
+news_event = {
+	id = FE_news.10
+	title = FE_news.10.t
+	desc = FE_news.10.desc
+	picture = GFX_news_event_celebration_of_furina
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FE_news.10.a
+		
+	}
+}
+
+#Victoria choose Loughshinny as their new era king
+news_event = {
+	id = FE_news.11
+	title = FE_news.11.t
+	desc = FE_news.11.desc
+	picture = GFX_news_event_celebration_of_furina
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FE_news.11.a
+		
+	}
+}
+
+#Victoria Theresia as their new era king
+news_event = {
+	id = FE_news.12
+	title = FE_news.12.t
+	desc = FE_news.12.desc
+	picture = GFX_news_event_celebration_of_furina
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FE_news.12.a
+		
+	}
+}
+
+#Victoria choose Tracy as their new era king
+news_event = {
+	id = FE_news.13
+	title = FE_news.13.t
+	desc = FE_news.13.desc
+	picture = GFX_news_event_celebration_of_furina
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FE_news.13.a
 		
 	}
 }
@@ -190,6 +313,28 @@ news_event = {
 	option = {
 		name = FE_news.14.a
 		
+	}
+}
+
+#Victoria Civil War
+news_event = {
+	id = FE_news.15
+	title = FE_news.15.t
+	desc = FE_news.15.desc
+	picture = GFX_news_event_generic_03
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FE_news.15.a
+		trigger = { NOT = { has_country_flag = RGC_victorian_civil_war_member_flag } }
+	}
+	
+	option = {
+		name = FE_news.15.b
+		trigger = { has_country_flag = RGC_victorian_civil_war_member_flag }
 	}
 }
 

@@ -286,6 +286,10 @@ WPE_start_civil_war = {
 	set_country_flag = WPE_millennium_election_over_flag
 	set_global_flag = white_civil_war_happens
 	reload_focus_tree = yes
+	every_possible_country = {
+		limit = { is_ai = no }
+		news_event = FE_news.7
+	}
 }
 
 WPE_initialize_sangvis_ferri_net_modifier = {

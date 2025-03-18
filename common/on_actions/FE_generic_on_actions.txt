@@ -180,8 +180,151 @@ on_actions = {
 				set_variable = { FE_secondary = token:generic_head_of_government_none }
 			}
 			############
+			add_to_variable = { global.month = 1 }
+			every_country = {
+				set_variable = { month = global.month }
+			}
+			############
 		}
 	}
+	
+	on_monthly_ANA = {
+		effect = {
+			add_to_variable = { global.month = 1 }
+			if = {
+				limit = { check_variable = { global.month > 12 } }
+				set_variable = { global.month = 1 }
+			}
+#			set_variable = { global.month = global.num_days } #365000 on start up.
+#			subtract_from_variable = { global.month = 365000 }
+#			modulo_variable = { global.month = 365 }
+#			round_variable = global.month
+#			if = {
+#				limit = {
+#					check_variable = {
+#						var = global.month
+#						value = 31
+#						compare = less_than_or_equals
+#					}
+#				}
+#				set_variable = { global.month = 1 }
+#			}
+#			else_if = {
+#				limit = {
+#					check_variable = {
+#						var = global.month
+#						value = 59
+#						compare = less_than_or_equals
+#					}
+#				}
+#				set_variable = { global.month = 2 }
+#			}
+#			else_if = {
+#				limit = {
+#					check_variable = {
+#						var = global.month
+#						value = 90
+#						compare = less_than_or_equals
+#					}
+#				}
+#				set_variable = { global.month = 3 }
+#			}
+#			else_if = {
+#				limit = {
+#					check_variable = {
+#						var = global.month
+#						value = 120
+#						compare = less_than_or_equals
+#					}
+#				}
+#				set_variable = { global.month = 4 }
+#			}
+#			else_if = {
+#				limit = {
+#					check_variable = {
+#						var = global.month
+#						value = 151
+#						compare = less_than_or_equals
+#					}
+#				}
+#				set_variable = { global.month = 5 }
+#			}
+#			else_if = {
+#				limit = {
+#					check_variable = {
+#						var = global.month
+#						value = 181
+#						compare = less_than_or_equals
+#					}
+#				}
+#				set_variable = { global.month = 6 }
+#			}
+#			else_if = {
+#				limit = {
+#					check_variable = {
+#						var = global.month
+#						value = 212
+#						compare = less_than_or_equals
+#					}
+#				}
+#				set_variable = { global.month = 7 }
+#			}
+#			else_if = {
+#				limit = {
+#					check_variable = {
+#						var = global.month
+#						value = 243
+#						compare = less_than_or_equals
+#					}
+#				}
+#				set_variable = { global.month = 8 }
+#			}
+#			else_if = {
+#				limit = {
+#					check_variable = {
+#						var = global.month
+#						value = 273
+#						compare = less_than_or_equals
+#					}
+#				}
+#				set_variable = { global.month = 9 }
+#			}
+#			else_if = {
+#				limit = {
+#					check_variable = {
+#						var = global.month
+#						value = 304
+#						compare = less_than_or_equals
+#					}
+#				}
+#				set_variable = { global.month = 10 }
+#			}
+#			else_if = {
+#				limit = {
+#					check_variable = {
+#						var = global.month
+#						value = 334
+#						compare = less_than_or_equals
+#					}
+#				}
+#				set_variable = { global.month = 11 }
+#			}
+#			else_if = {
+#				limit = {
+#					check_variable = {
+#						var = global.month
+#						value = 365
+#						compare = less_than_or_equals
+#					}
+#				}
+#				set_variable = { global.month = 12 }
+#			}
+			every_country = {
+				set_variable = { month = global.month }
+			}
+		}
+	}
+	
 	on_state_control_changed = {
 		effect = {
 			#if = {
