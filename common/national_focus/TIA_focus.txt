@@ -1508,4 +1508,319 @@ focus_tree = {
 			factor = 1
 		}
 	}
+	#外交
+	focus = {
+		#革命预警
+		id = TIA_revolutionary_early_warning
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_dream
+		x = 51
+		y = 0
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#堤亚穆-穆露奈依特边境问题
+		id = TIA_TIA_MUL_border_issue
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_revolutionary_early_warning
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = TIA_revolutionary_early_warning
+		}
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#支援帕雷提亚魔学研究
+		id = TIA_support_PAT_demonology
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_revolutionary_early_warning
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = TIA_revolutionary_early_warning
+		}
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#关注魔王军
+		id = TIA_pay_attention_to_MDK
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_revolutionary_early_warning
+		x = 4
+		y = 1
+		prerequisite = {
+			focus = TIA_revolutionary_early_warning
+		}
+		cost = 5
+		available = {
+			NOT = {
+				has_idea = TIA_pay_attention_to_ATC
+			}
+		}
+		completion_reward = {
+			add_ideas = TIA_pay_attention_to_MDK
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#支援第一战场
+		id = TIA_support_first_battlefield
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_pay_attention_to_MDK
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = TIA_pay_attention_to_MDK
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_MDK
+			NOT = {
+				has_idea = TIA_pay_attention_to_ATC
+			}
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#魔学武器实战
+		id = TIA_demonology_weapon_first
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_support_first_battlefield
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = TIA_support_first_battlefield
+		}
+		prerequisite = {
+			focus = TIA_support_PAT_demonology
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_MDK
+			NOT = {
+				has_idea = TIA_pay_attention_to_ATC
+			}
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#保障托里斯汀航运线
+		id = TIA_Secure_TOR_route
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_pay_attention_to_MDK
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = TIA_pay_attention_to_MDK
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_MDK
+			NOT = {
+				has_idea = TIA_pay_attention_to_ATC
+			}
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#离间魔国联邦
+		id = TIA_come_between_JRT_MDK
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_pay_attention_to_MDK
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = TIA_pay_attention_to_MDK
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_MDK
+			NOT = {
+				has_idea = TIA_pay_attention_to_ATC
+			}
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#缔结秘密盟约
+		id = TIA_make_secret_covenant
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_come_between_JRT_MDK
+		x = -1
+		y = 1
+		mutually_exclusive = {
+			focus = TIA_embargo_JRT
+		}
+		prerequisite = {
+			focus = TIA_come_between_JRT_MDK
+		}
+		prerequisite = {
+			focus = TIA_Secure_TOR_route
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_MDK
+			NOT = {
+				has_idea = TIA_pay_attention_to_ATC
+			}
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#禁运魔国联邦
+		id = TIA_embargo_JRT
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_Secure_TOR_route
+		x = -1
+		y = 1
+		mutually_exclusive = {
+			focus = TIA_make_secret_covenant
+		}
+		prerequisite = {
+			focus = TIA_Secure_TOR_route
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_MDK
+			NOT = {
+				has_idea = TIA_pay_attention_to_ATC
+			}
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#目标转变
+		id = TIA_pay_attention_to_MDK_end
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_demonology_weapon_first
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = TIA_demonology_weapon_first
+			focus = TIA_embargo_JRT
+			focus = TIA_make_secret_covenant
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_MDK
+			NOT = {
+				has_idea = TIA_pay_attention_to_ATC
+			}
+		}
+		completion_reward = {
+			remove_idea = TIA_pay_attention_to_MDK
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#关注反自动化条约委员会
+		id = TIA_pay_attention_to_ATC
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_revolutionary_early_warning
+		x = -4
+		y = 1
+		prerequisite = {
+			focus = TIA_revolutionary_early_warning
+		}
+		cost = 5
+		available = {
+			NOT = {
+				has_idea = TIA_pay_attention_to_MDK
+			}
+		}
+		completion_reward = {
+			add_ideas = TIA_pay_attention_to_ATC
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#干涉阿鲁卡内战
+		id = TIA_intervene_ALC_civil_war
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_revolutionary_early_warning
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = TIA_revolutionary_early_warning
+		}
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#调停艾尔孚利登-阿米多尼亚战争
+		id = TIA_mediating_ELF_AMD_war
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_revolutionary_early_warning
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = TIA_revolutionary_early_warning
+		}
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }
