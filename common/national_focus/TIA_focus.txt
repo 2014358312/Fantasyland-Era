@@ -1552,7 +1552,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		prerequisite = {
-			focus = TIA_revolutionary_early_warning
+			focus = TIA_TIA_MUL_border_issue
 		}
 		cost = 5
 		available = {
@@ -1682,6 +1682,29 @@ focus_tree = {
 		}
 	}
 	focus = {
+		#联系舰娘势力
+		id = TIA_contact_girlship_forces
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_come_between_JRT_MDK
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = TIA_come_between_JRT_MDK
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_MDK
+			NOT = {
+				has_idea = TIA_pay_attention_to_ATC
+			}
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
 		#缔结秘密盟约
 		id = TIA_make_secret_covenant
 		icon = GFX_focus_TIA_
@@ -1747,6 +1770,7 @@ focus_tree = {
 			focus = TIA_demonology_weapon_first
 			focus = TIA_embargo_JRT
 			focus = TIA_make_secret_covenant
+			focus = TIA_contact_girlship_forces
 		}
 		cost = 5
 		available = {
@@ -1756,7 +1780,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			remove_idea = TIA_pay_attention_to_MDK
+			remove_ideas = TIA_pay_attention_to_MDK
 		}
 		ai_will_do = {
 			factor = 1
@@ -1780,6 +1804,181 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = TIA_pay_attention_to_ATC
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#阿鲁卡王国重建计划
+		id = TIA_ALC_reconstruction_plan
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_pay_attention_to_ATC
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = TIA_pay_attention_to_ATC
+		}
+		prerequisite = {
+			focus = TIA_intervene_ALC_civil_war
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_ATC
+			NOT = {
+				has_idea = TIA_pay_attention_to_MDK
+			}
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#反反自动化条约委员会协约
+		id = TIA_anti_ATC_convention
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_intervene_ALC_civil_war
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = TIA_intervene_ALC_civil_war
+		}
+		prerequisite = {
+			focus = TIA_TIA_MUL_border_issue
+		}
+		prerequisite = {
+			focus = TIA_pay_attention_to_ATC
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_ATC
+			NOT = {
+				has_idea = TIA_pay_attention_to_MDK
+			}
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#埃尔施塔特桥头堡
+		id = TIA_Elstat_bridgehead
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_pay_attention_to_ATC
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = TIA_pay_attention_to_ATC
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_ATC
+			NOT = {
+				has_idea = TIA_pay_attention_to_MDK
+			}
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#挑起内部斗争
+		id = TIA_provoking_internal_conflict
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_ALC_reconstruction_plan
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = TIA_pay_attention_to_ATC
+			focus = TIA_Elstat_bridgehead
+			focus = TIA_anti_ATC_convention
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_ATC
+			NOT = {
+				has_idea = TIA_pay_attention_to_MDK
+			}
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#煽动圣玛格诺利亚种族主义者
+		id = TIA_incite_SMA_racists
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_anti_ATC_convention
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = TIA_anti_ATC_convention
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_ATC
+			NOT = {
+				has_idea = TIA_pay_attention_to_MDK
+			}
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#联络兰德索尔君主派
+		id = TIA_contract_LAN_monarchist
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_Elstat_bridgehead
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = TIA_Elstat_bridgehead
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_ATC
+			NOT = {
+				has_idea = TIA_pay_attention_to_MDK
+			}
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#目标转变
+		id = TIA_pay_attention_to_ATC_end
+		icon = GFX_focus_TIA_
+		relative_position_id = TIA_provoking_internal_conflict
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = TIA_provoking_internal_conflict
+			focus = TIA_incite_SMA_racists
+			focus = TIA_contract_LAN_monarchist
+		}
+		cost = 5
+		available = {
+			has_idea = TIA_pay_attention_to_ATC
+			NOT = {
+				has_idea = TIA_pay_attention_to_MDK
+			}
+		}
+		completion_reward = {
+			remove_ideas = TIA_pay_attention_to_ATC
 		}
 		ai_will_do = {
 			factor = 1
