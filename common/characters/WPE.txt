@@ -175,7 +175,6 @@ characters = {
 				original_tag = WPE
 			}
 			visible = {
-				NOT = { has_character_flag = character_no_visible_flag }
 				is_country_leader = no
 			}
 			available = { no_head_of_gov_trigger = yes }
@@ -762,7 +761,7 @@ characters = {
 			allowed = {
 				original_tag = WPE
 			}
-			visible = { NOT = { has_character_flag = character_no_visible_flag } }
+			visible = {}
 			available = { no_head_of_gov_trigger = yes }
 			can_be_fired = no
 			traits = { special_theory_operations_expert head_of_government_trait }
@@ -871,7 +870,7 @@ characters = {
 			allowed = {
 				original_tag = WPE
 			}
-			#visible = { NOT = { has_character_flag = character_no_visible_flag } }
+			visible = {}
 			available = { no_head_of_gov_trigger = yes }
 			can_be_fired = no
 			traits = { cautious_planner head_of_government_trait }
@@ -922,10 +921,10 @@ characters = {
 			allowed = {
 				original_tag = WPE
 			}
-			visible = { NOT = { has_character_flag = character_no_visible_flag } }
+			visible = {}
 			available = { no_head_of_gov_trigger = yes }
 			can_be_fired = no
-			traits = { head_of_government_trait }
+			traits = { party_connection head_of_government_trait }
 			cost = 0
 			ai_will_do = {
 				factor = 1
@@ -933,7 +932,7 @@ characters = {
 			on_add = {
 				hidden_effect = {
 					set_variable = { FE_secondary = token:WPE_Sarashiki_Tatenashi_head_of_government }
-					set_variable = { VL_status_var = 14 }
+					#set_variable = { VL_status_var = 14 }
 				}
 			}
 		}
@@ -1071,10 +1070,10 @@ characters = {
 	WPE_Shinonono_Tabane = {
 		name = Shinonono_Tabane
 		portraits = {
-			civilian = {
-				large = GFX_Portrait_WPE_Shinonono_Tabane
-				small = GFX_idea_advisor_WPE_Shinonono_Tabane
-			}
+			#civilian = {
+			#	large = GFX_Portrait_WPE_Shinonono_Tabane
+			#	small = GFX_idea_advisor_WPE_Shinonono_Tabane
+			#}
 			army = {
 				large = GFX_Portrait_WPE_Shinonono_Tabane_scientist
 				small = GFX_idea_advisor_WPE_Shinonono_Tabane
@@ -1273,10 +1272,10 @@ characters = {
 	WPE_Suginami_Ikaruga = {
 		name = Suginami_Ikaruga
 		portraits = {
-			civilian = {
-				large = GFX_Portrait_WPE_Suginami_Ikaruga
-				small = GFX_idea_advisor_WPE_Suginami_Ikaruga
-			}
+			#civilian = {
+			#	large = GFX_Portrait_WPE_Suginami_Ikaruga
+			#	small = GFX_idea_advisor_WPE_Suginami_Ikaruga
+			#}
 			army = {
 				large = GFX_Portrait_WPE_Suginami_Ikaruga_scientist
 				small = GFX_idea_advisor_WPE_Suginami_Ikaruga
@@ -2226,14 +2225,20 @@ characters = {
 				small = GFX_idea_advisor_WPE_Alisa_Slutsky
 			}
 		}
-		corps_commander = {
-			traits = {  }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
+		advisor = {
+			slot = political_advisor
+			idea_token = WPE_Alisa_Slutsky
+			allowed = {
+				original_tag = WPE
+			}
+			available = {
+				
+			}
+			traits = { mastermind_code_cracker }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
 		}
 	}
 
@@ -2249,14 +2254,20 @@ characters = {
 				small = GFX_idea_advisor_WPE_Luna_Filisina
 			}
 		}
-		corps_commander = {
-			traits = {  }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
+		advisor = {
+			slot = political_advisor
+			idea_token = WPE_Alisa_Slutsky
+			allowed = {
+				original_tag = WPE
+			}
+			available = {
+				
+			}
+			traits = { gran_carabinero }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
 		}
 	}
 
@@ -2272,14 +2283,11 @@ characters = {
 				small = GFX_idea_advisor_WPE_Victoria_Gilova
 			}
 		}
-		corps_commander = {
-			traits = {  }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
+		country_leader = {
+			ideology = police_state_subtype
+			traits = { unscrupulous_orchestrator }
+			expire = "1965.1.1.1"
+			id = -1
 		}
 	}
 	
@@ -2294,6 +2302,11 @@ characters = {
 				large = GFX_Portrait_WPE_Ayase_Eli
 				small = GFX_idea_advisor_WPE_Ayase_Eli
 			}
+		}
+		country_leader = {
+			ideology = classical_liberalism_subtype
+			expire = "1965.1.1.1"
+			traits = { budget_conscious_administrator }
 		}
 		advisor = {
 			slot = head_of_government
@@ -2313,6 +2326,417 @@ characters = {
 				hidden_effect = {
 					set_variable = { FE_secondary = token:WPE_Ayase_Eli_head_of_government }
 				}
+			}
+		}
+	}
+
+	WPE_Amatsuka_Yayoi = {
+		name = Amatsuka_Yayoi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Amatsuka_Yayoi
+				small = GFX_idea_advisor_WPE_Amatsuka_Yayoi
+			}
+			army = {
+				large = GFX_Portrait_WPE_Amatsuka_Yayoi
+				small = GFX_idea_advisor_WPE_Amatsuka_Yayoi
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = WPE_Amatsuka_Yayoi
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { air_close_air_support_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	WPE_Honjo_Misato = {
+		name = Honjo_Misato
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Honjo_Misato
+				small = GFX_idea_advisor_WPE_Honjo_Misato
+			}
+			army = {
+				large = GFX_Portrait_WPE_Honjo_Misato
+				small = GFX_idea_advisor_WPE_Honjo_Misato
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = WPE_Honjo_Misato
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { air_warfare_theorist }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	WPE_Isurugi_Moe = {
+		name = Isurugi_Moe
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Isurugi_Moe
+				small = GFX_idea_advisor_WPE_Isurugi_Moe
+			}
+			army = {
+				large = GFX_Portrait_WPE_Isurugi_Moe
+				small = GFX_idea_advisor_WPE_Isurugi_Moe
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = WPE_Isurugi_Moe
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { victory_through_airpower }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	WPE_Kazuura_Nono = {
+		name = Kazuura_Nono
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Kazuura_Nono
+				small = GFX_idea_advisor_WPE_Kazuura_Nono
+			}
+			army = {
+				large = GFX_Portrait_WPE_Kazuura_Nono
+				small = GFX_idea_advisor_WPE_Kazuura_Nono
+			}
+		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = WPE_Kazuura_Nono
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { air_chief_safety_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	WPE_Leyli_Haltija = {
+		name = Leyli_Haltija
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Leyli_Haltija
+				small = GFX_idea_advisor_WPE_Leyli_Haltija
+			}
+			army = {
+				large = GFX_Portrait_WPE_Leyli_Haltija
+				small = GFX_idea_advisor_WPE_Leyli_Haltija
+			}
+		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = WPE_Leyli_Haltija
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { air_chief_ground_support_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	WPE_Lizbet_Crown = {
+		name = Lizbet_Crown
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Lizbet_Crown
+				small = GFX_idea_advisor_WPE_Lizbet_Crown
+			}
+			army = {
+				large = GFX_Portrait_WPE_Lizbet_Crown
+				small = GFX_idea_advisor_WPE_Lizbet_Crown
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = WPE_Lizbet_Crown
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { air_bomber_interception_3 }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	WPE_Mikuri_Komachi = {
+		name = Mikuri_Komachi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Mikuri_Komachi
+				small = GFX_idea_advisor_WPE_Mikuri_Komachi
+			}
+			army = {
+				large = GFX_Portrait_WPE_Mikuri_Komachi
+				small = GFX_idea_advisor_WPE_Mikuri_Komachi
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = WPE_Mikuri_Komachi
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { air_pilot_training_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	WPE_Rusalka_Evereska = {
+		name = Rusalka_Evereska
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Rusalka_Evereska
+				small = GFX_idea_advisor_WPE_Rusalka_Evereska
+			}
+			army = {
+				large = GFX_Portrait_WPE_Rusalka_Evereska
+				small = GFX_idea_advisor_WPE_Rusalka_Evereska
+			}
+		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = WPE_Rusalka_Evereska
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { air_chief_night_operations_3 }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	WPE_Suzuhara_Kurumi = {
+		name = Suzuhara_Kurumi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Suzuhara_Kurumi
+				small = GFX_idea_advisor_WPE_Suzuhara_Kurumi
+			}
+			army = {
+				large = GFX_Portrait_WPE_Suzuhara_Kurumi
+				small = GFX_idea_advisor_WPE_Suzuhara_Kurumi
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+	
+	WPE_Anna_Morozova = {
+		name = Anna_Morozova
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_WPE_Anna_Morozova
+			#	small = GFX_idea_advisor_WPE_Anna_Morozova
+			#}
+			army = {
+				large = GFX_Portrait_WPE_Anna_Morozova_scientist
+				small = GFX_idea_advisor_WPE_Anna_Morozova
+			}
+		}
+		scientist = {
+			traits = { scientist_trait_electronics_specialist scientist_trait_fast_learner }
+			skills = {
+				specialization_air = 1
+			}
+		}
+	}
+
+	WPE_Avdotya_Nikolayevna_Ivanova = {
+		name = Avdotya_Nikolayevna_Ivanova
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Avdotya_Nikolayevna_Ivanova
+				small = GFX_idea_advisor_WPE_Avdotya_Nikolayevna_Ivanova
+			}
+			army = {
+				large = GFX_Portrait_WPE_Avdotya_Nikolayevna_Ivanova
+				small = GFX_idea_advisor_WPE_Avdotya_Nikolayevna_Ivanova
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = WPE_Avdotya_Nikolayevna_Ivanova
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { grand_battle_plan_expert }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	WPE_Bronya_Zaychik = {
+		name = Bronya_Zaychik
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Bronya_Zaychik
+				small = GFX_idea_advisor_WPE_Bronya_Zaychik
+			}
+			army = {
+				large = GFX_Portrait_WPE_Bronya_Zaychik
+				small = GFX_idea_advisor_WPE_Bronya_Zaychik
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = WPE_Bronya_Zaychik
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { army_chief_maneuver_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	WPE_Natalya_Andreyevna_Rostova = {
+		name = Natalya_Andreyevna_Rostova
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WPE_Natalya_Andreyevna_Rostova
+				small = GFX_idea_advisor_WPE_Natalya_Andreyevna_Rostova
+			}
+			army = {
+				large = GFX_Portrait_WPE_Natalya_Andreyevna_Rostova
+				small = GFX_idea_advisor_WPE_Natalya_Andreyevna_Rostova
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = WPE_Natalya_Andreyevna_Rostova
+			allowed = {
+				original_tag = WPE
+			}
+			traits = { army_artillery_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	WPE_Lilia = {
+		name = WPE_Lilia
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_WPE_Lilia
+			#	small = GFX_idea_advisor_WPE_Lilia
+			#}
+			army = {
+				large = GFX_Portrait_WPE_Lilia_scientist
+				small = GFX_idea_advisor_WPE_Lilia
+			}
+		}
+		scientist = {
+			traits = { scientist_trait_bombs_expert }
+			skills = {
+				specialization_air = 1
 			}
 		}
 	}

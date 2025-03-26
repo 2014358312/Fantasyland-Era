@@ -25,6 +25,7 @@ country_event = {
 	}
 }
 
+#carriar seaked
 country_event = {
 	id = landsol.2
 	title = landsol.2.t
@@ -39,6 +40,7 @@ country_event = {
 	}
 }
 
+#fulfill dalton treaty
 country_event = {
 	id = landsol.3
 	title = landsol.3.t
@@ -67,5 +69,56 @@ country_event = {
 	option = {
 		name = landsol.4.a
 		add_political_power = 10
+	}
+}
+
+country_event = {
+	id = landsol.5
+	title = landsol.5.t
+	desc = landsol.5.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = landsol.5.a
+		add_political_power = 10
+		add_opinion_modifier = {
+			target = EYP
+			modifier = LAN_economic_sanction
+		}
+	}
+
+	option = {
+		name = landsol.5.b
+		add_political_power = -25
+		hidden_effect = { FROM = { country_event = { id = landsol.7 days = 1 } } }
+	}
+}
+
+country_event = {
+	id = landsol.6
+	title = landsol.6.t
+	desc = landsol.6.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = landsol.6.a
+		add_political_power = -10
+	}
+}
+
+country_event = {
+	id = landsol.7
+	title = landsol.7.t
+	desc = landsol.7.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = landsol.7.a
 	}
 }

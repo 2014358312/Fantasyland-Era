@@ -19,59 +19,30 @@ focus_tree = {
 		}
 	}
 	default = no
+	
+	continuous_focus_position = { x = 100 y = 550 }
+
+	inlay_window = {
+		id = lan_inner_circle_inlay_window
+		position = { x = 1200 y = 150 }
+	}
 
 	focus = { 
 		id = LAN_into_millennium
 		icon = GFX_goal_generic_collaborate_local_elites
-		x = 10
+		x = 5
 		y = 0
 		cost = 4
 		available = {
 			is_subject = no
+			LAN_preparing_for_special_military_operation_against_eylstadt = yes
 		}
 		select_effect = {
 			set_country_flag = LAN_into_millennium_flag
 		}
 		completion_reward = {
 			clr_country_flag = LAN_into_millennium_flag
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = { 
-		id = LAN_after_celebration
-		icon = GFX_goal_generic_collaborate_local_elites
-		prerequisite = { focus = LAN_into_millennium }
-		relative_position_id = LAN_into_millennium
-		x = 0
-		y = 1
-		cost = 0
-		available = {
-			always = no
-		}
-		completion_reward = {
-			
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	focus = { 
-		id = LAN_call_dice
-		icon = GFX_focus_NOR_restore_public_trust_in_the_storting
-		prerequisite = { focus = LAN_after_celebration }
-		relative_position_id = LAN_after_celebration
-		x = 0
-		y = 1
-		cost = 1
-		available = {
-			
-		}
-		completion_reward = {
-			
+			add_political_power = 25
 		}
 		ai_will_do = {
 			factor = 1
@@ -80,21 +51,70 @@ focus_tree = {
 	
 	focus = { 
 		id = LAN_maintain_tiam_relation
-		icon = GFX_goal_generic_collaborate_local_elites
-		prerequisite = { focus = LAN_after_celebration }
-		mutually_exclusive = { focus = LAN_basic_principles_of_warfare }
-		relative_position_id = LAN_after_celebration
-		x = -4
+		icon = GFX_focus_LAN_maintain_tiam_relation
+		prerequisite = { focus = LAN_into_millennium }
+		relative_position_id = LAN_into_millennium
+		x = -3
 		y = 1
 		cost = 3
 		available = {
-			NOT = { has_completed_focus = LAN_call_dice }
+			TIA = {
+				exists = yes
+				NOT = {
+					has_war_with = ROOT
+					has_war_together_with = EYP
+				}
+			}
 		}
 		completion_reward = {
-			TIA = {
-				country_event = { id = germany.75 days = 1 }
-				custom_effect_tooltip = needs_approval
+			#unlock_decision_tooltip = 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = { 
+		id = LAN_call_on_the_people
+		icon = GFX_focus_ARG_anti_american_propaganda
+		prerequisite = { focus = LAN_into_millennium }
+		relative_position_id = LAN_into_millennium
+		x = 0
+		y = 1
+		cost = 3
+		available = {
+			OR = {
+				has_war = yes
+				any_allied_country = { has_war = yes }
+				any_other_country = {
+					NOT = { is_in_faction_with = ROOT }
+					is_guaranteed_by = ROOT
+					has_war = yes
+				}
 			}
+		}
+		completion_reward = {
+			add_ideas = LAN_call_on_the_people_idea
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = { 
+		id = LAN_officer_rotate
+		icon = GFX_focus_generic_full_social_mobilization
+		prerequisite = { focus = LAN_into_millennium }
+		mutually_exclusive = { focus = LAN_more_troops }
+		relative_position_id = LAN_into_millennium
+		x = 2
+		y = 1
+		cost = 3
+		available = {
+			
+		}
+		completion_reward = {
+			add_ideas = LAN_officer_rotate_idea_1
 			effect_tooltip = {
 				subtract_from_variable = { global.EYP_war_escalation_level_LAN_action = 1 }
 				custom_effect_tooltip = war_escalation_level_down_tt
@@ -107,18 +127,19 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = LAN_basic_principles_of_warfare
-		icon = GFX_goal_generic_collaborate_local_elites
-		prerequisite = { focus = LAN_after_celebration }
-		mutually_exclusive = { focus = LAN_maintain_tiam_relation }
-		relative_position_id = LAN_after_celebration
-		x = -2
+		id = LAN_more_troops
+		icon = GFX_focus_AFG_adopt_nufus
+		prerequisite = { focus = LAN_into_millennium }
+		mutually_exclusive = { focus = LAN_officer_rotate }
+		relative_position_id = LAN_into_millennium
+		x = 5
 		y = 1
 		cost = 3
 		available = {
-			NOT = { has_completed_focus = LAN_call_dice }
+			
 		}
 		completion_reward = {
+			add_ideas = LAN_more_troops_idea
 			AIL = {
 				swap_ideas = {
 					remove_idea = AIL_if_final_word
@@ -135,16 +156,165 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = LAN_more_troops
-		icon = GFX_goal_generic_collaborate_local_elites
-		prerequisite = { focus = LAN_after_celebration }
-		mutually_exclusive = { focus = LAN_officer_rotate }
-		relative_position_id = LAN_after_celebration
-		x = 2
+		id = LAN_economic_sanctions
+		icon = GFX_goal_generic_trade_blocked
+		prerequisite = { focus = LAN_maintain_tiam_relation }
+		mutually_exclusive = { focus = LAN_remind_neutral_of_their_status }
+		relative_position_id = LAN_maintain_tiam_relation
+		x = -1
 		y = 1
 		cost = 3
 		available = {
-			NOT = { has_completed_focus = LAN_call_dice }
+			
+		}
+		completion_reward = {
+			add_opinion_modifier = {
+				target = EYP
+				modifier = LAN_economic_sanction
+			}
+			every_other_country = {
+				limit = {
+					NOT = { has_war_with = EYP }
+					is_neighbor_of = EYP
+				}
+				country_event = landsol.5
+				custom_effect_tooltip = if_they_accept_newline_tt
+				custom_effect_tooltip = they_will_gain_tt
+				effect_tooltip = {
+					add_opinion_modifier = {
+						target = EYP
+						modifier = LAN_economic_sanction
+					}
+				}
+			}
+			if = {
+				limit = { AIL = { has_country_flag = AIL_carrier_destroyed_flag } }
+				custom_effect_tooltip = LAN_economic_sanctions_tt2
+			}
+			else = {
+				custom_effect_tooltip = generic_more_likely_to_accept_tt
+				custom_effect_tooltip = LAN_economic_sanctions_tt
+			}
+			EYP = { country_event = { id = landsol.6 days = 3 } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = { 
+		id = LAN_remind_neutral_of_their_status
+		icon = GFX_focus_LAN_remind_neutral_of_their_status
+		prerequisite = { focus = LAN_maintain_tiam_relation }
+		mutually_exclusive = { focus = LAN_economic_sanctions }
+		relative_position_id = LAN_maintain_tiam_relation
+		x = 1
+		y = 1
+		cost = 3
+		available = {
+			
+		}
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					NOT = { has_war_with = EYP }
+					is_neighbor_of = EYP
+				}
+				custom_effect_tooltip = if_they_accept_newline_tt
+				custom_effect_tooltip = they_will_gain_tt
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = { 
+		id = LAN_eyp_volunteer_army
+		icon = GFX_focus_generic_limited_social_mobilization
+		prerequisite = { focus = LAN_call_on_the_people }
+		prerequisite = {
+			focus = LAN_officer_rotate
+			focus = LAN_more_troops
+		}
+		relative_position_id = LAN_call_on_the_people
+		x = 1
+		y = 1
+		cost = 3
+		available = {
+			
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = LAN_call_on_the_people_idea
+				add_idea = LAN_call_on_the_people_idea_2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = { 
+		id = LAN_slow_artillery_advance
+		icon = GFX_goal_generic_army_superior_firepower
+		prerequisite = { focus = LAN_officer_rotate }
+		relative_position_id = LAN_officer_rotate
+		x = 1
+		y = 1
+		cost = 3
+		available = {
+			
+		}
+		completion_reward = {
+			LAN_officer_rotate_idea_add_2_effect = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = { 
+		id = LAN_advanced_armor_tactics
+		icon = GFX_focus_generic_heavy_tank
+		prerequisite = { focus = LAN_more_troops }
+		relative_position_id = LAN_more_troops
+		x = 0
+		y = 1
+		cost = 3
+		available = {
+			
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = LAN_more_troops_idea
+				add_idea = LAN_more_troops_idea_2
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = { 
+		id = LAN_eyp_royal_expulsion_order
+		icon = GFX_focus_LAN_eyp_royal_expulsion_order
+		prerequisite = {
+			focus = LAN_economic_sanctions
+			focus = LAN_remind_neutral_of_their_status
+		}
+		mutually_exclusive = { focus = LAN_promise_limited_war }
+		relative_position_id = LAN_economic_sanctions
+		x = 0
+		y = 1
+		cost = 3
+		available = {
+			
 		}
 		completion_reward = {
 			
@@ -155,18 +325,140 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = LAN_officer_rotate
-		icon = GFX_goal_generic_collaborate_local_elites
-		prerequisite = { focus = LAN_after_celebration }
-		mutually_exclusive = { focus = LAN_more_troops }
-		relative_position_id = LAN_after_celebration
-		x = 4
+		id = LAN_promise_limited_war
+		icon = GFX_focus_AFG_scavenging
+		prerequisite = {
+			focus = LAN_economic_sanctions
+			focus = LAN_remind_neutral_of_their_status
+		}
+		mutually_exclusive = { focus = LAN_eyp_royal_expulsion_order }
+		relative_position_id = LAN_economic_sanctions
+		x = 2
 		y = 1
 		cost = 3
 		available = {
-			NOT = { has_completed_focus = LAN_call_dice }
+			
 		}
 		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = { 
+		id = LAN_stimulate_local_economy
+		dynamic = yes
+		icon = {
+			trigger = {
+				OR = {
+					has_country_flag = eylstadt_drift_defence_war_member_flag
+					has_war = yes
+				}
+			}
+			value = GFX_focus_generic_reorient_production
+		}
+		icon = {
+			trigger = {
+				NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+				has_war = no
+			}
+			value = GFX_focus_generic_economic_recovery
+		}
+		icon = { value = GFX_focus_generic_economic_recovery }
+		prerequisite = { focus = LAN_call_on_the_people }
+		prerequisite = {
+			focus = LAN_economic_sanctions
+			focus = LAN_remind_neutral_of_their_status
+		}
+		relative_position_id = LAN_call_on_the_people
+		x = 0
+		y = 2
+		cost = 3
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 50
+			if = {
+				limit = {
+					NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
+					has_war = no
+				}
+				every_core_state = {
+					limit = { is_fully_controlled_by = ROOT }
+					random_select_amount = 3
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				every_core_state = {
+					limit = { is_fully_controlled_by = ROOT }
+					random_select_amount = 2
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				every_core_state = {
+					limit = { is_fully_controlled_by = ROOT }
+					random_select_amount = 1
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = { 
+		id = LAN_basic_principles_of_warfare
+		icon = GFX_focus_ARG_march_to_la_casa_rosada
+		prerequisite = { focus = LAN_officer_rotate }
+		relative_position_id = LAN_officer_rotate
+		x = 0
+		y = 2
+		cost = 3
+		available = {
+			
+		}
+		completion_reward = {
+			LAN_officer_rotate_idea_add_3_effect = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = { 
+		id = LAN_hybrid_communication_methods
+		icon = GFX_focus_AFG_telegraph
+		prerequisite = { focus = LAN_advanced_armor_tactics }
+		relative_position_id = LAN_advanced_armor_tactics
+		x = 0
+		y = 1
+		cost = 3
+		available = {
+			
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = LAN_more_troops_idea_2
+				add_idea = LAN_more_troops_idea_3
+			}
 			
 		}
 		ai_will_do = {
@@ -177,11 +469,90 @@ focus_tree = {
 	focus = { 
 		id = LAN_status_quo
 		icon = GFX_focus_LAN_keep_republican
-		prerequisite = { focus = LAN_call_dice }
-		relative_position_id = LAN_call_dice
-		x = -5
+		#prerequisite = { focus = LAN_call_dice }
+		#relative_position_id = LAN_call_dice
+		allow_branch = {
+			NOT = { has_government = fascism }
+		}
+		x = 40
+		y = 0
+		cost = 0
+		available = {
+			always = no
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_saren_victory
+		icon = GFX_focus_LAN_saren_victory
+		prerequisite = { focus = LAN_status_quo }
+		relative_position_id = LAN_status_quo
+		x = -4
 		y = 1
-		cost = 2
+		cost = 0
+		available = {
+			always = no
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_yui_victory
+		icon = GFX_focus_LAN_yui_victory
+		prerequisite = { focus = LAN_status_quo }
+		relative_position_id = LAN_status_quo
+		x = 0
+		y = 1
+		cost = 0
+		available = {
+			always = no
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_kiruya_victory
+		icon = GFX_focus_LAN_kiruya_victory
+		prerequisite = { focus = LAN_status_quo }
+		relative_position_id = LAN_status_quo
+		x = 4
+		y = 1
+		cost = 0
+		available = {
+			always = no
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_kokoro_victory
+		icon = GFX_focus_LAN_kokoro_victory
+		prerequisite = { focus = LAN_status_quo }
+		relative_position_id = LAN_status_quo
+		x = 2
+		y = 1
+		cost = 0
 		available = {
 			always = no
 		}
@@ -196,33 +567,14 @@ focus_tree = {
 	focus = { 
 		id = LAN_military_first
 		icon = GFX_goal_generic_collaborate_local_elites
-		prerequisite = { focus = LAN_call_dice }
-		relative_position_id = LAN_call_dice
-		x = 5
-		y = 1
-		cost = 2
-		available = {
-			always = no
-		}
-		completion_reward = {
-			
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = { 
-		id = LAN_new_era_action
-		icon = GFX_goal_generic_collaborate_local_elites
-		prerequisite = {
-			focus = LAN_status_quo
-			focus = LAN_military_first
-		}
+		#prerequisite = { focus = LAN_call_dice }
 		relative_position_id = LAN_status_quo
-		x = 5
-		y = 1
-		cost = 2
+		allow_branch = {
+			has_government = fascism
+		}
+		x = 0
+		y = 0
+		cost = 0
 		available = {
 			always = no
 		}
@@ -239,7 +591,7 @@ focus_tree = {
 		icon = GFX_focus_LAN_vein_of_republic
 		dynamic = yes
 		relative_position_id = LAN_into_millennium
-		x = 15
+		x = 20
 		y = 0
 		cost = 4
 		available = {
@@ -331,7 +683,7 @@ focus_tree = {
 		completion_reward = {
 			
 			effect_tooltip = {
-				add_ideas = LAN_war_economic_plan_idea_0
+				add_ideas = LAN_war_economic_plan_idea
 				custom_effect_tooltip = {
 					localization_key = LAN_unlock_industry_improvement_plan_decision_tt
 					INDUSTRY_TAB = LAN_industry_improvement_plan_tab_1
@@ -1132,7 +1484,7 @@ focus_tree = {
 	focus = {
 		id = LAN_twenty_passed
 		icon = GFX_goal_generic_more_territorial_claims
-		x = 26
+		x = 14
 		y = 5
 		cost = 0
 		#allow_branch = {
@@ -1229,7 +1581,7 @@ focus_tree = {
 		icon = GFX_focus_generic_home_defense
 		prerequisite = { focus = LAN_reform_military }
 		relative_position_id = LAN_reform_military
-		x = -5
+		x = -7
 		y = 1
 		cost = 5
 		available = {}
@@ -1883,9 +2235,9 @@ focus_tree = {
 		id = LAN_overseas_power_projection
 		icon = GFX_focus_eng_global_defense
 		prerequisite = { focus = LAN_reform_military }
-		relative_position_id = LAN_reform_military
-		x = -1
-		y = 1
+		relative_position_id = LAN_home_defence_focus
+		x = 4
+		y = 0
 		cost = 5
 		available = {}
 		ai_will_do = {
@@ -2516,9 +2868,9 @@ focus_tree = {
 		id = LAN_joint_command
 		icon = GFX_focus_eng_chiefs_of_staff_committee
 		prerequisite = { focus = LAN_reform_military }
-		relative_position_id = LAN_reform_military
-		x = 17
-		y = 1
+		relative_position_id = LAN_home_defence_focus
+		x = 22
+		y = 0
 		cost = 5
 		available = {}
 		ai_will_do = {
@@ -2535,9 +2887,9 @@ focus_tree = {
 		id = LAN_sea_warlord
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = LAN_reform_military }
-		relative_position_id = LAN_reform_military
-		x = 10
-		y = 1
+		relative_position_id = LAN_home_defence_focus
+		x = 15
+		y = 0
 		cost = 5
 		available = {
 			OR = {

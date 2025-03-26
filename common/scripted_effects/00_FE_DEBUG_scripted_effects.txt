@@ -10,12 +10,19 @@ DEBUG_wpe_secondary = {
 		limit = { is_debug = yes }
 	}
 	
-	for_each_loop = {
-		array = WPE_kujo_alisa_available_foci_array
-		index = i
-		value = v
-		
-		log = "WPE_var: [?WPE_kujo_alisa_available_foci_array^i.GetTokenKey]"
+	generate_character = {
+		token_base = generic_general # token will be TAG_token_base
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 4
+			logistics_skill = 1
+		}
+		portraits = { 
+			army = { large = GFX_idea_generic_head_of_government }
+		}
 	}
 	clear_DEBUG_decisions_flag = yes
 }

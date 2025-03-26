@@ -1466,6 +1466,109 @@ ideas = {
 				civilian_factory_use = 5
 			}
 		}
+		
+		LAN_call_on_the_people_idea = {
+			name = LAN_call_on_the_people
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		
+		LAN_call_on_the_people_idea_2 = {
+			name = LAN_call_on_the_people
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = 0.10
+				send_volunteer_size = 3
+				air_volunteer_cap = 100
+			}
+		}
+
+		LAN_officer_rotate_idea = {
+			#picture = 
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+		}
+
+		LAN_more_troops_idea = {
+			#picture = 
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.10
+			}
+		}
+
+		LAN_more_troops_idea_2 = {
+			name = LAN_more_troops_idea
+			#picture = 
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.10
+				army_armor_attack_factor = 0.05
+				army_armor_defence_factor = 0.05
+				coordination_bonus = 0.03
+				air_close_air_support_org_damage_factor = 0.10
+			}
+		}
+
+		LAN_more_troops_idea_3 = {
+			name = LAN_more_troops_idea
+			#picture = 
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.10
+				army_armor_attack_factor = 0.05
+				army_armor_defence_factor = 0.05
+				coordination_bonus = 0.03
+				air_close_air_support_org_damage_factor = 0.10
+				initiative_factor = 0.10
+			}
+		}
 	}
 	
 	industrial_concern = {
@@ -2103,6 +2206,155 @@ ideas = {
 				monthly_population = 0.15
 				experience_loss_factor = -0.10
 				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+	}
+	
+	country = {
+
+		LAN_officer_rotate_idea_1 = {
+			name = LAN_officer_rotate_idea
+			#picture = 
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army_factor = 0.10
+				army_spirit_category_type_cost_factor = -0.20
+				max_command_power_mult = 0.10
+			}
+		}
+
+		LAN_officer_rotate_idea_2 = {
+			name = LAN_officer_rotate_idea
+			#picture = 
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				army_artillery_attack_factor = 0.05
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					breakthrough = 0.10 instant = yes
+				}
+			}
+		}
+
+		LAN_officer_rotate_idea_3 = {
+			name = LAN_officer_rotate_idea
+			#picture = 
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = -0.05
+				army_morale_factor = 0.05
+				required_garrison_factor = -0.15
+			}
+		}
+
+		LAN_officer_rotate_idea_12 = {
+			name = LAN_officer_rotate_idea
+			#picture = 
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army_factor = 0.10
+				army_spirit_category_type_cost_factor = -0.20
+				max_command_power_mult = 0.10
+				army_artillery_attack_factor = 0.05
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					breakthrough = 0.10 instant = yes
+				}
+			}
+		}
+
+		LAN_officer_rotate_idea_13 = {
+			name = LAN_officer_rotate_idea
+			#picture = 
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army_factor = 0.10
+				army_spirit_category_type_cost_factor = -0.20
+				max_command_power_mult = 0.10
+				army_attack_factor = -0.05
+				army_morale_factor = 0.05
+				required_garrison_factor = -0.15
+			}
+		}
+
+		LAN_officer_rotate_idea_23 = {
+			name = LAN_officer_rotate_idea
+			#picture = 
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				army_artillery_attack_factor = 0.05
+				army_attack_factor = -0.05
+				army_morale_factor = 0.05
+				required_garrison_factor = -0.15
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					breakthrough = 0.10 instant = yes
+				}
+			}
+		}
+
+		LAN_officer_rotate_idea_123 = {
+			name = LAN_officer_rotate_idea
+			#picture = 
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army_factor = 0.10
+				army_spirit_category_type_cost_factor = -0.20
+				max_command_power_mult = 0.10
+				army_artillery_attack_factor = 0.05
+				army_attack_factor = -0.05
+				army_morale_factor = 0.05
+				required_garrison_factor = -0.15
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					breakthrough = 0.10 instant = yes
+				}
 			}
 		}
 	}

@@ -83,6 +83,7 @@ WPE_reassign_roles = {
 				}
 			}
 			set_nationality = WPF
+			log = "[GetDateText]: [Root.GetName]: transfer character [THIS.GetName] to WPF."
 		}
 	}
 	if = {
@@ -90,6 +91,7 @@ WPE_reassign_roles = {
 		every_character = {
 			limit = { has_character_flag = WPE_sangvis_member_flag }
 			set_nationality = WPI
+			log = "[GetDateText]: [Root.GetName]: transfer character [THIS.GetName] to WPI."
 		}
 	}
 	if = {
@@ -97,6 +99,7 @@ WPE_reassign_roles = {
 		every_character = {
 			limit = { has_character_flag = WPE_military_member_flag }
 			set_nationality = WPA
+			log = "[GetDateText]: [Root.GetName]: transfer character [THIS.GetName] to WPA."
 		}
 	}
 	WPF = {
@@ -131,6 +134,12 @@ WPE_reassign_roles = {
 			fascism = WPE.fascist_support_before_change
 			neutrality = WPE.neutrality_support_before_change
 		}
+		promote_character = event_target:federation_leader
+		every_possible_country = {
+			limit = { has_character = WPE_Suomi }
+			activate_advisor = WPE_Suomi_head_of_government
+		}
+		clear_global_event_target = federation_leader
 		country_event = { id = white_pole.17 days = 3 }
 		load_focus_tree = {
 			tree = white_hole_focus
@@ -252,7 +261,6 @@ WPE_reassign_roles = {
 		if = {
 			limit = { has_character = WPE_Ilf_Snow }
 			WPE_Ilf_Snow = {
-				set_character_flag = character_no_visible_flag
 				add_country_leader_role = {
 					country_leader = {
 						ideology = militarism_subtype
@@ -261,11 +269,22 @@ WPE_reassign_roles = {
 					}
 					promote_leader = yes
 				}
+				add_country_leader_role = {
+					country_leader = {
+						ideology = individual_dictatorship_subtype
+						expire = "1965.1.1.1"
+						traits = { revolutionary_general }
+					}
+					promote_leader = yes
+				}
 			}
 		}
 		if = {
+			limit = { has_character = WPE_Victoria_Gilova }
+			promote_character = WPE_Victoria_Gilova
+		}
+		if = {
 			limit = { has_character = WPE_Sarashiki_Tatenashi }
-			WPE_Sarashiki_Tatenashi = { clr_character_flag = character_no_visible_flag }
 			activate_advisor = WPE_Sarashiki_Tatenashi_head_of_government
 		}
 		add_ideas = WPE_coventry_snow_program
@@ -286,9 +305,11 @@ WPE_start_civil_war = {
 	set_country_flag = WPE_millennium_election_over_flag
 	set_global_flag = white_civil_war_happens
 	reload_focus_tree = yes
-	every_possible_country = {
-		limit = { is_ai = no }
-		news_event = FE_news.7
+	hidden_effect = {
+		every_possible_country = {
+			limit = { is_ai = no }
+			news_event = FE_news.7
+		}
 	}
 }
 

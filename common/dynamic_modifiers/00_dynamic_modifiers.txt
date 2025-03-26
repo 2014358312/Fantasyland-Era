@@ -5208,11 +5208,8 @@ AUS_austromarxism = {
 	planning_speed = AUS_austromarxism_planning_speed
 	max_planning_factor = AUS_austromarxism_max_planning_factor
 	remove_trigger = {
-		AND = {
-			has_completed_focus = AUS_revolution
-			NOT = {
-				has_government = communism
-			}
+		NOT = {
+			has_government = communism
 		}
 	}
 }
@@ -5237,11 +5234,8 @@ AUS_austrostalinism = {
 	planning_speed = AUS_austromarxism_planning_speed
 	max_planning_factor = AUS_austromarxism_max_planning_factor
 	remove_trigger = {
-		AND = {
-			has_completed_focus = AUS_revolution
-			NOT = {
-				has_government = communism
-			}
+		NOT = {
+			has_government = communism
 		}
 	}
 }
@@ -5266,11 +5260,8 @@ AUS_austrotrotskyism = {
 	planning_speed = AUS_austromarxism_planning_speed
 	max_planning_factor = AUS_austromarxism_max_planning_factor
 	remove_trigger = {
-		AND = {
-			has_completed_focus = AUS_revolution
-			NOT = {
-				has_government = communism
-			}
+		NOT = {
+			has_government = communism
 		}
 	}
 }
@@ -5839,19 +5830,6 @@ GER_politburo_modifier = {
 GER_industrial_relocation_resources = {
 	enable = { always = yes }
 	icon = GFX_idea_ARG_economic_reactivation
-
-	remove_trigger = {
-		OR = {
-			has_war_with = SOV
-			SOV = {
-				OR = {
-					exists = no
-					is_subject = yes
-				}
-			}
-		}
-		
-	}
 
 	country_resource_oil = GER_industrial_relocation_resources_country_resource_oil
 	country_resource_tungsten = GER_industrial_relocation_resources_country_resource_tungsten
@@ -6538,13 +6516,6 @@ COG_rwandan_separatism_modifier = {
 	icon = GFX_modifiers_COG_rwandan_separatism
 
 	remove_trigger = {
-		OR = {
-			ROOT = { is_owned_and_controlled_by = RWA } # ROOT refers to the state on which the modifier is added
-			COG = {
-				has_completed_focus = COG_the_pro_german_mwami_focus
-				has_completed_focus = COG_the_umwami_of_rwanda_focus
-			}
-		}
 		
 	}
 
@@ -6560,12 +6531,6 @@ COG_burundian_separatism_modifier = {
 	icon = GFX_modifiers_COG_burundian_separatism
 
 	remove_trigger = {
-		OR = {
-			ROOT = { is_owned_and_controlled_by = BRD } # ROOT refers to the state on which the modifier is added
-			COG = {
-				has_completed_focus = COG_the_mwami_of_burundi_focus
-			}
-		}
 	}
 
 	production_speed_buildings_factor = -0.1
@@ -6580,14 +6545,6 @@ COG_kasai_separatism_modifier = {
 	icon = GFX_modifiers_COG_kasai_separatism
 
 	remove_trigger = {
-		ROOT = { 
-			NOT = {
-				OR = {
-					is_owned_by = COG 
-					is_owned_by = BEL 
-				}
-			}
-		} # ROOT refers to the state on which the modifier is added # ROOT refers to the state on which the modifier is added
 	}
 
 	compliance_growth = -0.02
@@ -6614,17 +6571,6 @@ COG_state_loyal_to_belgium_modifier = {
 	icon = GFX_modifiers_COG_state_loyal_to_belgium
 
 	remove_trigger = {
-		OR = {
-			ROOT = { # ROOT refers to the state on which the modifier is added
-				NOT = {
-					OR = {
-						is_owned_by = COG 
-						is_owned_by = BEL 
-					}
-				}
-			} 
-			has_global_flag = COG_uprising_happened_flag
-		}
 	}
 
 }

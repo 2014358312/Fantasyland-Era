@@ -16,6 +16,118 @@ LAN_reset_degree_of_colonization = {
 	}
 }
 
+LAN_sasaki_saren_leader = {
+	if = {
+		limit = { communism < 0.50 }
+		add_popularity = {
+			ideology = communism
+			popularity = 0.15
+		}
+	}
+	if = {
+		limit = { not_a_communism_government = yes }
+		set_politics = {
+			ruling_party = communism
+			election_frequency = 48
+			elections_allowed = yes
+		}
+	}
+	promote_character = LAN_Sasaki_Saren
+}
+
+LAN_kusano_yui_leader = {
+	if = {
+		limit = { democratic < 0.50 }
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.10
+		}
+	}
+	if = {
+		limit = { not_a_democratic_government = yes }
+		set_politics = {
+			ruling_party = democratic
+			election_frequency = 48
+			elections_allowed = yes
+		}
+	}
+	promote_character = LAN_Kusano_Yui
+}
+
+LAN_momochi_kiruya_leader = {
+	if = {
+		limit = { democratic < 0.50 }
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.10
+		}
+	}
+	if = {
+		limit = { not_a_democratic_government = yes }
+		set_politics = {
+			ruling_party = democratic
+			election_frequency = 48
+			elections_allowed = yes
+		}
+	}
+	promote_character = LAN_Momochi_Kiruya
+}
+
+LAN_natsume_kokoro_leader = {
+	if = {
+		limit = { democratic < 0.50 }
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+	}
+	if = {
+		limit = { not_a_democratic_government = yes }
+		set_politics = {
+			ruling_party = democratic
+			election_frequency = 48
+			elections_allowed = yes
+		}
+	}
+	promote_character = LAN_Natsume_Kokoro
+}
+
+LAN_eustiana_von_astraea_leader = {
+	if = {
+		limit = { neutrality < 0.50 }
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.10
+		}
+	}
+	if = {
+		limit = { not_a_neutrality_government = yes }
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+	}
+	promote_character = LAN_Eustiana_von_Astraea
+}
+
+LAN_senri_mana_leader = {
+	if = {
+		limit = { fascism < 0.50 }
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+	}
+	if = {
+		limit = { not_a_fascism_government = yes }
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+	}
+	promote_character = LAN_Senri_Mana
+}
+
 LAN_bop_left_large = {
 	add_power_balance_value = {
 		id = LAN_balance_of_power
@@ -1338,3 +1450,95 @@ LAN_national_savings_plan_3_effect = {
 	}
 }
 
+LAN_officer_rotate_idea_add_1_effect = {
+	effect_tooltip = {
+		swap_ideas = {
+			remove_idea = LAN_officer_rotate_idea
+			add_idea = LAN_officer_rotate_idea_1
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = { has_idea = LAN_officer_rotate_idea }
+			remove_ideas = LAN_officer_rotate_idea
+			add_ideas = LAN_officer_rotate_idea_1
+		}
+		else_if = {
+			limit = { has_idea = LAN_officer_rotate_idea_2 }
+			remove_ideas = LAN_officer_rotate_idea_2
+			add_ideas = LAN_officer_rotate_idea_12
+		}
+		else_if = {
+			limit = { has_idea = LAN_officer_rotate_idea_3 }
+			remove_ideas = LAN_officer_rotate_idea_3
+			add_ideas = LAN_officer_rotate_idea_13
+		}
+		else_if = {
+			limit = { has_idea = LAN_officer_rotate_idea_23 }
+			remove_ideas = LAN_officer_rotate_idea_23
+			add_ideas = LAN_officer_rotate_idea_123
+		}
+	}
+}
+
+LAN_officer_rotate_idea_add_2_effect = {
+	effect_tooltip = {
+		swap_ideas = {
+			remove_idea = LAN_officer_rotate_idea
+			add_idea = LAN_officer_rotate_idea_2
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = { has_idea = LAN_officer_rotate_idea }
+			remove_ideas = LAN_officer_rotate_idea
+			add_ideas = LAN_officer_rotate_idea_2
+		}
+		else_if = {
+			limit = { has_idea = LAN_officer_rotate_idea_1 }
+			remove_ideas = LAN_officer_rotate_idea_1
+			add_ideas = LAN_officer_rotate_idea_12
+		}
+		else_if = {
+			limit = { has_idea = LAN_officer_rotate_idea_3 }
+			remove_ideas = LAN_officer_rotate_idea_3
+			add_ideas = LAN_officer_rotate_idea_23
+		}
+		else_if = {
+			limit = { has_idea = LAN_officer_rotate_idea_13 }
+			remove_ideas = LAN_officer_rotate_idea_13
+			add_ideas = LAN_officer_rotate_idea_123
+		}
+	}
+}
+
+LAN_officer_rotate_idea_add_3_effect = {
+	effect_tooltip = {
+		swap_ideas = {
+			remove_idea = LAN_officer_rotate_idea
+			add_idea = LAN_officer_rotate_idea_3
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = { has_idea = LAN_officer_rotate_idea }
+			remove_ideas = LAN_officer_rotate_idea
+			add_ideas = LAN_officer_rotate_idea_3
+		}
+		else_if = {
+			limit = { has_idea = LAN_officer_rotate_idea_1 }
+			remove_ideas = LAN_officer_rotate_idea_1
+			add_ideas = LAN_officer_rotate_idea_13
+		}
+		else_if = {
+			limit = { has_idea = LAN_officer_rotate_idea_2 }
+			remove_ideas = LAN_officer_rotate_idea_2
+			add_ideas = LAN_officer_rotate_idea_23
+		}
+		else_if = {
+			limit = { has_idea = LAN_officer_rotate_idea_12 }
+			remove_ideas = LAN_officer_rotate_idea_12
+			add_ideas = LAN_officer_rotate_idea_123
+		}
+	}
+}

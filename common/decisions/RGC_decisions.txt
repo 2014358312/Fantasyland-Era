@@ -89,6 +89,49 @@ RGC_prepare_civil_war_decision_category = {
 			factor = 200
 		}
 	}
+	
+	RGC_shadow_approaching_windermere_mission = {
+		icon = generic_ignite_civil_war
+		allowed = { tag = RGC }
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		days_mission_timeout = 30
+		is_good = no
+		fire_only_once = yes
+		activation = { always = no }
+		timeout_effect = {
+			custom_effect_tooltip = RGC_shadow_approaching_windermere_mission_tt
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = RGC_preventing_assassination_of_windermere_flag }
+					country_event = { id = victoria.8 days = 1 }
+				}
+				else = { country_event = { id = victoria.9 days = 1 } }
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	RGC_strengthen_security_measures_near_windermere = {
+		icon = generic_decision
+		allowed = {
+			original_tag = RGC
+		}
+		visible = { has_active_mission = RGC_shadow_approaching_windermere_mission }
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = RGC_preventing_assassination_of_windermere_flag
+			custom_effect_tooltip = RGC_strengthen_security_measures_near_windermere_tt
+		}
+		modifier = { command_power_gain_mult = -0.15 }
+	}
 }
 
 RGC_fate_of_royal_decision_category = {

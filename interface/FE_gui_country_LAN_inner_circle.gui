@@ -1,0 +1,770 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "lan_inner_circle_ui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 465 height = 465 }
+		orientation = center
+		clipping = no
+
+		#BACKGROUND
+		background = {
+			name = "background"
+			quadTextureSprite = "GFX_inner_circle_princess_bg"
+			alwaystransparent = yes
+		}
+		
+		background = {
+			name = "background_soild"
+			position = { x = 15 y = 16 }
+			quadTextureSprite = "GFX_inner_circle_princess_bg_spotlight_overlay"
+			alwaystransparent = yes
+		}
+		
+		#TITLE
+		instantTextBoxType = {
+			name ="inner_circle_title_name"
+			orientation = center_up
+			position = { x = -232 y = 20 }
+			font = "hoi_36header"
+			text = "LAN_inner_circle_title_text"
+			format = center
+			maxWidth = 465
+		}
+		
+		containerWindowType = {
+			name = "lan_inner_circle_ideology"
+			position = { x = 0 y = 0 }
+			size = { width = 465 height = 465 }
+			clipping = no
+
+			iconType = {
+				name = "lan_inner_circle_republic_icon"
+				position = { x = -120 y = 370 }
+				spriteType = "GFX_inner_circle_vertex_republic"
+				orientation = center_up
+				centerposition = yes
+				scale = 1
+				pdx_tooltip = lan_inner_circle_vertex_republic_text
+				#alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "lan_inner_circle_crown_icon"
+				position = { x = 0 y = 100 }
+				spriteType = "GFX_inner_circle_vertex_crown"
+				orientation = center_up
+				centerposition = yes
+				scale = 1
+				pdx_tooltip = lan_inner_circle_vertex_crown_text
+				#alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "lan_inner_circle_military_icon"
+				position = { x = 120 y = 370 }
+				spriteType = "GFX_inner_circle_vertex_military"
+				orientation = center_up
+				centerposition = yes
+				scale = 1
+				pdx_tooltip = lan_inner_circle_vertex_military_text
+				#alwaystransparent = yes
+			}
+		}
+		
+		containerWindowType = {
+			name = "lan_inner_circle_log_log_plot"
+			position = { x = 0 y = 230 }
+			size = { width = 465 height = 235 }
+			clipping = no
+
+			iconType = {
+				name = "lan_inner_circle_equilateral_triangular_mesh"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_inner_circle_equilateral_triangular_mesh"
+				orientation = center_up
+				centerposition = yes
+				scale = 1
+				alwaystransparent = yes
+			}
+
+			containerWindowType = {
+				name = "lan_inner_circle_coordinate"
+				position = { x = 0 y = -98 }
+				size = { width = 465 height = 235 }
+				clipping = no
+				
+				iconType = {
+					name = "lan_inner_circle_coordinate_1"
+					position = { x = -107.0 y = 75 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_2"
+					position = { x = -97.0 y = 56 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_3"
+					position = { x = -87.0 y = 75 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_4"
+					position = { x = -87.0 y = 37 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_5"
+					position = { x = -76.0 y = 56 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_6"
+					position = { x = -76.0 y = 18 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_7"
+					position = { x = -66.0 y = 75 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_8"
+					position = { x = -66.0 y = 37 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_9"
+					position = { x = -66.0 y = -1 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_10"
+					position = { x = -54.0 y = 56 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_11"
+					position = { x = -54.0 y = 18 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_12"
+					position = { x = -54.0 y = -20 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_13"
+					position = { x = -43.0 y = 75 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_14"
+					position = { x = -43.0 y = 37 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_15"
+					position = { x = -43.0 y = -1 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_16"
+					position = { x = -43.0 y = -38 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_17"
+					position = { x = -33.0 y = 56 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_18"
+					position = { x = -33.0 y = 18 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_19"
+					position = { x = -33.0 y = -20 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_20"
+					position = { x = -33.0 y = -57 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_21"
+					position = { x = -22.0 y = 75 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_22"
+					position = { x = -22.0 y = 37 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_23"
+					position = { x = -22.0 y = -1 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_24"
+					position = { x = -22.0 y = -38 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_25"
+					position = { x = -22.0 y = -76 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_26"
+					position = { x = -11.0 y = 56 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_27"
+					position = { x = -11.0 y = 18 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_28"
+					position = { x = -11.0 y = -20 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_29"
+					position = { x = -11.0 y = -57 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_30"
+					position = { x = -11.0 y = -95 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_31"
+					position = { x = 0.0 y = 75 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_32"
+					position = { x = 0.0 y = 37 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_33"
+					position = { x = 0.0 y = -1 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_34"
+					position = { x = 0.0 y = -38 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_35"
+					position = { x = 0.0 y = -76 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_36"
+					position = { x = 0.0 y = -112 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_37"
+					position = { x = 11.0 y = 56 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_38"
+					position = { x = 11.0 y = 18 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_39"
+					position = { x = 11.0 y = -20 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_40"
+					position = { x = 11.0 y = -57 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_41"
+					position = { x = 11.0 y = -95 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_42"
+					position = { x = 22.0 y = 75 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_43"
+					position = { x = 22.0 y = 37 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_44"
+					position = { x = 22.0 y = -1 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_45"
+					position = { x = 22.0 y = -38 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_46"
+					position = { x = 22.0 y = -76 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_47"
+					position = { x = 33.0 y = 56 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_48"
+					position = { x = 33.0 y = 18 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_49"
+					position = { x = 33.0 y = -20 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_50"
+					position = { x = 33.0 y = -57 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_51"
+					position = { x = 43.0 y = 75 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_52"
+					position = { x = 43.0 y = 37 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_53"
+					position = { x = 43.0 y = -1 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_54"
+					position = { x = 43.0 y = -38 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_55"
+					position = { x = 54.0 y = 56 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_56"
+					position = { x = 54.0 y = 18 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_57"
+					position = { x = 54.0 y = -20 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_58"
+					position = { x = 66.0 y = 75 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_59"
+					position = { x = 66.0 y = 37 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_60"
+					position = { x = 66.0 y = -1 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_61"
+					position = { x = 76.0 y = 56 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_62"
+					position = { x = 76.0 y = 18 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_63"
+					position = { x = 87.0 y = 75 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_64"
+					position = { x = 87.0 y = 37 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_65"
+					position = { x = 97.0 y = 56 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "lan_inner_circle_coordinate_66"
+					position = { x = 107.0 y = 75 }
+					spriteType = "GFX_inner_circle_coordinate"
+					orientation = center
+					centerposition = yes
+					scale = 1
+					alwaystransparent = yes
+				}
+			}
+		}
+		
+		#STATUS
+		instantTextBoxType = {
+			name ="inner_circle_title_status"
+			orientation = center_down
+			position = { x = -232 y = -80 }
+			font = "hoi_24header"
+			text = "LAN_inner_circle_status_text"
+			format = center
+			maxWidth = 465
+		}
+	}
+}

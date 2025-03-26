@@ -109,6 +109,7 @@ country_event = {
 				}
 				complete_national_focus = NEB_premier_riefenstahl_013
 			}
+			country_event = { id = nebulis.13 days = 4 }
 			every_possible_country = {
 				limit = { is_ai = no }
 				news_event = FE_news.4
@@ -265,5 +266,44 @@ country_event = {
 		complete_national_focus = NEB_premier_riefenstahl_001
 		activate_mission = NEB_committee_vots_on_constitutional_reform_proposal_mission
 		custom_effect_tooltip = NEB_committee_vots_on_constitutional_reform_proposal_mission_tt
+		hidden_effect = {
+			country_event = { id = nebulis.16 days = 31 }
+		}
+	}
+}
+
+country_event = {
+	id = nebulis.13
+	title = nebulis.13.t
+	desc = nebulis.13.desc
+	picture = GFX_report_event_generic_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = nebulis.13.a
+		swap_ideas = {
+			remove_idea = NEB_unofficial_constitution
+			add_idea = NEB_unofficial_constitution_1
+		}
+	}
+}
+
+country_event = {
+	id = nebulis.16
+	title = nebulis.16.t
+	desc = nebulis.16.desc
+	picture = GFX_report_event_generic_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { id = nebulis.17 days = 31 }
+		}
+	}
+
+	option = {
+		name = nebulis.16.a
 	}
 }

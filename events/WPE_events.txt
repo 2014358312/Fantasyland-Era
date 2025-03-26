@@ -392,18 +392,12 @@ country_event = {
 					slot = head_of_government
 					trait = leader_of_modernization_of_heavy_industry
 				}
-				remove_trait = {
-					slot = head_of_government
-					trait = head_of_government_trait
-				}
+				character_remove_hog_flag = yes
 				add_trait = {
 					slot = head_of_government
 					trait = leader_of_modernization_of_heavy_industry_improve
 				}
-				add_trait = {
-					slot = head_of_government
-					trait = head_of_government_trait
-				}
+				character_add_hog_flag = yes
 			}
 		}
 		add_war_support = 0.05
@@ -739,6 +733,7 @@ country_event = {
 			name = WPF_communism_party
 			long_name = WPF_communism_party
 		}
+		promote_character = WPE_Alisa_Mikhaylovna_Kujo
 		set_party_name = {
 			ideology = democratic
 			name = WPF_democratic_party
@@ -748,16 +743,7 @@ country_event = {
 			ideology = democratic
 			popularity = 0.15
 		}
-		WPE_Ayase_Eli = {
-			add_country_leader_role = {
-				country_leader = {
-					ideology = classical_liberalism_subtype
-					expire = "1965.1.1.1"
-					traits = { budget_conscious_administrator }
-				}
-				promote_leader = yes
-			}
-		}
+		promote_character = WPE_Ayase_Eli
 	}
 	
 	option = {
@@ -767,21 +753,13 @@ country_event = {
 			name = WPF_communism_party
 			long_name = WPF_communism_party
 		}
+		promote_character = WPE_Alisa_Mikhaylovna_Kujo
 		set_party_name = {
 			ideology = democratic
 			name = WPF_democratic_party
 			long_name = WPF_democratic_party
 		}
-		WPE_Ayase_Eli = {
-			add_country_leader_role = {
-				country_leader = {
-					ideology = classical_liberalism_subtype
-					expire = "1965.1.1.1"
-					traits = { budget_conscious_administrator }
-				}
-				promote_leader = yes
-			}
-		}
+		promote_character = WPE_Ayase_Eli
 		add_popularity = {
 			ideology = democratic
 			popularity = 0.15
@@ -797,21 +775,13 @@ country_event = {
 			name = WPF_communism_party
 			long_name = WPF_communism_party
 		}
+		promote_character = WPE_Alisa_Mikhaylovna_Kujo
 		set_party_name = {
 			ideology = democratic
 			name = WPF_democratic_party
 			long_name = WPF_democratic_party
 		}
-		WPE_Ayase_Eli = {
-			add_country_leader_role = {
-				country_leader = {
-					ideology = classical_liberalism_subtype
-					expire = "1965.1.1.1"
-					traits = { budget_conscious_administrator }
-				}
-				promote_leader = yes
-			}
-		}
+		promote_character = WPE_Ayase_Eli
 		add_popularity = {
 			ideology = democratic
 			popularity = 0.15
@@ -918,8 +888,12 @@ country_event = {
 		hidden_effect = {
 			remove_mission = WPE_choice_of_rushia_mission
 			get_current_ideology_popularities = yes
+			var:country_leader = { save_global_event_target_as = federation_leader }
 			if = {
-				limit = { date < 1000.2.1 }
+				limit = {
+					is_debug = yes
+					date < 1000.2.1
+				}
 				#only use for debug mode.
 				WPE_clear_character_before_civil_war = yes
 			}
@@ -969,6 +943,17 @@ country_event = {
 					}
 					add_core_of = PREV
 				}
+			}
+			every_state = {
+				limit = { is_core_of = WPE }
+				remove_core_of = WPE
+			}
+			remove_ideas = {
+				WPE_northern_guard
+				WPE_disappeared_twenty_years
+				WPE_failed_democracy_alternate
+				WPE_corruption_in_military
+				WPE_coventry_snow_program
 			}
 		}
 	}
@@ -1055,7 +1040,13 @@ country_event = {
 				WPI = { transfer_state = PREV }
 			}
 			
-			WPI = { create_temp_army = yes }
+			WPI = {
+				create_temp_army = yes
+				create_temp_army = yes
+				create_temp_army = yes
+				create_temp_army = yes
+				create_temp_army = yes
+			}
 			
 			WPF = {
 				set_cosmetic_tag = WPE_federation_lucia

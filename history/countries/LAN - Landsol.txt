@@ -74,6 +74,9 @@ LAN_initialize_congress_national = yes
 add_to_array = { industry_tab = 1 }
 add_to_array = { industry_tab = 2 }
 add_to_array = { industry_tab = 2 }
+add_to_array = { industry_tab_progress = 30 }
+add_to_array = { industry_tab_progress = 50 }
+add_to_array = { industry_tab_progress = 25 }
 set_variable = { LAN_industry_improvement_plan_cost_small = 30 }
 set_variable = { LAN_industry_improvement_plan_cost_medium = 50 }
 set_variable = { LAN_industry_improvement_plan_cost_large = 70 }
@@ -114,7 +117,7 @@ set_variable = { LAN_IP_embargo_cost_factor_var = 0.5 }
 
 add_ideas = {
 	LAN_birthplace_of_republican_revolution
-	LAN_astraea
+#	LAN_astraea
 	LAN_weak_infrastructure
 	LAN_retire_navy
 	LAN_ban_computer
@@ -122,7 +125,7 @@ add_ideas = {
 	LAN_royal_air_force_fake
 	LAN_royal_navy_fake
 	LAN_military_anomaly
-	LAN_republican_congress_fake
+#	LAN_republican_congress_fake
 }
 
 if = {
@@ -222,6 +225,12 @@ recruit_character = LAN_Todo_Akino
 recruit_character = LAN_Tono_Homare
 recruit_character = LAN_Utsushimi_Neneka
 activate_advisor = LAN_Senri_Mana_head_of_government
+activate_advisor = LAN_Eustiana_von_Astraea
+set_can_be_fired_in_advisor_role = {
+	character = LAN_Eustiana_von_Astraea
+	slot = political_advisor
+	value = no
+}
 recruit_character = LAN_Sakai_Naoto
 
 country_event = { id = landsol.1 days = 28 }

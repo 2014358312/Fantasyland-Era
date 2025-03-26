@@ -471,8 +471,8 @@ characters = {
 					SMA_roxy_is_rebuilding_army = yes
 				}
 			}
-			cost = 150
-			traits = { air_chief_reform_3 }
+			cost = 100
+			traits = { air_chief_reform_2 }
 			on_add = { SMA_roxy_appoint = yes } 
 			on_remove = { SMA_roxy_remove = yes }
 			ai_will_do = {
@@ -1298,6 +1298,127 @@ characters = {
 			army = {
 				large = GFX_Portrait_SMA_Yuzuriha_Saina
 				small = GFX_idea_advisor_SMA_Yuzuriha_Saina
+			}
+		}
+	}
+
+	SMA_Claudia_Bruford = {
+		name = Claudia_Bruford
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Claudia_Bruford
+				small = GFX_idea_advisor_SMA_Claudia_Bruford
+			}
+			army = {
+				large = GFX_Portrait_SMA_Claudia_Bruford_army
+				small = GFX_idea_advisor_SMA_Claudia_Bruford_army
+			}
+		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = SMA_Claudia_Bruford
+			allowed = { original_tag = SMA }
+			available = {
+				if = {
+					limit = { SMA_roxy_leading_military = yes }
+					SMA_roxy_is_rebuilding_army = yes
+				}
+			}
+			cost = 150
+			traits = { air_chief_ground_support_3 }
+			on_add = { SMA_roxy_appoint = yes } 
+			on_remove = { SMA_roxy_remove = yes }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	SMA_Komagome_Azuzu = {
+		name = Komagome_Azuzu
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_SMA_Komagome_Azuzu
+			#	small = GFX_idea_advisor_SMA_Komagome_Azuzu
+			#}
+			army = {
+				large = GFX_Portrait_SMA_Komagome_Azuzu_scientist
+				small = GFX_idea_advisor_SMA_Komagome_Azuzu_army
+			}
+		}
+		scientist = {
+			traits = { scientist_trait_aircraft_specialist scientist_trait_resourceful }
+			skills = {
+				specialization_air = 1
+			}
+		}
+	}
+
+	SMA_Muguruma_Miyako = {
+		name = Muguruma_Miyako
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Muguruma_Miyako
+				small = GFX_idea_advisor_SMA_Muguruma_Miyako
+			}
+			army = {
+				large = GFX_Portrait_SMA_Muguruma_Miyako_army
+				small = GFX_idea_advisor_SMA_Muguruma_Miyako_army
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = SMA_Muguruma_Miyako
+			allowed = { original_tag = SMA }
+			available = {
+				if = {
+					limit = { SMA_roxy_leading_military = yes }
+					SMA_roxy_is_rebuilding_army = yes
+				}
+			}
+			cost = 100
+			traits = { air_air_superiority_2 }
+			on_add = { SMA_roxy_appoint = yes } 
+			on_remove = { SMA_roxy_remove = yes }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	SMA_Watarai_Sonoka = {
+		name = Watarai_Sonoka
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Watarai_Sonoka
+				small = GFX_idea_advisor_SMA_Watarai_Sonoka
+			}
+			army = {
+				large = GFX_Portrait_SMA_Watarai_Sonoka_army
+				small = GFX_idea_advisor_SMA_Watarai_Sonoka_army
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = SMA_Watarai_Sonoka
+			allowed = { original_tag = SMA }
+			available = {
+			}
+			cost = 200
+			traits = { dive_bomber }
+			ai_will_do = {
+				base = 1.000
 			}
 		}
 	}

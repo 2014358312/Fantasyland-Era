@@ -470,51 +470,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				OR = {
-					AND = {
-						tag = GER
-						has_government = fascism
-						SOV = {
-							has_government = communism
-						}
-					}
-					AND = {
-						tag = SOV
-						has_government = communism
-						GER = {
-							has_government = fascism
-						}
-					}
-				}
-			}
-
-			cancel = {
-				OR = {
-					AND = {
-						tag = GER
-						is_subject = yes
-						has_war_with = SOV
-						NOT = { is_in_faction_with = SOV }
-					}
-					AND = {
-						tag = SOV
-						is_subject = yes
-						has_war_with = GER
-						NOT = { is_in_faction_with = GER }
-					}
-				}
-			}
-
-			on_remove = {
-				if = {
-					limit = {
-						tag = GER
-						is_in_faction_with = SOV
-					}
-					GER = {
-						dismantle_faction = yes
-					}
-				}
+				always = no
 			}
 
 			removal_cost = -1

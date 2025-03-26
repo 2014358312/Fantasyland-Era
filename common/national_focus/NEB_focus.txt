@@ -21,10 +21,13 @@ focus_tree = {
 	focus = {
 		id = NEB_premier_riefenstahl_001
 		text = NEB_riefenstahl_and_constitution
-		icon = GFX_focus_NEB_riefenstahl
+		icon = GFX_focus_NEB_premier_riefenstahl
 		x = 5
 		y = 0
 		cost = 0
+		allow_branch = {
+			check_variable = { FE_secondary = token:NEB_Lieselotte_Riefenstahl_head_of_government }
+		}
 		available = {
 			NEB_lieselotte_riefenstahl_as_gov = yes
 			hidden_trigger = {
@@ -32,7 +35,36 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			add_political_power = 25
 			custom_effect_tooltip = NEB_riefenstahl_and_constitution_tt
+			effect_tooltip = {
+				remove_ideas = NEB_unofficial_constitution
+				add_ideas = NEB_official_constitution_fake
+				add_political_power = 125
+				#NEB_Lieselotte_Riefenstahl = {
+				#	remove_trait = {
+				#		slot = head_of_government
+				#		trait = controversial_figurehead
+				#	}
+				#	character_remove_hog_flag = yes
+				#	add_trait = {
+				#		slot = head_of_government
+				#		#trait = conservative_nationalist
+				#		trait = the_faded_star
+				#	}
+				#	character_add_hog_flag = yes
+				#}
+				remove_trait = {
+					character = NEB_Lieselotte_Riefenstahl
+					slot = head_of_government
+					trait = controversial_figurehead
+				}
+				add_trait = {
+					character = NEB_Lieselotte_Riefenstahl
+					slot = head_of_government
+					trait = the_faded_star
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -570,6 +602,54 @@ focus_tree = {
 				has_completed_focus = NEB_premier_riefenstahl_013
 			}
 			else = { always = no }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_premier_dautriche_001
+		text = NEB_premier_dautriche
+		icon = GFX_focus_NEB_premier_dautriche
+		allow_branch = {
+			check_variable = { FE_secondary = token:NEB_Aileen_Lauren_Dautriche_head_of_government }
+		}
+		x = 5
+		y = 0
+		cost = 0
+		available = {
+			NEB_aileen_lauren_dautriche_as_gov = yes
+			hidden_trigger = {
+				always = no
+			}
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_premier_bernstein_001
+		text = NEB_premier_bernstein
+		icon = GFX_focus_NEB_premier_bernstein
+		allow_branch = {
+			check_variable = { FE_secondary = token:NEB_Elianna_Bernstein_head_of_government }
+		}
+		x = 5
+		y = 0
+		cost = 0
+		available = {
+			NEB_elianna_bernstein_as_gov = yes
+			hidden_trigger = {
+				always = no
+			}
+		}
+		completion_reward = {
+			
 		}
 		ai_will_do = {
 			factor = 1

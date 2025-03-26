@@ -242,3 +242,122 @@ country_event = {
 		KDE = { change_tag_from = ROOT }
 	}
 }
+
+# intelligence on the assassination of Windermere
+country_event = {
+	id = victoria.7
+	title = victoria.7.t
+	desc = victoria.7.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+
+	option = {
+		name = victoria.7.a
+		hidden_effect = {
+			activate_mission = RGC_shadow_approaching_windermere_mission
+		}
+		unlock_decision_tooltip = RGC_strengthen_security_measures_near_windermere
+	}
+
+	option = {
+		name = victoria.7.b
+		add_political_power = 50
+		hidden_effect = {
+			country_event = { id = victoria.9 days = 30 }
+		}
+	}
+}
+
+# Windermere survive
+country_event = {
+	id = victoria.8
+	title = victoria.8.t
+	desc = victoria.8.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = victoria.8.a
+		add_political_power = 100
+		army_experience = 30
+		hidden_effect = {
+			every_possible_country = {
+				limit = { is_ai = no }
+				news_event = FE_news.16
+			}
+		}
+	}
+}
+
+# Windermere assassinated
+country_event = {
+	id = victoria.9
+	title = victoria.9.t
+	desc = victoria.9.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			every_possible_country = {
+				limit = { has_character = RGC_Anfeilis_Windermere }
+				RGC_Anfeilis_Windermere = {
+					remove_country_leader_role = {
+						ideology = personalist_despotism_subtype
+					}
+					remove_unit_leader = yes
+				}
+				RGC_Military_Command_Headquarters = {
+					add_country_leader_role = {
+						country_leader = {
+							ideology = militarism_subtype
+							traits = { BEL_leopold_unknown_sympathies }
+							expire = "1965.1.1.1"
+							id = -1
+						}
+						promote_leader = yes
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = victoria.9.a
+		add_political_power = -100
+		effect_tooltip = {
+			every_possible_country = {
+				limit = { has_character = RGC_Anfeilis_Windermere }
+				RGC_Anfeilis_Windermere = {
+					remove_country_leader_role = {
+						ideology = personalist_despotism_subtype
+					}
+					remove_unit_leader = yes
+				}
+				RGC_Military_Command_Headquarters = {
+					add_country_leader_role = {
+						country_leader = {
+							ideology = militarism_subtype
+							traits = { BEL_leopold_unknown_sympathies }
+							expire = "1965.1.1.1"
+							id = -1
+						}
+						promote_leader = yes
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			every_possible_country = {
+				limit = { is_ai = no }
+				news_event = FE_news.17
+			}
+		}
+	}
+}
