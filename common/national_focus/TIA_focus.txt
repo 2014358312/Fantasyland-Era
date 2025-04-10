@@ -863,6 +863,13 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_ideas = TIA_railway_era
+			swap_ideas = {
+				remove_idea = TIA_financial_emergency_1
+				add_idea = TIA_financial_emergency_2
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -879,8 +886,26 @@ focus_tree = {
 		prerequisite = {
 			focus = TIA_never_too_late_to_mend
 		}
+		available = {
+			has_railway_connection = { start_state = 10 target_state = 234 }
+		}
 		completion_reward = {
-			add_political_power = 50
+			234 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 6286
+				}
+			}
+			add_ideas = TIA_free_port_seven
+			custom_effect_tooltip = TIA_free_port_seven_tooltip
 		}
 		ai_will_do = {
 			factor = 1
@@ -898,7 +923,10 @@ focus_tree = {
 			focus = TIA_never_too_late_to_mend
 		}
 		completion_reward = {
-			add_political_power = 50
+			swap_ideas = {
+				remove_idea = TIA_railway_era
+				add_idea = TIA_railway_era_1
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -916,7 +944,16 @@ focus_tree = {
 			focus = TIA_never_too_late_to_mend
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_political_power = 25
+			add_stability = 0.05
+			show_mio_tooltip = TIA_imperial_night_organization
+			random = {
+				chance = 95
+				country_event = {
+					id = TIA.101
+					days = 25
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1

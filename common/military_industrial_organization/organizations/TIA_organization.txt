@@ -268,6 +268,45 @@ TIA_BCRL_arsenal_organization = {
 	}
 } 
 
+TIA_imperial_night_organization = {
+	include = generic_tank_organization
+	icon = GFX_idea_imperial_night
+	allowed = {	
+		tag = TIA
+		has_dlc = "Arms Against Tyranny"
+	}
+	available = { 
+		owner = { has_completed_focus = TIA_promotion_Raillords }
+	}
+	equipment_type = {
+		armor
+		support_equipment
+		train_equipment
+		railway_gun_equipment
+	}
+	research_categories = {
+		armor
+		support_tech
+		train_tech
+	}
+
+	initial_trait = {
+		token = generic_mio_initial_trait_raillords_manufacturer
+		name = raillords_manufacturer
+
+		limit_to_equipment_type = { armor }
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+
+		production_bonus = {
+			production_conversion_speed_factor = 0.15
+			production_cost_factor = -0.05
+		}
+	}
+
+} 
 
 #####################
 
