@@ -5,6 +5,10 @@ on_actions = {
 				set_global_flag = STRIKE_CROSSING_SEA_BRIDGE_UNDER_CONSTRUCTION
 			}
 			############
+			random_country = {
+				set_variable = { global.number_square_root_2 = 1.414 }
+			}
+			############
 			every_country = {
 				limit = {
 					#NOT = { TAG = EYP }
@@ -169,6 +173,11 @@ on_actions = {
 			#LAN = { initialize_landsol_party_long_name = yes }
 			############
 			every_possible_country = {
+				generic_head_of_government_none = {
+					set_character_flag = generic_character_flag
+				}
+			}
+			every_possible_country = {
 				limit = {
 					#amount_taken_ideas = {
 					#	amount < 1
@@ -195,131 +204,7 @@ on_actions = {
 				limit = { check_variable = { global.month > 12 } }
 				set_variable = { global.month = 1 }
 			}
-#			set_variable = { global.month = global.num_days } #365000 on start up.
-#			subtract_from_variable = { global.month = 365000 }
-#			modulo_variable = { global.month = 365 }
-#			round_variable = global.month
-#			if = {
-#				limit = {
-#					check_variable = {
-#						var = global.month
-#						value = 31
-#						compare = less_than_or_equals
-#					}
-#				}
-#				set_variable = { global.month = 1 }
-#			}
-#			else_if = {
-#				limit = {
-#					check_variable = {
-#						var = global.month
-#						value = 59
-#						compare = less_than_or_equals
-#					}
-#				}
-#				set_variable = { global.month = 2 }
-#			}
-#			else_if = {
-#				limit = {
-#					check_variable = {
-#						var = global.month
-#						value = 90
-#						compare = less_than_or_equals
-#					}
-#				}
-#				set_variable = { global.month = 3 }
-#			}
-#			else_if = {
-#				limit = {
-#					check_variable = {
-#						var = global.month
-#						value = 120
-#						compare = less_than_or_equals
-#					}
-#				}
-#				set_variable = { global.month = 4 }
-#			}
-#			else_if = {
-#				limit = {
-#					check_variable = {
-#						var = global.month
-#						value = 151
-#						compare = less_than_or_equals
-#					}
-#				}
-#				set_variable = { global.month = 5 }
-#			}
-#			else_if = {
-#				limit = {
-#					check_variable = {
-#						var = global.month
-#						value = 181
-#						compare = less_than_or_equals
-#					}
-#				}
-#				set_variable = { global.month = 6 }
-#			}
-#			else_if = {
-#				limit = {
-#					check_variable = {
-#						var = global.month
-#						value = 212
-#						compare = less_than_or_equals
-#					}
-#				}
-#				set_variable = { global.month = 7 }
-#			}
-#			else_if = {
-#				limit = {
-#					check_variable = {
-#						var = global.month
-#						value = 243
-#						compare = less_than_or_equals
-#					}
-#				}
-#				set_variable = { global.month = 8 }
-#			}
-#			else_if = {
-#				limit = {
-#					check_variable = {
-#						var = global.month
-#						value = 273
-#						compare = less_than_or_equals
-#					}
-#				}
-#				set_variable = { global.month = 9 }
-#			}
-#			else_if = {
-#				limit = {
-#					check_variable = {
-#						var = global.month
-#						value = 304
-#						compare = less_than_or_equals
-#					}
-#				}
-#				set_variable = { global.month = 10 }
-#			}
-#			else_if = {
-#				limit = {
-#					check_variable = {
-#						var = global.month
-#						value = 334
-#						compare = less_than_or_equals
-#					}
-#				}
-#				set_variable = { global.month = 11 }
-#			}
-#			else_if = {
-#				limit = {
-#					check_variable = {
-#						var = global.month
-#						value = 365
-#						compare = less_than_or_equals
-#					}
-#				}
-#				set_variable = { global.month = 12 }
-#			}
-			every_country = {
+			random_country = {
 				set_variable = { month = global.month }
 			}
 		}

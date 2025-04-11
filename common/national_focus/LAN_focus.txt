@@ -474,7 +474,35 @@ focus_tree = {
 		allow_branch = {
 			NOT = { has_government = fascism }
 		}
-		x = 40
+		x = 42
+		y = 0
+		offset = {
+			x = 3
+			trigger = {
+				has_country_leader = { character = LAN_Natsume_Kokoro }
+			}
+		}
+		cost = 0
+		available = {
+			always = no
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_military_first
+		icon = GFX_focus_RAJ_military_into_the_workforce
+		#prerequisite = { focus = LAN_call_dice }
+		relative_position_id = LAN_status_quo
+		allow_branch = {
+			has_government = fascism
+		}
+		x = 0
 		y = 0
 		cost = 0
 		available = {
@@ -493,8 +521,16 @@ focus_tree = {
 		icon = GFX_focus_LAN_saren_victory
 		prerequisite = { focus = LAN_status_quo }
 		relative_position_id = LAN_status_quo
-		x = -4
+		x = -9
 		y = 1
+		offset = {
+			x = 3
+			trigger = {
+				NOT = {
+					has_country_leader = { character = LAN_Natsume_Kokoro }
+				}
+			}
+		}
 		cost = 0
 		available = {
 			always = no
@@ -512,8 +548,16 @@ focus_tree = {
 		icon = GFX_focus_LAN_yui_victory
 		prerequisite = { focus = LAN_status_quo }
 		relative_position_id = LAN_status_quo
-		x = 0
+		x = -3
 		y = 1
+		offset = {
+			x = 3
+			trigger = {
+				NOT = {
+					has_country_leader = { character = LAN_Natsume_Kokoro }
+				}
+			}
+		}
 		cost = 0
 		available = {
 			always = no
@@ -527,12 +571,332 @@ focus_tree = {
 	}
 
 	focus = { 
+		id = LAN_build_welfare_state
+		icon = GFX_goal_generic_solidarity
+		prerequisite = { focus = LAN_saren_victory }
+		relative_position_id = LAN_saren_victory
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_promote_multi_party_cooperation
+		icon = GFX_focus_ARG_strengthening_the_concordancia
+		prerequisite = { focus = LAN_saren_victory }
+		relative_position_id = LAN_saren_victory
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_national_labor_union
+		icon = GFX_goal_generic_union_agreement
+		prerequisite = { focus = LAN_saren_victory }
+		relative_position_id = LAN_saren_victory
+		x = -2
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_compulsory_education
+		icon = GFX_focus_generic_university_1
+		prerequisite = { focus = LAN_build_welfare_state }
+		prerequisite = { focus = LAN_national_labor_union }
+		relative_position_id = LAN_build_welfare_state
+		x = -3
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_train_technical_workers
+		icon = GFX_focus_FIN_socialist_welfare
+		prerequisite = { focus = LAN_compulsory_education }
+		relative_position_id = LAN_compulsory_education
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_ensuring_agricultural_production
+		icon = GFX_goal_generic_agriculture2
+		prerequisite = { focus = LAN_build_welfare_state }
+		relative_position_id = LAN_build_welfare_state
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_energy_revolution
+		icon = GFX_focus_ARG_develop_the_electricity_sector
+		prerequisite = { focus = LAN_restricting_local_power }
+		prerequisite = { focus = LAN_build_welfare_state }
+		relative_position_id = LAN_build_welfare_state
+		x = 1
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_new_republic
+		icon = GFX_focus_SWI_swiss_guiding_principles
+		prerequisite = { focus = LAN_train_technical_workers }
+		prerequisite = { focus = LAN_key_industries_for_nationalization }
+		prerequisite = { focus = LAN_energy_revolution }
+		relative_position_id = LAN_energy_revolution
+		x = -3
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_restore_government_authority
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = LAN_yui_victory }
+		relative_position_id = LAN_yui_victory
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_rural_revitalization_plan
+		icon = GFX_goal_generic_agriculture
+		prerequisite = { focus = LAN_restore_government_authority }
+		relative_position_id = LAN_restore_government_authority
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_independent_judicial_system
+		icon = GFX_focus_AUS_lawmaking_leniency
+		prerequisite = { focus = LAN_yui_victory }
+		relative_position_id = LAN_yui_victory
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_anti_corruption_campaign
+		icon = GFX_focus_ARG_anti_corruption_policies
+		prerequisite = { focus = LAN_restricting_local_power }
+		prerequisite = { focus = LAN_national_production_and_construction_corps }
+		prerequisite = { focus = LAN_independent_judicial_system }
+		relative_position_id = LAN_independent_judicial_system
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_restricting_local_power
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		prerequisite = {
+			focus = LAN_saren_victory
+			focus = LAN_yui_victory
+		}
+		relative_position_id = LAN_yui_victory
+		x = -2
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_national_production_and_construction_corps
+		icon = GFX_focus_FIN_finnish_federation_of_trade_unions
+		prerequisite = {
+			focus = LAN_yui_victory
+			focus = LAN_kiruya_victory
+		}
+		relative_position_id = LAN_yui_victory
+		x = -1
+		y = 1
+		offset = {
+			y = 1
+			trigger = {
+				has_government = fascism
+			}
+		}
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_key_industries_for_nationalization
+		icon = GFX_focus_DEN_heavy_regulations
+		prerequisite = { focus = LAN_build_welfare_state }
+		relative_position_id = LAN_build_welfare_state
+		x = -1
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
 		id = LAN_kiruya_victory
 		icon = GFX_focus_LAN_kiruya_victory
-		prerequisite = { focus = LAN_status_quo }
+		prerequisite = {
+			focus = LAN_status_quo
+			focus = LAN_military_first
+		}
 		relative_position_id = LAN_status_quo
-		x = 4
+		x = 3
 		y = 1
+		offset = {
+			x = 3
+			trigger = {
+				NOT = {
+					has_country_leader = { character = LAN_Natsume_Kokoro }
+				}
+			}
+		}
+		offset = {
+			x = -3
+			trigger = {
+				has_government = fascism
+			}
+		}
 		cost = 0
 		available = {
 			always = no
@@ -550,7 +914,10 @@ focus_tree = {
 		icon = GFX_focus_LAN_kokoro_victory
 		prerequisite = { focus = LAN_status_quo }
 		relative_position_id = LAN_status_quo
-		x = 2
+		allow_branch = {
+			has_country_leader = { character = LAN_Natsume_Kokoro }
+		}
+		x = 9
 		y = 1
 		cost = 0
 		available = {
@@ -565,15 +932,280 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = LAN_military_first
-		icon = GFX_goal_generic_collaborate_local_elites
-		#prerequisite = { focus = LAN_call_dice }
-		relative_position_id = LAN_status_quo
-		allow_branch = {
-			has_government = fascism
+		id = LAN_restrict_military
+		icon = GFX_goal_generic_restricting_military
+		prerequisite = {
+			focus = LAN_saren_victory
+			focus = LAN_yui_victory
+			focus = LAN_kiruya_victory
+			focus = LAN_kokoro_victory
 		}
-		x = 0
-		y = 0
+		mutually_exclusive = { focus = LAN_strengthen_command_chain }
+		relative_position_id = LAN_kiruya_victory
+		x = -3
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_strengthen_command_chain
+		icon = GFX_goal_generic_military_cooperation
+		prerequisite = { focus = LAN_kiruya_victory }
+		mutually_exclusive = { focus = LAN_restrict_military }
+		relative_position_id = LAN_kiruya_victory
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_strengthen_authority
+		icon = GFX_goal_generic_authoritarian_government
+		prerequisite = {
+			focus = LAN_restrict_military
+			focus = LAN_strengthen_command_chain
+		}
+		relative_position_id = LAN_restrict_military
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = LAN_declare_war_on_talent
+		icon = GFX_focus_BRA_repeale_national_security_law
+		prerequisite = { focus = LAN_kiruya_victory }
+		relative_position_id = LAN_kiruya_victory
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = LAN_magic_limited_act
+		icon = GFX_goal_generic_police_state
+		prerequisite = { focus = LAN_declare_war_on_talent }
+		relative_position_id = LAN_declare_war_on_talent
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = LAN_reform_police_state
+		icon = GFX_focus_generic_secret_service_agency
+		prerequisite = { focus = LAN_magic_limited_act }
+		relative_position_id = LAN_magic_limited_act
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = LAN_advocate_for_order
+		icon = GFX_focus_ARG_defense_and_democracy
+		prerequisite = { focus = LAN_declare_war_on_talent }
+		relative_position_id = LAN_declare_war_on_talent
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = LAN_low_interest_education_loans
+		icon = GFX_focus_RAJ_special_economic_zones
+		prerequisite = {
+			focus = LAN_advocate_for_order
+			focus = LAN_rural_revitalization_plan
+		}
+		mutually_exclusive = { focus = LAN_tighten_enrollment_restrictions }
+		relative_position_id = LAN_advocate_for_order
+		x = -5
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = LAN_tighten_enrollment_restrictions
+		icon = GFX_goal_generic_investigate_corruption
+		prerequisite = { focus = LAN_advocate_for_order }
+		mutually_exclusive = { focus = LAN_low_interest_education_loans }
+		relative_position_id = LAN_advocate_for_order
+		x = -3
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = LAN_tariff_act
+		icon = GFX_focus_BRA_rio_protocol
+		prerequisite = { focus = LAN_advocate_for_order }
+		relative_position_id = LAN_advocate_for_order
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = LAN_defend_motherland
+		icon = GFX_focus_GER_expand_ss_security_duties
+		prerequisite = { focus = LAN_advocate_for_order }
+		relative_position_id = LAN_advocate_for_order
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_orderly_republic
+		icon = GFX_focus_SWI_aktion_nationaler_widerstand
+		prerequisite = { focus = LAN_anti_corruption_campaign }
+		prerequisite = { focus = LAN_low_interest_education_loans }
+		relative_position_id = LAN_anti_corruption_campaign
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = LAN_equipped_republic
+		icon = GFX_goal_generic_defence_army_alt
+		prerequisite = {
+			focus = LAN_tighten_enrollment_restrictions
+			focus = LAN_low_interest_education_loans
+		}
+		prerequisite = { focus = LAN_tariff_act }
+		prerequisite = { focus = LAN_defend_motherland }
+		relative_position_id = LAN_tariff_act
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = LAN_kiruya_1victory
+		icon = GFX_focus_LAN_kiruya_victory
+		prerequisite = { focus = LAN_military_first }
+		relative_position_id = LAN_status_quo
+		x = -3
+		y = 1
 		cost = 0
 		available = {
 			always = no
@@ -2722,10 +3354,10 @@ focus_tree = {
 					}
 				}
 			}
-			value = GFX_focus_rom_abdicate
+			value = GFX_goal_generic_attack_san_magno
 		}
 		icon = {
-			value = GFX_focus_attack_france
+			value = GFX_focus_rom_abdicate
 		}
 		prerequisite = { focus = LAN_operation_torch }
 		relative_position_id = LAN_operation_torch
