@@ -1,72 +1,60 @@
 LAN_balance_of_power = {
 	initial_value = 0.06
-	left_side = council_left_side
-	right_side = mana_right_side
+	left_side = LAN_inner_circle_vertex_republic_left_side
+	right_side = LAN_inner_circle_vertex_crown_right_side
 	decision_category = LAN_balance_of_power_decision_category
 	range = {
 		id = LAN_balance_range
-		min = -0.1
-		max = 0.1
+		min = -0.33
+		max = 0.33
 		modifier = {
-			stability_factor = 0.05
-			war_support_factor = 0.05
 		}
 	}
 	
 	side = {
-		id = LAN_council_left_side
+		id = LAN_inner_circle_vertex_republic_left_side
 		icon = GFX_bop_LAN_council_side
 		range = {
-			id = LAN_council_high_side_range
+			id = LAN_inner_circle_vertex_republic_left_side_range
 			min = -1.0
-			max = -0.7
+			max = -0.33
 			modifier = {
-				stability_weekly = 0.03
-			}
-		}
-		range = {
-			id = LAN_council_medium_side_range
-			min = -0.7
-			max = -0.3
-			modifier = {
-				stability_weekly = 0.02
-			}
-		}
-		range = {
-			id = LAN_council_low_side_range
-			min = -0.3
-			max = -0.1
-			modifier = {
-				stability_weekly = 0.01
 			}
 		}
 	}
 	
 	side = {
-		id = LAN_mana_right_side
-		icon = GFX_bop_LAN_mana_side
+		id = LAN_inner_circle_vertex_crown_left_side
+		icon = GFX_bop_LAN_council_side
 		range = {
-			id = LAN_mana_low_side_range
-			min = 0.1
-			max = 0.3
+			id = LAN_inner_circle_vertex_crown_left_side_range
+			min = -1.0
+			max = -0.33
 			modifier = {
-				war_support_weekly = 0.01
 			}
 		}
+	}
+	
+	side = {
+		id = LAN_inner_circle_vertex_crown_right_side
+		icon = GFX_bop_LAN_council_side
 		range = {
-			id = LAN_mana_medium_side_range
-			min = 0.3
-			max = 0.7
-			modifier = {
-				war_support_weekly = 0.02
-			}
-		}
-		range = {
-			id = LAN_mana_high_side_range
-			min = 0.7
+			id = LAN_inner_circle_vertex_crown_right_side_range
+			min = 0.33
 			max = 1.0
 			modifier = {
-				war_support_weekly = 0.03
+			}
+		}
+	}
+	
+	side = {
+		id = LAN_inner_circle_vertex_military_right_side
+		icon = GFX_bop_LAN_council_side
+		range = {
+			id = LAN_inner_circle_vertex_military_right_side_range
+			min = 0.33
+			max = 1.0
+			modifier = {
 			}
 		}
 	}
