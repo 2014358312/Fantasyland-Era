@@ -248,3 +248,29 @@ defined_text = {
 	name = GetLANIndustryIconDesc
 	text = { localization_key = LAN_industry_improvement_plan_icon_[?industry_tab_var]_desc }
 }
+
+defined_text = {
+	name = GetLANInnerCircleHighestParty
+	text = {
+		trigger = {
+			check_variable = { LAN_inner_circle_vertex_republic_var > LAN_inner_circle_vertex_crown_var }
+			check_variable = { LAN_inner_circle_vertex_republic_var > LAN_inner_circle_vertex_military_var }
+		}
+		localization_key = lan_inner_circle_vertex_republic_text
+    }
+	text = {
+		trigger = {
+			check_variable = { LAN_inner_circle_vertex_crown_var > LAN_inner_circle_vertex_republic_var }
+			check_variable = { LAN_inner_circle_vertex_crown_var > LAN_inner_circle_vertex_military_var }
+		}
+		localization_key = lan_inner_circle_vertex_crown_text
+    }
+	text = {
+		trigger = {
+			check_variable = { LAN_inner_circle_vertex_military_var > LAN_inner_circle_vertex_republic_var }
+			check_variable = { LAN_inner_circle_vertex_military_var > LAN_inner_circle_vertex_crown_var }
+		}
+		localization_key = lan_inner_circle_vertex_military_text
+    }
+	text = { localization_key = something_with_wrong_tt }
+}
