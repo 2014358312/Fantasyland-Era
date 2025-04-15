@@ -150,6 +150,7 @@ characters = {
 						character = LAN_Todo_Akino
 						ruling_only = yes
 					}
+					has_idea = LAN_Todo_Akino
 					has_country_flag = LAN_support_mercury_foundation_flag
 				}
 			}
@@ -174,6 +175,26 @@ characters = {
 			}
 		}
 		advisor = {
+			slot = head_of_government
+			idea_token = LAN_Christina_Morgan_head_of_government
+			allowed = {
+				original_tag = LAN
+			}
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { heroic_marshal head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:LAN_Christina_Morgan_head_of_government }
+				}
+			}
+		}
+		advisor = {
 			slot = political_advisor
 			idea_token = LAN_Christina_Morgan
 			allowed = { original_tag = LAN }
@@ -188,7 +209,7 @@ characters = {
 		}
 		field_marshal = {
 			traits = { }
-			skill = 1
+			skill = 4
 			attack_skill = 1
 			defense_skill = 1
 			planning_skill = 1
@@ -277,21 +298,28 @@ characters = {
 		}
 		country_leader = {
 			ideology = dual_monarchy_subtype
-			traits = { royal_highness_princess foodie }
+			traits = { royal_highness_princess foodie_eustiana }
 			expire = "1965.1.1.1"
 			id = -1
 		}
 		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Eustiana_von_Astraea
-			allowed = { original_tag = LAN }
-			available = {
-				is_country_leader = no
+			slot = head_of_government
+			idea_token = LAN_Eustiana_von_Astraea_head_of_government
+			allowed = {
+				original_tag = LAN
 			}
-			cost = 150
-			traits = { pecorine }
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { pecorine foodie_eustiana head_of_government_trait }
+			cost = 0
 			ai_will_do = {
-				base = 1.000
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:LAN_Eustiana_von_Astraea_head_of_government }
+				}
 			}
 		}
 	}
@@ -1052,16 +1080,23 @@ characters = {
 			traits = { power_of_disputes }
 		}
 		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Kusano_Yui
-			allowed = { original_tag = LAN }
-			available = {
-				
+			slot = head_of_government
+			idea_token = LAN_Kusano_Yui_head_of_government
+			allowed = {
+				original_tag = LAN
 			}
-			cost = 150
-			traits = { silent_workhorse }
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { silent_workhorse head_of_government_trait }
+			cost = 0
 			ai_will_do = {
-				base = 1.000
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:LAN_Kusano_Yui_head_of_government }
+				}
 			}
 		}
 	}
@@ -1299,6 +1334,7 @@ characters = {
 						character = LAN_Todo_Akino
 						ruling_only = yes
 					}
+					has_idea = LAN_Todo_Akino
 					has_country_flag = LAN_support_mercury_foundation_flag
 				}
 			}
@@ -1328,6 +1364,26 @@ characters = {
 			traits = { lord_kiruya }
 		}
 		advisor = {
+			slot = head_of_government
+			idea_token = LAN_Momochi_Kiruya_head_of_government
+			allowed = {
+				original_tag = LAN
+			}
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { lord_kiruya head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:LAN_Momochi_Kiruya_head_of_government }
+				}
+			}
+		}
+		advisor = {
 			slot = political_advisor
 			idea_token = LAN_Momochi_Kiruya
 			allowed = { original_tag = LAN }
@@ -1338,6 +1394,7 @@ characters = {
 						has_country_leader_with_trait = reformer_kiruya
 					}
 				}
+				not_already_hired_except_as = political_advisor
 			}
 			cost = 150
 			traits = { austerity_expert }
@@ -1412,16 +1469,23 @@ characters = {
 			id = -1
 		}
 		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Natsume_Kokoro
-			allowed = { original_tag = LAN }
-			available = {
-				is_country_leader = no
+			slot = head_of_government
+			idea_token = LAN_Natsume_Kokoro_head_of_government
+			allowed = {
+				original_tag = LAN
 			}
-			cost = 150
-			traits = { little_guardian }
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { little_guardian head_of_government_trait }
+			cost = 0
 			ai_will_do = {
-				base = 1.000
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:LAN_Natsume_Kokoro_head_of_government }
+				}
 			}
 		}
 	}
@@ -1494,6 +1558,7 @@ characters = {
 						character = LAN_Todo_Akino
 						ruling_only = yes
 					}
+					has_idea = LAN_Todo_Akino
 					has_country_flag = LAN_support_mercury_foundation_flag
 				}
 			}
@@ -1624,12 +1689,33 @@ characters = {
 			id = -1
 		}
 		advisor = {
+			slot = head_of_government
+			idea_token = LAN_Sasaki_Saren_head_of_government
+			allowed = {
+				original_tag = LAN
+			}
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { the_future_star head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:LAN_Sasaki_Saren_head_of_government }
+				}
+			}
+		}
+		advisor = {
 			slot = high_command
 			ledger = army
 			idea_token = LAN_Sasaki_Saren
 			allowed = { original_tag = LAN }
 			available = {
 				is_country_leader = no
+				not_already_hired_except_as = high_command
 			}
 			cost = 100
 			traits = { army_regrouping_2 }
@@ -1645,6 +1731,9 @@ characters = {
 			planning_skill = 1
 			logistics_skill = 1
 			legacy_id = -1
+			visible = {
+				ROOT = { check_variable = { FE_secondary = LAN_Sasaki_Saren_head_of_government } }
+			}
 		}
 	}
 
@@ -1898,7 +1987,6 @@ characters = {
 			allowed = { original_tag = LAN }
 			available = {
 				is_country_leader = no
-				has_country_flag = LAN_support_mercury_foundation_flag
 			}
 			cost = 150
 			traits = { lady_of_the_consortium_advisor }
