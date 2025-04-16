@@ -117,3 +117,47 @@ scripted_gui = {
 		}
 	}
 }
+
+scripted_gui = {
+	FE_EventWindow_News_gui = {
+		context_type = player_context
+		parent_window_token = top_bar
+		window_name = "FE_EventWindow_News"
+		
+		visible = {
+			has_variable = FE_EventWindow_News_var
+		}
+
+		properties = {
+			FE_event_picture = {
+				#image = [GetDiplomacyUnknownPic]
+				image = GFX_news_event_vertical_coronation_of_yufiria
+			}
+		}
+		
+		dynamic_lists = {
+			FE_options_grid = {
+				entry_container = "FE_event_option_entry"
+				array = FE_EventWindow_News_array
+				index = i
+				value = v
+				change_scope = yes
+			}
+		}
+		
+		effects = {
+			FE_btn_minimize_click = {
+				#close gui
+				clear_variable = FE_EventWindow_News_var
+				#reset options
+				clear_array = FE_EventWindow_News_array
+			}
+			FE_event_option_button_click = {
+				#close gui
+				clear_variable = FE_EventWindow_News_var
+				#reset options
+				clear_array = FE_EventWindow_News_array
+			}
+		}
+	}
+}

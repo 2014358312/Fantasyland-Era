@@ -30,10 +30,9 @@ DEBUG_wpe_secondary = {
 DEBUG_test_static_modifier = {
 	if = {
 		limit = { is_debug = yes }
-		add_relation_modifier = {
-			target = EYP
-			modifier = HUN_dynastic_ties_license
-		}
+		set_variable = { FE_EventWindow_News_var = 1 }
+		add_to_array = { FE_EventWindow_News_array = 0 }
+		#add_to_array = { FE_EventWindow_News_array = 1 }
 	}
 	clear_DEBUG_decisions_flag = yes
 }
