@@ -1263,6 +1263,7 @@ focus_tree = {
 			NOT = {
 				has_idea = TIA_National_Public_Development_Plan
 			}
+			has_country_flag = TIA_National_Public_Development_Plans_flag
 		}
 		completion_reward = {
 			set_country_flag = TIA_Jusen_Coal_Mine_modernization_has_completed
@@ -1297,6 +1298,7 @@ focus_tree = {
 			NOT = {
 				has_idea = TIA_National_Public_Development_Plan
 			}
+			has_country_flag = TIA_National_Public_Development_Plans_flag
 			has_country_flag = {
 				flag = TIA_Jusen_Coal_Mine_modernization_has_completed
 				days > 180
@@ -1342,6 +1344,7 @@ focus_tree = {
 			NOT = {
 				has_idea = TIA_National_Public_Development_Plan
 			}
+			has_country_flag = TIA_National_Public_Development_Plans_flag
 		}
 		completion_reward = {
 			set_country_flag = TIA_expand_MaoliElectricRailways_has_completed
@@ -1372,6 +1375,7 @@ focus_tree = {
 			NOT = {
 				has_idea = TIA_National_Public_Development_Plan
 			}
+			has_country_flag = TIA_National_Public_Development_Plans_flag
 			has_country_flag = {
 				flag = TIA_expand_MaoliElectricRailways_has_completed
 				days > 180
@@ -1412,6 +1416,7 @@ focus_tree = {
 			NOT = {
 				has_idea = TIA_National_Public_Development_Plan
 			}
+			has_country_flag = TIA_National_Public_Development_Plans_flag
 			has_country_flag = {
 				flag = TIA_build_Imperial_night_Railway_has_completed
 				days > 180
@@ -1463,6 +1468,7 @@ focus_tree = {
 			NOT = {
 				has_idea = TIA_National_Public_Development_Plan
 			}
+			has_country_flag = TIA_National_Public_Development_Plans_flag
 		}
 		completion_reward = {
 			set_country_flag = TIA_upstreamKumakawa_industry_build_has_completed
@@ -1492,6 +1498,7 @@ focus_tree = {
 			NOT = {
 				has_idea = TIA_National_Public_Development_Plan
 			}
+			has_country_flag = TIA_National_Public_Development_Plans_flag
 			has_country_flag = {
 				flag = TIA_upstreamKumakawa_industry_build_has_completed
 				days > 180
@@ -1532,6 +1539,7 @@ focus_tree = {
 			NOT = {
 				has_idea = TIA_National_Public_Development_Plan
 			}
+			has_country_flag = TIA_National_Public_Development_Plans_flag
 			has_country_flag = {
 				flag = TIA_midstreamKumakawa_industry_build_has_completed
 				days > 180
@@ -1555,6 +1563,66 @@ focus_tree = {
 		}
 	}
 	focus = {
+		#御一夜城翻新计划
+		id = TIA_oichiya_south_city
+		icon = "GFX_goal_generic_soviet_construction"
+		relative_position_id = TIA_National_Public_Development_Plans
+		x = -4
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = TIA_National_Public_Development_Plans
+		}
+		available = {
+			NOT = {
+				has_idea = TIA_National_Public_Development_Plan
+			}
+			has_country_flag = TIA_National_Public_Development_Plans_flag
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = TIA_National_Public_Development_Plan
+				days = 180
+			}
+			unlock_decision_tooltip = TIA_oichiya_southcity_expand
+			unlock_decision_tooltip = TIA_oichiya_southcity_railway
+			unlock_decision_tooltip = TIA_oichiya_southcity_industry
+		}
+	}
+	focus = {
+		#贡露城海军工业
+		id = TIA_Gronru_naval_industy
+		icon = "GFX_goal_generic_soviet_construction"
+		relative_position_id = TIA_National_Public_Development_Plans
+		x = 4
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = TIA_National_Public_Development_Plans
+		}
+		available = {
+			NOT = {
+				has_idea = TIA_National_Public_Development_Plan
+			}
+			has_country_flag = TIA_National_Public_Development_Plans_flag
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = TIA_National_Public_Development_Plan
+				days = 180
+			}
+			unlock_decision_tooltip = TIA_Gronru_Personnel_training
+			unlock_decision_tooltip = TIA_Gronru_build_plan
+			unlock_decision_tooltip = TIA_Gronru_north_baise
+		}
+	}
+	focus = {
 		#堤亚穆经贸奇迹
 		id = TIA_Economic_trade_miracles
 		icon = GFX_focus_TIA_Economic_trade_miracles
@@ -1566,6 +1634,7 @@ focus_tree = {
 			NOT = {
 				has_idea = TIA_National_Public_Development_Plan
 			}
+			has_country_flag = TIA_National_Public_Development_Plans_flag
 		}
 		prerequisite = {
 			focus = TIA_downstream_Kumakawa_industry_build
