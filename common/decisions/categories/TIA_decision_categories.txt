@@ -1,10 +1,23 @@
 ################
 #####   TIA  ######
 ################
-
 TIA_ai_decision_category = {
 	icon = power_struggle
-	allowed = { original_tag = TIA }
-	visible = { is_ai = yes }
+	allowed = {
+		original_tag = TIA
+	}
+	visible = {
+		is_ai = yes
+	}
 }
 
+TIA_National_Public_Development_Plans_decisions = {
+	icon = saf_anti_colonialist_crusade
+	allowed = {
+		original_tag = TIA
+	}
+	visible = {
+		has_country_flag = TIA_National_Public_Development_Plans_flag
+	}
+	priority = 100
+}

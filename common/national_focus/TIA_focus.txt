@@ -55,13 +55,13 @@ focus_tree = {
 			custom_effect_tooltip = TIA_before_event_decide
 			if = {
 				limit = {
-					has_country_flag = TIA.1_A 
+					has_country_flag = TIA.1_A
 				}
 				complete_national_focus = TIA_Make_change
 			}
 			if = {
 				limit = {
-					has_country_flag = TIA.1_B 
+					has_country_flag = TIA.1_B
 				}
 				complete_national_focus = TIA_prank
 			}
@@ -888,7 +888,10 @@ focus_tree = {
 			focus = TIA_never_too_late_to_mend
 		}
 		available = {
-			has_railway_connection = { start_state = 10 target_state = 234 }
+			has_railway_connection = {
+				start_state = 10
+				target_state = 234
+			}
 		}
 		completion_reward = {
 			234 = {
@@ -1222,9 +1225,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		#堤亚穆经贸奇迹
-		id = TIA_Economic_trade_miracles
-		icon = GFX_focus_TIA_Economic_trade_miracles
+		#国家公共工程开发计划
+		id = TIA_National_Public_Development_Plans
+		icon = GFX_focus_TIA_National_Public_Development_Plans
 		relative_position_id = TIA_Centrally_set_taxes
 		x = 1
 		y = 1
@@ -1233,8 +1236,348 @@ focus_tree = {
 			focus = TIA_Centrally_set_taxes
 			focus = TIA_City_self_determination_taxes
 		}
+		available = {
+			has_completed_focus = TIA_Wilderness_development
+		}
 		completion_reward = {
 			add_political_power = 50
+			set_country_flag = TIA_National_Public_Development_Plans_flag
+			custom_effect_tooltip = TIA_National_Public_Development_Plans_strat
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#术仙煤矿现代化
+		id = TIA_Jusen_Coal_Mine_modernization
+		icon = GFX_focus_TIA_Jusen_Coal_Mine_modernization
+		relative_position_id = TIA_National_Public_Development_Plans
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_National_Public_Development_Plans
+		}
+		available = {
+			NOT = {
+				has_idea = TIA_National_Public_Development_Plan
+			}
+		}
+		completion_reward = {
+			set_country_flag = TIA_Jusen_Coal_Mine_modernization_has_completed
+			add_timed_idea = {
+				idea = TIA_National_Public_Development_Plan
+				days = 180
+			}
+			unlock_decision_tooltip = TIA_Liquefaction_of_coal
+			unlock_decision_tooltip = TIA_Mine_safety
+			unlock_decision_tooltip = TIA_Mining_rig_updates
+			unlock_decision_tooltip = TIA_Personnel_training
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#术仙城市化
+		id = TIA_Jusen_Urbanization
+		icon = "GFX_goal_generic_soviet_construction"
+		relative_position_id = TIA_Jusen_Coal_Mine_modernization
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = TIA_Jusen_Coal_Mine_modernization
+		}
+		available = {
+			NOT = {
+				has_idea = TIA_National_Public_Development_Plan
+			}
+			has_country_flag = {
+				flag = TIA_Jusen_Coal_Mine_modernization_has_completed
+				days > 180
+			}
+			custom_trigger_tooltip = {
+				tooltip = TIA_Jusen_Coal_Mine_modernization_focus_days_tt
+				has_country_flag = {
+					flag = TIA_Jusen_Coal_Mine_modernization_has_completed
+					days > 180
+				}
+			}
+		}
+		completion_reward = {
+			set_country_flag = TIA_Jusen_Urbanization_has_completed
+			add_timed_idea = {
+				idea = TIA_National_Public_Development_Plan
+				days = 180
+			}
+			unlock_decision_tooltip = TIA_Jusen_infrastructure_build
+			unlock_decision_tooltip = TIA_Jusen_Civil_engineering_construction
+			unlock_decision_tooltip = TIA_Jusen_raillord_marker
+			unlock_decision_tooltip = TIA_Jusen_Landmark_construction
+		}
+	}
+	focus = {
+		#资助毛利电铁社
+		id = TIA_expand_Maoli_Electric_Railways
+		icon = "GFX_goal_generic_soviet_construction"
+		relative_position_id = TIA_National_Public_Development_Plans
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = TIA_National_Public_Development_Plans
+		}
+		prerequisite = {
+			focus = TIA_Free_and_open_markets
+		}
+		available = {
+			NOT = {
+				has_idea = TIA_National_Public_Development_Plan
+			}
+		}
+		completion_reward = {
+			set_country_flag = TIA_expand_MaoliElectricRailways_has_completed
+			add_timed_idea = {
+				idea = TIA_National_Public_Development_Plan
+				days = 180
+			}
+			unlock_decision_tooltip = TIA_Maoli_Electric_Railways_expand
+			unlock_decision_tooltip = TIA_Maoli_Electric_Railways_electric_railway
+			unlock_decision_tooltip = TIA_Maoli_Electric_Railways_Personnel_training
+		}
+	}
+	focus = {
+		#放开铁路审批
+		id = TIA_build_Imperial_night_Railway
+		icon = "GFX_goal_generic_soviet_construction"
+		relative_position_id = TIA_expand_Maoli_Electric_Railways
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = TIA_expand_Maoli_Electric_Railways
+		}
+		available = {
+			NOT = {
+				has_idea = TIA_National_Public_Development_Plan
+			}
+			has_country_flag = {
+				flag = TIA_expand_MaoliElectricRailways_has_completed
+				days > 180
+			}
+			custom_trigger_tooltip = {
+				tooltip = TIA_expand_MaoliElectricRailways_focus_days_tt
+				has_country_flag = {
+					flag = TIA_expand_MaoliElectricRailways_has_completed
+					days > 180
+				}
+			}
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = TIA_National_Public_Development_Plan
+				days = 180
+			}
+			unlock_decision_tooltip = TIA_build_Imperial_night_Railway
+			unlock_decision_tooltip = TIA_Maoli_Electric_Railways_successful
+		}
+	}
+	focus = {
+		#铁路人偶们的付出
+		id = TIA_expand_railway_history_Museum
+		icon = "GFX_goal_generic_soviet_construction"
+		relative_position_id = TIA_build_Imperial_night_Railway
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = TIA_build_Imperial_night_Railway
+			focus = TIA_Jusen_Urbanization
+		}
+		available = {
+			NOT = {
+				has_idea = TIA_National_Public_Development_Plan
+			}
+			has_country_flag = {
+				flag = TIA_build_Imperial_night_Railway_has_completed
+				days > 180
+			}
+			custom_trigger_tooltip = {
+				tooltip = TIA_build_Imperial_night_Railway_focus_days_tt
+				has_country_flag = {
+					flag = TIA_build_Imperial_night_Railway_has_completed
+					days > 180
+				}
+			}
+			has_country_flag = {
+				flag = TIA_Jusen_Urbanization_has_completed
+				days > 180
+			}
+			custom_trigger_tooltip = {
+				tooltip = TIA_Jusen_Urbanization_focus_days_tt
+				has_country_flag = {
+					flag = TIA_Jusen_Urbanization_has_completed
+					days > 180
+				}
+			}
+		}
+		completion_reward = {
+			set_country_flag = TIA_expand_railwayhistoryMuseum
+			add_timed_idea = {
+				idea = TIA_National_Public_Development_Plan
+				days = 180
+			}
+			unlock_decision_tooltip = TIA_Wanggong_history_museum_expand
+			unlock_decision_tooltip = TIA_Wanggong_history_museum_publicize
+			unlock_decision_tooltip = TIA_Wanggong_history_museum_commemorate
+		}
+	}
+	focus = {
+		id = TIA_upstream_Kumakawa_industry_build
+		icon = "GFX_goal_generic_soviet_construction"
+		relative_position_id = TIA_National_Public_Development_Plans
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = TIA_National_Public_Development_Plans
+		}
+		available = {
+			NOT = {
+				has_idea = TIA_National_Public_Development_Plan
+			}
+		}
+		completion_reward = {
+			set_country_flag = TIA_upstreamKumakawa_industry_build_has_completed
+			add_timed_idea = {
+				idea = TIA_National_Public_Development_Plan
+				days = 180
+			}
+			unlock_decision_tooltip = TIA_upstream_Kumakawa_check
+			unlock_decision_tooltip = TIA_upstream_Kumakawa_design
+			unlock_decision_tooltip = TIA_upstream_Kumakawa_build
+		}
+	}
+	focus = {
+		id = TIA_midstream_Kumakawa_industry_build
+		icon = "GFX_goal_generic_soviet_construction"
+		relative_position_id = TIA_upstream_Kumakawa_industry_build
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = TIA_upstream_Kumakawa_industry_build
+		}
+		available = {
+			NOT = {
+				has_idea = TIA_National_Public_Development_Plan
+			}
+			has_country_flag = {
+				flag = TIA_upstreamKumakawa_industry_build_has_completed
+				days > 180
+			}
+			custom_trigger_tooltip = {
+				tooltip = TIA_upstreamKumakawa_industry_build_focus_days_tt
+				has_country_flag = {
+					flag = TIA_upstreamKumakawa_industry_build_has_completed
+					days > 180
+				}
+			}
+		}
+		completion_reward = {
+			set_country_flag = TIA_midstreamKumakawa_industry_build_has_completed
+			add_timed_idea = {
+				idea = TIA_National_Public_Development_Plan
+				days = 180
+			}
+			unlock_decision_tooltip = TIA_midstream_Kumakawa_choice
+			unlock_decision_tooltip = TIA_midstream_Kumakawa_invest
+			unlock_decision_tooltip = TIA_midstream_Kumakawa_build
+		}
+	}
+	focus = {
+		id = TIA_downstream_Kumakawa_industry_build
+		icon = "GFX_goal_generic_soviet_construction"
+		relative_position_id = TIA_midstream_Kumakawa_industry_build
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		prerequisite = {
+			focus = TIA_midstream_Kumakawa_industry_build
+		}
+		available = {
+			NOT = {
+				has_idea = TIA_National_Public_Development_Plan
+			}
+			has_country_flag = {
+				flag = TIA_midstreamKumakawa_industry_build_has_completed
+				days > 180
+			}
+			custom_trigger_tooltip = {
+				tooltip = TIA_midstreamKumakawa_industry_build_focus_days_tt
+				has_country_flag = {
+					flag = TIA_midstreamKumakawa_industry_build_has_completed
+					days > 180
+				}
+			}
+		}
+		completion_reward = {
+			set_country_flag = TIA_downstreamKumakawa_industry_build_has_completed
+			add_timed_idea = {
+				idea = TIA_National_Public_Development_Plan
+				days = 180
+			}
+			unlock_decision_tooltip = TIA_downstream_Kumakawa_plan
+			unlock_decision_tooltip = TIA_downstream_Kumakawa_invest
+		}
+	}
+	focus = {
+		#堤亚穆经贸奇迹
+		id = TIA_Economic_trade_miracles
+		icon = GFX_focus_TIA_Economic_trade_miracles
+		relative_position_id = TIA_expand_railway_history_Museum
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			NOT = {
+				has_idea = TIA_National_Public_Development_Plan
+			}
+		}
+		prerequisite = {
+			focus = TIA_downstream_Kumakawa_industry_build
+		}
+		prerequisite = {
+			focus = TIA_expand_railway_history_Museum
+		}
+		completion_reward = {
+			clr_country_flag = TIA_National_Public_Development_Plans_flag
+			add_political_power = 150
+			add_stability = 0.05
+			custom_effect_tooltip = TIA_National_Public_Development_Plans_will_end
 		}
 		ai_will_do = {
 			factor = 1

@@ -87,7 +87,7 @@ ideas = {
 			modifier = {
 				production_speed_rail_way_factor = 0.1
 				production_speed_buildings_factor = 0.1
-				industrial_capacity_factory = 0.10
+				industrial_capacity_factory = 0.1
 				local_resources_factor = 0.15
 				production_speed_supply_node_factor = 0.1
 				supply_node_range = 0.1
@@ -106,6 +106,21 @@ ideas = {
 				consumer_goods_factor = -0.25
 				civilian_intel_to_others = 25
 				trade_opinion_factor = 0.25
+			}
+		}
+		TIA_National_Public_Development_Plan = {
+			picture = generic_stability
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				civilian_factory_use = 10
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_speed_buildings_factor = 0.15
 			}
 		}
 		TIA_legitimate_dispute = {
@@ -214,6 +229,90 @@ ideas = {
 			}
 			modifier = {
 				war_support_factor = 0.01
+			}
+		}
+		TIA_Electric_Railways_1 = {
+			picture = TIA_N_8_hours_work
+			allowed = {
+			}
+			allowed_civil_war = {
+			}
+			modifier = {
+				railway_gun_bombardment_factor = 0.15
+				supply_factor = 0.1
+				supply_node_range = 0.05
+			}
+		}
+		TIA_Electric_Railways_2 = {
+			picture = TIA_N_8_hours_work
+			allowed = {
+			}
+			allowed_civil_war = {
+			}
+			modifier = {
+				railway_gun_bombardment_factor = 0.15
+				supply_factor = 0.15
+				supply_node_range = 0.1
+				army_speed_factor = 0.1
+			}
+		}
+		TIA_Electric_Railways_3 = {
+			picture = TIA_N_8_hours_work
+			allowed = {
+			}
+			allowed_civil_war = {
+			}
+			modifier = {
+				railway_gun_bombardment_factor = 0.15
+				supply_factor = 0.2
+				supply_node_range = 0.15
+				army_speed_factor = 0.1
+			}
+		}
+		TIA_no_forget_raillord_before_1 = {
+			picture = TIA_N_8_hours_work
+			allowed = {
+			}
+			allowed_civil_war = {
+				has_government = communism
+			}
+			modifier = {
+				#加稳定度（精神）
+				stability_factor = 0.1
+				#战争支持度（精神）
+				war_support_factor = 0.05
+				#防御战争稳定度修正
+				defensive_war_stability_factor = 0.25
+				#进攻战争稳定度修正
+				offensive_war_stability_factor = 0.25
+				#形态抵制力度
+				drift_defence_factor = 0.25
+				#外国颠覆效率
+				foreign_subversive_activites = -0.25
+			}
+		}
+		TIA_no_forget_raillord_before_2 = {
+			picture = TIA_N_8_hours_work
+			allowed = {
+			}
+			allowed_civil_war = {
+				has_government = communism
+			}
+			modifier = {
+				#政治顾问 
+				political_advisor_cost_factor = -0.25
+				#加稳定度（精神）
+				stability_factor = 0.15
+				#战争支持度（精神）
+				war_support_factor = 0.1
+				#防御战争稳定度修正
+				defensive_war_stability_factor = 0.25
+				#进攻战争稳定度修正
+				offensive_war_stability_factor = 0.25
+				#形态抵制力度
+				drift_defence_factor = 0.5
+				#外国颠覆效率
+				foreign_subversive_activites = -0.5
 			}
 		}
 	}
