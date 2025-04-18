@@ -1,0 +1,127 @@
+characters = {
+	CWS_AnchoR = {
+		name = CWS_AnchoR
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CWS_AnchoR
+				small = GFX_idea_advisor_CWS_AnchoR
+			}
+			army = {
+				large = GFX_Portrait_CWS_AnchoR
+				small = GFX_idea_advisor_CWS_AnchoR
+			}
+		}
+	}
+
+	CWS_Furukawa_Yui = {
+		name = Furukawa_Yui
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CWS_Furukawa_Yui
+				small = GFX_idea_advisor_CWS_Furukawa_Yui
+			}
+			army = {
+				large = GFX_Portrait_CWS_Furukawa_Yui
+				small = GFX_idea_advisor_CWS_Furukawa_Yui
+			}
+		}
+	}
+
+	CWS_Hanamiya_Nagisa = {
+		name = Hanamiya_Nagisa
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CWS_Hanamiya_Nagisa
+				small = GFX_idea_advisor_CWS_Hanamiya_Nagisa
+			}
+			army = {
+				large = GFX_Portrait_CWS_Hanamiya_Nagisa
+				small = GFX_idea_advisor_CWS_Hanamiya_Nagisa
+			}
+		}
+	}
+
+	CWS_Hasekura_Airi = {
+		name = Hasekura_Airi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CWS_Hasekura_Airi
+				small = GFX_idea_advisor_CWS_Hasekura_Airi
+			}
+			army = {
+				large = GFX_Portrait_CWS_Hasekura_Airi
+				small = GFX_idea_advisor_CWS_Hasekura_Airi
+			}
+		}
+		country_leader = {
+			ideology = technocracy_subtype
+			traits = { rearmer }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+
+	CWS_Marie_Bell_Breguet = {
+		name = Marie_Bell_Breguet
+		portraits = {
+			army = {
+				large = GFX_Portrait_CWS_Marie_Bell_Breguet_scientist
+				small = GFX_idea_advisor_CWS_Marie_Bell_Breguet
+			}
+		}
+		scientist = {
+			traits = { scientist_trait_bright scientist_trait_resourceful }
+			skills = {
+				specialization_land = 1
+			}
+		}
+	}
+
+	CWS_RyuZU = {
+		name = CWS_RyuZU
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CWS_RyuZU
+				small = GFX_idea_advisor_CWS_RyuZU
+			}
+			army = {
+				large = GFX_Portrait_CWS_RyuZU
+				small = GFX_idea_advisor_CWS_RyuZU
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = CWS_RyuZU_head_of_government
+			allowed = {
+				original_tag = LAN
+			}
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { historian head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:CWS_RyuZU_head_of_government }
+				}
+			}
+		}
+	}
+
+	CWS_Sasaki_Kaori = {
+		name = Sasaki_Kaori
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CWS_Sasaki_Kaori
+				small = GFX_idea_advisor_CWS_Sasaki_Kaori
+			}
+			army = {
+				large = GFX_Portrait_CWS_Sasaki_Kaori
+				small = GFX_idea_advisor_CWS_Sasaki_Kaori
+			}
+		}
+	}
+}
