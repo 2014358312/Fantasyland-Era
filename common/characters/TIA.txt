@@ -246,17 +246,26 @@ characters = {
 			allowed = {
 				original_tag = TIA
 			}
-			visible = { is_country_leader = no }
-			available = { no_head_of_gov_trigger = yes }
+			visible = {
+				is_country_leader = no
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
 			can_be_fired = no
-			traits = { moderate_reformist head_of_government_trait }
+			traits = {
+				moderate_reformist
+				head_of_government_trait
+			}
 			cost = 0
 			ai_will_do = {
 				factor = 1
 			}
 			on_add = {
 				hidden_effect = {
-					set_variable = { FE_secondary = token:TIA_Hinai_Paulette_head_of_government }
+					set_variable = {
+						FE_secondary = token:TIA_Hinai_Paulette_head_of_government
+					}
 				}
 			}
 		}
@@ -327,7 +336,6 @@ characters = {
 			}
 		}
 	}
-	
 	TIA_Livia = {
 		name = Livia
 		portraits = {
@@ -342,6 +350,78 @@ characters = {
 			navy = {
 				large = GFX_Portrait_TIA_Livia
 				small = GFX_idea_advisor_TIA_Livia
+			}
+		}
+	}
+	TIA_Alice_Bedford = {
+		name = Alice_Bedford
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/TIA/TIA_Alice_Bedford.dds"
+				small = GFX_idea_advisor_TIA_Alice_Bedford
+			}
+		}
+		scientist = {
+			traits = {
+				scientist_trait_nuclear_specialist
+				scientist_trait_bright
+			}
+			skills = {
+				specialization_nuclear = 3
+			}
+		}
+	}
+	TIA_Tsukumo_Haru = {
+		name = Tsukumo_Haru
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/TIA/TIA_Tsukumo_Haru.dds"
+				small = GFX_idea_advisor_TIA_Tsukumo_Haru
+			}
+		}
+		scientist = {
+			traits = {
+				scientist_trait_rocketry_specialist
+				scientist_trait_jet_expert
+			}
+			skills = {
+				specialization_air = 3
+			}
+		}
+	}
+	TIA_Lavi_Gier = {
+		name = Lavi_Gier
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/TIA/TIA_Lavi_Gier.dds"
+				small = GFX_idea_advisor_TIA_Lavi_Gier
+			}
+		}
+		scientist = {
+			traits = {
+				scientist_trait_bright
+				scientist_trait_nuclear_warfare_expert
+			}
+			skills = {
+				specialization_nuclear = 2
+			}
+		}
+	}
+	TIA_Emmy_Felton = {
+		name = Emmy_Felton
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/TIA/TIA_Emmy_Felton.dds"
+				small = GFX_idea_advisor_TIA_Emmy_Felton
+			}
+		}
+		scientist = {
+			traits = {
+				scientist_trait_fast_learner
+				scientist_trait_gifted_engineer
+			}
+			skills = {
+				specialization_land = 3
 			}
 		}
 	}

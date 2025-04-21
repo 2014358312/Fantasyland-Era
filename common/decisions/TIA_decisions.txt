@@ -1259,3 +1259,36 @@ TIA_National_Public_Development_Plans_decisions = {
 		}
 	}
 }
+
+TIA_TRA_meeting_decisions = {
+	TIA_TRA_1_everycountry_ratio_lead_TRA = {
+		priority = 100
+		visible = {
+			has_global_flag = TRA_everycountry_ratio_lead_TRA
+		}
+		is_good = yes
+		fire_only_once = yes
+		timeout_effect = {
+		}
+	}
+	TIA_TRA_1_TIA_lead_TRA = {
+		priority = 100
+		visible = {
+			has_global_flag = TRA_TIA_lead_TRA
+		}
+		is_good = yes
+		fire_only_once = yes
+		timeout_effect = {
+		}
+	}
+	TIA_TRA_exit_TRA = {
+		priority = 90
+		allowed = {
+			has_country_flag = TIA_take_part_in_TRA
+		}
+		ai_will_do = 0
+		complete_effect = {
+			clr_country_flag = TIA_take_part_in_TRA
+		}
+	}
+}

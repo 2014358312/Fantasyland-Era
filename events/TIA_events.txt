@@ -1,31 +1,29 @@
 ﻿###########################
 # TIA Events
 ###########################
-
 add_namespace = TIA
+add_namespace = TIA_waiting_for_result
 add_namespace = tiam
-
-country_event = { #启示
+country_event = {
+	#启示
 	id = TIA.1
 	title = TIA.1.t
 	desc = TIA.1.desc
 	picture = GFX_report_event_TIA_guillotine
-
 	fire_only_once = yes
-
 	is_triggered_only = yes
-
 	option = {
 		name = TIA.1.a
-		set_country_flag = TIA.1_A 
+		set_country_flag = TIA.1_A
 	}
 	option = {
 		name = TIA.1.b
-		set_country_flag = TIA.1_B 
+		set_country_flag = TIA.1_B
 	}
 }
 
-country_event = { #校园生活开始
+country_event = {
+	#校园生活开始
 	id = TIA.2
 	title = TIA.2.t
 	desc = TIA.2.desc
@@ -35,13 +33,16 @@ country_event = { #校园生活开始
 	option = {
 		name = TIA.2.a
 		hidden_effect = {
-			country_event = { id = TIA.3 days = 1 }
+			country_event = {
+				id = TIA.3
+				days = 1
+			}
 		}
 	}
 }
 
-
-country_event = { #维护
+country_event = {
+	#维护
 	id = TIA.3
 	title = TIA.3.t
 	desc = TIA.3.desc
@@ -51,14 +52,17 @@ country_event = { #维护
 	option = {
 		name = TIA.3.a
 		hidden_effect = {
-			country_event = { id = TIA.5 days = 7 }
+			country_event = {
+				id = TIA.5
+				days = 7
+			}
 			complete_national_focus = TIA_uphold_Tiona_Rudolvon
 		}
 	}
 }
 
-
-country_event = { #远离
+country_event = {
+	#远离
 	id = TIA.4
 	title = TIA.4.t
 	desc = TIA.4.desc
@@ -68,15 +72,25 @@ country_event = { #远离
 	option = {
 		name = TIA.4.a
 		hidden_effect = {
-			country_event = { id = TIA.6 days = 31 }
-			country_event = { id = TIA.7 days = 15 }
-			country_event = { id = TIA.8 days = 12 }
+			country_event = {
+				id = TIA.6
+				days = 31
+			}
+			country_event = {
+				id = TIA.7
+				days = 15
+			}
+			country_event = {
+				id = TIA.8
+				days = 12
+			}
 			complete_national_focus = TIA_Stay_away_Sion
 		}
 	}
 }
 
-country_event = { #锁定
+country_event = {
+	#锁定
 	id = TIA.5
 	title = TIA.5.t
 	desc = TIA.5.desc
@@ -86,13 +100,17 @@ country_event = { #锁定
 	option = {
 		name = TIA.5.a
 		hidden_effect = {
-			country_event = { id = TIA.4 days = 21 }
+			country_event = {
+				id = TIA.4
+				days = 21
+			}
 			complete_national_focus = TIA_Lock_on_Abel
 		}
 	}
 }
 
-country_event = { #马术社
+country_event = {
+	#马术社
 	id = TIA.6
 	title = TIA.6.t
 	desc = TIA.6.desc
@@ -107,7 +125,8 @@ country_event = { #马术社
 	}
 }
 
-country_event = { #福克罗德
+country_event = {
+	#福克罗德
 	id = TIA.7
 	title = TIA.7.t
 	desc = TIA.7.desc
@@ -122,7 +141,8 @@ country_event = { #福克罗德
 	}
 }
 
-country_event = { #舞会事件
+country_event = {
+	#舞会事件
 	id = TIA.8
 	title = TIA.8.t
 	desc = TIA.8.desc
@@ -137,7 +157,8 @@ country_event = { #舞会事件
 	}
 }
 
-country_event = { #剑术大会便当
+country_event = {
+	#剑术大会便当
 	id = TIA.9
 	title = TIA.9.t
 	desc = TIA.9.desc
@@ -152,7 +173,8 @@ country_event = { #剑术大会便当
 	}
 }
 
-country_event = { #铁路人偶大受欢迎
+country_event = {
+	#铁路人偶大受欢迎
 	id = TIA.101
 	title = TIA.101.t
 	desc = TIA.101.desc
@@ -165,26 +187,707 @@ country_event = { #铁路人偶大受欢迎
 		add_stability = 0.05
 	}
 }
+
 country_event = {
-	id = tiam.101
-	
-	hidden = yes
-
+	#参加TRA
+	id = TIA.102
+	title = TIA.102.t
+	desc = TIA.102.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
 	is_triggered_only = yes
-
-	immediate = {
-		hidden_effect = {
-			if = {
-				limit = { has_idea = TIA_cash_from_albion_treaty }
-				TIA_calculate_blockade_rate = yes
-				country_event = { id = tiam.101 days = 1 }
+	option = {
+		name = TIA.102.a
+		set_country_flag = TIA_take_part_in_TRA
+	}
+	option = {
+		name = TIA.102.b
+		trigger = {
+			NOT = {
+				tag = TIA
+			}
+		}
+		TIA = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = TIA_refuse_to_take_part_in_TRA
 			}
 		}
 	}
 }
 
+country_event = {
+	#会议议程1——最高机构
+	id = TIA.103
+	title = TIA.103.t
+	desc = TIA.103.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.103.a
+		ai_chance = {
+			base = 10000
+		}
+		add_to_variable = {
+			global.TIA_everycountry_ratio_lead_TRA = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = TIA_waiting_for_result.1
+				days = 7
+			}
+		}
+	}
+	option = {
+		name = TIA.103.b
+		ai_chance = {
+			base = 0
+		}
+		add_to_variable = {
+			global.TIA_TIA_lead_TRA = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = TIA_waiting_for_result.1
+				days = 7
+			}
+		}
+	}
+}
 
-country_event = { 
+country_event = {
+	#会议议程1—等待结果
+	id = TIA_waiting_for_result.1
+	title = TIA_waiting_for_result.1.t
+	desc = TIA_waiting_for_result.1.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA_waiting_for_result.1.a
+		if = {
+			limit = {
+				check_variable = {
+					global.TIA_TIA_lead_TRA > global.TIA_everycountry_ratio_lead_TRA
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = TIA.105
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.TIA_TIA_lead_TRA < global.TIA_everycountry_ratio_lead_TRA
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = TIA.104
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	#会议议程1——最高机构——各国比例组建
+	id = TIA.104
+	title = TIA.104.t
+	desc = TIA.104.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.104.a
+		set_global_flag = TRA_everycountry_ratio_lead_TRA
+	}
+}
+
+country_event = {
+	#会议议程1——最高机构——堤亚穆主导
+	id = TIA.105
+	title = TIA.105.t
+	desc = TIA.105.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.105.a
+		set_global_flag = TRA_TIA_lead_TRA
+	}
+}
+
+country_event = {
+	#会议议程2——铁路路权
+	id = TIA.106
+	title = TIA.106.t
+	desc = TIA.106.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.106.a
+		add_to_variable = {
+			global.TIA_asymptotic_reform_railway_power = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = TIA_waiting_for_result.2
+				days = 7
+			}
+		}
+	}
+	option = {
+		name = TIA.106.b
+		add_to_variable = {
+			global.TIA_radical_reforms_railway_power = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = TIA_waiting_for_result.2
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = {
+	#会议议程2—等待结果
+	id = TIA_waiting_for_result.2
+	title = TIA_waiting_for_result.2.t
+	desc = TIA_waiting_for_result.2.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA_waiting_for_result.2.a
+		if = {
+			limit = {
+				check_variable = {
+					global.TIA_asymptotic_reform_railway_power > global.TIA_radical_reforms_railway_power
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = TIA.107
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.TIA_asymptotic_reform_railway_power < global.TIA_radical_reforms_railway_power
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = TIA.108
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	#会议议程2——铁路路权——渐近改革
+	id = TIA.107
+	title = TIA.107.t
+	desc = TIA.107.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.107.a
+		set_global_flag = TRA_asymptotic_reform_railway_power
+	}
+}
+
+country_event = {
+	#会议议程2——铁路路权——激进改革
+	id = TIA.108
+	title = TIA.108.t
+	desc = TIA.108.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.108.a
+		set_global_flag = TRA_radical_reforms_railway_power
+	}
+}
+
+country_event = {
+	#会议议程3——铁路同盟基金
+	id = TIA.109
+	title = TIA.109.t
+	desc = TIA.109.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.109.a
+		add_to_variable = {
+			global.TIA_Share_budget_together = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = TIA_waiting_for_result.3
+				days = 7
+			}
+		}
+	}
+	option = {
+		name = TIA.109.b
+		add_to_variable = {
+			global.TIA_Strategic_Project_Financing = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = TIA_waiting_for_result.3
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = {
+	#会议议程3—等待结果
+	id = TIA_waiting_for_result.3
+	title = TIA_waiting_for_result.3.t
+	desc = TIA_waiting_for_result.3.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA_waiting_for_result.3.a
+		if = {
+			limit = {
+				check_variable = {
+					global.TIA_Share_budget_together > global.TIA_Strategic_Project_Financing
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = TIA.110
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.TIA_Share_budget_together < global.TIA_Strategic_Project_Financing
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = TIA.111
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	#会议议程2——铁路同盟基金——共同分摊预算
+	id = TIA.110
+	title = TIA.110.t
+	desc = TIA.110.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.110.a
+		set_global_flag = TRA_Share_budget_together
+	}
+}
+
+country_event = {
+	#会议议程2——铁路同盟基金——战略项目融资
+	id = TIA.111
+	title = TIA.111.t
+	desc = TIA.111.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.111.a
+		set_global_flag = TRA_Strategic_Project_Financing
+	}
+}
+
+country_event = {
+	#会议议程4——统一安全规范
+	id = TIA.112
+	title = TIA.112.t
+	desc = TIA.112.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.112.a
+		add_to_variable = {
+			global.TIA_Strongly_promote_ARSC = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = TIA_waiting_for_result.4
+				days = 7
+			}
+		}
+	}
+	option = {
+		name = TIA.112.b
+		add_to_variable = {
+			global.TIA_Voluntarily_choose_ARSC = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = TIA_waiting_for_result.4
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = {
+	#会议议程4—等待结果
+	id = TIA_waiting_for_result.4
+	title = TIA_waiting_for_result.4.t
+	desc = TIA_waiting_for_result.4.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA_waiting_for_result.4.a
+		if = {
+			limit = {
+				check_variable = {
+					global.TIA_Strongly_promote_ARSC > global.TIA_Voluntarily_choose_ARSC
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = TIA.113
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					global.TIA_Strongly_promote_ARSC < global.TIA_Voluntarily_choose_ARSC
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = TIA.114
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	#会议议程4——统一安全规范——强推同盟级铁路安全认证
+	id = TIA.113
+	title = TIA.113.t
+	desc = TIA.113.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.113.a
+		set_global_flag = TRA_Strongly_promote_ARSC
+	}
+}
+
+country_event = {
+	#会议议程4——统一安全规范——自愿践行同盟级铁路安全认证
+	id = TIA.114
+	title = TIA.114.t
+	desc = TIA.114.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.114.a
+		set_global_flag = TRA_Voluntarily_choose_ARSC
+	}
+}
+
+country_event = {
+	#会议议程5——武装力量的设立
+	id = TIA.115
+	title = TIA.115.t
+	desc = TIA.115.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.115.a
+		add_to_variable = {
+			global.TIA_PAF_SF_had = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = TIA_waiting_for_result.5
+				days = 7
+			}
+		}
+	}
+	option = {
+		name = TIA.112.b
+		add_to_variable = {
+			global.TIA_SF_had = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = TIA_waiting_for_result.5
+				days = 7
+			}
+		}
+	}
+	option = {
+		name = TIA.112.c
+		add_to_variable = {
+			global.TIA_none_force = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = TIA_waiting_for_result.5
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = {
+	#会议议程5—等待结果
+	id = TIA_waiting_for_result.5
+	title = TIA_waiting_for_result.5.t
+	desc = TIA_waiting_for_result.5.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA_waiting_for_result.5.a
+		if = {
+			limit = {
+				check_variable = {
+					AND = {
+						global.TIA_PAF_SF_had > global.TIA_SF_had
+						global.TIA_PAF_SF_had > global.TIA_none_force
+					}
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = TIA.116
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					AND = {
+						global.TIA_SF_had > global.TIA_PAF_SF_had
+						global.TIA_SF_had > global.TIA_none_force
+					}
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = TIA.117
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					AND = {
+						global.TIA_none_force > global.TIA_PAF_SF_had
+						global.TIA_none_force > global.TIA_SF_had
+					}
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = TIA.118
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	#会议议程5——武装力量的设立——设立专业武装力量和治安武装力量
+	id = TIA.116
+	title = TIA.116.t
+	desc = TIA.116.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.116.a
+		set_global_flag = TRA_PAF_SF_had
+	}
+}
+
+country_event = {
+	#会议议程5——武装力量的设立——仅设立治安武装力量
+	id = TIA.117
+	title = TIA.117.t
+	desc = TIA.117.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.117.a
+		set_global_flag = TRA_PAF_SF_had
+	}
+}
+
+country_event = {
+	#会议议程5—武装力量的设立—非军事化
+	id = TIA.118
+	title = TIA.118.t
+	desc = TIA.118.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.118.a
+		set_global_flag = TRA_none_force
+	}
+}
+
+country_event = {
+	#闭幕
+	id = TIA.119
+	title = TIA.119.t
+	desc = TIA.119.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.119.a
+	}
+}
+
+country_event = {
+	#参会各国就位
+	id = TIA.120
+	title = TIA.120.t
+	desc = TIA.120.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = TIA.120.a
+		every_country = {
+			limit = {
+				has_country_flag = TIA_take_part_in_TRA
+			}
+			country_event = {
+				id = TIA.103
+				days = 15
+			}
+			country_event = {
+				id = TIA.103
+				days = 15
+			}
+			country_event = {
+				id = TIA.106
+				days = 30
+			}
+			country_event = {
+				id = TIA.109
+				days = 45
+			}
+			country_event = {
+				id = TIA.112
+				days = 60
+			}
+			country_event = {
+				id = TIA.115
+				days = 75
+			}
+			country_event = {
+				id = TIA.119
+				days = 90
+			}
+		}
+		set_variable = {
+			global.TIA_TIA_lead_TRA = 0
+		}
+		set_variable = {
+			global.TIA_everycountry_ratio_lead_TRA = 0
+		}
+		set_variable = {
+			global.TIA_asymptotic_reform_railway_power = 0
+		}
+		set_variable = {
+			global.TIA_radical_reforms_railway_power = 0
+		}
+		set_variable = {
+			global.TIA_Share_budget_together = 0
+		}
+		set_variable = {
+			global.TIA_Strategic_Project_Financing = 0
+		}
+		set_variable = {
+			global.TIA_Strongly_promote_ARSC = 0
+		}
+		set_variable = {
+			global.TIA_Voluntarily_choose_ARSC = 0
+		}
+		set_variable = {
+			global.TIA_PAF_SF_had = 0
+		}
+		set_variable = {
+			global.TIA_SF_had = 0
+		}
+		set_variable = {
+			global.TIA_none_force = 0
+		}
+	}
+}
+
+country_event = {
+	id = tiam.101
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_idea = TIA_cash_from_albion_treaty
+				}
+				TIA_calculate_blockade_rate = yes
+				country_event = {
+					id = tiam.101
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = {
 	id = TIA.1001
 	title = TIA.1001.t
 	desc = TIA.1001.desc
