@@ -1,9 +1,9 @@
 characters = {
-	CET_Morgan_le_Fay = {
-		name = Morgan_le_Fay
+	CET_Altria_Pendragon = {
+		name = Altria_Pendragon
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_CET_Morgan_le_Fay
+				large = GFX_Portrait_CET_Altria_Pendragon
 			}
 		}
 		country_leader = {
@@ -11,6 +11,49 @@ characters = {
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = -1
+		}
+	}
+	
+	CET_Meryl_Ambrosius = {
+		name = Meryl_Ambrosius
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CET_Meryl_Ambrosius
+				small = GFX_idea_advisor_CET_Meryl_Ambrosius
+			}
+			army = {
+				large = GFX_Portrait_CET_Meryl_Ambrosius
+				small = GFX_idea_advisor_CET_Meryl_Ambrosius
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = CET_Meryl_Ambrosius_head_of_government
+			allowed = {
+				original_tag = CET
+			}
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { legendary_magician temperamental_meryl head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:CET_Meryl_Ambrosius_head_of_government }
+				}
+			}
+		}
+	}
+
+	CET_Morgan_le_Fay = {
+		name = Morgan_le_Fay
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CET_Morgan_le_Fay
+			}
 		}
 	}
 }
