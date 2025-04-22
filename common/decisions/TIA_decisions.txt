@@ -1266,27 +1266,119 @@ TIA_TRA_meeting_decisions = {
 		visible = {
 			has_global_flag = TRA_everycountry_ratio_lead_TRA
 		}
-		is_good = yes
-		fire_only_once = yes
-		timeout_effect = {
+		available = {
+			has_global_flag = TRA_unavailable_decisions
 		}
+		fire_only_once = yes
 	}
 	TIA_TRA_1_TIA_lead_TRA = {
 		priority = 100
 		visible = {
 			has_global_flag = TRA_TIA_lead_TRA
 		}
-		is_good = yes
-		fire_only_once = yes
-		timeout_effect = {
+		available = {
+			has_global_flag = TRA_unavailable_decisions
 		}
+		fire_only_once = yes
+	}
+	TIA_TRA_2_asymptotic_reform_railway_power = {
+		priority = 100
+		visible = {
+			has_global_flag = TRA_asymptotic_reform_railway_power
+		}
+		available = {
+			has_global_flag = TRA_unavailable_decisions
+		}
+		fire_only_once = yes
+	}
+	TIA_TRA_2_radical_reforms_railway_power = {
+		priority = 100
+		visible = {
+			has_global_flag = TIA_radical_reforms_railway_power
+		}
+		available = {
+			has_global_flag = TRA_unavailable_decisions
+		}
+		fire_only_once = yes
+	}
+	TIA_TRA_3_Share_budget_together = {
+		priority = 100
+		visible = {
+			has_global_flag = TRA_Share_budget_together
+		}
+		available = {
+			has_global_flag = TRA_unavailable_decisions
+		}
+		fire_only_once = yes
+	}
+	TIA_TRA_3_Strategic_Project_Financing = {
+		priority = 100
+		visible = {
+			has_global_flag = TRA_Strategic_Project_Financing
+		}
+		available = {
+			has_global_flag = TRA_unavailable_decisions
+		}
+		fire_only_once = yes
+	}
+	TIA_TRA_4_Strongly_promote_ARSC = {
+		priority = 100
+		visible = {
+			has_global_flag = TRA_Strongly_promote_ARSC
+		}
+		available = {
+			has_global_flag = TRA_unavailable_decisions
+		}
+		fire_only_once = yes
+	}
+	TIA_TRA_4_Voluntarily_choose_ARSC = {
+		priority = 100
+		visible = {
+			has_global_flag = TRA_Voluntarily_choose_ARSC
+		}
+		available = {
+			has_global_flag = TRA_unavailable_decisions
+		}
+		fire_only_once = yes
+	}
+	TIA_TRA_5_PAF_SF_had = {
+		priority = 100
+		visible = {
+			has_global_flag = TRA_PAF_SF_had
+		}
+		available = {
+			has_global_flag = TRA_unavailable_decisions
+		}
+		fire_only_once = yes
+	}
+	TIA_TRA_5_SF_had = {
+		priority = 100
+		visible = {
+			has_global_flag = TRA_SF_had
+		}
+		available = {
+			has_global_flag = TRA_unavailable_decisions
+		}
+		fire_only_once = yes
+	}
+	TIA_TRA_5_none_force = {
+		priority = 100
+		visible = {
+			has_global_flag = TRA_none_force
+		}
+		available = {
+			has_global_flag = TRA_unavailable_decisions
+		}
+		fire_only_once = yes
 	}
 	TIA_TRA_exit_TRA = {
 		priority = 90
 		allowed = {
-			has_country_flag = TIA_take_part_in_TRA
+			has_country_flag = TRA_take_part_in_TRA
 		}
-		ai_will_do = 0
+		ai_will_do = {
+			factor = 0
+		}
 		complete_effect = {
 			clr_country_flag = TIA_take_part_in_TRA
 		}

@@ -199,6 +199,9 @@ country_event = {
 	option = {
 		name = TIA.102.a
 		set_country_flag = TIA_take_part_in_TRA
+		ai_chance = {
+			base = 100
+		}
 	}
 	option = {
 		name = TIA.102.b
@@ -206,6 +209,9 @@ country_event = {
 			NOT = {
 				tag = TIA
 			}
+		}
+		ai_chance = {
+			base = 0
 		}
 		TIA = {
 			add_opinion_modifier = {
@@ -243,6 +249,10 @@ country_event = {
 		name = TIA.103.b
 		ai_chance = {
 			base = 0
+			modifier = {
+				add = 100
+				tag = TIA
+			}
 		}
 		add_to_variable = {
 			global.TIA_TIA_lead_TRA = 1
@@ -335,6 +345,9 @@ country_event = {
 		name = TIA.106.a
 		add_to_variable = {
 			global.TIA_asymptotic_reform_railway_power = 1
+		}
+		ai_chance = {
+			base = 10
 		}
 		hidden_effect = {
 			country_event = {
@@ -449,6 +462,9 @@ country_event = {
 		add_to_variable = {
 			global.TIA_Strategic_Project_Financing = 1
 		}
+		ai_chance = {
+			base = 10
+		}
 		hidden_effect = {
 			country_event = {
 				id = TIA_waiting_for_result.3
@@ -550,6 +566,9 @@ country_event = {
 		add_to_variable = {
 			global.TIA_Voluntarily_choose_ARSC = 1
 		}
+		ai_chance = {
+			base = 10
+		}
 		hidden_effect = {
 			country_event = {
 				id = TIA_waiting_for_result.4
@@ -647,9 +666,12 @@ country_event = {
 		}
 	}
 	option = {
-		name = TIA.112.b
+		name = TIA.115.b
 		add_to_variable = {
 			global.TIA_SF_had = 1
+		}
+		ai_chance = {
+			base = 10
 		}
 		hidden_effect = {
 			country_event = {
@@ -659,7 +681,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = TIA.112.c
+		name = TIA.115.c
 		add_to_variable = {
 			global.TIA_none_force = 1
 		}
@@ -684,9 +706,11 @@ country_event = {
 		name = TIA_waiting_for_result.5.a
 		if = {
 			limit = {
-				check_variable = {
-					AND = {
+				AND = {
+					check_variable = {
 						global.TIA_PAF_SF_had > global.TIA_SF_had
+					}
+					check_variable = {
 						global.TIA_PAF_SF_had > global.TIA_none_force
 					}
 				}
@@ -700,9 +724,11 @@ country_event = {
 		}
 		if = {
 			limit = {
-				check_variable = {
-					AND = {
+				AND = {
+					check_variable = {
 						global.TIA_SF_had > global.TIA_PAF_SF_had
+					}
+					check_variable = {
 						global.TIA_SF_had > global.TIA_none_force
 					}
 				}
@@ -716,9 +742,11 @@ country_event = {
 		}
 		if = {
 			limit = {
-				check_variable = {
-					AND = {
+				AND = {
+					check_variable = {
 						global.TIA_none_force > global.TIA_PAF_SF_had
+					}
+					check_variable = {
 						global.TIA_none_force > global.TIA_SF_had
 					}
 				}
@@ -803,8 +831,8 @@ country_event = {
 				has_country_flag = TIA_take_part_in_TRA
 			}
 			country_event = {
-				id = TIA.103
-				days = 15
+				id = TIA.121
+				days = 1
 			}
 			country_event = {
 				id = TIA.103
@@ -864,6 +892,19 @@ country_event = {
 		set_variable = {
 			global.TIA_none_force = 0
 		}
+	}
+}
+
+country_event = {
+	#开幕
+	id = TIA.121
+	title = TIA.121.t
+	desc = TIA.121.desc
+	picture = GFX_report_event_TIA_
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.121.a
 	}
 }
 

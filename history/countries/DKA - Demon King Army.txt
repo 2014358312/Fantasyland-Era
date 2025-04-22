@@ -1,15 +1,11 @@
-﻿capital = 218
-
+﻿capital = 512
 set_oob = DKA_1000_nsb
-
 add_manpower = 280000
-
 set_research_slots = 4
 set_convoys = 80
 set_stability = 0.65
 set_war_support = 0.35
-starting_train_buffer = 2.0
-
+starting_train_buffer = 2
 set_technology = {
 	basic_train = 1
 	### Infantry ###
@@ -18,8 +14,9 @@ set_technology = {
 	tech_support = 1
 	tech_engineers = 1
 }
+
 set_technology = {
-	tech_recon = 1		
+	tech_recon = 1
 	tech_mountaineers = 1
 	tech_trucks = 1
 	motorised_infantry = 1
@@ -28,7 +25,7 @@ set_technology = {
 }
 
 recruit_character = DKA_Ariel
-add_ideas ={
+add_ideas = {
 	The_resistance_of_the_Asian_ethnic_group
 	Strong_demon_soldiers
 	Believe_in_brute_force
@@ -51,10 +48,12 @@ add_equipment_to_stockpile = {
 	type = infantry_equipment_1
 	amount = 8000
 }
+
 add_equipment_to_stockpile = {
 	type = support_equipment_1
 	amount = 1000
 }
+
 add_equipment_to_stockpile = {
 	type = artillery_equipment_1
 	amount = 800
@@ -76,8 +75,6 @@ set_technology = {
 	support_weapons = 1
 	support_weapons2 = 1
 	paratroopers = 1
-	
-
 	#doctrines
 	delay = 1
 	elastic_defence = 1
@@ -88,10 +85,9 @@ set_technology = {
 	unrestricted_submarine_warfare = 1
 	raider_patrols = 1
 	#air
-	formation_flying = 1		
+	formation_flying = 1
 	dive_bombing = 1
 	direct_ground_support = 1
-
 	#electronics
 	electronic_mechanical_engineering = 1
 	radio = 1
@@ -100,7 +96,6 @@ set_technology = {
 	computing_machine = 1
 	basic_encryption = 1
 	basic_decryption = 1
-
 	#industry
 	basic_machine_tools = 1
 	improved_machine_tools = 1
@@ -115,17 +110,17 @@ set_technology = {
 	dispersed_industry2 = 1
 	dispersed_industry3 = 1
 	dispersed_industry4 = 1
-
 }
 
 set_power_balance = {
-	id = DKA_The_Queen_Mood 
+	id = DKA_The_Queen_Mood
 	set_default = yes
 }
 
-
 if = {
-	limit = { has_dlc = "Man the Guns" }
+	limit = {
+		has_dlc = "Man the Guns"
+	}
 	set_technology = {
 		basic_naval_mines = 1
 		submarine_mine_laying = 1
@@ -157,14 +152,17 @@ if = {
 	}
 	set_naval_oob = "DKA_1000_naval_mtg"
 }
+
 if = {
-	limit = { has_dlc = "Man the Guns" }
+	limit = {
+		has_dlc = "Man the Guns"
+	}
 	create_equipment_variant = {
 		name = "Deutschland"
 		type = ship_hull_cruiser_panzerschiff
 		parent_version = 0
 		modules = {
-        	fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
 			fixed_ship_battery_slot = ship_heavy_battery_2
 			fixed_ship_secondaries_slot = ship_secondaries_1
 			fixed_ship_armor_slot = ship_armor_cruiser_1
@@ -172,7 +170,7 @@ if = {
 			fixed_ship_engine_slot = cruiser_ship_engine_2
 			rear_1_custom_slot = ship_torpedo_1
 			mid_1_custom_slot = ship_airplane_launcher_1
-    	}
+		}
 	}
 	create_equipment_variant = {
 		name = "Type 24"
@@ -424,5 +422,3 @@ if = {
 		}
 	}
 }
-
-
