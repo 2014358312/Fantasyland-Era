@@ -523,4 +523,49 @@ characters = {
 			legacy_id = -1
 		}
 	}
+
+	RGC_York =  = {
+		name = RGC_York
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_RGC_York
+				small = GFX_idea_advisor_RGC_York
+			}
+			army = {
+				large = GFX_Portrait_RGC_York
+				small = GFX_idea_advisor_RGC_York
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = RGC_York_head_of_government
+			allowed = {
+				OR = {
+					original_tag = RGC
+					original_tag = KPR
+				}
+			}
+			can_be_fired = no
+			traits = { RGC_safe_hands head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				base = 1.000
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:RGC_York_head_of_government }
+				}
+			}
+		}
+		field_marshal = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
 }
