@@ -57,12 +57,6 @@ scripted_gui = {
 				index = council_member_idx
 				value = council_member_idv
 			}
-			congressStateDiaContainer = {
-				array = congressStateX
-				change_scope = no
-				entry_container = congressStateContainer
-				index = state_seat_idx
-			}
 		}
 
 		properties = {
@@ -71,17 +65,24 @@ scripted_gui = {
 				y = congressCouncilY^council_seat_idx
 				frame = congressCouncilFrame^council_seat_idx
 			}
-			congressStateSeatGUI = {
-				x = congressStateX^state_seat_idx
-				y = congressStateY^state_seat_idx
-				frame = congressStateFrame^state_seat_idx
-			}
 			congressCouncilMemberGUI = {
 				image = "GFX_landsol_congress_council_union"
 				frame = congressCouncilMemberArray^council_member_idx
 			}
 			commissioner = {
 				image = "GFX_landsol_congress_council_member_[?current_member]"
+			}
+			LANCongressTabSidebarIcon = {
+				image = "GFX_landsol_congress_tab_sidebar_image_[?landsol_congress_tab_sidebar]"
+			}
+			LANCongressTab1 = {
+				frame = landsol_congress_tab_1
+			}
+			LANCongressTab2 = {
+				frame = landsol_congress_tab_2
+			}
+			LANCongressTab3 = {
+				frame = landsol_congress_tab_3
 			}
 		}
 		
@@ -92,12 +93,28 @@ scripted_gui = {
 			close_button_click = {
 				clr_country_flag = LAN_landsol_congress_main_flag
 				set_variable = { LAN_landsol_congress_main_tab_var = 1 }
+				set_variable = { landsol_congress_tab_1 = 1 }
+				set_variable = { landsol_congress_tab_2 = 2 }
 			}
 			LANCongressTab1_click = {
+				set_variable = { landsol_congress_tab_1 = 1 }
+				set_variable = { landsol_congress_tab_2 = 2 }
 				set_variable = { LAN_landsol_congress_main_tab_var = 1 }
+				set_variable = { landsol_congress_tab_sidebar = 1 }
 			}
 			LANCongressTab2_click = {
+				set_variable = { landsol_congress_tab_1 = 2 }
+				set_variable = { landsol_congress_tab_2 = 1 }
 				set_variable = { LAN_landsol_congress_main_tab_var = 2 }
+				if = {
+					limit = { check_variable = { landsol_congress_tab_2_1 = 1 } }
+					set_variable = { landsol_congress_tab_sidebar = 2 }
+				}
+				else_if = {
+					limit = { check_variable = { landsol_congress_tab_2_1 = 2 } }
+					set_variable = { landsol_congress_tab_sidebar = 3 }
+				}
+				else = { set_variable = { landsol_congress_tab_sidebar = 1 } }
 			}
 			congressCouncilSeatGUI_click = {
 				for_each_loop = {
@@ -243,14 +260,31 @@ scripted_gui = {
 		}
 	}
 	
-	landsol_congress_main_tab_2_ui = {
+	landsol_congress_main_tab_2_1_ui = {
 		context_type = player_context
-		window_name = "landsol_congress_main_tab_2"
+		window_name = "landsol_congress_main_tab_2_1"
 		parent_window_name = landsol_congress_main
 		visible = {
 			#always = no
 			has_country_flag = LAN_landsol_congress_main_flag
 			check_variable = { LAN_landsol_congress_main_tab_var = 2 }
+		}
+
+		properties = {
+			congressStateSeatGUI = {
+				x = congressStateX^state_seat_idx
+				y = congressStateY^state_seat_idx
+				frame = congressStateFrame^state_seat_idx
+			}
+		}
+		
+		dynamic_lists = {
+			congressStateDiaContainer = {
+				array = congressStateX
+				change_scope = no
+				entry_container = congressStateContainer
+				index = state_seat_idx
+			}
 		}
 	}
 	

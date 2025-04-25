@@ -74,54 +74,6 @@ guiTypes = {
 		background = {
 			name = "Background"
 		}
-			
-		buttonType = { 
-			name = "LANCongressTab1"
-			position = { x = 0 y = 0 }
-			quadTextureSprite = "GFX_tab_large"
-		}
-		
-		instantTextboxType = {
-			name = "LANCongressTab1Text"
-			position = { x = 0 y = 10 }
-			font = "hoi_18mbs"
-			text = LAN_congress_tab_1_text
-			format = center
-			maxWidth = 258
-			alwaystransparent = yes
-		}
-			
-		buttonType = { 
-			name = "LANCongressTab2"
-			position = { x = 250 y = 0 }
-			quadTextureSprite = "GFX_tab_large"
-		}
-		
-		instantTextboxType = {
-			name = "LANCongressTab2Text"
-			position = { x = 250 y = 10 }
-			font = "hoi_18mbs"
-			text = LAN_congress_tab_2_text
-			format = center
-			maxWidth = 258
-			alwaystransparent = yes
-		}
-			
-		iconType = { 
-			name = "LANCongressTab3"
-			position = { x = 505 y = 5 }
-			quadTextureSprite = "GFX_tab_medium"
-		}
-		
-		instantTextboxType = {
-			name = "LANCongressTab3Text"
-			position = { x = 505 y = 10 }
-			font = "hoi_18mbs"
-			text = LAN_congress_tab_3_text
-			format = center
-			maxWidth = 210
-			alwaystransparent = yes
-		}
 		
 		containerWindowType = {
 			name = "landsol_congress_main_tab"
@@ -130,18 +82,7 @@ guiTypes = {
 			
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_plain_bg"
-			}
-			
-			buttonType = {
-				name = "close_button"
-				position = { x = -50 y = 5 }
-				quadTextureSprite ="GFX_closebutton"
-				buttonFont = "Main_14_black"
-				shortcut = "ESCAPE"
-				Orientation = "UPPER_RIGHT"
-				clicksound = click_close
-				pdx_tooltip = "CLOSE"
+				quadTextureSprite ="GFX_tiled_bg"
 			}
 			
 			containerWindowType = {
@@ -174,7 +115,6 @@ guiTypes = {
 					name = "LANCongressTabSidebarIcon"
 					position = { x = 22 y = 50 }
 					quadTextureSprite = "GFX_Portrait_LAN_Eustiana_von_Astraea"
-					#quadTextureSprite = "GFX_Portrait_LAN_Momochi_Kiruya_alt2"
 				}
 			}
 		
@@ -286,11 +226,71 @@ guiTypes = {
 					}
 				}
 			}
+			
+			buttonType = {
+				name = "close_button"
+				position = { x = -50 y = 14 }
+				quadTextureSprite ="GFX_closebutton_small"
+				buttonFont = "Main_14_black"
+				shortcut = "ESCAPE"
+				Orientation = "UPPER_RIGHT"
+				clicksound = click_close
+				pdx_tooltip = "CLOSE"
+			}
+		}
+			
+		buttonType = { 
+			name = "LANCongressTab1"
+			position = { x = 15 y = 0 }
+			quadTextureSprite = "GFX_tab_large"
+		}
+		
+		instantTextboxType = {
+			name = "LANCongressTab1Text"
+			position = { x = 15 y = 10 }
+			font = "hoi_18mbs"
+			text = LAN_country_authority_gui_tab_1_text
+			format = center
+			maxWidth = 258
+			alwaystransparent = yes
+		}
+			
+		buttonType = { 
+			name = "LANCongressTab2"
+			position = { x = 270 y = 0 }
+			quadTextureSprite = "GFX_tab_large"
+		}
+		
+		instantTextboxType = {
+			name = "LANCongressTab2Text"
+			position = { x = 270 y = 10 }
+			font = "hoi_18mbs"
+			text = LAN_country_authority_gui_tab_2_text
+			format = center
+			maxWidth = 258
+			alwaystransparent = yes
+		}
+			
+		iconType = { 
+			name = "LANCongressTab3"
+			position = { x = 525 y = 0 }
+			quadTextureSprite = "GFX_tab_large"
+			pdx_tooltip = LAN_country_authority_chief_justice
+		}
+		
+		instantTextboxType = {
+			name = "LANCongressTab3Text"
+			position = { x = 525 y = 10 }
+			font = "hoi_18mbs"
+			text = LAN_country_authority_gui_tab_3_text
+			format = center
+			maxWidth = 258
+			alwaystransparent = yes
 		}
 	}
 		
 	containerWindowType = {
-		name = "landsol_congress_main_tab_2"
+		name = "landsol_congress_main_tab_2_1"
 		position = { x = 220 y = 70 }
 		size = { width = 570 height = 400 }
 		
@@ -300,18 +300,24 @@ guiTypes = {
 		}
 		
 		containerWindowType = {
-			name = "landsol_congress_main_tab_2_1"
+			name = "landsol_congress_main_tab_2_1_box"
 			position = { x = 0 y = 0 }
 			size = { width = 570 height = 400 }
-	
+			
+			background = {
+				name = "background"
+				quadTextureSprite = "GFX_tiled_plain_no_border_bg"
+			}
+			
 			containerWindowType = {
 				name = "landsol_congress_common_main"
 				position = { x = 0 y = 0 }
 				size = { width = 570 height = 400 }
-				
-				background = {
-					name = "background"
-					quadTextureSprite = "GFX_tiled_window_gameui_pure_border"
+					
+				iconType = { 
+					name = "commiss2ioner_frame"
+					quadTextureSprite = "GFX_landsol_congress_leader_frame"
+					position= { x=20 y = 20 }
 				}
 			
 				containerWindowType = {
