@@ -546,11 +546,14 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = -10
-			set_victory_points = {
-				province = 6190
+			add_victory_points = {
+				province = 455
 				value = 10
 			}
-			# set_province_name = { id = 239 name = "皇女镇" }
+			set_province_name = {
+				id = 455
+				name = "皇女镇"
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -977,9 +980,20 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 25
-			swap_ideas = {
-				remove_idea = TIA_financial_emergency_2
-				add_idea = TIA_financial_emergency_3
+			if = {
+				limit = {
+					has_idea = TIA_financial_emergency_2
+				}
+				swap_ideas = {
+					remove_idea = TIA_financial_emergency_2
+					add_idea = TIA_financial_emergency_3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = TIA_financial_emergency_3
+				}
+				remove_ideas = TIA_financial_emergency_3
 			}
 			add_stability = 0.05
 			10 = {
@@ -1054,6 +1068,21 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
+			if = {
+				limit = {
+					has_idea = TIA_financial_emergency_2
+				}
+				swap_ideas = {
+					remove_idea = TIA_financial_emergency_2
+					add_idea = TIA_financial_emergency_3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = TIA_financial_emergency_3
+				}
+				remove_ideas = TIA_financial_emergency_3
+			}
 		}
 		ai_will_do = {
 			factor = 1
