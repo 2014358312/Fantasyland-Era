@@ -85,9 +85,19 @@ scripted_gui = {
 			}
 		}
 		
+		triggers = {
+		}
+		
 		effects = {
 			close_button_click = {
 				clr_country_flag = LAN_landsol_congress_main_flag
+				set_variable = { LAN_landsol_congress_main_tab_var = 1 }
+			}
+			LANCongressTab1_click = {
+				set_variable = { LAN_landsol_congress_main_tab_var = 1 }
+			}
+			LANCongressTab2_click = {
+				set_variable = { LAN_landsol_congress_main_tab_var = 2 }
 			}
 			congressCouncilSeatGUI_click = {
 				for_each_loop = {
@@ -230,6 +240,17 @@ scripted_gui = {
 				
 				set_variable = { current_member = current_union }
 			}
+		}
+	}
+	
+	landsol_congress_main_tab_2_ui = {
+		context_type = player_context
+		window_name = "landsol_congress_main_tab_2"
+		parent_window_name = landsol_congress_main
+		visible = {
+			#always = no
+			has_country_flag = LAN_landsol_congress_main_flag
+			check_variable = { LAN_landsol_congress_main_tab_var = 2 }
 		}
 	}
 	
