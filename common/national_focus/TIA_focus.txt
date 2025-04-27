@@ -1049,6 +1049,7 @@ focus_tree = {
 					level = 3
 					instant_build = yes
 				}
+				set_state_category = metropolis
 			}
 		}
 		ai_will_do = {
@@ -1083,6 +1084,18 @@ focus_tree = {
 				}
 				remove_ideas = TIA_financial_emergency_3
 			}
+			build_railway = {
+				level = 4
+				path = {
+					897
+					5001
+					4484
+					6216
+					6197
+					46
+					4895
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1101,6 +1114,24 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
+			add_victory_points = {
+				province = 897
+				value = 15
+			}
+			262 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				set_state_category = large_town
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1168,7 +1199,9 @@ focus_tree = {
 			focus = TIA_Centrally_set_taxes
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_political_power = 250
+			add_war_support = 0.05
+			add_ideas = TIA_urban_tax_autonomy
 		}
 		ai_will_do = {
 			factor = 1
@@ -1189,7 +1222,9 @@ focus_tree = {
 			focus = TIA_City_self_determination_taxes
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_political_power = -50
+			add_stability = 0.05
+			add_ideas = TIA_central_tax_control
 		}
 		ai_will_do = {
 			factor = 1
@@ -1269,8 +1304,31 @@ focus_tree = {
 		prerequisite = {
 			focus = TIA_never_too_late_to_mend
 		}
+		available = {
+			has_war_support > 0.7
+			has_war = no
+		}
 		completion_reward = {
-			add_political_power = 50
+			create_wargoal = {
+				target = PLA
+				type = take_state_focus
+			}
+			create_wargoal = {
+				target = LEA
+				type = take_state_focus
+			}
+			create_wargoal = {
+				target = LOW
+				type = take_state_focus
+			}
+			create_wargoal = {
+				target = LAS
+				type = take_state_focus
+			}
+			add_state_claim = 1
+			add_state_claim = 2
+			add_state_claim = 3
+			add_state_claim = 4
 		}
 		ai_will_do = {
 			factor = 1
@@ -1288,7 +1346,7 @@ focus_tree = {
 			focus = TIA_War_driven_economy
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_political_power = 150
 		}
 		ai_will_do = {
 			factor = 1

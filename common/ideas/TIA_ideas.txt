@@ -194,6 +194,38 @@ ideas = {
 			on_remove = {
 			}
 		}
+		TIA_urban_tax_autonomy = {
+			picture = generic_stability
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				local_resources_factor = 0.1
+				consumer_goods_factor = -0.15
+				cic_construction_boost_factor = 0.15
+				stability_factor = -0.05
+				resistance_decay_on_our_occupied_states = -0.2
+				political_power_gain = 0.1
+			}
+		}
+		TIA_central_tax_control = {
+			picture = generic_stability
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 0.2
+				overlord_trade_cost_factor = -0.15
+				war_support_factor = 0.05
+				political_advisor_cost_factor = -0.25
+			}
+		}
 		TIA_class_discrimination = {
 			picture = generic_stability
 			allowed = {
@@ -212,6 +244,7 @@ ideas = {
 				navy_advisor_cost_factor = 0.25
 				army_advisor_cost_factor = 0.25
 				unit_leader_as_advisor_cp_cost_factor = 0.25
+				disabled_ideas = 1
 			}
 		}
 		TIA_cash_from_albion_treaty = {
