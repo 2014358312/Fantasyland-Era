@@ -117,6 +117,31 @@ guiTypes = {
 					quadTextureSprite = "GFX_Portrait_LAN_Eustiana_von_Astraea"
 				}
 			}
+			
+			containerWindowType = {
+				name = "landsol_congress_main_tab_buttombar"
+				position = { x = 20 y = 440 }
+				size = { width = 770 height = 280 }
+				
+				background = {
+					name = "background"
+					quadTextureSprite = "GFX_tiled_window_gameui_pure_border"
+				}
+				
+				containerWindowType = {
+					name = "landsol_guid_leader_detail_box"
+					position = { x = 85 y = 5 }
+					
+					gridboxtype = {
+						name = "GuidLeaderContainer"
+						position = { x = 0 y = 0 }
+						size = { width = 100%% height = 100%% }
+						slotsize = { width = 150 height = 135 }
+						max_slots_horizontal = 5
+						add_horizontal = yes
+					}
+				}
+			}
 		
 			containerWindowType = {
 				name = "landsol_congress_main_tab_1"
@@ -367,6 +392,31 @@ guiTypes = {
 		iconType = { 
 			name = "congressStateSeatGUI"
 			quadTextureSprite = "GFX_landsol_congress_seat_state"
+		}
+	}
+	
+	containerWindowType = {
+		name = "congressGuidLeaderContainer"
+		position = { x = 0 y = 0 }
+		size = { width = 150 height = 135 }
+		
+		background = {
+			name = "background"
+			quadTextureSprite = "GFX_tiled_window_gameui_pure_border"
+		}
+		
+		iconType = { 
+			name = "guid_leader_icon"
+			position = { x = 3 y = 3 }
+			quadTextureSprite = "GFX_landsol_congress_tab_buttombar_image_1"
+			pdx_tooltip = guid_leader_detail_tt
+		}
+		
+		iconType = { 
+			name = "guid_leader_icon_frame"
+			position = { x = 3 y = 3 }
+			quadTextureSprite = "GFX_landsol_congress_tab_buttombar_image_frame"
+			alwaystransparent = yes
 		}
 	}
 }
