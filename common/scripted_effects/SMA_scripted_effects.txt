@@ -709,3 +709,26 @@ SMA_upgrade_the_great_rejuvenation = {
 	add_to_variable = { SMA_the_great_rejuvenation_ws_var = 0.05 }
 	add_to_variable = { SMA_the_great_rejuvenation_idea_var = 1 }
 }
+
+SMA_check_national_industry_report_status = {
+	if = {
+		limit = {
+			NOT = { has_completed_focus = SMA_national_defense_industry }
+			has_completed_focus = SMA_rebuild_industry
+		}
+		custom_effect_tooltip = SMA_check_national_industry_report_status_tt
+		add_political_power = -50
+	}
+}
+
+SMA_add_industry_program_start_cost = {
+	custom_effect_tooltip = SMA_add_industry_program_start_cost_tt
+	add_to_variable = { SMA_industry_program_var = 25 }
+	custom_effect_tooltip = generic_skip_one_line_tt
+}
+
+SMA_subtract_industry_program_start_cost = {
+	custom_effect_tooltip = SMA_subtract_industry_program_start_cost_tt
+	subtract_from_variable = { SMA_industry_program_var = 25 }
+	custom_effect_tooltip = generic_skip_one_line_tt
+}

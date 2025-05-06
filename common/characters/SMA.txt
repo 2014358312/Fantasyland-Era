@@ -11,11 +11,23 @@ characters = {
 				small = GFX_idea_advisor_SMA_Yuuki_Asuna_army_neutrality
 			}
 		}
-		country_leader = {
-			ideology = fascism_subtype
-			traits = {  }
-			expire = "1965.1.1.1"
-			id = -1
+		advisor = {
+			slot = head_of_government
+			idea_token = SMA_Yuuki_Asuna_head_of_government
+			allowed = { original_tag = SMA }
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				base = 1.000
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:SMA_Yuuki_Asuna_head_of_government }
+				}
+			}
 		}
 	}
 	
@@ -269,6 +281,26 @@ characters = {
 			traits = { scientist_trait_fast_learner scientist_trait_resourceful scientist_trait_armored_specialist }
 			skills = {
 				specialization_land = 1
+			}
+		}
+	}
+
+	SMA_Nanairo_Arshavin = {
+		name = Nanairo_Arshavin
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_SMA_Nanairo_Arshavin
+			#	small = GFX_idea_advisor_SMA_Nanairo_Arshavin
+			#}
+			army = {
+				large = GFX_Portrait_SMA_Nanairo_Arshavin_scientist
+				small = GFX_idea_advisor_SMA_Nanairo_Arshavin
+			}
+		}
+		scientist = {
+			traits = { scientist_trait_fast_learner }
+			skills = {
+				specialization_nuclear = 1
 			}
 		}
 	}
@@ -756,16 +788,23 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = theorist
+			slot = army_chief
+			ledger = army
 			idea_token = SMA_ES_Gamma
 			allowed = { original_tag = SMA }
 			available = {
+				if = {
+					limit = { SMA_roxy_leading_military = yes }
+					SMA_roxy_is_rebuilding_army = yes
+				}
 			}
-			cost = 150
-			traits = { blitzkrieg_theorist }
+			cost = 100
+			traits = { army_chief_planning_2 }
 			ai_will_do = {
 				base = 1.000
 			}
+			on_add = { SMA_roxy_appoint = yes } 
+			on_remove = { SMA_roxy_remove = yes }
 		}
 	}
 
@@ -842,16 +881,28 @@ characters = {
 				small = GFX_idea_advisor_SMA_Iris_Midgar
 			}
 		}
+		country_leader = {
+			ideology = fascism_subtype
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = -1
+		}
 		advisor = {
-			slot = political_advisor
-			idea_token = SMA_Iris_Midgar
+			slot = head_of_government
+			idea_token = SMA_Iris_Midgar_head_of_government
 			allowed = { original_tag = SMA }
 			visible = { is_country_leader = no }
-			available = { is_country_leader = no }
-			cost = 150
-			traits = { hawk }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { hawk head_of_government_trait }
+			cost = 0
 			ai_will_do = {
 				base = 1.000
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:SMA_Iris_Midgar_head_of_government }
+				}
 			}
 		}
 	}
@@ -915,6 +966,81 @@ characters = {
 			ai_will_do = {
 				base = 1.000
 			}
+		}
+	}
+
+	SMA_Nishizumi_Maho = {
+		name = Nishizumi_Maho
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Nishizumi_Maho
+				small = GFX_idea_advisor_SMA_Nishizumi_Maho
+			}
+			army = {
+				large = GFX_Portrait_SMA_Nishizumi_Maho
+				small = GFX_idea_advisor_SMA_Nishizumi_Maho
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = SMA_Nishizumi_Maho
+			allowed = { original_tag = SMA }
+			cost = 200
+			traits = { blitzkrieg_theorist }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		field_marshal = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	SMA_Itsumi_Erika = {
+		name = Itsumi_Erika
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SMA_Itsumi_Erika
+				small = GFX_idea_advisor_SMA_Itsumi_Erika
+			}
+			army = {
+				large = GFX_Portrait_SMA_Itsumi_Erika
+				small = GFX_idea_advisor_SMA_Itsumi_Erika
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = SMA_Itsumi_Erika
+			allowed = { original_tag = SMA }
+			available = {
+				if = {
+					limit = { SMA_roxy_leading_military = yes }
+					SMA_roxy_is_rebuilding_army = yes
+				}
+			}
+			cost = 100
+			traits = { army_armored_2 }
+			on_add = { SMA_roxy_appoint = yes } 
+			on_remove = { SMA_roxy_remove = yes }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
 		}
 	}
 
@@ -1138,25 +1264,6 @@ characters = {
 				small = GFX_idea_advisor_SMA_Henrietta_von_Witzleben
 			}
 		}
-		advisor = {
-			slot = high_command
-			ledger = army
-			idea_token = SMA_Henrietta_von_Witzleben
-			allowed = { original_tag = SMA }
-			available = {
-				if = {
-					limit = { SMA_roxy_leading_military = yes }
-					SMA_roxy_is_rebuilding_army = yes
-				}
-			}
-			cost = 150
-			traits = { army_armored_3 }
-			on_add = { SMA_roxy_appoint = yes } 
-			on_remove = { SMA_roxy_remove = yes }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
 		corps_commander = {
 			traits = { }
 			skill = 1
@@ -1279,6 +1386,7 @@ characters = {
 			idea_token = SMA_Sylvia_von_Haynes
 			allowed = { original_tag = SMA }
 			available = {
+				has_country_leader = { character = SMA_Freed_Reinhardt }
 			}
 			cost = 150
 			traits = { war_industrialist }
