@@ -1,0 +1,48 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_USA_CONGRESS}
+
+focus_tree = {
+	id = ALC_focus_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ALC
+		}
+	}
+	default = no
+
+	focus = { #阿米多尼亚-艾尔弗利登站
+		id = ALC_focus_civil_war
+		icon = GFX_ALC
+		x = 0
+		y = 0
+		cost = 10
+		available = {
+			date > 1002.08.01
+		}
+		completion_reward = {
+			start_civil_war = {
+				ideology = democratic
+				size = 0.5
+				# states = all
+				# states_filter = {
+				# 	is_on_continent = europe
+				# 	is_capital = no
+				# }
+				# set_country_flag = TAG_my_country_tag_alias_trigger
+				# Sets a country flag that gets used in a country tag alias.
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

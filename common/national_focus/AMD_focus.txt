@@ -1,0 +1,38 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_USA_CONGRESS}
+
+focus_tree = {
+	id = AMD_focus_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = AMD
+		}
+	}
+	default = no
+
+	focus = { #阿米多尼亚-艾尔弗利登站
+		id = AMD_focus_AMD_ELF_war
+		icon = GFX_AMD
+		x = 0
+		y = 0
+		cost = 10
+		available = {
+			date > 1003.04.03
+		}
+		completion_reward = {
+			declare_war_on = { target = ELF type = take_state_focus }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}
