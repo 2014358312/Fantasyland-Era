@@ -247,6 +247,26 @@ ideas = {
 				disabled_ideas = 1
 			}
 		}
+		TIA_class_discrimination_1 = {
+			picture = generic_stability
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = -0.05
+				foreign_subversive_activites = 0.1
+				civilian_intel_to_others = 15
+				command_abilities_cost_factor = 0.15
+				reassignment_duration_factor = 0.15
+				air_advisor_cost_factor = 0.15
+				navy_advisor_cost_factor = 0.15
+				army_advisor_cost_factor = 0.15
+				unit_leader_as_advisor_cp_cost_factor = 0.15
+			}
+		}
 		TIA_cash_from_albion_treaty = {
 			name = ALN_treaty_with_tiam
 			picture = generic_foreign_capital
@@ -327,6 +347,26 @@ ideas = {
 				army_speed_factor = 0.1
 			}
 		}
+		TIA_import_wheat = {
+			picture = generic_stability
+			allowed = {
+			}
+			allowed_civil_war = {
+			}
+			modifier = {
+				stability_factor = 0.05
+			}
+		}
+		TIA_country_grain_reserve_plan = {
+			picture = generic_stability
+			allowed = {
+			}
+			allowed_civil_war = {
+			}
+			modifier = {
+				stability_factor = 0.15
+			}
+		}
 		TIA_no_forget_raillord_before_1 = {
 			picture = TIA_N_8_hours_work
 			allowed = {
@@ -393,6 +433,61 @@ ideas = {
 				convoy_raiding_efficiency_factor = 0.15
 				#海军速度
 				naval_speed_factor = 0.15
+			}
+		}
+		TIA_Integrate_electronic_industry = {
+			picture = generic_stability
+			allowed = {
+			}
+			allowed_civil_war = {
+			}
+			modifier = {
+				#期待的基本生活消费品
+				consumer_goods_expected_value = -0.1
+				#每座工厂交易额外资源
+				resource_trade_cost_bonus_per_factory = 15
+				#地区建筑槽位数量
+				global_building_slots = 1
+				#颠覆活动代价
+				subversive_activites_upkeep = -0.25
+				#最大指挥点数提高
+				max_command_power = 25
+				#市场建设乘数
+				cic_construction_boost_factor = 0.10
+			}
+			research_bonus = {
+				electronics = 0.1
+			}
+		}
+		TIA_Monopolize_electronic_industry = {
+			picture = generic_stability
+			allowed = {
+			}
+			allowed_civil_war = {
+			}
+			modifier = {
+				#期待的基本生活消费品
+				consumer_goods_expected_value = -0.15
+				#每座工厂交易额外资源
+				resource_trade_cost_bonus_per_factory = 15
+				#地区建筑槽位数量
+				global_building_slots = 1
+				#颠覆活动代价
+				subversive_activites_upkeep = -0.25
+				#最大指挥点数提高
+				max_command_power = 25
+				#市场建设乘数
+				cic_construction_boost_factor = 0.25
+				#资源消耗
+				country_resource_cost_oil = -10
+				country_resource_cost_aluminium = -10
+				country_resource_cost_rubber = -10
+				country_resource_cost_tungsten = -10
+				country_resource_cost_steel = -10
+				country_resource_cost_chromium = -10
+			}
+			research_bonus = {
+				electronics = 0.25
 			}
 		}
 	}
