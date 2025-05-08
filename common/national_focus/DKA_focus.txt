@@ -922,16 +922,64 @@ focus = {
 	   army_experience =20
    }
 }
+###对外事务
+focus= {
+	id = DKA_external_affairs
+	prerequisite = { focus = DKA_understand}
+	x = 2
+	y = 1
+	relative_position_id = DKA_understand
+	cost = 7
+
+	ai_will_do = {
+	   factor = 1
+   }
+
+	available = {
+   }
+
+	bypass = {
+
+   }
+
+	completion_reward = {
+	   add_war_support = 0.1
+	   army_experience =20
+   }
+}
+###准备就绪
+focus= {
+	id = DKA_ready_to_go
+	prerequisite = { focus =  DKA_external_affairs focus = DKA_Internal_affairs}
+	x = -2
+	y = 1
+	relative_position_id =  DKA_external_affairs
+	cost = 7
+
+	ai_will_do = {
+	   factor = 1
+   }
+
+	available = {
+   }
+
+	bypass = {
+
+   }
+
+	completion_reward = {
+	   add_war_support = 0.1
+	   army_experience =20
+   }
+}
 	##准备北伐
 	focus = {
 		id = DKA_Preparing_for_the_Northern_Expedition
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
-		prerequisite = { focus =DKA_Dealing_with_opposition_parties }
-		prerequisite = { focus =DKA_Establish_a_Military_Committee }
-		prerequisite = { focus =DKA_Suppressing_Resistance_demi-human }
-		relative_position_id = DKA_Rearmament
+		prerequisite = { focus =DKA_ready_to_go}
+		relative_position_id = DKA_ready_to_go
 		x = -2.5
-		y = 15
+		y = 1
 		cost = 10
 
 		ai_will_do = {
@@ -1585,9 +1633,7 @@ focus = {
 			focus = {
 						id = DKA_Preparing_for_the_Southern_Expedition
 						icon = GFX_focus_chi_cooperation_with_the_nationalists
-						prerequisite = { focus =DKA_Dealing_with_opposition_parties }
-						prerequisite = { focus =DKA_Establish_a_Military_Committee }
-						prerequisite = { focus =DKA_Suppressing_Resistance_demi-human }
+						prerequisite = { focus =DKA_ready_to_go }
 						relative_position_id = DKA_Rearmament
 						x = 2
 						y = 15
