@@ -35,14 +35,8 @@ country_event = {
 			ideology = fascism
 			popularity = 0.1
 		}
-		effect_tooltip = {
-			retire_ideology_leader = fascism
-		}
+		effect_tooltip = { promote_character = SMA_Iris_Midgar }
 		hidden_effect = {
-			remove_country_leader_role = {
-				character = SMA_Yuuki_Asuna
-				ideology = fascism_subtype
-			}
 			remove_country_leader_role = {
 				character = GIA_Richard_Turner
 				ideology = interim_government_d_subtype
@@ -57,6 +51,11 @@ country_event = {
 				}
 				promote_leader = yes
 			}
+			set_party_name = {
+				ideology = democratic
+				name = SMA_democratic_party_empire_heir
+				long_name = SMA_democratic_party_empire_heir
+			}
 			every_possible_country = {
 				limit = { is_ai = no }
 				news_event = {
@@ -66,16 +65,6 @@ country_event = {
 					random_days = 3
 				}
 			}
-		}
-		add_country_leader_role = {
-			character = SMA_Iris_Midgar
-			country_leader = {
-				ideology = corporatism_subtype
-				traits = { radical_officer }
-				expire = "1965.1.1.1"
-				id = -1
-			}
-			promote_leader = yes
 		}
 	}
 
@@ -99,22 +88,8 @@ country_event = {
 		}
 		hidden_effect = {
 			remove_country_leader_role = {
-				character = SMA_Yuuki_Asuna
-				ideology = fascism_subtype
-			}
-			remove_country_leader_role = {
 				character = GIA_Richard_Turner
 				ideology = interim_government_d_subtype
-			}
-			add_country_leader_role = {
-				character = SMA_Iris_Midgar
-				country_leader = {
-					ideology = corporatism_subtype
-					traits = { radical_officer }
-					expire = "1965.1.1.1"
-					id = -1
-				}
-				promote_leader = yes
 			}
 			every_possible_country = {
 				limit = { is_ai = no }

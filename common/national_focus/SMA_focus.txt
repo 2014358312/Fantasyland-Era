@@ -2559,7 +2559,7 @@ focus_tree = {
 		icon = GFX_focus_SMA_survival_of_democracy
 		prerequisite = { focus = SMA_fate_of_night }
 		relative_position_id = SMA_fate_of_night
-		x = 2
+		x = 6
 		y = 1
 		cost = 5
 		available = {
@@ -2568,6 +2568,34 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = SMA_revenge_for_memory
+		icon = GFX_goal_generic_attack_landsol
+		prerequisite = {
+			focus = SMA_government_of_knight
+			focus = SMA_government_of_democracy
+		}
+		relative_position_id = SMA_fate_of_night
+		x = 5
+		y = 2
+		cost = 5
+		available = {
+			is_subject = no
+		}
+		search_filters = {  }
+		completion_reward = {
+			create_wargoal = {
+				type = take_core_state
+				target = LAN
+				expire = 0
+				generator = { 82 83 84 85 }
+			}
 		}
 		ai_will_do = {
 			factor = 1
