@@ -319,7 +319,7 @@ focus_tree = {
 	focus = {
 		#确立国民信仰
 		id = TIA_ensure_national_belief
-		icon = GFX_focus_TIA_money_ciris
+		icon = GFX_focus_TIA_ensure_national_belief
 		relative_position_id = TIA_Make_change
 		x = 0
 		y = 1
@@ -1283,6 +1283,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
+			custom_effect_tooltip = TIA_trade_with_FGU_tooltip
+			custom_effect_tooltip = FGU_needs_approval
+			add_ideas = TIA_trade_with_FGU
 		}
 		ai_will_do = {
 			factor = 1
@@ -1300,7 +1303,10 @@ focus_tree = {
 			focus = TIA_Strengthen_Gamindustri_four_countries_trade
 		}
 		completion_reward = {
-			add_political_power = 50
+			swap_ideas = {
+				remove_idea = TIA_trade_with_FGU
+				add_idea = TIA_trade_with_FGU_1
+			}
 		}
 		ai_will_do = {
 			factor = 1

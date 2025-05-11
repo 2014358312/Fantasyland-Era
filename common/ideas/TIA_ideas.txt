@@ -357,6 +357,71 @@ ideas = {
 				stability_factor = 0.05
 			}
 		}
+		TIA_trade_with_FGU = {
+			picture = generic_stability
+			allowed = {
+			}
+			allowed_civil_war = {
+			}
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.1
+				trade_laws_cost_factor  = -0.1
+				economy_cost_factor = -0.1
+				political_advisor_cost_factor = -0.25
+			}
+			targeted_modifier = {
+				tag = PLA
+				trade_cost_for_target_factor = -0.5
+			}
+			targeted_modifier = {
+				tag = LAS
+				trade_cost_for_target_factor = -0.5
+			}
+			targeted_modifier = {
+				tag = LEA
+				trade_cost_for_target_factor = -0.5
+			}
+			targeted_modifier = {
+				tag = LOW
+				trade_cost_for_target_factor = -0.5
+			}
+		}
+		TIA_trade_with_FGU_1 = {
+			picture = generic_stability
+			allowed = {
+			}
+			allowed_civil_war = {
+			}
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.1
+				trade_laws_cost_factor  = -0.1
+				economy_cost_factor = -0.1
+				political_advisor_cost_factor = -0.25
+				production_speed_industrial_complex_factor = 0.05
+			}
+
+			targeted_modifier = {
+				tag = PLA
+				trade_cost_for_target_factor = -0.5
+			}
+			targeted_modifier = {
+				tag = LAS
+				trade_cost_for_target_factor = -0.5
+			}
+			targeted_modifier = {
+				tag = LEA
+				trade_cost_for_target_factor = -0.5
+			}
+			targeted_modifier = {
+				tag = LOW
+				trade_cost_for_target_factor = -0.5
+			}
+			research_bonus = {
+				electronics = 0.25
+			}
+		}
 		TIA_country_grain_reserve_plan = {
 			picture = generic_stability
 			allowed = {
@@ -445,7 +510,7 @@ ideas = {
 				#期待的基本生活消费品
 				consumer_goods_expected_value = -0.1
 				#每座工厂交易额外资源
-				resource_trade_cost_bonus_per_factory = 15
+				resource_trade_cost_bonus_per_factory = 5
 				#地区建筑槽位数量
 				global_building_slots = 1
 				#颠覆活动代价
@@ -469,7 +534,7 @@ ideas = {
 				#期待的基本生活消费品
 				consumer_goods_expected_value = -0.15
 				#每座工厂交易额外资源
-				resource_trade_cost_bonus_per_factory = 15
+				resource_trade_cost_bonus_per_factory = 5
 				#地区建筑槽位数量
 				global_building_slots = 1
 				#颠覆活动代价
@@ -479,15 +544,15 @@ ideas = {
 				#市场建设乘数
 				cic_construction_boost_factor = 0.25
 				#资源消耗
-				country_resource_cost_oil = -10
-				country_resource_cost_aluminium = -10
-				country_resource_cost_rubber = -10
-				country_resource_cost_tungsten = -10
-				country_resource_cost_steel = -10
-				country_resource_cost_chromium = -10
+				country_resource_cost_oil = -5
+				country_resource_cost_aluminium = -5
+				country_resource_cost_rubber = -5
+				country_resource_cost_tungsten = -5
+				country_resource_cost_steel = -5
+				country_resource_cost_chromium = -5
 			}
 			research_bonus = {
-				electronics = 0.25
+				electronics = -0.05
 			}
 		}
 	}
