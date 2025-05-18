@@ -1,0 +1,190 @@
+guiTypes = {
+	containerWindowType = {
+		name = "FantasylandEra_alerts_window"
+		position = { x = -250 y = 0 }
+		size = { width = 0 height = 0 }
+		orientation = upper_left
+
+		gridboxtype = {
+			name = "peace_popup_alert_grid"
+			position = { x = 0 y = 0 }
+			size = { width = 100% height = 100%% }
+			slotsize = { width = 0 height = 0 }
+		}
+	}
+
+	containerWindowType = {
+		name = "peace_popup_alert_window"
+		position = { x = 0 y = 0 }
+		size = { width = 520 height = 300 }
+		orientation = center
+		origo = center
+		moveable = yes
+		fade_time = 200
+		fade_type = linear
+		show_sound = peace_summary_message
+		hide_sound = menu_close_window
+		click_to_front = yes
+		
+		background = {
+			name = "Background"
+			quadTextureSprite = "GFX_tiled_window_pol_goal"
+		}
+
+		containerWindowType = {
+			name = "flag_layout_1"
+			position = { x = 0 y = 5 }
+			size = { width = 100%% height = 100%% }
+			clipping = yes
+
+			iconType = {
+				name = "winner_flag"
+				quadTextureSprite = "GFX_flag_small2"
+				position = { x = 32 y = 23 }
+				Orientation = "UPPER_LEFT"
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "winner_flag_frame"
+				spriteType = "GFX_diplo_countrylist_flag_frame"
+				position = { x = 28 y = 19 }
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "loser_flag"
+				quadTextureSprite = "GFX_flag_small2"
+				position = { x= -73 y = 23 }
+				Orientation = "UPPER_RIGHT"
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "loser_flag_frame"
+				spriteType = "GFX_diplo_countrylist_flag_frame"
+				position = { x= -78 y = 19 }
+				Orientation = "UPPER_RIGHT"
+				alwaystransparent = yes
+			}
+		}
+
+#		containerWindowType = {
+#			name = "flag_layout_2"
+#			position = { x = 0 y = 50 }
+#			size = { width = 100%% height = 100%% }
+#			clipping = yes
+#		
+#			iconType = {
+#				name = "flag_winner"
+#				position = { x = 20 y = 17 }
+#				quadTextureSprite = "GFX_player_flag"
+#				alwaystransparent = yes
+#			}
+#			
+#			#iconType = {
+#			#	name = "flag_winner_overlay"
+#			#	position = { x = 18 y = 16 }
+#			#	spriteType = "GFX_flag_overlay_stateview_large"
+#			#	pdx_tooltip = TNO_PEACE_POPUP_FLAG1_TT
+#			#	alwaystransparent = yes
+#			#}
+#			
+#			iconType = {
+#				name = "flag_loser"
+#				position = { x = 463 y = 17 }
+#				quadTextureSprite = "GFX_player_flag"
+#				alwaystransparent = yes
+#			}
+#			
+#			#iconType = {
+#			#	name = "flag_loser_overlay"
+#			#	position = { x = 461 y = 16 }
+#			#	spriteType = "GFX_flag_overlay_stateview_large"
+#			#	pdx_tooltip = TNO_PEACE_POPUP_FLAG2_TT
+#			#	alwaystransparent = yes
+#			#}
+#		}
+
+		instantTextBoxType = {
+			name = "title"
+			position = { x = -165 y = 30 }
+			font = "hoi_24header"
+			text = "peace_popup_alert_title"
+			maxWidth = 330
+			maxHeight = 44
+			#fixedsize = yes
+			multiline = yes
+			format = center
+			orientation = center_up
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "message"
+			position = { x = -225 y = 85 }
+			font = "hoi_20b"
+			text = "peace_popup_alert_message"
+			maxWidth = 452
+			maxHeight = 110
+			format = center
+			orientation = center_up
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "description"
+			position = { x = 35 y = 110 }
+			font = "hoi_18mbs"
+			borderSize = { x = 0 y = 0}
+			text = "peace_popup_alert_description"
+			maxWidth = 453
+			maxHeight = 72
+			format = centre
+			vertical_alignment = centre
+		}
+
+		containerWindowType = {
+			name = "progressbar"
+			position = { x = 14 y = 193 }
+			size = { width = 350 height = 12 }
+			clipping = yes
+
+			iconType = {
+				name = "progressbar_shadow"
+				spriteType = "GFX_alert_progressbar_shadow"
+				position = { x = 0 y = 0 }
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "peace_popup_alert_progressbar"
+				spriteType = "GFX_alert_progressbar"
+				position = { x = 0 y = 0 }
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "ok_windows"
+			position = { x = 10 y = 62 }
+			size = { width = 100%% height = 100%% }
+			clipping = yes
+
+			iconType = {
+				name ="diplo_popup_bottom"
+				spriteType = "GFX_diplo_popup_bottom"
+				position = { x = 3 y = 159 }
+			}
+
+			buttonType = {
+				name = "ok_button"
+				position = { x = 185 y = 175 }
+				quadTextureSprite = "GFX_button_123x34"
+				buttonText = "OK"
+				buttonFont = "hoi_18mbs"
+				shortcut = "RETURN"
+			}
+		}
+	}
+}

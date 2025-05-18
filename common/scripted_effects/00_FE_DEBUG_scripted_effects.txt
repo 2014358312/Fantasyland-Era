@@ -5,26 +5,86 @@ clear_DEBUG_decisions_flag = {
 	}
 }
 
-DEBUG_wpe_secondary = {
+@alert_timer = 72
+@progressbar_min_value = -317
+@progressbar_max_value = 0
+@progressbar_divisor = 322
+
+DEBUG_peace_pop = {
 	if = {
 		limit = { is_debug = yes }
 	}
-	
-	generate_character = {
-		token_base = generic_general # token will be TAG_token_base
-		corps_commander = {
-			traits = { }
-			skill = 3
-			attack_skill = 4
-			defense_skill = 1
-			planning_skill = 4
-			logistics_skill = 1
+
+	#fire notification if player
+	RGC = { set_variable = { global.global_losing_country = THIS } }
+	every_possible_country = {
+		limit = {
+			is_ai = no
 		}
-		portraits = { 
-			army = { large = GFX_idea_generic_head_of_government }
+		LAN = { add_to_array = { PREV.peace_popup_alert_array_winner = THIS } }
+		RGC = { add_to_array = { PREV.peace_popup_alert_array = THIS } }
+		set_variable = { losing_country = global.global_losing_country }
+		set_variable = { peace_popup_progressbar_value_@var:losing_country = -317 }
+		set_variable = { peace_popup_alert_timer_@var:losing_country = 0 }
+		
+		#scoped_sound_effect = complete_focus
+		country_event = { id = FE_generic.41 hours = 1 }
+		set_variable_to_random = {
+			var = global.peace_popup_dirty
+			integer = yes
 		}
 	}
 	clear_DEBUG_decisions_flag = yes
+	DEBUG_peace_pop2 = yes
+}
+
+DEBUG_peace_pop2 = {
+	if = {
+		limit = { is_debug = yes }
+	}
+
+	#fire notification if player
+	TIA = { set_variable = { global.global_losing_country = THIS } }
+	every_possible_country = {
+		limit = {
+			is_ai = no
+		}
+		MUL = { add_to_array = { PREV.peace_popup_alert_array_winner = THIS } }
+		TIA = { add_to_array = { PREV.peace_popup_alert_array = THIS } }
+		set_variable = { losing_country = global.global_losing_country }
+		set_variable = { peace_popup_progressbar_value_@var:losing_country = -317 }
+		set_variable = { peace_popup_alert_timer_@var:losing_country = 0 }
+		
+		#scoped_sound_effect = complete_focus
+		country_event = { id = FE_generic.41 hours = 1 }
+		set_variable_to_random = {
+			var = global.peace_popup_dirty
+			integer = yes
+		}
+	}
+	clear_DEBUG_decisions_flag = yes
+}
+
+clear_peace_popup_alert = {
+	clear_variable = peace_popup_alert_timer_@var:losing_country
+	clear_variable = peace_popup_progressbar_value_@var:losing_country
+	remove_from_array = { peace_popup_alert_array = peace_popup_alert_array^i }
+	remove_from_array = { peace_popup_alert_array_winner = peace_popup_alert_array_winner^i }
+	#clear_array = peace_popup_alert_array
+	#clear_array = peace_popup_alert_array_winner
+	set_variable_to_random = {
+		var = global.peace_popup_dirty
+		integer = yes
+	}
+}
+
+update_peace_popup_progressbar = {
+	set_variable = { peace_popup_progressbar_value_@var:losing_country = peace_popup_alert_timer_@var:losing_country }
+	divide_variable = { peace_popup_progressbar_value_@var:losing_country = @alert_timer }
+	multiply_variable = { peace_popup_progressbar_value_@var:losing_country = @progressbar_divisor }
+	subtract_from_variable = { peace_popup_progressbar_value_@var:losing_country = @progressbar_divisor }
+	round_variable = peace_popup_progressbar_value_@var:losing_country
+	clamp_variable = { var = peace_popup_progressbar_value_@var:losing_country min = @progressbar_min_value max = @progressbar_max_value }
 }
 
 DEBUG_test_static_modifier = {

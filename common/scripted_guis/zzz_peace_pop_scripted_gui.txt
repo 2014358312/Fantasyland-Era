@@ -1,0 +1,51 @@
+scripted_gui = {
+	FantasylandEra_alerts_window = {
+		window_name = "FantasylandEra_alerts_window"
+		context_type = player_context
+		dirty = global.peace_popup_dirty # Please trigger the dirty var when manually triggering the popup.
+		ai_enabled = {
+			always = no
+		}
+		visible = {
+			NOT = { check_variable = { peace_popup_alert_array^num = 0 } }
+		}
+		dynamic_lists = {
+			peace_popup_alert_grid = {
+				array = peace_popup_alert_array
+				country_scope_entry_container = peace_popup_alert_window
+				index = i
+				change_scope = no
+			}
+		}
+		properties = {
+			winner_flag = {
+				image = "[?peace_popup_alert_array_winner^i.GetFlag]"
+			}
+			loser_flag = {
+				image = "[?peace_popup_alert_array^i.GetFlag]"
+			}
+			#flag_winner = {
+			#	image = "[?peace_popup_alert_array_winner^i.GetFlag]"
+			#}
+			#flag_loser = {
+			#	image = "[?peace_popup_alert_array^i.GetFlag]"
+			#}
+			peace_popup_alert_progressbar = {
+				x = peace_popup_progressbar_value_@var:losing_country
+			}
+		}
+		effects = {
+			ok_button_click = {
+				clr_global_flag = show_peace_popup_alert
+				clr_global_flag = losing_country_multiple
+				clr_global_flag = winning_country_multiple
+				clr_global_flag = war_continuing
+				clr_global_flag = war_won
+
+				clear_peace_popup_alert = yes
+				#clear_array = peace_popup_alert_array
+				add_to_variable = { global.peace_popup_dirty = 1 }
+			}
+		}
+	}
+}

@@ -34,3 +34,32 @@ country_event = {
 		trigger = { NOT = { has_country_flag = ROOT_calc_character_status_num_flag } }
 	}
 }
+
+
+country_event = {
+	id = FE_generic.41
+	hidden = yes
+	title = FE_generic.41.t
+	desc = FE_generic.41.desc
+	picture = GFX_report_event_ALN_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_to_variable = { peace_popup_alert_timer_@var:losing_country = 1 }
+			if = {
+				limit = { check_variable = { peace_popup_alert_timer_@var:losing_country > 71 } }
+				clear_peace_popup_alert = yes
+			}
+			else = {
+				update_peace_popup_progressbar = yes
+				set_variable_to_random = {
+					var = global.peace_popup_dirty
+					integer = yes
+				}
+				country_event = { id = FE_generic.41 hours = 1 }
+			}
+		}
+	}
+}
