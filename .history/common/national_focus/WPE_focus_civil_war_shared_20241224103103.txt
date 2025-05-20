@@ -77,34 +77,3 @@ shared_focus = {
 		
 	}
 }
-
-shared_focus = {
-	id = WPE_civil_war_day1
-	icon = GFX_goal_generic_defence_army
-	prerequisite = { focus = WPE_civil_war_day }
-	#mutually_exclusive = { focus =  }
-	relative_position_id = WPE_civil_war_day
-	x = -3
-	y = 1
-	cost = 0
-	ai_will_do = {
-		factor = 1
-	}
-	allow_branch = {
-		original_tag = WPE
-		has_country_flag = WPE_military_lucia_flag
-		has_civil_war = yes
-	}
-	available = {
-	}
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
-	select_effect = {
-		
-	}
-	completion_reward = {
-		add_political_power = 25
-		
-	}
-}
