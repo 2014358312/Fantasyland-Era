@@ -1,0 +1,90 @@
+guiTypes = {
+	
+
+	windowType = {
+		name = "load_screen"
+		backGround =""
+		position = { x = 0 y = 0 }
+		size = { x = 1024 y = 768 }
+		moveable = 0
+		dontRender = ""
+		horizontalBorder = "0"
+		verticalBorder = ""
+		fullScreen = yes
+		Orientation = "UPPER_LEFT"
+		
+				
+		windowType = {
+			name = "status"
+			backGround =""
+			position = { x = 0 y = 0 }
+			size = { x = 1024 y = 768 }
+			moveable = 0
+			dontRender = ""
+			horizontalBorder = "0"
+			verticalBorder = ""
+			fullScreen = no
+			Orientation = "CENTER_UP"
+			
+			
+			
+			instantTextBoxType = {
+				name = "text"
+				position = { x = -800 y = 920 }
+				textureFile = ""
+				font = "loadscreen_header"
+				borderSize = {x = 0 y = 0}
+				text = ""	
+				maxWidth = 800
+				maxHeight =40
+				fixedsize = yes
+				format = left
+			}	
+		
+			iconType = 
+			{
+				name = "progressbar"
+				spriteType = "GFX_loadingstatus_progress"
+				position = { x=-1000 y=860 }
+			}
+			
+			iconType = {
+				name ="bg_clausewitz_logo"
+				spriteType = "GFX_clausewitz_logo"
+				position = { x= -810 y = 20 }
+				Orientation = "LOWER_LEFT"
+			}
+		}
+		
+		windowType = {
+			name = "tip"
+			backGround =""
+			position = { x = 0 y = 0 }
+			size = { x = 1024 y = 200 }
+			moveable = 0
+			dontRender = ""
+			horizontalBorder = "0"
+			verticalBorder = ""
+			fullScreen = no
+			Orientation = "CENTER_DOWN"
+			
+				
+
+			instantTextBoxType = {
+				name = "text"
+				position = { x = -800 y = -190 }
+				textureFile = ""
+				font = "loadscreen_tip"
+				borderSize = {x = 0 y = 0}
+				text = ""	
+				maxWidth = 2500
+				maxHeight =200
+				fixedsize = yes
+				format = left
+				vertical_alignment = center				
+			}
+		}		
+	}
+	
+
+}

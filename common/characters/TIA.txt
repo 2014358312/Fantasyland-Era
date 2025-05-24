@@ -24,15 +24,31 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = political_advisor
-			idea_token = TIA_Mia_Runa_Tiamun
-			can_be_fired = no
-			desc = TIA_Mia_Runa_Tiamun_desc
+			slot = head_of_government
+			idea_token = TIA_Mia_Runa_Tiamun_head_of_government
 			allowed = {
 				original_tag = TIA
 			}
+			visible = {
+				is_country_leader = no
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
 			traits = {
 				Imperial_sagacity
+			}
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = {
+						FE_secondary = token:TIA_Mia_Runa_Tiamun_head_of_government
+					}
+				}
 			}
 		}
 	}
@@ -239,35 +255,6 @@ characters = {
 			defense_skill = 5
 			planning_skill = 3
 			logistics_skill = 4
-		}
-		advisor = {
-			slot = head_of_government
-			idea_token = TIA_Hinai_Paulette_head_of_government
-			allowed = {
-				original_tag = TIA
-			}
-			visible = {
-				is_country_leader = no
-			}
-			available = {
-				no_head_of_gov_trigger = yes
-			}
-			can_be_fired = no
-			traits = {
-				moderate_reformist
-				head_of_government_trait
-			}
-			cost = 0
-			ai_will_do = {
-				factor = 1
-			}
-			on_add = {
-				hidden_effect = {
-					set_variable = {
-						FE_secondary = token:TIA_Hinai_Paulette_head_of_government
-					}
-				}
-			}
 		}
 	}
 	TIA_Minokasa_Nagi = {
