@@ -74,4 +74,38 @@ characters = {
 			}
 		}
 	}
+
+	WAT_Sheele_Russell = {
+		name = Sheele_Russell
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WAT_Sheele_Russell
+				small = GFX_idea_advisor_WAT_Sheele_Russell
+			}
+			army = {
+				large = GFX_Portrait_WAT_Sheele_Russell
+				small = GFX_idea_advisor_WAT_Sheele_Russell
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = WAT_Sheele_Russell_head_of_government
+			allowed = {
+				original_tag = WAT
+			}
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = { free_market_economists head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:WAT_Sheele_Russell_head_of_government }
+				}
+			}
+		}
+	}
 }
