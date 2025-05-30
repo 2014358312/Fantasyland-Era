@@ -2266,5 +2266,243 @@ focus = {
 				country_event = DKA.1
 		
 			}
-		}															
+		}		
+		###一封谏言
+		focus = {
+			id = DKA_A_remonstrance
+			icon = GFX_goal_generic_major_alliance
+			prerequisite = {  focus =DKA_undone}
+			x=0
+			y = 1
+			relative_position_id =DKA_undone
+		
+			cost = 3
+		
+			ai_will_do = {
+				factor = 1
+			}
+		
+			available = {
+		
+			}
+		
+			bypass = {
+		
+			}
+		
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+		
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			completion_reward = {
+				add_political_power =150
+				country_event = DKA.1
+		
+			}
+		}		
+		###视察？
+		focus = {
+			id = DKA_Inspection?
+			icon = GFX_goal_generic_major_alliance
+			prerequisite = {  focus =DKA_A_remonstrance}
+			x=0
+			y = 1
+			relative_position_id =DKA_A_remonstrance
+		
+			cost = 3
+		
+			ai_will_do = {
+				factor = 1
+			}
+		
+			available = {
+		
+			}
+		
+			bypass = {
+		
+			}
+		
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+		
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			completion_reward = {
+				add_political_power =150
+				country_event = DKA.1
+		
+			}
+		}		
+			###对工业的视察
+		focus = {
+			id = DKA_Inspection_of_Industry
+			icon = GFX_goal_generic_major_alliance
+			prerequisite = {  focus =DKA_Inspection?}
+			x=0
+			y = 1
+			relative_position_id =DKA_Inspection?
+		
+			cost = 3
+		
+			ai_will_do = {
+				factor = 1
+			}
+		
+			available = {
+		
+			}
+		
+			bypass = {
+		
+			}
+		
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+		
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			completion_reward = {
+				add_political_power =150
+				country_event = DKA.1
+		
+			}
+		}	
+			###对工业的辩论
+		focus = {
+			id =  DKA_Debate_on_Industry
+			icon = GFX_goal_generic_major_alliance
+			prerequisite = {  focus =DKA_Inspection_of_Industry}
+			x=0
+			y = 1
+			relative_position_id =DKA_Inspection_of_Industry
+		
+			cost = 3
+		
+			ai_will_do = {
+				factor = 1
+			}
+		
+			available = {
+		
+			}
+		
+			bypass = {
+		
+			}
+		
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+		
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			completion_reward = {
+				add_political_power =150
+				country_event = DKA.1
+		
+			}
+		}	
+		###工业之用
+		focus = {
+			id = DKA_For_industrial_use
+			icon = GFX_goal_generic_major_alliance
+			prerequisite = {  focus =DKA_Debate_on_Industry}
+			x=0
+			y = 1
+			relative_position_id =DKA_Debate_on_Industry
+		
+			cost = 3
+		
+			ai_will_do = {
+				factor = 1
+			}
+		
+			available = {
+		
+			}
+		
+			bypass = {
+		
+			}
+		
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+		
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			completion_reward = {
+				add_political_power =150
+				country_event = DKA.1
+		
+			}
+		}	
+		###继前者之道路
+		focus = {
+			id = DKA_Following_the_path_of_the_former
+			icon = GFX_goal_generic_major_alliance
+			prerequisite = {  focus =DKA_For_industrial_use}
+			x=-1
+			y = 1
+			relative_position_id =DKA_For_industrial_use
+		
+			cost = 3
+		
+			ai_will_do = {
+				factor = 1
+			}
+		
+			available = {
+		
+			}
+		
+			bypass = {
+		
+			}
+		
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+		
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			completion_reward = {
+				add_political_power =150
+				country_event = DKA.1
+		
+			}
+		}	
+		###开辟未来的道路
+		focus = {
+			id = DKA_Pave_the_way_for_the_future
+			icon = GFX_goal_generic_major_alliance
+			prerequisite = {  focus =DKA_For_industrial_use}
+			x=1
+			y = 1
+			relative_position_id =DKA_For_industrial_use
+		
+			cost = 3
+		
+			ai_will_do = {
+				factor = 1
+			}
+		
+			available = {
+		
+			}
+		
+			bypass = {
+		
+			}
+		
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+		
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			completion_reward = {
+				add_political_power =150
+				country_event = DKA.1
+		
+			}
+		}
 	}				   	
