@@ -273,12 +273,12 @@ focus_tree = {
 			hidden_effect = {
 				remove_trait = {
 					character = TIA_Mia_Runa_Tiamun
-					slot = political_advisor
+					slot = head_of_government
 					trait = Imperial_sagacity
 				}
 				add_trait = {
 					character = TIA_Mia_Runa_Tiamun
-					slot = political_advisor
+					slot = head_of_government
 					trait = Imperial_sagacity_1
 				}
 			}
@@ -345,7 +345,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		#预防瘟疫
+		#医疗改革
 		id = TIA_Prevention_plague
 		icon = GFX_focus_TIA_build_hospital
 		relative_position_id = TIA_Make_change
@@ -365,15 +365,14 @@ focus_tree = {
 		}
 	}
 	focus = {
-		#改变校园生活
-		id = TIA_Transform_campus_life
+		#下一步计划
+		id = TIA_next_step_plan
 		icon = GFX_focus_TIA_school_life
 		relative_position_id = TIA_Make_change
 		x = 0
 		y = 2
-		cost = 1
+		cost = 5
 		available = {
-			has_country_flag = TIA_focus_cannot_completed
 		}
 		prerequisite = {
 			focus = TIA_Prevention_plague
@@ -382,33 +381,33 @@ focus_tree = {
 			focus = TIA_Financial_issues
 		}
 		completion_reward = {
-			add_political_power = 150
-			country_event = {
-				id = TIA.2
-				days = 1
-			}
+			add_political_power = 100
+			
 		}
 		ai_will_do = {
 			factor = 1
 		}
 	}
 	focus = {
-		#维护迪欧娜·鲁多路冯
-		id = TIA_uphold_Tiona_Rudolvon
+		#阶级歧视改革
+		id = TIA_class_discrimination_reform
 		icon = GFX_focus_TIA_Mia_Tiona
-		relative_position_id = TIA_Transform_campus_life
-		x = -2
+		relative_position_id = TIA_next_step_plan
+		x = -1
 		y = 1
-		cost = 1
+		cost = 5
 		available = {
-			has_country_flag = TIA_focus_cannot_completed
 		}
 		prerequisite = {
-			focus = TIA_Transform_campus_life
+			focus = TIA_next_step_plan
 		}
 		completion_reward = {
 			add_political_power = -50
 			add_stability = -0.05
+			swap_ideas = {
+				remove_idea = TIA_class_discrimination_1
+				add_idea = TIA_class_discrimination_2
+			}
 			custom_effect_tooltip = TIA_Rudolvon_trait
 			hidden_effect = {
 				remove_trait = {
@@ -428,90 +427,124 @@ focus_tree = {
 		}
 	}
 	focus = {
-		#锁定阿贝尔王子
-		id = TIA_Lock_on_Abel
+		#交好邻国
+		id = TIA_befriend_neighbors
 		icon = GFX_focus_TIA_Mia_Abel
-		relative_position_id = TIA_Transform_campus_life
-		x = 2
+		relative_position_id = TIA_next_step_plan
+		x = 3
 		y = 1
-		cost = 1
+		cost = 5
 		available = {
-			has_country_flag = TIA_focus_cannot_completed
 		}
 		prerequisite = {
-			focus = TIA_Transform_campus_life
+			focus = TIA_next_step_plan
 		}
 		completion_reward = {
-			add_political_power = -50
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		#远离席翁王子
-		id = TIA_Stay_away_Sion
-		icon = GFX_focus_TIA_Mia_Sion
-		relative_position_id = TIA_Transform_campus_life
-		x = 0
-		y = 1
-		cost = 1
-		available = {
-			has_country_flag = TIA_focus_cannot_completed
-		}
-		prerequisite = {
-			focus = TIA_Transform_campus_life
-		}
-		completion_reward = {
-			add_political_power = -50
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		#联系福克罗德商会
-		id = TIA_Contact_FaulkLeod_Chamber_Commerce
-		icon = GFX_focus_TIA_Mia_and_FaulkLeod
-		relative_position_id = TIA_Transform_campus_life
-		x = -4
-		y = 1
-		cost = 1
-		available = {
-			has_country_flag = TIA_focus_cannot_completed
-		}
-		prerequisite = {
-			focus = TIA_Transform_campus_life
-		}
-		completion_reward = {
-			add_political_power = -15
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		#舞会事件
-		id = TIA_Prom_events
-		icon = GFX_focus_TIA_Prom_events
-		relative_position_id = TIA_Transform_campus_life
-		x = 0
-		y = 2
-		cost = 1
-		available = {
-			has_country_flag = TIA_focus_cannot_completed
-		}
-		prerequisite = {
-			focus = TIA_Stay_away_Sion
-			focus = TIA_Lock_on_Abel
-			focus = TIA_uphold_Tiona_Rudolvon
-		}
-		completion_reward = {
-			add_political_power = -10
-			swap_ideas = {
-				remove_idea = TIA_class_discrimination_1
-				add_idea = TIA_class_discrimination_2
+			add_political_power = 50
+			add_stability = 0.05
+			add_war_support = -0.05
+			ALC = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_ALC_good_relationship
+				}
 			}
+			add_opinion_modifier = {
+				target = ALC
+				modifier = TIA_ALC_good_relationship
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#调查革命组织
+		id = TIA_Investigate_revolutionary_organizations
+		icon = GFX_focus_TIA_Mia_Sion
+		relative_position_id = TIA_next_step_plan
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+		}
+		prerequisite = {
+			focus = TIA_next_step_plan
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_stability = -0.05
+			add_popularity = { ideology = communism popularity = -0.05 }
+			add_popularity = { ideology = democratic popularity = -0.05 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#联系商会
+		id = TIA_Contact_Chamber_Commerce
+		icon = GFX_focus_TIA_Mia_and_FaulkLeod
+		relative_position_id = TIA_next_step_plan
+		x = -3
+		y = 1
+		cost = 5
+		available = {
+		}
+		prerequisite = {
+			focus = TIA_next_step_plan
+		}
+		completion_reward = {
+			add_political_power = 150
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#清洗反对派
+		id = TIA_purg_opposition
+		icon = GFX_focus_TIA_Prom_events
+		relative_position_id = TIA_next_step_plan
+		x = 1
+		y = 2
+		cost = 5
+		available = {
+		}
+		prerequisite = {
+			focus = TIA_Investigate_revolutionary_organizations
+			focus = TIA_befriend_neighbors
+			focus = TIA_class_discrimination_reform
+		}
+		completion_reward = {
+			add_political_power = -100
+			add_stability = -0.05
+			swap_ideas = {
+				remove_idea = TIA_class_discrimination_2
+				add_idea = TIA_class_discrimination_3
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#收缩领地管理
+		id = TIA_Shrink_territory_management
+		icon = GFX_focus_TIA_Shrink_territory_management
+		relative_position_id = TIA_purg_opposition
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+		}
+		prerequisite = {
+			focus = TIA_purg_opposition
+		}
+		completion_reward = {
+			add_political_power = 50
+			unlock_decision_category_tooltip = TIA_shrink_territory_management_category
 		}
 		ai_will_do = {
 			factor = 1
@@ -521,17 +554,17 @@ focus_tree = {
 		#进口小麦合约
 		id = TIA_Wheat_import_contract
 		icon = GFX_focus_TIA_Wheat_import_contract
-		relative_position_id = TIA_Prom_events
+		relative_position_id = TIA_purg_opposition
 		x = -4
 		y = 1
 		cost = 5
 		available = {
 		}
 		prerequisite = {
-			focus = TIA_Prom_events
+			focus = TIA_purg_opposition
 		}
 		prerequisite = {
-			focus = TIA_Contact_FaulkLeod_Chamber_Commerce
+			focus = TIA_Contact_Chamber_Commerce
 		}
 		completion_reward = {
 			add_political_power = 50
@@ -545,20 +578,21 @@ focus_tree = {
 		#处理静海森林问题
 		id = TIA_Dealing_Jinghai_Forest
 		icon = GFX_focus_TIA_Dealing_Jinghai_Forest
-		relative_position_id = TIA_Prom_events
+		relative_position_id = TIA_purg_opposition
 		x = -2
 		y = 1
 		cost = 5
 		available = {
 		}
 		prerequisite = {
-			focus = TIA_Prom_events
+			focus = TIA_purg_opposition
 		}
 		prerequisite = {
-			focus = TIA_uphold_Tiona_Rudolvon
+			focus = TIA_class_discrimination_reform
 		}
 		completion_reward = {
 			add_political_power = 50
+			remove_ideas = TIA_Jinhai_forest_event
 		}
 		ai_will_do = {
 			factor = 1
@@ -587,6 +621,7 @@ focus_tree = {
 				id = 455
 				name = "皇女镇"
 			}
+			add_state_core = 239
 		}
 		ai_will_do = {
 			factor = 1
@@ -635,150 +670,6 @@ focus_tree = {
 				remove_idea = TIA_import_wheat
 				add_idea = TIA_country_grain_reserve_plan
 			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		#加入马术社
-		id = TIA_Join_equestrian_club
-		icon = GFX_focus_TIA_Equestrian_club
-		relative_position_id = TIA_Transform_campus_life
-		x = 4
-		y = 1
-		cost = 1
-		available = {
-			has_country_flag = TIA_focus_cannot_completed
-		}
-		prerequisite = {
-			focus = TIA_Transform_campus_life
-		}
-		completion_reward = {
-			add_political_power = -15
-			add_trait = {
-				character = TIA_Mia_Runa_Tiamun
-				slot = political_advisor
-				trait = Member_Equestrian_Club
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		#剑术大会的便当
-		id = TIA_Bento_kendo_tournament
-		icon = GFX_focus_TIA_Bento_kendo_tournament
-		relative_position_id = TIA_Join_equestrian_club
-		x = -1
-		y = 1
-		cost = 1
-		available = {
-			has_country_flag = TIA_focus_cannot_completed
-		}
-		prerequisite = {
-			focus = TIA_Join_equestrian_club
-		}
-		prerequisite = {
-			focus = TIA_Lock_on_Abel
-		}
-		completion_reward = {
-			add_political_power = 50
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		#来自邻国的坏消息
-		id = TIA_Bad_news_from_neighboring
-		icon = GFX_focus_TIA_Bad_news_from_neighboring
-		relative_position_id = TIA_Bento_kendo_tournament
-		x = -1
-		y = 1
-		cost = 1
-		available = {
-			has_country_flag = TIA_focus_cannot_completed
-			ALC = {
-				has_civil_war = yes
-			}
-		}
-		prerequisite = {
-			focus = TIA_Bento_kendo_tournament
-		}
-		prerequisite = {
-			focus = TIA_Prom_events
-		}
-		completion_reward = {
-			add_political_power = 50
-			complete_national_focus = TIA_intervene_ALC_civil_war
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		#调动国内忠臣
-		id = TIA_Mobilize_loyal_ministers
-		icon = GFX_focus_TIA_Mobilize_loyal_ministers
-		relative_position_id = TIA_Bad_news_from_neighboring
-		x = -1
-		y = 1
-		cost = 1
-		available = {
-			has_country_flag = TIA_focus_cannot_completed
-		}
-		prerequisite = {
-			focus = TIA_Bad_news_from_neighboring
-		}
-		completion_reward = {
-			add_political_power = 50
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		#亲力亲为
-		id = TIA_Hands_on
-		icon = GFX_focus_TIA_Hands_on
-		relative_position_id = TIA_Bad_news_from_neighboring
-		x = 1
-		y = 1
-		cost = 1
-		available = {
-			has_country_flag = TIA_focus_cannot_completed
-		}
-		prerequisite = {
-			focus = TIA_Bad_news_from_neighboring
-		}
-		completion_reward = {
-			add_political_power = 50
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	focus = {
-		#结束这场愚蠢的叛乱
-		id = TIA_End_stupid_rebellion
-		icon = GFX_focus_TIA_End_stupid_rebellion
-		relative_position_id = TIA_Bad_news_from_neighboring
-		x = 0
-		y = 2
-		cost = 1
-		available = {
-			has_country_flag = TIA_focus_cannot_completed
-		}
-		prerequisite = {
-			focus = TIA_Hands_on
-		}
-		prerequisite = {
-			focus = TIA_Mobilize_loyal_ministers
-		}
-		completion_reward = {
-			add_political_power = 50
 		}
 		ai_will_do = {
 			factor = 1
