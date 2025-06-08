@@ -1962,13 +1962,125 @@ focus = {
 		add_stability = -0.1
 	}
 }					  
-	#########################军事线##############################					  
+	#########################军事线##############################
+	 ###看向军队
+	  focus = {
+			id = DKA_Look_at_the_army
+			icon = GFX_goal_generic_army_doctrines
+			x = 25
+			y = 0 
+					
+			cost = 10
+					
+			ai_will_do = {
+								factor = 1
+							}
+					
+							available = {
+					
+							}
+					
+							bypass = {
+					
+							}
+					
+							cancel_if_invalid = yes
+							continue_if_invalid = no
+							available_if_capitulated = no
+					
+					
+							completion_reward = {
+								army_experience = 30
+							}
+			}
+		###军队的归属权	
+	focus = {
+			id = DKA_Ownership_of_the_military
+			icon = GFX_goal_generic_small_arms
+			prerequisite = { focus =DKA_Look_at_the_army}
+			x = 0
+			y = 1
+			relative_position_id =DKA_Look_at_the_army
+									
+			cost = 10
+									
+			ai_will_do = {
+				factor = 2
+				modifier = {
+				factor = 2
+				has_completed_focus = JAP_support_the_kodoha_faction
+												}
+											}
+									
+				available = {
+									
+											}
+									
+				bypass = {
+									
+											}
+									
+				cancel_if_invalid = yes
+				continue_if_invalid = no
+				available_if_capitulated = no
+									
+				search_filters = { FOCUS_FILTER_RESEARCH }
+				completion_reward = {
+				add_tech_bonus = {
+					name = DKA_small_arms_modernization
+													bonus = 1.0
+													uses = 1
+													category = infantry_weapons	
+												}
+											}
+			}
+			###作为女王的剑
+	focus = {
+			id = DKA_As_the_Queen_Sword
+			icon = GFX_goal_generic_small_arms
+			prerequisite = { focus =DKA_Ownership_of_the_military}
+			x = -1
+			y = 1
+			relative_position_id =DKA_Ownership_of_the_military
+									
+			cost = 10
+									
+			ai_will_do = {
+				factor = 2
+				modifier = {
+				factor = 2
+				has_completed_focus = JAP_support_the_kodoha_faction
+												}
+											}
+									
+				available = {
+									
+											}
+									
+				bypass = {
+									
+											}
+									
+				cancel_if_invalid = yes
+				continue_if_invalid = no
+				available_if_capitulated = no
+									
+				search_filters = { FOCUS_FILTER_RESEARCH }
+				completion_reward = {
+				add_tech_bonus = {
+					name = DKA_small_arms_modernization
+													bonus = 1.0
+													uses = 1
+													category = infantry_weapons	
+												}
+											}
+										}	
 	 ###陆军法案
 	  focus = {
 			id = DKA_army_expansion_law
 			icon = GFX_goal_generic_army_doctrines
 			x = 25
-			y = 0 
+			y = 25
 					
 			cost = 10
 					
