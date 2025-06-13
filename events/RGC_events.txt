@@ -180,9 +180,38 @@ country_event = {
 	picture = GFX_report_event_generic_read_write
 
 	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			RGC_Delphine_Windermere = {
+				remove_trait = {
+					slot = head_of_government
+					trait = military_liaison_officer
+				}
+				character_remove_hog_flag = yes
+				add_trait = {
+					slot = head_of_government
+					trait = military_liaison_officer
+				}
+				add_trait = {
+					slot = head_of_government
+					trait = GER_staunch_social_democrat
+				}
+				character_add_hog_flag = yes
+			}
+		}
+	}
 
 	option = {
 		name = victoria.5.a
+		effect_tooltip = {
+			RGC_Delphine_Windermere = {
+				add_trait = {
+					slot = head_of_government
+					trait = GER_staunch_social_democrat
+				}
+			}
+		}
 		hidden_effect = {
 			every_possible_country = {
 				limit = { is_ai = no }

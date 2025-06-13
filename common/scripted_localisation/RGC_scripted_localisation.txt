@@ -122,3 +122,21 @@ defined_text = {
 	}
 	text = { localization_key = RGC_civil_war_sarkaz_modifier_low }
 }
+
+defined_text = {
+	name = GetDelphineTrait
+	text = {
+		trigger = {
+			has_country_flag = RGC_fate_of_royal_decided_flag
+			NOT = {
+				has_idea = RGC_fate_of_royal
+				has_idea = RGC_king_alexandrina
+				has_idea = RGC_king_loughshinny
+				has_idea = RGC_king_theresia
+				has_idea = RGC_king_tracy
+			}
+		}
+		localization_key = SECONDARY_RGC_Delphine_Windermere_head_of_government_trait_1
+	}
+	text = { localization_key = SECONDARY_RGC_Delphine_Windermere_head_of_government_trait_0 }
+}

@@ -1,22 +1,52 @@
+#!gfx:interface\goals\FE_country_goals.gfx
+#!gfx:interface\goals\FE_country_RGC_goals.gfx
+
 shared_focus = {
-	id = RGC_civil_war
-	icon = GFX_focus_generic_concessions
+	id = RGC_cw_ready_for_civil_war
+	icon = GFX_focus_hol_war_on_pacifism
 	allow_branch = {
+		#RGC_is_victoiran_country = yes
 		tag = RGC
-		has_global_flag = victorian_civil_war_happen
-		has_country_flag = RGC_victorian_civil_war_member_flag
 	}
 	#prerequisite = { focus = GFX_focus_generic_concessions }
 	#mutually_exclusive = { focus =  }
 	#relative_position_id = 
-	x = 5
+	x = 7
 	y = 0
-	cost = 0
+	cost = 2
 	ai_will_do = {
 		factor = 1
 	}
 	available = {
-		always = no
+		
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+		add_political_power = 25
+		add_war_support = 0.05
+	}
+}
+
+shared_focus = {
+	id = RGC_cw_summon_guerrilla
+	icon = GFX_goal_generic_military_sphere
+	prerequisite = { focus = RGC_cw_ready_for_civil_war }
+	#mutually_exclusive = { focus =  }
+	relative_position_id = RGC_cw_ready_for_civil_war
+	x = -5
+	y = 1
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		NOT = { has_idea = RGC_fate_of_royal }
+		has_idea = RGC_king_loughshinny
 	}
 	bypass = {
 
@@ -30,21 +60,26 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = KDE_civil_war
-	icon = GFX_focus_generic_concessions
-	allow_branch = {
-		tag = KDE
-		has_global_flag = victorian_civil_war_happen
-		has_country_flag = RGC_victorian_civil_war_member_flag
-	}
-	x = 5
-	y = 0
-	cost = 0
+	id = RGC_cw_friendly_to_windermere
+	icon = GFX_goal_generic_government_deals
+	prerequisite = { focus = RGC_cw_ready_for_civil_war }
+	#mutually_exclusive = { focus =  }
+	relative_position_id = RGC_cw_ready_for_civil_war
+	x = -3
+	y = 1
+	cost = 5
 	ai_will_do = {
 		factor = 1
 	}
 	available = {
-		always = no
+		NOT = { has_idea = RGC_fate_of_royal }
+		OR = {
+			RGC = {
+				RGC_Delphine_Windermere = { has_trait = GER_staunch_social_democrat }
+			}
+			has_idea = RGC_king_alexandrina
+			has_idea = RGC_king_loughshinny
+		}
 	}
 	bypass = {
 
@@ -58,21 +93,19 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = TAR_civil_war
-	icon = GFX_focus_generic_concessions
-	allow_branch = {
-		tag = KDE
-		has_global_flag = victorian_civil_war_happen
-		has_country_flag = RGC_victorian_civil_war_member_flag
-	}
-	x = 5
-	y = 0
-	cost = 0
+	id = RGC_cw_conscription_order
+	icon = GFX_goal_generic_defence_army
+	prerequisite = { focus = RGC_cw_ready_for_civil_war }
+	#mutually_exclusive = { focus =  }
+	relative_position_id = RGC_cw_ready_for_civil_war
+	x = -1
+	y = 1
+	cost = 5
 	ai_will_do = {
 		factor = 1
 	}
 	available = {
-		always = no
+		
 	}
 	bypass = {
 
@@ -84,3 +117,303 @@ shared_focus = {
 
 	}
 }
+
+shared_focus = {
+	id = RGC_cw_state_support
+	icon = GFX_goal_generic_spy_connections
+	prerequisite = { focus = RGC_cw_ready_for_civil_war }
+	#mutually_exclusive = { focus =  }
+	relative_position_id = RGC_cw_ready_for_civil_war
+	x = 1
+	y = 1
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = RGC_cw_assault_operations
+	icon = GFX_goal_generic_tank_destroyer2
+	prerequisite = { focus = RGC_cw_ready_for_civil_war }
+	#mutually_exclusive = { focus =  }
+	relative_position_id = RGC_cw_ready_for_civil_war
+	x = 3
+	y = 1
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		NOT = { has_idea = RGC_fate_of_royal }
+		OR = {
+			RGC = {
+				RGC_Delphine_Windermere = { has_trait = GER_staunch_social_democrat }
+			}
+			has_idea = RGC_king_alexandrina
+			has_idea = RGC_king_theresia
+			has_idea = RGC_king_tracy
+		}
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = RGC_cw_war_committee
+	icon = GFX_goal_generic_army_command_power
+	prerequisite = { focus = RGC_cw_ready_for_civil_war }
+	#mutually_exclusive = { focus =  }
+	relative_position_id = RGC_cw_ready_for_civil_war
+	x = 5
+	y = 1
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		NOT = { has_idea = RGC_fate_of_royal }
+		OR = {
+			has_idea = RGC_king_theresia
+			has_idea = RGC_king_tracy
+		}
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = RGC_cw_collect_old_weapon
+	icon = GFX_goal_generic_military_equipment
+	prerequisite = { focus = RGC_cw_conscription_order }
+	#mutually_exclusive = { focus =  }
+	relative_position_id = RGC_cw_conscription_order
+	x = -1
+	y = 1
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = RGC_cw_penetration_and_destruction
+	icon = GFX_goal_generic_investigation
+	prerequisite = { focus = RGC_cw_state_support }
+	#mutually_exclusive = { focus =  }
+	relative_position_id = RGC_cw_state_support
+	x = 1
+	y = 1
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = RGC_cw_declaration_of_independence
+	icon = GFX_goal_generic_forceful_treaty
+	prerequisite = { focus = RGC_cw_summon_guerrilla }
+	prerequisite = { focus = RGC_cw_friendly_to_windermere }
+	mutually_exclusive = { focus = RGC_cw_iron_wall focus = RGC_cw_survival_of_civilization }
+	relative_position_id = RGC_cw_summon_guerrilla
+	x = 1
+	y = 2
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = RGC_cw_iron_wall
+	icon = GFX_focus_SWE_hedgehog_defense
+	prerequisite = { focus = RGC_cw_friendly_to_windermere }
+	prerequisite = { focus = RGC_cw_assault_operations }
+	mutually_exclusive = { focus = RGC_cw_declaration_of_independence focus = RGC_cw_survival_of_civilization }
+	relative_position_id = RGC_cw_friendly_to_windermere
+	x = 3
+	y = 2
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = RGC_cw_survival_of_civilization
+	icon = GFX_focus_RGC_survival_of_civilization
+	prerequisite = { focus = RGC_cw_assault_operations }
+	prerequisite = { focus = RGC_cw_war_committee }
+	mutually_exclusive = { focus = RGC_cw_declaration_of_independence focus = RGC_cw_iron_wall }
+	relative_position_id = RGC_cw_war_committee
+	x = -1
+	y = 2
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = RGC_cw_war_focus_1
+	icon = GFX_focus_SWE_hedgehog_defense
+	prerequisite = { focus = RGC_cw_declaration_of_independence }
+	relative_position_id = RGC_cw_declaration_of_independence
+	x = -1
+	y = 1
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = RGC_cw_war_focus_2
+	icon = GFX_focus_SWE_hedgehog_defense
+	prerequisite = { focus = RGC_cw_declaration_of_independence }
+	relative_position_id = RGC_cw_declaration_of_independence
+	x = 1
+	y = 1
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = RGC_cw_war_focus_3
+	icon = GFX_focus_SWE_hedgehog_defense
+	prerequisite = { focus = RGC_cw_iron_wall }
+	relative_position_id = RGC_cw_iron_wall
+	x = 0
+	y = 1
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+
+	}
+}
+
+

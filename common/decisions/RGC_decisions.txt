@@ -156,6 +156,7 @@ RGC_fate_of_royal_decision_category = {
 		activation = { always = no }
 		complete_effect = {
 			custom_effect_tooltip = RGC_choice_of_delphine_tt
+			set_country_flag = RGC_fate_of_royal_decided_flag
 			add_political_power = 25
 			country_event = victoria.5
 			remove_ideas = RGC_fate_of_royal
@@ -166,8 +167,9 @@ RGC_fate_of_royal_decision_category = {
 				custom_effect_tooltip = RGC_choice_of_delphine_tt2
 			}
 			else = { custom_effect_tooltip = RGC_choice_of_delphine_tt3 }
-			country_event = victoria.5
+			set_country_flag = RGC_fate_of_royal_decided_flag
 			add_political_power = -25
+			country_event = victoria.5
 			remove_ideas = RGC_fate_of_royal
 		}
 		ai_will_do = {
