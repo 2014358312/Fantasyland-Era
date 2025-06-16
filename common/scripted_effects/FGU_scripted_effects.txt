@@ -1,0 +1,29 @@
+FGU_enter_boss_battle = {
+	set_global_flag = FGU_catastrophe_progress_flag
+	840 = {
+		if = {
+			limit = { controller = { is_game_goddess_country = yes } }
+			controller = {
+				save_event_target_as = temp_controlled_country
+			}
+			transfer_state_to = ARF
+		}
+	}
+	every_country = {
+		limit = { is_game_goddess_country = yes }
+		every_core_state = {
+			add_core_of = ARF
+		}
+		ARF = {
+			declare_war_on = {
+				target = PREV
+				type = annex_everything
+			}
+		}
+	}
+	event_target:temp_controlled_country = {
+		set_state_controller = 840
+		clear_global_event_target = temp_controlled_country
+	}
+	ARF = { become_exiled_in = { target = TIA legitimacy = 10 } }
+}

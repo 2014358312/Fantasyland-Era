@@ -1,4 +1,5 @@
 import os,sys
+import pyradox as pyx
 
 filepath=r"../../common/country_tags/KLS_countries.txt"
 
@@ -23,6 +24,11 @@ def GetCountryTag(filepath):
 	with open(filepath, 'r', encoding='utf-8') as file:
 		content_list = file.readlines() #读取所有行并返回列表
 		for line in content_list:
+			for char in line[:3]:
+				if char.isalpha() and char.isupper():
+					continue
+				else:
+					pass
 			contentresult.append(line[:3])
 	#with open("", 'r', encoding='utf-8') as file:
 	return contentresult

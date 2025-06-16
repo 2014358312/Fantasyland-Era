@@ -35,7 +35,37 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 	completion_reward = {
-		
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = FGU_goddesses_peace_treaty
+				add_idea = FGU_goddesses_peace_treaty_union_ready
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { has_idea = FGU_goddesses_peace_treaty }
+				remove_ideas = FGU_goddesses_peace_treaty
+			}
+			add_ideas = FGU_goddesses_peace_treaty_union_ready
+		}
+	}
+	completion_reward_joint_originator = {
+		add_political_power = 50
+		add_to_variable = { FGU_unification_process_var = 2 }
+		custom_effect_tooltip = {
+			localization_key = FGU_unification_process_tt
+			PROGRESS = FGU_unification_process_add
+			VALUE = 2
+		}
+	}
+	completion_reward_joint_member = {
+		add_political_power = 25
+		add_to_variable = { FGU_unification_process_var = 1 }
+		custom_effect_tooltip = {
+			localization_key = FGU_unification_process_tt
+			PROGRESS = FGU_unification_process_add
+			VALUE = 1
+		}
 	}
 }
 
