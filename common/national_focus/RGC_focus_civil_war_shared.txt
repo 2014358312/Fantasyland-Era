@@ -7,6 +7,9 @@ shared_focus = {
 	allow_branch = {
 		#RGC_is_victoiran_country = yes
 		tag = RGC
+		NOT = {
+			has_global_flag = victorian_civil_war_happen
+		}
 	}
 	#prerequisite = { focus = GFX_focus_generic_concessions }
 	#mutually_exclusive = { focus =  }
@@ -342,10 +345,38 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = RGC_cw_war_focus_1
+	id = TAR_cw_declaration_of_independence
+	text = RGC_cw_declaration_of_independence
+	icon = GFX_goal_generic_forceful_treaty
+	allow_branch = {
+		tag = TAR
+		has_global_flag = victorian_civil_war_happen
+	}
+	x = 7
+	y = 0
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = TAR_cw_war_focus_1
 	icon = GFX_focus_SWE_hedgehog_defense
-	prerequisite = { focus = RGC_cw_declaration_of_independence }
-	relative_position_id = RGC_cw_declaration_of_independence
+	prerequisite = { focus = TAR_cw_declaration_of_independence }
+	relative_position_id = TAR_cw_declaration_of_independence
 	x = -1
 	y = 1
 	cost = 5
@@ -367,10 +398,10 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = RGC_cw_war_focus_2
+	id = TAR_cw_war_focus_2
 	icon = GFX_focus_SWE_hedgehog_defense
-	prerequisite = { focus = RGC_cw_declaration_of_independence }
-	relative_position_id = RGC_cw_declaration_of_independence
+	prerequisite = { focus = TAR_cw_declaration_of_independence }
+	relative_position_id = TAR_cw_declaration_of_independence
 	x = 1
 	y = 1
 	cost = 5
@@ -392,12 +423,68 @@ shared_focus = {
 }
 
 shared_focus = {
+	id = RGC_cw_iron_wall_2
+	text = RGC_cw_iron_wall
+	icon = GFX_focus_SWE_hedgehog_defense
+	allow_branch = {
+		tag = RGC
+		has_global_flag = victorian_civil_war_happen
+	}
+	x = 7
+	y = 0
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
 	id = RGC_cw_war_focus_3
 	icon = GFX_focus_SWE_hedgehog_defense
-	prerequisite = { focus = RGC_cw_iron_wall }
-	relative_position_id = RGC_cw_iron_wall
+	prerequisite = { focus = RGC_cw_iron_wall_2 }
+	relative_position_id = RGC_cw_iron_wall_2
 	x = 0
 	y = 1
+	cost = 5
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		
+	}
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = KDE_cw_survival_of_civilization
+	text = RGC_cw_survival_of_civilization
+	icon = GFX_focus_RGC_survival_of_civilization
+	allow_branch = {
+		tag = KDE
+		has_global_flag = victorian_civil_war_happen
+	}
+	x = 7
+	y = 0
 	cost = 5
 	ai_will_do = {
 		factor = 1

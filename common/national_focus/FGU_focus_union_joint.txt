@@ -8,10 +8,9 @@
 ### search_filters = {FOCUS_FILTER_USA_CONGRESS}
 
 shared_focus = {
-	id = FGU_form_joint_alliance
-	icon = GFX_focus_NORDIC_dem_form_alliance
+	id = FGU_joint_additional_article
+	icon = GFX_focus_NORDIC_mon_form_alliance
 	text_icon = NORDIC_focus_style
-	dynamic = yes 
 	allow_branch = {
 		
 	}
@@ -23,7 +22,12 @@ shared_focus = {
 		base = 1
 	}
 	available = {
-		
+		is_game_goddess_country = yes
+		has_idea = FGU_goddesses_peace_treaty
+		NOT = { has_global_flag = FGU_catastrophe_progress_flag }
+	}
+	joint_trigger = {
+  		is_game_goddess_country = yes 
 	}
 	search_filters = { FOCUS_FILTER_POLITICAL }
 	bypass = {  }
@@ -36,11 +40,11 @@ shared_focus = {
 }
 
 joint_focus = {
-	id = FGU_form_joint_1111111
+	id = FGU_joint_joint_command
 	icon = GFX_goal_generic_army_doctrines
 	text_icon = NORDIC_focus_style
-	prerequisite = { focus = FGU_form_joint_alliance }
-	relative_position_id = FGU_form_joint_alliance
+	prerequisite = { focus = FGU_joint_additional_article }
+	relative_position_id = FGU_joint_additional_article
 	x = -6
 	y = 1
 	cost = 5
@@ -48,7 +52,8 @@ joint_focus = {
 		is_game_goddess_country = yes
 		has_stability > 0.5
 		has_war_support > 0.25
-	}	
+		NOT = { has_global_flag = FGU_catastrophe_progress_flag }
+	}
 	joint_trigger = {
   		is_game_goddess_country = yes 
 	}
@@ -57,6 +62,26 @@ joint_focus = {
 		air_experience = 25
 		navy_experience = 25
 		army_experience = 25
-		add_command_power = 25		
+		add_command_power = 25
+	}
+	completion_reward_joint_originator = {
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.75
+			uses = 1
+			category = land_doctrine
+			category = naval_doctrine
+			category = air_doctrine
+			category = special_forces_doctrine
+		}
+	}
+	completion_reward_joint_member = {
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.50
+			uses = 1
+			category = land_doctrine
+			category = naval_doctrine
+			category = air_doctrine
+			category = special_forces_doctrine
+		}
 	}
 }

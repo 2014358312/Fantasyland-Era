@@ -701,3 +701,20 @@ character_add_hog_flag = {
 		}
 	}
 }
+
+FE_peace_pop_effect = {
+	#fire notification if player
+	every_possible_country = {
+		limit = { is_ai = no }
+		event_target:pop_lose_country = { set_variable = { global.global_losing_country = THIS } }
+		event_target:pop_win_country = { add_to_array = { PREV.peace_popup_alert_array_winner = THIS } }
+		event_target:pop_lose_country = { add_to_array = { PREV.peace_popup_alert_array = THIS } }
+
+		set_variable = { losing_country = global.global_losing_country }
+		
+		set_variable_to_random = {
+			var = global.peace_popup_dirty
+			integer = yes
+		}
+	}
+}
