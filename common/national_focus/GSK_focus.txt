@@ -623,7 +623,9 @@ focus_tree = {
 		cost = 2
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			add_stability = 0.05
+			add_ideas = GSK_qinggongye##加精神
+			add_research_slot = 1
 		}
 	}
 	focus ={
@@ -635,7 +637,8 @@ focus_tree = {
 		cost = 2
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			add_political_power = 35
+			add_ideas = GSK_nye
 		}
 	}
 	focus ={
@@ -647,24 +650,87 @@ focus_tree = {
 		cost = 2
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			swap_ideas = { 
+				remove_idea = GSK_qinggongye ##原本精神
+				add_idea = GSK_qinggongye1 ##覆盖精神
+			 }
 		}
 	}
 	focus ={
-		id = GSK_snjh#四年计划
+		id = GSK_hxxzw#幻想乡织物计划
 		relative_position_id = GSK_sgy
-		prerequisite ={ focus = GSK_sgy focus = GSK_qgy}
+		prerequisite ={ focus = GSK_sgy}
+		x = 1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =10
+			add_stability = 0.05
+			add_ideas = GSK_zye
+		}
+	}
+	focus ={
+		id = GSK_ztjh#种田计划
+		relative_position_id = GSK_sgy
+		prerequisite ={ focus = GSK_sgy focus = GSK_ny}
 		x = -1
 		y = 1
 		cost = 2
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			add_political_power =15
+			swap_ideas = { 
+				remove_idea = GSK_nye ##原本精神
+				add_idea = GSK_nye1 ##覆盖精神
+			 }
 		}
-	}focus ={
-		id = GSK_ftym#飞天意面
-		relative_position_id = GSK_snjh
-		prerequisite ={ focus = GSK_snjh}
+	}
+	focus ={
+		id = GSK_hxxjh#幻想乡种植计划
+		relative_position_id = GSK_ny
+		prerequisite ={ focus = GSK_ny}
+		x = -1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =10
+			add_ideas = GSK_zy
+			add_tech_bonus = {
+			bonus = 3.0
+			uses = 3
+			category = construction_tech
+		}
+		}
+	}
+	
+	focus ={
+		id = GSK_qgyxc#全面轻工业初步形成
+		relative_position_id = GSK_ztjh
+		prerequisite ={ focus = GSK_ztjh focus =GSK_hxxjh focus =GSK_hxxzw}
+		x = 0
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			production_speed_industrial_complex_factor = 0.10
+			land_reinforce_rate =0.20
+			add_tech_bonus = {
+			bonus = 3.0
+			uses = 1
+			category = industry
+		}
+		swap_ideas = { 
+				remove_idea = GSK_nye1 ##原本精神
+				add_idea = GSK_nye2 ##覆盖精神
+			 }
+		}
+	}
+	focus ={
+		id = GSK_gtjs#研发高级耕田技术
+		relative_position_id = GSK_qgyxc
+		prerequisite ={ focus = GSK_qgyxc}
 		x = 0
 		y = 1
 		cost = 2
@@ -675,10 +741,23 @@ focus_tree = {
 		}
 	}
 	focus ={
-		id = GSK_gtjs#研发高级耕田技术
-		relative_position_id = GSK_ftym
-		prerequisite ={ focus = GSK_ftym}
-		x = 0
+		id = GSK_qgyhx#轻工业发展计划书
+		relative_position_id = GSK_gtjs
+		prerequisite ={ focus = GSK_gtjs}
+		x = -1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			production_speed_industrial_complex_factor = 0.10
+			land_reinforce_rate =0.20
+		}
+	}
+	focus ={
+		id = GSK_qgycx#轻工业初步成效
+		relative_position_id = GSK_gtjs
+		prerequisite ={ focus = GSK_gtjs}
+		x = 1
 		y = 1
 		cost = 2
 		available = {}
@@ -696,7 +775,8 @@ focus_tree = {
 		cost = 2
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			add_war_support = 0.05
+			add_ideas = GSK_zhonggongye##加精神
 		}
 	}
 	focus ={
@@ -712,11 +792,209 @@ focus_tree = {
 		}
 	}
 	focus ={
-		id = GSK_qtbj#齐头并进
+		id = GSK_tk#坦克事业
+		relative_position_id = GSK_wq
+		prerequisite ={ focus = GSK_wq}
+		x = 0
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_jwq#军工机构
+		relative_position_id = GSK_tk
+		prerequisite ={ focus = GSK_tk}
+		x = -1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_qwq#轻武器
+		relative_position_id = GSK_tk
+		prerequisite ={ focus = GSK_tk}
+		x = 1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_htjgc#河童工业
+		relative_position_id = GSK_qwq
+		prerequisite ={ focus = GSK_qwq focus = GSK_jwq}
+		x = -1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_dxkh#地下核威慑
+		relative_position_id = GSK_htjgc
+		prerequisite ={ focus = GSK_htjgc }
+		x = 0
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+
+	focus ={
+		id = GSK_jjjh#经济计划
 		relative_position_id = GSK_gongye
 		prerequisite ={ focus = GSK_gongye}
 		x = 0
 		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_fhfz#计划经济
+		relative_position_id = GSK_jjjh
+		prerequisite ={ focus = GSK_jjjh}
+		mutually_exclusive ={ focus = GSK_jjfs }
+		x = -2
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_snjh#四年计划
+		relative_position_id = GSK_fhfz
+		prerequisite ={ focus = GSK_fhfz}
+		x = -1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_grjs#光荣的建设
+		relative_position_id = GSK_fhfz
+		prerequisite ={ focus = GSK_fhfz}
+		x = 1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_fagh#方案规划
+		relative_position_id = GSK_grjs
+		prerequisite ={ focus = GSK_grjs focus = GSK_snjh}
+		x = -1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+
+
+	##分隔线
+	focus ={
+		id = GSK_jjfs#经济复苏
+		relative_position_id = GSK_jjjh
+		prerequisite ={ focus = GSK_jjjh}
+		mutually_exclusive ={ focus = GSK_fhfz }
+		x = 2
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_ssqf#神社祈福
+		relative_position_id = GSK_jjfs
+		prerequisite ={ focus = GSK_jjfs}
+		x = 1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_trjs#天人援建
+		relative_position_id = GSK_jjfs
+		prerequisite ={ focus = GSK_jjfs}
+		x = -1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_fsmb#第一个复苏目标达成
+		relative_position_id = GSK_trjs
+		prerequisite ={ focus = GSK_trjs focus = GSK_ssqf}
+		x = 1
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_dbzb#电表倒转的准备
+		relative_position_id = GSK_fsmb
+		prerequisite ={ focus = GSK_fsmb focus = GSK_fagh}
+		x = -2
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_jkdb#超工业实现！
+		relative_position_id = GSK_dbzb
+		prerequisite ={ focus = GSK_dbzb }
+		x = 0
+		y = 1
+		cost = 2
+		available = {}
+		completion_reward = {
+			add_political_power =150
+		}
+	}
+	focus ={
+		id = GSK_hxxqdcg#幻想乡工业庆典
+		relative_position_id = GSK_dbzb
+		prerequisite ={ focus = GSK_jkdb focus = GSK_dxkh focus = GSK_qgyhx focus = GSK_qgycx}
+		x = 0
+		y = 2
 		cost = 2
 		available = {}
 		completion_reward = {
