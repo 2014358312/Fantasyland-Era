@@ -311,6 +311,10 @@ RGC_start_civil_war = {
 				news_event = FE_news.15
 			}
 			set_global_flag = victorian_civil_war_happen
+			every_possible_country = {
+				limit = { RGC_is_victoiran_country = yes }
+				reload_focus_tree_hide = yes
+			}
 		}
 	}
 }

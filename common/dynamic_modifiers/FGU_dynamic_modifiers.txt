@@ -31,32 +31,13 @@ FGU_alliance_unification_process_dynamic_modifier = {
 	enable = { always = yes }
 
 	political_power_factor = FGU_AUP_political_power_factor_var
+}
 
-	army_attack_factor = WPE_SFN_army_chief_positive_var
-	army_defence_factor = WPE_SFN_army_chief_positive_var
-	training_time_army_factor = WPE_SFN_army_chief_negative_var
-	experience_gain_army_factor = WPE_SFN_army_chief_positive_var
-	army_org_factor = WPE_SFN_army_chief_positive_var
-	planning_speed = WPE_SFN_army_chief_positive_var
-	out_of_supply_factor = WPE_SFN_army_chief_negative_var
-	army_speed_factor = WPE_SFN_army_chief_positive_var
-	max_dig_in_factor = WPE_SFN_army_chief_positive_var
-	mobilization_speed = 1.00
-	
-	experience_gain_air_factor = WPE_SFN_air_chief_positive_var
-	air_accidents_factor = WPE_SFN_air_chief_negative_var
-	air_night_penalty = WPE_SFN_air_chief_negative_var
-	army_bonus_air_superiority_factor = WPE_SFN_air_chief_positive_var
-	air_weather_penalty = WPE_SFN_air_chief_negative_var
-	
-	navy_carrier_air_attack_factor = WPE_SFN_navy_chief_positive_var
-	navy_carrier_air_targetting_factor = WPE_SFN_navy_chief_positive_var
-	navy_carrier_air_agility_factor = WPE_SFN_navy_chief_positive_var
-	navy_capital_ship_attack_factor = WPE_SFN_navy_chief_positive_var
-	navy_capital_ship_defence_factor = WPE_SFN_navy_chief_positive_var
-	navy_screen_attack_factor = WPE_SFN_navy_chief_positive_var
-	navy_screen_defence_factor = WPE_SFN_navy_chief_positive_var
-	convoy_raiding_efficiency_factor = WPE_SFN_navy_chief_positive_var
-	experience_gain_navy_factor = WPE_SFN_navy_chief_positive_var
-	naval_speed_factor = WPE_SFN_navy_chief_positive_var
+FGU_joint_joint_command_dynamic_modifier = {
+	icon = GFX_idea_generic_war_preparation
+	enable = { always = yes }
+
+	max_command_power_mult = FGU_JJC_max_command_power_mult_var
+	army_org_factor = FGU_JJC_army_org_factor_var
+	army_speed_factor = FGU_JJC_army_speed_factor_var
 }

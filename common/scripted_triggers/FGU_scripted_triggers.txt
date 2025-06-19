@@ -10,3 +10,16 @@ is_game_goddess_country = {
 		}
 	}
 }
+
+FGU_joint_basic_trigger = {
+	is_game_goddess_country = yes
+	is_in_faction = yes
+	is_subject = no
+}
+
+FGU_joint_basic_available_trigger = {
+	FGU_joint_basic_trigger = yes	
+	any_allied_country = {
+		FGU_joint_basic_trigger = yes
+	}
+}

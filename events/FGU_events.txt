@@ -1,0 +1,38 @@
+﻿###########################
+# Goddesses Events
+###########################
+
+add_namespace = goddesses_joint
+
+country_event = {
+	id = goddesses_joint.1
+	title = goddesses_joint.1.t
+	desc = goddesses_joint.1.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = goddesses_joint.1.a
+		add_political_power = 10
+		add_to_variable = { global.FGU_unification_process_var = 1 }
+		custom_effect_tooltip = {
+			localization_key = FGU_unification_process_add_tt
+			VALUE = 1
+		}
+	}
+
+	option = {
+		name = goddesses_joint.1.b
+	}
+
+	option = {
+		name = goddesses_joint.1.c
+		add_political_power = -15
+		add_to_variable = { global.FGU_unification_process_var = -1 }
+		custom_effect_tooltip = {
+			localization_key = FGU_unification_process_sub_tt
+			VALUE = -1
+		}
+	}
+}

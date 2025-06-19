@@ -23,48 +23,69 @@ shared_focus = {
 	}
 	available = {
 		is_game_goddess_country = yes
+		any_allied_country = {
+			is_game_goddess_country = yes
+		}
+		hidden_trigger = {
+			if = {
+				limit = { has_global_flag = FGU_catastrophe_progress_flag }
+				all_allied_country = {
+					NOT = { has_country_flag = FGU_joint_additional_article_flag }
+				}
+			}
+		}
+		is_in_faction = yes
+		if = {
+			limit = { NOT = { has_global_flag = FGU_catastrophe_progress_flag } }
+			is_faction_leader = yes 	#if in catastrophe, restrictions will be relaxed.
+		}
+		is_subject = no
 		has_idea = FGU_goddesses_peace_treaty
-		NOT = { has_global_flag = FGU_catastrophe_progress_flag }
-	}
-	joint_trigger = {
-  		is_game_goddess_country = yes 
 	}
 	search_filters = { FOCUS_FILTER_POLITICAL }
 	bypass = {  }
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+	select_effect = {
+		if = {
+			limit = {
+				is_faction_leader = no
+				NOT = { has_country_flag = FGU_joint_additional_article_flag }
+				any_allied_country = { NOT = { has_country_flag = FGU_joint_additional_article_flag } }
+			}
+			set_country_flag = FGU_joint_additional_article_flag
+		}
+	}
 	completion_reward = {
-		effect_tooltip = {
+		if = {
+			limit = {
+				is_in_faction = yes
+				is_faction_leader = no
+				all_allied_country = { is_game_goddess_country = yes }
+				has_global_flag = FGU_catastrophe_progress_flag
+			}
+			set_faction_leader = yes
+		}
+		add_political_power = 50
+		custom_effect_tooltip = FGU_joint_additional_article_tt
+		add_to_variable = { global.FGU_unification_process_var = 2 }
+		custom_effect_tooltip = {
+			localization_key = FGU_unification_process_add_tt
+			VALUE = 2
+		}
+		swap_ideas = {
+			remove_idea = FGU_goddesses_peace_treaty
+			add_idea = FGU_goddesses_peace_treaty_union_ready
+		}
+		every_allied_country = {
+			limit = { has_idea = FGU_goddesses_peace_treaty }
 			swap_ideas = {
 				remove_idea = FGU_goddesses_peace_treaty
 				add_idea = FGU_goddesses_peace_treaty_union_ready
 			}
-		}
-		hidden_effect = {
-			if = {
-				limit = { has_idea = FGU_goddesses_peace_treaty }
-				remove_ideas = FGU_goddesses_peace_treaty
-			}
-			add_ideas = FGU_goddesses_peace_treaty_union_ready
-		}
-	}
-	completion_reward_joint_originator = {
-		add_political_power = 50
-		add_to_variable = { FGU_unification_process_var = 2 }
-		custom_effect_tooltip = {
-			localization_key = FGU_unification_process_tt
-			PROGRESS = FGU_unification_process_add
-			VALUE = 2
-		}
-	}
-	completion_reward_joint_member = {
-		add_political_power = 25
-		add_to_variable = { FGU_unification_process_var = 1 }
-		custom_effect_tooltip = {
-			localization_key = FGU_unification_process_tt
-			PROGRESS = FGU_unification_process_add
-			VALUE = 1
+			add_political_power = 25
+			country_event = goddesses_joint.1
 		}
 	}
 }
@@ -79,10 +100,10 @@ joint_focus = {
 	y = 1
 	cost = 5
 	available = {
-		is_game_goddess_country = yes
+		FGU_joint_basic_available_trigger = yes
+		NOT = { has_global_flag = FGU_catastrophe_progress_flag }
 		has_stability > 0.5
 		has_war_support > 0.25
-		NOT = { has_global_flag = FGU_catastrophe_progress_flag }
 	}
 	joint_trigger = {
   		is_game_goddess_country = yes 
@@ -93,9 +114,21 @@ joint_focus = {
 		navy_experience = 25
 		army_experience = 25
 		add_command_power = 25
+		effect_tooltip = {
+			add_ideas = FGU_joint_joint_command_idea_fake
+		}
+		hidden_effect = {
+			add_dynamic_modifier = {
+				modifier = FGU_joint_joint_command_dynamic_modifier
+			}
+			add_to_variable = { FGU_JJC_max_command_power_mult_var = 0.10 }
+			add_to_variable = { FGU_JJC_army_org_factor_var = 0.15 }
+			add_to_variable = { FGU_JJC_army_speed_factor_var = 0.10 }
+		}
 	}
 	completion_reward_joint_originator = {
 		add_doctrine_cost_reduction = {
+			name = FGU_joint_joint_command
 			cost_reduction = 0.75
 			uses = 1
 			category = land_doctrine
@@ -106,6 +139,7 @@ joint_focus = {
 	}
 	completion_reward_joint_member = {
 		add_doctrine_cost_reduction = {
+			name = FGU_joint_joint_command
 			cost_reduction = 0.50
 			uses = 1
 			category = land_doctrine
