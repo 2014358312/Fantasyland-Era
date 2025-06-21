@@ -841,6 +841,306 @@ northwest_continent_debug_decisions = {
 			}
 		}
 	}
+	debug_tia_civil_war_final = {
+		allowed = {
+			always = yes
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: decision debug_tia_civil_war_final"
+			#释放BEL
+			every_state = {
+				limit = {
+					OR = {
+						state = 235
+						state = 236
+						state = 237
+						state = 264
+						state = 265
+						state = 266
+						state = 238
+					}
+				}
+				effect_tooltip = {
+					add_core_of = BEL
+					BEL = {
+						transfer_state = PREV
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							NOT = {
+								is_core_of = BEL
+							}
+						}
+						add_core_of = BEL
+					}
+					BEL = {
+						transfer_state = PREV
+					}
+				}
+			}
+			every_country = {
+				limit = { has_character = TIA_Aqua }
+				TIA_Aqua = { set_nationality = BEL }
+			}
+			hidden_effect = {
+				every_country = {
+					limit = { has_character = TIA_Aqua }
+					if = {
+						limit = { NOT = { has_government = neutrality } }
+						set_politics = {
+							ruling_party = neutrality
+						}
+					}
+					add_country_leader_role = {
+						character = TIA_Aqua
+						country_leader = {
+							ideology = neutrality_subtype
+							expire = "1965.1.1.1"
+							traits = {
+								Water_Goddess_Aqua
+							}
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			#释放FON
+			every_state = {
+				limit = {
+					OR = {
+						state = 9
+						state = 12
+						state = 13
+						state = 14
+						state = 15
+						state = 16
+						state = 17
+						state = 18
+						state = 19
+						state = 20
+						state = 21
+						state = 22
+						state = 23
+						#state = 24
+					}
+				}
+				effect_tooltip = {
+					add_core_of = FON
+					FON = {
+						transfer_state = PREV
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							NOT = {
+								is_core_of = FON
+							}
+						}
+						add_core_of = FON
+					}
+					FON = {
+						transfer_state = PREV
+					}
+				}
+			}
+			#释放SOS
+			every_state = {
+				limit = {
+					OR = {
+						state = 248
+						state = 247
+						state = 223
+						state = 244
+						state = 243
+						state = 249
+						state = 224
+						state = 240
+						state = 241
+						state = 252
+						state = 250
+						state = 242
+					}
+				}
+				effect_tooltip = {
+					add_core_of = SOS
+					SOS = {
+						transfer_state = PREV
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							NOT = {
+								is_core_of = SOS
+							}
+						}
+						add_core_of = SOS
+					}
+					SOS = {
+						transfer_state = PREV
+					}
+				}
+			}
+			every_country = {
+				limit = { has_character = TIA_Luna }
+				TIA_Luna = { set_nationality = SOS }
+			}
+			hidden_effect = {
+				every_country = {
+					limit = { has_character = TIA_Luna }
+					if = {
+						limit = { NOT = { has_government = democratic } }
+						set_politics = {
+							ruling_party = democratic
+						}
+					}
+					add_country_leader_role = {
+						character = TIA_Luna
+						country_leader = {
+							ideology = classical_liberalism_subtype
+							expire = "1965.1.1.1"
+							traits = {
+							}
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			#释放RSB
+			every_state = {
+				limit = {
+					OR = {
+						state = 263
+						state = 234
+						state = 233
+						state = 232
+						state = 262
+						state = 231
+						state = 261
+						state = 259
+						state = 230
+					}
+				}
+				effect_tooltip = {
+					add_core_of = RSB
+					RSB = {
+						transfer_state = PREV
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							NOT = {
+								is_core_of = RSB
+							}
+						}
+						add_core_of = RSB
+					}
+					RSB = {
+						transfer_state = PREV
+					}
+				}
+			}
+			every_country = {
+				limit = { has_character = TIA_Livia }
+				TIA_Livia = { set_nationality = RSB }
+			}
+			hidden_effect = {
+				every_country = {
+					limit = { has_character = TIA_Livia }
+					if = {
+						limit = { NOT = { has_government = neutrality } }
+						set_politics = {
+							ruling_party = neutrality
+						}
+					}
+					add_country_leader_role = {
+						character = TIA_Livia
+						country_leader = {
+							ideology = militarism_subtype
+							expire = "1965.1.1.1"
+							traits = {
+							}
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			#释放TCC
+			every_state = {
+				limit = {
+					OR = {
+						state = 258
+						state = 257
+						state = 229
+						state = 228
+						state = 227
+						state = 260
+						state = 254
+						state = 239
+						state = 253
+						state = 226
+						state = 225
+						state = 255
+						state = 251
+						state = 256
+					}
+				}
+				effect_tooltip = {
+					add_core_of = TCC
+					TCC = {
+						transfer_state = PREV
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							NOT = {
+								is_core_of = TCC
+							}
+						}
+						add_core_of = TCC
+					}
+					TCC = {
+						transfer_state = PREV
+					}
+				}
+			}
+			every_country = {
+				limit = { has_character = TIA_Hachiroku }
+				TIA_Hachiroku = { set_nationality = TCC }
+			}
+			hidden_effect = {
+				every_country = {
+					limit = { has_character = TIA_Hachiroku }
+					if = {
+						limit = { NOT = { has_government = neutrality } }
+						set_politics = {
+							ruling_party = neutrality
+						}
+					}
+					add_country_leader_role = {
+						character = TIA_Hachiroku
+						country_leader = {
+							ideology = militarism_subtype
+							expire = "1965.1.1.1"
+							traits = {
+							}
+						}
+						promote_leader = yes
+					}
+				}
+			}
+		}
+	}
 	debug_paretian_heir_yufiria = {
 		allowed = {
 			always = yes
