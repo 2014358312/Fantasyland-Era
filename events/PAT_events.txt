@@ -3,6 +3,7 @@
 ###########################
 
 add_namespace = paretia
+add_namespace = paretia_revo #革命线的事件
 
 country_event = {
 	id = paretia.1
@@ -138,5 +139,153 @@ country_event = {
 
 	option = {
 		name = paretia.101.a
+		set_country_flag = PAT_overly_easy_coup_flag
+		mark_focus_tree_layout_dirty = yes
+		complete_national_focus = PAT_border_crisis
+	}
+}
+
+country_event = {#埋伏
+	id = paretia_revo.1
+	title = paretia_revo.1.t
+	desc = paretia_revo.1.d
+	picture = GFX_report_event_EYP_01
+	is_triggered_only = yes
+	option = {
+		name = paretia_revo.1.a
+
+	}
+}
+
+country_event = {#公主的决意
+	id = paretia_revo.2
+	title = paretia_revo.2.t
+	desc = paretia_revo.2.d
+	picture = GFX_report_event_EYP_01
+	is_triggered_only = yes
+	option = {
+		name = paretia_revo.2.a
+	}
+}
+
+country_event = {#暗影之下
+	id = paretia_revo.3
+	title = paretia_revo.3.t
+	desc = paretia_revo.3.d
+	picture = GFX_report_event_EYP_01
+	is_triggered_only = yes
+	option = {
+		name = paretia_revo.3.a
+	}
+
+}
+
+country_event = {#抵抗者们
+	id = paretia_revo.4
+	title = paretia_revo.4.t
+	desc = paretia_revo.4.d
+	picture = GFX_report_event_EYP_01
+	is_triggered_only = yes
+	option = {
+		name = paretia_revo.4.a
+	}
+}
+
+country_event = {#影中之声
+	id = paretia_revo.5
+	title = paretia_revo.5.t
+	desc = paretia_revo.5.d
+	picture = GFX_report_event_EYP_01
+	is_triggered_only = yes
+	option = {
+		name = paretia_revo.5.a
+	}
+}
+
+country_event = {#血战王都
+	id = paretia_revo.6
+	title = paretia_revo.6.t
+	desc = paretia_revo.6.d
+	picture = GFX_report_event_EYP_01
+	is_triggered_only = yes
+	option = {
+		name = paretia_revo.6.a
+	}
+}
+
+country_event = {#绝境
+	id = paretia_revo.7
+	title = paretia_revo.7.t
+	desc = paretia_revo.7.d
+	picture = GFX_report_event_EYP_01
+	is_triggered_only = yes
+	option = {#是艾妮斯和尤菲莉亚
+		name = paretia_revo.7.a
+		set_country_flag = PAT_heir_apparent
+		mark_focus_tree_layout_dirty = yes
+	}
+	option = {#是血族盟友
+		name = paretia_revo.7.b
+		set_country_flag = PAT_blood_allies
+		mark_focus_tree_layout_dirty = yes
+	}
+	option = {#是露米和信仰之光
+		name = paretia_revo.7.c
+		set_country_flag = PAT_rumi_and_light
+		mark_focus_tree_layout_dirty = yes
+	}
+	option = {#是幻觉
+		name = paretia_revo.7.e
+		set_country_flag = PAT_is_illusion
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+
+country_event = {#暴君之死
+	id = paretia_revo.8
+	title = paretia_revo.8.t
+	desc = paretia_revo.8.d
+	picture = GFX_report_event_EYP_01
+	is_triggered_only = yes
+	option = {#王国应由正统继承人们统治
+		name = paretia_revo.8.a
+		trigger = {
+			has_country_flag = PAT_heir_apparent
+		}
+	}
+	option = {#所有抗争者共同的胜利
+		name = paretia_revo.8.b
+		trigger = {
+			has_country_flag = PAT_blood_allies
+		}
+	}
+	option = {#全赖神秘而强大的露米殿下
+		name = paretia_revo.8.c
+		trigger = {
+			has_country_flag = PAT_rumi_and_light
+		}
+	}
+	option = {#亚尔加德王子居功至伟
+		name = paretia_revo.8.e
+		trigger = {
+			has_country_flag = PAT_is_illusion
+		}
+	}
+}
+
+country_event = {#大选结果
+	id = paretia_revo.9
+	title = paretia_revo.9.t
+	desc = paretia_revo.9.d
+	picture = GFX_report_event_EYP_01
+	is_triggered_only = yes
+	option = {#人民革命党
+		name = paretia_revo.9.a
+		set_country_flag = PAT_choose_PRP
+	}
+
+	option = {#自由民主党
+		name = paretia_revo.9.b
+		set_country_flag = PAT_choose_LDP
 	}
 }

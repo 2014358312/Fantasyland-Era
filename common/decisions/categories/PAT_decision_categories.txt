@@ -33,3 +33,26 @@ PAT_balance_of_power_decision_category = {
 	}
 }
 
+PAT_debug_decision_category = {
+	allowed = {
+		original_tag = PAT
+	}
+	visible = {
+		is_debug = yes
+	}
+}
+
+PAT_rebuild_country_category = {
+	allowed = {
+		original_tag = PAT
+	}
+	visible = {
+		has_completed_focus = PAT_focus_peoples_revorution_party
+		OR = {
+				has_idea = PAT_idea_Shadow_of_Destruction_2
+				has_idea = PAT_idea_Shadow_of_Destruction_1
+				has_idea = PAT_idea_Shadow_of_Destruction_0
+		}
+	}
+}
+

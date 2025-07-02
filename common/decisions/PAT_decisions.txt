@@ -908,3 +908,122 @@ PAT_balance_of_power_decision_category = {
 		}
 	}
 }
+
+PAT_debug_decision_category = {
+	PAT_debug_change_to_after_crisis = {#切换至灾厄之后
+		cost = 0
+		fire_only_once = no
+		complete_effect = {
+			set_country_flag = PAT_overly_easy_coup_flag
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	PAT_debug_change_to_traditional_policy = {#切换至回归传统
+		cost = 0
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = PAT_debug_decision_change_tip.tt
+				has_country_flag = PAT_overly_easy_coup_flag
+			}	
+		}
+		fire_only_once = no
+		complete_effect = {
+			set_country_flag = PAT_kingdom_newborn
+			set_country_flag = PAT_heir_apparent
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	PAT_debug_change_to_forward_future = {#切换至展望未来
+		cost = 0
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = PAT_debug_decision_change_tip.tt
+				has_country_flag = PAT_overly_easy_coup_flag
+			}	
+		}
+		fire_only_once = no
+		complete_effect = {
+			set_country_flag = PAT_kingdom_newborn
+			set_country_flag = PAT_blood_allies
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	PAT_debug_change_to_third_road = {#切换至第三条道路
+		cost = 0
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = PAT_debug_decision_change_tip.tt
+				has_country_flag = PAT_overly_easy_coup_flag
+			}	
+		}
+		fire_only_once = no
+		complete_effect = {
+			set_country_flag = PAT_kingdom_newborn
+			set_country_flag = PAT_rumi_and_light
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	PAT_debug_change_to_wisdom_of_ancestors = {#切换至向后看
+		cost = 0
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = PAT_debug_decision_change_tip.tt
+				has_country_flag = PAT_overly_easy_coup_flag
+			}	
+		}
+		fire_only_once = no
+		complete_effect = {
+			set_country_flag = PAT_kingdom_newborn
+			set_country_flag = PAT_is_illusion
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+}
+
+PAT_rebuild_country_category = {
+	PAT_rebuild_country = {
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = PAT_rebuild_decision_tt
+				OR = {
+					has_idea = PAT_idea_Shadow_of_Destruction_2
+					has_idea = PAT_idea_Shadow_of_Destruction_1
+					has_idea = PAT_idea_Shadow_of_Destruction_0
+				}
+			}
+		}
+		visible = {
+			OR = {
+					has_idea = PAT_idea_Shadow_of_Destruction_2
+					has_idea = PAT_idea_Shadow_of_Destruction_1
+					has_idea = PAT_idea_Shadow_of_Destruction_0
+				}
+		}
+		cost = 100
+		days_remove = 90
+		fire_only_once = no
+		remove_effect = {
+			if = {
+				limit = { has_idea = PAT_idea_Shadow_of_Destruction_2 }
+				swap_ideas = {
+					remove_idea = PAT_idea_Shadow_of_Destruction_2
+					add_idea = PAT_idea_Shadow_of_Destruction_1
+				}
+			}
+			else_if = {
+				limit = { has_idea = PAT_idea_Shadow_of_Destruction_1 }
+				swap_ideas = {
+					remove_idea = PAT_idea_Shadow_of_Destruction_1
+					add_idea = PAT_idea_Shadow_of_Destruction_0
+				}
+			}
+			else_if = {
+				limit = { has_idea = PAT_idea_Shadow_of_Destruction_0 }
+				remove_ideas = PAT_idea_Shadow_of_Destruction_0
+			}
+		}
+	}
+}

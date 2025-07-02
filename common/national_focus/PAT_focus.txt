@@ -32,17 +32,22 @@ focus_tree = {
 		icon = GFX_focus_BEL_legacy_of_the_soldier_king
 		x = 4
 		y = 0
-		offset = {
-			x = 6
-			y = 0
-			trigger = {
-				is_debug = yes
-			}
-		}
+		#offset = {
+		#	x = 6
+		#	y = 0
+		#	trigger = {
+		#		is_debug = yes
+		#	}
+		#}
 		cost = @focus_time_tier_2
 		available = {
 			is_subject = no
 			has_government = neutrality
+		}
+		allow_branch = {
+			NOT = {
+				has_country_flag = PAT_overly_easy_coup_flag
+			}
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -191,7 +196,7 @@ focus_tree = {
 					has_country_flag = PAT_still_kingdom_flag
 					is_debug = no
 				}
-				is_debug = yes
+				#is_debug = yes
 			}
 		}
 		x = 4
@@ -797,26 +802,34 @@ focus_tree = {
 			OR = {
 				AND = {
 					has_country_flag = PAT_overly_easy_coup_flag
-					is_debug = no
+					#is_debug = no
+					NOT = {
+						has_country_flag = PAT_kingdom_newborn
+					}
 				}
-				is_debug = yes
+				#is_debug = yes
 			}
 		}
 		x = 4
 		y = 0
-		offset = {
-			x = 14
-			y = 0
-			trigger = {
-				is_debug = yes
-			}
-		}
+		#offset = {
+		#	x = 14
+		#	y = 0
+		#	trigger = {
+		#		is_debug = yes
+		#	}
+		#}
 		cost = @focus_time_tier_5
 		available = {
 			has_completed_focus = PAT_border_crisis
 		}
+		select_effect = {
+			country_event = { id = paretia_revo.1 days = 20 }
+		}
 		completion_reward = {
-			
+			add_ideas = PAT_idea_Shadow_of_Destruction_3
+			remove_ideas = PAT_feudal_order
+			remove_ideas = PAT_peace_act
 		}
 		ai_will_do = {
 			factor = 1
@@ -833,6 +846,9 @@ focus_tree = {
 		cost = @focus_time_tier_2
 		available = {
 			
+		}
+		select_effect = {
+			country_event = { id = paretia_revo.2 days = 10 }
 		}
 		completion_reward = {
 			add_stability = -0.10
@@ -861,6 +877,19 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
+			PAT_lumi = {
+				add_advisor_role = {
+					advisor = {
+						slot = political_advisor
+						cost = 100
+						idea_token = PAT_Lumi_pol_advisor
+						traits = {
+							Lumi_elf_Church
+						}
+
+					}
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -880,6 +909,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
+			add_ideas = PAT_idea_elf_faith_0
 		}
 		ai_will_do = {
 			factor = 1
@@ -898,7 +928,11 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = PAT_idea_elf_faith_0
+				add_idea = PAT_idea_elf_faith_1
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -917,7 +951,8 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_manpower = 50000
+			add_war_support = 0.15
 		}
 		ai_will_do = {
 			factor = 1
@@ -935,8 +970,11 @@ focus_tree = {
 		available = {
 			
 		}
+		select_effect = {
+			country_event = { id = paretia_revo.4 days = 10 }
+		}
 		completion_reward = {
-			add_political_power = 50
+			add_ideas = PAT_idea_nation_awake
 		}
 		ai_will_do = {
 			factor = 1
@@ -955,7 +993,8 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_war_support = 0.05
+			add_ideas = PAT_idea_dragon_power
 		}
 		ai_will_do = {
 			factor = 1
@@ -972,6 +1011,9 @@ focus_tree = {
 		cost = @focus_time_tier_2
 		available = {
 			
+		}
+		select_effect = {
+			country_event = { id = paretia_revo.3 days = 10 }
 		}
 		completion_reward = {
 			add_stability = -0.10
@@ -999,7 +1041,8 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_offsite_building = { type = arms_factory level = 1 }
+			add_offsite_building = { type = industrial_complex level = 2 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -1017,8 +1060,15 @@ focus_tree = {
 		available = {
 			
 		}
+		select_effect = {
+			country_event = { id = paretia_revo.5 days = 10 }
+		}
 		completion_reward = {
-			add_political_power = 50
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+			add_stability = 0.1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1037,7 +1087,15 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_political_power = 100
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1056,7 +1114,7 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = 50
+			army_experience = 100
 		}
 		ai_will_do = {
 			factor = 1
@@ -1075,7 +1133,8 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_manpower = 10000
+			add_political_power = 100
 		}
 		ai_will_do = {
 			factor = 1
@@ -1094,7 +1153,14 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 4000
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1500
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1106,8 +1172,14 @@ focus_tree = {
 		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = {
 			focus = PAT_elf_against_3
+		}
+		prerequisite = {
 			focus = PAT_dragon_against_3
+		}
+		prerequisite = {
 			focus = PAT_vampire_against_3
+		}
+		prerequisite = {
 			focus = PAT_mankind_against_3
 		}
 		relative_position_id = PAT_after_crisis
@@ -1118,12 +1190,16 @@ focus_tree = {
 			
 		}
 		select_effect = {
-			set_country_flag = PAT_horn_of_counterattack_flag
+			#set_country_flag = PAT_horn_of_counterattack_flag#没搜到这flag在哪里有用到
+			country_event = { id = paretia_revo.6 days = 2 }
+			country_event = { id = paretia_revo.7 days = 5 }
+			set_country_flag = PAT_kingdom_newborn
 		}
 		completion_reward = {
 			add_political_power = -100
 			add_war_support = 0.10
-			clr_country_flag = PAT_horn_of_counterattack_flag
+			#clr_country_flag = PAT_horn_of_counterattack_flag
+			mark_focus_tree_layout_dirty = yes
 		}
 		ai_will_do = {
 			factor = 1
@@ -1133,16 +1209,23 @@ focus_tree = {
 	focus = {
 		id = PAT_newborn_of_country
 		icon = GFX_goal_generic_collaborate_local_elites
-		relative_position_id = PAT_horn_of_counterattack
-		x = 0
+		#relative_position_id = PAT_horn_of_counterattack
+		x = 4
 		y = 1
 		cost = @focus_time_tier_2
+		allow_branch = {
+			has_country_flag = PAT_kingdom_newborn
+		}
 		available = {
 			
 		}
 		completion_reward = {
 			add_political_power = -100
 			add_war_support = 0.10
+			swap_ideas = {
+				remove_idea = PAT_idea_Shadow_of_Destruction_3
+				add_idea = PAT_idea_Shadow_of_Destruction_2
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1154,8 +1237,11 @@ focus_tree = {
 		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = PAT_newborn_of_country }
 		relative_position_id = PAT_newborn_of_country
-		x = -6
+		x = -2
 		y = 1
+		allow_branch = {
+			has_country_flag = PAT_heir_apparent
+		}
 		cost = @focus_time_tier_1
 		available = {
 			
@@ -1190,24 +1276,307 @@ focus_tree = {
 		}
 	}
 
-	focus = {
+	focus = {#展望未来
 		id = PAT_foward_future
 		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = PAT_newborn_of_country }
 		relative_position_id = PAT_newborn_of_country
 		x = 0
 		y = 1
+		allow_branch = {
+			has_country_flag = PAT_blood_allies
+		}
 		cost = @focus_time_tier_1
 		available = {
 			
 		}
 		completion_reward = {
-			add_political_power = -100
-			add_war_support = 0.10
+			deactivate_advisor = PAT_Glantz_Mazenta_head_of_government
+			activate_advisor = generic_head_of_government_none
+			set_party_name = {
+				ideology = democratic
+				long_name = PAT_LDP_name_long
+				name = PAT_LDP_name
+			}
+			add_country_leader_role = {
+    			character = PAT_Kirio_reiji
+    			promote_leader = yes
+    			country_leader = {
+        		ideology = industrial_liberalism_subtype
+        		expire = "1965.1.1.1"
+        		#traits = { }
+    			}
+			}
+			set_party_name = {
+				ideology = communism
+				long_name = PAT_PRP_name_long
+				name = PAT_PRP_name
+			}
+			add_country_leader_role = {
+    			character = PAT_Azusa_aizawa
+    			promote_leader = yes
+    			country_leader = {
+        		ideology = radical_progressivism_subtype
+        		expire = "1965.1.1.1"
+        		#traits = { }
+    			}
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+			add_stability = 0.2
 		}
 		ai_will_do = {
 			factor = 1
 		}
+	}
+
+	focus = {#平等、共和、国家
+		id = PAT_focus_parity_republican_national
+		icon = GFX_focus_focus_fra_revolution_utmost
+		relative_position_id = PAT_foward_future
+		prerequisite = {
+			focus = PAT_foward_future
+		}
+		cost = @focus_time_tier_10
+		x = 0
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = PAT_idea_paretia_newborn
+				days = 360
+			}
+		}
+	}
+
+	focus = {#第一届大选
+		id = PAT_focus_First_general_election
+		icon = GFX_focus_focus_fra_revolution_utmost
+		relative_position_id = PAT_focus_parity_republican_national
+		prerequisite = {
+			focus = PAT_focus_parity_republican_national
+		}
+		cost = 1
+		x = 0
+		y = 1
+		select_effect = {
+			country_event = { id = paretia_revo.9 days = 7 }
+		}
+		completion_reward = {
+			effect_tooltip = {
+				country_event = { id = paretia_revo.9 }
+			}
+			add_political_power = 100
+		 }
+	}
+
+	focus = {#人民革命党
+		id = PAT_focus_peoples_revorution_party
+		icon = GFX_focus_focus_fra_revolution_utmost
+		relative_position_id = PAT_focus_First_general_election
+		prerequisite = {
+			focus = PAT_focus_First_general_election
+		}
+		available = {
+			has_country_flag = PAT_choose_PRP
+		}
+		cost = 5
+		x = -3
+		y = 1
+		completion_reward = {
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+			}
+			custom_effect_tooltip = PAT_focus_PRP.tt
+			unlock_decision_category_tooltip = PAT_rebuild_country_category
+			add_ideas = PAT_idea_paretian_communism_0
+		}
+	}
+	focus = {#部分调控
+		id = PAT_focus_partial_control
+		icon = GFX_focus_focus_fra_revolution_utmost
+		relative_position_id = PAT_focus_peoples_revorution_party
+		prerequisite = {
+			focus = PAT_focus_peoples_revorution_party
+		}
+		cost = 5
+		x = -1
+		y = 1
+		completion_reward = {
+			add_political_power = -100
+			add_ideas = PAT_idea_socialist_industrialization_0
+		}
+	}
+
+	focus = {#党内建设
+		id = PAT_focus_Party_building
+		icon = GFX_goal_support_communism
+		relative_position_id = PAT_focus_peoples_revorution_party
+		prerequisite = {
+			focus = PAT_focus_peoples_revorution_party
+		}
+		cost = 5
+		x = 1
+		y = 1
+		completion_reward = {
+			add_political_power = 80
+			swap_ideas = {
+				remove_idea = PAT_idea_paretian_communism_0
+				add_idea = PAT_idea_paretian_communism_1
+			}
+		}
+	}
+
+	focus = {#成立总工会
+		id = PAT_focus_General_Workers_Union
+		icon = GFX_goal_support_communism
+		relative_position_id = PAT_focus_partial_control
+		prerequisite = {
+			focus = PAT_focus_partial_control
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PAT_idea_socialist_industrialization_0
+				add_idea = PAT_idea_socialist_industrialization_1
+			}
+		}
+	}
+
+	focus = {#阶级斗争
+		id = PAT_focus_the_class_struggle
+		icon = GFX_goal_support_communism
+		relative_position_id = PAT_focus_Party_building
+		prerequisite = {
+			focus = PAT_focus_Party_building
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = PAT_idea_the_class_struggle
+		}
+	}
+
+	focus = {#世界革命的曙光
+		id = PAT_focus_world_revolution
+		icon = GFX_goal_support_communism
+		relative_position_id = PAT_focus_peoples_revorution_party
+		prerequisite = {
+			focus = PAT_focus_General_Workers_Union
+		}
+		prerequisite = {
+			focus = PAT_focus_the_class_struggle
+		}
+		cost = 10
+		x = 0
+		y = 3
+		completion_reward = {
+			add_ideas = PAT_idea_red_flood
+			set_cosmetic_tag = PAT_commune
+		}
+	}
+
+	focus = {#自由民主党
+		id = PAT_focus_Liberal_Democratic_Party
+		icon = GFX_goal_support_democracy
+		relative_position_id = PAT_focus_First_general_election
+		prerequisite = {
+			focus = PAT_focus_First_general_election
+		}
+		available = {
+			has_country_flag = PAT_choose_LDP
+		}
+		cost = 5
+		x = 3
+		y = 1
+		completion_reward = {
+			hidden_effect = {
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+					election_frequency = 60
+				}
+			}
+			custom_effect_tooltip = PAT_focus_LDP.tt
+
+		}
+	}
+	focus = {#议会政治
+		id = PAT_focus_parliamentary_politics
+		icon = GFX_goal_support_democracy
+		relative_position_id = PAT_focus_Liberal_Democratic_Party
+		prerequisite = {
+			focus = PAT_focus_Liberal_Democratic_Party
+		}
+		cost = 5
+		x = -1
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {#民权法案
+		id = PAT_focus_civil_rights_act
+		icon = GFX_goal_support_democracy
+		relative_position_id = PAT_focus_parliamentary_politics
+		prerequisite = {
+			focus = PAT_focus_parliamentary_politics
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {#经济分权
+		id = PAT_focus_economic_decentralization
+		icon = GFX_goal_support_democracy
+		relative_position_id = PAT_focus_Liberal_Democratic_Party
+		prerequisite = {
+			focus = PAT_focus_Liberal_Democratic_Party
+		}
+		cost = 5
+		x = 1
+		y = 1
+		completion_reward = { }
+	}
+	
+	focus = {#自由放任
+		id = PAT_focus_laissez_faire
+		icon = GFX_goal_support_democracy
+		relative_position_id = PAT_focus_economic_decentralization
+		prerequisite = {
+			focus = PAT_focus_economic_decentralization
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = { }
+	}
+	focus = {#自由、平等、繁荣
+		id = PAT_focus_Freedom_equality_prosperity
+		icon = GFX_goal_support_democracy
+		relative_position_id = PAT_focus_Liberal_Democratic_Party
+		prerequisite = {
+			focus = PAT_focus_civil_rights_act
+		}
+		prerequisite = {
+			focus = PAT_focus_laissez_faire
+		}
+		cost = 10
+		x = 0
+		y = 3
+		completion_reward = { }
 	}
 
 	focus = {
@@ -1215,9 +1584,12 @@ focus_tree = {
 		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = PAT_newborn_of_country }
 		relative_position_id = PAT_newborn_of_country
-		x = 6
+		x = 2
 		y = 1
 		cost = @focus_time_tier_1
+		allow_branch = {
+			has_country_flag = PAT_rumi_and_light
+		}
 		available = {
 			
 		}
@@ -1235,8 +1607,11 @@ focus_tree = {
 		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = PAT_newborn_of_country }
 		relative_position_id = PAT_newborn_of_country
-		x = 12
+		x = 4
 		y = 1
+		allow_branch = {
+			has_country_flag = PAT_is_illusion
+		}
 		cost = @focus_time_tier_1
 		available = {
 			
@@ -1255,13 +1630,13 @@ focus_tree = {
 		icon = GFX_goal_generic_collaborate_local_elites
 		x = 20
 		y = 0
-		offset = {
-			x = 10
-			y = 0
-			trigger = {
-				is_debug = yes
-			}
-		}
+		#offset = {
+		#	x = 10
+		#	y = 0
+		#	trigger = {
+		#		is_debug = yes
+		#	}
+		#}
 		cost = @focus_time_tier_5
 		available = {
 			
@@ -1796,4 +2171,5 @@ focus_tree = {
 			factor = 1
 		}
 	}
+
 }
