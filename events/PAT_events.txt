@@ -44,7 +44,7 @@ country_event = {
 	option = {
 		name = paretia.2.b
 		hidden_effect = {
-			country_event = paretia.101
+			country_event = { id = paretia.101 days = 7 random_hours = 48} 
 		}
 	}
 }
@@ -141,7 +141,7 @@ country_event = {
 		name = paretia.101.a
 		set_country_flag = PAT_overly_easy_coup_flag
 		mark_focus_tree_layout_dirty = yes
-		complete_national_focus = PAT_border_crisis
+		#complete_national_focus = PAT_border_crisis
 	}
 }
 
@@ -222,22 +222,18 @@ country_event = {#绝境
 	option = {#是艾妮斯和尤菲莉亚
 		name = paretia_revo.7.a
 		set_country_flag = PAT_heir_apparent
-		mark_focus_tree_layout_dirty = yes
 	}
 	option = {#是血族盟友
 		name = paretia_revo.7.b
 		set_country_flag = PAT_blood_allies
-		mark_focus_tree_layout_dirty = yes
 	}
 	option = {#是露米和信仰之光
 		name = paretia_revo.7.c
 		set_country_flag = PAT_rumi_and_light
-		mark_focus_tree_layout_dirty = yes
 	}
 	option = {#是幻觉
 		name = paretia_revo.7.e
 		set_country_flag = PAT_is_illusion
-		mark_focus_tree_layout_dirty = yes
 	}
 }
 
@@ -252,24 +248,28 @@ country_event = {#暴君之死
 		trigger = {
 			has_country_flag = PAT_heir_apparent
 		}
+		#mark_focus_tree_layout_dirty = yes
 	}
 	option = {#所有抗争者共同的胜利
 		name = paretia_revo.8.b
 		trigger = {
 			has_country_flag = PAT_blood_allies
 		}
+		#mark_focus_tree_layout_dirty = yes
 	}
 	option = {#全赖神秘而强大的露米殿下
 		name = paretia_revo.8.c
 		trigger = {
 			has_country_flag = PAT_rumi_and_light
 		}
+		#mark_focus_tree_layout_dirty = yes
 	}
 	option = {#亚尔加德王子居功至伟
 		name = paretia_revo.8.e
 		trigger = {
 			has_country_flag = PAT_is_illusion
 		}
+		#mark_focus_tree_layout_dirty = yes
 	}
 }
 

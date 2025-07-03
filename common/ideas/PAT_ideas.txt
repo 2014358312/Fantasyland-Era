@@ -333,7 +333,7 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				stability_weekly = 0.01
+				stability_weekly = 0.001
 			}
 		}
 
@@ -342,7 +342,7 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				stability_weekly = 0.01
+				stability_weekly = 0.001
 				army_morale_factor = 0.1
 			}
 		}
@@ -364,6 +364,61 @@ ideas = {
 			}
 			modifier = {
 				land_night_attack = 0.05
+			}
+		}
+
+		PAT_idea_freedom_nation = {#自由国度
+			cancel = {
+				NOT = {
+					has_government = democratic
+				}	
+			}
+			rule = {
+				can_send_volunteers = yes
+			}
+			modifier = {
+				send_volunteers_tension = -0.8
+				drift_defence_factor = 0.5
+				democratic_drift = 0.002
+				party_popularity_stability_factor = 5
+				stability_factor = -0.8
+			}
+		}
+
+		PAT_idea_shock_therapy = {#休克疗法
+			modifier = {
+				industrial_capacity_factory = -0.8
+				production_speed_buildings_factor = -0.5
+				stability_weekly = 0.035
+			}
+			on_remove = {
+				remove_ideas = PAT_idea_Shadow_of_Destruction_2
+			}
+		}
+
+		PAT_idea_Defending_Freedom = {#捍卫自由
+			modifier = {
+				conscription_factor = 0.03
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+				special_forces_cap = 0.5
+			}
+		}
+
+		PAT_idea_entrepreneurs = {#企业家精神
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+			}
+		}
+
+		PAT_idea_Giants_of_Democracy = {#民主的巨人
+			modifier = {
+				operative_slot = 2
+				boost_ideology_mission_factor = 3
+				propaganda_mission_factor = 3
+				guarantee_cost = -0.8
 			}
 		}
 	}

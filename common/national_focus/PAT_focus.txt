@@ -177,7 +177,10 @@ focus_tree = {
 		y = 2
 		cost = @focus_time_tier_5
 		available = {
-			always = no
+			#always = no
+		}
+		select_effect = {
+			country_event = { id = paretia.2 days = 10 }
 		}
 		completion_reward = {
 			
@@ -1219,6 +1222,9 @@ focus_tree = {
 		available = {
 			
 		}
+		select_effect = {
+			country_event = { id = paretia_revo.8 days = 8 random_hours = 48 }
+		}
 		completion_reward = {
 			add_political_power = -100
 			add_war_support = 0.10
@@ -1226,6 +1232,7 @@ focus_tree = {
 				remove_idea = PAT_idea_Shadow_of_Destruction_3
 				add_idea = PAT_idea_Shadow_of_Destruction_2
 			}
+			mark_focus_tree_layout_dirty = yes
 		}
 		ai_will_do = {
 			factor = 1
@@ -1285,6 +1292,7 @@ focus_tree = {
 		y = 1
 		allow_branch = {
 			has_country_flag = PAT_blood_allies
+			has_completed_focus = PAT_newborn_of_country
 		}
 		cost = @focus_time_tier_1
 		available = {
@@ -1396,6 +1404,10 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = PAT_focus_PRP.tt
+			add_popularity = {
+				ideology = communism
+				popularity = 0.3
+			}
 			unlock_decision_category_tooltip = PAT_rebuild_country_category
 			add_ideas = PAT_idea_paretian_communism_0
 		}
@@ -1509,6 +1521,11 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = PAT_focus_LDP.tt
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.6
+			}
+			add_ideas = PAT_idea_freedom_nation
 
 		}
 	}
@@ -1522,7 +1539,23 @@ focus_tree = {
 		cost = 5
 		x = -1
 		y = 1
-		completion_reward = { }
+		completion_reward = {
+			unlock_decision_tooltip = {
+   		 		decision = PAT_parliamentary_strive_for_consensus
+    			show_effect_tooltip = yes
+    			show_modifiers = yes
+			}
+			unlock_decision_tooltip = {
+   		 		decision = PAT_parliamentary_additional_requirements
+    			show_effect_tooltip = yes
+    			show_modifiers = yes
+			}
+			unlock_decision_tooltip = {
+   		 		decision = PAT_parliamentary_Research_Supports
+    			show_effect_tooltip = yes
+    			show_modifiers = yes
+			}
+		}
 	}
 
 	focus = {#民权法案
@@ -1535,7 +1568,9 @@ focus_tree = {
 		cost = 5
 		x = 0
 		y = 1
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = PAT_idea_Defending_Freedom
+		}
 	}
 
 	focus = {#经济分权
@@ -1548,7 +1583,20 @@ focus_tree = {
 		cost = 5
 		x = 1
 		y = 1
-		completion_reward = { }
+		completion_reward = {
+			add_timed_idea = {
+				idea = PAT_idea_shock_therapy
+				days = 360
+			}
+			custom_effect_tooltip = PAT_focus_economic_decentralization_tt
+			add_tech_bonus = {
+				name = PAT_focus_economic_decentralization
+				bonus = 1
+				uses = 2
+				category = industry
+			}
+
+		}
 	}
 	
 	focus = {#自由放任
@@ -1561,7 +1609,19 @@ focus_tree = {
 		cost = 5
 		x = 0
 		y = 1
-		completion_reward = { }
+		completion_reward = {
+			custom_effect_tooltip = PAT_focus_laissez_faire_tt
+			set_country_flag = PAT_add_idea_entrepreneurs_flag
+			effect_tooltip = {
+				add_ideas = PAT_idea_entrepreneurs
+			}
+			add_tech_bonus = {
+				name = PAT_focus_laissez_faire
+				bonus = 1
+				uses = 2
+				category = electronics
+			}
+		}
 	}
 	focus = {#自由、平等、繁荣
 		id = PAT_focus_Freedom_equality_prosperity
@@ -1576,7 +1636,10 @@ focus_tree = {
 		cost = 10
 		x = 0
 		y = 3
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = PAT_idea_Giants_of_Democracy
+			set_cosmetic_tag = PAT_republic
+		}
 	}
 
 	focus = {

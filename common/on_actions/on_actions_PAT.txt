@@ -26,4 +26,20 @@ on_actions = {
 			}
 		}
 	}
+
+	on_weekly_PAT = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = {
+						flag = PAT_add_idea_entrepreneurs_flag
+						days > 360
+					}
+				}
+				add_ideas = PAT_idea_entrepreneurs
+				clr_country_flag = PAT_add_idea_entrepreneurs_flag
+			}	
+		}
+		
+	}
 }

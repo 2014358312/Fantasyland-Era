@@ -983,7 +983,7 @@ PAT_debug_decision_category = {
 	}
 }
 
-PAT_rebuild_country_category = {
+PAT_rebuild_country_category = {#重建国家
 	PAT_rebuild_country = {
 		available = {
 			custom_trigger_tooltip = {
@@ -1023,6 +1023,66 @@ PAT_rebuild_country_category = {
 			else_if = {
 				limit = { has_idea = PAT_idea_Shadow_of_Destruction_0 }
 				remove_ideas = PAT_idea_Shadow_of_Destruction_0
+			}
+		}
+	}
+}
+
+PAT_LDP_decision_category = {
+	PAT_parliamentary_strive_for_consensus = {#议会 争取一致
+		fire_only_once = no
+		custom_cost_trigger = {
+			democratic > 0.05
+		}
+		custom_cost_text = decision_cost_demo_0.05
+		days_remove = 180
+		complete_effect = {
+			hidden_effect = {
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.05
+				}
+			}
+			add_political_power = 100
+		}
+	}
+
+	PAT_parliamentary_additional_requirements = {#议会 额外经费
+		fire_only_once = no
+		custom_cost_trigger = {
+			democratic > 0.08
+		}
+		custom_cost_text = decision_cost_demo_0.08
+		days_remove = 180
+		modifier = {
+			consumer_goods_expected_value = -0.3
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.08
+				}
+			}
+		}
+	}
+
+	PAT_parliamentary_Research_Supports = {#议会 支持科研
+		fire_only_once = no
+		custom_cost_trigger = {
+			democratic > 0.08
+		}
+		custom_cost_text = decision_cost_demo_0.08
+		days_remove = 180
+		modifier = {
+			research_speed_factor = 0.1
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.08
+				}
 			}
 		}
 	}
