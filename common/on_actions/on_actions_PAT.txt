@@ -42,4 +42,26 @@ on_actions = {
 		}
 		
 	}
+
+	on_weekly_PAT = {
+		effect = {
+			if = {
+				limit = {
+					has_war_support > 0.49
+				}
+				set_variable = { PAT_dyn_FAP_army = PAT.has_war_support }
+				divide_variable = { PAT_dyn_FAP_army = 5 }
+				set_variable = { PAT_dyn_FAP_garrison = PAT.has_war_support }
+				divide_variable = { PAT_dyn_FAP_garrison = -1.25 }
+
+			}
+			else_if = {
+				limit = {
+					has_war_support < 0.5
+				}
+				set_variable = { PAT_dyn_FAP_army = 0 }
+				set_variable = { PAT_dyn_FAP_garrison = 0 }
+			}
+		}
+	}
 }

@@ -1301,6 +1301,7 @@ focus_tree = {
 		completion_reward = {
 			deactivate_advisor = PAT_Glantz_Mazenta_head_of_government
 			activate_advisor = generic_head_of_government_none
+			set_cosmetic_tag = PAT_republic
 			set_party_name = {
 				ideology = democratic
 				long_name = PAT_LDP_name_long
@@ -1408,7 +1409,11 @@ focus_tree = {
 				ideology = communism
 				popularity = 0.3
 			}
-			unlock_decision_category_tooltip = PAT_rebuild_country_category
+			unlock_decision_tooltip = {
+   		 		decision = PAT_rebuild_country
+    			show_effect_tooltip = yes
+    			show_modifiers = yes
+			}
 			add_ideas = PAT_idea_paretian_communism_0
 		}
 	}
@@ -1495,7 +1500,7 @@ focus_tree = {
 		y = 3
 		completion_reward = {
 			add_ideas = PAT_idea_red_flood
-			set_cosmetic_tag = PAT_commune
+			#set_cosmetic_tag = PAT_commune
 		}
 	}
 
@@ -1638,7 +1643,7 @@ focus_tree = {
 		y = 3
 		completion_reward = {
 			add_ideas = PAT_idea_Giants_of_Democracy
-			set_cosmetic_tag = PAT_republic
+			#set_cosmetic_tag = PAT_republic
 		}
 	}
 
@@ -1647,21 +1652,263 @@ focus_tree = {
 		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = PAT_newborn_of_country }
 		relative_position_id = PAT_newborn_of_country
-		x = 2
+		x = 0
 		y = 1
 		cost = @focus_time_tier_1
 		allow_branch = {
 			has_country_flag = PAT_rumi_and_light
+			has_completed_focus = PAT_newborn_of_country
 		}
 		available = {
 			
 		}
 		completion_reward = {
-			add_political_power = -100
-			add_war_support = 0.10
+			add_political_power = 100
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.3
+			}
 		}
 		ai_will_do = {
 			factor = 1
+		}
+	}
+	focus = {#王朝社会主义
+		id = PAT_focus_dynasty_socialism
+		icon = GFX_focus_man_claim_the_mandate_of_heaven
+		relative_position_id = PAT_the_third_path
+		prerequisite = {
+			focus = PAT_the_third_path
+		}
+		cost = 10
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = PAT_idea_dynasty_socialism_0
+			unlock_decision_tooltip = {
+   		 		decision = PAT_rebuild_country
+    			show_effect_tooltip = yes
+    			show_modifiers = yes
+			}
+		}
+	}
+
+	focus = {#天鹅绒手套
+		id = PAT_focus_Velvet_Gloves
+		icon = GFX_focus_generic_fascist_propaganda
+		relative_position_id = PAT_focus_dynasty_socialism
+		prerequisite = {
+			focus = PAT_focus_dynasty_socialism
+		}
+		cost = 10
+		x = 0
+		y = 1
+		completion_reward = {
+			add_political_power = 100
+			swap_ideas = {
+				remove_idea = PAT_idea_dynasty_socialism_0
+				add_idea = PAT_idea_dynasty_socialism_1
+			}
+		}
+	}
+
+	focus = {#国民福利
+		id = PAT_focus_National_welfare
+		icon = GFX_focus_generic_fascist_propaganda
+		relative_position_id = PAT_focus_Velvet_Gloves
+		prerequisite = {
+			focus = PAT_focus_Velvet_Gloves
+		}
+		cost = 10
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.1
+			swap_ideas = {
+				remove_idea = PAT_idea_dynasty_socialism_1
+				add_idea = PAT_idea_dynasty_socialism_2
+			}
+		}
+	}
+
+	focus = {#弘扬民族精神
+		id = PAT_focus_Promoting_the_national_spirit
+		icon = GFX_focus_generic_fascist_propaganda
+		relative_position_id = PAT_focus_National_welfare
+		prerequisite = {
+			focus = PAT_focus_National_welfare
+		}
+		cost = 10
+		x = 0
+		y = 1
+		completion_reward = {
+			add_war_support = 0.2
+			swap_ideas = {
+				remove_idea = PAT_idea_dynasty_socialism_2
+				add_idea = PAT_idea_dynasty_socialism_3
+			}
+		}
+	}
+
+	focus = {#帝国崛起
+		id = PAT_focus_empire_rise
+		icon = GFX_focus_generic_fascist_propaganda
+		relative_position_id = PAT_focus_Promoting_the_national_spirit
+		prerequisite = {
+			focus = PAT_focus_Promoting_the_national_spirit
+		}
+		prerequisite = {
+			focus = PAT_focus_wartime_economic_system
+		}
+		prerequisite = {
+			focus = PAT_focus_Glory_of_War
+		}
+		cost = 15
+		x = 0
+		y = 1
+		completion_reward = {
+
+			set_cosmetic_tag = PAT_empire_rise
+			
+			set_variable = { PAT_dyn_FAP_army = PAT.has_war_support }
+			divide_variable = { PAT_dyn_FAP_army = 5 }
+			set_variable = { PAT_dyn_FAP_garrison = PAT.has_war_support }
+			divide_variable = { PAT_dyn_FAP_garrison = 1.25 }
+			add_dynamic_modifier = {
+				modifier = PAT_dynamic_fatherland_and_people
+			}
+			custom_effect_tooltip = PAT_dynamic_fatherland_and_people.tt
+		}
+	}
+
+	focus = {#农业资本化
+		id = PAT_focus_Capitalization_of_agriculture
+		icon = GFX_focus_generic_fascist_propaganda
+		relative_position_id = PAT_focus_dynasty_socialism
+		prerequisite = {
+			focus = PAT_focus_dynasty_socialism
+		}
+		cost = 5
+		x = -2
+		y = 1
+		completion_reward = {
+			add_ideas = PAT_idea_farmer_into_city
+		}
+	}
+
+	focus = {#国有化关键工业
+		id = PAT_focus_Nationalized_key_industries
+		icon = GFX_focus_generic_fascist_propaganda
+		relative_position_id = PAT_focus_Capitalization_of_agriculture
+		prerequisite = {
+			focus = PAT_focus_Capitalization_of_agriculture
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			capital_scope = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+		}
+	}
+
+	focus = {#战时经济体制
+		id = PAT_focus_wartime_economic_system
+		icon = GFX_focus_generic_fascist_propaganda
+		relative_position_id = PAT_focus_Nationalized_key_industries
+		prerequisite = {
+			focus = PAT_focus_Nationalized_key_industries
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+				has_idea = civilian_economy
+			}
+			swap_ideas = {
+				remove_idea = civilian_economy
+				add_idea = war_economy
+			}
+			}
+			else_if = {
+				limit = {
+					has_idea = low_economic_mobilisation
+				}
+				swap_ideas = {
+					remove_idea = low_economic_mobilisation
+					add_idea = war_economy
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = partial_economic_mobilisation
+				}
+				swap_ideas = {
+					remove_idea = partial_economic_mobilisation
+					add_idea = war_economy
+				}
+			}	
+		}
+	}
+
+	focus = {#创建青年团
+		id = PAT_focus_Creation_of_youth_groups
+		icon = GFX_focus_generic_fascist_propaganda
+		relative_position_id = PAT_focus_dynasty_socialism
+		prerequisite = {
+			focus = PAT_focus_dynasty_socialism
+		}
+		cost = 5
+		x = 2
+		y = 1
+		completion_reward = {
+			add_ideas = PAT_idea_Army_nation_0
+		}
+	}
+
+	focus = {#尚武社会
+		id = PAT_focus_martial_society
+		icon = GFX_focus_generic_fascist_propaganda
+		relative_position_id = PAT_focus_Creation_of_youth_groups
+		prerequisite = {
+			focus = PAT_focus_Creation_of_youth_groups
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PAT_idea_Army_nation_0
+				add_idea = PAT_idea_Army_nation_1
+			}
+		}
+	}
+
+	focus = {#战争的荣光
+		id = PAT_focus_Glory_of_War
+		icon = GFX_focus_generic_fascist_propaganda
+		relative_position_id = PAT_focus_martial_society
+		prerequisite = {
+			focus = PAT_focus_martial_society
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PAT_idea_Army_nation_1
+				add_idea = PAT_idea_Army_nation_2
+			}
 		}
 	}
 

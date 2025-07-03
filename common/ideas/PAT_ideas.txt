@@ -379,9 +379,9 @@ ideas = {
 			modifier = {
 				send_volunteers_tension = -0.8
 				drift_defence_factor = 0.5
-				democratic_drift = 0.002
-				party_popularity_stability_factor = 5
-				stability_factor = -0.8
+				democratic_drift = 0.02
+				party_popularity_stability_factor = 0.5
+				stability_factor = -0.2
 			}
 		}
 
@@ -398,7 +398,7 @@ ideas = {
 
 		PAT_idea_Defending_Freedom = {#捍卫自由
 			modifier = {
-				conscription_factor = 0.03
+				conscription = 0.03
 				special_forces_attack_factor = 0.1
 				special_forces_defence_factor = 0.1
 				special_forces_cap = 0.5
@@ -420,6 +420,90 @@ ideas = {
 				propaganda_mission_factor = 3
 				guarantee_cost = -0.8
 			}
+		}
+
+		PAT_idea_dynasty_socialism_0 = {#王朝社会主义 阶段1
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.1
+				fascism_drift = 0.01
+				weekly_casualties_war_support = 0.01
+			}
+		}
+
+		PAT_idea_dynasty_socialism_1 = {#王朝社会主义 阶段2
+			modifier = {
+				political_power_factor = 0.05
+				drift_defence_factor = 0.15
+				stability_factor = 0.1
+				war_support_factor = 0.15
+				fascism_drift = 0.02
+				weekly_casualties_war_support = 0.01
+			}
+		}
+
+		PAT_idea_dynasty_socialism_2 = {#王朝社会主义 阶段3
+			modifier = {
+				offensive_war_stability_factor = 0.2
+				political_power_factor = 0.1
+				drift_defence_factor = 0.25
+				stability_factor = 0.15
+				war_support_factor = 0.20
+				fascism_drift = 0.03
+				weekly_casualties_war_support = 0.01
+			}
+		}
+
+		PAT_idea_dynasty_socialism_3 = {#王朝社会主义 阶段4
+			modifier = {
+				offensive_war_stability_factor = 0.4
+				political_power_factor = 0.1
+				drift_defence_factor = 0.65
+				stability_factor = 0.20
+				war_support_factor = 0.25
+				fascism_drift = 0.05
+				weekly_casualties_war_support = +0.01
+			}
+		}
+
+		PAT_idea_farmer_into_city = {#农民进城
+			modifier = {
+				stability_factor = -0.1
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+			}
+		}
+
+		PAT_idea_Army_nation_0 = {#军队国家 阶段1
+			modifier = {
+				conscription = 0.01
+				fascism_drift = 0.001
+				conscription_factor = 0.2
+				required_garrison_factor = -0.2
+			}
+			
+		}
+
+		PAT_idea_Army_nation_1 = {#军队国家 阶段2
+			modifier = {
+				conscription = 0.02
+				fascism_drift = 0.003
+				conscription_factor = 0.2
+				required_garrison_factor = -0.2
+				training_time_factor = -0.15
+			}
+			
+		}
+
+		PAT_idea_Army_nation_2 = {#军队国家 阶段3
+			modifier = {
+				conscription = 0.03
+				fascism_drift = 0.005
+				conscription_factor = 0.25
+				required_garrison_factor = -0.4
+				training_time_factor = -0.20
+			}
+			
 		}
 	}
 }

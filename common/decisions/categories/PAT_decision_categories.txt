@@ -47,7 +47,11 @@ PAT_rebuild_country_category = {
 		original_tag = PAT
 	}
 	visible = {
-		has_completed_focus = PAT_focus_peoples_revorution_party
+		OR = {
+			has_completed_focus = PAT_focus_peoples_revorution_party
+			has_completed_focus = PAT_focus_dynasty_socialism
+		}
+
 		OR = {
 				has_idea = PAT_idea_Shadow_of_Destruction_2
 				has_idea = PAT_idea_Shadow_of_Destruction_1
@@ -62,7 +66,9 @@ PAT_LDP_decision_category = {
 		original_tag = PAT
 	}
 	visible = {
-		has_completed_focus = PAT_focus_Liberal_Democratic_Party
+			has_completed_focus = PAT_focus_Liberal_Democratic_Party
+		}
+		
 	}
 	priority = 150
 }

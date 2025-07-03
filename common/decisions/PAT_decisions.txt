@@ -985,6 +985,17 @@ PAT_debug_decision_category = {
 
 PAT_rebuild_country_category = {#重建国家
 	PAT_rebuild_country = {
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_idea = PAT_idea_Shadow_of_Destruction_2
+					has_idea = PAT_idea_Shadow_of_Destruction_1
+					has_idea = PAT_idea_Shadow_of_Destruction_0
+				}
+			}
+		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = PAT_rebuild_decision_tt
