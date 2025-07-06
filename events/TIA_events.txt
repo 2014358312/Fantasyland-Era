@@ -203,12 +203,31 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = TIA.11.a
-		
-	}option = {
+		custom_effect_tooltip = TIA_choice_Akua
+		swap_ideas = {
+			remove_idea = TIA_legitimate_dispute
+			add_idea = TIA_Akua_national_belief
+		}
+		remove_ideas = TIA_national_belief_prepare
+	}
+	option = {
 		name = TIA.11.b
+		custom_effect_tooltip = TIA_choice_Funina
+		swap_ideas = {
+			remove_idea = TIA_legitimate_dispute
+			add_idea = TIA_Funina_national_belief
+		}
+		remove_ideas = TIA_national_belief_prepare
 		
-	}option = {
+	}
+	option = {
 		name = TIA.11.c
+		custom_effect_tooltip = TIA_no_choice
+		swap_ideas = {
+			remove_idea = TIA_legitimate_dispute
+			add_idea = TIA_no_national_belief
+		}
+		remove_ideas = TIA_national_belief_prepare
 		
 	}
 }
