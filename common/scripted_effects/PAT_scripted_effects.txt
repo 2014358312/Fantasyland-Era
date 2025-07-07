@@ -1889,25 +1889,36 @@ PAT_over_successor_to_the_throne = {
 }
 
 PAT_initialize_tetrarchy_bop = {
-	set_politics = {
-		ruling_party = neutrality
-		elections_allowed = no
-	}
+	#set_politics = {
+	#	ruling_party = neutrality
+	#	elections_allowed = no
+	#}
 	set_country_flag = PAT_tetrarchy_flag
-	add_country_leader_role = {
-		character = PAT_Algard_von_Palettia
-		country_leader = {
-			ideology = neutrality_subtype
-			traits = { inexperienced_imperialist } #autocratic_imperialist
-			expire = "1965.1.1.1"
-		}
-		promote_leader = yes
-	}
-	activate_advisor = PAT_Yufiria_Mazenta_head_of_government
 	set_power_balance = {
 		id = PAT_balance_of_power
-		left_side = PAT_yufiria_left_side
+		left_side = PAT_Anisufia_left_side
 		right_side = PAT_algard_right_side
 		set_default = yes
+	}
+}
+
+PAT_down_shadow_of_Destruction = {#降低一层毁灭阴影
+	if = {
+		limit = { has_idea = PAT_idea_Shadow_of_Destruction_2 }
+		swap_ideas = {
+			remove_idea = PAT_idea_Shadow_of_Destruction_2
+			add_idea = PAT_idea_Shadow_of_Destruction_1
+		}
+	}
+	else_if = {
+		limit = { has_idea = PAT_idea_Shadow_of_Destruction_1 }
+		swap_ideas = {
+			remove_idea = PAT_idea_Shadow_of_Destruction_1
+			add_idea = PAT_idea_Shadow_of_Destruction_0
+		}
+	}
+	else_if = {
+		limit = { has_idea = PAT_idea_Shadow_of_Destruction_0 }
+		remove_ideas = PAT_idea_Shadow_of_Destruction_0
 	}
 }

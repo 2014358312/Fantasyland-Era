@@ -859,7 +859,13 @@ PAT_balance_of_power_decision_category = {
 			#	uses = 1
 			#	category = industry
 			#}
-			custom_effect_tooltip = PAT_tetrarchy_bop_7_tt
+			#custom_effect_tooltip = PAT_tetrarchy_bop_7_tt #做不到给全部科技的单张卡啊，一张卡只能选一个种类草
+			add_tech_bonus = {
+				name = PAT_tetrarchy_bop_7
+				bonus = 0.75
+				uses = 1
+				category = industry
+			}
 			add_power_balance_value = {
 				id = PAT_balance_of_power
 				value = -0.15
@@ -1017,24 +1023,7 @@ PAT_rebuild_country_category = {#重建国家
 		days_remove = 90
 		fire_only_once = no
 		remove_effect = {
-			if = {
-				limit = { has_idea = PAT_idea_Shadow_of_Destruction_2 }
-				swap_ideas = {
-					remove_idea = PAT_idea_Shadow_of_Destruction_2
-					add_idea = PAT_idea_Shadow_of_Destruction_1
-				}
-			}
-			else_if = {
-				limit = { has_idea = PAT_idea_Shadow_of_Destruction_1 }
-				swap_ideas = {
-					remove_idea = PAT_idea_Shadow_of_Destruction_1
-					add_idea = PAT_idea_Shadow_of_Destruction_0
-				}
-			}
-			else_if = {
-				limit = { has_idea = PAT_idea_Shadow_of_Destruction_0 }
-				remove_ideas = PAT_idea_Shadow_of_Destruction_0
-			}
+			PAT_down_shadow_of_Destruction = yes
 		}
 	}
 }

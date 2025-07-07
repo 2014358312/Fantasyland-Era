@@ -1,6 +1,6 @@
 PAT_balance_of_power = {
 	initial_value = 0.10
-	left_side = PAT_yufiria_left_side
+	left_side = PAT_Anisufia_left_side
 	right_side = PAT_algard_right_side
 	decision_category = PAT_balance_of_power_decision_category
 	range = {
@@ -8,64 +8,52 @@ PAT_balance_of_power = {
 		min = -0.1
 		max = 0.1
 		modifier = {
-			drift_defence_factor = -0.25
-			surrender_limit = 0.1
 		}
 	}
 	
 	side = {
-		id = PAT_yufiria_left_side
-		icon = GFX_bop_PAT_tetrarchy_yufiria_side
+		id = PAT_Anisufia_left_side
+		icon = GFX_bop_PAT_tetrarchy_Anisufia_side
 		range = {
-			id = PAT_yufiria_over_side_range
+			id = PAT_Anisufia_over_side_range
 			min = -1.0
-			max = -0.95
-			modifier = {
-				production_factory_max_efficiency_factor = 0.20
-				research_speed_factor = 0.10
-				war_support_factor = -0.20
-				power_balance_daily = -0.05
-			}
-			on_activate = {
-				
-			}
-		}
-		range = {
-			id = PAT_yufiria_complete_side_range
-			min = -0.95
 			max = -0.9
 			modifier = {
-				production_factory_max_efficiency_factor = 0.20
-				research_speed_factor = 0.10
-				war_support_factor = -0.20
-				power_balance_daily = -0.05
+				production_factory_max_efficiency_factor = 0.2
+				research_speed_factor = 0.1
+				stability_factor = -0.2
 			}
 			on_activate = {
-				
+				PAT_Anisufia_win_Parettia = {
+					unit_leader_event = { id = paretia_BOP.2 }
+				}
 			}
 		}
 		range = {
-			id = PAT_yufiria_high_side_range
+			id = PAT_Anisufia_complete_side_range
 			min = -0.9
 			max = -0.6
 			modifier = {
 				production_factory_max_efficiency_factor = 0.15
 				research_speed_factor = 0.075
-				war_support_factor = -0.15
+				stability_factor = -0.15
+			}
+			on_activate = {
+				
 			}
 		}
 		range = {
-			id = PAT_yufiria_medium_side_range
+			id = PAT_Anisufia_high_side_range
 			min = -0.6
 			max = -0.3
 			modifier = {
-				production_factory_max_efficiency_factor = 0.10
+				production_factory_max_efficiency_factor = 0.1
 				research_speed_factor = 0.05
-				war_support_factor = -0.10
+				war_support_factor = -0.1
 			}
 		}
 		range = {
-			id = PAT_yufiria_low_side_range
+			id = PAT_Anisufia_medium_side_range
 			min = -0.3
 			max = -0.1
 			modifier = {
@@ -80,58 +68,48 @@ PAT_balance_of_power = {
 		id = PAT_algard_right_side
 		icon = GFX_bop_PAT_tetrarchy_algard_side
 		range = {
-			id = PAT_algard_low_side_range
+			id = PAT_algard_medium_side_range
 			min = 0.1
 			max = 0.3
 			modifier = {
-				stability_factor = -0.05
+				stability_factor = 0.05
 				political_power_factor = 0.05
 				army_org_factor = 0.025
 			}
 		}
 		range = {
-			id = PAT_algard_medium_side_range
+			id = PAT_algard_high_side_range
 			min = 0.3
 			max = 0.6
 			modifier = {
-				stability_factor = -0.10
+				stability_factor = 0.10
 				political_power_factor = 0.10
 				army_org_factor = 0.05
 			}
 		}
 		range = {
-			id = PAT_algard_high_side_range
+			id = PAT_algard_complete_side_range
 			min = 0.6
 			max = 0.9
 			modifier = {
-				stability_factor = -0.15
+				stability_factor = 0.15
 				political_power_factor = 0.15
 				army_org_factor = 0.075
 			}
 		}
 		range = {
-			id = PAT_algard_complete_side_range
-			min = 0.9
-			max = 0.95
-			modifier = {
-				stability_factor = -0.20
-				political_power_factor = 0.20
-				army_org_factor = 0.10
-				power_balance_daily = 0.05
-			}
-		}
-		range = {
 			id = PAT_algard_over_side_range
-			min = 0.95
+			min = 0.9
 			max = 1.0
 			modifier = {
-				stability_factor = -0.20
-				political_power_factor = 0.20
-				army_org_factor = 0.10
-				power_balance_daily = 0.05
+				stability_factor = 0.2
+				political_power_factor = 0.2
+				army_org_factor = 0.1
 			}
 			on_activate = {
-			
+				PAT_Algard_von_Palettia = {
+					unit_leader_event = { id = paretia_BOP.1 }
+				}
 			}
 		}
 	}

@@ -1244,18 +1244,27 @@ focus_tree = {
 		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = PAT_newborn_of_country }
 		relative_position_id = PAT_newborn_of_country
-		x = -2
+		x = 0
 		y = 1
 		allow_branch = {
 			has_country_flag = PAT_heir_apparent
+			has_completed_focus = PAT_newborn_of_country
 		}
 		cost = @focus_time_tier_1
 		available = {
 			
 		}
 		completion_reward = {
-			add_political_power = -100
-			add_war_support = 0.10
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.3
+			}
+			add_stability = 0.1
+			#deactivate_advisor = PAT_Glantz_Mazenta_head_of_government
+			#hidden_effect = {
+			#	activate_advisor = generic_head_of_government_none
+			#}
+
 		}
 		ai_will_do = {
 			factor = 1
@@ -1269,17 +1278,118 @@ focus_tree = {
 		relative_position_id = PAT_traditional_policy
 		x = 0
 		y = 1
-		cost = @focus_time_tier_1
+		cost = 10
 		available = {
 			
 		}
 		completion_reward = {
 			add_political_power = 100
 			add_war_support = 0.10
+			add_country_leader_role = {
+    			character = PAT_Algard_von_Palettia
+    			promote_leader = yes
+    			country_leader = {
+        		ideology = dual_monarchy_subtype
+        		expire = "1965.1.1.1"
+        		traits = { inexperienced_imperialist }
+    			}
+				
+			}
+			#hidden_effect = {
+				#deactivate_advisor = generic_head_of_government_none
+			#}
+			deactivate_advisor = PAT_Glantz_Mazenta_head_of_government
+			activate_advisor = PAT_Anisufia_win_Parettia_head_of_government
 			PAT_initialize_tetrarchy_bop = yes
 		}
 		ai_will_do = {
 			factor = 1
+		}
+	}
+
+	focus = {#重建秩序
+		id = PAT_focus_restore_order
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_tetrarchy
+		prerequisite = {
+			focus = PAT_tetrarchy
+		}
+		cost = 5
+		x = -1
+		y = 1
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.1
+			PAT_down_shadow_of_Destruction = yes
+		}
+	}
+
+	focus = {#设立议会
+		id = PAT_focus_set_council
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_restore_order
+		prerequisite = {
+			focus = PAT_focus_restore_order
+		}
+		cost = 6
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 100
+			PAT_down_shadow_of_Destruction = yes
+		}
+	}
+
+	focus = {#改革精灵信仰
+		id = PAT_focus_reformprogress_elf_faith
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_tetrarchy
+		prerequisite = {
+			focus = PAT_tetrarchy
+		}
+		cost = 5
+		x = 1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PAT_genie_worship
+				add_idea = PAT_idea_Reorganized_churches
+			}
+		}
+	}
+	
+	focus = {#帕雷提亚大法典  #就在这立法典！
+		id = PAT_focus_statute_book_of_Paretia
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_reformprogress_elf_faith
+		prerequisite = {
+			focus = PAT_focus_reformprogress_elf_faith
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = PAT_idea_statute_book_of_Paretia
+		}
+	}
+
+	focus = {#爱国、忠诚、团结
+		id = PAT_focus_Patriotism_loyalty_solidarity
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_tetrarchy
+		prerequisite = {
+			focus = PAT_focus_set_council
+		}
+		prerequisite = {
+			focus = PAT_focus_statute_book_of_Paretia
+		}
+		cost = 10
+		x = 0
+		y = 3
+		completion_reward = {
+			PAT_down_shadow_of_Destruction = yes
+			add_ideas = PAT_idea_unify_people_empire
 		}
 	}
 
@@ -1668,6 +1778,21 @@ focus_tree = {
 				ideology = fascism
 				popularity = 0.3
 			}
+			set_politics = {
+				ruling_party = fascism
+			}
+			add_country_leader_role = {
+    			character = PAT_Algard_von_Palettia
+    			promote_leader = yes
+    			country_leader = {
+        		ideology = corporatism_subtype
+        		expire = "1965.1.1.1"
+        		traits = {  }
+    			}
+			}
+			hidden_effect = {
+				country_event = { id = paretia_revo.10 days = 10 }
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1912,15 +2037,16 @@ focus_tree = {
 		}
 	}
 
-	focus = {
+	focus = {#向后看
 		id = PAT_wisdom_of_ancestors
 		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = PAT_newborn_of_country }
 		relative_position_id = PAT_newborn_of_country
-		x = 4
+		x = 0
 		y = 1
 		allow_branch = {
 			has_country_flag = PAT_is_illusion
+			has_completed_focus = PAT_newborn_of_country
 		}
 		cost = @focus_time_tier_1
 		available = {
