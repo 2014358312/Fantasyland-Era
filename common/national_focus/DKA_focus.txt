@@ -9,7 +9,7 @@
 		}
 	}
 	default = no
-	continuous_focus_position = { x = 150 y = 3000}
+	continuous_focus_position = { x = 150 y = 4000}
 
 #	focus = {
 #		id = CHI_
@@ -314,15 +314,43 @@ focus = {
 			add_command_power =150
 		}
 	}
+	###我们的科技
+	focus = {
+		id = DKA_Our_technology
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus =DKA_Establish_a_Military_Committee}
+		relative_position_id = DKA_Establish_a_Military_Committee
+		x = -3
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+			}
+		available = {
+			}
+			bypass = {
+			}
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
+		complete_tooltip = {
+			}
+		completion_reward = {
+			add_research_slot = 1
+			add_command_power =150
+		}
+	}
 	  ##坚持力量优先
 	    focus= {
 		id = DKA_Persist_in_prioritizing_strength
-		prerequisite = { focus = DKA_Establish_a_Military_Committee }
+		prerequisite = { focus = DKA_Our_technology }
 		mutually_exclusive = { focus =DKA_Change_mindset}
 		x = -1
 		y = 1
-		relative_position_id =DKA_Establish_a_Military_Committee
-	
+		relative_position_id =DKA_Our_technology
 		cost = 6
 	
 		ai_will_do = {
@@ -563,11 +591,11 @@ focus = {
 	   ##转变思路
 	   focus= {
 		id = DKA_Change_mindset
-		prerequisite = { focus = DKA_Establish_a_Military_Committee }
+		prerequisite = { focus =DKA_Our_technology}
 		mutually_exclusive = { focus =DKA_Persist_in_prioritizing_strength}
 		x = 1
 		y = 1
-		relative_position_id =DKA_Establish_a_Military_Committee
+		relative_position_id =DKA_Our_technology
 	
 		cost = 6
 	
