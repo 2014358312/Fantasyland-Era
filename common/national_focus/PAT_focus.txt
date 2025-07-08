@@ -1331,7 +1331,7 @@ focus_tree = {
 		prerequisite = {
 			focus = PAT_focus_restore_order
 		}
-		cost = 6
+		cost = 5
 		x = 0
 		y = 1
 		completion_reward = {
@@ -1390,6 +1390,7 @@ focus_tree = {
 		completion_reward = {
 			PAT_down_shadow_of_Destruction = yes
 			add_ideas = PAT_idea_unify_people_empire
+			set_cosmetic_tag = PAT_peoples_empire
 		}
 	}
 
@@ -2053,11 +2054,240 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = -100
-			add_war_support = 0.10
+			add_political_power = 100
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.3
+			}
 		}
 		ai_will_do = {
 			factor = 1
+		}
+	}
+
+	focus = {#精灵与王国
+		id = PAT_focus_elf_and_kingdom
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_wisdom_of_ancestors
+		prerequisite = {
+			focus = PAT_wisdom_of_ancestors
+		}
+		cost = 10
+		x = 0
+		y = 1
+		completion_reward = {
+			PAT_down_shadow_of_Destruction = yes
+			add_ideas = PAT_idea_unify_elf_societal_0
+			add_stability = 0.1
+		}
+	}
+
+	focus = {#魔法复苏
+		id = PAT_focus_magic_Resuscitation
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_elf_and_kingdom
+		prerequisite = {
+			focus = PAT_focus_elf_and_kingdom
+		}
+		cost = 10
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_magic_Resuscitation
+				bonus = 2
+				uses = 1
+				category = electronics
+			}
+			swap_ideas = {
+				remove_idea = PAT_idea_unify_elf_societal_0
+				add_idea = PAT_idea_unify_elf_societal_1
+			}
+		}
+	}
+
+	focus = {#魔导之国
+		id = PAT_focus_magic_nation
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_magic_Resuscitation
+		prerequisite = {
+			focus = PAT_focus_magic_Resuscitation
+		}
+		cost = 10
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_magic_nation
+				bonus = 2
+				uses = 1
+				category = industry
+			}
+			swap_ideas = {
+				remove_idea = PAT_idea_unify_elf_societal_1
+				add_idea = PAT_idea_unify_elf_societal_2
+			}
+			PAT_down_shadow_of_Destruction = yes
+		}
+	}
+
+	focus = {#魔能飞升
+		id = PAT_focus_magic_soar
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_magic_nation
+		prerequisite = {
+			focus = PAT_focus_magic_nation
+		}
+		cost = 10
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_magic_soar
+				ahead_reduction = 2
+				category = nuclear
+			}
+			swap_ideas = {
+				remove_idea = PAT_idea_unify_elf_societal_2
+				add_idea = PAT_idea_unify_elf_societal_3
+			}
+		}
+	}
+
+	focus = {#不可知论
+		id = PAT_focus_agnosticism
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_elf_and_kingdom
+		prerequisite = {
+			focus = PAT_focus_elf_and_kingdom
+		}
+		cost = 5
+		x = -2
+		y = 1
+		completion_reward = {
+			add_stability = -0.2
+			add_popularity = {
+				ideology = neutrality
+				popularity = 1
+			}
+		}
+	}
+
+	focus = {#精灵选民
+		id = PAT_focus_elf_chosen_people
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_agnosticism
+		prerequisite = {
+			focus = PAT_focus_agnosticism
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = PAT_idea_fanaticism_0
+			unlock_decision_tooltip = PAT_Finding_the_Chosen
+		}
+	}
+
+	focus = {#信仰之力
+		id = PAT_focus_faith_power
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_elf_chosen_people
+		prerequisite = {
+			focus = PAT_focus_elf_chosen_people
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PAT_idea_fanaticism_0
+				add_idea = PAT_idea_fanaticism_1
+			}
+		}
+	}
+
+	focus = {#重建理想城
+		id = PAT_focus_Rebuild_Ideal_City
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_elf_and_kingdom
+		prerequisite = {
+			focus = PAT_focus_elf_and_kingdom
+		}
+		cost = 5
+		x = 2
+		y = 1
+		completion_reward = {
+			capital_scope = {
+				add_building_construction = {
+					type = Ideal_City
+					level = 1
+					province = 267
+				}
+			}
+		}
+	}
+
+	focus = {#收缴资本
+		id = PAT_focus_paid_capital
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_Rebuild_Ideal_City
+		prerequisite = {
+			focus = PAT_focus_Rebuild_Ideal_City
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_political_power = 100
+			unlock_decision_tooltip = PAT_Centralization_of_resources
+		}
+	}
+
+	focus = {#回归自然
+		id = PAT_focus_return_nature
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_paid_capital
+		prerequisite = {
+			focus = PAT_focus_paid_capital
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = PAT_idea_arouse_instinct
+		}
+	}
+
+	focus = {#新纪元
+		id = PAT_focus_New_Era
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_magic_soar
+		prerequisite = {
+			focus = PAT_focus_magic_soar
+		}
+		prerequisite = {
+			focus = PAT_focus_faith_power
+		}
+		prerequisite = {
+			focus = PAT_focus_return_nature
+		}
+		cost = 15
+		x = 0
+		y = 1
+		completion_reward = {
+			set_cosmetic_tag = PAT_holy_paretia_elf_nation
+			add_tech_bonus = {
+				name = PAT_focus_magic_soar
+				ahead_reduction = 2
+				category = nuclear
+			}
+			swap_ideas = {
+				remove_idea = PAT_idea_unify_elf_societal_3
+				add_idea = PAT_idea_unify_elf_societal_4
+			}
+			unlock_decision_tooltip = PAT_Last_rites
+			PAT_down_shadow_of_Destruction = yes
 		}
 	}
 

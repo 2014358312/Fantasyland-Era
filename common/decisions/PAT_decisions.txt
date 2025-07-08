@@ -1087,3 +1087,60 @@ PAT_LDP_decision_category = {
 		}
 	}
 }
+
+PAT_elf_and_kingdom_decision_category = {
+	PAT_Finding_the_Chosen = {#寻找被召选者
+		fire_only_once = no
+		cost = 100
+		visible = {
+			has_completed_focus = PAT_focus_elf_chosen_people
+		}
+		days_remove = 30
+		modifier = {
+			civilian_factory_use = 5
+		}
+		remove_effect = {
+			add_manpower = 10000
+		}
+	}
+
+	PAT_Centralization_of_resources = {#集中资源
+		fire_only_once = no
+		cost = 200
+		visible = {
+			has_completed_focus = PAT_focus_paid_capital
+		}
+		days_re_enable = 50
+		complete_effect = {
+			capital_scope = {
+				add_resource = {
+					type = steel
+					amount = 5
+				}
+				add_resource = {
+					type = oil
+					amount = 5
+				}
+				add_resource = {
+					type = chromium
+					amount = 5
+				}
+			}
+		}
+	}
+
+	PAT_Last_rites = {#终极仪式
+		fire_only_once = no
+		cost = 150
+		visible = {
+			has_completed_focus = PAT_focus_New_Era
+		}
+		available = {
+			has_tech = nuclear_reactor
+		}
+		days_re_enable = 100
+		complete_effect = {
+			add_nuclear_bombs = 1
+		}
+	}
+}
