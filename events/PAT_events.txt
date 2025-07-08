@@ -39,6 +39,7 @@ country_event = {
 		name = paretia.2.a
 		hidden_effect = {
 			country_event = paretia.3
+			set_country_flag = PAT_still_kingdom_flag
 		}
 	}
 
@@ -60,6 +61,7 @@ country_event = {
 
 	option = {
 		name = paretia.3.a
+		
 		custom_effect_tooltip = paretia_3_a_tt
 	}
 }
@@ -141,7 +143,6 @@ country_event = {
 	option = {
 		name = paretia.101.a
 		set_country_flag = PAT_overly_easy_coup_flag
-		mark_focus_tree_layout_dirty = yes
 		#complete_national_focus = PAT_border_crisis
 	}
 }
@@ -232,10 +233,10 @@ country_event = {#绝境
 		name = paretia_revo.7.c
 		set_country_flag = PAT_rumi_and_light
 	}
-	option = {#是幻觉
-		name = paretia_revo.7.e
-		set_country_flag = PAT_is_illusion
-	}
+	#option = {#是幻觉
+	#	name = paretia_revo.7.e
+	#	set_country_flag = PAT_is_illusion
+	#}
 }
 
 country_event = {#暴君之死
@@ -265,13 +266,13 @@ country_event = {#暴君之死
 		}
 		#mark_focus_tree_layout_dirty = yes
 	}
-	option = {#亚尔加德王子居功至伟
-		name = paretia_revo.8.e
-		trigger = {
-			has_country_flag = PAT_is_illusion
-		}
+	#option = {#亚尔加德王子居功至伟
+	#	name = paretia_revo.8.e
+	#	trigger = {
+	#		has_country_flag = PAT_is_illusion
+	#	}
 		#mark_focus_tree_layout_dirty = yes
-	}
+	#}
 }
 
 country_event = {#大选结果
@@ -298,6 +299,36 @@ country_event = {#国家与平民
 	is_triggered_only = yes
 	option = {
 		name = paretia_revo.10.a
+	}
+}
+
+country_event = {#英雄年代
+	id = paretia_revo.11
+	title = paretia_revo.11.t
+	desc = paretia_revo.11.d
+	is_triggered_only = yes
+	option = {
+		name = paretia_revo.11.a
+	}
+}
+
+country_event = {#战后云烟
+	id = paretia_revo.12
+	title = paretia_revo.12.t
+	desc = paretia_revo.12.d
+	is_triggered_only = yes
+	option = {
+		name = paretia_revo.12.a
+	}
+	option = {
+		name = paretia_revo.12.b
+		custom_effect_tooltip = paretia_revo.12.tt
+		clr_country_flag = PAT_blood_allies
+		clr_country_flag = PAT_heir_apparent
+		clr_country_flag = PAT_rumi_and_light
+		set_country_flag = PAT_the_third_road
+		complete_national_focus = PAT_the_third_path
+		mark_focus_tree_layout_dirty = yes
 	}
 }
 

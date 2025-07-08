@@ -46,7 +46,11 @@ focus_tree = {
 		}
 		allow_branch = {
 			NOT = {
-				has_country_flag = PAT_overly_easy_coup_flag
+				OR = {
+					has_country_flag = PAT_overly_easy_coup_flag
+					has_country_flag = PAT_still_kingdom_flag
+				}
+				
 			}
 		}
 		completion_reward = {
@@ -183,7 +187,7 @@ focus_tree = {
 			country_event = { id = paretia.2 days = 10 }
 		}
 		completion_reward = {
-			
+			mark_focus_tree_layout_dirty = yes
 		}
 		ai_will_do = {
 			factor = 1
@@ -197,7 +201,7 @@ focus_tree = {
 			OR = {
 				AND = {
 					has_country_flag = PAT_still_kingdom_flag
-					is_debug = no
+					#is_debug = no
 				}
 				#is_debug = yes
 			}
@@ -1232,6 +1236,9 @@ focus_tree = {
 				remove_idea = PAT_idea_Shadow_of_Destruction_3
 				add_idea = PAT_idea_Shadow_of_Destruction_2
 			}
+			hidden_effect = {
+				country_event = { id = paretia_revo.12 days = 20 }
+			}
 			mark_focus_tree_layout_dirty = yes
 		}
 		ai_will_do = {
@@ -1249,6 +1256,12 @@ focus_tree = {
 		allow_branch = {
 			has_country_flag = PAT_heir_apparent
 			has_completed_focus = PAT_newborn_of_country
+		}
+		cancel_if_invalid = no
+		cancel = {
+			NOT = {
+				has_country_flag = PAT_heir_apparent
+			}
 		}
 		cost = @focus_time_tier_1
 		available = {
@@ -1279,6 +1292,12 @@ focus_tree = {
 		x = 0
 		y = 1
 		cost = 10
+		cancel_if_invalid = no
+		cancel = {
+			NOT = {
+				has_country_flag = PAT_heir_apparent
+			}
+		}
 		available = {
 			
 		}
@@ -1405,6 +1424,12 @@ focus_tree = {
 			has_country_flag = PAT_blood_allies
 			has_completed_focus = PAT_newborn_of_country
 		}
+		cancel_if_invalid = no
+		cancel = {
+			NOT = {
+				has_country_flag = PAT_blood_allies
+			}
+		}
 		cost = @focus_time_tier_1
 		available = {
 			
@@ -1462,6 +1487,12 @@ focus_tree = {
 		relative_position_id = PAT_foward_future
 		prerequisite = {
 			focus = PAT_foward_future
+		}
+		cancel_if_invalid = no
+		cancel = {
+			NOT = {
+				has_country_flag = PAT_blood_allies
+			}
 		}
 		cost = @focus_time_tier_10
 		x = 0
@@ -1766,12 +1797,13 @@ focus_tree = {
 		x = 0
 		y = 1
 		cost = @focus_time_tier_1
+
 		allow_branch = {
-			has_country_flag = PAT_rumi_and_light
+			has_country_flag = PAT_the_third_road
 			has_completed_focus = PAT_newborn_of_country
 		}
 		available = {
-			
+			has_country_flag = PAT_the_third_road
 		}
 		completion_reward = {
 			add_political_power = 100
@@ -2046,10 +2078,16 @@ focus_tree = {
 		x = 0
 		y = 1
 		allow_branch = {
-			has_country_flag = PAT_is_illusion
+			has_country_flag = PAT_rumi_and_light
 			has_completed_focus = PAT_newborn_of_country
 		}
 		cost = @focus_time_tier_1
+		cancel_if_invalid = no
+		cancel = {
+			NOT = {
+				has_country_flag = PAT_rumi_and_light
+			}
+		}
 		available = {
 			
 		}
@@ -2059,6 +2097,7 @@ focus_tree = {
 				ideology = neutrality
 				popularity = 0.3
 			}
+			country_event = { id = paretia_revo.11 days = 10 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -2071,6 +2110,12 @@ focus_tree = {
 		relative_position_id = PAT_wisdom_of_ancestors
 		prerequisite = {
 			focus = PAT_wisdom_of_ancestors
+		}
+		cancel_if_invalid = no
+		cancel = {
+			NOT = {
+				has_country_flag = PAT_rumi_and_light
+			}
 		}
 		cost = 10
 		x = 0
