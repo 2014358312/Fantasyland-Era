@@ -1141,12 +1141,12 @@ northwest_continent_debug_decisions = {
 			}
 		}
 	}
-	debug_paretian_heir_yufiria = {
+	debug_paretian_heir_yufiria = {#暂时用不上
 		allowed = {
-			always = yes
+			always = no
 		}
 		visible = {
-			always = yes
+			always = no
 		}
 		available = {
 			PAT = {
@@ -1188,12 +1188,12 @@ northwest_continent_debug_decisions = {
 			}
 		}
 	}
-	debug_paretian_heir_algard = {
+	debug_paretian_heir_algard = {#暂时用不上了
 		allowed = {
-			always = yes
+			always = no
 		}
 		visible = {
-			always = yes
+			always = no
 		}
 		available = {
 			PAT = {
@@ -1259,7 +1259,26 @@ northwest_continent_debug_decisions = {
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: decision debug_paretian_heir_national_focus"
-			PAT = { complete_national_focus = PAT_evaluate_heir }
+			PAT = { 
+				complete_national_focus = PAT_evaluate_heir 
+				set_country_flag = PAT_still_kingdom_flag
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+	debug_paretian_heir_select_heir = {#快速选择国王继承
+		allowed = {
+			always = yes
+		}
+		visible = {
+			tag = PAT
+		}
+		complete_effect = {
+			country_event = { id = paretia_heir.2 }
+			set_country_flag = PAT_still_kingdom_flag
+			complete_national_focus = PAT_heir_choice_from_king
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
 }

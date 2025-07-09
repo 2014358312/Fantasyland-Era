@@ -1148,7 +1148,7 @@ PAT_elf_and_kingdom_decision_category = {
 PAT_hear_choose_decision_category = {
 	PAT_heir_choose_mission = {#继承任务
 		days_mission_timeout = 180
-		is_good = no
+		is_good = yes
 		activation = {
 			always = no
 		}
@@ -1159,6 +1159,7 @@ PAT_hear_choose_decision_category = {
 			PAT_Heir_Points_settle_effect = yes
 			complete_national_focus = PAT_heir_choice_from_king
 			clr_country_flag = PAT_successor_to_the_throne_flag
+			custom_effect_tooltip = PAT_heir_choose_mission_tt
 			
 		}
 	}
@@ -1245,6 +1246,7 @@ PAT_hear_choose_decision_category = {
 				if = {
 					limit = {
 						check_variable = { PAT_heir_points_Algard^0 > 5 }
+						check_variable = { PAT_Algard_prestige < 10 }
 					}
 					add_to_variable = { PAT_Algard_prestige = 1 }
 					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
@@ -1259,6 +1261,7 @@ PAT_hear_choose_decision_category = {
 				if = {
 					limit = {
 						check_variable = { PAT_heir_points_Anisufia^0 > 5 }
+						check_variable = { PAT_Anisufia_prestige < 10 }
 					}
 					add_to_variable = { PAT_Anisufia_prestige = 1 }
 					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
@@ -1309,6 +1312,7 @@ PAT_hear_choose_decision_category = {
 				if = {
 					limit = {
 						check_variable = { PAT_heir_points_Algard^1 > 5 }
+						check_variable = { PAT_Algard_prestige < 10 }
 					}
 					add_to_variable = { PAT_Algard_prestige = 1 }
 					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
@@ -1323,6 +1327,7 @@ PAT_hear_choose_decision_category = {
 				if = {
 					limit = {
 						check_variable = { PAT_heir_points_Anisufia^1 > 5 }
+						check_variable = { PAT_Anisufia_prestige < 10 }
 					}
 					add_to_variable = { PAT_Anisufia_prestige = 1 }
 					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
@@ -1373,6 +1378,7 @@ PAT_hear_choose_decision_category = {
 				if = {
 					limit = {
 						check_variable = { PAT_heir_points_Algard^2 > 5 }
+						check_variable = { PAT_Algard_prestige < 10 }
 					}
 					add_to_variable = { PAT_Algard_prestige = 1 }
 					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
@@ -1387,6 +1393,7 @@ PAT_hear_choose_decision_category = {
 				if = {
 					limit = {
 						check_variable = { PAT_heir_points_Anisufia^2 > 5 }
+						check_variable = { PAT_Anisufia_prestige < 10 }
 					}
 					add_to_variable = { PAT_Anisufia_prestige = 1 }
 					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
@@ -1437,6 +1444,7 @@ PAT_hear_choose_decision_category = {
 				if = {
 					limit = {
 						check_variable = { PAT_heir_points_Algard^3 > 5 }
+						check_variable = { PAT_Algard_prestige < 10 }
 					}
 					add_to_variable = { PAT_Algard_prestige = 1 }
 					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
@@ -1451,6 +1459,7 @@ PAT_hear_choose_decision_category = {
 				if = {
 					limit = {
 						check_variable = { PAT_heir_points_Anisufia^3 > 5 }
+						check_variable = { PAT_Anisufia_prestige < 10 }
 					}
 					add_to_variable = { PAT_Anisufia_prestige = 1 }
 					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
@@ -1501,6 +1510,7 @@ PAT_hear_choose_decision_category = {
 				if = {
 					limit = {
 						check_variable = { PAT_heir_points_Algard^4 > 5 }
+						check_variable = { PAT_Algard_prestige < 10 }
 					}
 					add_to_variable = { PAT_Algard_prestige = 1 }
 					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
@@ -1515,6 +1525,7 @@ PAT_hear_choose_decision_category = {
 				if = {
 					limit = {
 						check_variable = { PAT_heir_points_Anisufia^4 > 5 }
+						check_variable = { PAT_Anisufia_prestige < 10 }
 					}
 					add_to_variable = { PAT_Anisufia_prestige = 1 }
 					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
@@ -1553,5 +1564,17 @@ PAT_hear_choose_decision_category = {
 			}
 		}
 
+	}
+ }
+
+ PAT_country_and_hero_decision_category = {
+	PAT_decision_Industrial_Stimulus_Act = {#工业刺激法案
+		cost = 100
+		days_remove = 60
+		modifier = {
+			industrial_capacity_factory = 0.1
+			industrial_capacity_dockyard = 0.1
+		}
+		days_re_enable = 30
 	}
  }

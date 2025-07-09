@@ -63,7 +63,6 @@ country_event = {
 	option = {
 		name = paretia.3.a
 		
-		custom_effect_tooltip = paretia_3_a_tt
 	}
 }
 
@@ -399,7 +398,7 @@ country_event = {#最终赢家
 	title = paretia_heir.1.t
 	desc = paretia_heir.1.d
 	is_triggered_only = yes
-	option = {
+	option = {#王子胜出
 		name = paretia_heir.1.a
 		trigger = {
 			check_variable = { PAT_heir_points_settle_Algard > PAT_heir_points_settle_Anisufia }
@@ -422,7 +421,7 @@ country_event = {#最终赢家
 		clear_variable = PAT_Algard_prestige
 		clear_variable = PAT_Anisufia_prestige
 	}
-	option = {
+	option = {#公主胜出
 		name = paretia_heir.1.b
 		trigger = {
 			check_variable = { PAT_heir_points_settle_Algard < PAT_heir_points_settle_Anisufia }
@@ -444,10 +443,58 @@ country_event = {#最终赢家
 		clear_variable = PAT_Algard_prestige
 		clear_variable = PAT_Anisufia_prestige
 	}
-	option = {
+	option = {#辩论一下得了
 		name = paretia_heir.1.c
 		trigger = {
 			check_variable = { PAT_heir_points_settle_Algard = PAT_heir_points_settle_Anisufia }
 		}
+		country_event = { id = paretia_heir.2 days = 2 }
+	}
+}
+
+country_event = {#最终辩论
+	id = paretia_heir.2
+	title = paretia_heir.2.t
+	desc = paretia_heir.2.d
+	is_triggered_only = yes
+	option = {#王子胜出
+		name = paretia_heir.2.a
+		add_country_leader_role = {
+			character = PAT_Algard_von_Palettia
+			country_leader = { 
+				ideology = absolutism_subtype
+				traits = { PAT_heir_geniuse_made_heaven }
+			}
+			promote_leader = yes
+		}
+
+		PAT_heir_dynamic_add_Algard = yes
+		add_dynamic_modifier = {
+			modifier = PAT_dyanamic_geniuse_made_heaven
+		}
+		clear_array = PAT_heir_points_Algard
+		clear_array = PAT_heir_points_Anisufia
+		clear_variable = PAT_Algard_prestige
+		clear_variable = PAT_Anisufia_prestige
+
+	}
+	option = {#公主胜出
+		name = paretia_heir.2.b
+		add_country_leader_role = {
+			character = PAT_Anisufia_win_Parettia
+			country_leader = {
+				ideology = absolutism_subtype
+				traits = { PAT_heir_geniuse_made_heaven }
+			}
+			promote_leader = yes
+		}
+		PAT_heir_dynamic_add_Anisufia = yes
+		add_dynamic_modifier = {
+			modifier = PAT_dyanamic_geniuse_made_heaven
+		}
+		clear_array = PAT_heir_points_Algard
+		clear_array = PAT_heir_points_Anisufia
+		clear_variable = PAT_Algard_prestige
+		clear_variable = PAT_Anisufia_prestige
 	}
 }

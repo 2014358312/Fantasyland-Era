@@ -188,6 +188,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			mark_focus_tree_layout_dirty = yes
+			add_stability = 0.1
 		}
 		ai_will_do = {
 			factor = 1
@@ -330,6 +331,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			unlock_decision_tooltip = PAT_heir_choose_add_mana
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -350,6 +355,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			unlock_decision_tooltip = PAT_heir_choose_add_erudite
+			add_ideas = PAT_idea_parliamentary_support_politics_0
+
 		}
 		ai_will_do = {
 			factor = 1
@@ -370,6 +377,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			unlock_decision_tooltip = PAT_heir_choose_add_tactics
+			add_stability = 0.05
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -410,6 +422,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			unlock_decision_tooltip = PAT_heir_choose_add_mil
+			army_experience = 50
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -452,12 +469,12 @@ focus_tree = {
 		cost = @focus_time_tier_10
 		available = {
 			has_country_leader = {
-				character = PAT_Yufiria_Mazenta
+				character = PAT_Anisufia_win_Parettia
 				ruling_only = yes
 			}
 		}
 		completion_reward = {
-			
+			add_ideas = PAT_idea_magic_revolution_0
 		}
 		ai_will_do = {
 			factor = 1
@@ -474,12 +491,23 @@ focus_tree = {
 		cost = @focus_time_tier_10
 		available = {
 			has_country_leader = {
-				character = PAT_Yufiria_Mazenta
+				character = PAT_Anisufia_win_Parettia
 				ruling_only = yes
 			}
 		}
 		completion_reward = {
-			
+			add_tech_bonus = {
+				name = PAT_victory_of_magic_device
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+			add_tech_bonus = {
+				name = PAT_victory_of_magic_device
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -496,12 +524,15 @@ focus_tree = {
 		cost = @focus_time_tier_10
 		available = {
 			has_country_leader = {
-				character = PAT_Yufiria_Mazenta
+				character = PAT_Anisufia_win_Parettia
 				ruling_only = yes
 			}
 		}
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = PAT_idea_magic_revolution_0
+				add_idea = PAT_idea_magic_revolution_1
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -518,12 +549,15 @@ focus_tree = {
 		cost = @focus_time_tier_10
 		available = {
 			has_country_leader = {
-				character = PAT_Yufiria_Mazenta
+				character = PAT_Anisufia_win_Parettia
 				ruling_only = yes
 			}
 		}
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = PAT_idea_magic_revolution_1
+				add_idea = PAT_idea_magic_revolution_2
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -540,12 +574,15 @@ focus_tree = {
 		cost = @focus_time_tier_10
 		available = {
 			has_country_leader = {
-				character = PAT_Yufiria_Mazenta
+				character = PAT_Anisufia_win_Parettia
 				ruling_only = yes
 			}
 		}
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = PAT_idea_parliamentary_support_politics_0
+				add_idea = PAT_idea_parliamentary_support_politics_1
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -562,12 +599,25 @@ focus_tree = {
 		cost = @focus_time_tier_10
 		available = {
 			has_country_leader = {
-				character = PAT_Yufiria_Mazenta
+				character = PAT_Anisufia_win_Parettia
 				ruling_only = yes
 			}
 		}
 		completion_reward = {
-			
+			effect_tooltip = {
+				PAT_Yufiria_Mazenta = {
+					add_advisor_role = {
+						advisor = {
+							slot = political_advisor
+							idea_token = PAT_Yufiria_Mazenta_political_advisor
+							cost = 150
+							traits = {
+								faction_connection
+							}
+						}
+					}
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -584,12 +634,16 @@ focus_tree = {
 		cost = @focus_time_tier_10
 		available = {
 			has_country_leader = {
-				character = PAT_Yufiria_Mazenta
+				character = PAT_Anisufia_win_Parettia
 				ruling_only = yes
 			}
 		}
 		completion_reward = {
-			
+			remove_ideas = PAT_PAT_feudal_order
+			swap_ideas = {
+				remove_idea = PAT_idea_parliamentary_support_politics_1
+				add_idea = PAT_idea_parliamentary_support_politics_2
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -612,6 +666,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			add_political_power = 100
 			
 		}
 		ai_will_do = {
@@ -634,7 +689,8 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			
+			remove_ideas = PAT_idea_parliamentary_support_politics_0
+			add_country_leader_trait = popular_figurehead
 		}
 		ai_will_do = {
 			factor = 1
@@ -656,7 +712,8 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			
+			remove_ideas = PAT_feudal_order
+			add_ideas = PAT_idea_bureaucratic_politic
 		}
 		ai_will_do = {
 			factor = 1
@@ -678,7 +735,25 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+			effect_tooltip = {
+				PAT_lumi = {
+					add_advisor_role = {
+						advisor = {
+							slot = political_advisor
+							cost = 100
+							idea_token = PAT_Lumi_pol_advisor
+							traits = {
+								Lumi_elf_Church
+							}
+
+						}
+					}
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -700,7 +775,9 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			
+			add_political_power = -150
+			add_stability = 0.1
+			add_war_support = 0.1
 		}
 		ai_will_do = {
 			factor = 1
@@ -722,7 +799,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			
+			add_ideas = PAT_idea_economic_directive
 		}
 		ai_will_do = {
 			factor = 1
@@ -744,7 +821,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			
+			unlock_decision_tooltip = PAT_decision_Industrial_Stimulus_Act
 		}
 		ai_will_do = {
 			factor = 1
@@ -765,7 +842,7 @@ focus_tree = {
 		available = {
 			OR = {
 				has_country_leader = {
-					character = PAT_Yufiria_Mazenta
+					character = PAT_Anisufia_win_Parettia
 					ruling_only = yes
 				}
 				has_country_leader = {
@@ -779,7 +856,10 @@ focus_tree = {
 			NOT = { has_idea = PAT_peace_act }
 		}
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = PAT_peace_act
+				add_idea = PAT_idea_new_peace_act
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -797,7 +877,7 @@ focus_tree = {
 		available = {
 			OR = {
 				has_country_leader = {
-					character = PAT_Yufiria_Mazenta
+					character = PAT_Anisufia_win_Parettia
 					ruling_only = yes
 				}
 				has_country_leader = {
@@ -807,7 +887,8 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			
+			remove_ideas = PAT_genie_worship
+			add_ideas = PAT_idea_civil_society_0
 		}
 		ai_will_do = {
 			factor = 1
@@ -825,7 +906,7 @@ focus_tree = {
 		available = {
 			OR = {
 				has_country_leader = {
-					character = PAT_Yufiria_Mazenta
+					character = PAT_Anisufia_win_Parettia
 					ruling_only = yes
 				}
 				has_country_leader = {
@@ -835,7 +916,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = PAT_idea_civil_society_0
+				add_idea = PAT_idea_civil_society_1
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -846,7 +930,7 @@ focus_tree = {
 		id = PAT_leader_of_new_era
 		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = PAT_base_theory }
-		prerequisite = { focus = PAT_king_and_elf }
+		prerequisite = { focus = PAT_king_and_people }
 		prerequisite = { focus = PAT_class_reform }
 		relative_position_id = PAT_king_and_people
 		x = 0
@@ -854,12 +938,13 @@ focus_tree = {
 		cost = @focus_time_tier_10
 		available = {
 			has_country_leader = {
-				character = PAT_Yufiria_Mazenta
+				character = PAT_Anisufia_win_Parettia
 				ruling_only = yes
 			}
 		}
 		completion_reward = {
-			
+			add_country_leader_trait = PAT_trait_magic_pioneer
+			set_cosmetic_tag = PAT_magic_nation_tag
 		}
 		ai_will_do = {
 			factor = 1
@@ -870,7 +955,7 @@ focus_tree = {
 		id = PAT_emperor_of_new_era
 		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = PAT_class_reform }
-		prerequisite = { focus = PAT_king_and_people }
+		prerequisite = { focus = PAT_king_and_elf }
 		prerequisite = { focus = PAT_industry_fund }
 		relative_position_id = PAT_king_and_elf
 		x = 0
@@ -883,7 +968,12 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			
+			swap_ruler_traits = {
+				remove = popular_figurehead
+				add = PAT_trait_all_paretians_emperor
+			}
+			add_country_leader_trait = imperial_connections
+			set_cosmetic_tag = PAT_Algard_empire_tag
 		}
 		ai_will_do = {
 			factor = 1
@@ -972,16 +1062,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
-			PAT_lumi = {
-				add_advisor_role = {
-					advisor = {
-						slot = political_advisor
-						cost = 100
-						idea_token = PAT_Lumi_pol_advisor
-						traits = {
-							Lumi_elf_Church
-						}
+			effect_tooltip = {
+				PAT_lumi = {
+					add_advisor_role = {
+						advisor = {
+							slot = political_advisor
+							cost = 100
+							idea_token = PAT_Lumi_pol_advisor
+							traits = {
+								Lumi_elf_Church
+							}
 
+						}
 					}
 				}
 			}
