@@ -1922,3 +1922,508 @@ PAT_down_shadow_of_Destruction = {#降低一层毁灭阴影
 		remove_ideas = PAT_idea_Shadow_of_Destruction_0
 	}
 }
+
+PAT_Heir_Points_settle_effect = {#继承人分数结算
+	set_variable = { PAT_heir_points_settle_Anisufia = 0 }
+	set_variable = { PAT_heir_points_settle_Algard = 0 }
+	set_temp_variable = { temp_heir_Anisufia_prestige = PAT_Anisufia_prestige }
+	multiply_temp_variable = {
+		var = temp_heir_Anisufia_prestige
+		value = 2
+	}
+	add_to_variable = {
+		var = PAT_heir_points_settle_Anisufia
+		value = temp_heir_Anisufia_prestige
+	}
+	set_temp_variable = { temp_heir_Algard_prestige = PAT_Algard_prestige }
+	multiply_temp_variable = {
+		var = temp_heir_Algard_prestige
+		value = 2
+	}
+	add_to_variable = {
+		var = PAT_heir_points_settle_Algard
+		value = temp_heir_Algard_prestige
+	}
+	add_to_variable = { PAT_heir_points_settle_Anisufia = PAT_heir_points_Anisufia^0 }
+	add_to_variable = { PAT_heir_points_settle_Anisufia = PAT_heir_points_Anisufia^1 }
+	add_to_variable = { PAT_heir_points_settle_Anisufia = PAT_heir_points_Anisufia^2 }
+	add_to_variable = { PAT_heir_points_settle_Anisufia = PAT_heir_points_Anisufia^3 }
+	add_to_variable = { PAT_heir_points_settle_Anisufia = PAT_heir_points_Anisufia^4 }
+	add_to_variable = { PAT_heir_points_settle_Algard = PAT_heir_points_Algard^0 }
+	add_to_variable = { PAT_heir_points_settle_Algard = PAT_heir_points_Algard^1 }
+	add_to_variable = { PAT_heir_points_settle_Algard = PAT_heir_points_Algard^2 }
+	add_to_variable = { PAT_heir_points_settle_Algard = PAT_heir_points_Algard^3 }
+	add_to_variable = { PAT_heir_points_settle_Algard = PAT_heir_points_Algard^4 }
+	country_event = { id = paretia_heir.1 }
+}
+
+PAT_heir_AI_underway_Anisufia = {#AI对面继承人的行动
+	if = {
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^4 < 10 }
+		}
+		add_to_variable = { PAT_heir_points_Anisufia^4 = 2 } 
+		custom_effect_tooltip = PAT_heir_AI_Anisufia_add_erudite_tt
+		if = {
+			limit = {
+				check_variable = { PAT_heir_points_Anisufia^4 > 5 }
+			}
+			add_to_variable = { PAT_Anisufia_prestige = 1 }
+			custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+			}
+	}
+	else_if = {
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^0 < 10 }
+		}
+		add_to_variable = { PAT_heir_points_Anisufia^0 = 2 } 
+		custom_effect_tooltip = PAT_heir_AI_Anisufia_add_dip_tt
+		if = {
+			limit = {
+				check_variable = { PAT_heir_points_Anisufia^0 > 5 }
+			}
+			add_to_variable = { PAT_Anisufia_prestige = 1 }
+			custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+			}
+	}
+	else_if = {
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^2 < 10 }
+		}
+		add_to_variable = { PAT_heir_points_Anisufia^2 = 2 } 
+		custom_effect_tooltip = PAT_heir_AI_Anisufia_add_mana_tt
+		if = {
+			limit = {
+				check_variable = { PAT_heir_points_Anisufia^2 > 5 }
+			}
+			add_to_variable = { PAT_Anisufia_prestige = 1 }
+			custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+			}
+	}
+	else_if = {
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^1 < 10 }
+		}
+		add_to_variable = { PAT_heir_points_Anisufia^1 = 2 } 
+		custom_effect_tooltip = PAT_heir_AI_Anisufia_add_mil_tt
+		if = {
+			limit = {
+				check_variable = { PAT_heir_points_Anisufia^1 > 5 }
+			}
+			add_to_variable = { PAT_Anisufia_prestige = 1 }
+			custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+			}
+	}
+	else_if = {
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^3 < 10 }
+		}
+		add_to_variable = { PAT_heir_points_Anisufia^3 = 2 } 
+		custom_effect_tooltip = PAT_heir_AI_Anisufia_add_tactics_tt
+		if = {
+			limit = {
+				check_variable = { PAT_heir_points_Anisufia^3 > 5 }
+			}
+			add_to_variable = { PAT_Anisufia_prestige = 1 }
+			custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+			}
+	}
+}
+PAT_heir_AI_underway_Algard = {
+	if = {
+		limit = {
+			check_variable = { PAT_heir_points_Algard^1 < 10 }
+		}
+		add_to_variable = { PAT_heir_points_Algard^1 = 2 } 
+		custom_effect_tooltip = PAT_heir_AI_Algard_add_mil_tt
+		if = {
+			limit = {
+				check_variable = { PAT_heir_points_Algard^1 > 5 }
+			}
+			add_to_variable = { PAT_Algard_prestige = 1 }
+			custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+			}
+	}
+	else_if = {
+		limit = {
+			check_variable = { PAT_heir_points_Algard^2 < 10 }
+		}
+		add_to_variable = { PAT_heir_points_Algard^2 = 2 } 
+		custom_effect_tooltip = PAT_heir_AI_Algard_add_mana_tt
+		if = {
+			limit = {
+				check_variable = { PAT_heir_points_Algard^2 > 5 }
+			}
+			add_to_variable = { PAT_Algard_prestige = 1 }
+			custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+			}
+	}
+	else_if = {
+		limit = {
+			check_variable = { PAT_heir_points_Algard^3 < 10 }
+		}
+		add_to_variable = { PAT_heir_points_Algard^3 = 2 } 
+		custom_effect_tooltip = PAT_heir_AI_Algard_add_tactics_tt
+		if = {
+			limit = {
+				check_variable = { PAT_heir_points_Algard^3 > 5 }
+			}
+			add_to_variable = { PAT_Algard_prestige = 1 }
+			custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+			}
+	}
+	else_if = {
+		limit = {
+			check_variable = { PAT_heir_points_Algard^0 < 10 }
+		}
+		add_to_variable = { PAT_heir_points_Algard^0 = 2 } 
+		custom_effect_tooltip = PAT_heir_AI_Algard_add_dip_tt
+		if = {
+			limit = {
+				check_variable = { PAT_heir_points_Algard^0 > 5 }
+			}
+			add_to_variable = { PAT_Algard_prestige = 1 }
+			custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+			}
+	}
+	else_if = {
+		limit = {
+			check_variable = { PAT_heir_points_Algard^4 < 10 }
+		}
+		add_to_variable = { PAT_heir_points_Algard^4 = 2 } 
+		custom_effect_tooltip = PAT_heir_AI_Algard_add_erudite_tt
+		if = {
+			limit = {
+				check_variable = { PAT_heir_points_Algard^4 > 5 }
+			}
+			add_to_variable = { PAT_Algard_prestige = 1 }
+			custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+			}
+	}
+}
+
+PAT_heir_dynamic_add_Algard = {#结算特质并给予动态修正
+	set_variable = { PAT_heir_buff_settle_subjects_autonomy_var = 0 }
+	set_variable = { PAT_heir_buff_settle_conscription_var = 0 }
+	set_variable = { PAT_heir_buff_settle_political_power_var = 0 }
+	set_variable = { PAT_heir_buff_settle_intel_network_factor_var = 0 }
+	set_variable = { PAT_heir_buff_settle_research_speed_factor_var = 0 }
+	set_variable = { PAT_heir_buff_settle_compliance_gain_var = 0 }
+	set_variable = { PAT_heir_buff_settle_war_support_factor_var = 0 }
+	set_variable = { PAT_heir_buff_settle_operative_slot_var = 0 }
+	set_variable = { PAT_heir_buff_settle_stability_weekly_var = 0 }
+	set_variable = { PAT_heir_buff_settle_supply_consumption_factor_var = 0 }
+	set_variable = { PAT_heir_buff_settle_non_core_manpower_var = 0 }
+	set_variable = { PAT_heir_buff_settle_army_XP_var = 0 }
+	set_variable = { PAT_heir_buff_settle_consumer_goods_expected_value_var = 0 }
+	set_variable = { PAT_heir_buff_settle_production_speed_buildings_factor_var = 0 }
+	set_variable = { PAT_heir_buff_resistance_target_var = 0 }
+	if = {#声望
+		limit = {
+			check_variable = { PAT_Algard_prestige > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_compliance_gain_var = 0.01 }
+	}
+	if = {#外交
+		limit = {
+			check_variable = { PAT_heir_points_Algard^0 > 7 }
+			check_variable = { PAT_heir_points_Algard^0 < 10 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_subjects_autonomy_var = 0.05 }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_heir_points_Algard^0 > 9 } }
+		add_to_variable = { PAT_heir_buff_settle_subjects_autonomy_var = 0.1 }
+	}
+
+	if = {#军事
+		limit = {
+			check_variable = { PAT_heir_points_Algard^1 > 7 }
+			check_variable = { PAT_heir_points_Algard^1 < 10 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_conscription_var = 0.01 }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_heir_points_Algard^1 > 9 } }
+		add_to_variable = { PAT_heir_buff_settle_conscription_var = 0.02 }
+	}
+
+	if = {#管理
+		limit = {
+			check_variable = { PAT_heir_points_Algard^2 > 7 }
+			check_variable = { PAT_heir_points_Algard^2 < 10 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_political_power_var = 0.1 }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_heir_points_Algard^2 > 9 } }
+		add_to_variable = { PAT_heir_buff_settle_political_power_var = 0.15 }
+	}
+
+	if = {#谋略
+		limit = {
+			check_variable = { PAT_heir_points_Algard^3 > 7 }
+			check_variable = { PAT_heir_points_Algard^3 < 10 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_intel_network_factor_var = 0.15 }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_heir_points_Algard^3 > 9 } }
+		add_to_variable = { PAT_heir_buff_settle_intel_network_factor_var = 0.20 }
+	}
+
+	if = {#学识
+		limit = {
+			check_variable = { PAT_heir_points_Algard^4 > 7 }
+			check_variable = { PAT_heir_points_Algard^4 < 10 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_research_speed_factor_var = 0.05 }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_heir_points_Algard^4 > 9 } }
+		add_to_variable = { PAT_heir_buff_settle_research_speed_factor_var = 0.1 }
+	}
+
+	if = {#外交+军事 组合
+		limit = {
+			check_variable = { PAT_heir_points_Algard^0 > 9 }
+			check_variable = { PAT_heir_points_Algard^1 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_war_support_factor_var = 0.2 }
+	}
+
+	if = {#外交+管理 组合
+		limit = {
+			check_variable = { PAT_heir_points_Algard^0 > 9 }
+			check_variable = { PAT_heir_points_Algard^2 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_war_support_factor_var = 0.2 }
+	}
+
+	if = {#外交+谋略 组合
+		limit = {
+			check_variable = { PAT_heir_points_Algard^0 > 9 }
+			check_variable = { PAT_heir_points_Algard^3 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_operative_slot_var = 2 }
+	}
+
+	if = {#外交+学识 组合
+		limit = {
+			check_variable = { PAT_heir_points_Algard^0 > 9 }
+			check_variable = { PAT_heir_points_Algard^4 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_stability_weekly_var = 0.03 }
+	}
+
+	if = {#军事 管理 组合
+		limit = {
+			check_variable = { PAT_heir_points_Algard^1 > 9 }
+			check_variable = { PAT_heir_points_Algard^2 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_supply_consumption_factor_var = -0.2 }
+	}
+
+	if = {#军事 谋略 组合
+		limit = {
+			check_variable = { PAT_heir_points_Algard^1 > 9 }
+			check_variable = { PAT_heir_points_Algard^3 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_non_core_manpower_var = 0.1 }
+	}
+
+	if = {#军事 学识 组合
+		limit = {
+			check_variable = { PAT_heir_points_Algard^1 > 9 }
+			check_variable = { PAT_heir_points_Algard^4 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_army_XP_var = 0.2 }
+	}
+
+	if = {#管理 谋略 组合
+		limit = {
+			check_variable = { PAT_heir_points_Algard^2 > 9 }
+			check_variable = { PAT_heir_points_Algard^3 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_consumer_goods_expected_value_var = -0.15 }
+	}
+
+	if = {#管理 学识 组合
+		limit = {
+			check_variable = { PAT_heir_points_Algard^2 > 9 }
+			check_variable = { PAT_heir_points_Algard^4 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_production_speed_buildings_factor_var = 0.1 }
+	}
+
+	if = {#谋略 学识 组合
+		limit = {
+			check_variable = { PAT_heir_points_Algard^2 > 9 }
+			check_variable = { PAT_heir_points_Algard^4 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_resistance_target_var = -0.2 }
+	}
+}
+
+PAT_heir_dynamic_add_Anisufia = {#结算特质并给予动态修正
+	set_variable = { PAT_heir_buff_settle_subjects_autonomy_var = 0 }
+	set_variable = { PAT_heir_buff_settle_conscription_var = 0 }
+	set_variable = { PAT_heir_buff_settle_political_power_var = 0 }
+	set_variable = { PAT_heir_buff_settle_intel_network_factor_var = 0 }
+	set_variable = { PAT_heir_buff_settle_research_speed_factor_var = 0 }
+	set_variable = { PAT_heir_buff_settle_compliance_gain_var = 0 }
+	set_variable = { PAT_heir_buff_settle_war_support_factor_var = 0 }
+	set_variable = { PAT_heir_buff_settle_operative_slot_var = 0 }
+	set_variable = { PAT_heir_buff_settle_stability_weekly_var = 0 }
+	set_variable = { PAT_heir_buff_settle_supply_consumption_factor_var = 0 }
+	set_variable = { PAT_heir_buff_settle_non_core_manpower_var = 0 }
+	set_variable = { PAT_heir_buff_settle_army_XP_var = 0 }
+	set_variable = { PAT_heir_buff_settle_consumer_goods_expected_value_var = 0 }
+	set_variable = { PAT_heir_buff_settle_production_speed_buildings_factor_var = 0 }
+	set_variable = { PAT_heir_buff_resistance_target_var = 0 }
+	if = {#声望
+		limit = {
+			check_variable = { PAT_Anisufia_prestige > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_compliance_gain_var = 0.01 }
+	}
+	if = {#外交
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^0 > 7 }
+			check_variable = { PAT_heir_points_Anisufia^0 < 10 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_subjects_autonomy_var = 0.05 }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_heir_points_Anisufia^0 > 9 } }
+		add_to_variable = { PAT_heir_buff_settle_subjects_autonomy_var = 0.1 }
+	}
+
+	if = {#军事
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^1 > 7 }
+			check_variable = { PAT_heir_points_Anisufia^1 < 10 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_conscription_var = 0.01 }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_heir_points_Anisufia^1 > 9 } }
+		add_to_variable = { PAT_heir_buff_settle_conscription_var = 0.02 }
+	}
+
+	if = {#管理
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^2 > 7 }
+			check_variable = { PAT_heir_points_Anisufia^2 < 10 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_political_power_var = 0.1 }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_heir_points_Anisufia^2 > 9 } }
+		add_to_variable = { PAT_heir_buff_settle_political_power_var = 0.15 }
+	}
+
+	if = {#谋略
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^3 > 7 }
+			check_variable = { PAT_heir_points_Anisufia^3 < 10 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_intel_network_factor_var = 0.15 }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_heir_points_Anisufia^3 > 9 } }
+		add_to_variable = { PAT_heir_buff_settle_intel_network_factor_var = 0.20 }
+	}
+
+	if = {#学识
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^4 > 7 }
+			check_variable = { PAT_heir_points_Anisufia^4 < 10 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_research_speed_factor_var = 0.05 }
+	}
+	else_if = {
+		limit = { check_variable = { PAT_heir_points_Anisufia^4 > 9 } }
+		add_to_variable = { PAT_heir_buff_settle_research_speed_factor_var = 0.1 }
+	}
+
+	if = {#外交+军事 组合
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^0 > 9 }
+			check_variable = { PAT_heir_points_Anisufia^1 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_war_support_factor_var = 0.2 }
+	}
+
+	if = {#外交+管理 组合
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^0 > 9 }
+			check_variable = { PAT_heir_points_Anisufia^2 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_war_support_factor_var = 0.2 }
+	}
+
+	if = {#外交+谋略 组合
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^0 > 9 }
+			check_variable = { PAT_heir_points_Anisufia^3 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_operative_slot_var = 2 }
+	}
+
+	if = {#外交+学识 组合
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^0 > 9 }
+			check_variable = { PAT_heir_points_Anisufia^4 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_stability_weekly_var = 0.03 }
+	}
+
+	if = {#军事 管理 组合
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^1 > 9 }
+			check_variable = { PAT_heir_points_Anisufia^2 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_supply_consumption_factor_var = -0.2 }
+	}
+
+	if = {#军事 谋略 组合
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^1 > 9 }
+			check_variable = { PAT_heir_points_Anisufia^3 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_non_core_manpower_var = 0.1 }
+	}
+
+	if = {#军事 学识 组合
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^1 > 9 }
+			check_variable = { PAT_heir_points_Anisufia^4 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_army_XP_var = 0.2 }
+	}
+
+	if = {#管理 谋略 组合
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^2 > 9 }
+			check_variable = { PAT_heir_points_Anisufia^3 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_consumer_goods_expected_value_var = -0.15 }
+	}
+
+	if = {#管理 学识 组合
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^2 > 9 }
+			check_variable = { PAT_heir_points_Anisufia^4 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_settle_production_speed_buildings_factor_var = 0.1 }
+	}
+
+	if = {#谋略 学识 组合
+		limit = {
+			check_variable = { PAT_heir_points_Anisufia^2 > 9 }
+			check_variable = { PAT_heir_points_Anisufia^4 > 9 }
+		}
+		add_to_variable = { PAT_heir_buff_resistance_target_var = -0.2 }
+	}
+}

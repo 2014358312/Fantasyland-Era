@@ -212,16 +212,104 @@ focus_tree = {
 		available = {
 			has_completed_focus = PAT_border_crisis
 		}
+		select_effect = {
+			country_event = { id = paretia.4 days = 25 }
+		}
 		completion_reward = {
 			add_stability = 0.05
 			add_political_power = 50
 			set_country_flag = PAT_successor_to_the_throne_flag
-			unlock_decision_category_tooltip = PAT_successor_to_the_throne_decision_category
+			#unlock_decision_category_tooltip = PAT_successor_to_the_throne_decision_category
 			hidden_effect = {
-				PAT_initialize_successor_to_the_throne_gui = yes
+				#PAT_initialize_successor_to_the_throne_gui = yes
 			}
-			activate_mission = PAT_successor_to_the_throne_mission
-			country_event = { id = paretia.4 days = 3 }
+			#activate_mission = PAT_successor_to_the_throne_mission
+			activate_mission = PAT_heir_choose_mission
+			hidden_effect = {
+				activate_mission = PAT_heir_AI_is_underway
+			}
+			add_to_array = {#初始数值
+				array = PAT_heir_points_Anisufia
+				value = 3
+				index = 0
+			}
+			add_to_array = {
+				array = PAT_heir_points_Anisufia
+				value = 2
+				index = 1
+			}
+			add_to_array = {
+				array = PAT_heir_points_Anisufia
+				value = 2
+				index = 2
+			}
+			add_to_array = {
+				array = PAT_heir_points_Anisufia
+				value = 1
+				index = 3
+			}
+			add_to_array = {
+				array = PAT_heir_points_Anisufia
+				value = 4
+				index = 4
+			}
+
+			add_to_array = {
+				array = PAT_heir_points_Algard
+				value = 1
+				index = 0
+			}
+			add_to_array = {
+				array = PAT_heir_points_Algard
+				value = 3
+				index = 1
+			}
+			add_to_array = {
+				array = PAT_heir_points_Algard
+				value = 3
+				index = 2
+			}
+			add_to_array = {
+				array = PAT_heir_points_Algard
+				value = 3
+				index = 3
+			}
+			add_to_array = {
+				array = PAT_heir_points_Algard
+				value = 1
+				index = 4
+			}
+			add_to_array = {
+				array = PAT_heir_points_top
+				value = 0
+				index = 0
+				}
+			add_to_array = {
+				array = PAT_heir_points_top
+				value = 0
+				index = 1
+				}
+			add_to_array = {
+				array = PAT_heir_points_top
+				value = 0
+				index = 2
+				}
+			add_to_array = {
+				array = PAT_heir_points_top
+				value = 0
+				index = 3
+				}
+			add_to_array = {
+				array = PAT_heir_points_top
+				value = 0
+				index = 4
+				}
+			set_variable = { PAT_Anisufia_prestige = 3 }
+			set_variable = { PAT_Algard_prestige = 4 }
+			effect_tooltip = {
+				country_event = { id = paretia.4 }
+			}
+			
 		}
 		ai_will_do = {
 			factor = 1
@@ -235,13 +323,13 @@ focus_tree = {
 		relative_position_id = PAT_evaluate_heir
 		x = -2
 		y = 1
-		cost = @focus_time_tier_2
+		cost = 1
 		available = {
-			has_active_mission = PAT_successor_to_the_throne_mission
+			has_active_mission = PAT_heir_choose_mission
 			NOT = { has_completed_focus = PAT_heir_choice_from_king }
 		}
 		completion_reward = {
-			unlock_decision_tooltip = PAT_successor_to_the_throne_administration_decision
+			unlock_decision_tooltip = PAT_heir_choose_add_mana
 		}
 		ai_will_do = {
 			factor = 1
@@ -255,13 +343,13 @@ focus_tree = {
 		relative_position_id = PAT_evaluate_heir
 		x = -1
 		y = 2
-		cost = @focus_time_tier_2
+		cost = 1
 		available = {
-			has_active_mission = PAT_successor_to_the_throne_mission
+			has_active_mission = PAT_heir_choose_mission
 			NOT = { has_completed_focus = PAT_heir_choice_from_king }
 		}
 		completion_reward = {
-			unlock_decision_tooltip = PAT_successor_to_the_throne_knowledge_decision
+			unlock_decision_tooltip = PAT_heir_choose_add_erudite
 		}
 		ai_will_do = {
 			factor = 1
@@ -275,13 +363,13 @@ focus_tree = {
 		relative_position_id = PAT_evaluate_heir
 		x = 0
 		y = 1
-		cost = @focus_time_tier_2
+		cost = 1
 		available = {
-			has_active_mission = PAT_successor_to_the_throne_mission
+			has_active_mission = PAT_heir_choose_mission
 			NOT = { has_completed_focus = PAT_heir_choice_from_king }
 		}
 		completion_reward = {
-			unlock_decision_tooltip = PAT_successor_to_the_throne_strategy_decision
+			unlock_decision_tooltip = PAT_heir_choose_add_tactics
 		}
 		ai_will_do = {
 			factor = 1
@@ -295,13 +383,13 @@ focus_tree = {
 		relative_position_id = PAT_evaluate_heir
 		x = 1
 		y = 2
-		cost = @focus_time_tier_2
+		cost = 1
 		available = {
-			has_active_mission = PAT_successor_to_the_throne_mission
+			has_active_mission = PAT_heir_choose_mission
 			NOT = { has_completed_focus = PAT_heir_choice_from_king }
 		}
 		completion_reward = {
-			unlock_decision_tooltip = PAT_successor_to_the_throne_diplomacy_decision
+			unlock_decision_tooltip = PAT_heir_choose_add_dip
 		}
 		ai_will_do = {
 			factor = 1
@@ -315,13 +403,13 @@ focus_tree = {
 		relative_position_id = PAT_evaluate_heir
 		x = 2
 		y = 1
-		cost = @focus_time_tier_2
+		cost = 1
 		available = {
-			has_active_mission = PAT_successor_to_the_throne_mission
+			has_active_mission = PAT_heir_choose_mission
 			NOT = { has_completed_focus = PAT_heir_choice_from_king }
 		}
 		completion_reward = {
-			unlock_decision_tooltip = PAT_successor_to_the_throne_military_decision
+			unlock_decision_tooltip = PAT_heir_choose_add_mil
 		}
 		ai_will_do = {
 			factor = 1
@@ -346,7 +434,7 @@ focus_tree = {
 			always = no
 		}
 		completion_reward = {
-			
+			clr_country_flag = PAT_successor_to_the_throne_flag
 		}
 		ai_will_do = {
 			factor = 1

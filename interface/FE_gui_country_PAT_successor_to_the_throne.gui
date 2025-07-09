@@ -1,3 +1,4 @@
+#!gfx:interface\FE_texticons.gfx
 @Yufiria_X = 60
 @Algard_X = 260
 @successor_Y = 30
@@ -18,8 +19,8 @@ guiTypes = {
 			size = { width = 100%% height = 0 }
 			
 			iconType = {
-				name = "Yufiria_icon"
-				spriteType = "GFX_Yufiria_Mazenta_texticon"
+				name = "Anisufia_icon"
+				spriteType = "GFX_Anisufia_win_Parettia_texticon"
 				position = { x = @Yufiria_X y = @successor_Y }
 			}
 			
@@ -36,11 +37,11 @@ guiTypes = {
 			size = { width = 100%% height = 50 }
 		
 			instantTextboxType = {
-				name = "Yufiria_name"
+				name = "anisufia_name"
 				position = { x = @Yufiria_X y = @name_Y }
 				font = "hoi_24header"
 				format = center
-				text = yufiria_name_text
+				text = "anisufia_name_text"
 				maxWidth = 168
 			}
 			
@@ -49,37 +50,206 @@ guiTypes = {
 				position = { x = @Algard_X y = @name_Y }
 				font = "hoi_24header"
 				format = center
-				text = algard_name_text
+				text = "algard_name_text"
 				maxWidth = 168
 				alwaystransparent = yes
 			}
 		
-			instantTextboxType = {
-				name = "Yufiria_info"
-				position = { x = @Yufiria_X y = @info_Y }
-				font = "hoi_18mbs"
-				format = center
-				text = yufiria_info_text
-				maxWidth = 168
-				alwaystransparent = yes
-			}
-			
-			instantTextboxType = {
-				name = "Algard_info"
-				position = { x = @Algard_X y = @info_Y }
-				font = "hoi_18mbs"
-				format = center
-				text = algard_info_text
-				maxWidth = 168
-				alwaystransparent = yes
-			}
+				#instantTextboxType = {
+				#	name = "Yufiria_info"
+				#	position = { x = @Yufiria_X y = @info_Y }
+				#	font = "hoi_18mbs"
+				#	format = center
+				#	text = yufiria_info_text
+				#	maxWidth = 168
+				#	alwaystransparent = yes
+				#}
+				
+				#instantTextboxType = {
+				#	name = "Algard_info"
+				#	position = { x = @Algard_X y = @info_Y }
+				#	font = "hoi_18mbs"
+				#	format = center
+				#	text = algard_info_text
+				#	maxWidth = 168
+				#	alwaystransparent = yes
+				#}
+
+				instantTextBoxType = {#外交
+					name = "Anisufia_dip"
+					position = {
+						x = @Yufiria_X
+						y = @info_Y
+					}
+					font = "hoi_18mbs"
+					format = center
+					text = "Anisufia_dip"
+					maxWidth = 168
+					# = yes
+					pdx_tooltip = "PAT_heir_gui_points_tt"
+				}
+
+				instantTextBoxType = {#军事
+					name = "Anisufia_mil"
+					position = {
+						x = @Yufiria_X
+						y = 360
+					}
+					font = "hoi_18mbs"
+					format = center
+					text = "Anisufia_mil"
+					maxWidth = 168
+					# = yes
+					pdx_tooltip = "PAT_heir_gui_points_tt"
+				}
+
+				instantTextBoxType = {#管理
+					name = "Anisufia_mana"
+					position = {
+						x = @Yufiria_X
+						y = 380
+					}
+					font = "hoi_18mbs"
+					format = center
+					text = "Anisufia_mana"
+					maxWidth = 168
+					# = yes
+					pdx_tooltip = "PAT_heir_gui_points_tt"
+				}
+
+				instantTextBoxType = {#谋略
+					name = "Anisufia_tactics"
+					position = {
+						x = @Yufiria_X
+						y = 400
+					}
+					font = "hoi_18mbs"
+					format = center
+					text = "Anisufia_tactics"
+					maxWidth = 168
+					# = yes
+					pdx_tooltip = "PAT_heir_gui_points_tt"
+				}
+
+				instantTextBoxType = {#学识
+					name = "Anisufia_erudite"
+					position = {
+						x = @Yufiria_X
+						y = 420
+					}
+					font = "hoi_18mbs"
+					format = center
+					text = "Anisufia_erudite"
+					maxWidth = 168
+					# = yes
+					pdx_tooltip = "PAT_heir_gui_points_tt"
+				}
+
+				instantTextBoxType = {#声望
+					name = "Anisufia_prestige"
+					position = {
+						x = @Yufiria_X
+						y = 440
+					}
+					font = "hoi_18mbs"
+					format = center
+					text = "Anisufia_prestige"
+					maxWidth = 168
+					## = yes
+					pdx_tooltip =  "PAT_heir_gui_prestige_tt"
+				}
+
+				instantTextBoxType = {#外交
+					name = "Algard_dip"
+					position = {
+						x = @Algard_X
+						y = @info_Y
+					}
+					font = "hoi_18mbs"
+					format = center
+					text = "Algard_dip"
+					maxWidth = 168
+					# = yes
+					pdx_tooltip = "PAT_heir_gui_points_tt"
+				}
+
+				instantTextBoxType = {#军事
+					name = "Algard_mil"
+					position = {
+						x = @Algard_X
+						y = 360
+					}
+					font = "hoi_18mbs"
+					format = center
+					text = "Algard_mil"
+					maxWidth = 168
+					# = yes
+					pdx_tooltip = "PAT_heir_gui_points_tt"
+				}
+
+				instantTextBoxType = {#管理
+					name = "Algard_mana"
+					position = {
+						x = @Algard_X
+						y = 380
+					}
+					font = "hoi_18mbs"
+					format = center
+					text = "Algard_mana"
+					maxWidth = 168
+					# = yes
+					pdx_tooltip = "PAT_heir_gui_points_tt"
+				}
+
+				instantTextBoxType = {#谋略
+					name = "Algard_tactics"
+					position = {
+						x = @Algard_X
+						y = 400
+					}
+					font = "hoi_18mbs"
+					format = center
+					text = "Algard_tactics"
+					maxWidth = 168
+					# = yes
+					pdx_tooltip = "PAT_heir_gui_points_tt"
+				}
+
+				instantTextBoxType = {#学识
+					name = "Algard_erudite"
+					position = {
+						x = @Algard_X
+						y = 420
+					}
+					font = "hoi_18mbs"
+					format = center
+					text = "Algard_erudite"
+					maxWidth = 168
+					# = yes
+					pdx_tooltip = "PAT_heir_gui_points_tt"
+				}
+
+				instantTextBoxType = {#声望
+					name = "Algard_prestige"
+					position = {
+						x = @Algard_X
+						y = 440
+					}
+					font = "hoi_18mbs"
+					format = center
+					text = "Algard_prestige"
+					maxWidth = 168
+					#alwaystransparent = yes
+					pdx_tooltip = "PAT_heir_gui_prestige_tt"
+				}
+
 		
 			instantTextboxType = {
 				name = "target_info"
 				position = { x = 20 y = 510 }
 				font = "hoi_18mbs"
 				format = center
-				text = target_info_text
+				text = "target_info_text"
 				maxWidth = 460
 			}
 		}

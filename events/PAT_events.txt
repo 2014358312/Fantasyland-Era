@@ -5,6 +5,7 @@
 add_namespace = paretia
 add_namespace = paretia_revo #革命线的事件
 add_namespace = paretia_BOP #bop事件
+add_namespace = paretia_heir #继承人线事件
 
 country_event = {
 	id = paretia.1
@@ -74,24 +75,26 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
+	option = {#帮助艾妮丝登上王位
 		name = paretia.4.a
 		custom_effect_tooltip = {
 			localization_key = PAT_successor_support_one_tt
-			CHARACTER = Yufiria_Mazenta
+			CHARACTER = Anisufia_win_Parettia
 		}
-		set_country_flag = PAT_successor_support_yufiria_flag
-		PAT_calculate_successor_cost = yes
+		#set_country_flag = PAT_successor_support_yufiria_flag
+		#PAT_calculate_successor_cost = yes
+		set_country_flag = PAT_heir_choose_Anisufia
 	}
 
-	option = {
+	option = {#帮助亚尔加德登上王位
 		name = paretia.4.b
 		custom_effect_tooltip = {
 			localization_key = PAT_successor_support_one_tt
 			CHARACTER = Algard_von_Palettia
 		}
-		set_country_flag = PAT_successor_support_algard_flag
-		PAT_calculate_successor_cost = yes
+		#set_country_flag = PAT_successor_support_algard_flag
+		#PAT_calculate_successor_cost = yes
+		set_country_flag = PAT_heir_choose_Algard
 	}
 }
 
@@ -144,6 +147,12 @@ country_event = {
 		name = paretia.101.a
 		set_country_flag = PAT_overly_easy_coup_flag
 		#complete_national_focus = PAT_border_crisis
+		add_stability = -0.5
+		add_war_support = -0.5
+		add_political_power = -200
+		capital_scope = {
+			add_manpower = -40000
+		}
 	}
 }
 
@@ -384,3 +393,61 @@ unit_leader_event = {#职务更替
 #		activate_advisor = PAT_Algard_von_Palettia_head_of_government
 #	}
 #}
+
+country_event = {#最终赢家
+	id = paretia_heir.1
+	title = paretia_heir.1.t
+	desc = paretia_heir.1.d
+	is_triggered_only = yes
+	option = {
+		name = paretia_heir.1.a
+		trigger = {
+			check_variable = { PAT_heir_points_settle_Algard > PAT_heir_points_settle_Anisufia }
+		}
+		add_country_leader_role = {
+			character = PAT_Algard_von_Palettia
+			country_leader = { 
+				ideology = absolutism_subtype
+				traits = { PAT_heir_geniuse_made_heaven }
+			}
+			promote_leader = yes
+		}
+
+		PAT_heir_dynamic_add_Algard = yes
+		add_dynamic_modifier = {
+			modifier = PAT_dyanamic_geniuse_made_heaven
+		}
+		clear_array = PAT_heir_points_Algard
+		clear_array = PAT_heir_points_Anisufia
+		clear_variable = PAT_Algard_prestige
+		clear_variable = PAT_Anisufia_prestige
+	}
+	option = {
+		name = paretia_heir.1.b
+		trigger = {
+			check_variable = { PAT_heir_points_settle_Algard < PAT_heir_points_settle_Anisufia }
+		}
+		add_country_leader_role = {
+			character = PAT_Anisufia_win_Parettia
+			country_leader = {
+				ideology = absolutism_subtype
+				traits = { PAT_heir_geniuse_made_heaven }
+			}
+			promote_leader = yes
+		}
+		PAT_heir_dynamic_add_Anisufia = yes
+		add_dynamic_modifier = {
+			modifier = PAT_dyanamic_geniuse_made_heaven
+		}
+		clear_array = PAT_heir_points_Algard
+		clear_array = PAT_heir_points_Anisufia
+		clear_variable = PAT_Algard_prestige
+		clear_variable = PAT_Anisufia_prestige
+	}
+	option = {
+		name = paretia_heir.1.c
+		trigger = {
+			check_variable = { PAT_heir_points_settle_Algard = PAT_heir_points_settle_Anisufia }
+		}
+	}
+}

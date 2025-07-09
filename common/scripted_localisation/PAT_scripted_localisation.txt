@@ -363,3 +363,660 @@ defined_text = {
 	}
 	text = { localization_key = something_with_wrong_ttt }
 }
+
+defined_text = {#艾妮丝 声望等级
+	name = PAT_Anisufia_prestige_scl
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_Anisufia_prestige < 2
+			}
+		}
+		localization_key = PAT_prestige_verylow
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_Anisufia_prestige > 1
+			}
+			check_variable = {
+				PAT.PAT_Anisufia_prestige < 5
+			}
+		}
+		localization_key = PAT_prestige_low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_Anisufia_prestige > 4
+			}
+			check_variable = {
+				PAT.PAT_Anisufia_prestige < 8
+			}
+		}
+		localization_key = PAT_prestige_middle
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_Anisufia_prestige > 7
+			}
+			check_variable = {
+				PAT.PAT_Anisufia_prestige < 10
+			}
+		}
+		localization_key = PAT_prestige_high
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_Anisufia_prestige > 9
+			}
+		}
+		localization_key = PAT_prestige_max
+	}
+}
+
+defined_text = {#亚尔加德 声望等级
+	name = PAT_Algard_prestige_scl
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_Algard_prestige < 2
+			}
+		}
+		localization_key = PAT_prestige_verylow
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_Algard_prestige > 1
+			}
+			check_variable = {
+				PAT.PAT_Algard_prestige < 5
+			}
+		}
+		localization_key = PAT_prestige_low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_Algard_prestige > 4
+			}
+			check_variable = {
+				PAT.PAT_Algard_prestige < 8
+			}
+		}
+		localization_key = PAT_prestige_middle
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_Algard_prestige > 7
+			}
+			check_variable = {
+				PAT.PAT_Algard_prestige < 10
+			}
+		}
+		localization_key = PAT_prestige_high
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_Algard_prestige > 9
+			}
+		}
+		localization_key = PAT_prestige_max
+	}
+}
+
+defined_text = {
+	name = PAT_heir_choose_who_scl
+	text = {
+		trigger = {
+			PAT = {
+				has_country_flag = PAT_heir_choose_Anisufia
+			}
+		}
+		localization_key = Anisufia_win_Parettia
+	}
+	text = {
+		trigger = {
+			PAT = {
+				has_country_flag = PAT_heir_choose_Algard
+			}
+		}
+		localization_key = Algard_von_Palettia
+	}
+}
+
+defined_text = {#艾妮丝 外交等级
+	name = PAT_Anisufia_dip_level_scl
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^0 < 2
+			}
+		}
+		localization_key = PAT_heir_points_verylow
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^0 > 1
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^0 < 5
+			}
+		}
+		localization_key = PAT_heir_points_low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^0 > 4
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^0 < 8
+			}
+		}
+		localization_key = PAT_heir_points_middle
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^0 > 7
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^0 < 10
+			}
+		}
+		localization_key = PAT_heir_points_high
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^0 > 9
+			}
+		}
+		localization_key = PAT_heir_points_max
+	}
+}
+
+defined_text = {#亚尔加德 外交等级
+	name = PAT_Algard_dip_level_scl
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^0 < 2
+			}
+		}
+		localization_key = PAT_heir_points_verylow
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^0 > 1
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^0 < 5
+			}
+		}
+		localization_key = PAT_heir_points_low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^0 > 4
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^0 < 8
+			}
+		}
+		localization_key = PAT_heir_points_middle
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^0 > 7
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^0 < 10
+			}
+		}
+		localization_key = PAT_heir_points_high
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^0 > 9
+			}
+		}
+		localization_key = PAT_heir_points_max
+	}
+}
+
+defined_text = {#艾妮丝 军事等级
+	name = PAT_Anisufia_mil_level_scl
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^1 < 2
+			}
+		}
+		localization_key = PAT_heir_points_verylow
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^1 > 1
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^1 < 5
+			}
+		}
+		localization_key = PAT_heir_points_low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^1 > 4
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^1 < 8
+			}
+		}
+		localization_key = PAT_heir_points_middle
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^1 > 7
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^1 < 10
+			}
+		}
+		localization_key = PAT_heir_points_high
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^1 > 9
+			}
+		}
+		localization_key = PAT_heir_points_max
+	}
+}
+
+
+defined_text = {#亚尔加德 军事等级
+	name = PAT_Algard_mil_level_scl
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^1 < 2
+			}
+		}
+		localization_key = PAT_heir_points_verylow
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^1 > 1
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^1 < 5
+			}
+		}
+		localization_key = PAT_heir_points_low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^1 > 4
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^1 < 8
+			}
+		}
+		localization_key = PAT_heir_points_middle
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^1 > 7
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^1 < 10
+			}
+		}
+		localization_key = PAT_heir_points_high
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^1 > 9
+			}
+		}
+		localization_key = PAT_heir_points_max
+	}
+}
+
+defined_text = {#亚尔加德 管理等级
+	name = PAT_Algard_mana_level_scl
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^2 < 2
+			}
+		}
+		localization_key = PAT_heir_points_verylow
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^2 > 1
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^2 < 5
+			}
+		}
+		localization_key = PAT_heir_points_low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^2 > 4
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^2 < 8
+			}
+		}
+		localization_key = PAT_heir_points_middle
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^2 > 7
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^2 < 10
+			}
+		}
+		localization_key = PAT_heir_points_high
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^2 > 9
+			}
+		}
+		localization_key = PAT_heir_points_max
+	}
+}
+
+defined_text = {#亚尔加德 谋略等级
+	name = PAT_Algard_tactics_level_scl
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^3 < 2
+			}
+		}
+		localization_key = PAT_heir_points_verylow
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^3 > 1
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^3 < 5
+			}
+		}
+		localization_key = PAT_heir_points_low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^3 > 4
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^3 < 8
+			}
+		}
+		localization_key = PAT_heir_points_middle
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^3 > 7
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^3 < 10
+			}
+		}
+		localization_key = PAT_heir_points_high
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^3 > 9
+			}
+		}
+		localization_key = PAT_heir_points_max
+	}
+}
+
+defined_text = {#亚尔加德 学识等级
+	name = PAT_Algard_erudite_level_scl
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^4 < 2
+			}
+		}
+		localization_key = PAT_heir_points_verylow
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^4 > 1
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^4 < 5
+			}
+		}
+		localization_key = PAT_heir_points_low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^4 > 4
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^4 < 8
+			}
+		}
+		localization_key = PAT_heir_points_middle
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^4 > 7
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Algard^4 < 10
+			}
+		}
+		localization_key = PAT_heir_points_high
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Algard^4 > 9
+			}
+		}
+		localization_key = PAT_heir_points_max
+	}
+}
+
+defined_text = {#艾妮丝 管理等级
+	name = PAT_Anisufia_mana_level_scl
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^2 < 2
+			}
+		}
+		localization_key = PAT_heir_points_verylow
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^2 > 1
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^2 < 5
+			}
+		}
+		localization_key = PAT_heir_points_low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^2 > 4
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^2 < 8
+			}
+		}
+		localization_key = PAT_heir_points_middle
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^2 > 7
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^2 < 10
+			}
+		}
+		localization_key = PAT_heir_points_high
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^2 > 9
+			}
+		}
+		localization_key = PAT_heir_points_max
+	}
+}
+
+defined_text = {#艾妮丝 谋略等级
+	name = PAT_Anisufia_tactics_level_scl
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^3 < 2
+			}
+		}
+		localization_key = PAT_heir_points_verylow
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^3 > 1
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^3 < 5
+			}
+		}
+		localization_key = PAT_heir_points_low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^3 > 4
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^3 < 8
+			}
+		}
+		localization_key = PAT_heir_points_middle
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^3 > 7
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^3 < 10
+			}
+		}
+		localization_key = PAT_heir_points_high
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^3 > 9
+			}
+		}
+		localization_key = PAT_heir_points_max
+	}
+}
+
+defined_text = {#艾妮丝 学识等级
+	name = PAT_Anisufia_erudite_level_scl
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^4 < 2
+			}
+		}
+		localization_key = PAT_heir_points_verylow
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^4 > 1
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^4 < 5
+			}
+		}
+		localization_key = PAT_heir_points_low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^4 > 4
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^4 < 8
+			}
+		}
+		localization_key = PAT_heir_points_middle
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^4 > 7
+			}
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^4 < 10
+			}
+		}
+		localization_key = PAT_heir_points_high
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PAT.PAT_heir_points_Anisufia^4 > 9
+			}
+		}
+		localization_key = PAT_heir_points_max
+	}
+}

@@ -11,7 +11,7 @@ PAT_successor_to_the_throne_decision_category = {
 			complete_national_focus = PAT_heir_choice_from_king
 			custom_effect_tooltip = PAT_successor_to_the_throne_mission_tt
 			hidden_effect = {
-				PAT_settle_successor_modifier = yes
+				#PAT_settle_successor_modifier = yes
 			}
 			if = {
 				limit = { check_variable = { PAT_Yufiria_score = PAT_Algard_score } }
@@ -39,7 +39,7 @@ PAT_successor_to_the_throne_decision_category = {
 		activation = { always = no }
 		timeout_effect = {
 			hidden_effect = {
-				PAT_settle_successor_modifier = yes
+				#PAT_settle_successor_modifier = yes
 			}
 			
 			if = {
@@ -1144,3 +1144,414 @@ PAT_elf_and_kingdom_decision_category = {
 		}
 	}
 }
+##########数组 0,1,2,3,4分别对应外交 军事 管理 谋略 学识
+PAT_hear_choose_decision_category = {
+	PAT_heir_choose_mission = {#继承任务
+		days_mission_timeout = 180
+		is_good = no
+		activation = {
+			always = no
+		}
+		available = {
+			always = no
+		}
+		timeout_effect = {
+			PAT_Heir_Points_settle_effect = yes
+			complete_national_focus = PAT_heir_choice_from_king
+			clr_country_flag = PAT_successor_to_the_throne_flag
+			
+		}
+	}
+
+	PAT_heir_choose_add_prestige = {#增加声望
+		cost = 0
+		available = {
+			NOT = {
+				has_country_flag = PAT_heir_choose_upgrade
+			}
+			if = {
+				limit = { has_country_flag = PAT_heir_choose_Algard }
+				custom_trigger_tooltip = {
+					tooltip = PAT_heir_prestige_max_tt
+					check_variable = { PAT_Algard_prestige < 10 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_heir_choose_Anisufia }
+				custom_trigger_tooltip = {
+					tooltip = PAT_heir_prestige_max_tt
+					check_variable = { PAT_Anisufia_prestige < 10 }
+				}
+			}
+		}
+		days_remove = 15
+		complete_effect = {
+			set_country_flag = PAT_heir_choose_upgrade
+		}
+		remove_effect = {
+			if = {
+				limit = { has_country_flag = PAT_heir_choose_Algard }
+				add_to_variable = { PAT_Algard_prestige = 1 }
+				custom_effect_tooltip = PAT_heir_add_prestige_tt
+				clr_country_flag = PAT_heir_choose_upgrade
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_heir_choose_Anisufia }
+				add_to_variable = { PAT_Anisufia_prestige = 1 }
+				custom_effect_tooltip = PAT_heir_add_prestige_tt
+				clr_country_flag = PAT_heir_choose_upgrade
+			}
+		}
+	}
+
+	PAT_heir_choose_add_dip = {#增加外交
+		cost = 0
+		visible = {
+			has_completed_focus = PAT_heir_exercise_diplomacy
+		}
+		available = {
+			NOT = {
+				has_country_flag = PAT_heir_choose_upgrade
+			}
+			custom_trigger_tooltip = {
+				tooltip = PAT_heir_points_add_tt
+				check_variable = { PAT_heir_points_top^0 < 6 }
+			}
+			if = {
+				limit = { has_country_flag = PAT_heir_choose_Algard }
+				custom_trigger_tooltip = {
+					tooltip = PAT_heir_points_max_tt
+					check_variable = { PAT_heir_points_Algard^0 < 10 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_heir_choose_Anisufia }
+				custom_trigger_tooltip = {
+					tooltip = PAT_heir_points_max_tt
+					check_variable = { PAT_heir_points_Anisufia^0 < 10 }
+				}
+			}
+		}
+		days_remove = 15
+		complete_effect = {
+			set_country_flag = PAT_heir_choose_upgrade
+		}
+		remove_effect = {
+			if = {
+				limit = { has_country_flag = PAT_heir_choose_Algard }
+				add_to_variable = { PAT_heir_points_Algard^0 = 2 }
+				add_to_variable = { PAT_heir_points_top^0 = 1 }
+				custom_effect_tooltip = PAT_heir_add_dip_tt
+				if = {
+					limit = {
+						check_variable = { PAT_heir_points_Algard^0 > 5 }
+					}
+					add_to_variable = { PAT_Algard_prestige = 1 }
+					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+				}
+				clr_country_flag = PAT_heir_choose_upgrade
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_heir_choose_Anisufia }
+				add_to_variable = { PAT_heir_points_Anisufia^0 = 2 }
+				add_to_variable = { PAT_heir_points_top^0 = 1 }
+				custom_effect_tooltip = PAT_heir_add_dip_tt
+				if = {
+					limit = {
+						check_variable = { PAT_heir_points_Anisufia^0 > 5 }
+					}
+					add_to_variable = { PAT_Anisufia_prestige = 1 }
+					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+				}
+				clr_country_flag = PAT_heir_choose_upgrade
+			}
+		}
+	}
+
+	PAT_heir_choose_add_mil = {#增加军事
+		cost = 0
+		visible = {
+			has_completed_focus = PAT_heir_exercise_military
+		}
+		available = {
+			NOT = {
+				has_country_flag = PAT_heir_choose_upgrade
+			}
+			custom_trigger_tooltip = {
+				tooltip = PAT_heir_points_add_tt
+				check_variable = { PAT_heir_points_top^1 < 6 }
+			}
+			if = {
+				limit = { has_country_flag = PAT_heir_choose_Algard }
+				custom_trigger_tooltip = {
+					tooltip = PAT_heir_points_max_tt
+					check_variable = { PAT_heir_points_Algard^1 < 10 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_heir_choose_Anisufia }
+				custom_trigger_tooltip = {
+					tooltip = PAT_heir_points_max_tt
+					check_variable = { PAT_heir_points_Anisufia^1 < 10 }
+				}
+			}
+		}
+		days_remove = 15
+		complete_effect = {
+			set_country_flag = PAT_heir_choose_upgrade
+		}
+		remove_effect = {
+			if = {
+				limit = { has_country_flag = PAT_heir_choose_Algard }
+				add_to_variable = { PAT_heir_points_Algard^1 = 2 }
+				add_to_variable = { PAT_heir_points_top^1 = 1 }
+				custom_effect_tooltip = PAT_heir_add_mil_tt
+				if = {
+					limit = {
+						check_variable = { PAT_heir_points_Algard^1 > 5 }
+					}
+					add_to_variable = { PAT_Algard_prestige = 1 }
+					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+				}
+				clr_country_flag = PAT_heir_choose_upgrade
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_heir_choose_Anisufia }
+				add_to_variable = { PAT_heir_points_Anisufia^1 = 2 }
+				add_to_variable = { PAT_heir_points_top^1 = 1 }
+				custom_effect_tooltip = PAT_heir_add_mil_tt
+				if = {
+					limit = {
+						check_variable = { PAT_heir_points_Anisufia^1 > 5 }
+					}
+					add_to_variable = { PAT_Anisufia_prestige = 1 }
+					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+				}
+				clr_country_flag = PAT_heir_choose_upgrade
+			}
+		}
+	}
+
+	PAT_heir_choose_add_mana = {#增加管理
+		cost = 0
+		visible = {
+			has_completed_focus = PAT_heir_exercise_administration
+		}
+		available = {
+			NOT = {
+				has_country_flag = PAT_heir_choose_upgrade
+			}
+			custom_trigger_tooltip = {
+				tooltip = PAT_heir_points_add_tt
+				check_variable = { PAT_heir_points_top^2 < 6 }
+			}
+			if = {
+				limit = { has_country_flag = PAT_heir_choose_Algard }
+				custom_trigger_tooltip = {
+					tooltip = PAT_heir_points_max_tt
+					check_variable = { PAT_heir_points_Algard^2 < 10 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_heir_choose_Anisufia }
+				custom_trigger_tooltip = {
+					tooltip = PAT_heir_points_max_tt
+					check_variable = { PAT_heir_points_Anisufia^2 < 10 }
+				}
+			}
+		}
+		days_remove = 15
+		complete_effect = {
+			set_country_flag = PAT_heir_choose_upgrade
+		}
+		remove_effect = {
+			if = {
+				limit = { has_country_flag = PAT_heir_choose_Algard }
+				add_to_variable = { PAT_heir_points_Algard^2 = 2 }
+				add_to_variable = { PAT_heir_points_top^2 = 1 }
+				custom_effect_tooltip = PAT_heir_add_mana_tt
+				if = {
+					limit = {
+						check_variable = { PAT_heir_points_Algard^2 > 5 }
+					}
+					add_to_variable = { PAT_Algard_prestige = 1 }
+					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+				}
+				clr_country_flag = PAT_heir_choose_upgrade
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_heir_choose_Anisufia }
+				add_to_variable = { PAT_heir_points_Anisufia^2 = 2 }
+				add_to_variable = { PAT_heir_points_top^2 = 1 }
+				custom_effect_tooltip = PAT_heir_add_mana_tt
+				if = {
+					limit = {
+						check_variable = { PAT_heir_points_Anisufia^2 > 5 }
+					}
+					add_to_variable = { PAT_Anisufia_prestige = 1 }
+					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+				}
+				clr_country_flag = PAT_heir_choose_upgrade
+			}
+		}
+	}
+
+	PAT_heir_choose_add_tactics = {#增加谋略
+		cost = 0
+		visible = {
+			has_completed_focus = PAT_heir_exercise_strategy
+		}
+		available = {
+			NOT = {
+				has_country_flag = PAT_heir_choose_upgrade
+			}
+			custom_trigger_tooltip = {
+				tooltip = PAT_heir_points_add_tt
+				check_variable = { PAT_heir_points_top^3 < 6 }
+			}
+			if = {
+				limit = { has_country_flag = PAT_heir_choose_Algard }
+				custom_trigger_tooltip = {
+					tooltip = PAT_heir_points_max_tt
+					check_variable = { PAT_heir_points_Algard^3 < 10 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_heir_choose_Anisufia }
+				custom_trigger_tooltip = {
+					tooltip = PAT_heir_points_max_tt
+					check_variable = { PAT_heir_points_Anisufia^3 < 10 }
+				}
+			}
+		}
+		days_remove = 15
+		complete_effect = {
+			set_country_flag = PAT_heir_choose_upgrade
+		}
+		remove_effect = {
+			if = {
+				limit = { has_country_flag = PAT_heir_choose_Algard }
+				add_to_variable = { PAT_heir_points_Algard^3 = 2 }
+				add_to_variable = { PAT_heir_points_top^3 = 1 }
+				custom_effect_tooltip = PAT_heir_add_tactics_tt
+				if = {
+					limit = {
+						check_variable = { PAT_heir_points_Algard^3 > 5 }
+					}
+					add_to_variable = { PAT_Algard_prestige = 1 }
+					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+				}
+				clr_country_flag = PAT_heir_choose_upgrade
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_heir_choose_Anisufia }
+				add_to_variable = { PAT_heir_points_Anisufia^3 = 2 }
+				add_to_variable = { PAT_heir_points_top^3 = 1 }
+				custom_effect_tooltip = PAT_heir_add_tactics_tt
+				if = {
+					limit = {
+						check_variable = { PAT_heir_points_Anisufia^3 > 5 }
+					}
+					add_to_variable = { PAT_Anisufia_prestige = 1 }
+					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+				}
+				clr_country_flag = PAT_heir_choose_upgrade
+			}
+		}
+	}
+
+	PAT_heir_choose_add_erudite = {#增加学识
+		cost = 0
+		visible = {
+			has_completed_focus = PAT_heir_exercise_knowledge
+		}
+		available = {
+			NOT = {
+				has_country_flag = PAT_heir_choose_upgrade
+			}
+			custom_trigger_tooltip = {
+				tooltip = PAT_heir_points_add_tt
+				check_variable = { PAT_heir_points_top^4 < 6 }
+			}
+			if = {
+				limit = { has_country_flag = PAT_heir_choose_Algard }
+				custom_trigger_tooltip = {
+					tooltip = PAT_heir_points_max_tt
+					check_variable = { PAT_heir_points_Algard^4 < 10 }
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = PAT_heir_choose_Anisufia }
+				custom_trigger_tooltip = {
+					tooltip = PAT_heir_points_max_tt
+					check_variable = { PAT_heir_points_Anisufia^4 < 10 }
+				}
+			}
+		}
+		days_remove = 15
+		complete_effect = {
+			set_country_flag = PAT_heir_choose_upgrade
+		}
+		remove_effect = {
+			if = {
+				limit = { has_country_flag = PAT_heir_choose_Algard }
+				add_to_variable = { PAT_heir_points_Algard^4 = 2 }
+				add_to_variable = { PAT_heir_points_top^4 = 1 }
+				custom_effect_tooltip = PAT_heir_add_erudite_tt
+				if = {
+					limit = {
+						check_variable = { PAT_heir_points_Algard^4 > 5 }
+					}
+					add_to_variable = { PAT_Algard_prestige = 1 }
+					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+				}
+				clr_country_flag = PAT_heir_choose_upgrade
+			}	
+			else_if = {
+				limit = { has_country_flag = PAT_heir_choose_Anisufia }
+				add_to_variable = { PAT_heir_points_Anisufia^4 = 2 }
+				add_to_variable = { PAT_heir_points_top^4 = 1 }
+				custom_effect_tooltip = PAT_heir_add_erudite_tt
+				if = {
+					limit = {
+						check_variable = { PAT_heir_points_Anisufia^4 > 5 }
+					}
+					add_to_variable = { PAT_Anisufia_prestige = 1 }
+					custom_effect_tooltip = PAT_heir_add_prestige_cause_points_tt
+				}
+				clr_country_flag = PAT_heir_choose_upgrade
+			}
+		}
+	}
+
+	PAT_heir_AI_is_underway = {#对面继承人的行动
+		days_mission_timeout = 20
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_country_flag = PAT_successor_to_the_throne_flag
+			}
+		}
+		is_good = no
+		timeout_effect = {
+			if = {
+				limit = {
+					has_country_flag = PAT_heir_choose_Algard
+					
+				}
+				PAT_heir_AI_underway_Anisufia = yes
+				activate_mission = PAT_heir_AI_is_underway
+			}
+			else_if = {
+				limit = {
+					has_country_flag = PAT_heir_choose_Anisufia
+				}
+				PAT_heir_AI_underway_Algard = yes
+				activate_mission = PAT_heir_AI_is_underway
+			}
+		}
+
+	}
+ }
