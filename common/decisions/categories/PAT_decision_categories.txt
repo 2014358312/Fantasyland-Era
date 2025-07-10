@@ -33,8 +33,12 @@ PAT_hear_choose_decision_category = {
 	}
 	
 	scripted_gui = PAT_successor_detail_ui
-
-	priority = 100
+	cancel_trigger = {
+		NOT = {
+			has_country_flag = PAT_successor_to_the_throne_flag
+		}
+	}
+	priority = 600
 }
 
 PAT_balance_of_power_decision_category = {
@@ -106,4 +110,14 @@ PAT_country_and_hero_decision_category = {
 		has_completed_focus = PAT_industry_fund
 	}
 	priority = 50
+}
+
+PAT_industry_focus_unolock_category = {
+	allowed = {
+		original_tag = PAT
+	}
+	visible = {
+		has_completed_focus = PAT_treasury
+	}
+	priority = 400
 }

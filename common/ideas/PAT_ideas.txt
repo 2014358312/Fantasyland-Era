@@ -1,4 +1,5 @@
 ideas = {
+	
 	hidden_ideas = {
 		PAT_talented_king_subject_idea = {
 			allowed = {
@@ -668,6 +669,194 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.1
 				global_building_slots_factor = 0.1
 				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+
+		PAT_idea_magic_industry = {#魔力工业
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		PAT_idea_Efficient_Agricultural_Management = {#高效农业管理
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				consumer_goods_expected_value = -0.15
+			}
+		}
+
+		PAT_idea_magic_energy = {#魔能资源
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				supply_consumption_factor = -0.1
+			}
+		}
+
+		PAT_idea_intensive_development = {#集约发展
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				global_building_slots_factor = 0.1
+			}
+		}
+
+		PAT_idea_modernization_development = {#现代化发展
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				global_building_slots = 1
+			}
+		}
+
+		PAT_idea_paretia_economic_miracle = {#帕雷提亚经济奇迹
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				political_power_factor = 0.1
+				consumer_goods_expected_value = -0.3
+				industrial_capacity_factory = 0.2
+				supply_consumption_factor = -0.1
+				global_building_slots_factor = 0.15
+				global_building_slots = 1
+			}
+		}
+
+
+	}
+	industrial_concern = {
+		PAT_Development_Corporation_0 = {#国家开发集团
+			allowed = {
+				original_tag = PAT
+			}
+			visible = {
+				has_completed_focus = PAT_state_delelopment
+				NOT = {
+					has_completed_focus = PAT_connect_state
+				}
+			}
+			cancel = {
+				has_completed_focus = PAT_connect_state
+			}
+			on_remove = {
+				add_political_power = 150
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+			
+		}
+
+		PAT_Development_Corporation_1 = {
+			allowed = {
+				original_tag = PAT
+			}
+			visible = {
+				has_completed_focus = PAT_connect_state
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_buildings_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				production_speed_rail_way_factor = 0.1
+				production_speed_supply_node_factor = 0.1
+			}
+			
+		}
+
+		PAT_National_Academy_0 = {#国家研究院
+			allowed = {
+				original_tag = PAT
+			}
+			visible = {
+				has_completed_focus = PAT_national_research_academy
+				NOT = {
+					has_completed_focus = PAT_talented_scientist
+				}
+			}
+			cancel = {
+				has_completed_focus = PAT_talented_scientist
+			}
+			 
+			on_remove = {
+				add_political_power = 150
+			}
+			modifier = {
+				research_speed_factor = 0.1
+			}
+			research_bonus = {
+				electronics = 0.05
+				industry = 0.05
+			}
+		}
+
+		PAT_National_Academy_1 = {#国家研究院
+			allowed = {
+				original_tag = PAT
+			}
+			visible = {
+				has_completed_focus = PAT_talented_scientist
+
+			}
+			modifier = {
+				research_speed_factor = 0.15
+			}
+			research_bonus = {
+				electronics = 0.1
+				industry = 0.1
+			}
+		}
+
+		PAT_magic_resource_0 = {#魔能资源 1
+			allowed = {
+				original_tag = PAT
+			}
+			visible = {
+				has_completed_focus = PAT_resource_dig
+				NOT = {
+					has_completed_focus = PAT_magic_device_engine
+				}
+			}
+			cancel = {
+				has_completed_focus = PAT_magic_device_engine
+			}
+			on_remove = {
+				add_political_power = 150
+			}
+			modifier = {
+				local_resources_factor = 0.15
+
+			}
+			research_bonus = {
+				synth_resources = 0.1
+			}
+		}
+
+		PAT_magic_resource_1 = {#魔能资源 2
+			allowed = {
+				original_tag = PAT
+			}
+			visible = {
+					has_completed_focus = PAT_magic_device_engine
+				}
+			
+			modifier = {
+				local_resources_factor = 0.15
+				production_lack_of_resource_penalty_factor = -0.25
+
+			}
+			research_bonus = {
+				synth_resources = 0.1
 			}
 		}
 	}

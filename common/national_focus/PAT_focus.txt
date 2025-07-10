@@ -2530,13 +2530,16 @@ focus_tree = {
 		#}
 		cost = @focus_time_tier_5
 		available = {
-			
+			OR = {
+				has_completed_focus = PAT_newborn_of_country
+				has_completed_focus = PAT_evaluate_heir
+			}
 		}
 		completion_reward = {
 			add_tech_bonus = {
 				name = PAT_industry_reform_plan
 				bonus = 1
-				uses = 1
+				uses = 2
 				category = industry
 			}
 		}
@@ -2585,7 +2588,7 @@ focus_tree = {
 		completion_reward = {
 			add_research_slot = 1
 			custom_effect_tooltip = available_industrial_concern
-			show_ideas_tooltip = PAT_national_intelligence_section_2
+			show_ideas_tooltip = PAT_National_Academy_0
 		}
 		ai_will_do = {
 			factor = 1
@@ -2598,13 +2601,19 @@ focus_tree = {
 		prerequisite = { focus = PAT_national_research_academy }
 		relative_position_id = PAT_national_research_academy
 		x = 0
-		y = 1
+		y = 2
 		cost = @focus_time_tier_5
 		available = {
 			
 		}
 		completion_reward = {
-			
+			custom_effect_tooltip = PAT_up_industrial_concern
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = PAT_National_Academy_0
+					add_idea = PAT_National_Academy_1
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2617,13 +2626,13 @@ focus_tree = {
 		prerequisite = { focus = PAT_talented_scientist }
 		relative_position_id = PAT_talented_scientist
 		x = 0
-		y = 1
+		y = 2
 		cost = @focus_time_tier_5
 		available = {
 			
 		}
 		completion_reward = {
-			add_ideas = PAT_magic_device_industrial_idea
+			add_ideas = PAT_idea_magic_industry
 		}
 		ai_will_do = {
 			factor = 1
@@ -2642,9 +2651,14 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_research_slot = 1
-			custom_effect_tooltip = available_industrial_concern
-			show_ideas_tooltip = PAT_national_intelligence_section_2
+			capital_scope = {
+				set_building_level = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 5
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2663,7 +2677,14 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_ideas = PAT_magic_device_industrial_idea
+			capital_scope = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2682,7 +2703,33 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			
+			random_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2701,7 +2748,7 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			
+			add_political_power = 100
 		}
 		ai_will_do = {
 			factor = 1
@@ -2720,14 +2767,9 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			capital_scope = {
-				add_extra_state_shared_building_slots = 5
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = PAT_Development_Corporation_0
+			add_political_power = 75
 		}
 		ai_will_do = {
 			factor = 1
@@ -2746,9 +2788,23 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_research_slot = 1
-			custom_effect_tooltip = available_industrial_concern
-			show_ideas_tooltip = PAT_national_intelligence_section_2
+			every_core_state = {
+				limit = {
+					is_capital = no
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = PAT_up_industrial_concern
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = PAT_Development_Corporation_0
+					add_idea = PAT_Development_Corporation_1
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2767,7 +2823,33 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_ideas = PAT_magic_device_industrial_idea
+			random_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2786,7 +2868,34 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			
+			random_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = PAT_idea_intensive_development
 		}
 		ai_will_do = {
 			factor = 1
@@ -2805,7 +2914,34 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			
+			random_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = PAT_idea_modernization_development
 		}
 		ai_will_do = {
 			factor = 1
@@ -2824,9 +2960,39 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_research_slot = 1
-			custom_effect_tooltip = available_industrial_concern
-			show_ideas_tooltip = PAT_national_intelligence_section_2
+			random_core_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = PAT_state_school
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2839,13 +3005,20 @@ focus_tree = {
 		prerequisite = { focus = PAT_state_school }
 		relative_position_id = PAT_state_school
 		x = 0
-		y = 1
+		y = 2
 		cost = @focus_time_tier_5
 		available = {
 			
 		}
 		completion_reward = {
-			add_ideas = PAT_magic_device_industrial_idea
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = PAT_magic_resource_0
+			add_tech_bonus = {
+				name = PAT_resource_dig
+				bonus = 0.5
+				uses = 2
+				category = excavation_tech
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2858,13 +3031,20 @@ focus_tree = {
 		prerequisite = { focus = PAT_resource_dig }
 		relative_position_id = PAT_resource_dig
 		x = 0
-		y = 1
+		y = 2
 		cost = @focus_time_tier_5
 		available = {
 			
 		}
 		completion_reward = {
-			
+			custom_effect_tooltip = PAT_up_industrial_concern
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = PAT_magic_resource_0
+					add_idea = PAT_magic_resource_1
+				}
+			}
+			add_ideas = PAT_idea_magic_energy
 		}
 		ai_will_do = {
 			factor = 1
@@ -2884,7 +3064,8 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			
+			add_political_power = 75
+			unlock_decision_category_tooltip = PAT_industry_focus_unolock_category
 		}
 		ai_will_do = {
 			factor = 1
@@ -2903,7 +3084,8 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			
+			add_political_power = 50
+			add_ideas = PAT_idea_Efficient_Agricultural_Management
 		}
 		ai_will_do = {
 			factor = 1
@@ -2922,7 +3104,39 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			
+			add_tech_bonus = {
+				name = PAT_DoI
+				ahead_reduction = 2
+				uses = 1
+				category = industry
+			}
+			random_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2941,7 +3155,8 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			
+			add_political_power = 75
+			unlock_decision_tooltip = PAT_decision_Payment_benefits
 		}
 		ai_will_do = {
 			factor = 1
@@ -2954,15 +3169,30 @@ focus_tree = {
 		prerequisite = { focus = PAT_new_paper_money }
 		prerequisite = { focus = PAT_DPW }
 		prerequisite = { focus = PAT_urbanization }
+		prerequisite = {
+			focus = PAT_magic_device_industrial
+		}
+		prerequisite = {
+			focus = PAT_magic_device_engine
+		}
 		relative_position_id = PAT_DPW
 		x = 0
-		y = 1
+		y = 2
 		cost = @focus_time_tier_10
 		available = {
 			
 		}
 		completion_reward = {
-			
+			add_research_slot = 1
+			hidden_effect = {
+				remove_ideas = PAT_idea_modernization_development
+				remove_ideas = PAT_idea_intensive_development
+				remove_ideas = PAT_idea_magic_energy
+				remove_ideas = PAT_idea_magic_industry
+				remove_ideas = PAT_idea_Efficient_Agricultural_Management
+			}
+			custom_effect_tooltip = PAT_economic_miracle_tt
+			add_ideas = PAT_idea_paretia_economic_miracle
 		}
 		ai_will_do = {
 			factor = 1
