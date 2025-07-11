@@ -1,4 +1,214 @@
 characters = {
+
+	PAT_Leini_Shian = {#蕾妮·席昂
+		name = PAT_Leini_Shian
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_PAT_Leini_Shian
+				small =GFX_idea_advisor_PAT_Leini_Shian
+			}
+			army = {
+				large = GFX_Portrait_PAT_Leini_Shian
+				small = GFX_idea_advisor_PAT_Leini_Shian
+			}
+		}
+		corps_commander = {
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+			traits = {
+				trait_engineer
+			}
+		}
+	}
+
+	PAT_Shirufinu_Meizu_Parettia = {#谢尔菲娜·梅斯·帕雷提亚
+		name = PAT_Shirufinu_Meizu_Parettia
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_PAT_Shirufinu_Meizu_Parettia
+				small =GFX_idea_advisor_PAT_Shirufinu_Meizu_Parettia
+			}
+			army = {
+				large = GFX_Portrait_PAT_Shirufinu_Meizu_Parettia
+				small = GFX_idea_advisor_PAT_Shirufinu_Meizu_Parettia
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = PAT_Shirufinu_Meizu_Parettia_pol_advisor
+			cost = 150
+			available = {
+				not_already_hired_except_as = political_advisor
+			}
+			traits = { popular_figurehead }
+		}
+
+		advisor = {
+			slot = army_chief
+			idea_token = PAT_Shirufinu_Meizu_Parettia_army_advisor
+			cost = 150
+			available = {
+				not_already_hired_except_as = army_chief
+			}
+			traits = { army_chief_offensive_2 }
+		}
+
+		corps_commander = {
+			skill = 1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+			traits = {
+				infantry_officer
+			}
+		}
+	}
+
+	PAT_Iria_Koraru = {#伊莉雅•克拉尔
+		name = PAT_Iria_Koraru
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_PAT_Iria_Koraru
+				small =GFX_idea_advisor_PAT_Iria_Koraru
+			}
+			army = {
+				large = GFX_Portrait_PAT_Iria_Koraru
+				small = GFX_idea_advisor_PAT_Iria_Koraru
+			}
+		}
+
+		advisor = {
+			slot = high_command
+			idea_token = PAT_Iria_Koraru_command_advisor
+			cost = 150
+			traits = { army_logistics_2 }
+		}
+
+		corps_commander = {
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+			traits = {
+				infantry_officer
+				infantry_leader
+			}
+		}
+	}
+
+	PAT_Tiruti_Kuraretto ={#缇尔蒂•库拉雷特
+		name = PAT_Tiruti_Kuraretto
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_PAT_Tiruti_Kuraretto
+				small = GFX_idea_advisor_PAT_Tiruti_Kuraretto
+			}
+			army = {
+				large = GFX_Portrait_PAT_Tiruti_Kuraretto
+				small = GFX_idea_advisor_PAT_Tiruti_Kuraretto
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = PAT_Tiruti_Kuraretto_pol_advisor
+			traits = { PAT_triat_Koushaku_Reijou }
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 1
+			traits = {
+				trait_engineer
+				organizer
+			}
+		}
+	}
+
+	PAT_Sharutoruzu = {#夏尔托斯伯爵
+		name = PAT_Sharutoruzu
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_PAT_Sharutoruzu
+				small =GFX_idea_advisor_PAT_Sharutoruzu
+			}
+			army = {
+				large = GFX_Portrait_PAT_Sharutoruzu
+				small = GFX_idea_advisor_PAT_Sharutoruzu
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = PAT_Sharutoruzu_navy_advisor
+			cost = 100
+			traits = { navy_chief_old_guard }
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 3
+			traits = {
+				old_guard
+				politically_connected
+			}
+		}
+	}
+
+	PAT_Morittsu_Sharutoruzu = {#莫里兹•夏尔托斯
+		name = PAT_Morittsu_Sharutoruzu
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_PAT_Morittsu_Sharutoruzu
+				small =GFX_idea_advisor_PAT_Morittsu_Sharutoruzu
+			}
+			army = {
+				large = GFX_Portrait_PAT_Morittsu_Sharutoruzu
+				small = GFX_idea_advisor_PAT_Morittsu_Sharutoruzu
+			}
+		}
+	corps_commander = {
+		skill = 2
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 3
+		logistics_skill = 1
+		traits = {
+			old_guard
+		}
+	}
+	}
+
+	PAT_Naburu_Supurauto = {#纳维尔•史普劳特
+		name = PAT_Naburu_Supurauto
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_PAT_Naburu_Supurauto
+				small =GFX_idea_advisor_PAT_Naburu_Supurauto
+			}
+			army = {
+				large = GFX_Portrait_PAT_Naburu_Supurauto
+				small = GFX_idea_advisor_PAT_Naburu_Supurauto
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 4
+			traits = {
+				unyielding_defender
+			}
+		}
+	}
 	PAT_Orphans_II_Palettia = {
 		name = Orphans_II_Palettia
 		portraits = {
@@ -47,6 +257,11 @@ characters = {
 		portraits = {
 			civilian = {
 				small = GFX_idea_advisor_PAT_Glantz_Mazenta
+				large = GFX_Portrait_PAT_Glantz_Mazenta
+			}
+			army = {
+				small = GFX_idea_advisor_PAT_Glantz_Mazenta
+				large = GFX_Portrait_PAT_Glantz_Mazenta
 			}
 		}
 		advisor = {
@@ -67,6 +282,26 @@ characters = {
 					set_variable = { FE_secondary = token:PAT_Glantz_Mazenta_head_of_government }
 					set_variable = { VL_status_var = 12 }
 				}
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = PAT_Glantz_Mazenta_pol_advisor
+			cost = 150
+			available = {
+				not_already_hired_except_as = political_advisor
+			}
+			traits = { master_of_politics }
+		}
+		field_marshal = {
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 1
+			traits = {
+				unyielding_defender
 			}
 		}
 	}
@@ -354,6 +589,9 @@ characters = {
 			idea_token = PAT_Lumi_pol_advisor
 			traits = {
 				Lumi_elf_Church
+			}
+			available = {
+				not_already_hired_except_as = political_advisor
 			}
 			visible = {
 				OR = {
