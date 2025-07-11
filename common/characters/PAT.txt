@@ -4,6 +4,11 @@ characters = {
 		portraits = {
 			civilian = {
 				large = GFX_Portrait_PAT_Orphans_II_Palettia
+				small = GFX_idea_advisor_PAT_Orphans_II_Palettia
+			}
+			army = {
+				large = GFX_Portrait_PAT_Orphans_II_Palettia
+				small = GFX_idea_advisor_PAT_Orphans_II_Palettia
 			}
 		}
 		country_leader = {
@@ -11,6 +16,29 @@ characters = {
 			traits = { agricultural_scientist_plus }
 			expire = "1965.1.1.1"
 			id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			traits = { agricultural_scientist_plus }
+			cost = 200
+			idea_token = Orphans_II_Palettia_political_advisor
+			available = {
+				not_already_hired_except_as = political_advisor
+				is_country_leader = no
+			}
+
+		}
+		field_marshal = {
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			traits = {
+				old_guard
+				politically_connected
+				infantry_leader
+			}
 		}
 	}
 	

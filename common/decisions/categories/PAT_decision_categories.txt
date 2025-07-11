@@ -121,3 +121,19 @@ PAT_industry_focus_unolock_category = {
 	}
 	priority = 400
 }
+
+PAT_army_reformprogress_category = {
+	allowed = {
+		original_tag = PAT
+	}
+	visible = {
+		has_completed_focus = PAT_war_theory
+		OR = {
+			has_idea = PAT_decentralization_military_power
+			has_idea = PAT_decentralization_military_power_1
+			has_idea = PAT_decentralization_military_power_2
+			has_idea = PAT_decentralization_military_power_3
+		}
+	}
+	priority = 400
+}

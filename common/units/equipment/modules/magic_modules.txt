@@ -1,0 +1,43 @@
+equipment_modules = {
+	limit = {
+		has_dlc = "No Step Back" 
+	}
+	tank_magic_cannon = {
+		abbreviation = "TMC"
+		category = tank_small_main_armament
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			soft_attack = 45
+			hard_attack = 0
+			reliability = -0.35
+			ap_attack = 0
+			build_cost_ic = 6.5
+		}
+		dismantle_cost_ic = 1
+		xp_cost = 1
+		can_convert_from = {
+			module_category = tank_small_main_armament
+			convert_cost_ic = 6.5
+		}
+		build_cost_resources = {
+			steel = 3
+			chromium = 1
+			tungsten = 1
+		}
+	}
+
+	tank_magic_engine = {
+		abbreviation = "mag"
+		category = tank_engine_type
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			build_cost_ic = 4
+			reliability = -0.6
+			fuel_consumption = 0
+			
+		}
+		multiply_stats = {
+			maximum_speed = -0.15
+		}
+	}
+}

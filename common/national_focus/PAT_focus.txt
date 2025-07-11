@@ -3223,6 +3223,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = PAT_economic_miracle_tt
 			add_ideas = PAT_idea_paretia_economic_miracle
+			remove_ideas = PAT_backward_industry
 		}
 		ai_will_do = {
 			factor = 1
@@ -3237,10 +3238,22 @@ focus_tree = {
 		y = 0
 		cost = @focus_time_tier_10
 		available = {
-			
+			OR = {
+				has_completed_focus = PAT_newborn_of_country
+				has_completed_focus = PAT_evaluate_heir
+			}
 		}
 		completion_reward = {
-			
+			unlock_decision_category_tooltip = PAT_army_reformprogress_category
+			army_experience = 50
+			navy_experience = 50
+			air_experience = 50
+			add_tech_bonus = {
+				name = PAT_war_theory
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -3259,10 +3272,307 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
+		}
+	}
+
+	focus = {#魔力材料
+		id = PAT_focus_magic_material
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_military_industry_group
+		prerequisite = {
+			focus = PAT_military_industry_group
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {#新型制式装备
+		id = PAT_focus_new_standard_equipment
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_magic_material
+		prerequisite = {
+			focus = PAT_focus_magic_material
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_new_standard_equipment
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {#集中冶炼
+		id = PAT_focus_concentrate_smelting
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_new_standard_equipment
+		prerequisite = {
+			focus = PAT_focus_new_standard_equipment
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			capital_scope = {
+				add_resource = {
+					type = steel
+					amount = 50
+				}
+				add_resource = {
+					type = aluminium
+					amount = 40
+				}
+				add_resource = {
+					type = tungsten
+					amount = 40
+				}
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {#魔能弹药
+		id = PAT_focus_magic_ammunition
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_concentrate_smelting
+		prerequisite = {
+			focus = PAT_focus_concentrate_smelting
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_magic_ammunition
+				ahead_reduction = 2
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {#军事产业重组
+		id = PAT_focus_Army_industrial_reorganization
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_magic_ammunition
+		prerequisite = {
+			focus = PAT_focus_magic_ammunition
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = PAT_idea_advanced_military_industry_0
+		}
+	}
+
+	focus = {#流水线生产
+		id = PAT_focus_assembly_line_production
+		icon = GFX_goal_generic_collaborate_local_elites
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = PAT_focus_Army_industrial_reorganization
+		prerequisite = {
+			focus = PAT_focus_Army_industrial_reorganization
+		}
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = PAT_idea_advanced_military_industry_0
+				add_idea = PAT_idea_advanced_military_industry_1
+			}
+		}
+	}
+
+	focus = {#魔能引擎
+		id = PAT_focus_magic_engine
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_magic_device_engine
+		prerequisite = {
+			focus = PAT_magic_device_engine
+		}
+		prerequisite = {
+			focus = PAT_focus_Army_industrial_reorganization
+		}
+		cost = 10
+		x = 0
+		y = 2
+		completion_reward = {
+			set_technology = {
+				tank_magic_engine_tech = 1
+			}
+			custom_effect_tooltip = PAT_tank_magic_engine_unlock_tt
+		}
+	}
+
+	focus = {#魔能大炮
+		id = PAT_focus_magic_Heavy_artillery
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_assembly_line_production
+		prerequisite = {
+			focus = PAT_focus_assembly_line_production
+		}
+		cost = 10
+		x = 0
+		y = 1
+		completion_reward = {
+			set_technology = {
+				tank_magic_cannon_tech = 1
+			}
+			custom_effect_tooltip = PAT_magic_cannon_unlock_tt
+			add_tech_bonus = {
+				name = PAT_focus_magic_ammunition
+				ahead_reduction = 2
+				uses = 1
+				category = artillery
+			}
 		}
 	}
 
@@ -3278,10 +3588,188 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			
+			army_experience = 35
+			add_ideas = PAT_idea_paretian_army_0
 		}
 		ai_will_do = {
 			factor = 1
+		}
+	}
+
+	focus = {#工程部队
+		id = PAT_focus_Engineering_unit
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_group_war
+		prerequisite = {
+			focus = PAT_group_war
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_Engineering_unit
+				bonus = 0.75
+				uses = 1
+				category = support_tech
+			}
+			custom_effect_tooltip = PAT_focus_Engineering_unit_tt
+			add_unit_bonus = {
+				engineer = {
+					entrenchment = 1
+				}
+			}
+		}
+	}
+
+	focus = {#军用载具
+		id = PAT_focus_military_vehicle
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_Engineering_unit
+		prerequisite = {
+			focus = PAT_focus_Engineering_unit
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_military_vehicle
+				bonus = 0.75
+				uses = 2
+				category = motorized_equipment
+			}
+			swap_ideas = {
+				remove_idea = PAT_idea_paretian_army_0
+				add_idea = PAT_idea_paretian_army_1
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {#魔力通信
+		id = PAT_focus_magic_correspond
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_military_vehicle
+		prerequisite = {
+			focus = PAT_focus_military_vehicle
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_magic_correspond
+				bonus = 1
+				uses = 1
+				category = radar_tech
+			}
+			add_tech_bonus = {
+				name = PAT_focus_magic_correspond
+				bonus = 1
+				uses = 1
+				category = electronics
+			}
+			capital_scope = {
+				add_building_construction = {
+					type = radar_station
+					level = 2
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = PAT_idea_paretian_army_1
+				add_idea = PAT_idea_paretian_army_2
+			}
+		}
+	}
+
+	focus = {#尖刀部队
+		id = PAT_focus_army_of_daggers
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_magic_correspond
+		prerequisite = {
+			focus = PAT_focus_magic_correspond
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_army_of_daggers
+				bonus = 1
+				uses = 2
+				category = mountaineers_tech
+				category = marine_tech
+				category = para_tech
+			}
+			swap_ideas = {
+				remove_idea = PAT_idea_paretian_army_2
+				add_idea = PAT_idea_paretian_army_3
+			}
+		}
+	}
+
+	focus = {#现代铁骑兵
+		id = PAT_focus_Modern_Iron_Cavalry
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_army_of_daggers
+		prerequisite = {
+			focus = PAT_focus_army_of_daggers
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_Modern_Iron_Cavalry
+				bonus = 1
+				uses = 2
+				category = armor
+			}
+		}
+	}
+
+	focus = {#魔能列车炮
+		id = PAT_focus_magic_railgun
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_Modern_Iron_Cavalry
+		prerequisite = {
+			focus = PAT_focus_Modern_Iron_Cavalry
+		}
+		cost = 10
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_magic_railgun
+				bonus = 1
+				uses = 2
+				category = train_tech
+			}
+			add_ideas = PAT_idea_magic_railgun
 		}
 	}
 
@@ -3297,10 +3785,408 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			
+			air_experience = 50
+			navy_experience = 50
+			add_tech_bonus = {
+				name = PAT_three_dimensional_combat
+				bonus = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+			add_tech_bonus = {
+				name = PAT_three_dimensional_combat
+				bonus = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
 		}
 		ai_will_do = {
 			factor = 1
+		}
+	}
+
+	focus = {#建立空军
+		id = PAT_focus_create_airforce
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_three_dimensional_combat
+		prerequisite = {
+			focus = PAT_three_dimensional_combat
+		}
+		cost = 5
+		x = -2
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_create_airforce
+				bonus = 1
+				uses = 2
+				category = heavy_air
+				category = light_air
+				category = medium_air
+			}
+			add_ideas = PAT_idea_paretian_airforce_0
+		}
+	}
+
+	focus = {#航空工业
+		id = PAT_focus_aerospace_industry
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_create_airforce
+		prerequisite = {
+			focus = PAT_focus_create_airforce
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+
+		}
+	}
+
+	focus = {#地面设施
+		id = PAT_focus_Ground_Facilities
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_aerospace_industry
+		prerequisite = {
+			focus = PAT_focus_aerospace_industry
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_aerospace_industry
+				bonus = 1
+				uses = 1
+				category = cat_anti_air
+			}
+			add_tech_bonus = {
+				name = PAT_focus_aerospace_industry
+				bonus = 1
+				uses = 1
+				category = radar_tech
+			}
+			capital_scope = {
+				add_building_construction = {
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {#王牌训练
+		id = PAT_focus_ace_training
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_Ground_Facilities
+		prerequisite = {
+			focus = PAT_focus_Ground_Facilities
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_ace_training
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			swap_ideas = {
+				remove_idea = PAT_idea_paretian_airforce_0
+				add_idea = PAT_idea_paretian_airforce_1
+			}
+		}
+	}
+
+	focus = {#魔能飞机生产
+		id = PAT_focus_magic_Aircraft_production
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_ace_training
+		prerequisite = {
+			focus = PAT_focus_ace_training
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PAT_idea_paretian_airforce_1
+				add_idea = PAT_idea_paretian_airforce_2
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {#空地合作
+		id = PAT_focus_Air_ground_cooperation
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_magic_Aircraft_production
+		prerequisite = {
+			focus = PAT_focus_magic_Aircraft_production
+		}
+		mutually_exclusive = {
+			focus = PAT_focus_Emphasis_aircraft_carriers
+		}
+		cost = 10
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PAT_idea_paretian_airforce_2
+				add_idea = PAT_idea_paretian_airforce_air_land
+			}
+		}
+	}
+
+	focus = {#扩建海军
+		id = PAT_focus_bigger_and_better_navy
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_three_dimensional_combat
+		prerequisite = {
+			focus = PAT_three_dimensional_combat
+		}
+		cost = 5
+		x = 2
+		y = 1
+		completion_reward = {
+			add_ideas = PAT_idea_paretian_navy_0
+		}
+	}
+
+	focus = {#建设海军基地
+		id = PAT_focus_build_navy_base
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_bigger_and_better_navy
+		prerequisite = {
+			focus = PAT_focus_bigger_and_better_navy
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			every_core_state = {
+				limit = {
+					naval_base > 0
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 5
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {#扩建海军船坞
+		id = PAT_focus_build_dockyard
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_build_navy_base
+		prerequisite = {
+			focus = PAT_focus_build_navy_base
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_build_dockyard
+				bonus = 1
+				uses = 2
+				category = cl_tech
+				category = ca_tech
+				category = dd_tech
+				category = ss_tech
+				category = cv_tech
+				category = bb_tech
+				category = bc_tech
+
+			}
+			every_core_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+				}
+			}
+
+		}
+	}
+
+	focus = {#海上天命
+		id = PAT_focus_mandate_onsea
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_build_dockyard
+		prerequisite = {
+			focus = PAT_focus_build_dockyard
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_mandate_onsea
+				bonus = 0.5
+				uses = 2
+				category = cat_ship_heavy_battery
+			}
+
+			add_tech_bonus = {
+				name = PAT_focus_mandate_onsea
+				bonus = 0.5
+				uses = 2
+				category = cat_ship_medium_battery
+			}
+
+			swap_ideas = {
+				remove_idea = PAT_idea_paretian_navy_0
+				add_idea = PAT_idea_paretian_navy_1
+			}
+		}
+	}
+
+	focus = {#大洋海军
+		id = PAT_focus_ocean_navy
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_mandate_onsea
+		prerequisite = {
+			focus = PAT_focus_mandate_onsea
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_ocean_navy
+				bonus = 1
+				uses = 1
+				category = dd_tech
+			}
+
+			add_tech_bonus = {
+				name = PAT_focus_ocean_navy
+				bonus = 1
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {#无敌舰队
+		id = PAT_focus_muteki_kantai
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_ocean_navy
+		prerequisite = {
+			focus = PAT_focus_ocean_navy
+		}
+		mutually_exclusive = {
+			focus = PAT_focus_Emphasis_aircraft_carriers
+		}
+		cost = 10
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_muteki_kantai
+				ahead_reduction = 2
+				uses = 1
+				category = bb_tech
+			}
+			swap_ideas = {
+				remove_idea = PAT_idea_paretian_navy_1
+				add_idea = PAT_idea_paretian_navy_muteki_kantai
+			}
+		}
+	}
+
+	focus = {#重视航母
+		id = PAT_focus_Emphasis_aircraft_carriers
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_ocean_navy
+		prerequisite = {
+			focus = PAT_focus_magic_Aircraft_production
+			focus = PAT_focus_ocean_navy
+		}
+		mutually_exclusive = {
+			focus = PAT_focus_Air_ground_cooperation
+		}
+		mutually_exclusive = {
+			focus = PAT_focus_muteki_kantai
+		}
+		cost = 10
+		x = -2
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = PAT_focus_Emphasis_aircraft_carriers
+				ahead_reduction = 2
+				uses = 1
+				category = cv_tech
+			}
+			swap_ideas = {
+				remove_idea = PAT_idea_paretian_navy_1
+				add_idea = PAT_idea_paretian_navy_cv_fisrt
+			}
 		}
 	}
 
@@ -3316,10 +4202,219 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			
+			add_war_support = 0.1
+			add_ideas = PAT_idea_shadow_of_war_0
 		}
 		ai_will_do = {
 			factor = 1
+		}
+	}
+
+	focus = {#设立情报省
+		id = PAT_focus_set_jouhou_shou #情报省嘛（
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_total_war
+		prerequisite = {
+			focus = PAT_total_war
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PAT_idea_shadow_of_war_0
+				add_idea = PAT_idea_shadow_of_war_1
+			}
+		}
+	}
+
+	focus = {#舆论战线
+		id = PAT_focus_seron_sensen #世論戦線 问就是英文机翻太长了
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_set_jouhou_shou
+		prerequisite = {
+			focus = PAT_focus_set_jouhou_shou
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_political_power = 50
+			swap_ideas = {
+				remove_idea = PAT_idea_shadow_of_war_1
+				add_idea = PAT_idea_shadow_of_war_2
+			}
+		}
+	}
+
+	focus = {#国家战备
+		id = PAT_focus_national_preparedness
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_seron_sensen
+		prerequisite = {
+			focus = PAT_focus_seron_sensen
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+				has_idea = civilian_economy
+			}
+			swap_ideas = {
+				remove_idea = civilian_economy
+				add_idea = war_economy
+			}
+			}
+			else_if = {
+				limit = {
+					has_idea = low_economic_mobilisation
+				}
+				swap_ideas = {
+					remove_idea = low_economic_mobilisation
+					add_idea = war_economy
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = partial_economic_mobilisation
+				}
+				swap_ideas = {
+					remove_idea = partial_economic_mobilisation
+					add_idea = war_economy
+				}
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {#全民动员
+		id = PAT_focus_universal_mobilization
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_national_preparedness
+		prerequisite = {
+			focus = PAT_focus_national_preparedness
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+				has_idea = disarmed_nation
+			}
+			swap_ideas = {
+				remove_idea = disarmed_nation
+				add_idea = extensive_conscription
+			}
+			}
+			else_if = {
+				limit = {
+					has_idea = volunteer_only
+				}
+				swap_ideas = {
+					remove_idea = volunteer_only
+					add_idea = extensive_conscription
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = limited_conscription
+				}
+				swap_ideas = {
+					remove_idea = limited_conscription
+					add_idea = extensive_conscription
+				}
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+
+		}
+	}
+
+	focus = {#帕雷提亚精神
+		id = PAT_focus_paretian_spirit
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_universal_mobilization
+		prerequisite = {
+			focus = PAT_focus_universal_mobilization
+		}
+		cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_ideas = PAT_idea_tough_of_paretia_0
+		}
+	}
+
+	focus = {#为何而战
+		id = PAT_focus_fight_for_what
+		icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = PAT_focus_paretian_spirit
+		prerequisite = {
+			focus = PAT_focus_paretian_spirit
+		}
+		cost = 10
+		x = 0
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PAT_idea_tough_of_paretia_0
+				add_idea = PAT_idea_tough_of_paretia_1
+			}
 		}
 	}
 

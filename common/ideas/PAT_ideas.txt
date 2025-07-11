@@ -98,6 +98,102 @@ ideas = {
 				land_reinforce_rate = -0.2
 			}
 		}
+
+		PAT_decentralization_military_power_1 = {#军权集中-初步集中
+			picture = generic_army_problems
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			available = {
+			}
+			cancel = {
+			}
+			traits = {
+			}
+			modifier = {
+				command_power_gain_mult = -0.20
+				air_cas_present_factor = -0.15
+				max_planning = -0.15
+				planning_speed = -0.15
+				land_reinforce_rate = -0.15
+			}
+		}
+
+		PAT_decentralization_military_power_2 = {#军权集中-改革指挥链
+			picture = generic_army_problems
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			available = {
+			}
+			cancel = {
+			}
+			traits = {
+			}
+			modifier = {
+				command_power_gain_mult = -0.15
+				air_cas_present_factor = -0.1
+				max_planning = -0.10
+				planning_speed = -0.10
+				land_reinforce_rate = -0.10
+			}
+		}
+
+		PAT_decentralization_military_power_3 = {#军权集中-基本完成
+			picture = generic_army_problems
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			available = {
+			}
+			cancel = {
+			}
+			traits = {
+			}
+			modifier = {
+				command_power_gain_mult = -0.1
+				air_cas_present_factor = -0.05
+				max_planning = -0.05
+				planning_speed = -0.05
+				land_reinforce_rate = -0.05
+			}
+		}
+
+		PAT_decentralization_military_power_4 = {#军权集中-总指挥部
+			picture = saf_soviet_advisers
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			available = {
+			}
+			cancel = {
+			}
+			traits = {
+			}
+			modifier = {
+				max_command_power = 30
+				skill_bonus_factor = 0.1
+				army_org_factor = 0.1
+				max_planning = 0.15
+				land_reinforce_rate = 0.05
+			}
+		}
 		
 		PAT_backward_industry = {
 			picture = generic_backward_industry
@@ -730,6 +826,257 @@ ideas = {
 				global_building_slots = 1
 			}
 		}
+
+		PAT_idea_advanced_military_industry_0 = {#先进军事工业 1
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+
+		PAT_idea_advanced_military_industry_1 = {#先进军事工业 2
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.1
+				line_change_production_efficiency_factor = 0.1
+			}
+		}
+
+		PAT_idea_paretian_army_0 = {#帕雷提亚陆军 1
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				army_morale_factor = 0.1
+			}
+		}
+
+		PAT_idea_paretian_army_1 = {#帕雷提亚陆军 2
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				army_morale_factor = 0.1
+				army_speed_factor = 0.1
+			}
+		}
+
+		PAT_idea_paretian_army_2 = {#帕雷提亚陆军 3
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				army_morale_factor = 0.1
+				army_speed_factor = 0.1
+				army_org_factor = 0.1
+				coordination_bonus = 0.02
+			}
+		}
+
+		PAT_idea_paretian_army_3 = {#帕雷提亚陆军 4
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				army_morale_factor = 0.1
+				army_speed_factor = 0.1
+				army_org_factor = 0.1
+				coordination_bonus = 0.02
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+			}
+		}
+
+		PAT_idea_magic_railgun = {#魔能列车炮
+			allowed = {
+				original_tag = PAT
+			}
+			equipment_bonus = {
+				railway_gun_equipment = {
+					instant = yes
+					build_cost_ic = -0.2
+				}
+			}
+		}
+
+		PAT_idea_paretian_airforce_0 = {#帕雷提亚空军 1
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				air_doctrine_cost_factor = -0.1
+			}
+		}
+
+		PAT_idea_paretian_airforce_1 = {#帕雷提亚空军 2
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				air_doctrine_cost_factor = -0.1
+				air_ace_generation_chance_factor = 0.25
+				air_ace_bonuses_factor = 0.2
+			}
+		}
+
+		PAT_idea_paretian_airforce_2 = {#帕雷提亚空军 3
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				air_doctrine_cost_factor = -0.1
+				air_ace_generation_chance_factor = 0.25
+				air_ace_bonuses_factor = 0.2
+				air_night_penalty = -0.2
+			}
+		}
+
+		PAT_idea_paretian_airforce_air_land = {#帕雷提亚空军 空地合作
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				air_doctrine_cost_factor = -0.1
+				air_ace_generation_chance_factor = 0.25
+				air_ace_bonuses_factor = 0.2
+				air_night_penalty = -0.2
+				air_cas_efficiency = 0.25
+				air_cas_present_factor = 0.2
+				ground_attack_factor = 0.1
+			}
+		}
+
+		PAT_idea_paretian_navy_0 = {#帕雷提亚海军 1
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				naval_coordination = 0.1
+				naval_morale_factor = 0.1
+			}
+		}
+
+		PAT_idea_paretian_navy_1 = {#帕雷提亚海军 2
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				naval_coordination = 0.1
+				naval_morale_factor = 0.1
+				spotting_chance = 0.2
+				sortie_efficiency = 0.1
+			}
+		}
+
+		PAT_idea_paretian_navy_muteki_kantai = {#帕雷提亚海军 无敌舰队
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				naval_coordination = 0.1
+				naval_morale_factor = 0.1
+				spotting_chance = 0.2
+				sortie_efficiency = 0.1
+				screening_efficiency = 0.1
+				naval_critical_score_chance_factor = 0.1
+			}
+		}
+
+		PAT_idea_paretian_navy_cv_fisrt = {#帕雷提亚海军 重视航母
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				naval_coordination = 0.1
+				naval_morale_factor = 0.1
+				spotting_chance = 0.2
+				sortie_efficiency = 0.1
+				naval_detection = 0.1
+				air_nav_efficiency = 0.2
+			}
+		}
+
+		PAT_idea_shadow_of_war_0 = {#战争之影1
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				conscription = 0.02
+
+			}
+			rule = {
+				can_create_factions = yes
+			}
+		}
+
+		PAT_idea_shadow_of_war_1 = {#战争之影2
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				conscription = 0.02
+				operative_slot = 1
+				intel_network_gain_factor = 0.25
+				army_intel_factor = 0.25
+				navy_intel_factor = 0.25
+				airforce_intel_factor = 0.25
+
+			}
+			rule = {
+				can_create_factions = yes
+			}
+		}
+
+
+		PAT_idea_shadow_of_war_2 = {#战争之影3
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				conscription = 0.02
+				operative_slot = 1
+				intel_network_gain_factor = 0.25
+				army_intel_factor = 0.25
+				navy_intel_factor = 0.25
+				airforce_intel_factor = 0.25
+				intelligence_agency_defense = 2
+				propaganda_mission_factor = 1
+				boost_ideology_mission_factor = 1
+
+			}
+			rule = {
+				can_create_factions = yes
+			}
+		}
+
+		PAT_idea_tough_of_paretia_0 = {#帕雷提亚的坚韧 1
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				political_power_gain = 0.5
+				weekly_casualties_war_support = -0.005
+			}
+		}
+
+		PAT_idea_tough_of_paretia_1 = {#帕雷提亚的坚韧 2
+			allowed = {
+				original_tag = PAT
+			}
+			modifier = {
+				political_power_gain = 0.5
+				weekly_casualties_war_support = -0.005
+				drift_defence_factor = 0.5
+				army_core_attack_factor = 0.2
+				army_core_defence_factor = 0.2
+			}
+		}
+
 
 
 	}

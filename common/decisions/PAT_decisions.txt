@@ -1664,3 +1664,23 @@ PAT_hear_choose_decision_category = {
 		}
 	}
  }
+
+PAT_army_reformprogress_category = {
+	PAT_Centralization_of_military_decision = {
+		available = {
+			has_army_experience > 99
+			has_stability > 0.05
+		}
+		days_remove = 100
+		modifier = {
+			command_power_gain = -0.2
+		}
+		complete_effect = {
+			add_stability = -0.05
+			army_experience = -100
+		}
+		remove_effect = {
+			PAT_Centralization_of_military = yes
+		}
+	}
+}

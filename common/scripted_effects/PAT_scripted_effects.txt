@@ -2437,3 +2437,42 @@ PAT_heir_dynamic_add_Anisufia = {#结算特质并给予动态修正
 		add_to_variable = { PAT_heir_buff_resistance_target_var = -0.2 }
 	}
 }
+
+PAT_Centralization_of_military = {
+	if = {
+		limit = {
+			has_idea = PAT_decentralization_military_power
+		}
+		swap_ideas = {
+			remove_idea = PAT_decentralization_military_power
+			add_idea = PAT_decentralization_military_power_1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = PAT_decentralization_military_power_1
+		}
+		swap_ideas = {
+			remove_idea = PAT_decentralization_military_power_1
+			add_idea = PAT_decentralization_military_power_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = PAT_decentralization_military_power_2
+		}
+		swap_ideas = {
+			remove_idea = PAT_decentralization_military_power_2
+			add_idea = PAT_decentralization_military_power_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = PAT_decentralization_military_power_3
+		}
+		swap_ideas = {
+			remove_idea = PAT_decentralization_military_power_3
+			add_idea = PAT_decentralization_military_power_4
+		}
+	}
+}
