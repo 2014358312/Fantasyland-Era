@@ -35,6 +35,22 @@ ideas = {
 			on_remove = {
 			}
 		}
+		TIA_financial_over = {
+			picture = financial_emergency
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.5
+				political_power_cost = 0.5
+				stability_factor = -0.25
+			}
+		}
 		TIA_financial_emergency_1 = {
 			picture = financial_emergency
 			allowed = {
@@ -164,6 +180,21 @@ ideas = {
 				line_change_production_efficiency_factor = -0.1
 			}
 		}
+		TIA_legitimate_war = {
+			picture = generic_stability
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.3
+				political_power_cost = 0.5
+				industrial_capacity_factory = -0.5
+				line_change_production_efficiency_factor = -0.5
+			}
+		}
 		TIA_potential_plague = {
 			picture = potential_plague
 			allowed = {
@@ -192,6 +223,23 @@ ideas = {
 			on_add = {
 			}
 			on_remove = {
+			}
+		}
+		TIA_plague_happened = {
+			picture = potential_plague
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.2
+				political_power_cost = 0.5
+				local_resources_factor = -0.3
+				resistance_growth = 0.3
+				consumer_goods_factor = 0.3
 			}
 		}
 		TIA_urban_tax_autonomy = {

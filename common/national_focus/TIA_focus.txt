@@ -555,6 +555,89 @@ focus_tree = {
 		}
 	}
 	focus = {
+		#安抚北方
+		id = TIA_Soothe_North
+		icon = GFX_focus_TIA_Soothe_North
+		relative_position_id = TIA_Shrink_territory_management
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+		}
+		prerequisite = {
+			focus = TIA_Shrink_territory_management
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#废除奴隶制
+		id = TIA_abolish_slavery
+		icon = GFX_focus_TIA_abolish_slavery
+		relative_position_id = TIA_purg_opposition
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+		}
+		prerequisite = {
+			focus = TIA_purg_opposition
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#浮游都市的建成方法
+		id = TIA_floating_city_construction
+		icon = GFX_focus_TIA_floating_city_construction
+		relative_position_id = TIA_abolish_slavery
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+		}
+		prerequisite = {
+			focus = TIA_abolish_slavery
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#美好国度的建设方略
+		id = TIA_magnificent_kingdom_construction
+		icon = GFX_focus_TIA_magnificent_kingdom_construction
+		relative_position_id = TIA_floating_city_construction
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+		}
+		prerequisite = {
+			focus = TIA_floating_city_construction
+		}
+		prerequisite = {
+			focus = TIA_Soothe_North
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
 		#进口小麦合约
 		id = TIA_Wheat_import_contract
 		icon = GFX_focus_TIA_Wheat_import_contract
@@ -731,7 +814,7 @@ focus_tree = {
 			focus = TIA_prank
 		}
 		completion_reward = {
-			add_political_power = 50
+			remove_ideas = TIA_financial_emergency
 		}
 		ai_will_do = {
 			factor = 1
@@ -752,7 +835,7 @@ focus_tree = {
 			focus = TIA_Financial_crisis
 		}
 		completion_reward = {
-			add_political_power = 50
+			remove_ideas = TIA_potential_plague
 		}
 		ai_will_do = {
 			factor = 1
@@ -774,6 +857,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
+			remove_ideas = TIA_legitimate_dispute
 		}
 		ai_will_do = {
 			factor = 1
