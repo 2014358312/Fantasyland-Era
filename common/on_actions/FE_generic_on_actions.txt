@@ -195,6 +195,35 @@ on_actions = {
 				set_variable = { month = global.month }
 			}
 			############
+			every_possible_country = {
+				add_to_array = { FE_welcome_tab_array = 0 }
+				add_to_array = { FE_welcome_tab_array = 0 }
+				add_to_array = { FE_welcome_tab_array = 0 }
+				add_to_array = { FE_welcome_tab_array = 0 }
+				add_to_array = { FE_welcome_continent_east_history_page_array = 1 }
+				add_to_array = { FE_welcome_continent_east_history_page_array = 2 }
+				set_variable = { FE_continent_desc_now_var = 1 }
+				capital_scope = {
+					if = {
+						limit = { is_on_continent = ristania }
+						set_variable = { PREV.FE_continent_var = 1 }
+					}
+					else_if = {
+						limit = { is_on_continent = thrandis }
+						set_variable = { PREV.FE_continent_var = 2 }
+					}
+					else = { set_variable = { PREV.FE_continent_var = 114514 } }
+				}
+				if = {
+					limit = { is_ai = no }
+					set_country_flag = FE_welcome_flag
+				}
+			}
+			LAN = {
+				set_variable = { FE_continent_var = 1 } #Temporary measures
+				set_country_flag = FE_historical_country_flag
+			}
+			############
 		}
 	}
 	

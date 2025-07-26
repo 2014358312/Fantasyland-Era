@@ -1,0 +1,156 @@
+scripted_gui = {
+	FE_welcome_window_title = {
+		context_type = player_context
+		window_name = "FE_welcome_window_title"
+		
+		visible = { always = yes }
+		
+		effects = {
+			close_button_click = {
+				if = {
+					limit = { has_country_flag = FE_welcome_flag }
+					set_variable = { FE_now_page = 0 }
+					set_variable = { FE_total_page = 0 }
+					clr_country_flag = FE_welcome_flag
+				}
+				else = { set_country_flag = FE_welcome_flag }
+			}
+		}
+	}
+	
+	FE_welcome_window = {
+		context_type = player_context
+		window_name = "FE_welcome_window"
+		
+		visible = { has_country_flag = FE_welcome_flag }
+		
+		properties = {
+			country_picture = { image = [GETCountryPicture] }
+			#tab_button_1 = { frame = FE_welcome_tab_array^0 }
+			#tab_button_2 = { frame = FE_welcome_tab_array^1 }
+			#tab_button_3 = { frame = FE_welcome_tab_array^2 }
+			#tab_button_4 = { frame = FE_welcome_tab_array^3 }
+		}
+		
+		effects = {
+			tab_button_1_click = {
+				set_variable = { FE_now_page = 0 }
+				set_variable = { FE_total_page = 0 }
+				for_each_loop = {
+					array = FE_welcome_tab_array
+					index = i
+					value = v
+					
+					set_variable = { FE_welcome_tab_array^i = 0 }
+				}
+				set_variable = { FE_welcome_tab_array^0 = 1 }
+				### CUSTOMIZATION ###
+				
+				#####################
+				#set_variable = { FE_now_page =  }
+				#set_variable = { FE_total_page =  }
+			}
+			tab_button_2_click = {
+				set_variable = { FE_now_page = 0 }
+				set_variable = { FE_total_page = 0 }
+				for_each_loop = {
+					array = FE_welcome_tab_array
+					index = i
+					value = v
+					
+					set_variable = { FE_welcome_tab_array^i = 0 }
+				}
+				set_variable = { FE_welcome_tab_array^1 = 1 }
+				### CUSTOMIZATION ###
+				set_variable = { FE_last_continent_var = FE_continent_var }
+				if = {
+					limit = {
+						check_variable = {
+							var = FE_continent_var
+							value = FE_last_continent_var
+							compare = not_equals
+						}
+					}
+					set_variable = { FE_continent_desc_now_var = 1 }
+				}
+				else = { set_variable = { FE_continent_desc_now_var = FE_continent_desc_now_var } }
+				if = {
+					limit = { check_variable = { FE_continent_var = 1 } }
+					set_variable = { FE_continent_desc_total_var = FE_welcome_continent_east_history_page_array^num }
+				}
+				#####################
+				set_variable = { FE_now_page = FE_continent_desc_now_var }
+				set_variable = { FE_total_page = FE_continent_desc_total_var }
+			}
+			tab_button_3_click = {
+				set_variable = { FE_now_page = 0 }
+				set_variable = { FE_total_page = 0 }
+				for_each_loop = {
+					array = FE_welcome_tab_array
+					index = i
+					value = v
+					
+					set_variable = { FE_welcome_tab_array^i = 0 }
+				}
+				set_variable = { FE_welcome_tab_array^2 = 1 }
+				### CUSTOMIZATION ###
+				
+				#####################
+				#set_variable = { FE_now_page =  }
+				#set_variable = { FE_total_page =  }
+			}
+			tab_button_4_click = {
+				set_variable = { FE_now_page = 0 }
+				set_variable = { FE_total_page = 0 }
+				for_each_loop = {
+					array = FE_welcome_tab_array
+					index = i
+					value = v
+					
+					set_variable = { FE_welcome_tab_array^i = 0 }
+				}
+				set_variable = { FE_welcome_tab_array^3 = 1 }
+				### CUSTOMIZATION ###
+				
+				#####################
+				#set_variable = { FE_now_page =  }
+				#set_variable = { FE_total_page =  }
+			}
+			previous_page_click = {
+				if = {
+					limit = { check_variable = { FE_now_page = 1 } }
+					set_variable = { FE_now_page = FE_total_page }
+				}
+				else = { subtract_from_variable = { FE_now_page = 1 } }
+			}
+			next_page_click = {
+				if = {
+					limit = { check_variable = { FE_now_page = FE_total_page } }
+					set_variable = { FE_now_page = 1 }
+				}
+				else = { add_to_variable = { FE_now_page = 1 } }
+			}
+			close_button_click = {
+				for_each_loop = {
+					array = FE_welcome_tab_array
+					index = i
+					value = v
+					
+					set_variable = { FE_welcome_tab_array^i = 0 }
+				}
+				set_variable = { FE_now_page = 0 }
+				set_variable = { FE_total_page = 0 }
+				clr_country_flag = FE_welcome_flag
+			}
+		}
+		
+		triggers = {
+			previous_page_visible = {
+				NOT = { check_variable = { FE_total_page = 0 } }
+			}
+			next_page_visible = {
+				NOT = { check_variable = { FE_total_page = 0 } }
+			}
+		}
+	}
+}

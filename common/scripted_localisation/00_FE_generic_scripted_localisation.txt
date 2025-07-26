@@ -1,0 +1,177 @@
+defined_text = {
+	name = GETCentreTitleText
+	text = {
+		trigger = {
+			check_variable = { FE_welcome_tab_array^0 = 1 }
+			check_variable = { FE_welcome_tab_array^1 = 0 }
+			check_variable = { FE_welcome_tab_array^2 = 0 }
+			check_variable = { FE_welcome_tab_array^3 = 0 }
+		}
+		localization_key = "tab_name_1_text"
+	}
+	text = {
+		trigger = {
+			check_variable = { FE_welcome_tab_array^0 = 0 }
+			check_variable = { FE_welcome_tab_array^1 = 1 }
+			check_variable = { FE_welcome_tab_array^2 = 0 }
+			check_variable = { FE_welcome_tab_array^3 = 0 }
+		}
+		localization_key = "tab_name_2_text"
+	}
+	text = {
+		trigger = {
+			check_variable = { FE_welcome_tab_array^0 = 0 }
+			check_variable = { FE_welcome_tab_array^1 = 0 }
+			check_variable = { FE_welcome_tab_array^2 = 1 }
+			check_variable = { FE_welcome_tab_array^3 = 0 }
+		}
+		localization_key = "tab_name_3_text"
+	}
+	text = {
+		trigger = {
+			check_variable = { FE_welcome_tab_array^0 = 0 }
+			check_variable = { FE_welcome_tab_array^1 = 0 }
+			check_variable = { FE_welcome_tab_array^2 = 0 }
+			check_variable = { FE_welcome_tab_array^3 = 1 }
+		}
+		localization_key = "tab_name_4_text"
+	}
+	text = { localization_key = tab_name_0_text }
+}
+
+defined_text = {
+	name = GETCentreDescText
+	text = {
+		trigger = {
+			check_variable = { FE_welcome_tab_array^0 = 1 }
+			check_variable = { FE_welcome_tab_array^1 = 0 }
+			check_variable = { FE_welcome_tab_array^2 = 0 }
+			check_variable = { FE_welcome_tab_array^3 = 0 }
+		}
+		localization_key = "tab_desc_1_text"
+	}
+	text = {
+		trigger = {
+			check_variable = { FE_welcome_tab_array^0 = 0 }
+			check_variable = { FE_welcome_tab_array^1 = 1 }
+			check_variable = { FE_welcome_tab_array^2 = 0 }
+			check_variable = { FE_welcome_tab_array^3 = 0 }
+		}
+		localization_key = "tab_desc_2_text"
+	}
+	text = {
+		trigger = {
+			check_variable = { FE_welcome_tab_array^0 = 0 }
+			check_variable = { FE_welcome_tab_array^1 = 0 }
+			check_variable = { FE_welcome_tab_array^2 = 1 }
+			check_variable = { FE_welcome_tab_array^3 = 0 }
+		}
+		localization_key = "tab_desc_3_text"
+	}
+	text = {
+		trigger = {
+			check_variable = { FE_welcome_tab_array^0 = 0 }
+			check_variable = { FE_welcome_tab_array^1 = 0 }
+			check_variable = { FE_welcome_tab_array^2 = 0 }
+			check_variable = { FE_welcome_tab_array^3 = 1 }
+		}
+		localization_key = "tab_desc_4_text"
+	}
+	text = { localization_key = generic_null }
+}
+
+defined_text = {
+	name = GETCountryDesc
+	text = {
+		trigger = {
+			has_country_flag = FE_historical_country_flag
+		}
+		localization_key = "FE_historical_country_[ROOT.GetTag]"
+	}
+	text = {
+		localization_key = "generic_null"
+	}
+}
+
+defined_text = {
+	name = GETContinentDesc
+	text = {
+		trigger = {
+			check_variable = { FE_continent_var = 1 }
+		}
+		localization_key = "tab_desc_2_east_text"
+	}
+	text = {
+		trigger = {
+			check_variable = { FE_continent_var = 2 }
+		}
+		localization_key = "tab_desc_2_west_text"
+	}
+	text = {
+		trigger = {
+			check_variable = { FE_continent_var = 3 }
+		}
+		localization_key = "tab_desc_2_new_text"
+	}
+	text = {
+		trigger = {
+			check_variable = { FE_continent_var = 4 }
+		}
+		localization_key = "tab_desc_2_middle_north_text"
+	}
+	text = {
+		trigger = {
+			check_variable = { FE_continent_var = 5 }
+		}
+		localization_key = "tab_desc_2_middle_south_text"
+	}
+	text = {
+		localization_key = "generic_null"
+	}
+}
+
+defined_text = {
+	name = GETContinentDescEast
+	text = {
+		localization_key = "east_continent_history_page_[?FE_now_page]"
+	}
+}
+
+defined_text = {
+	name = GETNowPage
+	text = {
+		trigger = {
+			check_variable = { FE_now_page = 0 }
+		}
+		localization_key = "generic_null"
+	}
+	text = {
+		localization_key = "now_page_name_text_1"
+	}
+}
+
+defined_text = {
+	name = GETTotalPage
+	text = {
+		trigger = {
+			check_variable = { FE_total_page = 0 }
+		}
+		localization_key = "generic_null"
+	}
+	text = {
+		localization_key = "total_page_name_text_1"
+	}
+}
+
+defined_text = {
+	name = GETCountryPicture
+	text = {
+		trigger = {
+			has_country_flag = FE_historical_country_flag
+		}
+		localization_key = "GFX_welcome_gui_country_picture_[ROOT.GetTag]"
+	}
+	text = {
+		localization_key = "GFX_welcome_gui_country_picture_null"
+	}
+}
