@@ -80,7 +80,7 @@ focus = {
 	}
 }
 ###支持旧王
-	focus = {
+	  focus = {
 		id = DKA_support_old_king
 		icon = GFX_goal_generic_major_alliance
 		prerequisite = { focus =DKA_The_Longest_Night }
@@ -929,7 +929,7 @@ focus = {
  focus= {
 	id = DKA_Internal_affairs
 	prerequisite = { focus = DKA_understand}
-	x = -2
+	x = 2
 	y = 1
 	relative_position_id = DKA_understand
 	cost = 7
@@ -954,7 +954,7 @@ focus = {
 focus= {
 	id = DKA_external_affairs
 	prerequisite = { focus = DKA_understand}
-	x = 2
+	x = -2
 	y = 1
 	relative_position_id = DKA_understand
 	cost = 7
@@ -979,7 +979,7 @@ focus= {
 focus= {
 	id = DKA_ready_to_go
 	prerequisite = { focus =  DKA_external_affairs focus = DKA_Internal_affairs}
-	x = -2
+	x = 2
 	y = 1
 	relative_position_id =  DKA_external_affairs
 	cost = 7
@@ -2315,6 +2315,7 @@ focus = {
 			prerequisite = { focus =  DKA_Eliminate_anomalies  }
 			prerequisite = { focus = DKA_Higher_centralization  }
 			prerequisite = { focus = DKA_Appointing_senior_generals  }
+			prerequisite = { focus =DKA_Internal_affairs }
 			x = -1
 			y = 10
 			relative_position_id =  DKA_Eliminate_anomalies
