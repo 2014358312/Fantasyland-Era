@@ -365,7 +365,7 @@ country_event = {
 					add_country_leader_role = {
 						character = TIA_Aqua
 						country_leader = {
-							ideology = neutrality_subtype
+							ideology = theocratic_monarchy_subtype
 							expire = "1965.1.1.1"
 							traits = {
 								Water_Goddess_Aqua
@@ -598,6 +598,66 @@ country_event = {
 	option = {
 		name = TIA.16.b
 		
+	}
+}
+
+country_event = {
+	#MUL吞并TMB
+	id = TIA.17
+	title = TIA.17.t
+	desc = TIA.17.desc
+	picture = GFX_report_event_TIA_guillotine
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.17.a
+	}
+}
+
+country_event = {
+	#二次内战or和平？（TIA)
+	id = TIA.18
+	title = TIA.18.t
+	desc = TIA.18.desc
+	picture = GFX_report_event_TIA_guillotine
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.18.a
+		TCC = {
+			country_event = {
+				id = TIA.19
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = TIA.18.b
+		declare_war_on = { target = TCC type = take_claimed_state }
+	}
+}
+
+country_event = {
+	#二次内战or和平？（TCC)
+	id = TIA.19
+	title = TIA.19.t
+	desc = TIA.19.desc
+	picture = GFX_report_event_TIA_guillotine
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = TIA.19.a
+		TIA = {
+			annex_country = { 
+				target = TCC 
+				transfer_troops = yes 
+			}
+			change_tag_from = TCC
+			set_cosmetic_tag = TIA_empire_federation
+		}
+	}
+	option = {
+		name = TIA.19.b
 	}
 }
 

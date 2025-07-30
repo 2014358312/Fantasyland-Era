@@ -884,6 +884,39 @@ focus_tree = {
 			factor = 1
 		}
 	}
+	focus = {
+		#内战结束，处理战区
+		id = TIA_civil_war_end_and_treaty
+		icon = GFX_focus_TIA_civil_war_end_and_treaty
+		relative_position_id = TIA_Then_revolution_began
+		x = 0
+		y = 1
+		cost = 2
+		available = {
+			FON = {
+				exists = no
+			}
+			BEL = {
+				exists = no
+			}
+			SOS = {
+				exists = no
+			}
+		}
+		prerequisite = {
+			focus = TIA_Then_revolution_began
+		}
+		completion_reward = {
+			add_political_power = 50
+			country_event = {
+				id = TIA.18
+				days = 1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	#经济
 	focus = {
 		#亡羊补牢为时不晚
@@ -1321,7 +1354,10 @@ focus_tree = {
 			focus = TIA_City_self_determination_taxes
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_political_power = 150
+			add_offsite_building = { type = arms_factory level = 2 }
+			add_offsite_building = { type = dockyard level = 2 }
+			add_offsite_building = { type = industrial_complex level = 5 }
 		}
 		ai_will_do = {
 			factor = 1
