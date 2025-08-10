@@ -6,6 +6,8 @@
 ### search_filters = {FOCUS_FILTER_MANPOWER}
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 ### search_filters = {FOCUS_FILTER_USA_CONGRESS}
+#!gfx:interface\goals\FE_country_goals.gfx
+#!gfx:interface\goals\FE_country_NEB_goals.gfx
 
 focus_tree = {
 	id = nebulis_focus
@@ -580,6 +582,7 @@ focus_tree = {
 		text = NEB_autunno_caldo
 		icon = GFX_focus_NEB_autunno_caldo
 		allow_branch = {
+			check_variable = { FE_secondary = token:NEB_Lieselotte_Riefenstahl_head_of_government }
 			has_country_flag = NEB_autunno_caldo_flag
 		}
 		prerequisite = {
@@ -664,7 +667,7 @@ focus_tree = {
 		y = 0
 		cost = 5
 		available = {
-			
+			has_idea = NEB_Anne_Shelley_high_command
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -685,9 +688,27 @@ focus_tree = {
 		cost = 5
 		available = {
 			NEB_fate_of_riefenstahl_has_done = yes
+			has_idea = NEB_Anne_Shelley_high_command
 		}
 		completion_reward = {
-			add_political_power = 150
+			NEB_Anne_Shelley = {
+				set_can_be_fired_in_advisor_role = {
+					slot = high_command
+					value = yes
+				}
+			}
+			deactivate_advisor = NEB_Anne_Shelley_high_command
+			NEB_Anne_Shelley = {
+				remove_advisor_role = {
+					slot = high_command
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = { has_idea = NEB_Anne_Shelley_high_command }
+					remove_ideas = NEB_Anne_Shelley_high_command
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1764,6 +1785,616 @@ focus_tree = {
 		relative_position_id = NEB_military_army_041
 		x = 1
 		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_001
+		text = NEB_approval_of_national_highway_repair_plan
+		icon = GFX_focus_generic_road_investment
+		prerequisite = { focus = NEB_military_focus }
+		relative_position_id = NEB_military_focus
+		x = 7
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_002
+		text = NEB_revitalizing_economy
+		icon = GFX_focus_generic_currency_reforms
+		prerequisite = { focus = NEB_economy_001 }
+		relative_position_id = NEB_economy_001
+		x = -4
+		y = 1
+		cost = 5
+		available = {
+			NOT = {
+				has_completed_focus = NEB_economy_003
+			}
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cancel = {
+			has_completed_focus = NEB_economy_003
+		}
+	}
+
+	focus = {
+		id = NEB_economy_003
+		text = NEB_continuing_policy_of_prioritizing_heavy_industry
+		icon = GFX_goal_generic_factory_complex
+		prerequisite = { focus = NEB_economy_001 }
+		relative_position_id = NEB_economy_001
+		x = 4
+		y = 1
+		cost = 5
+		available = {
+			NOT = {
+				has_completed_focus = NEB_economy_002
+			}
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cancel = {
+			has_completed_focus = NEB_economy_002
+		}
+	}
+
+	focus = {
+		id = NEB_economy_004
+		text = NEB_veterans_administration
+		icon = GFX_focus_SWE_state_paid_vacation
+		prerequisite = { focus = NEB_economy_001 }
+		relative_position_id = NEB_economy_001
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_005
+		text = NEB_factory_transformation
+		icon = GFX_focus_GER_factories_for_resources
+		prerequisite = { focus = NEB_economy_001 }
+		relative_position_id = NEB_economy_001
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_006
+		text = NEB_new_hydroelectric_power_station
+		icon = GFX_focus_generic_hydroelectric_energy
+		prerequisite = {
+			focus = NEB_economy_002
+			focus = NEB_economy_003
+		}
+		relative_position_id = NEB_economy_002
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_007
+		text = NEB_adjust_tax_items
+		icon = GFX_focus_RAJ_special_economic_zones
+		prerequisite = {
+			focus = NEB_economy_002
+			focus = NEB_economy_003
+		}
+		relative_position_id = NEB_economy_002
+		x = 4
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_008
+		text = NEB_digging_for_treasures
+		icon = GFX_focus_generic_mining_industry
+		prerequisite = {
+			focus = NEB_economy_002
+			focus = NEB_economy_003
+		}
+		relative_position_id = NEB_economy_003
+		x = -2
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_009
+		text = NEB_efforts_towards_self-sufficiency
+		icon = GFX_focus_GER_autarky_ambitions
+		prerequisite = { focus = NEB_economy_003 }
+		relative_position_id = NEB_economy_003
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_010
+		text = NEB_relaxing_economic_regulation
+		icon = GFX_focus_ARG_anti_corruption_policies
+		prerequisite = { focus = NEB_economy_002 }
+		relative_position_id = NEB_economy_002
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_011
+		text = NEB_join_southern_continental_trade_union
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = NEB_economy_010 }
+		relative_position_id = NEB_economy_010
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_012
+		text = NEB_investment_in_polish_industrial_zones
+		icon = GFX_focus_generic_full_employment
+		prerequisite = { focus = NEB_economy_010 }
+		relative_position_id = NEB_economy_010
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_013
+		text = NEB_quality_and_quantity_guaranteed
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = NEB_economy_003 }
+		relative_position_id = NEB_economy_003
+		x = -1
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_014
+		text = NEB_optimize_production_line
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = NEB_economy_009 }
+		relative_position_id = NEB_economy_009
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_015
+		text = NEB_encourage_foreign_investment_to_build_factories
+		icon = GFX_focus_generic_diplomatic_treaty
+		prerequisite = { focus = NEB_economy_011 }
+		relative_position_id = NEB_economy_011
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_016
+		text = NEB_expand_polish_industry
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = NEB_economy_012 }
+		relative_position_id = NEB_economy_012
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_017
+		text = NEB_merge_tower_of_stars
+		icon = GFX_focus_generic_university_2
+		prerequisite = {
+			focus = NEB_economy_010
+			focus = NEB_economy_013
+		}
+		relative_position_id = NEB_economy_010
+		x = 4
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_018
+		text = NEB_establish_central_planning_bureau
+		icon = GFX_focus_POL_warsaw_main_station
+		prerequisite = { focus = NEB_economy_013 }
+		relative_position_id = NEB_economy_013
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_019
+		text = NEB_reorganize_heavy_industry_production_committee
+		icon = GFX_focus_generic_central_planning
+		prerequisite = { focus = NEB_economy_013 }
+		relative_position_id = NEB_economy_013
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_020
+		text = NEB_specialization
+		icon = GFX_focus_AFG_a_modern_economy
+		prerequisite = { focus = NEB_economy_016 }
+		relative_position_id = NEB_economy_016
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_021
+		text = NEB_shift_towards_military_production
+		icon = GFX_focus_generic_military_industry
+		prerequisite = { focus = NEB_economy_016 }
+		relative_position_id = NEB_economy_016
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			OR = {
+				has_war = yes
+				has_war_support > 0.75
+			}
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_022
+		text = NEB_strengthen_shipping_capacity
+		icon = GFX_focus_POL_develop_polish_shipbuilding
+		prerequisite = { focus = NEB_economy_018 }
+		relative_position_id = NEB_economy_018
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_023
+		text = NEB_strengthen_functions_of_regulatory_authorities
+		icon = GFX_focus_generic_whispers
+		prerequisite = { focus = NEB_economy_013 }
+		relative_position_id = NEB_economy_013
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_024
+		text = NEB_comprehensive_production_department
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = NEB_economy_019 }
+		relative_position_id = NEB_economy_019
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_025
+		text = NEB_courageously_climbing_mount_dardanna
+		icon = GFX_focus_generic_jet_planes
+		prerequisite = { focus = NEB_economy_020 }
+		relative_position_id = NEB_economy_020
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_026
+		text = NEB_laying_foundation_for_a_complete_national_defense_system
+		icon = GFX_focus_generic_nuclear_development
+		prerequisite = { focus = NEB_economy_021 }
+		relative_position_id = NEB_economy_021
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_027
+		text = NEB_fortress_plan
+		icon = GFX_focus_GER_kriegslokomotive
+		prerequisite = { focus = NEB_economy_022 }
+		prerequisite = { focus = NEB_economy_023 }
+		mutually_exclusive = { focus = NEB_economy_028 }
+		relative_position_id = NEB_economy_022
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_economy_028
+		text = NEB_project_code_nebilis
+		#icon = GFX_focus_wonderweapons
+		icon = GFX_focus_GER_wunderwaffe
+		prerequisite = { focus = NEB_economy_024 }
+		prerequisite = { focus = NEB_economy_023 }
+		mutually_exclusive = { focus = NEB_economy_027 }
+		relative_position_id = NEB_economy_024
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NEB_military_navy_001
+		text = NEB_approve_navy_budget
+		icon = GFX_focus_BEL_antwerp_maritime_academy
+		prerequisite = { focus = NEB_military_army_001 }
+		relative_position_id = NEB_military_army_001
+		x = 8
+		y = 6
 		cost = 5
 		available = {
 			
