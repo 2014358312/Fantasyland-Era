@@ -689,6 +689,7 @@ focus_tree = {
 		available = {
 			NEB_fate_of_riefenstahl_has_done = yes
 			has_idea = NEB_Anne_Shelley_high_command
+			has_idea = NEB_household_troops
 		}
 		completion_reward = {
 			NEB_Anne_Shelley = {
@@ -710,6 +711,12 @@ focus_tree = {
 					remove_ideas = NEB_Anne_Shelley_high_command
 				}
 			}
+			remove_ideas = NEB_household_troops
+			add_timed_idea = {
+				idea = NEB_household_troops_2
+				days = 730
+			}
+			custom_effect_tooltip = NEB_rectify_national_defense_forces_tt
 		}
 		ai_will_do = {
 			factor = 1
@@ -729,7 +736,7 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = 150
+			 
 		}
 		ai_will_do = {
 			factor = 1
