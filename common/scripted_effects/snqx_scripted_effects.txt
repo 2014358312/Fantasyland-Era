@@ -1,0 +1,468 @@
+#	Example:
+#
+#	example_effect = {
+#		add_political_power = 66
+#		add_popularity = {
+#			ideology = fascism
+#			popularity = 0.33
+#		}
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+battery_progress_var_effect = {
+	set_variable = {
+		GAK_batteries_number_gui_var = GAK_batteries_number
+	}
+	divide_variable = {
+		GAK_batteries_number_gui_var = 8
+	}
+}
+GAK_unit_leader_var = {
+	set_country_flag = GAK_sp_griffin_commanding_tactical_doll
+    set_variable = {
+		GAK_random_GAK_m1891 = 10
+	}
+	set_variable = {
+		GAK_random_GAK_kar98k = 10
+	}
+	set_variable = {
+		GAK_random_GAK_AA12 = 10
+	}
+	set_variable = {
+		GAK_random_GAK_MartiniHenry = 10
+	}
+	set_variable = {
+		GAK_random_GAK_kolibri = 10
+	}
+	set_variable = {
+		GAK_random_GAK_mg4 = 10
+	}
+	set_variable = {
+		GAK_random_GAK_MLEMK1 = 10
+	}
+	set_variable = {
+		GAK_random_GAK_iws2000 = 10
+	}
+	set_variable = {
+		GAK_random_GAK_mk23 = 10
+	}
+	set_variable = {
+		GAK_random_GAK_aps = 10
+	}
+	set_variable = {
+		GAK_random_GAK_hk21 = 10
+	}
+	set_variable = {
+		GAK_random_GAK_spas12 = 10
+	}
+	set_variable = {
+		GAK_random_GAK_M14 = 10
+	}
+	set_variable = {
+		GAK_random_GAK_kp31 = 10
+	}
+	set_variable = {
+		GAK_random_GAK_js9 = 10
+	}
+	set_variable = {
+		GAK_random_GAK_GeneralLiu = 10
+	}
+}
+GAK_random_unit_leader = {
+	add_to_variable = {
+    	GAK_unlocked_number_var = 1
+    }
+	random_list = {
+		GAK_random_GAK_m1891 = {
+			set_variable = {
+				GAK_random_GAK_m1891 = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_m1891"
+				skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 1
+				traits = { infantry_officer Tactical_support GAK_NOT_FOUND }
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+
+			}
+		}
+		GAK_random_GAK_kar98k = {
+			set_variable = {
+				GAK_random_GAK_kar98k = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_kar98k"
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 1
+				traits = { infantry_officer Frontline_combat_readiness GAK_NOT_FOUND }
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+		GAK_random_GAK_AA12 = {
+			set_variable = {
+				GAK_random_GAK_AA12 = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_AA12"
+				skill = 2
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 2
+				traits = { infantry_officer Border_investigation GAK_NOT_FOUND }
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+		GAK_random_GAK_MartiniHenry = {
+			set_variable = {
+				GAK_random_GAK_MartiniHenry = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_MartiniHenry"
+				skill = 2
+				attack_skill = 1
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 2
+				traits = { infantry_officer General_support_group GAK_NOT_FOUND}
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+		GAK_random_GAK_kolibri = {
+			set_variable = {
+				GAK_random_GAK_kolibri = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_kolibri"
+				skill = 2
+				attack_skill = 1
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
+				traits = { infantry_officer Border_investigation GAK_NOT_FOUND}
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+		GAK_random_GAK_mg4 = {
+			set_variable = {
+				GAK_random_GAK_mg4 = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_mg4"
+				skill = 2
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+				traits = { infantry_officer Border_investigation GAK_NOT_FOUND}
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+		GAK_random_GAK_MLEMK1 = {
+			set_variable = {
+				GAK_random_GAK_MLEMK1 = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_MLEMK1"
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 1
+				traits = { infantry_officer Frontline_combat_readiness GAK_NOT_FOUND}
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+		GAK_random_GAK_iws2000 = {
+			set_variable = {
+				GAK_random_GAK_iws2000 = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_iws2000"
+				skill = 2
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 1
+				traits = { infantry_officer Frontline_combat_readiness GAK_NOT_FOUND}
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+		GAK_random_GAK_mk23 = {
+			set_variable = {
+				GAK_random_GAK_mk23 = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_mk23"
+				skill = 2
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 2
+				traits = { infantry_officer Tactical_support GAK_NOT_FOUND}
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+		GAK_random_GAK_aps = {
+			set_variable = {
+				GAK_random_GAK_aps = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_aps"
+				skill = 2
+				attack_skill = 1
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
+				traits = { infantry_officer Tactical_support GAK_NOT_FOUND}
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+		GAK_random_GAK_hk21 = {
+			set_variable = {
+				GAK_random_GAK_hk21 = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_hk21"
+				skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 1
+				traits = { infantry_officer General_support_group GAK_NOT_FOUND}
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+		GAK_random_GAK_spas12 = {
+			set_variable = {
+				GAK_random_GAK_spas12 = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_spas12"
+				skill = 2
+				attack_skill = 1
+				defense_skill = 3
+				planning_skill = 1
+				logistics_skill = 1
+				traits = { infantry_officer Border_investigation GAK_NOT_FOUND}
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+		GAK_random_GAK_M14 = {
+			set_variable = {
+				GAK_random_GAK_M14 = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_M14"
+				skill = 2
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+				traits = { infantry_officer Frontline_combat_readiness GAK_NOT_FOUND}
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+		GAK_random_GAK_kp31 = {
+			set_variable = {
+				GAK_random_GAK_kp31 = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_kp31"
+				skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 1
+				traits = { infantry_officer General_support_group GAK_NOT_FOUND}
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+		GAK_random_GAK_js9 = {
+			set_variable = {
+				GAK_random_GAK_js9 = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_js9"
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 1
+				traits = { infantry_officer Frontline_combat_readiness GAK_NOT_FOUND}
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+		GAK_random_GAK_GeneralLiu = {
+			set_variable = {
+				GAK_random_GAK_GeneralLiu = 0
+			}
+			add_corps_commander_role = {
+				character = "GAK_GeneralLiu"
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 2
+				traits = { infantry_officer Frontline_combat_readiness GAK_NOT_FOUND}
+			}
+			random_unit_leader = {
+				limit = {
+					has_trait = GAK_NOT_FOUND
+				}
+				set_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+				unit_leader_event = griffin_commander.1
+			}
+		}
+	}
+}

@@ -1,0 +1,74 @@
+#	Example:
+#
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+#
+
+doll_mod_tab_trigger = {
+	is_special_project_completed = sp:sp_griffin_digi_mind_update
+	custom_trigger_tooltip = {
+		tooltip = GAK_16_lab_slot_trigger_tt
+		check_variable = {
+			GAK_16_lab_slot < 2
+		}
+	}
+	all_unit_leader = {
+		NOT = { has_unit_leader_flag = GAK_leader_digi_mind_update }
+	}
+	num_of_civilian_factories_available_for_projects > 0
+}
+
+GAK_unit_leader_medals_number_trigger = {
+	OR = {
+		AND = {
+			skill > 1
+			custom_trigger_tooltip = {
+    			tooltip = GAK_unit_leader_medals_number_trigger_1_tt
+				has_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 0
+				}
+			}
+		}
+		AND = {
+			skill > 4
+			custom_trigger_tooltip = {
+    			tooltip = GAK_unit_leader_medals_number_trigger_2_tt
+				has_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 1
+				}
+			}
+		}
+		AND = {
+			skill > 7
+			custom_trigger_tooltip = {
+    			tooltip = GAK_unit_leader_medals_number_trigger_3_tt
+				has_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 2
+				}
+			}
+		}
+		AND = {
+			skill > 9
+			custom_trigger_tooltip = {
+    		tooltip = GAK_unit_leader_medals_number_trigger_4_tt
+				has_unit_leader_flag = {
+					flag = GAK_has_medals_number
+					value = 3
+				}
+			}
+		}
+	}
+}
+

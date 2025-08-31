@@ -1,0 +1,1255 @@
+technologies = {
+	
+	@975 = 0
+	@996 = 2
+	@998 = 4
+	@1000 = 6
+	@1001 = 8
+	@1003 = 10
+	@1005 = 12
+	@1007 = 14
+	@1009 = 16
+	@1012 = 18
+	@1015 = 20
+
+	tactical_UAV = {
+		enable_equipments = {
+			tactical_UAV_equipment_0
+		}
+		allow = {
+			has_country_flag = GAK_flag
+		}
+		path = {
+			leads_to_tech = tactical_UAV1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_UAV6
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_UAV11
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_UAV16
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_UAV21
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_UAV26
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_UAV31
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_UAV36
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_UAV41
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_UAV46
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1918
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 0 y = 0 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV1 = {
+		enable_subunits = {
+			fortification_fairy_unit
+		}
+		path = {
+			leads_to_tech = tactical_UAV2
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 996
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 0 y = 2 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV2 = {
+		fortification_fairy_unit = {
+			entrenchment = 1
+			fort = {
+				defence = 0.05
+				attack = 0.10
+			}
+		}
+		path = {
+			leads_to_tech = tactical_UAV3
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1000
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 0 y = 6 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV3 = {
+		fortification_fairy_unit = {
+			battalion_mult = {
+				category = category_tactical_doll
+				entrenchment = 0.2
+				add = yes
+			}
+			river = {
+				defence = 0.05
+				attack = 0.05
+			}
+		}
+		path = {
+			leads_to_tech = tactical_UAV4
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1003
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 0 y = 10 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV4 = {
+		fortification_fairy_unit = {
+			entrenchment = 1
+			urban = {
+				defence = 0.05
+				attack = 0.1
+			}
+		}
+		path = {
+			leads_to_tech = tactical_UAV5
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1007
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 0 y = 14 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV5 = {
+		fortification_fairy_unit = {
+			entrenchment = 0.5
+			battalion_mult = {
+				category = category_tactical_doll
+				entrenchment = 0.1
+				add = yes
+			}
+			fort = {
+				defence = 0.05
+				attack = 0.05
+			}
+		}
+		research_cost = 1.5
+		start_year = 1012
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 0 y = 18 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV6 = {
+		enable_subunits = {
+			cannonry_fairy_unit
+		}
+		path = {
+			leads_to_tech = tactical_UAV7
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 996
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 2 y = 2 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV7 = {
+		cannonry_fairy_unit = {
+			soft_attack = 0.15
+			hard_attack = 0.1
+		}
+		path = {
+			leads_to_tech = tactical_UAV8
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1000
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 2 y = 6 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV8 = {
+		cannonry_fairy_unit = {
+			battalion_mult = {
+				category = category_tactical_doll
+				breakthrough = 0.1
+			}
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+		path = {
+			leads_to_tech = tactical_UAV9
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1003
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 2 y = 10 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV9 = {
+		cannonry_fairy_unit = {
+			soft_attack = 0.15
+			hard_attack = 0.1
+		}
+		path = {
+			leads_to_tech = tactical_UAV10
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1007
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 2 y = 14 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV10 = {
+		cannonry_fairy_unit = {
+			battalion_mult = {
+				category = category_tactical_doll
+				breakthrough = 0.05
+			}
+			soft_attack = 0.15
+			hard_attack = 0.1
+		}
+		research_cost = 2.5
+		start_year = 1012
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 2 y = 18 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV11 = {
+		enable_subunits = {
+			snipe_fairy_unit
+		}
+		path = {
+			leads_to_tech = tactical_UAV12
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 996
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 4 y = 2 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV12 = {
+		snipe_fairy_unit = {
+			hard_attack = 0.25
+			soft_attack = 0.1
+			ap_attack = 0.25
+		}
+		path = {
+			leads_to_tech = tactical_UAV13
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1000
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 4 y = 6 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV13 = {
+		snipe_fairy_unit = {
+			battalion_mult = {
+				category = category_tactical_doll
+				hard_attack = 0.1
+			}
+			hard_attack = 0.25
+			soft_attack = 0.15
+			ap_attack = 0.25
+		}
+		path = {
+			leads_to_tech = tactical_UAV14
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1003
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 4 y = 10 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV14 = {
+		snipe_fairy_unit = {
+			hard_attack = 0.25
+			soft_attack = 0.15
+			ap_attack = 0.25
+		}
+		path = {
+			leads_to_tech = tactical_UAV15
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1007
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 4 y = 14 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV15 = {
+		snipe_fairy_unit = {
+			battalion_mult = {
+				category = category_tactical_doll_mg
+				ap_attack = 0.1
+				air_attack = 0.15
+			}
+			battalion_mult = {
+				category = category_tactical_doll_rf
+				ap_attack = 0.1
+			}
+			hard_attack = 0.25
+			soft_attack = 0.15
+			ap_attack = 0.25
+		}
+		research_cost = 2.5
+		start_year = 1012
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 4 y = 18 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV16 = {
+		enable_subunits = {
+			cooking_fairy_unit
+		}
+		path = {
+			leads_to_tech = tactical_UAV17
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 996
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 6 y = 2 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV17 = {
+		cooking_fairy_unit = {
+			supply_consumption_factor = -0.1
+			fuel_consumption_factor = -0.05
+		}
+		path = {
+			leads_to_tech = tactical_UAV18
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1000
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 6 y = 6 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV18 = {
+		cooking_fairy_unit = {
+			supply_consumption_factor = -0.1
+			fuel_consumption_factor = -0.05
+			battalion_mult = {
+				category = category_tactical_doll
+				default_morale = 0.3
+			}
+		}
+		path = {
+			leads_to_tech = tactical_UAV19
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1003
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 6 y = 10 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV19 = {
+		cooking_fairy_unit = {
+			supply_consumption_factor = -0.1
+			fuel_consumption_factor = -0.05
+		}
+		path = {
+			leads_to_tech = tactical_UAV20
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1007
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 6 y = 14 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV20 = {
+		cooking_fairy_unit = {
+			supply_consumption_factor = -0.1
+			fuel_consumption_factor = -0.05
+			battalion_mult = {
+				category = category_tactical_doll
+				max_organisation = 0.1
+			}
+		}
+		research_cost = 1.5
+		start_year = 1012
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 6 y = 18 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV21 = {
+		enable_subunits = {
+			doctor_fairy_unit
+		}
+		path = {
+			leads_to_tech = tactical_UAV22
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 996
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 8 y = 2 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV22 = {
+		doctor_fairy_unit = {
+			casualty_trickleback = 0.10
+			experience_loss_factor = -0.10
+		}
+		path = {
+			leads_to_tech = tactical_UAV23
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1000
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 8 y = 6 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV23 = {
+		doctor_fairy_unit = {
+			battalion_mult = {
+				category = category_tactical_doll
+				max_strength = 0.1
+			}
+			recovery = 0.1
+			casualty_trickleback = 0.10
+			experience_loss_factor = -0.10
+		}
+		path = {
+			leads_to_tech = tactical_UAV24
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1003
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 8 y = 10 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV24 = {
+		doctor_fairy_unit = {
+			casualty_trickleback = 0.10
+			experience_loss_factor = -0.10
+		}
+		path = {
+			leads_to_tech = tactical_UAV25
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1007
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 8 y = 14 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV25 = {
+		doctor_fairy_unit = {
+			casualty_trickleback = 0.05
+			experience_loss_factor = -0.05
+			battalion_mult = {
+				category = category_tactical_doll_sg
+				max_strength = 0.05
+			}
+			battalion_mult = {
+				category = category_tactical_doll_smg
+				max_strength = 0.05
+			}
+			recovery = 0.05
+		}
+		research_cost = 2.5
+		start_year = 1012
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 8 y = 18 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV26 = {
+		enable_subunits = {
+			illumine_fairy_unit
+		}
+		path = {
+			leads_to_tech = tactical_UAV27
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 996
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 10 y = 2 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV27 = {
+		illumine_fairy_unit = {
+			recon = 2.0
+		}
+		path = {
+			leads_to_tech = tactical_UAV28
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1000
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 10 y = 6 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV28 = {
+		illumine_fairy_unit = {
+			recon = 1.5
+			battalion_mult = {
+				category = category_tactical_doll
+				recon = 0.1
+				add = yes
+			}
+			battalion_mult = {
+				category = category_tactical_doll_hg
+				recon = 0.1
+				add = yes
+			}
+		}
+		path = {
+			leads_to_tech = tactical_UAV29
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1003
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 10 y = 10 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV29 = {
+		illumine_fairy_unit = {
+			recon = 2.0
+		}
+		path = {
+			leads_to_tech = tactical_UAV30
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1007
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 10 y = 14 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV30 = {
+		illumine_fairy_unit = {
+			battalion_mult = {
+				category = category_tactical_doll
+				soft_attack = 0.05
+			}
+			recon = 1.0
+		}
+		research_cost = 1.5
+		start_year = 1012
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 10 y = 18 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV31 = {
+		enable_subunits = {
+			shield_fairy_unit
+		}
+		path = {
+			leads_to_tech = tactical_UAV32
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 996
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 12 y = 2 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV32 = {
+		shield_fairy_unit = {
+			forest = {
+				defence = 0.05
+				attack = 0.1
+			}
+			hills = {
+				defence = 0.05
+				attack = 0.1
+			}
+			mountain = {
+				defence = 0.05
+				attack = 0.1
+			}
+		}
+		path = {
+			leads_to_tech = tactical_UAV33
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1000
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 12 y = 6 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV33 = {
+		shield_fairy_unit = {
+			battalion_mult = {
+				category = category_tactical_doll
+				breakthrough = 0.15
+			}
+			jungle = {
+				defence = 0.05
+				attack = 0.1
+			}
+			marsh = {
+				defence = 0.05
+				attack = 0.1
+			}
+		}
+		path = {
+			leads_to_tech = tactical_UAV34
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1003
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 12 y = 10 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV34 = {
+		shield_fairy_unit = {
+			plains = {
+				defence = 0.05
+				attack = 0.1
+			}
+			desert = {
+				defence = 0.05
+				attack = 0.1
+			}
+			river = {
+				defence = 0.05
+				attack = 0.1
+			}
+		}
+		path = {
+			leads_to_tech = tactical_UAV35
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1007
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 12 y = 14 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV35 = {
+		shield_fairy_unit = {
+			battalion_mult = {
+				category = category_tactical_doll_smg
+				defence = 0.05
+				breakthrough = 0.05
+			}
+			battalion_mult = {
+				category = category_tactical_doll_sg
+				defence = 0.05
+				breakthrough = 0.05
+			}
+			fort = {
+				defence = 0.05
+				attack = 0.1
+			}
+			urban = {
+				defence = 0.05
+				attack = 0.1
+			}
+		}
+		research_cost = 1.5
+		start_year = 1012
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 12 y = 18 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV36 = {
+		enable_subunits = {
+			armor_fairy_unit
+		}
+		path = {
+			leads_to_tech = tactical_UAV37
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 996
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 14 y = 2 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV37 = {
+		armor_fairy_unit = {
+			armor_value = 0.5
+		}
+		path = {
+			leads_to_tech = tactical_UAV38
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1000
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 14 y = 6 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV38 = {
+		armor_fairy_unit = {
+			battalion_mult = {
+				category = category_tactical_doll_sg
+				armor_value = 0.2
+			}
+			armor_value = 1.0
+		}
+		path = {
+			leads_to_tech = tactical_UAV39
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1003
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 14 y = 10 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV39 = {
+		armor_fairy_unit = {
+			armor_value = 1.0
+		}
+		path = {
+			leads_to_tech = tactical_UAV40
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1007
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 14 y = 14 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV40 = {
+		armor_fairy_unit = {
+			battalion_mult = {
+				category = category_tactical_doll_sg
+				armor_value = 0.2
+			}
+			armor_value = 2.0
+		}
+		research_cost = 2.5
+		start_year = 1012
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 14 y = 18 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV41 = {
+		enable_subunits = {
+			peace_fairy_unit
+		}
+		path = {
+			leads_to_tech = tactical_UAV42
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 996
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 16 y = 2 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV42 = {
+		peace_fairy_unit = {
+			suppression_factor = 0.20
+		}
+		path = {
+			leads_to_tech = tactical_UAV43
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1000
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 16 y = 6 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV43 = {
+		peace_fairy_unit = {
+			suppression_factor = 0.20
+		}
+		path = {
+			leads_to_tech = tactical_UAV44
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1003
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 16 y = 10 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV44 = {
+		peace_fairy_unit = {
+			suppression_factor = 0.20
+		}
+		path = {
+			leads_to_tech = tactical_UAV45
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1007
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 16 y = 14 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV45 = {
+		peace_fairy_unit = {
+			suppression_factor = 0.20
+		}
+		research_cost = 1.5
+		start_year = 1012
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 16 y = 18 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV46 = {
+		enable_subunits = {
+			command_fairy_unit
+		}
+		path = {
+			leads_to_tech = tactical_UAV47
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 996
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 18 y = 2 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV47 = {
+		command_fairy_unit = {
+			initiative = 0.15
+		}
+		path = {
+			leads_to_tech = tactical_UAV48
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 996
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 18 y = 6 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV48 = {
+		command_fairy_unit = {
+			initiative = 0.15
+			battalion_mult = {
+				category = category_tactical_doll
+				default_morale = 0.1
+				add = yes
+			}
+		}
+		path = {
+			leads_to_tech = tactical_UAV49
+			research_cost_coeff = 1
+		}
+		research_cost = 2
+		start_year = 1003
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 18 y = 10 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV49 = {
+		command_fairy_unit = {
+			initiative = 0.15
+		}
+		path = {
+			leads_to_tech = tactical_UAV50
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1007
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 18 y = 14 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	tactical_UAV50 = {
+		command_fairy_unit = {
+			initiative = 0.15
+			battalion_mult = {
+				category = category_tactical_doll
+				hard_attack = 0.1
+				soft_attack = 0.1
+			}
+		}
+		research_cost = 2.5
+		start_year = 1012
+		folder = {
+			name = equipment_UAV_folder
+			position = { x = 18 y = 18 }
+		}
+		categories = {
+			tactical_UAV_tech
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+}

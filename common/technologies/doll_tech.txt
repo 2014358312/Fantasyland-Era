@@ -1,0 +1,1532 @@
+technologies = {
+	
+	# @1918 = 0
+	# @1936 = 2
+	# @1937 = 4
+	# @1938 = 6
+	# @1939 = 8
+	# @1940 = 10
+	# @1941 = 12
+	# @1942 = 14
+	# @1943 = 16
+	# @1944 = 18
+	# @1945 = 20
+
+	@975 = 0
+	@996 = 2
+	@998 = 4
+	@1000 = 6
+	@1001 = 8
+	@1003 = 10
+	@1005 = 12
+	@1007 = 14
+	@1009 = 16
+	@1012 = 18
+	@1015 = 20
+
+	tactical_doll = {
+		enable_equipments = {
+			doll_equipment_hg_0
+			doll_equipment_smg_0
+			doll_equipment_rf_0
+			doll_equipment_ar_0
+		}
+		enable_subunits = {
+			tactical_doll_hg
+			tactical_doll_smg
+			tactical_doll_rf
+			tactical_doll_ar
+		}
+		enable_equipment_modules = {
+			doll_FMJ_high_velocity
+			doll_M61_armour_piercing_projectile
+			doll_ILMH1_hollow_point
+		}
+		allow = {
+			has_country_flag = GAK_flag
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_tactical_doll"
+			}
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		path = {
+			leads_to_tech = tactical_doll1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_light
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_light3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_light6
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 998
+		folder = {
+			name = doll_tech_folder
+			position = { x = 7 y = 1 }
+		}
+
+		categories = {
+			tactical_doll
+			tactical_doll_tech
+		}
+
+		special_project_specialization = { specialization_griffin }
+
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	tactical_doll1 = {
+		enable_subunits = {
+			tactical_doll_sg
+		}
+		enable_subunits = {
+			tactical_doll_mg
+		}
+		enable_equipments = {
+			doll_equipment_ar_1
+			doll_equipment_hg_1
+			doll_equipment_rf_1
+			doll_equipment_smg_1
+			doll_equipment_sg_0
+			doll_equipment_mg_0
+		}
+		enable_equipment_modules = {
+			doll_BK_rifled_slug
+			doll_1_buckshot
+		}
+		on_research_complete = {
+			custom_effect_tooltip = {
+				localization_key = SP_UNLOCK_PROJECT
+				PROJECT = sp_griffin_airborne_fairy	
+			}
+			custom_effect_tooltip = {
+				localization_key = SP_UNLOCK_PROJECT
+				PROJECT = sp_griffin_amphibious_tactical_doll	
+			}
+			custom_effect_tooltip = {
+				localization_key = SP_UNLOCK_PROJECT
+				PROJECT = sp_griffin_special_armour_piercing_projectile
+			}
+			custom_effect_tooltip = {
+				localization_key = SP_UNLOCK_PROJECT
+				PROJECT = sp_griffin_digi_mind_update
+			}
+		}
+		path = {
+			leads_to_tech = tactical_doll2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_heavy
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_heavy3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_heavy8
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_heavy10
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1001
+		folder = {
+			name = doll_tech_folder
+			position = { x = 7 y = 7 }
+		}
+
+		categories = {
+			tactical_doll
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_doll2 = {
+		enable_equipments = {
+			doll_equipment_ar_2
+			doll_equipment_hg_2
+			doll_equipment_rf_2
+			doll_equipment_smg_2
+			doll_equipment_sg_1
+			doll_equipment_mg_1
+		}
+		research_cost = 1.5
+		start_year = 1007
+		folder = {
+			name = doll_tech_folder
+			position = { x = 7 y = 13 }
+		}
+		path = {
+			leads_to_tech = tactical_doll3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_doll4
+			research_cost_coeff = 1
+		}
+		categories = {
+			tactical_doll
+			tactical_doll_tech
+		}
+		on_research_complete = {
+			custom_effect_tooltip = {
+				localization_key = SP_UNLOCK_PROJECT
+				PROJECT = sp_griffin_third_generation_tactical_doll	
+			}
+		}
+
+		special_project_specialization = { specialization_griffin }
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+	}
+	tactical_doll3 = {
+		enable_equipment_modules = {
+			doll_IOP_high_velocity
+			doll_IOP_armour_piercing_projectile
+			doll_IOP_hollow_point
+			doll_IOP_buckshot
+			doll_IOP_MARS_riflescope
+			doll_IOP_optical_sight
+			doll_IOP_T_exo
+			doll_IOP_bulletproof
+		}
+		allow = {
+			ROOT = {
+				is_special_project_completed = sp:sp_griffin_third_generation_tactical_doll
+			}
+		}
+
+		is_special_project_tech = yes
+		research_cost = 1
+		start_year = 1012
+		folder = {
+			name = doll_tech_folder
+			position = { x = 5 y = 17 }
+		}
+
+		categories = {
+			tactical_doll
+			tactical_doll_tech
+		}
+
+		special_project_specialization = { specialization_griffin }
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+	}
+	tactical_doll4 = {
+		enable_equipment_modules = {
+			doll_man_portable_artillery
+			doll_IOP_shield
+			doll_IOP_accelerating_coil
+			doll_IOP_RO
+		}
+		allow = {
+			ROOT = {
+				is_special_project_completed = sp:sp_griffin_third_generation_tactical_doll
+			}
+		}
+
+		is_special_project_tech = yes
+		research_cost = 1
+		start_year = 1012
+		folder = {
+			name = doll_tech_folder
+			position = { x = 7 y = 17 }
+		}
+
+		categories = {
+			tactical_doll
+			tactical_doll_tech
+		}
+
+		special_project_specialization = { specialization_griffin }
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+	}
+	tactical_equipment_light = {
+		research_cost = 0.5
+		start_year = 998
+		enable_equipment_modules = {
+			doll_JSP_high_velocity
+		}
+		path = {
+			leads_to_tech = tactical_equipment_light1
+			research_cost_coeff = 1
+		}
+		tactical_doll_ar = {
+			soft_attack = 0.1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 5 y = 3 }
+		}
+
+		categories = {
+			tactical_equipment_light
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_light1 = {
+		research_cost = 1
+		start_year = 1001
+		enable_equipment_modules = {
+			doll_JHP_high_velocity
+		}
+		tactical_doll_ar = {
+			soft_attack = 0.1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_light2
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 5 y =7 }
+		}
+
+		categories = {
+			tactical_equipment_light
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_light2 = {
+		research_cost = 1
+		start_year = 1005
+		enable_equipment_modules = {
+			doll_APCR_high_velocity
+		}
+		tactical_doll_ar = {
+			soft_attack = 0.1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 5 y = 11 }
+		}
+
+		categories = {
+			tactical_equipment_light
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_light3 = {
+		research_cost = 0.5
+		start_year = 998
+		enable_equipment_modules = {
+			doll_ILMH2_hollow_point
+		}
+		tactical_doll_smg = {
+			soft_attack = 0.1
+		}
+		tactical_doll_hg = {
+			soft_attack = 0.1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_light4
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 3 y = 3 }
+		}
+
+		categories = {
+			tactical_equipment_light
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_light4 = {
+		research_cost = 1
+		start_year = 1001
+		enable_equipment_modules = {
+			doll_ILMH3_hollow_point
+		}
+		tactical_doll_smg = {
+			soft_attack = 0.1
+		}
+		tactical_doll_hg = {
+			soft_attack = 0.1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_light5
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_light11
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 3 y = 7 }
+		}
+
+		categories = {
+			tactical_equipment_light
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_light5 = {
+		research_cost = 1
+		start_year = 1005
+		enable_equipment_modules = {
+			doll_ILMH4_hollow_point
+		}
+		tactical_doll_smg = {
+			soft_attack = 0.1
+		}
+		tactical_doll_hg = {
+			soft_attack = 0.1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 3 y = 11 }
+		}
+
+		categories = {
+			tactical_equipment_light
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_light6 = {
+		research_cost = 0.5
+		start_year = 998
+		enable_equipment_modules = {
+			doll_M993_armour_piercing_projectile
+		}
+		tactical_doll_rf = {
+			ap_attack = 0.1
+			hard_attack = 0.1
+		}
+		tactical_doll_mg = {
+			ap_attack = 0.1
+			hard_attack = 0.1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_light7
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 1 y = 3 }
+		}
+
+		categories = {
+			tactical_equipment_light
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_light7 = {
+		research_cost = 1
+		start_year = 1001
+		enable_equipment_modules = {
+			doll_Mk169_armour_piercing_projectile
+		}
+		tactical_doll_rf = {
+			ap_attack = 0.1
+			hard_attack = 0.1
+		}
+		tactical_doll_mg = {
+			ap_attack = 0.1
+			hard_attack = 0.1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_light8
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_light9
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 1 y = 7 }
+		}
+
+		categories = {
+			tactical_equipment_light
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_light8 = {
+		research_cost = 1
+		start_year = 1005
+		enable_equipment_modules = {
+			doll_Mk211_armour_piercing_projectile
+		}
+		tactical_doll_rf = {
+			ap_attack = 0.1
+			hard_attack = 0.1
+		}
+		tactical_doll_mg = {
+			ap_attack = 0.1
+			hard_attack = 0.1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 1 y = 11 }
+		}
+
+		categories = {
+			tactical_equipment_light
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_light9 = {
+		research_cost = 0.5
+		start_year = 1003
+		enable_equipment_modules = {
+			doll_Mk33_sniper_shells
+		}
+		tactical_doll_rf = {
+			soft_attack = 0.1
+		}
+		tactical_doll_mg = {
+			soft_attack = 0.1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_light10
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 2 y = 9 }
+		}
+
+		categories = {
+			tactical_equipment_light
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_light10 = {
+		research_cost = 1
+		start_year = 1007
+		enable_equipment_modules = {
+			doll_M1022_sniper_shells
+		}
+		tactical_doll_rf = {
+			soft_attack = 0.1
+		}
+		tactical_doll_mg = {
+			soft_attack = 0.1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 2 y = 13 }
+		}
+
+		categories = {
+			tactical_equipment_light
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_light11 = {
+		research_cost = 0.5
+		start_year = 1003
+		enable_equipment_modules = {
+			doll_hg_signal_flare
+		}
+		tactical_doll_hg = {
+			recon = 0.5
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 4 y = 9 }
+		}
+
+		categories = {
+			tactical_equipment_light
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_heavy = {
+		research_cost = 0.5
+		start_year = 1003
+		enable_equipment_modules = {
+			doll_FST_rifled_slug
+		}
+		tactical_doll_sg = {
+			hard_attack = 0.1
+			ap_attack = 0.1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_heavy1
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 9 y = 9 }
+		}
+
+		categories = {
+			tactical_equipment_heavy
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_heavy1 = {
+		research_cost = 1
+		start_year = 1007
+		enable_equipment_modules = {
+			doll_WAD_rifled_slug
+		}
+		tactical_doll_sg = {
+			hard_attack = 0.1
+			ap_attack = 0.1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_heavy2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_heavy13
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 9 y = 13 }
+		}
+
+		categories = {
+			tactical_equipment_heavy
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_heavy2 = {
+		research_cost = 1
+		start_year = 1012
+		enable_equipment_modules = {
+			doll_SABOT_rifled_slug
+		}
+		tactical_doll_sg = {
+			hard_attack = 0.1
+			ap_attack = 0.1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 9 y = 17 }
+		}
+
+		categories = {
+			tactical_equipment_heavy
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_heavy3 = {
+		research_cost = 0.5
+		start_year = 1003
+		enable_equipment_modules = {
+			doll_0_buckshot
+		}
+		tactical_doll_sg = {
+			soft_attack = 0.1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_heavy4
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 11 y = 9 }
+		}
+
+		categories = {
+			tactical_equipment_heavy
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_heavy4 = {
+		research_cost = 1
+		start_year = 1007
+		enable_equipment_modules = {
+			doll_00_buckshot
+		}
+		tactical_doll_sg = {
+			soft_attack = 0.1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_heavy5
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_heavy6
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 11 y = 13 }
+		}
+
+		categories = {
+			tactical_equipment_heavy
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_heavy5 = {
+		research_cost = 1
+		start_year = 1012
+		enable_equipment_modules = {
+			doll_000_buckshot
+		}
+		tactical_doll_sg = {
+			soft_attack = 0.1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 11 y = 17 }
+		}
+
+		categories = {
+			tactical_equipment_heavy
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_heavy6 = {
+		research_cost = 0.5
+		start_year = 1009
+		enable_equipment_modules = {
+			doll_6_birdshot
+		}
+		tactical_doll_sg = {
+			soft_attack = 0.05
+		}
+		path = {
+			leads_to_tech = tactical_equipment_heavy7
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 10 y = 15 }
+		}
+
+		categories = {
+			tactical_equipment_heavy
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_heavy7 = {
+		research_cost = 1
+		start_year = 1015
+		enable_equipment_modules = {
+			doll_7_birdshot
+		}
+		tactical_doll_sg = {
+			soft_attack = 0.05
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 10 y = 19 }
+		}
+
+		categories = {
+			tactical_equipment_heavy
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_heavy8 = {
+		research_cost = 1
+		start_year = 1007
+		allow = {
+			ROOT = {
+				is_special_project_completed = sp:sp_griffin_special_armour_piercing_projectile
+			}
+		}
+
+		is_special_project_tech = yes
+		enable_equipment_modules = {
+			doll_Mk900slap_special_armour_piercing_projectile
+		}
+		tactical_doll_mg = {
+			hard_attack = 0.1
+			ap_attack = 0.2
+		}
+		path = {
+			leads_to_tech = tactical_equipment_heavy9
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 13 y = 13 }
+		}
+
+		categories = {
+			tactical_equipment_heavy
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_heavy9 = {
+		research_cost = 1
+		start_year = 1012
+		allow = {
+			ROOT = {
+				is_special_project_completed = sp:sp_griffin_special_armour_piercing_projectile
+			}
+		}
+
+		is_special_project_tech = yes
+		enable_equipment_modules = {
+			doll_Mk1000slap_special_armour_piercing_projectile
+			tank_anti_armored_sniper_gun
+			tank_antiaircraft_gun
+			tank_general_purpose_machine_gun
+		}
+		tactical_doll_mg = {
+			hard_attack = 0.1
+			ap_attack = 0.2
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 13 y = 17 }
+		}
+
+		categories = {
+			tactical_equipment_heavy
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_heavy10 = {
+		research_cost = 0.5
+		start_year = 1003
+		enable_equipment_modules = {
+			doll_type1_bulletproof
+		}
+		tactical_doll_sg = {
+			breakthrough = 0.1
+			armor_value = 0.1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_heavy11
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 15 y = 9 }
+		}
+
+		categories = {
+			tactical_equipment_heavy
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_heavy11 = {
+		research_cost = 1
+		start_year = 1007
+		enable_equipment_modules = {
+			doll_type2_bulletproof
+		}
+		tactical_doll_sg = {
+			breakthrough = 0.1
+			armor_value = 0.1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_heavy12
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 15 y = 13 }
+		}
+
+		categories = {
+			tactical_equipment_heavy
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_heavy12 = {
+		research_cost = 1
+		start_year = 1007
+		enable_equipment_modules = {
+			doll_type3_bulletproof
+			tank_armor_chip
+			tank_defense_chip
+		}
+		tactical_doll_sg = {
+			breakthrough = 0.1
+			armor_value = 0.1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 15 y = 17 }
+		}
+
+		categories = {
+			tactical_equipment_heavy
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_heavy13 = {
+		research_cost = 0.5
+		start_year = 1009
+		enable_equipment_modules = {
+			doll_sg_flash
+		}
+		tactical_doll_sg = {
+			breakthrough = 0.1
+			defense = 0.1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 8 y = 15 }
+		}
+
+		categories = {
+			tactical_equipment_heavy
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_night_vision_device = {
+		allow = {
+			has_country_flag = GAK_flag
+		}
+		land_night_attack = 0.05
+		research_cost = 1.5
+		start_year = 1000
+		path = {
+			leads_to_tech = tactical_night_vision_device1
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 1 y = 5 }
+		}
+
+		categories = {
+			tactical_night_vision_device
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_night_vision_device1 = {
+		land_night_attack = 0.05
+		research_cost = 1.5
+		start_year = 1003
+		path = {
+			leads_to_tech = tactical_night_vision_device2
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 1 y = 9 }
+		}
+
+		categories = {
+			tactical_night_vision_device
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_night_vision_device2 = {
+		research_cost = 1.5
+		land_night_attack = 0.05
+		start_year = 1007
+		path = {
+			leads_to_tech = tactical_night_vision_device3
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = doll_tech_folder
+			position = { x = 1 y = 13 }
+		}
+
+		categories = {
+			tactical_night_vision_device
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_night_vision_device3 = {
+		land_night_attack = 0.05
+		research_cost = 2.5
+		start_year = 1012
+		folder = {
+			name = doll_tech_folder
+			position = { x = 1 y = 17 }
+		}
+
+		categories = {
+			tactical_night_vision_device
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_sight = {
+		allow = {
+			has_country_flag = GAK_flag
+		}
+		enable_equipment_modules = {
+			doll_BM_optical_sight
+			doll_EOT506_holographic_sight
+			doll_AMP_COMPM2_riflescope
+		}
+		path = {
+			leads_to_tech = tactical_equipment_sight1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_sight4
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_sight7
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_equipment_sight10
+			research_cost_coeff = 1
+		}
+		research_cost = 0.5
+		start_year = 998
+		folder = {
+			name = doll_tech_folder
+			position = { x = 0 y = 0 }
+		}
+
+		categories = {
+			tactical_equipment_sight
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_sight1 = {
+		enable_equipment_modules = {
+			doll_LRA_optical_sight
+		}
+		path = {
+			leads_to_tech = tactical_equipment_sight2
+			research_cost_coeff = 1
+		}
+		research_cost = 0.5
+		start_year = 1001
+		folder = {
+			name = doll_tech_folder
+			position = { x = -1 y = 2 }
+		}
+
+		categories = {
+			tactical_equipment_sight
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_sight2 = {
+		enable_equipment_modules = {
+			doll_PSO_optical_sight
+		}
+		path = {
+			leads_to_tech = tactical_equipment_sight3
+			research_cost_coeff = 1
+		}
+		research_cost = 0.5
+		start_year = 1005
+		folder = {
+			name = doll_tech_folder
+			position = { x = -1 y = 4 }
+		}
+
+		categories = {
+			tactical_equipment_sight
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_sight3 = {
+		enable_equipment_modules = {
+			doll_VFL_optical_sight
+		}
+		research_cost = 0.5
+		start_year = 1009
+		folder = {
+			name = doll_tech_folder
+			position = { x = -1 y = 6 }
+		}
+
+		categories = {
+			tactical_equipment_sight
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_sight4 = {
+		enable_equipment_modules = {
+			doll_EOT512_holographic_sight
+		}
+		path = {
+			leads_to_tech = tactical_equipment_sight5
+			research_cost_coeff = 1
+		}
+		research_cost = 0.5
+		start_year = 1001
+		folder = {
+			name = doll_tech_folder
+			position = { x = 1 y = 2 }
+		}
+
+		categories = {
+			tactical_equipment_sight
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_sight5 = {
+		enable_equipment_modules = {
+			doll_EOT516_holographic_sight
+		}
+		path = {
+			leads_to_tech = tactical_equipment_sight6
+			research_cost_coeff = 1
+		}
+		research_cost = 0.5
+		start_year = 1005
+		folder = {
+			name = doll_tech_folder
+			position = { x = 1 y = 4 }
+		}
+
+		categories = {
+			tactical_equipment_sight
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_sight6 = {
+		enable_equipment_modules = {
+			doll_EOT518_holographic_sight
+		}
+		research_cost = 0.5
+		start_year = 1009
+		folder = {
+			name = doll_tech_folder
+			position = { x = 1 y = 6 }
+		}
+
+		categories = {
+			tactical_equipment_sight
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_sight7 = {
+		enable_equipment_modules = {
+			doll_AMP_COMPM4_riflescope
+		}
+		path = {
+			leads_to_tech = tactical_equipment_sight8
+			research_cost_coeff = 1
+		}
+		research_cost = 0.5
+		start_year = 1001
+		folder = {
+			name = doll_tech_folder
+			position = { x = -3 y = 2 }
+		}
+
+		categories = {
+			tactical_equipment_sight
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_sight8 = {
+		enable_equipment_modules = {
+			doll_COG_M150_riflescope
+		}
+		path = {
+			leads_to_tech = tactical_equipment_sight9
+			research_cost_coeff = 1
+		}
+		research_cost = 0.5
+		start_year = 1005
+		folder = {
+			name = doll_tech_folder
+			position = { x = -3 y = 4 }
+		}
+
+		categories = {
+			tactical_equipment_sight
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_sight9 = {
+		enable_equipment_modules = {
+			doll_ITI_MARS_riflescope
+		}
+		research_cost = 0.5
+		start_year = 1009
+		folder = {
+			name = doll_tech_folder
+			position = { x = -3 y = 6 }
+		}
+
+		categories = {
+			tactical_equipment_sight
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_sight10 = {
+		enable_equipment_modules = {
+			doll_RMR_spare_sight
+		}
+		path = {
+			leads_to_tech = tactical_equipment_sight11
+			research_cost_coeff = 1
+		}
+		research_cost = 0.5
+		start_year = 1001
+		folder = {
+			name = doll_tech_folder
+			position = { x = 3 y = 2 }
+		}
+
+		categories = {
+			tactical_equipment_sight
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_sight11 = {
+		enable_equipment_modules = {
+			doll_RMR_T2_spare_sight
+		}
+		path = {
+			leads_to_tech = tactical_equipment_sight12
+			research_cost_coeff = 1
+		}
+		research_cost = 0.5
+		start_year = 1005
+		folder = {
+			name = doll_tech_folder
+			position = { x = 3 y = 4 }
+		}
+
+		categories = {
+			tactical_equipment_sight
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_sight12 = {
+		enable_equipment_modules = {
+			doll_RMR_T4_spare_sight
+		}
+		research_cost = 0.5
+		start_year = 1009
+		folder = {
+			name = doll_tech_folder
+			position = { x = 3 y = 6 }
+		}
+
+		categories = {
+			tactical_equipment_sight
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_accessory = {
+		allow = {
+			has_country_flag = GAK_flag
+		}
+		enable_equipment_modules = {
+			doll_IOP_T1_exo
+			doll_IOP_X1_exo
+			doll_AC1_silencer
+			doll_tattered_camouflage_cloak
+		}
+		path = {
+			leads_to_tech = tactical_equipment_accessory1
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 998
+		folder = {
+			name = doll_tech_folder
+			position = { x = 0 y = 0 }
+		}
+
+		categories = {
+			tactical_equipment_accessory
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_accessory1 = {
+		enable_equipment_modules = {
+			doll_IOP_T2_exo
+			doll_IOP_X2_exo
+			doll_AC2_silencer
+			doll_common_camouflage_cloak
+			doll_Mk3_bore
+			doll_HD50_tripod
+			doll_laboratorial_computing_chip
+		}
+		path = {
+			leads_to_tech = tactical_equipment_accessory2
+			research_cost_coeff = 1
+		}
+		dependencies = {
+			tactical_doll1 = 1
+		}
+		research_cost = 1.5
+		start_year = 1000
+		folder = {
+			name = doll_tech_folder
+			position = { x = 0 y = 6 }
+		}
+
+		categories = {
+			tactical_equipment_accessory
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_accessory2 = {
+		enable_equipment_modules = {
+			doll_IOP_T3_exo
+			doll_IOP_X3_exo
+			doll_AC3_silencer
+			doll_urban_camouflage_cloak
+			doll_Mk4_bore
+			doll_HD50Mk2_tripod
+			doll_first_computing_chip
+			doll_M1050_LRF_perambulator
+			doll_IOP_high_capacity_belt
+		}
+		path = {
+			leads_to_tech = tactical_equipment_accessory3
+			research_cost_coeff = 1
+		}
+		dependencies = {
+			tactical_doll1 = 1
+		}
+		research_cost = 1.5
+		start_year = 1003
+		folder = {
+			name = doll_tech_folder
+			position = { x = 0 y = 12 }
+		}
+
+		categories = {
+			tactical_equipment_accessory
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_equipment_accessory3 = {
+		enable_equipment_modules = {
+			doll_IOP_T4_exo
+			doll_IOP_X4_exo
+			doll_AC4_silencer
+			doll_thermal_optical_camouflage_cloak
+			doll_Mk0_bore
+			doll_HD100_tripod
+			doll_second_computing_chip
+			doll_IOP_ultimate_capacity_belt
+			doll_M200X_LRF_perambulator
+			doll_dedicated_computing_chip
+		}
+		dependencies = {
+			tactical_doll1 = 1
+		}
+		research_cost = 2
+		start_year = 1009
+		folder = {
+			name = doll_tech_folder
+			position = { x = 0 y = 18 }
+		}
+
+		categories = {
+			tactical_equipment_accessory
+			tactical_doll_tech
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

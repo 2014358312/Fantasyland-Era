@@ -1,0 +1,31 @@
+scripted_gui = {
+
+	snqx_combat_information_room_ui = {
+		context_type = decision_category
+		window_name = "snqx_combat_information_room_ui_Window"
+
+		triggers = {
+			#格林娜写书
+			snqx_kalina_working_visible = {
+				OR = {
+					has_country_flag = GAK_making_operational_report
+					has_country_flag = GAK_auto_operational_report
+				}
+			}
+			#格林娜待命
+			snqx_kalina_waiting_visible = {
+				NOT = {
+					has_country_flag = GAK_making_operational_report
+					has_country_flag = GAK_auto_operational_report
+				}
+			}
+		}
+		properties = {
+			battery_progress_var = {
+				frame = GAK_batteries_number_gui_var
+			}
+		}
+
+	}
+}
+

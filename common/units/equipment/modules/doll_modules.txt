@@ -1,0 +1,1340 @@
+equipment_modules = {
+	doll_FMJ_high_velocity = {
+		abbreviation = "fmj"
+		category = doll_high_velocity
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 9
+			hard_attack = 2
+			ap_attack = 6
+			defense = 10
+			breakthrough = 2
+			build_cost_ic = 0.45
+		}
+		xp_cost = 0
+		build_cost_resources = {
+			steel = 1
+		}
+	}
+	doll_JSP_high_velocity = {
+		abbreviation = "jsp"
+		category = doll_high_velocity
+		sfx = sfx_ui_sd_module_engine
+		parent = doll_FMJ_high_velocity
+		add_stats = {
+			soft_attack = 11
+			hard_attack = 3
+			ap_attack = 9
+			defense = 13
+			breakthrough = 4
+			build_cost_ic = 0.6
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 1
+		}
+	}
+	doll_JHP_high_velocity = {
+		abbreviation = "jhp"
+		category = doll_high_velocity
+		sfx = sfx_ui_sd_module_engine
+		parent = doll_JSP_high_velocity
+		add_stats = {
+			soft_attack = 13
+			hard_attack = 5
+			ap_attack = 12
+			defense = 19
+			breakthrough = 6
+			build_cost_ic = 0.75
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 1
+		}
+	}
+	doll_APCR_high_velocity = {
+		abbreviation = "apcr"
+		category = doll_high_velocity
+		sfx = sfx_ui_sd_module_engine
+		parent = doll_JHP_high_velocity
+		add_stats = {
+			soft_attack = 16
+			hard_attack = 7
+			ap_attack = 15
+			defense = 24
+			breakthrough = 9
+			build_cost_ic = 0.98
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 2
+		}
+	}
+	doll_M61_armour_piercing_projectile = {
+		abbreviation = "msap"
+		category = doll_armour_piercing_projectile
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 5
+			hard_attack = 13
+			ap_attack = 55
+			defense = 4
+			breakthrough = 2
+			build_cost_ic = 1.54
+		}
+		xp_cost = 0
+		build_cost_resources = {
+			steel = 1
+		}
+	}
+	doll_M993_armour_piercing_projectile = {
+		abbreviation = "mnap"
+		parent = doll_M61_armour_piercing_projectile
+		category = doll_armour_piercing_projectile
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 6
+			hard_attack = 15
+			ap_attack = 65
+			defense = 6
+			breakthrough = 3
+			build_cost_ic = 2.37
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			tungsten = 1
+			steel = 1
+		}
+	}
+	doll_Mk169_armour_piercing_projectile = {
+		parent = doll_M993_armour_piercing_projectile
+		abbreviation = "moap"
+		category = doll_armour_piercing_projectile
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 8
+			hard_attack = 15
+			ap_attack = 80
+			defense = 10
+			breakthrough = 5
+			build_cost_ic = 2.88
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			tungsten = 1
+			steel = 1
+		}
+	}
+	doll_Mk211_armour_piercing_projectile = {
+		parent = doll_Mk169_armour_piercing_projectile
+		abbreviation = "mtap"
+		category = doll_armour_piercing_projectile
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 10
+			hard_attack = 20
+			ap_attack = 95
+			defense = 11
+			breakthrough = 7
+			build_cost_ic = 3.57
+		}
+		xp_cost = 2
+		build_cost_resources = {
+			tungsten = 1
+			steel = 2
+		}
+	}
+	doll_Mk33_sniper_shells = {
+		abbreviation = "mkss"
+		category = doll_sniper_shells
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 15
+			hard_attack = 8
+			ap_attack = 65
+			defense = 15
+			breakthrough = 2
+			build_cost_ic = 2.64
+		}
+		xp_cost = 2
+		build_cost_resources = {
+			steel = 2
+			tungsten = 1
+		}
+	}
+	doll_M1022_sniper_shells = {
+		parent = doll_Mk33_sniper_shells
+		abbreviation = "moss"
+		category = doll_sniper_shells
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 18
+			hard_attack = 9
+			ap_attack = 80
+			defense = 17
+			breakthrough = 5
+			build_cost_ic = 3.25
+		}
+		xp_cost = 2
+		build_cost_resources = {
+			steel = 2
+			tungsten = 1
+		}
+	}
+	doll_ILMH1_hollow_point = {
+		abbreviation = "iohp"
+		category = doll_hollow_point
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 6
+			hard_attack = 1
+			ap_attack = 2
+			defense = 16
+			breakthrough = 2
+			build_cost_ic = 0.29
+		}
+		xp_cost = 0
+		build_cost_resources = {
+			steel = 1
+		}
+	}
+	doll_ILMH2_hollow_point = {
+		abbreviation = "ithp"
+		parent = doll_ILMH1_hollow_point
+		category = doll_hollow_point
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 8
+			hard_attack = 2
+			ap_attack = 3
+			defense = 20
+			breakthrough = 3
+			build_cost_ic = 0.36
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 1
+		}
+	}
+	doll_ILMH3_hollow_point = {
+		parent = doll_ILMH2_hollow_point
+		abbreviation = "ithp"
+		category = doll_hollow_point
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 10
+			hard_attack = 3
+			ap_attack = 4
+			defense = 24
+			breakthrough = 5
+			build_cost_ic = 0.44
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 1
+		}
+	}
+	doll_ILMH4_hollow_point = {
+		abbreviation = "ifhp"
+		parent = doll_ILMH3_hollow_point
+		category = doll_hollow_point
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 12
+			hard_attack = 5
+			ap_attack = 5
+			defense = 30
+			breakthrough = 8
+			build_cost_ic = 0.55
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 2
+		}
+	}
+	doll_BK_rifled_slug = {
+		abbreviation = "brs"
+		category = doll_rifled_slug
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 3
+			hard_attack = 8
+			ap_attack = 21
+			defense = 18
+			breakthrough = 5
+			build_cost_ic = 1.28
+		}
+		xp_cost = 0
+		build_cost_resources = {
+			steel = 1
+			tungsten = 1
+		}
+	}
+	doll_FST_rifled_slug = {
+		abbreviation = "frs"
+		parent = doll_BK_rifled_slug
+		category = doll_rifled_slug
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 4
+			hard_attack = 10
+			ap_attack = 29
+			defense = 20
+			breakthrough = 7
+			build_cost_ic = 1.62
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 1
+			tungsten = 1
+		}
+	}
+	doll_WAD_rifled_slug = {
+		abbreviation = "wrs"
+		parent = doll_FST_rifled_slug
+		category = doll_rifled_slug
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 5
+			hard_attack = 12
+			ap_attack = 37
+			defense = 22
+			breakthrough = 9
+			build_cost_ic = 2.07
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 2
+			tungsten = 1
+		}
+	}
+	doll_SABOT_rifled_slug = {
+		abbreviation = "srs"
+		parent = doll_WAD_rifled_slug
+		category = doll_rifled_slug
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 7
+			hard_attack = 14
+			ap_attack = 42
+			defense = 24
+			breakthrough = 11
+			build_cost_ic = 2.45
+		}
+		xp_cost = 2
+		build_cost_resources = {
+			steel = 2
+			tungsten = 1
+		}
+	}
+	doll_1_buckshot = {
+		abbreviation = "obs"
+		category = doll_buckshot
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 7
+			hard_attack = 2
+			ap_attack = 5
+			defense = 21
+			breakthrough = 3
+			build_cost_ic = 0.58
+		}
+		xp_cost = 0
+		build_cost_resources = {
+			steel = 1
+		}
+	}
+	doll_0_buckshot = {
+		abbreviation = "zbs"
+		parent = doll_1_buckshot
+		category = doll_buckshot
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 9
+			hard_attack = 3
+			ap_attack = 8
+			defense = 28
+			breakthrough = 5
+			build_cost_ic = 0.72
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 1
+		}
+	}
+	doll_00_buckshot = {
+		abbreviation = "zzbs"
+		parent = doll_0_buckshot
+		category = doll_buckshot
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 11
+			hard_attack = 5
+			ap_attack = 10
+			defense = 32
+			breakthrough = 7
+			build_cost_ic = 0.84
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 2
+		}
+	}
+	doll_000_buckshot = {
+		abbreviation = "zzzbs"
+		parent = doll_00_buckshot
+		category = doll_buckshot
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 13
+			hard_attack = 7
+			ap_attack = 12
+			defense = 35
+			breakthrough = 9
+			build_cost_ic = 0.97
+		}
+		xp_cost = 2
+		build_cost_resources = {
+			steel = 2
+		}
+	}
+	doll_IOP_X1_exo = {
+		abbreviation = "xoe"
+		category = doll_x_exo
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			armor_value = 2
+		}
+		multiply_stats = {
+			maximum_speed = 0.05
+			defense = 0.05
+			breakthrough = 0.05
+			build_cost_ic = 0.1
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 1
+			aluminium = 1
+		}
+	}
+	doll_IOP_X2_exo = {
+		abbreviation = "xte"
+		parent = doll_IOP_X1_exo
+		category = doll_x_exo
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			armor_value = 3
+			reliability = 0.05
+		}
+		multiply_stats = {
+			maximum_speed = 0.05
+			defense = 0.1
+			breakthrough = 0.05
+			build_cost_ic = 0.1
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 1
+			aluminium = 1
+		}
+	}
+	doll_IOP_X3_exo = {
+		abbreviation = "xthe"
+		parent = doll_IOP_X2_exo
+		category = doll_x_exo
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			armor_value = 4
+			reliability = 0.1
+		}
+		multiply_stats = {
+			maximum_speed = 0.1
+			defense = 0.1
+			breakthrough = 0.05
+			build_cost_ic = 0.1
+		}
+		xp_cost = 2
+		build_cost_resources = {
+			steel = 1
+			aluminium = 1
+		}
+	}
+	doll_IOP_X4_exo = {
+		abbreviation = "xfe"
+		parent = doll_IOP_X3_exo
+		category = doll_x_exo
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			armor_value = 5
+			reliability = 0.15
+		}
+		multiply_stats = {
+			maximum_speed = 0.15
+			defense = 0.1
+			breakthrough = 0.1
+			build_cost_ic = 0.15
+		}
+		xp_cost = 2
+		build_cost_resources = {
+			steel = 1
+			aluminium = 1
+		}
+	}
+	doll_IOP_T1_exo = {
+		abbreviation = "toe"
+		category = doll_t_exo
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			armor_value = 5
+			hardness = 0.05
+		}
+		multiply_stats = {
+			maximum_speed = -0.15
+			breakthrough = 0.25
+			defense = 0.05
+			build_cost_ic = 0.1
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 1
+			chromium = 1
+		}
+	}
+	doll_IOP_T2_exo = {
+		abbreviation = "tte"
+		parent = doll_IOP_T1_exo
+		category = doll_t_exo
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			armor_value = 7
+			hardness = 0.05
+		}
+		multiply_stats = {
+			maximum_speed = -0.15
+			breakthrough = 0.3
+			defense = 0.1
+			build_cost_ic = 0.15
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 1
+			chromium = 1
+		}
+	}
+	doll_IOP_T3_exo = {
+		abbreviation = "tthe"
+		parent = doll_IOP_T2_exo
+		category = doll_t_exo
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			armor_value = 9
+			hardness = 0.1
+		}
+		multiply_stats = {
+			maximum_speed = -0.15
+			breakthrough = 0.4
+			defense = 0.15
+			build_cost_ic = 0.2
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 1
+			chromium = 1
+		}
+	}
+	doll_IOP_T4_exo = {
+		abbreviation = "tfe"
+		parent = doll_IOP_T3_exo
+		category = doll_t_exo
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			armor_value = 12
+			hardness = 0.1
+		}
+		multiply_stats = {
+			maximum_speed = -0.15
+			breakthrough = 0.5
+			defense = 0.15
+			build_cost_ic = 0.25
+		}
+		xp_cost = 2
+		build_cost_resources = {
+			steel = 2
+			chromium = 1
+		}
+	}
+	doll_AC1_silencer = {
+		abbreviation = "aos"
+		category = doll_silencer
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			reliability = -0.05
+			breakthrough = 1
+			defense = 1
+			build_cost_ic = 0.1
+		}
+		xp_cost = 1
+	}
+	doll_AC2_silencer = {
+		abbreviation = "ats"
+		parent = doll_AC1_silencer
+		category = doll_silencer
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			reliability = -0.05
+			breakthrough = 1
+			defense = 2
+			build_cost_ic = 0.15
+		}
+		xp_cost = 1
+	}
+	doll_AC3_silencer = {
+		abbreviation = "aths"
+		parent = doll_AC2_silencer
+		category = doll_silencer
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			reliability = -0.05
+			breakthrough = 2
+			defense = 2
+			build_cost_ic = 0.25
+		}
+		xp_cost = 1
+	}
+	doll_AC4_silencer = {
+		abbreviation = "afs"
+		parent = doll_AC3_silencer
+		category = doll_silencer
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			reliability = -0.05
+			soft_attack = 1
+			breakthrough = 2
+			defense = 2
+			build_cost_ic = 0.4
+		}
+		xp_cost = 2
+	}
+	doll_BM_optical_sight = {
+		abbreviation = "bos"
+		category = doll_optical_sight
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			recon = 0.1
+			build_cost_ic = 0.15
+			reliability = -0.1
+		}
+		multiply_stats = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			defense = -0.2
+			breakthrough = -0.25
+		}
+		xp_cost = 1
+	}
+	doll_LRA_optical_sight = {
+		abbreviation = "los"
+		category = doll_optical_sight
+		parent = doll_BM_optical_sight
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			recon = 0.1
+			build_cost_ic = 0.2
+			reliability = -0.15
+		}
+		multiply_stats = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			defense = -0.15
+			breakthrough = -0.2
+		}
+		xp_cost = 1
+	}
+	doll_PSO_optical_sight = {
+		abbreviation = "pos"
+		category = doll_optical_sight
+		parent = doll_LRA_optical_sight
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			recon = 0.2
+			build_cost_ic = 0.3
+			reliability = -0.1
+		}
+		multiply_stats = {
+			soft_attack = 0.1
+			hard_attack = 0.05
+			defense = -0.1
+			breakthrough = -0.15
+		}
+		xp_cost = 1
+	}
+	doll_VFL_optical_sight = {
+		abbreviation = "vos"
+		category = doll_optical_sight
+		parent = doll_PSO_optical_sight
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			build_cost_ic = 0.4
+			recon = 0.2
+			reliability = -0.1
+		}
+		multiply_stats = {
+			soft_attack = 0.15
+			hard_attack = 0.05
+			defense = -0.1
+			breakthrough = -0.15
+		}
+		xp_cost = 1
+	}
+	doll_EOT506_holographic_sight = {
+		abbreviation = "e506hs"
+		category = doll_holographic_sight
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			build_cost_ic = 0.25
+			reliability = -0.15
+		}
+		multiply_stats = {
+			soft_attack = 0.02
+			defense = 0.05
+			breakthrough = 0.15
+		}
+		xp_cost = 1
+	}
+	doll_EOT512_holographic_sight = {
+		abbreviation = "e512hs"
+		parent = doll_EOT506_holographic_sight
+		category = doll_holographic_sight
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			build_cost_ic = 0.5
+			reliability = -0.15
+		}
+		multiply_stats = {
+			soft_attack = 0.02
+			defense = 0.05
+			breakthrough = 0.3
+		}
+		xp_cost = 1
+	}
+	doll_EOT516_holographic_sight = {
+		abbreviation = "e516hs"
+		parent = doll_EOT512_holographic_sight
+		category = doll_holographic_sight
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			build_cost_ic = 0.75
+			reliability = -0.15
+		}
+		multiply_stats = {
+			soft_attack = 0.05
+			defense = 0.05
+			breakthrough = 0.45
+		}
+		xp_cost = 1
+	}
+	doll_EOT518_holographic_sight = {
+		abbreviation = "e518hs"
+		parent = doll_EOT516_holographic_sight
+		category = doll_holographic_sight
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			build_cost_ic = 1.0
+			reliability = -0.1
+		}
+		multiply_stats = {
+			soft_attack = 0.05
+			defense = 0.05
+			breakthrough = 0.6
+		}
+		xp_cost = 1
+	}
+	doll_AMP_COMPM2_riflescope = {
+		abbreviation = "ac2r"
+		category = doll_riflescope
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {	
+			build_cost_ic = 0.15
+			reliability = -0.1
+			suppression = 0.5
+		}
+		multiply_stats = {
+			defense = 0.1
+			breakthrough = 0.05
+		}
+		xp_cost = 1
+	}
+	doll_AMP_COMPM4_riflescope = {
+		abbreviation = "ac4r"
+		category = doll_riflescope
+		parent = doll_AMP_COMPM2_riflescope
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {	
+			build_cost_ic = 0.3
+			reliability = -0.1
+			suppression = 1.0
+		}
+		multiply_stats = {
+			defense = 0.2
+			breakthrough = 0.05
+		}
+		xp_cost = 1
+	}
+	doll_COG_M150_riflescope = {
+		abbreviation = "cmr"
+		category = doll_riflescope
+		parent = doll_AMP_COMPM4_riflescope
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {	
+			build_cost_ic = 0.45
+			reliability = -0.1
+			suppression = 1.5
+		}
+		multiply_stats = {
+			defense = 0.3
+			breakthrough = 0.05
+		}
+		xp_cost = 1
+	}
+	doll_ITI_MARS_riflescope = {
+		abbreviation = "imr"
+		category = doll_riflescope
+		parent = doll_COG_M150_riflescope
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {	
+			build_cost_ic = 0.6
+			reliability = -0.1
+			suppression = 2.0
+		}
+		multiply_stats = {
+			defense = 0.4
+			breakthrough = 0.1
+		}
+		xp_cost = 1
+	}
+	doll_RMR_spare_sight = {
+		abbreviation = "rss"
+		category = doll_spare_sight
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			build_cost_ic = 0.1
+			reliability = -0.05
+		}
+		multiply_stats = {
+			defense = 0.05
+			breakthrough = 0.1
+		}
+		xp_cost = 1
+	}
+	doll_RMR_T2_spare_sight = {
+		abbreviation = "rtss"
+		parent = doll_RMR_spare_sight
+		category = doll_spare_sight
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			build_cost_ic = 0.2
+			reliability = -0.05
+		}
+		multiply_stats = {
+			defense = 0.1
+			breakthrough = 0.15
+		}
+		xp_cost = 1
+	}
+	doll_RMR_T4_spare_sight = {
+		abbreviation = "rfss"
+		parent = doll_RMR_spare_sight
+		category = doll_spare_sight
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			build_cost_ic = 0.15
+			reliability = -0.05
+		}
+		multiply_stats = {
+			defense = 0.15
+			breakthrough = 0.2
+		}
+		xp_cost = 1
+	}
+	doll_6_birdshot = {
+		abbreviation = "d6b"
+		category = doll_birdshot
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			soft_attack = 11
+			hard_attack = 2
+			ap_attack = 7
+			defense = 25
+			breakthrough = 3
+			build_cost_ic = 0.53
+		}
+		xp_cost = 2
+		build_cost_resources = {
+			steel = 2
+		}
+	}
+	doll_7_birdshot = {
+		abbreviation = "d7b"
+		category = doll_birdshot
+		parent = doll_6_birdshot
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			soft_attack = 14
+			hard_attack = 3
+			ap_attack = 9
+			defense = 27
+			breakthrough = 4
+			build_cost_ic = 0.64
+		}
+		xp_cost = 2
+		build_cost_resources = {
+			steel = 2
+		}
+	}
+	doll_laboratorial_special_armour_piercing_projectile = {
+		abbreviation = "labsap"
+		category = doll_special_armour_piercing_projectile
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 7
+			hard_attack = 15
+			air_attack = 10
+			ap_attack = 200
+			defense = 8
+			breakthrough = 2
+			build_cost_ic = 4.77
+			reliability = -0.15
+		}
+		xp_cost = 2
+		build_cost_resources = {
+			steel = 1
+			tungsten = 1
+		}
+	}
+	doll_Mk900slap_special_armour_piercing_projectile = {
+		abbreviation = "mnsap"
+		category = doll_special_armour_piercing_projectile
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 12
+			hard_attack = 22
+			air_attack = 15
+			ap_attack = 250
+			defense = 10
+			breakthrough = 5
+			build_cost_ic = 4.85
+			reliability = -0.1
+		}
+		xp_cost = 2
+		build_cost_resources = {
+			steel = 2
+			tungsten = 1
+		}
+	}
+	doll_Mk1000slap_special_armour_piercing_projectile = {
+		abbreviation = "mtsap"
+		parent = doll_Mk900slap_special_armour_piercing_projectile
+		category = doll_special_armour_piercing_projectile
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			soft_attack = 14
+			hard_attack = 24
+			air_attack = 20
+			ap_attack = 300
+			defense = 12
+			breakthrough = 8
+			build_cost_ic = 5.76
+			reliability = -0.15
+		}
+		xp_cost = 2
+		build_cost_resources = {
+			steel = 2
+			tungsten = 2
+		}
+	}
+	doll_laboratorial_computing_chip = {
+		abbreviation = "lcc"
+		category = doll_computing_chip
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			build_cost_ic = 0.15
+			reliability = -0.1
+			supply_consumption = -0.02
+		}
+		multiply_stats = {
+			maximum_speed = 0.05
+			defense = 0.05
+			breakthrough = 0.05
+		}
+		xp_cost = 2
+	}
+	doll_first_computing_chip = {
+		abbreviation = "fcc"
+		parent = doll_laboratorial_computing_chip
+		category = doll_computing_chip
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			build_cost_ic = 0.25
+			reliability = -0.1
+			supply_consumption = -0.03
+		}
+		multiply_stats = {
+			maximum_speed = 0.1
+			defense = 0.05
+			breakthrough = 0.05
+		}
+		xp_cost = 2
+	}
+	doll_second_computing_chip = {
+		abbreviation = "scc"
+		parent = doll_first_computing_chip
+		category = doll_computing_chip
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			build_cost_ic = 0.35
+			reliability = -0.1
+			supply_consumption = -0.04
+		}
+		multiply_stats = {
+			maximum_speed = 0.15
+			defense = 0.1
+			breakthrough = 0.05
+		}
+		xp_cost = 2
+	}
+	doll_dedicated_computing_chip = {
+		abbreviation = "dcc"
+		category = doll_computing_chip
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			reliability = -0.1
+		}
+		multiply_stats = {
+			maximum_speed = 0.15
+			soft_attack = 0.1
+			breakthrough = 0.15
+			supply_consumption = 0.2
+			build_cost_ic = 0.2
+		}
+		xp_cost = 5
+	}
+	doll_type1_bulletproof = {
+		abbreviation = "tob"
+		category = doll_bulletproof
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			defense = 2
+			breakthrough = 12
+			armor_value = 5
+		}
+		multiply_stats = {
+			armor_value = 0.15
+			build_cost_ic = 0.25
+			breakthrough = 0.3
+			defense = 0.1
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 1
+		}
+	}
+	doll_type2_bulletproof = {
+		abbreviation = "ttb"
+		parent = doll_type1_bulletproof
+		category = doll_bulletproof
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			defense = 3
+			breakthrough = 14
+			armor_value = 8
+			hardness = 0.05
+			reliability = -0.1
+		}
+		multiply_stats = {
+			armor_value = 0.25
+			build_cost_ic = 0.35
+			breakthrough = 0.4
+			defense = 0.15
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 1
+			chromium = 1
+		}
+	}
+	doll_type3_bulletproof = {
+		abbreviation = "tthb"
+		parent = doll_type2_bulletproof
+		category = doll_bulletproof
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			defense = 4
+			breakthrough = 16
+			armor_value = 10
+			hardness = 0.1
+			reliability = -0.05
+		}
+		multiply_stats = {
+			armor_value = 0.35
+			build_cost_ic = 0.5
+			breakthrough = 0.45
+			defense = 0.2
+		}
+		xp_cost = 1
+		build_cost_resources = {
+			steel = 1
+			chromium = 1
+		}
+	}
+	doll_IOP_high_capacity_belt = {
+		abbreviation = "ihb"
+		category = doll_belt
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			defense = 5
+			breakthrough = 2
+			suppression = 0.5
+			build_cost_ic = 0.8
+			reliability = -0.1
+		}
+		multiply_stats = {
+			soft_attack = 0.2
+			hard_attack = 0.2
+			supply_consumption = 0.15
+		}
+		xp_cost = 2
+	}
+	doll_IOP_ultimate_capacity_belt = {
+		abbreviation = "iub"
+		parent = doll_IOP_high_capacity_belt
+		category = doll_belt
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			defense = 8
+			breakthrough = 4
+			suppression = 0.8
+			build_cost_ic = 1.2
+			reliability = -0.1
+		}
+		multiply_stats = {
+			soft_attack = 0.3
+			hard_attack = 0.3
+			supply_consumption = 0.15
+		}
+		xp_cost = 2
+	}
+	doll_tattered_camouflage_cloak = {
+		abbreviation = "tcc"
+		category = doll_camouflage_cloak
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			defense = 1
+			breakthrough = 0.5
+			recon = 0.1
+			reliability = -0.05
+			build_cost_ic = 0.2
+		}
+	}
+	doll_common_camouflage_cloak = {
+		abbreviation = "ccc"
+		parent = doll_tattered_camouflage_cloak
+		category = doll_camouflage_cloak
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			defense = 1.5
+			breakthrough = 1
+			recon = 0.1
+			reliability = -0.05
+			build_cost_ic = 0.25
+		}
+	}
+	doll_urban_camouflage_cloak = {
+		abbreviation = "ucc"
+		parent = doll_common_camouflage_cloak
+		category = doll_camouflage_cloak
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			defense = 2
+			breakthrough = 1.5
+			recon = 0.1
+			reliability = -0.05
+			build_cost_ic = 0.3
+		}
+	}
+	doll_thermal_optical_camouflage_cloak = {
+		abbreviation = "tocc"
+		parent = doll_urban_camouflage_cloak
+		category = doll_camouflage_cloak
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			defense = 2.5
+			breakthrough = 1.5
+			recon = 0.15
+			reliability = -0.05
+			build_cost_ic = 0.35
+		}
+	}
+	doll_Mk3_bore = {
+		abbreviation = "mtb"
+		category = doll_bore
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			breakthrough = 0.5
+			defense = 1
+			reliability = -0.1
+		}
+		multiply_stats = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			ap_attack = 0.2
+			build_cost_ic = 0.05
+		}
+		xp_cost = 2
+	}
+	doll_Mk4_bore = {
+		abbreviation = "mfb"
+		parent = doll_Mk3_bore
+		category = doll_bore
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			breakthrough = 1
+			defense = 2
+			reliability = -0.1
+		}
+		multiply_stats = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			ap_attack = 0.2
+			build_cost_ic = 0.08
+		}
+		xp_cost = 2
+	}
+	doll_Mk0_bore = {
+		abbreviation = "mzb"
+		parent = doll_Mk4_bore
+		category = doll_bore
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			breakthrough = 1
+			defense = 2
+			reliability = -0.05
+		}
+		multiply_stats = {
+			soft_attack = 0.08
+			hard_attack = 0.08
+			ap_attack = 0.25
+			build_cost_ic = 0.1
+		}
+		xp_cost = 2
+	}
+	doll_sg_flash = {
+		abbreviation = "dsf"
+		category = doll_flash
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			defense = 4
+			breakthrough = 2
+			suppression = 0.5
+			build_cost_ic = 0.2
+			reliability = -0.05
+		}
+		multiply_stats = {
+			soft_attack = -0.05
+			hard_attack = -0.05
+		}
+	}
+	doll_M1050_LRF_perambulator = {
+		abbreviation = "mpb"
+		category = doll_perambulator
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			recon = 0.1
+			defense = 2
+			breakthrough = 1
+			build_cost_ic = 0.1
+			reliability = -0.1
+		}
+		xp_cost = 1
+	}
+	doll_M200X_LRF_perambulator = {
+		abbreviation = "mxpb"
+		parent = doll_M1050_LRF_perambulator
+		category = doll_perambulator
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			recon = 0.2
+			defense = 3
+			breakthrough = 1.5
+			reliability = -0.1
+			build_cost_ic = 0.2
+		}
+		xp_cost = 1
+	}
+	doll_HD50_tripod = {
+		abbreviation = "H50t"
+		category = doll_tripod
+		sfx = sfx_ui_sd_module_engine
+		multiply_stats = {
+			defense = 0.05
+			breakthrough = 0.05
+			build_cost_ic = 0.05
+		}
+		xp_cost = 1
+	}
+	doll_HD50Mk2_tripod = {
+		abbreviation = "H50m"
+		parent = doll_HD50_tripod
+		category = doll_tripod
+		sfx = sfx_ui_sd_module_engine
+		multiply_stats = {
+			defense = 0.1
+			breakthrough = 0.1
+			build_cost_ic = 0.1
+		}
+		xp_cost = 1
+	}
+	doll_HD100_tripod = {
+		abbreviation = "H100t"
+		parent = doll_HD50Mk2_tripod
+		category = doll_tripod
+		sfx = sfx_ui_sd_module_engine
+		multiply_stats = {
+			defense = 0.15
+			breakthrough = 0.15
+			build_cost_ic = 0.1
+		}
+		xp_cost = 1
+	}
+	doll_hg_signal_flare = {
+		abbreviation = "hsf"
+		category = doll_signal_flare
+		sfx = sfx_ui_sd_module_engine
+		add_stats = {
+			recon = 0.1
+			defense = 2
+			breakthrough = 0.5
+			reliability = -0.05
+			build_cost_ic = 0.15
+		}
+		xp_cost = 1
+	}
+	doll_fire_control_component = {
+		abbreviation = "dfcc"
+		category = fire_control_component
+		sfx = sfx_ui_sd_module_engine
+		multiply_stats = {
+			soft_attack = 0.3
+			hard_attack = 0.3
+			defense = 0.2
+			breakthrough = 0.15
+			supply_consumption = 0.2
+			build_cost_ic = 0.35
+		}
+		xp_cost = 5
+		build_cost_resources = {
+			steel = 1
+			tungsten = 1
+			chromium = 1
+		}
+	}
+}

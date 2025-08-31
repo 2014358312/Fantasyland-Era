@@ -1,0 +1,174 @@
+﻿add_namespace = griffin
+add_namespace = griffin_commander
+#格里芬基地选址
+country_event = {
+	id = griffin.1
+	title = griffin.1.t
+	desc = griffin.1.d
+	fire_only_once = no
+	is_triggered_only = yes
+	timeout_days = 10
+	picture = GFX_report_event_gak_chose_adress
+	option = {
+		name = griffin.1.a
+		random_owned_controlled_state = {
+			limit = {
+				is_capital = yes
+			}
+			set_state_flag = GAK_griffin_base
+			custom_effect_tooltip = griffin_1_tt
+		}	
+		
+	}
+	option = {
+		name = griffin.1.b
+		trigger = {
+			any_core_state = {
+				is_owned_and_controlled_by = ROOT
+				is_capital = no
+				OR = {
+					has_state_category = megalopolis
+					has_state_category = metropolis
+				}
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				OR = {
+					has_state_category = megalopolis
+					has_state_category = metropolis
+				}
+				is_capital = no
+			}
+			set_state_flag = GAK_griffin_base
+			custom_effect_tooltip = griffin_1_tt
+		}
+		
+	}
+}
+#格里芬基地陷落
+country_event = {
+	id = griffin.2
+	title = griffin.2.t
+	desc = griffin.2.d
+	timeout_days = 10
+	picture = GFX_report_event_base_fall
+	mean_time_to_happen = { days = 20 }
+	trigger = {
+		has_country_flag = GAK_flag
+		all_controlled_state = {
+			NOT = {
+				has_state_flag = GAK_griffin_base
+			}
+		}
+		NOT = { has_country_flag = GAK_base_fall }
+		check_variable = {
+    		GAK_expand > 0
+    	}
+	}
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				limit = { has_state_flag = GAK_griffin_base }
+				set_state_flag = GAK_base_fall_state 
+			}
+		}
+	}
+	option = {
+		name = griffin.2.a	
+		set_country_flag = GAK_base_fall
+		remove_dynamic_modifier = {
+			modifier = GAK_tactical_doll_army
+		}
+		hidden_effect = {
+			every_country = {
+				every_controlled_state = {
+					limit = {
+						has_state_flag = GAK_griffin_base
+						has_state_flag = GAK_base_fall_state
+					}
+					remove_dynamic_modifier = {
+						modifier = GAK_doll_barracks
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = griffin.2.a_tt
+	}
+}
+
+country_event = {
+	id = griffin.4
+	title = griffin.4.t
+	desc = griffin.4.d
+	timeout_days = 10
+	picture = GFX_report_event_digi_mind
+	is_triggered_only = yes
+	option = {
+		name = griffin.4.o.a	
+		set_country_flag = GAK_synthsis_steel
+	}
+	option = {
+		name = griffin.4.o.b
+		set_country_flag = GAK_synthsis_aluminium
+	}
+	option = {
+		name = griffin.4.o.c
+		set_country_flag = GAK_synthsis_tungsten
+	}
+	option = {
+		name = griffin.4.o.d
+		set_country_flag = GAK_synthsis_chromium
+	}
+}
+#人形建造
+unit_leader_event = {
+	id = griffin_commander.1
+	title = griffin_commander.1.t
+	desc = griffin_commander.1.d
+	fire_only_once = no
+	is_triggered_only = yes
+	timeout_days = 10
+	option = {
+		name = griffin_commander.1.a
+		hidden_effect = {
+			PREV = { remove_unit_leader_trait = GAK_NOT_FOUND }
+		}
+	}
+}
+#心智升级（416）
+unit_leader_event = {
+	id = griffin_commander.2
+	title = griffin_commander.2.t
+	desc = griffin_commander.2.d
+	fire_only_once = no
+	is_triggered_only = yes
+	timeout_days = 10
+	option = {
+		name = griffin_commander.2.a
+		hidden_effect = {
+			PREV = {
+				add_unit_leader_trait = Digi_mind_update
+				add_unit_leader_trait = mod_skill_HK
+			}
+		}
+	}
+}
+#心智升级
+unit_leader_event = {
+	id = griffin_commander.3
+	title = griffin_commander.3.t
+	desc = griffin_commander.3.d
+	fire_only_once = no
+	is_triggered_only = yes
+	timeout_days = 10
+	option = {
+		name = griffin_commander.3.a
+		hidden_effect = {
+			PREV = {
+				add_unit_leader_trait = Digi_mind_update
+				clr_unit_leader_flag = GAK_leader_digi_mind_update
+			}
+		}
+	}
+}

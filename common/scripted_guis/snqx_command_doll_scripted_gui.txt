@@ -1,0 +1,3579 @@
+scripted_gui = {
+
+	Tactical_tablet_ui = {
+		context_type = player_context
+		window_name = "Tactical_tablet_ui_Window"
+		visible = {
+			has_country_flag = GAK_open_Tactical_tablet_flag
+		}
+		effects = {
+			close_button_click = {
+				clr_country_flag = GAK_open_Tactical_tablet_flag
+			}
+			#HK416
+			HK416_mod_tab_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_HK416
+					}
+					set_unit_leader_flag = GAK_leader_digi_mind_update
+				}
+				mod_tab_click_effect = yes
+				set_portraits = {
+					character = GAK_HK416
+					army = { large = "GFX_portrait_gak_HK416_mod" }
+				}
+			}
+			HK416_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_HK416 }
+					}
+					set_country_flag = open_awarding_medals_HK416
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_HK416
+				}
+			}
+			HK416_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_HK416
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_HK416
+			}
+			HK416_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_HK416
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_HK416
+			}
+			HK416_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_HK416
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_HK416
+			}
+			HK416_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_HK416
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_HK416
+			}
+			#G3
+			G3_mod_tab_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_G3
+					}
+					set_unit_leader_flag = GAK_leader_digi_mind_update
+				}
+				mod_tab_click_effect = yes
+				set_portraits = {
+					character = GAK_G3
+					army = { large = "GFX_portrait_gak_G3_mod" }
+				}
+			}
+			G3_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_G3 }
+					}
+					set_country_flag = open_awarding_medals_G3
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_G3
+				}
+			}
+			G3_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_G3
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_G3
+			}
+			G3_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_G3
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_G3
+			}
+			G3_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_G3
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_G3
+			}
+			G3_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_G3
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_G3
+			}
+			#NTW
+			NTW_mod_tab_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_NTW
+					}
+					set_unit_leader_flag = GAK_leader_digi_mind_update
+				}
+				mod_tab_click_effect = yes
+				set_portraits = {
+					character = GAK_NTW
+					army = { large = "GFX_portrait_gak_NTW_mod" }
+				}
+			}
+			NTW_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_NTW }
+					}
+					set_country_flag = open_awarding_medals_NTW
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_NTW
+				}
+			}
+			NTW_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_NTW
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_NTW
+			}
+			NTW_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_NTW
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_NTW
+			}
+			NTW_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_NTW
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_NTW
+			}
+			NTW_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_NTW
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_NTW
+			}
+			#Thompson
+			Thompson_mod_tab_click = {
+				
+			}
+			Thompson_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_Thompson }
+					}
+					set_country_flag = open_awarding_medals_Thompson
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_Thompson
+				}
+			}
+			Thompson_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_Thompson
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_Thompson
+			}
+			Thompson_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_Thompson
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_Thompson
+			}
+			Thompson_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_Thompson
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_Thompson
+			}
+			Thompson_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_Thompson
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_Thompson
+			}
+			#维尔德
+			Welrod_mod_tab_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_Welrod
+					}
+					set_unit_leader_flag = GAK_leader_digi_mind_update
+				}
+				mod_tab_click_effect = yes
+				set_portraits = {
+					character = GAK_Welrod
+					army = { large = "GFX_portrait_gak_Welrod_mod" }
+				}
+			}
+			Welrod_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_Welrod }
+					}
+					set_country_flag = open_awarding_medals_Welrod
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_Welrod
+				}
+			}
+			Welrod_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_Welrod
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_Welrod
+			}
+			Welrod_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_Welrod
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_Welrod
+			}
+			Welrod_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_Welrod
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_Welrod
+			}
+			Welrod_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_Welrod
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_Welrod
+			}
+			#莫辛纳甘
+			m1891_mod_tab_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_m1891
+					}
+					set_unit_leader_flag = GAK_leader_digi_mind_update
+				}
+				mod_tab_click_effect = yes
+				set_portraits = {
+					character = GAK_m1891
+					army = { large = "GFX_portrait_gak_m1891_mod" }
+				}
+			}
+			m1891_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_m1891 }
+					}
+					set_country_flag = open_awarding_medals_m1891
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_m1891
+				}
+			}
+			m1891_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_m1891
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_m1891
+			}
+			m1891_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_m1891
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_m1891
+			}
+			m1891_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_m1891
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_m1891
+			}
+			m1891_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_m1891
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_m1891
+			}
+			#kar98k
+			kar98k_mod_tab_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_kar98k
+					}
+					set_unit_leader_flag = GAK_leader_digi_mind_update
+				}
+				mod_tab_click_effect = yes
+				set_portraits = {
+					character = GAK_kar98k
+					army = { large = "GFX_portrait_gak_kar98k_mod" }
+				}
+			}
+			kar98k_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_kar98k }
+					}
+					set_country_flag = open_awarding_medals_kar98k
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_kar98k
+				}
+			}
+			kar98k_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_kar98k
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_kar98k
+			}
+			kar98k_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_kar98k
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_kar98k
+			}
+			kar98k_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_kar98k
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_kar98k
+			}
+			kar98k_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_kar98k
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_kar98k
+			}
+			#AA12
+			AA12_mod_tab_click = {
+				
+			}
+			AA12_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_AA12 }
+					}
+					set_country_flag = open_awarding_medals_AA12
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_AA12
+				}
+			}
+			AA12_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_AA12
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_AA12
+			}
+			AA12_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_AA12
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_AA12
+			}
+			AA12_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_AA12
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_AA12
+			}
+			AA12_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_AA12
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_AA12
+			}
+			#马提尼亨利
+			MartiniHenry_mod_tab_click = {
+				
+			}
+			MartiniHenry_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_MartiniHenry }
+					}
+					set_country_flag = open_awarding_medals_MartiniHenry
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_MartiniHenry
+				}
+			}
+			MartiniHenry_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_MartiniHenry
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_MartiniHenry
+			}
+			MartiniHenry_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_MartiniHenry
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_MartiniHenry
+			}
+			MartiniHenry_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_MartiniHenry
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_MartiniHenry
+			}
+			MartiniHenry_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_MartiniHenry
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_MartiniHenry
+			}
+			#RO635
+			RO635_mod_tab_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_RO635
+					}
+					set_unit_leader_flag = GAK_leader_digi_mind_update
+				}
+				mod_tab_click_effect = yes
+				set_portraits = {
+					character = GAK_RO635
+					army = { large = "GFX_portrait_gak_RO635_mod" }
+				}
+			}
+			RO635_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_RO635 }
+					}
+					set_country_flag = open_awarding_medals_RO635
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_RO635
+				}
+			}
+			RO635_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_RO635
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_RO635
+			}
+			RO635_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_RO635
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_RO635
+			}
+			RO635_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_RO635
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_RO635
+			}
+			RO635_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_RO635
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_RO635
+			}
+			#蜂鸟
+			kolibri_mod_tab_click = {
+				
+			}
+			kolibri_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_kolibri }
+					}
+					set_country_flag = open_awarding_medals_kolibri
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_kolibri
+				}
+			}
+			kolibri_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_kolibri
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_kolibri
+			}
+			kolibri_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_kolibri
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_kolibri
+			}
+			kolibri_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_kolibri
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_kolibri
+			}
+			kolibri_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_kolibri
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_kolibri
+			}
+			#MG4
+			mg4_mod_tab_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_mg4
+					}
+					set_unit_leader_flag = GAK_leader_digi_mind_update
+				}
+				mod_tab_click_effect = yes
+				set_portraits = {
+					character = GAK_mg4
+					army = { large = "GFX_portrait_gak_mg4_mod" }
+				}
+			}
+			mg4_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_mg4 }
+					}
+					set_country_flag = open_awarding_medals_mg4
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_mg4
+				}
+			}
+			mg4_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_mg4
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_mg4
+			}
+			mg4_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_mg4
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_mg4
+			}
+			mg4_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_mg4
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_mg4
+			}
+			mg4_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_mg4
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_mg4
+			}
+			#李恩菲尔德
+			MLEMK1_mod_tab_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_MLEMK1
+					}
+					set_unit_leader_flag = GAK_leader_digi_mind_update
+				}
+				mod_tab_click_effect = yes
+				set_portraits = {
+					character = GAK_MLEMK1
+					army = { large = "GFX_portrait_gak_MLEMK1_mod" }
+				}
+			}
+			MLEMK1_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_MLEMK1 }
+					}
+					set_country_flag = open_awarding_medals_MLEMK1
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_MLEMK1
+				}
+			}
+			MLEMK1_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_MLEMK1
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_MLEMK1
+			}
+			MLEMK1_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_MLEMK1
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_MLEMK1
+			}
+			MLEMK1_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_MLEMK1
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_MLEMK1
+			}
+			MLEMK1_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_MLEMK1
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_MLEMK1
+			}
+			#iws2000
+			iws2000_mod_tab_click = {
+				
+			}
+			iws2000_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_iws2000 }
+					}
+					set_country_flag = open_awarding_medals_iws2000
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_iws2000
+				}
+			}
+			iws2000_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_iws2000
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_iws2000
+			}
+			iws2000_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_iws2000
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_iws2000
+			}
+			iws2000_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_iws2000
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_iws2000
+			}
+			iws2000_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_iws2000
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_iws2000
+			}
+			#Mk23
+			mk23_mod_tab_click = {
+				
+			}
+			mk23_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_mk23 }
+					}
+					set_country_flag = open_awarding_medals_mk23
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_mk23
+				}
+			}
+			mk23_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_mk23
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_mk23
+			}
+			mk23_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_mk23
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_mk23
+			}
+			mk23_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_mk23
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_mk23
+			}
+			mk23_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_mk23
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_mk23
+			}
+			#斯捷奇金
+			aps_mod_tab_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_aps
+					}
+					set_unit_leader_flag = GAK_leader_digi_mind_update
+				}
+				mod_tab_click_effect = yes
+				set_portraits = {
+					character = GAK_aps
+					army = { large = "GFX_portrait_gak_aps_mod" }
+				}
+			}
+			aps_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_aps }
+					}
+					set_country_flag = open_awarding_medals_aps
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_aps
+				}
+			}
+			aps_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_aps
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_aps
+			}
+			aps_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_aps
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_aps
+			}
+			aps_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_aps
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_aps
+			}
+			aps_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_aps
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_aps
+			}
+			#HK21
+			hk21_mod_tab_click = {
+				
+			}
+			hk21_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_hk21 }
+					}
+					set_country_flag = open_awarding_medals_hk21
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_hk21
+				}
+			}
+			hk21_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_hk21
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_hk21
+			}
+			hk21_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_hk21
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_hk21
+			}
+			hk21_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_hk21
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_hk21
+			}
+			hk21_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_hk21
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_hk21
+			}
+			#SPAS-12
+			spas12_mod_tab_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_spas12
+					}
+					set_unit_leader_flag = GAK_leader_digi_mind_update
+				}
+				mod_tab_click_effect = yes
+				set_portraits = {
+					character = GAK_spas12
+					army = { large = "GFX_portrait_gak_spas12_mod" }
+				}
+			}
+			spas12_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_spas12 }
+					}
+					set_country_flag = open_awarding_medals_spas12
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_spas12
+				}
+			}
+			spas12_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_spas12
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_spas12
+			}
+			spas12_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_spas12
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_spas12
+			}
+			spas12_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_spas12
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_spas12
+			}
+			spas12_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_spas12
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_spas12
+			}
+			#M14
+			M14_mod_tab_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_M14
+					}
+					set_unit_leader_flag = GAK_leader_digi_mind_update
+				}
+				mod_tab_click_effect = yes
+				set_portraits = {
+					character = GAK_M14
+					army = { large = "GFX_portrait_gak_M14_mod" }
+				}
+			}
+			M14_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_M14 }
+					}
+					set_country_flag = open_awarding_medals_M14
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_M14
+				}
+			}
+			M14_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_M14
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_M14
+			}
+			M14_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_M14
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_M14
+			}
+			M14_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_M14
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_M14
+			}
+			M14_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_M14
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_M14
+			}
+			#索米
+			kp31_mod_tab_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_kp31
+					}
+					set_unit_leader_flag = GAK_leader_digi_mind_update
+				}
+				mod_tab_click_effect = yes
+				set_portraits = {
+					character = GAK_kp31
+					army = { large = "GFX_portrait_gak_kp31_mod" }
+				}
+			}
+			kp31_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_kp31 }
+					}
+					set_country_flag = open_awarding_medals_kp31
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_kp31
+				}
+			}
+			kp31_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_kp31
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_kp31
+			}
+			kp31_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_kp31
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_kp31
+			}
+			kp31_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_kp31
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_kp31
+			}
+			kp31_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_kp31
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_kp31
+			}
+			#js9
+			js9_mod_tab_click = {
+				
+			}
+			js9_medal_tab_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_awarding_medals_js9 }
+					}
+					set_country_flag = open_awarding_medals_js9
+				}
+				else = {
+					clr_country_flag = open_awarding_medals_js9
+				}
+			}
+			js9_Awarding_medals_tab_1_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_js9
+					}
+					Awarding_medals_tab_1_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_js9
+			}
+			js9_Awarding_medals_tab_2_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_js9
+					}
+					Awarding_medals_tab_2_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_js9
+			}
+			js9_Awarding_medals_tab_3_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_js9
+					}
+					Awarding_medals_tab_3_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_js9
+			}
+			js9_Awarding_medals_tab_4_click = {
+				random_unit_leader = {
+					limit = {
+						is_character = GAK_js9
+					}
+					Awarding_medals_tab_4_effect = yes
+				}
+				add_political_power = -50
+				clr_country_flag = open_awarding_medals_js9
+			}
+		}
+		triggers = {
+			#HK416
+			HK416_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_HK416				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			HK416_mod3_visible = {
+				any_unit_leader = {
+					is_character = GAK_HK416
+					has_trait = Digi_mind_update
+				}
+			}
+			HK416_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_HK416				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			HK416_mod_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_HK416
+					has_trait = Digi_mind_update
+				}
+			}
+			HK416_mod_tab_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_HK416				
+					NOT = { has_trait = Digi_mind_update }
+				}
+				doll_mod_tab_trigger = yes
+			}
+			HK416_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_HK416		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			HK416_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_HK416
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			HK416_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_HK416
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			HK416_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_HK416
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			HK416_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_HK416
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			HK416_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_HK416
+			}
+			HK416_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_HK416
+			}
+			HK416_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_HK416
+			}
+			HK416_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_HK416
+			}
+			HK416_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_HK416
+			}
+			HK416_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_HK416
+					has_trait = GAK_medal1
+				}
+			}
+			HK416_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_HK416
+					has_trait = GAK_medal2
+				}
+			}
+			HK416_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_HK416
+					has_trait = GAK_medal3
+				}
+			}
+			HK416_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_HK416
+					has_trait = GAK_medal4
+				}
+			}
+			#G3
+			G3_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_G3				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			G3_mod3_visible = {
+				any_unit_leader = {
+					is_character = GAK_G3
+					has_trait = Digi_mind_update
+				}
+			}
+			G3_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_G3				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			G3_mod_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_G3
+					has_trait = Digi_mind_update
+				}
+			}
+			G3_mod_tab_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_G3				
+					NOT = { has_trait = Digi_mind_update }
+				}
+				doll_mod_tab_trigger = yes
+			}
+			G3_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_G3		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			G3_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_G3
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			G3_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_G3
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			G3_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_G3
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			G3_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_G3
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			G3_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_G3
+			}
+			G3_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_G3
+			}
+			G3_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_G3
+			}
+			G3_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_G3
+			}
+			G3_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_G3
+			}
+			G3_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_G3
+					has_trait = GAK_medal1
+				}
+			}
+			G3_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_G3
+					has_trait = GAK_medal2
+				}
+			}
+			G3_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_G3
+					has_trait = GAK_medal3
+				}
+			}
+			G3_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_G3
+					has_trait = GAK_medal4
+				}
+			}
+			#NTW
+			NTW_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_NTW				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			NTW_mod3_visible = {
+				any_unit_leader = {
+					is_character = GAK_NTW
+					has_trait = Digi_mind_update
+				}
+			}
+			NTW_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_NTW				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			NTW_mod_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_NTW
+					has_trait = Digi_mind_update
+				}
+			}
+			NTW_mod_tab_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_NTW				
+					NOT = { has_trait = Digi_mind_update }
+				}
+				doll_mod_tab_trigger = yes
+			}
+			NTW_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_NTW		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			NTW_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_NTW
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			NTW_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_NTW
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			NTW_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_NTW
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			NTW_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_NTW
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			NTW_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_NTW
+			}
+			NTW_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_NTW
+			}
+			NTW_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_NTW
+			}
+			NTW_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_NTW
+			}
+			NTW_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_NTW
+			}
+			NTW_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_NTW
+					has_trait = GAK_medal1
+				}
+			}
+			NTW_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_NTW
+					has_trait = GAK_medal2
+				}
+			}
+			NTW_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_NTW
+					has_trait = GAK_medal3
+				}
+			}
+			NTW_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_NTW
+					has_trait = GAK_medal4
+				}
+			}
+			#Thompson
+			Thompson_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_Thompson				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			Thompson_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_Thompson				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			Thompson_mod_tab_click_enabled = {
+				always = no
+			}
+			Thompson_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_Thompson		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			Thompson_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_Thompson
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			Thompson_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_Thompson
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			Thompson_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_Thompson
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			Thompson_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_Thompson
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			Thompson_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_Thompson
+			}
+			Thompson_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_Thompson
+			}
+			Thompson_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_Thompson
+			}
+			Thompson_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_Thompson
+			}
+			Thompson_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_Thompson
+			}
+			Thompson_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_Thompson
+					has_trait = GAK_medal1
+				}
+			}
+			Thompson_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_Thompson
+					has_trait = GAK_medal2
+				}
+			}
+			Thompson_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_Thompson
+					has_trait = GAK_medal3
+				}
+			}
+			Thompson_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_Thompson
+					has_trait = GAK_medal4
+				}
+			}
+			#维尔德
+			Welrod_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_Welrod				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			Welrod_mod3_visible = {
+				any_unit_leader = {
+					is_character = GAK_Welrod
+					has_trait = Digi_mind_update
+				}
+			}
+			Welrod_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_Welrod				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			Welrod_mod_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_Welrod
+					has_trait = Digi_mind_update
+				}
+			}
+			Welrod_mod_tab_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_Welrod				
+					NOT = { has_trait = Digi_mind_update }
+				}
+				doll_mod_tab_trigger = yes
+			}
+			Welrod_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_Welrod			
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			Welrod_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_Welrod
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			Welrod_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_Welrod
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			Welrod_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_Welrod
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			Welrod_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_Welrod
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			Welrod_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_Welrod
+			}
+			Welrod_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_Welrod
+			}
+			Welrod_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_Welrod
+			}
+			Welrod_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_Welrod
+			}
+			Welrod_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_Welrod
+			}
+			Welrod_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_Welrod
+					has_trait = GAK_medal1
+				}
+			}
+			Welrod_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_Welrod
+					has_trait = GAK_medal2
+				}
+			}
+			Welrod_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_Welrod
+					has_trait = GAK_medal3
+				}
+			}
+			Welrod_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_Welrod
+					has_trait = GAK_medal4
+				}
+			}
+			#莫辛纳甘
+			m1891_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_m1891				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			m1891_mod3_visible = {
+				any_unit_leader = {
+					is_character = GAK_m1891
+					has_trait = Digi_mind_update
+				}
+			}
+			m1891_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_m1891				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			m1891_mod_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_m1891
+					has_trait = Digi_mind_update
+				}
+			}
+			m1891_mod_tab_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_m1891				
+					NOT = { has_trait = Digi_mind_update }
+				}
+				doll_mod_tab_trigger = yes
+			}
+			m1891_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_m1891		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			m1891_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_m1891
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			m1891_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_m1891
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			m1891_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_m1891
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			m1891_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_m1891
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			m1891_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_m1891
+			}
+			m1891_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_m1891
+			}
+			m1891_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_m1891
+			}
+			m1891_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_m1891
+			}
+			m1891_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_m1891
+			}
+			m1891_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_m1891
+					has_trait = GAK_medal1
+				}
+			}
+			m1891_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_m1891
+					has_trait = GAK_medal2
+				}
+			}
+			m1891_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_m1891
+					has_trait = GAK_medal3
+				}
+			}
+			m1891_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_m1891
+					has_trait = GAK_medal4
+				}
+			}
+			#kar98k
+			kar98k_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_kar98k				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			kar98k_mod3_visible = {
+				any_unit_leader = {
+					is_character = GAK_kar98k
+					has_trait = Digi_mind_update
+				}
+			}
+			kar98k_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_kar98k				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			kar98k_mod_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_kar98k
+					has_trait = Digi_mind_update
+				}
+			}
+			kar98k_mod_tab_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_kar98k				
+					NOT = { has_trait = Digi_mind_update }
+				}
+				doll_mod_tab_trigger = yes
+			}
+			kar98k_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_kar98k		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			kar98k_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_kar98k
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			kar98k_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_kar98k
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			kar98k_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_kar98k
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			kar98k_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_kar98k
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			kar98k_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_kar98k
+			}
+			kar98k_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_kar98k
+			}
+			kar98k_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_kar98k
+			}
+			kar98k_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_kar98k
+			}
+			kar98k_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_kar98k
+			}
+			kar98k_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_kar98k
+					has_trait = GAK_medal1
+				}
+			}
+			kar98k_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_kar98k
+					has_trait = GAK_medal2
+				}
+			}
+			kar98k_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_kar98k
+					has_trait = GAK_medal3
+				}
+			}
+			kar98k_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_kar98k
+					has_trait = GAK_medal4
+				}
+			}
+			#AA12
+			AA12_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_AA12				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			AA12_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_AA12				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			AA12_mod_tab_click_enabled = {
+				always = no
+			}
+			AA12_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_AA12		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			AA12_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_AA12
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			AA12_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_AA12
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			AA12_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_AA12
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			AA12_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_AA12
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			AA12_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_AA12
+			}
+			AA12_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_AA12
+			}
+			AA12_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_AA12
+			}
+			AA12_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_AA12
+			}
+			AA12_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_AA12
+			}
+			AA12_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_AA12
+					has_trait = GAK_medal1
+				}
+			}
+			AA12_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_AA12
+					has_trait = GAK_medal2
+				}
+			}
+			AA12_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_AA12
+					has_trait = GAK_medal3
+				}
+			}
+			AA12_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_AA12
+					has_trait = GAK_medal4
+				}
+			}
+			#马提尼亨利
+			MartiniHenry_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_MartiniHenry				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			MartiniHenry_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_MartiniHenry				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			MartiniHenry_mod_tab_click_enabled = {
+				always = no
+			}
+			MartiniHenry_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_MartiniHenry		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			MartiniHenry_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_MartiniHenry
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			MartiniHenry_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_MartiniHenry
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			MartiniHenry_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_MartiniHenry
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			MartiniHenry_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_MartiniHenry
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			MartiniHenry_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_MartiniHenry
+			}
+			MartiniHenry_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_MartiniHenry
+			}
+			MartiniHenry_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_MartiniHenry
+			}
+			MartiniHenry_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_MartiniHenry
+			}
+			MartiniHenry_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_MartiniHenry
+			}
+			MartiniHenry_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_MartiniHenry
+					has_trait = GAK_medal1
+				}
+			}
+			MartiniHenry_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_MartiniHenry
+					has_trait = GAK_medal2
+				}
+			}
+			MartiniHenry_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_MartiniHenry
+					has_trait = GAK_medal3
+				}
+			}
+			MartiniHenry_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_MartiniHenry
+					has_trait = GAK_medal4
+				}
+			}
+			#RO635
+			RO635_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_RO635				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			RO635_mod3_visible = {
+				any_unit_leader = {
+					is_character = GAK_RO635
+					has_trait = Digi_mind_update
+				}
+			}
+			RO635_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_RO635				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			RO635_mod_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_RO635
+					has_trait = Digi_mind_update
+				}
+			}
+			RO635_mod_tab_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_RO635				
+					NOT = { has_trait = Digi_mind_update }
+				}
+				doll_mod_tab_trigger = yes
+			}
+			RO635_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_RO635		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			RO635_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_RO635
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			RO635_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_RO635
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			RO635_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_RO635
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			RO635_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_RO635
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			RO635_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_RO635
+			}
+			RO635_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_RO635
+			}
+			RO635_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_RO635
+			}
+			RO635_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_RO635
+			}
+			RO635_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_RO635
+			}
+			RO635_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_RO635
+					has_trait = GAK_medal1
+				}
+			}
+			RO635_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_RO635
+					has_trait = GAK_medal2
+				}
+			}
+			RO635_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_RO635
+					has_trait = GAK_medal3
+				}
+			}
+			RO635_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_RO635
+					has_trait = GAK_medal4
+				}
+			}
+			#蜂鸟
+			kolibri_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_kolibri				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			kolibri_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_kolibri				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			kolibri_mod_tab_click_enabled = {
+				always = no
+			}
+			kolibri_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_kolibri		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			kolibri_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_kolibri
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			kolibri_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_kolibri
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			kolibri_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_kolibri
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			kolibri_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_kolibri
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			kolibri_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_kolibri
+			}
+			kolibri_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_kolibri
+			}
+			kolibri_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_kolibri
+			}
+			kolibri_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_kolibri
+			}
+			kolibri_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_kolibri
+			}
+			kolibri_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_kolibri
+					has_trait = GAK_medal1
+				}
+			}
+			kolibri_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_kolibri
+					has_trait = GAK_medal2
+				}
+			}
+			kolibri_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_kolibri
+					has_trait = GAK_medal3
+				}
+			}
+			kolibri_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_kolibri
+					has_trait = GAK_medal4
+				}
+			}
+			#MG4
+			mg4_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_mg4				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			mg4_mod3_visible = {
+				any_unit_leader = {
+					is_character = GAK_mg4
+					has_trait = Digi_mind_update
+				}
+			}
+			mg4_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_mg4				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			mg4_mod_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_mg4
+					has_trait = Digi_mind_update
+				}
+			}
+			mg4_mod_tab_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_mg4				
+					NOT = { has_trait = Digi_mind_update }
+				}
+				doll_mod_tab_trigger = yes
+			}
+			mg4_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_mg4		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			mg4_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_mg4
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			mg4_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_mg4
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			mg4_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_mg4
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			mg4_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_mg4
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			mg4_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_mg4
+			}
+			mg4_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_mg4
+			}
+			mg4_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_mg4
+			}
+			mg4_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_mg4
+			}
+			mg4_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_mg4
+			}
+			mg4_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_mg4
+					has_trait = GAK_medal1
+				}
+			}
+			mg4_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_mg4
+					has_trait = GAK_medal2
+				}
+			}
+			mg4_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_mg4
+					has_trait = GAK_medal3
+				}
+			}
+			mg4_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_mg4
+					has_trait = GAK_medal4
+				}
+			}
+			#李恩菲尔德
+			MLEMK1_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_MLEMK1				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			MLEMK1_mod3_visible = {
+				any_unit_leader = {
+					is_character = GAK_MLEMK1
+					has_trait = Digi_mind_update
+				}
+			}
+			MLEMK1_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_MLEMK1				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			MLEMK1_mod_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_MLEMK1
+					has_trait = Digi_mind_update
+				}
+			}
+			MLEMK1_mod_tab_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_MLEMK1				
+					NOT = { has_trait = Digi_mind_update }
+				}
+				doll_mod_tab_trigger = yes
+			}
+			MLEMK1_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_MLEMK1		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			MLEMK1_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_MLEMK1
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			MLEMK1_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_MLEMK1
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			MLEMK1_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_MLEMK1
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			MLEMK1_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_MLEMK1
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			MLEMK1_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_MLEMK1
+			}
+			MLEMK1_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_MLEMK1
+			}
+			MLEMK1_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_MLEMK1
+			}
+			MLEMK1_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_MLEMK1
+			}
+			MLEMK1_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_MLEMK1
+			}
+			MLEMK1_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_MLEMK1
+					has_trait = GAK_medal1
+				}
+			}
+			MLEMK1_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_MLEMK1
+					has_trait = GAK_medal2
+				}
+			}
+			MLEMK1_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_MLEMK1
+					has_trait = GAK_medal3
+				}
+			}
+			MLEMK1_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_MLEMK1
+					has_trait = GAK_medal4
+				}
+			}
+			#iws2000
+			iws2000_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_iws2000				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			iws2000_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_iws2000				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			iws2000_mod_tab_click_enabled = {
+				always = no
+			}
+			iws2000_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_iws2000		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			iws2000_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_iws2000
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			iws2000_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_iws2000
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			iws2000_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_iws2000
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			iws2000_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_iws2000
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			iws2000_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_iws2000
+			}
+			iws2000_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_iws2000
+			}
+			iws2000_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_iws2000
+			}
+			iws2000_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_iws2000
+			}
+			iws2000_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_iws2000
+			}
+			iws2000_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_iws2000
+					has_trait = GAK_medal1
+				}
+			}
+			iws2000_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_iws2000
+					has_trait = GAK_medal2
+				}
+			}
+			iws2000_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_iws2000
+					has_trait = GAK_medal3
+				}
+			}
+			iws2000_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_iws2000
+					has_trait = GAK_medal4
+				}
+			}
+			#Mk23
+			mk23_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_mk23				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			mk23_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_mk23				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			mk23_mod_tab_click_enabled = {
+				always = no
+			}
+			mk23_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_mk23		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			mk23_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_mk23
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			mk23_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_mk23
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			mk23_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_mk23
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			mk23_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_mk23
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			mk23_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_mk23
+			}
+			mk23_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_mk23
+			}
+			mk23_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_mk23
+			}
+			mk23_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_mk23
+			}
+			mk23_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_mk23
+			}
+			mk23_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_mk23
+					has_trait = GAK_medal1
+				}
+			}
+			mk23_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_mk23
+					has_trait = GAK_medal2
+				}
+			}
+			mk23_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_mk23
+					has_trait = GAK_medal3
+				}
+			}
+			mk23_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_mk23
+					has_trait = GAK_medal4
+				}
+			}
+			#斯捷奇金
+			aps_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_aps				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			aps_mod3_visible = {
+				any_unit_leader = {
+					is_character = GAK_aps
+					has_trait = Digi_mind_update
+				}
+			}
+			aps_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_aps				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			aps_mod_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_aps
+					has_trait = Digi_mind_update
+				}
+			}
+			aps_mod_tab_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_aps				
+					NOT = { has_trait = Digi_mind_update }
+				}
+				doll_mod_tab_trigger = yes
+			}
+			aps_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_aps		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			aps_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_aps
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			aps_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_aps
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			aps_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_aps
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			aps_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_aps
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			aps_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_aps
+			}
+			aps_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_aps
+			}
+			aps_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_aps
+			}
+			aps_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_aps
+			}
+			aps_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_aps
+			}
+			aps_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_aps
+					has_trait = GAK_medal1
+				}
+			}
+			aps_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_aps
+					has_trait = GAK_medal2
+				}
+			}
+			aps_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_aps
+					has_trait = GAK_medal3
+				}
+			}
+			aps_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_aps
+					has_trait = GAK_medal4
+				}
+			}
+			#HK21
+			hk21_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_hk21				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			hk21_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_hk21				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			hk21_mod_tab_click_enabled = {
+				always = no
+			}
+			hk21_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_hk21		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			hk21_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_hk21
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			hk21_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_hk21
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			hk21_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_hk21
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			hk21_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_hk21
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			hk21_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_hk21
+			}
+			hk21_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_hk21
+			}
+			hk21_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_hk21
+			}
+			hk21_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_hk21
+			}
+			hk21_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_hk21
+			}
+			hk21_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_hk21
+					has_trait = GAK_medal1
+				}
+			}
+			hk21_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_hk21
+					has_trait = GAK_medal2
+				}
+			}
+			hk21_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_hk21
+					has_trait = GAK_medal3
+				}
+			}
+			hk21_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_hk21
+					has_trait = GAK_medal4
+				}
+			}
+			#SPAS-12
+			spas12_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_spas12				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			spas12_mod3_visible = {
+				any_unit_leader = {
+					is_character = GAK_spas12
+					has_trait = Digi_mind_update
+				}
+			}
+			spas12_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_spas12				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			spas12_mod_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_spas12
+					has_trait = Digi_mind_update
+				}
+			}
+			spas12_mod_tab_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_spas12				
+					NOT = { has_trait = Digi_mind_update }
+				}
+				doll_mod_tab_trigger = yes
+			}
+			spas12_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_spas12		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			spas12_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_spas12
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			spas12_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_spas12
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			spas12_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_spas12
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			spas12_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_spas12
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			spas12_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_spas12
+			}
+			spas12_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_spas12
+			}
+			spas12_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_spas12
+			}
+			spas12_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_spas12
+			}
+			spas12_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_spas12
+			}
+			spas12_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_spas12
+					has_trait = GAK_medal1
+				}
+			}
+			spas12_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_spas12
+					has_trait = GAK_medal2
+				}
+			}
+			spas12_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_spas12
+					has_trait = GAK_medal3
+				}
+			}
+			spas12_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_spas12
+					has_trait = GAK_medal4
+				}
+			}
+			#M14
+			M14_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_M14				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			M14_mod3_visible = {
+				any_unit_leader = {
+					is_character = GAK_M14
+					has_trait = Digi_mind_update
+				}
+			}
+			M14_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_M14				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			M14_mod_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_M14
+					has_trait = Digi_mind_update
+				}
+			}
+			M14_mod_tab_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_M14				
+					NOT = { has_trait = Digi_mind_update }
+				}
+				doll_mod_tab_trigger = yes
+			}
+			M14_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_M14		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			M14_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_M14
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			M14_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_M14
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			M14_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_M14
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			M14_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_M14
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			M14_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_M14
+			}
+			M14_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_M14
+			}
+			M14_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_M14
+			}
+			M14_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_M14
+			}
+			M14_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_M14
+			}
+			M14_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_M14
+					has_trait = GAK_medal1
+				}
+			}
+			M14_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_M14
+					has_trait = GAK_M14
+				}
+			}
+			M14_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_M14
+					has_trait = GAK_medal3
+				}
+			}
+			M14_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_M14
+					has_trait = GAK_medal4
+				}
+			}
+			#索米
+			kp31_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_kp31				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			kp31_mod3_visible = {
+				any_unit_leader = {
+					is_character = GAK_kp31
+					has_trait = Digi_mind_update
+				}
+			}
+			kp31_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_kp31				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			kp31_mod_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_kp31
+					has_trait = Digi_mind_update
+				}
+			}
+			kp31_mod_tab_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_kp31				
+					NOT = { has_trait = Digi_mind_update }
+				}
+				doll_mod_tab_trigger = yes
+			}
+			kp31_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_kp31		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			kp31_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_kp31
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			kp31_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_kp31
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			kp31_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_kp31
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			kp31_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_kp31
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			kp31_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_kp31
+			}
+			kp31_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_kp31
+			}
+			kp31_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_kp31
+			}
+			kp31_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_kp31
+			}
+			kp31_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_kp31
+			}
+			kp31_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_kp31
+					has_trait = GAK_medal1
+				}
+			}
+			kp31_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_kp31
+					has_trait = GAK_kp31
+				}
+			}
+			kp31_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_kp31
+					has_trait = GAK_medal3
+				}
+			}
+			kp31_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_kp31
+					has_trait = GAK_medal4
+				}
+			}
+			#js9
+			js9_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_js9				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			js9_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_js9				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			js9_mod_tab_click_enabled = {
+				always = no
+			}
+			js9_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_js9		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			js9_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_js9
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			js9_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_js9
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			js9_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_js9
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			js9_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_js9
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			js9_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_js9
+			}
+			js9_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_js9
+			}
+			js9_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_js9
+			}
+			js9_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_js9
+			}
+			js9_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_js9
+			}
+			js9_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_js9
+					has_trait = GAK_medal1
+				}
+			}
+			js9_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_js9
+					has_trait = GAK_medal2
+				}
+			}
+			js9_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_js9
+					has_trait = GAK_medal3
+				}
+			}
+			js9_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_js9
+					has_trait = GAK_medal4
+				}
+			}
+			#刘氏步枪
+			GeneralLiu_unlock_visible = {
+				any_unit_leader = {
+					is_character = GAK_GeneralLiu				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			GeneralLiu_introduce_visible = {
+				any_unit_leader = {
+					is_character = GAK_GeneralLiu				
+					NOT = { has_trait = Digi_mind_update }
+				}
+			}
+			GeneralLiu_mod_tab_click_enabled = {
+				always = no
+			}
+			GeneralLiu_medal_tab_click_enabled = {
+				OR = {
+					AND = {
+						any_unit_leader = {
+							is_character = GAK_GeneralLiu		
+							GAK_unit_leader_medals_number_trigger = yes
+						}
+					}
+				}
+			}
+			GeneralLiu_Awarding_medals_tab_1_click_enabled = {
+				
+				any_unit_leader = {
+					is_character = GAK_GeneralLiu
+					NOT = { has_trait = GAK_medal1 }
+				}
+				has_political_power > 49
+			}
+			GeneralLiu_Awarding_medals_tab_2_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_GeneralLiu
+					NOT = { has_trait = GAK_medal2 }
+				}
+				has_political_power > 49
+			}
+			GeneralLiu_Awarding_medals_tab_3_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_GeneralLiu
+					NOT = { has_trait = GAK_medal3 }
+				}
+				has_political_power > 49
+			}
+			GeneralLiu_Awarding_medals_tab_4_click_enabled = {
+				any_unit_leader = {
+					is_character = GAK_GeneralLiu
+					NOT = { has_trait = GAK_medal4 }
+				}
+				has_political_power > 49
+			}
+			GeneralLiu_Awarding_medals_tab_1_visible = {
+				has_country_flag = open_awarding_medals_GeneralLiu
+			}
+			GeneralLiu_Awarding_medals_tab_2_visible = {
+				has_country_flag = open_awarding_medals_GeneralLiu
+			}
+			GeneralLiu_Awarding_medals_tab_3_visible = {
+				has_country_flag = open_awarding_medals_GeneralLiu
+			}
+			GeneralLiu_Awarding_medals_tab_4_visible = {
+				has_country_flag = open_awarding_medals_GeneralLiu
+			}
+			GeneralLiu_awarding_medals_bg_visible = {
+				has_country_flag = open_awarding_medals_GeneralLiu
+			}
+			GeneralLiu_medal_1_visible = {
+				any_unit_leader = {
+					is_character = GAK_GeneralLiu
+					has_trait = GAK_medal1
+				}
+			}
+			GeneralLiu_medal_2_visible = {
+				any_unit_leader = {
+					is_character = GAK_GeneralLiu
+					has_trait = GAK_medal2
+				}
+			}
+			GeneralLiu_medal_3_visible = {
+				any_unit_leader = {
+					is_character = GAK_GeneralLiu
+					has_trait = GAK_medal3
+				}
+			}
+			GeneralLiu_medal_4_visible = {
+				any_unit_leader = {
+					is_character = GAK_GeneralLiu
+					has_trait = GAK_medal4
+				}
+			}
+		}
+	}
+}
+

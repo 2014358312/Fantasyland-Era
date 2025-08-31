@@ -1,0 +1,53 @@
+# options for map_icon_category:
+# For land units: infantry,armored,other
+# For sea units: ship,transport,uboat
+
+sub_units = {
+	IOP_gustaf_unit = {
+		abbreviation = "igu"
+		sprite = super_heavy_artillery
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		affects_speed = yes
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_artillery
+			category_support_artillery
+			category_heavy_unit
+		}
+
+
+		combat_width = 0
+		
+		essential = {
+			IOP_gustaf_equipment
+		}
+
+		need = {
+			IOP_gustaf_equipment = 3
+		}
+		manpower = 100
+		training_time = 220
+		max_organisation = 0
+		default_morale = 0.1
+		max_strength = 0.1
+		weight = 0.2
+		
+		supply_consumption = 0.35
+
+		can_be_parachuted = no
+
+		same_support_type = super_heavy_artillery 
+	}
+}

@@ -1,0 +1,1438 @@
+GAK_16_lab = {
+	GAK_commanding_tactical_doll = {
+		icon = GAK_research_doll
+		visible = {
+			GAK_unit_leader_var_trigger = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GAK_16_lab_slot_trigger_tt
+				check_variable = {
+					GAK_16_lab_slot < 2
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		days_remove = 60
+		modifier = {
+			civilian_factory_use = 1
+			industrial_capacity_factory = -0.1
+		}
+		fixed_random_seed = no 
+		complete_effect = {
+			add_to_variable = {
+				GAK_16_lab_slot = 1
+			}
+		}
+		remove_effect = {
+			hidden_effect = {
+				GAK_random_unit_leader = yes
+			}
+			add_to_variable = {
+				GAK_16_lab_slot = -1
+			}
+			custom_effect_tooltip = GAK_commanding_tactical_doll_tt
+		}
+	}
+	GAK_digi_mind_update = {
+		icon = GAK_research_doll
+		activation = {
+			any_unit_leader = {
+				has_unit_leader_flag = GAK_leader_digi_mind_update
+			}
+		}
+		available = {
+			always = no
+		}
+		selectable_mission = no
+		days_mission_timeout = 60
+		cancel_trigger = {
+			all_unit_leader = {
+				NOT = { has_unit_leader_flag = GAK_leader_digi_mind_update }
+			}
+		}
+		complete_effect = {
+			
+		} 
+		timeout_effect = {
+			hidden_effect = {
+				random_unit_leader = {
+					limit = {
+						has_unit_leader_flag = GAK_leader_digi_mind_update
+					}
+					unit_leader_event = griffin_commander.3
+				}
+			}
+			custom_effect_tooltip = GAK_digi_mind_update_tt
+			add_to_variable = {
+				GAK_16_lab_slot = -1
+			}
+			remove_ideas = GAK_leader_digi_mind_update_idea
+		}
+	}
+	GAK_research_SST = {
+		icon = GAK_research_doll
+		visible = {
+			can_research = tactical_doll1
+			NOT = { has_tech = tactical_doll1 }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GAK_16_lab_slot_trigger_tt
+				check_variable = {
+					GAK_16_lab_slot < 2
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 10
+		days_remove = 50
+		complete_effect = {
+			add_to_variable = {
+				GAK_16_lab_slot = 1
+			}
+		}
+		modifier = {
+			political_power_cost = 0.1
+    		consumer_goods_factor = 0.1
+    		industrial_capacity_factory = -0.1
+		}
+		remove_effect = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				technology = tactical_doll1
+			}
+			add_to_variable = {
+				GAK_16_lab_slot = -1
+			}
+		}
+	}
+	GAK_research_SSD = {
+		icon = GAK_research_doll
+		visible = {
+			can_research = tactical_doll2
+			NOT = { has_tech = tactical_doll2 }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GAK_16_lab_slot_trigger_tt
+				check_variable = {
+					GAK_16_lab_slot < 2
+				}
+			}
+		}
+		cost = 10
+		days_remove = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = {
+				GAK_16_lab_slot = 1
+			}
+		}
+		modifier = {
+			political_power_cost = 0.1
+    		consumer_goods_factor = 0.1
+    		industrial_capacity_factory = -0.1
+		}
+		remove_effect = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				technology = tactical_doll2
+			}
+			add_to_variable = {
+				GAK_16_lab_slot = -1
+			}
+		}
+	}
+	GAK_research_synthsis = {
+		icon = GAK_research_doll
+		visible = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GAK_16_lab_slot_trigger_tt
+				check_variable = {
+					GAK_16_lab_slot < 2
+				}
+			}
+		}
+		cost = 10
+		days_remove = 90
+		complete_effect = {
+			country_event = { id = griffin.4 }
+			add_to_variable = {
+				GAK_16_lab_slot = 1
+			}
+
+		}
+		modifier = {
+			consumer_goods_factor = 0.1
+			industrial_capacity_factory = -0.15
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					ROOT = { has_country_flag = GAK_synthsis_steel }
+				}
+				random_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					add_resource = {
+						type = steel
+						amount = 20
+					}
+				}
+				add_to_variable = {
+					GAK_16_lab_slot = -1
+				}
+				clr_country_flag = GAK_synthsis_steel
+			}
+			else_if = {
+				limit = {
+					ROOT = { has_country_flag = GAK_synthsis_aluminium }
+				}
+				random_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					add_resource = {
+						type = aluminium
+						amount = 10
+					}
+				}
+				add_to_variable = {
+					GAK_16_lab_slot = -1
+				}
+				clr_country_flag = GAK_synthsis_aluminium
+			}
+			else_if = {
+				limit = {
+					ROOT = { has_country_flag = GAK_synthsis_tungsten }
+				}
+				random_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					add_resource = {
+						type = tungsten
+						amount = 10
+					}
+				}
+				add_to_variable = {
+					GAK_16_lab_slot = -1
+				}
+				clr_country_flag = GAK_synthsis_tungsten
+			}
+			else_if = {
+				limit = {
+					ROOT = { has_country_flag = GAK_synthsis_chromium }
+				}
+				random_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					add_resource = {
+						type = chromium
+						amount = 10
+					}
+				}
+				add_to_variable = {
+					GAK_16_lab_slot = -1
+				}
+				clr_country_flag = GAK_synthsis_chromium
+			}
+		}
+	}
+	GAK_research_doll = {
+		icon = GAK_research_doll
+		visible = {
+			NOT = { has_idea = GAK_research_doll_idea }
+		}
+		available = {
+			NOT = { has_idea = GAK_research_doll_idea }
+		}
+		cost = 10
+		complete_effect = {
+			add_ideas = GAK_research_doll_idea
+			remove_ideas = {
+				GAK_research_UAV_idea
+				GAK_research_heavy_equipment_idea
+			}
+		}	
+	}
+	GAK_research_UAV = {
+		icon = GAK_research_UAV
+		visible = {
+			NOT = { has_idea = GAK_research_UAV_idea }
+		}
+		available = {
+			NOT = { has_idea = GAK_research_UAV_idea }
+		}
+		cost = 10
+		complete_effect = {
+			add_ideas = GAK_research_UAV_idea
+			remove_ideas = {
+				GAK_research_heavy_equipment_idea
+				GAK_research_doll_idea
+			}
+		}
+	}
+	GAK_research_heavy_equipment = {
+		icon = GAK_research_heavy
+		visible = {
+			NOT = { has_idea = GAK_research_heavy_equipment_idea }
+		}
+		available = {
+			NOT = { has_idea = GAK_research_heavy_equipment_idea }
+		}
+		cost = 10
+		complete_effect = {
+			add_ideas = GAK_research_heavy_equipment_idea
+			remove_ideas = {
+				GAK_research_UAV_idea
+				GAK_research_doll_idea
+			}
+		}
+	}
+}
+GAK_griffin = {
+	GAK_open_Tactical_tablet_debug = {
+		icon = GAK_link_start_icon
+		available = {
+			always = yes
+		}
+		visible = {
+			is_debug = yes
+			NOT = { has_country_flag = GAK_open_Tactical_tablet_flag }
+		}
+		complete_effect = {
+			set_country_flag = GAK_open_Tactical_tablet_flag
+		}
+	}
+	GAK_link_start = {
+		icon = GAK_link_start_icon
+		available = {
+			is_ai = no
+		}
+		visible = {
+			NOT = { has_country_flag = GAK_flag }
+		}
+		complete_effect = {
+			set_country_flag = GAK_flag
+			add_research_slot = 1
+			army_experience = 20
+			set_technology = {
+				tactical_doll = 1
+				tactical_equipment_accessory = 1
+				tactical_UAV = 1
+			}
+			add_ideas = GAK_contractor
+			set_variable = {
+				GAK_special_forces_cap = 0.04
+			}
+			set_variable = {
+				GAK_category_tactical_doll_attack_factor = 0
+			}
+			set_variable = {
+				GAK_category_tactical_doll_defence_factor = 0
+			}
+			set_variable = {
+				GAK_special_forces_cap_flat = 100
+			}
+			set_variable = {
+				GAK_resistance_damage_to_garrison_on_our_occupied_states = 0
+			}
+			set_variable = {
+				GAK_resistance_target = 0
+			}
+			set_variable = {
+    			GAK_mountaineers_special_forces_contribution_factor = 0
+    		}
+    		add_to_variable = {
+    			GAK_unlocked_number_var = 5
+    		}
+			hidden_effect = {
+				add_dynamic_modifier = {
+					modifier = GAK_tactical_doll_army
+				}
+			}
+			custom_effect_tooltip = GAK_link_start_tt
+			hidden_effect = {
+				every_unit_leader = {
+					limit = {
+						OR = {
+							is_character = GAK_HK416
+							is_character = GAK_G3
+							is_character = GAK_NTW
+							is_character = GAK_Thompson
+							is_character = GAK_Welrod
+						}
+					}
+					set_unit_leader_flag = {
+						flag = GAK_has_medals_number
+						value = 0
+					}
+				}
+			}
+    	}
+    }
+    GAK_open_Tactical_tablet = {
+		icon = GAK_link_start_icon
+		available = {
+			always = yes
+		}
+		visible = {
+			NOT = { has_country_flag = GAK_base_fall }
+			has_country_flag = GAK_flag
+			NOT = { has_country_flag = GAK_open_Tactical_tablet_flag }
+		}
+		complete_effect = {
+			set_country_flag = GAK_open_Tactical_tablet_flag
+		}
+	}
+    GAK_griffin_base = {
+    	icon = GAK_scv
+    	available = {
+    		has_country_flag = GAK_flag
+    	}
+    	visible = {
+    		has_country_flag = GAK_flag
+    	}
+    	fire_only_once = yes
+    	cost = 10
+    	complete_effect = {
+    		country_event = { id = griffin.1 }
+    		set_variable = { GAK_expand = 0 }
+    	}
+    	
+    }
+    GAK_deepen_military_cooperation = {
+    	icon = GAK_military_cooperation
+    	visible = {
+    		check_variable = {
+    			GAK_expand > 1
+    		}
+    		NOT = { has_country_flag = GAK_base_fall }
+    	}
+    	available = {
+    		always = yes
+    	}
+    	fire_only_once = yes
+    	cost = 10
+    	days_remove = 30
+    	modifier = {
+    		political_power_cost = 0.1
+    		consumer_goods_factor = 0.15
+    		industrial_capacity_factory = -0.2
+    	}
+    	remove_effect = {
+    		set_country_flag = GAK_military_cooperation
+    		add_to_variable = {
+    			GAK_category_tactical_doll_attack_factor = 0.1
+    		}
+    		add_to_variable = {
+    			GAK_category_tactical_doll_defence_factor = 0.05
+    		}
+    		add_to_variable = {
+    			GAK_resistance_damage_to_garrison_on_our_occupied_states = 0.2
+    		}
+    		add_to_variable = {
+    			GAK_resistance_target = -0.15
+    		}
+    		custom_effect_tooltip = GAK_deepen_military_cooperation_tt
+    	}
+    }
+    
+    GAK_large_scale_tactical_doll = {
+    	icon = GAK_military_cooperation
+    	visible = {
+    		OR = {
+    			check_variable = {
+    				GAK_expand > 6
+    			}
+    			has_country_flag = GAK_military_cooperation
+    		}
+    		NOT = { has_country_flag = GAK_base_fall }
+    	}
+    	available = {
+    		has_country_flag = GAK_military_cooperation
+    		custom_trigger_tooltip = {
+    			tooltip = GAK_large_scale_tactical_doll_trigger_tt
+    			check_variable = {
+    				GAK_expand > 6
+    			}
+    		}
+    	}
+    	fire_only_once = yes
+    	days_remove = 50
+    	modifier = {
+    		political_power_cost = 0.1
+    		consumer_goods_factor = 0.15
+    		industrial_capacity_factory = -0.2
+    	}
+    	remove_effect = {
+    		add_to_variable = {
+    			GAK_mountaineers_special_forces_contribution_factor = -0.4
+    		}
+    		set_variable = {
+    			GAK_industrial_capacity_factory = 0.2
+    		}
+    		set_variable = {
+    			GAK_production_speed_buildings_factor = 0.1
+    		}
+    		set_variable = {
+    			GAK_conscription_factor = -0.15
+    		}
+    		custom_effect_tooltip = GAK_large_scale_tactical_doll_tt
+    	}
+    }
+    GAK_construct_combat_information_room = {
+    	icon = GAK_scv
+    	fire_only_once = yes
+    	available = {
+    		has_country_flag = GAK_military_cooperation
+    		custom_trigger_tooltip = {
+    			tooltip = GAK_construct_combat_information_room_trigger_tt
+    			check_variable = {
+    				GAK_expand > 2
+    			}
+    		}
+    		num_of_civilian_factories_available_for_projects > 1
+    	}
+    	visible = {
+    		OR = {
+    			has_country_flag = GAK_military_cooperation
+    			check_variable = {
+    				GAK_expand > 2
+    			}
+    		}
+    	}
+    	days_remove = 30
+    	modifier = {
+    		civilian_factory_use = 2
+    	}
+    	remove_effect = {
+    		set_country_flag = combat_information_room
+    		unlock_decision_category_tooltip = GAK_combat_information_room
+    		set_variable = {
+    			GAK_batteries_number = 0
+    		}
+    		set_variable = {
+    			GAK_battery_production_speed = 30
+    		}
+    		set_variable = {
+    			GAK_operational_report = 0
+    		}
+    	}
+    }
+    GAK_construct_16_lab = {
+    	icon = GAK_scv
+    	visible = {
+    		OR = {
+    			has_country_flag = GAK_military_cooperation
+    			check_variable = {
+    				GAK_expand > 4
+    			}
+    		}
+    	}
+    	available = {
+    		has_country_flag = GAK_military_cooperation
+    		custom_trigger_tooltip = {
+    			tooltip = GAK_construct_16_lab_trigger_tt
+    			check_variable = {
+    				GAK_expand > 4
+    			}
+    		}
+    		num_of_civilian_factories_available_for_projects > 1
+    	}
+    	days_remove = 30
+    	fire_only_once = yes
+    	modifier = {
+    		political_power_cost = 0.1
+    		consumer_goods_factor = 0.15
+    		industrial_capacity_factory = -0.2
+    		civilian_factory_use = 2
+    		production_speed_griffin_facility_factor = 500
+    	}
+    	cancel_trigger = {
+    		ROOT = {
+    			any_controlled_state = {
+    				griffin_facility > 0
+    			}
+    		}
+    	}
+    	cancel_effect = {
+    		set_country_flag = GAK_16_lab_f
+    		set_variable = {
+    			GAK_research_speed_factor = 0.2
+    		}
+    		set_variable = { GAK_16_lab_slot = 0 }
+    		unlock_decision_category_tooltip = GAK_16_lab
+    		add_scientist_role = {
+				character = "GAK_Persicaria"
+				scientist = {
+					desc = GAK_Persicaria_desc
+					traits = { }
+					skills = {
+						specialization_griffin = 5
+					}
+				}
+    		}
+    		add_breakthrough_progress = {
+				specialization = specialization_griffin
+				value = 1
+			}
+    	}
+    	remove_effect = {
+    		set_country_flag = GAK_16_lab_f
+    		set_variable = {
+    			GAK_research_speed_factor = 0.2
+    		}
+    		set_variable = { GAK_16_lab_slot = 0 }
+    		unlock_decision_category_tooltip = GAK_16_lab
+    		add_scientist_role = {
+				character = "GAK_Persicaria"
+				scientist = {
+					desc = GAK_Persicaria_desc
+					traits = { }
+					skills = {
+						specialization_griffin = 5
+					}
+				}
+    		}
+    		add_breakthrough_progress = {
+				specialization = specialization_griffin
+				value = 1
+			}
+    	}
+    }
+    GAK_leader_debug = {
+    	visible = {
+    		is_debug = yes
+    		GAK_unit_leader_var_trigger = yes
+    	}
+    	icon = generic_political_discourse
+    	complete_effect = {
+    		GAK_random_unit_leader = yes
+    	}
+    }
+    GAK_project_debug = {
+    	visible = {
+    		is_debug = yes
+    	}
+    	icon = generic_political_discourse
+    	complete_effect = {
+    		add_breakthrough_progress = {
+				specialization = specialization_griffin
+				value = 1
+			}
+    	}
+    }
+    GAK_16_lab_debug = {
+    	visible = {
+    		is_debug = yes
+    	}
+    	icon = generic_political_discourse
+    	days_remove = 50
+    	modifier = {
+    		production_speed_griffin_facility_factor = 500
+    	}
+    	complete_effect = {
+			set_country_flag = GAK_16_lab_f
+			set_variable = { GAK_16_lab_slot = 0 }
+			add_scientist_role = {
+				character = "GAK_Persicaria"
+				scientist = {
+					desc = GAK_Persicaria_desc
+					traits = { }
+					skills = {
+						specialization_griffin = 5
+					}
+				}
+    		}
+    	}
+    	cancel_trigger = {
+    		any_controlled_state = {
+    			griffin_facility > 0
+    		}
+    	}
+    }
+    GAK_construct_base = {
+    	icon = GAK_scv
+    	state_target = yes
+    	target_root_trigger = {
+    		has_country_flag = GAK_flag
+    	}
+    	fire_only_once = yes
+    	target_trigger = {
+    		FROM = {
+    			has_state_flag = GAK_griffin_base
+    			is_owned_and_controlled_by = ROOT
+    		}
+    	}
+    	available = {
+    		num_of_civilian_factories_available_for_projects > 2 
+    	}
+    	days_remove = 50
+    	on_map_mode = map_and_decisions_view
+    	modifier = {
+    		civilian_factory_use = 3
+    	}
+    	remove_effect = {
+    		ROOT = {
+    			add_to_variable = {
+    				GAK_expand = 1
+    			}
+    			add_to_variable = {
+    				GAK_special_forces_cap = 0.04
+    			}
+    			add_to_variable = {
+    				GAK_special_forces_cap_flat = 20
+    			}
+    		}
+    		custom_effect_tooltip = GAK_expand_base_tt
+    		FROM = {
+    			hidden_effect = {
+    				set_variable = { GAK_state_production_speed_buildings_factor =0.1 }
+    				set_variable = { GAK_local_building_slots_factor = 0.2 }
+    				add_dynamic_modifier = {
+						modifier = GAK_doll_barracks
+					}
+				}
+				custom_effect_tooltip = GAK_doll_barracks_tt
+    		}
+    		custom_effect_tooltip = GAK_construct_base_tt
+    	}
+    }
+    GAK_expand_base = {
+    	icon = GAK_scv
+    	state_target = yes
+    	target_root_trigger = {
+    		has_country_flag = GAK_flag
+    		check_variable = {
+    			GAK_expand > 0
+    		}
+    	}
+    	target_trigger = {
+    		FROM = {
+    			has_state_flag = GAK_griffin_base
+    			is_owned_and_controlled_by = ROOT
+    		}
+    	}
+    	visible = {
+    		ROOT = {
+    			check_variable = {
+    				GAK_expand < 14
+    			}
+    			NOT = { has_country_flag = GAK_base_fall }
+    		}
+    	}
+    	available = {
+    		num_of_civilian_factories_available_for_projects > 2
+    		custom_trigger_tooltip = {
+    			tooltip = GAK_expand_trigger_tt
+    			ROOT = {
+    				check_variable = {
+    					GAK_expand < 14
+    				}
+    				
+    			}
+    		}
+
+    	}
+    	fire_only_once = no
+    	days_remove = 50
+    	on_map_mode = map_and_decisions_view
+    	modifier = {
+    		civilian_factory_use = 3
+    	}
+    	remove_effect = {
+    		if = {
+    			limit = {
+    				ROOT = {
+    					check_variable = {
+    						GAK_expand = 1
+    					}
+    				}
+    			}
+    			ROOT = {
+    				add_to_variable = {
+    					GAK_expand = 1
+    				}
+    				add_to_variable = {
+    					GAK_special_forces_cap = 0.04
+    				}
+    				add_to_variable = {
+    					GAK_special_forces_cap_flat = 20
+    				}
+    				add_to_variable = {
+    					GAK_mountaineers_special_forces_contribution_factor = -0.1
+    				}
+    				custom_effect_tooltip = GAK_expand_base_4_tt
+    			}
+    		}
+    		else_if = {
+    			limit = {
+    				ROOT = {
+    					check_variable = {
+    						GAK_expand = 2
+    					}
+    				}
+    			}
+    			ROOT = {
+    				add_to_variable = {
+    					GAK_expand = 1
+    				}
+    				add_to_variable = {
+    					GAK_special_forces_cap = 0.04
+    				}
+    				add_to_variable = {
+    					GAK_special_forces_cap_flat = 20
+    				}
+    				add_to_variable = {
+    					GAK_mountaineers_special_forces_contribution_factor = -0.1
+    				}
+    				custom_effect_tooltip = GAK_expand_base_2_tt
+    				custom_effect_tooltip = GAK_expand_base_4_tt
+    			}
+    		}
+    		else_if = {
+    			limit = {
+    				ROOT = {
+    					check_variable = {
+    						GAK_expand = 6
+    					}
+    				}
+    			}
+    			ROOT = {
+    				add_to_variable = {
+    					GAK_expand = 1
+    				}
+    				add_to_variable = {
+    					GAK_special_forces_cap = 0.04
+    				}
+    				add_to_variable = {
+    					GAK_special_forces_cap_flat = 20
+    				}
+    				add_to_variable = {
+    					GAK_mountaineers_special_forces_contribution_factor = -0.1
+    				}
+    				custom_effect_tooltip = GAK_expand_base_4_tt
+    			}
+    			FROM = {
+    				
+    				hidden_effect = {
+    					add_to_variable = { GAK_state_production_speed_buildings_factor = 0.1 }
+    					add_to_variable = { GAK_local_building_slots_factor = 0.2 }
+    				}
+    				custom_effect_tooltip = GAK_expand_base_1_tt
+    			}
+
+    		}
+    		else_if = {
+    			limit = {
+    				ROOT = {
+    					check_variable = {
+    						GAK_expand = 13
+    					}
+    				}
+    			}
+    			ROOT = {
+    				add_to_variable = {
+    					GAK_expand = 1
+    				}
+    				add_to_variable = {
+    					GAK_special_forces_cap = 0.04
+    				}
+    				add_to_variable = {
+    					GAK_special_forces_cap_flat = 20
+    				}
+    				custom_effect_tooltip = GAK_expand_base_tt
+    			}
+    			FROM = {
+    				hidden_effect = {
+    					add_to_variable = { GAK_state_production_speed_buildings_factor = 0.1 }
+    					add_to_variable = { GAK_local_building_slots_factor = 0.2 }
+    				}
+    				custom_effect_tooltip = GAK_expand_base_1_tt
+    			}
+    		}
+    		else = {
+    			ROOT = {
+    				add_to_variable = {
+    					GAK_expand = 1
+    				}
+    				add_to_variable = {
+    					GAK_special_forces_cap = 0.04
+    				}
+    				add_to_variable = {
+    					GAK_special_forces_cap_flat = 20
+    				}
+    				add_to_variable = {
+    					GAK_battery_production_speed = 10
+    				}
+    				custom_effect_tooltip = GAK_expand_base_3_tt
+    			}
+    			custom_effect_tooltip = GAK_expand_base_tt
+    		}
+    	}
+    }
+    GAK_expand_debug = {
+    	visible = {
+    		is_debug = yes
+    	}
+    	icon = generic_political_discourse
+    	complete_effect = {
+    		add_to_variable = {
+    			GAK_expand = 1
+    		}
+    		add_to_variable = {
+    			GAK_special_forces_cap = 0.56
+    		}
+    		add_to_variable = {
+    			GAK_special_forces_cap_flat = 280
+    		}
+    	}
+    }
+    GAK_rebuild_base = {
+    	icon = GAK_scv
+    	visible = {
+    		has_country_flag = GAK_flag
+    		has_country_flag = GAK_base_fall
+    	}
+    	available = {
+    		custom_trigger_tooltip = {
+    			tooltip = GAK_rebuild_base_trigger_tt
+    			any_controlled_state = {
+    				has_state_flag = GAK_griffin_base
+    				has_state_flag = GAK_base_fall_state
+    			}
+    		}
+    		num_of_civilian_factories_available_for_projects > 2
+    	}
+    	days_remove = 50
+    	modifier = {
+    		civilian_factory_use = 3
+    	}
+    	remove_effect = {
+    		clr_country_flag = GAK_base_fall
+    		add_dynamic_modifier = {
+    			modifier = GAK_tactical_doll_army
+    		}
+    		every_controlled_state = {
+    			limit = {
+    				has_state_flag = GAK_griffin_base
+    				has_state_flag = GAK_base_fall_state 
+    			}
+    			add_dynamic_modifier = {
+    				modifier = GAK_doll_barracks
+    			}
+    			clr_state_flag = GAK_base_fall_state 
+    		}
+    	}
+    }
+    GAK_base_defence = {
+    	icon = GAK_defence
+    	visible = {
+    		check_variable = {
+    			GAK_expand > 0 
+    		}
+    		NOT = { has_country_flag = GAK_base_defence } 
+    	}
+    	available = {
+    		custom_trigger_tooltip = {
+    			tooltip = GAK_base_defence_trigger_tt
+    			any_owned_state = {
+    				has_state_flag = GAK_griffin_base
+    				is_controlled_by = ROOT
+    				any_neighbor_state = {
+    					NOT = { is_fully_controlled_by = ROOT }
+    				}
+    			}
+    		}
+    		has_war = yes
+    	}
+    	custom_cost_trigger = {
+			command_power > 29
+		}
+		custom_cost_text = cp_at_least_30
+		complete_effect = {
+			set_country_flag = GAK_base_defence
+			every_controlled_state = {
+				limit = {
+					has_state_flag = GAK_griffin_base
+				}
+				
+				add_dynamic_modifier = {
+					modifier = GAK_defence_base
+				}
+			}
+		}
+    }
+    GAK_end_base_defence = {
+    	icon = GAK_defence
+    	visible = {
+    		check_variable = {
+    			GAK_expand > 0 
+    		}
+    		has_country_flag = GAK_base_defence
+    	}
+    	available = {
+    		OR = {
+    			custom_trigger_tooltip = {
+    				tooltip = GAK_end_base_defence_trigger_tt
+    				any_owned_state = {
+    					has_state_flag = GAK_griffin_base
+    					is_controlled_by = ROOT
+    					all_neighbor_state = {
+    						is_fully_controlled_by = ROOT
+    					}
+    				}
+    			}
+    			has_war = no
+    		}
+    	}
+    	complete_effect = {
+			clr_country_flag = GAK_base_defence
+			every_controlled_state = {
+				limit = {
+					has_state_flag = GAK_griffin_base
+				}
+				
+				remove_dynamic_modifier = {
+					modifier = GAK_defence_base
+				}
+			}
+		}
+    }
+    GAK_debug_combat_information_room = {
+    	icon = generic_political_discourse
+    	visible = {
+    		is_debug = yes
+    	}
+    	complete_effect = {
+    		set_country_flag = combat_information_room
+    		set_variable = {
+    			GAK_batteries_number = 0
+    		}
+    		set_variable = {
+    			GAK_battery_production_speed = 30
+    		}
+    	}
+
+    }
+}
+GAK_combat_information_room = {
+	GAK_debug_battery_production = {
+    	icon = generic_political_discourse
+    	visible = {
+    		is_debug = yes
+    	}
+    	complete_effect = {
+    		add_to_variable = {
+    			GAK_batteries_number = 100
+    		}
+    		add_to_variable = {
+    			GAK_operational_report = 100
+    		}
+    		battery_progress_var_effect = yes
+    	}
+    }
+	GAK_battery_production = {
+		icon = GAK_battery_production_icon
+		allowed = { always = yes }
+		available = { always = no }
+		is_good = yes
+		fire_only_once = no
+		selectable_mission = no
+		days_mission_timeout = 30
+		activation = {
+			has_country_flag = combat_information_room
+			NOT = {
+				has_country_flag = GAK_base_fall
+			}
+			check_variable = {
+				GAK_batteries_number < 800
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = GAK_battery_production_trigger_tt
+					check_variable = {
+						var = GAK_batteries_number
+						value = 800
+					}
+				}
+				has_country_flag = GAK_base_fall
+			}
+		}
+		timeout_effect = {
+			add_to_variable = {
+				var = GAK_batteries_number
+				value = GAK_battery_production_speed
+			}
+			clamp_variable = {
+				var = GAK_batteries_number
+				min = 0
+				max = 800
+			}
+			battery_progress_var_effect = yes
+			custom_effect_tooltip = GAK_battery_production_tt
+		}
+
+	}
+	GAK_operational_report_production = {
+		icon = GAK_operational_report_production_icon
+		visible = {
+    		NOT = { has_country_flag = GAK_auto_operational_report }
+    	}
+    	available = {
+    		custom_trigger_tooltip = {
+    			tooltip = GAK_operational_report_production_trigger_tt
+    			check_variable = {
+    				GAK_operational_report < 1000
+    			}
+    		}
+    		NOT = { has_country_flag = GAK_making_operational_report }
+    	}
+    	custom_cost_trigger = {
+    		check_variable = {
+				GAK_batteries_number > 29
+			}
+			has_army_experience > 14
+    	}
+    	custom_cost_text = decision_cost_batteries_30_xp_15
+    	complete_effect = {
+			hidden_effect = {
+				add_to_variable = {
+					var = GAK_batteries_number
+					value = -30
+				}
+				army_experience = -15
+			}
+			battery_progress_var_effect = yes
+			set_country_flag = GAK_making_operational_report
+		}
+		days_remove = 15
+		remove_effect = {
+			add_to_variable = {
+				GAK_operational_report = 10
+			}
+			clamp_variable = {
+				var = GAK_operational_report
+				max = 1000
+			}
+			custom_effect_tooltip = GAK_operational_report_production_tt
+			clr_country_flag = GAK_making_operational_report
+		}
+	}
+	GAK_many_operational_report_production = {
+		icon = GAK_operational_report_production_icon
+		visible = {
+    		NOT = { has_country_flag = GAK_auto_operational_report }
+    	}
+    	available = {
+    		custom_trigger_tooltip = {
+    			tooltip = GAK_operational_report_production_trigger_tt
+    			check_variable = {
+    				GAK_operational_report < 1000
+    			}
+    		}
+    		NOT = { has_country_flag = GAK_making_operational_report }
+    	}
+    	custom_cost_trigger = {
+    		check_variable = {
+				GAK_batteries_number > 99
+			}
+			has_army_experience > 49
+    	}
+    	custom_cost_text = decision_cost_batteries_100_xp_50
+    	complete_effect = {
+			hidden_effect = {
+				add_to_variable = {
+					var = GAK_batteries_number
+					value = -100
+				}
+				army_experience = -50
+				battery_progress_var_effect = yes
+			}
+			set_country_flag = GAK_making_operational_report
+		}
+		days_remove = 25
+		remove_effect = {
+			add_to_variable = {
+				GAK_operational_report = 40
+			}
+			clamp_variable = {
+				var = GAK_operational_report
+				max = 1000
+			}
+			custom_effect_tooltip = GAK_many_operational_report_production_tt
+			clr_country_flag = GAK_making_operational_report
+		}
+	}
+	GAK_start_operational_report_production = {
+		icon = GAK_auto_operational_report_production_icon
+		visible = {
+    		NOT = { has_country_flag = GAK_auto_operational_report }
+    	}
+    	available = {
+    		always = yes
+    	}
+    	
+    	complete_effect = {
+			set_country_flag = GAK_auto_operational_report
+			custom_effect_tooltip = GAK_start_operational_report_production_tt
+		}
+	}
+	GAK_auto_operational_report_production = {
+		icon = GAK_auto_operational_report_production_icon
+		allowed = { always = yes }
+		available = { always = no }
+		is_good = yes
+		fire_only_once = no
+		selectable_mission = no
+		days_mission_timeout = 30
+		activation = {
+			has_country_flag = GAK_auto_operational_report
+			NOT = {
+				has_country_flag = GAK_base_fall
+			}
+			check_variable = {
+				GAK_operational_report < 1000
+			}
+
+			check_variable = {
+				GAK_batteries_number > 99
+			}
+			has_army_experience > 49
+		}
+		cancel_trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = GAK_auto_operational_report_production_trigger_tt
+					OR = {
+						check_variable = {
+							GAK_operational_report > 999
+						}
+						check_variable = {
+							GAK_batteries_number < 100
+						}
+					}
+				}
+				has_army_experience < 50
+				has_country_flag = GAK_base_fall
+				NOT = { has_country_flag = GAK_auto_operational_report }
+			}
+		}
+		timeout_effect = {
+			add_to_variable = {
+				GAK_operational_report = 40
+			}
+			clamp_variable = {
+				var = GAK_operational_report
+				min = 0
+				max = 1000
+			}
+			add_to_variable = {
+				GAK_batteries_number = -100
+			}
+			hidden_effect = {
+				army_experience = -50
+			}
+			battery_progress_var_effect = yes
+			custom_effect_tooltip = GAK_auto_operational_report_production_tt
+		}
+	}
+	GAK_stop_operational_report_production = {
+		icon = GAK_auto_operational_report_production_icon
+		visible = {
+    		has_country_flag = GAK_auto_operational_report
+    	}
+    	available = {
+    		always = yes
+    	}
+    	
+    	complete_effect = {
+			clr_country_flag = GAK_auto_operational_report
+		}
+	}
+	GAK_unit_leader_study = {
+		icon = unit_leader_study_icon
+		visible = {
+			always = yes
+		}
+		custom_cost_trigger = {
+			check_variable = {
+				GAK_operational_report > 9
+			}
+		}
+		custom_cost_text = decision_cost_operational_report_10
+		days_remove = 20
+		complete_effect = {
+			add_to_variable = {
+				GAK_operational_report = -10
+			}
+		}
+		modifier = {
+			terrain_trait_xp_gain_factor = 0.2
+		}
+		remove_effect = {
+			every_unit_leader = {
+				limit = {
+					OR = {
+						has_trait = Black_cat
+						has_trait = General_support_group
+						has_trait = Frontline_combat_readiness
+						has_trait = Tactical_support
+						has_trait = Border_investigation
+						has_trait = Anti_rain
+					}
+					skill < 8
+				}
+				gain_xp = 400
+			}
+		}
+	}
+	GAK_strengthen_military_training = {
+		icon = GAK_training
+		visible = {
+			always = yes
+		}
+		custom_cost_trigger = {
+			check_variable = {
+				GAK_operational_report > 14
+			}
+		}
+		custom_cost_text = decision_cost_operational_report_15
+		days_remove = 50
+		modifier = {
+			training_time_army_factor = -0.2
+			experience_gain_army_unit_factor = 0.3
+			experience_gain_army_factor = 0.2
+		}
+		complete_effect = {
+			add_to_variable = {
+				GAK_operational_report = -15
+			}
+		}
+	}
+	GAK_organize_raid_operation = {
+		icon = GAK_raid_operation
+		visible = {
+			always = yes
+		}
+		custom_cost_trigger = {
+			check_variable = {
+				GAK_operational_report > 19
+			}
+		}
+		custom_cost_text = decision_cost_operational_report_20
+		days_remove = 20
+		modifier = {
+			army_attack_factor = 0.2
+			breakthrough_factor = 0.3
+			army_attack_speed_factor = 0.5
+			army_speed_factor = 0.5
+			no_supply_grace = 24
+			org_loss_when_moving = -0.2
+		}
+		complete_effect = {
+			add_to_variable = {
+				GAK_operational_report = -20
+			}
+		}
+	}
+	GAK_plan_offensive = {
+		icon = GAK_plan
+		visible = {
+			always = yes
+		}
+		available = {
+			NOT = { has_country_flag = GAK_planning_offensive }
+		}
+		custom_cost_trigger = {
+			check_variable = {
+				GAK_operational_report > 9
+			}
+		}
+		custom_cost_text = decision_cost_operational_report_10
+		days_remove = 40
+		complete_effect = {
+			set_country_flag = GAK_planning_offensive
+			add_to_variable = {
+				GAK_operational_report = -10
+			}
+		}
+		modifier = {
+			max_planning_factor = 0.2
+			planning_speed = 0.5
+			org_loss_when_moving = -0.2
+			army_org_regain = 0.3
+		}
+		remove_effect = {
+			clr_country_flag = GAK_planning_offensive
+		}
+	}
+	GAK_plan_large_scale_offensive = {
+		icon = GAK_plan
+		visible = {
+			always = yes
+		}
+		available = {
+			NOT = { has_country_flag = GAK_planning_offensive }
+		}
+		custom_cost_trigger = {
+			check_variable = {
+				GAK_operational_report > 24
+			}
+		}
+		custom_cost_text = decision_cost_operational_report_25
+		days_remove = 60
+		complete_effect = {
+			set_country_flag = GAK_planning_offensive
+			add_to_variable = {
+				GAK_operational_report = -10
+			}
+		}
+		modifier = {
+			max_planning_factor = 0.5
+			planning_speed = 0.6
+			org_loss_when_moving = -0.2
+			army_org_regain = 0.4
+		}
+		remove_effect = {
+			clr_country_flag = GAK_planning_offensive
+		}
+	}
+	GAK_develop_defense_plan = {
+		icon = GAK_defence_plan
+		visible = {
+			always = yes
+		}
+		custom_cost_trigger = {
+			check_variable = {
+				GAK_operational_report > 14
+			}
+		}
+		custom_cost_text = decision_cost_operational_report_15
+		days_remove = 40
+		complete_effect = {
+			add_to_variable = {
+				GAK_operational_report = -15
+			}
+		}
+		modifier = {
+			army_defence_factor = 0.2
+			army_org_factor = 0.2
+			army_org_regain = 0.2
+			max_dig_in_factor = 0.4
+			dig_in_speed_factor = 0.6
+		}
+	}
+}

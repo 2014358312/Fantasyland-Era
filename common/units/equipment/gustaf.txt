@@ -1,0 +1,53 @@
+equipments = {
+	IOP_gustaf_equipment = {
+		year = 1936
+
+		is_archetype = yes
+		picture = archetype_artillery_equipment		
+		type = {
+			artillery
+			infantry 
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+
+		max_military_factories = 5
+
+		#Misc Abilities
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 15
+		breakthrough = 15
+		hardness = 0.1
+		armor_value = 40
+
+		#Offensive Abilities
+		soft_attack = 45
+		hard_attack = 30
+		ap_attack = 80
+		air_attack = 0
+
+		additional_collateral_damage = 450
+
+		#Space taken in convoy
+		lend_lease_cost = 15
+		
+		build_cost_ic = 100
+		resources = {
+			steel = 3
+			tungsten = 1
+		}
+	}
+
+	IOP_gustaf_equipment_0 = {
+		year = 1936
+
+		archetype = IOP_gustaf_equipment
+		priority = 50
+		module_slots = inherit
+		visual_level = 0		
+	}
+}
+

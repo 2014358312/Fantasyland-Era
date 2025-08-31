@@ -1,0 +1,33 @@
+GAK_16_lab = {
+	icon = GAK_16lab_icon
+	picture = GFX_decision_category_16_lab
+	visible = {
+		NOT = { has_country_flag = GAK_base_fall }
+		has_country_flag = GAK_16_lab_f
+	}
+	allowed = {
+		always = yes
+	}
+}
+GAK_griffin = {
+	icon = GAK_griffin_icon
+	picture = GFX_decision_category_griffin_base
+	visible = {
+		always = yes
+	}
+	allowed = {
+		always = yes
+	}
+}
+GAK_combat_information_room = {
+	icon = GAK_combat_information_room_icon
+	#picture = GFX_decision_category_combat_information_room
+	scripted_gui = snqx_combat_information_room_ui
+	visible = {
+		has_country_flag = combat_information_room
+		NOT = { has_country_flag = GAK_base_fall }
+	}
+	allowed = {
+		always = yes
+	}
+}

@@ -1,0 +1,29 @@
+#	Example:
+#
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+#
+
+GAK_unit_leader_var_trigger = {
+	has_country_flag = GAK_sp_griffin_commanding_tactical_doll
+	OR = {
+		AND = {
+			check_variable = {
+				GAK_unlocked_number_var < 22
+			}
+			is_special_project_completed = sp:sp_griffin_digi_mind_update
+		}
+		check_variable = {
+			GAK_unlocked_number_var < 21
+		}
+	}
+}

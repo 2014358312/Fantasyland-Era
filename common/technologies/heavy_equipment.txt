@@ -1,0 +1,671 @@
+technologies = {
+
+	@975 = 0
+	@996 = 2
+	@998 = 4
+	@1000 = 6
+	@1001 = 8
+	@1003 = 10
+	@1005 = 12
+	@1007 = 14
+	@1009 = 16
+	@1012 = 18
+	@1015 = 20
+
+	ATW_tech = {
+		enable_equipments = {
+			anti_tank_weapons_0
+		}
+		enable_subunits = {
+			anti_tank_unit
+			anti_tank_support_unit
+		}
+		path = {
+			leads_to_tech = ATW_tech1
+			research_cost_coeff = 1
+		}
+		allow = {
+			has_country_flag = GAK_flag
+		}
+		research_cost = 2
+		start_year = 998
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 0 }
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = {
+				localization_key = SP_UNLOCK_PROJECT
+				PROJECT = sp_griffin_IOP_Gustaf	
+			}
+		}
+		categories = {
+			ATW_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	ATW_tech1 = {
+		anti_tank_unit = {
+			ap_attack = 0.1
+			hard_attack = 0.1
+			fort = {
+				attack = 0.05
+			}
+		}
+		anti_tank_support_unit = {
+			ap_attack = 0.1
+			hard_attack = 0.1
+			fort = {
+				attack = 0.05
+			}
+		}
+		path = {
+			leads_to_tech = ATW_tech2
+			research_cost_coeff = 1
+		}
+		research_cost = 1
+		start_year = 1000
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 2 }
+		}
+
+		categories = {
+			ATW_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	ATW_tech2 = {
+		enable_equipments = {
+			anti_tank_weapons_1
+		}
+		path = {
+			leads_to_tech = ATW_tech3
+			research_cost_coeff = 1
+		}
+		research_cost = 2
+		start_year = 1001
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 4 }
+		}
+
+		categories = {
+			ATW_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	ATW_tech3 = {
+		anti_tank_unit = {
+			ap_attack = 0.1
+			hard_attack = 0.1
+			fort = {
+				attack = 0.05
+			}
+		}
+		anti_tank_support_unit = {
+			ap_attack = 0.1
+			hard_attack = 0.1
+			fort = {
+				attack = 0.05
+			}
+		}
+		enable_equipment_modules = {
+			tank_heavy_weapon_chip
+			tank_missile_launcher_MK1
+			tank_missile_launcher_MK2
+			tank_armor_cannon
+			tank_cannon
+		}
+		path = {
+			leads_to_tech = ATW_tech4
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = main_battle_tanks
+			research_cost_coeff = 1
+		}
+		research_cost = 1
+		start_year = 1003
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 6 }
+		}
+
+		categories = {
+			ATW_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	ATW_tech4 = {
+		enable_equipments = {
+			anti_tank_weapons_2
+		}
+		path = {
+			leads_to_tech = ATW_tech5
+			research_cost_coeff = 1
+		}
+		research_cost = 2
+		start_year = 1007
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 8 }
+		}
+
+		categories = {
+			ATW_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	ATW_tech5 = {
+		anti_tank_unit = {
+			ap_attack = 0.1
+			hard_attack = 0.1
+			urban = {
+				attack = 0.05
+			}
+		}
+		anti_tank_support_unit = {
+			ap_attack = 0.1
+			hard_attack = 0.1
+			urban = {
+				attack = 0.05
+			}
+		}
+		research_cost = 1
+		start_year = 1012
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 10 }
+		}
+
+		categories = {
+			ATW_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	AGL_tech = {
+		enable_equipments = {
+			grenade_launcher_0
+		}
+		enable_subunits = {
+			auto_grenade_launcher
+			auto_grenade_launcher_support
+		}
+		allow = {
+			has_country_flag = GAK_flag
+		}
+		path = {
+			leads_to_tech = AGL_tech1
+			research_cost_coeff = 1
+		}
+		research_cost = 2
+		start_year = 998
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 0 }
+		}
+
+		categories = {
+			AGL_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	AGL_tech1 = {
+		auto_grenade_launcher = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+		auto_grenade_launcher_support = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+		path = {
+			leads_to_tech = AGL_tech2
+			research_cost_coeff = 1
+		}
+		research_cost = 1
+		start_year = 1000
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 2 }
+		}
+
+		categories = {
+			AGL_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	AGL_tech2 = {
+		enable_equipments = {
+			grenade_launcher_1
+		}
+		path = {
+			leads_to_tech = AGL_tech3
+			research_cost_coeff = 1
+		}
+		research_cost = 2
+		start_year = 1001
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 4 }
+		}
+
+		categories = {
+			AGL_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	AGL_tech3 = {
+		auto_grenade_launcher = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+		auto_grenade_launcher_support = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+		enable_equipment_modules = {
+			tank_grenade_launcher
+			tank_light_weapon_chip
+		}
+		path = {
+			leads_to_tech = AGL_tech4
+			research_cost_coeff = 1
+		}
+		research_cost = 1
+		start_year = 1003
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 6 }
+		}
+
+		categories = {
+			AGL_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	AGL_tech4 = {
+		enable_equipments = {
+			grenade_launcher_2
+		}
+		path = {
+			leads_to_tech = AGL_tech5
+			research_cost_coeff = 1
+		}
+		research_cost = 2
+		start_year = 1007
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 8 }
+		}
+
+		categories = {
+			AGL_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	AGL_tech5 = {
+		auto_grenade_launcher = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+		auto_grenade_launcher_support = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+		research_cost = 1
+		start_year = 1012
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 10 }
+		}
+
+		categories = {
+			AGL_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	MTR_tech = {
+		enable_equipments = {
+			mortar_0
+		}
+		enable_subunits = {
+			mortar_unit
+			mortar_support_unit
+		}
+		allow = {
+			has_country_flag = GAK_flag
+		}
+		path = {
+			leads_to_tech = MTR_tech1
+			research_cost_coeff = 1
+		}
+		research_cost = 2
+		start_year = 998
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 0 }
+		}
+
+		categories = {
+			MTR_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	MTR_tech1 = {
+		mortar_unit = {
+			soft_attack = 0.1
+			jungle = {
+				attack = 0.05
+			}
+			forest = {
+				attack = 0.05
+			}
+		}
+		mortar_support_unit = {
+			soft_attack = 0.1
+			jungle = {
+				attack = 0.05
+			}
+			forest = {
+				attack = 0.05
+			}
+		}
+		enable_equipment_modules = {
+			tank_flame_thrower
+		}
+		path = {
+			leads_to_tech = MTR_tech2
+			research_cost_coeff = 1
+		}
+		research_cost = 1
+		start_year = 1000
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 2 }
+		}
+
+		categories = {
+			MTR_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	MTR_tech2 = {
+		enable_equipments = {
+			mortar_1
+		}
+		path = {
+			leads_to_tech = MTR_tech3
+			research_cost_coeff = 1
+		}
+		research_cost = 2
+		start_year = 1001
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 4 }
+		}
+
+		categories = {
+			MTR_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	MTR_tech3 = {
+		mortar_unit = {
+			soft_attack = 0.1
+		}
+		mortar_support_unit = {
+			soft_attack = 0.1
+		}
+		enable_equipment_modules = {
+			tank_small_mortar
+			tank_fire_chip
+			tank_smoke_emitter
+		}
+		path = {
+			leads_to_tech = MTR_tech4
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tactical_mecha
+			research_cost_coeff = 1
+		}
+		research_cost = 1
+		start_year = 1003
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 6 }
+		}
+
+		categories = {
+			MTR_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	MTR_tech4 = {
+		enable_equipments = {
+			mortar_2
+		}
+		path = {
+			leads_to_tech = MTR_tech5
+			research_cost_coeff = 1
+		}
+		research_cost = 2
+		start_year = 1007
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 8 }
+		}
+
+		categories = {
+			MTR_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	MTR_tech5 = {
+		mortar_unit = {
+			soft_attack = 0.1
+		}
+		mortar_support_unit = {
+			soft_attack = 0.1
+		}
+		research_cost = 1
+		start_year = 1012
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 0 y = 10 }
+		}
+
+		categories = {
+			MTR_tech
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	main_battle_tanks = {
+		enable_equipments = {
+			equipment_main_battle_tanks_0
+		}
+		enable_subunits = {
+			main_battle_tanks_unit
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_main_battle_tanks"
+			}
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		enable_equipment_modules = {
+			tank_automatic_defense_system
+			tank_era
+			tank_protective_generator
+			tank_UAV_compartment
+			tank_AESA
+		}
+		path = {
+			leads_to_tech = main_battle_tanks1
+			research_cost_coeff = 1
+		}
+		research_cost = 2
+		start_year = 1003
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 2 y = 6 }
+		}
+
+		categories = {
+			main_battle_tanks
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	main_battle_tanks1 = {
+		enable_equipments = {
+			equipment_main_battle_tanks_1
+		}
+		research_cost = 2
+		start_year = 1012
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 2 y = 10 }
+		}
+
+		categories = {
+			main_battle_tanks
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	tactical_mecha = {
+		enable_equipments = {
+			equipment_tactical_mecha_0
+		}
+		enable_subunits = {
+			tactical_mecha_unit
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_tactical_mecha"
+			}
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		path = {
+			leads_to_tech = tactical_mecha1
+			research_cost_coeff = 1
+		}
+		research_cost = 2
+		start_year = 1003
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 2 y = 6 }
+		}
+
+		categories = {
+			tactical_mecha
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	tactical_mecha1 = {
+		enable_equipments = {
+			equipment_tactical_mecha_1
+		}
+		research_cost = 2
+		start_year = 1012
+		folder = {
+			name = heavy_equipment_folder
+			position = { x = 2 y = 10 }
+		}
+
+		categories = {
+			tactical_mecha
+			heavy_equipment
+		}
+		special_project_specialization = { specialization_griffin }
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+}

@@ -1,0 +1,46 @@
+
+GAK_tactical_doll_army = {
+	enable = { always = yes }
+	remove_trigger = {
+		always = no
+	}
+	icon = GFX_idea_GAK_tactical_doll_army
+	special_forces_cap = GAK_special_forces_cap
+	special_forces_cap_flat = GAK_special_forces_cap_flat
+	modifier_army_sub_unit_category_tactical_doll_defence_factor = GAK_category_tactical_doll_defence_factor
+	modifier_army_sub_unit_category_tactical_doll_attack_factor = GAK_category_tactical_doll_attack_factor
+	resistance_damage_to_garrison_on_our_occupied_states = GAK_resistance_damage_to_garrison_on_our_occupied_states
+	resistance_target = GAK_resistance_target
+	mountaineers_special_forces_contribution_factor = GAK_mountaineers_special_forces_contribution_factor
+	production_speed_buildings_factor = GAK_production_speed_buildings_factor
+	industrial_capacity_factory = GAK_industrial_capacity_factory
+	conscription_factor = GAK_conscription_factor
+	research_speed_factor = GAK_research_speed_factor
+}
+GAK_doll_barracks = {
+	enable = { always = yes }
+	remove_trigger = {
+		always = no
+	}
+	state_production_speed_buildings_factor = GAK_state_production_speed_buildings_factor
+	local_building_slots_factor = GAK_local_building_slots_factor
+	icon = GFX_idea_GAK_contractor
+}
+
+GAK_defence_base = {
+	enable = { always = yes }
+	remove_trigger = {
+		always = no
+	}
+	icon = GFX_modifiers_base_defence
+	attacker_modifier = yes
+	army_attack_factor = -0.3
+	army_core_attack_factor = 0.5
+	army_defence_factor = 0.5
+	army_speed_factor = -0.3
+	army_attack_speed_factor = -0.3
+	cas_damage_reduction = 0.2
+	dig_in_speed_factor = 0.6
+	max_dig_in_factor = 0.4
+	state_production_speed_buildings_factor = -0.8
+}
