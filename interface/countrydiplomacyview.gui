@@ -72,70 +72,12 @@ guiTypes = {
 				instantTextboxType = {
 					name = "faction_name"
 					position = { x = 0 y = 0 }
-					font = "hoi_18mbs"
+					font = "hoi_16mbs"
 					text = "faction"
-					maxWidth = 173
+					maxWidth = 195
 					maxHeight = 20
 					fixedsize = yes
 					format = left
-				}
-			}
-
-			instantTextboxType = {
-				name = "leader_name"
-				position = { x = 245 y = 43 }
-				font = "hoi_16mbs"
-				text = "Rudolf Kittler"
-				maxWidth = 173
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-			}
-
-			containerWindowType = {
-				name = "opinion_info"
-				position = { x = 341 y = 5 } #position = { x = 425 y = 5 }
-				size = { width = 100 height = 60 }
-				clipping = no
-
-				background = {
-					name = "Background"
-					spriteType ="GFX_diplo_opinion_bg"
-					position = { x = 33 y = -4 }
-				}
-
-				iconType = {
-					name = "our_opinion_left_flag"
-					quadTextureSprite ="GFX_flag_small"
-					position = { x = 38 y = 9 }
-					alwaystransparent = yes
-				}
-
-				instantTextboxType = {
-					name = "our_opinion_value"
-					position = { x = 67 y = -4 }
-					font = "hoi_16mbs"
-					text = "+50"
-					maxWidth = 30
-					maxHeight = 20
-					format = center
-				}
-
-				iconType = {
-					name = "their_opinion_left_flag"
-					quadTextureSprite ="GFX_flag_small"
-					position = { x = 74 y = 21 }
-					alwaystransparent = yes
-				}
-
-				instantTextboxType = {
-					name = "their_opinion_value"
-					position = { x = 37 y = 42 }
-					font = "hoi_16mbs"
-					text = "-100"
-					maxWidth = 30
-					maxHeight = 20
-					format = center
 				}
 			}
 
@@ -352,7 +294,83 @@ guiTypes = {
 					}
 				}
 			}
+		
+			iconType = {
+				name = "diplo_leader_name_icon"
+				position = { x = 378 y = 209 }
+				spriteType = "GFX_generic_text_bg_154"
+			}
 
+			instantTextboxType = {
+				name = "leader_name"
+				position = { x = 382 y = 213 }
+				#Covered by the UI below to achieve concealment
+				font = "hoi_18mbs"
+				text = "Rudolf Kittler"
+				maxWidth = 145
+				maxHeight = 22
+				format = left
+				fixedsize = yes
+			}
+	
+			containerWindowType = {
+				name = "opinion_background"
+				position = { x = 428 y = 282 }
+				size = { width = 105 height = 78 }
+				
+				background = {
+					name = "Background"
+					spriteType = "GFX_tiled_decisions_bg_small"
+				}
+			}
+
+
+			containerWindowType = {
+				name = "opinion_info"
+				position = { x = 411 y = 293 } #was position = { x = 341 y = 5 }
+				size = { width = 100 height = 60 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					spriteType ="GFX_diplo_opinion_bg"
+					position = { x = 33 y = -4 }
+				}
+
+				iconType = {
+					name = "our_opinion_left_flag"
+					quadTextureSprite ="GFX_flag_small"
+					position = { x = 38 y = 9 }
+					alwaystransparent = yes
+				}
+
+				instantTextboxType = {
+					name = "our_opinion_value"
+					position = { x = 67 y = -4 }
+					font = "hoi_16mbs"
+					text = "+50"
+					maxWidth = 30
+					maxHeight = 20
+					format = center
+				}
+
+				iconType = {
+					name = "their_opinion_left_flag"
+					quadTextureSprite ="GFX_flag_small"
+					position = { x = 74 y = 21 }
+					alwaystransparent = yes
+				}
+
+				instantTextboxType = {
+					name = "their_opinion_value"
+					position = { x = 37 y = 42 }
+					font = "hoi_16mbs"
+					text = "-100"
+					maxWidth = 30
+					maxHeight = 20
+					format = center
+				}
+			}
 
 			containerWindowType = {
 				name = "relations_info"
@@ -5173,21 +5191,21 @@ guiTypes = {
 			fixedsize = yes
 		}
 		
-		iconType = {
-			name = "diplo_leader_name_icon"
-			position = { x = 230 y = 100 }
-			spriteType = "GFX_generic_text_bg_154"
-		}
+		#iconType = {
+		#	name = "diplo_leader_name_icon"
+		#	position = { x = 230 y = 100 }
+		#	spriteType = "GFX_generic_text_bg_154"
+		#}
 		
-		instantTextboxType = {
-			name = "diplo_leader_name"
-			position = { x = 235 y = 104 }
-			font = "hoi_18mbs"
-			text = "L_name_tt"
-			maxWidth = 145
-			maxHeight = 36
-			fixedsize = yes
-		}
+		#instantTextboxType = {
+		#	name = "diplo_leader_name"
+		#	position = { x = 235 y = 104 }
+		#	font = "hoi_18mbs"
+		#	text = "L_name_tt"
+		#	maxWidth = 145
+		#	maxHeight = 36
+		#	fixedsize = yes
+		#}
 		
 		iconType = {
 			name = "diplo_vice_leader_status_icon"
@@ -5221,6 +5239,8 @@ guiTypes = {
 			maxWidth = 145
 			maxHeight = 36
 			fixedsize = yes
+			pdx_tooltip = VL_Dip_state_tt
+			pdx_tooltip_delayed = VL_desc_tt
 		}
 	}
 	
@@ -5248,7 +5268,7 @@ guiTypes = {
 		
 		background = {
 			name = "Background"
-			spriteType = "GFX_tiled_decisions_bg_small"
+		#	spriteType = "GFX_tiled_decisions_bg_small"
 		}
 		
 		#iconType = {
