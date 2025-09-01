@@ -141,3 +141,17 @@ TIA_naval_dynamic_modifier = {
 	navy_intel_factor = TIA_rm_navy_intel_factor	#0.1
 	naval_invasion_prep_speed = TIA_rm_naval_invasion_prep_speed	#0.15
 }
+
+TIA_floating_city = {
+	enable = { always = yes }
+	icon = GFX_modifiers_ETH_state_development 
+
+	remove_trigger = {
+		ROOT = { NOT = { is_core_of = ROOT.controller } } # ROOT refers to the state on which the modifier is added
+	}
+
+	local_building_slots_factor = 0.5
+	local_building_slots = 2
+	army_defence_factor = 0.25
+	research_speed_factor = 0.1
+}

@@ -4,6 +4,7 @@
 add_namespace = TIA
 add_namespace = TIA_waiting_for_result
 add_namespace = tiam
+add_namespace = TIA_state_event
 country_event = {
 	#启示
 	id = TIA.1
@@ -29,7 +30,7 @@ country_event = {
 }
 
 country_event = {
-	#校园生活开始
+	#权力交接
 	id = TIA.2
 	title = TIA.2.t
 	desc = TIA.2.desc
@@ -38,17 +39,67 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = TIA.2.a
+		custom_effect_tooltip = TIA_power_change_A
+		retire_country_leader = yes
+		add_political_power = 100
+		add_stability = 0.05
 		hidden_effect = {
-			country_event = {
-				id = TIA.3
-				days = 1
+			add_country_leader_role = {
+    			character = TIA_Mia_Runa_Tiamun
+    			promote_leader = yes
+    			country_leader = {
+        			ideology = absolutism_subtype
+        			expire = "1100.1.1.1"
+        			traits = { Imperial_sagacity_1 }
+    			}
+			}
+		}
+	}
+	option = {
+		name = TIA.2.b
+		custom_effect_tooltip = TIA_power_change_B
+		retire_country_leader = yes
+		add_tech_bonus = {
+    		bonus = 0.5
+    		uses = 2
+    		category = industry
+		}
+        add_stability = 0.05
+		hidden_effect = {
+			add_country_leader_role = {
+    			character = TIA_Mia_Runa_Tiamun
+    			promote_leader = yes
+    			country_leader = {
+        			ideology = absolutism_subtype
+        			expire = "1100.1.1.1"
+        			traits = { Imperial_sagacity_1 }
+    			}
+			}
+		}
+	}
+	option = {
+		name = TIA.2.c
+		custom_effect_tooltip = TIA_power_change_C
+		retire_country_leader = yes
+		add_stability = -0.10
+        add_war_support = 0.05
+        add_political_power = 150
+		hidden_effect = {
+			add_country_leader_role = {
+    			character = TIA_Mia_Runa_Tiamun
+    			promote_leader = yes
+    			country_leader = {
+        			ideology = absolutism_subtype
+        			expire = "1100.1.1.1"
+        			traits = { Imperial_sagacity_1 }
+    			}
 			}
 		}
 	}
 }
 
 country_event = {
-	#维护
+	#医疗改革成功
 	id = TIA.3
 	title = TIA.3.t
 	desc = TIA.3.desc
@@ -57,13 +108,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = TIA.3.a
-		hidden_effect = {
-			country_event = {
-				id = TIA.5
-				days = 7
-			}
-			complete_national_focus = TIA_uphold_Tiona_Rudolvon
-		}
+		remove_ideas = TIA_potential_plague
 	}
 }
 
@@ -1426,4 +1471,23 @@ country_event = {
 	option = {
 		name = TIA.1001.a
 	}
+}
+
+state_event = {
+	#浮游都市建成
+    id = TIA_state_event.1
+    title = TIA_state_event.1.t
+    desc = TIA_state_event.1.desc
+    picture = GFX_report_event_TIA_
+    
+    is_triggered_only = yes
+    
+    option = {
+        name = TIA_state_event.1.a
+		251 = {
+			add_dynamic_modifier = {
+				modifier = TIA_floating_city
+			}
+		}
+    }
 }
