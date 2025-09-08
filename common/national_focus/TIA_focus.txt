@@ -384,7 +384,10 @@ focus_tree = {
 		y = 2
 		cost = 5
 		available = {
-			has_country_leader = { ruling_only = yes name = "马蒂亚斯·卢娜·堤亚穆" }
+			has_country_leader = {
+				ruling_only = yes
+				character = TIA_Matthias_Runa_Tiamun
+			}
 		}
 		prerequisite = {
 			focus = TIA_Prevention_plague
@@ -406,6 +409,111 @@ focus_tree = {
 			factor = 1
 		}
 	}
+
+	focus = {
+		id = GER_fuhrerprinzip
+
+		dynamic = yes
+		
+		alternate_icon = GFX_focus_GER_support_the_fuhrer_historical
+
+		icon = {
+			trigger = {
+				has_country_leader = {
+					ruling_only = yes
+					character = TIA_Mia_Runa_Tiamun
+				}
+			}
+			value = GFX_focus_GER_fuhrerprinzip_todt
+		}
+		icon = {
+			trigger = {
+				has_country_leader = {
+					ruling_only = yes
+					character = GER_albert_speer
+				}
+			}
+			value = GFX_focus_GER_fuhrerprinzip_speer
+		}
+		icon = GFX_focus_GER_support_the_fuhrer
+
+		prerequisite = { focus = TIA_next_step_plan }
+		x = 7
+		y = 1
+		relative_position_id = TIA_next_step_plan
+		cost = 5
+		available = {
+			has_government = neutrality
+			has_country_leader = {
+				ruling_only = yes
+				character = TIA_Mia_Runa_Tiamun
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_INNER_CIRCLE FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER }
+
+		completion_reward = {
+			custom_effect_tooltip = GER_fuhrerprinzip_inner_circle_tt
+			add_political_power = 50
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_country_leader_with_trait = GER_der_fuhrer
+				}
+				random_character = {
+					limit = {
+						is_country_leader = yes
+					}
+					swap_country_leader_traits = {
+						remove = GER_der_fuhrer
+						add = GER_der_fuhrer_fuhrerprinzip
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_leader_with_trait = GER_der_fuhrer_wehrmacht
+				}
+				random_character = {
+					limit = {
+						is_country_leader = yes
+					}
+					swap_country_leader_traits = {
+						remove = GER_der_fuhrer_wehrmacht
+						add = GER_der_fuhrer_fuhrerprinzip_wehrmacht
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_leader_with_trait = GER_der_fuhrer_neurath
+				}
+				random_character = {
+					limit = {
+						is_country_leader = yes
+					}
+					swap_country_leader_traits = {
+						remove = GER_der_fuhrer_neurath
+						add = GER_der_fuhrer_fuhrerprinzip_neurath
+					}
+				}
+			}
+			# No fallback if country leader is not Hitler and the Werhmacht / Neurath focuses are completed
+
+			hidden_effect = {
+				add_dynamic_modifier = {
+					modifier = GER_the_inner_circle_dm
+				}
+			}
+		}
+	}
+
 	focus = {
 		#阶级歧视改革
 		id = TIA_class_discrimination_reform
