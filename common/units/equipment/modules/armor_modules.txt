@@ -1,0 +1,426 @@
+equipment_modules = {
+    # 引擎
+	tank_diesel_engine = { # 柴油
+		abbreviation = "die"
+		category = ifv_engine_type
+		sfx = sfx_ui_sd_module_engine
+
+		add_stats = {
+			build_cost_ic = 1 
+			fuel_consumption = 2
+			reliability = 0.20
+		}
+		multiply_stats = {  }
+	}
+
+	tank_petrol_electric_engine = { # 油电
+		abbreviation = "pel"
+		category = ifv_engine_type
+		sfx = sfx_ui_sd_module_engine
+
+		add_stats = {
+			fuel_consumption = 1.5
+			build_cost_ic = 1
+			reliability = 0.10
+		}
+		multiply_stats = {  }
+	}
+
+	tank_gas_turbine_engine = { # 燃气
+		abbreviation = "tur"
+		category = tank_engine_type
+		sfx = sfx_ui_sd_module_engine
+
+		add_stats = {
+			build_cost_ic = 2.5
+			fuel_consumption = 4
+			breakthrough = 4
+			maximum_speed = 0.4
+		}
+
+		multiply_stats = {
+            breakthrough = 0.1
+			maximum_speed = 0.1
+		}
+	}
+
+    tank_nuclear_engine = { # 核能
+        abbreviation = "nuc"
+        category = tank_engine_type
+        sfx = sfx_ui_sd_module_engine
+
+        add_stats = {
+            build_cost_ic = 8
+            fuel_consumption = 0.01
+            maximum_speed = 0.2
+        }
+
+        build_cost_resources = { # TODO: 资源消耗
+
+		}
+    }
+
+    # 悬挂
+	tank_wheeled_suspension = { # 轮式
+		abbreviation = "whe"
+		category = ifv_suspension_type
+		sfx = sfx_ui_sd_module_sonar
+
+		add_stats = {
+			reliability = -0.1
+            maximum_speed = 0.3
+		}
+		dismantle_cost_ic  = 0.5
+
+		multiply_stats =  {
+			build_cost_ic = -0.1
+			hardness = -0.2
+		}
+	}
+
+	tank_half_track_suspension = { # 半履带
+		abbreviation = "htr"
+		category = ifv_suspension_type
+		sfx = sfx_ui_sd_module_sonar
+        add_stats = {
+		}
+		dismantle_cost_ic = 0.5
+	}
+
+    tank_torsion_bar_suspension = { # 扭力杆
+		abbreviation = "tor"
+		category = tank_suspension_type
+		sfx = sfx_ui_sd_module_sonar
+
+		add_stats = {
+			build_cost_ic = 1
+			reliability = 0.10
+		}
+		dismantle_cost_ic  = 2
+
+		multiply_stats = {
+		}
+	}
+
+    tank_hydropneumatic_suspension = { # 液气悬挂
+        abbreviation = "hdp"
+        category = tank_suspension_type
+        sfx = sfx_ui_sd_module_sonar
+
+        add_stats = {
+            build_cost_ic = 2
+            reliability = -0.10
+        }
+        dismantle_cost_ic = 3
+        multiply_stats = {
+            soft_attack = 0.05
+            hard_attack = 0.05
+            build_cost_ic = 0.05
+        }
+    }
+
+    tank_compliance_suspension = { # 柔性悬挂
+        abbreviation = "cpl"
+        category = tank_suspension_type
+        sfx = sfx_ui_sd_module_sonar
+
+        add_stats = {
+            build_cost_ic = 1
+            reliability = 0.10
+        }
+        dismantle_cost_ic = 2
+        multiply_stats = {
+            build_cost_ic = -0.05
+            maximum_speed = 0.10
+        }
+    }
+
+    # TODO: 悬浮系统
+
+    # 传感阵列
+    tank_sensor_array_1 = { # 传感阵列1
+        abbreviation = "sa1"
+        category = tank_sensor_array_type
+        sfx = sfx_ui_sd_module_sonar
+
+        add_stats = {
+            build_cost_ic = 2
+            hardness = -0.2
+        }
+        dismantle_cost_ic = 3
+    }
+
+    tank_sensor_array_2 = { # 传感阵列2
+        abbreviation = "sa2"
+        category = tank_sensor_array_type
+        sfx = sfx_ui_sd_module_sonar
+
+        add_stats = {
+            build_cost_ic = 1
+        }
+        dismantle_cost_ic = 2
+    }
+
+    tank_sensor_array_3 = { # 传感阵列3
+        abbreviation = "sa3"
+        category = tank_sensor_array_type
+        sfx = sfx_ui_sd_module_sonar
+
+        add_stats = {
+            build_cost_ic = 1
+            defence = 4
+            breakthrough = 4
+        }
+        dismantle_cost_ic = 2
+    }
+
+    # 步兵战车炮塔
+    ifv_turret_basic = { # 小炮
+        abbreviation = "tu1"
+        category = ifv_turret_type
+        sfx = sfx_ui_sd_module_turret
+    }
+
+    ifv_turret_large = { # 中炮
+        abbreviation = "tu2"
+        category = ifv_turret_type
+        sfx = sfx_ui_sd_module_turret
+
+        add_stats = {
+            build_cost_ic = 1
+            maximum_speed = -0.1
+        }
+
+        dismantle_cost_ic = 0.5
+
+        allowed_module_categories = {
+			main_armament_slot = {
+				tank_medium_main_armament
+			}
+		}
+    }
+
+    ifv_turret_universal = { # 重炮
+        abbreviation = "tu3"
+        category = ifv_turret_type
+        sfx = sfx_ui_sd_module_turret
+
+        add_stats = {
+            build_cost_ic = 2
+            maximum_speed = -0.2
+            # TODO: 资源消耗
+        }
+
+        dismantle_cost_ic = 0.5
+
+		allowed_module_categories = {
+			main_armament_slot = {
+				tank_medium_main_armament
+				tank_heavy_main_armament
+			}
+		}      
+    }
+
+    # 装甲
+    tank_steel_armor = { # 均质钢
+        abbreviation = "ste"
+        category = ifv_armor_type
+        sfx = sfx_ui_sd_module_sonar
+
+        add_stats = {
+            # TODO: 资源消耗
+        }
+    }
+
+    tank_polymer_armor = { # 聚合物
+        abbreviation = "plm"
+        category = ifv_armor_type
+        sfx = sfx_ui_sd_module_sonar
+
+        add_stats = {
+            maximum_speed = 0.2
+            hardness = -0.1
+            # TODO: 资源消耗
+        }
+
+        multiply_stats = {
+            armor_value = -0.2
+            build_cost_ic = -0.2
+        }
+    }
+
+    tank_du_composite_armor = { # 贫铀
+        abbreviation = "duc"
+        category = tank_armor_type
+        sfx = sfx_ui_sd_module_sonar
+
+        add_stats = {
+            hardness = 0.1
+            defence = 2
+            breakthrough = 2
+            # TODO: 资源消耗 
+        }
+
+        multiply_stats = {
+            armor_value = 0.15
+            build_cost_ic = 0.2
+        }
+    }
+
+    tank_carbon_composite_armor = { # 碳素
+        abbreviation = "cac"
+        category = ifv_armor_type
+        sfx = sfx_ui_sd_module_sonar
+
+        add_stats = {
+            hardness = 0.1
+            defence = 4
+            breakthrough = 4
+            # TODO: 资源消耗
+        }
+
+        multiply_stats = {
+            armor_value = 0.1
+        }
+    }
+
+    # 反应装甲
+    tank_explosive_reactive_armor = { # 爆反
+        abbreviation = "xra"
+        category = tank_reactive_armor_type
+        sfx = sfx_ui_sd_module_turret
+
+        add_stats = {
+            armor_value = 6
+            defence = 4
+            breakthrough = 4
+            build_cost_ic = 1
+        }
+    }
+
+    tank_electromagnetic_reactive_armor = { # 电磁
+        abbreviation = "era"
+        category = ifv_reactive_armor_type
+        sfx = sfx_ui_sd_module_turret
+
+        add_stats = {
+            armor_value = 10
+            defence = 6
+            breakthrough = 8
+            build_cost_ic = 2
+        }
+    }
+
+    # TODO: 附魔装甲
+
+    # 近防
+    tank_heavy_machinegun = { # 重机枪
+        abbreviation = "hmg"
+        category = ifv_close_defense
+        sfx = sfx_ui_sd_module_turret
+
+        add_stats = {
+            soft_attack = 2
+            defence = 2
+            build_cost_ic = 0.5
+        }
+    }
+
+    tank_laser_point_defense = { # 激光
+        abbreviation = "las"
+        category = ifv_close_defense
+        sfx = sfx_ui_sd_module_turret
+
+        add_stats = {
+            soft_attack = 2
+            defence = 5
+            breakthrough = 5
+            build_cost_ic = 2
+        }
+    }
+
+    tank_microwave_inducer = { # 微波
+        abbreviation = "mic"
+        category = tank_close_defense
+        sfx = sfx_ui_sd_module_turret
+
+        add_stats = {
+            soft_attack = 1
+            defence = 7
+            breakthrough = 8
+            build_cost_ic = 3
+        }
+    }
+
+    # TODO: 力场发生器
+
+    # 额外模块
+    tank_smoke_generator = { # 发烟器
+        abbreviation = "smo"
+        category = tank_special_module
+        sfx = sfx_ui_sd_module_turret
+
+        add_stats = {
+            defence = 2
+            breakthrough = 3
+            build_cost_ic = 0.5
+        }
+    }
+
+    tank_tow_missile = { # 陶式飞弹
+        abbreviation = "tow"
+        category = tank_special_module
+        sfx = sfx_ui_sd_module_turret
+
+        add_stats = {
+            soft_attack = 1
+            hard_attack = 2
+            build_cost_ic = 0.5
+        }
+    }
+
+    easy_maintenance = { # 易维护改装
+		abbreviation = "easy"
+		category = tank_manned_special_module
+		sfx = sfx_ui_sd_module_turret
+
+    	add_stats = {
+			reliability = 0.1
+		}
+		dismantle_cost_ic = 1
+		xp_cost = 30
+		multiply_stats = {
+			build_cost_ic = -0.075
+		}
+    }
+
+    self_assessment_module = { # 自检系统
+        abbreviation = "sam"
+        category = tank_unmanned_special_module
+        sfx = sfx_ui_sd_module_turret
+
+        add_stats = {
+			reliability = 0.2
+		}
+		dismantle_cost_ic = 1
+		xp_cost = 30
+		multiply_stats = {
+			build_cost_ic = -0.05
+		}
+    }
+
+    modular_structure = { # 模块化
+        abbreviation = "mod"
+        category = tank_special_module
+        sfx = sfx_ui_sd_module_turret
+
+        add_stats = {
+			reliability = 0.2
+		}
+		dismantle_cost_ic = 1
+		xp_cost = 100
+		multiply_stats = {
+			build_cost_ic = -0.1
+		}
+    }
+}

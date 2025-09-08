@@ -1,0 +1,293 @@
+# options for map_icon_category:
+# For land units: infantry,armored,other
+# For sea units: ship,transport,uboat
+
+sub_units = {
+    ifv_unit = {
+        abbreviation = "IFV"
+        sprite = mechanized
+        map_icon_category = infantry
+        priority = 600
+        ai_priority = 200
+
+        active = no
+        group = mobile
+        type = {
+            ifv_type
+        }
+        categories = {
+            category_all_armor
+            category_all_infantry
+			category_army
+            category_front_line
+            category_mobile_and_mobile_combat_sup
+            category_tanks
+            category_vehicle_infantry
+        }
+
+        combat_width = 2
+        soft_attack = 0.1
+		hard_attack = 2.0
+		max_strength = 15
+		max_organisation = 30
+		default_morale = 0.3
+		manpower = 800
+
+		#Misc Abilities
+		training_time = 180
+		suppression = 3
+		weight = 1
+		supply_consumption = 0.18
+
+        affects_speed = yes
+        transport = ifv_chassis
+
+		essential = {
+			ifv_chassis
+		}
+	
+		need = {
+			infantry_equipment = 80
+			ifv_chassis = 80
+		}
+
+		forest = {
+		    attack = -0.2
+			movement = -0.2
+		}
+		mountain = 	{
+		    attack = -0.1
+		}
+		jungle = {
+		    attack = -0.3
+			movement = -0.2
+		}
+		marsh = {
+		    attack = -0.15 
+			movement = -0.05
+		}
+		urban = {
+			attack = -0.3
+			defence = -0.05
+		}
+		river = { 
+			attack = -0.2 
+			movement = -0.2
+		}
+		amphibious = { 
+			attack = -0.4
+		}	
+    }  
+
+    mbt_unit = {
+        abbreviation = "MBT"
+        sprite = medium_armor
+        map_icon_category = armored
+        priority = 600
+        ai_priority = 200
+
+        active = no
+        group = armor
+        type = {
+            armor
+        }
+        categories = {
+            category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+        }
+
+        combat_width = 2
+
+		essential = {
+			mbt_chassis
+		}
+
+		need = {
+			mbt_chassis = 50
+		}
+		manpower = 500
+		max_organisation = 10
+		max_strength = 2
+		default_morale = 0.3
+		training_time = 180
+		weight = 1.5
+		
+		supply_consumption = 0.25
+
+		suppression = 2.5
+		
+		forest = {
+		    attack = -0.3
+			movement = -0.4
+		}
+		hills = {
+		    attack = -0.1
+		}
+		mountain = 	{
+		    attack = -0.2
+		}
+		jungle = {
+		    attack = -0.4
+			movement = -0.4
+		}
+		marsh = {
+		    attack = -0.1 
+			movement = -0.1
+		}
+		urban = {
+			attack = -0.4
+			defence = -0.1
+		}
+		river = { 
+			attack = -0.2 
+			movement = -0.2
+		}
+		amphibious = { 
+			attack = -0.7
+		}	
+    }  
+
+    robot_tank_unit = {
+        abbreviation = "RBT"
+        sprite = medium_armor
+        map_icon_category = armored
+        priority = 600
+        ai_priority = 200
+
+        active = no
+        group = armor
+        type = {
+            armor
+        }
+        categories = {
+            category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+            category_unmanned_armor
+        }
+
+        combat_width = 2
+
+		essential = {
+			rbt_chassis
+		}
+
+		need = {
+			rbt_chassis = 60
+		}
+		manpower = 100
+		max_organisation = 10
+		max_strength = 2
+		default_morale = 0.2
+		training_time = 120
+		weight = 1.5
+		
+		supply_consumption = 0.2
+
+		suppression = 2.5
+		
+		forest = {
+		    attack = -0.4
+			movement = -0.5
+		}
+		hills = {
+		    attack = -0.15
+		}
+		mountain = 	{
+		    attack = -0.3
+		}
+		jungle = {
+		    attack = -0.5
+			movement = -0.5
+		}
+		marsh = {
+		    attack = -0.15 
+			movement = -0.15
+		}
+		urban = {
+			attack = -0.5
+			defence = -0.15
+		}
+		river = { 
+			attack = -0.3 
+			movement = -0.3
+		}
+		amphibious = { 
+			attack = -0.8
+		}	
+    } 
+
+    ai_tank_unit = {
+        abbreviation = "AIT"
+        sprite = medium_armor
+        map_icon_category = armored
+        priority = 600
+        ai_priority = 200
+
+        active = no
+        group = armor
+        type = {
+            armor
+        }
+        categories = {
+            category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+            category_unmanned_armor
+        }
+
+        combat_width = 2
+
+		essential = {
+			ait_chassis
+		}
+
+		need = {
+			ait_chassis = 60
+		}
+		manpower = 50
+		max_organisation = 10
+		max_strength = 2
+		default_morale = 0.3
+		training_time = 60
+		weight = 1.5
+		
+		supply_consumption = 0.2
+
+		suppression = 2.5
+		
+		forest = {
+		    attack = -0.4
+			movement = -0.5
+		}
+		hills = {
+		    attack = -0.15
+		}
+		mountain = 	{
+		    attack = -0.3
+		}
+		jungle = {
+		    attack = -0.5
+			movement = -0.5
+		}
+		marsh = {
+		    attack = -0.15 
+			movement = -0.15
+		}
+		urban = {
+			attack = -0.5
+			defence = -0.15
+		}
+		river = { 
+			attack = -0.3 
+			movement = -0.3
+		}
+		amphibious = { 
+			attack = -0.8
+		}	
+    } 
+}
