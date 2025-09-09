@@ -21,11 +21,19 @@ add_ideas = {
     GSK_Shen_Fist
     GSK_techology_of_lost
 	GSK_hunlun_zhengfu
-	#GSK_where_hakurei
-	#GSK_management_of_hakurei
 }
 
-recruit_character = GSK_hakurei_reimu
+if = {
+	limit = { is_debug = yes }
+	add_ideas = {
+		GSK_where_hakurei
+		GSK_management_of_hakurei
+	}
+}
+
+recruit_character = GSK_Hakurei_Reimu
+recruit_character = GSK_Yakumo_Yukari
+activate_advisor = GSK_Yakumo_Yukari_head_of_government
 
 set_politics = {
 	ruling_party = neutrality

@@ -1,11 +1,15 @@
 characters = {
 
-	GSK_hakurei_reimu = { #博丽灵梦
+	GSK_Hakurei_Reimu = {
 		name = Hakurei_Reimu
 		portraits = {
 			civilian = {
 				large = GFX_Portrait_GSK_Hakurei_Reimu
-				#small = GFX_
+				small = GFX_idea_advisor_GSK_Yakumo_Yukari
+			}
+			army = {
+				large = GFX_Portrait_GSK_Hakurei_Reimu
+				small = GFX_idea_advisor_GSK_Yakumo_Yukari
 			}
 		}
 		country_leader = {
@@ -13,6 +17,40 @@ characters = {
 			traits = {  }
 			expire = "1965.1.1"
 			id = -1
+		}
+	}
+
+	GSK_Yakumo_Yukari = {
+		name = Yakumo_Yukari
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_GSK_Yakumo_Yukari
+				small = GFX_idea_advisor_GSK_Yakumo_Yukari
+			}
+			army = {
+				large = GFX_Portrait_GSK_Yakumo_Yukari
+				small = GFX_idea_advisor_GSK_Yakumo_Yukari
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = GSK_Yakumo_Yukari_head_of_government
+			allowed = {
+				original_tag = GSK
+			}
+			visible = { is_country_leader = no }
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			traits = {  head_of_government_trait }
+			cost = 0
+			ai_will_do = {
+				factor = 1
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = { FE_secondary = token:GSK_Yakumo_Yukari_head_of_government }
+				}
+			}
 		}
 	}
 
