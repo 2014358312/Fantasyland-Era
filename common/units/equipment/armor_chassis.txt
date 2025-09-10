@@ -6,7 +6,7 @@ equipments = {
         is_buildable = no
 
         picture = archetype_amphibious_tank_equipment
-        type = mechanized
+        type = armor
         group_by = archetype
         interface_category = interface_category_armor
         priority = 40
@@ -68,16 +68,6 @@ equipments = {
                     ifv_reactive_armor_type
                     tank_special_module
                     tank_manned_special_module                   
-                }
-            }
-
-            special_type_slot_4 = {
-                required = no
-                allowed_module_categories = {
-                    ifv_close_defense
-                    ifv_reactive_armor_type
-                    tank_special_module
-                    tank_manned_special_module                    
                 }
             }
         }
@@ -182,29 +172,26 @@ equipments = {
         reliability = 0.90
     }
 
-    ifv_chassis_sensor = { 
+    ifv_chassis_3 = { # 先进型步兵战车
+        abbreviation = "ifv3"
+        derived_variant_name = ifv_equipment_3
+        visual_level = 0
         year = 1006
-        is_archetype = yes
-        is_buildable = no
-
-        picture = archetype_amphibious_tank_equipment
-        type = mechanized
-        group_by = archetype
-        interface_category = interface_category_armor
+        archetype = ifv_chassis
+        parent = ifv_chassis_2
         priority = 40
-
         module_slots = {
-            turret_type_slot = {
-                required = yes
-                allowed_module_categories = {
-                    ifv_turret_type
-                }
-            }
-
             main_armament_slot = {
                 required = yes
                 allowed_module_categories = {
                     tank_small_main_armament
+                }
+            }
+
+            turret_type_slot = {
+                required = yes
+                allowed_module_categories = {
+                    ifv_turret_type
                 }
             }
 
@@ -304,6 +291,7 @@ equipments = {
 			armor_type_slot = tank_steel_armor
 			engine_type_slot = tank_diesel_engine
 		}
+
 		defense = 35
 		breakthrough = 24
 		hardness = 0.75
@@ -311,24 +299,6 @@ equipments = {
 		air_attack = 0
 		build_cost_ic = 6.8
 		reliability = 0.90
-
-		lend_lease_cost = 6
-        maximum_speed = 8
-		resources = {
-		}
-		fuel_consumption = 0
-
-    }
-
-    ifv_chassis_3 = { # 先进型步兵战车
-        abbreviation = "ifv3"
-        derived_variant_name = ifv_equipment_3
-        visual_level = 0
-        year = 1006
-        archetype = ifv_chassis_sensor
-        parent = ifv_chassis_2
-        priority = 40
-        module_slots = inherit
 
 		upgrades = {
 			#tank_nsb_engine_upgrade
@@ -341,10 +311,120 @@ equipments = {
         derived_variant_name = ifv_equipment_4
         visual_level = 0
         year = 1010
-        archetype = ifv_chassis_sensor
+        archetype = ifv_chassis
         parent = ifv_chassis_3
         priority = 40
-        module_slots = inherit
+        module_slots = {
+            main_armament_slot = {
+                required = yes
+                allowed_module_categories = {
+                    tank_small_main_armament
+                }
+            }
+
+            turret_type_slot = {
+                required = yes
+                allowed_module_categories = {
+                    ifv_turret_type
+                }
+            }
+
+            suspension_type_slot = {
+                required = yes
+                allowed_module_categories = {
+                    ifv_suspension_type
+                    tank_suspension_type
+                }
+            }
+
+            armor_type_slot = {
+                required = yes
+                allowed_module_categories = {
+                    ifv_armor_type
+                }
+            }
+
+            special_type_slot_1 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    ifv_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type
+                }
+            }
+
+            special_type_slot_2 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    ifv_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type
+                }
+            }
+
+            special_type_slot_3 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    ifv_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type                   
+                }
+            }
+
+            special_type_slot_4 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    ifv_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type                    
+                }
+            }
+        }
+        module_count_limit = {
+            category = tank_reactive_armor_type
+            count < 2
+        }
+
+        module_count_limit = {
+            category = tank_sensor_array_type
+            count < 2
+        }
+
+        module_count_limit = {
+            module = tank_laser_point_defense
+            count < 2
+        }
+            
+        module_count_limit = {
+            module = tank_smoke_generator
+            count < 2
+        }
+
+        module_count_limit = {
+            module = easy_maintenance
+            count < 2
+        }
+
+        module_count_limit = {
+            module = modular_structure
+            count < 2
+        }
+
+        default_modules = {
+			main_armament_slot = empty
+			turret_type_slot = ifv_turret_basic
+			suspension_type_slot = tank_half_track_suspension
+			armor_type_slot = tank_steel_armor
+			engine_type_slot = tank_diesel_engine
+		}
 
 		defense = 40
 		breakthrough = 28
@@ -360,10 +440,131 @@ equipments = {
         derived_variant_name = ifv_equipment_5
         visual_level = 0
         year = 1013
-        archetype = ifv_chassis_sensor
+        archetype = ifv_chassis
         parent = ifv_chassis_4
         priority = 40
-        module_slots = inherit
+        module_slots = {
+            main_armament_slot = {
+                required = yes
+                allowed_module_categories = {
+                    tank_small_main_armament
+                }
+            }
+
+            turret_type_slot = {
+                required = yes
+                allowed_module_categories = {
+                    ifv_turret_type
+                }
+            }
+
+            suspension_type_slot = {
+                required = yes
+                allowed_module_categories = {
+                    ifv_suspension_type
+                    tank_suspension_type
+                }
+            }
+
+            armor_type_slot = {
+                required = yes
+                allowed_module_categories = {
+                    ifv_armor_type
+                }
+            }
+
+            special_type_slot_1 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    ifv_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type
+                }
+            }
+
+            special_type_slot_2 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    ifv_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type
+                }
+            }
+
+            special_type_slot_3 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    ifv_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type                   
+                }
+            }
+
+            special_type_slot_4 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    ifv_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type                    
+                }
+            }
+
+            special_type_slot_5 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    ifv_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type                    
+                }
+            }
+        }
+        module_count_limit = {
+            category = tank_reactive_armor_type
+            count < 2
+        }
+
+        module_count_limit = {
+            category = tank_sensor_array_type
+            count < 2
+        }
+
+        module_count_limit = {
+            module = tank_laser_point_defense
+            count < 2
+        }
+            
+        module_count_limit = {
+            module = tank_smoke_generator
+            count < 2
+        }
+
+        module_count_limit = {
+            module = easy_maintenance
+            count < 2
+        }
+
+        module_count_limit = {
+            module = modular_structure
+            count < 2
+        }
+
+        default_modules = {
+			main_armament_slot = empty
+			turret_type_slot = ifv_turret_basic
+			suspension_type_slot = tank_half_track_suspension
+			armor_type_slot = tank_steel_armor
+			engine_type_slot = tank_diesel_engine
+		}
 
 		defense = 45
 		breakthrough = 32
@@ -395,6 +596,18 @@ equipments = {
                 }
             }
 
+            special_type_slot_1 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    tank_close_defense
+                    ifv_reactive_armor_type
+                    tank_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                }
+            }
+
             suspension_type_slot = {
                 required = yes
                 allowed_module_categories = {
@@ -414,18 +627,6 @@ equipments = {
                 required = yes
                 allowed_module_categories = {
                     tank_engine_type
-                }
-            }
-
-            special_type_slot_1 = {
-                required = no
-                allowed_module_categories = {
-                    ifv_close_defense
-                    tank_close_defense
-                    ifv_reactive_armor_type
-                    tank_reactive_armor_type
-                    tank_special_module
-                    tank_manned_special_module
                 }
             }
 
@@ -566,17 +767,14 @@ equipments = {
 		armor_value = 60
     }
 
-    mbt_chassis_sensor = {
+    mbt_chassis_3 = { # 先进型主战坦克
+        abbreviation = "mbt3"
+        derived_variant_name = mbt_equipment_3
+        visual_level = 0
         year = 1007
-        is_archetype = yes
-        is_buildable = no
-
-        picture = archetype_modern_tank_equipment
-        type = armor
-        group_by = archetype
-        interface_category = interface_category_armor
+        parent = mbt_chassis_2
+        archetype = mbt_chassis
         priority = 2000
-
         module_slots = {
             main_armament_slot = {
                 required = yes
@@ -584,6 +782,19 @@ equipments = {
                     tank_small_main_armament
                     tank_medium_main_armament
                     tank_heavy_main_armament
+                }
+            }
+
+            special_type_slot_1 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    tank_close_defense
+                    ifv_reactive_armor_type
+                    tank_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type
                 }
             }
 
@@ -606,19 +817,6 @@ equipments = {
                 required = yes
                 allowed_module_categories = {
                     tank_engine_type
-                }
-            }
-
-            special_type_slot_1 = {
-                required = no
-                allowed_module_categories = {
-                    ifv_close_defense
-                    tank_close_defense
-                    ifv_reactive_armor_type
-                    tank_reactive_armor_type
-                    tank_special_module
-                    tank_manned_special_module
-                    tank_sensor_array_type
                 }
             }
 
@@ -658,6 +856,19 @@ equipments = {
                     tank_special_module
                     tank_manned_special_module    
                     tank_sensor_array_type               
+                }
+            }
+
+            special_type_slot_5 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    tank_close_defense
+                    ifv_reactive_armor_type
+                    tank_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type
                 }
             }
         }
@@ -702,6 +913,7 @@ equipments = {
 			armor_type_slot = tank_steel_armor
 			engine_type_slot = tank_diesel_engine
 		}
+
         maximum_speed = 8.8
 		build_cost_ic = 7.2
         defense = 6
@@ -709,20 +921,6 @@ equipments = {
 		reliability = 0.95
         hardness = 0.95
 		armor_value = 70
-		resources = {
-            # TODO: 资源消耗
-		}
-    }
-
-    mbt_chassis_3 = { # 先进型主战坦克
-        abbreviation = "mbt3"
-        derived_variant_name = mbt_equipment_3
-        visual_level = 0
-        year = 1007
-        parent = mbt_chassis_2
-        archetype = mbt_chassis_sensor
-        priority = 2000
-        module_slots = inherit
 
     	upgrades = {
 			#tank_nsb_engine_upgrade
@@ -736,9 +934,146 @@ equipments = {
         visual_level = 0
         year = 1010
         parent = mbt_chassis_3
-        archetype = mbt_chassis_sensor
+        archetype = mbt_chassis
         priority = 2000
-        module_slots = inherit
+        module_slots = {
+            main_armament_slot = {
+                required = yes
+                allowed_module_categories = {
+                    tank_small_main_armament
+                    tank_medium_main_armament
+                    tank_heavy_main_armament
+                }
+            }
+
+            special_type_slot_1 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    tank_close_defense
+                    ifv_reactive_armor_type
+                    tank_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type
+                }
+            }
+
+            suspension_type_slot = {
+                required = yes
+                allowed_module_categories = {
+                    tank_suspension_type
+                }
+            }
+
+            armor_type_slot = {
+                required = yes
+                allowed_module_categories = {
+                    ifv_armor_type
+                    tank_armor_type
+                }
+            }
+
+            engine_type_slot = {
+                required = yes
+                allowed_module_categories = {
+                    tank_engine_type
+                }
+            }
+
+            special_type_slot_2 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    tank_close_defense
+                    ifv_reactive_armor_type
+                    tank_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type
+                }
+            }
+
+            special_type_slot_3 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    tank_close_defense
+                    ifv_reactive_armor_type
+                    tank_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module      
+                    tank_sensor_array_type            
+                }
+            }
+
+            special_type_slot_4 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    tank_close_defense
+                    ifv_reactive_armor_type
+                    tank_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module    
+                    tank_sensor_array_type               
+                }
+            }
+
+            special_type_slot_5 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    tank_close_defense
+                    ifv_reactive_armor_type
+                    tank_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type
+                }
+            }
+        }
+        module_count_limit = {
+            category = tank_reactive_armor_type
+            count < 2
+        }
+
+        module_count_limit = {
+            category = tank_sensor_array_type
+            count < 2
+        }
+
+        module_count_limit = {
+            module = tank_laser_point_defense
+            count < 2
+        }
+
+        module_count_limit = {
+            module = tank_microwave_inducer
+            count < 2
+        }
+            
+        module_count_limit = {
+            module = tank_smoke_generator
+            count < 2
+        }
+
+        module_count_limit = {
+            module = easy_maintenance
+            count < 2
+        }
+
+        module_count_limit = {
+            module = modular_structure
+            count < 2
+        }
+
+        default_modules = {
+			main_armament_slot = empty
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_steel_armor
+			engine_type_slot = tank_diesel_engine
+		}
 
         maximum_speed = 9
 		build_cost_ic = 7.5
@@ -755,9 +1090,146 @@ equipments = {
         visual_level = 0
         year = 1013
         parent = mbt_chassis_4
-        archetype = mbt_chassis_sensor
+        archetype = mbt_chassis
         priority = 2000
-        module_slots = inherit
+        module_slots = {
+            main_armament_slot = {
+                required = yes
+                allowed_module_categories = {
+                    tank_small_main_armament
+                    tank_medium_main_armament
+                    tank_heavy_main_armament
+                }
+            }
+
+            special_type_slot_1 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    tank_close_defense
+                    ifv_reactive_armor_type
+                    tank_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type
+                }
+            }
+
+            suspension_type_slot = {
+                required = yes
+                allowed_module_categories = {
+                    tank_suspension_type
+                }
+            }
+
+            armor_type_slot = {
+                required = yes
+                allowed_module_categories = {
+                    ifv_armor_type
+                    tank_armor_type
+                }
+            }
+
+            engine_type_slot = {
+                required = yes
+                allowed_module_categories = {
+                    tank_engine_type
+                }
+            }
+
+            special_type_slot_2 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    tank_close_defense
+                    ifv_reactive_armor_type
+                    tank_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type
+                }
+            }
+
+            special_type_slot_3 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    tank_close_defense
+                    ifv_reactive_armor_type
+                    tank_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module      
+                    tank_sensor_array_type            
+                }
+            }
+
+            special_type_slot_4 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    tank_close_defense
+                    ifv_reactive_armor_type
+                    tank_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module    
+                    tank_sensor_array_type               
+                }
+            }
+
+            special_type_slot_5 = {
+                required = no
+                allowed_module_categories = {
+                    ifv_close_defense
+                    tank_close_defense
+                    ifv_reactive_armor_type
+                    tank_reactive_armor_type
+                    tank_special_module
+                    tank_manned_special_module
+                    tank_sensor_array_type
+                }
+            }
+        }
+        module_count_limit = {
+            category = tank_reactive_armor_type
+            count < 2
+        }
+
+        module_count_limit = {
+            category = tank_sensor_array_type
+            count < 2
+        }
+
+        module_count_limit = {
+            module = tank_laser_point_defense
+            count < 2
+        }
+
+        module_count_limit = {
+            module = tank_microwave_inducer
+            count < 2
+        }
+            
+        module_count_limit = {
+            module = tank_smoke_generator
+            count < 2
+        }
+
+        module_count_limit = {
+            module = easy_maintenance
+            count < 2
+        }
+
+        module_count_limit = {
+            module = modular_structure
+            count < 2
+        }
+
+        default_modules = {
+			main_armament_slot = empty
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_steel_armor
+			engine_type_slot = tank_diesel_engine
+		}
 
         maximum_speed = 9
 		build_cost_ic = 8
