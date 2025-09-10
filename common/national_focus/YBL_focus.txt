@@ -17,8 +17,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = YBl_shenmifangke
 		mutually_exclusive = {
-			focus = YBl_shenmifangke
-			focus = YBL_guiyudahai
+			focus = YBl_shenmifangke focus = YBL_guiyudahai
 		}
 		cost = 5
 		available = {
@@ -147,8 +146,8 @@ focus_tree = {
 	focus = {
 		id = YBL_jianzhengyiqiedeshengtu
 		icon = YBL_jianzhengyiqiedeshengtu
-		x = -1
-		y = 1
+		x = -2
+		y = 2
 		relative_position_id = YBL_buchangageerren
 		prerequisite = {
 			focus = YBL_buchangageerren
@@ -292,35 +291,18 @@ focus_tree = {
 			add_political_power = 120
 		}
 	}
-	focus = {
-		id = YBL_jujiaoguojizhuangkuang
-		icon = GFX_goal_generic_national_unity
-		x = 0
-		y = 1
-		relative_position_id = YBL_xuanbuhoujingmidejieshu
-		prerequisite = {
-			focus = YBL_xuanbuhoujingmidejieshu
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
+	#保守线
 	focus = {
 		id = YBL_yibiliyayanjiuyuan
 		icon = GFX_focus_research
-		x = 0
+		x = -3
 		y = 1
-		relative_position_id = YBL_jujiaoguojizhuangkuang
+		relative_position_id = YBL_xuanbuhoujingmidejieshu
 		prerequisite = {
-			focus = YBL_jujiaoguojizhuangkuang
+			focus = YBL_jianzhengyiqiedeshengtu
+		}
+		prerequisite = {
+			focus = YBL_xuanbuhoujingmidejieshu
 		}
 		cost = 5
 		available = {
@@ -362,7 +344,7 @@ focus_tree = {
 		id = YBL_dongdalugongshi
 		icon = GFX_goal_generic_attack_allies
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = YBL_zhongshidalu
 		prerequisite = {
 			focus = YBL_zhongshidalu
@@ -380,7 +362,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = YBL_youhaodeyinju
+		id = YBL_youhaodelinju
 		icon = GFX_goal_generic_improve_relations
 		x = -1
 		y = 1
@@ -405,9 +387,9 @@ focus_tree = {
 		icon = GFX_goal_anschluss
 		x = 0
 		y = 1
-		relative_position_id = YBL_youhaodeyinju
+		relative_position_id = YBL_youhaodelinju
 		prerequisite = {
-			focus = YBL_youhaodeyinju
+			focus = YBL_youhaodelinju
 		}
 		cost = 5
 		available = {
@@ -440,7 +422,82 @@ focus_tree = {
 		search_filters = {
 		}
 		completion_reward = {
-			add_political_power = 120
+			hidden_effect = {
+				every_country = {
+					limit = {
+						has_government = democratic
+						NOT = { is_in_faction_with = ROOT }
+						OR = {
+							is_major = yes
+							is_neighbor_of = ROOT
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_cosmetic_tag = KPB_kingdom_portugal_and_brazil } #Non-Aligned Duarte Nuno (Monarchist)
+						}
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = puppet_wargoal_focus
+								expire = 0
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							ROOT = { has_government = neutrality }  #Non-Aligned Salazar (Even in Monarchist branch if Duarte Nuno is not ruler yet)
+						}
+							ROOT = {
+								create_wargoal = {
+									target = PREV
+									type = topple_government
+									expire = 0
+								}
+							}
+					}
+					else = { #Fascist Preto
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = annex_everything
+								expire = 0
+							}
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = YBL_the_communist_threat_tt
+			every_country = {
+				limit = {
+					has_government = democratic
+					NOT = { is_in_faction_with = ROOT }
+					OR = {
+						is_major = yes
+						is_neighbor_of = ROOT
+					}
+				}
+			}
+
+			hidden_effect = {
+				every_country = {
+					limit = {
+						has_government = democratic
+						NOT = { is_in_faction_with = ROOT }
+						OR = {
+							is_major = yes
+							is_neighbor_of = ROOT
+						}
+					}
+					ROOT = {
+						add_ai_strategy = {
+							type = declare_war
+							id = PREV
+							value = 100
+						}
+					}
+				}
+			}
 		}
 	}
 	focus = {
@@ -492,7 +549,7 @@ focus_tree = {
 		id = YBL_kuayuedayangdemengyou
 		icon = GFX_goal_generic_improve_relations
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = YBL_zhimiandahai
 		prerequisite = {
 			focus = YBL_zhimiandahai
@@ -555,7 +612,7 @@ focus_tree = {
 		id = YBL_shenpanri
 		icon = YBL_shenpanri
 		x = 0
-		y = 1
+		y = 1.5
 		relative_position_id = YBL_dongdalushoufuzhe
 		prerequisite = {
 			focus = YBL_dongdalushoufuzhe
@@ -577,11 +634,38 @@ focus_tree = {
 	focus = {
 		id = YBL_nianqingdedashenpanguan
 		icon = GFX_YBL_nianqingdedashenpanguan
-		x = 1
-		y = 1
+		x = 2
+		y = 2
 		relative_position_id = YBL_yimianqizhilianggeminzu
 		prerequisite = {
 			focus = YBL_yimianqizhilianggeminzu
+		}
+		cost = 5
+		available = {
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = {
+		}
+		completion_reward = {
+			add_popularity = { ideology = democratic popularity = 0.3 }
+			set_politics = { ruling_party = democratic elections_allowed = no }
+		}
+	}
+	#保守线
+	#进步线
+	focus = {
+		id = YBL_CapitalUniversity
+		icon = GFX_focus_research
+		x = 3
+		y = 1
+		relative_position_id = YBL_xuanbuhoujingmidejieshu
+		prerequisite = {
+			focus = YBL_nianqingdedashenpanguan
+		}
+		prerequisite = {
+			focus = YBL_xuanbuhoujingmidejieshu
 		}
 		cost = 5
 		available = {
@@ -602,8 +686,7 @@ focus_tree = {
 		icon = GFX_focus_generic_monarchy_2
 		relative_position_id = YBl_guiyudahai
 		mutually_exclusive = {
-			focus = YBL_wendingxianzhuang
-			focus = YBL_guiyudahai
+			focus = YBL_wendingxianzhuang focus = YBL_guiyudahai
 		}
 		x = -10
 		y = 0
@@ -809,7 +892,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YBL_zhigengniaojihua
-		icon = GFX_goal_generic_national_unity
+		icon = YBL_zhigengniaojihua
 		x = 0
 		y = 1
 		relative_position_id = YBL_huangjiayanjiuyuan
@@ -830,7 +913,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YBL_chuangjianxuexiaotuan
-		icon = GFX_goal_generic_national_unity
+		icon = YBL_chuangjianxuexiaotuan
 		x = -2
 		y = 1
 		relative_position_id = YBL_chaoyuexuemaideminzu
@@ -1090,8 +1173,7 @@ focus_tree = {
 		x = 0
 		y = 0
 		mutually_exclusive = {
-			focus = BRA_end_the_state_of_emergency
-			focus = BRA_prepare_for_second_intentona
+			focus = YBL_wendingxianzhuang focus = YBl_shenmifangke
 		}
 		cost = 5
 		available = {
