@@ -707,7 +707,7 @@ equipments = {
         defense = 5
         breakthrough = 32
 		reliability = 0.8
-        hardness = 0.90
+        hardness = 0.95
 		armor_value = 50
 		resources = {
             # TODO: 资源消耗
@@ -722,6 +722,8 @@ equipments = {
         archetype = mbt_chassis
         priority = 2000
         module_slots = inherit
+		
+		hardness = 0.90
 
 		upgrades = {
 			#tank_nsb_engine_upgrade
@@ -744,7 +746,6 @@ equipments = {
         defense = 5
         breakthrough = 32
 		reliability = 0.90
-        hardness = 0.95
 		armor_value = 50
     }
 
@@ -763,7 +764,6 @@ equipments = {
         defense = 5
         breakthrough = 36
 		reliability = 0.90
-        hardness = 0.95
 		armor_value = 60
     }
 
@@ -919,7 +919,6 @@ equipments = {
         defense = 6
         breakthrough = 38
 		reliability = 0.95
-        hardness = 0.95
 		armor_value = 70
 
     	upgrades = {
@@ -1080,7 +1079,6 @@ equipments = {
         defense = 7
         breakthrough = 42
 		reliability = 1
-        hardness = 0.95
 		armor_value = 75
     }
 
@@ -1236,7 +1234,6 @@ equipments = {
         defense = 8
         breakthrough = 45
 		reliability = 1.2
-        hardness = 0.95
 		armor_value = 90
     }
 
@@ -1273,6 +1270,7 @@ equipments = {
                 allowed_module_categories = {
                     ifv_suspension_type
                     tank_suspension_type
+                    tank_levitation_type
                 }
             }
 
@@ -1437,7 +1435,6 @@ equipments = {
         defense = 4.5
         breakthrough = 28
 		reliability = 0.60
-        hardness = 0.80
 		armor_value = 60
     }
 
@@ -1456,7 +1453,7 @@ equipments = {
         defense = 5
         breakthrough = 32
 		reliability = 0.65
-        hardness = 0.80
+        hardness = 0.85
 		armor_value = 65
     }
 
@@ -1475,8 +1472,17 @@ equipments = {
         defense = 5.5
         breakthrough = 35
 		reliability = 0.75
-        hardness = 0.80
+        hardness = 0.90
 		armor_value = 75
+    }
+
+    rbt_amphibious_chassis = {
+        archetype = rbt_chassis
+        type = { amphibious armor }
+    	for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.75 }
+		}    
     }
 
     ait_chassis = {
@@ -1512,6 +1518,7 @@ equipments = {
                 allowed_module_categories = {
                     ifv_suspension_type
                     tank_suspension_type
+                    tank_levitation_type
                 }
             }
 
@@ -1662,7 +1669,6 @@ equipments = {
         defense = 4
         breakthrough = 24
 		reliability = 0.40
-        hardness = 0.80
 		armor_value = 50
     }
 
@@ -1681,7 +1687,6 @@ equipments = {
         defense = 6
         breakthrough = 30
 		reliability = 0.50
-        hardness = 0.80
 		armor_value = 65
     }
 
@@ -1700,7 +1705,7 @@ equipments = {
         defense = 7
         breakthrough = 36
 		reliability = 0.60
-        hardness = 0.80
+        hardness = 0.85
 		armor_value = 75
     }
 
@@ -1721,5 +1726,14 @@ equipments = {
 		reliability = 0.80
         hardness = 0.90
 		armor_value = 90
+    }
+
+    ait_amphibious_chassis = {
+        archetype = ait_chassis
+        type = { amphibious armor }
+    	for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.75 }
+		}    
     }
 }

@@ -13,7 +13,7 @@ sub_units = {
         active = no
         group = mobile
         type = {
-            ifv_type
+            armor
         }
         categories = {
             category_all_armor
@@ -288,6 +288,136 @@ sub_units = {
 		}
 		amphibious = { 
 			attack = -0.8
+		}	
+    } 
+
+    amphibious_robot_tank = {
+        abbreviation = "ARBT"
+        sprite = medium_armor
+        map_icon_category = armored
+        priority = 600
+        ai_priority = 200
+
+        active = no
+        group = armor
+        type = {
+            armor
+			amphibious
+        }
+        categories = {
+            category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+            category_unmanned_armor
+			category_amphibious_tanks
+        }
+
+        combat_width = 2
+
+		need = {
+			rbt_amphibious_chassis = 60
+		}
+		manpower = 100
+		max_organisation = 10
+		max_strength = 2
+		default_morale = 0.2
+		training_time = 120
+		weight = 1.5
+		
+		supply_consumption = 0.2
+
+		suppression = 2.5
+		
+		forest = {
+		    attack = -0.3
+			movement = -0.4
+		}
+		hills = {
+		    attack = -0.1
+		}
+		mountain = 	{
+		    attack = -0.25
+		}
+		jungle = {
+		    attack = -0.4
+			movement = -0.4
+		}
+		urban = {
+			attack = -0.5
+			defence = -0.15
+		}
+		river = { 
+			attack = 0.3 
+			movement = 0.3
+		}
+		amphibious = { 
+			attack = 0.5
+		}	
+    } 
+
+    amphibious_ai_tank = {
+        abbreviation = "AAIT"
+        sprite = medium_armor
+        map_icon_category = armored
+        priority = 600
+        ai_priority = 200
+
+        active = no
+        group = armor
+        type = {
+            armor
+			amphibious
+        }
+        categories = {
+            category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+            category_unmanned_armor
+			category_amphibious_tanks
+        }
+
+        combat_width = 2
+
+		need = {
+			ait_amphibious_chassis = 60
+		}
+		manpower = 50
+		max_organisation = 10
+		max_strength = 2
+		default_morale = 0.3
+		training_time = 60
+		weight = 1.5
+		
+		supply_consumption = 0.2
+
+		suppression = 2.5
+		
+		forest = {
+		    attack = -0.3
+			movement = -0.4
+		}
+		hills = {
+		    attack = -0.1
+		}
+		mountain = 	{
+		    attack = -0.25
+		}
+		jungle = {
+		    attack = -0.4
+			movement = -0.4
+		}
+		urban = {
+			attack = -0.5
+			defence = -0.15
+		}
+		river = { 
+			attack = 0.3 
+			movement = 0.3
+		}
+		amphibious = { 
+			attack = 0.5
 		}	
     } 
 }

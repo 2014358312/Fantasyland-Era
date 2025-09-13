@@ -135,7 +135,26 @@ equipment_modules = {
         }
     }
 
-    # TODO: 悬浮系统
+    tank_levitation_module = { # 悬浮系统
+        abbreviation = "lev"
+        category = tank_levitation_type
+        sfx = sfx_ui_sd_module_sonar
+		allow_equipment_type = amphibious
+		forbid_equipment_type_exact_match = armor
+		forbid_equipment_type = {
+			anti_air
+			artillery
+			anti_tank
+			flame
+		}
+
+        add_stats = {
+            build_cost_ic = 4
+        }
+        multiply_stats = {
+            build_cost_ic = 0.1
+        }
+    }
 
     # 传感阵列
     tank_sensor_array_1 = { # 传感阵列1
@@ -168,7 +187,7 @@ equipment_modules = {
 
         add_stats = {
             build_cost_ic = 1
-            defence = 4
+            defense = 4
             breakthrough = 4
         }
         dismantle_cost_ic = 2
@@ -255,8 +274,8 @@ equipment_modules = {
         sfx = sfx_ui_sd_module_sonar
 
         add_stats = {
-            hardness = 0.1
-            defence = 2
+            hardness = 0.05
+            defense = 2
             breakthrough = 2
             # TODO: 资源消耗 
         }
@@ -273,14 +292,14 @@ equipment_modules = {
         sfx = sfx_ui_sd_module_sonar
 
         add_stats = {
-            hardness = 0.1
-            defence = 4
+            hardness = 0.02
+            defense = 4
             breakthrough = 4
             # TODO: 资源消耗
         }
 
         multiply_stats = {
-            armor_value = 0.1
+            armor_value = 0.30
         }
     }
 
@@ -292,7 +311,7 @@ equipment_modules = {
 
         add_stats = {
             armor_value = 6
-            defence = 4
+            defense = 4
             breakthrough = 4
             build_cost_ic = 1
         }
@@ -305,7 +324,7 @@ equipment_modules = {
 
         add_stats = {
             armor_value = 10
-            defence = 6
+            defense = 6
             breakthrough = 8
             build_cost_ic = 2
         }
@@ -321,7 +340,7 @@ equipment_modules = {
 
         add_stats = {
             soft_attack = 2
-            defence = 2
+            defense = 2
             build_cost_ic = 0.5
         }
     }
@@ -333,7 +352,7 @@ equipment_modules = {
 
         add_stats = {
             soft_attack = 2
-            defence = 5
+            defense = 5
             breakthrough = 5
             build_cost_ic = 2
         }
@@ -346,7 +365,7 @@ equipment_modules = {
 
         add_stats = {
             soft_attack = 1
-            defence = 7
+            defense = 7
             breakthrough = 8
             build_cost_ic = 3
         }
@@ -361,7 +380,7 @@ equipment_modules = {
         sfx = sfx_ui_sd_module_turret
 
         add_stats = {
-            defence = 2
+            defense = 2
             breakthrough = 3
             build_cost_ic = 0.5
         }

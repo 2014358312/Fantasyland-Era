@@ -1,0 +1,207 @@
+sp_land_carbon_coating = {
+    specialization = specialization_land
+
+    project_tags = sp_tag_tank
+
+	ai_will_do = {
+		base = 1
+	}
+
+    available = {
+		FROM = {
+			has_tech = composite_armor
+		}
+	}
+
+    breakthrough_cost = {
+		specialization_land = 2
+	}
+
+	prototype_time = sp_time.prototype.medium
+
+	complexity = sp_complexity.medium
+	
+	project_output = {
+		country_effects = {
+			add_ideas = carbon_coating_idea
+		}
+	}
+
+	generic_prototype_rewards = {
+		sp_land_generic_reward_scientist_xp_1
+		sp_land_generic_reward_scientist_xp_2
+		sp_land_generic_reward_scientist_xp_3
+		sp_land_generic_reward_army_xp_1
+		sp_land_generic_reward_army_xp_2
+		sp_land_generic_reward_army_xp_3
+		sp_land_generic_reward_major_progress_1
+		sp_land_generic_reward_major_progress_2
+		sp_land_generic_reward_major_progress_3
+		sp_land_generic_reward_test_failure_1
+		sp_land_generic_reward_test_failure_2
+		sp_land_generic_reward_test_failure_3
+		sp_land_generic_reward_resource_scarcity
+	}
+}
+
+sp_land_carbon_composite_armor = {
+    specialization = specialization_land
+
+    project_tags = sp_tag_tank
+
+	ai_will_do = {
+		base = 1
+	}
+
+    available = {
+		FROM = {
+			has_tech = composite_armor
+            is_special_project_completed = sp:sp_land_carbon_coating
+		}
+	}
+
+    breakthrough_cost = {
+		specialization_land = 1
+	}
+
+	prototype_time = sp_time.prototype.short
+
+	complexity = sp_complexity.small
+	
+	project_output = {
+		enable_equipment_modules = {
+			tank_carbon_composite_armor
+		}
+	}
+
+	generic_prototype_rewards = {
+		sp_land_generic_reward_scientist_xp_1
+		sp_land_generic_reward_scientist_xp_2
+		sp_land_generic_reward_scientist_xp_3
+		sp_land_generic_reward_army_xp_1
+		sp_land_generic_reward_army_xp_2
+		sp_land_generic_reward_army_xp_3
+		sp_land_generic_reward_major_progress_1
+		sp_land_generic_reward_major_progress_2
+		sp_land_generic_reward_major_progress_3
+		sp_land_generic_reward_test_failure_1
+		sp_land_generic_reward_test_failure_2
+		sp_land_generic_reward_test_failure_3
+		sp_land_generic_reward_resource_scarcity
+	}
+}
+
+sp_land_unmanned_levitation_modules = {
+	specialization = specialization_land
+
+	project_tags = sp_tag_tank
+
+	ai_will_do = {
+		base = 1
+	}
+
+	available = {
+		FROM = {
+			has_tech = experimental_robot_tank
+		}
+	}
+
+	breakthrough_cost = {
+		specialization_land = 1
+	}
+	
+	prototype_time = sp_time.prototype.short
+
+	complexity = sp_complexity.small
+	
+	project_output = {
+		country_effects = {
+			add_design_template_bonus = {
+				name = sp_land_unmanned_levitation_modules
+				uses = 1
+				cost_factor = 1
+				equipment = amphibious_rbt_chassis
+				equipment = amphibious_ait_chassis
+			}
+
+			add_design_template_bonus = {
+				name = sp_land_unmanned_levitation_modules
+				uses = 2
+				cost_factor = 0.5
+				equipment = amphibious_rbt_chassis
+				equipment = amphibious_ait_chassis
+			}
+		}
+
+		enable_equipment_modules = {
+			tank_levitation_module
+		}
+
+		enable_subunits = { 
+			amphibious_robot_tank
+            amphibious_ai_tank
+		}
+	}
+
+	generic_prototype_rewards = {
+		sp_land_generic_reward_scientist_xp_1
+		sp_land_generic_reward_scientist_xp_2
+		sp_land_generic_reward_scientist_xp_3
+		sp_land_generic_reward_army_xp_1
+		sp_land_generic_reward_army_xp_2
+		sp_land_generic_reward_army_xp_3
+		sp_land_generic_reward_major_progress_1
+		sp_land_generic_reward_major_progress_2
+		sp_land_generic_reward_major_progress_3
+		sp_land_generic_reward_test_failure_1
+		sp_land_generic_reward_test_failure_2
+		sp_land_generic_reward_test_failure_3
+		sp_land_generic_reward_resource_scarcity
+	}
+}
+
+sp_land_compliance_suspension = {
+    specialization = specialization_land
+
+    project_tags = sp_tag_tank
+
+	ai_will_do = {
+		base = 1
+	}
+
+    available = {
+		FROM = {
+			has_tech = improved_mbt_chassis
+		}
+	}
+
+    breakthrough_cost = {
+		specialization_land = 1
+	}
+
+	prototype_time = sp_time.prototype.short
+
+	complexity = sp_complexity.small
+	
+	project_output = {
+		enable_equipment_modules = {
+			tank_compliance_suspension
+		}
+	}
+
+	generic_prototype_rewards = {
+		sp_land_generic_reward_scientist_xp_1
+		sp_land_generic_reward_scientist_xp_2
+		sp_land_generic_reward_scientist_xp_3
+		sp_land_generic_reward_army_xp_1
+		sp_land_generic_reward_army_xp_2
+		sp_land_generic_reward_army_xp_3
+		sp_land_generic_reward_major_progress_1
+		sp_land_generic_reward_major_progress_2
+		sp_land_generic_reward_major_progress_3
+		sp_land_generic_reward_test_failure_1
+		sp_land_generic_reward_test_failure_2
+		sp_land_generic_reward_test_failure_3
+		sp_land_generic_reward_resource_scarcity
+	}
+}
