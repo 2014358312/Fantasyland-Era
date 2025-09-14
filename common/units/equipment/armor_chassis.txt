@@ -1476,15 +1476,6 @@ equipments = {
 		armor_value = 75
     }
 
-    rbt_amphibious_chassis = {
-        archetype = rbt_chassis
-        type = { amphibious armor }
-    	for_each = {
-			variant_name = { find_and_replace = { "chassis" "equipment" } }
-			hardness = { set = 0.75 }
-		}    
-    }
-
     ait_chassis = {
         year = 1001
         is_archetype = yes
@@ -1726,14 +1717,5 @@ equipments = {
 		reliability = 0.80
         hardness = 0.90
 		armor_value = 90
-    }
-
-    ait_amphibious_chassis = {
-        archetype = ait_chassis
-        type = { amphibious armor }
-    	for_each = {
-			variant_name = { find_and_replace = { "chassis" "equipment" } }
-			hardness = { set = 0.75 }
-		}    
     }
 }

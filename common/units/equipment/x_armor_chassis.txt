@@ -1,0 +1,19 @@
+duplicate_archetypes = {
+    rbt_amphibious_chassis = {
+        archetype = rbt_chassis
+        type = { amphibious armor }
+    	for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.75 }
+		}    
+    }
+
+    ait_amphibious_chassis = {
+        archetype = ait_chassis
+        type = { amphibious armor }
+    	for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			hardness = { set = 0.75 }
+		}    
+    }
+}
