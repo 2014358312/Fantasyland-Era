@@ -8,30 +8,107 @@
 ### search_filters = {FOCUS_FILTER_USA_CONGRESS}
 
 focus_tree = {
-	id = ELF_focus_tree
+	id = ELF_focus
+
 	country = {
 		factor = 0
+		
 		modifier = {
 			add = 10
 			tag = ELF
 		}
 	}
+	
 	default = no
 
-	focus = { 
-		id = ELF_
-		icon = GFX_ELF_
-		x = 10
+	initial_show_position = { x = 0 , y = 0 }
+
+
+	
+
+
+
+
+
+
+#114514
+
+
+#1
+		focus = {
+		id = ELF_initial_new_braver
+		icon = GFX_ELF_initial
+		x = 0
 		y = 0
-		cost = 10
-		available = {
-			always = no 
-		}
-		completion_reward = {
-			add_political_power = 150
-		}
+		cost = 0
 		ai_will_do = {
-			factor = 1
+		factor = 1
 		}
-	}
-}
+		}
+
+
+	    focus = {
+		id = ELF_initial_monarchy
+		icon = GFX_ELF_initial
+	
+		prerequisite = { focus = ELF_initial_new_braver }
+		relative_position_id = ELF_initial_new_braver
+		x = 0
+		y = 1
+		cost = 1
+		ai_will_do = {
+		factor = 1
+		}
+	    }
+
+
+		focus = {
+		id = ELF_initial_the_son_of_prophecy
+		icon = GFX_ELF_initial
+	
+		prerequisite = { focus = ELF_initial_monarchy }
+		relative_position_id = ELF_initial_monarchy
+		x = 0
+		y = 1
+		cost = 1
+		ai_will_do = {
+		factor = 1
+		}
+	    }
+
+
+        focus = {
+		id = ELF_initial_the_three_year_plan_of_the_empire
+		icon = GFX_ELF_initial
+	
+		prerequisite = { focus = ELF_initial_the_son_of_prophecy }
+		relative_position_id = ELF_initial_the_son_of_prophecy
+		x = 0
+		y = 1
+		cost = 2
+		ai_will_do = {
+		factor = 1
+		}
+	    }
+
+
+		focus = {
+		id = ELF_initial_salt_iron_monopoly
+		icon = GFX_ELF_initial
+	
+		prerequisite = { focus = ELF_initial_the_three_year_plan_of_the_empire }
+		relative_position_id = ELF_initial_the_three_year_plan_of_the_empire
+		x = 0
+		y = 1
+		cost = 3
+
+		ai_will_do = {
+		factor = 1
+		}
+		}
+
+
+
+
+
+		}
