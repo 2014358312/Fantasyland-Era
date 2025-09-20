@@ -26,19 +26,3920 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = WSG_nihao
-		icon = GFX_goal_generic_collaborate_local_elites
-		x = 10
+		id = WSG_stagnation_in_a_leading_nation
+		#icon = GFX_goal_generic_collaborate_local_elites
+		x = 30
 		y = 0
-		cost = 10
+		cost = 2
 		available = {
-			always = no 
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = WSG_reorganizing_the_economy
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_stagnation_in_a_leading_nation
+		x = -3
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_stagnation_in_a_leading_nation
+		}
+	}
+
+	focus = { 
+		id = WSG_reassure_the_public
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_reorganizing_the_economy
+		x = -1
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea =  WSG_silent_society 
+				add_idea =  WSG_silent_society01 
+			}
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_reorganizing_the_economy
+		}
+	}
+
+	focus = { 
+		id = WSG_inspire_social_vitality
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_reassure_the_public
+		x = 0
+		y = 1
+		cost = 3
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =   WSG_silent_society02 
+				remove_idea =  WSG_silent_society01 
+			}
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_reassure_the_public
+		}
+	}
+
+	focus = { 
+		id = WSG_leading_society
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_inspire_social_vitality
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =   WSG_silent_society03 
+				remove_idea =  WSG_silent_society02 
+			}
+				add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_inspire_social_vitality
+		}
+	}
+
+	focus = { 
+		id = WSG_focus_on_peoples_livelihood
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_reorganizing_the_economy
+		x = 1
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =   WSG_national_economy01 
+				remove_idea =  WSG_national_economy 
+			}
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_reorganizing_the_economy
+		}
+	}
+
+	focus = { 
+		id = WSG_livelihood_construction_projects
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_focus_on_peoples_livelihood
+		x = 0
+		y = 1
+		cost = 3
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =   WSG_national_economy02 
+				remove_idea =  WSG_national_economy01 
+			}
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_focus_on_peoples_livelihood
+		}
+	}
+
+	focus = { 
+		id = WSG_economic_cycle
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_livelihood_construction_projects
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =   WSG_national_economy03 
+				remove_idea =  WSG_national_economy02 
+			}
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_livelihood_construction_projects
+		}
+	}
+
+	focus = { 
+		id = WSG_reorganize_the_military
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_stagnation_in_a_leading_nation
+		x = 3
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_stagnation_in_a_leading_nation
+		}
+	}
+
+	focus = { 
+		id = WSG_rectify_army_discipline
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_reorganize_the_military
+		x = -3
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =   WSG_outdated_army_theory01 
+				remove_idea =  WSG_outdated_army_theory 
+			}
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_reorganize_the_military
+		}
+	}
+
+	focus = { 
+		id = WSG_strengthen_basic_training
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_rectify_army_discipline
+		x = 0
+		y = 1
+		cost = 3
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =   WSG_outdated_army_theory02 
+				remove_idea =  WSG_outdated_army_theory01 
+			}
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_rectify_army_discipline
+		}
+	}
+
+	focus = { 
+		id = WSG_strengthen_collaborative_operations
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_strengthen_basic_training
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =   WSG_outdated_army_theory03 
+				remove_idea =  WSG_outdated_army_theory02 
+			}
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_strengthen_basic_training
+		}
+	}
+
+	focus = { 
+		id = WSG_rectify_the_air_force
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_reorganize_the_military
+		x = -1
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =   WSG_outdated_air_force01 
+				remove_idea =  WSG_outdated_air_force 
+			}
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_reorganize_the_military
+		}
+	}
+
+	focus = { 
+		id = WSG_strengthen_training
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_rectify_the_air_force
+		x = 0
+		y = 1
+		cost = 3
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =   WSG_outdated_air_force02 
+				remove_idea =  WSG_outdated_air_force01 
+			}
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_rectify_the_air_force
+		}
+	}
+
+	focus = { 
+		id = WSG_equipment_upgrade
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_strengthen_training
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =   WSG_outdated_air_force03 
+				remove_idea =  WSG_outdated_air_force02 
+			}
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_strengthen_training
+		}
+	}
+
+	focus = { 
+		id = WSG_naval_overhaul
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_reorganize_the_military
+		x = 1
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =   WSG_fading_glory_navy01 
+				remove_idea =  WSG_fading_glory_navy 
+			}
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_reorganize_the_military
+		}
+	}
+
+	focus = { 
+		id = WSG_training_aviation_forces
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_naval_overhaul
+		x = 0
+		y = 1
+		cost = 3
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =   WSG_fading_glory_navy02 
+				remove_idea =  WSG_fading_glory_navy01 
+			}
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_naval_overhaul
+		}
+	}
+
+	focus = { 
+		id = WSG_train_sailors
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_training_aviation_forces
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -1
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =   WSG_fading_glory_navy03 
+				remove_idea =  WSG_fading_glory_navy02 
+			}
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_training_aviation_forces
+		}
+	}
+
+	focus = { 
+		id = WSG_complete_preliminary_reforms
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_stagnation_in_a_leading_nation
+		x = 0
+		y = 5
+		cost = 5
+		available = {
+			original_tag = WSG 
 		}
 		completion_reward = {
 			add_political_power = 150
 		}
 		ai_will_do = {
 			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_leading_society
+		}
+        prerequisite = { 
+			focus = WSG_economic_cycle
+		}
+        prerequisite = { 
+			focus = WSG_strengthen_collaborative_operations
+		}
+        prerequisite = { 
+			focus = WSG_equipment_upgrade
+		}
+        prerequisite = { 
+			focus = WSG_train_sailors
+		}
+	}
+
+	focus = { 
+		id = WSG_offspring_of_the_ancients
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_complete_preliminary_reforms
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.95
+			}
+		}
+		completion_reward = {
+			add_political_power = 300
+			swap_ideas = {
+				remove_idea =  WSG_stagnation_in_a_leading_nation 
+				add_idea =  WSG_offspring_of_the_ancients 
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_complete_preliminary_reforms
+		}
+	}
+
+############################工业线###############################
+
+	focus = { 
+		id = WSG_port_area_planning
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_offspring_of_the_ancients
+		x = 7
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.2
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.10
+			}
+			every_state ={
+				limit = {
+			        is_controlled_by = WSG
+			        is_core_of = WSG
+					infrastructure < 5
+		        }
+			add_building_construction = {
+                type = infrastructure
+                level = 1
+                instant_build = yes
+                }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_offspring_of_the_ancients
+		}
+	}
+
+	focus = { 
+		id = WSG_eastern_provinces
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_port_area_planning
+		x = -3
+		y = 1
+		cost = 3
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			680 = { WSG_state_category_up = yes }
+			685 = { WSG_state_category_up = yes }
+			695 = { WSG_state_category_up = yes }
+			696 = { WSG_state_category_up = yes }
+			710 = { WSG_state_category_up = yes }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_port_area_planning
+		}
+	}
+
+	focus = { 
+		id = WSG_eastern_special_economic_zone
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_eastern_provinces
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			680 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+                    type = industrial_complex
+                    level = 3
+                    instant_build = yes
+                }
+			}
+			685 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+                    type = industrial_complex
+                    level = 3
+                    instant_build = yes
+                }
+			}
+			695 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+                    type = industrial_complex
+                    level = 3
+                    instant_build = yes
+                }
+			}
+			696 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+                    type = industrial_complex
+                    level = 3
+                    instant_build = yes
+                }
+			}
+			710 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+                    type = industrial_complex
+                    level = 3
+                    instant_build = yes
+                }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_eastern_provinces
+		}
+	}
+
+	focus = { 
+		id = WSG_western_provinces
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_port_area_planning
+		x = -1
+		y = 1
+		cost = 3
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			678 = { WSG_state_category_up = yes }
+			684 = { WSG_state_category_up = yes }
+			694 = { WSG_state_category_up = yes }
+			707 = { WSG_state_category_up = yes }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_port_area_planning
+		}
+	}
+
+	focus = { 
+		id = WSG_western_mixed_industry
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_western_provinces
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			678 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+                    type = industrial_complex
+                    level = 3
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = dockyard
+                    level = 1
+                    instant_build = yes
+                }
+			}
+			684 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+			}
+			694 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+                    type = arms_factory
+                    level = 3
+                    instant_build = yes
+                }
+			}
+			704 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+                    type = dockyard
+                    level = 4
+                    instant_build = yes
+                }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_western_provinces
+		}
+	}
+
+	focus = { 
+		id = WSG_southern_provinces
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_port_area_planning
+		x = 1
+		y = 1
+		cost = 3
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			688 = { WSG_state_category_up = yes }
+			698 = { WSG_state_category_up = yes }
+			706 = { WSG_state_category_up = yes }
+			709 = { WSG_state_category_up = yes }
+			711 = { WSG_state_category_up = yes }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_port_area_planning
+		}
+	}
+
+	focus = { 
+		id = WSG_southern_shipyard
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_southern_provinces
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			706 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+                    type = dockyard
+                    level = 5
+                    instant_build = yes
+                }
+			}
+			709 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+                    type = dockyard
+                    level = 5
+                    instant_build = yes
+                }
+			}
+			711 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+                    type = dockyard
+                    level = 5
+                    instant_build = yes
+                }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_southern_provinces
+		}
+	}
+
+	focus = { 
+		id = WSG_northern_provinces
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_port_area_planning
+		x = 3
+		y = 1
+		cost = 3
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			672 = { WSG_state_category_up = yes }
+			673 = { WSG_state_category_up = yes }
+			675 = { WSG_state_category_up = yes }
+			681 = { WSG_state_category_up = yes }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_port_area_planning
+		}
+	}
+
+	focus = { 
+		id = WSG_northern_heavy_industry_base
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_northern_provinces
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			672 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+                    type = arms_factory
+                    level = 4
+                    instant_build = yes
+                }
+			}
+			673 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+                    type = arms_factory
+                    level = 4
+                    instant_build = yes
+                }
+			}
+			675 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+                    type = arms_factory
+                    level = 4
+                    instant_build = yes
+                }
+			}
+			681 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+                    type = arms_factory
+                    level = 3
+                    instant_build = yes
+                }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_northern_provinces
+		}
+	}
+
+	focus = { 
+		id = WSG_super_port_area
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_port_area_planning
+		x = 0
+		y = 3
+		cost = 6
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.20
+			}
+			swap_ideas = {
+				add_idea = WSG_super_port_area
+				remove_idea = WSG_silent_society03
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_eastern_special_economic_zone
+		}
+        prerequisite = { 
+			focus = WSG_western_mixed_industry
+		}
+        prerequisite = { 
+			focus = WSG_southern_shipyard
+		}
+        prerequisite = { 
+			focus = WSG_northern_heavy_industry_base
+		}
+	}
+
+##########################科技线####################################
+
+	focus = { 
+		id = WSG_restart_the_archive
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_offspring_of_the_ancients
+		x = -13
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_political_power = 100
+			unlock_decision_tooltip = WSG_technical_potential
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_offspring_of_the_ancients
+		}
+	}
+
+	focus = { 
+		id = WSG_technical_potential_I
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_restart_the_archive
+		x = 0
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.2
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = WSG_add_tech
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_restart_the_archive
+		}
+	}
+
+	focus = { 
+		id = WSG_technical_potential_II
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_technical_potential_I
+		x = 0
+		y = 1
+		cost = 3
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.2
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_technical_potential_I
+		}
+	}
+
+	focus = { 
+		id = WSG_technical_potential_III
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_technical_potential_II
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.2
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_technical_potential_II
+		}
+	}
+
+	focus = { 
+		id = WSG_technical_potential_IV
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_technical_potential_III
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_technical_potential_III
+		}
+	}
+
+	focus = { 
+		id = WSG_technical_potential_V
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_technical_potential_IV
+		x = 0
+		y = 1
+		cost = 6
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_technical_potential_IV
+		}
+	}
+
+	focus = { 
+		id = WSG_resource_synthesis_I
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_technical_potential_I
+		x = -2
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.2
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = steel
+				    amount = 42
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = tungsten
+				    amount = 20
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = chromium
+				    amount = 16
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = aluminium
+				    amount = 32
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = rubber 
+				    amount = 18
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = oil
+				    amount = 36
+			    }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_technical_potential_I
+		}
+	}
+
+	focus = { 
+		id = WSG_resource_synthesis_II
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_technical_potential_II
+		x = -2
+		y = 1
+		cost = 3
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.2
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = steel
+				    amount = 56
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = tungsten
+				    amount = 32
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = chromium
+				    amount = 24
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = aluminium
+				    amount = 42
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = rubber 
+				    amount = 32
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = oil
+				    amount = 64
+			    }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_technical_potential_II
+		}
+	}
+
+	focus = { 
+		id = WSG_resource_synthesis_III
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_technical_potential_III
+		x = -2
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = steel
+				    amount = 72
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = tungsten
+				    amount = 32
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = chromium
+				    amount = 40
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = aluminium
+				    amount = 32
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = rubber 
+				    amount = 24
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = oil
+				    amount = 56
+			    }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_technical_potential_III
+		}
+	}
+
+	focus = { 
+		id = WSG_resource_synthesis_IV
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_technical_potential_IV
+		x = -2
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = steel
+				    amount = 96
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = tungsten
+				    amount = 32
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = chromium
+				    amount = 48
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = aluminium
+				    amount = 42
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = rubber 
+				    amount = 36
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = oil
+				    amount = 64
+			    }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_technical_potential_IV
+		}
+	}
+
+#######################政治线##############################
+
+	focus = { 
+		id = WSG_admiral_and_port_area
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_offspring_of_the_ancients
+		x = -7
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.2
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.10
+			}
+			add_political_power = 100
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_offspring_of_the_ancients
+		}
+	}
+
+	focus = { 
+		id = WSG_consolidate_the_power_of_the_admiral
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_admiral_and_port_area
+		x = -1
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_ideas = WSG_consolidate_rights_l1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_consolidate_the_power_of_the_secretary_ship
+		}
+        prerequisite = { 
+			focus = WSG_admiral_and_port_area
+		}
+	}
+
+	focus = { 
+		id = WSG_encouragement_from_the_admiral
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_consolidate_the_power_of_the_admiral
+		x = -2
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_consolidate_the_power_of_the_admiral
+		}
+	}
+
+	focus = { 
+		id = WSG_commanders_order
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_consolidate_the_power_of_the_admiral
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_political_power = 200
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_consolidate_the_power_of_the_admiral
+		}
+	}
+
+	focus = { 
+		id = WSG_admiral_first
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_commanders_order
+		x = 0
+		y = 1
+		cost = 6
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+			swap_ideas = {
+				add_idea = WSG_consolidate_rights_l2
+				remove_idea = WSG_consolidate_rights_l1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_commanders_order
+		}
+        prerequisite = { 
+			focus = WSG_encouragement_from_the_admiral
+		}
+	}
+
+	focus = { 
+		id = WSG_consolidate_the_power_of_the_secretary_ship
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_admiral_and_port_area
+		x = 1
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_ideas = WSG_consolidate_rights_r1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_consolidate_the_power_of_the_admiral
+		}
+        prerequisite = { 
+			focus = WSG_admiral_and_port_area
+		}
+	}
+
+	focus = { 
+		id = WSG_the_job_of_a_secretary_ship
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_consolidate_the_power_of_the_secretary_ship
+		x = 2
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_war_support = 0.05
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_consolidate_the_power_of_the_secretary_ship
+		}
+	}
+
+	focus = { 
+		id = WSG_secretary_ship_privilege
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_consolidate_the_power_of_the_secretary_ship
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+	        army_experience = 50
+	        navy_experience = 50
+	        air_experience = 50
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_consolidate_the_power_of_the_secretary_ship
+		}
+	}
+
+	focus = { 
+		id = WSG_secretary_ship_auxiliary_politics
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_secretary_ship_privilege
+		x = 0
+		y = 1
+		cost = 6
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+			swap_ideas = {
+				add_idea = WSG_consolidate_rights_r2
+				remove_idea = WSG_consolidate_rights_r1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_secretary_ship_privilege
+		}
+        prerequisite = { 
+			focus = WSG_the_job_of_a_secretary_ship
+		}
+	}
+
+	focus = { 
+		id = WSG_admiral_and_secretary_ship
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_admiral_and_port_area
+		x = 0
+		y = 6
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_admiral_first
+			focus = WSG_secretary_ship_auxiliary_politics
+		}
+	}
+
+	focus = { 
+		id = WSG_secretary_lexington
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_admiral_and_secretary_ship
+		x = -7
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_secretary_vittorio_veneto
+		}
+        prerequisite = { 
+			focus = WSG_admiral_and_secretary_ship
+		}
+	}
+
+	focus = { 
+		id = WSG_lexington_plan
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_secretary_lexington
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_secretary_lexington
+		}
+	}
+
+	focus = { 
+		id = WSG_expand_resource_output
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_lexington_plan
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_lexington_plan
+		}
+	}
+
+	focus = { 
+		id = WSG_ship_girl_reserve_army
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_expand_resource_output
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_expand_resource_output
+		}
+	}
+
+	focus = { 
+		id = WSG_secretary_vittorio_veneto
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_admiral_and_secretary_ship
+		x = -5
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_secretary_lexington
+		}
+        prerequisite = { 
+			focus = WSG_admiral_and_secretary_ship
+		}
+	}
+
+	focus = { 
+		id = WSG_vittorio_veneto_plan
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_secretary_vittorio_veneto
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_secretary_vittorio_veneto
+		}
+	}
+
+	focus = { 
+		id = WSG_restricting_resource_exports
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_vittorio_veneto_plan
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_vittorio_veneto_plan
+		}
+	}
+
+	focus = { 
+		id = WSG_port_defense_army
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_restricting_resource_exports
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_restricting_resource_exports
+		}
+	}
+
+	focus = { 
+		id = WSG_secretary_yubari
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_admiral_and_secretary_ship
+		x = -3
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_secretary_hood
+		}
+        mutually_exclusive = {
+			focus = WSG_secretary_yixian
+		}
+        prerequisite = { 
+			focus = WSG_admiral_and_secretary_ship
+		}
+	}
+
+	focus = { 
+		id = WSG_government_efficiency
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_secretary_yubari
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_secretary_yubari
+		}
+	}
+
+	focus = { 
+		id = WSG_efficient_cabinet
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_government_efficiency
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_government_efficiency
+		}
+	}
+
+	focus = { 
+		id = WSG_wartime_laws_and_regulations
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_efficient_cabinet
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_efficient_cabinet
+		}
+	}
+
+	focus = { 
+		id = WSG_secretary_hood
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_admiral_and_secretary_ship
+		x = -1
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_secretary_yubari
+		}
+        mutually_exclusive = {
+			focus = WSG_secretary_yixian
+		}
+        prerequisite = { 
+			focus = WSG_admiral_and_secretary_ship
+		}
+	}
+
+	focus = { 
+		id = WSG_efficient_construction
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_secretary_hood
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_secretary_hood
+		}
+	}
+
+	focus = { 
+		id = WSG_technological_advantages
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_efficient_construction
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_efficient_construction
+		}
+	}
+
+	focus = { 
+		id = WSG_efficient_internal_affairs
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_technological_advantages
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_technological_advantages
+		}
+	}
+
+	focus = { 
+		id = WSG_secretary_yixian
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_admiral_and_secretary_ship
+		x = 1
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_secretary_hood
+		}
+        mutually_exclusive = {
+			focus = WSG_secretary_yubari
+		}
+        prerequisite = { 
+			focus = WSG_admiral_and_secretary_ship
+		}
+	}
+
+	focus = { 
+		id = WSG_internal_stability
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id =WSG_secretary_yixian
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_secretary_yixian
+		}
+	}
+
+	focus = { 
+		id = WSG_homeland_defense
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_internal_stability
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_internal_stability
+		}
+	}
+
+	focus = { 
+		id = WSG_cost_reduction_and_efficiency_improvement
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_homeland_defense
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_homeland_defense
+		}
+	}
+
+	focus = { 
+		id = WSG_secretary_jean_bart
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_admiral_and_secretary_ship
+		x = 3
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_secretary_bubnov
+		}
+        mutually_exclusive = {
+			focus = WSG_secretary_clausewitz
+		}
+        prerequisite = { 
+			focus = WSG_admiral_and_secretary_ship
+		}
+	}
+
+	focus = { 
+		id = WSG_rapid_restructuring
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_secretary_jean_bart
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_secretary_jean_bart
+		}
+	}
+
+	focus = { 
+		id = WSG_strengthen_the_position
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_rapid_restructuring
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_rapid_restructuring
+		}
+	}
+
+	focus = { 
+		id = WSG_save_strength
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_strengthen_the_position
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_strengthen_the_position
+		}
+	}
+
+	focus = { 
+		id = WSG_secretary_bubnov
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_admiral_and_secretary_ship
+		x = 5
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_secretary_jean_bart
+		}
+        mutually_exclusive = {
+			focus = WSG_secretary_clausewitz
+		}
+        prerequisite = { 
+			focus = WSG_admiral_and_secretary_ship
+		}
+	}
+
+	focus = { 
+		id = WSG_indomitable_will
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_secretary_bubnov
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_secretary_bubnov
+		}
+	}
+
+	focus = { 
+		id = WSG_fierce_offensive
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_indomitable_will
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_indomitable_will
+		}
+	}
+
+	focus = { 
+		id = WSG_accumulation_of_experience
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_fierce_offensive
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_fierce_offensive
+		}
+	}
+
+	focus = { 
+		id = WSG_secretary_clausewitz
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_admiral_and_secretary_ship
+		x = 7
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_secretary_bubnov
+		}
+        mutually_exclusive = {
+			focus = WSG_secretary_jean_bart
+		}
+        prerequisite = { 
+			focus = WSG_admiral_and_secretary_ship
+		}
+	}
+
+	focus = { 
+		id = WSG_army_mobility
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_secretary_clausewitz
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_secretary_clausewitz
+		}
+	}
+
+	focus = { 
+		id = WSG_preemptive_strike
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_army_mobility
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_army_mobility
+		}
+	}
+
+	focus = { 
+		id = WSG_rapid_construction
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_preemptive_strike
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_preemptive_strike
+		}
+	}
+
+	focus = { 
+		id = WSG_revival_of_holy_right
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_admiral_and_secretary_ship
+		x = 0
+		y = 5
+		cost = 10
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.10
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_ship_girl_reserve_army
+			focus = WSG_port_defense_army
+		}
+        prerequisite = { 
+			focus = WSG_wartime_laws_and_regulations
+			focus = WSG_efficient_internal_affairs
+			focus = WSG_cost_reduction_and_efficiency_improvement
+		}
+        prerequisite = { 
+			focus = WSG_save_strength
+			focus = WSG_accumulation_of_experience
+			focus = WSG_rapid_construction
+		}
+	}
+
+#########################外交线###############################
+
+	focus = { 
+		id = WSG_warship_girl_r_attack
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_offspring_of_the_ancients
+		x = 0
+		y = 3
+		cost = 3
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_offspring_of_the_ancients
+		}
+	}
+
+	focus = { 
+		id = WSG_diplomatic_posture
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_warship_girl_r_attack
+		x = -2
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_warship_girl_r_attack
+		}
+	}
+
+	focus = { 
+		id = WSG_allies_from_other_continents
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_diplomatic_posture
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_diplomatic_posture
+		}
+	}
+
+	focus = { 
+		id = WSG_new_world_alliance
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_diplomatic_posture
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_diplomatic_posture
+		}
+	}
+
+	focus = { 
+		id = WSG_imminent_threat
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_warship_girl_r_attack
+		x = 2
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_warship_girl_r_attack
+		}
+	}
+
+	focus = { 
+		id = WSG_cut_off_the_threat
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_imminent_threat
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_imminent_threat
+		}
+	}
+
+	focus = { 
+		id = WSG_grand_arbitration
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_imminent_threat
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_imminent_threat
+		}
+	}
+
+	focus = { 
+		id = WSG_ancient_archenemy
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_warship_girl_r_attack
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			always = no
+		}
+		completion_reward = {
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_warship_girl_r_attack
+		}
+	}
+
+	focus = { 
+		id = WSG_battle_in_heaven
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_ancient_archenemy
+		x = 0
+		y = 2
+		cost = 10
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_ancient_archenemy
+		}
+	}
+
+#########################军事线###########################
+
+	focus = { 
+		id = WSG_wartime_port_area
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_offspring_of_the_ancients
+		x = 15
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.2
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.10
+			}
+			unlock_decision_tooltip = WSG_wartime_port_area
+			swap_ideas = {
+				add_idea =  WSG_wartime_port_area
+				remove_idea =  WSG_national_economy03
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_offspring_of_the_ancients
+		}
+	}
+
+	focus = { 
+		id = WSG_naval_construction
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_wartime_port_area
+		x = -2
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_ideas = WSG_naval_construction
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_wartime_port_area
+		}
+	}
+
+	focus = { 
+		id = WSG_strengthening_heavy_industry
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_wartime_port_area
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_ideas = WSG_strengthening_heavy_industry
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_wartime_port_area
+		}
+	}
+
+	focus = { 
+		id = WSG_port_production_technology
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_wartime_port_area
+		x = 2
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_ideas = WSG_port_production_technology
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_wartime_port_area
+		}
+	}
+
+	focus = { 
+		id = WSG_war_engine
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_wartime_port_area
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.20
+			}
+			remove_ideas =  WSG_naval_construction
+			remove_ideas =  WSG_strengthening_heavy_industry
+			remove_ideas =  WSG_port_production_technology
+			swap_ideas = {
+				add_idea =  WSG_war_engine
+				remove_idea =  WSG_wartime_port_area
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_naval_construction
+		}
+        prerequisite = { 
+			focus = WSG_strengthening_heavy_industry
+		}
+        prerequisite = { 
+			focus = WSG_port_production_technology
+		}
+	}
+
+	focus = { 
+		id = WSG_general_administration_of_war
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_war_engine
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_ideas = WSG_general_administration_of_war
+	        army_experience = 50
+	        navy_experience = 50
+	        air_experience = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_war_engine
+		}
+	}
+
+	focus = { 
+		id = WSG_between_floating_worlds
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_general_administration_of_war
+		x = 0
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.2
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.20
+			}
+			army_experience = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_general_administration_of_war
+		}
+	}
+
+	focus = { 
+		id = WSG_army_theoretical_innovation_I
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_between_floating_worlds
+		x = 3
+		y = 2
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_outdated_army_theory04
+				remove_idea =  WSG_outdated_army_theory03 
+			}
+			army_experience = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_between_floating_worlds
+		}
+	}
+
+	focus = { 
+		id = WSG_army_theoretical_innovation_II
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_army_theoretical_innovation_I
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_outdated_army_theory05
+				remove_idea =  WSG_outdated_army_theory04
+			}
+			add_doctrine_cost_reduction = {
+		        name = WSG_army_theoretical_innovation_II
+		        cost_reduction = 0.6
+		        uses = 2
+		        category = land_doctrine
+	        }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_army_theoretical_innovation_I
+		}
+	}
+
+	focus = { 
+		id = WSG_army_theoretical_innovation_III
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_army_theoretical_innovation_II
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_outdated_army_theory06
+				remove_idea =  WSG_outdated_army_theory05
+			}
+			army_experience = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_army_theoretical_innovation_II
+		}
+	}
+
+	focus = { 
+		id = WSG_shipborne_combat_tactics
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_army_theoretical_innovation_III
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_shipborne_combat_tactics
+				remove_idea =  WSG_outdated_army_theory06
+			}
+			add_doctrine_cost_reduction = {
+		        name = WSG_shipborne_combat_tactics
+		        cost_reduction = 0.6
+		        uses = 2
+		        category = land_doctrine
+	        }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_army_theoretical_innovation_III
+		}
+	}
+
+	focus = { 
+		id = WSG_rebuilding_the_command_system
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_between_floating_worlds
+		x = -1
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			if = {
+				limit = { has_idea = WSG_army_of_ship_girl_rr }
+			    swap_ideas = {
+				    add_idea =  WSG_army_of_ship_girl_rrl
+				    remove_idea =  WSG_army_of_ship_girl_rr
+			    }
+			}
+			else = {
+				add_ideas = WSG_army_of_ship_girl_rl
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_between_floating_worlds
+		}
+	}
+
+	focus = { 
+		id = WSG_rebuilding_the_army_system
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_between_floating_worlds
+		x = 1
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			if = {
+				limit = { has_idea = WSG_army_of_ship_girl_rl }
+			    swap_ideas = {
+				    add_idea =  WSG_army_of_ship_girl_rrl
+				    remove_idea =  WSG_army_of_ship_girl_rl
+			    }
+			}
+			else = {
+				add_ideas = WSG_army_of_ship_girl_rr
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_between_floating_worlds
+		}
+	}
+
+	focus = { 
+		id = WSG_marine_ship_installation
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_between_floating_worlds
+		x = 0
+		y = 2
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_army_of_ship_girl_r
+				remove_idea =  WSG_army_of_ship_girl_rrl
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_rebuilding_the_command_system
+		}
+        prerequisite = { 
+			focus = WSG_rebuilding_the_army_system
+		}
+	}
+
+	focus = { 
+		id = WSG_special_warship_equipment
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_marine_ship_installation
+		x = -1
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_army_of_ship_girl_r_s
+				remove_idea =  WSG_army_of_ship_girl_r
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_general_naval_equipment
+		}
+        prerequisite = { 
+			focus = WSG_marine_ship_installation
+		}
+	}
+
+	focus = { 
+		id = WSG_general_naval_equipment
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_marine_ship_installation
+		x = 1
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_army_of_ship_girl_r_g
+				remove_idea =  WSG_army_of_ship_girl_r
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_special_warship_equipment
+		}
+        prerequisite = { 
+			focus = WSG_marine_ship_installation
+		}
+	}
+
+	focus = { 
+		id = WSG_cross_river_combat
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_marine_ship_installation
+		x = -1
+		y = 2
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_ideas = WSG_cross_river_combat
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_cross_sea_operations
+		}
+        prerequisite = { 
+			focus = WSG_special_warship_equipment
+			focus = WSG_general_naval_equipment
+		}
+	}
+
+	focus = { 
+		id = WSG_cross_sea_operations
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_marine_ship_installation
+		x = 1
+		y = 2
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_ideas = WSG_cross_sea_operations
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_cross_river_combat
+		}
+        prerequisite = { 
+			focus = WSG_special_warship_equipment
+			focus = WSG_general_naval_equipment
+		}
+	}
+
+	focus = { 
+		id = WSG_long_range_supply
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_marine_ship_installation
+		x = -1
+		y = 3
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_ideas = WSG_long_range_supply
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_efficient_supply
+		}
+        prerequisite = { 
+			focus = WSG_cross_sea_operations
+			focus = WSG_cross_river_combat
+		}
+	}
+
+	focus = { 
+		id = WSG_efficient_supply
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_marine_ship_installation
+		x = 1
+		y = 3
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_ideas = WSG_efficient_supply
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_long_range_supply
+		}
+        prerequisite = { 
+			focus = WSG_cross_sea_operations
+			focus = WSG_cross_river_combat
+		}
+	}
+
+	focus = { 
+		id = WSG_army_of_ship_girl_r
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_marine_ship_installation
+		x = 0
+		y = 4
+		cost = 8
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = WSG_merge_ideas
+			if = {
+				limit = { has_idea = WSG_army_of_ship_girl_r_g }
+			    swap_ideas = {
+				    add_idea =  WSG_the_special_operations_army_of_ship_girl_g
+				    remove_idea =  WSG_army_of_ship_girl_r_g
+			    }
+				remove_ideas =  WSG_shipborne_combat_tactics
+				add_power_balance_value = {
+   			        id = WSG_balance_of_power
+    		        value = -0.10
+			        }
+			}
+			else_if = {
+				limit = { has_idea = WSG_army_of_ship_girl_r_s }
+			    swap_ideas = {
+				    add_idea = WSG_the_special_operations_army_of_ship_girl_s
+				    remove_idea =  WSG_army_of_ship_girl_r_s
+			    }
+				remove_ideas =  WSG_shipborne_combat_tactics
+				add_power_balance_value = {
+   			        id = WSG_balance_of_power
+    		        value = -0.10
+			        }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = {
+			focus = WSG_shipborne_combat_tactics
+		}
+        prerequisite = { 
+			focus = WSG_long_range_supply
+			focus = WSG_efficient_supply
+		}
+	}
+
+	focus = { 
+		id = WSG_below_the_overarching_sky
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_general_administration_of_war
+		x = -5
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.2
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.20
+			}
+			air_experience = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_general_administration_of_war
+		}
+	}
+
+	focus = { 
+		id = WSG_air_combat_auxiliary_ship_installation
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_below_the_overarching_sky
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_ideas = WSG_air_force_of_ship_girl_r01
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_below_the_overarching_sky
+		}
+	}
+
+	focus = { 
+		id = WSG_ship_mounted_technical_equipment
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_air_combat_auxiliary_ship_installation
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_air_force_of_ship_girl_r02
+				remove_idea =  WSG_air_force_of_ship_girl_r01
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_air_combat_auxiliary_ship_installation
+		}
+	}
+
+	focus = { 
+		id = WSG_air_combat_ship_girl
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_ship_mounted_technical_equipment
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_air_force_of_ship_girl_r03
+				remove_idea =  WSG_air_force_of_ship_girl_r02
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_ship_mounted_technical_equipment
+		}
+	}
+
+	focus = { 
+		id = WSG_near_earth_support
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_air_combat_ship_girl
+		x = -2
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_air_force_of_ship_girl_r_n
+				remove_idea =  WSG_air_force_of_ship_girl_r03
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_specialized_aerial_combat
+			focus = WSG_long_range_bombing
+		}
+        prerequisite = { 
+			focus = WSG_air_combat_ship_girl
+		}
+	}
+
+	focus = { 
+		id = WSG_specialized_aerial_combat
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_air_combat_ship_girl
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_air_force_of_ship_girl_r_s
+				remove_idea =  WSG_air_force_of_ship_girl_r03
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_near_earth_support
+			focus = WSG_long_range_bombing
+		}
+        prerequisite = { 
+			focus = WSG_air_combat_ship_girl
+		}
+	}
+
+	focus = { 
+		id = WSG_long_range_bombing
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_air_combat_ship_girl
+		x = 2
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_air_force_of_ship_girl_r_l
+				remove_idea =  WSG_air_force_of_ship_girl_r03
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_specialized_aerial_combat
+			focus = WSG_near_earth_support
+		}
+        prerequisite = { 
+			focus = WSG_air_combat_ship_girl
+		}
+	}
+
+	focus = { 
+		id = WSG_air_force_theoretical_innovation_I
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_below_the_overarching_sky
+		x = -4
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_outdated_air_force04
+				remove_idea =  WSG_outdated_air_force03
+			}
+			air_experience = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_below_the_overarching_sky
+		}
+	}
+
+	focus = { 
+		id = WSG_air_force_theoretical_innovation_II
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_air_force_theoretical_innovation_I
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_outdated_air_force05
+				remove_idea =  WSG_outdated_air_force04
+			}
+			add_doctrine_cost_reduction = {
+		        name = WSG_air_force_theoretical_innovation_II
+		        cost_reduction = 0.6
+		        uses = 2
+		        category = air_doctrine
+	        }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_air_force_theoretical_innovation_I
+		}
+	}
+
+	focus = { 
+		id = WSG_air_force_theoretical_innovation_III
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_air_force_theoretical_innovation_II
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_outdated_air_force06
+				remove_idea =  WSG_outdated_air_force05
+			}
+			air_experience = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_air_force_theoretical_innovation_II
+		}
+	}
+
+	focus = { 
+		id = WSG_ship_aircraft_integration
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_air_force_theoretical_innovation_III
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_ship_aircraft_integration
+				remove_idea =  WSG_outdated_air_force06
+			}
+			add_doctrine_cost_reduction = {
+		        name = WSG_ship_aircraft_integration
+		        cost_reduction = 0.6
+		        uses = 2
+		        category = air_doctrine
+	        }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_air_force_theoretical_innovation_III
+		}
+	}
+
+	focus = { 
+		id = WSG_air_force_of_ship_girl_r
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_specialized_aerial_combat
+		x = 0
+		y = 1
+		cost = 8
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = WSG_merge_ideas
+			if = {
+				limit = { has_idea = WSG_air_force_of_ship_girl_r_n }
+			    swap_ideas = {
+				    add_idea =  WSG_the_sky_aces_of_ship_girl_n
+				    remove_idea =  WSG_air_force_of_ship_girl_r_n
+			    }
+				remove_ideas =   WSG_ship_aircraft_integration
+				add_power_balance_value = {
+   			        id = WSG_balance_of_power
+    		        value = -0.10
+			    }
+			}
+			else_if = {
+				limit = { has_idea = WSG_air_force_of_ship_girl_r_s }
+			    swap_ideas = {
+				    add_idea =  WSG_the_sky_aces_of_ship_girl_s
+				    remove_idea =  WSG_air_force_of_ship_girl_r_s
+			    }
+				remove_ideas =   WSG_ship_aircraft_integration
+				add_power_balance_value = {
+   			        id = WSG_balance_of_power
+    		        value = -0.10
+			    }
+			}
+			if = {
+				limit = { has_idea = WSG_air_force_of_ship_girl_r_l }
+			    swap_ideas = {
+				    add_idea =  WSG_the_sky_aces_of_ship_girl_l
+				    remove_idea =  WSG_air_force_of_ship_girl_r_l
+			    }
+				remove_ideas =   WSG_ship_aircraft_integration
+				add_power_balance_value = {
+   			        id = WSG_balance_of_power
+    		        value = -0.10
+			    }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_specialized_aerial_combat
+			focus = WSG_near_earth_support
+			focus = WSG_long_range_bombing
+		}
+        prerequisite = { 
+			focus = WSG_ship_aircraft_integration
+		}
+	}
+
+	focus = { 
+		id = WSG_above_the_byss
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_general_administration_of_war
+		x = 6
+		y = 1
+		cost = 2
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.2
+			}
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.20
+			}
+			navy_experience = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_general_administration_of_war
+		}
+	}
+
+	focus = { 
+		id = WSG_naval_warfare_ship_equipment
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_above_the_byss
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			add_ideas = WSG_navy_of_ship_girl_r01
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_above_the_byss
+		}
+	}
+
+	focus = { 
+		id = WSG_warships_and_ship_equipment
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_naval_warfare_ship_equipment
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_navy_of_ship_girl_r02
+				remove_idea =  WSG_navy_of_ship_girl_r01
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_naval_warfare_ship_equipment
+		}
+	}
+
+	focus = { 
+		id = WSG_sea_air_collaboration
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_warships_and_ship_equipment
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_navy_of_ship_girl_r03
+				remove_idea =  WSG_navy_of_ship_girl_r02
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_warships_and_ship_equipment
+		}
+	}
+
+	focus = { 
+		id = WSG_overwhelming_fire_power
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_sea_air_collaboration
+		x = -1
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_navy_of_ship_girl_r_o
+				remove_idea =  WSG_navy_of_ship_girl_r03
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_air_superiority
+		}
+        prerequisite = { 
+			focus = WSG_sea_air_collaboration
+		}
+	}
+
+	focus = { 
+		id = WSG_air_superiority
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_sea_air_collaboration
+		x = 1
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_navy_of_ship_girl_r_a
+				remove_idea =  WSG_navy_of_ship_girl_r03
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_overwhelming_fire_power
+		}
+        prerequisite = { 
+			focus = WSG_sea_air_collaboration
+		}
+	}
+
+	focus = { 
+		id = WSG_naval_theoretical_innovation_I
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_above_the_byss
+		x = 3
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_fading_glory_navy04
+				remove_idea =  WSG_fading_glory_navy03
+			}
+			navy_experience = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_above_the_byss
+		}
+	}
+
+	focus = { 
+		id = WSG_naval_theoretical_innovation_II
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_naval_theoretical_innovation_I
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_fading_glory_navy05
+				remove_idea =  WSG_fading_glory_navy04
+			}
+			add_doctrine_cost_reduction = {
+		        name = WSG_naval_theoretical_innovation_II
+		        cost_reduction = 0.6
+		        uses = 2
+		        category = naval_doctrine
+	        }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_naval_theoretical_innovation_I
+		}
+	}
+
+	focus = { 
+		id = WSG_naval_theoretical_innovation_III
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_naval_theoretical_innovation_II
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_fading_glory_navy06
+				remove_idea =  WSG_fading_glory_navy05
+			}
+		    navy_experience = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_naval_theoretical_innovation_II
+		}
+	}
+
+	focus = { 
+		id = WSG_honor_navy
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_naval_theoretical_innovation_III
+		x = 0
+		y = 1
+		cost = 4
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea =  WSG_honor_navy
+				remove_idea =  WSG_fading_glory_navy06
+			}
+			add_doctrine_cost_reduction = {
+		        name = WSG_honor_navy
+		        cost_reduction = 0.6
+		        uses = 2
+		        category = naval_doctrine
+	        }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_naval_theoretical_innovation_III
+		}
+	}
+
+	focus = { 
+		id = WSG_navy_of_ship_girl_r
+		#icon = GFX_goal_generic_collaborate_local_elites
+		relative_position_id = WSG_sea_air_collaboration
+		x = 0
+		y = 2
+		cost = 8
+		available = {
+			original_tag = WSG 
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = WSG_merge_ideas
+			if = {
+				limit = { has_idea =  WSG_navy_of_ship_girl_r_o }
+			    swap_ideas = {
+				    add_idea =  WSG_the_glory_of_the_navy_ship_girl_o
+				    remove_idea =   WSG_navy_of_ship_girl_r_o
+			    }
+				remove_ideas =  WSG_honor_navy
+				add_power_balance_value = {
+   			        id = WSG_balance_of_power
+    		        value = -0.10
+			        }
+			}
+			else_if = {
+				limit = { has_idea =  WSG_navy_of_ship_girl_r_a }
+			    swap_ideas = {
+				    add_idea =  WSG_the_glory_of_the_navy_ship_girl_a
+				    remove_idea =   WSG_navy_of_ship_girl_r_a
+			    }
+				remove_ideas =  WSG_honor_navy
+				add_power_balance_value = {
+   			        id = WSG_balance_of_power
+    		        value = -0.10
+			    }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_overwhelming_fire_power
+			focus = WSG_air_superiority
+		}
+        prerequisite = { 
+			focus = WSG_honor_navy
 		}
 	}
 

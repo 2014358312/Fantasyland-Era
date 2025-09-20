@@ -1,20 +1,296 @@
 WSG_balance_of_power_decision_category = {
-	WSG_bop_monthly_trust_change_mission = {
+	WSG_small_scale_speech = {
 		icon = generic_train
-		allowed = { tag = WSG }
-		available = { hidden_trigger = { always = no } }
-		days_mission_timeout = 30
-		is_good = yes
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value < 1
+			}
+	    }	
+	    visible = {
+			always = yes
+	    }
+		cost = 50
 		fire_only_once = no
-		activation = { always = no }
-		timeout_effect = {
-			#random_list = {
-			#	
-			#}
-			activate_mission = WSG_bop_monthly_trust_change_mission
+		days_remove = 60
+		modifier = {
+		}
+		complete_effect = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = 0.05
+			}
 		}
 		ai_will_do = {
-			factor = 0
+			factor = 100
 		}
-	}
+    }
+
+	WSG_large_scale_speech = {
+		icon = generic_train
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value < 1
+			}
+	    }	
+	    visible = {
+			always = yes
+	    }
+		cost = 100
+		fire_only_once = no
+		days_remove = 120
+		modifier = {
+		}
+		complete_effect = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = 0.10
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+    }
+
+	WSG_alert_to_war = {
+		icon = generic_train
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			threat > 0.5
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value < 1
+			}
+	    }	
+	    visible = {
+			always = yes
+	    }
+		cost = 150
+		fire_only_once = no
+		days_remove = 180
+		modifier = {
+		}
+		complete_effect = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = 0.15
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+    }
+
+	WSG_call_on_the_people = {
+		icon = generic_train
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -0.2
+			}
+	    }	
+	    visible = {
+			always = yes
+	    }
+		cost = 50
+		fire_only_once = no
+		days_remove = 120
+		modifier = {
+			army_core_attack_factor = 0.10
+		    army_core_defence_factor = 0.10
+		}
+		complete_effect = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				add = 100
+				has_war = yes
+			}
+		}
+    }
+
+	WSG_promoting_production = {
+		icon = generic_train
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.2
+			}
+	    }	
+	    visible = {
+			always = yes
+	    }
+		cost = 100
+		fire_only_once = no
+		days_remove = 120
+		modifier = {
+			production_factory_efficiency_gain_factor = 0.2
+		}
+		complete_effect = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.10
+			}
+		}
+		ai_will_do = {
+			base = 50
+			modifier = {
+				add = 100
+				has_war = yes
+			}
+		}
+    }
+
+	WSG_war_gear = {
+		icon = generic_train
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+	    }	
+	    visible = {
+			always = yes
+	    }
+		cost = 150
+		fire_only_once = no
+		days_remove = 120
+		modifier = {
+			army_attack_factor = 0.05
+		    army_defence_factor = 0.05
+			supply_node_range = 0.1
+		}
+		complete_effect = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.15
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				add = 200
+				has_war = yes
+			}
+		}
+    }
+
+	WSG_wartime_port_area = {
+		icon = generic_train
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			threat > 0.5
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.2
+			}
+	    }	
+	    visible = {
+			has_completed_focus = WSG_wartime_port_area
+	    }
+		cost = 50
+		fire_only_once = no
+		days_remove = 120
+		modifier = {
+		}
+		complete_effect = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.05
+			}
+			every_state = {
+				limit = {
+					 is_controlled_by = WSG
+			         is_core_of = WSG
+					 industrial_complex > 0
+				}
+			    remove_building = {
+                     type = industrial_complex
+                     level = 1
+                }
+			    add_building_construction = {
+                     type = arms_factory
+                     level = 1
+                     instant_build = yes
+                }
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				add = 200
+				has_war = yes
+			}
+		}
+    }
+
+	WSG_technical_potential = {
+		icon = generic_train
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+	    }	
+	    visible = {
+			has_completed_focus = WSG_restart_the_archive
+	    }
+		cost = 50
+		fire_only_once = no
+		days_remove = 120
+		modifier = {
+		}
+		complete_effect = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.15
+			}
+		    add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 1
+			}
+			
+		    add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 1
+			}
+			
+		    add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 1
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+    }
+
 }

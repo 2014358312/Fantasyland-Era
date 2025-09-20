@@ -24,3 +24,64 @@ WSG_bop_choose_military = {
 	}
 	set_variable = { WSG_bop_located_var = 3 }
 }
+
+WSG_state_category_up = {
+	if = { # tiny_island -> small_island
+		limit = {
+			has_state_category = tiny_island
+		}
+		set_state_category = small_island
+	}
+	else_if = { # wasteland -> pastoral
+		limit = {
+			has_state_category = wasteland
+		}
+		set_state_category = pastoral
+	}
+	else_if = { # small_island enclave pastoral -> rural
+		limit = {
+			or = {
+				has_state_category = small_island
+				has_state_category = enclave
+				has_state_category = pastoral
+			}
+		}
+		set_state_category = rural
+	}
+	else_if = { # small_island rural -> town
+		limit = {
+			has_state_category = rural
+		}
+		set_state_category = town
+	}
+	else_if = { # town large_town -> city
+		limit = {
+			or = {
+				has_state_category = town
+				has_state_category = large_town
+			}                
+		}
+		set_state_category = city
+	}
+	else_if = { # city -> large_city
+		limit = {
+			has_state_category = city                
+		}
+		set_state_category = large_city 
+	}
+	else_if = { # large_city -> metropolis
+		limit = {
+			has_state_category = large_city                
+		}
+		set_state_category = metropolis
+	}
+	else_if = { # metropolis -> megalopolis
+		limit = {
+			has_state_category = metropolis                
+		}
+		set_state_category = megalopolis
+	}
+	else = { # megalopolis
+		 add_extra_state_shared_building_slots = 3
+	}
+}
