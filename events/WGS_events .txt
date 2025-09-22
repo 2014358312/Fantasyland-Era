@@ -1,0 +1,769 @@
+﻿###########################
+# Warship Girls Events
+###########################
+
+add_namespace = WGS_inner_circle_lexington
+add_namespace = WGS_inner_circle_vittorio_veneto
+add_namespace = WGS_inner_circle_yubari
+add_namespace = WGS_inner_circle_hood
+add_namespace = WGS_inner_circle_yixian
+add_namespace = WGS_inner_circle_jean_bart
+add_namespace = WGS_inner_circle_bubnov
+add_namespace = WGS_inner_circle_clausewitz
+
+
+country_event = {
+	id = WGS_inner_circle_lexington.01
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_lexington
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 1 }
+			check_variable = { WSG_ascended_advisor_2 = 1 }
+			check_variable = { WSG_ascended_advisor_3 = 1 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_lexington_plan }
+			}
+			activate_shine_on_focus = WSG_lexington_plan
+			country_event = { id = WGS_inner_circle_lexington.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_expand_resource_output }
+			}
+			activate_shine_on_focus = WSG_expand_resource_output
+			country_event = { id = WGS_inner_circle_lexington.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_ship_girl_reserve_army }
+			}
+			activate_shine_on_focus = WSG_ship_girl_reserve_army
+			country_event = { id = WGS_inner_circle_lexington.02 days = 70 }
+		}
+	}
+}
+
+country_event = {
+	id = WGS_inner_circle_lexington.02
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_lexington
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 1 }
+			check_variable = { WSG_ascended_advisor_2 = 1 }
+			check_variable = { WSG_ascended_advisor_3 = 1 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_lexington_plan
+			}
+			complete_national_focus = {
+				focus = WSG_lexington_plan
+				use_side_message = yes
+				originator_name = WSG_Lexington
+			}
+			country_event = { id = WGS_inner_circle_lexington.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_expand_resource_output
+			}
+			complete_national_focus = {
+				focus = WSG_expand_resource_output
+				use_side_message = yes
+				originator_name = WSG_Lexington
+			}
+			country_event = { id = WGS_inner_circle_lexington.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_ship_girl_reserve_army
+			}
+			complete_national_focus = {
+				focus = WSG_ship_girl_reserve_army
+				use_side_message = yes
+				originator_name = WSG_Lexington
+			}
+		}
+	}
+}
+
+
+
+country_event = {
+	id =  WGS_inner_circle_vittorio_veneto.01
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_vittorio_veneto
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 2 }
+			check_variable = { WSG_ascended_advisor_2 = 2 }
+			check_variable = { WSG_ascended_advisor_3 = 2 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_vittorio_veneto_plan }
+			}
+			activate_shine_on_focus = WSG_vittorio_veneto_plan
+			country_event = { id =  WGS_inner_circle_vittorio_veneto.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_restricting_resource_exports }
+			}
+			activate_shine_on_focus = WSG_restricting_resource_exports
+			country_event = { id =  WGS_inner_circle_vittorio_veneto.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_port_defense_army }
+			}
+			activate_shine_on_focus = WSG_port_defense_army
+			country_event = { id =  WGS_inner_circle_vittorio_veneto.02 days = 70 }
+		}
+	}
+}
+
+country_event = {
+	id = WGS_inner_circle_vittorio_veneto.02
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_vittorio_veneto
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 2 }
+			check_variable = { WSG_ascended_advisor_2 = 2 }
+			check_variable = { WSG_ascended_advisor_3 = 2 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_vittorio_veneto_plan
+			}
+			complete_national_focus = {
+				focus = WSG_vittorio_veneto_plan
+				use_side_message = yes
+				originator_name = WSG_Vittorio_Veneto
+			}
+			country_event = { id =  WGS_inner_circle_vittorio_veneto.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_restricting_resource_exports
+			}
+			complete_national_focus = {
+				focus = WSG_restricting_resource_exports
+				use_side_message = yes
+				originator_name = WSG_Vittorio_Veneto
+			}
+			country_event = { id =  WGS_inner_circle_vittorio_veneto.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_port_defense_army
+			}
+			complete_national_focus = {
+				focus = WSG_port_defense_army
+				use_side_message = yes
+				originator_name = WSG_Vittorio_Veneto
+			}
+		}
+	}
+}
+
+country_event = {
+	id =  WGS_inner_circle_yubari.01
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_yubari
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 3 }
+			check_variable = { WSG_ascended_advisor_2 = 3 }
+			check_variable = { WSG_ascended_advisor_3 = 3 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_government_efficiency }
+			}
+			activate_shine_on_focus = WSG_government_efficiency
+			country_event = { id =  WGS_inner_circle_yubari.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_efficient_cabinet }
+			}
+			activate_shine_on_focus = WSG_efficient_cabinet
+			country_event = { id =  WGS_inner_circle_yubari.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_wartime_laws_and_regulations }
+			}
+			activate_shine_on_focus = WSG_wartime_laws_and_regulations
+			country_event = { id =  WGS_inner_circle_yubari.02 days = 70 }
+		}
+	}
+}
+
+country_event = {
+	id = WGS_inner_circle_yubari.02
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_yubari
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 3 }
+			check_variable = { WSG_ascended_advisor_2 = 3 }
+			check_variable = { WSG_ascended_advisor_3 = 3 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_government_efficiency
+			}
+			complete_national_focus = {
+				focus = WSG_government_efficiency
+				use_side_message = yes
+				originator_name = WSG_Yubari
+			}
+			country_event = { id =  WGS_inner_circle_yubari.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_efficient_cabinet
+			}
+			complete_national_focus = {
+				focus = WSG_efficient_cabinet
+				use_side_message = yes
+				originator_name = WSG_Yubari
+			}
+			country_event = { id =  WGS_inner_circle_yubari.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_wartime_laws_and_regulations
+			}
+			complete_national_focus = {
+				focus = WSG_wartime_laws_and_regulations
+				use_side_message = yes
+				originator_name = WSG_Yubari
+			}
+		}
+	}
+}
+
+
+
+country_event = {
+	id =  WGS_inner_circle_hood.01
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_hood
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 4 }
+			check_variable = { WSG_ascended_advisor_2 = 4 }
+			check_variable = { WSG_ascended_advisor_3 = 4 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_efficient_construction }
+			}
+			activate_shine_on_focus = WSG_efficient_construction
+			country_event = { id =  WGS_inner_circle_hood.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_technological_advantages }
+			}
+			activate_shine_on_focus = WSG_technological_advantages
+			country_event = { id =  WGS_inner_circle_hood.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_efficient_internal_affairs }
+			}
+			activate_shine_on_focus = WSG_efficient_internal_affairs
+			country_event = { id =  WGS_inner_circle_hood.02 days = 70 }
+		}
+	}
+}
+
+country_event = {
+	id = WGS_inner_circle_hood.02
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_hood
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 4 }
+			check_variable = { WSG_ascended_advisor_2 = 4 }
+			check_variable = { WSG_ascended_advisor_3 = 4 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_efficient_construction
+			}
+			complete_national_focus = {
+				focus = WSG_efficient_construction
+				use_side_message = yes
+				originator_name = WSG_Hood
+			}
+			country_event = { id =  WGS_inner_circle_hood.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_technological_advantages
+			}
+			complete_national_focus = {
+				focus = WSG_technological_advantages
+				use_side_message = yes
+				originator_name = WSG_Hood
+			}
+			country_event = { id =  WGS_inner_circle_hood.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_efficient_internal_affairs
+			}
+			complete_national_focus = {
+				focus = WSG_efficient_internal_affairs
+				use_side_message = yes
+				originator_name = WSG_Hood
+			}
+		}
+	}
+}
+
+
+
+country_event = {
+	id =  WGS_inner_circle_yixian.01
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_yixian
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 5 }
+			check_variable = { WSG_ascended_advisor_2 = 5 }
+			check_variable = { WSG_ascended_advisor_3 = 5 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_internal_stability }
+			}
+			activate_shine_on_focus = WSG_internal_stability
+			country_event = { id =  WGS_inner_circle_yixian.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_homeland_defense }
+			}
+			activate_shine_on_focus = WSG_homeland_defense
+			country_event = { id =  WGS_inner_circle_yixian.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_cost_reduction_and_efficiency_improvement }
+			}
+			activate_shine_on_focus = WSG_cost_reduction_and_efficiency_improvement
+			country_event = { id =  WGS_inner_circle_yixian.02 days = 70 }
+		}
+	}
+}
+
+country_event = {
+	id = WGS_inner_circle_yixian.02
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_yixian
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 5 }
+			check_variable = { WSG_ascended_advisor_2 = 5 }
+			check_variable = { WSG_ascended_advisor_3 = 5 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_internal_stability
+			}
+			complete_national_focus = {
+				focus = WSG_internal_stability
+				use_side_message = yes
+				originator_name = WSG_YiXian
+			}
+			country_event = { id =  WGS_inner_circle_yixian.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_homeland_defense
+			}
+			complete_national_focus = {
+				focus = WSG_homeland_defense
+				use_side_message = yes
+				originator_name = WSG_YiXian
+			}
+			country_event = { id =  WGS_inner_circle_yixian.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_cost_reduction_and_efficiency_improvement
+			}
+			complete_national_focus = {
+				focus = WSG_cost_reduction_and_efficiency_improvement
+				use_side_message = yes
+				originator_name = WSG_YiXian
+			}
+		}
+	}
+}
+
+
+
+country_event = {
+	id =  WGS_inner_circle_jean_bart.01
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_jean_bart
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 6 }
+			check_variable = { WSG_ascended_advisor_2 = 6 }
+			check_variable = { WSG_ascended_advisor_3 = 6 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_rapid_restructuring }
+			}
+			activate_shine_on_focus = WSG_rapid_restructuring
+			country_event = { id =  WGS_inner_circle_jean_bart.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_strengthen_the_position }
+			}
+			activate_shine_on_focus = WSG_strengthen_the_position
+			country_event = { id =  WGS_inner_circle_jean_bart.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_save_strength }
+			}
+			activate_shine_on_focus = WSG_save_strength
+			country_event = { id =  WGS_inner_circle_jean_bart.02 days = 70 }
+		}
+	}
+}
+
+country_event = {
+	id = WGS_inner_circle_jean_bart.02
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_jean_bart
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 6 }
+			check_variable = { WSG_ascended_advisor_2 = 6 }
+			check_variable = { WSG_ascended_advisor_3 = 6 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_rapid_restructuring
+			}
+			complete_national_focus = {
+				focus = WSG_rapid_restructuring
+				use_side_message = yes
+				originator_name = WSG_Jean_Bart
+			}
+			country_event = { id =  WGS_inner_circle_jean_bart.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_strengthen_the_position
+			}
+			complete_national_focus = {
+				focus = WSG_strengthen_the_position
+				use_side_message = yes
+				originator_name = WSG_Jean_Bart
+			}
+			country_event = { id =  WGS_inner_circle_jean_bart.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_save_strength
+			}
+			complete_national_focus = {
+				focus = WSG_save_strength
+				use_side_message = yes
+				originator_name = WSG_Jean_Bart
+			}
+		}
+	}
+}
+
+
+
+country_event = {
+	id =  WGS_inner_circle_bubnov.01
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_bubnov
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 7 }
+			check_variable = { WSG_ascended_advisor_2 = 7 }
+			check_variable = { WSG_ascended_advisor_3 = 7 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_indomitable_will }
+			}
+			activate_shine_on_focus = WSG_indomitable_will
+			country_event = { id =  WGS_inner_circle_bubnov.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_fierce_offensive }
+			}
+			activate_shine_on_focus = WSG_fierce_offensive
+			country_event = { id =  WGS_inner_circle_bubnov.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_accumulation_of_experience }
+			}
+			activate_shine_on_focus = WSG_accumulation_of_experience
+			country_event = { id =  WGS_inner_circle_bubnov.02 days = 70 }
+		}
+	}
+}
+
+country_event = {
+	id = WGS_inner_circle_bubnov.02
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_bubnov
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 7 }
+			check_variable = { WSG_ascended_advisor_2 = 7 }
+			check_variable = { WSG_ascended_advisor_3 = 7 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_indomitable_will
+			}
+			complete_national_focus = {
+				focus = WSG_indomitable_will
+				use_side_message = yes
+				originator_name = WSG_Bubnov
+			}
+			country_event = { id =  WGS_inner_circle_bubnov.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_fierce_offensive
+			}
+			complete_national_focus = {
+				focus = WSG_fierce_offensive
+				use_side_message = yes
+				originator_name = WSG_Bubnov
+			}
+			country_event = { id =  WGS_inner_circle_bubnov.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_accumulation_of_experience
+			}
+			complete_national_focus = {
+				focus = WSG_accumulation_of_experience
+				use_side_message = yes
+				originator_name = WSG_Bubnov
+			}
+		}
+	}
+}
+
+
+
+country_event = {
+	id =  WGS_inner_circle_clausewitz.01
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_clausewitz
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 8 }
+			check_variable = { WSG_ascended_advisor_2 = 8 }
+			check_variable = { WSG_ascended_advisor_3 = 8 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_army_mobility }
+			}
+			activate_shine_on_focus = WSG_army_mobility
+			country_event = { id =  WGS_inner_circle_clausewitz.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_preemptive_strike }
+			}
+			activate_shine_on_focus = WSG_preemptive_strike
+			country_event = { id =  WGS_inner_circle_clausewitz.02 days = 70 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = WSG_rapid_construction }
+			}
+			activate_shine_on_focus = WSG_rapid_construction
+			country_event = { id =  WGS_inner_circle_clausewitz.02 days = 70 }
+		}
+	}
+}
+
+country_event = {
+	id = WGS_inner_circle_clausewitz.02
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = WSG_secretary_clausewitz
+		OR = {
+			check_variable = { WSG_ascended_advisor_1 = 8 }
+			check_variable = { WSG_ascended_advisor_2 = 8 }
+			check_variable = { WSG_ascended_advisor_3 = 8 }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_army_mobility
+			}
+			complete_national_focus = {
+				focus = WSG_army_mobility
+				use_side_message = yes
+				originator_name = WSG_Clausewitz
+			}
+			country_event = { id =  WGS_inner_circle_clausewitz.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_preemptive_strike
+			}
+			complete_national_focus = {
+				focus = WSG_preemptive_strike
+				use_side_message = yes
+				originator_name = WSG_Clausewitz
+			}
+			country_event = { id =  WGS_inner_circle_clausewitz.01 days = 30 }
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = WSG_rapid_construction
+			}
+			complete_national_focus = {
+				focus = WSG_rapid_construction
+				use_side_message = yes
+				originator_name = WSG_Clausewitz
+			}
+		}
+	}
+}
