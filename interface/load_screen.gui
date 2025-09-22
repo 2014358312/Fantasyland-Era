@@ -5,7 +5,7 @@ guiTypes = {
 		name = "load_screen"
 		backGround =""
 		position = { x = 0 y = 0 }
-		size = { x = 1024 y = 768 }
+		size = { x = 100%% y = 100%% }
 		moveable = 0
 		dontRender = ""
 		horizontalBorder = "0"
@@ -17,23 +17,27 @@ guiTypes = {
 		windowType = {
 			name = "status"
 			backGround =""
-			position = { x = 0 y = 0 }
-			size = { x = 1024 y = 768 }
+			position = { x = 0 y = -148 }
+			size = { x = 100%% y = 100%% }
 			moveable = 0
 			dontRender = ""
 			horizontalBorder = "0"
 			verticalBorder = ""
 			fullScreen = no
-			Orientation = "CENTER_UP"
+			Orientation = "CENTER_DOWN"
 			
-			
+			iconType = {
+				name ="bg_clausewitz_logo"
+				spriteType = "GFX_clausewitz_logo"
+				position = { x= -810 y = -180 }
+			}
 			
 			instantTextBoxType = {
 				name = "text"
-				position = { x = -800 y = 920 }
+				position = { x = -800 y = 0 }
 				textureFile = ""
 				font = "loadscreen_header"
-				borderSize = {x = 0 y = 0}
+				borderSize = {x = 0 y = -13}
 				text = ""	
 				maxWidth = 800
 				maxHeight =40
@@ -45,14 +49,7 @@ guiTypes = {
 			{
 				name = "progressbar"
 				spriteType = "GFX_loadingstatus_progress"
-				position = { x=-1000 y=860 }
-			}
-			
-			iconType = {
-				name ="bg_clausewitz_logo"
-				spriteType = "GFX_clausewitz_logo"
-				position = { x= -810 y = 20 }
-				Orientation = "LOWER_LEFT"
+				position = { x=-1000 y=-73 }
 			}
 		}
 		
@@ -78,7 +75,7 @@ guiTypes = {
 				borderSize = {x = 0 y = 0}
 				text = ""	
 				maxWidth = 2500
-				maxHeight =200
+				maxHeight = 200
 				fixedsize = yes
 				format = left
 				vertical_alignment = center				
