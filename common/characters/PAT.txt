@@ -265,24 +265,12 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = head_of_government
-			idea_token = PAT_Glantz_Mazenta_head_of_government
-			allowed = { original_tag = PAT }
+			slot = head_of_government_character
+			idea_token = PAT_Glantz_Mazenta_head_of_government_character
 			available = {
 				no_head_of_gov_trigger = yes
 			}
-			can_be_fired = no
-			cost = 0
-			traits = { BRA_political_fox head_of_government_trait }
-			ai_will_do = {
-				base = 1.000
-			}
-			on_add = {
-				hidden_effect = {
-					set_variable = { FE_secondary = token:PAT_Glantz_Mazenta_head_of_government }
-					set_variable = { VL_status_var = 12 }
-				}
-			}
+			traits = { BRA_political_fox }
 		}
 
 		advisor = {
@@ -319,29 +307,12 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = head_of_government
-			idea_token = PAT_Anisufia_win_Parettia_head_of_government
-			allowed = {
-				original_tag = PAT
-			}
-			visible = {
-				has_country_flag = PAT_tetrarchy_flag
-			}
+			slot = head_of_government_character
+			idea_token = PAT_Anisufia_win_Parettia_head_of_government_character
 			available = {
 				no_head_of_gov_trigger = yes
 			}
-			can_be_fired = no
-			cost = 0
-
-			traits = { vice_king_1 head_of_government_trait }
-			on_add = {
-				hidden_effect = {
-					deactivate_advisor = PAT_Anisufia_win_Parettia_political_advisor
-					deactivate_advisor = PAT_Anisufia_win_Parettia_high_command
-					set_variable = { FE_secondary = token:PAT_Anisufia_win_Parettia_head_of_government }
-					set_variable = { VL_status_var = 16 }
-				}
-			}
+			traits = { vice_king_1 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -400,29 +371,12 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = head_of_government
-			idea_token = PAT_Yufiria_Mazenta_head_of_government
-			allowed = { original_tag = PAT }
-			visible = {
-				always = no
-			}
+			slot = head_of_government_character
+			idea_token = PAT_Yufiria_Mazenta_head_of_government_character
 			available = {
 				no_head_of_gov_trigger = yes
 			}
-			can_be_fired = no
-			cost = 0
-			traits = { vice_king_1 head_of_government_trait }
-			on_add = {
-				hidden_effect = {
-					ROOT = {
-						deactivate_advisor = PAT_Yufiria_Mazenta_political_advisor
-						deactivate_advisor = PAT_Yufiria_Mazenta_air_chief
-					}
-				}
-			}
-			ai_will_do = {
-				base = 1.000
-			}
+			traits = { vice_king_1 }
 		}
 		advisor = {
 			slot = political_advisor
@@ -483,28 +437,12 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = head_of_government
-			idea_token = PAT_Algard_von_Palettia_head_of_government
-			allowed = { original_tag = PAT }
-			visible = {
-				has_country_flag = PAT_tetrarchy_flag
-			}
+			slot = head_of_government_character
+			idea_token = PAT_Algard_von_Palettia_head_of_government_character
 			available = {
 				no_head_of_gov_trigger = yes
 			}
-			can_be_fired = no
-			cost = 0
-			traits = { vice_king_2 head_of_government_trait }
-			on_add = {
-				hidden_effect = {
-					ROOT = { deactivate_advisor = PAT_Algard_von_Palettia_political_advisor }
-					set_variable = { FE_secondary = token:PAT_Algard_von_Palettia_head_of_government }
-					set_variable = { VL_status_var = 17 }
-				}
-			}
-			ai_will_do = {
-				base = 1.000
-			}
+			traits = { vice_king_2 }
 		}
 		advisor = {
 			slot = political_advisor

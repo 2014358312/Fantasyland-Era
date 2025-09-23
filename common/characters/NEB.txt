@@ -36,24 +36,10 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = head_of_government
-			idea_token = NEB_Lieselotte_Riefenstahl_head_of_government
-			allowed = {
-				original_tag = NEB
-			}
-			visible = { is_country_leader = no }
+			slot = head_of_government_character
+			idea_token = NEB_Lieselotte_Riefenstahl_head_of_government_character
 			available = { no_head_of_gov_trigger = yes }
-			can_be_fired = no
-			traits = { controversial_figurehead head_of_government_trait }
-			cost = 0
-			ai_will_do = {
-				factor = 1
-			}
-			on_add = {
-				hidden_effect = {
-					set_variable = { FE_secondary = token:NEB_Lieselotte_Riefenstahl_head_of_government }
-				}
-			}
+			traits = { controversial_figurehead }
 		}
 	}
 	
@@ -72,24 +58,10 @@ characters = {
 			id = -1
 		}
 		advisor = {
-			slot = head_of_government
-			idea_token = NEB_Aileen_Lauren_Dautriche_head_of_government
-			allowed = {
-				original_tag = NEB
-			}
-			visible = { is_country_leader = no }
+			slot = head_of_government_character
+			idea_token = NEB_Aileen_Lauren_Dautriche_head_of_government_character
 			available = { no_head_of_gov_trigger = yes }
-			can_be_fired = no
-			traits = { professional_crisis_solver head_of_government_trait }
-			cost = 0
-			ai_will_do = {
-				factor = 1
-			}
-			on_add = {
-				hidden_effect = {
-					set_variable = { FE_secondary = token:NEB_Aileen_Lauren_Dautriche_head_of_government }
-				}
-			}
+			traits = { professional_crisis_solver }
 		}
 	}
 	
@@ -102,35 +74,10 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = head_of_government
-			idea_token = NEB_Elianna_Bernstein_head_of_government
-			allowed = {
-				original_tag = NEB
-			}
-			visible = { is_country_leader = no }
+			slot = head_of_government_character
+			idea_token = NEB_Elianna_Bernstein_head_of_government_character
 			available = { no_head_of_gov_trigger = yes }
-			can_be_fired = no
-			traits = { bibliophile_princess political_insulator head_of_government_trait }
-			cost = 0
-			ai_will_do = {
-				factor = 1
-			}
-			on_add = {
-				hidden_effect = {
-					set_variable = { FE_secondary = token:NEB_Elianna_Bernstein_head_of_government }
-					#set_variable = { FE_temp_temp_variable = THIS.id }
-					#meta_effect = {
-					#	text = { set_variable = { FE_temp_temp_temp_variable = [TOKEN] } }
-					#	TOKEN = [?THIS.GetTokenKey]
-					#}
-					#log = "FE_temp_variable name: [THIS.GetName]"
-					#log = "FE_temp_temp_variable: [?FE_temp_temp_variable]"
-					#log = "FE_temp_temp_variable token: [?FE_temp_temp_variable.GetTokenKey]"
-					#log = "FE_temp_temp_variable name: [FE_temp_temp_variable.GetName]"
-					#log = "FE_temp_temp_temp_variable: [?FE_temp_temp_temp_variable]"
-					#log = "FE_temp_temp_temp_variable token: [?FE_temp_temp_temp_variable.GetTokenKey]"
-				}
-			}
+			traits = { bibliophile_princess political_insulator }
 		}
 	}
 	

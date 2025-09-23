@@ -38,20 +38,10 @@ characters = {
 			id = -1
 		}
 		advisor = {
-			slot = head_of_government
-			idea_token = RNA_Phoebe_head_of_government
-			allowed = { original_tag = RNA }
-			can_be_fired = no
-			traits = { archbishop_of_rinascita head_of_government_trait }
-			cost = 0
-			ai_will_do = {
-				base = 1.000
-			}
-			on_add = {
-				hidden_effect = {
-					set_variable = { FE_secondary = token:RNA_Phoebe_head_of_government }
-				}
-			}
+			slot = head_of_government_character
+			idea_token = RNA_Phoebe_head_of_government_character
+			available = { no_head_of_gov_trigger = yes }
+			traits = { archbishop_of_rinascita }
 		}
 	}
 }

@@ -76,20 +76,10 @@ characters = {
 			id = -1
 		}
 		advisor = {
-			slot = head_of_government
-			idea_token = RGC_Delphine_Windermere_head_of_government
-			allowed = { original_tag = RGC }
-			can_be_fired = no
-			traits = { military_liaison_officer head_of_government_trait }
-			cost = 0
-			ai_will_do = {
-				base = 1.000
-			}
-			on_add = {
-				hidden_effect = {
-					set_variable = { FE_secondary = token:RGC_Delphine_Windermere_head_of_government }
-				}
-			}
+			slot = head_of_government_character
+			idea_token = RGC_Delphine_Windermere_head_of_government_character
+			available = { no_head_of_gov_trigger = yes }
+			traits = { military_liaison_officer }
 		}
 		corps_commander = {
 			traits = { }
@@ -537,25 +527,10 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = head_of_government
-			idea_token = RGC_York_head_of_government
-			allowed = {
-				OR = {
-					original_tag = RGC
-					original_tag = KPR
-				}
-			}
-			can_be_fired = no
-			traits = { RGC_safe_hands head_of_government_trait }
-			cost = 0
-			ai_will_do = {
-				base = 1.000
-			}
-			on_add = {
-				hidden_effect = {
-					set_variable = { FE_secondary = token:RGC_York_head_of_government }
-				}
-			}
+			slot = head_of_government_character
+			idea_token = RGC_York_head_of_government_character
+			available = { no_head_of_gov_trigger = yes }
+			traits = { RGC_safe_hands }
 		}
 		field_marshal = {
 			traits = { }

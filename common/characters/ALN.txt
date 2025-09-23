@@ -57,24 +57,10 @@ characters = {
 			id = -1
 		}
 		advisor = {
-			slot = head_of_government
-			idea_token = ALN_Elizabeth_Rose_Bloodflame_head_of_government
-			allowed = {
-				ALN_is_former_albion_member = yes
-			}
-			visible = { is_country_leader = no }
+			slot = head_of_government_character
+			idea_token = ALN_Elizabeth_Rose_Bloodflame_head_of_government_character
 			available = { no_head_of_gov_trigger = yes }
-			can_be_fired = no
-			traits = { SWE_former_autocrat head_of_government_trait }
-			cost = 0
-			ai_will_do = {
-				factor = 1
-			}
-			on_add = {
-				hidden_effect = {
-					set_variable = { FE_secondary = token:ALN_Elizabeth_Rose_Bloodflame_head_of_government }
-				}
-			}
+			traits = { SWE_former_autocrat }
 		}
 	}
 	

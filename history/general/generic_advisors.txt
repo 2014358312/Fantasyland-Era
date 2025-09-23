@@ -1,28 +1,28 @@
 # For minor countries where advisors are not defined
 # Generate them from a generic template
 
-every_possible_country = {
-	generate_character = {
-		token_base = generic # token will be TAG_token_base
-		name = generic_head_of_government_none
-		advisor = {
-			slot = head_of_government
-			idea_token = head_of_government_none
-			visible = { ROOT = { NOT = { has_idea_with_trait = head_of_government_trait } } }
-			traits = { head_of_government_trait }
-			cost = 0
-			can_be_fired = no
-			ai_will_do = {
-				factor = 1
-			}
-			on_add = {
-				hidden_effect = {
-					set_variable = { FE_secondary = token:generic_head_of_government_none }
-				}
-			}
-		}
-		portraits = { 
-			army = { small = GFX_idea_generic_head_of_government }
-		}
-	}
-}
+#every_possible_country = {
+#	generate_character = {
+#		token_base = generic # token will be TAG_token_base
+#		name = generic_head_of_government_none
+#		advisor = {
+#			slot = head_of_government
+#			idea_token = head_of_government_none
+#			visible = { ROOT = { NOT = { has_idea_with_trait = head_of_government_trait } } }
+#			traits = { head_of_government_trait }
+#			cost = 0
+#			can_be_fired = no
+#			ai_will_do = {
+#				factor = 1
+#			}
+#			on_add = {
+#				hidden_effect = {
+#					set_variable = { FE_secondary = token:generic_head_of_government_none }
+#				}
+#			}
+#		}
+#		portraits = { 
+#			army = { small = GFX_idea_generic_head_of_government }
+#		}
+#	}
+#}

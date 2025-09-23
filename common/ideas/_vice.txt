@@ -1,0 +1,954 @@
+ideas = {
+	head_of_government = {
+		generic_head_of_government_none = {
+			name = generic_head_of_government_none
+			picture = advisor_generic_head_of_government
+			allowed = {
+				always = yes
+			}
+			visible = {
+				has_idea = generic_head_of_government_none
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = {  }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:generic_head_of_government_none }
+				}
+			}
+		}
+		ALN_Elizabeth_Rose_Bloodflame_head_of_government = {
+			name = Elizabeth_Rose_Bloodflame
+			picture = advisor_ALN_Elizabeth_Rose_Bloodflame
+			allowed = {
+				ALN_is_former_albion_member = yes
+			}
+			visible = {
+				ALN_is_former_albion_member = yes
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { SWE_former_autocrat }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:ALN_Elizabeth_Rose_Bloodflame_head_of_government }
+				}
+			}
+		}
+		ALP_Kuo_Shenlin_head_of_government = {
+			name = Kuo_Shenlin
+			picture = advisor_ALP_Kuo_Shenlin
+			allowed = {
+				original_tag = ALP
+			}
+			visible = {
+				original_tag = ALP
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { modernizer_and_diplomat }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:ALP_Kuo_Shenlin_head_of_government }
+				}
+			}
+		}
+		ALP_Shirai_Yuyu_head_of_government = {
+			name = Shirai_Yuyu
+			picture = advisor_ALP_Shirai_Yuyu
+			allowed = {
+				original_tag = ALP
+			}
+			visible = {
+				original_tag = ALP
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { nationalist_symbol }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:ALP_Shirai_Yuyu_head_of_government }
+				}
+			}
+		}
+		CET_Meryl_Ambrosius_head_of_government = {
+			name = Meryl_Ambrosius
+			picture = advisor_CET_Meryl_Ambrosius
+			allowed = {
+				original_tag = CET
+			}
+			visible = {
+				original_tag = CET
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { legendary_magician temperamental_meryl }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:CET_Meryl_Ambrosius_head_of_government }
+				}
+			}
+		}
+		CRB_Minamiya_Natsuki_head_of_government = {
+			name = Minamiya_Natsuki
+			picture = advisor_CRB_Minamiya_Natsuki
+			allowed = {
+				original_tag = CRB
+			}
+			visible = {
+				original_tag = CRB
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { witch_of_the_void }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:CRB_Minamiya_Natsuki_head_of_government }
+				}
+			}
+		}
+		CWS_RyuZU_head_of_government = {
+			name = CWS_RyuZU
+			picture = advisor_CWS_RyuZU
+			allowed = {
+				original_tag = CWS
+			}
+			visible = {
+				original_tag = CWS
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { historian }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:CWS_RyuZU_head_of_government }
+				}
+			}
+		}
+		DKA_Machina_Soleige_head_of_government = {
+			name = Machina_Soleige
+			picture = advisor_DKA_Machina_Soleige
+			allowed = {
+				original_tag = DKA
+			}
+			visible = {
+				original_tag = DKA
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { head_of_government_trait }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:DKA_Machina_Soleige_head_of_government }
+				}
+			}
+		}
+		EYP_Varma_head_of_government = {
+			name = Varma
+			picture = advisor_EYP_Varma
+			allowed = {
+				original_tag = EYP
+			}
+			visible = {
+				original_tag = EYP
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { prime_minister_varma }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:EYP_Varma_head_of_government }
+				}
+			}
+		}
+		GSK_Yakumo_Yukari_head_of_government = {
+			name = Yakumo_Yukari
+			picture = advisor_GSK_Yakumo_Yukari
+			allowed = {
+				original_tag = GSK
+			}
+			visible = {
+				original_tag = GSK
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { Yakumo_Yukari_evening_star }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:GSK_Yakumo_Yukari_head_of_government }
+				}
+			}
+		}
+		LAN_Christina_Morgan_head_of_government = {
+			name = Christina_Morgan
+			picture = advisor_LAN_Christina_Morgan
+			allowed = {
+				original_tag = LAN
+			}
+			visible = {
+				original_tag = LAN
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { heroic_marshal }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:LAN_Christina_Morgan_head_of_government }
+				}
+			}
+		}
+		LAN_Natsume_Kokoro_head_of_government = {
+			name = Natsume_Kokoro
+			picture = advisor_LAN_Natsume_Kokoro
+			allowed = {
+				original_tag = LAN
+			}
+			visible = {
+				original_tag = LAN
+			}
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { little_guardian }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:LAN_Natsume_Kokoro_head_of_government }
+				}
+			}
+		}
+		LAN_Momochi_Kiruya_head_of_government = {
+			name = Momochi_Kiruya
+			picture = advisor_LAN_Momochi_Kiruya
+			allowed = {
+				original_tag = LAN
+			}
+			visible = {
+				original_tag = LAN
+			}
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { lord_kiruya }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:LAN_Momochi_Kiruya_head_of_government }
+				}
+			}
+		}
+		LAN_Sasaki_Saren_head_of_government = {
+			name = Sasaki_Saren
+			picture = advisor_LAN_Sasaki_Saren
+			allowed = {
+				original_tag = LAN
+			}
+			visible = {
+				original_tag = LAN
+			}
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { the_future_star }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:LAN_Sasaki_Saren_head_of_government }
+				}
+			}
+		}
+		LAN_Senri_Mana_head_of_government = {
+			name = Senri_Mana
+			picture = advisor_LAN_Senri_Mana
+			allowed = {
+				original_tag = LAN
+			}
+			visible = {
+				original_tag = LAN
+			}
+			available = { no_head_of_gov_trigger = yes }
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { JUNO_national_socialist_vanguard }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:LAN_Senri_Mana_head_of_government }
+				}
+			}
+		}
+		LAN_Eustiana_von_Astraea_head_of_government = {
+			name = Eustiana_von_Astraea
+			picture = advisor_LAN_Eustiana_von_Astraea
+			allowed = {
+				original_tag = LAN
+			}
+			visible = {
+				original_tag = LAN
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { pecorine foodie_eustiana }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:LAN_Eustiana_von_Astraea_head_of_government }
+				}
+			}
+		}
+		LAN_Kusano_Yui_head_of_government = {
+			name = Kusano_Yui
+			picture = advisor_LAN_Kusano_Yui
+			allowed = {
+				original_tag = LAN
+			}
+			visible = {
+				original_tag = LAN
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { silent_workhorse }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:LAN_Kusano_Yui_head_of_government }
+				}
+			}
+		}
+		LAS_Jinguji_Kei_head_of_government = {
+			name = Jinguji_Kei
+			picture = advisor_LAS_Jinguji_Kei
+			allowed = {
+				original_tag = LAS
+			}
+			visible = {
+				original_tag = LAS
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { Oracle }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:LAS_Jinguji_Kei_head_of_government }
+				}
+			}
+		}
+		LEA_Chika_Hakozaki_head_of_government = {
+			name = Chika_Hakozaki
+			picture = advisor_LEA_Chika_Hakozaki
+			allowed = {
+				original_tag = LEA
+			}
+			visible = {
+				original_tag = LEA
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { Oracle }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:LEA_Chika_Hakozaki_head_of_government }
+				}
+			}
+		}
+		LOW_Mina_Nishizawa_head_of_government = {
+			name = Mina_Nishizawa
+			picture = advisor_LOW_Mina_Nishizawa
+			allowed = {
+				original_tag = LOW
+			}
+			visible = {
+				original_tag = LOW
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { Oracle }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:LOW_Mina_Nishizawa_head_of_government }
+				}
+			}
+		}
+		NEB_Lieselotte_Riefenstahl_head_of_government = {
+			name = Lieselotte_Riefenstahl
+			picture = advisor_NEB_Lieselotte_Riefenstahl
+			allowed = {
+				original_tag = NEB
+			}
+			visible = {
+				original_tag = NEB
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { controversial_figurehead }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:NEB_Lieselotte_Riefenstahl_head_of_government }
+				}
+			}
+		}
+		NEB_Aileen_Lauren_Dautriche_head_of_government = {
+			name = Aileen_Lauren_Dautriche
+			picture = advisor_NEB_Aileen_Lauren_Dautriche
+			allowed = {
+				original_tag = NEB
+			}
+			visible = {
+				original_tag = NEB
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { professional_crisis_solver }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:NEB_Aileen_Lauren_Dautriche_head_of_government }
+				}
+			}
+		}
+		NEB_Elianna_Bernstein_head_of_government = {
+			name = Elianna_Bernstein
+			picture = advisor_NEB_Elianna_Bernstein
+			allowed = {
+				original_tag = NEB
+			}
+			visible = {
+				original_tag = NEB
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { bibliophile_princess political_insulator }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:NEB_Elianna_Bernstein_head_of_government }
+				}
+			}
+		}
+		NUB_Toyama_Kasumi_head_of_government = {
+			name = Toyama_Kasumi
+			picture = advisor_NUB_Toyama_Kasumi
+			allowed = {
+				original_tag = NUB
+			}
+			visible = {
+				original_tag = NUB
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { extraordinary_star }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:NUB_Toyama_Kasumi_head_of_government }
+				}
+			}
+		}
+		PAT_Algard_von_Palettia_head_of_government = {
+			name = Algard_von_Palettia
+			picture = advisor_PAT_Algard_von_Palettia
+			allowed = { original_tag = PAT }
+			visible = {
+				has_country_flag = PAT_tetrarchy_flag
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { vice_king_2 }
+			on_add = {
+				hidden_effect = {
+					ROOT = { deactivate_advisor = PAT_Algard_von_Palettia_political_advisor }
+					set_variable = { ROOT.FE_secondary = token:PAT_Algard_von_Palettia_head_of_government }
+					set_variable = { VL_status_var = 17 }
+				}
+			}
+		}
+		PAT_Yufiria_Mazenta_head_of_government = {
+			name = Yufiria_Mazenta
+			picture = advisor_PAT_Yufiria_Mazenta
+			allowed = { original_tag = PAT }
+			visible = {
+				always = no
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { vice_king_1 }
+			on_add = {
+				hidden_effect = {
+					ROOT = {
+						deactivate_advisor = PAT_Yufiria_Mazenta_political_advisor
+						deactivate_advisor = PAT_Yufiria_Mazenta_air_chief
+					}
+				}
+			}
+		}
+		PAT_Anisufia_win_Parettia_head_of_government = {
+			name = Anisufia_win_Parettia
+			picture = advisor_PAT_Anisufia_win_Parettia
+			allowed = {
+				original_tag = PAT
+			}
+			visible = {
+				has_country_flag = PAT_tetrarchy_flag
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { vice_king_1 }
+			on_add = {
+				hidden_effect = {
+					deactivate_advisor = PAT_Anisufia_win_Parettia_political_advisor
+					deactivate_advisor = PAT_Anisufia_win_Parettia_high_command
+					set_variable = { ROOT.FE_secondary = token:PAT_Anisufia_win_Parettia_head_of_government }
+					set_variable = { VL_status_var = 16 }
+				}
+			}
+		}
+		PAT_Glantz_Mazenta_head_of_government = {
+			name = Glantz_Mazenta
+			picture = advisor_PAT_Glantz_Mazenta
+			allowed = { original_tag = PAT }
+			visible = { }
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { BRA_political_fox }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:PAT_Glantz_Mazenta_head_of_government }
+					set_variable = { VL_status_var = 12 }
+				}
+			}
+		}
+		PLA_Histoire_head_of_government = {
+			name = Histoire
+			picture = advisor_PLA_Histoire
+			allowed = {
+				original_tag = PLA
+			}
+			visible = {
+				original_tag = PLA
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { historian Oracle }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:PLA_Histoire_head_of_government }
+				}
+			}
+		}
+		RGC_York_head_of_government = {
+			name = RGC_York
+			picture = advisor_RGC_York
+			allowed = {
+				OR = {
+					original_tag = RGC
+					original_tag = KPR
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = RGC
+					original_tag = KPR
+				}
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { RGC_safe_hands }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:RGC_York_head_of_government }
+				}
+			}
+		}
+		RGC_Delphine_Windermere_head_of_government = {
+			name = Delphine_Windermere
+			picture = advisor_RGC_Delphine_Windermere
+			allowed = { original_tag = RGC }
+			visible = { original_tag = RGC }
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { military_liaison_officer }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:RGC_Delphine_Windermere_head_of_government }
+				}
+			}
+		}
+		RNA_Phoebe_head_of_government = {
+			name = Phoebe
+			picture = advisor_RNA_Phoebe
+			allowed = { original_tag = RNA }
+			visible = { original_tag = RNA }
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { archbishop_of_rinascita }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:RNA_Phoebe_head_of_government }
+				}
+			}
+		}
+		RSL_Aijo_Karen_head_of_government = {
+			name = Aijo_Karen
+			picture = advisor_RSL_Aijo_Karen
+			allowed = { original_tag = RSL }
+			visible = {
+				original_tag = RSL
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { the_future_star }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:RSL_Aijo_Karen_head_of_government }
+				}
+			}
+		}
+		SMA_Iris_Midgar_head_of_government = {
+			name = Iris_Midgar
+			picture = advisor_SMA_Iris_Midgar
+			allowed = { original_tag = SMA }
+			visible = {
+				original_tag = SMA
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { hawk }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:SMA_Iris_Midgar_head_of_government }
+				}
+			}
+		}
+		SMA_Roxy_Migurdia_head_of_government = {
+			name = Roxy_Migurdia
+			picture = advisor_SMA_Roxy_Migurdia
+			allowed = { original_tag = SMA }
+			visible = { original_tag = SMA }
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { military_reformer }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:SMA_Roxy_Migurdia_head_of_government }
+				}
+			}
+		}
+		SMA_Yuuki_Asuna_head_of_government = {
+			name = Yuuki_Asuna
+			picture = advisor_SMA_Yuuki_Asuna
+			allowed = { original_tag = SMA }
+			visible = {
+				original_tag = SMA
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:SMA_Yuuki_Asuna_head_of_government }
+				}
+			}
+		}
+		SNP_Chkalov_head_of_government = {
+			name = Chkalov
+			picture = advisor_SNP_Chkalov
+			allowed = { original_tag = SNP }
+			visible = { original_tag = SNP }
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { SWE_anti_nazi_interdisciplinary_social_scientist }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:SNP_Chkalov_head_of_government }
+				}
+			}
+		}
+		TIA_Mia_Runa_Tiamun_head_of_government = {
+			name = Mia_Runa_Tiamun
+			picture = advisor_TIA_Mia_Runa_Tiamun
+			allowed = {
+				original_tag = TIA
+			}
+			visible = {
+				original_tag = TIA
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = {
+				Imperial_sagacity
+			}
+			on_add = {
+				hidden_effect = {
+					set_variable = {
+						ROOT.FE_secondary = token:TIA_Mia_Runa_Tiamun_head_of_government
+					}
+				}
+			}
+		}
+		WAT_Sheele_Russell_head_of_government = {
+			name = Sheele_Russell
+			picture = advisor_WAT_Sheele_Russell
+			allowed = {
+				original_tag = WAT
+			}
+			visible = {
+				original_tag = WAT
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { free_market_economists }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:WAT_Sheele_Russell_head_of_government }
+				}
+			}
+		}
+		WPE_Ayase_Eli_head_of_government = {
+			name = Ayase_Eli
+			picture = advisor_WPE_Ayase_Eli
+			allowed = {
+				original_tag = WPE
+			}
+			visible = {
+				original_tag = WPE
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { balanced_budget_economy_supporter }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:WPE_Ayase_Eli_head_of_government }
+				}
+			}
+		}
+		WPE_Sarashiki_Tatenashi_head_of_government = {
+			name = Sarashiki_Tatenashi
+			picture = advisor_WPE_Sarashiki_Tatenashi
+			allowed = {
+				original_tag = WPE
+			}
+			visible = {
+				original_tag = WPE
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { party_connection }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:WPE_Sarashiki_Tatenashi_head_of_government }
+					#set_variable = { VL_status_var = 14 }
+				}
+			}
+		}
+		WPE_Fedorov_head_of_government = {
+			name = DOLL_Fedorov
+			picture = advisor_WPE_Fedorov
+			allowed = {
+				original_tag = WPE
+			}
+			visible = {
+				original_tag = WPE
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { cautious_planner }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:WPE_Fedorov_head_of_government }
+					set_variable = { VL_status_var = 14 }
+				}
+			}
+		}
+		WPE_Agent_head_of_government = {
+			name = DOLL_Agent
+			picture = advisor_WPE_Agent
+			allowed = {
+				original_tag = WPE
+			}
+			visible = { original_tag = WPE }
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { GER_supreme_commander_armed_forces }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:WPE_Agent_head_of_government }
+				}
+			}
+		}
+		WPE_Suomi_head_of_government = {
+			name = DOLL_Suomi
+			picture = advisor_WPE_Suomi
+			allowed = {
+				original_tag = WPE
+			}
+			visible = {
+				original_tag = WPE
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { special_theory_operations_expert }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:WPE_Suomi_head_of_government }
+					set_variable = { VL_status_var = 14 }
+				}
+			}
+		}
+		WPE_Ilf_Snow_head_of_government = {
+			name = Ilf_Snow
+			picture = advisor_WPE_Ilf_Snow
+			allowed = {
+				original_tag = WPE
+			}
+			visible = {
+				original_tag = WPE
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { leader_of_modernization_of_heavy_industry }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:WPE_Ilf_Snow_head_of_government }
+					set_variable = { VL_status_var = 14 }
+				}
+			}
+		}
+		WPE_Promaya_Zatzatski_head_of_government = {
+			name = Promaya_Zatzatski
+			picture = advisor_WPE_Promaya_Zatzatski
+			allowed = {
+				original_tag = WPE
+			}
+			visible = {
+				original_tag = WPE
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { heroic_marshal advocates_for_total_war }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:WPE_Promaya_Zatzatski_head_of_government }
+					set_variable = { VL_status_var = 14 }
+				}
+			}
+		}
+	}
+}

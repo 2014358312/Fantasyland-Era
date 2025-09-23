@@ -174,19 +174,14 @@ on_actions = {
 			#LAN = { initialize_landsol_party_long_name = yes }
 			############
 			every_possible_country = {
-				generic_head_of_government_none = {
-					set_character_flag = generic_character_flag
-				}
-			}
-			every_possible_country = {
 				limit = {
-					#amount_taken_ideas = {
-					#	amount < 1
-					#	slots = { head_of_government }
-					#}
-					NOT = { has_idea_with_trait = head_of_government_trait }
+					amount_taken_ideas = {
+						amount < 1
+						slots = { head_of_government }
+					}
+					#NOT = { has_idea_with_trait = head_of_government_trait }
 				}
-				activate_advisor = generic_head_of_government_none
+				add_ideas = generic_head_of_government_none
 				set_variable = { FE_secondary = token:generic_head_of_government_none }
 			}
 			############
