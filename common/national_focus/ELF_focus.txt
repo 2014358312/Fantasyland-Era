@@ -497,4 +497,123 @@ focus_tree = {
 
 
 
+
+
+
+#36d24bff#军事国策
+
+    focus = {
+		id = ELF_military_first
+		icon = GFX_ELF_military
+		prerequisite = {
+
+		}
+		mutually_exclusive = {}
+		x = 20
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		available = {
+
+		}
+		bypass = {
+
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+
+    focus = {
+		id = ELF_military_left
+		icon = GFX_ELF_military
+		mutually_exclusive = { focus = ELF_military_right }
+		prerequisite = {
+			focus = ELF_military_first
+		}
+		relative_position_id = ELF_military_first
+		x = -5
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		available = {
+
+		}
+		bypass = {
+
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+
+
+
+    focus = {
+		id = ELF_military_right
+		icon = GFX_ELF_military
+		mutually_exclusive = { focus = ELF_military_left }
+		prerequisite = {
+			focus = ELF_military_first
+		}
+		relative_position_id = ELF_military_first
+		x = 5
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		available = {
+
+		}
+		bypass = {
+
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		}
