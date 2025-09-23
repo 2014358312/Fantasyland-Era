@@ -8,33 +8,62 @@
 ### search_filters = {FOCUS_FILTER_USA_CONGRESS}
 
 focus_tree = {
-	id = ELF_focus
+	id = ELF_focus_tree
 
 	country = {
-		factor = 0
+		base = 0
 		
 		modifier = {
-			add = 10
+			add = 114514
 			tag = ELF
 		}
 	}
 	
 	default = no
 
+	continuous_focus_position = { x = 0 , y = 5000}
+
 	initial_show_position = { x = 0 , y = 0 }
 
+##通用
+##focus = {
+##		id = ELF_initial_finish_regency
+##		icon = GFX_ELF_initial
+##	
+##		prerequisite = { focus = ELF_initial_a_lot_to_do }
+##		relative_position_id = ELF_initial_a_lot_to_do
+##      mutually_exclusive = { focus = }
+##		x = 0
+##		y = 1
+##		cost = 5
+##
+##		ai_will_do = {
+##			base = 1
+##			modifier = {
+##				add = 0
+##			}
+##		}
+##		availale = {
+##		}
+##		bypass = {
+##		}
+##		search_filters = {
+##
+##		}
+##		completion_reward = {
+##				
+##		}
+##		}
 
+
+##
 	
 
 
 
+#df4212ff#第一页国策
 
 
-
-#114514
-
-
-#1
 		focus = {
 		id = ELF_initial_new_braver
 		icon = GFX_ELF_initial
@@ -42,7 +71,20 @@ focus_tree = {
 		y = 0
 		cost = 0
 		ai_will_do = {
-		factor = 1
+			base = 100
+			modifier = {
+				add = 0
+			}
+		}
+		availale = {
+		}
+		bypass = {
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+				add_political_power = 25
 		}
 		}
 
@@ -57,7 +99,20 @@ focus_tree = {
 		y = 1
 		cost = 1
 		ai_will_do = {
-		factor = 1
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		availale = {
+		}
+		bypass = {
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+				add_political_power = 25
 		}
 	    }
 
@@ -72,7 +127,20 @@ focus_tree = {
 		y = 1
 		cost = 1
 		ai_will_do = {
-		factor = 1
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		availale = {
+		}
+		bypass = {
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+				add_political_power = 25
 		}
 	    }
 
@@ -87,8 +155,21 @@ focus_tree = {
 		x = 0
 		y = 1
 		cost = 2
-		ai_will_do = {
-		factor = 1
+	    ai_will_do = {
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		availale = {
+		}
+		bypass = {
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+				
 		}
 	    }
 
@@ -105,7 +186,20 @@ focus_tree = {
 		cost = 3
 
 		ai_will_do = {
-		factor = 1
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		availale = {
+		}
+		bypass = {
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+				
 		}
 		}
 
@@ -122,7 +216,20 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-		factor = 1
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		availale = {
+		}
+		bypass = {
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+				
 		}
 		}
 
@@ -131,14 +238,27 @@ focus_tree = {
 		id = ELF_initial_the_daocha_of_three_years
 		icon = GFX_ELF_initial
 	
-		prerequisite = { ELF_initial_unified_industry_pricing}
+		prerequisite = { focus = ELF_initial_unified_industry_pricing }
 		relative_position_id = ELF_initial_unified_industry_pricing
 		x = 0
 		y = 1
 		cost = 5
 
 		ai_will_do = {
-		factor = 1
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		availale = {
+		}
+		bypass = {
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+			
 		}
 		}
 
@@ -154,7 +274,20 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-		factor = 1
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		availale = {
+		}
+		bypass = {
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+				
 		}
 		}
 
@@ -163,14 +296,27 @@ focus_tree = {
 		id = ELF_initial_bill
 		icon = GFX_ELF_initial
 	
-		prerequisite = { ELF_initial_nobility }
+		prerequisite = { focus = ELF_initial_nobility }
 		relative_position_id = ELF_initial_nobility
 		x = 0
 		y = 1
 		cost = 5
 
 		ai_will_do = {
-		factor = 1
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		availale = {
+		}
+		bypass = {
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+				
 		}
 		}
 
@@ -180,14 +326,27 @@ focus_tree = {
 		id = ELF_initial_sound
 		icon = GFX_ELF_initial
 	
-		prerequisite = { ELF_initial_bill }
+		prerequisite = { focus = ELF_initial_bill }
 		relative_position_id = ELF_initial_bill
 		x = 0
 		y = 1
 		cost = 5
 
 		ai_will_do = {
-		factor = 1
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		availale = {
+		}
+		bypass = {
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+				
 		}
 		}
 
@@ -197,14 +356,27 @@ focus_tree = {
 		id = ELF_initial_our_wedding
 		icon = GFX_ELF_initial
 	
-		prerequisite = { ELF_initial_sound }
+		prerequisite = { focus = ELF_initial_sound }
 		relative_position_id = ELF_initial_sound
 		x = 0
 		y = 1
 		cost = 5
 
 		ai_will_do = {
-		factor = 1
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		availale = {
+		}
+		bypass = {
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+				
 		}
 		}
 
@@ -214,14 +386,15 @@ focus_tree = {
 		id = ELF_initial_and_my_friends
 		icon = GFX_ELF_initial
 	
-		prerequisite = { ELF_initial_our_wedding }
+		prerequisite = { focus = ELF_initial_our_wedding }
 		relative_position_id = ELF_initial_our_wedding
 		x = -1
 		y = 1
 		cost = 5
 
 		ai_will_do = {
-		factor = 1
+		
+		base = 1
 		}
 		}
 
@@ -232,14 +405,27 @@ focus_tree = {
 		id = ELF_initial_as_well_as
 		icon = GFX_ELF_initial
 	
-		prerequisite = { ELF_initial_our_wedding }
+		prerequisite = { focus = ELF_initial_our_wedding }
 		relative_position_id = ELF_initial_our_wedding
 		x = 1
 		y = 1
 		cost = 5
 
 		ai_will_do = {
-		factor = 1
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		availale = {
+		}
+		bypass = {
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+				
 		}
 		}
 
@@ -251,15 +437,27 @@ focus_tree = {
 		id = ELF_initial_a_lot_to_do
 		icon = GFX_ELF_initial
 	
-		prerequisite = { ELF_initial_and_my_friends }
-		prerequisite = { ELF_initial_as_well_as }
+		prerequisite = { focus = ELF_initial_and_my_friends }
 		relative_position_id = ELF_initial_our_wedding
 		x = 0
 		y = 1
 		cost = 5
 
 		ai_will_do = {
-		factor = 1
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		availale = {
+		}
+		bypass = {
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+				
 		}
 		}
 
@@ -269,14 +467,27 @@ focus_tree = {
 		id = ELF_initial_finish_regency
 		icon = GFX_ELF_initial
 	
-		prerequisite = { ELF_initial_a_lot_to_do }
+		prerequisite = { focus = ELF_initial_a_lot_to_do }
 		relative_position_id = ELF_initial_a_lot_to_do
 		x = 0
 		y = 1
 		cost = 5
 
 		ai_will_do = {
-		factor = 1
+			base = 1
+			modifier = {
+				add = 0
+			}
+		}
+		availale = {
+		}
+		bypass = {
+		}
+		search_filters = {
+
+		}
+		completion_reward = {
+				
 		}
 		}
 
