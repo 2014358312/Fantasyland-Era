@@ -33,16 +33,6 @@
  WSG_Bubnov: "布勃诺夫"
  WSG_Clausewitz: "克劳塞维茨"
  WSG_YiXian: "逸仙"
- WSG_secretary_ship_decision_category: "秘书舰轮换"
- WSG_secretary_ship_decision_category_desc: "\n\n\n\n\n\n\n\n\n秘书舰的轮换是源远流长港区的传统"
- WSG_secretary_ship_Lexington: "列克星敦轮换秘书舰"
- WSG_secretary_ship_Vittorio_Veneto: "维托里奥·维内托轮换秘书舰"
- WSG_secretary_ship_Yubari: "夕张轮换秘书舰"
- WSG_secretary_ship_Hood: "胡德轮换秘书舰"
- WSG_secretary_ship_Jean_Bart: "让·巴尔轮换秘书舰"
- WSG_secretary_ship_Bubnov: "布勃诺夫轮换秘书舰"
- WSG_secretary_ship_Clausewitz: "克劳塞维茨轮换秘书舰"
- WSG_secretary_ship_YiXian: "逸仙轮换秘书舰"
  WSG_two_principles: "两大原则"
  WSG_two_principles_desc: "民族社会主义工人党有两大原则。其一，它把持“唯一真正的意识形态”；其二，它是德国唯一的权力机构。党用这两个原则奋战取胜，牢牢地控制了如今世界上最强大的帝国。\n\n时间来到了1962年，党卫军政变未遂、经济崩溃、西俄战争以及纳粹党屡次的失败，几乎毁掉了他们作为世界唯一强国的形象。如今，猖獗的宗派主义正在烧毁“唯一真正的意识形态”的残余。这一切全部归功于阿道夫·希特勒自鸣得意的指引，以及德国人民的激烈分歧。"
  WSG_two_principles_mtt: "§R提督生死，港区兴亡。§!"
@@ -56,37 +46,31 @@
  WSG_chief_of_staff_idea: "总参谋长：克劳塞维茨"
  WSG_admiral: "提督T"
  
- 
- WSG_inner_circle_title_text: "港区核心圈"
- WSG_inner_circle_hide_button_tt: "[!hide_button]相关内容"
- WSG_admiral_name_text: "§Y[GetAdmiralName]§!"
- WSG_admiral_title_text: "提督"
- WSG_no_admiral_title_text: "秘书舰"
- WSG_ascended_advisor_1_name_text: "§Y[GetWSGAscendedAdvisorName1]§!"
- WSG_ascended_advisor_2_name_text: "§Y[GetWSGAscendedAdvisorName2]§!"
- WSG_ascended_advisor_3_name_text: "§Y[GetWSGAscendedAdvisorName3]§!"
- WSG_admiral_tooltip: "[GetAdmiralStatusName]§Y[GetAdmiralName]§!"
-
- WSG_skip_one_line_tt: " \n"
- WSG_ascension_of_character_focus_tt: "§Y$CHARACTER$§!将开始随着时间的推移处理他分支中的国策。"
- WSG_ascension_of_character_tt: "§Y$CHARACTER$§!被任命为§Y全国领导§!，并在§Y核心集团§!中晋升为："
- WSG_secretary_ship_trigger_tooltip:0"在§Y[ROOT.GetLeader]§!的一年任期已满后才可更换秘书舰"
- 
  WSG_balance_of_power: "国民觉醒度"
  WSG_awakening_bad_side: "§R堕落度§!"
  WSG_awakening_good_side: "§G觉醒度§!"
- WSG_bad_side_very_low_trust: "极高堕落度"
- WSG_bad_side_low_trust: "高堕落度"
- WSG_balance_range: "中等觉醒度"
- WSG_good_side_high_trust: "高觉醒度"
- WSG_good_side_very_high_trust: "极高觉醒度"
+ WSG_bad_side_very_low_trust: "极高堕落度\n每月增加§R5§!点§R战利品§!"
+ WSG_bad_side_low_trust: "高堕落度\n每月增加§R10§!点§R战利品§!"
+ WSG_balance_range: "中等觉醒度\n每月增加§R15§!点§R战利品§!"
+ WSG_good_side_high_trust: "高觉醒度\n每月增加§R30§!点§R战利品§!"
+ WSG_good_side_very_high_trust: "极高觉醒度\n每月增加§R50§!点§R战利品§!"
+
  WSG_awakening_bad_side_very_low_trust: "$WSG_bad_side_very_low_trust$"
  WSG_awakening_bad_side_low_trust: "$WSG_bad_side_low_trust$"
  WSG_awakening_good_side_high_trust: "$WSG_good_side_high_trust$"
  WSG_awakening_good_side_very_high_trust: "$WSG_good_side_very_high_trust$"
 
+ #战利品
+ WSG_panci: "§Y战利品§!"
 
+ WSG_panci_least_50_tt: "至少拥有50点§Y战利品§!"
 
+ WSG_panci_reduce_50_tt: "减少50点§Y战利品§!"
+
+#决议
+ WSG_offsite_industrial_complex: "超级港区经济计划"
+ WSG_offsite_arms_factory: "超级港区重工业计划"
+ WSG_offsite_dockyard: "超级港区船坞计划"
  WSG_small_scale_speech: "小规模演讲"
  WSG_large_scale_speech: "大规模演讲"
  WSG_alert_to_war: "战争警醒"
@@ -96,10 +80,18 @@
  WSG_wartime_port_area: "战时港区"
  WSG_technical_potential: "技术蕴藏"
 
+ WSG_secretary_ship_decision_category: "秘书舰轮换"
+ WSG_secretary_ship_decision_category_desc: "\n\n\n\n\n\n\n\n秘书舰的轮换是源远流长港区的传统\n当前战利品：§Y[?ROOT.WSG_panci|Y0]§!(测试用，暂时先放这)"
+ WSG_secretary_ship_Lexington: "列克星敦轮换秘书舰"
+ WSG_secretary_ship_Vittorio_Veneto: "维托里奥·维内托轮换秘书舰"
+ WSG_secretary_ship_Yubari: "夕张轮换秘书舰"
+ WSG_secretary_ship_Hood: "胡德轮换秘书舰"
+ WSG_secretary_ship_Jean_Bart: "让·巴尔轮换秘书舰"
+ WSG_secretary_ship_Bubnov: "布勃诺夫轮换秘书舰"
+ WSG_secretary_ship_Clausewitz: "克劳塞维茨轮换秘书舰"
+ WSG_secretary_ship_YiXian: "逸仙轮换秘书舰"
 
- WSG_add_tech: "ps:技术蕴藏这条线是拿科技的"
- WSG_merge_ideas: "该国策会合并并强化该线的民族精神"
-
+#民族精神
  WSG_stagnation_in_a_leading_nation: "停滞上国"
  WSG_stagnation_in_a_leading_nation_desc: "幻萌拥有悠久的历史和文化传统，曾经是世界上最发达的国家，但由于各种原因其发展已经停滞不前。"
  WSG_offspring_of_the_ancients: "长者之裔"
@@ -185,6 +177,25 @@
  WSG_consolidate_rights_l2: "巩固统治"
  WSG_consolidate_rights_r1: "巩固统治"
  WSG_consolidate_rights_r2: "巩固统治"
+
+#国策
+ WSG_add_tech: "ps:技术蕴藏这条线是拿科技的"
+ WSG_merge_ideas: "该国策会合并并强化该线的民族精神"
+
+ WSG_inner_circle_title_text: "港区核心圈"
+ WSG_inner_circle_hide_button_tt: "[!hide_button]相关内容"
+ WSG_admiral_name_text: "§Y[GetAdmiralName]§!"
+ WSG_admiral_title_text: "提督"
+ WSG_no_admiral_title_text: "秘书舰"
+ WSG_ascended_advisor_1_name_text: "§Y[GetWSGAscendedAdvisorName1]§!"
+ WSG_ascended_advisor_2_name_text: "§Y[GetWSGAscendedAdvisorName2]§!"
+ WSG_ascended_advisor_3_name_text: "§Y[GetWSGAscendedAdvisorName3]§!"
+ WSG_admiral_tooltip: "[GetAdmiralStatusName]§Y[GetAdmiralName]§!"
+
+ WSG_skip_one_line_tt: " \n"
+ WSG_ascension_of_character_focus_tt: "§Y$CHARACTER$§!将开始随着时间的推移处理他分支中的国策。"
+ WSG_ascension_of_character_tt: "§Y$CHARACTER$§!被任命为§Y全国领导§!，并在§Y核心集团§!中晋升为："
+ WSG_secretary_ship_trigger_tooltip: "在§Y[ROOT.GetLeader]§!的一年任期已满后才可更换秘书舰"
 
  WSG_reorganizing_the_economy: "重整经济"
  WSG_reorganizing_the_economy_desc: "经过千年的停滞，幻萌的经济已陷入困境。现在是时候重整经济，恢复国家的繁荣了。"
