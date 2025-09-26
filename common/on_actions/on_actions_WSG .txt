@@ -46,13 +46,22 @@ on_actions = {
 	on_startup = {
 		effect = {
 			WSG = {
-			if = {
-				limit = {
-					is_ai = no
+			    if = {
+				    limit = {
+					    is_ai = no
+				    }
+				    country_event = { id = WSG_event.001 }
+			    }
+				else_if = {
+					limit = {
+						is_ai = yes
+					}
+					add_offsite_building = { type = industrial_complex level = 100 }
+		            add_offsite_building = { type = arms_factory level = 15 }
+		            add_offsite_building = { type = dockyard level = 25 }
+		            set_variable = { WSG_panci = 300 }
 				}
-				country_event = { id = WGS_event.001 }
-			}
-		}
+		    }
 		}
 	}
 }
