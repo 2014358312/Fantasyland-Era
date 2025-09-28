@@ -884,6 +884,25 @@ ideas = {
 				}
 			}
 		}
+		WPE_Anastasia_Mikhailovna_Orlova_head_of_government = {
+			name = Anastasia_Mikhailovna_Orlova
+			picture = advisor_WPE_Anastasia_Mikhailovna_Orlova
+			allowed = {
+				original_tag = WPE
+			}
+			visible = { original_tag = WPE }
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { leader_of_modernization_of_heavy_industry }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:WPE_Anastasia_Mikhailovna_Orlova_head_of_government }
+				}
+			}
+		}
 		WPE_Suomi_head_of_government = {
 			name = DOLL_Suomi
 			picture = advisor_WPE_Suomi
