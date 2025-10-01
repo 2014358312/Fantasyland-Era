@@ -142,6 +142,7 @@ TIA_naval_dynamic_modifier = {
 	naval_invasion_prep_speed = TIA_rm_naval_invasion_prep_speed	#0.15
 }
 
+#地区加成
 TIA_floating_city = {
 	enable = { always = yes }
 	icon = GFX_modifiers_ETH_state_development 
@@ -154,4 +155,16 @@ TIA_floating_city = {
 	local_building_slots = 2
 	army_defence_factor = 0.25
 	research_speed_factor = 0.1
+}
+
+#核心圈子
+TIA_the_inner_circle_dm = {
+	icon = GFX_idea_generic_fascism_drift_2
+	enable = { always = yes }
+	remove_trigger = {
+		NOT = { has_government = neutrality }
+	}
+
+	custom_modifier_tooltip = TIA_the_inner_circle_dm_tt
+	#custom_modifier_tooltip = idea_desc|GER_todt_reich_engineer
 }
