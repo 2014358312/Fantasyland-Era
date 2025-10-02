@@ -119,6 +119,28 @@ scripted_gui = {
 }
 
 scripted_gui = {
+	max_unit_window = {
+		context_type = player_context
+		parent_window_token = deployment_tab
+		window_name = "max_unit_window"
+		dirty = max_unit_window_variable
+		
+		visible = {
+			always = yes
+		}
+
+		properties = {
+			max_unit_progressbar = {
+				frame = FE_deploy_armies_ui
+			}
+			max_unit = {
+				frame = FE_max_unit_armies_tooltip
+			}
+		}
+	}
+}
+
+scripted_gui = {
 	FE_EventWindow_News_gui = {
 		context_type = player_context
 		parent_window_token = top_bar

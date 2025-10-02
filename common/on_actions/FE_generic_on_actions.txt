@@ -219,6 +219,11 @@ on_actions = {
 				set_country_flag = FE_historical_country_flag
 			}
 			############
+			every_possible_country = {
+				FE_calc_max_unit = yes
+				country_event = FE_generic.12581
+			}
+			############
 		}
 	}
 	
@@ -259,6 +264,21 @@ on_actions = {
 			#		cancel_resistance = yes
 			#	}
 			#}
+		}
+	}
+	
+	on_daily = {
+		effect = {
+			WPE = {
+				every_possible_country = {
+					FE_calc_max_unit = yes
+					country_event = FE_generic.12581
+				}
+				every_country = {
+					FE_calc_max_unit = yes
+					country_event = FE_generic.12581
+				}
+			}
 		}
 	}
 }

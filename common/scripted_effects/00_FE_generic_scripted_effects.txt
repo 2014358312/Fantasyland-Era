@@ -723,3 +723,79 @@ FE_show_welcome_ui = {
 	set_country_flag = FE_welcome_flag
 }
 
+FE_update_max_unit_ui = {
+	if = {
+		limit = {
+			check_variable = { max_unit_window_variable < 100 }
+		}
+		add_to_variable = { max_unit_window_variable = 1 }
+	}
+	else = { subtract_from_variable = { max_unit_window_variable = 1 } }
+}
+
+FE_calc_max_unit = {
+	set_variable = { FE_max_unit_armies = 0 }
+	set_variable = { FE_max_unit_armies_tooltip = 1 }
+	every_core_state = {
+		add_to_variable = { PREV.FE_max_unit_armies = 2 }
+	}
+	every_owned_state = {
+		limit = { NOT = { is_core_of = WPE } }
+		add_to_variable = { PREV.FE_max_unit_armies = 1 }
+	}
+	add_to_variable = { FE_max_unit_armies = modifier@max_unit_recruit }
+	set_variable = { temp_max_unit_recruit_factor = FE_max_unit_armies }
+	if = {
+		limit = { check_variable = { modifier@max_unit_recruit_factor < 0 } }
+		set_variable = { temp_max_unit_recruit_factor_positive = modifier@max_unit_recruit_factor }
+		multiply_variable = { temp_max_unit_recruit_factor_positive = -1 }
+		multiply_variable = { temp_max_unit_recruit_factor = temp_max_unit_recruit_factor_positive }
+		subtract_from_variable = { FE_max_unit_armies = temp_max_unit_recruit_factor }
+	}
+	else_if = {
+		limit = { check_variable = { modifier@max_unit_recruit_factor > 0 } }
+		multiply_variable = { temp_max_unit_recruit_factor = modifier@max_unit_recruit_factor }
+		add_to_variable = { FE_max_unit_armies = temp_max_unit_recruit_factor }
+	}
+	clear_variable = temp_max_unit_recruit_factor
+	clear_variable = temp_max_unit_recruit_factor_positive
+	FE_daily_refresh_max_unit = yes
+}
+
+FE_daily_refresh_max_unit = {
+	set_variable = { FE_deploy_armies_ui = num_armies }
+	divide_variable = { FE_deploy_armies_ui = FE_max_unit_armies }
+	multiply_variable = { FE_deploy_armies_ui = 100 }
+	round_variable = FE_deploy_armies_ui
+	if = {
+		limit = { check_variable = { FE_deploy_armies_ui > 100 } }
+		set_variable = { FE_max_unit_armies_tooltip = 2 }
+		if = {
+			limit = {
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = FE_max_unit_armies_dynamic_modifier
+					}
+				}
+			}
+			add_dynamic_modifier = {
+				modifier = FE_max_unit_armies_dynamic_modifier
+			}
+		}
+		set_variable = { temp_max_unit_rate = FE_deploy_armies_ui }
+		log = "[?FE_deploy_armies_ui]"
+		log = "[?temp_max_unit_rate]"
+		subtract_from_variable = { temp_max_unit_rate = FE_max_unit_armies }
+		divide_variable = { temp_max_unit_rate = 100 }
+		set_variable = { FE_MUA_positive_var = temp_max_unit_rate }
+		multiply_variable = { temp_max_unit_rate = -1 }
+		set_variable = { FE_MUA_negetive_var = temp_max_unit_rate }
+		clear_variable = temp_max_unit_rate
+	}
+	else = {
+		clear_variable = FE_MUA_negetive_var
+		clear_variable = FE_MUA_positive_var
+	}
+	FE_update_max_unit_ui = yes
+}
+

@@ -272,5 +272,12 @@
  
  generic_head_of_government_none: "暂无"
 
- max_unit_recruit: "部队招募上限"
- max_unit_recruit_factor: "部队招募上限系数"
+ max_unit_text: "师部署上限"
+ max_unit_text_desc: "§Y师部署上限§!\n师部署上限代表了国家当前在正常情况下所能支撑的最大常备军的数量。若是师部署数量超过了支撑上限，将给所有部队带来战斗力惩罚。\n通过法案、民族精神等可以修正师部署上限，计算方法为先加算后乘算。"
+ max_unit_text_desc_delayed: "[GETCountryMaxUnitStatusText]"
+ max_unit_text_desc_negetive: "当前部署的师数量已超过上限，这将带来如下惩罚：\n  - $MODIFIERS_ARMY_ATTACK_FACTOR$: [?FE_MUA_negetive_var|.2%R]\n  - $MODIFIERS_ARMY_DEFENCE_FACTOR$: [?FE_MUA_negetive_var|.2%R]\n  - $MODIFIER_ARMY_ORG_FACTOR$: [?FE_MUA_negetive_var|.1%R]\n  - $MODIFIER_ARMY_MORALE_FACTOR$: [?FE_MUA_negetive_var|.1%R]\n  - $MODIFIER_CONSUMER_GOODS_FACTOR$: [?FE_MUA_positive_var|.2%Y]"
+ max_unit_text_desc_positive: "当前部署的师数量并未超过上限。"
+ max_unit_name_text: "[?num_armies] / [?FE_max_unit_armies]"
+ max_unit_recruit: "师部署上限"
+ max_unit_recruit_factor: "师部署上限系数"
+ FE_max_unit_armies_dynamic_modifier: "师部署超限惩罚"

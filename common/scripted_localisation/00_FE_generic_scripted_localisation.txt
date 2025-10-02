@@ -175,3 +175,16 @@ defined_text = {
 		localization_key = "GFX_welcome_gui_country_picture_null"
 	}
 }
+
+defined_text = {
+	name = GETCountryMaxUnitStatusText
+	text = {
+		trigger = {
+			check_variable = { FE_deploy_armies_ui > 100 }
+		}
+		localization_key = "max_unit_text_desc_negetive"
+	}
+	text = {
+		localization_key = "max_unit_text_desc_positive"
+	}
+}
