@@ -430,7 +430,7 @@ focus_tree = {
 		icon = GFX_focus_TIA_Royal_Cabinet
 
 		prerequisite = { focus = TIA_next_step_plan }
-		x = 7
+		x = 12
 		y = 1
 		relative_position_id = TIA_next_step_plan
 		cost = 5
@@ -454,6 +454,431 @@ focus_tree = {
 			add_dynamic_modifier = {
 				modifier = TIA_the_inner_circle_dm
 			}
+		}
+	}
+
+	focus = { 
+		id = TIA_cabinet_Miabel_Runa_Tiamun
+		icon = GFX_focus_TIA_Miabel_Runa_Tiamun
+		relative_position_id = TIA_Royal_Cabinet
+		x = -7
+		y = 1
+		cost = 2
+		available = {
+			original_tag = TIA 
+			has_country_leader = {
+				ruling_only = yes
+				character = TIA_Mia_Runa_Tiamun
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_tt
+				CHARACTER = Miabel_Runa_Tiamun
+			}
+			show_ideas_tooltip = TIA_secretary_ship_idea
+
+			custom_effect_tooltip = TIA_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_focus_tt
+				CHARACTER = Miabel_Runa_Tiamun
+			}
+			if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_1 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_1 = 1 }
+			}
+			else_if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_2 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_2 = 1 }
+			}
+			else_if = {
+				limit = {
+						check_variable = { TIA_ascended_advisor_3 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_3 = 1 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = TIA_cabinet_Alice_Bedford
+		}
+        prerequisite = { 
+			focus = TIA_Royal_Cabinet
+		}
+	}
+	
+	focus = { 
+		id = TIA_cabinet_Alice_Bedford
+		icon = GFX_focus_TIA_Alice_Bedford
+		relative_position_id = TIA_Royal_Cabinet
+		x = -5
+		y = 1
+		cost = 2
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_tt
+				CHARACTER = Alice_Bedford
+			}
+			show_ideas_tooltip = TIA_captain_of_military_police_idea
+
+			custom_effect_tooltip = TIA_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_focus_tt
+				CHARACTER = Alice_Bedford
+			}
+			if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_1 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_1 = 1 }
+			}
+			else_if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_2 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_2 = 1 }
+			}
+			else_if = {
+				limit = {
+						check_variable = { TIA_ascended_advisor_3 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_3 = 1 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = TIA_cabinet_Miabel_Runa_Tiamun
+		}
+        prerequisite = { 
+			focus = TIA_Royal_Cabinet
+		}
+	}
+
+	focus = { 
+		id = TIA_cabinet_Anne_Littstein
+		icon = GFX_focus_TIA_Anne_Littstein
+		relative_position_id = TIA_Royal_Cabinet
+		x = -3
+		y = 1
+		cost = 2
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_tt
+				CHARACTER = Anne_Littstein
+			}
+			show_ideas_tooltip = TIA_academician_of_DAS_idea
+
+			custom_effect_tooltip = TIA_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_focus_tt
+				CHARACTER = Anne_Littstein
+			}
+			if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_1 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_1 = 1 }
+			}
+			else_if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_2 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_2 = 1 }
+			}
+			else_if = {
+				limit = {
+						check_variable = { TIA_ascended_advisor_3 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_3 = 1 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = TIA_cabinet_Ekure
+		}
+        mutually_exclusive = {
+			focus = TIA_cabinet_Dion_Alaia
+		}
+        prerequisite = { 
+			focus = TIA_Royal_Cabinet
+		}
+	}
+	
+	focus = { 
+		id = TIA_cabinet_Ekure
+		icon = GFX_focus_TIA_Ekure
+		relative_position_id = TIA_Royal_Cabinet
+		x = -1
+		y = 1
+		cost = 2
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_tt
+				CHARACTER = Ekure
+			}
+			show_ideas_tooltip = TIA_royal_agent_idea
+
+			custom_effect_tooltip = TIA_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_focus_tt
+				CHARACTER = Ekure
+			}
+			if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_1 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_1 = 1 }
+			}
+			else_if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_2 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_2 = 1 }
+			}
+			else_if = {
+				limit = {
+						check_variable = { TIA_ascended_advisor_3 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_3 = 1 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = TIA_cabinet_Anne_Littstein
+		}
+        mutually_exclusive = {
+			focus = TIA_cabinet_Dion_Alaia
+		}
+        prerequisite = { 
+			focus = TIA_Royal_Cabinet
+		}
+	}
+	
+	focus = { 
+		id = TIA_cabinet_Dion_Alaia
+		icon = GFX_focus_TIA_Dion_Alaia
+		relative_position_id = TIA_Royal_Cabinet
+		x = 1
+		y = 1
+		cost = 2
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_tt
+				CHARACTER = Dion_Alaia
+			}
+			show_ideas_tooltip = TIA_minister_of_armament_idea
+
+			custom_effect_tooltip = TIA_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_focus_tt
+				CHARACTER = Dion_Alaia
+			}
+			if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_1 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_1 = 1 }
+			}
+			else_if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_2 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_2 = 1 }
+			}
+			else_if = {
+				limit = {
+						check_variable = { TIA_ascended_advisor_3 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_3 = 1 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = TIA_cabinet_Ekure
+		}
+        mutually_exclusive = {
+			focus = TIA_cabinet_Anne_Littstein
+		}
+        prerequisite = { 
+			focus = TIA_Royal_Cabinet
+		}
+	}
+
+	focus = { 
+		id = TIA_cabinet_Ludwig_Hewitt
+		icon = GFX_focus_TIA_Ludwig_Hewitt
+		relative_position_id = TIA_Royal_Cabinet
+		x = 3
+		y = 1
+		cost = 2
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_tt
+				CHARACTER = Ludwig_Hewitt
+			}
+			show_ideas_tooltip = TIA_engineer_idea
+
+			custom_effect_tooltip = TIA_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_focus_tt
+				CHARACTER = Ludwig_Hewitt
+			}
+			if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_1 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_1 = 1 }
+			}
+			else_if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_2 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_2 = 1 }
+			}
+			else_if = {
+				limit = {
+						check_variable = { TIA_ascended_advisor_3 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_3 = 1 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = TIA_cabinet_Livia
+		}
+        mutually_exclusive = {
+			focus = TIA_cabinet_Yumiella_Dolkness
+		}
+        prerequisite = { 
+			focus = TIA_Royal_Cabinet
+		}
+	}
+
+	focus = { 
+		id = TIA_cabinet_Livia
+		icon = GFX_focus_TIA_Livia
+		relative_position_id = TIA_Royal_Cabinet
+		x = 5
+		y = 1
+		cost = 2
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_tt
+				CHARACTER = Livia
+			}
+			show_ideas_tooltip = TIA_architect_idea
+
+			custom_effect_tooltip = TIA_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_focus_tt
+				CHARACTER = Livia
+			}
+			if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_1 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_1 = 1 }
+			}
+			else_if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_2 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_2 = 1 }
+			}
+			else_if = {
+				limit = {
+						check_variable = { TIA_ascended_advisor_3 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_3 = 1 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = TIA_cabinet_Ludwig_Hewitt
+		}
+        mutually_exclusive = {
+			focus = TIA_cabinet_Yumiella_Dolkness
+		}
+        prerequisite = { 
+			focus = TIA_Royal_Cabinet
+		}
+	}
+	
+	focus = { 
+		id = TIA_cabinet_Yumiella_Dolkness
+		icon = GFX_focus_TIA_Yumiella_Dolkness
+		relative_position_id = TIA_Royal_Cabinet
+		x = 7
+		y = 1
+		cost = 2
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_tt
+				CHARACTER = Yumiella_Dolkness
+			}
+			show_ideas_tooltip = TIA_chief_of_staff_idea
+
+			custom_effect_tooltip = TIA_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = TIA_ascension_of_character_focus_tt
+				CHARACTER = Yumiella_Dolkness
+			}
+			if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_1 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_1 = 1 }
+			}
+			else_if = {
+				limit = {
+					check_variable = { TIA_ascended_advisor_2 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_2 = 1 }
+			}
+			else_if = {
+				limit = {
+						check_variable = { TIA_ascended_advisor_3 = 0 }
+				}
+				set_variable = { TIA_ascended_advisor_3 = 1 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = TIA_cabinet_Livia
+		}
+        mutually_exclusive = {
+			focus = TIA_cabinet_Ludwig_Hewitt
+		}
+        prerequisite = { 
+			focus = TIA_Royal_Cabinet
 		}
 	}
 
@@ -1003,7 +1428,7 @@ focus_tree = {
 		id = TIA_never_too_late_to_mend
 		icon = GFX_focus_TIA_never_too_late_to_mend
 		relative_position_id = TIA_dream
-		x = 25
+		x = 35
 		y = 0
 		cost = 5
 		available = {
@@ -2002,7 +2427,7 @@ focus_tree = {
 		id = TIA_Expansion_MCG
 		icon = GFX_focus_TIA_Expansion_MCG
 		relative_position_id = TIA_dream
-		x = 40
+		x = 50
 		y = 0
 		cost = 5
 		available = {
@@ -2311,7 +2736,7 @@ focus_tree = {
 		id = TIA_revolutionary_early_warning
 		icon = GFX_focus_TIA_revolutionary_early_warning
 		relative_position_id = TIA_dream
-		x = 51
+		x = 61
 		y = 0
 		cost = 5
 		available = {
