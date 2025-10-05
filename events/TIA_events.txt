@@ -2,6 +2,7 @@
 # TIA Events
 ###########################
 add_namespace = TIA
+add_namespace = TIA_debug
 add_namespace = TIA_waiting_for_result
 add_namespace = tiam
 add_namespace = TIA_state_event
@@ -1470,6 +1471,23 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = TIA.1001.a
+	}
+}
+
+#DEBUG
+country_event = {
+	#结束核心圈顾问任期
+	id = TIA_debug.1
+	title = TIA_debug.1.t
+	desc = TIA_debug.1.desc
+	picture = GFX_report_event_TIA_premiership
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = TIA_debug.1.a
+		set_variable = { TIA_ascended_advisor_1 = 0 }
+		set_variable = { TIA_ascended_advisor_2 = 0 }
+		set_variable = { TIA_ascended_advisor_3 = 0 }
 	}
 }
 
