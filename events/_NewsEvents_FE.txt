@@ -372,6 +372,56 @@ news_event = {
 	}
 }
 
+#TIA unify the faith
+news_event = {
+	id = FE_news.18
+	title = FE_news.18.t
+	desc = FE_news.18.desc
+	desc = {
+		text = FE_news.18.desc.Akua
+		trigger = {
+			TIA = {
+				has_country_flag = TIA_chose_Akua
+			}
+		}
+	}
+	desc = {
+		text = FE_news.18.desc.Furina
+		trigger = {
+			TIA = {
+				has_country_flag = TIA_chose_Furina
+			}
+		}
+	}
+	desc = {
+		text = FE_news.18.desc.none
+		trigger = {
+			TIA = {
+				has_country_flag = TIA_chose_none
+			}
+		}
+	}
+	picture = GFX_news_event_generic_05
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = FE_news.18.a
+		trigger = {
+			NOT = {
+				original_tag = TIA
+			}
+		}
+	}
+	option = {
+		name = FE_news.18.b
+		trigger = {
+			original_tag = TIA
+		}
+	}
+}
+
 #test
 news_event = {
 	id = FE_news.test
