@@ -3,7 +3,7 @@ characters = {
 		name = Ariel
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/DKA/DKA_Ariel.dds"
+				large = GFX_Portrait_DKA_Ariel
 			}
 		}
 		country_leader = {
@@ -18,8 +18,8 @@ characters = {
 		name = Machina_Soleige
 		portraits = {
 			civilian = {
-				large = "GFX_Portrait_DKA_Machina_Soleige"
-				small = "GFX_idea_advisor_DKA_Machina_Soleige"
+				large = GFX_Portrait_DKA_Machina_Soleige
+				small = GFX_idea_advisor_DKA_Machina_Soleige
 			}
 		}
 		advisor = {
@@ -27,6 +27,58 @@ characters = {
 			idea_token = DKA_Machina_Soleige_head_of_government_character
 			available = { no_head_of_gov_trigger = yes }
 			traits = { RAJ_GOE_costly_reformer }
+		}
+	}
+
+	DKA_Sophia_Karen = {
+		name = Sophia_Karen
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_DKA_Sophia_Karen
+				small = GFX_idea_advisor_DKA_Sophia_Karen
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = DKA_Sophia_Karen
+			available = { }
+			cost = 150
+			traits = { mass_assault_expert }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	DKA_Benetnash_Iverson = {
+		name = Benetnash_Iverson
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_DKA_Benetnash_Iverson
+				small = GFX_idea_advisor_DKA_Benetnash_Iverson
+			}
+		}
+		country_leader = {
+			ideology = neutrality_subtype
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+
+	DKA_Amelia_Rozequarts = {
+		name = Amelia_Rozequarts
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_DKA_Amelia_Rozequarts
+				small = GFX_idea_advisor_DKA_Amelia_Rozequarts
+			}
+		}
+		country_leader = {
+			ideology = communism_subtype
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = -1
 		}
 	}
 }
