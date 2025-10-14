@@ -35,6 +35,15 @@ add_ideas = {
 	The_breeding_of_rebellious_hearts
 }
 
+set_variable = { DKA_WS_army_org_factor_var = 2.00 }
+set_variable = { DKA_WS_army_morale_factor_var = 0.50 }
+set_variable = { DKA_WS_org_loss_when_moving_var = -0.50 }
+set_variable = { DKA_WS_breakthrough_factor_var = 1.00 }
+set_variable = { DKA_WS_army_attack_factor_var = 1.00 }
+set_variable = { DKA_WS_army_defence_factor_var = 2.00 }
+set_variable = { DKA_WS_army_speed_factor_var = -0.20 }
+#add_dynamic_modifier = { modifier = DKA_warlike_sentiment_dynamic_modifier }
+
 set_politics = {
 	ruling_party = fascism
 	elections_allowed = no
@@ -116,7 +125,9 @@ set_technology = {
 }
 
 set_power_balance = {
-	id = DKA_The_Queen_Mood
+	id = DKA_balance_of_power
+	left_side = DKA_low_maou_leadership
+	right_side = DKA_high_maou_leadership
 	set_default = yes
 }
 
