@@ -1,0 +1,58 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#       attacker_modifier = no  # if yes this modifier will also be read in combat for 
+#                               # people engaging in the combat even if not in the state
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+GSK_management_of_hakurei_dynamic_modifier = {
+	icon = GFX_idea_man_five_year_plan_industry
+	enable = {
+		has_dynamic_modifier = {
+			modifier = GSK_management_of_hakurei_hidden_dynamic_modifier
+		}
+	}
+	
+	custom_modifier_tooltip = GSK_management_of_hakurei_mtt_0
+	custom_modifier_tooltip = GSK_management_of_hakurei_mtt_1
+	custom_modifier_tooltip = GSK_management_of_hakurei_mtt_2
+	custom_modifier_tooltip = GSK_management_of_hakurei_mtt_3
+	custom_modifier_tooltip = GSK_management_of_hakurei_mtt_4
+	custom_modifier_tooltip = GSK_management_of_hakurei_mtt_5
+	custom_modifier_tooltip = GSK_management_of_hakurei_mtt_6
+}
+
+GSK_management_of_hakurei_hidden_dynamic_modifier = {
+	enable = {
+		has_dynamic_modifier = {
+			modifier = GSK_management_of_hakurei_dynamic_modifier
+		}
+	}
+	
+	research_speed_factor = GSK_MOH_research_speed_factor_var
+	
+	army_attack_factor = GSK_MOH_army_attack_factor_var
+	army_defence_factor = GSK_MOH_army_defence_factor_var
+	supply_consumption_factor = GSK_MOH_supply_consumption_factor_var
+}
