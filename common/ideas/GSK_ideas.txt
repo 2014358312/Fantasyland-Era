@@ -118,48 +118,6 @@ ideas = {
 				coastal_bunker_max_level_terrain_limit = 10
 			}
 		}
-		
-		GSK_where_hakurei = {
-			allowed = {
-				always = no
-			}
-			
-			allowed_civil_war = {
-				always = no
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				political_power_factor = -0.10
-				stability_factor = -0.20
-				war_support_factor = 0.10
-			}
-		}
-		
-		GSK_management_of_hakurei = {
-			allowed = {
-				always = no
-			}
-			
-			allowed_civil_war = {
-				always = no
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				political_power_factor = -0.15
-				custom_modifier_tooltip = GSK_management_of_hakurei_mtt_0
-				custom_modifier_tooltip = GSK_management_of_hakurei_mtt_1
-				custom_modifier_tooltip = GSK_management_of_hakurei_mtt_2
-				custom_modifier_tooltip = GSK_management_of_hakurei_mtt_3
-				custom_modifier_tooltip = GSK_management_of_hakurei_mtt_4
-				custom_modifier_tooltip = GSK_management_of_hakurei_mtt_5
-				custom_modifier_tooltip = GSK_management_of_hakurei_mtt_6
-			}
-		}
-		
 		GSK_The_responsibility_of_the_Hirori_shrine_maiden={
             allowed = {
 				always = no
@@ -321,6 +279,24 @@ ideas = {
                 local_building_slots_factor =0.10
             }
         }
+        GSK_nye3={
+            allowed{
+                always = no
+            }
+            removal_cost = -1
+            modifier={
+                economy_cost_factor =-0.10
+                local_building_slots_factor =0.05
+                production_speed_industrial_complex_factor =0.10
+                political_power_factor = 0.10
+                consumer_goods_factor =-0.30
+                production_speed_buildings_factor =0.60
+                production_speed_infrastructure_factor =0.80
+                local_building_slots_factor =0.20
+                research_speed_factor = 0.5
+                max_command_power = 200
+            }
+        }
         GSK_zye={
             allowed{
                 always = no
@@ -331,6 +307,47 @@ ideas = {
                 production_speed_infrastructure_factor =0.05
                 production_speed_industrial_complex_factor =0.15
                 production_speed_arms_factory_factor = -0.05
+            }
+        }
+        GSK_tank_sea={
+            allowed{
+                always = no
+            }
+            removal_cost = -1
+            modifier={
+                tank_manufacturer_cost_factor =-0.10
+                breakthrough_factor =0.10
+                army_armor_attack_factor = 0.50	
+                army_armor_defence_factor = 0.40
+            }
+        }
+        GSK_industrial_concern={
+            allowed{
+                always = no
+            }
+            removal_cost = -1
+            modifier={
+                political_advisor_cost_factor = -0.05
+                tank_manufacturer_cost_factor = -0.15
+                naval_manufacturer_cost_factor = -0.10
+                aircraft_manufacturer_cost_factor = -0.30
+                materiel_manufacturer_cost_factor = -0.25
+                industrial_concern_cost_factor =-0.20
+            }
+        }
+        GSK_industrial_river={
+            allowed{
+                always = no
+            }
+            removal_cost = -1
+            modifier={
+                min_export = -0.10
+                economy_cost_factor =-0.10
+                local_resources_factor =0.10
+                research_speed_factor =0.20
+                production_speed_buildings_factor =0.10
+                local_building_slots_factor =0.20
+                supply_consumption_factor =-0.30
             }
         }
         GSK_zy={
@@ -355,7 +372,44 @@ ideas = {
 				conscription_factor = 0.10
             }
         }
-		
+        GSK_Economy_ech={
+            allowed{
+                always = no
+            }
+            removal_cost = -1
+            modifier={
+                stability_weekly =0.10
+                production_speed_buildings_factor =0.50
+                production_speed_arms_factory_factor =-0.40
+                production_speed_industrial_complex_factor =0.60
+                production_speed_infrastructure_factor =0.50
+            }
+        }
+        GSK_Economy_idea={
+            allowed{
+                always = no
+            }
+            removal_cost = -1
+            modifier={
+                theorist_cost_factor =-0.50
+                industrial_concern_cost_factor =-0.20
+                economy_cost_factor =-0.40
+                production_speed_arms_factory_factor =0.50
+                production_speed_industrial_complex_factor =-0.40
+                production_speed_buildings_factor =0.10
+            }
+        }
+		GSK_Nuclear_bomb={
+            allowed{
+                always = no
+            }
+            removal_cost = -1
+            modifier={
+                army_bonus_air_superiority_factor =0.50
+                air_cas_present_factor =0.50
+                production_speed_nuclear_reactor_factor =0.50
+            }
+        }
 		GSK_hxx={
             allowed{
                 always = no
