@@ -736,8 +736,14 @@ focus_tree = {
 		cost = 2
 		available = {}
 		completion_reward = {
-			production_speed_industrial_complex_factor = 0.10
-			land_reinforce_rate =0.20
+			add_stability = 0.10
+			add_tech_bonus = {
+			bonus = 2.0
+			uses = 3
+			category = construction_tech
+			category = excavation_tech
+		}
+			production_speed_industrial_complex_factor = 0.20
 		}
 	}
 	focus ={
@@ -746,11 +752,20 @@ focus_tree = {
 		prerequisite ={ focus = GSK_gtjs}
 		x = -1
 		y = 1
-		cost = 2
+		cost = 4
 		available = {}
 		completion_reward = {
-			production_speed_industrial_complex_factor = 0.10
-			land_reinforce_rate =0.20
+			add_tech_bonus = {
+			bonus = 3.0
+			uses = 1
+			category = construction_tech
+		}
+			662 = {
+			add_resource = {
+				type = steel
+				amount = 10
+			}
+		}
 		}
 	}
 	focus ={
@@ -762,8 +777,22 @@ focus_tree = {
 		cost = 2
 		available = {}
 		completion_reward = {
-			production_speed_industrial_complex_factor = 0.10
-			land_reinforce_rate =0.20
+			656 = {
+			add_resource = {
+				type = rubber
+				amount = 8
+				type = tungsten
+				amount = 5
+				type = chromium
+				amount = 12
+				type = aluminium
+				amount = 10
+			}
+		}
+			swap_ideas = { 
+				remove_idea = GSK_nye2 ##原本精神
+				add_idea = GSK_nye3 ##覆盖精神
+			 }
 		}
 	}
 	focus ={
@@ -788,47 +817,67 @@ focus_tree = {
 		cost = 2
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			army_experience = 10
+			add_tech_bonus = {
+			bonus = 3.0
+			uses = 1
+			category = infantry_weapons
+		}
 		}
 	}
 	focus ={
-		id = GSK_tk#坦克事业
+		id = GSK_tank_industry#坦克事业
 		relative_position_id = GSK_wq
 		prerequisite ={ focus = GSK_wq}
 		x = 0
 		y = 1
-		cost = 2
+		cost = 8
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			add_ideas = GSK_tank_sea
+			add_tech_bonus = {
+			bonus = 3.0
+			uses = 1
+			category = armor
+		}
 		}
 	}
 	focus ={
 		id = GSK_jwq#军工机构
-		relative_position_id = GSK_tk
-		prerequisite ={ focus = GSK_tk}
+		relative_position_id = GSK_tank_industry
+		prerequisite ={ focus = GSK_tank_industry}
 		x = -1
 		y = 1
 		cost = 2
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			add_offsite_building = { type = arms_factory level = 10 }
+			add_ideas = GSK_industrial_concern
 		}
 	}
 	focus ={
 		id = GSK_qwq#轻武器
-		relative_position_id = GSK_tk
-		prerequisite ={ focus = GSK_tk}
+		relative_position_id = GSK_tank_industry
+		prerequisite ={ focus = GSK_tank_industry}
 		x = 1
 		y = 1
 		cost = 2
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			add_tech_bonus = {
+			bonus = 3.0
+			uses = 2
+			category = infantry_weapons
+		}
+			add_tech_bonus = {
+			bonus = 3.0
+			uses = 3
+			category = artillery
+		}
 		}
 	}
 	focus ={
-		id = GSK_htjgc#河童工业
+		id = GSK_river_infantry#妖怪之山河童计划
 		relative_position_id = GSK_qwq
 		prerequisite ={ focus = GSK_qwq focus = GSK_jwq}
 		x = -1
@@ -836,24 +885,28 @@ focus_tree = {
 		cost = 2
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			add_political_power =10
+			add_ideas = GSK_industrial_river
 		}
 	}
 	focus ={
-		id = GSK_dxkh#地下核威慑
-		relative_position_id = GSK_htjgc
-		prerequisite ={ focus = GSK_htjgc }
+		id = GSK_air_dxkh#天空的威慑
+		relative_position_id = GSK_river_infantry
+		prerequisite ={ focus = GSK_river_infantry }
 		x = 0
 		y = 1
 		cost = 2
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			add_ideas = GSK_Nuclear_bomb
+			research_bonus = {
+		        nuclear = 2.00
+            }
 		}
 	}
 
 	focus ={
-		id = GSK_jjjh#经济计划
+		id = GSK_Economy#经济计划
 		relative_position_id = GSK_gongye
 		prerequisite ={ focus = GSK_gongye}
 		x = 0
@@ -861,20 +914,26 @@ focus_tree = {
 		cost = 2
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			add_tech_bonus = {
+			bonus = 2.0
+			uses = 2
+			category = industry
+		}
+			add_ideas = GSK_Economy_ech
 		}
 	}
 	focus ={
 		id = GSK_fhfz#计划经济
-		relative_position_id = GSK_jjjh
-		prerequisite ={ focus = GSK_jjjh}
+		relative_position_id = GSK_Economy
+		prerequisite ={ focus = GSK_Economy}
 		mutually_exclusive ={ focus = GSK_jjfs }
 		x = -2
 		y = 1
 		cost = 2
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			add_political_power=0.50
+			add_ideas = GSK_Economy_idea
 		}
 	}
 	focus ={
@@ -918,8 +977,8 @@ focus_tree = {
 	##分隔线
 	focus ={
 		id = GSK_jjfs#经济复苏
-		relative_position_id = GSK_jjjh
-		prerequisite ={ focus = GSK_jjjh}
+		relative_position_id = GSK_Economy
+		prerequisite ={ focus = GSK_Economy}
 		mutually_exclusive ={ focus = GSK_fhfz }
 		x = 2
 		y = 1
@@ -992,7 +1051,7 @@ focus_tree = {
 	focus ={
 		id = GSK_hxxqdcg#幻想乡工业庆典
 		relative_position_id = GSK_dbzb
-		prerequisite ={ focus = GSK_jkdb focus = GSK_dxkh focus = GSK_qgyhx focus = GSK_qgycx}
+		prerequisite ={ focus = GSK_jkdb focus = GSK_air_dxkh focus = GSK_qgyhx focus = GSK_qgycx}
 		x = 0
 		y = 2
 		cost = 2
