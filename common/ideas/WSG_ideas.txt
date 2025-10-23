@@ -263,9 +263,10 @@ ideas = {
 				ai_get_ally_desire_factor = -1000
 				lend_lease_tension = 1
 				guarantee_tension = 1
-				consumer_goods_expected_value = 0.40
+				consumer_goods_expected_value = 0.50
 				political_power_cost = 1
 				political_power_factor = -0.25
+				research_speed_factor = -0.80
 				stability_factor = 0.10
 				war_support_factor = -1
 				army_core_attack_factor = 1
@@ -279,6 +280,37 @@ ideas = {
 				can_create_factions = no
 			}
 		}
+
+		WSG_stagnation_in_a_leading_nation_II = {
+			picture = WSG_offspring_of_the_ancients
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				join_faction_tension = 1
+				justify_war_goal_time = 10
+				enemy_justify_war_goal_time = 10
+				ai_focus_defense_factor = 10
+				ai_get_ally_desire_factor = -1000
+				lend_lease_tension = 1
+				guarantee_tension = 1
+				consumer_goods_expected_value = 0.50
+				political_power_cost = 1
+				research_speed_factor = -0.40
+				stability_factor = 0.10
+				war_support_factor = -0.50
+				army_core_attack_factor = 1
+		        army_core_defence_factor = 1
+				army_attack_factor = -0.50
+		        army_defence_factor = -0.50
+				global_building_slots = 3
+			}
+			rule = {
+				can_send_volunteers = no
+				can_create_factions = no
+			}
+		}
+
 
 		WSG_offspring_of_the_ancients = {
 			picture = WSG_offspring_of_the_ancients
@@ -517,6 +549,8 @@ ideas = {
 				research_speed_factor = 0.05
 				political_power_gain = 0.25
 				war_support_factor = 0.10
+				communism_drift = 0.1
+				custom_modifier_tooltip = WSG_panci_monthly_add_25_tt
 			}
 		}
 
@@ -674,6 +708,17 @@ ideas = {
 			}
 		}
 
+		WSG_consolidate_rights_l3 = {
+			picture = WSG_consolidate_rights
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.10
+				political_power_factor = 0.10
+			}
+		}
+
 		WSG_consolidate_rights_r1 = {
 			picture = WSG_consolidate_rights
 			allowed_civil_war = {
@@ -692,6 +737,17 @@ ideas = {
 			modifier = {
 				war_support_factor = 0.10
 				consumer_goods_factor = -0.05
+			}
+		}
+
+		WSG_consolidate_rights_r3 = {
+			picture = WSG_consolidate_rights
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				war_support_factor = 0.10
+				consumer_goods_factor = -0.10
 			}
 		}
 
@@ -967,6 +1023,7 @@ ideas = {
 			}
 			modifier = {
 				river_crossing_factor = -0.50
+				terrain_penalty_reduction = 0.15
 			}
 		}
 

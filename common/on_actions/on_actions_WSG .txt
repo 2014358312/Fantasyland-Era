@@ -43,6 +43,18 @@ on_actions = {
 		}
 	}
 
+	on_monthly_WSG = {
+		effect = {
+			WSG = {
+				if = {
+					limit = { has_idea = WSG_revival_of_holy_right }
+					add_to_variable = { WSG_panci = 25 }
+				}
+				else = {}
+			}
+		}
+	}
+
 	on_startup = {
 		effect = {
 			WSG = {
