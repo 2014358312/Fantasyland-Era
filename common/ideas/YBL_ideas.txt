@@ -1,40 +1,525 @@
 ideas = {
 	country = {
-		YBL_jingmihoushidai = {
-		    picture = YBL_jingmihoushidai
-			
-			modifier = {
-				stability_factor =-0.4
-				
-				war_support_factor =-0.2
 
-				surrender_limit = -0.5
+		YBL_MZ1 = {
+			picture = 1
+
+			name = 伊比利亚的黄金时代
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_gain = 1 #每日政治点数
+				stability_factor = 0.3 #稳定度
+				war_support_factor = 0.3 #战争支持度
+				army_core_attack_factor = 0.8 #陆军核心攻击
+				army_core_defence_factor = 0.8 #陆军核心防御
+				army_org_factor = 0.5 #组织度
+				research_speed_factor = 1 #科研速度
+				industrial_capacity_factory = 0.8 #工厂产出
 			}
 		}
-		YBL_jianqufenliedeguodu = {
-		    picture = YBL_jianqufenliedeguodu
-			
-			modifier = {
-				political_power_factor = -0.1
-				
-				research_speed_factor = -0.5
-				
-				conscription = -0.005
+
+		YBL_MZ2 = {
+			picture = 1
+
+			name = 伊比利亚即大海
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				navy_screen_attack_factor = 0.75 #屏卫舰攻击
+				navy_capital_ship_attack_factor = 0.75 #主力舰攻击
+				naval_speed_factor = 1.3 #海军速度	
+				navy_max_range_factor = 0.5 #海军最大航程参数
+				spotting_chance = 0.8 #索敌速度
+				naval_detection = 1 #探测速度
+				naval_strike_agility_factor = -0.2 #海军机动
 			}
 		}
-		YBL_shenpanri = {
-				picture = YBL_shenpanri
-				
-				modifier = {
-					war_support_weekly =0.01
-					
-					non_core_manpower =0.05
-	
-					attrition = -0.1
-					justify_war_goal_time = -0.75
-					local_resources_factor = 0.3
-				}
-			}
 
+		YBL_MZ3 = {
+			picture = 1
+
+			name = 尚未完成的国教会
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_gain = -0.5 #每日政治点数
+				stability_weekly = -0.1 #每周稳定度
+				defensive_war_stability_factor = -0.2 #防御性战争对稳定度修正
+				#以下为法案政治顾问等花费
+				mobilization_laws_cost_factor = +0.25
+				trade_laws_cost_factor  = +0.25
+				economy_cost_factor = +0.25
+				political_advisor_cost_factor = +0.25
+				tank_manufacturer_cost_factor = +0.25
+				naval_manufacturer_cost_factor = +0.25
+				aircraft_manufacturer_cost_factor = +0.25
+				materiel_manufacturer_cost_factor = +0.25
+				industrial_concern_cost_factor = +0.25
+				theorist_cost_factor = +0.25
+				army_chief_cost_factor = +0.25
+				navy_chief_cost_factor = +0.25
+				air_chief_cost_factor = +0.25
+				high_command_cost_factor = +0.25
+				#以上为法案政治顾问等花费
+			}
+		}
+
+		YBL_MZ4 = {
+			picture = 1
+
+			name = 底层人民的不满
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_gain = -0.5 #每日政治点数
+				industrial_capacity_factory = -0.2 #工厂产出
+				production_speed_buildings_factor = -0.2 #建造速度
+				consumer_goods_factor = 0.15 #生活用品工厂
+			}
+		}
+
+		YBL_MZ5 = {
+			picture = 1
+
+			name = 深海教会的渗透
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_factor = -0.2 #政治点数获取
+				fascism_drift = 0.5 #每日法西斯主义支持率
+				consumer_goods_factor = 0.10 #生活用品工厂
+				stability_factor = -0.3 #稳定度
+				war_support_factor = -0.3 #战争支持度
+			}
+		}
+
+		YBL_MZ6 = {
+			picture = 1
+
+			name = 被搁置的建议
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_gain = -0.5 #每日政治点数
+				consumer_goods_factor = 0.10 #生活用品工厂
+				#以下为法案政治顾问等花费
+				mobilization_laws_cost_factor = +0.5
+				trade_laws_cost_factor  = +0.5
+				economy_cost_factor = +0.5
+				political_advisor_cost_factor = +0.5
+				tank_manufacturer_cost_factor = +0.5
+				naval_manufacturer_cost_factor = +0.5
+				aircraft_manufacturer_cost_factor = +0.5
+				materiel_manufacturer_cost_factor = +0.5
+				industrial_concern_cost_factor = +0.5
+				theorist_cost_factor = +0.5
+				army_chief_cost_factor = +0.5
+				navy_chief_cost_factor = +0.5
+				air_chief_cost_factor = +0.5
+				high_command_cost_factor = +0.5
+				#以上为法案政治顾问等花费
+				industrial_capacity_dockyard = -0.5 #海军船坞产出
+				research_speed_factor = -0.2 #研究速度
+			}
+		}
+
+		YBL_MZ7 = {
+			picture = 1
+
+			name = 着手处理国内事务
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_gain = -0.5 #每日政治点数
+				consumer_goods_factor = 0.10 #生活用品工厂
+			}
+		}
+
+		YBL_MZ8 = {
+			picture = 1
+
+			name = 潜藏的深海教众
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_factor = -0.1 #政治点数获取
+				fascism_drift = 0.3 #每日法西斯主义支持率
+				stability_factor = -0.1 #稳定度
+				war_support_factor = 0.1 #战争支持度
+			}
+		}
+
+		YBL_MZ9 = {
+			picture = 1
+
+			name = 宗教改革基本失败
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_factor = -0.8 #政治点数获取
+				fascism_drift = 1 #每日法西斯主义支持率
+				stability_factor = -0.1 #稳定度
+				war_support_factor = -0.1 #战争支持度
+				consumer_goods_factor = 0.80 #生活用品工厂
+			}
+		}
+
+		YBL_MZ10 = {
+			picture = 1
+
+			name = 文创科研限制法案
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				fascism_drift = -0.3 #每日法西斯主义支持率
+				research_speed_factor = -0.2 #研究速度
+			}
+		}
+
+		YBL_MZ11 = {
+			picture = 1
+
+			name = 失落王都
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				research_speed_factor = -100 #研究速度
+				political_power_gain = -10000 #每日政治点数
+				production_speed_buildings_factor = -100 #建造速度
+				min_export = -100 #可出口资源
+				local_resources_factor = -100 #战略资源获取
+				local_building_slots_factor = -100 #地区最大工业值
+				drift_defence_factor = 100 #意识形态抵抗力度
+				stability_weekly = 100 #每周稳定度
+				command_power_gain = -100 #每日指挥点
+				industrial_capacity_factory = -100 #工厂产出
+				industrial_capacity_dockyard = -100 #船坞产出
+				monthly_population = -100 #月度人力
+			}
+		}
+
+		YBL_MZ12 = {
+			picture = 1
+
+			name = 关注国教会建设
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_cost = 0.8 #每日政治点消耗
+				defensive_war_stability_factor = -0.1 #防御性战争对稳定度修正
+				consumer_goods_factor = 0.05 #生活消费品
+			}
+		}
+
+		YBL_MZ13 = {
+			picture = 1
+
+			name = 伊比利亚特色萨科塔教义
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_gain = 1 #每日政治点
+				consumer_goods_factor = -0.15 #生活消费品
+				army_org_factor = 0.1 #陆军组织度
+				army_core_attack_factor = 0.2 #核心领土攻击
+				army_core_defence_factor = 0.2 #核心领土防御
+				experience_loss_factor = -0.3 #有经验的士兵损失
+			}
+		}
+
+		YBL_MZ14 = {
+			picture = 1
+
+			name = 世俗化的空想
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_gain = -0.5 #每日政治点
+				stability_factor = -0.2 #稳定度
+				war_support_factor = -0.2 #战争支持度
+			}
+		}
+
+		YBL_MZ15 = {
+			picture = 1
+
+			name = 伊比利亚国家教义
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_gain = 0.5 #每日政治点
+				production_speed_buildings_factor = 0.15 #建造速度
+				breakthrough_factor = 0.15 #突破
+				army_attack_factor = 0.2 #陆军攻击
+				army_speed_factor = 0.2 #陆军师速度
+				org_loss_when_moving = -0.15 #陆军移动组织度损失
+			}
+		}
+
+		YBL_MZ16 = {
+			picture = 1
+
+			name = 动员立法会
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_factor = -0.2 #政治点数百分比
+			}
+		}
+
+		YBL_MZ17 = {
+			picture = 1
+
+			name = 伊比利亚人权法案
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				industrial_capacity_factory = 0.1 #工厂产出
+				consumer_goods_factor = 0.05 #生活消费品
+				industrial_capacity_dockyard = 0.1 #船坞产出
+				production_speed_buildings_factor = 0.1 #建造速度
+			}
+		}
+
+		YBL_MZ18 = {
+			picture = 1
+
+			name = 暂时放下的争议
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				industrial_capacity_factory = 0.1 #工厂产出
+				industrial_capacity_dockyard = 0.1 #船坞产出
+				production_speed_buildings_factor = 0.1 #建造速度
+				conscription_factor = 0.15 #适役人口修正
+				stability_factor = 0.5 #稳定度
+			}
+		}
+
+		YBL_MZ19 = {
+			picture = 1
+
+			name = 布雷奥甘的预言
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_gain = 1 #每日政治点
+				war_support_factor = 1 #战争支持度
+				industrial_capacity_factory = 0.1 #工厂产出
+				industrial_capacity_dockyard = 0.1 #船坞产出
+				production_speed_buildings_factor = 0.1 #建造速度
+				conscription_factor = 0.05 #适役人口
+			}
+		}
+
+		YBL_MZ20 = {
+			picture = 1
+
+			name = 屠杀阿戈尔人
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				stability_factor = -0.2 #稳定度
+				research_speed_factor = -0.3 #研究速度
+			}
+		}
+
+		YBL_MZ21 = {
+			picture = 1
+
+			name = 斯图提斐拉号的掌舵者
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				navy_org = 10 #海军组织度 非百分比制
+				naval_retreat_speed = 0.1 #海军撤退速度
+				spotting_chance = 0.2 #索敌速度
+				navy_capital_ship_attack_factor = 0.5 #主力舰攻击
+			}
+		}
+
+		YBL_MZ22 = {
+			picture = 1
+
+			name = 斯图提斐拉号的设计者
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				naval_speed_factor = 0.2 #海军速度
+				navy_max_range_factor = 0.2 #海军最大航程参数
+				navy_fuel_consumption_factor = -0.25 #海军燃油消耗
+				naval_manufacturer_cost_factor = -0.5 #海军制造商花费
+			}
+		}
+
+		YBL_MZ23 = {
+			picture = 1
+
+			name = 三位一体
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_gain =1 #每日政治点增加
+				industrial_capacity_factory = 0.1 #工厂产出
+				industrial_capacity_dockyard = 0.1 #船坞产出
+				production_speed_buildings_factor = 0.1 #建造速度
+				army_core_attack_factor = 0.25 #陆军核心攻击
+				army_core_defence_factor = 0.25 #陆军核心防御
+				stability_factor = 0.1 #稳定度
+				#以下为法案政治顾问等花费
+				mobilization_laws_cost_factor = -0.25
+				trade_laws_cost_factor  = -0.25
+				economy_cost_factor = -0.25
+				political_advisor_cost_factor = -0.25
+				tank_manufacturer_cost_factor = -0.25
+				naval_manufacturer_cost_factor = -0.25
+				aircraft_manufacturer_cost_factor = -0.25
+				materiel_manufacturer_cost_factor = -0.25
+				industrial_concern_cost_factor = -0.25
+				theorist_cost_factor = -0.25
+				army_chief_cost_factor = -0.25
+				navy_chief_cost_factor = -0.25
+				air_chief_cost_factor = -0.25
+				high_command_cost_factor = -0.25
+				#以上为法案政治顾问等花费
+			}
+		}
+
+		YBL_MZ24 = {
+			picture = 1
+
+			name = 自相残杀的人们
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				monthly_population = -0.5 #月度人力
+				conscription_factor = -0.5 #适服役人口修正
+			}
+		}
+
+		YBL_MZ25 = {
+			picture = 1
+
+			name = 迷茫无措的人们
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				army_org_factor = -0.5 #陆军组织度
+				industrial_capacity_factory = -0.5 #工厂产出
+				industrial_capacity_dockyard = -0.5 #船坞产出
+				production_speed_buildings_factor = -0.5 #建造速度
+				research_speed_factor = -1 #研究速度
+			}
+		}
+
+		YBL_MZ26 = {
+			picture = 1
+
+			name = 伊比利亚紧急状态
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_gain = 1 #每日政治点增加
+				command_power_gain_mult = 0.5 #每日指挥点增长百分比
+				stability_weekly = -0.05 #每周稳定度增长
+				surrender_limit = 1 #投降界限
+				mobilization_speed = 0.5 #动员速度
+			}
+		}
+
+		YBL_MZ27 = {
+			picture = 1
+
+			name = 国王诏会进行中
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_gain = -0.5 #每日政治点增加
+				experience_gain_army_factor = -0.5 #陆军经验增长
+				production_speed_buildings_factor = -0.9 #建造速度
+			}
+		}
 	}
 }

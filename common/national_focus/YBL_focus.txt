@@ -9,1193 +9,1398 @@ focus_tree = {
 		}
 	}
 	default = no
-	#审判庭线
-	focus = {
-		id = YBL_wendingxianzhuang
-		icon = GFX_focus_generic_strike_at_democracy2
-		x = -10
-		y = 0
-		relative_position_id = YBl_shenmifangke
-		mutually_exclusive = {
-			focus = YBl_shenmifangke focus = YBL_guiyudahai
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			set_party_name = {
-				ideology = neutrality
-				name = YBL_shenpantingzhishang_long
-				long_name = YBL_shenpantingzhishang
-			}
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_chongjianjiayuan
-		icon = GFX_goal_generic_construction
-		x = -1
-		y = 1
-		relative_position_id = YBL_wendingxianzhuang
-		mutually_exclusive = {
-			focus = YBL_xunqiuwaiyuan
-		}
-		prerequisite = {
-			focus = YBL_wendingxianzhuang
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			set_party_name = {
-				ideology = neutrality
-				name = YBL_shenpantingzhishang_long
-				long_name = YBL_shenpantingzhishang
-			}
-			add_political_power = 120
-		}
-	}
-	#右
-	focus = {
-		id = YBL_xunqiuwaiyuan
-		icon = GFX_focus_BRA_reach_out_to_military_dem
-		x = 1
-		y = 1
-		relative_position_id = YBL_wendingxianzhuang
-		mutually_exclusive = {
-			focus = YBL_chongjianjiayuan
-		}
-		prerequisite = {
-			focus = YBL_wendingxianzhuang
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			create_field_marshal = {
-				name = "乌尔比安"
-				portrait_path = "gfx/leaders/YBL/YBL_wuerbian.png"
-				traits = {
-					brilliant_strategist
-				}
-				skill = 4
-				attack_skill = 6
-				defense_skill = 3
-				planning_skill = 3
-				logistics_skill = 3
-			}
-		}
-	}
-	focus = {
-		id = YBL_zhengshimaodun
-		icon = GFX_goal_generic_forceful_treaty
-		x = 0
-		y = 1
-		relative_position_id = YBL_chongjianjiayuan
-		prerequisite = {
-			focus = YBL_chongjianjiayuan
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_buchangageerren
-		icon = YBL_buchangageerren
-		x = 0
-		y = 1
-		relative_position_id = YBL_zhengshimaodun
-		prerequisite = {
-			focus = YBL_zhengshimaodun
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_jianzhengyiqiedeshengtu
-		icon = YBL_jianzhengyiqiedeshengtu
-		x = -2
-		y = 2
-		relative_position_id = YBL_buchangageerren
-		prerequisite = {
-			focus = YBL_buchangageerren
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_ailinifaling
-		icon = GFX_focus_BRA_the_polaca
-		x = 1
-		y = 1
-		relative_position_id = YBL_buchangageerren
-		prerequisite = {
-			focus = YBL_buchangageerren
-			focus = YBL_yimianqizhilianggeminzu
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_shenhailieren
-		icon = YBL_shenhailieren
-		x = 0
-		y = 1
-		relative_position_id = YBL_xunqiuwaiyuan
-		prerequisite = {
-			focus = YBL_xunqiuwaiyuan
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_yimianqizhilianggeminzu
-		icon = YBL_yimianqizhilianggeminzu
-		x = 0
-		y = 1
-		relative_position_id = YBL_shenhailieren
-		prerequisite = {
-			focus = YBL_shenhailieren
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_huangjinhaianjiuyejihua
-		icon = GFX_focus_por_workers_of_iberia
-		x = 0
-		y = 1
-		relative_position_id = YBL_ailinifaling
-		prerequisite = {
-			focus = YBL_ailinifaling
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_huangjinhaianjiuyejihua
-		icon = YBL_huangjinhaianjiuyejihua
-		x = 0
-		y = 1
-		relative_position_id = YBL_ailinifaling
-		prerequisite = {
-			focus = YBL_ailinifaling
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_xuanbuhoujingmidejieshu
-		icon = YBL_xuanbuhoujingmidejieshu
-		x = 0
-		y = 1
-		relative_position_id = YBL_huangjinhaianjiuyejihua
-		prerequisite = {
-			focus = YBL_huangjinhaianjiuyejihua
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	#保守线
-	focus = {
-		id = YBL_yibiliyayanjiuyuan
-		icon = GFX_focus_research
-		x = -3
-		y = 1
-		relative_position_id = YBL_xuanbuhoujingmidejieshu
-		prerequisite = {
-			focus = YBL_jianzhengyiqiedeshengtu
-		}
-		prerequisite = {
-			focus = YBL_xuanbuhoujingmidejieshu
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_zhongshidalu
-		icon = YBL_zhongshidalu
-		x = -1
-		y = 1
-		relative_position_id = YBL_yibiliyayanjiuyuan
-		mutually_exclusive = {
-			focus = YBL_zhimiandahai
-		}
-		prerequisite = {
-			focus = YBL_yibiliyayanjiuyuan
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_dongdalugongshi
-		icon = GFX_goal_generic_attack_allies
-		x = 0
-		y = 2
-		relative_position_id = YBL_zhongshidalu
-		prerequisite = {
-			focus = YBL_zhongshidalu
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_youhaodelinju
-		icon = GFX_goal_generic_improve_relations
-		x = -1
-		y = 1
-		relative_position_id = YBL_dongdalugongshi
-		prerequisite = {
-			focus = YBL_dongdalugongshi
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_fangemingzhenxian
-		icon = GFX_goal_anschluss
-		x = 0
-		y = 1
-		relative_position_id = YBL_youhaodelinju
-		prerequisite = {
-			focus = YBL_youhaodelinju
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_sisuiminzhuweizhuang
-		icon = GFX_focus_generic_strike_at_democracy2
-		x = 1
-		y = 1
-		relative_position_id = YBL_dongdalugongshi
-		prerequisite = {
-			focus = YBL_dongdalugongshi
-			focus = YBL_kuayuedayangdemengyou
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			hidden_effect = {
-				every_country = {
-					limit = {
-						has_government = democratic
-						NOT = { is_in_faction_with = ROOT }
-						OR = {
-							is_major = yes
-							is_neighbor_of = ROOT
-						}
-					}
-					if = {
-						limit = {
-							ROOT = { has_cosmetic_tag = KPB_kingdom_portugal_and_brazil } #Non-Aligned Duarte Nuno (Monarchist)
-						}
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = puppet_wargoal_focus
-								expire = 0
-							}
-						}
-					}
-					else_if = {
-						limit = {
-							ROOT = { has_government = neutrality }  #Non-Aligned Salazar (Even in Monarchist branch if Duarte Nuno is not ruler yet)
-						}
-							ROOT = {
-								create_wargoal = {
-									target = PREV
-									type = topple_government
-									expire = 0
-								}
-							}
-					}
-					else = { #Fascist Preto
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = annex_everything
-								expire = 0
-							}
-						}
-					}
-				}
-			}
-			custom_effect_tooltip = YBL_the_communist_threat_tt
-			every_country = {
-				limit = {
-					has_government = democratic
-					NOT = { is_in_faction_with = ROOT }
-					OR = {
-						is_major = yes
-						is_neighbor_of = ROOT
-					}
-				}
-			}
+	#伊比利亚王国（黄金时代）
 
-			hidden_effect = {
-				every_country = {
-					limit = {
-						has_government = democratic
-						NOT = { is_in_faction_with = ROOT }
-						OR = {
-							is_major = yes
-							is_neighbor_of = ROOT
-						}
-					}
-					ROOT = {
-						add_ai_strategy = {
-							type = declare_war
-							id = PREV
-							value = 100
-						}
-					}
-				}
+focus = {
+		id = YBL_GC1 #GC1深蓝之树，遗梦回响
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		#relative_position_id = 指定国策的id #以某一国策为中心确定国策在国策树的位置
+		x = 25
+		y = 0
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		#prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+		#	focus = 
+		#}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		cancel = { #当满足什么条件时，国策会被取消
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+			add_political_power = 120 #获得政治点
+			news_event = { id = YBL_SJ1 } #触发事件“遗梦回响”
+		}
+	}
+
+	focus = {
+		id = YBL_GC2 #GC2着手处理国内事务
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC1 #以某一国策为中心确定国策在国策树的位置
+		x = -6
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+			focus = YBL_GC1
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		cancel = { #当满足什么条件时，国策会被取消
+
+		}
+
+		available_if_capitulated = yes #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+			add_timed_idea = { 
+				idea = YBL_MZ7 days = 180
+			 }
+		}
+	}
+
+		focus = {
+		id = YBL_GC3 #GC3深海教会的渗透
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC2 #以某一国策为中心确定国策在国策树的位置
+		x = -5
+		y = 1
+
+		cost = 1 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+			focus = YBL_GC2
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 5
+		}
+
+		available = { #国策可以点击时的条件
+#我不会填，详见策划案
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		cancel = { #当满足什么条件时，国策会被取消
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+			add_political_power = 50 #添加政治点数
+			unlock_decision_category_tooltip = YBL_JYZ1 #提示启用决议
+		}
+	}
+
+	focus = {
+		id = YBL_GC3A #GC3A国教将至，优势在我。
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3 #以某一国策为中心确定国策在国策树的位置
+		x = -1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+			focus = YBL_GC3
+		}
+
+		mutually_exclusive = { focus = YBL_GC3B }
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 1
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		cancel = { #当满足什么条件时，国策会被取消
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+			add_political_power = 100 #添加政治点
+			add_stability = -0.1 #添加稳定度
+			add_popularity = { 
+				ideology = fascism popularity = 0.1
+			 }#添加一次性法西斯主义支持率
+		}
+	}
+	
+	focus = {
+		id = YBL_GC3A1 #GC3A1公开反深海教会诏令
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3A #以某一国策为中心确定国策在国策树的位置
+		x = -1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+			focus = YBL_GC3A
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 1
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		cancel = { #当满足什么条件时，国策会被取消
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+			swap_ideas = {
+			remove_idea = YBL_MZ5
+			add_idea = YBL_MZ8			
+		}#替换民族精神
+		}
+	}
+
+	focus = {
+		id = YBL_GC3A2 #GC3A2依靠萨科塔教义立信
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3A1 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 1
+
+		cost = 5 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+			focus = YBL_GC3A1
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 1
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		cancel = { #当满足什么条件时，国策会被取消
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+			unlock_decision_category_tooltip = YBL_ #提示启用决议
+		}
+	}
+
+	focus = {
+		id = YBL_GC3A3 #GC3A3大肆抓捕深海信徒
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3A2 #以某一国策为中心确定国策在国策树的位置
+		x = -1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+			focus = YBL_GC3A2
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 1
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		cancel = { #当满足什么条件时，国策会被取消
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		add_stability = -0.3 #稳定度
+		unlock_decision_category_tooltip = YBL_ #提示启用决议
+		unlock_decision_category_tooltip = YBL_ #提示启用决议
+		}
+	}
+
+	focus = {
+		id = YBL_GC3A4 #GC3A4触底反弹
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3A3 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+			focus = YBL_GC3A3
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 1
+		}
+
+		available = { #国策可以点击时的条件
+		#我不会填 需要始终为非
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		swap_ideas = {
+			remove_idea = YBL_MZ8
+			add_idea = YBL_MZ9			
+		}
+		}
+	}
+
+	focus = {
+		id = YBL_GC3A5 #GC3A5陷入漩涡
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3A4 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+			focus = YBL_GC3A4
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 1
+		}
+
+		available = { #国策可以点击时的条件
+		#我不会填 需要条件始终为非
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+			#我不会填	详细效果请看伊比利亚王国国策树策划案	
+		}
+	}
+
+	focus = {
+		id = YBL_GC3B #GC3B愚我百姓，重拳出击
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3 #以某一国策为中心确定国策在国策树的位置
+		x = 1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+			focus = YBL_GC3
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 1
+		}
+
+		mutually_exclusive = { focus = YBL_GC3A }
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		stability_factor = 0.1 #稳定度
+		add_popularity = { ideology = neutrality popularity = 0.05 } 
+		}
+	}
+
+	focus = {
+		id = YBL_GC3B1 #GC3B1发表文创科研限制法案
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3B #以某一国策为中心确定国策在国策树的位置
+		x = 1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+			focus = YBL_GC3B
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 1
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		add_ideas = YBL_MZ10 #添加民族精神10（文创科研限制法案）
+		}
+	}
+
+	focus = {
+		id = YBL_GC3B2 #GC3B2去宗教化改革
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3B1 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+			focus = YBL_GC3B1
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 1
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		add_ideas = YBL_MZ10 #添加民族精神10（文创科研限制法案）
+		}
+	}
+
+	focus = {
+		id = YBL_GC3B3 #GC3B3确立深海教为邪教
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3B2 #以某一国策为中心确定国策在国策树的位置
+		x = 1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+			focus = YBL_GC3B2
+			#我不会填 需要一个检测法西斯主义支持率≤20%
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 1
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		swap_ideas = {
+			remove_idea = YBL_MZ5
+			add_idea = YBL_MZ8			
+		}
+		}
+	}
+
+	focus = {
+		id = YBL_GC3B4 #GC3B4稳抓严打，秩序优先
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3B3 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+			focus = YBL_GC3B3
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 1
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		unlock_decision_category_tooltip = YBL_ #逮捕深海教会信徒
+		unlock_decision_category_tooltip = YBL_ #安抚国民疑虑
+		}
+	}
+
+	focus = {
+		id = YBL_GC3B5 #GC3B5基本稳定局面
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3B4 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+			focus = YBL_GC3B4
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 1
+		}
+
+		available = { #国策可以点击时的条件
+		#我不会填 此处需要一个法西斯主义支持率≤5%
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		remove_ideas = YBL_MZ5 #移除深海教会的渗透
+		remove_ideas = YBL_MZ8 #移除潜藏的深海教众
+		}
+	}
+
+	focus = {
+		id = YBL_GC3C #GC3C关注国教会建设
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 2
+
+		cost = 5 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC3B focus = YBL_GC3A
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 5
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		add_political_power = 80 #添加政治点数
+		swap_ideas = {
+			remove_idea = YBL_MZ3
+			add_idea = YBL_MZ12			
+		}
+		}
+	}
+
+	focus = {
+		id = YBL_GC3C1 #GC3C1邀请国内教众探讨新教
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3C #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 1
+
+		cost = 5 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC3C
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 5
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		news_event = { id = SJ16 }#触发事件“伊比利亚教谈论会”
+		}
+	}
+
+	focus = {
+		id = YBL_GC3C2 #GC3C2伊比利亚的新教义
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3C1 #以某一国策为中心确定国策在国策树的位置
+		x = -1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC3C1
+		}
+		prerequisite = { 
+			focus = YBL_GC3A2
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 5
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		add_stability = 0.2 #稳定度
+		}
+	}
+
+	focus = {
+		id = YBL_GC3C4 #GC3C4彻底根除深海邪教
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3C2 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 1
+
+		cost = 1 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC3C2
+		}
+		prerequisite = { 
+			focus = YBL_GC3A3
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 5
+		}
+
+		available = { #国策可以点击时的条件
+		#我不会填 此处需要一个法西斯主义支持率≤5%
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		remove_ideas = YBL_MZ8
+		}
+	}
+
+	focus = {
+		id = YBL_GC3C3 #GC3C3世俗化的空想
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3C1 #以某一国策为中心确定国策在国策树的位置
+		x = 1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC3C1
+		}
+		prerequisite = { 
+			focus = YBL_GC3B2
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 5
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		add_ideas = YBL_MZ14 #添加世俗化的空想
+		}
+	}
+
+	focus = {
+		id = YBL_GC3C5 #GC3C5用实践检验真理
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3C3 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 1
+
+		cost = 10 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC3C3
+		}
+		prerequisite = { 
+			focus = YBL_GC3B3
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 5
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		news_event = { id = YBL_SJ5 }
+		328 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
 			}
 		}
+		330 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		315 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		316 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		317 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		327 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		329 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		314 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		313 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		321 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		320 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		321 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		322 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		318 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		310 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		319 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		311 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		325 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		326 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		324 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		323 = {
+			add_extra_state_shared_building_slots = 1 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+			add_building_construction = { #添加
+			type = infrastructure #基础设施
+			level = 1 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		}
+		}
 	}
-	focus = {
-		id = YBL_dongdalushoufuzhe
-		icon = YBL_dongdalushoufuzhe
+
+	focus = { 
+		id = YBL_GC3C6 #立法确立国教会地位
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3C4 #以某一国策为中心确定国策在国策树的位置
 		x = 0
 		y = 1
-		relative_position_id = YBL_sisuiminzhuweizhuang
-		prerequisite = {
-			focus = YBL_sisuiminzhuweizhuang
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC3C4
 		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
 			factor = 5
 		}
-		search_filters = {
+
+		available = { #国策可以点击时的条件
+		NOT = { has_idea = YBL_MZ5 } 
+		NOT = { has_idea = YBL_MZ8 } 
 		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_zhimiandahai
-		icon = YBL_zhimiandahai
-		x = 1
-		y = 1
-		relative_position_id = YBL_yibiliyayanjiuyuan
-		mutually_exclusive = {
-			focus = YBL_zhongshidalu
-		}
-		prerequisite = {
-			focus = YBL_yibiliyayanjiuyuan
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		add_ideas = YBL_MZ13 #伊比利亚特色萨科塔教义
 		}
 	}
+
 	focus = {
-		id = YBL_kuayuedayangdemengyou
-		icon = GFX_goal_generic_improve_relations
-		x = 0
-		y = 2
-		relative_position_id = YBL_zhimiandahai
-		prerequisite = {
-			focus = YBL_zhimiandahai
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_jingjihuzhutiaokuan
-		icon = GFX_goal_generic_major_alliance
-		x = 1
-		y = 1
-		relative_position_id = YBL_kuayuedayangdemengyou
-		prerequisite = {
-			focus = YBL_kuayuedayangdemengyou
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_shenpanbujingzhe
-		icon = YBL_shenpanbujingzhe
+		id = YBL_GC3C7 #GC3C7解放思想团结向前
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3C5 #以某一国策为中心确定国策在国策树的位置
 		x = 0
 		y = 1
-		relative_position_id = YBL_jingjihuzhutiaokuan
-		prerequisite = {
-			focus = YBL_jingjihuzhutiaokuan
+
+		cost = 5 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC3C5
 		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
 			factor = 5
 		}
-		search_filters = {
+
+		available = { #国策可以点击时的条件
+		NOT = { has_idea = YBL_MZ5 } 
+		NOT = { has_idea = YBL_MZ8 } 
 		}
-		completion_reward = {
-			add_political_power = 120
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		swap_ideas = {
+			remove_idea = YBL_MZ14
+			add_idea = YBL_MZ15			
+		}
+		remove_ideas = YBL_MZ10
 		}
 	}
+
 	focus = {
-		id = YBL_shenpanri
-		icon = YBL_shenpanri
+		id = YBL_GC3C8 #GC3C8完成伊比利亚宗教改革
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC3C1 #以某一国策为中心确定国策在国策树的位置
 		x = 0
-		y = 1.5
-		relative_position_id = YBL_dongdalushoufuzhe
-		prerequisite = {
-			focus = YBL_dongdalushoufuzhe
-			focus = YBL_fangemingzhenxian
-			focus = YBL_shenpanbujingzhe
+		y = 4
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC3C6 
+			focus = YBL_GC3C7 
 		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
 			factor = 5
 		}
-		search_filters = {
+
+		available = { #国策可以点击时的条件
+		
 		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_nianqingdedashenpanguan
-		icon = GFX_YBL_nianqingdedashenpanguan
-		x = 2
-		y = 2
-		relative_position_id = YBL_yimianqizhilianggeminzu
-		prerequisite = {
-			focus = YBL_yimianqizhilianggeminzu
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_popularity = { ideology = democratic popularity = 0.3 }
-			set_politics = { ruling_party = democratic elections_allowed = no }
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		remove_ideas = YBL_MZ12 #关注国教会建设
 		}
 	}
-	#保守线
-	#进步线
+
 	focus = {
-		id = YBL_CapitalUniversity
-		icon = GFX_focus_research
+		id = YBL_GC4 #GC4就业歧视问题
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC2 #以某一国策为中心确定国策在国策树的位置
 		x = 3
 		y = 1
-		relative_position_id = YBL_xuanbuhoujingmidejieshu
-		prerequisite = {
-			focus = YBL_nianqingdedashenpanguan
+
+		cost = 1 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC2
 		}
-		prerequisite = {
-			focus = YBL_xuanbuhoujingmidejieshu
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
 			factor = 5
 		}
-		search_filters = {
+
+		available = { #国策可以点击时的条件
+		#我不会填，详见策划案
 		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	#审判庭线
-	#王室线
-	focus = {
-		id = YBl_shenmifangke
-		icon = GFX_focus_generic_monarchy_2
-		relative_position_id = YBl_guiyudahai
-		mutually_exclusive = {
-			focus = YBL_wendingxianzhuang focus = YBL_guiyudahai
-		}
-		x = -10
-		y = 0
-		cost = 5
-		completion_reward = {
-			add_political_power = 120
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		unlock_decision_category_tooltip = YBL_JYZ2 #就业歧视问题
 		}
 	}
+
 	focus = {
-		id = YBL_wangnvdebairixuanyan
-		icon = GFX_goal_generic_construction
-		x = 0
-		y = 1
-		relative_position_id = YBl_shenmifangke
-		prerequisite = {
-			focus = YBl_shenmifangke
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			set_party_name = {
-				ideology = neutrality
-				name = YBL_diguotongyidang_long
-				long_name = YBL_diguotongyidang
-			}
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_zaizuguojiaohui
-		icon = GFX_focus_por_concordat
-		x = 0
-		y = 1
-		relative_position_id = YBL_wangnvdebairixuanyan
-		prerequisite = {
-			focus = YBL_wangnvdebairixuanyan
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_chongqiyibiliyazhiyan
-		icon = YBL_chongqiyibiliyazhiyan
-		x = 0
-		y = 1
-		relative_position_id = YBL_zaizuguojiaohui
-		prerequisite = {
-			focus = YBL_zaizuguojiaohui
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_yinghuichuanqi
-		icon = YBL_yinghuichuanqi
-		x = -1
-		y = 1
-		relative_position_id = YBL_chongqiyibiliyazhiyan
-		prerequisite = {
-			focus = YBL_chongqiyibiliyazhiyan
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_dajingmixingcunzhe
-		icon = YBL_dajingmixingcunzhe
-		x = 1
-		y = 1
-		relative_position_id = YBL_chongqiyibiliyazhiyan
-		prerequisite = {
-			focus = YBL_chongqiyibiliyazhiyan
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_shuijinglieyuchaxingdong
-		icon = YBL_shuijinglieyuchaxingdong
-		x = -1
-		y = 1
-		relative_position_id = YBL_dajingmixingcunzhe
-		prerequisite = {
-			focus = YBL_dajingmixingcunzhe
-			focus = YBL_yinghuichuanqi
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_chaoyuexuemaideminzu
-		icon = YBL_chaoyuexuemaideminzu
-		x = 0
-		y = 1
-		relative_position_id = YBL_shuijinglieyuchaxingdong
-		prerequisite = {
-			focus = YBL_shuijinglieyuchaxingdong
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_xuangaodiguochongjian
-		icon = YBL_xuangaodiguochongjian
-		x = 0
-		y = 1
-		relative_position_id = YBL_chaoyuexuemaideminzu
-		prerequisite = {
-			focus = YBL_chaoyuexuemaideminzu
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_huangjiayanjiuyuan
-		icon = GFX_focus_research
-		x = 2
-		y = 1
-		relative_position_id = YBL_chaoyuexuemaideminzu
-		prerequisite = {
-			focus = YBL_chaoyuexuemaideminzu
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_zhigengniaojihua
-		icon = YBL_zhigengniaojihua
-		x = 0
-		y = 1
-		relative_position_id = YBL_huangjiayanjiuyuan
-		prerequisite = {
-			focus = YBL_huangjiayanjiuyuan
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_chuangjianxuexiaotuan
-		icon = YBL_chuangjianxuexiaotuan
+		id = YBL_GC4A #GC4A保障王权
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC4 #以某一国策为中心确定国策在国策树的位置
 		x = -2
 		y = 1
-		relative_position_id = YBL_chaoyuexuemaideminzu
-		prerequisite = {
-			focus = YBL_chaoyuexuemaideminzu
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC4
 		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
 			factor = 5
 		}
-		search_filters = {
+
+		available = { #国策可以点击时的条件
+		
 		}
-		completion_reward = {
-			add_political_power = 120
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		unlock_decision_category_tooltip = YBL_ #将国王从歧视中剥离
 		}
 	}
+
 	focus = {
-		id = YBL_chuyingnvhuang
-		icon = YBL_chuyingnvhuang
-		x = 0
-		y = 2
-		relative_position_id = YBL_xuangaodiguochongjian
-		prerequisite = {
-			focus = YBL_xuangaodiguochongjian
+		id = YBL_GC4A1 #GC4A1安排王室慰问
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC4A #以某一国策为中心确定国策在国策树的位置
+		x = -1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC4A
 		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
 			factor = 5
 		}
-		search_filters = {
+
+		available = { #国策可以点击时的条件
+		
 		}
-		completion_reward = {
-			add_political_power = 120
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		unlock_decision_category_tooltip = YBL_ #安排王室巡游
 		}
 	}
+
 	focus = {
-		id = YBL_huifuguofangjunjingfei
-		icon = YBL_huifuguofangjunjingfei
+		id = YBL_GC4A2 #GC4A2向民众承诺改变
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC4A1 #以某一国策为中心确定国策在国策树的位置
 		x = 0
 		y = 1
-		relative_position_id = YBL_chuyingnvhuang
-		prerequisite = {
-			focus = YBL_chuyingnvhuang
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC4A1
 		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
 			factor = 5
 		}
-		search_filters = {
+
+		available = { #国策可以点击时的条件
+		
 		}
-		completion_reward = {
-			add_political_power = 120
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+			add_timed_idea = { idea = MZ27 days = 60 } #添加为期60天的民族精神“国王诏会进行中”
 		}
-	}
-	focus = {
-		id = YBL_gonghuizizhufazhan
-		icon = YBL_gonghuizizhufazhan
-		x = 0
-		y = 1
-		relative_position_id = YBL_huifuguofangjunjingfei
-		prerequisite = {
-			focus = YBL_huifuguofangjunjingfei
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_wangyushibing
-		icon = YBL_wangyushibing
-		x = 0
-		y = 1
-		relative_position_id = YBL_gonghuizizhufazhan
-		prerequisite = {
-			focus = YBL_gonghuizizhufazhan
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_renmingongchang
-		icon = GFX_focus_secret_rearmament
-		x = -2
-		y = 1
-		relative_position_id = YBL_chuyingnvhuang
-		prerequisite = {
-			focus = YBL_chuyingnvhuang
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_kejifuwushengchan
-		icon = YBL_kejifuwushengchan
-		x = 0
-		y = 1
-		relative_position_id = YBL_renmingongchang
-		prerequisite = {
-			focus = YBL_renmingongchang
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_paoyumianbao
-		icon = YBL_paoyumianbao
-		x = 0
-		y = 1
-		relative_position_id = YBL_kejifuwushengchan
-		prerequisite = {
-			focus = YBL_kejifuwushengchan
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_jianglishenpanguan
-		icon = GFX_focus_generic_military_mission
-		x = 2
-		y = 1
-		relative_position_id = YBL_chuyingnvhuang
-		prerequisite = {
-			focus = YBL_chuyingnvhuang
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_chengjiejunquanlixiafang
-		icon = YBL_chengjiejunquanlixiafang
-		x = 0
-		y = 1
-		relative_position_id = YBL_jianglishenpanguan
-		prerequisite = {
-			focus = YBL_jianglishenpanguan
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_jianyutideng
-		icon = YBL_jianyutideng
-		x = 0
-		y = 1
-		relative_position_id = YBL_chengjiejunquanlixiafang
-		prerequisite = {
-			focus = YBL_chengjiejunquanlixiafang
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	focus = {
-		id = YBL_nvwangwansui
-		icon = GFX_goal_generic_national_unity
-		x = 0
-		y = 1.5
-		relative_position_id = YBL_wangyushibing
-		prerequisite = {
-			focus = YBL_wangyushibing
-			focus = YBL_paoyumianbao
-			focus = YBL_jianyutideng
-		}
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			factor = 5
-		}
-		search_filters = {
-		}
-		completion_reward = {
-			add_political_power = 120
-		}
-	}
-	#王室线
-	#深海教会线
-	focus = {
-		id = YBL_guiyudahai
-		icon = GFX_focus_BRA_tribunal
-		x = 0
-		y = 0
-		mutually_exclusive = {
-			focus = YBL_wendingxianzhuang focus = YBl_shenmifangke
-		}
-		cost = 5
-		available = {
-		}
-		allow_branch = {
-		}
-		completion_reward = {
-			create_country_leader = {
-				name = "YBL_yishamala"
-				desc = ""
-				picture = "gfx/leaders/YBL/YBL_yishamala.png"
-				expire = "1999.1.1"
-				ideology = despotism
-				traits = {
-				}
-			}
-		}
-	}
-	continuous_focus_position = {
-		x = 0
-		y = 2500
 	}
 }
-
-#深海教会线
