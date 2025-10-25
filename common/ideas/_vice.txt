@@ -969,5 +969,27 @@ ideas = {
 				}
 			}
 		}
+		ROS_Origami_Yukari_head_of_government = {
+			name = Origami_Yukari
+			picture = advisor_ROS_Origami_Yukari
+			allowed = {
+				original_tag = ROS
+			}
+			visible = {
+				original_tag = ROS
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { heroic_marshal }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:ROS_Origami_Yukari_head_of_government }
+					set_variable = { VL_status_var = 18 }
+				}
+			}
+		}
 	}
 }
