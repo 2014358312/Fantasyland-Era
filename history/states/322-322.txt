@@ -9,20 +9,24 @@ state={
 	history={
 		owner = YBL
 		set_variable = { state_id = 322 }
-		buildings = {
-			infrastructure = 2
-			industrial_complex = 1
-			air_base = 1
+		buildings = { #地块所拥有的建筑数量
+			infrastructure = 2 #基建
+			industrial_complex = 1 #民用工厂
+			air_base = 1 #机场
 		}
-		add_core_of = YBL
+		victory_points = {#为地区小区块添加胜利点
+			3723 #区块ID
+			20 #胜利点数量
+		}
+		add_core_of = YBL #该地区核心属于 = YBL 伊比利亚王国
 	}
 	resources = {
-		oil=29
-		aluminium=0
-		rubber=0
-		tungsten=0
-		steel=17
-		chromium=0
+		oil=29 #石油数×2
+		aluminium=7 #铝×2
+		rubber=0 #橡胶×2
+		tungsten=0 #钨×2
+		steel=10 #钢×2
+		chromium=0 #铬×2
 	}
 	local_supplies=1.0
 }

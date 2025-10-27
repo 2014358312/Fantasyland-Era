@@ -1,4 +1,11 @@
 ### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
 focus_tree = {
 	id = mod_focus_tree
 	country = {
@@ -9,13 +16,45 @@ focus_tree = {
 		}
 	}
 	default = no
+	continuous_focus_position = { x = 20 y = 1500 } #持续性国策位置调整
+	
+	#测试国策
+	focus = {
+		id = YBL_GCCS #GCCS测试国策
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		x = 1
+		y = 1
+
+		cost = 1 #完成国策所需要的时间=填写的数字×7
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 0
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		
+	}
+	}
 	#伊比利亚王国（黄金时代）
 
 focus = {
 		id = YBL_GC1 #GC1深蓝之树，遗梦回响
 		icon = YBL_nianqdedashengpang #国策图标连接
 		#relative_position_id = 指定国策的id #以某一国策为中心确定国策在国策树的位置
-		x = 23
+		x = 14
 		y = 0
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
@@ -120,7 +159,7 @@ focus = {
 		id = YBL_GC3 #GC3深海教会的渗透
 		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
 		relative_position_id = YBL_GC2 #以某一国策为中心确定国策在国策树的位置
-		x = -5
+		x = -4
 		y = 1
 
 		cost = 1 #完成国策所需要的时间=填写的数字×7
@@ -886,16 +925,24 @@ focus = {
 				type = naval_base #添加种类为海军基地
 				level = 10 #添加数量
 				instant_build = yes #立刻完成 no反之
-				province = 2175 #小地块代码
+				province = 2463 #小地块代码
 			}
 		}
 		add_victory_points = {
 				province = 2175
+				value = 20
+			}
+		add_victory_points = {
+				province = 2463
 				value = 30
 			}
 		set_province_name = {
 			id = 2175
-			name = "圣科尔多经济区"
+			name = "圣科尔多市"
+		}
+		set_province_name = {
+			id = 2463
+			name = "圣科尔多经贸港"
 		}
 		}
 	}
@@ -1366,10 +1413,10 @@ focus = {
 		x = 1
 		y = 1
 
-		cost = 5 #完成国策所需要的时间=填写的数字×7
+		cost = 2 #完成国策所需要的时间=填写的数字×7
 
 		prerequisite = { 
-			focus = YBL_GC4B2
+			focus = YBL_GC4B2 focus = YBL_GC6A2
 		}
 #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
 #如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
@@ -1403,7 +1450,7 @@ focus = {
 		x = -2
 		y = 1
 
-		cost = 5 #完成国策所需要的时间=填写的数字×7
+		cost = 2 #完成国策所需要的时间=填写的数字×7
 
 		prerequisite = { 
 			focus = YBL_GC4B3
@@ -1432,7 +1479,7 @@ focus = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
 		completion_reward = { #国策效果
-		    custom_effect_tooltip = YBL_INQ_industrial_complex_2 #假提示，为INQ增加两个民用工厂
+		    custom_effect_tooltip = YBL_INQ_industrial_complex_2 #提示，为INQ增加两个民用工厂
 			remove_ideas = YBL_MZ4 #除去的民族精神
 		}
 	}
@@ -1518,7 +1565,7 @@ focus = {
 		x = 0
 		y = 2
 
-		cost = 5 #完成国策所需要的时间=填写的数字×7
+		cost = 2 #完成国策所需要的时间=填写的数字×7
 
 		prerequisite = { 
 			focus = YBL_GC4A4 focus = YBL_GC4B4
@@ -1588,6 +1635,443 @@ focus = {
 			remove_idea = YBL_MZ16 #除去的民族精神
 			add_idea = YBL_MZ17 #添加的民族精神			
 		    }
+		}
+	}
+
+	focus = {
+		id = YBL_GC5 #GC5阿戈尔人的建议
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC1 #以某一国策为中心确定国策在国策树的位置
+		x = 7
+		y = 1
+
+		cost = 1 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC1
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 5
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		   custom_effect_tooltip = YBL_AGE_AoMan #文本，“庄园主的傲慢”
+		}
+	}
+
+	focus = {
+		id = YBL_GC6 #GC6抛弃岛民
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC5 #以某一国策为中心确定国策在国策树的位置
+		x = -4
+		y = 1
+
+		cost = 1 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC5
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 0
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		   add_political_power = -150 #添加政治点数
+		}
+	}
+
+	focus = {
+		id = YBL_GC6A #GC6A1避其锋芒，厚积薄发
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC6 #以某一国策为中心确定国策在国策树的位置
+		x = -1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC6
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 0
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		   #启用决议，布雷奥甘的计划决议组
+		}
+	}
+
+	focus = {
+		id = YBL_GC6A1 #GC6A1将视线投向底层
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC6A #以某一国策为中心确定国策在国策树的位置
+		x = -1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC6A
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 0
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		   #启用决议暗中安排群众撤离
+		}
+	}
+
+	focus = {
+		id = YBL_GC6A2 #GC6A2首席设计师亲临生产
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC6A1 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC6A1
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 0
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		  country_event = { days = 1 random = 0 id = YBL_SJ7 } #触发事件，首席与工人仅职责之别
+		   322 = { #为某某地区添加建筑，every_state为所有地区
+			add_extra_state_shared_building_slots = 2 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 2 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		    }
+			310 = { #为某某地区添加建筑，every_state为所有地区
+			add_extra_state_shared_building_slots = 2 #添加建筑槽数量
+			add_building_construction = { #添加
+			type = industrial_complex #民用工厂
+			level = 2 #数量
+			instant_build = yes #立刻完成 no反之
+			}
+		    }
+		    add_victory_points = {
+				province = 3723
+				value = 30
+			}
+		    set_province_name = {
+			    id = 3723
+			    name = "比希利亚" #比希利亚，意为希望之城，所在省份320莱费雷亚，意为铁律
+		    }
+		}
+	}
+
+	focus = {
+		id = YBL_GC6A3 #GC6A3
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC6A2 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 2
+
+		cost = 5 #完成国策所需要的时间=填写的数字×7
+
+	prerequisite = { 
+			focus = YBL_GC4B3
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 0
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		   custom_effect_tooltip = YBL_IDA_add_research_slot_1 #提示，为IDA增加一个科研槽
+		}
+	}
+
+	focus = {
+		id = YBL_GC6A4 #GC6A1将视线投向底层
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC6A #以某一国策为中心确定国策在国策树的位置
+		x = 1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC6A
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 0
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		   country_event = { days = 1 random = 0 id = YBL_SJ11 } #触发事件，不得志者的共鸣
+		}
+	}
+
+
+	focus = {
+		id = YBL_GC6B #GC6斩草除根，除恶务尽
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC6 #以某一国策为中心确定国策在国策树的位置
+		x = 1
+		y = 1
+
+		cost = 5 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC6
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 0
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		   #布雷奥甘逝世
+		   add_offsite_building = { type = industrial_complex level = 3 } #添加三个地图外民用工厂
+		}
+	}
+
+	focus = {
+		id = YBL_GC6B #GC6B斩草除根，除恶务尽
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC6 #以某一国策为中心确定国策在国策树的位置
+		x = 1
+		y = 1
+
+		cost = 5 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC6
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 0
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		   #布雷奥甘逝世
+		   add_offsite_building = { type = industrial_complex level = 3 } #添加三个地图外民用工厂
+		}
+	}
+
+	focus = {
+		id = YBL_GC6B1 #GC6B1掌间生瘤，自断一臂
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC6B #以某一国策为中心确定国策在国策树的位置
+		x = 1
+		y = 1
+
+		cost = 5 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC6B
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 0
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		   add_timed_idea = { idea = MZ20 days = 120 } #添加持续120天的屠杀阿戈尔人
+		   add_offsite_building = { type = arms_factory  level = 3 } #添加三个地图外军工厂
+		   add_offsite_building = { type = industrial_complex level = 5 } #添加五个地图外民用工厂
+		}
+	}
+
+	focus = {
+		id = YBL_GC6B2 #GC6B2无可救药的傲慢
+		icon = GFX_goal_generic_intelligence_exchange #国策图标连接
+		relative_position_id = YBL_GC6B1 #以某一国策为中心确定国策在国策树的位置
+		x = 1
+		y = 1
+
+		cost = 5 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 
+			focus = YBL_GC6B1
+		}
+#前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”，
+#如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+        ai_will_do = { #ai点击该国策的倾向
+			factor = 0
+		}
+
+		available = { #国策可以点击时的条件
+		
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = yes #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+		custom_effect_tooltip = YBL_YuChunDe_YBLYer #提示，愚蠢的伊比利亚人
+		   remove_ideas = YBL_MZ6 #除去的民族精神
 		}
 	}
 
