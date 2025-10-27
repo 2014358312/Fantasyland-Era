@@ -4,25 +4,26 @@ state={
 	provinces={
 		1241 2594 2891 3106 6271 6296 
 	}
-	manpower=100000
+	manpower=100000 #地区人力
 	state_category = city
 	history={
 		owner = YBL
 		set_variable = { state_id = 319 }
-		buildings = {
-			infrastructure = 2
-			industrial_complex = 1
-			air_base = 1
+		buildings = { #地块所拥有的建筑数量
+			infrastructure = 1 #基建
+			industrial_complex = 1 #民用工厂
+			air_base = 3 #机场
 		}
-		add_core_of = YBL
+		add_core_of = YBL #该地区核心属于 = YBL 伊比利亚王国
 	}
-	resources = {
-		oil=0
-		aluminium=0
-		rubber=0
-		tungsten=0
-		steel=0
-		chromium=0
+
+	resources = { #地区资源
+		oil=20 #石油数×2
+		aluminium=16 #铝×2
+		rubber=7 #橡胶×2
+		tungsten=1 #钨×2
+		steel=35 #钢×2
+		chromium=0 #铬×2
 	}
 	local_supplies=1.0
 }
