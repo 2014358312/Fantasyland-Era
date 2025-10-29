@@ -1,14 +1,27 @@
 characters = {#伊比利亚人物
+
+    #corps_commander 陆军元帅
+	#field_marshal 陆军将领
+	#navy_leader 海军将领
+	#country_leader 领导人
+	#advisor 理论家、政治顾问、总司令等内阁成员
+	# slot = political_advisor 政治顾问
+	# slot = theorist 理论家
+
 	YBL_Fernando_lberia = { #费尔南多·伊比利亚
-		name = Fernando_lberia
+		name = Fernando_lberia #费尔南多·伊比利亚
 		portraits = {
 			civilian = {#头像位置
-				large = "gfx/leaders/YBL/YBL_Carmen.dds"
+				large = "gfx/leaders/YBL/YBL_Fernando_lberia.dds"
 			}
 		}
-		country_leader = {#身为国家领导人时的信息
+
+		country_leader = {#定义党派领导人
 			ideology =  YBL_three #属于什么子意识形态
-			traits = {  }
+			traits = { 
+			    Arrogance
+				Indulgence
+			}
 			expire = "1965.1.1.1"
 			id = -1
 		}
@@ -21,28 +34,78 @@ characters = {#伊比利亚人物
 				large = "gfx/leaders/YBL/YBL_Carmen.dds"
 			}
 		}
-		country_leader = {
-			ideology = YBL_three
-			traits = {  }
-			expire = "1965.1.1.1" #退休or死亡时间
-			id = -1
+
+	    	country_leader = {#定义党派领导人
+	    		ideology =  YBL_three #属于什么子意识形态
+	    		traits = {  }
+	    		expire = "1965.1.1.1"
+	    		id = -1
+	    	}
+		advisor = { #理论家、政治顾问、总司令等内阁
+		    slot = political_advisor #明确属于内阁的什么分支=政治顾问
+		    idea_token = Carmen #ID 识别招募的具体是谁
+		    allowed = {#检测国家初始tag
+			    original_tag = YBL
+			}
+			visible = {#判断角色是否可用，是否在内阁可见
+			    NOT = { country_exists = INQ }
+			}
+			traits = { Missionaries } #特质
 		}
 	}
 
 	YBL_Lrene = { #艾丽妮
-		name = Lrene
+		name = Lrene #艾丽妮
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/YBL/YBL_Lrene.dds"
+				small = "gfx\interface\ideas\advisors\YBL\idea_advisor_YBL_Lrene.png"
 			}
 		}
-		country_leader = {
-			ideology = YBL_two
-			traits = {  }
+		country_leader = { #定义党派领导人
+			ideology = YBL_two #子意识形态
+			traits = {  } #特质
 			expire = "1965.1.1.1"
 			id = -1
 		}
+
+		field_marshal = { #陆军将领
+		    idea_token = Carmen #ID 识别招募的具体是谁
+		    allowed = {#检测国家初始tag
+			    original_tag = YBL
+			}
+			visible =  {#判断角色是否可见
+			    NOT = { country_exists = INQ } #判断角色是否可用
+				#has_completed_focus = YBL_GC7B #需要已完成国策
+			}
+			skill = 8 #将领等级
+			attack_skill = 6 #攻击
+			defense_skill = 4 #防御
+			planning_skill = 3 #计划
+			logistics_skill = 4 #后勤
+			traits = { 
+				offensive_doctrine #进攻大师
+				organisational_leader #组织大师
+			 } #特质
+		}
+
+		advisor = { #理论家、政治顾问、总司令等内阁
+		    slot = political_advisor #明确属于内阁的什么分支=政治顾问
+		    idea_token = Carmen #ID 识别招募的具体是谁
+		    allowed = {#检测国家初始tag
+			    original_tag = YBL
+			}
+			visible = {#判断角色是否可见
+			    NOT = { country_exists = INQ }
+			}
+			available = { #判断角色是否启用
+				has_completed_focus = YBL_GC7B #需要已完成国策
+			}
+			traits = { Missionaries1 } #角色拥有的特质
+		}
+
 	}
+
 	YBL_Ahnaya = {
 		name = Ahnaya
 		portraits = {
@@ -56,6 +119,31 @@ characters = {#伊比利亚人物
 			expire = "1965.1.1.1"
 			id = -1
 		}
+	}
+
+	YBL_Afonso = { #阿方索
+		name = Ahnaya
+		portraits = {
+			civilian = {
+				small = "gfx/advisor/YBL/idea_advisor_YBL_Afonso.dds"
+			}
+		}
+		navy_leader = { #海军将领
+		    idea_token = Ahnaya #ID 识别招募的具体是谁
+		    allowed = {#检测国家初始tag
+			    original_tag = YBL
+			}
+			visible =  {#判断角色是否在内阁可见
+			    NOT = { country_exists = INQ } #判断角色是否可用
+			}
+			skill = 5 #将领等级
+			attack_skill = 4 #攻击
+			defense_skill = 4 #防御
+			maneuvering_skill = 5 #护航
+			coordinatetion_skill = 6 #协同
+			traits = { } #特质
+		}
+		
 	}
 	
 }

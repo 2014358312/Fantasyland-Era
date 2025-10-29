@@ -1,0 +1,56 @@
+
+###Todo remove commented advisor experience gains
+leader_traits  = {#本界面为伊比利亚的人物特质
+
+
+    Arrogance = { #特征id，傲慢的国王
+		random = no #是否会随机出现在其他领导人身上
+		political_power_cost = 0.3 #政治点消耗
+		org_loss_when_moving = 0.1 #陆军移动组织度损失
+		mobilization_speed = -0.3 #动员速度
+		required_garrison_factor = 0.1 #驻军需求
+		ai_will_do = { #ai雇佣该领导人的意愿
+			factor = 1
+		}
+	}
+
+	Indulgence = { #特征id，放任社会自由发展
+		random = no #是否会随机出现在其他领导人身上
+		monthly_population = 0.1 #月度人力
+		industrial_capacity_factory = 0.05 #工厂产出
+	    industrial_capacity_dockyard = 0.05 #船坞产出
+		production_speed_buildings_factor = 0.15 #建造速度
+		ai_will_do = { #ai雇佣该领导人的意愿
+			factor = 1
+		}
+	}
+
+	Missionaries = { #特征id，国教会传教士
+		random = no #是否会随机出现在其他领导人身上
+		stability_factor = 0.2
+		neutrality_drift = 0.02
+		political_power_gain = 0.3
+		drift_defence_factor = 0.2
+
+		ai_will_do = { #ai雇佣该领导人的意愿
+			factor = 5
+		}
+	}
+
+	Missionaries1 = { #特征id，知晓一切的大审判官
+		random = no #是否会随机出现在其他领导人身上
+		political_power_cost = 0.5
+		defensive_war_stability_factor = 0.2
+		command_power_gain = 5 #每日指挥点数
+		max_command_power = 80 #指挥点上线
+	    recon_factor = 0.5 #陆军侦察
+	    army_attack_factor = 0.2 #陆军攻击
+	    army_defence_factor = 0.2 #陆军防御
+
+		ai_will_do = { #ai雇佣该领导人的意愿
+			factor = 1
+		}
+	}
+
+}
+
