@@ -1,0 +1,45 @@
+YBL_JYZ_1 = { #深海教会问题
+
+	YBL_JYZ_1_Suppress_the_Church = { #组织深海邪教搜捕行动
+	    #icon = 决议前的图标
+		fire_only_once = no #是否只能点一次
+		days_remove = 14 #持续多少天
+		days_re_enable = 7 #决议完成后冷却多少天可用
+		cost = 15 #决议消耗的政治点数
+		#war_with_on_remove = tag #当你启用这个决议时，向tag发出正当化预警
+		#war_with_on_complete = tag #当你这个决议满足启用条件时，向tag发出正当化预警
+		priority = 10 #决议在决议组的上下排序优先级
+	    allowed = { #判定是否可用
+	        original_tag = YBL #检测国家为YBL
+			has_completed_focus = YBL_GC3 #完成了国策
+			NOT = { has_completed_focus = GC3C8 } #要求没有完成国策
+		}
+		visible = { #判定是否可见
+		    original_tag = YBL #检测国家为YBL
+			has_completed_focus = YBL_GC3 #完成了国策
+			NOT = { has_completed_focus = GC3C8 } #要求没有完成国策
+		}
+
+		#available = {#可见但不可以点
+		#    
+	    #}
+
+		remove_effect = { #倒计时结束后获得什么效果
+
+		}
+
+		complete_effect = { #启用时给你什么效果
+
+		}
+
+		modifier = {#决议持续期间有什么效果
+
+		}
+		cancel_trigger = { } #什么情况下取消
+		cancel_effect = { } #取消后有什么效果
+		ai_will_do = { #AI使用此决议的优先度，不设置则不点
+
+		}
+
+	}
+}

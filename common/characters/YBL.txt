@@ -27,6 +27,42 @@ characters = {#伊比利亚人物
 		}
 	}
 
+	YBL_Breogan = { #布雷奥甘
+		name = Breogan #布雷奥甘
+		portraits = {
+			civilian = {#头像位置
+				large = "gfx/leaders/YBL/YBL_Breogan.dds"
+			}
+		}
+
+		country_leader = {#定义党派领导人
+			ideology = YBL_one #子意识形态
+			traits = {  } #特质
+			expire = "1965.1.1.1"
+			id = -1
+		}
+
+		advisor = { #内阁
+			slot = head_of_government_character #内阁栏
+			idea_token = YBL_Breogan_head_of_government_character #布雷奥甘
+			available = { 
+				no_head_of_gov_trigger = yes
+				#original_tag = YBL #所在国家系伊比利亚
+			}
+			traits = { Architectural_designer Chief_Ship_Designer }
+			
+			cost = 0 
+			ai_will_do = { #ai意愿
+				base = 1
+			}
+			on_add = { #不知道什么作用，不过是国家副手必须项
+				hidden_effect = {
+					set_variable = {FE_secondary = token:YBL_Breogan_head_of_government}
+				}
+			}
+		}
+	}
+
 	YBL_Carmen = { #卡门·伊比利亚
 		name = Carmen
 		portraits = {
@@ -44,7 +80,7 @@ characters = {#伊比利亚人物
 		advisor = { #理论家、政治顾问、总司令等内阁
 		    slot = political_advisor #明确属于内阁的什么分支=政治顾问
 		    idea_token = Carmen #ID 识别招募的具体是谁
-		    allowed = {#检测国家初始tag
+		    allowed = {#检测是否可用，国家初始tag
 			    original_tag = YBL
 			}
 			visible = {#判断角色是否可用，是否在内阁可见
@@ -70,7 +106,7 @@ characters = {#伊比利亚人物
 		}
 
 		field_marshal = { #陆军将领
-		    idea_token = Carmen #ID 识别招募的具体是谁
+		    idea_token = Carmen_1 #ID 识别招募的具体是谁
 		    allowed = {#检测国家初始tag
 			    original_tag = YBL
 			}
@@ -91,7 +127,8 @@ characters = {#伊比利亚人物
 
 		advisor = { #理论家、政治顾问、总司令等内阁
 		    slot = political_advisor #明确属于内阁的什么分支=政治顾问
-		    idea_token = Carmen #ID 识别招募的具体是谁
+		    idea_token = Carmen_2 #ID 识别招募的具体是谁
+			cost = 300
 		    allowed = {#检测国家初始tag
 			    original_tag = YBL
 			}
@@ -122,14 +159,15 @@ characters = {#伊比利亚人物
 	}
 
 	YBL_Afonso = { #阿方索
-		name = Ahnaya
+		name = Afonso
 		portraits = {
 			civilian = {
+				large = "gfx/leaders/YBL/YBL_Afonso.dds"
 				small = "gfx/advisor/YBL/idea_advisor_YBL_Afonso.dds"
 			}
 		}
 		navy_leader = { #海军将领
-		    idea_token = Ahnaya #ID 识别招募的具体是谁
+		    idea_token = Afonso #ID 识别招募的具体是谁
 		    allowed = {#检测国家初始tag
 			    original_tag = YBL
 			}

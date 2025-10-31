@@ -1,0 +1,24 @@
+###################
+#####   YBL  #####
+###################
+#决议组文件
+YBL_JYZ_1 = { #决议组ID，处理深海教会
+	allowed = { #判定是否可用
+	    original_tag = YBL #检测国家为YBL
+	    has_completed_focus = YBL_GC3 #完成了国策
+		NOT = { has_completed_focus = GC3C8 } #要求没有完成国策
+	}
+	visible = { #判定是否可见
+		original_tag = YBL #检测国家为YBL
+	    has_completed_focus = YBL_GC3 #完成了国策
+		NOT = { has_completed_focus = GC3C8 } #要求没有完成国策
+	}
+	priority = 10 #决议组的优先度
+	#picture = 决议组的图标索引
+	visible_when_empty = no #决议组里没有决议是否显示，默认为no
+	#scripted_gui = GUI索引 #决议组里的GUI，参考苏联大清洗面板
+
+	#highlight_states = { highlight_states_trigger={}}
+	#on_map_area = {state = 地区ID zoom = 俯看地图的高度}
+	#以上两个为省份高亮代码
+}
