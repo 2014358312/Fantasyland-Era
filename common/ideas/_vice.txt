@@ -991,5 +991,28 @@ ideas = {
 				}
 			}
 		}
+
+		YBL_Breogan_head_of_government = {
+			name = Breogan
+			picture = advisor_YBL_Breogan
+			allowed = {
+				original_tag = YBL
+			}
+			visible = {
+				original_tag = YBL
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { Architectural_designer Chief_Ship_Designer }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:YBL_Breogan_head_of_government }
+					set_variable = { YL_status_var = 19 } #国家副手的职位名称
+				}
+			}
+		}
 	}
 }
