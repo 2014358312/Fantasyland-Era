@@ -1,7 +1,7 @@
 characters = {#伊比利亚人物
 
-    #corps_commander 陆军元帅
-	#field_marshal 陆军将领
+    #corps_commander 陆军将领
+	#field_marshal 陆军元帅
 	#navy_leader 海军将领
 	#country_leader 领导人
 	#advisor 理论家、政治顾问、总司令等内阁成员
@@ -99,13 +99,13 @@ characters = {#伊比利亚人物
 			}
 		}
 		country_leader = { #定义党派领导人
-			ideology = YBL_two #子意识形态
+			ideology = YBL_one #子意识形态
 			traits = {  } #特质
 			expire = "1965.1.1.1"
 			id = -1
 		}
 
-		field_marshal = { #陆军将领
+		field_marshal = { #陆军元帅
 		    idea_token = Lrene1 #ID 识别招募的具体是谁
 		    allowed = {#检测国家初始tag
 			    original_tag = YBL
@@ -120,8 +120,9 @@ characters = {#伊比利亚人物
 			planning_skill = 3 #计划
 			logistics_skill = 4 #后勤
 			traits = { 
-				offensive_doctrine #进攻大师
-				organisational_leader #组织大师
+				commando #特战专家
+				skilled_staffer #熟练参谋
+				war_hero #战争英雄
 			 } #特质
 		}
 
@@ -182,6 +183,163 @@ characters = {#伊比利亚人物
 			traits = { } #特质
 		}
 		
+	}
+
+	YBL_Toygawa_sakiko_Master_of_Melodia = { #丰川祥子 旋律的主人 aveMujica联动版本
+		name = Toygawa_sakiko_Master_of_Melodia #旋律的主人
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/YBL/YBL_Toygawa_sakiko_Master_of_Melodia.dds"
+				small = "gfx\interface\ideas\advisors\YBL\idea_advisor_YBL_Toygawa_sakiko_Master_of_Melodia.png"
+			}
+		}
+		country_leader = { #定义党派领导人
+			ideology = YBL_two #子意识形态
+			traits = {  } #特质
+			expire = "1965.1.1.1"
+			id = -1
+		}
+
+		field_marshal = { #陆军元帅
+		    idea_token = Toygawa_sakiko_Master_of_Melodia #ID 识别招募的具体是谁
+		    allowed = {#检测国家初始tag
+			    original_tag = YBL
+			}
+			visible =  {#判断角色是否可见
+			    NOT = { country_exists = INQ } #判断角色是否可用
+				#has_completed_focus = YBL_GC7B #需要已完成国策
+			}
+			skill = 3 #将领等级
+			attack_skill = 6 #攻击
+			defense_skill = 2 #防御
+			planning_skill = 3 #计划
+			logistics_skill = 3 #后勤
+			traits = { 
+				offensive_doctrine #进攻大师
+				inspirational_leader #魅力非凡
+				politically_connected #政治关联
+			 } #特质
+		}
+	}
+
+	YBL_Misumi_Sumika_Caged_Singer = { #三角初华 笼中歌者 aveMujica联动版本
+		name = Misumi_Sumika_Caged_Singer #笼中歌者
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/YBL/YBL_Misumi_Sumika_Caged_Singer.dds"
+				small = "gfx\interface\ideas\advisors\YBL\idea_advisor_YBL_Misumi_Sumika_Caged_Singer.png"
+			}
+		}
+
+		corps_commander = { #陆军将领
+		    idea_token = Misumi_Sumika_Caged_Singer #ID 识别招募的具体是谁
+		    allowed = {#检测国家初始tag
+			    original_tag = YBL
+			}
+			visible =  {#判断角色是否可见
+			    NOT = { country_exists = INQ } #判断角色是否可用
+				#has_completed_focus = YBL_GC7B #需要已完成国策
+			}
+			skill = 2 #将领等级
+			attack_skill = 2 #攻击
+			defense_skill = 2 #防御
+			planning_skill = 2 #计划
+			logistics_skill = 3 #后勤
+			traits = { 
+				media_personality #媒体人物
+				camouflage_expert #伪装专家
+			 } #特质
+		}
+	}
+
+	YBL_Wakaba_Mutsumi_Marionettes_ld = { #若叶睦 提线的本我 aveMujica联动版本
+		name = Wakaba_Mutsumi_Marionettes_ld #提线的本我
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/YBL/YBL_Wakaba_Mutsumi_Marionettes_ld.dds"
+				small = "gfx\interface\ideas\advisors\YBL\idea_advisor_YBL_Wakaba_Mutsumi_Marionettes_ld.png"
+			}
+		}
+
+		corps_commander = { #陆军将领
+		    idea_token = Wakaba_Mutsumi_Marionettes_ld #ID 识别招募的具体是谁
+		    allowed = {#检测国家初始tag
+			    original_tag = YBL
+			}
+			visible =  {#判断角色是否可见
+			    NOT = { country_exists = INQ } #判断角色是否可用
+				#has_completed_focus = YBL_GC7B #需要已完成国策
+			}
+			skill = 4 #将领等级
+			attack_skill = 4 #攻击
+			defense_skill = 1 #防御
+			planning_skill = 2 #计划
+			logistics_skill = 3 #后勤
+			traits = { 
+				harsh_leader #严厉将领
+				scavenger #拾荒者
+			 } #特质
+		}
+	}
+
+	YBL_Yahata_Umiri_Moonlight_Executioner = { #八幡海铃 月下执行者 aveMujica联动版本
+		name = Yahata_Umiri_Moonlight_Executioner #月下执行者
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/YBL/YBL_Yahata_Umiri_Moonlight_Executioner.dds"
+				small = "gfx\interface\ideas\advisors\YBL\idea_advisor_YBL_Yahata_Umiri_Moonlight_Executioner.png"
+			}
+		}
+
+		corps_commander = { #陆军将领
+		    idea_token = Yahata_Umiri_Moonlight_Executioner #ID 识别招募的具体是谁
+		    allowed = {#检测国家初始tag
+			    original_tag = YBL
+			}
+			visible =  {#判断角色是否可见
+			    NOT = { country_exists = INQ } #判断角色是否可用
+				#has_completed_focus = YBL_GC7B #需要已完成国策
+			}
+			skill = 4 #将领等级
+			attack_skill = 4 #攻击
+			defense_skill = 2 #防御
+			planning_skill = 5 #计划
+			logistics_skill = 2 #后勤
+			traits = { 
+				adaptable #强于适应
+				career_officer #职业军官
+			 } #特质
+		}
+	}
+
+	YBL_Yotenji_Wakagusa_Magician_of_passion = { #祐天寺若麦 情热魔术师 aveMujica联动版本
+		name = Yotenji_Wakagusa_Magician_of_passion #情热魔术师
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/YBL/YBL_Yotenji_Wakagusa_Magician_of_passion.dds"
+				small = "gfx\interface\ideas\advisors\YBL\idea_advisor_YBL_Yotenji_Wakagusa_Magician_of_passion.png"
+			}
+		}
+
+		corps_commander = { #陆军将领
+		    idea_token = Yotenji_Wakagusa_Magician_of_passion #ID 识别招募的具体是谁
+		    allowed = {#检测国家初始tag
+			    original_tag = YBL
+			}
+			visible =  {#判断角色是否可见
+			    NOT = { country_exists = INQ } #判断角色是否可用
+				#has_completed_focus = YBL_GC7B #需要已完成国策
+			}
+			skill = 4 #将领等级
+			attack_skill = 3 #攻击
+			defense_skill = 4 #防御
+			planning_skill = 2 #计划
+			logistics_skill = 2 #后勤
+			traits = { 
+				trickster #奇袭专家
+				media_personality #媒体人物
+			 } #特质
+		}
 	}
 	
 }
