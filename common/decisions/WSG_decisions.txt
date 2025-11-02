@@ -41,10 +41,8 @@ WSG_balance_of_power_decision_category = {
                 }
             }
             add_offsite_building = { type = industrial_complex level = 5 }
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_reduce_100_tt
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
-			}
         }
         ai_will_do = {
             factor = 50
@@ -145,10 +143,8 @@ WSG_balance_of_power_decision_category = {
                 }
             }
             add_offsite_building = { type = dockyard level = 5 }
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_reduce_100_tt
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
-			}
         }
         ai_will_do = {
             factor = 50
@@ -451,8 +447,6 @@ WSG_balance_of_power_decision_category = {
 
 }
 
-
-
 WSG_secretary_ship_decision_category = {
 	WSG_secretary_ship_Lexington = {
 		icon = WSG_Lexington
@@ -694,4 +688,843 @@ WSG_secretary_ship_decision_category = {
 		}
 	}
 
+}
+
+WSG_secretary_ship_agenda_category = {
+	WSG_revitalize_the_port_area = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_50_tt
+                check_variable = { WSG_panci > 49 }
+			}
+        }    
+        visible = {
+           	WSG_Lexington = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+			production_speed_buildings_factor = 0.05
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                add_to_variable = { WSG_panci = -50 }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_aircraft_carrier_tactics = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_75_tt
+                check_variable = { WSG_panci > 74 }
+			}
+        }    
+        visible = {
+           	WSG_Lexington = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                add_to_variable = { WSG_panci = -75 }
+	        add_doctrine_cost_reduction = {
+		        name = WSG_aircraft_carrier_tactics
+		        cost_reduction = 0.5
+		        uses = 1
+		        category = cat_base_strike
+	        }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_economic_development = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+        }    
+        visible = {
+           	WSG_Lexington = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+			random_state = {
+				limit = {
+			        is_controlled_by = WSG
+			        is_core_of = WSG
+		        }
+			add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }	
+			}
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_focus_on_administration = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_50_tt
+                check_variable = { WSG_panci > 49 }
+			}
+        }    
+        visible = {
+           	WSG_Vittorio_Veneto = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                add_to_variable = { WSG_panci = -50 }
+			add_political_power = 50
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_promote_politics = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_75_tt
+                check_variable = { WSG_panci > 74 }
+			}
+        }    
+        visible = {
+           	WSG_Vittorio_Veneto = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+			political_power_factor = 0.1
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                add_to_variable = { WSG_panci = -75 }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_focus_on_military_and_political_affairs = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+        }    
+        visible = {
+           	WSG_Vittorio_Veneto = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+	        army_experience = 30
+	        navy_experience = 30
+	        air_experience = 30
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_promote_scientific_research = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_50_tt
+                check_variable = { WSG_panci > 49 }
+			}
+        }    
+        visible = {
+           	WSG_Yubari = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+			research_speed_factor = 0.1
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                add_to_variable = { WSG_panci = -50 }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_developing_production = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_75_tt
+                check_variable = { WSG_panci > 74 }
+			}
+        }    
+        visible = {
+           	WSG_Yubari = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+			production_factory_efficiency_gain_factor = 0.1
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                add_to_variable = { WSG_panci = -75 }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_technological_development = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+        }    
+        visible = {
+           	WSG_Yubari = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+			add_research_slot = 1
+        }
+        remove_effect = {
+			add_research_slot = -1
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_naval_development = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_50_tt
+                check_variable = { WSG_panci > 49 }
+			}
+        }    
+        visible = {
+           	WSG_Hood = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                add_to_variable = { WSG_panci = -50 }
+			navy_experience = 30
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_decisive_naval_tactics = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_75_tt
+                check_variable = { WSG_panci > 74 }
+			}
+        }    
+        visible = {
+           	WSG_Hood = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                add_to_variable = { WSG_panci = -75 }
+	        add_doctrine_cost_reduction = {
+		        name = WSG_decisive_naval_tactics
+		        cost_reduction = 0.5
+		        uses = 1
+		        category = cat_fleet_in_being
+	        }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_naval_constructions = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+        }    
+        visible = {
+           	WSG_Hood = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+			industrial_capacity_dockyard = 0.2
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_organize_production = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_50_tt
+                check_variable = { WSG_panci > 49 }
+			}
+        }    
+        visible = {
+           	WSG_YiXian = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+			industrial_capacity_factory = 0.1
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                add_to_variable = { WSG_panci = -50 }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_ensure_military_supplies = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_75_tt
+                check_variable = { WSG_panci > 74 }
+			}
+        }    
+        visible = {
+           	WSG_YiXian = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+			supply_node_range = 0.1
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                add_to_variable = { WSG_panci = -75 }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_military_industry_development = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+        }    
+        visible = {
+           	WSG_YiXian = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+			random_state = {
+				limit = {
+			        is_controlled_by = WSG
+			        is_core_of = WSG
+		        }
+			add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }	
+			}
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_organizational_defense = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_50_tt
+                check_variable = { WSG_panci > 49 }
+			}
+        }    
+        visible = {
+           	WSG_Jean_Bart = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+			army_defence_factor = 0.05
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                add_to_variable = { WSG_panci = -50 }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_army_decisive_battle_tactics = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_75_tt
+                check_variable = { WSG_panci > 74 }
+			}
+        }    
+        visible = {
+           	WSG_Jean_Bart = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                add_to_variable = { WSG_panci = -75 }
+	        add_doctrine_cost_reduction = {
+		        name = WSG_army_decisive_battle_tactics
+		        cost_reduction = 0.5
+		        uses = 1
+		        category = cat_grand_battle_plan
+	        }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_field_fortifications = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+        }    
+        visible = {
+           	WSG_Jean_Bart = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+			max_dig_in = 10
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_organize_an_attack = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_50_tt
+                check_variable = { WSG_panci > 49 }
+			}
+        }    
+        visible = {
+           	WSG_Bubnov = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+			army_attack_factor = 0.05
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                add_to_variable = { WSG_panci = -50 }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_advantageous_firepower_tactics = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_75_tt
+                check_variable = { WSG_panci > 74 }
+			}
+        }    
+        visible = {
+           	WSG_Bubnov = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                add_to_variable = { WSG_panci = -75 }
+	        add_doctrine_cost_reduction = {
+		        name = WSG_advantageous_firepower_tactics
+		        cost_reduction = 0.5
+		        uses = 1
+		        category = cat_superior_firepower
+	        }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_plan_offensive = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+        }    
+        visible = {
+           	WSG_Bubnov = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+			max_planning = 0.1
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_organize_offensive = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_50_tt
+                check_variable = { WSG_panci > 49 }
+			}
+        }    
+        visible = {
+           	WSG_Clausewitz = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 7
+        modifier = {
+			planning_speed = 0.7
+        }
+        complete_effect = {
+			custom_effect_tooltip = WSG_panci_reduce_50_tt
+                add_to_variable = { WSG_panci = -50 }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_urgent_construction = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_75_tt
+                check_variable = { WSG_panci > 74 }
+			}
+        }    
+        visible = {
+           	WSG_Clausewitz = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 14
+        modifier = {
+			dig_in_speed_factor = 0.7
+        }
+        complete_effect = {
+			custom_effect_tooltip = WSG_panci_reduce_75_tt
+                add_to_variable = { WSG_panci = -75 }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_night_raid = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+        }    
+        visible = {
+           	WSG_Clausewitz = {
+				is_country_leader = yes
+			}
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+			land_night_attack = 0.15
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
 }
