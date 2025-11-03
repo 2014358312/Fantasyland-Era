@@ -18,17 +18,17 @@ focus_tree = {
 	}
 	default = no
 	
-	continuous_focus_position = { x = 100 y = 1600 }
+	continuous_focus_position = { x = 100 y = 1000 }
 	
 	inlay_window = {
 		id = wsg_inner_circle_inlay_window
-		position = { x = 1200 y = 200 }
+		position = { x = 200 y = 1600 }
 	}
 
 	focus = { 
 		id = WSG_stagnation_in_a_leading_nation
 		icon = GFX_focus_generic_improve_the_administration
-		x = 25
+		x = 29
 		y = 0
 		cost = 2
 		available = {
@@ -900,7 +900,7 @@ focus_tree = {
 		id = WSG_port_area_planning
 		icon = GFX_focus_generic_modernize_industry
 		relative_position_id = WSG_offspring_of_the_ancients
-		x = 8
+		x = 0
 		y = 1
 		cost = 2
 		available = {
@@ -1323,9 +1323,8 @@ focus_tree = {
 	focus = { 
 		id = WSG_restart_the_archive
 		icon = GFX_SOV_national_academies_of_sciences_ccp_2d_sov_compatibility
-		relative_position_id = WSG_stagnation_in_a_leading_nation
-		x = 8
-		y = 0
+		x = 46
+		y = 1
 		cost = 2
 		available = {
 			original_tag = WSG 
@@ -1496,7 +1495,7 @@ focus_tree = {
 		id = WSG_resource_synthesis_I
 		icon = GFX_focus_generic_steel
 		relative_position_id = WSG_technical_potential_I
-		x = 2
+		x = -2
 		y = 1
 		cost = 5
 		available = {
@@ -1566,7 +1565,7 @@ focus_tree = {
 		id = WSG_resource_synthesis_II
 		icon = GFX_focus_generic_steel
 		relative_position_id = WSG_technical_potential_II
-		x = 2
+		x = -2
 		y = 1
 		cost = 5
 		available = {
@@ -1636,7 +1635,7 @@ focus_tree = {
 		id = WSG_resource_synthesis_III
 		icon = GFX_focus_generic_steel
 		relative_position_id = WSG_technical_potential_III
-		x = 2
+		x = -2
 		y = 1
 		cost = 5
 		available = {
@@ -1706,7 +1705,7 @@ focus_tree = {
 		id = WSG_resource_synthesis_IV
 		icon = GFX_focus_generic_steel
 		relative_position_id = WSG_technical_potential_IV
-		x = 2
+		x = -2
 		y = 1
 		cost = 5
 		available = {
@@ -1778,7 +1777,7 @@ focus_tree = {
 		id = WSG_admiral_and_port_area
 		icon = GFX_focus_usa_guarantee_the_american_dream
 		relative_position_id = WSG_offspring_of_the_ancients
-		x = -8
+		x = -10
 		y = 1
 		cost = 2
 		available = {
@@ -3158,21 +3157,17 @@ focus_tree = {
 	focus = { 
 		id = WSG_warship_girl_r_attack
 		icon = GFX_goal_generic_territory_or_war
-		relative_position_id = WSG_offspring_of_the_ancients
-		x = 0
-		y = 1
+		x = 39
+		y = 2
 		cost = 5
 		available = {
-			original_tag = WSG 
+			always = no
 		}
 		completion_reward = {
-
+			custom_effect_tooltip = WSG_unfinished
 		}
 		ai_will_do = {
 			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_offspring_of_the_ancients
 		}
 	}
 
@@ -3350,7 +3345,7 @@ focus_tree = {
 		id = WSG_wartime_port_area
 		icon = GFX_focus_generic_reorient_production
 		relative_position_id = WSG_offspring_of_the_ancients
-		x = 15
+		x = 9
 		y = 1
 		cost = 2
 		available = {
@@ -4612,5 +4607,1898 @@ focus_tree = {
 			focus = WSG_honor_navy
 		}
 	}
+########################觉醒——复兴分割线##################
+	focus = { 
+		id = WSG_port_area_and_tomorrow
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 57
+		y = 0
+		cost = 5
+		available = {
+			original_tag = WSG 
+			has_completed_focus = WSG_revival_of_holy_right
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
+	focus = { 
+		id = WSG_from_the_deep_sea
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_port_area_and_tomorrow
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_port_area_and_tomorrow
+		}
+	}
+
+	focus = { 
+		id = WSG_port_area_academy_of_sciences
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_technical_potential_V
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			has_completed_focus = WSG_port_area_and_tomorrow
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_500_tt
+                check_variable = { WSG_panci > 499 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                add_to_variable = { WSG_panci = -500 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_technical_potential_V
+		}
+	}
+
+	focus = { 
+		id = WSG_industrial_integration
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_port_area_academy_of_sciences
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_port_area_academy_of_sciences
+		}
+	}
+
+	focus = { 
+		id = WSG_rocket_engine_project
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_port_area_academy_of_sciences
+		x = -2
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_port_area_academy_of_sciences
+		}
+	}
+
+	focus = { 
+		id = WSG_jet_engine_project
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_port_area_academy_of_sciences
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_port_area_academy_of_sciences
+		}
+	}
+
+	focus = { 
+		id = WSG_atomic_engineering
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_industrial_integration
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_rocket_engine_project
+		}
+        prerequisite = { 
+			focus = WSG_jet_engine_project
+		}
+	}
+
+	focus = { 
+		id = WSG_dark_day
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_from_the_deep_sea
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = WSG_completed_by_the_event
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_victory_day
+		}
+        prerequisite = { 
+			focus = WSG_from_the_deep_sea
+		}
+	}
+
+	focus = { 
+		id = WSG_rancor_and_blood
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_dark_day
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_dark_day
+		}
+	}
+
+	focus = { 
+		id = WSG_hate_propaganda
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_rancor_and_blood
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_rancor_and_blood
+		}
+	}
+
+	focus = { 
+		id = WSG_sudden_change_in_the_situation
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_rancor_and_blood
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_rancor_and_blood
+		}
+	}
+
+	focus = { 
+		id = WSG_the_rise_of_militarism
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_rancor_and_blood
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_hate_propaganda
+		}
+        prerequisite = { 
+			focus = WSG_sudden_change_in_the_situation
+		}
+	}
+
+	focus = { 
+		id = WSG_revenge_fever
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_hate_propaganda
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_hate_propaganda
+		}
+	}
+
+	focus = { 
+		id = WSG_exclusionary_frenzy
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_sudden_change_in_the_situation
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_sudden_change_in_the_situation
+		}
+	}
+
+	focus = { 
+		id = WSG_letter_to_the_admiral
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_the_rise_of_militarism
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_the_rise_of_militarism
+		}
+        prerequisite = { 
+			focus = WSG_revenge_fever
+		}
+	}
+
+	focus = { 
+		id = WSG_convincing_the_secretary_ship
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_the_rise_of_militarism
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_the_rise_of_militarism
+		}
+        prerequisite = { 
+			focus = WSG_exclusionary_frenzy
+		}
+	}
+
+	focus = { 
+		id = WSG_right_full_rudder
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_the_rise_of_militarism
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_letter_to_the_admiral
+		}
+        prerequisite = { 
+			focus = WSG_convincing_the_secretary_ship
+		}
+	}
+
+	focus = { 
+		id = WSG_expedited_production
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_right_full_rudder
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_right_full_rudder
+		}
+	}
+
+	focus = { 
+		id = WSG_war_zone
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_expedited_production
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_expedited_production
+		}
+	}
+
+	focus = { 
+		id = WSG_military_fanaticism
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_right_full_rudder
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_right_full_rudder
+		}
+	}
+
+	focus = { 
+		id = WSG_bloodshed_march
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_military_fanaticism
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_military_fanaticism
+		}
+	}
+
+	focus = { 
+		id = WSG_go_to_war
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_right_full_rudder
+		x = 0
+		y = 3
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			custom_effect_tooltip = WSG_unfinished
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_war_zone
+		}
+        prerequisite = { 
+			focus = WSG_bloodshed_march
+		}
+	}
+
+	focus = { 
+		id = WSG_head_south
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_go_to_war
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_go_to_war
+		}
+	}
+
+	focus = { 
+		id = WSG_westward_expansion
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_go_to_war
+		x = -2
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_go_to_war
+		}
+	}
+
+	focus = { 
+		id = WSG_east_exit
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_go_to_war
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_go_to_war
+		}
+	}
+
+	focus = { 
+		id = WSG_victory_day
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_from_the_deep_sea
+		x = -6
+		y = 1
+		cost = 5
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = WSG_completed_by_the_event
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_dark_day
+		}
+        prerequisite = { 
+			focus = WSG_from_the_deep_sea
+		}
+	}
+
+	focus = { 
+		id = WSG_dawn_of_the_port_area
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_victory_day
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_victory_day
+		}
+	}
+
+	focus = { 
+		id = WSG_the_most_beautiful_harbor_area
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_dawn_of_the_port_area
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_dawn_of_the_port_area
+		}
+	}
+
+	focus = { 
+		id = WSG_the_most_beautiful_ship_girl
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_the_most_beautiful_harbor_area
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_the_most_beautiful_harbor_area
+		}
+	}
+
+	focus = { 
+		id = WSG_praise_the_present_moment
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_dawn_of_the_port_area
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_dawn_of_the_port_area
+		}
+	}
+
+	focus = { 
+		id = WSG_praise_the_future
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_praise_the_present_moment
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_praise_the_present_moment
+		}
+	}
+
+	focus = { 
+		id = WSG_our_admiral
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_dawn_of_the_port_area
+		x = 0
+		y = 3
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_the_most_beautiful_ship_girl
+		}
+        prerequisite = { 
+			focus = WSG_praise_the_future
+		}
+	}
+
+	focus = { 
+		id = WSG_standing_tall_in_the_world
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_our_admiral
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_our_admiral
+		}
+	}
+
+	focus = { 
+		id = WSG_our_people
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_the_most_beautiful_ship_girl
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_the_most_beautiful_ship_girl
+		}
+	}
+
+	focus = { 
+		id = WSG_prosperous_port_area
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_our_people
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_our_people
+		}
+	}
+
+	focus = { 
+		id = WSG_our_military
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_praise_the_future
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_praise_the_future
+		}
+	}
+
+	focus = { 
+		id = WSG_passion_for_serving_the_ountry
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_our_military
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_our_military
+		}
+	}
+
+	focus = { 
+		id = WSG_great_revival
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_standing_tall_in_the_world
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_standing_tall_in_the_world
+		}
+        prerequisite = { 
+			focus = WSG_prosperous_port_area
+		}
+        prerequisite = { 
+			focus = WSG_passion_for_serving_the_ountry
+		}
+	}
+
+	focus = { 
+		id = WSG_focus_on_the_world
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_great_revival
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			custom_effect_tooltip = WSG_unfinished
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_great_revival
+		}
+	}
+
+	focus = { 
+		id = WSG_western_continent_strategy
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_focus_on_the_world
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_focus_on_the_world
+		}
+	}
+
+	focus = { 
+		id = WSG_new_world_strategy
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_focus_on_the_world
+		x = -2
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_focus_on_the_world
+		}
+	}
+
+	focus = { 
+		id = WSG_eastern_continent_strategy
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_focus_on_the_world
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_focus_on_the_world
+		}
+	}
+
+	focus = { 
+		id = WSG_mainland_strategy
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_from_the_deep_sea
+		x = 7
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_from_the_deep_sea
+		}
+	}
+
+	focus = { 
+		id = WSG_armor_breakthrough
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_mainland_strategy
+		x = -2
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			has_completed_focus = WSG_army_of_ship_girl_r
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_mainland_strategy
+		}
+	}
+
+	focus = { 
+		id = WSG_anti_infantry_firepower
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_armor_breakthrough
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_anti_armor_firepower
+		}
+        prerequisite = { 
+			focus = WSG_armor_breakthrough
+		}
+	}
+
+	focus = { 
+		id = WSG_anti_armor_firepower
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_armor_breakthrough
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_anti_infantry_firepower
+		}
+        prerequisite = { 
+			focus = WSG_armor_breakthrough
+		}
+	}
+
+	focus = { 
+		id = WSG_key_breakthroughs
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_anti_infantry_firepower
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_full_line_assault
+		}
+        prerequisite = { 
+			focus = WSG_anti_infantry_firepower
+			focus = WSG_anti_armor_firepower
+		}
+	}
+
+	focus = { 
+		id = WSG_full_line_assault
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_anti_armor_firepower
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_key_breakthroughs
+		}
+        prerequisite = { 
+			focus = WSG_anti_infantry_firepower
+			focus = WSG_anti_armor_firepower
+		}
+	}
+
+	focus = { 
+		id = WSG_armor_rate_optimization
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_full_line_assault
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_armor_optimization
+		}
+        prerequisite = { 
+			focus = WSG_key_breakthroughs
+			focus = WSG_full_line_assault
+		}
+	}
+
+	focus = { 
+		id = WSG_armor_optimization
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_key_breakthroughs
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_armor_rate_optimization
+		}
+        prerequisite = { 
+			focus = WSG_key_breakthroughs
+			focus = WSG_full_line_assault
+		}
+	}
+
+	focus = { 
+		id = WSG_armor_quantification_integration
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_armor_optimization
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = armor_performance_integration
+		}
+        prerequisite = { 
+			focus = WSG_armor_rate_optimization
+			focus = WSG_armor_optimization
+		}
+	}
+
+	focus = { 
+		id = WSG_armor_performance_integration
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_armor_rate_optimization
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_armor_quantification_integration
+		}
+        prerequisite = { 
+			focus = WSG_armor_rate_optimization
+			focus = WSG_armor_optimization
+		}
+	}
+
+	focus = { 
+		id = WSG_air_strike
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_mainland_strategy
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			has_completed_focus = WSG_air_force_of_ship_girl_r
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_mainland_strategy
+		}
+	}
+
+	focus = { 
+		id = WSG_mainly_light_fighter_aircraft
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_air_strike
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_mainly_heavy_fighter_aircraft
+		}
+        prerequisite = { 
+			focus = WSG_air_strike
+		}
+	}
+
+	focus = { 
+		id = WSG_emphasize_close_air_support
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_mainly_light_fighter_aircraft
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_emphasize_tactical_bombing
+		}
+        prerequisite = { 
+			focus = WSG_mainly_light_fighter_aircraft
+			focus = WSG_mainly_heavy_fighter_aircraft
+		}
+	}
+
+	focus = { 
+		id = WSG_enemy_rear_strike
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_emphasize_close_air_support
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_destruction_of_fortifications
+		}
+        prerequisite = { 
+			focus = WSG_emphasize_tactical_bombing
+			focus = WSG_emphasize_close_air_support
+		}
+	}
+
+	focus = { 
+		id = WSG_quantitative_integration_of_air_force_equipment
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_enemy_rear_strike
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_air_force_equipment_performance_integration
+		}
+        prerequisite = { 
+			focus = WSG_destruction_of_fortifications
+			focus = WSG_enemy_rear_strike
+		}
+	}
+
+	focus = { 
+		id = WSG_mainly_heavy_fighter_aircraft
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_air_strike
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_mainly_light_fighter_aircraft
+		}
+        prerequisite = { 
+			focus = WSG_air_strike
+		}
+	}
+
+	focus = { 
+		id = WSG_emphasize_tactical_bombing
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_mainly_heavy_fighter_aircraft
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_emphasize_close_air_support
+		}
+        prerequisite = { 
+			focus = WSG_mainly_light_fighter_aircraft
+			focus = WSG_mainly_heavy_fighter_aircraft
+		}
+	}
+
+	focus = { 
+		id = WSG_destruction_of_fortifications
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_emphasize_tactical_bombing
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_enemy_rear_strike
+		}
+        prerequisite = { 
+			focus = WSG_emphasize_tactical_bombing
+			focus = WSG_emphasize_close_air_support
+		}
+	}
+
+	focus = { 
+		id = WSG_air_force_equipment_performance_integration
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_destruction_of_fortifications
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_quantitative_integration_of_air_force_equipment
+		}
+        prerequisite = { 
+			focus = WSG_destruction_of_fortifications
+			focus = WSG_enemy_rear_strike
+		}
+	}
+
+	focus = { 
+		id = WSG_ocean_strategy
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_from_the_deep_sea
+		x = 7
+		y = 7
+		cost = 5
+		available = {
+			original_tag = WSG 
+			has_completed_focus = WSG_navy_of_ship_girl_r
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_from_the_deep_sea
+		}
+	}
+
+	focus = { 
+		id = WSG_sea_control
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_ocean_strategy
+		x = -2
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_ocean_strategy
+		}
+	}
+
+	focus = { 
+		id = WSG_deep_sea_hunter
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_sea_control
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_sea_control
+		}
+	}
+
+	focus = { 
+		id = WSG_assault_blade
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_deep_sea_hunter
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_deep_sea_hunter
+		}
+	}
+
+	focus = { 
+		id = WSG_deep_sea_search
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_sea_control
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_sea_control
+		}
+	}
+
+	focus = { 
+		id = WSG_maritime_escort
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_deep_sea_search
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_deep_sea_search
+		}
+	}
+
+	focus = { 
+		id = WSG_naval_mobility
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_assault_blade
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_ocean_route
+		}
+        prerequisite = { 
+			focus = WSG_maritime_escort
+		}
+        prerequisite = { 
+			focus = WSG_assault_blade
+		}
+	}
+
+	focus = { 
+		id = WSG_ocean_route
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_maritime_escort
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_naval_mobility
+		}
+        prerequisite = { 
+			focus = WSG_maritime_escort
+		}
+        prerequisite = { 
+			focus = WSG_assault_blade
+		}
+	}
+
+	focus = { 
+		id = WSG_main_battle
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_ocean_strategy
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_ocean_strategy
+		}
+	}
+
+	focus = { 
+		id = WSG_super_aircraft_carrier
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_main_battle
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_large_ships_and_cannons
+		}
+        prerequisite = { 
+			focus = WSG_main_battle
+		}
+	}
+
+	focus = { 
+		id = WSG_large_ships_and_cannons
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_main_battle
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_super_aircraft_carrier
+		}
+        prerequisite = { 
+			focus = WSG_main_battle
+		}
+	}
+
+	focus = { 
+		id = WSG_focus_on_heavy_patrols
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_super_aircraft_carrier
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_focus_on_light_patrol
+		}
+        prerequisite = { 
+			focus = WSG_super_aircraft_carrier
+			focus = WSG_large_ships_and_cannons
+		}
+	}
+
+	focus = { 
+		id = WSG_focus_on_light_patrol
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_large_ships_and_cannons
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_focus_on_heavy_patrols
+		}
+        prerequisite = { 
+			focus = WSG_super_aircraft_carrier
+			focus = WSG_large_ships_and_cannons
+		}
+	}
+
+	focus = { 
+		id = WSG_strengthen_air_defense
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_focus_on_heavy_patrols
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_strengthen_protection
+		}
+        prerequisite = { 
+			focus = WSG_focus_on_heavy_patrols
+			focus = WSG_focus_on_light_patrol
+		}
+	}
+
+	focus = { 
+		id = WSG_strengthen_protection
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_focus_on_light_patrol
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_strengthen_air_defense
+		}
+        prerequisite = { 
+			focus = WSG_focus_on_heavy_patrols
+			focus = WSG_focus_on_light_patrol
+		}
+	}
+
+	focus = { 
+		id = WSG_quantitative_integration_of_naval_equipment
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_ocean_route
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_navy_equipment_performance_integration
+		}
+        prerequisite = { 
+			focus = WSG_ocean_route
+			focus = WSG_naval_mobility
+		}
+        prerequisite = { 
+			focus = WSG_strengthen_air_defense
+			focus = WSG_strengthen_protection
+		}
+	}
+
+	focus = { 
+		id = WSG_navy_equipment_performance_integration
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_strengthen_air_defense
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_quantitative_integration_of_naval_equipment
+		}
+        prerequisite = { 
+			focus = WSG_ocean_route
+			focus = WSG_naval_mobility
+		}
+        prerequisite = { 
+			focus = WSG_strengthen_air_defense
+			focus = WSG_strengthen_protection
+		}
+	}
 }
