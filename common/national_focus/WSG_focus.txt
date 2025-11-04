@@ -28,7 +28,7 @@ focus_tree = {
 	focus = { 
 		id = WSG_stagnation_in_a_leading_nation
 		icon = GFX_focus_generic_improve_the_administration
-		x = 29
+		x = 26
 		y = 0
 		cost = 2
 		available = {
@@ -1323,7 +1323,7 @@ focus_tree = {
 	focus = { 
 		id = WSG_restart_the_archive
 		icon = GFX_SOV_national_academies_of_sciences_ccp_2d_sov_compatibility
-		x = 46
+		x = 41
 		y = 1
 		cost = 2
 		available = {
@@ -1495,7 +1495,7 @@ focus_tree = {
 		id = WSG_resource_synthesis_I
 		icon = GFX_focus_generic_steel
 		relative_position_id = WSG_technical_potential_I
-		x = -2
+		x = 2
 		y = 1
 		cost = 5
 		available = {
@@ -1504,12 +1504,18 @@ focus_tree = {
     			 id = WSG_balance_of_power
    			     value > 0.2
 			}
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
 		}
 		completion_reward = {
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
     		     value = -0.05
 			}
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
 			random_owned_controlled_state = {
 				limit = { is_core_of = WSG }
 				add_resource = {
@@ -1565,7 +1571,7 @@ focus_tree = {
 		id = WSG_resource_synthesis_II
 		icon = GFX_focus_generic_steel
 		relative_position_id = WSG_technical_potential_II
-		x = -2
+		x = 2
 		y = 1
 		cost = 5
 		available = {
@@ -1574,12 +1580,18 @@ focus_tree = {
     			 id = WSG_balance_of_power
    			     value > 0.2
 			}
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
 		}
 		completion_reward = {
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
     		     value = -0.05
 			}
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
 			random_owned_controlled_state = {
 				limit = { is_core_of = WSG }
 				add_resource = {
@@ -1635,7 +1647,7 @@ focus_tree = {
 		id = WSG_resource_synthesis_III
 		icon = GFX_focus_generic_steel
 		relative_position_id = WSG_technical_potential_III
-		x = -2
+		x = 2
 		y = 1
 		cost = 5
 		available = {
@@ -1644,12 +1656,18 @@ focus_tree = {
     			 id = WSG_balance_of_power
    			     value > 0.6
 			}
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
 		}
 		completion_reward = {
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
     		     value = -0.05
 			}
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
 			random_owned_controlled_state = {
 				limit = { is_core_of = WSG }
 				add_resource = {
@@ -1705,7 +1723,7 @@ focus_tree = {
 		id = WSG_resource_synthesis_IV
 		icon = GFX_focus_generic_steel
 		relative_position_id = WSG_technical_potential_IV
-		x = -2
+		x = 2
 		y = 1
 		cost = 5
 		available = {
@@ -1714,12 +1732,18 @@ focus_tree = {
     			 id = WSG_balance_of_power
    			     value > 0.6
 			}
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
 		}
 		completion_reward = {
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
     		     value = -0.05
 			}
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
 			random_owned_controlled_state = {
 				limit = { is_core_of = WSG }
 				add_resource = {
@@ -2019,6 +2043,7 @@ focus_tree = {
 			original_tag = WSG 
 		}
 		completion_reward = {
+			custom_effect_tooltip = WSG_different
 			add_political_power = 100
 			add_stability = 0.05
 			if = {
@@ -3157,7 +3182,7 @@ focus_tree = {
 	focus = { 
 		id = WSG_warship_girl_r_attack
 		icon = GFX_goal_generic_territory_or_war
-		x = 39
+		x = 36
 		y = 2
 		cost = 5
 		available = {
@@ -3552,7 +3577,8 @@ focus_tree = {
 			factor = 3
 		}
         prerequisite = { 
-			focus = WSG_between_floating_worlds
+			focus = WSG_rebuilding_the_army_system
+			focus = WSG_rebuilding_the_command_system
 		}
 	}
 
@@ -3573,7 +3599,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 		        name = WSG_army_theoretical_innovation_II
-		        cost_reduction = 0.6
+		        cost_reduction = 0.5
 		        uses = 2
 		        category = land_doctrine
 	        }
@@ -3628,7 +3654,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 		        name = WSG_shipborne_combat_tactics
-		        cost_reduction = 0.6
+		        cost_reduction = 0.5
 		        uses = 2
 		        category = land_doctrine
 	        }
@@ -3897,6 +3923,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			custom_effect_tooltip = WSG_different
 			custom_effect_tooltip = WSG_merge_ideas
 			if = {
 				limit = { has_idea = WSG_army_of_ship_girl_r_g }
@@ -4159,7 +4186,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 		        name = WSG_air_force_theoretical_innovation_II
-		        cost_reduction = 0.6
+		        cost_reduction = 0.5
 		        uses = 2
 		        category = air_doctrine
 	        }
@@ -4214,7 +4241,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 		        name = WSG_ship_aircraft_integration
-		        cost_reduction = 0.6
+		        cost_reduction = 0.5
 		        uses = 2
 		        category = air_doctrine
 	        }
@@ -4242,6 +4269,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			custom_effect_tooltip = WSG_different
 			custom_effect_tooltip = WSG_merge_ideas
 			if = {
 				limit = { has_idea = WSG_air_force_of_ship_girl_r_n }
@@ -4487,7 +4515,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 		        name = WSG_naval_theoretical_innovation_II
-		        cost_reduction = 0.6
+		        cost_reduction = 0.5
 		        uses = 2
 		        category = naval_doctrine
 	        }
@@ -4542,7 +4570,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 		        name = WSG_honor_navy
-		        cost_reduction = 0.6
+		        cost_reduction = 0.5
 		        uses = 2
 		        category = naval_doctrine
 	        }
@@ -4570,6 +4598,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			custom_effect_tooltip = WSG_different
 			custom_effect_tooltip = WSG_merge_ideas
 			if = {
 				limit = { has_idea =  WSG_navy_of_ship_girl_r_o }
@@ -4611,7 +4640,7 @@ focus_tree = {
 	focus = { 
 		id = WSG_port_area_and_tomorrow
 		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 57
+		x = 53
 		y = 0
 		cost = 5
 		available = {
@@ -4654,7 +4683,7 @@ focus_tree = {
 		cost = 5
 		available = {
 			original_tag = WSG 
-			has_completed_focus = WSG_port_area_and_tomorrow
+			has_completed_focus = WSG_revival_of_holy_right
 			custom_trigger_tooltip = {
 				tooltip = WSG_panci_least_500_tt
                 check_variable = { WSG_panci > 499 }
@@ -4663,6 +4692,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip =  WSG_panci_reduce_500_tt
                 add_to_variable = { WSG_panci = -500 }
+			add_research_slot = 1
 		}
 		ai_will_do = {
 			factor = 1
@@ -4681,8 +4711,10 @@ focus_tree = {
 		cost = 5
 		available = {
 			original_tag = WSG 
+			has_completed_focus = WSG_super_port_area
 		}
 		completion_reward = {
+			unlock_decision_tooltip = WSG_industrial_integration
 		}
 		ai_will_do = {
 			factor = 1
@@ -4703,6 +4735,27 @@ focus_tree = {
 			original_tag = WSG 
 		}
 		completion_reward = {
+	        add_tech_bonus = {
+		        name = WSG_rocket_engine_project
+		        bonus = 2
+		        uses = 1
+		        ahead_reduction = 1
+		        technology = experimental_rockets
+	        }
+	        add_tech_bonus = {
+		        name = WSG_rocket_engine_project
+		        bonus = 2
+		        uses = 1
+		        ahead_reduction = 2
+		        technology = sp_rockets_rocket_bomber
+	        }
+	        add_tech_bonus = {
+		        name = WSG_rocket_engine_project
+		        bonus = 2
+		        uses = 1
+		        ahead_reduction = 3
+		        technology = sp_rockets_improved_rocket_bomber
+	        }
 		}
 		ai_will_do = {
 			factor = 1
@@ -4723,6 +4776,27 @@ focus_tree = {
 			original_tag = WSG 
 		}
 		completion_reward = {
+	        add_tech_bonus = {
+		        name = WSG_jet_engine_project
+		        bonus = 2
+		        uses = 1
+		        ahead_reduction = 1
+		        technology = sp_rockets_improved_guidance
+	        }
+	        add_tech_bonus = {
+		        name = WSG_jet_engine_project
+		        bonus = 2
+		        uses = 1
+		        ahead_reduction = 2
+		        technology = sp_rockets_dual_chamber_rocket_engine_1
+	        }
+	        add_tech_bonus = {
+		        name = WSG_jet_engine_project
+		        bonus = 2
+		        uses = 1
+		        ahead_reduction = 3
+		        technology = sp_rockets_dual_chamber_rocket_engine_2
+	        }
 		}
 		ai_will_do = {
 			factor = 1
@@ -4743,6 +4817,13 @@ focus_tree = {
 			original_tag = WSG 
 		}
 		completion_reward = {
+	        add_tech_bonus = {
+		        name = WSG_atomic_engineering
+		        bonus = 4
+		        uses = 1
+		        ahead_reduction = 1
+		        category = nuclear 
+	        }
 		}
 		ai_will_do = {
 			factor = 1
@@ -5500,6 +5581,8 @@ focus_tree = {
 			original_tag = WSG 
 		}
 		completion_reward = {
+			army_experience = 50
+	        air_experience = 50
 		}
 		ai_will_do = {
 			factor = 1
@@ -5521,6 +5604,12 @@ focus_tree = {
 			has_completed_focus = WSG_army_of_ship_girl_r
 		}
 		completion_reward = {
+	        add_doctrine_cost_reduction = {
+		        name = WSG_armor_breakthrough
+		        cost_reduction = 0.5
+		        uses = 2
+		        category = land_doctrine
+	        }
 		}
 		ai_will_do = {
 			factor = 1
@@ -5547,12 +5636,19 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+			if = {
+				limit = { has_idea = WSG_armor_breakthrough_r1 }
+			    swap_ideas = {
+				    add_idea =  WSG_armor_breakthrough_1
+				    remove_idea =  WSG_armor_breakthrough_r1
+			    }
+			}
+			else = {
+				add_ideas = WSG_armor_breakthrough_l1
+			}
 		}
 		ai_will_do = {
 			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_anti_armor_firepower
 		}
         prerequisite = { 
 			focus = WSG_armor_breakthrough
@@ -5576,12 +5672,19 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+			if = {
+				limit = { has_idea = WSG_armor_breakthrough_l1 }
+			    swap_ideas = {
+				    add_idea =  WSG_armor_breakthrough_1
+				    remove_idea =  WSG_armor_breakthrough_l1
+			    }
+			}
+			else = {
+				add_ideas = WSG_armor_breakthrough_r1
+			}
 		}
 		ai_will_do = {
 			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_anti_infantry_firepower
 		}
         prerequisite = { 
 			focus = WSG_armor_breakthrough
@@ -5589,7 +5692,7 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = WSG_key_breakthroughs
+		id = WSG_armor_optimization
 		icon = GFX_focus_hol_the_foundations_of_defense
 		relative_position_id = WSG_anti_infantry_firepower
 		x = 0
@@ -5605,21 +5708,33 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+			if = {
+				limit = { has_idea = WSG_armor_breakthrough_r2 }
+			    swap_ideas = {
+				    add_idea =  WSG_armor_breakthrough_2
+				    remove_idea =  WSG_armor_breakthrough_r2
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_armor_breakthrough_l2
+				    remove_idea =  WSG_armor_breakthrough_1
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
-        mutually_exclusive = {
-			focus = WSG_full_line_assault
-		}
         prerequisite = { 
 			focus = WSG_anti_infantry_firepower
+		}
+        prerequisite = { 
 			focus = WSG_anti_armor_firepower
 		}
 	}
 
 	focus = { 
-		id = WSG_full_line_assault
+		id = WSG_armor_rate_optimization
 		icon = GFX_focus_hol_the_foundations_of_defense
 		relative_position_id = WSG_anti_armor_firepower
 		x = 0
@@ -5635,111 +5750,33 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+			if = {
+				limit = { has_idea = WSG_armor_breakthrough_l2 }
+			    swap_ideas = {
+				    add_idea =  WSG_armor_breakthrough_2
+				    remove_idea =  WSG_armor_breakthrough_l2
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_armor_breakthrough_r2
+				    remove_idea =  WSG_armor_breakthrough_1
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
-        mutually_exclusive = {
-			focus = WSG_key_breakthroughs
-		}
         prerequisite = { 
 			focus = WSG_anti_infantry_firepower
+		}
+        prerequisite = { 
 			focus = WSG_anti_armor_firepower
 		}
 	}
 
 	focus = { 
-		id = WSG_armor_rate_optimization
-		icon = GFX_focus_hol_the_foundations_of_defense
-		relative_position_id = WSG_full_line_assault
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_armor_optimization
-		}
-        prerequisite = { 
-			focus = WSG_key_breakthroughs
-			focus = WSG_full_line_assault
-		}
-	}
-
-	focus = { 
-		id = WSG_armor_optimization
-		icon = GFX_focus_hol_the_foundations_of_defense
-		relative_position_id = WSG_key_breakthroughs
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_armor_rate_optimization
-		}
-        prerequisite = { 
-			focus = WSG_key_breakthroughs
-			focus = WSG_full_line_assault
-		}
-	}
-
-	focus = { 
-		id = WSG_armor_quantification_integration
-		icon = GFX_focus_hol_the_foundations_of_defense
-		relative_position_id = WSG_armor_optimization
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = armor_performance_integration
-		}
-        prerequisite = { 
-			focus = WSG_armor_rate_optimization
-			focus = WSG_armor_optimization
-		}
-	}
-
-	focus = { 
-		id = WSG_armor_performance_integration
+		id = WSG_full_line_assault
 		icon = GFX_focus_hol_the_foundations_of_defense
 		relative_position_id = WSG_armor_rate_optimization
 		x = 0
@@ -5748,13 +5785,143 @@ focus_tree = {
 		available = {
 			original_tag = WSG 
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+			swap_ideas = {
+				add_idea =  WSG_armor_breakthrough_r3
+				remove_idea =  WSG_armor_breakthrough_2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_key_breakthroughs
+		}
+        prerequisite = { 
+			focus = WSG_armor_optimization
+		}
+        prerequisite = { 
+			focus = WSG_armor_rate_optimization
+		}
+	}
+
+	focus = { 
+		id =  WSG_key_breakthroughs
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_armor_optimization
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+			swap_ideas = {
+				add_idea =  WSG_armor_breakthrough_l3
+				remove_idea =  WSG_armor_breakthrough_2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_full_line_assault
+		}
+        prerequisite = { 
+			focus = WSG_armor_optimization
+		}
+        prerequisite = { 
+			focus = WSG_armor_rate_optimization
+		}
+	}
+
+	focus = { 
+		id = WSG_armor_quantification_integration
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_key_breakthroughs
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = WSG_different
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+			if = {
+				limit = { has_idea = WSG_armor_breakthrough_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_armor_breakthrough_lq
+				    remove_idea =  WSG_armor_breakthrough_l3
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_armor_breakthrough_rq
+				    remove_idea =  WSG_armor_breakthrough_r3
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = armor_performance_integration
+		}
+        prerequisite = { 
+			focus = WSG_full_line_assault
+			focus = WSG_key_breakthroughs
+		}
+	}
+
+	focus = { 
+		id = WSG_armor_performance_integration
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_full_line_assault
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = WSG_different
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+			if = {
+				limit = { has_idea = WSG_armor_breakthrough_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_armor_breakthrough_lp
+				    remove_idea =  WSG_armor_breakthrough_l3
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_armor_breakthrough_rp
+				    remove_idea =  WSG_armor_breakthrough_r3
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -5763,8 +5930,8 @@ focus_tree = {
 			focus = WSG_armor_quantification_integration
 		}
         prerequisite = { 
-			focus = WSG_armor_rate_optimization
-			focus = WSG_armor_optimization
+			focus = WSG_full_line_assault
+			focus = WSG_key_breakthroughs
 		}
 	}
 
@@ -5780,6 +5947,12 @@ focus_tree = {
 			has_completed_focus = WSG_air_force_of_ship_girl_r
 		}
 		completion_reward = {
+	        add_doctrine_cost_reduction = {
+		        name = WSG_air_strike
+		        cost_reduction = 0.5
+		        uses = 2
+		        category = air_doctrine
+	        }
 		}
 		ai_will_do = {
 			factor = 1
@@ -5799,13 +5972,14 @@ focus_tree = {
 		available = {
 			original_tag = WSG 
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+			add_ideas = WSG_air_strike_l1
 		}
 		ai_will_do = {
 			factor = 1
@@ -5828,53 +6002,53 @@ focus_tree = {
 		available = {
 			original_tag = WSG 
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+			swap_ideas = {
+				add_idea = WSG_air_strike_l2
+				remove_idea = WSG_air_strike_l1
+			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
-        mutually_exclusive = {
-			focus = WSG_emphasize_tactical_bombing
-		}
         prerequisite = { 
 			focus = WSG_mainly_light_fighter_aircraft
-			focus = WSG_mainly_heavy_fighter_aircraft
 		}
 	}
 
 	focus = { 
 		id = WSG_enemy_rear_strike
 		icon = GFX_focus_hol_the_foundations_of_defense
-		relative_position_id = WSG_emphasize_close_air_support
+		relative_position_id =WSG_emphasize_tactical_bombing
 		x = 0
 		y = 1
 		cost = 5
 		available = {
 			original_tag = WSG 
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+			swap_ideas = {
+				add_idea = WSG_air_strike_r3
+				remove_idea = WSG_air_strike_r2
+			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
-        mutually_exclusive = {
-			focus = WSG_destruction_of_fortifications
-		}
         prerequisite = { 
 			focus = WSG_emphasize_tactical_bombing
-			focus = WSG_emphasize_close_air_support
 		}
 	}
 
@@ -5888,13 +6062,27 @@ focus_tree = {
 		available = {
 			original_tag = WSG 
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip = WSG_different
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+			if = {
+				limit = { has_idea = WSG_air_strike_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_air_strike_lp
+				    remove_idea =  WSG_air_strike_l3
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_air_strike_rp
+				    remove_idea =  WSG_air_strike_r3
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -5904,6 +6092,8 @@ focus_tree = {
 		}
         prerequisite = { 
 			focus = WSG_destruction_of_fortifications
+		}
+        prerequisite = { 
 			focus = WSG_enemy_rear_strike
 		}
 	}
@@ -5918,13 +6108,14 @@ focus_tree = {
 		available = {
 			original_tag = WSG 
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+			add_ideas = WSG_air_strike_r1
 		}
 		ai_will_do = {
 			factor = 1
@@ -5947,22 +6138,22 @@ focus_tree = {
 		available = {
 			original_tag = WSG 
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+			swap_ideas = {
+				add_idea = WSG_air_strike_r2
+				remove_idea = WSG_air_strike_r1
+			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
-        mutually_exclusive = {
-			focus = WSG_emphasize_close_air_support
-		}
         prerequisite = { 
-			focus = WSG_mainly_light_fighter_aircraft
 			focus = WSG_mainly_heavy_fighter_aircraft
 		}
 	}
@@ -5970,29 +6161,29 @@ focus_tree = {
 	focus = { 
 		id = WSG_destruction_of_fortifications
 		icon = GFX_focus_hol_the_foundations_of_defense
-		relative_position_id = WSG_emphasize_tactical_bombing
+		relative_position_id = WSG_emphasize_close_air_support
 		x = 0
 		y = 1
 		cost = 5
 		available = {
 			original_tag = WSG 
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+			swap_ideas = {
+				add_idea = WSG_air_strike_l3
+				remove_idea = WSG_air_strike_l2
+			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
-        mutually_exclusive = {
-			focus = WSG_enemy_rear_strike
-		}
         prerequisite = { 
-			focus = WSG_emphasize_tactical_bombing
 			focus = WSG_emphasize_close_air_support
 		}
 	}
@@ -6007,13 +6198,27 @@ focus_tree = {
 		available = {
 			original_tag = WSG 
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip = WSG_different
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+			if = {
+				limit = { has_idea = WSG_air_strike_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_air_strike_lq
+				    remove_idea =  WSG_air_strike_l3
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_air_strike_rq
+				    remove_idea =  WSG_air_strike_r3
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -6023,6 +6228,8 @@ focus_tree = {
 		}
         prerequisite = { 
 			focus = WSG_destruction_of_fortifications
+		}
+        prerequisite = { 
 			focus = WSG_enemy_rear_strike
 		}
 	}
@@ -6039,6 +6246,7 @@ focus_tree = {
 			has_completed_focus = WSG_navy_of_ship_girl_r
 		}
 		completion_reward = {
+			navy_experience = 100
 		}
 		ai_will_do = {
 			factor = 1
@@ -6059,6 +6267,12 @@ focus_tree = {
 			original_tag = WSG 
 		}
 		completion_reward = {
+	        add_doctrine_cost_reduction = {
+		        name = WSG_sea_control
+		        cost_reduction = 0.5
+		        uses = 2
+		        category = naval_doctrine
+	        }
 		}
 		ai_will_do = {
 			factor = 1
@@ -6085,6 +6299,16 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+			if = {
+				limit = { has_idea = WSG_sea_control_r1 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_1
+				    remove_idea =  WSG_sea_control_r1
+			    }
+			}
+			else = {
+				add_ideas = WSG_sea_control_l1
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -6111,12 +6335,28 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+			if = {
+				limit = { has_idea = WSG_sea_control_r2 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_2
+				    remove_idea =  WSG_sea_control_r2
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_sea_control_l2
+				    remove_idea =  WSG_sea_control_1
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
         prerequisite = { 
 			focus = WSG_deep_sea_hunter
+		}
+        prerequisite = { 
+			focus = WSG_deep_sea_search
 		}
 	}
 
@@ -6137,6 +6377,16 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+			if = {
+				limit = { has_idea = WSG_sea_control_l1 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_1
+				    remove_idea =  WSG_sea_control_l1
+			    }
+			}
+			else = {
+				add_ideas = WSG_sea_control_r1
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -6163,12 +6413,28 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+			if = {
+				limit = { has_idea = WSG_sea_control_l2 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_2
+				    remove_idea =  WSG_sea_control_l2
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_sea_control_r2
+				    remove_idea =  WSG_sea_control_1
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
         prerequisite = { 
 			focus = WSG_deep_sea_search
+		}
+        prerequisite = { 
+			focus = WSG_deep_sea_hunter
 		}
 	}
 
@@ -6189,6 +6455,10 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+			swap_ideas = {
+				add_idea =  WSG_sea_control_l3
+				remove_idea =  WSG_sea_control_2
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -6221,6 +6491,10 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+			swap_ideas = {
+				add_idea =  WSG_sea_control_r3
+				remove_idea =  WSG_sea_control_2
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -6247,6 +6521,12 @@ focus_tree = {
 			original_tag = WSG 
 		}
 		completion_reward = {
+	        add_doctrine_cost_reduction = {
+		        name = WSG_main_battle
+		        cost_reduction = 0.5
+		        uses = 2
+		        category = naval_doctrine
+	        }
 		}
 		ai_will_do = {
 			factor = 1
@@ -6273,6 +6553,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+		    add_ideas = WSG_main_battle_l1
 		}
 		ai_will_do = {
 			factor = 1
@@ -6302,6 +6583,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+		    add_ideas = WSG_main_battle_r1
 		}
 		ai_will_do = {
 			factor = 1
@@ -6317,36 +6599,6 @@ focus_tree = {
 	focus = { 
 		id = WSG_focus_on_heavy_patrols
 		icon = GFX_focus_hol_the_foundations_of_defense
-		relative_position_id = WSG_super_aircraft_carrier
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_focus_on_light_patrol
-		}
-        prerequisite = { 
-			focus = WSG_super_aircraft_carrier
-			focus = WSG_large_ships_and_cannons
-		}
-	}
-
-	focus = { 
-		id = WSG_focus_on_light_patrol
-		icon = GFX_focus_hol_the_foundations_of_defense
 		relative_position_id = WSG_large_ships_and_cannons
 		x = 0
 		y = 1
@@ -6361,16 +6613,46 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+			swap_ideas = {
+				add_idea = WSG_main_battle_r2
+				remove_idea = WSG_main_battle_r1
+			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
-        mutually_exclusive = {
-			focus = WSG_focus_on_heavy_patrols
+        prerequisite = { 
+			focus = WSG_large_ships_and_cannons
+		}
+	}
+
+	focus = { 
+		id = WSG_focus_on_light_patrol
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_super_aircraft_carrier
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
+			swap_ideas = {
+				add_idea = WSG_main_battle_l2
+				remove_idea = WSG_main_battle_l1
+			}
+		}
+		ai_will_do = {
+			factor = 1
 		}
         prerequisite = { 
 			focus = WSG_super_aircraft_carrier
-			focus = WSG_large_ships_and_cannons
 		}
 	}
 
@@ -6389,14 +6671,39 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			custom_effect_tooltip = WSG_different
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+			if = {
+				limit = { has_idea = WSG_main_battle_l3l }
+			    swap_ideas = {
+				    add_idea =  WSG_main_battle_l3
+				    remove_idea =  WSG_main_battle_l3l
+			    }
+			}
+			else_if = {
+				limit = { has_idea = WSG_main_battle_r3l }
+				swap_ideas = {
+				    add_idea = WSG_main_battle_r3
+				    remove_idea =  WSG_main_battle_r3l
+				}
+			}
+			else_if = {
+				limit = { has_idea = WSG_main_battle_l2 }
+				swap_ideas = {
+				    add_idea = WSG_main_battle_l3r
+				    remove_idea =  WSG_main_battle_l2
+				}
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_main_battle_r3r
+				    remove_idea =  WSG_main_battle_r2
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_strengthen_protection
 		}
         prerequisite = { 
 			focus = WSG_focus_on_heavy_patrols
@@ -6419,14 +6726,39 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			custom_effect_tooltip = WSG_different
 			custom_effect_tooltip =  WSG_panci_reduce_100_tt
                 add_to_variable = { WSG_panci = -100 }
+			if = {
+				limit = { has_idea = WSG_main_battle_l3r }
+			    swap_ideas = {
+				    add_idea =  WSG_main_battle_l3
+				    remove_idea =  WSG_main_battle_l3r
+			    }
+			}
+			else_if = {
+				limit = { has_idea = WSG_main_battle_r3r }
+				swap_ideas = {
+				    add_idea = WSG_main_battle_r3
+				    remove_idea =  WSG_main_battle_r3r
+				}
+			}
+			else_if = {
+				limit = { has_idea = WSG_main_battle_l2 }
+				swap_ideas = {
+				    add_idea = WSG_main_battle_l3l
+				    remove_idea =  WSG_main_battle_l2
+				}
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_main_battle_r3l
+				    remove_idea = WSG_main_battle_r2
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_strengthen_air_defense
 		}
         prerequisite = { 
 			focus = WSG_focus_on_heavy_patrols
@@ -6444,13 +6776,43 @@ focus_tree = {
 		available = {
 			original_tag = WSG 
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip = WSG_different
+			custom_effect_tooltip = WSG_merge_idea
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+			if = {
+				limit = { has_idea = WSG_main_battle_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_main_battle_lq
+				    remove_idea =  WSG_main_battle_l3
+			    }
+			}
+			if = {
+				limit = { has_idea = WSG_main_battle_r3 }
+			    swap_ideas = {
+				    add_idea =  WSG_main_battle_lq
+				    remove_idea =  WSG_main_battle_r3
+			    }
+			}
+			if = {
+				limit = { has_idea = WSG_sea_control_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_lq
+				    remove_idea =  WSG_sea_control_l3
+			    }
+			}
+			if = {
+				limit = { has_idea = WSG_sea_control_r3 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_rq
+				    remove_idea =  WSG_sea_control_r3
+			    }
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -6471,20 +6833,50 @@ focus_tree = {
 	focus = { 
 		id = WSG_navy_equipment_performance_integration
 		icon = GFX_focus_hol_the_foundations_of_defense
-		relative_position_id = WSG_strengthen_air_defense
+		relative_position_id = WSG_strengthen_protection
 		x = 0
 		y = 1
 		cost = 5
 		available = {
 			original_tag = WSG 
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip = WSG_different
+			custom_effect_tooltip = WSG_merge_idea
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+			if = {
+				limit = { has_idea = WSG_main_battle_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_main_battle_lp
+				    remove_idea =  WSG_main_battle_l3
+			    }
+			}
+			if = {
+				limit = { has_idea = WSG_main_battle_r3 }
+			    swap_ideas = {
+				    add_idea =  WSG_main_battle_lp
+				    remove_idea =  WSG_main_battle_r3
+			    }
+			}
+			if = {
+				limit = { has_idea = WSG_sea_control_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_lp
+				    remove_idea =  WSG_sea_control_l3
+			    }
+			}
+			if = {
+				limit = { has_idea = WSG_sea_control_r3 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_rp
+				    remove_idea =  WSG_sea_control_r3
+			    }
+			}
 		}
 		ai_will_do = {
 			factor = 1

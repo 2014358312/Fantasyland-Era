@@ -1527,4 +1527,76 @@ WSG_secretary_ship_agenda_category = {
             factor = 50
         }
     }
+
+	WSG_industrial_integration = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
+			}
+			arms_factory > 19
+        }    
+        visible = {
+            has_completed_focus = WSG_industrial_integration
+			NOT = { has_idea = WSG_industrial_integration_V }
+        }
+        cost = 0
+        fire_only_once = no
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+            WSG = { WSG_remove_arms_factory_20 = yes }
+        }
+        remove_effect = {
+			if = {
+				limit = {
+					has_idea = WSG_industrial_integration_IV
+				}
+			    swap_ideas = {
+				    add_idea = WSG_industrial_integration_V
+				    remove_idea = WSG_industrial_integration_IV
+			    }
+			}
+			else_if = {
+				limit = {
+					has_idea = WSG_industrial_integration_III
+				}
+			    swap_ideas = {
+				    add_idea = WSG_industrial_integration_IV
+				    remove_idea = WSG_industrial_integration_III
+			    }
+			}
+			else_if = {
+				limit = {
+					has_idea = WSG_industrial_integration_II
+				}
+			    swap_ideas = {
+				    add_idea = WSG_industrial_integration_III
+				    remove_idea = WSG_industrial_integration_II
+			    }
+			}
+			else_if = {
+				limit = {
+					has_idea = WSG_industrial_integration_I
+				}
+			    swap_ideas = {
+				    add_idea = WSG_industrial_integration_II
+				    remove_idea = WSG_industrial_integration_I
+			    }
+			}
+			else = {
+				add_ideas = WSG_industrial_integration_I
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
 }
