@@ -535,10 +535,35 @@ WSG_secretary_ship_decision_category = {
 			factor = 10
 		}
 	}
-
 }
 
 WSG_secretary_ship_agenda_category = {
+	WSG_expedited_secretary_ship = {
+		icon = GFX_WSG_decision_category
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			command_power >50
+	    }	
+	    visible = {
+			has_country_flag = secretary_ship_cd
+	    }
+		cost = 50
+		fire_only_once = no
+		days_re_enable = 180
+		modifier = {
+		}
+		complete_effect = {
+			custom_effect_tooltip = WSG_remove_secretary_ship_cd
+			clr_country_flag = secretary_ship_cd
+			add_command_power = -50
+		}
+		ai_will_do = {
+			factor = 10
+		}
+    }
+
     WSG_offsite_industrial_complex = {
         icon = GFX_WSG_decision_category
         allowed = {
