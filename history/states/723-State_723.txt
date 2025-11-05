@@ -4,26 +4,29 @@ state={
 	provinces={
 		12175 12319 12460 12514 12584 12918 13106 13328 13503 13506 
 	}
+	manpower=1293481#地区人力
+	state_category = megalopolis #地块类型，megalopolis为大城市，large_city为密集城镇，city为城镇，large_town为稀疏城镇，town为发达乡村
 	history={
-		owner = ANA
-		add_core_of = ANA
-		buildings = {
-			infrastructure = 2
-			industrial_complex = 1
-			arms_factory = 1
-			air_base = 1
+		owner = YBL #初始拥有该地块的国家
+		set_variable = { state_id = 727 }
+		buildings = { #地块所拥有的建筑数量
+			infrastructure = 4 #基建
+			industrial_complex = 5 #民用工厂
+			air_base = 6 #机场
+		}
+		add_core_of = YBL #该地区核心属于 = YBL 伊比利亚王国
+		victory_points = {#为地区小区块添加胜利点
+			4921 #区块ID
+			50 #胜利点数量
 		}
 	}
-	manpower = 4689018
-	state_category=town
-	buildings_max_level_factor=1.000
 	resources = {
-		oil=0
-		aluminium=0
-		rubber=0
-		tungsten=5
-		steel=0
-		chromium=20
+		oil=0 #石油数×2
+		aluminium=16 #铝×2
+		rubber=0 #橡胶×2
+		tungsten=0 #钨×2
+		steel=35 #钢×2
+		chromium=0 #铬×2
 	}
-	local_supplies=1.0
+	
 }

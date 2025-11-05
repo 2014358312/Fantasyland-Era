@@ -4,26 +4,30 @@ state={
 	provinces={
 		12236 12271 12390 12457 12465 12674 12774 12925 12950 12990 13281 13309 13475 13487 
 	}
+	manpower=991964 #地区人力
+	state_category = city
 	history={
-		owner = ANA
-		add_core_of = ANA
-		buildings = {
-			infrastructure = 2
-			industrial_complex = 1
-			arms_factory = 1
-			air_base = 1
+		owner = YBL
+		set_variable = { state_id = 707 }
+		buildings = { #地块所拥有的建筑数量
+			infrastructure = 1 #基建
+			industrial_complex = 1 #民用工厂
+			air_base = 3 #机场
 		}
+		add_core_of = YBL #该地区核心属于 = YBL 伊比利亚王国
+		#victory_points = {#为地区小区块添加胜利点
+		#	2891 #区块ID
+		#	5 #胜利点数量
+		#}
 	}
-	manpower = 4017717
-	state_category=town
-	buildings_max_level_factor=1.000
-	resources = {
-		oil=30
-		aluminium=0
-		rubber=0
-		tungsten=0
-		steel=40
-		chromium=0
+
+	resources = { #地区资源
+		oil=20 #石油数×2
+		aluminium=16 #铝×2
+		rubber=7 #橡胶×2
+		tungsten=1 #钨×2
+		steel=35 #钢×2
+		chromium=0 #铬×2
 	}
 	local_supplies=1.0
 }
