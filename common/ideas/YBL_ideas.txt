@@ -3,7 +3,44 @@ ideas = {
 		YBL_MZ1 = {
 			picture = 1
 
-			#伊比利亚的黄金时代
+			#黄金时代的幻梦
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				political_power_gain = -0.5 #每日政治点数
+				stability_factor = 0.1 #稳定度
+				war_support_factor = 0.1 #战争支持度
+				consumer_goods_factor = 0.5 #生活消费品
+			}
+		}
+
+		YBL_MZ2 = {
+			picture = 1
+
+			#黄金舰队之殇
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				navy_screen_attack_factor = -0.75 #屏卫舰攻击
+				navy_capital_ship_attack_factor = -0.75 #主力舰攻击
+				naval_speed_factor = -0.5 #海军速度	
+				navy_max_range_factor = -0.5 #海军最大航程参数
+				spotting_chance = -1 #索敌速度
+				naval_detection = -5 #探测速度
+				naval_strike_agility_factor = -0.2 #海军机动
+			}
+		}
+
+		YBL_MZ3 = {
+			picture = 1
+
+			#伊比利亚国教会
 
 			allowed = { original_tag = YBL }
 
@@ -11,86 +48,33 @@ ideas = {
 
 			modifier = { 
 				political_power_gain = 0.5 #每日政治点数
-				stability_factor = 0.1 #稳定度
-				war_support_factor = 0.1 #战争支持度
-				army_org_factor = 0.1 #组织度
-				industrial_capacity_factory = 0.1 #工厂产出
-			}
-		}
-
-		YBL_MZ2 = {
-			picture = 1
-
-			#伊比利亚即大海
-
-			allowed = { original_tag = YBL }
-
-			removal_cost = -1
-
-			modifier = { 
-				navy_screen_attack_factor = 0.05 #屏卫舰攻击
-				navy_capital_ship_attack_factor = 0.05 #主力舰攻击
-				naval_speed_factor = 0.05 #海军速度	
-				navy_max_range_factor = 0.05 #海军最大航程参数
-				spotting_chance = 0.05 #索敌速度
-				naval_detection = 0.05 #探测速度
-				naval_strike_agility_factor = -0.05 #海军机动
-			}
-		}
-
-		YBL_MZ3 = {
-			picture = 1
-
-			#尚未完成的国教会
-
-			allowed = { original_tag = YBL }
-
-			removal_cost = -1
-
-			modifier = { 
-				political_power_gain = -0.5 #每日政治点数
-				stability_weekly = -0.1 #每周稳定度
-				defensive_war_stability_factor = -0.2 #防御性战争对稳定度修正
-				#以下为法案政治顾问等花费
-				mobilization_laws_cost_factor = +0.25
-				trade_laws_cost_factor  = +0.25
-				economy_cost_factor = +0.25
-				political_advisor_cost_factor = +0.25
-				tank_manufacturer_cost_factor = +0.25
-				naval_manufacturer_cost_factor = +0.25
-				aircraft_manufacturer_cost_factor = +0.25
-				materiel_manufacturer_cost_factor = +0.25
-				industrial_concern_cost_factor = +0.25
-				theorist_cost_factor = +0.25
-				army_chief_cost_factor = +0.25
-				navy_chief_cost_factor = +0.25
-				air_chief_cost_factor = +0.25
-				high_command_cost_factor = +0.25
-				#以上为法案政治顾问等花费
+				stability_weekly = 0.2 #每周稳定度
+				defensive_war_stability_factor = 0.2 #防御性战争对稳定度修正
 			}
 		}
 
 		YBL_MZ4 = {
 			picture = 1
 
-			#底层人民的不满
+			#工业静谧
 
 			allowed = { original_tag = YBL }
 
 			removal_cost = -1
 
 			modifier = { 
-				political_power_gain = -0.5 #每日政治点数
-				industrial_capacity_factory = -0.2 #工厂产出
-				production_speed_buildings_factor = -0.2 #建造速度
-				consumer_goods_factor = 0.15 #生活用品工厂
+				industrial_capacity_factory = -0.8 #工厂产出
+				production_speed_buildings_factor = -0.8 #建造速度
+				industrial_capacity_dockyard = -0.3 #船坞产出
+				production_factory_max_efficiency_factor = -0.3 #生产效率上限
+				production_factory_efficiency_gain_factor = -0.3 #生产效率增长
 			}
 		}
 
 		YBL_MZ5 = {
 			picture = 1
 
-			#深海教会的渗透
+			#国民的不满
 
 			allowed = { original_tag = YBL }
 
@@ -98,7 +82,6 @@ ideas = {
 
 			modifier = { 
 				political_power_factor = -0.2 #政治点数获取
-				fascism_drift = 0.3 #每日法西斯主义支持率
 				consumer_goods_factor = 0.10 #生活用品工厂
 				stability_factor = -0.3 #稳定度
 				war_support_factor = -0.3 #战争支持度
@@ -108,7 +91,7 @@ ideas = {
 		YBL_MZ6 = {
 			picture = 1
 
-			#被搁置的建议
+			#反岛民情绪高涨
 
 			allowed = { original_tag = YBL }
 
@@ -116,7 +99,7 @@ ideas = {
 
 			modifier = { 
 				political_power_gain = -0.5 #每日政治点数
-				consumer_goods_factor = 0.10 #生活用品工厂
+				consumer_goods_factor = -0.10 #生活用品工厂
 				#以下为法案政治顾问等花费
 				mobilization_laws_cost_factor = +0.5
 				trade_laws_cost_factor  = +0.5
@@ -134,7 +117,7 @@ ideas = {
 				high_command_cost_factor = +0.5
 				#以上为法案政治顾问等花费
 				industrial_capacity_dockyard = -0.5 #海军船坞产出
-				research_speed_factor = -0.2 #研究速度
+				research_speed_factor = -0.5 #研究速度
 			}
 		}
 
@@ -573,16 +556,8 @@ ideas = {
 
 		    allowed = {#判断法案使用条件
 			    has_dlc = "Arms Against Tyranny"
-				controls_state = 327 #要求控制哪一地区
-				OR = {
-					original_tag = YBL #判断国家是伊比利亚王国
-					original_tag = INQ #判断国家是伊比利亚审判庭
-					original_tag = IDA #判断国家是伊比利亚民主同盟
-					original_tag = IBR #判断国家是伊比利亚王室
-					original_tag = HVD #判断国家是大群意志
-				}
+				controls_state = 732 #要求控制哪一地区
 			}
-
 			research_bonus = { #他能够为哪些科技有促进作用
 			    electronics = 0.1 #电子学
 				dd_tech = 0.05 #驱逐舰
