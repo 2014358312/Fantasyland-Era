@@ -259,6 +259,10 @@ WSG_balance_of_power_decision_category = {
     			 id = WSG_balance_of_power
    			     value > 0.6
 			}
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_100_tt
+                check_variable = { WSG_panci > 99 }
+			}
 	    }	
 	    visible = {
 			has_completed_focus = WSG_restart_the_archive
@@ -273,6 +277,8 @@ WSG_balance_of_power_decision_category = {
    			     id = WSG_balance_of_power
     		     value = -0.15
 			}
+			custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                add_to_variable = { WSG_panci = -100 }
 		    add_breakthrough_progress = {
 				specialization = specialization_land
 				value = 1
