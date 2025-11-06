@@ -2,7 +2,7 @@ state={
 	id=724
 	name="STATE_724"
 	provinces={
-		12120 12151 12646 12766 13510 
+		12120 12151 12766 13510 12833
 	}
     manpower=100000
 	state_category = city
@@ -13,14 +13,22 @@ state={
 			infrastructure = 2 #基建
 			industrial_complex = 1 #民用工厂
 			air_base = 1 #机场
+			12766 = {
+				supply_node = 2 #补给中心
+				naval_base = 3 #海军基地
+			}
 		}
 		victory_points = {#为地区小区块添加胜利点
-			12646 #区块ID
-			10 #胜利点数量
+			12833 #区块ID
+			5 #胜利点数量
 		}
 		victory_points = {#为地区小区块添加胜利点
 			12766 #区块ID
 			30 #胜利点数量
+		}
+		victory_points = {#为地区小区块添加胜利点
+			12151 #区块ID
+			10 #胜利点数量
 		}
 		add_core_of = YBL
 	}
