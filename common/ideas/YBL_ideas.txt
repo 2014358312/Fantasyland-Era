@@ -13,7 +13,7 @@ ideas = {
 				political_power_gain = -0.5 #每日政治点数
 				stability_factor = 0.1 #稳定度
 				war_support_factor = 0.1 #战争支持度
-				consumer_goods_factor = 0.5 #生活消费品
+				consumer_goods_expected_value = 0.50 #民众期望的消费品系数
 			}
 		}
 
@@ -513,13 +513,13 @@ ideas = {
 			removal_cost = -1 #取消该法案所需的政治点数，-1为不花费
 
 			modifier = { #该法案的效果
-			consumer_goods_factor = -0.05 #生活消费品 
+			consumer_goods_expected_value = 0.30 #期望的生活消费品数量 
 			trade_opinion_factor = 0.1 #贸易协定关系修正
 			research_speed_factor = 0.05 #研究速度
 			local_resources_factor = 0.1 #战略资源获取率
-			local_building_slots_factor = 0.05 #地区最大工业值
-			production_speed_industrial_complex_factor = 0.2 #民用工厂建造速度
-			production_speed_infrastructure_factor = 0.2 #基础设施建造速度
+			local_building_slots_factor = 0.1 #地区最大工业值
+			production_speed_industrial_complex_factor = 0.3 #民用工厂建造速度
+			production_speed_infrastructure_factor = 0.3 #基础设施建造速度
 			production_speed_arms_factory_factor = -0.5 #军用工厂建造速度
 			production_speed_bunker_factor = -1 #堡垒建造速度
 			industrial_capacity_factory = -0.5 #工厂产出
@@ -534,17 +534,16 @@ ideas = {
 					}
 					OR = {#满足下列任意条件之一
 						surrender_progress > 0.3 #投降度大于30
-						#has_completed_focus =  #满足什么什么国策
-						NOT = { has_idea = YBL_MZ2 } #要求没有民族精神
+						NOT = { has_idea = YBL_MZ1 } #要求没有民族精神
 					}
 				}
-				ELSE = { #检测条件2，如果你不满足条件1，则检测你能否满足以下条件
-				    limit = {
-						has_war = no #是否处于战争
-						original_tag = YBL #判断国家是伊比利亚
-						has_idea = YBL_MZ11 #拥有民族精神失落王都
-					}
-				}
+				#ELSE = { #检测条件2，如果你不满足条件1，则检测你能否满足以下条件
+				#    limit = {
+				#		has_war = no #是否处于战争
+				#		original_tag = YBL #判断国家是伊比利亚
+				#		has_idea = YBL_MZ11 #拥有民族精神失落王都
+				#	}
+				#}
 			}
 			cancel_if_invalid = yes #如果你的状态不支持你继续这个法案是否直接取消
 		}
@@ -555,8 +554,12 @@ ideas = {
 		Royal_Academy_of_Science = {#伊比利亚-阿戈尔首席科学院
 
 		    allowed = {#判断法案使用条件
-			    has_dlc = "Arms Against Tyranny"
-				controls_state = 732 #要求控制哪一地区
+			    #has_dlc = "Arms Against Tyranny"
+				trigger = {
+					has_full_control_of_state = 732 #要求完全控制哪一地区
+					core_state = 732 #要求核心省份的代码
+					#has_completed_focus = YBL_GC #已完成国策
+				}
 			}
 			research_bonus = { #他能够为哪些科技有促进作用
 			    electronics = 0.1 #电子学
@@ -569,9 +572,9 @@ ideas = {
 
 			modifier = { #国家修正
 			    consumer_goods_factor = 0.2 #生活消费品
-				naval_speed_factor = 0.05 #海军速度
+				naval_speed_factor = 0.1 #海军速度
 				navy_max_range_factor = 0.05 #海军最大航程参数
-				navy_fuel_consumption_factor = -0.1 #海军燃料消耗-10%
+				navy_fuel_consumption_factor = -0.15 #海军燃料消耗-15%
 			}
 			cancel_if_invalid = yes #如果你的状态不支持你继续这个法案是否直接取消
 		}

@@ -73,4 +73,129 @@ focus_tree = {
 	}
 	#伊比利亚王国（静谧后时代）
 
+	focus = {
+		id = YBL_GC1 #GC1迷失航路
+		icon = YBL_nianqdedashengpang #国策图标连接
+		x = 12
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 10
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+			add_political_power = 50 #获得政治点
+			country_event = { days = 1 random = 0 id = YBL_SJ1 } #触发事件“迷失航路”
+		}
+	}
+
+	focus = {
+		id = YBL_GC2 #GC2 布雷奥甘的思考
+		icon = YBL_nianqdedashengpang #国策图标连接
+		relative_position_id = YBL_GC1 #以某一国策为中心确定国策在国策树的位置
+		x = -8
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 	#前置国策	
+			focus = YBL_GC1 
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = no #始终为非
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = YBL_GC3 #GC3 剑与提灯
+		icon = YBL_nianqdedashengpang #国策图标连接
+		relative_position_id = YBL_GC1 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 	#前置国策	
+			focus = YBL_GC1 
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = no #始终为非
+		
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = YBL_GC4 #GC4 王室的抉择
+		icon = YBL_nianqdedashengpang #国策图标连接
+		relative_position_id = YBL_GC1 #以某一国策为中心确定国策在国策树的位置
+		x = 8
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 	#前置国策	
+			focus = YBL_GC1 
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = no #始终为非
+		
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
 }
