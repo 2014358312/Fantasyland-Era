@@ -505,7 +505,7 @@ ideas = {
 		law = yes #确认它是一种法案
 		use_list_view = no #它是在法案栏中可见的
 
-		Laissez_fairer = { #法案名字，自由放任
+		YBL_Laissez_fairer = { #法案名字，自由放任
 			allowed = {#判断法案使用条件
 				always = yes #判断是否允许出现在经济法案里
 				original_tag = YBL #判断国家是伊比利亚
@@ -551,32 +551,5 @@ ideas = {
 
 	industrial_concern = {#工业企业
 
-		Royal_Academy_of_Science = {#伊比利亚-阿戈尔首席科学院
-
-		    allowed = {#判断法案使用条件
-			    #has_dlc = "Arms Against Tyranny"
-				trigger = {
-					has_full_control_of_state = 732 #要求完全控制哪一地区
-					core_state = 732 #要求核心省份的代码
-					#has_completed_focus = YBL_GC #已完成国策
-				}
-			}
-			research_bonus = { #他能够为哪些科技有促进作用
-			    electronics = 0.1 #电子学
-				dd_tech = 0.05 #驱逐舰
-				cl_tech = 0.05 #轻巡
-				cv_tech = 0.1 #航母研究加成
-			}
-
-			traits = { } #特质
-
-			modifier = { #国家修正
-			    consumer_goods_factor = 0.2 #生活消费品
-				naval_speed_factor = 0.1 #海军速度
-				navy_max_range_factor = 0.05 #海军最大航程参数
-				navy_fuel_consumption_factor = -0.15 #海军燃料消耗-15%
-			}
-			cancel_if_invalid = yes #如果你的状态不支持你继续这个法案是否直接取消
-		}
 	}
 }
