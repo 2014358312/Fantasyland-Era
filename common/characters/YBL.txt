@@ -17,7 +17,7 @@ characters = {#伊比利亚人物
 		}
 
 		country_leader = {#定义党派领导人
-			ideology =  YBL_three #属于什么子意识形态
+			ideology =  YBL_Pluralistic_monarchy #属于什么子意识形态
 			traits = { 
 			    Arrogance
 				Indulgence
@@ -35,19 +35,26 @@ characters = {#伊比利亚人物
 			}
 		}
 
-		country_leader = {#定义党派领导人
-			ideology = YBL_two #子意识形态
-			traits = {  } #特质
-			expire = "1965.1.1.1"
-			id = -1
-		}
+		#country_leader = {#定义党派领导人
+		#	ideology = YBL_Breogan_Thoughton #子意识形态
+		#	traits = {  } #特质
+		#	expire = "1965.1.1.1"
+		#	id = -1
+		#}
 
 		advisor = { #内阁
 			slot = head_of_government_character #内阁栏
 			idea_token = YBL_Breogan_head_of_government_character #布雷奥甘
 			available = { 
 				no_head_of_gov_trigger = yes
-				original_tag = YBL #所在国家系伊比利亚
+				original_tag = YBL
+			}
+			available = { #判断是否可用
+				original_tag = YBL
+				NOT = { country_exists = IDA }
+			}
+			visible = {#判断角色是否在内阁可见
+				original_tag = YBL
 			}
 			traits = { Architectural_designer Chief_Ship_Designer } #角色特质
 			
@@ -80,11 +87,15 @@ characters = {#伊比利亚人物
 		advisor = { #理论家、政治顾问、总司令等内阁
 		    slot = political_advisor #明确属于内阁的什么分支=政治顾问
 		    idea_token = Carmen #ID 识别招募的具体是谁
-		    allowed = {#检测是否可用，国家初始tag
-			    original_tag = YBL
+		    allowed = {#仅在开局检测
+				original_tag = YBL
 			}
-			visible = {#判断角色是否可用，是否在内阁可见
-			    NOT = { country_exists = INQ }
+			available = { #判断是否可用
+				original_tag = YBL
+				NOT = { country_exists = INQ }
+			}
+			visible = {#判断角色是否在内阁可见
+				original_tag = YBL
 			}
 			traits = { Missionaries } #特质
 		}
@@ -99,7 +110,7 @@ characters = {#伊比利亚人物
 			}
 		}
 		country_leader = { #定义党派领导人
-			ideology = YBL_one #子意识形态
+			ideology = YBL_Lrene_Thoughton #子意识形态
 			traits = {  } #特质
 			expire = "1965.1.1.1"
 			id = -1
@@ -107,12 +118,15 @@ characters = {#伊比利亚人物
 
 		field_marshal = { #陆军元帅
 		    idea_token = Lrene1 #ID 识别招募的具体是谁
-		    allowed = {#检测国家初始tag
-			    original_tag = YBL
+		     allowed = {#仅在开局检测
+				original_tag = YBL
 			}
-			visible =  {#判断角色是否可见
-			    NOT = { country_exists = INQ } #判断角色是否可用
-				#has_completed_focus = YBL_GC7B #需要已完成国策
+			available = { #判断是否可用
+				original_tag = YBL
+				NOT = { country_exists = INQ }
+			}
+			visible = {#判断角色是否在内阁可见
+				original_tag = YBL
 			}
 			skill = 8 #将领等级
 			attack_skill = 6 #攻击
@@ -130,14 +144,15 @@ characters = {#伊比利亚人物
 		    slot = political_advisor #明确属于内阁的什么分支=政治顾问
 		    idea_token = Lrene2 #ID 识别招募的具体是谁
 			cost = 300
-		    allowed = {#检测国家初始tag
+		    allowed = {#仅在开局检测
 			    original_tag = YBL
 			}
-			visible = {#判断角色是否可见
-			    NOT = { country_exists = INQ }
+			available = { #判断是否可用
+				original_tag = YBL
+				NOT = { country_exists = INQ }
 			}
-			available = { #判断角色是否启用
-				has_completed_focus = YBL_GC7B #需要已完成国策
+			visible = {#判断角色是否在内阁可见
+				original_tag = YBL
 			}
 			traits = { Missionaries1 } #角色拥有的特质
 		}
@@ -172,8 +187,12 @@ characters = {#伊比利亚人物
 		    allowed = {#检测国家初始tag
 			    original_tag = YBL
 			}
+			available = { #判断是否可用
+				original_tag = YBL
+				NOT = { country_exists = INQ }
+			}
 			visible =  {#判断角色是否在内阁可见
-			    NOT = { country_exists = INQ } #判断角色是否可用
+			    original_tag = YBL
 			}
 			skill = 5 #将领等级
 			attack_skill = 4 #攻击
