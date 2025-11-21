@@ -1366,7 +1366,6 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip = WSG_add_tech
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
     		     value = -0.05
@@ -1607,7 +1606,6 @@ focus_tree = {
    			     id = WSG_balance_of_power
     		     value = -0.05
 			}
-			custom_effect_tooltip = WSG_add_tech
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
     		     value = -0.05
@@ -1839,11 +1837,6 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			add_power_balance_value = {
-   			     id = WSG_balance_of_power
-    		     value = -0.05
-			}
-			custom_effect_tooltip = WSG_add_tech
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
     		     value = -0.05
@@ -4008,9 +4001,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = WSG_general_administration_of_war
-	        army_experience = 50
-	        navy_experience = 50
-	        air_experience = 50
+	        army_experience = 25
+	        navy_experience = 25
+	        air_experience = 25
 		}
 		ai_will_do = {
 			factor = 2
@@ -4039,7 +4032,7 @@ focus_tree = {
    			     id = WSG_balance_of_power
     		     value = -0.20
 			}
-			army_experience = 100
+			army_experience = 50
 		}
 		ai_will_do = {
 			factor = 3
@@ -4064,7 +4057,7 @@ focus_tree = {
 				add_idea =  WSG_outdated_army_theory04
 				remove_idea =  WSG_outdated_army_theory03 
 			}
-			army_experience = 50
+			army_experience = 25
 		}
 		ai_will_do = {
 			factor = 3
@@ -4093,7 +4086,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 		        name = WSG_army_theoretical_innovation_II
 		        cost_reduction = 0.5
-		        uses = 2
+		        uses = 1
 		        category = land_doctrine
 	        }
 		}
@@ -4120,7 +4113,7 @@ focus_tree = {
 				add_idea =  WSG_outdated_army_theory06
 				remove_idea =  WSG_outdated_army_theory05
 			}
-			army_experience = 100
+			army_experience = 50
 		}
 		ai_will_do = {
 			factor = 3
@@ -4148,7 +4141,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 		        name = WSG_shipborne_combat_tactics
 		        cost_reduction = 0.5
-		        uses = 2
+		        uses = 1
 		        category = land_doctrine
 	        }
 		}
@@ -4474,7 +4467,7 @@ focus_tree = {
    			     id = WSG_balance_of_power
     		     value = -0.20
 			}
-			air_experience = 100
+			air_experience = 50
 		}
 		ai_will_do = {
 			factor = 2
@@ -4652,7 +4645,7 @@ focus_tree = {
 				add_idea =  WSG_outdated_air_force04
 				remove_idea =  WSG_outdated_air_force03
 			}
-			air_experience = 50
+			air_experience = 25
 		}
 		ai_will_do = {
 			factor = 2
@@ -4680,7 +4673,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 		        name = WSG_air_force_theoretical_innovation_II
 		        cost_reduction = 0.5
-		        uses = 2
+		        uses = 1
 		        category = air_doctrine
 	        }
 		}
@@ -4707,7 +4700,7 @@ focus_tree = {
 				add_idea =  WSG_outdated_air_force06
 				remove_idea =  WSG_outdated_air_force05
 			}
-			air_experience = 100
+			air_experience = 50
 		}
 		ai_will_do = {
 			factor = 2
@@ -4735,7 +4728,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 		        name = WSG_ship_aircraft_integration
 		        cost_reduction = 0.5
-		        uses = 2
+		        uses = 1
 		        category = air_doctrine
 	        }
 		}
@@ -4833,7 +4826,7 @@ focus_tree = {
    			     id = WSG_balance_of_power
     		     value = -0.20
 			}
-			navy_experience = 100
+			navy_experience = 50
 		}
 		ai_will_do = {
 			factor = 2
@@ -4981,7 +4974,7 @@ focus_tree = {
 				add_idea =  WSG_fading_glory_navy04
 				remove_idea =  WSG_fading_glory_navy03
 			}
-			navy_experience = 50
+			navy_experience = 25
 		}
 		ai_will_do = {
 			factor = 2
@@ -5009,7 +5002,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 		        name = WSG_naval_theoretical_innovation_II
 		        cost_reduction = 0.5
-		        uses = 2
+		        uses = 1
 		        category = naval_doctrine
 	        }
 		}
@@ -5036,7 +5029,7 @@ focus_tree = {
 				add_idea =  WSG_fading_glory_navy06
 				remove_idea =  WSG_fading_glory_navy05
 			}
-		    navy_experience = 100
+		    navy_experience = 50
 		}
 		ai_will_do = {
 			factor = 2
@@ -5064,7 +5057,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 		        name = WSG_honor_navy
 		        cost_reduction = 0.5
-		        uses = 2
+		        uses = 1
 		        category = naval_doctrine
 	        }
 		}
@@ -6061,13 +6054,13 @@ focus_tree = {
 		relative_position_id = WSG_from_the_deep_sea
 		x = 7
 		y = 1
-		cost = 5
+		cost = 2
 		available = {
 			original_tag = WSG 
 		}
 		completion_reward = {
-			army_experience = 50
-	        air_experience = 50
+			army_experience = 25
+	        air_experience = 25
 		}
 		ai_will_do = {
 			factor = 1
@@ -6083,7 +6076,7 @@ focus_tree = {
 		relative_position_id = WSG_mainland_strategy
 		x = -2
 		y = 1
-		cost = 5
+		cost = 3
 		available = {
 			original_tag = WSG 
 			has_completed_focus = WSG_army_of_ship_girl_r
@@ -6092,7 +6085,7 @@ focus_tree = {
 	        add_doctrine_cost_reduction = {
 		        name = WSG_armor_breakthrough
 		        cost_reduction = 0.5
-		        uses = 2
+		        uses = 1
 		        category = land_doctrine
 	        }
 		}
@@ -6424,7 +6417,7 @@ focus_tree = {
 		relative_position_id = WSG_mainland_strategy
 		x = 2
 		y = 1
-		cost = 5
+		cost = 3
 		available = {
 			original_tag = WSG 
 			has_completed_focus = WSG_air_force_of_ship_girl_r
@@ -6433,7 +6426,7 @@ focus_tree = {
 	        add_doctrine_cost_reduction = {
 		        name = WSG_air_strike
 		        cost_reduction = 0.5
-		        uses = 2
+		        uses = 1
 		        category = air_doctrine
 	        }
 		}
@@ -6723,13 +6716,13 @@ focus_tree = {
 		relative_position_id = WSG_from_the_deep_sea
 		x = 7
 		y = 7
-		cost = 5
+		cost = 2
 		available = {
 			original_tag = WSG 
 			has_completed_focus = WSG_navy_of_ship_girl_r
 		}
 		completion_reward = {
-			navy_experience = 100
+			navy_experience = 50
 		}
 		ai_will_do = {
 			factor = 1
@@ -6745,7 +6738,7 @@ focus_tree = {
 		relative_position_id = WSG_ocean_strategy
 		x = -2
 		y = 1
-		cost = 5
+		cost = 3
 		available = {
 			original_tag = WSG 
 		}
@@ -6753,7 +6746,7 @@ focus_tree = {
 	        add_doctrine_cost_reduction = {
 		        name = WSG_sea_control
 		        cost_reduction = 0.5
-		        uses = 2
+		        uses = 1
 		        category = naval_doctrine
 	        }
 		}
@@ -6999,7 +6992,7 @@ focus_tree = {
 		relative_position_id = WSG_ocean_strategy
 		x = 2
 		y = 1
-		cost = 5
+		cost = 3
 		available = {
 			original_tag = WSG 
 		}
@@ -7007,7 +7000,7 @@ focus_tree = {
 	        add_doctrine_cost_reduction = {
 		        name = WSG_main_battle
 		        cost_reduction = 0.5
-		        uses = 2
+		        uses = 1
 		        category = naval_doctrine
 	        }
 		}
