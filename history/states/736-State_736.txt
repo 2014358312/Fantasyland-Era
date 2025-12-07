@@ -2,12 +2,12 @@ state={
 	id=736
 	name="STATE_736"
 	provinces={
-		12121 12642 12764 13419 12861
+		12121  12764 13419 12861 12642
 	}
 	manpower=991964 #地区人力
 	state_category = city
 	history={
-		owner = YBL
+		owner = IDA
 		set_variable = { state_id = 736 }
 		buildings = { #地块所拥有的建筑数量
 			infrastructure = 3 #基建
@@ -17,22 +17,30 @@ state={
 			12764 = {
 				supply_node = 2 #补给中心
 			}
-			12642 = {
+			13419 = {
 				naval_base = 3 #海军基地
+			}
+			12642 = {
+				naval_base = 10 #海军基地
 			}
 		}
 		add_core_of = YBL #该地区核心属于 = YBL 伊比利亚王国
+		add_core_of = IDA 
 		victory_points = {#为地区小区块添加胜利点
 			12121 #区块ID
-			10 #胜利点数量
-		}
-		victory_points = {#为地区小区块添加胜利点
-			12642 #区块ID
-			5 #胜利点数量
+			10 #胜利点数量，伊比利亚之眼标准
 		}
 		victory_points = {#为地区小区块添加胜利点
 			12764 #区块ID
-			15 #胜利点数量
+			15 #胜利点数量，小城市标准
+		}
+		victory_points = {#为地区小区块添加胜利点
+			12642 #区块ID
+			5 #胜利点数量，小港口小建筑标准
+		}
+		victory_points = {#为地区小区块添加胜利点
+			13419 #区块ID
+			10 #胜利点数量，伊比利亚之眼标准
 		}
 	}
 
