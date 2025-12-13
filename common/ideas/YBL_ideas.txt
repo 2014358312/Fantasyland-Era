@@ -505,7 +505,7 @@ ideas = {
 		law = yes #确认它是一种法案
 		use_list_view = no #它是在法案栏中可见的
 
-		YBL_Laissez_fairer = { #法案名字，牧羊人经济
+		YBL_Laissez_fairer = { #法案名字，自由放任
 			allowed = { #开局判定一次后不再判断
 				always = yes #判断是否允许出现在经济法案里
 				original_tag = YBL #判断国家是伊比利亚
@@ -513,43 +513,18 @@ ideas = {
 			removal_cost = -1 #取消该法案所需的政治点数，-1为不花费
 
 			modifier = { #该法案的效果
-			consumer_goods_expected_value = 0.3 #期望的生活消费品数量 
+			consumer_goods_expected_value = 0.30 #期望的生活消费品数量 
 			trade_opinion_factor = 0.1 #贸易协定关系修正
-			research_speed_factor = 0.2 #研究速度
+			research_speed_factor = 0.05 #研究速度
 			local_resources_factor = 0.1 #战略资源获取率
-			production_speed_industrial_complex_factor = 0.4 #民用工厂建造速度
+			local_building_slots_factor = 0.1 #地区最大工业值
+			production_speed_industrial_complex_factor = 0.3 #民用工厂建造速度
 			production_speed_infrastructure_factor = 0.3 #基础设施建造速度
-			production_speed_arms_factory_factor = -0.9 #军用工厂建造速度
+			production_speed_arms_factory_factor = -0.5 #军用工厂建造速度
 			production_speed_bunker_factor = -1 #堡垒建造速度
 			industrial_capacity_factory = -0.5 #工厂产出
 			production_factory_max_efficiency_factor = -0.3 #生产效率上限
 			production_factory_efficiency_gain_factor = -0.3 #生产效率增长
-			}
-
-			allowed_to_remove = { #满足什么条件才能取消法案
-					OR = {#满足下列任意条件之一
-						surrender_progress > 0.3 #投降度大于30
-						NOT = { has_idea = YBL_MZ1 } #要求没有民族精神
-					}
-			}
-			cancel_if_invalid = yes #如果你的状态不支持你继续这个法案是否直接取消
-		}
-
-		YBL_Economic_Collapse = { #法案名字，经济停滞
-			allowed = { #开局判定一次后不再判断
-				always = no #判断是否允许出现在经济法案里
-				original_tag = YBL #判断国家是伊比利亚
-			}
-			removal_cost = -1 #取消该法案所需的政治点数，-1为不花费
-
-			modifier = { #该法案的效果
-			consumer_goods_expected_value = 0.5 #期望的生活消费品数量 
-			trade_opinion_factor = -0.5 #贸易协定关系修正
-			research_speed_factor = -0.8 #研究速度
-			production_speed_industrial_complex_factor = -0.8 #民用工厂建造速度
-			production_speed_infrastructure_factor = -0.8 #基础设施建造速度
-			production_speed_arms_factory_factor = -1 #军用工厂建造速度
-			industrial_capacity_factory = -1 #工厂产出+
 			}
 
 			allowed_to_remove = { #满足什么条件才能取消法案
@@ -572,8 +547,8 @@ ideas = {
 			visible = { #是否可见
 				OR = {
 					AND = {
-						owns_state = 736 #要求拥有省份的代码
-						controls_state = 736 #要求控制省份的代码
+						owns_state = 723 #要求拥有省份的代码
+						controls_state = 723 #要求控制省份的代码
 					}
 					original_tag = YBL #判断国家是伊比利亚王国
 					original_tag = INQ #判断国家是审判庭
@@ -595,8 +570,8 @@ ideas = {
 						    }
 						}
 					}
-					owns_state = 736 #要求拥有省份的代码
-					controls_state = 736 #要求控制省份的代码
+					owns_state = 723 #要求拥有省份的代码
+					controls_state = 723 #要求控制省份的代码
 				}
 			}
 
