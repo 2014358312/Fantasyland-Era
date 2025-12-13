@@ -76,7 +76,7 @@ focus_tree = {
 	focus = {
 		id = YBL_GC1 #GC1迷失航路
 		icon = YBL_nianqdedashengpang #国策图标连接
-		x = 15
+		x = 12
 		y = 1
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
@@ -104,7 +104,7 @@ focus_tree = {
 		id = YBL_GC2 #GC2 布雷奥甘的思考
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC1 #以某一国策为中心确定国策在国策树的位置
-		x = -11
+		x = -8
 		y = 1
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
@@ -237,7 +237,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBL_GC2A3 #GC2A3 国家重建计划委员会
+		id = YBL_GC2A3 #GC2A3 奉命于危难之间
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC2A1
 		x = 0
@@ -278,10 +278,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBL_GC2A4 #GC2A4 协助望曦城重建
+		id = YBL_GC2A4 #GC2A4 提交工业复兴法案
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC2A3
-		x = -2
+		x = -1
 		y = 1
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
@@ -313,28 +313,20 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBL_GC2A5 #GC2A5 重启海洋科学院
+		id = YBL_GC2A5 #GC2A5 灾后环境治理法案
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC2A3
-		x = 2
+		x = 1
 		y = 1
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
 		prerequisite = { 		
-			focus = YBL_GC2A3 
-			focus = YBL_GC3A1
+			focus = YBL_GC2A3
 		}
 
 		ai_will_do = { #ai点击该国策的倾向
 			factor = 3
-		}
-
-		available = { #实时检测
-			AND = {
-				focus = YBL_GC3A1
-				focus = YBL_GC3A2
-			}
 		}
 
 		select_effect = { #点击国策时的效果
@@ -356,13 +348,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBL_GC2A6 #GC2A6 西南铁律工业区
+		id = YBL_GC2A6 #GC2A6 望曦-盐风双城核心战略
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC2A4
 		x = 0
 		y = 1
 
-		cost = 10 #完成国策所需要的时间=填写的数字×7
+		cost = 2 #完成国策所需要的时间=填写的数字×7
 
 		prerequisite = { 		
 			focus = YBL_GC2A4
@@ -391,7 +383,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBL_GC2A7 #GC2A7 望曦大学
+		id = YBL_GC2A7 #GC2A7 圣骸滤净工程
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC2A5
 		x = 0
@@ -401,9 +393,6 @@ focus_tree = {
 
 		prerequisite = { 		
 			focus = YBL_GC2A5
-		}
-		prerequisite = { 		
-			focus = YBL_GC2A3
 		}
 
 		ai_will_do = { #ai点击该国策的倾向
@@ -429,7 +418,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBL_GC2A8 #GC2A8 西南双城核心战略
+		id = YBL_GC2A8 #GC2A8 勉强维稳市场
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC2A3
 		x = 0
@@ -443,9 +432,6 @@ focus_tree = {
 		prerequisite = { 		
 			focus = YBL_GC2A7
 		}
-		prerequisite = { 		
-			focus = YBL_GC2A10
-		}
 
 		ai_will_do = { #ai点击该国策的倾向
 			factor = 3
@@ -470,79 +456,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBL_GC2A9 #GC2A9 试行盐碱治理办法
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC2A3
-		x = 0
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 		
-			focus = YBL_GC2A3
-		}
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 3
-		}
-
-		select_effect = { #点击国策时的效果
-
-		}
-
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC2A10 #GC2A10 圣骸滤净工程
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC2A3
-		x = 0
-		y = 2
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 		
-			focus = YBL_GC2A9
-		}
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 3
-		}
-
-		select_effect = { #点击国策时的效果
-
-		}
-
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC2B #GC2B 据理力争
+		id = YBL_GC2B #GC2B 无法弥合的伤痕
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC2A8
 		x = -2
@@ -553,9 +467,6 @@ focus_tree = {
 		prerequisite = { 		
 			focus = YBL_GC2A8
 		}
-		mutually_exclusive = { 
-			focus = YBL_GC2C
-		} #冲突的国策，需要两边都写
 
 		ai_will_do = { #ai点击该国策的倾向
 			factor = 3
@@ -580,7 +491,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBL_GC2B1 #GC2B1 拉拢铁律省
+		id = YBL_GC2B1 #GC2B1 拉拢军团大阵
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC2B
 		x = -1
@@ -615,7 +526,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBL_GC2B2 #GC2B2 向盐风城转移资产
+		id = YBL_GC2B2 #GC2B2 向望曦转移资产
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC2B
 		x = 1
@@ -688,10 +599,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBL_GC2C #GC2C 暂时的妥协
+		id = YBL_GC2C #GC2C 木偶师的艺术
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC2A8
-		x = 2
+		x = 3
 		y = 1
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
@@ -699,12 +610,9 @@ focus_tree = {
 		prerequisite = { 		
 			focus = YBL_GC2A8
 		}
-		mutually_exclusive = { 
-			focus = YBL_GC2B
-		} #冲突的国策，需要两边都写
 
 		ai_will_do = { #ai点击该国策的倾向
-			factor = 0
+			factor = 3
 		}
 
 		select_effect = { #点击国策时的效果
@@ -761,10 +669,10 @@ focus_tree = {
 	}
 
 		focus = {
-		id = YBL_GC3A #GC3A 岛民提案
+		id = YBL_GC3A #GC3A 阿戈尔事由
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC3 #以某一国策为中心确定国策在国策树的位置
-		x = -4
+		x = -2
 		y = 1
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
@@ -772,51 +680,13 @@ focus_tree = {
 		prerequisite = { 	#前置国策	
 			focus = YBL_GC3 
 		}
-		mutually_exclusive = { 
-			focus = YBL_GC3C focus = YBL_GC3B
-		} #冲突的国策，需要两边都写
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 0
-		}
-
-		available = {
-			
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3A1 #GC3A1 扩大首席权力
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3A2 #以某一国策为中心确定国策在国策树的位置
-		x = -2
-		y = 0
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A 
-		}
 
 		ai_will_do = { #ai点击该国策的倾向
 			factor = 4
 		}
 
 		available = {
-			 
+			always = no #始终为非
 		}
 		
 		available_if_capitulated = no #投降后是否可用
@@ -834,715 +704,24 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBL_GC3A2 #GC3A2 为阿戈尔人平反
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3A #以某一国策为中心确定国策在国策树的位置
-		x = -1
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A 
-		}
-		mutually_exclusive = { 
-			focus = YBL_GC3A3
-		} #冲突的国策，需要两边都写
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 4
-		}
-
-		available = {
-			 
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3A3 #GC3A3 放任反岛民情绪扩大
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3B #以某一国策为中心确定国策在国策树的位置
-		x = -3
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3B focus = YBL_GC3C
-		}
-		mutually_exclusive = { 
-			focus = YBL_GC3A2
-		} #冲突的国策，需要两边都写
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 4
-		}
-
-		available = {
-			 
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3A4 #GC3A4 布雷奥甘改革
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3A2 #以某一国策为中心确定国策在国策树的位置
-		x = -1
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A1 
-		}
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A2 
-		}
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 2
-		}
-
-		available = {
-			 
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3A5 #GC3A5 灾后环境治理法案
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3A4 #以某一国策为中心确定国策在国策树的位置
-		x = -1
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A4 
-		}
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC2A5 
-		}
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 2
-		}
-
-		available = {
-			
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3A6 #GC3A6 有形的大手
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3A4 #以某一国策为中心确定国策在国策树的位置
-		x = 1
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A4 
-		}
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 2
-		}
-
-		available = {
-			 
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3A7 #GC3A7 征收贵族资产
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3A4 #以某一国策为中心确定国策在国策树的位置
-		x = 3
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A4 
-		}
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 2
-		}
-
-		available = {
-			focus = YBL_GC3B3 
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3A8 #GC3A8 加速盐碱地治理
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3A5 #以某一国策为中心确定国策在国策树的位置
-		x = 0
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A5 
-		}
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 2
-		}
-
-		available = {
-			
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3A9 #GC3A9 以工代赈
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3A6 #以某一国策为中心确定国策在国策树的位置
-		x = 0
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A6 
-		}
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 2
-		}
-
-		available = {
-			
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3A10 #GC3A10 投资内陆工业建设
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3A7 #以某一国策为中心确定国策在国策树的位置
-		x = 0
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A7 
-		}
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A6
-		}
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 2
-		}
-
-		available = {
-			
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3A11 #GC3A11 迈向君主立宪
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3A6 #以某一国策为中心确定国策在国策树的位置
-		x = 0
-		y = 2
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A8 
-		}
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A9
-		}
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A10
-		}
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 2
-		}
-
-		available = {
-			
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3C #GC3C 圣徒提案
+		id = YBL_GC3B #GC3B 罢免阿戈尔人
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC3 #以某一国策为中心确定国策在国策树的位置
-		x = 4
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3
-		}
-		mutually_exclusive = { 
-			focus = YBL_GC3B focus = YBL_GC3A
-		} #冲突的国策，需要两边都写
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 4
-		}
-
-		available = {
-			 
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3C2 #GC3C2 威胁贵族
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3C #以某一国策为中心确定国策在国策树的位置
-		x = 1
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3C 
-		}
-		mutually_exclusive = { 
-			focus = YBL_GC3C3
-		} #冲突的国策，需要两边都写
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 4
-		}
-
-		available = {
-			 
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-	
-	focus = {
-		id = YBL_GC3C3 #GC3C3 逼迫贵族
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3B #以某一国策为中心确定国策在国策树的位置
-		x = 3
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3B focus = YBL_GC3A
-		}
-		mutually_exclusive = { 
-			focus = YBL_GC3C2
-		} #冲突的国策，需要两边都写
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 4
-		}
-
-		available = {
-			 
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-focus = {
-		id = YBL_GC3B #GC3B1 王权至上
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3 #以某一国策为中心确定国策在国策树的位置
-		x = 0
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3 
-		}
-		mutually_exclusive = { 
-			focus = YBL_GC3C focus = YBL_GC3A
-		} #冲突的国策，需要两边都写
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 2
-		}
-
-		available = {
-			 
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3B1 #GC3C1 罢免布雷奥甘
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3B #以某一国策为中心确定国策在国策树的位置
-		x = -1
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3B 
-		}
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 2
-		}
-
-		available = {
-			 
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3B2 #GC3C2 确保军队忠诚
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3B #以某一国策为中心确定国策在国策树的位置
-		x = 1
-		y = 1
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3B 
-		}
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 2
-		}
-
-		available = {
-			 
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3B3 #GC3C3 授意逮捕改革派
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3B #以某一国策为中心确定国策在国策树的位置
-		x = 0
-		y = 2
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3B1 
-		}
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3B2 
-		}
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 2
-		}
-
-		available = {
-			 
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3B4 #GC3C4 佩尔多尼族群法
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3B #以某一国策为中心确定国策在国策树的位置
-		x = -2
-		y = 2
-
-		cost = 2 #完成国策所需要的时间=填写的数字×7
-
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3B1 
-		}
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3A3
-		}
-		
-
-		ai_will_do = { #ai点击该国策的倾向
-			factor = 2
-		}
-
-		available = {
-			 
-		}
-		
-		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
-		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
-		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
-
-		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
-
-		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
-		completion_reward = { #国策效果
-
-		}
-	}
-
-	focus = {
-		id = YBL_GC3B5 #GC3C5 将贵族贬为平民
-		icon = YBL_nianqdedashengpang #国策图标连接
-		relative_position_id = YBL_GC3B #以某一国策为中心确定国策在国策树的位置
 		x = 2
-		y = 2
+		y = 1
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
 		prerequisite = { 	#前置国策	
-			focus = YBL_GC3B1 
+			focus = YBL_GC3 
 		}
-		prerequisite = { 	#前置国策	
-			focus = YBL_GC3C3
-		}
-		
 
 		ai_will_do = { #ai点击该国策的倾向
-			factor = 2
+			factor = 4
 		}
 
 		available = {
-			 
+			always = no #始终为非
 		}
 		
 		available_if_capitulated = no #投降后是否可用
@@ -1563,7 +742,7 @@ focus = {
 		id = YBL_GC4 #GC4 改组国教会
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC1 #以某一国策为中心确定国策在国策树的位置
-		x = 12
+		x = 8
 		y = 1
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
@@ -1573,7 +752,7 @@ focus = {
 		}
 
 		ai_will_do = { #ai点击该国策的倾向
-			factor = 0
+			factor = 4
 		}
 
 		available = {

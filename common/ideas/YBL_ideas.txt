@@ -510,7 +510,7 @@ ideas = {
 				always = yes #判断是否允许出现在经济法案里
 				original_tag = YBL #判断国家是伊比利亚
 			}
-			removal_cost = 100 #取消该法案所需的政治点数，-1为不花费
+			removal_cost = -1 #取消该法案所需的政治点数，-1为不花费
 
 			modifier = { #该法案的效果
 			consumer_goods_expected_value = 0.3 #期望的生活消费品数量 
@@ -519,7 +519,7 @@ ideas = {
 			local_resources_factor = 0.1 #战略资源获取率
 			production_speed_industrial_complex_factor = 0.4 #民用工厂建造速度
 			production_speed_infrastructure_factor = 0.3 #基础设施建造速度
-			production_speed_arms_factory_factor = -1 #军用工厂建造速度
+			production_speed_arms_factory_factor = -0.9 #军用工厂建造速度
 			production_speed_bunker_factor = -1 #堡垒建造速度
 			industrial_capacity_factory = -0.5 #工厂产出
 			production_factory_max_efficiency_factor = -0.3 #生产效率上限
@@ -529,7 +529,7 @@ ideas = {
 			allowed_to_remove = { #满足什么条件才能取消法案
 					OR = {#满足下列任意条件之一
 						surrender_progress > 0.3 #投降度大于30
-						NOT = { has_idea = YBL_MZ4 } #要求没有民族精神
+						NOT = { has_idea = YBL_MZ1 } #要求没有民族精神
 					}
 			}
 			cancel_if_invalid = yes #如果你的状态不支持你继续这个法案是否直接取消
@@ -555,7 +555,7 @@ ideas = {
 			allowed_to_remove = { #满足什么条件才能取消法案
 					OR = {#满足下列任意条件之一
 						surrender_progress > 0.3 #投降度大于30
-						NOT = { has_idea = YBL_MZ4 } #要求没有民族精神
+						NOT = { has_idea = YBL_MZ1 } #要求没有民族精神
 					}
 			}
 			cancel_if_invalid = yes #如果你的状态不支持你继续这个法案是否直接取消
@@ -564,6 +564,10 @@ ideas = {
 
 	industrial_concern = {#工业企业
 	    YBL_Royal_Academy_of_Science = {#伊比利亚-阿戈尔首席科学院
+
+		    allowed = { #开局判定一次后不再判断
+				original_tag = YBL #判断国家是伊比利亚王国
+			}
 
 			visible = { #是否可见
 				OR = {
@@ -606,7 +610,7 @@ ideas = {
 			traits = { } #特质
 
 			modifier = { #国家修正
-			    consumer_goods_factor = 0.15 #生活消费品
+			    consumer_goods_factor = 0.25 #生活消费品
 				naval_speed_factor = 0.1 #海军速度
 				navy_max_range_factor = 0.1 #海军最大航程参数
 				navy_fuel_consumption_factor = -0.1 #海军燃料消耗-10%
