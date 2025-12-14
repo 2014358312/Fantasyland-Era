@@ -198,3 +198,52 @@ defined_text = {
 	}
 	text = { localization_key = wrong }
 }
+
+defined_text = {
+	name = GetMonthlyPanci
+	text = {
+	   trigger = {
+			power_balance_value = {
+    			id = WSG_balance_of_power
+   			    value > 0.6
+			}
+	   }
+	   localization_key = monthly_panci_add50
+	}
+	text = {
+	   trigger = {
+			power_balance_value = {
+    			id = WSG_balance_of_power
+   			    value > 0.2
+			}
+	   }
+	   localization_key = monthly_panci_add30
+	}
+	text = {
+	   trigger = {
+			power_balance_value = {
+    			id = WSG_balance_of_power
+   			    value > -0.2
+			}
+	   }
+	   localization_key = monthly_panci_add15
+	}
+	text = {
+	   trigger = {
+			power_balance_value = {
+    			id = WSG_balance_of_power
+   			    value > -0.6
+			}
+	   }
+	   localization_key = monthly_panci_add10
+	}
+	text = {
+	   trigger = {
+			power_balance_value = {
+    			id = WSG_balance_of_power
+   			    value < -0.59
+			}
+	   }
+	   localization_key = monthly_panci_add5
+	}
+}
