@@ -3,50 +3,202 @@
 ###########################
 
 add_namespace = YBL_SJ
+add_namespace = YBL_BLAG_SJ
+#布雷奥甘线
+    country_event = { #迷失航路
+    	id = YBL_SJ.1
+    	title = YBL_SJ.1.t #事件名，本地化的值，括号内可以加trigger参数
+    	desc = YBL_SJ.1.desc #事件描述，括号内可以加trigger参数
+    	#picture = 图片索引
 
-country_event = {
-	id = YBL_SJ.1
-	title = YBL_SJ.1.t #事件名，本地化的值，括号内可以加trigger参数
-	desc = YBL_SJ.1.desc #事件描述，括号内可以加trigger参数
-	#picture = 图片索引
+    	option = { #选项的本地化，name = 选项内容
+    		name = YBL_SJ.1.A
+    		ai_chance = {
+    			base = 10
+    		}
+    		add_political_power = 10 #获得政治点数
+    		complete_national_focus = YBL_GC3 #完成国策召开王国议会
+    	}
 
-	option = { #选项的本地化，name = 选项内容
-		name = YBL_SJ.1.A
-		ai_chance = {
-			base = 10
-		}
-		add_political_power = 10 #获得政治点数
-		complete_national_focus = YBL_GC3 #完成国策召开王国议会
-	}
+    	option = { #选项的本地化，name = 选项内容
+	    	name = YBL_SJ.1.B
+	    	ai_chance = {
+	    		base = 2
+	    	}
+    		add_political_power = 10 #获得政治点数
+    		complete_national_focus = YBL_GC2 #完成国策布雷奥甘的思考
+    	}
 
-	option = { #选项的本地化，name = 选项内容
-		name = YBL_SJ.1.B
-		ai_chance = {
-			base = 2
-		}
-		add_political_power = 10 #获得政治点数
-		complete_national_focus = YBL_GC2 #完成国策布雷奥甘的思考
-	}
+    	option = { #选项的本地化，name = 选项内容
+    		name = YBL_SJ.1.C
+    		ai_chance = {
+	    		base = 2
+    		}
+    		add_political_power = 10 #获得政治点数
+    		complete_national_focus = YBL_GC4 #完成国策剑与提灯
+    	}
 
-	option = { #选项的本地化，name = 选项内容
-		name = YBL_SJ.1.C
-		ai_chance = {
-			base = 2
-		}
-		add_political_power = 10 #获得政治点数
-		complete_national_focus = YBL_GC4 #完成国策剑与提灯
-	}
+    	trigger = { #每隔20天检测是否符合条件，符合立即触发
+    	    original_tag = YBL
+    		has_completed_focus = YBL_GC1 #完成了国策
+    	}	
+    	five_only_once = yes #是否只触发一次
+    	is_triggered_only = yes #只能被代码触发
+    	#major = yes 会让所有国家收到此事件
+    	#如果规定只能触发一次，即便规定了major=yes，其他国家也无法触发该事件
+    	hidden = no #他是否是隐藏的，不显示事件只触发效果
+    	immediate = {  #在框内填写内容，触发事件时就触发效果
+    		
+    	}
+    }
 
-	trigger = { #每隔20天检测是否符合条件，符合立即触发
-	    original_tag = YBL
-		has_completed_focus = YBL_GC1 #完成了国策
-	}	
-	five_only_once = yes #是否只触发一次
-	is_triggered_only = yes #只能被代码触发
-	#major = yes 会让所有国家收到此事件
-	#如果规定只能触发一次，即便规定了major=yes，其他国家也无法触发该事件
-	hidden = no #他是否是隐藏的，不显示事件只触发效果
-	immediate = {  #在框内填写内容，触发事件时就触发效果
-		
-	}
-}
+	country_event = { #王城来信
+    	id = YBL_SJ.2 
+    	title = YBL_SJ.2.t #事件名，本地化的值，括号内可以加trigger参数
+    	desc = YBL_SJ.2.desc #事件描述，括号内可以加trigger参数
+    	#picture = 图片索引
+
+    	option = { #选项的本地化，name = 选项内容
+    		name = YBL_SJ.2.A
+    		ai_chance = {
+    			base = 10
+    		}
+    		country_event = { days = 0 random = 6 id = YBL_SJ.3 }
+    	}
+
+    	five_only_once = yes #是否只触发一次
+    	is_triggered_only = yes #只能被代码触发
+    	#major = yes 会让所有国家收到此事件
+    	#如果规定只能触发一次，即便规定了major=yes，其他国家也无法触发该事件
+    	hidden = no #他是否是隐藏的，不显示事件只触发效果
+    	immediate = {  #在框内填写内容，触发事件时就触发效果
+    		
+    	}
+    }
+
+	country_event = { #回函
+    	id = YBL_SJ.3
+    	title = YBL_SJ.3.t #事件名，本地化的值，括号内可以加trigger参数
+    	desc = YBL_SJ.3.desc #事件描述，括号内可以加trigger参数
+    	#picture = 图片索引
+
+    	option = { #选项的本地化，name = 选项内容
+    		name = YBL_SJ.3.A
+    		ai_chance = {
+    			base = 1
+    		}
+    		add_political_power = 20 #获得政治点数
+			add_timed_idea = { idea = YBL_MZ10 days = 90 }
+			hidden_effect = {
+			    random_list = { 
+			        75 = {  #倾向
+		    		country_event = { days = 90 random = 0 id = YBL_SJ.4 }
+		        	} 
+		        	25 = {  #倾向
+			    	country_event = { days = 90 random = 0 id = YBL_SJ.5 }
+		        	} 
+		        }
+		    }
+    	}
+
+		option = { #选项的本地化，name = 选项内容
+    		name = YBL_SJ.3.B
+    		ai_chance = {
+    			base = 10
+    		}
+    		add_political_power = -50 #获得政治点数
+			add_timed_idea = { idea = YBL_MZ11 days = 90 }
+    	}
+
+    	five_only_once = yes #是否只触发一次
+    	is_triggered_only = yes #只能被代码触发
+    	#major = yes 会让所有国家收到此事件
+    	#如果规定只能触发一次，即便规定了major=yes，其他国家也无法触发该事件
+    	hidden = no #他是否是隐藏的，不显示事件只触发效果
+    	immediate = {  #在框内填写内容，触发事件时就触发效果
+    		
+    	}
+    }
+
+	country_event = { #本性难移
+    	id = YBL_SJ.4
+    	title = YBL_SJ.4.t #事件名，本地化的值，括号内可以加trigger参数
+    	desc = YBL_SJ.4.desc #事件描述，括号内可以加trigger参数
+    	#picture = 图片索引
+
+    	option = { #选项的本地化，name = 选项内容
+    		name = YBL_SJ.4.A
+    		ai_chance = {
+    			base = 1
+    		}
+			add_popularity = { ideology = neutrality popularity = -0.1 }
+    	}
+
+    	five_only_once = yes #是否只触发一次
+    	is_triggered_only = yes #只能被代码触发
+    	#major = yes 会让所有国家收到此事件
+    	#如果规定只能触发一次，即便规定了major=yes，其他国家也无法触发该事件
+    	hidden = no #他是否是隐藏的，不显示事件只触发效果
+    	immediate = {  #在框内填写内容，触发事件时就触发效果
+    		
+    	}
+    }
+
+	country_event = { #与民更始
+    	id = YBL_SJ.5
+    	title = YBL_SJ.5.t #事件名，本地化的值，括号内可以加trigger参数
+    	desc = YBL_SJ.5.desc #事件描述，括号内可以加trigger参数
+    	#picture = 图片索引
+
+    	option = { #选项的本地化，name = 选项内容
+    		name = YBL_SJ.5.A
+    		ai_chance = {
+    			base = 1
+    		}
+			716 = {
+		        add_extra_state_shared_building_slots = 1
+		        add_building_construction = {
+		        	type = infrastructure
+		        	level = 1
+			        instant_build = yes #立刻完成 no反之
+		        }
+			}
+			724 = {
+		        add_extra_state_shared_building_slots = 1
+		        add_building_construction = {
+		        	type = infrastructure
+		        	level = 1
+			        instant_build = yes #立刻完成 no反之
+		        }
+				add_building_construction = {
+		        	type = industrial_complex #民用工厂
+		        	level = 1
+			        instant_build = yes #立刻完成 no反之
+		        }
+			}
+			723 = {
+		        add_extra_state_shared_building_slots = 2
+		        add_building_construction = {
+		        	type = infrastructure
+		        	level = 1
+			        instant_build = yes #立刻完成 no反之
+		        }
+				add_building_construction = {
+		        	type = industrial_complex #民用工厂
+		        	level = 2
+			        instant_build = yes #立刻完成 no反之
+		        }
+			}
+			add_popularity = { ideology = neutrality popularity = 0.03 }
+			add_popularity = { ideology = democratic popularity = -0.03 }
+    	}
+
+    	five_only_once = yes #是否只触发一次
+    	is_triggered_only = yes #只能被代码触发
+    	#major = yes 会让所有国家收到此事件
+    	#如果规定只能触发一次，即便规定了major=yes，其他国家也无法触发该事件
+    	hidden = no #他是否是隐藏的，不显示事件只触发效果
+    	immediate = {  #在框内填写内容，触发事件时就触发效果
+    		
+    	}
+    }
