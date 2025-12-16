@@ -1,0 +1,826 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+focus_tree = {
+	id = mod_focus_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = IDA
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 20 y = 1500 } #持续性国策位置调整
+	
+	#测试国策
+	focus = {
+		id = IDA_GCCS #GCCS测试
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		#relative_position_id = 指定国策的id #以某一国策为中心确定国策在国策树的位置
+		x = 1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			
+		}
+     #前置国策 如果在同一个框内增加一个“focis = xxx”则效果为“完成其中一个国策即可”
+	 #如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		cancel = { #当满足什么条件时，国策会被取消
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+#伊比利亚民主同盟（内战年代）
+    focus = {
+		id = IDA_GC1 #重组特区政府
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		#relative_position_id = 指定国策的id #以某一国策为中心确定国策在国策树的位置
+		x = 8
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC1A #寻求特区法院支持
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		 relative_position_id = IDA_GC1 #以某一国策为中心确定国策在国策树的位置
+		x = -1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC1
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC1B #控制贵族议员
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		 relative_position_id = IDA_GC1 #以某一国策为中心确定国策在国策树的位置
+		x = 1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC1
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC2 #应对王国特使
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		relative_position_id = IDA_GC1 #以某一国策为中心确定国策在国策树的位置
+		x = -4
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC1
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC2A #稳定改革成果
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		relative_position_id = IDA_GC2 #以某一国策为中心确定国策在国策树的位置
+		x = -2
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC2
+		}
+		mutually_exclusive = { 
+			focus = IDA_GC2B
+		} #冲突的国策，需要两边都写 
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC2A1 #整合特区行政机构
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		relative_position_id = IDA_GC2A #以某一国策为中心确定国策在国策树的位置
+		x = -1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC2A
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC2A2 #储备资源
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		relative_position_id = IDA_GC2A #以某一国策为中心确定国策在国策树的位置
+		x = 1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC2A
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC2A3 #完成工业转型
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		relative_position_id = IDA_GC2A2 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC2A2
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC2A4 #特区外交
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		relative_position_id = IDA_GC2A1 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC2A1
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC2A5 #装甲采购合同
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		relative_position_id = IDA_GC2A3 #以某一国策为中心确定国策在国策树的位置
+		x = -1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC2A4
+		}
+		prerequisite = { 		
+			focus = IDA_GC2A3
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC2B #宣布紧急状态
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		relative_position_id = IDA_GC2 #以某一国策为中心确定国策在国策树的位置
+		x = 2
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC2
+		}
+		mutually_exclusive = { 
+			focus = IDA_GC2A
+		} #冲突的国策，需要两边都写 
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC2B1 #征召支持者
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		relative_position_id = IDA_GC2B #以某一国策为中心确定国策在国策树的位置
+		x = 1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC2B
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC2B2 #实施全面封锁
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		relative_position_id = IDA_GC2B #以某一国策为中心确定国策在国策树的位置
+		x = -1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC2B
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC2B3 #清洗国王派
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		relative_position_id = IDA_GC2B2 #以某一国策为中心确定国策在国策树的位置
+		x = 1
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC2B2
+		}
+		prerequisite = { 		
+			focus = IDA_GC2B1
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC2B4 #突袭攻势
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		relative_position_id = IDA_GC2B3 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC2B3
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC2C #击碎王冠
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		relative_position_id = IDA_GC2 #以某一国策为中心确定国策在国策树的位置
+		x = 0
+		y = 5
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC2A5 focus = IDA_GC2B4
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+
+	focus = {
+		id = IDA_GC3 #《雷亚宪法》
+		icon = GFX_focus_generic_improve_the_administration #国策图标连接
+		relative_position_id = IDA_GC1 #以某一国策为中心确定国策在国策树的位置
+		x = 4
+		y = 1
+
+		cost = 2 #完成国策所需要的时间=填写的数字×7
+
+		prerequisite = { 		
+			focus = IDA_GC1
+		}
+
+		ai_will_do = { #ai点击该国策的倾向
+			factor = 4
+		}
+
+		available = { #国策可以点击时的条件
+
+		}
+
+		allow_branch = { #该国策可显示的条件
+		
+	    }
+
+		bypass = { #跳过该国策的条件（不会给国策效果）
+
+		}
+
+		select_effect = { #点击国策时的效果
+
+		}
+
+		available_if_capitulated = no #投降后是否可用
+		cancelable = no #国策能否被取消
+		cancel_if_invalid = yes #不满足某一条件时国策是否取消
+		continue_if_invalid = no #不满足某一条件时国策是否取消
+		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
+
+		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
+
+		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
+		completion_reward = { #国策效果
+
+		}
+	}
+}

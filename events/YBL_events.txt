@@ -99,6 +99,7 @@ add_namespace = YBL_BLAG_SJ
 		        	} 
 		        }
 		    }
+			complete_national_focus = YBL_GC2C
     	}
 
 		option = { #选项的本地化，name = 选项内容
@@ -108,6 +109,7 @@ add_namespace = YBL_BLAG_SJ
     		}
     		add_political_power = -50 #获得政治点数
 			add_timed_idea = { idea = YBL_MZ11 days = 90 }
+			complete_national_focus = YBL_GC2B
     	}
 
     	five_only_once = yes #是否只触发一次
@@ -201,4 +203,54 @@ add_namespace = YBL_BLAG_SJ
     	immediate = {  #在框内填写内容，触发事件时就触发效果
     		
     	}
-    }
+	}
+
+	country_event = { #挣脱王权的枷锁
+    	id = YBL_SJ.6
+    	title = YBL_SJ.6.t #事件名，本地化的值，括号内可以加trigger参数
+    	desc = YBL_SJ.6.desc #事件描述，括号内可以加trigger参数
+    	#picture = 图片索引
+
+    	option = { #选项的本地化，name = 选项内容
+    		name = YBL_SJ.6.A
+    		ai_chance = {
+    			base = 1
+    		}
+			
+    	}
+
+    	five_only_once = yes #是否只触发一次
+    	is_triggered_only = yes #只能被代码触发
+    	#major = yes 会让所有国家收到此事件
+    	#如果规定只能触发一次，即便规定了major=yes，其他国家也无法触发该事件
+    	hidden = no #他是否是隐藏的，不显示事件只触发效果
+    	immediate = {  #在框内填写内容，触发事件时就触发效果
+    		
+    	}
+	}
+
+	country_event = { #挣脱王权的枷锁
+    	id = YBL_SJ.7
+    	title = YBL_SJ.7.t #事件名，本地化的值，括号内可以加trigger参数
+    	desc = YBL_SJ.7.desc #事件描述，括号内可以加trigger参数
+    	#picture = 图片索引
+
+    	option = { #选项的本地化，name = 选项内容
+    		name = YBL_SJ.7.A
+    		ai_chance = {
+    			base = 1
+    		}
+			IDA = {
+				change_tag_from = YBL
+			}
+    	}
+
+    	five_only_once = yes #是否只触发一次
+    	is_triggered_only = yes #只能被代码触发
+    	#major = yes 会让所有国家收到此事件
+    	#如果规定只能触发一次，即便规定了major=yes，其他国家也无法触发该事件
+    	hidden = no #他是否是隐藏的，不显示事件只触发效果
+    	immediate = {  #在框内填写内容，触发事件时就触发效果
+    		
+    	}
+	}
