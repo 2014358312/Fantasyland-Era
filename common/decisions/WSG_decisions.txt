@@ -574,12 +574,16 @@ WSG_secretary_ship_agenda_category = {
 			original_tag = WSG
 		}
 	    available = {
-			command_power >50
+			hidden_effect = { always = yes }
 	    }	
 	    visible = {
 			has_country_flag = secretary_ship_cd
 	    }
-		cost = 50
+		custom_cost_trigger = {
+			command_power > 49
+			has_political_power > 49
+		}
+		custom_cost_text = decision_cost_CP_50_pp_50
 		fire_only_once = no
 		days_re_enable = 180
 		modifier = {
@@ -587,7 +591,10 @@ WSG_secretary_ship_agenda_category = {
 		complete_effect = {
 			custom_effect_tooltip = WSG_remove_secretary_ship_cd
 			clr_country_flag = secretary_ship_cd
-			add_command_power = -50
+			hidden_effect = {
+				add_command_power = -50
+				add_political_power = -50
+			}
 		}
 		ai_will_do = {
 			factor = 10
@@ -927,7 +934,7 @@ WSG_secretary_ship_agenda_category = {
         fire_only_once = no
         days_remove = 180
         modifier = {
-			political_power_factor = 0.1
+			political_power_gain = 0.5
         }
         complete_effect = {
 			custom_effect_tooltip =  WSG_panci_reduce_75_tt
@@ -1560,9 +1567,9 @@ WSG_secretary_ship_agenda_category = {
         }
         cost = 0
         fire_only_once = no
-        days_remove = 7
+        days_remove = 30
         modifier = {
-			planning_speed = 0.7
+			planning_speed = 0.5
         }
         complete_effect = {
 			custom_effect_tooltip = WSG_panci_reduce_50_tt
@@ -1596,9 +1603,9 @@ WSG_secretary_ship_agenda_category = {
         }
         cost = 0
         fire_only_once = no
-        days_remove = 14
+        days_remove = 45
         modifier = {
-			dig_in_speed_factor = 0.7
+			dig_in_speed_factor = 0.5
         }
         complete_effect = {
 			custom_effect_tooltip = WSG_panci_reduce_75_tt
