@@ -1,0 +1,216 @@
+ideas = {
+	hidden_ideas = {
+
+		FON_fontaine_military_army_0 = {
+			name = FON_fontaine_army
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = -0.10
+				supply_consumption_factor = -0.05
+				minimum_training_level = -0.10
+				army_speed_factor = -0.10
+				training_time_factor = 0.25
+				custom_modifier_tooltip = blank_null
+			}
+		}
+
+		FON_fontaine_military_navy_0 = {
+			name = FON_fontaine_navy
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				naval_detection = -0.15
+				screening_efficiency = 0.10
+				navy_capital_ship_attack_factor = -0.15
+				navy_capital_ship_defence_factor = -0.20
+				refit_speed = 0.05
+				repair_speed_factor = -0.10
+			}
+		}
+
+		FON_fontaine_military_air_force_0 = {
+			name = FON_fontaine_air_force
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				air_accidents_factor = 0.15
+				air_training_xp_gain_factor = -0.10
+				air_mission_xp_gain_factor = 0.10
+				air_ace_generation_chance_factor = -0.50
+				air_range_factor = -0.75
+			}
+		}
+		
+	}
+	
+	country = {
+		FON_belief_of_hydro_archon = {
+			picture = MEX_church_power_5
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			available = {}
+			
+			cancel = {}
+			
+			traits = {}
+			
+			modifier = {
+				consumer_goods_factor = 0.03
+				party_popularity_stability_factor = 0.05
+				conscription_factor = 0.10
+			}
+			
+			targeted_modifier = {}
+			
+			equipment_bonus = {}
+			
+			research_bonus = {}
+			
+			rule = {}
+			
+			on_add = {}
+			
+			on_remove = {}
+		}
+		
+		FON_pool_government = {
+			picture = generic_disjointed_gov
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				trade_laws_cost_factor = 0.20
+				mobilization_laws_cost_factor = 0.20
+				economy_cost_factor = 0.20
+				political_advisor_cost_factor = 0.25
+			}
+		}
+		
+		FON_oratrice_mecanique_d_analyse_cardinale = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.10
+			}
+		}
+		
+		FON_fontaine_research_institute = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.10
+				custom_modifier_tooltip = FON_fontaine_research_institute_mtt
+			}
+		}
+		
+		FON_fontaine_industrial_system_fake = {
+			name = FON_fontaine_industrial_system_dynamic_modifier
+			picture = SOV_third_five_year_plan_civilian
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+
+			available = {
+				#always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.20
+				production_speed_industrial_complex_factor = 0.10
+				production_speed_arms_factory_factor = -0.10
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = -0.05
+				industrial_concern_cost_factor = -0.15
+			}
+		}
+		
+		FON_fontaine_military_fake = {
+			name = FON_fontaine_military_dynamic_modifier
+			picture = tur_disorganised_armed_forces
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+
+			available = {
+				#always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = -0.15
+				war_stability_factor = -0.10
+				custom_modifier_tooltip = FON_fontaine_military_air_force_mtt
+				custom_modifier_tooltip = FON_fontaine_military_navy_mtt
+				custom_modifier_tooltip = FON_fontaine_military_army_mtt
+			}
+		}
+	}
+}
