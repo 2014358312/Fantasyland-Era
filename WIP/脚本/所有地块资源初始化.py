@@ -44,7 +44,8 @@ def process_file(file_path):
         'rubber': generate_random_value([40, 35, 20, 5], 0.95),
         'tungsten': generate_random_value([30, 40, 25, 5], 0.90),
         'steel': generate_random_value([10, 20, 40, 30], 0.70),
-        'chromium': generate_random_value([25, 35, 30, 10], 0.90)
+        'chromium': generate_random_value([25, 35, 30, 10], 0.90),
+        'coal': 1
     }
 
     # 替换现有的 resources 字段
@@ -55,6 +56,7 @@ def process_file(file_path):
         f"\t\ttungsten={resources['tungsten']}\n",
         f"\t\tsteel={resources['steel']}\n",
         f"\t\tchromium={resources['chromium']}\n",
+        f"\t\tcoal={resources['coal']}\n",
         "\t}\n"
     ] + lines[resources_index + 8:]
 
