@@ -4,13 +4,40 @@ set_convoys = 80
 set_stability = 0.65
 set_war_support = 0.35
 starting_train_buffer = 2
+set_oob = TIA_1000
+set_naval_oob = TIA_1000_naval
+
 set_technology = {
 	basic_train = 1
 	### Infantry ###
 	infantry_weapons = 1
 	infantry_weapons1 = 1
+	gw_artillery = 1
+	interwar_artillery = 1
 	tech_support = 1
 	tech_engineers = 1
+	basic_naval_mines = 1
+	submarine_mine_laying = 1
+	basic_torpedo = 1
+	basic_battery = 1
+	basic_light_battery = 1
+	basic_heavy_battery = 1
+	improved_ship_torpedo_launcher = 1
+	early_ship_hull_submarine = 1
+	basic_ship_hull_submarine = 1
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	early_ship_hull_cruiser = 1
+	basic_ship_hull_cruiser = 1
+	early_ship_hull_heavy = 1
+	basic_ship_hull_heavy = 1
+	early_ship_hull_carrier = 1
+	basic_ship_hull_carrier = 1
+	mtg_transport = 1
+	coastal_defense_ships = 1
+	basic_depth_charges = 1
+	basic_cruiser_armor_scheme = 1
+	basic_dp_light_battery = 1
 }
 
 
@@ -437,4 +464,137 @@ set_popularities = {
 	neutrality = 95
 	communism = 1
 	fascism = 1
+}
+
+create_equipment_variant = {
+	name = "堤亚穆级"
+	name_group = TIA_BB_tearmoon
+	design_team = mio:TIA_GARDERNERS_naval_arsenal_organization
+	type = ship_hull_heavy_1
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_2
+		fixed_ship_anti_air_slot = ship_anti_air_1
+		fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = heavy_ship_engine_2
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_1
+		front_1_custom_slot = ship_anti_air_1
+		mid_1_custom_slot = ship_secondaries_1
+		mid_2_custom_slot = ship_airplane_launcher_1
+		rear_1_custom_slot = ship_heavy_battery_2
+	}
+}
+
+create_equipment_variant = {
+	name = "米娅级"
+	type = ship_hull_cruiser_1
+	name_group = TIA_CA_Mia
+	# design_team = mio:TIA_GARDERNERS_naval_arsenal_organization
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_light_medium_battery_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_1
+		fixed_ship_armor_slot = ship_armor_cruiser_1
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		mid_1_custom_slot = ship_torpedo_1
+		mid_2_custom_slot = empty
+		rear_1_custom_slot = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "露那提亚级"
+	type = ship_hull_carrier_1
+	name_group = TIA_CV_Lunatia
+	parent_version = 0
+	modules = {
+		fixed_ship_deck_slot_1 = ship_deck_space
+		fixed_ship_deck_slot_2 = ship_deck_space
+		fixed_ship_anti_air_slot = ship_anti_air_2
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = carrier_ship_engine_2
+		fixed_ship_secondaries_slot = dp_ship_secondaries_1
+		front_1_custom_slot = ship_deck_space
+		mid_1_custom_slot = ship_deck_space
+	}
+}
+
+create_equipment_variant = {
+	name = "芙三级"
+	type = ship_hull_submarine_2
+	name_group = TIA_SS_F_III_Class
+	# design_team = mio:JAP_sasebo_naval_arsenal_organization
+	parent_version = 0
+	modules = {
+		fixed_ship_torpedo_slot = ship_torpedo_sub_1
+		fixed_ship_engine_slot = sub_ship_engine_1
+		rear_1_custom_slot = ship_torpedo_sub_1
+	}
+}	
+
+create_equipment_variant = {
+	name = "白雪级"
+	type = ship_hull_light_2
+	name_group = TIA_DD_BAIXUE
+	# design_team = mio:JAP_maizuru_naval_arsenal_organization
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_2
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = light_ship_engine_2
+		fixed_ship_torpedo_slot = ship_torpedo_2
+		mid_1_custom_slot = ship_torpedo_2
+		rear_1_custom_slot = ship_depth_charge_1
+	}
+}
+
+create_equipment_variant = {
+	name = "伊黎耶林级"
+	type = ship_hull_heavy_1
+	# design_team = mio:JAP_sasebo_naval_arsenal_organization
+	name_group = JAP_BB_HISTORICAL
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_1
+		fixed_ship_anti_air_slot = ship_anti_air_1
+		fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = heavy_ship_engine_2
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_1
+		front_1_custom_slot = ship_heavy_battery_1
+		mid_1_custom_slot = ship_secondaries_1
+		mid_2_custom_slot = ship_airplane_launcher_1
+		rear_1_custom_slot = ship_heavy_battery_1
+	}
+	obsolete = yes
+}
+
+create_equipment_variant = {
+	name = "普雷顿级"
+	type = ship_hull_cruiser_2
+	name_group = TIA_CA_Preton
+	design_team = mio:JAP_sasebo_naval_arsenal_organization
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_2
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_2
+		fixed_ship_armor_slot = ship_armor_cruiser_2
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		front_1_custom_slot = ship_medium_battery_2
+		mid_1_custom_slot = ship_torpedo_2
+		mid_2_custom_slot = ship_torpedo_2
+		rear_1_custom_slot = ship_airplane_launcher_1
+	}
+	obsolete = yes
 }

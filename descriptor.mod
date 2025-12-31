@@ -1,11 +1,11 @@
-version="1.0"
+version="1.17"
 tags={
 	"Utilities"
 	"Map"
 	"Translation"
 	"Graphics"
 }
-name="Fantasyland Era"
+name="Fantasyland-Era"
 replace_path="common/abilities"
 replace_path="common/ai_areas"
 replace_path="common/ai_strategy"
