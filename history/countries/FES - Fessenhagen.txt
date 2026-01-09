@@ -1,5 +1,5 @@
 ﻿capital = 701
-
+set_oob = FES_1000
 set_research_slots = 3
 set_convoys = 80
 set_stability = 0.65
@@ -13,8 +13,35 @@ set_technology = {
 	infantry_weapons1 = 1
 	tech_support = 1
 	tech_engineers = 1
+	gw_artillery = 1
+	tech_trucks = 1
+	armored_car1 = 1
+	tech_recon = 1
+	autoloader_guidelines = 1
+	converted_ifv_chassis = 1
+	interwar_antiair = 1
 }
+create_equipment_variant = {
+	name = "00式主战战车" #先放着 不会起名
+	type = mbt_chassis_0
+	modules = {
+		main_armament_slot = tank_small_cannon
+		engine_type_slot = tank_diesel_engine
+		armor_type_slot = tank_steel_armor
+		suspension_type_slot = tank_torsion_bar_suspension
+	}
 
+}
+create_equipment_variant = {
+	name = "一式步战车"
+	type = ifv_chassis_0
+	modules = {
+		main_armament_slot = tank_heavy_machinegun
+		engine_type_slot = tank_half_track_suspension
+		armor_type_slot = tank_steel_armor
+		turret_type_slot = ifv_turret_basic
+	}
+}
 recruit_character = FES_Tanya_von_Degurechaff
 
 set_politics = {

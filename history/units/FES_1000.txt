@@ -1,0 +1,358 @@
+division_template = {
+	name = "帝国殖民地步兵师"
+	division_names_group = FES_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		infantry = { x = 2 y = 3 }
+		artillery_brigade = { x = 3 y = 0 }
+		armored_car = {
+			x = 4
+			y = 0
+		}
+	}
+	support = {
+		artillery = {
+			x = 0
+			y = 0
+		}
+		engineer = {
+			x = 0
+			y = 1
+		}
+		recon = {
+			x = 0
+			y = 2
+		}
+	}
+}
+
+division_template = {
+	name = "帝国主力步兵师"
+	division_names_group = FES_INF_02
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+		infantry = { x = 2 y = 0 }
+		artillery_brigade = { x = 3 y = 0 }
+		artillery_brigade = { x = 3 y = 1 }
+		artillery_brigade = { x = 3 y = 2 }
+		mbt_unit = { x = 4 y = 0 }
+	}
+	support = {
+		artillery = {
+			x = 0
+			y = 0
+		}
+		engineer = {
+			x = 0
+			y = 1
+		}
+		recon = {
+			x = 0
+			y = 2
+		}
+		anti_air = {
+			x = 0
+			y = 3
+		}
+	}
+}
+division_template = {
+	name = "帝国装甲师"
+	division_names_group = FES_ARM_01
+	template_counter = 21
+	regiments = {
+		ifv_unit = { x = 0 y = 1 }
+		ifv_unit = { x = 0 y = 2 }
+		ifv_unit = { x = 0 y = 3 }
+		ifv_unit = { x = 1 y = 1 }
+		ifv_unit = { x = 1 y = 2 }
+		ifv_unit = { x = 1 y = 3 }
+		artillery_brigade = { x = 2 y = 0 }
+		artillery_brigade = { x = 2 y = 1 }
+		artillery_brigade = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = {
+			x = 0
+			y = 0
+		}
+		engineer = {
+			x = 0
+			y = 1
+		}
+		recon = {
+			x = 0
+			y = 2
+		}
+		anti_air = {
+			x = 0
+			y = 3
+		}
+	}
+}
+#第一集团军
+units = {
+	division = {
+		name = "第101帝国步兵师“警卫旗队”"
+		location = 13473
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第102帝国步兵师“帝国”"
+		location = 12984
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第103帝国殖民地步兵师“远地哨兵”"
+		location = 13048
+		division_template = "帝国殖民地步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第104帝国殖民地步兵师“北方”"
+		location = 13048
+		division_template = "帝国殖民地步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第105帝国步兵师“荣誉”"
+		location = 12701
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第106帝国殖民地步兵师“卫兵”"
+		location = 12701
+		division_template = "帝国殖民地步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第107帝国步兵师“圣刀”"
+		location = 13292
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第108帝国步兵师“圣殿”"
+		location = 13292
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第109帝国步兵师“锋刃”"
+		location = 13292
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第101帝国装甲师“黑骑士”"
+		location = 13048
+		division_template = "帝国装甲师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第102帝国装甲师“铁卫”"
+		location = 13048
+		division_template = "帝国装甲师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+
+	#第二集团军
+	division = {
+		name = "第110帝国步兵师"
+		location = 12256
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第111帝国步兵师"
+		location = 12256
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第112帝国殖民地步兵师"
+		location = 13020
+		division_template = "帝国殖民地步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第113帝国殖民地步兵师"
+		location = 13020
+		division_template = "帝国殖民地步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第114帝国步兵师"
+		location = 13464
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第115帝国殖民地步兵师"
+		location = 13464
+		division_template = "帝国殖民地步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第116帝国步兵师"
+		location = 12974
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第117帝国步兵师"
+		location = 12974
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第118帝国步兵师"
+		location = 12974
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第103帝国装甲师"
+		location = 12397
+		division_template = "帝国装甲师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第104帝国装甲师"
+		location = 12397
+		division_template = "帝国装甲师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+
+	#第三集团军
+	division = {
+		name = "第119帝国步兵师"
+		location = 13250
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第120帝国步兵师"
+		location = 13250
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第121帝国殖民地步兵师"
+		location = 12490
+		division_template = "帝国殖民地步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第122帝国殖民地步兵师"
+		location = 12490
+		division_template = "帝国殖民地步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第123帝国步兵师"
+		location = 12598
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第124帝国殖民地步兵师"
+		location = 12598
+		division_template = "帝国殖民地步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第125帝国步兵师"
+		location = 12657
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	division = {
+		name = "第126帝国步兵师"
+		location = 12657
+		division_template = "帝国主力步兵师"
+		start_equipment_factor = 1
+		start_experience_factor = 0.45
+		start_manpower_factor = 1
+	}
+	#这儿还有仨战术机大队到时候再加
+}
+
