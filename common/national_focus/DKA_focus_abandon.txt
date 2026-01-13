@@ -1,0 +1,2727 @@
+﻿focus_tree = {
+	id = DKA_focus_tree_abandon
+	country = {
+		factor = 0
+	}
+	default = no
+	continuous_focus_position = {
+		x = 150
+		y = 4000
+	}
+	#	focus = {
+	#		id = DKA_
+	#		icon = GFX_
+	#		prerequisite = { focus = }
+	#		mutually_exclusive = { focus =  }
+	#		x = -3
+	#		y = 0
+	#		relative_position_id = 
+	#
+	#		cost = 10
+	#
+	#		ai_will_do = {
+	#			factor = 1
+	#		}
+	#
+	#		available = {
+	#
+	#		}
+	#		
+	#		bypass = {
+	#
+	#		}
+	#
+	#		cancel_if_invalid = yes
+	#		continue_if_invalid = no
+	#		available_if_capitulated = no
+	#
+	#		complete_tooltip = {
+	#
+	#		}
+	#
+	#		completion_reward = {
+	#
+	#		}
+	#	}
+	###############################政治线中线################################################
+	###最漫长的一夜
+	focus = {
+		id = DKA_The_Longest_Night
+		icon = GFX_goal_generic_major_alliance
+		x = 10
+		y = 0
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 150
+			country_event = DKA.1
+		}
+	}
+	##向爱丽儿效忠
+	focus = {
+		id = DKA_Declare_allegiance_to_Ariel
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_The_Longest_Night
+		}
+		relative_position_id = DKA_The_Longest_Night
+		mutually_exclusive = {
+			focus = DKA_believe_in_demi-human
+		}
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	##建立政治局
+	focus = {
+		id = DKA_Establish_a_Political_Bureau
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Declare_allegiance_to_Ariel
+		}
+		relative_position_id = DKA_Declare_allegiance_to_Ariel
+		x = -2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			create_intelligence_agency = yes
+			add_ideas = ITA_servizio_informazione_militare_ns
+		}
+	}
+	##重整军备	
+	focus = {
+		id = DKA_Rearmament
+		prerequisite = {
+			focus = DKA_Declare_allegiance_to_Ariel
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_Declare_allegiance_to_Ariel
+		cost = 6
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+			add_timed_idea = {
+				idea = Rearmament
+				days = 150
+			}
+		}
+	}
+	###处理反对党
+	focus = {
+		id = DKA_Dealing_with_opposition_parties
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Establish_a_Political_Bureau
+		}
+		relative_position_id = DKA_Establish_a_Political_Bureau
+		x = -2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+	###提拔元老
+	focus = {
+		id = DKA_Promote_elders
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Establish_a_Political_Bureau
+		}
+		relative_position_id = DKA_Establish_a_Political_Bureau
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+	##处理亚人
+	focus = {
+		id = DKA_Suppressing_Resistance_demi-human
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Rearmament
+		}
+		relative_position_id = DKA_Rearmament
+		x = 3
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			remove_ideas = The_resistance_of_the_Asian_ethnic_group
+			add_stability = -0.15
+		}
+	}
+	###成立军事委员会
+	focus = {
+		id = DKA_Establish_a_Military_Committee
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Motivational_spirit
+		}
+		relative_position_id = DKA_Motivational_spirit
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_research_slot = 1
+			add_command_power = 150
+		}
+	}
+	###我们的科技
+	focus = {
+		id = DKA_Our_technology
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Establish_a_Military_Committee
+		}
+		relative_position_id = DKA_Establish_a_Military_Committee
+		x = -5
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_research_slot = 1
+			add_command_power = 150
+		}
+	}
+	##坚持力量优先
+	focus = {
+		id = DKA_Persist_in_prioritizing_strength
+		prerequisite = {
+			focus = DKA_Our_technology
+		}
+		mutually_exclusive = {
+			focus = DKA_Change_mindset
+		}
+		x = -1
+		y = 1
+		relative_position_id = DKA_Our_technology
+		cost = 6
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	##女王的指示
+	focus = {
+		id = DKA_The_Queens_Instructions
+		prerequisite = {
+			focus = DKA_Persist_in_prioritizing_strength
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_Persist_in_prioritizing_strength
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+		}
+	}
+	##全民健身运动
+	focus = {
+		id = DKA_National_Fitness_Campaign
+		prerequisite = {
+			focus = DKA_The_Queens_Instructions
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_The_Queens_Instructions
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+		}
+	}
+	##更加专业化的训练
+	focus = {
+		id = DKA_More_specialized_training
+		prerequisite = {
+			focus = DKA_National_Fitness_Campaign
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_National_Fitness_Campaign
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+		}
+	}
+	##向知识分子妥协
+	focus = {
+		id = DKA_Compromise_with_intellectuals
+		prerequisite = {
+			focus = DKA_National_Fitness_Campaign
+		}
+		mutually_exclusive = {
+			focus = DKA_Thoroughly_suppress
+		}
+		x = -4
+		y = 1
+		relative_position_id = DKA_National_Fitness_Campaign
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+		}
+	}
+	##彻底的打压
+	focus = {
+		id = DKA_Thoroughly_suppress
+		prerequisite = {
+			focus = DKA_National_Fitness_Campaign
+		}
+		mutually_exclusive = {
+			focus = DKA_Compromise_with_intellectuals
+		}
+		x = -6
+		y = 1
+		relative_position_id = DKA_National_Fitness_Campaign
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+		}
+	}
+	##组织奥林匹克委员会
+	focus = {
+		id = DKA_Organizing_the_Olympic_Committee
+		prerequisite = {
+			focus = DKA_National_Fitness_Campaign
+		}
+		x = -2
+		y = 1
+		relative_position_id = DKA_National_Fitness_Campaign
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+		}
+	}
+	##组织第一次奥林匹克运动会
+	focus = {
+		id = DKA_Organizing_the_First_Olympic_Games
+		prerequisite = {
+			focus = DKA_Organizing_the_Olympic_Committee
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_Organizing_the_Olympic_Committee
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+		}
+	}
+	##转变思路
+	focus = {
+		id = DKA_Change_mindset
+		prerequisite = {
+			focus = DKA_Our_technology
+		}
+		mutually_exclusive = {
+			focus = DKA_Persist_in_prioritizing_strength
+		}
+		x = 1
+		y = 1
+		relative_position_id = DKA_Our_technology
+		cost = 6
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	##脑子是个好东西
+	focus = {
+		id = DKA_The_brain_is_a_good_thing
+		prerequisite = {
+			focus = DKA_Change_mindset
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_Change_mindset
+		cost = 6
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	##解放思想
+	focus = {
+		id = DKA_emancipate
+		prerequisite = {
+			focus = DKA_The_brain_is_a_good_thing
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_The_brain_is_a_good_thing
+		cost = 6
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	##锻炼思维
+	focus = {
+		id = DKA_Exercise_thinking
+		prerequisite = {
+			focus = DKA_emancipate
+		}
+		x = 2
+		y = 1
+		relative_position_id = DKA_emancipate
+		cost = 6
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	##组织第一次创新创业大赛
+	focus = {
+		id = DKA_Organize_the_first_innovation_and_entrepreneurship_competition
+		prerequisite = {
+			focus = DKA_Exercise_thinking
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_Exercise_thinking
+		cost = 6
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	##成立科学院
+	focus = {
+		id = DKA_Establishment_of_the_Academy_of_Sciences
+		prerequisite = {
+			focus = DKA_emancipate
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_emancipate
+		cost = 6
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	##巧用力气
+	focus = {
+		id = DKA_Clever_use_of_strength
+		prerequisite = {
+			focus = DKA_emancipate
+		}
+		mutually_exclusive = {
+			focus = DKA_Negating_strength
+		}
+		x = 4
+		y = 1
+		relative_position_id = DKA_emancipate
+		cost = 6
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	##否定力气
+	focus = {
+		id = DKA_Negating_strength
+		prerequisite = {
+			focus = DKA_emancipate
+		}
+		mutually_exclusive = {
+			focus = DKA_Clever_use_of_strength
+		}
+		x = 6
+		y = 1
+		relative_position_id = DKA_emancipate
+		cost = 6
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	###一切的开始？
+	focus = {
+		id = DKA_The_Beginning_of_Everything
+		prerequisite = {
+			focus = DKA_Establish_a_Military_Committee
+		}
+		x = 7
+		y = 1
+		relative_position_id = DKA_Establish_a_Military_Committee
+		cost = 6
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	###何物降临？
+	focus = {
+		id = DKA_What_has_come
+		prerequisite = {
+			focus = DKA_The_Beginning_of_Everything
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_The_Beginning_of_Everything
+		cost = 1
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	###神物？
+	focus = {
+		id = DKA_supernatural_being
+		prerequisite = {
+			focus = DKA_What_has_come
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_What_has_come
+		cost = 1
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	###领悟
+	focus = {
+		id = DKA_understand
+		prerequisite = {
+			focus = DKA_supernatural_being
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_supernatural_being
+		cost = 1
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	###对内事务
+	focus = {
+		id = DKA_Internal_affairs
+		prerequisite = {
+			focus = DKA_understand
+		}
+		x = -2
+		y = 1
+		relative_position_id = DKA_understand
+		cost = 7
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	###对内事务
+	focus = {
+		id = DKA_Internal_affairs
+		prerequisite = {
+			focus = DKA_understand
+		}
+		x = 2
+		y = 1
+		relative_position_id = DKA_understand
+		cost = 7
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	###对外事务
+	focus = {
+		id = DKA_external_affairs
+		prerequisite = {
+			focus = DKA_understand
+		}
+		x = -2
+		y = 1
+		relative_position_id = DKA_understand
+		cost = 7
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	###准备就绪
+	focus = {
+		id = DKA_ready_to_go
+		prerequisite = {
+			focus = DKA_external_affairs
+			focus = DKA_Internal_affairs
+		}
+		x = 2
+		y = 1
+		relative_position_id = DKA_external_affairs
+		cost = 7
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+		}
+	}
+	##准备北伐
+	focus = {
+		id = DKA_Preparing_for_the_Northern_Expedition
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_ready_to_go
+		}
+		relative_position_id = DKA_ready_to_go
+		x = -2.5
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_war_support = 0.15
+			army_experience = 150
+			navy_experience = 150
+			air_experience = 150
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = YBL
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	###向BET宣战
+	focus = {
+		id = DKA_Declare_war_on_the_Kingdom_of_Bertom
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Preparing_for_the_Northern_Expedition
+		}
+		relative_position_id = DKA_Preparing_for_the_Northern_Expedition
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = BET
+				type = annex_everything
+			}
+			add_timed_idea = {
+				idea = Attack_on_the_Kingdom_of_Bertom
+				days = 120
+			}
+		}
+	}
+	##向PAT宣战
+	focus = {
+		id = DKA_Declare_war_on_the_Kingdom_of_Paretia
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Preparing_for_the_Northern_Expedition
+		}
+		prerequisite = {
+			focus = DKA_Declare_war_on_the_Kingdom_of_Bertom
+		}
+		relative_position_id = DKA_Preparing_for_the_Northern_Expedition
+		x = 2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = PAT
+				type = annex_everything
+			}
+			add_timed_idea = {
+				idea = Attack_on_the_Kingdom_of_paretia
+				days = 120
+			}
+		}
+	}
+	###向ALC宣战
+	focus = {
+		id = DKA_Declare_war_on_the_Kingdom_of_Aruka
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Preparing_for_the_Northern_Expedition
+		}
+		prerequisite = {
+			focus = DKA_Declare_war_on_the_Kingdom_of_Paretia
+		}
+		relative_position_id = DKA_Preparing_for_the_Northern_Expedition
+		x = -2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = ALC
+				type = annex_everything
+			}
+			add_timed_idea = {
+				idea = Attack_on_the_Kingdom_of_Aruka
+				days = 120
+			}
+		}
+	}
+	##宣扬我们的胜利
+	focus = {
+		id = DKA_Promote_our_victory
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_assimilation_Kingdom_of_Aruka
+			focus = DKA_assimilation_Kingdom_of_Bertom
+			focus = DKA_assimilation_Kingdom_of_Paretia
+			focus = DKA_assimilation_Kingdom_of_Tolistine
+		}
+		relative_position_id = DKA_Declare_war_on_the_Kingdom_of_Bertom
+		x = 1
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_ideas = our_victory
+		}
+	}
+	##确认接下来的道路
+	focus = {
+		id = DKA_Confirm_the_next_path
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Promote_our_victory
+		}
+		relative_position_id = DKA_Promote_our_victory
+		x = 0
+		y = 1
+		cost = 1
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_ideas = our_victory
+		}
+	}
+	##铁与血
+	focus = {
+		id = DKA_Iron_and_Blood
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Confirm_the_next_path
+		}
+		mutually_exclusive = {
+			focus = DKA_Bread_and_Peace
+		}
+		relative_position_id = DKA_Confirm_the_next_path
+		x = -1
+		y = 1
+		cost = 1
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_ideas = our_victory
+		}
+	}
+	##更长远的打算
+	focus = {
+		id = DKA_A_longer-term_plan
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Iron_and_Blood
+			focus = DKA_Bread_and_Peace
+		}
+		relative_position_id = DKA_Iron_and_Blood
+		x = 0.5
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			1774 = {
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+					province = 351
+				}
+			}
+			5699 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 352
+				}
+			}
+			army_experience = 100
+			air_experience = 100
+		}
+	}
+	###与魔国联邦取得联系
+	focus = {
+		id = DKA_Contact_the_Federation_of_Demon_States
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Iron_and_Blood
+			focus = DKA_Bread_and_Peace
+		}
+		relative_position_id = DKA_Iron_and_Blood
+		x = 2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			1774 = {
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+					province = 351
+				}
+			}
+			5699 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 352
+				}
+			}
+			army_experience = 100
+			air_experience = 100
+		}
+	}
+	##邀请魔物联邦加入
+	focus = {
+		id = DKA_Invite_the_Demon_Federation_to_join
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Establish_an_alliance
+		}
+		prerequisite = {
+			focus = DKA_Contact_the_Federation_of_Demon_States
+		}
+		relative_position_id = DKA_Establish_an_alliance
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			1774 = {
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+					province = 351
+				}
+			}
+			5699 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 352
+				}
+			}
+			army_experience = 100
+			air_experience = 100
+		}
+	}
+	###建立同盟
+	focus = {
+		id = DKA_Establish_an_alliance
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_A_longer-term_plan
+		}
+		relative_position_id = DKA_A_longer-term_plan
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			create_faction = "魔王"
+		}
+	}
+	##面包与和平
+	focus = {
+		id = DKA_Bread_and_Peace
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Confirm_the_next_path
+		}
+		mutually_exclusive = {
+			focus = DKA_Iron_and_Blood
+		}
+		relative_position_id = DKA_Confirm_the_next_path
+		x = 1
+		y = 1
+		cost = 1
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_ideas = our_victory
+		}
+	}
+	##准备处理MUL
+	focus = {
+		id = DKA_Preparing_to_deal_with_the_Murunait_Empire
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Iron_and_Blood
+		}
+		relative_position_id = DKA_Iron_and_Blood
+		x = -2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			1774 = {
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+					province = 351
+				}
+			}
+			5699 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 352
+				}
+			}
+			army_experience = 100
+			air_experience = 100
+		}
+	}
+	###向穆露奈伊特帝国宣战
+	focus = {
+		id = DKA_Declare_war_on_the_Mulunait_Empire
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Preparing_to_deal_with_the_Murunait_Empire
+		}
+		relative_position_id = DKA_Preparing_to_deal_with_the_Murunait_Empire
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = ALC
+				type = annex_everything
+			}
+			add_timed_idea = {
+				idea = Attack_on_the_Kingdom_of_Aruka
+				days = 120
+			}
+		}
+	}
+	##否认缓冲区
+	focus = {
+		id = DKA_Deny_buffer_zone
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Declare_war_on_the_Mulunait_Empire
+		}
+		relative_position_id = DKA_Declare_war_on_the_Mulunait_Empire
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = ALC
+				type = annex_everything
+			}
+			add_timed_idea = {
+				idea = Attack_on_the_Kingdom_of_Aruka
+				days = 120
+			}
+		}
+	}
+	###向提亚穆帝国迈进
+	focus = {
+		id = DKA_Advancing_towards_the_Tiyamu_Empire
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Deny_buffer_zone
+		}
+		relative_position_id = DKA_Deny_buffer_zone
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = ALC
+				type = annex_everything
+			}
+			add_timed_idea = {
+				idea = Attack_on_the_Kingdom_of_Aruka
+				days = 120
+			}
+		}
+	}
+	###同化ALC
+	focus = {
+		id = DKA_assimilation_Kingdom_of_Aruka
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Declare_war_on_the_Kingdom_of_Aruka
+		}
+		relative_position_id = DKA_Declare_war_on_the_Kingdom_of_Aruka
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				country_exists = ALC
+			}
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = assimilation_Kingdom_of_Aruka
+				days = 30
+			}
+		}
+	}
+	##同化BET
+	focus = {
+		id = DKA_assimilation_Kingdom_of_Bertom
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Declare_war_on_the_Kingdom_of_Bertom
+		}
+		relative_position_id = DKA_Declare_war_on_the_Kingdom_of_Bertom
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				country_exists = BET
+			}
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = assimilation_Kingdom_of_Bertom
+				days = 30
+			}
+		}
+	}
+	##同化PAT
+	focus = {
+		id = DKA_assimilation_Kingdom_of_Paretia
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Declare_war_on_the_Kingdom_of_Paretia
+		}
+		relative_position_id = DKA_Declare_war_on_the_Kingdom_of_Paretia
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				country_exists = PAT
+			}
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = assimilation_Kingdom_of_Paretia
+				days = 30
+			}
+		}
+	}
+	##激励精神	   
+	focus = {
+		id = DKA_Motivational_spirit
+		prerequisite = {
+			focus = DKA_Rearmament
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_Rearmament
+		cost = 6
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 20
+			country_event = {
+				id = DKA.2
+			}
+		}
+	}
+	##我们的东线
+	focus = {
+		id = DKA_Our_Eastern_Route
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_ready_to_go
+		}
+		relative_position_id = DKA_ready_to_go
+		x = 3
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_war = no
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_war_support = 0.15
+			army_experience = 150
+			navy_experience = 150
+			air_experience = 150
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	##向托利斯汀宣战	
+	focus = {
+		id = DKA_Declare_war_on_the_Kingdom_of_Tolistine
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Our_Eastern_Route
+		}
+		relative_position_id = DKA_Our_Eastern_Route
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = TOR
+				type = annex_everything
+			}
+			add_timed_idea = {
+				idea = Attack_on_the_Kingdom_of_Tolistine
+				days = 120
+			}
+		}
+	}
+	###同化	
+	focus = {
+		id = DKA_assimilation_Kingdom_of_Tolistine
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Declare_war_on_the_Kingdom_of_Tolistine
+		}
+		relative_position_id = DKA_Declare_war_on_the_Kingdom_of_Tolistine
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				country_exists = TOR
+			}
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = assimilation_Kingdom_of_Tolistine
+				days = 30
+			}
+		}
+	}
+	##与穆露奈伊特王国建交
+	focus = {
+		id = DKA_Establish_diplomatic_relations_with_the_Kingdom_of_Mulunait
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = {
+			focus = DKA_Bread_and_Peace
+		}
+		relative_position_id = DKA_Bread_and_Peace
+		x = 2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			MUL = {
+				add_opinion_modifier = {
+					target = DKA
+					modifier = mul_dka_diplomatic_focus
+				}
+			}
+		}
+	}
+	################################政治右线#######################						  
+	###相信亚人
+	focus = {
+		id = DKA_believe_in_demi-human
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = {
+			focus = DKA_The_Longest_Night
+		}
+		relative_position_id = DKA_The_Longest_Night
+		mutually_exclusive = {
+			focus = DKA_support_old_king
+		}
+		x = 6
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 120
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_stability = -0.1
+		}
+	}
+	##某神秘力量的降临
+	focus = {
+		id = DKA_The_descent_of_a_mysterious_force
+		icon = GFX_focus_
+		prerequisite = {
+			focus = DKA_believe_in_demi-human
+		}
+		relative_position_id = DKA_believe_in_demi-human
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 120
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_stability = -0.1
+		}
+	}
+	###宣传解放思想
+	focus = {
+		id = DKA_Promote_the_liberation_of_the_mind
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = {
+			focus = DKA_The_descent_of_a_mysterious_force
+		}
+		relative_position_id = DKA_The_descent_of_a_mysterious_force
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 120
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_stability = -0.1
+		}
+	}
+	###争取军队的支持
+	focus = {
+		id = DKA_Strive_for_the_support_of_the_military
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = {
+			focus = DKA_believe_in_demi-human
+		}
+		relative_position_id = DKA_believe_in_demi-human
+		x = 2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 120
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_stability = -0.1
+		}
+	}
+	###面向群众
+	focus = {
+		id = DKA_Targeting_the_public
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = {
+			focus = DKA_Strive_for_the_support_of_the_military
+		}
+		prerequisite = {
+			focus = DKA_Promote_the_liberation_of_the_mind
+		}
+		relative_position_id = DKA_Strive_for_the_support_of_the_military
+		x = 1
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 120
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_stability = -0.1
+		}
+	}
+	###面向高层
+	focus = {
+		id = DKA_Targeting_senior_management
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = {
+			focus = DKA_Strive_for_the_support_of_the_military
+		}
+		prerequisite = {
+			focus = DKA_Promote_the_liberation_of_the_mind
+		}
+		relative_position_id = DKA_Strive_for_the_support_of_the_military
+		mutually_exclusive = {
+			focus = DKA_Targeting_the_public
+		}
+		x = -1
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 120
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_stability = -0.1
+		}
+	}
+	#########################军事线##############################
+	###看向军队
+	focus = {
+		id = DKA_Look_at_the_army
+		icon = GFX_goal_generic_army_doctrines
+		x = 25
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			army_experience = 30
+		}
+	}
+	###军队的归属权	
+	focus = {
+		id = DKA_Ownership_of_the_military
+		icon = GFX_goal_generic_small_arms
+		prerequisite = {
+			focus = DKA_Look_at_the_army
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_Look_at_the_army
+		cost = 10
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_completed_focus = JAP_support_the_kodoha_faction
+			}
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = DKA_small_arms_modernization
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	###作为女王的剑
+	focus = {
+		id = DKA_As_the_Queen_Sword
+		icon = GFX_goal_generic_small_arms
+		prerequisite = {
+			focus = DKA_Ownership_of_the_military
+		}
+		x = -1
+		y = 1
+		relative_position_id = DKA_Ownership_of_the_military
+		cost = 10
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_completed_focus = JAP_support_the_kodoha_faction
+			}
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = DKA_small_arms_modernization
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	###服从议会
+	focus = {
+		id = DKA_Obey_the_parliament
+		icon = GFX_goal_generic_small_arms
+		prerequisite = {
+			focus = DKA_Ownership_of_the_military
+		}
+		x = 1
+		y = 1
+		relative_position_id = DKA_Ownership_of_the_military
+		cost = 10
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_completed_focus = JAP_support_the_kodoha_faction
+			}
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = DKA_small_arms_modernization
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	###清除异类
+	focus = {
+		id = DKA_Eliminate_anomalies
+		icon = GFX_goal_generic_small_arms
+		prerequisite = {
+			focus = DKA_Obey_the_parliament
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_Obey_the_parliament
+		cost = 10
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_completed_focus = JAP_support_the_kodoha_faction
+			}
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = DKA_small_arms_modernization
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	###更高的集权
+	focus = {
+		id = DKA_Higher_centralization
+		icon = GFX_goal_generic_small_arms
+		prerequisite = {
+			focus = DKA_As_the_Queen_Sword
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_As_the_Queen_Sword
+		cost = 10
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_completed_focus = JAP_support_the_kodoha_faction
+			}
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = DKA_small_arms_modernization
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	###委派高级将领
+	focus = {
+		id = DKA_Appointing_senior_generals
+		icon = GFX_goal_generic_small_arms
+		prerequisite = {
+			focus = DKA_As_the_Queen_Sword
+		}
+		x = -2
+		y = 1
+		relative_position_id = DKA_As_the_Queen_Sword
+		cost = 10
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_completed_focus = JAP_support_the_kodoha_faction
+			}
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = DKA_small_arms_modernization
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	###委派高级将领
+	focus = {
+		id = DKA_Appointing_senior_generals
+		icon = GFX_goal_generic_small_arms
+		prerequisite = {
+			focus = DKA_As_the_Queen_Sword
+		}
+		x = -2
+		y = 1
+		relative_position_id = DKA_As_the_Queen_Sword
+		cost = 10
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_completed_focus = JAP_support_the_kodoha_faction
+			}
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = DKA_small_arms_modernization
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	###军参谋部的建立
+	focus = {
+		id = DKA_Establishment_of_the_Military_Staff_Office
+		icon = GFX_goal_generic_small_arms
+		prerequisite = {
+			focus = DKA_Eliminate_anomalies
+		}
+		prerequisite = {
+			focus = DKA_Higher_centralization
+		}
+		prerequisite = {
+			focus = DKA_Appointing_senior_generals
+		}
+		prerequisite = {
+			focus = DKA_Internal_affairs
+		}
+		x = -1
+		y = 10
+		relative_position_id = DKA_Eliminate_anomalies
+		cost = 10
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_completed_focus = JAP_support_the_kodoha_faction
+			}
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = DKA_small_arms_modernization
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	###陆军法案		
+	focus = {
+		id = DKA_army_expansion_law
+		icon = GFX_goal_generic_army_doctrines
+		x = 25
+		y = 25
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			army_experience = 30
+		}
+	}
+	##轻武器现代化
+	focus = {
+		id = DKA_small_arms_modernization
+		icon = GFX_goal_generic_small_arms
+		prerequisite = {
+			focus = DKA_army_expansion_law
+		}
+		x = -1
+		y = 1
+		relative_position_id = DKA_army_expansion_law
+		cost = 10
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_completed_focus = JAP_support_the_kodoha_faction
+			}
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = DKA_small_arms_modernization
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	##运输装备现代化
+	focus = {
+		id = DKA_Modernization_of_transportation_equipment
+		icon = GFX_goal_generic_small_arms
+		prerequisite = {
+			focus = DKA_army_expansion_law
+		}
+		x = 1
+		y = 1
+		relative_position_id = DKA_army_expansion_law
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = DKA_small_arms_modernization
+				bonus = 1
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+	###关注坦克																	
+	focus = {
+		id = DKA_Follow_Tank
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = {
+			focus = DKA_Modernization_of_transportation_equipment
+			focus = DKA_small_arms_modernization
+		}
+		x = -1
+		y = 1
+		relative_position_id = DKA_Modernization_of_transportation_equipment
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			army_experience = 20
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_dlc = "No Step Back"
+					}
+				}
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					name = mech_army_bonus
+					technology = basic_medium_tank
+					technology = improved_medium_tank
+					technology = advanced_medium_tank
+					technology = mechanised_infantry
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					name = mech_army_bonus
+					technology = basic_medium_tank_chassis
+					technology = improved_medium_tank_chassis
+					technology = advanced_medium_tank_chassis
+					technology = mechanised_infantry
+				}
+			}
+		}
+	}
+	###坦克世界启动				
+	focus = {
+		id = DKA_World_of_Tanks_start-up
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = {
+			focus = DKA_Follow_Tank
+		}
+		mutually_exclusive = {
+			focus = DKA_War_Thunder_start-up
+		}
+		x = -1
+		y = 1
+		relative_position_id = DKA_Follow_Tank
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_ideas = World_of_Tanks
+		}
+	}
+	###战雷启动
+	focus = {
+		id = DKA_War_Thunder_start-up
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = {
+			focus = DKA_Follow_Tank
+		}
+		mutually_exclusive = {
+			focus = DKA_World_of_Tanks_start-up
+		}
+		x = 1
+		y = 1
+		relative_position_id = DKA_Follow_Tank
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_ideas = War_Thunder
+		}
+	}
+	focus = {
+		id = DKA_Request_guidance_from_the_Tank_Alliance
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = {
+			focus = DKA_World_of_Tanks_start-up
+			focus = DKA_War_Thunder_start-up
+		}
+		x = 1
+		y = 1
+		relative_position_id = DKA_World_of_Tanks_start-up
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+		}
+	}
+	########################################工业线########################################
+	###百废待兴
+	focus = {
+		id = DKA_undone
+		icon = GFX_goal_generic_major_alliance
+		available = {
+			has_completed_focus = DKA_The_Longest_Night
+		}
+		x = 40
+		y = 0
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 150
+			country_event = DKA.1
+		}
+	}
+	###一封谏言
+	focus = {
+		id = DKA_A_remonstrance
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = {
+			focus = DKA_undone
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_undone
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 150
+			country_event = DKA.1
+		}
+	}
+	###视察？
+	focus = {
+		id = DKA_Inspection?
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = {
+			focus = DKA_A_remonstrance
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_A_remonstrance
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 150
+			country_event = DKA.1
+		}
+	}
+	###对工业的视察
+	focus = {
+		id = DKA_Inspection_of_Industry
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = {
+			focus = DKA_Inspection?
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_Inspection?
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 150
+			country_event = DKA.1
+		}
+	}
+	###对工业的辩论
+	focus = {
+		id = DKA_Debate_on_Industry
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = {
+			focus = DKA_Inspection_of_Industry
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_Inspection_of_Industry
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 150
+			country_event = DKA.1
+		}
+	}
+	###工业之用
+	focus = {
+		id = DKA_For_industrial_use
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = {
+			focus = DKA_Debate_on_Industry
+		}
+		x = 0
+		y = 1
+		relative_position_id = DKA_Debate_on_Industry
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 150
+			country_event = DKA.1
+		}
+	}
+	###继前者之道路
+	focus = {
+		id = DKA_Following_the_path_of_the_former
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = {
+			focus = DKA_For_industrial_use
+		}
+		x = -1
+		y = 1
+		relative_position_id = DKA_For_industrial_use
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 150
+			country_event = DKA.1
+		}
+	}
+	###开辟未来的道路
+	focus = {
+		id = DKA_Pave_the_way_for_the_future
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = {
+			focus = DKA_For_industrial_use
+		}
+		x = 1
+		y = 1
+		relative_position_id = DKA_For_industrial_use
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 150
+			country_event = DKA.1
+		}
+	}
+}
