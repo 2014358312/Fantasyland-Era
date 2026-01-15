@@ -168,6 +168,27 @@ ideas = {
 				}
 			}
 		}
+		DKA_White_head_of_government = {
+			name = DKA_White
+			picture = advisor_DKA_White
+			allowed = {
+				original_tag = DKA
+			}
+			visible = {
+				original_tag = DKA
+			}
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { DKA_silent_worker }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:DKA_White_head_of_government }
+				}
+			}
+		}
 		EYP_Varma_head_of_government = {
 			name = Varma
 			picture = advisor_EYP_Varma
