@@ -116,7 +116,7 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = PAT_Tiruti_Kuraretto_pol_advisor
-			traits = { PAT_triat_Koushaku_Reijou }
+			traits = { PAT_trait_Koushaku_Reijou }
 		}
 		corps_commander = {
 			skill = 3
@@ -319,7 +319,11 @@ characters = {
 			idea_token = PAT_Anisufia_win_Parettia_political_advisor
 			allowed = { original_tag = PAT }
 			available = {
-				not_already_hired_except_as = political_advisor
+				OR = {
+					is_country_leader = no
+					not_already_hired_except_as = political_advisor
+				}
+				
 			}
 			visible = {
 				NOT = { has_country_flag = PAT_tetrarchy_flag }
@@ -520,6 +524,14 @@ characters = {
 			available = {
 				not_already_hired_except_as = army_chief
 			}
+		}
+		advisor = {
+			slot = head_of_government_character
+			idea_token = PAT_lumi_head_of_government_character
+			available = {
+				no_head_of_gov_trigger = yes
+			}
+			traits = { Lumi_elf_Church }
 		}
 		advisor = {
 			slot = political_advisor

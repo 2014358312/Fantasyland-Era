@@ -145,7 +145,12 @@ country_event = {
 	option = {
 		name = paretia.101.a
 		set_country_flag = PAT_overly_easy_coup_flag
-		#complete_national_focus = PAT_border_crisis
+		custom_effect_tooltip = PAT_Load_After_crisis_focus_tt
+		hidden_effect = {
+			load_oob = PAT_Load_After_crisis_focus
+			country_event = { id = paretia_revo.1 days = 20 }
+		}
+		mark_focus_tree_layout_dirty = yes
 		add_stability = -0.5
 		add_war_support = -0.5
 		add_political_power = -200
@@ -162,6 +167,20 @@ country_event = {#埋伏
 	picture = GFX_report_event_EYP_01
 	is_triggered_only = yes
 	option = {
+		retire_character  = PAT_Orphans_II_Palettia
+		add_country_leader_role = {
+    		character = PAT_Algard_von_Palettia
+    		promote_leader = yes
+    		country_leader = {
+        	ideology = interim_government_n_subtype
+        	expire = "1965.1.1.1"
+        	traits = { PAT_trait_resistance_leader }
+    		}
+		}
+		deactivate_advisor = PAT_Glantz_Mazenta_head_of_government_character
+		hidden_effect = {
+			add_ideas = generic_head_of_government_none
+		}
 		name = paretia_revo.1.a
 
 	}
@@ -317,6 +336,10 @@ country_event = {#英雄年代
 	is_triggered_only = yes
 	option = {
 		name = paretia_revo.11.a
+		activate_advisor = PAT_lumi_head_of_government_character
+		hidden_effect = {
+			add_ideas = PAT_lumi_head_of_government
+		}
 	}
 }
 
@@ -334,6 +357,33 @@ country_event = {#战后云烟
 		clr_country_flag = PAT_blood_allies
 		clr_country_flag = PAT_heir_apparent
 		clr_country_flag = PAT_rumi_and_light
+		hidden_effect = {
+			if = {
+				limit = {
+					has_completed_focus = PAT_foward_future
+				}
+				uncomplete_national_focus = {
+					focus = PAT_foward_future
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = PAT_traditional_policy
+				}
+				uncomplete_national_focus = {
+					focus = PAT_traditional_policy
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = PAT_wisdom_of_ancestors
+				}
+				uncomplete_national_focus = {
+					focus = PAT_wisdom_of_ancestors
+				}
+			}
+
+		}
 		set_country_flag = PAT_the_third_road
 		complete_national_focus = PAT_the_third_path
 		mark_focus_tree_layout_dirty = yes
@@ -377,7 +427,10 @@ unit_leader_event = {#职务更替
 		}
 		hidden_effect = {
 		}
-		activate_advisor = PAT_Algard_von_Palettia_head_of_government
+		activate_advisor = PAT_Algard_von_Palettia_head_of_government_character
+		hidden_effect = {
+			add_ideas = PAT_Algard_von_Palettia_head_of_government
+		}
 	}
 }
 

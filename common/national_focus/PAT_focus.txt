@@ -186,6 +186,9 @@ focus_tree = {
 		select_effect = {
 			country_event = { id = paretia.2 days = 10 }
 		}
+		cancel = {
+			has_country_flag = PAT_overly_easy_coup_flag
+		}
 		completion_reward = {
 			mark_focus_tree_layout_dirty = yes
 			add_stability = 0.1
@@ -739,21 +742,8 @@ focus_tree = {
 				ideology = neutrality
 				popularity = 0.1
 			}
-			effect_tooltip = {
-				PAT_lumi = {
-					add_advisor_role = {
-						advisor = {
-							slot = political_advisor
-							cost = 100
-							idea_token = PAT_Lumi_pol_advisor
-							traits = {
-								Lumi_elf_Church
-							}
-
-						}
-					}
-				}
-			}
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = PAT_Lumi_pol_advisor
 		}
 		ai_will_do = {
 			factor = 1
@@ -1005,12 +995,7 @@ focus_tree = {
 		#	}
 		#}
 		cost = @focus_time_tier_5
-		available = {
-			has_completed_focus = PAT_border_crisis
-		}
-		select_effect = {
-			country_event = { id = paretia_revo.1 days = 20 }
-		}
+		cancelable = no
 		completion_reward = {
 			add_ideas = PAT_idea_Shadow_of_Destruction_3
 			remove_ideas = PAT_feudal_order
@@ -1062,21 +1047,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
-			effect_tooltip = {
-				PAT_lumi = {
-					add_advisor_role = {
-						advisor = {
-							slot = political_advisor
-							cost = 100
-							idea_token = PAT_Lumi_pol_advisor
-							traits = {
-								Lumi_elf_Church
-							}
-
-						}
-					}
-				}
-			}
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = PAT_Lumi_pol_advisor
 		}
 		ai_will_do = {
 			factor = 1
@@ -1397,8 +1369,19 @@ focus_tree = {
 		id = PAT_newborn_of_country
 		icon = GFX_goal_generic_collaborate_local_elites
 		#relative_position_id = PAT_horn_of_counterattack
-		x = 4
+		x = -2
 		y = 1
+		offset = {
+			x = 10
+			trigger = {
+				OR = {
+					has_completed_focus = PAT_foward_future
+					has_completed_focus = PAT_wisdom_of_ancestors
+					has_completed_focus = PAT_the_third_path
+					has_completed_focus = PAT_traditional_policy
+				}
+			}
+		}
 		cost = @focus_time_tier_2
 		allow_branch = {
 			has_country_flag = PAT_kingdom_newborn
@@ -1431,21 +1414,46 @@ focus_tree = {
 		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = PAT_newborn_of_country }
 		relative_position_id = PAT_newborn_of_country
-		x = 0
+		x = -2
 		y = 1
 		allow_branch = {
-			has_country_flag = PAT_heir_apparent
-			has_completed_focus = PAT_newborn_of_country
+			has_country_flag = PAT_kingdom_newborn
+			NOT = {
+				has_completed_focus = PAT_foward_future
+				has_completed_focus = PAT_the_third_path
+				has_completed_focus = PAT_wisdom_of_ancestors
+			}
+		}
+		offset = {
+			x = 2
+			trigger = {
+				has_completed_focus = PAT_traditional_policy
+			}
 		}
 		cancel_if_invalid = no
 		cancel = {
-			NOT = {
-				has_country_flag = PAT_heir_apparent
+			custom_trigger_tooltip = {
+				tooltip = PAT_select_third_path_tt
+				NOT = {
+					has_country_flag = PAT_heir_apparent
+				}
 			}
+		}
+		mutually_exclusive = {
+			focus = PAT_foward_future
+		}
+		mutually_exclusive = {
+			focus = PAT_the_third_path
+		}
+		mutually_exclusive = {
+			focus = PAT_wisdom_of_ancestors
 		}
 		cost = @focus_time_tier_1
 		available = {
-			
+			custom_trigger_tooltip = {
+				tooltip = PAT_back_to_kingdom_tt
+				has_country_flag = PAT_heir_apparent
+			}
 		}
 		completion_reward = {
 			add_popularity = {
@@ -1474,8 +1482,11 @@ focus_tree = {
 		cost = 10
 		cancel_if_invalid = no
 		cancel = {
-			NOT = {
-				has_country_flag = PAT_heir_apparent
+			custom_trigger_tooltip = {
+				tooltip = PAT_select_third_path_tt
+				NOT = {
+					has_country_flag = PAT_heir_apparent
+				}
 			}
 		}
 		available = {
@@ -1497,8 +1508,10 @@ focus_tree = {
 			#hidden_effect = {
 				#deactivate_advisor = generic_head_of_government_none
 			#}
-			deactivate_advisor = PAT_Glantz_Mazenta_head_of_government
-			activate_advisor = PAT_Anisufia_win_Parettia_head_of_government
+			activate_advisor = PAT_Anisufia_win_Parettia_head_of_government_character
+			hidden_effect = {
+				add_ideas = PAT_Anisufia_win_Parettia_head_of_government
+			}
 			PAT_initialize_tetrarchy_bop = yes
 		}
 		ai_will_do = {
@@ -1598,25 +1611,48 @@ focus_tree = {
 		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = PAT_newborn_of_country }
 		relative_position_id = PAT_newborn_of_country
-		x = 0
+		x = -10
 		y = 1
+		offset = {
+			x = 10
+			trigger = {
+				has_completed_focus = PAT_foward_future
+			}
+		}
 		allow_branch = {
-			has_country_flag = PAT_blood_allies
-			has_completed_focus = PAT_newborn_of_country
+			has_country_flag = PAT_kingdom_newborn
+			NOT = {
+				has_completed_focus = PAT_traditional_policy
+				has_completed_focus = PAT_the_third_path
+				has_completed_focus = PAT_wisdom_of_ancestors
+			}
+		}
+		mutually_exclusive = {
+			focus = PAT_traditional_policy
+		}
+		mutually_exclusive = {
+			focus = PAT_the_third_path
+		}
+		mutually_exclusive = {
+			focus = PAT_wisdom_of_ancestors
 		}
 		cancel_if_invalid = no
 		cancel = {
-			NOT = {
-				has_country_flag = PAT_blood_allies
+			custom_trigger_tooltip = {
+				tooltip = PAT_select_third_path_tt
+				NOT = {
+					has_country_flag = PAT_blood_allies
+				}
 			}
 		}
 		cost = @focus_time_tier_1
 		available = {
-			
+			custom_trigger_tooltip = {
+				tooltip = PAT_democratic_line_tt
+				has_country_flag = PAT_blood_allies
+			}
 		}
 		completion_reward = {
-			deactivate_advisor = PAT_Glantz_Mazenta_head_of_government
-			activate_advisor = generic_head_of_government_none
 			set_cosmetic_tag = PAT_republic
 			set_party_name = {
 				ideology = democratic
@@ -1670,8 +1706,11 @@ focus_tree = {
 		}
 		cancel_if_invalid = no
 		cancel = {
-			NOT = {
-				has_country_flag = PAT_blood_allies
+			custom_trigger_tooltip = {
+				tooltip = PAT_select_third_path_tt
+				NOT = {
+					has_country_flag = PAT_blood_allies
+				}
 			}
 		}
 		cost = @focus_time_tier_10
@@ -1974,13 +2013,31 @@ focus_tree = {
 		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = PAT_newborn_of_country }
 		relative_position_id = PAT_newborn_of_country
-		x = 0
+		x = 4
 		y = 1
+		offset = {
+			x = -4
+			trigger = {
+				has_completed_focus = PAT_the_third_path
+			}
+		}
 		cost = @focus_time_tier_1
-
+		mutually_exclusive = {
+			focus = PAT_traditional_policy
+		}
+		mutually_exclusive = {
+			focus = PAT_foward_future
+		}
+		mutually_exclusive = {
+			focus = PAT_wisdom_of_ancestors
+		}
 		allow_branch = {
-			has_country_flag = PAT_the_third_road
-			has_completed_focus = PAT_newborn_of_country
+			has_country_flag = PAT_kingdom_newborn
+			NOT = {
+				has_completed_focus = PAT_traditional_policy
+				has_completed_focus = PAT_foward_future
+				has_completed_focus = PAT_wisdom_of_ancestors
+			}
 		}
 		available = {
 			has_country_flag = PAT_the_third_road
@@ -2255,17 +2312,45 @@ focus_tree = {
 		icon = GFX_goal_generic_collaborate_local_elites
 		prerequisite = { focus = PAT_newborn_of_country }
 		relative_position_id = PAT_newborn_of_country
-		x = 0
+		x = 11
 		y = 1
+		offset = {
+			x = -11
+			trigger = {
+				has_completed_focus = PAT_wisdom_of_ancestors
+			}
+		}
 		allow_branch = {
-			has_country_flag = PAT_rumi_and_light
-			has_completed_focus = PAT_newborn_of_country
+			has_country_flag = PAT_kingdom_newborn
+			NOT = {
+				has_completed_focus = PAT_traditional_policy
+				has_completed_focus = PAT_the_third_path
+				has_completed_focus = PAT_foward_future
+			}
+		}
+		mutually_exclusive = {
+			focus = PAT_traditional_policy
+		}
+		mutually_exclusive = {
+			focus = PAT_the_third_path
+		}
+		mutually_exclusive = {
+			focus = PAT_foward_future
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = PAT_look_at_back_tt
+				has_country_flag = PAT_rumi_and_light
+			}
 		}
 		cost = @focus_time_tier_1
 		cancel_if_invalid = no
 		cancel = {
-			NOT = {
-				has_country_flag = PAT_rumi_and_light
+			custom_trigger_tooltip = {
+				tooltip = PAT_select_third_path_tt
+				NOT = {
+					has_country_flag = PAT_rumi_and_light
+				}
 			}
 		}
 		available = {
@@ -2293,8 +2378,11 @@ focus_tree = {
 		}
 		cancel_if_invalid = no
 		cancel = {
-			NOT = {
-				has_country_flag = PAT_rumi_and_light
+			custom_trigger_tooltip = {
+				tooltip = PAT_select_third_path_tt
+				NOT = {
+					has_country_flag = PAT_rumi_and_light
+				}
 			}
 		}
 		cost = 10
@@ -2614,6 +2702,17 @@ focus_tree = {
 					add_idea = PAT_National_Academy_1
 				}
 			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_idea = PAT_National_Academy_0
+					}
+					swap_ideas = {
+						remove_idea = PAT_National_Academy_0
+						add_idea = PAT_National_Academy_1
+					}
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2809,6 +2908,17 @@ focus_tree = {
 				swap_ideas = {
 					remove_idea = PAT_Development_Corporation_0
 					add_idea = PAT_Development_Corporation_1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_idea = PAT_Development_Corporation_0
+					}
+					swap_ideas = {
+						remove_idea = PAT_Development_Corporation_0
+						add_idea = PAT_Development_Corporation_1
+					}
 				}
 			}
 		}
@@ -3068,6 +3178,17 @@ focus_tree = {
 					add_idea = PAT_magic_resource_1
 				}
 			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_idea = PAT_magic_resource_0
+					}
+					swap_ideas = {
+						remove_idea = PAT_magic_resource_0
+						add_idea = PAT_magic_resource_1
+					}
+				}
+			}
 			add_ideas = PAT_idea_magic_energy
 		}
 		ai_will_do = {
@@ -3234,7 +3355,7 @@ focus_tree = {
 		id = PAT_war_theory
 		icon = GFX_goal_generic_collaborate_local_elites
 		relative_position_id = PAT_industry_reform_plan
-		x = 13
+		x = 15
 		y = 0
 		cost = @focus_time_tier_10
 		available = {
@@ -3253,6 +3374,13 @@ focus_tree = {
 				name = PAT_war_theory
 				uses = 1
 				category = land_doctrine
+			}
+			add_mastery_bonus = {
+				bonus = 0.1
+				days = 180
+				name = PAT_war_theory
+				folder = land
+				truck = infantry
 			}
 		}
 		ai_will_do = {
@@ -3824,6 +3952,12 @@ focus_tree = {
 				category = light_air
 				category = medium_air
 			}
+			add_daily_mastery = {
+				amount = 0.5
+				days = 100
+				name =  PAT_focus_create_airforce
+				track = fighter_aircraft				
+			}
 			add_ideas = PAT_idea_paretian_airforce_0
 		}
 	}
@@ -3997,6 +4131,12 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			add_ideas = PAT_idea_paretian_navy_0
+			add_daily_mastery = {
+				amount = 0.5
+				days = 100
+				name =  PAT_focus_bigger_and_better_navy
+				track = screens				
+			}
 		}
 	}
 

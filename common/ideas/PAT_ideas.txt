@@ -290,7 +290,7 @@ ideas = {
 				stability_factor = -0.8
 				war_support_factor = -0.8
 				political_power_factor = -0.8
-				consumer_goods_expected_value = 0.8
+				consumer_goods_factor = 0.8
 			}
 		}
 
@@ -304,7 +304,7 @@ ideas = {
 				stability_factor = -0.6
 				war_support_factor = -0.6
 				political_power_factor = -0.6
-				consumer_goods_expected_value = 0.6
+				consumer_goods_factor = 0.6
 			}
 		}
 		PAT_idea_Shadow_of_Destruction_1 = {#毁灭阴影
@@ -317,7 +317,7 @@ ideas = {
 				stability_factor = -0.4
 				war_support_factor = -0.4
 				political_power_factor = -0.4
-				consumer_goods_expected_value = 0.4
+				consumer_goods_factor = 0.4
 			}
 		}
 
@@ -331,7 +331,7 @@ ideas = {
 				stability_factor = -0.2
 				war_support_factor = -0.2
 				political_power_factor = -0.2
-				consumer_goods_expected_value = 0.2
+				consumer_goods_factor = 0.2
 			}
 		}
 
@@ -345,7 +345,7 @@ ideas = {
 				production_speed_buildings_factor = 0.1
 				stability_factor = 0.2
 				stability_weekly = 0.05
-				consumer_goods_expected_value = -0.3
+				consumer_goods_factor = -0.3
 			}
 		}
 
@@ -574,7 +574,7 @@ ideas = {
 		PAT_idea_Army_nation_0 = {#军队国家 阶段1
 			modifier = {
 				conscription = 0.01
-				fascism_drift = 0.001
+				fascism_drift = 0.01
 				conscription_factor = 0.2
 				required_garrison_factor = -0.2
 			}
@@ -584,7 +584,7 @@ ideas = {
 		PAT_idea_Army_nation_1 = {#军队国家 阶段2
 			modifier = {
 				conscription = 0.02
-				fascism_drift = 0.003
+				fascism_drift = 0.03
 				conscription_factor = 0.2
 				required_garrison_factor = -0.2
 				training_time_factor = -0.15
@@ -595,7 +595,7 @@ ideas = {
 		PAT_idea_Army_nation_2 = {#军队国家 阶段3
 			modifier = {
 				conscription = 0.03
-				fascism_drift = 0.005
+				fascism_drift = 0.05
 				conscription_factor = 0.25
 				required_garrison_factor = -0.4
 				training_time_factor = -0.20
@@ -606,7 +606,7 @@ ideas = {
 		PAT_idea_Reorganized_churches = {#重组的精灵教会
 			modifier = {
 				production_speed_infrastructure_factor = 0.2
-				consumer_goods_expected_value = -0.2
+				consumer_goods_factor = -0.2
 
 			}
 		}
@@ -782,7 +782,7 @@ ideas = {
 				original_tag = PAT
 			}
 			modifier = {
-				consumer_goods_expected_value = -0.15
+				consumer_goods_factor = -0.15
 			}
 		}
 
@@ -819,7 +819,7 @@ ideas = {
 			}
 			modifier = {
 				political_power_factor = 0.1
-				consumer_goods_expected_value = -0.3
+				consumer_goods_factor = -0.3
 				industrial_capacity_factory = 0.2
 				supply_consumption_factor = -0.1
 				global_building_slots_factor = 0.15
@@ -1091,12 +1091,6 @@ ideas = {
 					has_completed_focus = PAT_connect_state
 				}
 			}
-			cancel = {
-				has_completed_focus = PAT_connect_state
-			}
-			on_remove = {
-				add_political_power = 150
-			}
 			modifier = {
 				production_speed_industrial_complex_factor = 0.1
 				production_speed_buildings_factor = 0.1
@@ -1131,13 +1125,7 @@ ideas = {
 					has_completed_focus = PAT_talented_scientist
 				}
 			}
-			cancel = {
-				has_completed_focus = PAT_talented_scientist
-			}
 			 
-			on_remove = {
-				add_political_power = 150
-			}
 			modifier = {
 				research_speed_factor = 0.1
 			}
@@ -1173,12 +1161,6 @@ ideas = {
 				NOT = {
 					has_completed_focus = PAT_magic_device_engine
 				}
-			}
-			cancel = {
-				has_completed_focus = PAT_magic_device_engine
-			}
-			on_remove = {
-				add_political_power = 150
 			}
 			modifier = {
 				local_resources_factor = 0.15

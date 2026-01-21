@@ -1241,5 +1241,28 @@ ideas = {
 			}
 		}		
 
+		PAT_lumi_head_of_government = {
+			name = PAT_lumi
+			picture = advisor_PAT_Lumi
+			allowed = {
+				original_tag = PAT
+			}
+			visible = {
+				original_tag = PAT
+				has_completed_focus = PAT_wisdom_of_ancestors
+			}
+			available = {
+				PAT_lumi = { no_head_of_gov_trigger = yes }
+			}
+			can_be_fired = no
+			cancel_if_invalid = no
+			traits = { Lumi_elf_Church }
+			on_add = {
+				hidden_effect = {
+					set_variable = { ROOT.FE_secondary = token:PAT_lumi_head_of_government }
+					set_variable = { VL_status_var = 21 }
+				}
+			}
+		}	
 	}
 }
