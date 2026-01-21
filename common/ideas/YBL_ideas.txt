@@ -275,13 +275,30 @@ ideas = {
 			}
 		}
 
+		YBL_MZ13 = {
+			picture = 1
+
+			#镇压莱费雷亚的叛乱
+
+			allowed = { original_tag = YBL }
+
+			removal_cost = -1
+
+			modifier = { 
+				targeted_modifier = {
+		    		tag = IDA
+		    		attack_bonus_against = 0.2 #陆军攻击
+	    			breakthrough_bonus_against = 0.2 #突破	
+	    		}
+			}
+		}
 
 	}
 
 #经济法案
 	economy = {
 		law = yes #确认它是一种法案
-		use_list_view = yes #它是在法案栏中可见的
+		use_list_view = no #它是在法案栏中可见的
 
 		YBL_Laissez_fairer = { #法案名字，牧羊人经济的余晖
 			allowed = { #开局判定一次后不再判断
@@ -317,7 +334,7 @@ ideas = {
 			removal_cost = -1 #取消该法案所需的政治点数，-1为不花费
 
 			modifier = { #该法案的效果
-			consumer_goods_expected_value = 0.2 #期望的生活消费品数量 
+			consumer_goods_expected_value = -0.2 #期望的生活消费品数量 
 			trade_opinion_factor = -0.5 #贸易协定关系修正
 			research_speed_factor = -0.5 #研究速度
 			production_speed_arms_factory_factor = -0.4 #军用工厂建造速度
@@ -329,13 +346,34 @@ ideas = {
 			allowed_to_remove = { #满足什么条件才能取消法案
 					OR = {#满足下列任意条件之一
 						surrender_progress > 0.75 #投降度大于75
-						NOT = { 
-							has_idea = YBL_MZ4
-							has_idea = YBL_MZ7_3
-						} #要求没有民族精神
+				
 					}
 			}
 			cancel_if_invalid = no #如果你的状态不支持你继续这个法案是否直接取消
+		}
+
+		YBL_Economic_Collapse_1 = { #法案名字，经济逐渐恢复
+			allowed = { #开局判定一次后不再判断
+				always = no #判断是否允许出现在经济法案里
+			}
+			removal_cost = -1 #取消该法案所需的政治点数，-1为不花费
+
+			modifier = { #该法案的效果
+			consumer_goods_expected_value = 0.25 #期望的生活消费品数量 
+			trade_opinion_factor = -0.2 #贸易协定关系修正
+			production_speed_arms_factory_factor = -0.4 #军用工厂建造速度
+			industrial_capacity_factory = -0.3 #工厂产出
+			production_factory_max_efficiency_factor = -0.3 #生产效率上限
+			production_factory_efficiency_gain_factor = -0.3 #生产效率增长
+			}
+
+			allowed_to_remove = { #满足什么条件才能取消法案
+					OR = {#满足下列任意条件之一
+						surrender_progress > 0.75 #投降度大于75
+						
+					}
+			}
+			cancel_if_invalid = NO #如果你的状态不支持你继续这个法案是否直接取消
 		}
 	}
 

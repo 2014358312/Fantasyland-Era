@@ -6,7 +6,7 @@ ideas = { #伊比利亚民主联盟
 
 			#临时组成的民兵自卫队
 
-			allowed = { original_tag = YBL }
+			allowed = { original_tag = IDA }
 
 			removal_cost = -1
 
@@ -14,6 +14,33 @@ ideas = { #伊比利亚民主联盟
 				modifier_army_sub_unit_militia_attack_factor = -0.05
 				modifier_army_sub_unit_militia_defence_factor = -0.1
 				modifier_army_sub_unit_militia_speed_factor = -0.15
+			}
+		}
+
+		IDA_MZ2 = {
+			picture = 1
+
+			#发动突然袭击
+
+			allowed = { original_tag = IDA }
+
+			removal_cost = -1
+
+			modifier = { 
+				army_speed_factor = 0.1 #陆军师速度
+			}
+
+			targeted_modifier = {
+				tag = YBL
+				attack_bonus_against = 0.1 #陆军攻击
+				breakthrough_bonus_against = 0.1 #突破
+				defense_bonus_against = 0.1 #陆军防御	
+			}
+			targeted_modifier = {
+				tag = INQ
+				attack_bonus_against = 0.1 #陆军攻击
+				breakthrough_bonus_against = 0.2 #突破
+				defense_bonus_against = 0.1 #陆军防御	
 			}
 		}
 	}

@@ -107,8 +107,16 @@ add_namespace = YBL_BLAG_SJ
     		ai_chance = {
     			base = 10
     		}
-    		add_political_power = -50 #获得政治点数
-			add_timed_idea = { idea = YBL_MZ11 days = 90 }
+			IDA = {
+				716 = {
+		        add_extra_state_shared_building_slots = 2
+		        add_building_construction = {
+		        	type = infrastructure
+		        	level = 2
+			        instant_build = yes #立刻完成 no反之
+		        }
+			}
+			}
 			complete_national_focus = YBL_GC2B
     	}
 
@@ -131,9 +139,19 @@ add_namespace = YBL_BLAG_SJ
     	option = { #选项的本地化，name = 选项内容
     		name = YBL_SJ.4.A
     		ai_chance = {
+    			base = 3
+    		}
+			add_popularity = { ideology = neutrality popularity = -0.1 }
+			complete_national_focus = YBL_GC2B
+    	}
+
+		option = { #选项的本地化，name = 选项内容
+    		name = YBL_SJ.4.B
+    		ai_chance = {
     			base = 1
     		}
 			add_popularity = { ideology = neutrality popularity = -0.1 }
+			complete_national_focus = YBL_GC2C
     	}
 
     	five_only_once = yes #是否只触发一次
@@ -157,6 +175,7 @@ add_namespace = YBL_BLAG_SJ
     		ai_chance = {
     			base = 1
     		}
+			complete_national_focus = YBL_GC2C
 			716 = {
 		        add_extra_state_shared_building_slots = 1
 		        add_building_construction = {
@@ -205,7 +224,7 @@ add_namespace = YBL_BLAG_SJ
     	}
 	}
 
-	country_event = { #挣脱王权的枷锁
+	country_event = { #特区未来
     	id = YBL_SJ.6
     	title = YBL_SJ.6.t #事件名，本地化的值，括号内可以加trigger参数
     	desc = YBL_SJ.6.desc #事件描述，括号内可以加trigger参数
@@ -216,7 +235,7 @@ add_namespace = YBL_BLAG_SJ
     		ai_chance = {
     			base = 1
     		}
-			
+			country_event = { days = 2 random = 21 id = YBL_SJ.7 }
     	}
 
     	five_only_once = yes #是否只触发一次
@@ -229,7 +248,7 @@ add_namespace = YBL_BLAG_SJ
     	}
 	}
 
-	country_event = { #挣脱王权的枷锁
+	country_event = { #鸿门宴
     	id = YBL_SJ.7
     	title = YBL_SJ.7.t #事件名，本地化的值，括号内可以加trigger参数
     	desc = YBL_SJ.7.desc #事件描述，括号内可以加trigger参数
@@ -237,6 +256,48 @@ add_namespace = YBL_BLAG_SJ
 
     	option = { #选项的本地化，name = 选项内容
     		name = YBL_SJ.7.A
+    		ai_chance = {
+    			base = 1
+    		}
+			724 = { set_demilitarized_zone = yes }
+			734 = { set_demilitarized_zone = yes }
+    	}
+		option = { #选项的本地化，name = 选项内容
+    		name = YBL_SJ.7.B
+    		ai_chance = {
+    			base = 1
+    		}
+			YBL = {
+				set_autonomy = {
+	    			target = IDA
+	    			autonomy_state = autonomy_free
+	    		}
+				add_timed_idea = { idea = YBL_MZ13 days = 90 }
+				declare_war_on = { target = IDA type = civil_war } #立刻宣布内战
+			}
+			IDA = {
+				change_tag_from = YBL
+			}
+    	}
+
+    	five_only_once = yes #是否只触发一次
+    	is_triggered_only = yes #只能被代码触发
+    	#major = yes 会让所有国家收到此事件
+    	#如果规定只能触发一次，即便规定了major=yes，其他国家也无法触发该事件
+    	hidden = no #他是否是隐藏的，不显示事件只触发效果
+    	immediate = {  #在框内填写内容，触发事件时就触发效果
+    		
+    	}
+	}
+
+	country_event = { #顺利脱身
+    	id = YBL_SJ.8
+    	title = YBL_SJ.8.t #事件名，本地化的值，括号内可以加trigger参数
+    	desc = YBL_SJ.8.desc #事件描述，括号内可以加trigger参数
+    	#picture = 图片索引
+
+    	option = { #选项的本地化，name = 选项内容
+    		name = YBL_SJ.8.A
     		ai_chance = {
     			base = 1
     		}

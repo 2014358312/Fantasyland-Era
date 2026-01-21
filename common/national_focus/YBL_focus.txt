@@ -59,9 +59,9 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -86,9 +86,9 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -101,7 +101,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBL_GC2 #GC2 布雷奥甘的思考
+		id = YBL_GC2 #GC2 迈向阿戈尔人未来
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC1 #以某一国策为中心确定国策在国策树的位置
 		x = -11
@@ -122,9 +122,9 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -153,9 +153,9 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -188,9 +188,9 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -223,9 +223,9 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -243,7 +243,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 5 #完成国策所需要的时间=填写的数字×7
+		cost = 3 #完成国策所需要的时间=填写的数字×7
 
 		prerequisite = { 		
 			focus = YBL_GC2A
@@ -264,9 +264,9 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -282,6 +282,14 @@ focus_tree = {
 		    	remove_idea = YBL_MZ1
 		    	add_idea = YBL_MZ7_3			
 		    }
+			IDA = {
+				transfer_state = 736
+				transfer_state = 737
+			}
+			set_autonomy = {
+				target = IDA
+				autonomy_state = autonomy_dominion #自治领
+			}
 		}
 	}
 
@@ -292,7 +300,7 @@ focus_tree = {
 		x = -2
 		y = 1
 
-		cost = 5 #完成国策所需要的时间=填写的数字×7
+		cost = 3 #完成国策所需要的时间=填写的数字×7
 
 		prerequisite = { 		
 			focus = YBL_GC2A3
@@ -307,9 +315,9 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -344,9 +352,12 @@ focus_tree = {
 		}
 
 		available = { #实时检测
-			AND = {
-				focus = YBL_GC3A1
-				focus = YBL_GC3A2
+			OR = {
+				has_completed_focus = YBL_GC2A3
+				AND = {
+			    	has_completed_focus = YBL_GC3A1
+			    	has_completed_focus = YBL_GC3A2
+			    }
 			}
 		}
 
@@ -355,9 +366,9 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -402,9 +413,9 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -453,9 +464,9 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -473,6 +484,13 @@ focus_tree = {
 			add_ideas = YBL_MZ8
 			IDA = {
 				add_ideas = YBL_MZ8
+				add_tech_bonus = { #工业加成卡
+		    		name = YBL_GC2A7_GY
+		    	    bonus = 0.5
+		    	    uses = 2
+		    	    category = industry
+		    	    ahead_reduction = 1
+		    	}
 			}
 		}
 	}
@@ -484,7 +502,7 @@ focus_tree = {
 		x = 0
 		y = 3
 
-		cost = 10 #完成国策所需要的时间=填写的数字×7
+		cost = 5 #完成国策所需要的时间=填写的数字×7
 
 		prerequisite = { 		
 			focus = YBL_GC2A6
@@ -505,9 +523,9 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -515,6 +533,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
 		completion_reward = { #国策效果
 		    news_event = { id = FE_news.21 }
+			swap_ideas = {
+	    		remove_idea = YBL_Economic_Collapse
+	    		add_idea = YBL_Economic_Collapse_1			
+    		}
 		    737 = {
 		        add_extra_state_shared_building_slots = 2
 		        add_building_construction = {
@@ -563,9 +585,9 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -601,9 +623,9 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -617,7 +639,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBL_GC2B #GC2B 将在外，君命有所不受
+		id = YBL_GC2B #GC2B 展望特区的未来
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC2A8
 		x = -2
@@ -636,14 +658,14 @@ focus_tree = {
 			factor = 3
 		}
 
-		select_effect = { #点击国策时的效果
-
+		available = {
+			always = no #始终为非
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -655,7 +677,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBL_GC2B1 #GC2B1 拉拢铁律大阵
+		id = YBL_GC2B1 #GC2B1 接管铁律军指挥权
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC2B
 		x = -1
@@ -676,21 +698,23 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
 
 		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
 		completion_reward = { #国策效果
-
+		719 = { set_demilitarized_zone = yes }
+		725 = { set_demilitarized_zone = yes }
+		716 = { set_demilitarized_zone = yes }
 		}
 	}
 
 	focus = {
-		id = YBL_GC2B2 #GC2B2 转移阿戈尔人
+		id = YBL_GC2B2 #GC2B2 转移阿戈尔资产
 		icon = YBL_nianqdedashengpang #国策图标连接
 		relative_position_id = YBL_GC2B
 		x = 1
@@ -711,9 +735,8 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -759,26 +782,22 @@ focus_tree = {
 		}
 
 		select_effect = { #点击国策时的效果
-
+		    country_event = { days = 0 random = 3 id = YBL_SJ.6 }
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
 
 		search_filters = { FOCUS_FILTER_POLITICAL } #国策标签（筛选器检索）
 		completion_reward = { #国策效果
-		    IDA = {
-				transfer_state = { 736 737 }
-			}
 			add_ideas = YBL_MZ12
 			remove_ideas = YBL_MZ8
 			remove_ideas = YBL_MZ7_3
-			country_event = { days = 3 random = 0 id = YBL_SJ.7 }
+			country_event = { days = 0 random = 0 id = YBL_SJ.8 }
 		}
 	}
 
@@ -802,14 +821,14 @@ focus_tree = {
 			factor = 0
 		}
 
-		select_effect = { #点击国策时的效果
-
+		available = {
+			always = no #始终为非
 		}
 
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -842,9 +861,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -880,9 +899,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -915,9 +934,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -953,9 +972,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -991,9 +1010,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1030,9 +1049,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1070,9 +1089,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1107,9 +1126,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1144,9 +1163,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1180,9 +1199,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1216,9 +1235,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1256,9 +1275,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1299,9 +1318,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1338,9 +1357,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1374,9 +1393,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1410,9 +1429,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1449,9 +1468,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1488,9 +1507,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1527,9 +1546,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1569,9 +1588,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1610,9 +1629,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1647,9 +1666,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1684,9 +1703,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1721,9 +1740,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1763,9 +1782,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1801,9 +1820,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1836,9 +1855,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1874,9 +1893,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1912,9 +1931,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1947,9 +1966,9 @@ focus_tree = {
 		}
 		
 		available_if_capitulated = no #投降后是否可用
-		cancelable = no #国策能否被取消
+		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		continue_if_invalid = no #不满足某一条件时国策是否取消
+		 
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）

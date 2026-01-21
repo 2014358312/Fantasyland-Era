@@ -1,0 +1,58 @@
+###########################
+# YBL
+###########################
+
+add_namespace = IDA_SJ
+add_namespace = IDA_BLAG_SJ
+add_namespace = IDA_NeiZhan_SJ
+#布雷奥甘线
+
+	country_event = { #挣脱王权的枷锁
+    	id = IDA_SJ.3
+    	title = IDA_SJ.3.t #事件名，本地化的值，括号内可以加trigger参数
+    	desc = IDA_SJ.3.desc #事件描述，括号内可以加trigger参数
+    	#picture = 图片索引
+
+    	option = { #选项的本地化，name = 选项内容
+    		name = IDA_SJ.3.A
+    		ai_chance = {
+    			base = 1
+    		}
+			
+    	}
+
+    	five_only_once = yes #是否只触发一次
+    	is_triggered_only = yes #只能被代码触发
+    	#major = yes 会让所有国家收到此事件
+    	#如果规定只能触发一次，即便规定了major=yes，其他国家也无法触发该事件
+    	hidden = no #他是否是隐藏的，不显示事件只触发效果
+    	immediate = {  #在框内填写内容，触发事件时就触发效果
+    		
+    	}
+	}
+
+	country_event = { #挣脱王权的枷锁
+    	id = IDA_SJ.7
+    	title = IDA_SJ.7.t #事件名，本地化的值，括号内可以加trigger参数
+    	desc = IDA_SJ.7.desc #事件描述，括号内可以加trigger参数
+    	#picture = 图片索引
+
+    	option = { #选项的本地化，name = 选项内容
+    		name = IDA_SJ.7.A
+    		ai_chance = {
+    			base = 1
+    		}
+			IDA = {
+				change_tag_from = YBL
+			}
+    	}
+
+    	five_only_once = yes #是否只触发一次
+    	is_triggered_only = yes #只能被代码触发
+    	#major = yes 会让所有国家收到此事件
+    	#如果规定只能触发一次，即便规定了major=yes，其他国家也无法触发该事件
+    	hidden = no #他是否是隐藏的，不显示事件只触发效果
+    	immediate = {  #在框内填写内容，触发事件时就触发效果
+    		
+    	}
+	}
