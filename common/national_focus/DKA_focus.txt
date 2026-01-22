@@ -48,14 +48,167 @@
 	#		}
 	#	}
 	###############################政治线中线################################################
-	###最漫长的一夜
+	focus = {
+		id = DKA_second_northern_expedition
+		icon = GFX_goal_generic_focus_on_westland
+		x = 26
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			is_ai = yes
+			any_other_country = {
+				is_on_same_continent_as = ROOT
+				NOT = {
+					has_war_with = ROOT
+					has_government = ROOT
+				}
+			}
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_on_same_continent_as = ROOT
+					NOT = {
+						has_war_with = ROOT
+						has_government = ROOT
+					}
+				}
+				ROOT = {
+					declare_war_on = {
+						target = PREV
+						type = annex_everythiing
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = DKA_make_enemy_sow_discord
+		icon = GFX_goal_generic_espionage
+		prerequisite = {
+			focus = DKA_second_northern_expedition
+		}
+		relative_position_id = DKA_second_northern_expedition
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			is_ai = yes
+			has_war = yes
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_on_same_continent_as = ROOT
+					NOT = {
+						has_war_with = ROOT
+						has_government = ROOT
+					}
+				}
+				add_stability = -0.1
+				add_war_support = -0.1
+				add_political_power = -50
+			}
+		}
+	}
+	
+	focus = {
+		id = DKA_attack_northeast
+		icon = GFX_goal_generic_railway_construction
+		prerequisite = {
+			focus = DKA_second_northern_expedition
+		}
+		relative_position_id = DKA_second_northern_expedition
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			is_ai = yes
+			has_war = yes
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = DKA_final_attack_to_tiam
+		icon = GFX_goal_generic_air_CAS_german
+		prerequisite = {
+			focus = DKA_make_enemy_sow_discord
+		}
+		prerequisite = {
+			focus = DKA_attack_northeast
+		}
+		relative_position_id = DKA_make_enemy_sow_discord
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			is_ai = yes
+			has_war = yes
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			TIA = {
+				add_political_power = -300
+				add_stability = -0.2
+				add_war_support = -0.2
+			}
+		}
+	}
+	
 	focus = {
 		id = DKA_eyes_of_storm
 		icon = GFX_focus_DKA_eyes_of_storm
 		mutually_exclusive = {
 			focus = DKA_sword_of_revolution
 		}
-		x = 10
+		x = 20
 		y = 0
 		cost = 0
 		ai_will_do = {
@@ -88,6 +241,38 @@
 			focus = DKA_eyes_of_storm
 		}
 		relative_position_id = DKA_eyes_of_storm
+		x = -2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = DKA_unite_to_forward
+		icon = GFX_focus_generic_military_academy
+		prerequisite = {
+			focus = DKA_eyes_of_storm
+		}
+		relative_position_id = DKA_eyes_of_storm
 		x = 0
 		y = 1
 		cost = 10
@@ -112,13 +297,46 @@
 			add_political_power = 150
 		}
 	}
+
+	focus = {
+		id = DKA_investment_on_state
+		icon = GFX_focus_generic_military_academy
+		prerequisite = {
+			focus = DKA_eyes_of_storm
+		}
+		relative_position_id = DKA_eyes_of_storm
+		x = 2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	
 	focus = {
 		id = DKA_sword_of_revolution
 		icon = GFX_focus_generic_social_democracy
 		mutually_exclusive = {
 			focus = DKA_eyes_of_storm
 		}
-		x = 20
+		x = 10
 		y = 0
 		cost = 0
 		ai_will_do = {
