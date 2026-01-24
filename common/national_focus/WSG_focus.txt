@@ -18,7 +18,7 @@ focus_tree = {
 	}
 	default = no
 	
-	continuous_focus_position = { x = 100 y = 1000 }
+	continuous_focus_position = { x = 1000 y = 300 }
 	
 	inlay_window = {
 		id = wsg_inner_circle_inlay_window
@@ -5145,8 +5145,8 @@ focus_tree = {
 	focus = { 
 		id = WSG_port_area_and_tomorrow
 		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 53
-		y = 0
+		x = 16
+		y = 17
 		cost = 5
 		available = {
 			original_tag = WSG 
@@ -5337,7 +5337,7 @@ focus_tree = {
 		id = WSG_dark_day
 		icon = GFX_focus_hol_the_foundations_of_defense
 		relative_position_id = WSG_from_the_deep_sea
-		x = 0
+		x = 6
 		y = 1
 		cost = 5
 		available = {
@@ -5348,9 +5348,6 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_victory_day
 		}
         prerequisite = { 
 			focus = WSG_from_the_deep_sea
@@ -5714,10 +5711,10 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = WSG_victory_day
+		id = WSG_state_of_emergency
 		icon = GFX_focus_hol_the_foundations_of_defense
 		relative_position_id = WSG_from_the_deep_sea
-		x = -6
+		x = 0
 		y = 1
 		cost = 5
 		available = {
@@ -5729,8 +5726,351 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+        prerequisite = { 
+			focus = WSG_from_the_deep_sea
+		}
+	}
+
+	focus = { 
+		id = WSG_admirals_exclusive_jurisdiction
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_state_of_emergency
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			has_completed_focus = WSG_consolidate_the_power_of_the_admiral
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
         mutually_exclusive = {
-			focus = WSG_dark_day
+			focus = WSG_lexington_prime_minister
+		}
+        prerequisite = { 
+			focus = WSG_state_of_emergency
+		}
+	}
+
+	focus = { 
+		id = WSG_lexington_prime_minister
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_state_of_emergency
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			has_completed_focus = WSG_consolidate_the_power_of_the_secretary_ship
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_admirals_exclusive_jurisdiction
+		}
+        prerequisite = { 
+			focus = WSG_state_of_emergency
+		}
+	}
+
+	focus = { 
+		id = WSG_pacify_the_people
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_state_of_emergency
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_admirals_exclusive_jurisdiction
+			focus = WSG_lexington_prime_minister
+		}
+	}
+
+	focus = { 
+		id = WSG_public_opinion_supervision
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_pacify_the_people
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_pacify_the_people
+		}
+	}
+
+	focus = { 
+		id = WSG_suppressing_militarism
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_pacify_the_people
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_pacify_the_people
+		}
+	}
+
+	focus = { 
+		id = WSG_settle_a_situation
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_pacify_the_people
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_public_opinion_supervision
+		}
+        prerequisite = { 
+			focus = WSG_suppressing_militarism
+		}
+	}
+
+	focus = { 
+		id = WSG_admirals_rule
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_settle_a_situation
+		x = -2
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			has_completed_focus = WSG_admirals_exclusive_jurisdiction
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_settle_a_situation
+		}
+	}
+
+	focus = { 
+		id = WSG_admirals_experience
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_admirals_rule
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_admirals_rule
+		}
+	}
+
+	focus = { 
+		id = WSG_the_reign_of_lexington
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_settle_a_situation
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+			has_completed_focus = WSG_lexington_prime_minister
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_settle_a_situation
+		}
+	}
+
+	focus = { 
+		id = WSG_lifetime_secretary_ship
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_the_reign_of_lexington
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_the_reign_of_lexington
+		}
+	}
+
+	focus = { 
+		id = WSG_everything_is_settled
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_settle_a_situation
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_settle_a_situation
+		}
+	}
+
+	focus = { 
+		id = WSG_back_on_track
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_everything_is_settled
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_everything_is_settled
+		}
+	}
+
+	focus = { 
+		id = WSG_the_future_of_the_port_area
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_back_on_track
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+			custom_effect_tooltip = WSG_unfinished
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_back_on_track
+		}
+        prerequisite = { 
+			focus = WSG_admirals_experience
+			focus = WSG_lifetime_secretary_ship
+		}
+	}
+
+	focus = { 
+		id = WSG_stand_aloof_from_the_world
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_the_future_of_the_port_area
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_dealing_with_threats
+		}
+        prerequisite = { 
+			focus = WSG_the_future_of_the_port_area
+		}
+	}
+
+	focus = { 
+		id = WSG_dealing_with_threats
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_the_future_of_the_port_area
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			original_tag = WSG 
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        mutually_exclusive = {
+			focus = WSG_stand_aloof_from_the_world
+		}
+        prerequisite = { 
+			focus = WSG_the_future_of_the_port_area
+		}
+	}
+
+	focus = { 
+		id = WSG_victory_day
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_from_the_deep_sea
+		x = -7
+		y = 1
+		cost = 5
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = WSG_completed_by_the_event
+		}
+		ai_will_do = {
+			factor = 1
 		}
         prerequisite = { 
 			focus = WSG_from_the_deep_sea
@@ -6071,7 +6411,7 @@ focus_tree = {
 		id = WSG_mainland_strategy
 		icon = GFX_focus_hol_the_foundations_of_defense
 		relative_position_id = WSG_from_the_deep_sea
-		x = 7
+		x = 14
 		y = 1
 		cost = 2
 		available = {
@@ -6379,7 +6719,7 @@ focus_tree = {
 			factor = 1
 		}
         mutually_exclusive = {
-			focus = armor_performance_integration
+			focus = WSG_armor_performance_integration
 		}
         prerequisite = { 
 			focus = WSG_full_line_assault
@@ -6583,7 +6923,7 @@ focus_tree = {
 			factor = 1
 		}
         mutually_exclusive = {
-			focus = WSG_air_force_equipment_performance_integration
+			focus = WSG_quantitative_integration_of_air_force_equipment
 		}
         prerequisite = { 
 			focus = WSG_destruction_of_fortifications
@@ -6719,7 +7059,7 @@ focus_tree = {
 			factor = 1
 		}
         mutually_exclusive = {
-			focus = WSG_quantitative_integration_of_air_force_equipment
+			focus = WSG_air_force_equipment_performance_integration
 		}
         prerequisite = { 
 			focus = WSG_destruction_of_fortifications
@@ -6733,8 +7073,8 @@ focus_tree = {
 		id = WSG_ocean_strategy
 		icon = GFX_focus_hol_the_foundations_of_defense
 		relative_position_id = WSG_from_the_deep_sea
-		x = 7
-		y = 7
+		x = 23
+		y = 1
 		cost = 2
 		available = {
 			original_tag = WSG 
