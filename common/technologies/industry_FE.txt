@@ -1,0 +1,1233 @@
+@mechanical_intelligence_industry_x = 0
+@biological_intelligence_industry_x = 2
+@machine_tool_x = 5
+@construction_x = 8
+@excavation_x = 10
+@left_y_998 = 0
+@left_y_1000 = 2
+@left_y_1001 = 4
+@left_y_1003 = 6
+@left_y_1005 = 8
+@left_y_1007 = 10
+@left_y_1009 = 12
+technologies = {
+
+	machine_tool_1 = {
+	
+		production_factory_max_efficiency_factor = 0.1
+		equipment_conversion_speed = 0.2
+		
+		path = {
+			leads_to_tech = machine_tool_2 
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = mechanical_intelligence_industry_1 
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = biological_intelligence_industry_1 
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = construction_1 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 998
+		folder = {
+			name = industry_folder
+			position = { x = @machine_tool_x y = @left_y_998 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		categories = {
+			industry
+			cat_production
+		}
+	}
+
+	machine_tool_2 = {
+	
+		production_factory_max_efficiency_factor = 0.1
+		equipment_conversion_speed = 0.2
+		
+		path = {
+			leads_to_tech = machine_tool_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1001
+		folder = {
+			name = industry_folder
+			position = { x = @machine_tool_x y = @left_y_1001 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		categories = {
+			industry
+			cat_production
+		}
+	}
+
+	machine_tool_3 = {
+	
+		production_factory_max_efficiency_factor = 0.1
+		equipment_conversion_speed = 0.2
+		
+		path = {
+			leads_to_tech = machine_tool_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1003
+		folder = {
+			name = industry_folder
+			position = { x = @machine_tool_x y = @left_y_1003 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		categories = {
+			industry
+			cat_production
+		}
+	}
+
+	machine_tool_4 = {
+	
+		production_factory_max_efficiency_factor = 0.1
+		equipment_conversion_speed = 0.2
+		
+		path = {
+			leads_to_tech = machine_tool_5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1005
+		folder = {
+			name = industry_folder
+			position = { x = @machine_tool_x y = @left_y_1005 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		categories = {
+			industry
+			cat_production
+		}
+	}
+
+	machine_tool_5 = {
+	
+		production_factory_max_efficiency_factor = 0.1
+		equipment_conversion_speed = 0.2
+		
+		#path = {
+		#	leads_to_tech = machine_tool_5
+		#	research_cost_coeff = 1
+		#}
+		
+		research_cost = 1.5
+		start_year = 1007
+		folder = {
+			name = industry_folder
+			position = { x = @machine_tool_x y = @left_y_1007 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		categories = {
+			industry
+			cat_production
+		}
+	}
+
+	mechanical_intelligence_industry_1 = {
+
+		industrial_capacity_factory = 0.15
+		industrial_capacity_dockyard = 0.1
+		industrial_capacity_factory_powered = 0.05 
+		industrial_capacity_dockyard_powered = 0.025 
+		global_building_slots_factor = 0.20
+		
+		path = {
+			leads_to_tech = mechanical_intelligence_industry_2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1000
+		folder = {
+			name = industry_folder
+			position = { x = @mechanical_intelligence_industry_x y = @left_y_1000 }
+		}
+		
+		#XOR = {
+		#	biological_intelligence_industry_1
+		#}
+		
+		ai_will_do = {
+			factor = 50
+
+			modifier = {
+				factor = 0
+				has_tech = biological_intelligence_industry_1
+			}
+			
+			modifier = {
+				factor = 0
+				is_researching_technology = biological_intelligence_industry_1
+			}
+						
+			modifier = {
+				factor = 5
+				date > "1000.7.1"
+			}
+		}
+		
+		categories = {
+			industry
+			concentrated_industry_category
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+
+	mechanical_intelligence_industry_2 = {
+
+		industrial_capacity_factory = 0.15
+		industrial_capacity_dockyard = 0.1
+		industrial_capacity_factory_powered = 0.05 
+		industrial_capacity_dockyard_powered = 0.025 
+		global_building_slots_factor = 0.20
+		
+		path = {
+			leads_to_tech = mechanical_intelligence_industry_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1001
+		folder = {
+			name = industry_folder
+			position = { x = @mechanical_intelligence_industry_x y = @left_y_1001 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+
+			modifier = {
+				factor = 5
+				date > "1001.1.1"
+			}
+		}
+		
+		categories = {
+			industry
+			concentrated_industry_category
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+
+	mechanical_intelligence_industry_3 = {
+
+		industrial_capacity_factory = 0.15
+		industrial_capacity_dockyard = 0.1
+		industrial_capacity_factory_powered = 0.05 
+		industrial_capacity_dockyard_powered = 0.025 
+		global_building_slots_factor = 0.20
+		
+		path = {
+			leads_to_tech = mechanical_intelligence_industry_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1003
+		folder = {
+			name = industry_folder
+			position = { x = @mechanical_intelligence_industry_x y = @left_y_1003 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+
+			modifier = {
+				factor = 5
+				date > "1003.1.1"
+			}
+		}
+		
+		categories = {
+			industry
+			concentrated_industry_category
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+
+	mechanical_intelligence_industry_4 = {
+
+		industrial_capacity_factory = 0.15
+		industrial_capacity_dockyard = 0.1
+		industrial_capacity_factory_powered = 0.05 
+		industrial_capacity_dockyard_powered = 0.025 
+		global_building_slots_factor = 0.20
+		
+		path = {
+			leads_to_tech = mechanical_intelligence_industry_5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1005
+		folder = {
+			name = industry_folder
+			position = { x = @mechanical_intelligence_industry_x y = @left_y_1005 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+
+			modifier = {
+				factor = 5
+				date > "1005.1.1"
+			}
+		}
+		
+		categories = {
+			industry
+			concentrated_industry_category
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+
+	mechanical_intelligence_industry_5 = {
+
+		industrial_capacity_factory = 0.15
+		industrial_capacity_dockyard = 0.1
+		industrial_capacity_factory_powered = 0.05 
+		industrial_capacity_dockyard_powered = 0.025 
+		global_building_slots_factor = 0.20
+		
+		#path = {
+		#	leads_to_tech = mechanical_intelligence_industry_5
+		#	research_cost_coeff = 1
+		#}
+		
+		research_cost = 1.5
+		start_year = 1007
+		folder = {
+			name = industry_folder
+			position = { x = @mechanical_intelligence_industry_x y = @left_y_1007 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+
+			modifier = {
+				factor = 5
+				date > "1007.1.1"
+			}
+		}
+		
+		categories = {
+			industry
+			concentrated_industry_category
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+
+	biological_intelligence_industry_1 = {
+
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.1
+		industrial_capacity_factory_powered = 0.025 
+		industrial_capacity_dockyard_powered = 0.025 
+		line_change_production_efficiency_factor = 0.1
+		production_factory_start_efficiency_factor = 0.05
+		industry_air_damage_factor = -0.15
+		global_building_slots_factor = 0.2
+		
+		path = {
+			leads_to_tech = biological_intelligence_industry_2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1000
+		folder = {
+			name = industry_folder
+			position = { x = @biological_intelligence_industry_x y = @left_y_1000 }
+		}
+		
+		#XOR = {
+		#	mechanical_intelligence_industry_1
+		#}
+		
+		ai_will_do = {
+			factor = 50
+
+			modifier = {
+				factor = 0
+				has_tech = mechanical_intelligence_industry_1
+			}
+			
+			modifier = {
+				factor = 0
+				is_researching_technology = mechanical_intelligence_industry_1
+			}
+						
+			modifier = {
+				factor = 5
+				date > "1000.7.1"
+			}
+		}
+		
+		categories = {
+			industry
+			dispersed_industry_category
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+
+	biological_intelligence_industry_2 = {
+
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.1
+		industrial_capacity_factory_powered = 0.025 
+		industrial_capacity_dockyard_powered = 0.025 
+		line_change_production_efficiency_factor = 0.1
+		production_factory_start_efficiency_factor = 0.05
+		industry_air_damage_factor = -0.10
+		global_building_slots_factor = 0.2
+		
+		path = {
+			leads_to_tech = biological_intelligence_industry_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1001
+		folder = {
+			name = industry_folder
+			position = { x = @biological_intelligence_industry_x y = @left_y_1001 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+
+			modifier = {
+				factor = 5
+				date > "1001.1.1"
+			}
+		}
+		
+		categories = {
+			industry
+			dispersed_industry_category
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+
+	biological_intelligence_industry_3 = {
+
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.1
+		industrial_capacity_factory_powered = 0.025
+		industrial_capacity_dockyard_powered = 0.025
+		line_change_production_efficiency_factor = 0.1
+		production_factory_start_efficiency_factor = 0.05
+		industry_air_damage_factor = -0.10
+		global_building_slots_factor = 0.2
+		
+		path = {
+			leads_to_tech = biological_intelligence_industry_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1003
+		folder = {
+			name = industry_folder
+			position = { x = @biological_intelligence_industry_x y = @left_y_1003 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+
+			modifier = {
+				factor = 5
+				date > "1003.1.1"
+			}
+		}
+		
+		categories = {
+			industry
+			dispersed_industry_category
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+
+	biological_intelligence_industry_4 = {
+
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.1
+		industrial_capacity_factory_powered = 0.05 
+		industrial_capacity_dockyard_powered = 0.05
+		line_change_production_efficiency_factor = 0.1
+		production_factory_start_efficiency_factor = 0.05
+		industry_air_damage_factor = -0.10
+		global_building_slots_factor = 0.2
+		
+		path = {
+			leads_to_tech = biological_intelligence_industry_5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1005
+		folder = {
+			name = industry_folder
+			position = { x = @biological_intelligence_industry_x y = @left_y_1005 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+
+			modifier = {
+				factor = 5
+				date > "1005.1.1"
+			}
+		}
+		
+		categories = {
+			industry
+			dispersed_industry_category
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+
+	biological_intelligence_industry_5 = {
+
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.1
+		industrial_capacity_factory_powered = 0.05
+		industrial_capacity_dockyard_powered = 0.05 
+		line_change_production_efficiency_factor = 0.1
+		production_factory_start_efficiency_factor = 0.05
+		industry_air_damage_factor = -0.10
+		global_building_slots_factor = 0.2
+		
+		#path = {
+		#	leads_to_tech = biological_intelligence_industry_5
+		#	research_cost_coeff = 1
+		#}
+		
+		research_cost = 1.5
+		start_year = 1007
+		folder = {
+			name = industry_folder
+			position = { x = @biological_intelligence_industry_x y = @left_y_1007 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+
+			modifier = {
+				factor = 5
+				date > "1007.1.1"
+			}
+		}
+		
+		categories = {
+			industry
+			dispersed_industry_category
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+	
+	construction_1 = {
+		production_speed_buildings_factor = 0.1
+		production_speed_buildings_powered_factor = 0.025 
+		industry_repair_factor = 0.10
+
+		path = {
+			leads_to_tech = construction_2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = excavation_1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1000
+		categories = {
+			industry
+			construction_tech
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @construction_x y = @left_y_1000 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+			
+			modifier = {
+				factor = 5
+				date > "1937.1.1"
+			}
+		}
+	}
+
+	excavation_1 = {
+		
+		local_resources_factor = 0.10
+		local_resources_coal_factor = 0.05
+		
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		
+		categories = {
+			industry
+			construction_tech
+			excavation_tech
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @excavation_x y = @left_y_1000 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 5.0
+				OR = {
+					oil > 0
+					aluminium > 0
+					rubber > 0
+					tungsten > 0
+					steel > 0
+					chromium > 0
+					coal > 0
+				}
+			}
+			
+			modifier = {
+				factor = 1.5
+				OR = {
+					oil > 8
+					aluminium > 8
+					rubber > 8
+					tungsten > 8
+					steel > 8
+					chromium > 8
+					coal > 8
+				}
+			}
+		}
+	}
+	
+	construction_2 = {
+
+		production_speed_buildings_factor = 0.1
+		production_speed_buildings_powered_factor = 0.025 
+		industry_repair_factor = 0.10
+		
+		path = {
+			leads_to_tech = construction_3 
+			research_cost_coeff = 1
+		}		
+		path = {
+			leads_to_tech = excavation_2 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1001
+		
+		categories = {
+			industry
+			construction_tech
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @construction_x y = @left_y_1001 }
+		}
+		
+		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				factor = 10
+				date > "1001.1.1"
+			}			
+		}
+	}
+
+	excavation_2 = {
+		
+		local_resources_factor = 0.10
+		local_resources_coal_factor = 0.05
+
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1001
+		
+		categories = {
+			industry
+			construction_tech
+			excavation_tech
+		}
+
+		
+		folder = {
+			name = industry_folder
+			position = { x = @excavation_x y = @left_y_1001 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 5.0
+				OR = {
+					oil > 0
+					aluminium > 0
+					rubber > 0
+					tungsten > 0
+					steel > 0
+					chromium > 0
+					coal > 0 
+				}
+			}
+			
+			modifier = {
+				factor = 1.5
+				OR = {
+					oil > 8
+					aluminium > 8
+					rubber > 8
+					tungsten > 8
+					steel > 8
+					chromium > 8
+					coal > 8
+				}
+			}
+		}
+	}	
+	
+	construction_3 = {
+
+		production_speed_buildings_factor = 0.1
+		production_speed_buildings_powered_factor = 0.025
+		industry_repair_factor = 0.10
+		
+		path = {
+			leads_to_tech = construction_4 
+			research_cost_coeff = 1
+		}
+				
+		path = {
+			leads_to_tech = excavation_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1003
+		
+		categories = {
+			industry
+			construction_tech
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @construction_x y = @left_y_1003 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+			
+			modifier = {
+				factor = 1.5
+				has_war = yes
+			}
+			
+			modifier = {
+				factor = 0.5
+				has_war = no
+			}
+			
+			modifier = {
+				factor = 3
+				date > "1003.1.1"
+			}
+		}
+	}
+
+
+	excavation_3 = {
+		
+		local_resources_factor = 0.10
+		local_resources_coal_factor = 0.05
+
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1003
+		
+		categories = {
+			industry
+			construction_tech
+			excavation_tech
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @excavation_x y = @left_y_1003 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 5.0
+				OR = {
+					oil > 0
+					aluminium > 0
+					rubber > 0
+					tungsten > 0
+					steel > 0
+					chromium > 0
+					coal > 0
+				}
+			}
+			
+			modifier = {
+				factor = 1.5
+				OR = {
+					oil > 8
+					aluminium > 8
+					rubber > 8
+					tungsten > 8
+					steel > 8
+					chromium > 8
+					coal > 8
+				}
+			}
+		}
+	}		
+	
+	construction_4 = {
+
+		production_speed_buildings_factor = 0.1
+		production_speed_buildings_powered_factor = 0.05 
+		industry_repair_factor = 0.10
+
+		on_research_complete = {
+			custom_effect_tooltip = {
+				localization_key = SP_UNLOCK_PROJECT
+				PROJECT = sp_commercial_nuclear_reactor	
+			}
+		}
+		
+		path = {
+			leads_to_tech = construction_5 
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = excavation_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1005
+		
+		categories = {
+			industry
+			construction_tech
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @construction_x y = @left_y_1005 }
+		}
+		
+		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				factor = 10
+				date > "1005.1.1"
+			}
+		}
+	}
+
+	excavation_4 = {
+		
+		local_resources_factor = 0.10
+		local_resources_coal_factor = 0.05
+
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1005
+		
+		categories = {
+			industry
+			construction_tech
+			excavation_tech
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @excavation_x y = @left_y_1005 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 5.0
+				OR = {
+					oil > 0
+					aluminium > 0
+					rubber > 0
+					tungsten > 0
+					steel > 0
+					chromium > 0
+					coal > 0
+				}
+			}
+			
+			modifier = {
+				factor = 1.5
+				OR = {
+					oil > 8
+					aluminium > 8
+					rubber > 8
+					tungsten > 8
+					steel > 8
+					chromium > 8
+					coal > 8
+				}
+			}
+		}
+	}			
+	
+	construction_5 = {
+
+		production_speed_buildings_factor = 0.1
+		production_speed_buildings_powered_factor = 0.05
+		industry_repair_factor = 0.10
+		
+		path = {
+			leads_to_tech = excavation_5
+			research_cost_coeff = 1
+		}
+
+		
+		research_cost = 2
+		start_year = 1007
+		
+		categories = {
+			industry
+			construction_tech
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @construction_x y = @left_y_1007 }
+		}
+		
+		ai_will_do = {
+			factor = 4
+			
+			modifier = {
+				factor = 10
+				date > "1007.1.1"
+			}
+		}
+	}
+
+	excavation_5 = {
+		
+		local_resources_factor = 0.10
+		local_resources_coal_factor = 0.05
+
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1007
+		
+		categories = {
+			industry
+			construction_tech
+			excavation_tech
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @excavation_x y = @left_y_1007 }
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 5.0
+				OR = {
+					oil > 0
+					aluminium > 0
+					rubber > 0
+					tungsten > 0
+					steel > 0
+					chromium > 0
+					coal > 0
+				}
+			}
+			
+			modifier = {
+				factor = 1.5
+				OR = {
+					oil > 8
+					aluminium > 8
+					rubber > 8
+					tungsten > 8
+					steel > 8
+					chromium > 8
+					coal > 8
+				}
+			}
+		}
+	}
+
+	resource_casting = {
+		
+		local_resources_factor = 0.10
+		local_resources_coal_factor = 0.05
+
+		path = {
+			leads_to_tech = steel_foundry
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = oil_foundry
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = aluminium_foundry
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = tungsten_foundry
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = chromium_foundry
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1000
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 12 y = 2 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	steel_foundry = {
+
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1000
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 12 y = 4 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	oil_foundry = {
+
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1000
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 14 y = 4 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	aluminium_foundry = {
+
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1000
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 16 y = 4 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	tungsten_foundry = {
+
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1000
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 18 y = 4 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	chromium_foundry = {
+
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1000
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 20 y = 4 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}
