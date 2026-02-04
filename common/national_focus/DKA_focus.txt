@@ -1,4 +1,6 @@
-﻿focus_tree = {
+﻿#!gfx:interface\goals.gfx
+#!gfx:interface\goals\FE_country_goals.gfx
+focus_tree = {
 	id = DKA_focus_tree
 	country = {
 		factor = 0
@@ -93,7 +95,6 @@
 			}
 		}
 	}
-	
 	focus = {
 		id = DKA_make_enemy_sow_discord
 		icon = GFX_goal_generic_espionage
@@ -134,7 +135,6 @@
 			}
 		}
 	}
-	
 	focus = {
 		id = DKA_attack_northeast
 		icon = GFX_goal_generic_railway_construction
@@ -161,10 +161,8 @@
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
 		}
 	}
-	
 	focus = {
 		id = DKA_final_attack_to_tiam
 		icon = GFX_goal_generic_air_CAS_german
@@ -201,7 +199,6 @@
 			}
 		}
 	}
-	
 	focus = {
 		id = DKA_eyes_of_storm
 		icon = GFX_focus_DKA_eyes_of_storm
@@ -233,7 +230,6 @@
 			#country_event = DKA.1
 		}
 	}
-
 	focus = {
 		id = DKA_unite_to_forward
 		icon = GFX_goal_generic_national_unity
@@ -265,14 +261,15 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_strengthen_central_management
 		icon = GFX_goal_generic_authoritarian_government
 		prerequisite = {
 			focus = DKA_unite_to_forward
 		}
-		mutually_exclusive = { focus = DKA_commit_to_right_of_self_governance }
+		mutually_exclusive = {
+			focus = DKA_commit_to_right_of_self_governance
+		}
 		relative_position_id = DKA_unite_to_forward
 		x = -1
 		y = 1
@@ -298,14 +295,15 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_commit_to_right_of_self_governance
 		icon = GFX_focus_generic_self_management
 		prerequisite = {
 			focus = DKA_unite_to_forward
 		}
-		mutually_exclusive = { focus = DKA_strengthen_central_management }
+		mutually_exclusive = {
+			focus = DKA_strengthen_central_management
+		}
 		relative_position_id = DKA_unite_to_forward
 		x = 1
 		y = 1
@@ -331,7 +329,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_build_military_committee
 		icon = GFX_focus_generic_military_academy
@@ -363,7 +360,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_political_bureau
 		icon = GFX_focus_generic_improve_the_administration_2
@@ -374,7 +370,9 @@
 			focus = DKA_strengthen_central_management
 			focus = DKA_commit_to_right_of_self_governance
 		}
-		mutually_exclusive = { focus = DKA_think_tank }
+		mutually_exclusive = {
+			focus = DKA_think_tank
+		}
 		relative_position_id = DKA_build_military_committee
 		x = 0
 		y = 2
@@ -400,7 +398,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_use_talent
 		icon = GFX_focus_generic_education
@@ -432,7 +429,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_national_minority_administration
 		icon = GFX_focus_generic_improve_the_administration
@@ -464,14 +460,15 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_use_opposition_party
 		icon = GFX_focus_generic_subjugation
 		prerequisite = {
 			focus = DKA_national_minority_administration
 		}
-		mutually_exclusive = { focus = DKA_dismiss_opposition_party }
+		mutually_exclusive = {
+			focus = DKA_dismiss_opposition_party
+		}
 		relative_position_id = DKA_national_minority_administration
 		x = -1
 		y = 1
@@ -497,14 +494,15 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_dismiss_opposition_party
 		icon = GFX_goal_generic_oppression
 		prerequisite = {
 			focus = DKA_national_minority_administration
 		}
-		mutually_exclusive = { focus = DKA_use_opposition_party }
+		mutually_exclusive = {
+			focus = DKA_use_opposition_party
+		}
 		relative_position_id = DKA_national_minority_administration
 		x = 1
 		y = 1
@@ -530,7 +528,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_unite_faction
 		icon = GFX_focus_generic_electrification
@@ -562,7 +559,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_unite_faction_2
 		icon = GFX_focus_generic_court
@@ -594,7 +590,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_loyalty_and_unity
 		icon = GFX_focus_generic_military_dictatorship
@@ -630,7 +625,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_investment_on_state
 		icon = GFX_focus_GER_factories_for_resources
@@ -662,7 +656,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_think_tank
 		icon = GFX_goal_generic_intelligence_exchange
@@ -673,7 +666,9 @@
 			focus = DKA_strengthen_central_management
 			focus = DKA_commit_to_right_of_self_governance
 		}
-		mutually_exclusive = { focus = DKA_political_bureau }
+		mutually_exclusive = {
+			focus = DKA_political_bureau
+		}
 		relative_position_id = DKA_investment_on_state
 		x = 0
 		y = 2
@@ -699,7 +694,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_people_trust
 		icon = GFX_goal_generic_consumer_goods
@@ -731,7 +725,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_minority_autonomous_region
 		icon = GFX_focus_CHI_registry_of_property
@@ -763,14 +756,15 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_cross_party_cooperation
 		icon = GFX_focus_ETH_re-convene_the_parliament
 		prerequisite = {
 			focus = DKA_people_trust
 		}
-		mutually_exclusive = { focus = DKA_strive_for_votes }
+		mutually_exclusive = {
+			focus = DKA_strive_for_votes
+		}
 		relative_position_id = DKA_people_trust
 		x = 1
 		y = 2
@@ -796,7 +790,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_supervisory_mechanism
 		icon = GFX_goal_generic_plotting
@@ -828,7 +821,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_future_wenpon_to_damon
 		icon = GFX_goal_generic_medium_industry
@@ -860,14 +852,15 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_strive_for_votes
 		icon = GFX_goal_generic_foreign_investments
 		prerequisite = {
 			focus = DKA_future_wenpon_to_damon
 		}
-		mutually_exclusive = { focus = DKA_cross_party_cooperation }
+		mutually_exclusive = {
+			focus = DKA_cross_party_cooperation
+		}
 		relative_position_id = DKA_future_wenpon_to_damon
 		x = 0
 		y = 1
@@ -893,7 +886,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_thunderbolt_operation
 		icon = GFX_goal_generic_ban_right_wing
@@ -929,7 +921,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_construction_team_in_demon_city
 		icon = GFX_focus_generic_industrial_experts
@@ -964,7 +955,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_build_warship
 		icon = GFX_focus_generic_refit_civilian_ships
@@ -996,7 +986,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_build_weapon
 		icon = GFX_focus_generic_military_industry
@@ -1028,7 +1017,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_economic_zone
 		icon = GFX_focus_CHI_planned_economy
@@ -1060,7 +1048,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_railway_security_law
 		icon = GFX_focus_generic_railroad
@@ -1092,7 +1079,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_NAS
 		icon = GFX_focus_generic_university_3
@@ -1125,7 +1111,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_pre_war_to_west
 		icon = GFX_goal_generic_occupy_states_ongoing_war
@@ -1158,7 +1143,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_support_revolution
 		icon = GFX_focus_PRC_revolutionary_war_of_the_masses
@@ -1190,7 +1174,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_coal_trade_to_bertram
 		icon = GFX_goal_generic_trade
@@ -1222,7 +1205,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_bunker_level_towards_bertram
 		icon = GFX_focus_SWE_hedgehog_defense
@@ -1254,7 +1236,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_ensure_west_railway_transportation
 		icon = GFX_focus_generic_road_investment
@@ -1286,7 +1267,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_war_to_west
 		icon = GFX_goal_generic_major_war
@@ -1318,7 +1298,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_fate_of_bertram
 		icon = GFX_goal_generic_forceful_treaty
@@ -1356,7 +1335,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_pre_war_to_east
 		icon = GFX_goal_generic_occupy_states_ongoing_war
@@ -1389,7 +1367,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_stronger_connections
 		icon = GFX_goal_generic_improve_relations
@@ -1421,7 +1398,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_integrate_military_command_system
 		icon = GFX_focus_CHI_military_mission
@@ -1453,7 +1429,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_east_industry_to_south
 		icon = GFX_focus_SOV_merge_plants
@@ -1485,7 +1460,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_expand_naval_base
 		icon = GFX_goal_generic_navy_doctrines_tactics
@@ -1517,7 +1491,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_war_to_east
 		icon = GFX_goal_generic_major_war
@@ -1549,7 +1522,6 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
 		id = DKA_ethnic_integration_with_jura_tempest
 		icon = GFX_focus_PER_constitutional_monarchy
@@ -1587,7 +1559,6 @@
 			add_political_power = 150
 		}
 	}
-	
 	focus = {
 		id = DKA_sword_of_revolution
 		icon = GFX_focus_generic_social_democracy
