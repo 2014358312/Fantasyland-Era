@@ -602,7 +602,7 @@ WSG_secretary_ship_agenda_category = {
     }
 
     WSG_offsite_industrial_complex = {
-        icon = GFX_WSG_decision_category
+        icon =  GFX_non_available_factory_icon
         allowed = {
             original_tag = WSG
         }
@@ -652,7 +652,7 @@ WSG_secretary_ship_agenda_category = {
     }
 
     WSG_offsite_arms_factory = {
-        icon = GFX_WSG_decision_category
+        icon = GFX_military_factory_icon
         allowed = {
             original_tag = WSG
         }
@@ -704,7 +704,7 @@ WSG_secretary_ship_agenda_category = {
     }
 
     WSG_offsite_dockyard = {
-        icon = GFX_WSG_decision_category
+        icon = GFX_dockyard_icon
         allowed = {
             original_tag = WSG
         }
@@ -816,8 +816,9 @@ WSG_secretary_ship_agenda_category = {
         complete_effect = {
 			custom_effect_tooltip =  WSG_panci_reduce_75_tt
                 add_to_variable = { WSG_panci = -75 }
-			add_mastery = {
-				amount = 100
+			add_daily_mastery = {
+				amount = 0.6
+				days = 180
 				track = carriers
 			}
         }
@@ -1157,8 +1158,9 @@ WSG_secretary_ship_agenda_category = {
         complete_effect = {
 			custom_effect_tooltip =  WSG_panci_reduce_75_tt
                 add_to_variable = { WSG_panci = -75 }
-			add_mastery = {
-				amount = 100
+			add_daily_mastery = {
+				amount = 0.6
+				days = 180
 				track = capital_ships
 			}
         }
@@ -1387,8 +1389,9 @@ WSG_secretary_ship_agenda_category = {
         complete_effect = {
 			custom_effect_tooltip =  WSG_panci_reduce_75_tt
                 add_to_variable = { WSG_panci = -75 }
-			add_mastery = {
-				amount = 100
+			add_daily_mastery = {
+				amount = 0.6
+				days = 180
 				track = infantry
 			}
         }
@@ -1498,8 +1501,9 @@ WSG_secretary_ship_agenda_category = {
         complete_effect = {
 			custom_effect_tooltip =  WSG_panci_reduce_75_tt
                 add_to_variable = { WSG_panci = -75 }
-			add_mastery = {
-				amount = 100
+			add_daily_mastery = {
+				amount = 0.6
+				days = 180
 				track = armor
 			}
         }

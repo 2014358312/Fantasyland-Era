@@ -5,40 +5,45 @@ on_actions = {
 				limit = {
 				    power_balance_value = {
     			        id = WSG_balance_of_power
-   			            value > 0.6
+   			            value > 0.59
 			        }
 				}
 				add_to_variable = { WSG_panci = 50 }
+				set_variable = { WSG_monthly_panci = 50 }
 			}
             else_if = {
 				limit = {
 				    power_balance_value = {
     			        id = WSG_balance_of_power
-   			            value > 0.2
+   			            value > 0.19
 			        }
 				}
 				add_to_variable = { WSG_panci = 30 }
+				set_variable = { WSG_monthly_panci = 30 }
 			}
             else_if = {
 				limit = {
 				    power_balance_value = {
     			        id = WSG_balance_of_power
-   			            value > -0.2
+   			            value > -0.21
 			        }
 				}
 				add_to_variable = { WSG_panci = 15 }
+				set_variable = { WSG_monthly_panci = 15 }
 			}
             else_if = {
 				limit = {
 				    power_balance_value = {
     			        id = WSG_balance_of_power 
-   			            value > -0.6
+   			            value > -0.61
 			        }
 				}
 				add_to_variable = { WSG_panci = 10 }
+				set_variable = { WSG_monthly_panci = 10 }
 			}
            else = {
 				add_to_variable = { WSG_panci = 5 }
+				set_variable = { WSG_monthly_panci = 5 }
 			}
 		}
 	}
