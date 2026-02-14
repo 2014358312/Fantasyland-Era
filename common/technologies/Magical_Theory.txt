@@ -1,5 +1,5 @@
 technologies = {
-	#!gfx:interface/FE_technologies.gfx
+
 	@996 = 2
 	@1000 = 4
 	@1002 = 6
@@ -10,7 +10,6 @@ technologies = {
 	@1012 = 16
 	@1014 = 18
 	@1016 = 20
-	@10161 = 22
 
 	General_Arcane_Theory = { #通用魔能理论
 		start_year = 996
@@ -18,8 +17,7 @@ technologies = {
 		categories = {
 			categories_Magical_theory
 		}
-		research_speed_factor = 0.05
-		conscription_factor = 0.05
+		research_speed_factor = 0.03
 		ai_will_do = {
 			factor = 1
 		}
@@ -47,19 +45,13 @@ technologies = {
 			categories_Magical_theory
 		}
 		
-		acclimatization_hot_climate_gain_factor = 0.10
-		acclimatization_cold_climate_gain_factor = 0.10
-		industrial_capacity_factory = 0.05
+		production_factory_max_efficiency_factor = 0.025
 		
 		ai_will_do = {
 			factor = 1
 		}
 		path = {
 			leads_to_tech = Unified_theory_of_elements
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = Electronic_Technology_1
 			research_cost_coeff = 1
 		}
 	}
@@ -73,9 +65,8 @@ technologies = {
 		categories = {
 			categories_Magical_theory
 		}
-		
+		research_sharing_per_country_bonus_factor = 0.05
 		research_speed_factor = 0.04
-		production_factory_max_efficiency_factor = 0.05
 		
 		ai_will_do = {
 			factor = 1
@@ -96,20 +87,12 @@ technologies = {
 			categories_Magical_theory
 		}
 
-		research_speed_factor = 0.02
-		army_attack_factor = -0.05
-		army_defence_factor = 0.10
-		breakthrough_factor = 0.10
 		
 		ai_will_do = {
 			factor = 1
 		}
 		path = {
 			leads_to_tech = Psychic_Awareness
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = Electronic_Technology_3
 			research_cost_coeff = 1
 		}
 	}
@@ -124,9 +107,7 @@ technologies = {
 			categories_Magical_theory
 		}
 
-		stability_factor = 0.10
-		land_reinforce_rate = 0.03
-		coordination_bonus = 0.02
+		conscription_factor = 0.05
 		
 		ai_will_do = {
 			factor = 1
@@ -147,20 +128,15 @@ technologies = {
 			categories_Magical_theory
 		}
 
-		recon_factor = 0.05
-		army_morale_factor = 0.05
-		army_core_attack_factor = 0.10
-		army_defence_factor = 0.10
+		land_reinforce_rate = 0.05
+		coordination_bonus = 0.05
+		initiative_factor = 0.05
 		
 		ai_will_do = {
 			factor = 1
 		}
 		path = {
 			leads_to_tech = The_Essence_of_the_Magical_World
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = Electronic_Technology_5
 			research_cost_coeff = 1
 		}
 	}
@@ -175,8 +151,8 @@ technologies = {
 			categories_Magical_theory
 		}
 
-		supply_consumption_factor = -0.05
-		research_speed_factor = 0.08
+		supply_consumption_factor = -0.10
+		fuel_cost = -0.10
 		
 		ai_will_do = {
 			factor = 1
@@ -197,21 +173,14 @@ technologies = {
 			categories_Magical_theory
 		}
 
-		production_factory_max_efficiency_factor = 0.10
-		breakthrough_factor = 0.05
-		ARMY_FUEL_CONSUMPTION_FACTOR = -0.15
-		NAVY_FUEL_CONSUMPTION_FACTOR = -0.15
-		AIR_FUEL_CONSUMPTION_FACTOR = -0.15
-				
+		custom_modifier_tooltip = hutao_tech_tt
+		research_speed_factor = 0.01
+		
 		ai_will_do = {
 			factor = 1
 		}
 		path = {
 			leads_to_tech = Reality_Distortion_Concept
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = Electronic_Technology_7
 			research_cost_coeff = 1
 		}
 	}
@@ -226,10 +195,9 @@ technologies = {
 			categories_Magical_theory
 		}
 
-		production_factory_efficiency_gain_factor = 0.10
-		global_building_slots_factor = 0.15
-		research_speed_factor = 0.05
-				
+		custom_modifier_tooltip = hutao_tech_tt
+		research_speed_factor = 0.01
+		
 		ai_will_do = {
 			factor = 1
 		}
@@ -249,23 +217,17 @@ technologies = {
 			categories_Magical_theory
 		}
 
-		army_attack_factor = 0.10
-		army_defence_factor = 0.15
-		breakthrough_factor = 0.10
-		
+		custom_modifier_tooltip = hutao_tech_tt
+		research_speed_factor = 0.01
 		
 		ai_will_do = {
 			factor = 1
-		}
-		path = {
-			leads_to_tech = Electronic_Technology_9
-			research_cost_coeff = 1
 		}
 	}
 	Magic_Spirit_Core = { #魔灵核心
 		folder = {	
 			name = Magical_theory_folder
-			position = { x = 8 y = @1000 }
+			position = { x = 4 y = @1000 }
 		}
 		start_year = 1000
 		research_cost = 1
@@ -273,7 +235,8 @@ technologies = {
 			categories_Magical_theory
 		}
 
-		research_speed_factor = 0.04
+		custom_modifier_tooltip = hutao_tech_tt
+		research_speed_factor = 0.01
 		
 		ai_will_do = {
 			factor = 1
@@ -282,15 +245,11 @@ technologies = {
 			leads_to_tech = Demon_Spirit_Logic_Standardization
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = Electronic_Technology_2
-			research_cost_coeff = 1
-		}
 	}
 	Demon_Spirit_Logic_Standardization = { #魔灵逻辑标准化
 		folder = {	
 			name = Magical_theory_folder
-			position = { x = 8 y = @1002 }
+			position = { x = 4 y = @1002 }
 		}
 		start_year = 1002
 		research_cost = 1
@@ -298,6 +257,7 @@ technologies = {
 			categories_Magical_theory
 		}
 
+		custom_modifier_tooltip = hutao_tech_tt
 		research_speed_factor = 0.01
 		
 		ai_will_do = {
@@ -311,7 +271,7 @@ technologies = {
 	Magic_Array = { #魔导阵列
 		folder = {	
 			name = Magical_theory_folder
-			position = { x = 8 y = @1004 }
+			position = { x = 4 y = @1004 }
 		}
 		start_year = 1004
 		research_cost = 1
@@ -319,6 +279,7 @@ technologies = {
 			categories_Magical_theory
 		}
 
+		custom_modifier_tooltip = hutao_tech_tt
 		research_speed_factor = 0.01
 		
 		ai_will_do = {
@@ -332,7 +293,7 @@ technologies = {
 	Runecraft_Miniaturization = { #魔纹微型化
 		folder = {	
 			name = Magical_theory_folder
-			position = { x = 8 y = @1006 }
+			position = { x = 4 y = @1006 }
 		}
 		start_year = 1006
 		research_cost = 1
@@ -340,6 +301,7 @@ technologies = {
 			categories_Magical_theory
 		}
 
+		custom_modifier_tooltip = hutao_tech_tt
 		research_speed_factor = 0.01
 		
 		ai_will_do = {
@@ -349,15 +311,11 @@ technologies = {
 			leads_to_tech = High_precision_amplification
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = Electronic_Technology_4
-			research_cost_coeff = 1
-		}
 	}
 	High_precision_amplification = { #高精度扩增技术
 		folder = {	
 			name = Magical_theory_folder
-			position = { x = 8 y = @1008 }
+			position = { x = 4 y = @1008 }
 		}
 		start_year = 1008
 		research_cost = 1
@@ -365,6 +323,7 @@ technologies = {
 			categories_Magical_theory
 		}
 
+		custom_modifier_tooltip = hutao_tech_tt
 		research_speed_factor = 0.01
 		
 		ai_will_do = {
@@ -378,7 +337,7 @@ technologies = {
 	Light_Magic_Engraving = { #光魔法蚀刻
 		folder = {	
 			name = Magical_theory_folder
-			position = { x = 8 y = @1010 }
+			position = { x = 4 y = @1010 }
 		}
 		start_year = 1010
 		research_cost = 1
@@ -386,6 +345,7 @@ technologies = {
 			categories_Magical_theory
 		}
 
+		custom_modifier_tooltip = hutao_tech_tt
 		research_speed_factor = 0.01
 		
 		ai_will_do = {
@@ -399,7 +359,7 @@ technologies = {
 	Element_substitution = { #元素替换技术
 		folder = {	
 			name = Magical_theory_folder
-			position = { x = 8 y = @1012 }
+			position = { x = 4 y = @1012 }
 		}
 		start_year = 1012
 		research_cost = 1
@@ -407,6 +367,7 @@ technologies = {
 			categories_Magical_theory
 		}
 
+		custom_modifier_tooltip = hutao_tech_tt
 		research_speed_factor = 0.01
 		
 		ai_will_do = {
@@ -420,7 +381,7 @@ technologies = {
 	Entity_free_magic_energy_transmission = { #无实体魔能传输
 		folder = {	
 			name = Magical_theory_folder
-			position = { x = 8 y = @1014 }
+			position = { x = 4 y = @1014 }
 		}
 		start_year = 1014
 		research_cost = 1
@@ -428,6 +389,7 @@ technologies = {
 			categories_Magical_theory
 		}
 
+		custom_modifier_tooltip = hutao_tech_tt
 		research_speed_factor = 0.01
 		
 		ai_will_do = {
@@ -441,7 +403,7 @@ technologies = {
 	Void_Resonance = { #虚空回响技术
 		folder = {	
 			name = Magical_theory_folder
-			position = { x = 8 y = @1016 }
+			position = { x = 4 y = @1016 }
 		}
 		start_year = 1016
 		research_cost = 1
@@ -449,6 +411,7 @@ technologies = {
 			categories_Magical_theory
 		}
 
+		custom_modifier_tooltip = hutao_tech_tt
 		research_speed_factor = 0.01
 		
 		ai_will_do = {
@@ -463,22 +426,18 @@ technologies = {
 			categories_Magical_theory
 		}
 
-		land_reinforce_rate = 0.03
-		initiative_factor = 0.02
+		custom_modifier_tooltip = hutao_tech_tt
+		research_speed_factor = 0.01
 
 		ai_will_do = {
 			factor = 1
 		}
 		folder = {
 			name = Magical_theory_folder
-			position = { x = 2 y = @1002 }
+			position = { x = 10 y = @1000 }
 		}
 		path = {
 			leads_to_tech = Electronic_Technology_2
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = Electronic_Technology_3
 			research_cost_coeff = 1
 		}
 	}
@@ -487,31 +446,20 @@ technologies = {
 		categories = {
 			categories_Magical_theory
 		}
-		allow = {
-			ROOT = {
-				has_tech = Electronic_Technology_1
-				has_tech = Magic_Spirit_Core
-			}
-		}
 
-		enable_building = {
-			building = radar_station
-			level = 1
-		}
-
-		air_detection = 0.1
-		naval_detection = 0.1
+		custom_modifier_tooltip = hutao_tech_tt
+		research_speed_factor = 0.01
 
 		ai_will_do = {
 			factor = 1
 		}
 		folder = {
 			name = Magical_theory_folder
-			position = { x = 6 y = @1002 }
+			position = { x = 10 y = @1002 }
 		}
 		start_year = 1002
 		path = {
-			leads_to_tech = Electronic_Technology_4
+			leads_to_tech = Electronic_Technology_3
 			research_cost_coeff = 1
 		}
 	}
@@ -520,30 +468,20 @@ technologies = {
 		categories = {
 			categories_Magical_theory
 		}
-		allow = {
-			ROOT = {
-				has_tech = MEO_and_BSS
-				has_tech = Electronic_Technology_1
-			}
-		}
 
-		initiative_factor = 0.03
-		coordination_bonus = 0.02
+		custom_modifier_tooltip = hutao_tech_tt
+		research_speed_factor = 0.01
 
 		ai_will_do = {
 			factor = 1
 		}
 		folder = {
 			name = Magical_theory_folder
-			position = { x = 2 y = @1006 }
+			position = { x = 10 y = @1004 }
 		}
 		start_year = 1004
 		path = {
-			leads_to_tech = Electronic_Technology_5
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = Electronic_Technology_6
+			leads_to_tech = Electronic_Technology_4
 			research_cost_coeff = 1
 		}
 	}
@@ -552,32 +490,20 @@ technologies = {
 		categories = {
 			categories_Magical_theory
 		}
-		allow = {
-			ROOT = {
-				has_tech = Electronic_Technology_2
-				has_tech = Runecraft_Miniaturization
-			}
-		}
 
-		enable_building = {
-			building = radar_station
-			level = 2
-		}
-
-		category_recon = {
-			recon = 0.5
-		}
+		custom_modifier_tooltip = hutao_tech_tt
+		research_speed_factor = 0.01
 
 		ai_will_do = {
 			factor = 1
 		}
 		folder = {
 			name = Magical_theory_folder
-			position = { x = 6 y = @1006 }
+			position = { x = 10 y = @1006 }
 		}
 		start_year = 1006
 		path = {
-			leads_to_tech = Electronic_Technology_6
+			leads_to_tech = Electronic_Technology_5
 			research_cost_coeff = 1
 		}
 	}
@@ -586,30 +512,20 @@ technologies = {
 		categories = {
 			categories_Magical_theory
 		}
-		allow = {
-			ROOT = {
-				has_tech = Electronic_Technology_3
-				has_tech = Psychic_Control
-			}
-		}
 
-		intelligence_agency_defense = 0.5
-		army_intel_to_others = -0.1
+		custom_modifier_tooltip = hutao_tech_tt
+		research_speed_factor = 0.01
 
 		ai_will_do = {
 			factor = 1
 		}
 		folder = {
 			name = Magical_theory_folder
-			position = { x = 2 y = 14 }
+			position = { x = 10 y = @1008 }
 		}
 		start_year = 1008
 		path = {
 			leads_to_tech = Electronic_Technology_6
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = Electronic_Technology_7
 			research_cost_coeff = 1
 		}
 	}
@@ -618,32 +534,20 @@ technologies = {
 		categories = {
 			categories_Magical_theory
 		}
-		allow = {
-			ROOT = {
-				has_tech = Electronic_Technology_4
-				has_tech = Electronic_Technology_3
-			}
-		}
 
-
-		enable_building = {
-			building = radar_station
-			level = 3
-		}
-
-		initiative_factor = 0.05	
-		intel_from_combat_factor = 0.1
+		custom_modifier_tooltip = hutao_tech_tt
+		research_speed_factor = 0.01
 
 		ai_will_do = {
 			factor = 1
 		}
 		folder = {
 			name = Magical_theory_folder
-			position = { x = 6 y = @1010 }
+			position = { x = 10 y = @1010 }
 		}
 		start_year = 1010
 		path = {
-			leads_to_tech = Electronic_Technology_8
+			leads_to_tech = Electronic_Technology_7
 			research_cost_coeff = 1
 		}
 	}
@@ -652,30 +556,20 @@ technologies = {
 		categories = {
 			categories_Magical_theory
 		}
-		allow = {
-			ROOT = {
-				has_tech = Electronic_Technology_5
-				has_tech = New_Spell_Theory
-			}
-		}
 
-		intelligence_agency_defense = 0.5
-		coordination_bonus = 0.03
+		custom_modifier_tooltip = hutao_tech_tt
+		research_speed_factor = 0.01
 
 		ai_will_do = {
 			factor = 1
 		}
 		folder = {
 			name = Magical_theory_folder
-			position = { x = 2 y = 18 }
+			position = { x = 10 y = @1012 }
 		}
 		start_year = 1012
 		path = {
 			leads_to_tech = Electronic_Technology_8
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = Electronic_Technology_9
 			research_cost_coeff = 1
 		}
 	}
@@ -684,73 +578,38 @@ technologies = {
 		categories = {
 			categories_Magical_theory
 		}
-		allow = {
-			ROOT = {
-				has_tech = Electronic_Technology_6
-				has_tech = Electronic_Technology_7
-			}
-		}
 
-		enable_building = {
-			building = radar_station
-			level = 4
-		}
-
-		CIVILIAN_INTEL_FACTOR = 0.1
-		ARMY_INTEL_FACTOR = 0.1
-		NAVY_INTEL_FACTOR = 0.1
-		AIRFORCE_INTEL_FACTOR = 0.1
-		on_research_complete = {
-			if = {
-				limit = {
-					ROOT = {
-						is_debug = yes
-					}
-				}
-				ROOT = {
-					add_ideas = debug_ideas_Electronic_Technology_8	
-				}
-			}
-			else = {
-				ROOT = {
-					add_ideas = normal_ideas_Electronic_Technology_8	
-				}
-			}
-		}
+		custom_modifier_tooltip = hutao_tech_tt
+		research_speed_factor = 0.01
 
 		ai_will_do = {
 			factor = 1
 		}
 		folder = {
 			name = Magical_theory_folder
-			position = { x = 6 y = @1014 }
+			position = { x = 10 y = @1014 }
 		}
 		start_year = 1014
+		path = {
+			leads_to_tech = Electronic_Technology_9
+			research_cost_coeff = 1
+		}
 	}
 	Electronic_Technology_9 = { #微时空膜
 		research_cost = 1
 		categories = {
 			categories_Magical_theory
 		}
-		allow = {
-			ROOT = {
-				has_tech = Electronic_Technology_7
-				has_tech = Surrealism_theory
-			}
-		}
 
-		intelligence_agency_defense = 0.5
-		CIVILIAN_INTEL_TO_OTHERS = -0.15
-		ARMY_INTEL_TO_OTHERS = -0.15
-		NAVY_INTEL_TO_OTHERS = -0.15
-		AIRFORCE_INTEL_TO_OTHERS = -0.15
+		custom_modifier_tooltip = hutao_tech_tt
+		research_speed_factor = 0.01
 
 		ai_will_do = {
 			factor = 1
 		}
 		folder = {
 			name = Magical_theory_folder
-			position = { x = 2 y = @10161 }
+			position = { x = 10 y = @1016 }
 		}
 		start_year = 1016
 	}

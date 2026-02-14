@@ -1,43 +1,48 @@
-DKA_eyes_of_storm_decision_category = {
-	DKA_eyes_of_storm_mission = {
-		icon = generic_arrest
-		activation = {
-			always = no
+dka_The_Queen_Mood= {
+	XX（单个决议） = {
+		
+		cost = 60
+		days_remove = 30
+		days_re_enable = 60
+
+		visible = {
+			条件
 		}
-		available = {
-			always = no
-		}
-		is_good = yes
-		days_mission_timeout = 31
-		timeout_effect = {
-			custom_effect_tooltip = DKA_eyes_of_storm_mission_tt
-			hidden_effect = {
-				if = {
-					limit = { has_country_flag = DKA_eyes_of_storm_decision_flag }
-					complete_national_focus = DKA_sword_of_revolution
-				}
-				else = {
-					complete_national_focus = DKA_eyes_of_storm
-				}
+		ai_will_do = {
+			factor = X
+			modifier = {
+				add/factor = X
+				条件
 			}
+		}
+		modifier = {
+			
+	   	}
+		complete_effect = {  
+			
+		}
+		remove_effect = {
+			决议完成/结束时的效果
 		}
 	}
 	
-	DKA_eyes_of_storm_revolution_decision = {
-		icon = generic_prepare_civil_war
-		visible = {
-			has_active_mission = DKA_eyes_of_storm_mission
+
+	xx（任务模板） = {     
+		activation = {                         
+			
+		}                                    
+		available = {                           
+			完成任务的条件
 		}
-		cost = 0
-		fire_only_once = yes
-		complete_effect = {
-			set_country_flag = DKA_eyes_of_storm_decision_flag
+		
+		is_good = yes/no（决定任务进度条的颜色）                         
+	
+		days_mission_timeout = 任务时限天数
+		timeout_effect = {                      
+			超时未完成任务的效果          
 		}
-		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 0
-			}
+		complete_effect = {                    
+			任务完成（满足上方available条件）的效果          
 		}
 	}
 }
