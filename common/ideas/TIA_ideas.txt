@@ -883,13 +883,7 @@ ideas = {
 			allowed_civil_war = {
 			}
 			modifier = {
-				stability_factor = 0.1
-				war_support_factor = 0.05
-				army_core_attack_factor = 0.1
-				political_power_factor = 0.05
-				production_speed_buildings_factor = 0.05
-				political_power_cost = 0.1
-				research_speed_factor = -0.05
+				stability_factor = 0.05
 			}
 		}
 		TIA_Funina_national_belief = {
@@ -899,12 +893,7 @@ ideas = {
 			allowed_civil_war = {
 			}
 			modifier = {
-				stability_factor = 0.1
-				war_support_factor = -0.05
-				army_core_defence_factor = -0.1
-				political_power_factor = 0.05
-				political_power_cost = 0.1
-				political_advisor_cost_factor = 0.1
+				stability_factor = 0.05
 			}
 		}
 		TIA_no_national_belief = {
@@ -916,28 +905,434 @@ ideas = {
 			modifier = {
 				stability_factor = -0.15
 				war_support_factor = -0.1
-				army_core_defence_factor = 0.1
-				army_core_attack_factor = 0.1
-				political_power_factor = 0.1
-				production_speed_buildings_factor = 0.1
-				research_speed_factor = 0.1
 			}
 		}
+###################################
+# 水神信仰线 - 国民精神
+###################################
+
+		###################################
+		# 芙宁娜正统系
+		###################################
+
 		TIA_Funina_orthodoxy_established = {
-			picture = generic_stability
-			allowed = {
-			}
-			allowed_civil_war = {
-			}
+			picture = TIA_Funina_orthodoxy_established
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
 			modifier = {
-				stability_factor = 0.15
 				political_power_gain = 0.10
-				political_power_factor = 0.05
-				war_support_factor = -0.05
-				army_core_defence_factor = -0.05
-				political_power_cost = 0.05
-				political_advisor_cost_factor = 0.05
+				stability_factor = 0.05
+				research_speed_factor = 0.03
+				monthly_population = -0.02
 			}
 		}
+
+		TIA_water_court = {
+			picture = TIA_water_court
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.15
+				compliance_gain = 0.05
+				production_speed_buildings_factor = -0.05
+			}
+		}
+
+		TIA_southern_purification = {
+			picture = TIA_southern_purification
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = 0.20
+				monthly_population = 0.03
+			}
+		}
+
+		TIA_Funina_orthodoxy_mature = {
+			picture = TIA_Funina_orthodoxy_mature
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.08
+				research_speed_factor = 0.03
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		TIA_Funina_orthodoxy_enforced = {
+			picture = TIA_Funina_orthodoxy_enforced
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.03
+				war_support_factor = 0.10
+				consumer_goods_factor = 0.03
+			}
+		}
+
+		TIA_water_harmony_spirit = {
+			picture = TIA_water_harmony_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.25
+				stability_factor = 0.15
+				research_speed_factor = 0.05
+				justify_war_goal_time = -0.15
+				improve_relations_maintain_cost_factor = -0.20
+			}
+		}
+
+		TIA_divine_authority_spirit = {
+			picture = TIA_divine_authority_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.20
+				stability_factor = 0.10
+				war_support_factor = 0.15
+				mobilization_speed = 0.10
+				research_speed_factor = -0.05
+				industrial_capacity_factory = -0.03
+			}
+		}
+
+		###################################
+		# 世俗化系
+		###################################
+
+		TIA_secularization_chaos = {
+			picture = TIA_secularization_chaos
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.10
+				political_power_gain = -0.15
+				research_speed_factor = 0.05
+			}
+		}
+
+		TIA_secularization_transition = {
+			picture = TIA_secularization_transition
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.08
+				war_support_factor = -0.05
+				political_power_gain = -0.05
+				research_speed_factor = 0.05
+			}
+		}
+
+		TIA_age_of_reason = {
+			picture = TIA_age_of_reason
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.03
+				research_speed_factor = 0.10
+				political_power_gain = 0.10
+			}
+		}
+
+		TIA_secular_tolerance = {
+			picture = TIA_secular_tolerance
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				research_speed_factor = 0.08
+				political_power_gain = 0.15
+				monthly_population = 0.03
+			}
+		}
+
+		TIA_state_atheism_spirit = {
+			picture = TIA_state_atheism_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.20
+				research_speed_factor = 0.10
+				industrial_capacity_factory = 0.05
+				stability_factor = -0.05
+				war_support_factor = -0.05
+			}
+		}
+
+		TIA_enlightened_empire_spirit = {
+			picture = TIA_enlightened_empire_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.25
+				stability_factor = 0.10
+				research_speed_factor = 0.15
+				industrial_capacity_factory = 0.03
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		TIA_scientific_supremacy_spirit = {
+			picture = TIA_scientific_supremacy_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.15
+				research_speed_factor = 0.20
+				industrial_capacity_factory = 0.10
+				industrial_capacity_dockyard = 0.08
+				stability_factor = -0.05
+				war_support_factor = -0.03
+			}
+		}
+
+		###################################
+		# 阿库娅正统系
+		###################################
+
+		TIA_Aqua_orthodoxy_established = {
+			picture = TIA_Aqua_orthodoxy_established
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.10
+				monthly_population = 0.05
+				mobilization_speed = 0.05
+				political_power_gain = -0.05
+				research_speed_factor = -0.03
+			}
+		}
+
+		TIA_divine_grace_mission_spirit = {
+			picture = TIA_divine_grace_mission_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.08
+				conscription_factor = 0.25
+				industrial_capacity_factory = -0.03
+			}
+		}
+
+		TIA_Aqua_militant_faith = {
+			picture = TIA_Aqua_militant_faith
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.15
+				monthly_population = 0.10
+				mobilization_speed = 0.10
+				army_attack_factor = 0.03
+				stability_factor = -0.05
+				research_speed_factor = -0.05
+				industrial_capacity_factory = -0.05
+			}
+		}
+
+		TIA_Aqua_pragmatic_faith = {
+			picture = TIA_Aqua_pragmatic_faith
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.08
+				monthly_population = 0.05
+				stability_factor = 0.03
+			}
+		}
+
+		TIA_aqua_renaissance_research_boost = {
+			picture = TIA_aqua_renaissance_research_boost
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+
+		TIA_Aqua_enlightened_faith = {
+			picture = TIA_Aqua_enlightened_faith
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.05
+				monthly_population = 0.03
+				research_speed_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+
+		TIA_aqua_militant_theocracy_spirit = {
+			picture = TIA_aqua_militant_theocracy_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.20
+				monthly_population = 0.15
+				mobilization_speed = 0.15
+				army_attack_factor = 0.05
+				army_defence_factor = 0.03
+				stability_factor = -0.05
+				research_speed_factor = -0.08
+				industrial_capacity_factory = -0.05
+				political_power_gain = -0.10
+			}
+		}
+
+		TIA_aqua_benevolent_spirit = {
+			picture = TIA_aqua_benevolent_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.12
+				war_support_factor = 0.05
+				monthly_population = 0.08
+				research_speed_factor = 0.03
+				consumer_goods_factor = -0.03
+			}
+		}
+
+###################################
+# 以下内容追加至上方 country = {} 块内
+###################################
+
+###################################
+# 水神信仰线 - 事件临时国民精神
+# 追加至 common/ideas/ 下TIA ideas文件的 country = {} 块中
+###################################
+
+		TIA_faith_southern_protest_suppressed = {
+			picture = TIA_faith_southern_protest_suppressed
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.05
+				stability_factor = -0.03
+			}
+		}
+
+		TIA_faith_martial_law_lite = {
+			picture = TIA_faith_martial_law_lite
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.10
+				stability_factor = -0.03
+				war_support_factor = 0.02
+			}
+		}
+
+		TIA_faith_curfew = {
+			picture = TIA_faith_curfew
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				industrial_capacity_factory = -0.03
+			}
+		}
+
+###################################
+# 水神信仰线 - 中后期事件临时国民精神
+# 追加至 common/ideas/ 下TIA ideas文件的 country = {} 块中
+###################################
+
+		TIA_faith_international_scholars = {
+			picture = TIA_faith_international_scholars
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.03
+				political_power_gain = 0.05
+			}
+		}
+
+		TIA_faith_harvest_blessing = {
+			picture = TIA_faith_harvest_blessing
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.05
+				stability_factor = 0.03
+				consumer_goods_factor = -0.02
+			}
+		}
+
+###################################
+# 追加外交好感修正
+# 追加至 common/opinion_modifiers/ 对应文件中
+###################################
+
+#	TIA_faith_harmony_display = {
+#		value = 15
+#		decay = 0.5
+#	}
+#
+#	TIA_faith_science_prestige = {
+#		value = 10
+#		decay = 1.0
+#	}
+
+###################################
+# 水神信仰线 - 决议效果国民精神
+# 追加至 common/ideas/ 下TIA ideas文件的 country = {} 块中
+###################################
+
+		TIA_faith_war_prayer_buff = {
+			picture = TIA_faith_war_prayer_buff
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.05
+				army_org_factor = 0.03
+				army_attack_factor = 0.02
+			}
+		}
+
+		TIA_faith_chaplain_corps_permanent = {
+			picture = TIA_faith_chaplain_corps_permanent
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.08
+				army_org_regain = 0.05
+				experience_gain_army_factor = 0.05
+			}
+		}
+
 	}
 }

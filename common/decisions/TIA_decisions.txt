@@ -1390,3 +1390,704 @@ TIA_TRA_meeting_decisions = {
 		}
 	}
 }
+###################################
+# 水神信仰线 - 决议
+###################################
+
+###################################
+# 水神裁判所决议（芙宁娜线）
+###################################
+
+TIA_water_court_decisions = {
+
+	TIA_water_court_judge_corrupt = {
+		#审判腐败贵族
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = TIA
+		}
+
+		available = {
+			has_idea = TIA_water_court
+			has_political_power > 50
+		}
+
+		visible = {
+			has_idea = TIA_water_court
+		}
+
+		days_remove = 30
+		cost = 50
+
+		fire_only_once = no
+		days_re_enable = 180
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+
+		remove_effect = {
+			add_stability = 0.03
+			add_political_power = 30
+			add_popularity = { ideology = neutrality popularity = 0.02 }
+			custom_effect_tooltip = TIA_water_court_judge_corrupt_tt
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 2
+				has_stability < 0.5
+			}
+		}
+	}
+
+	TIA_water_court_doctrinal_arbitration = {
+		#教义仲裁
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = TIA
+		}
+
+		available = {
+			has_idea = TIA_water_court
+			has_political_power > 35
+		}
+
+		visible = {
+			has_idea = TIA_water_court
+		}
+
+		days_remove = 20
+		cost = 35
+
+		fire_only_once = no
+		days_re_enable = 120
+
+		modifier = {
+			political_power_gain = -0.03
+		}
+
+		remove_effect = {
+			add_stability = 0.02
+			add_war_support = 0.01
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = TIA
+				}
+				add_compliance = 5
+			}
+			custom_effect_tooltip = TIA_water_court_doctrinal_arbitration_tt
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	TIA_water_court_heresy_investigation = {
+		#异端审查
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = TIA
+		}
+
+		available = {
+			has_idea = TIA_water_court
+			has_political_power > 75
+		}
+
+		visible = {
+			has_idea = TIA_water_court
+		}
+
+		days_remove = 45
+		cost = 75
+
+		fire_only_once = no
+		days_re_enable = 240
+
+		modifier = {
+			stability_factor = -0.02
+			political_power_gain = -0.05
+		}
+
+		remove_effect = {
+			add_stability = -0.02
+			add_popularity = { ideology = communism popularity = -0.03 }
+			add_popularity = { ideology = democratic popularity = -0.03 }
+			add_popularity = { ideology = neutrality popularity = 0.05 }
+			custom_effect_tooltip = TIA_water_court_heresy_investigation_tt
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 3
+				OR = {
+					communism > 0.15
+					democratic > 0.15
+				}
+			}
+		}
+	}
+}
+
+###################################
+# 女神恩泽布道团决议（阿库娅线）
+###################################
+
+TIA_grace_mission_decisions = {
+
+	TIA_grace_mass_preaching = {
+		#大规模布道
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = TIA
+		}
+
+		available = {
+			has_idea = TIA_divine_grace_mission_spirit
+			has_political_power > 25
+			num_of_civilian_factories > 10
+		}
+
+		visible = {
+			OR = {
+				has_idea = TIA_divine_grace_mission_spirit
+				has_idea = TIA_Aqua_militant_faith
+				has_idea = TIA_Aqua_pragmatic_faith
+				has_idea = TIA_Aqua_enlightened_faith
+			}
+		}
+
+		days_remove = 60
+		cost = 25
+
+		fire_only_once = no
+		days_re_enable = 180
+
+		modifier = {
+			consumer_goods_factor = 0.03
+		}
+
+		remove_effect = {
+			add_manpower = 15000
+			add_stability = 0.03
+			add_war_support = 0.02
+			custom_effect_tooltip = TIA_grace_mass_preaching_tt
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 2
+				has_manpower < 100000
+			}
+		}
+	}
+
+	TIA_grace_holy_water_ceremony = {
+		#圣水洗礼仪式
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = TIA
+		}
+
+		available = {
+			OR = {
+				has_idea = TIA_divine_grace_mission_spirit
+				has_idea = TIA_Aqua_militant_faith
+				has_idea = TIA_Aqua_pragmatic_faith
+				has_idea = TIA_Aqua_enlightened_faith
+			}
+			has_political_power > 40
+		}
+
+		visible = {
+			OR = {
+				has_idea = TIA_divine_grace_mission_spirit
+				has_idea = TIA_Aqua_militant_faith
+				has_idea = TIA_Aqua_pragmatic_faith
+				has_idea = TIA_Aqua_enlightened_faith
+			}
+		}
+
+		days_remove = 15
+		cost = 40
+
+		fire_only_once = no
+		days_re_enable = 120
+
+		remove_effect = {
+			add_war_support = 0.05
+			add_stability = 0.01
+			army_experience = 5
+			custom_effect_tooltip = TIA_grace_holy_water_ceremony_tt
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				has_war_support < 0.5
+			}
+		}
+	}
+
+	TIA_grace_heretic_sweep = {
+		#异教清扫
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = TIA
+		}
+
+		available = {
+			OR = {
+				has_idea = TIA_divine_grace_mission_spirit
+				has_idea = TIA_Aqua_militant_faith
+			}
+			has_political_power > 60
+		}
+
+		visible = {
+			OR = {
+				has_idea = TIA_divine_grace_mission_spirit
+				has_idea = TIA_Aqua_militant_faith
+				has_idea = TIA_Aqua_pragmatic_faith
+			}
+		}
+
+		days_remove = 30
+		cost = 60
+
+		fire_only_once = no
+		days_re_enable = 200
+
+		modifier = {
+			stability_factor = -0.03
+		}
+
+		remove_effect = {
+			add_stability = -0.02
+			add_war_support = 0.03
+			add_popularity = { ideology = communism popularity = -0.03 }
+			add_popularity = { ideology = democratic popularity = -0.02 }
+			add_popularity = { ideology = fascism popularity = -0.02 }
+			add_popularity = { ideology = neutrality popularity = 0.05 }
+			custom_effect_tooltip = TIA_grace_heretic_sweep_tt
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_idea = TIA_Aqua_pragmatic_faith
+			}
+		}
+	}
+}
+
+###################################
+# 水神信仰线 - 后期追加决议
+###################################
+
+###################################
+# 芙宁娜线 - 朝圣经济决议（圣地开发后解锁）
+###################################
+
+TIA_pilgrimage_economy_decisions = {
+
+	TIA_pilgrimage_grand_festival = {
+		#朝圣大祭典
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = TIA
+		}
+
+		available = {
+			has_completed_focus = TIA_sacred_land_development
+			has_political_power > 60
+			has_war = no
+		}
+
+		visible = {
+			has_completed_focus = TIA_fontaine_pilgrimage_concordat
+		}
+
+		days_remove = 45
+		cost = 60
+
+		fire_only_once = no
+		days_re_enable = 365
+
+		modifier = {
+			consumer_goods_factor = 0.02
+		}
+
+		remove_effect = {
+			add_political_power = 100
+			add_stability = 0.05
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = FON
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = TIA_pilgrimage_grand_festival_tt
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+	}
+
+	TIA_pilgrimage_route_expansion = {
+		#扩建朝圣道路网
+		icon = generic_construction
+
+		allowed = {
+			tag = TIA
+		}
+
+		available = {
+			has_completed_focus = TIA_sacred_land_development
+			has_political_power > 40
+		}
+
+		visible = {
+			has_completed_focus = TIA_fontaine_pilgrimage_concordat
+		}
+
+		days_remove = 60
+		cost = 40
+
+		fire_only_once = yes
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = FON
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = TIA
+					is_coastal = no
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = TIA_pilgrimage_route_expansion_tt
+		}
+
+		ai_will_do = {
+			factor = 8
+		}
+	}
+}
+
+###################################
+# 世俗化线 - 理性建设决议（理性时代宣言后解锁）
+###################################
+
+TIA_reason_building_decisions = {
+
+	TIA_reason_public_education_reform = {
+		#公共教育改革
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = TIA
+		}
+
+		available = {
+			has_idea = TIA_age_of_reason
+			has_political_power > 75
+		}
+
+		visible = {
+			OR = {
+				has_idea = TIA_age_of_reason
+				has_idea = TIA_secular_tolerance
+				has_idea = TIA_state_atheism_spirit
+				has_idea = TIA_enlightened_empire_spirit
+				has_idea = TIA_scientific_supremacy_spirit
+			}
+		}
+
+		days_remove = 90
+		cost = 75
+
+		fire_only_once = yes
+
+		modifier = {
+			consumer_goods_factor = 0.03
+			political_power_gain = -0.05
+		}
+
+		remove_effect = {
+			add_research_slot = 1
+			add_stability = 0.03
+			custom_effect_tooltip = TIA_reason_public_education_reform_tt
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	TIA_reason_secular_courts = {
+		#世俗法院体系
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = TIA
+		}
+
+		available = {
+			OR = {
+				has_idea = TIA_secular_tolerance
+				has_idea = TIA_state_atheism_spirit
+			}
+			has_political_power > 50
+		}
+
+		visible = {
+			OR = {
+				has_idea = TIA_age_of_reason
+				has_idea = TIA_secular_tolerance
+				has_idea = TIA_state_atheism_spirit
+				has_idea = TIA_enlightened_empire_spirit
+				has_idea = TIA_scientific_supremacy_spirit
+			}
+		}
+
+		days_remove = 60
+		cost = 50
+
+		fire_only_once = yes
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+
+		remove_effect = {
+			add_political_power = 75
+			add_stability = 0.05
+			custom_effect_tooltip = TIA_reason_secular_courts_tt
+		}
+
+		ai_will_do = {
+			factor = 7
+		}
+	}
+
+	TIA_reason_science_expo = {
+		#帝国科学博览会
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = TIA
+		}
+
+		available = {
+			OR = {
+				has_idea = TIA_secular_tolerance
+				has_idea = TIA_state_atheism_spirit
+				has_idea = TIA_enlightened_empire_spirit
+				has_idea = TIA_scientific_supremacy_spirit
+			}
+			has_political_power > 50
+			num_of_civilian_factories > 15
+		}
+
+		visible = {
+			OR = {
+				has_idea = TIA_age_of_reason
+				has_idea = TIA_secular_tolerance
+				has_idea = TIA_state_atheism_spirit
+				has_idea = TIA_enlightened_empire_spirit
+				has_idea = TIA_scientific_supremacy_spirit
+			}
+		}
+
+		days_remove = 30
+		cost = 50
+
+		fire_only_once = no
+		days_re_enable = 365
+
+		remove_effect = {
+			add_tech_bonus = {
+				name = TIA_science_expo_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+			add_stability = 0.02
+			custom_effect_tooltip = TIA_reason_science_expo_tt
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+	}
+}
+
+###################################
+# 阿库娅线 - 圣战军团决议（编成后解锁）
+###################################
+
+TIA_sacred_army_decisions = {
+
+	TIA_sacred_army_war_prayer = {
+		#战前大祈祷
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = TIA
+		}
+
+		available = {
+			has_completed_focus = TIA_sacred_army_formation
+			has_war = yes
+			has_political_power > 30
+		}
+
+		visible = {
+			has_completed_focus = TIA_sacred_army_formation
+		}
+
+		days_remove = 14
+		cost = 30
+
+		fire_only_once = no
+		days_re_enable = 90
+
+		remove_effect = {
+			add_war_support = 0.03
+			army_experience = 5
+			add_timed_idea = {
+				idea = TIA_faith_war_prayer_buff
+				days = 60
+			}
+			custom_effect_tooltip = TIA_sacred_army_war_prayer_tt
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = no
+			}
+		}
+	}
+
+	TIA_sacred_army_recruit_zealots = {
+		#征召狂信者
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = TIA
+		}
+
+		available = {
+			OR = {
+				has_idea = TIA_Aqua_militant_faith
+				has_idea = TIA_aqua_militant_theocracy_spirit
+			}
+			has_political_power > 40
+			has_manpower < 200000
+		}
+
+		visible = {
+			has_completed_focus = TIA_sacred_army_formation
+		}
+
+		days_remove = 30
+		cost = 40
+
+		fire_only_once = no
+		days_re_enable = 180
+
+		modifier = {
+			stability_factor = -0.02
+		}
+
+		remove_effect = {
+			add_manpower = 25000
+			add_war_support = 0.02
+			add_stability = -0.02
+			custom_effect_tooltip = TIA_sacred_army_recruit_zealots_tt
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 3
+				has_manpower < 50000
+			}
+		}
+	}
+
+	TIA_sacred_army_chaplain_corps = {
+		#随军祭司团扩编
+		icon = generic_political_discourse
+
+		allowed = {
+			tag = TIA
+		}
+
+		available = {
+			has_completed_focus = TIA_sacred_army_formation
+			has_political_power > 60
+		}
+
+		visible = {
+			has_completed_focus = TIA_sacred_army_formation
+		}
+
+		days_remove = 45
+		cost = 60
+
+		fire_only_once = yes
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+
+		remove_effect = {
+			add_ideas = TIA_faith_chaplain_corps_permanent
+			custom_effect_tooltip = TIA_sacred_army_chaplain_corps_tt
+		}
+
+		ai_will_do = {
+			factor = 8
+		}
+	}
+}
