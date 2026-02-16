@@ -1,40 +1,40 @@
 scripted_gui = {
-	WSG_zlp_gui = {	
-		window_name = "WSG_zlp"
+	WSG_panci_gui = {	
+		window_name = "WSG_panci"
 		context_type = decision_category
 		visible = {	
 			
 		}
 		effects = {
-			open_gqst_btn_click = {
+			open_dininghall_button_click = {
 				
 				if = {
 					limit = {
-						has_country_flag = show_gqst_window
+						has_country_flag = show_dininghall_window
 					}
-					clr_country_flag = show_gqst_window
+					clr_country_flag = show_dininghall_window
 					
 				}
 				else = {
-					set_country_flag = show_gqst_window
+					set_country_flag = show_dininghall_window
 					
 				}
 			}
 			
 		}	
 	}
-    gqst_window_gui = {
-        window_name = "gqst_window"
+    dininghall_window_gui = {
+        window_name = "dininghall_window"
 		context_type = player_context
 		visible = {	
 			
-            has_country_flag = show_gqst_window
+            has_country_flag = show_dininghall_window
 		}
 		effects = {
-			gqst_button_exit_click = {
-             clr_country_flag = show_gqst_window			 
+			dininghall_button_exit_click = {
+             clr_country_flag = show_dininghall_window			 
             }
-            menu_1_btn_click ={                          #鲱鱼罐头
+            menu_1_button_click ={                          #鲱鱼罐头
                 
 			if = {
 					limit = {
@@ -68,99 +68,99 @@ scripted_gui = {
             set_country_flag = WSG_stkf
 			
 			
-			custom_effect_tooltip = menu_1_btn_tt					
+			custom_effect_tooltip = menu_1_button_tt					
 	   	}    
         
-		menu_2_btn_click = {     #甜豆花
+		menu_2_button_click = {     #甜豆花
             add_to_variable = {
 				var = WSG_panci
 				value = -50
 			}
 			add_timed_idea = {
-            idea = WSG_tdh_jc
+            idea = WSG_tiandouhua_buff
             days = 60
             }
 			set_country_flag = WSG_stkf
-			custom_effect_tooltip = menu_2_btn_tt
+			custom_effect_tooltip = menu_2_button_tt
 		}
         
-		menu_3_btn_click = {     #苹果派
+		menu_3_button_click = {     #苹果派
             add_to_variable = {
 				var = WSG_panci
 				value = -50
 			}
 			add_timed_idea = {
-            idea = WSG_pgp_jc
+            idea = WSG_applepie_buff
             days = 60
             }
 			set_country_flag = WSG_stkf
-			custom_effect_tooltip = menu_3_btn_tt
+			custom_effect_tooltip = menu_3_button_tt
 		}
         
-		menu_4_btn_click = {     #鱼雷果汁
+		menu_4_button_click = {     #鱼雷果汁
             add_to_variable = {
 				var = WSG_panci
 				value = -50
 			}
 			add_timed_idea = {
-            idea = WSG_ylgz_jc
+            idea = WSG_torpedo_juice_buff
             days = 60
             }
 			set_country_flag = WSG_stkf
-			custom_effect_tooltip = menu_4_btn_tt
+			custom_effect_tooltip = menu_4_button_tt
 		}
 
-        menu_5_btn_click = {      #黑森林蛋糕
+        menu_5_button_click = {      #黑森林蛋糕
             add_to_variable = {
 				var = WSG_panci
 				value = -50
 			}
 			add_timed_idea = {
-            idea = WSG_hsldg_jc
+            idea = WSG_black_forest_cake_buff
             days = 60
             }
 			set_country_flag = WSG_stkf
-			custom_effect_tooltip = menu_5_btn_tt
+			custom_effect_tooltip = menu_5_button_tt
 		}
         
-		menu_6_btn_click = {      #冰淇淋
+		menu_6_button_click = {      #冰淇淋
             add_to_variable = {
 				var = WSG_panci
 				value = -100
 			}
 			add_timed_idea = {
-            idea = WSG_F4U_jc
+            idea = WSG_F4U_buff
             days = 60
             }
 			set_country_flag = WSG_stkf
-			custom_effect_tooltip = menu_6_btn_tt
+			custom_effect_tooltip = menu_6_button_tt
 		}
 
 
 
 	}
 	triggers = {
-		menu_1_btn_click_enabled = {
+		menu_1_button_click_enabled = {
 				check_variable = { WSG_panci > 24 }
 				not = { has_country_flag = WSG_stkf }
 			}
-		menu_2_btn_click_enabled = {
+		menu_2_button_click_enabled = {
 				check_variable = { WSG_panci > 49 }
 				not = { has_country_flag = WSG_stkf }
 			}
-		menu_3_btn_click_enabled = {
+		menu_3_button_click_enabled = {
 				check_variable = { WSG_panci > 49 }
 				not = { has_country_flag = WSG_stkf }
 			}
-		menu_4_btn_click_enabled = {
+		menu_4_button_click_enabled = {
 				check_variable = { WSG_panci > 49 }
 				not = { has_country_flag = WSG_stkf }
 			}
-		menu_5_btn_click_enabled = {
+		menu_5_button_click_enabled = {
 				check_variable = { WSG_panci > 49 }
 				not = { has_country_flag = WSG_stkf }
 			}
-		menu_6_btn_click_enabled = {
+		menu_6_button_click_enabled = {
 				check_variable = { WSG_panci > 99 }
 				not = { has_country_flag = WSG_stkf }
 			}
