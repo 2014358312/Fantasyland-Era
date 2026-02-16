@@ -65,7 +65,7 @@ scripted_gui = {
 				var = WSG_panci
 				value = -25
 			}
-            set_country_flag = WSG_stkf
+            set_country_flag = WSG_start_cooking
 			
 			
 			custom_effect_tooltip = menu_1_btn_tt					
@@ -80,7 +80,7 @@ scripted_gui = {
             idea = WSG_tiandouhua_buff
             days = 60
             }
-			set_country_flag = WSG_stkf
+			set_country_flag = WSG_start_cooking
 			custom_effect_tooltip = menu_2_btn_tt
 		}
         
@@ -93,7 +93,7 @@ scripted_gui = {
             idea = WSG_applepie_buff
             days = 60
             }
-			set_country_flag = WSG_stkf
+			set_country_flag = WSG_start_cooking
 			custom_effect_tooltip = menu_3_btn_tt
 		}
         
@@ -106,7 +106,7 @@ scripted_gui = {
             idea = WSG_torpedo_juice_buff
             days = 60
             }
-			set_country_flag = WSG_stkf
+			set_country_flag = WSG_start_cooking
 			custom_effect_tooltip = menu_4_btn_tt
 		}
 
@@ -119,7 +119,7 @@ scripted_gui = {
             idea = WSG_black_forest_cake_buff
             days = 60
             }
-			set_country_flag = WSG_stkf
+			set_country_flag = WSG_start_cooking
 			custom_effect_tooltip = menu_5_btn_tt
 		}
         
@@ -132,7 +132,7 @@ scripted_gui = {
             idea = WSG_F4U_buff
             days = 60
             }
-			set_country_flag = WSG_stkf
+			set_country_flag = WSG_start_cooking
 			custom_effect_tooltip = menu_6_btn_tt
 		}
 
@@ -142,27 +142,27 @@ scripted_gui = {
 	triggers = {
 		menu_1_btn_click_enabled = {
 				check_variable = { WSG_panci > 24 }
-				not = { has_country_flag = WSG_stkf }
+				not = { has_country_flag = WSG_start_cooking }
 			}
 		menu_2_btn_click_enabled = {
 				check_variable = { WSG_panci > 49 }
-				not = { has_country_flag = WSG_stkf }
+				not = { has_country_flag = WSG_start_cooking }
 			}
 		menu_3_btn_click_enabled = {
 				check_variable = { WSG_panci > 49 }
-				not = { has_country_flag = WSG_stkf }
+				not = { has_country_flag = WSG_start_cooking }
 			}
 		menu_4_btn_click_enabled = {
 				check_variable = { WSG_panci > 49 }
-				not = { has_country_flag = WSG_stkf }
+				not = { has_country_flag = WSG_start_cooking }
 			}
 		menu_5_btn_click_enabled = {
 				check_variable = { WSG_panci > 49 }
-				not = { has_country_flag = WSG_stkf }
+				not = { has_country_flag = WSG_start_cooking }
 			}
 		menu_6_btn_click_enabled = {
 				check_variable = { WSG_panci > 99 }
-				not = { has_country_flag = WSG_stkf }
+				not = { has_country_flag = WSG_start_cooking }
 			}
 	}			    
 }
