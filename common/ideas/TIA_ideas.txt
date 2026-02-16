@@ -907,6 +907,122 @@ ideas = {
 				war_support_factor = -0.1
 			}
 		}
+		# 米雅贝儿线终点
+		TIA_new_dawn_spirit = {
+			picture = TIA_new_dawn_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.10
+				war_support_factor = 0.05
+			}
+		}
+
+		# 爱丽丝线终点
+		TIA_reshaping_reason_spirit = {
+			picture = TIA_reshaping_reason_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.10
+				political_power_gain = 0.10
+			}
+		}
+
+		# 安妮线终点
+		TIA_people_are_empire_spirit = {
+			picture = TIA_people_are_empire_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				monthly_population = 0.10
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		# 艾克莱尔线终点
+		TIA_imperial_spirit_idea = {
+			picture = TIA_imperial_spirit_idea
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.10
+				army_org_factor = 0.05
+				war_support_factor = 0.10
+			}
+		}
+
+		# 迪欧娜线终点
+		TIA_common_destiny_spirit = {
+			picture = TIA_common_destiny_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.10
+				monthly_population = 0.05
+			}
+		}
+
+		# 路德维希线终点
+		TIA_financial_miracle_spirit = {
+			picture = TIA_financial_miracle_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.08
+				political_power_gain = 0.15
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		# 莉薇娅线终点
+		TIA_empire_steel_spirit = {
+			picture = TIA_empire_steel_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				industrial_capacity_factory = 0.10
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		# 尤蜜拉线终点
+		TIA_regeneration_technique_spirit = {
+			picture = TIA_regeneration_technique_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.10
+				industrial_capacity_factory = 0.05
+				political_power_gain = 0.05
+			}
+		}
+
+		# 马其诺改革完成
+		TIA_maginot_reformed_spirit = {
+			picture = TIA_maginot_reformed_spirit
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_org_factor = 0.05
+				experience_gain_army_factor = 0.10
+			}
+		}
 ###################################
 # 水神信仰线 - 国民精神
 ###################################
@@ -1220,12 +1336,7 @@ ideas = {
 		}
 
 ###################################
-# 以下内容追加至上方 country = {} 块内
-###################################
-
-###################################
 # 水神信仰线 - 事件临时国民精神
-# 追加至 common/ideas/ 下TIA ideas文件的 country = {} 块中
 ###################################
 
 		TIA_faith_southern_protest_suppressed = {
@@ -1264,7 +1375,6 @@ ideas = {
 
 ###################################
 # 水神信仰线 - 中后期事件临时国民精神
-# 追加至 common/ideas/ 下TIA ideas文件的 country = {} 块中
 ###################################
 
 		TIA_faith_international_scholars = {
@@ -1291,23 +1401,7 @@ ideas = {
 		}
 
 ###################################
-# 追加外交好感修正
-# 追加至 common/opinion_modifiers/ 对应文件中
-###################################
-
-#	TIA_faith_harmony_display = {
-#		value = 15
-#		decay = 0.5
-#	}
-#
-#	TIA_faith_science_prestige = {
-#		value = 10
-#		decay = 1.0
-#	}
-
-###################################
 # 水神信仰线 - 决议效果国民精神
-# 追加至 common/ideas/ 下TIA ideas文件的 country = {} 块中
 ###################################
 
 		TIA_faith_war_prayer_buff = {

@@ -436,44 +436,11 @@ country_event = {
 					}
 				}
 			}
-		#释放FON
-			every_state = {
-				limit = {
-					OR = {
-						state = 9
-						state = 12
-						state = 13
-						state = 14
-						state = 15
-						state = 16
-						state = 17
-						state = 18
-						state = 19
-						state = 20
-						state = 21
-						state = 22
-						state = 23
-						#state = 24
-					}
-				}
-				effect_tooltip = {
-					add_core_of = FON
-					FON = {
-						transfer_state = PREV
-					}
-				}
-				hidden_effect = {
-					if = {
-						limit = {
-							NOT = {
-								is_core_of = FON
-							}
-						}
-						add_core_of = FON
-					}
-					FON = {
-						transfer_state = PREV
-					}
+		#FON独立
+			TIA = {
+				set_autonomy = {
+					target = FON
+					autonomy_state = autonomy_free
 				}
 			}
 		#释放SOS
@@ -719,6 +686,1653 @@ country_event = {
 	}
 	option = {
 		name = TIA.19.b
+	}
+}
+
+# TIA_Abdicate 触发 —— 退位风波
+country_event = {
+	id = TIA.20
+	title = TIA.20.t
+	desc = TIA.20.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	#选项A: 米雅试图与阿库娅谈判
+	option = {
+		name = TIA.20.a
+		add_political_power = -50
+		add_stability = -0.05
+		custom_effect_tooltip = TIA.20.a_tt
+		ai_chance = {
+			factor = 50
+		}
+	}
+	#选项B: 米雅默认局势——随她去吧
+	option = {
+		name = TIA.20.b
+		add_stability = -0.10
+		add_war_support = -0.05
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# TIA_disinterest 触发 —— 阿库娅对王位没有兴趣
+country_event = {
+	id = TIA.21
+	title = TIA.21.t
+	desc = TIA.21.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	#选项A: 阿库娅扬长而去，帝国陷入权力真空
+	option = {
+		name = TIA.21.a
+		add_political_power = -75
+		add_stability = -0.08
+		add_popularity = { ideology = neutrality popularity = -0.05 }
+		custom_effect_tooltip = TIA.21.a_tt
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# TIA_Aqua_ascension 触发 —— 阿库娅不情愿的加冕
+country_event = {
+	id = TIA.22
+	title = TIA.22.t
+	desc = TIA.22.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	#选项A: 以阿库娅的名义——新时代开始了
+	option = {
+		name = TIA.22.a
+		add_political_power = -25
+		add_stability = -0.05
+		add_war_support = 0.05
+		set_politics = {
+			ruling_party = neutrality
+		}
+		custom_effect_tooltip = TIA.22.a_tt
+		ai_chance = {
+			factor = 50
+		}
+	}
+	#选项B: 加冕只是形式——真正的权力仍在幕后
+	option = {
+		name = TIA.22.b
+		add_political_power = -50
+		add_stability = -0.03
+		custom_effect_tooltip = TIA.22.b_tt
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# TIA_Fucarlos_appear 触发 —— 芙卡洛斯现身
+country_event = {
+	id = TIA.23
+	title = TIA.23.t
+	desc = TIA.23.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	#选项A: 又来一个水神！？
+	option = {
+		name = TIA.23.a
+		add_stability = -0.10
+		add_war_support = -0.05
+		add_political_power = -50
+		custom_effect_tooltip = TIA.23.a_tt
+		ai_chance = {
+			factor = 50
+		}
+	}
+	#选项B: 也许……我们可以利用这个局势
+	option = {
+		name = TIA.23.b
+		add_political_power = -30
+		add_stability = -0.05
+		add_war_support = 0.03
+		custom_effect_tooltip = TIA.23.b_tt
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+###################################
+# 米雅贝儿线 (TIA.24-26)
+###################################
+
+# 帝国的明日 → 贵族的冷眼
+country_event = {
+	id = TIA.24
+	title = TIA.24.t
+	desc = TIA.24.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 亲自逐一拜访贵族——以礼服人
+	option = {
+		name = TIA.24.a
+		add_political_power = 30
+		add_stability = 0.03
+		custom_effect_tooltip = TIA.24.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_mia_visited_nobles
+			country_event = { id = TIA.48 days = 15 }
+		}
+		ai_chance = { factor = 50 }
+	}
+	# 绕过贵族直接诉诸民意——在帝都广场发表演说
+	option = {
+		name = TIA.24.b
+		add_political_power = -20
+		add_stability = 0.05
+		add_war_support = 0.02
+		custom_effect_tooltip = TIA.24.b_tt
+		hidden_effect = {
+			set_country_flag = TIA_mia_public_speech
+			country_event = { id = TIA.49 days = 10 }
+		}
+		ai_chance = { factor = 30 }
+	}
+	# 让安妮去和贵族谈——她更擅长这个
+	option = {
+		name = TIA.24.c
+		trigger = {
+			has_completed_focus = TIA_cabinet_Anne_Littstein
+		}
+		add_political_power = 20
+		add_stability = 0.04
+		ai_chance = { factor = 20 }
+	}
+}
+
+# 重申皇权 → 暗杀未遂
+country_event = {
+	id = TIA.25
+	title = TIA.25.t
+	desc = TIA.25.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 彻查幕后黑手——不惜一切代价
+	option = {
+		name = TIA.25.a
+		add_political_power = -40
+		add_stability = -0.02
+		add_war_support = 0.03
+		set_country_flag = TIA_cabinet_mia_purge
+		custom_effect_tooltip = TIA.25.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_mia_thorough_investigation
+			country_event = { id = TIA.50 days = 20 }
+		}
+		ai_chance = { factor = 40 }
+	}
+	# 轻描淡写——展示皇室的从容与大度
+	option = {
+		name = TIA.25.b
+		add_political_power = 25
+		add_stability = 0.03
+		custom_effect_tooltip = TIA.25.b_tt
+		hidden_effect = {
+			set_country_flag = TIA_mia_showed_grace
+			country_event = { id = TIA.51 days = 15 }
+		}
+		ai_chance = { factor = 40 }
+	}
+	# 借题发挥——以此为由清洗反对派
+	option = {
+		name = TIA.25.c
+		add_political_power = 50
+		add_stability = -0.05
+		add_war_support = 0.05
+		ai_chance = { factor = 20 }
+	}
+	# 如果之前亲访贵族——通过线人锁定嫌疑人
+	option = {
+		name = TIA.25.d
+		trigger = { has_country_flag = TIA_mia_visited_nobles }
+		add_political_power = 40
+		add_stability = 0.03
+		add_war_support = 0.03
+		ai_chance = { factor = 100 }
+	}
+	# 如果之前广场演说——民众自发提供刺客线索
+	option = {
+		name = TIA.25.e
+		trigger = { has_country_flag = TIA_mia_public_speech }
+		add_political_power = 30
+		add_stability = 0.05
+		add_war_support = 0.02
+		add_manpower = 2000
+		ai_chance = { factor = 100 }
+	}
+}
+
+# 王室诏令 → 米雅的抉择——诏令的最后一条
+country_event = {
+	id = TIA.26
+	title = TIA.26.t
+	desc = TIA.26.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 赦免所有政治犯——展示新堤亚穆的宽容
+	option = {
+		name = TIA.26.a
+		add_political_power = -30
+		add_stability = 0.08
+		add_popularity = { ideology = neutrality popularity = 0.03 }
+		ai_chance = { factor = 50 }
+	}
+	# 有条件释放——要求宣誓效忠皇室
+	option = {
+		name = TIA.26.b
+		add_political_power = 20
+		add_stability = 0.03
+		ai_chance = { factor = 50 }
+	}
+	# 如果之前彻查暗杀——掌握了完整的反叛网络
+	option = {
+		name = TIA.26.c
+		trigger = { has_country_flag = TIA_mia_thorough_investigation }
+		add_political_power = 50
+		add_stability = 0.08
+		add_war_support = 0.03
+		ai_chance = { factor = 100 }
+	}
+	# 如果之前从容应对——中间派贵族主动配合诏令推行
+	option = {
+		name = TIA.26.d
+		trigger = { has_country_flag = TIA_mia_showed_grace }
+		add_political_power = 40
+		add_stability = 0.10
+		add_popularity = { ideology = neutrality popularity = 0.03 }
+		ai_chance = { factor = 100 }
+	}
+}
+
+###################################
+# 爱丽丝·贝德福德线 (TIA.27-29)
+###################################
+
+# 理性之光 → 学院长老会的质疑
+country_event = {
+	id = TIA.27
+	title = TIA.27.t
+	desc = TIA.27.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 用数据说话——在学术委员会上公开辩论
+	option = {
+		name = TIA.27.a
+		add_political_power = 20
+		custom_effect_tooltip = TIA.27.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_alice_won_debate
+			country_event = { id = TIA.52 days = 20 }
+		}
+		ai_chance = { factor = 50 }
+	}
+	# 直接以皇室权威压过学院——改革不容耽搁
+	option = {
+		name = TIA.27.b
+		add_political_power = -15
+		add_stability = -0.02
+		ai_chance = { factor = 30 }
+	}
+	# 邀请长老们参与改革——给他们荣誉头衔换取合作
+	option = {
+		name = TIA.27.c
+		add_political_power = -25
+		add_stability = 0.02
+		ai_chance = { factor = 20 }
+	}
+}
+
+# 军用研究预算重启 → 实验室事故
+country_event = {
+	id = TIA.28
+	title = TIA.28.t
+	desc = TIA.28.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 爱丽丝亲自带队调查原因并改进安全流程
+	option = {
+		name = TIA.28.a
+		add_political_power = -20
+		add_stability = 0.02
+		add_tech_bonus = {
+			name = TIA_safety_protocol_bonus
+			bonus = 0.5
+			uses = 1
+			category = electronics
+		}
+		ai_chance = { factor = 50 }
+	}
+	# 封锁消息——不能让反对派拿事故做文章
+	option = {
+		name = TIA.28.b
+		add_political_power = 15
+		add_stability = -0.02
+		ai_chance = { factor = 30 }
+	}
+	# 加大投入——用更好的设备防止再次发生
+	option = {
+		name = TIA.28.c
+		add_political_power = -40
+		add_tech_bonus = {
+			name = TIA_upgraded_lab_bonus
+			bonus = 1.0
+			uses = 1
+			category = electronics
+		}
+		ai_chance = { factor = 20 }
+	}
+	# 如果之前辩论获胜——学院全力配合调查
+	option = {
+		name = TIA.28.d
+		trigger = { has_country_flag = TIA_alice_won_debate }
+		add_political_power = 10
+		add_stability = 0.03
+		add_tech_bonus = {
+			name = TIA_academy_cooperation
+			bonus = 1.0
+			uses = 1
+			category = electronics
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+# 魔导科技融合 → 第一件魔导原型机
+country_event = {
+	id = TIA.29
+	title = TIA.29.t
+	desc = TIA.29.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 公开展示——让全帝国看看科学的力量
+	option = {
+		name = TIA.29.a
+		add_political_power = 30
+		add_stability = 0.03
+		add_war_support = 0.02
+		ai_chance = { factor = 40 }
+	}
+	# 保密——这是军事机密
+	option = {
+		name = TIA.29.b
+		add_political_power = 15
+		army_experience = 10
+		ai_chance = { factor = 30 }
+	}
+	# 向外国出售技术换取资金
+	option = {
+		name = TIA.29.c
+		add_political_power = 50
+		add_offsite_building = { type = industrial_complex level = 1 }
+		ai_chance = { factor = 30 }
+	}
+}
+
+###################################
+# 安妮·利特斯坦线 (TIA.30-32)
+###################################
+
+# 救济与粮配 → 粮仓的真相
+country_event = {
+	id = TIA.30
+	title = TIA.30.t
+	desc = TIA.30.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 安妮亲自前往灾区监督分配——确保每一粒粮食到位
+	option = {
+		name = TIA.30.a
+		add_political_power = -15
+		add_stability = 0.05
+		add_manpower = 3000
+		custom_effect_tooltip = TIA.30.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_anne_field_supervision
+			country_event = { id = TIA.53 days = 15 }
+		}
+		ai_chance = { factor = 50 }
+	}
+	# 追查贪腐——严惩囤粮的地方官
+	option = {
+		name = TIA.30.b
+		add_political_power = -30
+		add_stability = 0.03
+		ai_chance = { factor = 30 }
+	}
+	# 紧急向邻国采购粮食——用外汇换时间
+	option = {
+		name = TIA.30.c
+		add_political_power = -40
+		add_stability = 0.04
+		add_manpower = 5000
+		ai_chance = { factor = 20 }
+	}
+}
+
+# 公共卫生运动 → 瘟疫村庄的抉择
+country_event = {
+	id = TIA.31
+	title = TIA.31.t
+	desc = TIA.31.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 安妮坚持进入疫区——"他们需要看到帝国没有抛弃他们"
+	option = {
+		name = TIA.31.a
+		add_political_power = 30
+		add_stability = 0.05
+		add_manpower = 2000
+		custom_effect_tooltip = TIA.31.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_anne_entered_plague
+			country_event = { id = TIA.54 days = 20 }
+		}
+		ai_chance = { factor = 40 }
+	}
+	# 听从医生建议设立隔离区——理性优先
+	option = {
+		name = TIA.31.b
+		add_stability = 0.02
+		ai_chance = { factor = 40 }
+	}
+	# 派军队强制隔离——阻止瘟疫扩散比什么都重要
+	option = {
+		name = TIA.31.c
+		add_stability = -0.03
+		add_war_support = 0.02
+		ai_chance = { factor = 20 }
+	}
+	# 如果之前亲赴灾区——安妮在民间建立了信任网络
+	option = {
+		name = TIA.31.d
+		trigger = { has_country_flag = TIA_anne_field_supervision }
+		add_political_power = 30
+		add_stability = 0.07
+		add_manpower = 5000
+		ai_chance = { factor = 100 }
+	}
+}
+
+# 重建地方议会 → 第一次选举的混乱
+country_event = {
+	id = TIA.32
+	title = TIA.32.t
+	desc = TIA.32.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 安妮亲自到场维持秩序并宣布选举结果有效
+	option = {
+		name = TIA.32.a
+		add_political_power = 25
+		add_stability = 0.03
+		add_popularity = { ideology = democratic popularity = 0.03 }
+		ai_chance = { factor = 50 }
+	}
+	# 宣布选举无效重新来过——第一次总有不完美的地方
+	option = {
+		name = TIA.32.b
+		add_political_power = -30
+		add_stability = 0.02
+		ai_chance = { factor = 30 }
+	}
+	# 默认贵族候选人的"胜利"——妥协以换取他们的合作
+	option = {
+		name = TIA.32.c
+		add_political_power = 40
+		add_stability = -0.02
+		ai_chance = { factor = 20 }
+	}
+	# 如果之前进入疫区——安妮的声望让选民信服
+	option = {
+		name = TIA.32.d
+		trigger = { has_country_flag = TIA_anne_entered_plague }
+		add_political_power = 40
+		add_stability = 0.05
+		add_popularity = { ideology = democratic popularity = 0.05 }
+		ai_chance = { factor = 100 }
+	}
+}
+
+###################################
+# 艾克莱尔线 (TIA.33-35)
+###################################
+
+# 整顿军纪 → 军官集体抗命
+country_event = {
+	id = TIA.33
+	title = TIA.33.t
+	desc = TIA.33.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 艾克莱尔亲自前往军营对峙——"谁敢不从？"
+	option = {
+		name = TIA.33.a
+		add_political_power = 20
+		add_war_support = 0.05
+		army_experience = 10
+		custom_effect_tooltip = TIA.33.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_eclair_faced_rebels
+			country_event = { id = TIA.55 days = 10 }
+		}
+		ai_chance = { factor = 40 }
+	}
+	# 逐一约谈——给他们最后一次机会
+	option = {
+		name = TIA.33.b
+		add_political_power = -15
+		add_war_support = 0.02
+		army_experience = 5
+		ai_chance = { factor = 40 }
+	}
+	# 直接免职——从军校提拔新军官
+	option = {
+		name = TIA.33.c
+		add_political_power = -30
+		add_war_support = -0.02
+		army_experience = 20
+		ai_chance = { factor = 20 }
+	}
+}
+
+# 统一指挥体系 → 地方军阀的回应
+country_event = {
+	id = TIA.34
+	title = TIA.34.t
+	desc = TIA.34.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 以利诱之——承诺军阀将军们在新体系中的荣誉职位
+	option = {
+		name = TIA.34.a
+		add_political_power = -25
+		add_stability = 0.03
+		army_experience = 10
+		ai_chance = { factor = 40 }
+	}
+	# 以势迫之——调集忠诚部队包围不服从者
+	option = {
+		name = TIA.34.b
+		add_political_power = 20
+		add_stability = -0.03
+		add_war_support = 0.05
+		army_experience = 15
+		ai_chance = { factor = 30 }
+	}
+	# 给他们时间——三个月内自行移交指挥权，否则以叛国论处
+	option = {
+		name = TIA.34.c
+		add_political_power = -10
+		army_experience = 5
+		ai_chance = { factor = 30 }
+	}
+	# 如果之前单骑赴营——军中威望无人能及
+	option = {
+		name = TIA.34.d
+		trigger = { has_country_flag = TIA_eclair_faced_rebels }
+		add_political_power = 30
+		add_stability = 0.05
+		army_experience = 20
+		add_war_support = 0.05
+		ai_chance = { factor = 100 }
+	}
+}
+
+# 铁血再铸 → 新兵的第一次实弹演习
+country_event = {
+	id = TIA.35
+	title = TIA.35.t
+	desc = TIA.35.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 艾克莱尔宣布演习大获成功——士气空前高涨
+	option = {
+		name = TIA.35.a
+		add_war_support = 0.05
+		army_experience = 15
+		add_manpower = 5000
+		ai_chance = { factor = 60 }
+	}
+	# 指出不足之处——真正的战场比演习残酷十倍
+	option = {
+		name = TIA.35.b
+		army_experience = 25
+		add_war_support = 0.02
+		ai_chance = { factor = 40 }
+	}
+}
+
+###################################
+# 迪欧娜线 (TIA.36-38)
+###################################
+
+# 帝国民族整合局 → 少数民族代表的请愿
+country_event = {
+	id = TIA.36
+	title = TIA.36.t
+	desc = TIA.36.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 迪欧娜亲自接见代表——倾听他们的诉求
+	option = {
+		name = TIA.36.a
+		add_political_power = -15
+		add_stability = 0.05
+		custom_effect_tooltip = TIA.36.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_tiona_met_minorities
+			country_event = { id = TIA.56 days = 15 }
+		}
+		ai_chance = { factor = 40 }
+	}
+	# 以帝国法令的形式回应——保障基本权利但强调统一
+	option = {
+		name = TIA.36.b
+		add_political_power = 15
+		add_stability = 0.02
+		ai_chance = { factor = 40 }
+	}
+	# 拒绝接见——帝国只有一个民族
+	option = {
+		name = TIA.36.c
+		add_political_power = 20
+		add_stability = -0.03
+		add_war_support = 0.02
+		ai_chance = { factor = 20 }
+	}
+}
+
+# 同化政策 → 书院里的火焰——焚书事件
+country_event = {
+	id = TIA.37
+	title = TIA.37.t
+	desc = TIA.37.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 迪欧娜震怒——下令保护少数民族文献
+	option = {
+		name = TIA.37.a
+		add_political_power = -20
+		add_stability = 0.04
+		custom_effect_tooltip = TIA.37.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_tiona_protected_books
+			country_event = { id = TIA.57 days = 20 }
+		}
+		ai_chance = { factor = 50 }
+	}
+	# 默认已经发生的事实——但私下处分肇事者
+	option = {
+		name = TIA.37.b
+		add_political_power = 10
+		add_stability = -0.02
+		ai_chance = { factor = 30 }
+	}
+	# 将此事定性为"文化统一的必要之痛"
+	option = {
+		name = TIA.37.c
+		add_political_power = 20
+		add_stability = -0.05
+		add_war_support = 0.02
+		ai_chance = { factor = 20 }
+	}
+	# 如果之前亲自接见——少数民族社区协助调查纵火者
+	option = {
+		name = TIA.37.d
+		trigger = { has_country_flag = TIA_tiona_met_minorities }
+		add_political_power = 20
+		add_stability = 0.06
+		ai_chance = { factor = 100 }
+	}
+}
+
+# 边境自治实验 → 意外的奇迹——自治区经济繁荣
+country_event = {
+	id = TIA.38
+	title = TIA.38.t
+	desc = TIA.38.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 推广自治经验——向更多边境地区推行
+	option = {
+		name = TIA.38.a
+		add_political_power = 30
+		add_stability = 0.05
+		add_offsite_building = { type = industrial_complex level = 1 }
+		ai_chance = { factor = 50 }
+	}
+	# 保持谨慎——成功不可复制，继续观察
+	option = {
+		name = TIA.38.b
+		add_political_power = 15
+		add_stability = 0.02
+		ai_chance = { factor = 50 }
+	}
+	# 如果之前保护文献——自治区主动邀请帝国观察员
+	option = {
+		name = TIA.38.c
+		trigger = { has_country_flag = TIA_tiona_protected_books }
+		add_political_power = 40
+		add_stability = 0.07
+		add_offsite_building = { type = industrial_complex level = 2 }
+		ai_chance = { factor = 100 }
+	}
+}
+
+###################################
+# 路德维希线 (TIA.39-41)
+###################################
+
+# 财政紧缩令 → 帝都的面包暴动
+country_event = {
+	id = TIA.39
+	title = TIA.39.t
+	desc = TIA.39.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 路德维希冷冷地说："短期的痛苦换来长期的健康"
+	option = {
+		name = TIA.39.a
+		add_stability = -0.05
+		add_political_power = 30
+		add_consumer_goods_factor = -0.02
+		custom_effect_tooltip = TIA.39.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_ludwig_held_firm
+			country_event = { id = TIA.58 days = 20 }
+		}
+		ai_chance = { factor = 40 }
+	}
+	# 小幅放松管控——在面包价格上做出让步
+	option = {
+		name = TIA.39.b
+		add_stability = 0.03
+		add_political_power = -15
+		ai_chance = { factor = 40 }
+	}
+	# 出动宪兵镇压——不能让暴民破坏改革
+	option = {
+		name = TIA.39.c
+		add_stability = -0.03
+		add_war_support = 0.03
+		add_political_power = 15
+		ai_chance = { factor = 20 }
+	}
+}
+
+# 帝国债券发行 → 贵族的集体抵制
+country_event = {
+	id = TIA.40
+	title = TIA.40.t
+	desc = TIA.40.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 路德维希公开贵族们的私人账簿——你们有钱，只是不想出
+	option = {
+		name = TIA.40.a
+		add_political_power = 40
+		add_stability = -0.03
+		custom_effect_tooltip = TIA.40.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_ludwig_exposed_nobles
+			country_event = { id = TIA.59 days = 15 }
+		}
+		ai_chance = { factor = 40 }
+	}
+	# 提高国债利率——让贪婪为国家服务
+	option = {
+		name = TIA.40.b
+		add_political_power = -20
+		add_offsite_building = { type = industrial_complex level = 1 }
+		ai_chance = { factor = 40 }
+	}
+	# 以皇室财产带头认购——展示诚意
+	option = {
+		name = TIA.40.c
+		add_political_power = -40
+		add_stability = 0.05
+		add_offsite_building = { type = industrial_complex level = 1 }
+		ai_chance = { factor = 20 }
+	}
+	# 如果之前坚持紧缩——财务数字证明路德维希是对的
+	option = {
+		name = TIA.40.d
+		trigger = { has_country_flag = TIA_ludwig_held_firm }
+		add_political_power = 50
+		add_stability = 0.03
+		add_offsite_building = { type = industrial_complex level = 1 }
+		ai_chance = { factor = 100 }
+	}
+}
+
+# 商会国有化 → 暗夜中的毒酒——路德维希遇刺
+country_event = {
+	id = TIA.41
+	title = TIA.41.t
+	desc = TIA.41.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 路德维希大难不死——他冷冷地说"看来我踩到了正确的尾巴"
+	option = {
+		name = TIA.41.a
+		add_political_power = 50
+		add_stability = 0.02
+		add_war_support = 0.03
+		custom_effect_tooltip = TIA.41.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_ludwig_survived_poison
+		}
+		ai_chance = { factor = 50 }
+	}
+	# 顺藤摸瓜——借机铲除商会残余势力
+	option = {
+		name = TIA.41.b
+		add_political_power = 30
+		add_stability = -0.02
+		add_offsite_building = { type = industrial_complex level = 1 }
+		ai_chance = { factor = 50 }
+	}
+	# 如果之前公开账簿——民间自发保护路德维希
+	option = {
+		name = TIA.41.c
+		trigger = { has_country_flag = TIA_ludwig_exposed_nobles }
+		add_political_power = 60
+		add_stability = 0.05
+		add_offsite_building = { type = industrial_complex level = 2 }
+		ai_chance = { factor = 100 }
+	}
+}
+
+###################################
+# 莉薇娅线 (TIA.42-44)
+###################################
+
+# 重修帝都 → 地下遗迹的发现
+country_event = {
+	id = TIA.42
+	title = TIA.42.t
+	desc = TIA.42.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 暂停工程——考古发掘优先
+	option = {
+		name = TIA.42.a
+		add_political_power = -20
+		custom_effect_tooltip = TIA.42.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_livia_archaeology
+			country_event = { id = TIA.60 days = 25 }
+		}
+		ai_chance = { factor = 30 }
+	}
+	# 工期不能耽误——记录之后继续施工
+	option = {
+		name = TIA.42.b
+		add_political_power = 15
+		capital_scope = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 40 }
+	}
+	# 让尤蜜拉来看看——也许是古代魔导设施
+	option = {
+		name = TIA.42.c
+		trigger = {
+			has_completed_focus = TIA_cabinet_Yumiella_Dolkness
+		}
+		add_political_power = 10
+		add_tech_bonus = {
+			name = TIA_ancient_ruins_bonus
+			bonus = 1.0
+			uses = 1
+			category = electronics
+		}
+		ai_chance = { factor = 30 }
+	}
+}
+
+# 南北交通计划 → 工人罢工
+country_event = {
+	id = TIA.43
+	title = TIA.43.t
+	desc = TIA.43.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 莉薇娅亲赴工地谈判——改善工人待遇
+	option = {
+		name = TIA.43.a
+		add_political_power = -25
+		add_stability = 0.05
+		custom_effect_tooltip = TIA.43.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_livia_worker_rights
+			country_event = { id = TIA.61 days = 20 }
+		}
+		ai_chance = { factor = 50 }
+	}
+	# 换一批工人——罢工者一律解雇
+	option = {
+		name = TIA.43.b
+		add_political_power = 15
+		add_stability = -0.03
+		ai_chance = { factor = 30 }
+	}
+	# 军队介入——工程是国家利益，不容阻挠
+	option = {
+		name = TIA.43.c
+		add_stability = -0.05
+		add_war_support = 0.02
+		ai_chance = { factor = 20 }
+	}
+	# 如果之前考古发掘——古代工程技术加速施工
+	option = {
+		name = TIA.43.d
+		trigger = { has_country_flag = TIA_livia_archaeology }
+		add_political_power = 20
+		add_stability = 0.05
+		every_owned_state = {
+			limit = { is_core_of = TIA }
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+# 工业再兴 → 第一座新工厂的投产仪式
+country_event = {
+	id = TIA.44
+	title = TIA.44.t
+	desc = TIA.44.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 盛大的剪彩典礼——邀请各国使节观礼
+	option = {
+		name = TIA.44.a
+		add_political_power = 30
+		add_stability = 0.03
+		every_country = {
+			limit = {
+				NOT = { tag = TIA }
+				NOT = { has_war_with = TIA }
+				capital_scope = { is_on_continent = ristania }
+			}
+			add_opinion_modifier = {
+				target = TIA
+				modifier = TIA_industrial_prestige
+			}
+		}
+		ai_chance = { factor = 50 }
+	}
+	# 低调处理——尽快投产才是正事
+	option = {
+		name = TIA.44.b
+		add_political_power = 15
+		random_owned_controlled_state = {
+			limit = { is_core_of = TIA free_building_slots = { building = arms_factory size > 0 include_locked = yes } }
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 50 }
+	}
+	# 如果之前保障工人权利——工人们自发加班赶工期
+	option = {
+		name = TIA.44.c
+		trigger = { has_country_flag = TIA_livia_worker_rights }
+		add_political_power = 40
+		add_stability = 0.05
+		random_owned_controlled_state = {
+			limit = { is_core_of = TIA free_building_slots = { building = industrial_complex size > 0 include_locked = yes } }
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = { is_core_of = TIA free_building_slots = { building = arms_factory size > 0 include_locked = yes } }
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+###################################
+# 尤蜜拉·多克尼斯线 (TIA.45-47)
+###################################
+
+# 魔力枯竭研究 → 异常魔力波动
+country_event = {
+	id = TIA.45
+	title = TIA.45.t
+	desc = TIA.45.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 尤蜜拉：这正是我需要的数据！——加大研究力度
+	option = {
+		name = TIA.45.a
+		add_political_power = -20
+		custom_effect_tooltip = TIA.45.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_yumi_pulse_research
+			country_event = { id = TIA.62 days = 20 }
+		}
+		ai_chance = { factor = 50 }
+	}
+	# 暂停实验——安全第一
+	option = {
+		name = TIA.45.b
+		add_political_power = 10
+		add_stability = 0.02
+		ai_chance = { factor = 30 }
+	}
+	# 秘密转移到地下实验室——不能让外界知道
+	option = {
+		name = TIA.45.c
+		add_political_power = -10
+		add_stability = -0.02
+		ai_chance = { factor = 20 }
+	}
+}
+
+# 禁忌文献复原 → 黑魔法的诱惑
+country_event = {
+	id = TIA.46
+	title = TIA.46.t
+	desc = TIA.46.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 尤蜜拉坚持原则——只研究可控的部分
+	option = {
+		name = TIA.46.a
+		add_political_power = 15
+		add_stability = 0.02
+		add_tech_bonus = {
+			name = TIA_controlled_magic_bonus
+			bonus = 0.5
+			uses = 1
+			category = nuclear
+		}
+		ai_chance = { factor = 40 }
+	}
+	# 深入禁区——真正的知识从不安全
+	option = {
+		name = TIA.46.b
+		add_political_power = -30
+		add_stability = -0.03
+		add_tech_bonus = {
+			name = TIA_forbidden_magic_bonus
+			bonus = 1.5
+			uses = 1
+			category = nuclear
+		}
+		custom_effect_tooltip = TIA.46.b_tt
+		hidden_effect = {
+			set_country_flag = TIA_yumi_forbidden_path
+			country_event = { id = TIA.63 days = 15 }
+		}
+		ai_chance = { factor = 30 }
+	}
+	# 销毁最危险的部分——有些知识不该被人类掌握
+	option = {
+		name = TIA.46.c
+		add_political_power = 20
+		add_stability = 0.05
+		ai_chance = { factor = 30 }
+	}
+	# 如果之前深入研究脉冲——已掌握安全边界数据
+	option = {
+		name = TIA.46.d
+		trigger = { has_country_flag = TIA_yumi_pulse_research }
+		add_political_power = 20
+		add_stability = 0.03
+		add_tech_bonus = {
+			name = TIA_pulse_guided_magic
+			bonus = 1.5
+			uses = 1
+			category = nuclear
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+# 魔能工业化 → 第一座魔导发电厂
+country_event = {
+	id = TIA.47
+	title = TIA.47.t
+	desc = TIA.47.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 举办通电仪式——当灯火点亮的那一刻，人群沸腾了
+	option = {
+		name = TIA.47.a
+		add_political_power = 50
+		add_stability = 0.05
+		random_owned_controlled_state = {
+			limit = { is_core_of = TIA free_building_slots = { building = industrial_complex size > 0 include_locked = yes } }
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 50 }
+	}
+	# 先供军工——民用可以等
+	option = {
+		name = TIA.47.b
+		add_political_power = 20
+		add_war_support = 0.03
+		random_owned_controlled_state = {
+			limit = { is_core_of = TIA free_building_slots = { building = arms_factory size > 0 include_locked = yes } }
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 50 }
+	}
+	# 如果之前选择深入禁区——禁忌知识大幅提升产能
+	option = {
+		name = TIA.47.c
+		trigger = { has_country_flag = TIA_yumi_forbidden_path }
+		add_political_power = 30
+		add_stability = -0.02
+		random_owned_controlled_state = {
+			limit = { is_core_of = TIA free_building_slots = { building = industrial_complex size > 0 include_locked = yes } }
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+		}
+		add_tech_bonus = {
+			name = TIA_forbidden_power_plant
+			bonus = 1.0
+			uses = 1
+			category = industry
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+###################################
+# 内阁线 - 后续连锁事件
+# 事件ID范围: TIA.48 - TIA.62
+###################################
+
+###################################
+# 米雅贝儿线后续 (TIA.48-51)
+###################################
+
+# 24.a后续 —— 亲访贵族的回报
+country_event = {
+	id = TIA.48
+	title = TIA.48.t
+	desc = TIA.48.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.48.a
+		add_political_power = 25
+		add_stability = 0.03
+		custom_effect_tooltip = TIA.48.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+
+# 24.b后续 —— 广场演说引发的浪潮
+country_event = {
+	id = TIA.49
+	title = TIA.49.t
+	desc = TIA.49.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.49.a
+		add_political_power = 20
+		add_war_support = 0.03
+		add_manpower = 3000
+		custom_effect_tooltip = TIA.49.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+
+# 25.a后续 —— 彻查的收获
+country_event = {
+	id = TIA.50
+	title = TIA.50.t
+	desc = TIA.50.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 公布调查结果——让阴谋暴露在阳光下
+	option = {
+		name = TIA.50.a
+		add_political_power = 30
+		add_stability = 0.03
+		ai_chance = { factor = 50 }
+	}
+	# 保留证据——作为将来制衡贵族的底牌
+	option = {
+		name = TIA.50.b
+		add_political_power = 50
+		ai_chance = { factor = 50 }
+	}
+}
+
+# 25.b后续 —— 从容应对的意外收获
+country_event = {
+	id = TIA.51
+	title = TIA.51.t
+	desc = TIA.51.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.51.a
+		add_political_power = 20
+		add_stability = 0.05
+		ai_chance = { factor = 100 }
+	}
+}
+
+###################################
+# 爱丽丝线后续 (TIA.52)
+###################################
+
+# 27.a后续 —— 辩论胜利后的学术改革浪潮
+country_event = {
+	id = TIA.52
+	title = TIA.52.t
+	desc = TIA.52.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 趁热打铁改组学术院
+	option = {
+		name = TIA.52.a
+		add_political_power = 20
+		ai_chance = { factor = 50 }
+	}
+	# 适可而止——给保守派留面子
+	option = {
+		name = TIA.52.b
+		add_political_power = 30
+		add_stability = 0.02
+		ai_chance = { factor = 50 }
+	}
+}
+
+###################################
+# 安妮线后续 (TIA.53-54)
+###################################
+
+# 30.a后续 —— 安妮在南方的名望
+country_event = {
+	id = TIA.53
+	title = TIA.53.t
+	desc = TIA.53.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.53.a
+		add_political_power = 25
+		add_stability = 0.03
+		add_manpower = 5000
+		ai_chance = { factor = 100 }
+	}
+}
+
+# 31.a后续 —— 安妮走出疫区后
+country_event = {
+	id = TIA.54
+	title = TIA.54.t
+	desc = TIA.54.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 安妮的故事成为民间传说
+	option = {
+		name = TIA.54.a
+		add_political_power = 30
+		add_stability = 0.05
+		add_popularity = { ideology = democratic popularity = 0.02 }
+		ai_chance = { factor = 50 }
+	}
+	# 安妮总结疫区经验——编写帝国第一部防疫手册
+	option = {
+		name = TIA.54.b
+		add_political_power = 15
+		add_stability = 0.03
+		add_monthly_population = 0.05
+		ai_chance = { factor = 50 }
+	}
+}
+
+###################################
+# 艾克莱尔线后续 (TIA.55)
+###################################
+
+# 33.a后续 —— 单骑赴营的后果
+country_event = {
+	id = TIA.55
+	title = TIA.55.t
+	desc = TIA.55.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# "铁娘子"的名号传遍全军
+	option = {
+		name = TIA.55.a
+		add_war_support = 0.03
+		army_experience = 15
+		add_manpower = 3000
+		ai_chance = { factor = 100 }
+	}
+}
+
+###################################
+# 迪欧娜线后续 (TIA.56-57)
+###################################
+
+# 36.a后续 —— 接见代表后的政策灵感
+country_event = {
+	id = TIA.56
+	title = TIA.56.t
+	desc = TIA.56.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 创建帝国多元文化基金
+	option = {
+		name = TIA.56.a
+		add_political_power = -15
+		add_stability = 0.05
+		ai_chance = { factor = 50 }
+	}
+	# 起草《帝国臣民平等法》
+	option = {
+		name = TIA.56.b
+		add_political_power = 20
+		add_stability = 0.03
+		ai_chance = { factor = 50 }
+	}
+}
+
+# 37.a后续 —— 文献保护令的连锁反应
+country_event = {
+	id = TIA.57
+	title = TIA.57.t
+	desc = TIA.57.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.57.a
+		add_political_power = 25
+		add_stability = 0.04
+		ai_chance = { factor = 100 }
+	}
+}
+
+###################################
+# 路德维希线后续 (TIA.58-59)
+###################################
+
+# 39.a后续 —— 紧缩令的数字证明
+country_event = {
+	id = TIA.58
+	title = TIA.58.t
+	desc = TIA.58.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 公布财务报告——用铁一般的事实堵住悠悠之口
+	option = {
+		name = TIA.58.a
+		add_political_power = 30
+		add_stability = 0.03
+		add_consumer_goods_factor = -0.02
+		ai_chance = { factor = 50 }
+	}
+	# 低调处理——不需要向任何人证明什么
+	option = {
+		name = TIA.58.b
+		add_political_power = 20
+		ai_chance = { factor = 50 }
+	}
+}
+
+# 40.a后续 —— 公开账簿引发的政治地震
+country_event = {
+	id = TIA.59
+	title = TIA.59.t
+	desc = TIA.59.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 趁热打铁——推行贵族财产税
+	option = {
+		name = TIA.59.a
+		add_political_power = 40
+		add_stability = -0.02
+		add_consumer_goods_factor = -0.03
+		ai_chance = { factor = 50 }
+	}
+	# 适可而止——已经达到了震慑目的
+	option = {
+		name = TIA.59.b
+		add_political_power = 25
+		add_stability = 0.03
+		ai_chance = { factor = 50 }
+	}
+}
+
+###################################
+# 莉薇娅线后续 (TIA.60-61)
+###################################
+
+# 42.a后续 —— 古代遗迹的重大发现
+country_event = {
+	id = TIA.60
+	title = TIA.60.t
+	desc = TIA.60.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 将古代技术应用于现代工程
+	option = {
+		name = TIA.60.a
+		add_political_power = 20
+		capital_scope = {
+			add_extra_state_shared_building_slots = 2
+		}
+		ai_chance = { factor = 50 }
+	}
+	# 建立博物馆——让历史教育民众
+	option = {
+		name = TIA.60.b
+		add_political_power = 15
+		add_stability = 0.05
+		ai_chance = { factor = 50 }
+	}
+}
+
+# 43.a后续 —— 工人权利法案的涟漪
+country_event = {
+	id = TIA.61
+	title = TIA.61.t
+	desc = TIA.61.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.61.a
+		add_political_power = 20
+		add_stability = 0.04
+		add_offsite_building = { type = industrial_complex level = 1 }
+		ai_chance = { factor = 100 }
+	}
+}
+
+###################################
+# 尤蜜拉线后续 (TIA.62-63)
+###################################
+
+# 45.a后续 —— 脉冲数据的突破
+country_event = {
+	id = TIA.62
+	title = TIA.62.t
+	desc = TIA.62.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 确认帝都地下存在古代魔力核心
+	option = {
+		name = TIA.62.a
+		add_political_power = 25
+		ai_chance = { factor = 50 }
+	}
+	# 暂时封锁数据——等待进一步验证
+	option = {
+		name = TIA.62.b
+		add_political_power = 15
+		add_stability = 0.02
+		ai_chance = { factor = 50 }
+	}
+}
+
+# 46.b后续 —— 深入禁区的代价与收获
+country_event = {
+	id = TIA.63
+	title = TIA.63.t
+	desc = TIA.63.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	is_triggered_only = yes
+
+	# 尤蜜拉成功控制住了风险——但她的眼睛变了颜色
+	option = {
+		name = TIA.63.a
+		add_political_power = 20
+		add_stability = -0.02
+		add_tech_bonus = {
+			name = TIA_dark_knowledge_bonus
+			bonus = 1.0
+			uses = 1
+			category = nuclear
+		}
+		ai_chance = { factor = 50 }
+	}
+	# 尤蜜拉决定立刻封印研究——太危险了
+	option = {
+		name = TIA.63.b
+		add_political_power = 15
+		add_stability = 0.05
+		ai_chance = { factor = 50 }
 	}
 }
 
@@ -1715,7 +3329,6 @@ country_event = {
 		name = TIA_faith.12.a
 		add_political_power = 30
 		add_stability = 0.02
-		add_research_speed_factor = 0.02
 		custom_effect_tooltip = TIA_faith.12.a_tt
 		ai_chance = {
 			factor = 70
@@ -2207,7 +3820,6 @@ country_event = {
 	option = {
 		name = TIA_faith.14.a
 		add_political_power = 25
-		add_research_speed_factor = 0.02
 		add_timed_idea = {
 			idea = TIA_faith_international_scholars
 			days = 365
@@ -2286,7 +3898,6 @@ country_event = {
 	option = {
 		name = TIA_faith.15.c
 		add_political_power = 30
-		add_research_speed_factor = 0.02
 		every_country = {
 			limit = {
 				NOT = { tag = TIA }
@@ -2435,7 +4046,6 @@ country_event = {
 		name = TIA_faith.24.a
 		add_political_power = 30
 		add_stability = 0.03
-		add_research_speed_factor = 0.01
 		custom_effect_tooltip = TIA_faith.24.a_tt
 		ai_chance = {
 			factor = 50
@@ -2458,7 +4068,6 @@ country_event = {
 		}
 		add_political_power = 50
 		add_stability = 0.05
-		add_research_speed_factor = 0.02
 		ai_chance = {
 			factor = 20
 		}
