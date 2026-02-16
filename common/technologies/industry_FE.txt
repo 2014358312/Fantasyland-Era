@@ -1127,33 +1127,15 @@ technologies = {
 		}
 	}
 
-	steel_foundry_1 = {
-
-		path = {
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 2
-		start_year = 1000
-		
-		categories = {
-			industry
-		}
-		
-		folder = {
-			name = industry_folder
-			position = { x = @resource_foundry_4_x y = @left_y_1000 }
-		}
-		
-		ai_will_do = {
-			factor = 10
-		}
-	}
-
 	oil_foundry_1 = {
 
 		path = {
 			leads_to_tech = rubber_foundry_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = oil_foundry_2
 			research_cost_coeff = 1
 		}
 		
@@ -1174,14 +1156,62 @@ technologies = {
 		}
 	}
 
-	rubber_foundry_1 = {
+	oil_foundry_2 = {
+	
+		path = {
+			leads_to_tech = oil_foundry_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1003
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @resource_foundry_2_x y = @left_y_1003 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
 
+	oil_foundry_3 = {
+	
 		path = {
 			research_cost_coeff = 1
 		}
 		
 		research_cost = 2
-		start_year = 1000
+		start_year = 1007
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @resource_foundry_2_x y = @left_y_1007 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	rubber_foundry_1 = {
+
+		path = {
+			leads_to_tech = rubber_foundry_2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1001
 		
 		categories = {
 			industry
@@ -1197,9 +1227,152 @@ technologies = {
 		}
 	}
 
+	rubber_foundry_2 = {
+
+		path = {
+			leads_to_tech = rubber_foundry_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1003
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @resource_foundry_1_x y = @left_y_1003 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	rubber_foundry_3 = {
+
+		path = {
+			leads_to_tech = rubber_foundry_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1005
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @resource_foundry_1_x y = @left_y_1005 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	rubber_foundry_4 = {
+
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1007
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @resource_foundry_1_x y = @left_y_1007 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	steel_foundry_1 = {
+
+		path = {
+			leads_to_tech = steel_foundry_2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1000
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @resource_foundry_4_x y = @left_y_1000 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	steel_foundry_2 = {
+
+		path = {
+			leads_to_tech = steel_foundry_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1003
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @resource_foundry_4_x y = @left_y_1003 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	steel_foundry_3 = {
+
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1007
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @resource_foundry_4_x y = @left_y_1007 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
 	aluminium_foundry_1 = {
 
 		path = {
+			leads_to_tech = aluminium_foundry_2
 			research_cost_coeff = 1
 		}
 		
@@ -1220,9 +1393,57 @@ technologies = {
 		}
 	}
 
+	aluminium_foundry_2 = {
+
+		path = {
+			leads_to_tech = aluminium_foundry_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1003
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @resource_foundry_5_x y = @left_y_1003 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	aluminium_foundry_3 = {
+
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1007
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @resource_foundry_5_x y = @left_y_1007 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
 	tungsten_foundry_1 = {
 
 		path = {
+			leads_to_tech = tungsten_foundry_2
 			research_cost_coeff = 1
 		}
 		
@@ -1243,9 +1464,57 @@ technologies = {
 		}
 	}
 
+	tungsten_foundry_2 = {
+
+		path = {
+			leads_to_tech = tungsten_foundry_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1003
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @resource_foundry_3_x y = @left_y_1003 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	tungsten_foundry_3 = {
+
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1007
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @resource_foundry_3_x y = @left_y_1007 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
 	chromium_foundry_1 = {
 
 		path = {
+			leads_to_tech = chromium_foundry_2
 			research_cost_coeff = 1
 		}
 		
@@ -1259,6 +1528,53 @@ technologies = {
 		folder = {
 			name = industry_folder
 			position = { x = @resource_foundry_6_x y = @left_y_1000 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	chromium_foundry_2 = {
+
+		path = {
+			leads_to_tech = chromium_foundry_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1003
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @resource_foundry_6_x y = @left_y_1003 }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	chromium_foundry_3 = {
+
+		path = {
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1007
+		
+		categories = {
+			industry
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = @resource_foundry_6_x y = @left_y_1007 }
 		}
 		
 		ai_will_do = {

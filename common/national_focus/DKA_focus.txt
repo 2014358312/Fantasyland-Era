@@ -1,4 +1,6 @@
-﻿focus_tree = {
+﻿#!gfx:interface\goals.gfx
+#!gfx:interface\goals\FE_country_goals.gfx
+focus_tree = {
 	id = DKA_focus_tree
 	country = {
 		factor = 0
@@ -67,11 +69,6 @@
 				}
 			}
 		}
-		bypass = {
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
@@ -93,7 +90,6 @@
 			}
 		}
 	}
-	
 	focus = {
 		id = DKA_make_enemy_sow_discord
 		icon = GFX_goal_generic_espionage
@@ -111,11 +107,6 @@
 			is_ai = yes
 			has_war = yes
 		}
-		bypass = {
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
@@ -134,7 +125,6 @@
 			}
 		}
 	}
-	
 	focus = {
 		id = DKA_attack_northeast
 		icon = GFX_goal_generic_railway_construction
@@ -152,19 +142,12 @@
 			is_ai = yes
 			has_war = yes
 		}
-		bypass = {
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			
 		}
 	}
-	
 	focus = {
 		id = DKA_final_attack_to_tiam
 		icon = GFX_goal_generic_air_CAS_german
@@ -185,11 +168,6 @@
 			is_ai = yes
 			has_war = yes
 		}
-		bypass = {
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
@@ -201,7 +179,6 @@
 			}
 		}
 	}
-	
 	focus = {
 		id = DKA_eyes_of_storm
 		icon = GFX_focus_DKA_eyes_of_storm
@@ -220,20 +197,108 @@
 				always = no
 			}
 		}
-		bypass = {
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			add_political_power = 150
-			#country_event = DKA.1
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.10
+			}
+			add_political_power = 120
+			army_experience = 5
+			add_timed_idea = {
+				idea = fascist_influence
+				days = 90
+			}
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				add_timed_idea = {
+					idea = fascist_influence
+					days = 90
+				}
+			}
 		}
 	}
-
+	focus = {
+		id = DKA_unite_to_forward
+		icon = GFX_goal_generic_national_unity
+		prerequisite = {
+			focus = DKA_eyes_of_storm
+		}
+		relative_position_id = DKA_eyes_of_storm
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_idea = DKA_rest_of_storm_4
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = DKA_rest_of_storm_4
+				add_idea = DKA_rest_of_storm_3
+			}
+		}
+	}
+	focus = {
+		id = DKA_strengthen_central_management
+		icon = GFX_goal_generic_authoritarian_government
+		prerequisite = {
+			focus = DKA_unite_to_forward
+		}
+		mutually_exclusive = {
+			focus = DKA_commit_to_right_of_self_governance
+		}
+		relative_position_id = DKA_unite_to_forward
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_commit_to_right_of_self_governance
+		icon = GFX_focus_generic_self_management
+		prerequisite = {
+			focus = DKA_unite_to_forward
+		}
+		mutually_exclusive = {
+			focus = DKA_strengthen_central_management
+		}
+		relative_position_id = DKA_unite_to_forward
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
 	focus = {
 		id = DKA_build_military_committee
 		icon = GFX_focus_generic_military_academy
@@ -249,12 +314,36 @@
 		}
 		available = {
 		}
-		bypass = {
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
 		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		complete_tooltip = {
+	}
+	focus = {
+		id = DKA_political_bureau
+		icon = GFX_focus_generic_improve_the_administration_2
+		prerequisite = {
+			focus = DKA_build_military_committee
+		}
+		prerequisite = {
+			focus = DKA_strengthen_central_management
+			focus = DKA_commit_to_right_of_self_governance
+		}
+		mutually_exclusive = {
+			focus = DKA_think_tank
+		}
+		relative_position_id = DKA_build_military_committee
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
 		}
 		completion_reward = {
 			add_popularity = {
@@ -265,14 +354,37 @@
 			add_political_power = 150
 		}
 	}
-
 	focus = {
-		id = DKA_unite_to_forward
-		icon = GFX_focus_generic_military_academy
+		id = DKA_use_talent
+		icon = GFX_focus_generic_education
 		prerequisite = {
-			focus = DKA_eyes_of_storm
+			focus = DKA_political_bureau
 		}
-		relative_position_id = DKA_eyes_of_storm
+		relative_position_id = DKA_political_bureau
+		x = -3
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_national_minority_administration
+		icon = GFX_focus_generic_improve_the_administration
+		prerequisite = {
+			focus = DKA_use_talent
+		}
+		relative_position_id = DKA_use_talent
 		x = 0
 		y = 1
 		cost = 10
@@ -281,12 +393,32 @@
 		}
 		available = {
 		}
-		bypass = {
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
 		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		complete_tooltip = {
+	}
+	focus = {
+		id = DKA_use_opposition_party
+		icon = GFX_focus_generic_subjugation
+		prerequisite = {
+			focus = DKA_national_minority_administration
+		}
+		mutually_exclusive = {
+			focus = DKA_dismiss_opposition_party
+		}
+		relative_position_id = DKA_national_minority_administration
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
 		}
 		completion_reward = {
 			add_popularity = {
@@ -297,10 +429,112 @@
 			add_political_power = 150
 		}
 	}
-
+	focus = {
+		id = DKA_dismiss_opposition_party
+		icon = GFX_goal_generic_oppression
+		prerequisite = {
+			focus = DKA_national_minority_administration
+		}
+		mutually_exclusive = {
+			focus = DKA_use_opposition_party
+		}
+		relative_position_id = DKA_national_minority_administration
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_unite_faction
+		icon = GFX_focus_generic_electrification
+		prerequisite = {
+			focus = DKA_political_bureau
+		}
+		relative_position_id = DKA_political_bureau
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_unite_faction_2
+		icon = GFX_focus_generic_court
+		prerequisite = {
+			focus = DKA_unite_faction
+		}
+		relative_position_id = DKA_unite_faction
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_loyalty_and_unity
+		icon = GFX_focus_generic_military_dictatorship
+		prerequisite = {
+			focus = DKA_unite_faction_2
+		}
+		prerequisite = {
+			focus = DKA_use_opposition_party
+			focus = DKA_dismiss_opposition_party
+		}
+		relative_position_id = DKA_unite_faction_2
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
 	focus = {
 		id = DKA_investment_on_state
-		icon = GFX_focus_generic_military_academy
+		icon = GFX_focus_GER_factories_for_resources
 		prerequisite = {
 			focus = DKA_eyes_of_storm
 		}
@@ -313,12 +547,36 @@
 		}
 		available = {
 		}
-		bypass = {
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
 		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		complete_tooltip = {
+	}
+	focus = {
+		id = DKA_think_tank
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = {
+			focus = DKA_investment_on_state
+		}
+		prerequisite = {
+			focus = DKA_strengthen_central_management
+			focus = DKA_commit_to_right_of_self_governance
+		}
+		mutually_exclusive = {
+			focus = DKA_political_bureau
+		}
+		relative_position_id = DKA_investment_on_state
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
 		}
 		completion_reward = {
 			add_popularity = {
@@ -329,14 +587,704 @@
 			add_political_power = 150
 		}
 	}
-	
+	focus = {
+		id = DKA_people_trust
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = {
+			focus = DKA_think_tank
+		}
+		relative_position_id = DKA_think_tank
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_minority_autonomous_region
+		icon = GFX_focus_CHI_registry_of_property
+		prerequisite = {
+			focus = DKA_people_trust
+		}
+		relative_position_id = DKA_people_trust
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_cross_party_cooperation
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		prerequisite = {
+			focus = DKA_people_trust
+		}
+		mutually_exclusive = {
+			focus = DKA_strive_for_votes
+		}
+		relative_position_id = DKA_people_trust
+		x = 1
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_supervisory_mechanism
+		icon = GFX_goal_generic_plotting
+		prerequisite = {
+			focus = DKA_think_tank
+		}
+		relative_position_id = DKA_think_tank
+		x = 3
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_future_wenpon_to_damon
+		icon = GFX_goal_generic_medium_industry
+		prerequisite = {
+			focus = DKA_supervisory_mechanism
+		}
+		relative_position_id = DKA_supervisory_mechanism
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_strive_for_votes
+		icon = GFX_goal_generic_foreign_investments
+		prerequisite = {
+			focus = DKA_future_wenpon_to_damon
+		}
+		mutually_exclusive = {
+			focus = DKA_cross_party_cooperation
+		}
+		relative_position_id = DKA_future_wenpon_to_damon
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_thunderbolt_operation
+		icon = GFX_goal_generic_ban_right_wing
+		prerequisite = {
+			focus = DKA_minority_autonomous_region
+		}
+		prerequisite = {
+			focus = DKA_cross_party_cooperation
+			focus = DKA_strive_for_votes
+		}
+		relative_position_id = DKA_minority_autonomous_region
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_construction_team_in_demon_city
+		icon = GFX_focus_generic_industrial_experts
+		prerequisite = {
+			focus = DKA_think_tank
+		}
+		prerequisite = {
+			focus = DKA_political_bureau
+		}
+		relative_position_id = DKA_unite_to_forward
+		x = 0
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_build_warship
+		icon = GFX_focus_generic_refit_civilian_ships
+		prerequisite = {
+			focus = DKA_construction_team_in_demon_city
+		}
+		relative_position_id = DKA_construction_team_in_demon_city
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_build_weapon
+		icon = GFX_focus_generic_military_industry
+		prerequisite = {
+			focus = DKA_construction_team_in_demon_city
+		}
+		relative_position_id = DKA_construction_team_in_demon_city
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_economic_zone
+		icon = GFX_focus_CHI_planned_economy
+		prerequisite = {
+			focus = DKA_build_warship
+		}
+		relative_position_id = DKA_build_warship
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_railway_security_law
+		icon = GFX_focus_generic_railroad
+		prerequisite = {
+			focus = DKA_build_weapon
+		}
+		relative_position_id = DKA_build_weapon
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_NAS
+		icon = GFX_focus_generic_university_3
+		prerequisite = {
+			focus = DKA_build_warship
+			focus = DKA_build_weapon
+		}
+		relative_position_id = DKA_build_warship
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_pre_war_to_west
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = {
+			focus = DKA_strengthen_central_management
+			focus = DKA_commit_to_right_of_self_governance
+		}
+		relative_position_id = DKA_unite_to_forward
+		x = -9
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_support_revolution
+		icon = GFX_focus_PRC_revolutionary_war_of_the_masses
+		prerequisite = {
+			focus = DKA_pre_war_to_west
+		}
+		relative_position_id = DKA_pre_war_to_west
+		x = -2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_coal_trade_to_bertram
+		icon = GFX_goal_generic_trade
+		prerequisite = {
+			focus = DKA_support_revolution
+		}
+		relative_position_id = DKA_support_revolution
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_bunker_level_towards_bertram
+		icon = GFX_focus_SWE_hedgehog_defense
+		prerequisite = {
+			focus = DKA_pre_war_to_west
+		}
+		relative_position_id = DKA_pre_war_to_west
+		x = 2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_ensure_west_railway_transportation
+		icon = GFX_focus_generic_road_investment
+		prerequisite = {
+			focus = DKA_bunker_level_towards_bertram
+		}
+		relative_position_id = DKA_bunker_level_towards_bertram
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_war_to_west
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = DKA_pre_war_to_west
+		}
+		relative_position_id = DKA_pre_war_to_west
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_fate_of_bertram
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = {
+			focus = DKA_coal_trade_to_bertram
+		}
+		prerequisite = {
+			focus = DKA_war_to_west
+		}
+		prerequisite = {
+			focus = DKA_ensure_west_railway_transportation
+		}
+		relative_position_id = DKA_war_to_west
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_pre_war_to_east
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = {
+			focus = DKA_strengthen_central_management
+			focus = DKA_commit_to_right_of_self_governance
+		}
+		relative_position_id = DKA_unite_to_forward
+		x = 9
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			JRT = {
+				exists = yes
+				NOT = {
+					has_war_with = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}
+		bypass = {
+			JRT = {
+				OR = {
+					exists = no
+					has_war_with = ROOT
+				}
+			}
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_stronger_connections
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = {
+			focus = DKA_pre_war_to_east
+		}
+		relative_position_id = DKA_pre_war_to_east
+		x = -2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_integrate_military_command_system
+		icon = GFX_focus_CHI_military_mission
+		prerequisite = {
+			focus = DKA_stronger_connections
+		}
+		relative_position_id = DKA_stronger_connections
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_east_industry_to_south
+		icon = GFX_focus_SOV_merge_plants
+		prerequisite = {
+			focus = DKA_pre_war_to_east
+		}
+		relative_position_id = DKA_pre_war_to_east
+		x = 2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_expand_naval_base
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = {
+			focus = DKA_east_industry_to_south
+		}
+		relative_position_id = DKA_east_industry_to_south
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_war_to_east
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = DKA_pre_war_to_east
+		}
+		relative_position_id = DKA_pre_war_to_east
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DKA_ethnic_integration_with_jura_tempest
+		icon = GFX_focus_PER_constitutional_monarchy
+		prerequisite = {
+			focus = DKA_integrate_military_command_system
+		}
+		prerequisite = {
+			focus = DKA_war_to_east
+		}
+		prerequisite = {
+			focus = DKA_expand_naval_base
+		}
+		relative_position_id = DKA_war_to_east
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+			add_stability = 0.05
+			add_political_power = 150
+		}
+	}
 	focus = {
 		id = DKA_sword_of_revolution
 		icon = GFX_focus_generic_social_democracy
 		mutually_exclusive = {
 			focus = DKA_eyes_of_storm
 		}
-		x = 10
+		x = 4
 		y = 0
 		cost = 0
 		ai_will_do = {
@@ -348,11 +1296,6 @@
 				always = no
 			}
 		}
-		bypass = {
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}

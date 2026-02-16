@@ -6,6 +6,7 @@ add_namespace = TIA_debug
 add_namespace = TIA_waiting_for_result
 add_namespace = tiam
 add_namespace = TIA_state_event
+add_namespace = TIA_faith
 country_event = {
 	#启示
 	id = TIA.1
@@ -1453,6 +1454,1209 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = TIA.121.a
+	}
+}
+
+###################################
+# 水神信仰线 - 事件
+###################################
+
+###################################
+# 芙宁娜正统线事件
+###################################
+
+# 南方阿库娅派抗议（芙宁娜正统诏令后触发）
+country_event = {
+	id = TIA_faith.1
+	title = TIA_faith.1.t
+	desc = TIA_faith.1.desc
+	picture = GFX_report_event_TIA_southern_protest
+
+	is_triggered_only = yes
+
+	#选项A: 派宪兵维持秩序
+	option = {
+		name = TIA_faith.1.a
+		add_stability = -0.03
+		add_political_power = -25
+		add_timed_idea = {
+			idea = TIA_faith_southern_protest_suppressed
+			days = 120
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+	#选项B: 暂时忽略，专注推进改革
+	option = {
+		name = TIA_faith.1.b
+		add_stability = -0.05
+		add_war_support = -0.03
+		ai_chance = {
+			factor = 30
+		}
+	}
+	#选项C: 与南方阿库娅派领袖秘密对话
+	option = {
+		name = TIA_faith.1.c
+		add_political_power = -50
+		add_stability = 0.02
+		hidden_effect = {
+			country_event = {
+				id = TIA_faith.2
+				days = 60
+				random_days = 30
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+# 秘密对话的后续
+country_event = {
+	id = TIA_faith.2
+	title = TIA_faith.2.t
+	desc = TIA_faith.2.desc
+	picture = GFX_report_event_TIA_secret_negotiation
+
+	is_triggered_only = yes
+
+	#选项A: 给予南方教会有限的礼仪保留权
+	option = {
+		name = TIA_faith.2.a
+		add_stability = 0.03
+		add_political_power = -30
+		custom_effect_tooltip = TIA_faith.2.a_tt
+		ai_chance = {
+			factor = 70
+		}
+	}
+	#选项B: 谈判破裂，强化裁判所权力
+	option = {
+		name = TIA_faith.2.b
+		add_stability = -0.02
+		add_war_support = 0.03
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# 水神裁判所首次重大审判
+country_event = {
+	id = TIA_faith.3
+	title = TIA_faith.3.t
+	desc = TIA_faith.3.desc
+	picture = GFX_report_event_TIA_water_court_trial
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_idea = TIA_water_court
+		NOT = { has_country_flag = TIA_faith_first_trial_done }
+	}
+
+	mean_time_to_happen = {
+		days = 90
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_first_trial_done
+	}
+
+	#选项A: 审判腐败的南方总督——震慑贵族
+	option = {
+		name = TIA_faith.3.a
+		add_political_power = 50
+		add_stability = 0.03
+		add_popularity = { ideology = neutrality popularity = 0.03 }
+		ai_chance = {
+			factor = 50
+		}
+	}
+	#选项B: 审判阿库娅派煽动者——巩固信仰统一
+	option = {
+		name = TIA_faith.3.b
+		add_political_power = 25
+		add_war_support = 0.03
+		add_popularity = { ideology = fascism popularity = -0.02 }
+		add_popularity = { ideology = communism popularity = -0.02 }
+		ai_chance = {
+			factor = 30
+		}
+	}
+	#选项C: 公开审判一名叛国的芙宁娜派极端分子——展示公正
+	option = {
+		name = TIA_faith.3.c
+		add_stability = 0.05
+		add_political_power = -25
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+###################################
+# 世俗化线事件
+###################################
+
+# 两派联合抗议（政教分离敕令后触发）
+country_event = {
+	id = TIA_faith.10
+	title = TIA_faith.10.t
+	desc = TIA_faith.10.desc
+	picture = GFX_report_event_TIA_joint_protest
+
+	is_triggered_only = yes
+
+	#选项A: 出动近卫军维持秩序，但不使用武力
+	option = {
+		name = TIA_faith.10.a
+		add_stability = -0.05
+		add_political_power = -50
+		add_timed_idea = {
+			idea = TIA_faith_martial_law_lite
+			days = 90
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+	#选项B: 无视抗议，让民众自行发泄
+	option = {
+		name = TIA_faith.10.b
+		add_stability = -0.08
+		add_war_support = -0.05
+		hidden_effect = {
+			country_event = {
+				id = TIA_faith.11
+				days = 30
+				random_days = 15
+			}
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+	#选项C: 米雅亲自发表公开演说
+	option = {
+		name = TIA_faith.10.c
+		add_political_power = -75
+		add_stability = 0.03
+		custom_effect_tooltip = TIA_faith.10.c_tt
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# 抗议升级——街头暴力
+country_event = {
+	id = TIA_faith.11
+	title = TIA_faith.11.t
+	desc = TIA_faith.11.desc
+	picture = GFX_report_event_TIA_street_violence
+
+	is_triggered_only = yes
+
+	#选项A: 宣布临时宵禁
+	option = {
+		name = TIA_faith.11.a
+		add_stability = -0.03
+		add_political_power = -30
+		add_timed_idea = {
+			idea = TIA_faith_curfew
+			days = 60
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+	#选项B: 逮捕暴力分子的领袖
+	option = {
+		name = TIA_faith.11.b
+		add_stability = 0.02
+		add_political_power = -50
+		add_popularity = { ideology = neutrality popularity = 0.02 }
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+# 知识分子请愿书（世俗化过渡期自动触发）
+country_event = {
+	id = TIA_faith.12
+	title = TIA_faith.12.t
+	desc = TIA_faith.12.desc
+	picture = GFX_report_event_TIA_scholar_petition
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_idea = TIA_secularization_transition
+		NOT = { has_country_flag = TIA_faith_scholar_petition_done }
+	}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_scholar_petition_done
+	}
+
+	#选项A: 接受请愿——邀请学者参与起草理性宣言
+	option = {
+		name = TIA_faith.12.a
+		add_political_power = 30
+		add_stability = 0.02
+		add_research_speed_factor = 0.02
+		custom_effect_tooltip = TIA_faith.12.a_tt
+		ai_chance = {
+			factor = 70
+		}
+	}
+	#选项B: 客气地回绝——现在不是时候
+	option = {
+		name = TIA_faith.12.b
+		add_political_power = 10
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+###################################
+# 阿库娅正统线事件
+###################################
+
+# 枫丹危机升温（阿库娅正统诏令后触发）
+country_event = {
+	id = TIA_faith.20
+	title = TIA_faith.20.t
+	desc = TIA_faith.20.desc
+	picture = GFX_report_event_TIA_fontaine_crisis
+
+	is_triggered_only = yes
+
+	#选项A: 向枫丹增派驻军
+	option = {
+		name = TIA_faith.20.a
+		add_political_power = -30
+		add_war_support = 0.03
+		if = {
+			limit = { FON = { exists = yes } }
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_aqua_fontaine_tension
+				}
+			}
+		}
+		custom_effect_tooltip = TIA_faith.20.a_tt
+		ai_chance = {
+			factor = 40
+		}
+	}
+	#选项B: 暂时搁置枫丹问题，集中精力推进布道
+	option = {
+		name = TIA_faith.20.b
+		add_stability = -0.03
+		hidden_effect = {
+			country_event = {
+				id = TIA_faith.21
+				days = 120
+				random_days = 60
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+	#选项C: 派遣阿库娅布道团进入枫丹
+	option = {
+		name = TIA_faith.20.c
+		add_political_power = -50
+		add_stability = -0.05
+		if = {
+			limit = { FON = { exists = yes } }
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_aqua_fontaine_provocation
+				}
+			}
+		}
+		custom_effect_tooltip = TIA_faith.20.c_tt
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# 枫丹刺玫会正式声明（搁置后延迟触发）
+country_event = {
+	id = TIA_faith.21
+	title = TIA_faith.21.t
+	desc = TIA_faith.21.desc
+	picture = GFX_report_event_TIA_fontaine_declaration
+
+	is_triggered_only = yes
+
+	#选项A: 以帝国名义谴责刺玫会声明
+	option = {
+		name = TIA_faith.21.a
+		add_political_power = -20
+		add_war_support = 0.02
+		if = {
+			limit = { FON = { exists = yes } }
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_aqua_fontaine_tension
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+	#选项B: 保持沉默
+	option = {
+		name = TIA_faith.21.b
+		add_stability = -0.02
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# 阿库娅派士兵的狂热（布道团建立后自动触发）
+country_event = {
+	id = TIA_faith.22
+	title = TIA_faith.22.t
+	desc = TIA_faith.22.desc
+	picture = GFX_report_event_TIA_zealot_soldiers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_idea = TIA_divine_grace_mission_spirit
+		NOT = { has_country_flag = TIA_faith_zealot_event_done }
+	}
+
+	mean_time_to_happen = {
+		days = 120
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_zealot_event_done
+	}
+
+	#选项A: 嘉奖这些狂热的信徒——鼓励更多人效仿
+	option = {
+		name = TIA_faith.22.a
+		add_war_support = 0.05
+		add_manpower = 10000
+		add_stability = -0.02
+		ai_chance = {
+			factor = 50
+		}
+	}
+	#选项B: 命令军官控制宗教热情——军纪不能动摇
+	option = {
+		name = TIA_faith.22.b
+		add_stability = 0.03
+		add_political_power = 25
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+###################################
+# 临时国民精神（用于事件）
+###################################
+# 注意：以下ideas需要合并到ideas文件中
+# 此处单独列出方便查看
+
+
+###################################
+# 水神信仰线 - 中后期事件
+# 追加至 events/TIA_faith_events.txt 末尾
+###################################
+
+###################################
+# 芙宁娜线 - 中后期事件
+###################################
+
+# 枫丹对朝圣协约的回应
+country_event = {
+	id = TIA_faith.4
+	title = TIA_faith.4.t
+	desc = TIA_faith.4.desc
+	picture = GFX_report_event_TIA_fontaine_concordat_response
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_fontaine_pilgrimage_concordat
+		NOT = { has_country_flag = TIA_faith_fontaine_response_done }
+	}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_fontaine_response_done
+	}
+
+	# 刺玫会温和派胜出，同意协约
+	option = {
+		name = TIA_faith.4.a
+		add_political_power = 50
+		add_stability = 0.03
+		if = {
+			limit = { FON = { exists = yes } }
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_pilgrimage_concordat_opinion
+				}
+			}
+		}
+		set_country_flag = TIA_fontaine_concordat_accepted
+		custom_effect_tooltip = TIA_faith.4.a_tt
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 南方净化后的游击活动
+country_event = {
+	id = TIA_faith.5
+	title = TIA_faith.5.t
+	desc = TIA_faith.5.desc
+	picture = GFX_report_event_TIA_southern_guerrilla
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_suppress_southern_aqua
+		NOT = { has_country_flag = TIA_faith_guerrilla_done }
+		NOT = { has_completed_focus = TIA_quell_southern_unrest }
+	}
+
+	mean_time_to_happen = {
+		days = 45
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_guerrilla_done
+	}
+
+	# 派遣密探渗透地下教会
+	option = {
+		name = TIA_faith.5.a
+		add_political_power = -40
+		add_stability = 0.02
+		custom_effect_tooltip = TIA_faith.5.a_tt
+		ai_chance = {
+			factor = 50
+		}
+	}
+	# 实施连坐制度——让地方领主为辖区内的叛乱负责
+	option = {
+		name = TIA_faith.5.b
+		add_political_power = -20
+		add_stability = -0.03
+		add_war_support = 0.02
+		ai_chance = {
+			factor = 30
+		}
+	}
+	# 以利诱之——宣布改信芙宁娜者可免三年赋税
+	option = {
+		name = TIA_faith.5.c
+		add_political_power = -60
+		add_stability = 0.04
+		add_consumer_goods = 0.02
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# "水之和谐"仪式——终点前的叙事高潮
+country_event = {
+	id = TIA_faith.6
+	title = TIA_faith.6.t
+	desc = TIA_faith.6.desc
+	picture = GFX_report_event_TIA_water_harmony_ceremony
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_sacred_land_development
+		has_idea = TIA_Funina_orthodoxy_mature
+		NOT = { has_country_flag = TIA_faith_harmony_ceremony_done }
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_harmony_ceremony_done
+	}
+
+	# 举行盛大的全国庆典
+	option = {
+		name = TIA_faith.6.a
+		add_political_power = 25
+		add_stability = 0.03
+		add_war_support = 0.02
+		country_event = {
+			id = TIA_faith.7
+			days = 15
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 仪式中的外国使节——各国对堤亚穆信仰政策的反应
+country_event = {
+	id = TIA_faith.7
+	title = TIA_faith.7.t
+	desc = TIA_faith.7.desc
+	picture = GFX_report_event_TIA_foreign_envoys
+
+	is_triggered_only = yes
+
+	# 欢迎使节——借此机会展示帝国的文明形象
+	option = {
+		name = TIA_faith.7.a
+		add_political_power = 30
+		every_country = {
+			limit = {
+				has_government = neutrality
+				NOT = { tag = TIA }
+				NOT = { has_war_with = TIA }
+				capital_scope = {
+					is_on_continent = ristania
+				}
+			}
+			add_opinion_modifier = {
+				target = TIA
+				modifier = TIA_faith_harmony_display
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	# 这是帝国内政，不需要外人指点
+	option = {
+		name = TIA_faith.7.b
+		add_political_power = 15
+		add_war_support = 0.02
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# "神罚之水"路线——异见者被发现
+country_event = {
+	id = TIA_faith.8
+	title = TIA_faith.8.t
+	desc = TIA_faith.8.desc
+	picture = GFX_report_event_TIA_dissenter_found
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_quell_southern_unrest
+		has_idea = TIA_Funina_orthodoxy_enforced
+		NOT = { has_country_flag = TIA_faith_dissenter_event_done }
+	}
+
+	mean_time_to_happen = {
+		days = 90
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_dissenter_event_done
+	}
+
+	# 公开处刑——杀鸡儆猴
+	option = {
+		name = TIA_faith.8.a
+		add_stability = 0.02
+		add_war_support = 0.03
+		add_political_power = -20
+		ai_chance = {
+			factor = 40
+		}
+	}
+	# 秘密处理——不要让此事扩大
+	option = {
+		name = TIA_faith.8.b
+		add_political_power = -10
+		ai_chance = {
+			factor = 40
+		}
+	}
+	# 流放——展示帝国的"仁慈"
+	option = {
+		name = TIA_faith.8.c
+		add_stability = -0.01
+		add_political_power = 10
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+###################################
+# 世俗化线 - 中后期事件
+###################################
+
+# 国家无神论——神殿没收中的抵抗
+country_event = {
+	id = TIA_faith.13
+	title = TIA_faith.13.t
+	desc = TIA_faith.13.desc
+	picture = GFX_report_event_TIA_temple_seizure
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_idea = TIA_state_atheism_spirit
+		NOT = { has_country_flag = TIA_faith_temple_seizure_done }
+	}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_temple_seizure_done
+	}
+
+	# 强制执行——把神像拆下来送博物馆
+	option = {
+		name = TIA_faith.13.a
+		add_political_power = -30
+		add_stability = -0.03
+		add_offsite_building = { type = industrial_complex level = 1 }
+		ai_chance = {
+			factor = 50
+		}
+	}
+	# 允许信徒搬走个人信仰物品后再征收
+	option = {
+		name = TIA_faith.13.b
+		add_political_power = -15
+		add_stability = 0.02
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# 启蒙帝国路线——外国学者慕名来访
+country_event = {
+	id = TIA_faith.14
+	title = TIA_faith.14.t
+	desc = TIA_faith.14.desc
+	picture = GFX_report_event_TIA_foreign_scholars
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_idea = TIA_secular_tolerance
+		NOT = { has_country_flag = TIA_faith_foreign_scholars_done }
+	}
+
+	mean_time_to_happen = {
+		days = 90
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_foreign_scholars_done
+	}
+
+	# 热烈欢迎——在十桥大学设立国际访问学者项目
+	option = {
+		name = TIA_faith.14.a
+		add_political_power = 25
+		add_research_speed_factor = 0.02
+		add_timed_idea = {
+			idea = TIA_faith_international_scholars
+			days = 365
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	# 有限度接纳——要求学者们签署不干涉内政声明
+	option = {
+		name = TIA_faith.14.b
+		add_political_power = 15
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# 钢铁理性路线——魔法的科学化突破
+country_event = {
+	id = TIA_faith.15
+	title = TIA_faith.15.t
+	desc = TIA_faith.15.desc
+	picture = GFX_report_event_TIA_magic_science_breakthrough
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_idea = TIA_scientific_supremacy_spirit
+		NOT = { has_country_flag = TIA_faith_magic_science_done }
+	}
+
+	mean_time_to_happen = {
+		days = 120
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_magic_science_done
+	}
+
+	# 立即投入军事应用
+	option = {
+		name = TIA_faith.15.a
+		add_political_power = 25
+		add_war_support = 0.03
+		add_tech_bonus = {
+			name = TIA_magic_science_military_bonus
+			bonus = 1.0
+			uses = 1
+			category = electronics
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+	# 优先民用推广——魔力发电、魔导通信
+	option = {
+		name = TIA_faith.15.b
+		add_political_power = 50
+		add_stability = 0.03
+		random_owned_controlled_state = {
+			limit = { is_core_of = TIA free_building_slots = { building = industrial_complex size > 0 include_locked = yes } }
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+	# 公开发表论文——让全世界看看堤亚穆的实力
+	option = {
+		name = TIA_faith.15.c
+		add_political_power = 30
+		add_research_speed_factor = 0.02
+		every_country = {
+			limit = {
+				NOT = { tag = TIA }
+				NOT = { has_war_with = TIA }
+			}
+			add_opinion_modifier = {
+				target = TIA
+				modifier = TIA_faith_science_prestige
+			}
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# 世俗化路线——宗教势力最后的反扑（挺过风暴阶段）
+country_event = {
+	id = TIA_faith.16
+	title = TIA_faith.16.t
+	desc = TIA_faith.16.desc
+	picture = GFX_report_event_TIA_last_resistance
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_idea = TIA_secularization_transition
+		NOT = { has_country_flag = TIA_faith_last_resistance_done }
+	}
+
+	mean_time_to_happen = {
+		days = 120
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_last_resistance_done
+	}
+
+	# 以静制动——不回应就是最好的回应
+	option = {
+		name = TIA_faith.16.a
+		add_stability = -0.02
+		add_political_power = 20
+		ai_chance = {
+			factor = 40
+		}
+	}
+	# 邀请两派代表参加"国家未来恳谈会"
+	option = {
+		name = TIA_faith.16.b
+		add_political_power = -40
+		add_stability = 0.04
+		custom_effect_tooltip = TIA_faith.16.b_tt
+		ai_chance = {
+			factor = 40
+		}
+	}
+	# 公布帝国财政的真实数据——让人民看看宗教纷争的代价
+	option = {
+		name = TIA_faith.16.c
+		add_political_power = -20
+		add_stability = 0.02
+		add_war_support = 0.02
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+###################################
+# 阿库娅线 - 中后期事件
+###################################
+
+# 圣战军团首次出征前的祝祷
+country_event = {
+	id = TIA_faith.23
+	title = TIA_faith.23.t
+	desc = TIA_faith.23.desc
+	picture = GFX_report_event_TIA_sacred_army_blessing
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_sacred_army_formation
+		NOT = { has_country_flag = TIA_faith_sacred_army_blessing_done }
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_sacred_army_blessing_done
+	}
+
+	# 让阿库娅最高神官主持仪式——宗教与军事的最高结合
+	option = {
+		name = TIA_faith.23.a
+		add_war_support = 0.05
+		army_experience = 10
+		custom_effect_tooltip = TIA_faith.23.a_tt
+		ai_chance = {
+			factor = 60
+		}
+	}
+	# 由米雅本人主持——提醒所有人，军队效忠的是帝国
+	option = {
+		name = TIA_faith.23.b
+		add_political_power = 30
+		add_war_support = 0.03
+		army_experience = 5
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+# 文艺复兴——神学与科学的融合论战
+country_event = {
+	id = TIA_faith.24
+	title = TIA_faith.24.t
+	desc = TIA_faith.24.desc
+	picture = GFX_report_event_TIA_theological_debate
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_reconcile_northern_scholars
+		has_idea = TIA_Aqua_pragmatic_faith
+		NOT = { has_country_flag = TIA_faith_theological_debate_done }
+	}
+
+	mean_time_to_happen = {
+		days = 90
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_theological_debate_done
+	}
+
+	# 在十桥大学举办公开辩论——让真理越辩越明
+	option = {
+		name = TIA_faith.24.a
+		add_political_power = 30
+		add_stability = 0.03
+		add_research_speed_factor = 0.01
+		custom_effect_tooltip = TIA_faith.24.a_tt
+		ai_chance = {
+			factor = 50
+		}
+	}
+	# 出版官方立场文件——以皇家学术院的名义统一口径
+	option = {
+		name = TIA_faith.24.b
+		add_political_power = 20
+		add_stability = 0.02
+		ai_chance = {
+			factor = 30
+		}
+	}
+	# 让爱丽丝·贝德福德主持——她是两边都尊重的人
+	option = {
+		name = TIA_faith.24.c
+		trigger = {
+			has_completed_focus = TIA_cabinet_Alice_Bedford
+		}
+		add_political_power = 50
+		add_stability = 0.05
+		add_research_speed_factor = 0.02
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# 军国神权终点——最高神官要求与皇帝共治
+country_event = {
+	id = TIA_faith.25
+	title = TIA_faith.25.t
+	desc = TIA_faith.25.desc
+	picture = GFX_report_event_TIA_high_priest_demand
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_idea = TIA_aqua_militant_theocracy_spirit
+		NOT = { has_country_flag = TIA_faith_high_priest_demand_done }
+	}
+
+	mean_time_to_happen = {
+		days = 180
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_high_priest_demand_done
+	}
+
+	# 拒绝——皇权不可分割
+	option = {
+		name = TIA_faith.25.a
+		add_political_power = -75
+		add_stability = -0.05
+		add_war_support = -0.05
+		custom_effect_tooltip = TIA_faith.25.a_tt
+		ai_chance = {
+			factor = 40
+		}
+	}
+	# 接受形式上的"共治"——给神官一个虚衔来安抚他
+	option = {
+		name = TIA_faith.25.b
+		add_political_power = -30
+		add_stability = 0.03
+		add_war_support = 0.03
+		custom_effect_tooltip = TIA_faith.25.b_tt
+		ai_chance = {
+			factor = 40
+		}
+	}
+	# 以"阿库娅的旨意"为借口，解除最高神官的职务
+	option = {
+		name = TIA_faith.25.c
+		add_political_power = -100
+		add_stability = -0.08
+		add_war_support = 0.05
+		hidden_effect = {
+			country_event = {
+				id = TIA_faith.28
+				days = 30
+				random_days = 30
+			}
+		}
+		custom_effect_tooltip = TIA_faith.25.c_tt
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# 仁慈帝国终点——丰收祭典
+country_event = {
+	id = TIA_faith.26
+	title = TIA_faith.26.t
+	desc = TIA_faith.26.desc
+	picture = GFX_report_event_TIA_harvest_festival
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_idea = TIA_aqua_benevolent_spirit
+		NOT = { has_country_flag = TIA_faith_harvest_festival_done }
+	}
+
+	mean_time_to_happen = {
+		days = 120
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_harvest_festival_done
+	}
+
+	# 在全国举办"水之恩泽"丰收庆典
+	option = {
+		name = TIA_faith.26.a
+		add_political_power = 75
+		add_stability = 0.05
+		add_war_support = 0.02
+		add_timed_idea = {
+			idea = TIA_faith_harvest_blessing
+			days = 180
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 阿库娅正统——北方学院的秘密集会（布道团阶段）
+country_event = {
+	id = TIA_faith.27
+	title = TIA_faith.27.t
+	desc = TIA_faith.27.desc
+	picture = GFX_report_event_TIA_northern_secret_meeting
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_idea = TIA_divine_grace_mission_spirit
+		NOT = { has_country_flag = TIA_faith_northern_secret_done }
+	}
+
+	mean_time_to_happen = {
+		days = 150
+	}
+
+	immediate = {
+		set_country_flag = TIA_faith_northern_secret_done
+	}
+
+	# 突袭集会现场——逮捕所有参与者
+	option = {
+		name = TIA_faith.27.a
+		add_political_power = -30
+		add_stability = -0.03
+		add_popularity = { ideology = neutrality popularity = 0.03 }
+		ai_chance = {
+			factor = 30
+		}
+	}
+	# 假装不知道——他们翻不起大浪
+	option = {
+		name = TIA_faith.27.b
+		add_stability = -0.02
+		hidden_effect = {
+			set_country_flag = TIA_faith_northern_ignored
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+	# 派密探混入——了解他们的真正目的
+	option = {
+		name = TIA_faith.27.c
+		add_political_power = -20
+		custom_effect_tooltip = TIA_faith.27.c_tt
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+# 解除最高神官后的后续
+country_event = {
+	id = TIA_faith.28
+	title = TIA_faith.28.t
+	desc = TIA_faith.28.desc
+	picture = GFX_report_event_TIA_priest_aftermath
+
+	is_triggered_only = yes
+
+	# 前神官的追随者安静地接受了现实
+	option = {
+		name = TIA_faith.28.a
+		trigger = {
+			stability > 0.4
+		}
+		add_stability = 0.05
+		add_political_power = 50
+		ai_chance = {
+			factor = 50
+		}
+	}
+	# 前神官的追随者发动了小规模叛乱
+	option = {
+		name = TIA_faith.28.b
+		trigger = {
+			stability < 0.4
+		}
+		add_stability = -0.05
+		add_political_power = -50
+		add_manpower = -3000
+		ai_chance = {
+			factor = 50
+		}
 	}
 }
 

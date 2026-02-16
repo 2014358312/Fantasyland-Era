@@ -3826,4 +3826,704 @@ focus_tree = {
 			factor = 1
 		}
 	}
+
+	###################################
+	# 水神信仰线 - 芙宁娜正统
+	###################################
+
+	focus = {
+		#芙宁娜正统诏令
+		id = TIA_Funina_orthodoxy_decree
+		icon = GFX_focus_TIA_Funina_orthodoxy_decree
+		x = 69
+		y = 0
+		cost = 5
+		mutually_exclusive = {
+			focus = TIA_Aqua_orthodoxy_decree
+		}
+		mutually_exclusive = {
+			focus = TIA_secularization_edict
+		}
+		available = {
+			has_idea = TIA_Funina_national_belief
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+			add_war_support = -0.03
+			swap_ideas = {
+				remove_idea = TIA_Funina_national_belief
+				add_idea = TIA_Funina_orthodoxy_established
+			}
+			hidden_effect = {
+				country_event = {
+					id = TIA_faith.1
+					days = 120
+					random_days = 60
+				}
+			}
+			custom_effect_tooltip = TIA_Funina_orthodoxy_decree_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#水神裁判所
+		id = TIA_water_court_establishment
+		icon = GFX_focus_TIA_water_court_establishment
+		relative_position_id = TIA_Funina_orthodoxy_decree
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_Funina_orthodoxy_decree
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.05
+			remove_ideas = TIA_legitimate_dispute
+			add_ideas = TIA_water_court
+			unlock_decision_category_tooltip = TIA_water_court_decisions
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#枫丹朝圣协约
+		id = TIA_fontaine_pilgrimage_concordat
+		icon = GFX_focus_TIA_fontaine_pilgrimage_concordat
+		relative_position_id = TIA_water_court_establishment
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_water_court_establishment
+		}
+		mutually_exclusive = {
+			focus = TIA_suppress_southern_aqua
+		}
+		available = {
+			FON = {
+				exists = yes
+				NOT = { has_war_with = TIA }
+			}
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.03
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_pilgrimage_concordat_opinion
+				}
+			}
+			add_opinion_modifier = {
+				target = FON
+				modifier = TIA_pilgrimage_concordat_opinion
+			}
+			custom_effect_tooltip = TIA_fontaine_pilgrimage_concordat_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#南方净化令
+		id = TIA_suppress_southern_aqua
+		icon = GFX_focus_TIA_suppress_southern_aqua
+		relative_position_id = TIA_water_court_establishment
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_water_court_establishment
+		}
+		mutually_exclusive = {
+			focus = TIA_fontaine_pilgrimage_concordat
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = -100
+			add_stability = -0.10
+			add_war_support = 0.05
+			add_timed_idea = {
+				idea = TIA_southern_purification
+				days = 180
+			}
+			custom_effect_tooltip = TIA_suppress_southern_aqua_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#圣地开发计划
+		id = TIA_sacred_land_development
+		icon = GFX_focus_TIA_sacred_land_development
+		relative_position_id = TIA_fontaine_pilgrimage_concordat
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_fontaine_pilgrimage_concordat
+		}
+		available = {
+		}
+		completion_reward = {
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = TIA_Funina_orthodoxy_established
+				add_idea = TIA_Funina_orthodoxy_mature
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = FON
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = TIA_sacred_land_development_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#平定南方动乱
+		id = TIA_quell_southern_unrest
+		icon = GFX_focus_TIA_quell_southern_unrest
+		relative_position_id = TIA_suppress_southern_aqua
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_suppress_southern_aqua
+		}
+		available = {
+			has_war = no
+		}
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.08
+			add_manpower = -5000
+			remove_ideas = TIA_southern_purification
+			swap_ideas = {
+				remove_idea = TIA_Funina_orthodoxy_established
+				add_idea = TIA_Funina_orthodoxy_enforced
+			}
+			custom_effect_tooltip = TIA_quell_southern_unrest_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#"水之和谐"——神权与王权的统一
+		id = TIA_theocratic_harmony
+		icon = GFX_focus_TIA_theocratic_harmony
+		relative_position_id = TIA_sacred_land_development
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = TIA_sacred_land_development
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 200
+			add_stability = 0.15
+			swap_ideas = {
+				remove_idea = TIA_Funina_orthodoxy_mature
+				add_idea = TIA_water_harmony_spirit
+			}
+			custom_effect_tooltip = TIA_theocratic_harmony_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#"神罚之水"——绝对信仰权威
+		id = TIA_divine_authority
+		icon = GFX_focus_TIA_divine_authority
+		relative_position_id = TIA_quell_southern_unrest
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = TIA_quell_southern_unrest
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.10
+			add_war_support = 0.10
+			swap_ideas = {
+				remove_idea = TIA_Funina_orthodoxy_enforced
+				add_idea = TIA_divine_authority_spirit
+			}
+			custom_effect_tooltip = TIA_divine_authority_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	###################################
+	# 水神信仰线 - 世俗化
+	###################################
+
+	focus = {
+		#政教分离敕令
+		id = TIA_secularization_edict
+		icon = GFX_focus_TIA_secularization_edict
+		x = 75
+		y = 0
+		cost = 5
+		mutually_exclusive = {
+			focus = TIA_Funina_orthodoxy_decree
+		}
+		mutually_exclusive = {
+			focus = TIA_Aqua_orthodoxy_decree
+		}
+		available = {
+			has_idea = TIA_no_national_belief
+		}
+		completion_reward = {
+			add_political_power = -150
+			add_stability = -0.15
+			add_war_support = -0.10
+			swap_ideas = {
+				remove_idea = TIA_no_national_belief
+				add_idea = TIA_secularization_chaos
+			}
+			remove_ideas = TIA_legitimate_dispute
+			hidden_effect = {
+				country_event = {
+					id = TIA_faith.10
+					days = 45
+					random_days = 45
+				}
+			}
+			custom_effect_tooltip = TIA_secularization_edict_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#挺过风暴
+		id = TIA_weather_the_storm
+		icon = GFX_focus_TIA_weather_the_storm
+		relative_position_id = TIA_secularization_edict
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_secularization_edict
+		}
+		available = {
+			stability > 0.2
+		}
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 50
+			swap_ideas = {
+				remove_idea = TIA_secularization_chaos
+				add_idea = TIA_secularization_transition
+			}
+			custom_effect_tooltip = TIA_weather_the_storm_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#理性时代宣言
+		id = TIA_age_of_reason_proclamation
+		icon = GFX_focus_TIA_age_of_reason_proclamation
+		relative_position_id = TIA_weather_the_storm
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_weather_the_storm
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = TIA_secularization_transition
+				add_idea = TIA_age_of_reason
+			}
+			if = {
+				limit = {
+					has_completed_focus = TIA_cabinet_Alice_Bedford
+				}
+				add_research_slot = 1
+			}
+			custom_effect_tooltip = TIA_age_of_reason_proclamation_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#信仰自由保障法
+		id = TIA_freedom_of_faith_act
+		icon = GFX_focus_TIA_freedom_of_faith_act
+		relative_position_id = TIA_age_of_reason_proclamation
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_age_of_reason_proclamation
+		}
+		mutually_exclusive = {
+			focus = TIA_state_atheism
+		}
+		available = {
+		}
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 50
+			swap_ideas = {
+				remove_idea = TIA_age_of_reason
+				add_idea = TIA_secular_tolerance
+			}
+			custom_effect_tooltip = TIA_freedom_of_faith_act_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#国家无神论
+		id = TIA_state_atheism
+		icon = GFX_focus_TIA_state_atheism
+		relative_position_id = TIA_age_of_reason_proclamation
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_age_of_reason_proclamation
+		}
+		mutually_exclusive = {
+			focus = TIA_freedom_of_faith_act
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 200
+			add_stability = -0.05
+			add_offsite_building = { type = industrial_complex level = 3 }
+			swap_ideas = {
+				remove_idea = TIA_age_of_reason
+				add_idea = TIA_state_atheism_spirit
+			}
+			custom_effect_tooltip = TIA_state_atheism_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#"理性之光"——启蒙帝国
+		id = TIA_enlightened_empire
+		icon = GFX_focus_TIA_enlightened_empire
+		relative_position_id = TIA_freedom_of_faith_act
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = TIA_freedom_of_faith_act
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 300
+			add_stability = 0.10
+			swap_ideas = {
+				remove_idea = TIA_secular_tolerance
+				add_idea = TIA_enlightened_empire_spirit
+			}
+			custom_effect_tooltip = TIA_enlightened_empire_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#"钢铁理性"——科学至上帝国
+		id = TIA_scientific_supremacy
+		icon = GFX_focus_TIA_scientific_supremacy
+		relative_position_id = TIA_state_atheism
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = TIA_state_atheism
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 150
+			add_research_slot = 1
+			swap_ideas = {
+				remove_idea = TIA_state_atheism_spirit
+				add_idea = TIA_scientific_supremacy_spirit
+			}
+			custom_effect_tooltip = TIA_scientific_supremacy_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	###################################
+	# 水神信仰线 - 阿库娅正统
+	###################################
+
+	focus = {
+		#阿库娅正统诏令
+		id = TIA_Aqua_orthodoxy_decree
+		icon = GFX_focus_TIA_Aqua_orthodoxy_decree
+		x = 81
+		y = 0
+		cost = 5
+		mutually_exclusive = {
+			focus = TIA_Funina_orthodoxy_decree
+		}
+		mutually_exclusive = {
+			focus = TIA_secularization_edict
+		}
+		available = {
+			has_idea = TIA_Akua_national_belief
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_stability = -0.03
+			add_war_support = 0.08
+			swap_ideas = {
+				remove_idea = TIA_Akua_national_belief
+				add_idea = TIA_Aqua_orthodoxy_established
+			}
+			hidden_effect = {
+				country_event = {
+					id = TIA_faith.20
+					days = 80
+					random_days = 40
+				}
+			}
+			custom_effect_tooltip = TIA_Aqua_orthodoxy_decree_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#女神恩泽布道团
+		id = TIA_divine_grace_mission
+		icon = GFX_focus_TIA_divine_grace_mission
+		relative_position_id = TIA_Aqua_orthodoxy_decree
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_Aqua_orthodoxy_decree
+		}
+		available = {
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			remove_ideas = TIA_legitimate_dispute
+			add_ideas = TIA_divine_grace_mission_spirit
+			unlock_decision_category_tooltip = TIA_grace_mission_decisions
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#神恩征召令
+		id = TIA_holy_conscription
+		icon = GFX_focus_TIA_holy_conscription
+		relative_position_id = TIA_divine_grace_mission
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_divine_grace_mission
+		}
+		mutually_exclusive = {
+			focus = TIA_reconcile_northern_scholars
+		}
+		available = {
+		}
+		completion_reward = {
+			add_war_support = 0.10
+			add_manpower = 50000
+			remove_ideas = TIA_divine_grace_mission_spirit
+			swap_ideas = {
+				remove_idea = TIA_Aqua_orthodoxy_established
+				add_idea = TIA_Aqua_militant_faith
+			}
+			custom_effect_tooltip = TIA_holy_conscription_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#北方学者安抚
+		id = TIA_reconcile_northern_scholars
+		icon = GFX_focus_TIA_reconcile_northern_scholars
+		relative_position_id = TIA_divine_grace_mission
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_divine_grace_mission
+		}
+		mutually_exclusive = {
+			focus = TIA_holy_conscription
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = -80
+			add_stability = 0.08
+			add_research_slot = 1
+			remove_ideas = TIA_divine_grace_mission_spirit
+			swap_ideas = {
+				remove_idea = TIA_Aqua_orthodoxy_established
+				add_idea = TIA_Aqua_pragmatic_faith
+			}
+			custom_effect_tooltip = TIA_reconcile_northern_scholars_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#圣战军团编成
+		id = TIA_sacred_army_formation
+		icon = GFX_focus_TIA_sacred_army_formation
+		relative_position_id = TIA_holy_conscription
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_holy_conscription
+		}
+		available = {
+		}
+		completion_reward = {
+			add_manpower = 30000
+			add_war_support = 0.05
+			custom_effect_tooltip = TIA_sacred_army_formation_tt
+			hidden_effect = {
+				load_oob = TIA_divine_guard
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#阿库娅文艺复兴
+		id = TIA_aqua_cultural_renaissance
+		icon = GFX_focus_TIA_aqua_cultural_renaissance
+		relative_position_id = TIA_reconcile_northern_scholars
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_reconcile_northern_scholars
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+			add_timed_idea = {
+				idea = TIA_aqua_renaissance_research_boost
+				days = 365
+			}
+			swap_ideas = {
+				remove_idea = TIA_Aqua_pragmatic_faith
+				add_idea = TIA_Aqua_enlightened_faith
+			}
+			custom_effect_tooltip = TIA_aqua_cultural_renaissance_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#"神恩即力量"——阿库娅军国神权
+		id = TIA_aqua_theocratic_militarism
+		icon = GFX_focus_TIA_aqua_theocratic_militarism
+		relative_position_id = TIA_sacred_army_formation
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = TIA_sacred_army_formation
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.15
+			swap_ideas = {
+				remove_idea = TIA_Aqua_militant_faith
+				add_idea = TIA_aqua_militant_theocracy_spirit
+			}
+			custom_effect_tooltip = TIA_aqua_theocratic_militarism_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		#"水之恩泽"——仁慈帝国
+		id = TIA_aqua_benevolent_empire
+		icon = GFX_focus_TIA_aqua_benevolent_empire
+		relative_position_id = TIA_aqua_cultural_renaissance
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = TIA_aqua_cultural_renaissance
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 200
+			add_stability = 0.15
+			swap_ideas = {
+				remove_idea = TIA_Aqua_enlightened_faith
+				add_idea = TIA_aqua_benevolent_spirit
+			}
+			custom_effect_tooltip = TIA_aqua_benevolent_empire_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }
