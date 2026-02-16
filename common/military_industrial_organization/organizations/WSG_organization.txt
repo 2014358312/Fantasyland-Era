@@ -18,111 +18,11 @@ WSG_mobile_tank_organization = {
 }
 
 WSG_medium_tank_organization = {
-	
+	include = generic_medium_tank_organization
 	icon = GFX_idea_army_ordnance_department
 	allowed = {	
 		tag = WSG
 		has_dlc = "Arms Against Tyranny"
-	}
-	equipment_type = { 
-			armor 
-			mechanized_equipment
-			motorized_equipment
-	 }
-	research_categories = {
-		    armor
-		    mechanized_equipment
-			motorized_equipment		
-	}
-	tree_header_text = {
-		text = WSG_medium_armor_RJ
-		x = 1
-	}
-
-	tree_header_text = {
-		text = WSG_medium_armor_YY
-		x = 4
-	}
-
-	tree_header_text = {
-		text = WSG_medium_armor_XS
-		x = 7
-	}
-
-	
-	
-	initial_trait = {
-	    token = WSG_armor
-		name = WSG_armor
-		
-		equipment_bonus = {
-			reliability = 0.1
-			maximum_speed = 0.1
-			soft_attack = 0.1
-			hard_attack = 0.1
-			breakthrough = 0.1
-		}
-		production_bonus = {
-			production_capacity_factor = 0.1
-		}
-	}
-	
-	trait = {
-		token = WSG_armor_0
-		name = WSG_armor_0
-		icon = GFX_generic_mio_department_icon_tank_medium_tank_production
-
-		position = { x=2 y=0 }
-		
-
-		limit_to_equipment_type = {
-			mio_cat_eq_all_medium_tank
-		}
-
-		equipment_bonus = {
-			reliability = 0.25
-		}
-	}
-    trait = {
-		token = WSG_armor_1
-		name = WSG_armor_1
-		icon = GFX_generic_mio_department_icon_tank_medium_tank_weapons
-		
-		position = { x = 7 y = 0 }
-
-		relative_position_id = generic_mio_trait_light_assault_gun_improvements
-		
-
-		limit_to_equipment_type = { medium_tank_artillery_chassis 
-		                            light_tank_artillery_chassis 
-		                            heavy_tank_artillery_chassis }
-
-		equipment_bonus = {
-			
-		}
-	}
-    trait = {
-		token = WSG_armor_2
-		name = WSG_armor_2
-		icon = GFX_generic_mio_trait_icon_reliability
-		
-		position = { x = 6  y = 1 }
-
-		relative_position_id = generic_mio_trait_light_assault_gun_improvements
-		
-		all_parents = { WSG_armor_1 }
-
-		limit_to_equipment_type = { light_tank_artillery_chassis }
-
-		equipment_bonus = {
-			
-		}
-	}
-	trait = {
-		token = WSG_armor_3
-		name = WSG_armor_3
-		icon = GFX_1
-		position = { x = 8  y = 1 }
 	}
 }
 
