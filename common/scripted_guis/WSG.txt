@@ -1,0 +1,169 @@
+scripted_gui = {
+	WSG_zlp_gui = {	
+		window_name = "WSG_zlp"
+		context_type = decision_category
+		visible = {	
+			
+		}
+		effects = {
+			open_gqst_btn_click = {
+				
+				if = {
+					limit = {
+						has_country_flag = show_gqst_window
+					}
+					clr_country_flag = show_gqst_window
+					
+				}
+				else = {
+					set_country_flag = show_gqst_window
+					
+				}
+			}
+			
+		}	
+	}
+    gqst_window_gui = {
+        window_name = "gqst_window"
+		context_type = player_context
+		visible = {	
+			
+            has_country_flag = show_gqst_window
+		}
+		effects = {
+			gqst_button_exit_click = {
+             clr_country_flag = show_gqst_window			 
+            }
+            menu_1_btn_click ={                          #鲱鱼罐头
+                
+			if = {
+					limit = {
+						not = { has_country_flag = qiyong_feiyuguantou }
+					}
+					set_variable = {
+						feiyuguantou_cishu = 1
+					}
+					
+				}
+				else = {
+					limit = {
+						check_variable = {
+							feiyuguantou_cishu > 0
+						}
+					}
+					add_to_variable = { feiyuguantou_cishu = 1 }
+				}
+			random_list = {
+				10 = {  country_event = { days = 0 id = feiyuguantou_shijian.5 } }
+                
+				30 = {  country_event = { days = 0 id = feiyuguantou_shijian.6 } }
+				
+				
+				}
+				
+			add_to_variable = {
+				var = WSG_panci
+				value = -25
+			}
+            set_country_flag = WSG_stkf
+			
+			
+			custom_effect_tooltip = menu_1_btn_tt					
+	   	}    
+        
+		menu_2_btn_click = {     #甜豆花
+            add_to_variable = {
+				var = WSG_panci
+				value = -50
+			}
+			add_timed_idea = {
+            idea = WSG_tdh_jc
+            days = 60
+            }
+			set_country_flag = WSG_stkf
+			custom_effect_tooltip = menu_2_btn_tt
+		}
+        
+		menu_3_btn_click = {     #苹果派
+            add_to_variable = {
+				var = WSG_panci
+				value = -50
+			}
+			add_timed_idea = {
+            idea = WSG_pgp_jc
+            days = 60
+            }
+			set_country_flag = WSG_stkf
+			custom_effect_tooltip = menu_3_btn_tt
+		}
+        
+		menu_4_btn_click = {     #鱼雷果汁
+            add_to_variable = {
+				var = WSG_panci
+				value = -50
+			}
+			add_timed_idea = {
+            idea = WSG_ylgz_jc
+            days = 60
+            }
+			set_country_flag = WSG_stkf
+			custom_effect_tooltip = menu_4_btn_tt
+		}
+
+        menu_5_btn_click = {      #黑森林蛋糕
+            add_to_variable = {
+				var = WSG_panci
+				value = -50
+			}
+			add_timed_idea = {
+            idea = WSG_hsldg_jc
+            days = 60
+            }
+			set_country_flag = WSG_stkf
+			custom_effect_tooltip = menu_5_btn_tt
+		}
+        
+		menu_6_btn_click = {      #冰淇淋
+            add_to_variable = {
+				var = WSG_panci
+				value = -100
+			}
+			add_timed_idea = {
+            idea = WSG_F4U_jc
+            days = 60
+            }
+			set_country_flag = WSG_stkf
+			custom_effect_tooltip = menu_6_btn_tt
+		}
+
+
+
+	}
+	triggers = {
+		menu_1_btn_click_enabled = {
+				check_variable = { WSG_panci > 24 }
+				not = { has_country_flag = WSG_stkf }
+			}
+		menu_2_btn_click_enabled = {
+				check_variable = { WSG_panci > 49 }
+				not = { has_country_flag = WSG_stkf }
+			}
+		menu_3_btn_click_enabled = {
+				check_variable = { WSG_panci > 49 }
+				not = { has_country_flag = WSG_stkf }
+			}
+		menu_4_btn_click_enabled = {
+				check_variable = { WSG_panci > 49 }
+				not = { has_country_flag = WSG_stkf }
+			}
+		menu_5_btn_click_enabled = {
+				check_variable = { WSG_panci > 49 }
+				not = { has_country_flag = WSG_stkf }
+			}
+		menu_6_btn_click_enabled = {
+				check_variable = { WSG_panci > 99 }
+				not = { has_country_flag = WSG_stkf }
+			}
+	}			    
+}
+}

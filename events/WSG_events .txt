@@ -11,6 +11,9 @@ add_namespace = WSG_inner_circle_jean_bart
 add_namespace = WSG_inner_circle_bubnov
 add_namespace = WSG_inner_circle_clausewitz
 add_namespace = WSG_event
+add_namespace = feiyuguantou_shijian
+add_namespace = WSG_stkf_event
+
 
 country_event = {
 	id = WSG_event.001
@@ -820,4 +823,155 @@ country_event = {
 			}
 		}
 	}
+}
+
+
+country_event = {
+    id = feiyuguantou_shijian.1    
+    is_triggered_only = no
+    fire_only_once = yes
+    title = feiyuguantou_shijian.1.t
+    desc = feiyuguantou_shijian.1.d
+	picture = GFX_event_fygt1
+    trigger = {
+        check_variable = { feiyuguantou_cishu > 1 }
+    }
+    mean_time_to_happen = {days = 1}
+    option = {
+        name = feiyuguantou_shijian.1.a
+    }
+}
+
+country_event = {
+    id = feiyuguantou_shijian.2    
+    is_triggered_only = no
+    fire_only_once = yes
+    title = feiyuguantou_shijian.2.t
+    desc = feiyuguantou_shijian.2.d
+	picture = GFX_event_fygt2
+    trigger = {
+        check_variable = { feiyuguantou_cishu > 2 }
+    }
+    mean_time_to_happen = {days = 1}
+    option = {
+        name = feiyuguantou_shijian.2.a
+    }
+}
+country_event = {
+    id = feiyuguantou_shijian.3    
+    is_triggered_only = no        
+    title = feiyuguantou_shijian.3.t
+    desc = feiyuguantou_shijian.3.d
+	picture = GFX_event_fygt3
+    fire_only_once = yes
+    trigger = {
+        check_variable = { feiyuguantou_cishu > 3 }
+    }
+    mean_time_to_happen = {days = 1}
+    option = {
+    name = feiyuguantou_shijian.3.a   
+    add_timed_idea = {
+    idea = gangqu_revolution
+    days = 30
+    }    
+}
+}   
+
+country_event = {
+    id = feiyuguantou_shijian.4    
+    is_triggered_only = no        
+    title = feiyuguantou_shijian.3.t
+    desc = feiyuguantou_shijian.3.d
+	picture = GFX_event_fygt3
+    trigger = {
+        check_variable = { feiyuguantou_cishu > 4 }
+    }
+    mean_time_to_happen = {days = 1}
+    option = {
+    name = feiyuguantou_shijian.3.a   
+    if = {
+        limit = {
+          not={  has_idea = gangqu_revolution}
+        }
+    
+    add_timed_idea = {
+    idea = gangqu_revolution
+    days = 30
+    } 
+    }   
+    else = {
+        limit = { has_idea = gangqu_revolution}
+        modify_timed_idea = {
+    idea = gangqu_revolution
+    days = 30
+}
+    }
+}
+}
+
+country_event = {
+    id = feiyuguantou_shijian.5    
+    is_triggered_only = yes        
+    title = feiyuguantou_shijian.5.t
+    desc = feiyuguantou_shijian.5.d
+	picture = GFX_event_fygt4
+    
+    
+    option = {
+    name = feiyuguantou_shijian.5.a
+    set_country_flag = qiyong_feiyuguantou
+	add_political_power = -50
+    }
+}
+
+country_event = {
+    id = feiyuguantou_shijian.6    
+    is_triggered_only = yes        
+    title = feiyuguantou_shijian.6.t
+    desc = feiyuguantou_shijian.6.d
+	picture = GFX_event_fygt5
+    
+    
+    option = {
+    name = feiyuguantou_shijian.6.a
+    set_country_flag = qiyong_feiyuguantou
+	add_timed_idea = {
+            idea = WSG_fygt_jc
+            days = 60
+            }
+    }
+}
+
+country_event = {
+    id = WSG_stkf_event.1  
+    is_triggered_only = yes        
+    title = WSG_stkf_event.1.t
+    desc = WSG_stkf_event.1.d
+	picture = GFX_event_fygt4
+    hidden = yes
+    
+    option = {
+    name = WSG_stkf_event.1.a
+    add_to_variable = {
+				var = WSG_stkf
+				value = 1
+			}
+    }
+}
+country_event = {
+    id = WSG_stkf_event.2  
+    is_triggered_only = yes        
+    title = WSG_stkf_event.2.t
+    desc = WSG_stkf_event.2.d
+	picture = GFX_event_fygt4
+    hidden = yes
+    
+    option = {
+    name = WSG_stkf_event.2.a
+    clr_country_flag = WSG_stkf
+	set_variable = {
+		var = WSG_stkf
+		value = 0
+	}
+    }
 }
