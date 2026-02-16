@@ -114,6 +114,16 @@ characters = {
 			}
 			traits = { yubari_trait technology_leadership }
 		}
+		scientist = {                     
+					traits = {
+						scientist_trait_nuclear_specialist
+						scientist_trait_nuclear_power_expert 
+						scientist_trait_brilliant_theorist 
+					}
+					skills = {
+						specialization_nuclear = 3
+					}				      
+                        }
 		country_leader = {
 			ideology = trade_liberalism_subtype
 			traits = { yubari_trait technology_leadership }
@@ -717,8 +727,8 @@ characters = {
 		advisor = {
 			slot = high_command
 			idea_token = WSG_advisor_Eugen
-			traits = { Eugen_trait army_infantry_2 }
-			cost = 50
+			traits = { Eugen_trait  }
+			cost = 100
 		}
 		corps_commander = {
 						traits={												  
@@ -734,6 +744,124 @@ characters = {
 			    defense_skill = 7
 			    planning_skill = 5
 			    logistics_skill = 5
+						}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	WSG_Moltke = {
+		name = Moltke
+		portraits = {
+			civilian = {
+				small = GFX_idea_advisor_WSG_Moltke
+			}
+			army = {
+				large = GFX_Portrait_WSG_Moltke
+				small = GFX_idea_advisor_WSG_Moltke
+			}
+			
+		}
+		advisor = {
+			slot = high_command
+			idea_token = WSG_advisor_Moltke
+			traits = { army_armored_2  }
+			cost = 100
+		}
+		corps_commander = {
+				traits = {
+				  panzer_leader				  
+				  trickster
+				  war_hero				  
+				  WSGR_trait
+				  career_officer				  
+			    }
+			    skill = 4
+			    attack_skill = 5
+			    defense_skill = 2
+			    planning_skill = 5
+			    logistics_skill = 3
+						}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	WSG_ykgj = {  #约克公爵
+		name = ykgj
+		portraits = {
+			civilian = {
+				small = GFX_idea_advisor_WSG_ykgj
+			}
+			army = {
+				large = GFX_Portrait_WSG_ykgj
+				small = GFX_idea_advisor_WSG_ykgj
+			}
+			
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = WSG_advisor_ykgj
+			traits = { army_chief_offensive_1  }
+			cost = 50
+		}
+		corps_commander = {
+				traits = {
+				  naval_invader
+				  career_officer
+				  armor_officer
+				  WSGR_trait
+			    }
+			    skill = 3
+			    attack_skill = 4
+			    defense_skill = 2
+			    planning_skill = 2
+			    logistics_skill = 3
+						}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	WSG_mdn = {  #蒙大拿
+		name = mdn
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WSG_mdn
+				small = GFX_idea_advisor_WSG_mdn
+			}
+			army = {
+				large = GFX_Portrait_WSG_mdn
+				small = GFX_idea_advisor_WSG_mdn
+			}
+			
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = WSG_advisor_mdn
+			traits = { army_chief_planning_2  }
+			cost = 100
+		}
+        scientist = {
+                            traits = {
+                                scientist_trait_armored_specialist								
+								scientist_trait_gifted_engineer
+                            }
+                            skills = {
+                               specialization_land = 3
+                            }
+                        }
+
+		corps_commander = {
+				traits = {					   					   
+					naval_invader
+					bearer_of_artillery					   
+					WSGR_trait
+					}
+					skill = 3
+					attack_skill = 3
+					defense_skill = 3
+					planning_skill = 5
+					logistics_skill = 5
 						}
 		ai_will_do = {
 			factor = 1
@@ -794,17 +922,30 @@ characters = {
 	WSG_Lexington_syc = {
 		name = Lexington
 		portraits={
+			civilian = {
+				small = GFX_idea_advisor_WSG_Lexington_syc
+			}
 			army={
 				large = GFX_Portrait_WSG_Lexington_syc
-				small = GFX_idea_advisor_WSG_Lexington
+				small = GFX_idea_advisor_WSG_Lexington_syc
 			}
 		}
+		advisor = {  
+								slot = navy_chief
+								cost = 150
+								idea_token = WSG_lexington_navy_advisor								
+								traits = { 
+									Lexington_navy_advisor
+								 }
+								ai_will_do = {
+									factor = 0
+								}
+							}
 		navy_leader={
 			traits = {
 							WSG_hj_trait
 				            blue_water_expert
-							air_controller
-							
+							air_controller							
 							superior_tactician	
 						}
 						skill = 5
@@ -817,11 +958,25 @@ characters = {
 	WSG_yml_syc = {
 		name = yml
 		portraits={
+			civilian = {
+				small = GFX_idea_advisor_WSG_yml_syc
+			}
 			army={
 				large = GFX_Portrait_WSG_yml_syc
 				small = GFX_idea_advisor_WSG_yml_syc
 			}
 		}
+		advisor = {  
+					slot = navy_chief
+					cost = 100
+					idea_token = WSG_yml_advisor								
+					traits = { 
+						navy_chief_commerce_raiding_2
+								 }
+					ai_will_do = {
+						factor = 0
+					}
+				}
 		navy_leader={
 			traits = { superior_tactician
 					lone_wolf
@@ -839,11 +994,25 @@ characters = {
 	WSG_vv_hj = {
 		name = Vittorio_Veneto
 		portraits={
+			civilian = {
+				small = GFX_idea_advisor_WSG_Vittorio_Veneto
+			}
 			army={
 				large = GFX_Portrait_WSG_Vittorio_Veneto
 				small = GFX_idea_advisor_WSG_Vittorio_Veneto
 			}
 		}
+		advisor = {  
+					slot = navy_chief
+					cost = 100
+					idea_token = WSG_vv_advisor								
+					traits = { 
+						navy_chief_decisive_battle_2
+								 }
+					ai_will_do = {
+						factor = 0
+					}
+				}
 		navy_leader={
 			traits = {
                    WSG_hj_trait 
@@ -866,12 +1035,26 @@ characters = {
 	}
 	WSG_gy_syc = {
 		name = geye
+		civilian = {
+				small = GFX_idea_advisor_WSG_gy_syc
+			}
 		portraits={
 			army={
 				large = GFX_Portrait_WSG_gy_syc
 				small = GFX_idea_advisor_WSG_gy_syc
 			}
 		}
+		advisor = {  
+					slot = navy_chief
+					cost = 100
+					idea_token = WSG_gy_advisor								
+					traits = { 
+						navy_chief_reform_2
+								 }
+					ai_will_do = {
+						factor = 0
+					}
+				}
 		navy_leader={
 			traits = {
                     WSG_syc_trait
@@ -890,11 +1073,25 @@ characters = {
 	WSG_qy = {
 		name = qy
 		portraits={
+			civilian = {
+				small = GFX_idea_advisor_WSG_qy
+			}
 			army={
 				large = GFX_Portrait_WSG_qy
 				small = GFX_idea_advisor_WSG_qy
 			}
 		}
+		advisor = {  
+					slot = high_command
+					cost = 100
+					idea_token = WSG_qiye_advisor								
+					traits = { 
+						navy_carrier_2
+								 }
+					ai_will_do = {
+						factor = 0
+					}
+				}
 		navy_leader={
 			traits = {
 							WSG_hj_trait
@@ -907,15 +1104,30 @@ characters = {
 						maneuvering_skill = 1
 						coordination_skill = 1
 		}
+
 	}
 	WSG_Sevastopol = {
 		name = Sevastopol
 		portraits={
+			civilian = {
+				small = GFX_idea_advisor_WSG_Sevastopol
+			}
 			army={
 				large = GFX_Portrait_WSG_Sevastopol
 				small = GFX_idea_advisor_WSG_Sevastopol
 			}
 		}
+		advisor = {  
+					slot = high_command
+					cost = 100
+					idea_token = WSG_Sevastopol_advisor								
+					traits = { 
+						navy_screen_2
+								 }
+					ai_will_do = {
+						factor = 0
+					}
+				}
 		navy_leader={
 			traits = {
 							WSG_hj_trait
@@ -933,11 +1145,25 @@ characters = {
 	WSG_xhl = { #小海狸
 		name = xhl
 		portraits={
+			civilian = {
+				small = GFX_idea_advisor_WSG_xhl
+			}
 			army={
 				large = GFX_Portrait_WSG_xhl
 				small = GFX_idea_advisor_WSG_xhl
 			}
 		}
+		advisor = {  
+					slot = navy_chief
+					cost = 100
+					idea_token = WSG_xhl_advisor								
+					traits = { 
+						navy_chief_maneuver_2
+								 }
+					ai_will_do = {
+						factor = 0
+					}
+				}
 		navy_leader={
 			traits = {
 						WSG_hj_trait
@@ -954,11 +1180,25 @@ characters = {
 	WSG_anshan = {
 		name = anshan
 		portraits={
+			civilian = {
+				small = GFX_idea_advisor_WSG_anshan
+			}
 			army={
 				large = GFX_Portrait_WSG_anshan
 				small = GFX_idea_advisor_WSG_anshan
 			}
 		}
+		advisor = {  
+					slot = high_command
+					cost = 100
+					idea_token = WSG_anshan_advisor								
+					traits = { 
+						navy_fleet_logistics_2
+								 }
+					ai_will_do = {
+						factor = 0
+					}
+				}
 		navy_leader={
 			traits = {
 							WSG_hj_trait
@@ -974,11 +1214,25 @@ characters = {
 	WSG_AIII = { #我的天哪是AIII大人
 		name = AIII
 		portraits={
+			civilian = {
+				small = GFX_idea_advisor_WSG_AIII
+			}
 			army={
 				large = GFX_Portrait_WSG_AIII
 				small = GFX_idea_advisor_WSG_AIII
 			}
 		}
+		advisor = {  
+					slot = high_command
+					cost = 100
+					idea_token = WSG_AIII_advisor								
+					traits = { 
+						navy_capital_ship_2
+								 }
+					ai_will_do = {
+						factor = 0
+					}
+				}
 		navy_leader={
 			traits = {
 							WSG_hj_trait
@@ -994,7 +1248,133 @@ characters = {
 						coordination_skill = 4
 		}
 	}
-	
+	WSG_CV16 = {
+		name = CV16
+		portraits = {
+			civilian = {
+				small = GFX_idea_advisor_WSG_CV16
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = WSG_advisor_CV16
+			traits = { CV16_trait }
+			cost = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	WSG_dadian = {
+		name = dadian
+		portraits = {
+			civilian = {
+				small = GFX_idea_advisor_WSG_dadian
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = WSG_advisor_dadian
+			traits = { dadian_trait }
+			cost = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	WSG_Albion = {
+		name = Albion
+		portraits = {
+			civilian = {
+				small = GFX_idea_advisor_WSG_Albion
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = WSG_advisor_Albion
+			traits = { Albion_trait }
+			cost = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
+	WSG_fengnai = {
+		name = fengnai
+		portraits = {
+			civilian = {
+				small = GFX_idea_advisor_WSG_fengnai
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = WSG_advisor_fengnai
+			traits = { fengnai_trait }
+			cost = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	WSG_miya = {
+		name = miya
+		portraits = {
+			civilian = {
+				small = GFX_idea_advisor_WSG_miya
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = WSG_advisor_miya
+			traits = { miya_trait }
+			cost = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    WSG_nzs = {#女灶神
+		name = nzs
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WSG_nzs
+			}
+		}
+		scientist = {
+					traits = {
+						scientist_trait_surface_ship_specialist
+						scientist_trait_resourceful
+					}
+					skills = {
+						specialization_naval = 3
+					}
+				}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	WSG_Indomitable = {
+		name = Indomitable
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WSG_Indomitable
+			}
+		}
+		scientist = {
+			traits = {
+                                scientist_trait_aircraft_specialist
+                                scientist_trait_helicopter_expert
+                                scientist_trait_jet_expert
+                                scientist_trait_brilliant_theorist 
+                            }
+                            skills = {
+                                specialization_air = 3
+                            }
+						}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
 }
