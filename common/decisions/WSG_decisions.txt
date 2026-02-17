@@ -585,7 +585,7 @@ WSG_secretary_ship_agenda_category = {
 		}
 		custom_cost_text = decision_cost_CP_50_pp_50
 		fire_only_once = no
-		days_re_enable = 180
+		days_re_enable = 90
 		modifier = {
 		}
 		complete_effect = {
@@ -772,6 +772,10 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Lexington_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -779,9 +783,11 @@ WSG_secretary_ship_agenda_category = {
 			production_speed_buildings_factor = 0.05
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
-        }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
+		}
         remove_effect = {
         }
         ai_will_do = {
@@ -808,14 +814,20 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Lexington_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_75
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 74 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                    add_to_variable = { WSG_panci = -75 }
+            }
 			add_daily_mastery = {
 				amount = 0.6
 				days = 180
@@ -848,14 +860,22 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Lexington_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
+        }
+        remove_effect = {
 			random_state = {
 				limit = {
 			        is_controlled_by = WSG
@@ -868,8 +888,6 @@ WSG_secretary_ship_agenda_category = {
                     instant_build = yes
                 }	
 			}
-        }
-        remove_effect = {
         }
         ai_will_do = {
             factor = 50
@@ -895,14 +913,20 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Vittorio_Veneto_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
 			add_political_power = 50
         }
         remove_effect = {
@@ -931,6 +955,10 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Vittorio_Veneto_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_75
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 74 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -938,8 +966,10 @@ WSG_secretary_ship_agenda_category = {
 			political_power_gain = 0.5
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                    add_to_variable = { WSG_panci = -75 }
+            }
         }
         remove_effect = {
         }
@@ -967,17 +997,23 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Vittorio_Veneto_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-	        army_experience = 30
-	        navy_experience = 30
-	        air_experience = 30
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
+	        army_experience = 50
+	        navy_experience = 50
+	        air_experience = 50
         }
         remove_effect = {
         }
@@ -1005,6 +1041,10 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Yubari_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1012,8 +1052,10 @@ WSG_secretary_ship_agenda_category = {
 			research_speed_factor = 0.1
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
         }
         remove_effect = {
         }
@@ -1041,6 +1083,10 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Yubari_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_75
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 74 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1048,8 +1094,10 @@ WSG_secretary_ship_agenda_category = {
 			production_factory_efficiency_gain_factor = 0.1
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                    add_to_variable = { WSG_panci = -75 }
+            }
         }
         remove_effect = {
         }
@@ -1077,14 +1125,20 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Yubari_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
 			add_research_slot = 1
         }
         remove_effect = {
@@ -1114,15 +1168,21 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Hood_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
-			navy_experience = 30
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
+			navy_experience = 75
         }
         remove_effect = {
         }
@@ -1150,14 +1210,20 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Hood_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_75
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 74 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                    add_to_variable = { WSG_panci = -75 }
+            }
 			add_daily_mastery = {
 				amount = 0.6
 				days = 180
@@ -1190,6 +1256,10 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Hood_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1197,8 +1267,10 @@ WSG_secretary_ship_agenda_category = {
 			industrial_capacity_dockyard = 0.2
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
         }
         remove_effect = {
         }
@@ -1226,6 +1298,10 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_YiXian_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1233,8 +1309,10 @@ WSG_secretary_ship_agenda_category = {
 			industrial_capacity_factory = 0.1
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
         }
         remove_effect = {
         }
@@ -1262,6 +1340,10 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_YiXian_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_75
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 74 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1269,8 +1351,10 @@ WSG_secretary_ship_agenda_category = {
 			supply_node_range = 0.1
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                    add_to_variable = { WSG_panci = -75 }
+            }
         }
         remove_effect = {
         }
@@ -1298,14 +1382,20 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_YiXian_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
 			random_state = {
 				limit = {
 			        is_controlled_by = WSG
@@ -1345,6 +1435,10 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Jean_Bart_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1352,8 +1446,10 @@ WSG_secretary_ship_agenda_category = {
 			army_defence_factor = 0.05
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
         }
         remove_effect = {
         }
@@ -1381,14 +1477,20 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Jean_Bart_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_75
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 74 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                    add_to_variable = { WSG_panci = -75 }
+            }
 			add_daily_mastery = {
 				amount = 0.6
 				days = 180
@@ -1421,6 +1523,10 @@ WSG_secretary_ship_agenda_category = {
 			    check_variable = { ROOT.FE_secondary = token:WSG_Jean_Bart_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1428,8 +1534,10 @@ WSG_secretary_ship_agenda_category = {
 			max_dig_in = 10
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
         }
         remove_effect = {
         }
@@ -1457,6 +1565,10 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Bubnov_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1464,8 +1576,10 @@ WSG_secretary_ship_agenda_category = {
 			army_attack_factor = 0.05
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
         }
         remove_effect = {
         }
@@ -1493,14 +1607,20 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Bubnov_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_75
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 74 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                    add_to_variable = { WSG_panci = -75 }
+            }
 			add_daily_mastery = {
 				amount = 0.6
 				days = 180
@@ -1533,6 +1653,10 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Bubnov_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1540,8 +1664,10 @@ WSG_secretary_ship_agenda_category = {
 			max_planning = 0.1
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
         }
         remove_effect = {
         }
@@ -1569,6 +1695,10 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Clausewitz_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 30
@@ -1576,8 +1706,10 @@ WSG_secretary_ship_agenda_category = {
 			planning_speed = 0.5
         }
         complete_effect = {
-			custom_effect_tooltip = WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
         }
         remove_effect = {
         }
@@ -1605,6 +1737,10 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Clausewitz_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_75
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 74 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 45
@@ -1612,8 +1748,10 @@ WSG_secretary_ship_agenda_category = {
 			dig_in_speed_factor = 0.5
         }
         complete_effect = {
-			custom_effect_tooltip = WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
+                    add_to_variable = { WSG_panci = -75 }
+            }
         }
         remove_effect = {
         }
@@ -1641,6 +1779,10 @@ WSG_secretary_ship_agenda_category = {
 			    check_variable = { ROOT.FE_secondary = token:WSG_Clausewitz_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1648,8 +1790,10 @@ WSG_secretary_ship_agenda_category = {
 			land_night_attack = 0.15
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
         }
         remove_effect = {
         }
@@ -1674,14 +1818,20 @@ WSG_secretary_ship_agenda_category = {
             has_completed_focus = WSG_industrial_integration
 			NOT = { has_idea = WSG_industrial_integration_V }
         }
+		custom_cost_text = WSG_panci_200
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 199 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 90
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                    add_to_variable = { WSG_panci = -200 }
+            }
             WSG = { WSG_remove_arms_factory_20 = yes }
         }
         remove_effect = {
