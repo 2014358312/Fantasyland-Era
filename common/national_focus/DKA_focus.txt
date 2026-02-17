@@ -12,7 +12,7 @@ focus_tree = {
 	default = no
 	continuous_focus_position = {
 		x = 150
-		y = 4000
+		y = 800
 	}
 	#	focus = {
 	#		id = DKA_
@@ -49,134 +49,1358 @@ focus_tree = {
 	#
 	#		}
 	#	}
-	###############################政治线中线################################################
 	focus = {
-		id = DKA_second_northern_expedition
-		icon = GFX_goal_generic_focus_on_westland
-		x = 26
+		id = DKA_industry_remain_to_be_done
+		icon = GFX_focus_DKA_eyes_of_storm
+		x = 8
 		y = 0
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
-		}
-		available = {
-			is_ai = yes
-			any_other_country = {
-				is_on_same_continent_as = ROOT
-				NOT = {
-					has_war_with = ROOT
-					has_government = ROOT
-				}
-			}
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			every_other_country = {
-				limit = {
-					is_on_same_continent_as = ROOT
-					NOT = {
-						has_war_with = ROOT
-						has_government = ROOT
-					}
-				}
-				ROOT = {
-					declare_war_on = {
-						target = PREV
-						type = annex_everythiing
-					}
-				}
-			}
+			add_political_power = 50
 		}
 	}
 	focus = {
-		id = DKA_make_enemy_sow_discord
-		icon = GFX_goal_generic_espionage
+		id = DKA_industry_department
+		icon = GFX_focus_DKA_eyes_of_storm
 		prerequisite = {
-			focus = DKA_second_northern_expedition
+			focus = DKA_industry_remain_to_be_done
 		}
-		relative_position_id = DKA_second_northern_expedition
+		relative_position_id = DKA_industry_remain_to_be_done
+		x = -6
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_industry_self_sufficient
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_industry_department
+		}
+		relative_position_id = DKA_industry_department
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_manmade_resource
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_industry_self_sufficient
+		}
+		relative_position_id = DKA_industry_self_sufficient
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
-		}
-		available = {
-			is_ai = yes
-			has_war = yes
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			every_other_country = {
-				limit = {
-					is_on_same_continent_as = ROOT
-					NOT = {
-						has_war_with = ROOT
-						has_government = ROOT
-					}
-				}
-				add_stability = -0.1
-				add_war_support = -0.1
-				add_political_power = -50
-			}
+			add_political_power = 50
 		}
 	}
 	focus = {
-		id = DKA_attack_northeast
-		icon = GFX_goal_generic_railway_construction
+		id = DKA_resource_produce
+		icon = GFX_focus_DKA_eyes_of_storm
 		prerequisite = {
-			focus = DKA_second_northern_expedition
+			focus = DKA_industry_self_sufficient
 		}
-		relative_position_id = DKA_second_northern_expedition
+		relative_position_id = DKA_industry_self_sufficient
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
-		}
-		available = {
-			is_ai = yes
-			has_war = yes
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
+			add_political_power = 50
 		}
 	}
 	focus = {
-		id = DKA_final_attack_to_tiam
-		icon = GFX_goal_generic_air_CAS_german
+		id = DKA_land_planning
+		icon = GFX_focus_DKA_eyes_of_storm
 		prerequisite = {
-			focus = DKA_make_enemy_sow_discord
+			focus = DKA_industry_self_sufficient
 		}
-		prerequisite = {
-			focus = DKA_attack_northeast
-		}
-		relative_position_id = DKA_make_enemy_sow_discord
-		x = 1
+		relative_position_id = DKA_industry_self_sufficient
+		x = 3
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
-		}
-		available = {
-			is_ai = yes
-			has_war = yes
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			TIA = {
-				add_political_power = -300
-				add_stability = -0.2
-				add_war_support = -0.2
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_oversea_trade
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_industry_remain_to_be_done
+		}
+		relative_position_id = DKA_industry_remain_to_be_done
+		x = 6
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_offtax_area
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_oversea_trade
+		}
+		relative_position_id = DKA_oversea_trade
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_black_market_proxy
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_offtax_area
+		}
+		relative_position_id = DKA_offtax_area
+		x = -3
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_agricultural_product_exports
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_oversea_trade
+		}
+		relative_position_id = DKA_oversea_trade
+		x = -1
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_regulate_market_competition
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_offtax_area
+		}
+		relative_position_id = DKA_offtax_area
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_build_dam
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_industry_department
+			focus = DKA_oversea_trade
+		}
+		relative_position_id = DKA_industry_remain_to_be_done
+		x = -4
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_country_infrastructure_project
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_industry_department
+			focus = DKA_oversea_trade
+		}
+		relative_position_id = DKA_industry_remain_to_be_done
+		x = -2
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_national_central_back
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_industry_department
+			focus = DKA_oversea_trade
+		}
+		relative_position_id = DKA_industry_remain_to_be_done
+		x = 0
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_factory_investment
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_industry_department
+			focus = DKA_oversea_trade
+		}
+		relative_position_id = DKA_industry_remain_to_be_done
+		x = 2
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_encourage_border_tourism
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_industry_department
+			focus = DKA_oversea_trade
+		}
+		relative_position_id = DKA_industry_remain_to_be_done
+		x = 4
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_industry_system
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_industry_self_sufficient
+			focus = DKA_offtax_area
+		}
+		relative_position_id = DKA_industry_remain_to_be_done
+		x = 0
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_production_innovation
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_industry_system
+		}
+		relative_position_id = DKA_industry_system
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_establish_research_center
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_industry_system
+		}
+		relative_position_id = DKA_industry_system
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_large_scale_construction
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_industry_system
+		}
+		relative_position_id = DKA_industry_system
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_build_military
+		icon = GFX_focus_DKA_eyes_of_storm
+		x = 27
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_build_navy
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_build_military
+		}
+		relative_position_id = DKA_build_military
+		x = -6
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_navy_quantity
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_build_navy
+		}
+		relative_position_id = DKA_build_navy
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_navy_ship_management
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_navy_quantity
+		}
+		relative_position_id = DKA_navy_quantity
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_navy_quality
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_build_navy
+		}
+		relative_position_id = DKA_build_navy
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_navy_shipyard_contract
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_navy_quality
+		}
+		relative_position_id = DKA_navy_quality
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_navy_ship_expand_plan
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_navy_quantity
+			focus = DKA_navy_quality
+		}
+		relative_position_id = DKA_navy_quantity
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_navy_ship_gunfire_suppression
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_navy_quantity
+			focus = DKA_navy_quality
+		}
+		relative_position_id = DKA_navy_quantity
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_from_sea_to_land
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_navy_ship_expand_plan
+		}
+		relative_position_id = DKA_navy_ship_expand_plan
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_large_warship
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_navy_ship_expand_plan
+		}
+		prerequisite = {
+			focus = DKA_navy_ship_gunfire_suppression
+		}
+		relative_position_id = DKA_navy_ship_expand_plan
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_experimental_special_purpose_ship
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_navy_ship_gunfire_suppression
+		}
+		relative_position_id = DKA_navy_ship_gunfire_suppression
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_independent_air_force
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_build_military
+		}
+		mutually_exclusive = {
+			focus = DKA_create_army_and_naval_air_force
+		}
+		relative_position_id = DKA_build_military
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_create_army_and_naval_air_force
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_build_military
+		}
+		mutually_exclusive = {
+			focus = DKA_independent_air_force
+		}
+		relative_position_id = DKA_build_military
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_delegate_senior_generals
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_create_army_and_naval_air_force
+			focus = DKA_independent_air_force
+		}
+		relative_position_id = DKA_independent_air_force
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_supreme_leadership_of_military
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_build_military
+		}
+		relative_position_id = DKA_build_military
+		x = 2
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_lessons_of_war
+		icon = GFX_focus_DKA_eyes_of_storm
+		relative_position_id = DKA_supreme_leadership_of_military
+		x = -2
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DKA_lessons_of_war_ttt
+				always = no
 			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_sword_of_queen
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_delegate_senior_generals
+		}
+		prerequisite = {
+			focus = DKA_supreme_leadership_of_military
+		}
+		relative_position_id = DKA_delegate_senior_generals
+		x = 0
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_three_dimensional_warfare
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_sword_of_queen
+		}
+		relative_position_id = DKA_sword_of_queen
+		x = -5
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_air_force_see_fighter
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_three_dimensional_warfare
+		}
+		mutually_exclusive = {
+			focus = DKA_air_force_see_cas
+			focus = DKA_air_force_see_bomber
+		}
+		relative_position_id = DKA_three_dimensional_warfare
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_air_force_see_cas
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_three_dimensional_warfare
+		}
+		mutually_exclusive = {
+			focus = DKA_air_force_see_fighter
+			focus = DKA_air_force_see_bomber
+		}
+		relative_position_id = DKA_three_dimensional_warfare
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_air_force_see_bomber
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_three_dimensional_warfare
+		}
+		mutually_exclusive = {
+			focus = DKA_air_force_see_fighter
+			focus = DKA_air_force_see_cas
+		}
+		relative_position_id = DKA_three_dimensional_warfare
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_scorched_earth_strategy
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_lessons_of_war
+		}
+		prerequisite = {
+			focus = DKA_supreme_leadership_of_military
+		}
+		mutually_exclusive = {
+			focus = DKA_develop_mobile_force
+		}
+		relative_position_id = DKA_supreme_leadership_of_military
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_local_offensive
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_scorched_earth_strategy
+		}
+		relative_position_id = DKA_scorched_earth_strategy
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_develop_motorized_vehicles
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_local_offensive
+		}
+		relative_position_id = DKA_local_offensive
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_shock_troops
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_develop_motorized_vehicles
+		}
+		relative_position_id = DKA_develop_motorized_vehicles
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_develop_mobile_force
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_lessons_of_war
+		}
+		prerequisite = {
+			focus = DKA_supreme_leadership_of_military
+		}
+		mutually_exclusive = {
+			focus = DKA_scorched_earth_strategy
+		}
+		relative_position_id = DKA_supreme_leadership_of_military
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_advanced_armor_research
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_develop_mobile_force
+		}
+		relative_position_id = DKA_develop_mobile_force
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_mobile_infantry
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_advanced_armor_research
+		}
+		relative_position_id = DKA_advanced_armor_research
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_modern_armor_doctrine
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_mobile_infantry
+		}
+		relative_position_id = DKA_mobile_infantry
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_coordination_with_air_force
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_scorched_earth_strategy
+			focus = DKA_develop_mobile_force
+		}
+		relative_position_id = DKA_scorched_earth_strategy
+		x = 1
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_support_for_complex_terrain
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_develop_motorized_vehicles
+		}
+		prerequisite = {
+			focus = DKA_coordination_with_air_force
+		}
+		relative_position_id = DKA_coordination_with_air_force
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_joint_operation
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_mobile_infantry
+		}
+		prerequisite = {
+			focus = DKA_coordination_with_air_force
+		}
+		relative_position_id = DKA_coordination_with_air_force
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_terrestrial_mechanical_behemoth
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_support_for_complex_terrain
+			focus = DKA_joint_operation
+		}
+		relative_position_id = DKA_support_for_complex_terrain
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_turn_to_military_industry
+		icon = GFX_focus_DKA_eyes_of_storm
+		relative_position_id = DKA_build_military
+		x = 5
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_systematic_military_knowledge
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_build_military
+		}
+		prerequisite = {
+			focus = DKA_turn_to_military_industry
+		}
+		relative_position_id = DKA_turn_to_military_industry
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_national_transportation_safety_board
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_turn_to_military_industry
+		}
+		relative_position_id = DKA_turn_to_military_industry
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_military_logistics_course
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_systematic_military_knowledge
+		}
+		prerequisite = {
+			focus = DKA_national_transportation_safety_board
+		}
+		relative_position_id = DKA_national_transportation_safety_board
+		x = -1
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_establish_railway_transportation_department
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_national_transportation_safety_board
+		}
+		relative_position_id = DKA_national_transportation_safety_board
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_air_escort_transportation
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_establish_railway_transportation_department
+		}
+		relative_position_id = DKA_establish_railway_transportation_department
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_eight_hour_global_strategy
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_air_escort_transportation
+		}
+		relative_position_id = DKA_air_escort_transportation
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_ensure_basic_military_supplies
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_turn_to_military_industry
+		}
+		relative_position_id = DKA_turn_to_military_industry
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_give_priority_to_supply_of_naval_production
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_ensure_basic_military_supplies
+		}
+		relative_position_id = DKA_ensure_basic_military_supplies
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_give_priority_to_supply_of_land_production
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_ensure_basic_military_supplies
+		}
+		relative_position_id = DKA_ensure_basic_military_supplies
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_desert_nuclear_weapon_research
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_give_priority_to_supply_of_naval_production
+		}
+		prerequisite = {
+			focus = DKA_give_priority_to_supply_of_land_production
+		}
+		relative_position_id = DKA_give_priority_to_supply_of_land_production
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = DKA_siege_weapon
+		icon = GFX_focus_DKA_eyes_of_storm
+		prerequisite = {
+			focus = DKA_give_priority_to_supply_of_land_production
+		}
+		relative_position_id = DKA_give_priority_to_supply_of_land_production
+		x = 0
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_political_power = 50
 		}
 	}
 	focus = {
@@ -185,8 +1409,8 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = DKA_sword_of_revolution
 		}
-		x = 20
-		y = 0
+		x = 12
+		y = 10
 		cost = 0
 		ai_will_do = {
 			factor = 1
@@ -1284,7 +2508,8 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = DKA_eyes_of_storm
 		}
-		x = 4
+		relative_position_id = DKA_eyes_of_storm
+		x = 20
 		y = 0
 		cost = 0
 		ai_will_do = {
@@ -1302,6 +2527,137 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 150
 			#country_event = DKA.1
+		}
+	}
+	
+	focus = {
+		id = DKA_second_northern_expedition
+		icon = GFX_goal_generic_focus_on_westland
+		relative_position_id = DKA_eyes_of_storm
+		x = 8
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			is_ai = yes
+			any_other_country = {
+				is_on_same_continent_as = ROOT
+				NOT = {
+					has_war_with = ROOT
+					has_government = ROOT
+				}
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_on_same_continent_as = ROOT
+					NOT = {
+						has_war_with = ROOT
+						has_government = ROOT
+					}
+				}
+				ROOT = {
+					declare_war_on = {
+						target = PREV
+						type = annex_everythiing
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = DKA_make_enemy_sow_discord
+		icon = GFX_goal_generic_espionage
+		prerequisite = {
+			focus = DKA_second_northern_expedition
+		}
+		relative_position_id = DKA_second_northern_expedition
+		x = -1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			is_ai = yes
+			has_war = yes
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_on_same_continent_as = ROOT
+					NOT = {
+						has_war_with = ROOT
+						has_government = ROOT
+					}
+				}
+				add_stability = -0.1
+				add_war_support = -0.1
+				add_political_power = -50
+			}
+		}
+	}
+	focus = {
+		id = DKA_attack_northeast
+		icon = GFX_goal_generic_railway_construction
+		prerequisite = {
+			focus = DKA_second_northern_expedition
+		}
+		relative_position_id = DKA_second_northern_expedition
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			is_ai = yes
+			has_war = yes
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = DKA_final_attack_to_tiam
+		icon = GFX_goal_generic_air_CAS_german
+		prerequisite = {
+			focus = DKA_make_enemy_sow_discord
+		}
+		prerequisite = {
+			focus = DKA_attack_northeast
+		}
+		relative_position_id = DKA_make_enemy_sow_discord
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			is_ai = yes
+			has_war = yes
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			TIA = {
+				add_political_power = -300
+				add_stability = -0.2
+				add_war_support = -0.2
+			}
 		}
 	}
 }
