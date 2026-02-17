@@ -12,7 +12,6 @@ add_namespace = WSG_inner_circle_bubnov
 add_namespace = WSG_inner_circle_clausewitz
 add_namespace = WSG_event
 add_namespace = feiyuguantou_shijian
-add_namespace = WSG_start_cooking_event
 
 
 country_event = {
@@ -939,39 +938,5 @@ country_event = {
             idea = WSG_surstromming_buff
             days = 60
             }
-    }
-}
-
-country_event = {
-    id = WSG_start_cooking_event.1  
-    is_triggered_only = yes        
-    title = WSG_start_cooking_event.1.t
-    desc = WSG_start_cooking_event.1.d
-	picture = GFX_event_surstromming4
-    hidden = yes
-    
-    option = {
-    name = WSG_start_cooking_event.1.a
-    add_to_variable = {
-				var = WSG_cooking_CD  #购买buff以后经过的天数
-				value = 1
-			}
-    }
-}
-country_event = {
-    id = WSG_start_cooking_event.2  
-    is_triggered_only = yes        
-    title = WSG_start_cooking_event.2.t
-    desc = WSG_start_cooking_event.2.d
-	picture = GFX_event_surstromming4
-    hidden = yes
-    
-    option = {
-    name = WSG_start_cooking_event.2.a
-    clr_country_flag = WSG_start_cooking
-	set_variable = {
-		var = WSG_cooking_CD
-		value = 0
-	}
     }
 }

@@ -81,21 +81,4 @@ on_actions = {
 		    }
 		}
 	}
-    on_daily = {            #检查食堂开饭的时间,过了60天移除country_flag
-         effect = {
-        if = {
-            limit = { check_variable = { WSG_start_cooking > 59 } }
-            country_event = { id = WSG_start_cooking_event.2 }
-        }
-     }
-    }
-	on_daily = {            #设定计算天数的变量每天+1
-         effect = {
-        if = {
-            limit = { has_country_flag = WSG_start_cooking }
-            country_event = { id = WSG_start_cooking_event.1 }
-        }
-         }
-    }
-
 }
