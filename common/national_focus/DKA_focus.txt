@@ -1,5 +1,6 @@
 ﻿#!gfx:interface\goals.gfx
 #!gfx:interface\goals\FE_country_goals.gfx
+#!gfx:interface\goals\FE_country_DKA_goals.gfx
 focus_tree = {
 	id = DKA_focus_tree
 	country = {
@@ -51,7 +52,7 @@ focus_tree = {
 	#	}
 	focus = {
 		id = DKA_industry_remain_to_be_done
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_construction
 		x = 8
 		y = 0
 		cost = 5
@@ -67,7 +68,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_industry_department
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_production2
 		prerequisite = {
 			focus = DKA_industry_remain_to_be_done
 		}
@@ -87,7 +88,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_industry_self_sufficient
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_GER_autarky_ambitions
 		prerequisite = {
 			focus = DKA_industry_department
 		}
@@ -107,7 +108,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_manmade_resource
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_rubber
 		prerequisite = {
 			focus = DKA_industry_self_sufficient
 		}
@@ -127,7 +128,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_resource_produce
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_mining_industry
 		prerequisite = {
 			focus = DKA_industry_self_sufficient
 		}
@@ -147,7 +148,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_land_planning
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_build_housing
 		prerequisite = {
 			focus = DKA_industry_self_sufficient
 		}
@@ -167,7 +168,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_oversea_trade
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_positive_trade_relations
 		prerequisite = {
 			focus = DKA_industry_remain_to_be_done
 		}
@@ -187,7 +188,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_offtax_area
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_landowner_tax_cuts
 		prerequisite = {
 			focus = DKA_oversea_trade
 		}
@@ -207,7 +208,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_black_market_proxy
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_RAJ_issue_bonds_on_the_stock_market
 		prerequisite = {
 			focus = DKA_offtax_area
 		}
@@ -227,7 +228,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_agricultural_product_exports
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_agriculture
 		prerequisite = {
 			focus = DKA_oversea_trade
 		}
@@ -247,7 +248,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_regulate_market_competition
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_stable_government
 		prerequisite = {
 			focus = DKA_offtax_area
 		}
@@ -267,7 +268,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_build_dam
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_IRQ_construct_the_kut_barrage
 		prerequisite = {
 			focus = DKA_industry_department
 			focus = DKA_oversea_trade
@@ -288,7 +289,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_country_infrastructure_project
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_DKA_country_infrastructure_project
 		prerequisite = {
 			focus = DKA_industry_department
 			focus = DKA_oversea_trade
@@ -308,8 +309,8 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = DKA_national_central_back
-		icon = GFX_focus_DKA_eyes_of_storm
+		id = DKA_national_central_bank
+		icon = GFX_focus_PER_national_bank
 		prerequisite = {
 			focus = DKA_industry_department
 			focus = DKA_oversea_trade
@@ -330,7 +331,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_factory_investment
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_improve_industry
 		prerequisite = {
 			focus = DKA_industry_department
 			focus = DKA_oversea_trade
@@ -351,7 +352,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_encourage_border_tourism
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_tourism
 		prerequisite = {
 			focus = DKA_industry_department
 			focus = DKA_oversea_trade
@@ -372,7 +373,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_industry_system
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_industry_2
 		prerequisite = {
 			focus = DKA_industry_self_sufficient
 			focus = DKA_offtax_area
@@ -393,7 +394,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_production_innovation
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_FIN_finnish_federation_of_trade_unions
 		prerequisite = {
 			focus = DKA_industry_system
 		}
@@ -413,7 +414,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_establish_research_center
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_research
 		prerequisite = {
 			focus = DKA_industry_system
 		}
@@ -433,7 +434,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_large_scale_construction
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_PRC_urbanization
 		prerequisite = {
 			focus = DKA_industry_system
 		}
@@ -453,7 +454,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_build_military
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_military_mission
 		x = 27
 		y = 0
 		cost = 5
@@ -469,7 +470,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_build_navy
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_PRC_establish_pla_navy
 		prerequisite = {
 			focus = DKA_build_military
 		}
@@ -489,7 +490,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_navy_quantity
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_construct_naval_dockyard
 		prerequisite = {
 			focus = DKA_build_navy
 		}
@@ -509,7 +510,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_navy_ship_management
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = {
 			focus = DKA_navy_quantity
 		}
@@ -529,7 +530,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_navy_quality
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_naval_industry
 		prerequisite = {
 			focus = DKA_build_navy
 		}
@@ -549,7 +550,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_navy_shipyard_contract
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_shipyard
 		prerequisite = {
 			focus = DKA_navy_quality
 		}
@@ -569,7 +570,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_navy_ship_expand_plan
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_large_navy
 		prerequisite = {
 			focus = DKA_navy_quantity
 			focus = DKA_navy_quality
@@ -590,7 +591,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_navy_ship_gunfire_suppression
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_PHI_the_concrete_battleship
 		prerequisite = {
 			focus = DKA_navy_quantity
 			focus = DKA_navy_quality
@@ -611,7 +612,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_from_sea_to_land
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_naval_invasion
 		prerequisite = {
 			focus = DKA_navy_ship_expand_plan
 		}
@@ -631,7 +632,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_large_warship
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_flagship
 		prerequisite = {
 			focus = DKA_navy_ship_expand_plan
 		}
@@ -654,7 +655,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_experimental_special_purpose_ship
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_navy_research_bonus
 		prerequisite = {
 			focus = DKA_navy_ship_gunfire_suppression
 		}
@@ -674,7 +675,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_independent_air_force
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_PRC_establish_pla_air_force
 		prerequisite = {
 			focus = DKA_build_military
 		}
@@ -697,7 +698,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_create_army_and_naval_air_force
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_air_doctrine
 		prerequisite = {
 			focus = DKA_build_military
 		}
@@ -720,7 +721,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_delegate_senior_generals
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_CHI_military_mission
 		prerequisite = {
 			focus = DKA_create_army_and_naval_air_force
 			focus = DKA_independent_air_force
@@ -741,7 +742,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_supreme_leadership_of_military
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_military_dictatorship
 		prerequisite = {
 			focus = DKA_build_military
 		}
@@ -761,7 +762,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_lessons_of_war
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_army_command_power
 		relative_position_id = DKA_supreme_leadership_of_military
 		x = -2
 		y = 0
@@ -784,7 +785,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_sword_of_queen
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_SWI_helvetic_junta
 		prerequisite = {
 			focus = DKA_delegate_senior_generals
 		}
@@ -807,7 +808,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_three_dimensional_warfare
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_air_command
 		prerequisite = {
 			focus = DKA_sword_of_queen
 		}
@@ -827,7 +828,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_air_force_see_fighter
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_air_fighter_new
 		prerequisite = {
 			focus = DKA_three_dimensional_warfare
 		}
@@ -851,7 +852,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_air_force_see_cas
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_air_CAS_new
 		prerequisite = {
 			focus = DKA_three_dimensional_warfare
 		}
@@ -875,7 +876,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_air_force_see_bomber
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_air_strategic_bomber_new
 		prerequisite = {
 			focus = DKA_three_dimensional_warfare
 		}
@@ -899,7 +900,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_scorched_earth_strategy
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_SWE_let_fly_all_guns
 		prerequisite = {
 			focus = DKA_lessons_of_war
 		}
@@ -925,7 +926,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_local_offensive
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_intense_warfare
 		prerequisite = {
 			focus = DKA_scorched_earth_strategy
 		}
@@ -945,7 +946,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_develop_motorized_vehicles
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_mobile_trucks
 		prerequisite = {
 			focus = DKA_local_offensive
 		}
@@ -965,7 +966,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_shock_troops
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_GER_schutztruppe
 		prerequisite = {
 			focus = DKA_develop_motorized_vehicles
 		}
@@ -985,7 +986,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_develop_mobile_force
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_doctrine_tank_warfare
 		prerequisite = {
 			focus = DKA_lessons_of_war
 		}
@@ -1011,7 +1012,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_advanced_armor_research
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_armor_research
 		prerequisite = {
 			focus = DKA_develop_mobile_force
 		}
@@ -1031,7 +1032,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_mobile_infantry
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_mechanized
 		prerequisite = {
 			focus = DKA_advanced_armor_research
 		}
@@ -1051,7 +1052,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_modern_armor_doctrine
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_army_doctrines
 		prerequisite = {
 			focus = DKA_mobile_infantry
 		}
@@ -1071,7 +1072,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_coordination_with_air_force
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_armored_air_support
 		prerequisite = {
 			focus = DKA_scorched_earth_strategy
 			focus = DKA_develop_mobile_force
@@ -1092,7 +1093,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_support_for_complex_terrain
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_arctic_warfare
 		prerequisite = {
 			focus = DKA_develop_motorized_vehicles
 		}
@@ -1115,7 +1116,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_joint_operation
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_well_conceived_plan
 		prerequisite = {
 			focus = DKA_mobile_infantry
 		}
@@ -1138,7 +1139,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_terrestrial_mechanical_behemoth
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = DKA_support_for_complex_terrain
 			focus = DKA_joint_operation
@@ -1159,7 +1160,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_turn_to_military_industry
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_military_industry
 		relative_position_id = DKA_build_military
 		x = 5
 		y = 0
@@ -1176,7 +1177,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_systematic_military_knowledge
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_PRC_arms_recovery_efforts
 		prerequisite = {
 			focus = DKA_build_military
 		}
@@ -1199,7 +1200,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_national_transportation_safety_board
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_commission
 		prerequisite = {
 			focus = DKA_turn_to_military_industry
 		}
@@ -1219,7 +1220,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_military_logistics_course
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_reinforcing_the_supply_network
 		prerequisite = {
 			focus = DKA_systematic_military_knowledge
 		}
@@ -1242,7 +1243,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_establish_railway_transportation_department
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_railway_construction
 		prerequisite = {
 			focus = DKA_national_transportation_safety_board
 		}
@@ -1262,7 +1263,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_air_escort_transportation
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_air_logistics
 		prerequisite = {
 			focus = DKA_establish_railway_transportation_department
 		}
@@ -1282,7 +1283,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_eight_hour_global_strategy
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_POL_support_global_falangism
 		prerequisite = {
 			focus = DKA_air_escort_transportation
 		}
@@ -1302,7 +1303,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_ensure_basic_military_supplies
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_military_equipment
 		prerequisite = {
 			focus = DKA_turn_to_military_industry
 		}
@@ -1322,7 +1323,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_give_priority_to_supply_of_naval_production
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_JAP_naval_armaments_program
 		prerequisite = {
 			focus = DKA_ensure_basic_military_supplies
 		}
@@ -1342,7 +1343,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_give_priority_to_supply_of_land_production
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_reorient_production
 		prerequisite = {
 			focus = DKA_ensure_basic_military_supplies
 		}
@@ -1362,7 +1363,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_desert_nuclear_weapon_research
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_goal_generic_nuclear_test
 		prerequisite = {
 			focus = DKA_give_priority_to_supply_of_naval_production
 		}
@@ -1385,7 +1386,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DKA_siege_weapon
-		icon = GFX_focus_DKA_eyes_of_storm
+		icon = GFX_focus_generic_railway_gun
 		prerequisite = {
 			focus = DKA_give_priority_to_supply_of_land_production
 		}
@@ -2534,7 +2535,7 @@ focus_tree = {
 		id = DKA_second_northern_expedition
 		icon = GFX_goal_generic_focus_on_westland
 		relative_position_id = DKA_eyes_of_storm
-		x = 8
+		x = -6
 		y = 0
 		cost = 10
 		ai_will_do = {
