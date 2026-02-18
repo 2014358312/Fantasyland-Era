@@ -907,6 +907,100 @@ ideas = {
 				war_support_factor = -0.1
 			}
 		}
+		TIA_plague_shield = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = GFX_idea_TIA_plague_shield
+			modifier = {
+				monthly_population = 0.10
+				stability_factor = 0.05
+				conscription = 0.01
+			}
+		}
+
+		TIA_plague_weakened = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = GFX_idea_TIA_plague_weakened
+			modifier = {
+				monthly_population = -0.05
+				stability_factor = -0.02
+			}
+		}
+
+		TIA_plague_scarred = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = GFX_idea_TIA_plague_scarred
+			modifier = {
+				monthly_population = -0.15
+				stability_factor = -0.05
+				war_support_factor = -0.03
+				conscription = -0.01
+			}
+		}
+
+	###################################
+	# 枫丹危机 - 国民精神
+	###################################
+
+		# 怀柔终点——模范省份
+		TIA_fontaine_model_province = {
+			picture = TIA_fontaine_model_province
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.05
+				consumer_goods_factor = -0.02
+			}
+		}
+
+		# 铁腕中——军管维稳成本
+		TIA_fontaine_martial_law_cost = {
+			picture = TIA_fontaine_martial_law_cost
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.10
+				consumer_goods_factor = 0.03
+				monthly_population = -0.02
+			}
+		}
+
+		# 铁腕终点A——占领成本
+		TIA_fontaine_occupation_cost = {
+			picture = TIA_fontaine_occupation_cost
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.08
+				political_power_gain = -0.15
+				consumer_goods_factor = 0.05
+				war_support_factor = -0.03
+			}
+		}
+
+		# 铁腕终点B——直辖管理
+		TIA_fontaine_direct_admin = {
+			picture = TIA_fontaine_direct_admin
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.08
+				consumer_goods_factor = 0.02
+				stability_factor = -0.03
+			}
+		}
+
+	###################################
+	# 内阁线 - 国民精神
+	###################################
+
 		# 米雅贝儿线终点
 		TIA_new_dawn_spirit = {
 			picture = TIA_new_dawn_spirit
@@ -1023,9 +1117,9 @@ ideas = {
 				experience_gain_army_factor = 0.10
 			}
 		}
-###################################
-# 水神信仰线 - 国民精神
-###################################
+	###################################
+	# 水神信仰线 - 国民精神
+	###################################
 
 		###################################
 		# 芙宁娜正统系
@@ -1335,9 +1429,9 @@ ideas = {
 			}
 		}
 
-###################################
-# 水神信仰线 - 事件临时国民精神
-###################################
+	###################################
+	# 水神信仰线 - 事件临时国民精神
+	###################################
 
 		TIA_faith_southern_protest_suppressed = {
 			picture = TIA_faith_southern_protest_suppressed
@@ -1373,9 +1467,9 @@ ideas = {
 			}
 		}
 
-###################################
-# 水神信仰线 - 中后期事件临时国民精神
-###################################
+	###################################
+	# 水神信仰线 - 中后期事件临时国民精神
+	###################################
 
 		TIA_faith_international_scholars = {
 			picture = TIA_faith_international_scholars
@@ -1400,9 +1494,9 @@ ideas = {
 			}
 		}
 
-###################################
-# 水神信仰线 - 决议效果国民精神
-###################################
+	###################################
+	# 水神信仰线 - 决议效果国民精神
+	###################################
 
 		TIA_faith_war_prayer_buff = {
 			picture = TIA_faith_war_prayer_buff

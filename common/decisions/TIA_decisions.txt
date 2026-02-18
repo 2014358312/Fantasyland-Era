@@ -2091,3 +2091,253 @@ TIA_sacred_army_decisions = {
 		}
 	}
 }
+
+###################################
+# 枫丹危机决议
+###################################
+
+TIA_fontaine_monitoring_decisions = {
+
+	TIA_fontaine_send_envoy = {
+		#派遣特使
+		icon = generic_political_discourse
+
+		allowed = { tag = TIA }
+
+		available = {
+			has_country_flag = TIA_fontaine_crisis_started
+			has_political_power > 40
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+		}
+
+		visible = {
+			has_country_flag = TIA_fontaine_crisis_started
+			FON = { exists = yes }
+		}
+
+		days_remove = 20
+		cost = 40
+
+		fire_only_once = no
+		days_re_enable = 120
+
+		remove_effect = {
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_fontaine_envoy_visit
+				}
+			}
+			add_stability = 0.02
+			custom_effect_tooltip = TIA_fontaine_send_envoy_tt
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 2
+				has_country_flag = TIA_fontaine_conciliation_path
+			}
+		}
+	}
+
+	TIA_fontaine_trade_concession = {
+		#贸易让利
+		icon = generic_political_discourse
+
+		allowed = { tag = TIA }
+
+		available = {
+			has_country_flag = TIA_fontaine_crisis_started
+			has_political_power > 30
+			num_of_civilian_factories > 5
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+		}
+
+		visible = {
+			has_country_flag = TIA_fontaine_crisis_started
+			FON = { exists = yes }
+			NOT = { has_country_flag = TIA_fontaine_hardline_path }
+		}
+
+		days_remove = 30
+		cost = 30
+
+		fire_only_once = no
+		days_re_enable = 180
+
+		modifier = {
+			consumer_goods_factor = 0.02
+		}
+
+		remove_effect = {
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_fontaine_trade_benefit
+				}
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			add_stability = 0.01
+			custom_effect_tooltip = TIA_fontaine_trade_concession_tt
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	TIA_fontaine_suppress_unrest = {
+		#镇压骚乱
+		icon = generic_political_discourse
+
+		allowed = { tag = TIA }
+
+		available = {
+			has_country_flag = TIA_fontaine_hardline_path
+			has_political_power > 50
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+		}
+
+		visible = {
+			has_country_flag = TIA_fontaine_hardline_path
+			FON = { exists = yes }
+		}
+
+		days_remove = 15
+		cost = 50
+
+		fire_only_once = no
+		days_re_enable = 90
+
+		modifier = {
+			stability_factor = -0.02
+		}
+
+		remove_effect = {
+			add_stability = 0.02
+			add_war_support = 0.02
+			add_manpower = -1000
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_fontaine_suppression_anger
+				}
+			}
+			custom_effect_tooltip = TIA_fontaine_suppress_unrest_tt
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 2
+				has_stability < 0.4
+			}
+		}
+	}
+
+	TIA_fontaine_propaganda_campaign = {
+		#枫丹宣传攻势
+		icon = generic_political_discourse
+
+		allowed = { tag = TIA }
+
+		available = {
+			has_country_flag = TIA_fontaine_crisis_started
+			has_political_power > 35
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+		}
+
+		visible = {
+			has_country_flag = TIA_fontaine_crisis_started
+			FON = { exists = yes }
+		}
+
+		days_remove = 45
+		cost = 35
+
+		fire_only_once = no
+		days_re_enable = 150
+
+		remove_effect = {
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_fontaine_propaganda_effect
+				}
+			}
+			add_stability = 0.01
+			custom_effect_tooltip = TIA_fontaine_propaganda_campaign_tt
+		}
+
+		ai_will_do = {
+			factor = 4
+		}
+	}
+
+	TIA_fontaine_arrest_radicals = {
+		#逮捕激进分子
+		icon = generic_political_discourse
+
+		allowed = { tag = TIA }
+
+		available = {
+			has_country_flag = TIA_fontaine_intel_active
+			has_political_power > 60
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+		}
+
+		visible = {
+			has_country_flag = TIA_fontaine_intel_active
+			FON = { exists = yes }
+			NOT = { has_country_flag = TIA_fontaine_thorn_rose_destroyed }
+		}
+
+		days_remove = 30
+		cost = 60
+
+		fire_only_once = no
+		days_re_enable = 200
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+
+		remove_effect = {
+			add_stability = 0.02
+			add_political_power = -10
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_fontaine_arrest_resentment
+				}
+			}
+			custom_effect_tooltip = TIA_fontaine_arrest_radicals_tt
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 2
+				has_country_flag = TIA_fontaine_hardline_path
+			}
+		}
+	}
+}

@@ -115,54 +115,6 @@ country_event = {
 }
 
 country_event = {
-	#远离
-	id = TIA.4
-	title = TIA.4.t
-	desc = TIA.4.desc
-	picture = GFX_report_event_TIA_guillotine
-	fire_only_once = no
-	is_triggered_only = yes
-	option = {
-		name = TIA.4.a
-		hidden_effect = {
-			country_event = {
-				id = TIA.6
-				days = 31
-			}
-			country_event = {
-				id = TIA.7
-				days = 15
-			}
-			country_event = {
-				id = TIA.8
-				days = 12
-			}
-			complete_national_focus = TIA_Stay_away_Sion
-		}
-	}
-}
-
-country_event = {
-	#锁定
-	id = TIA.5
-	title = TIA.5.t
-	desc = TIA.5.desc
-	picture = GFX_report_event_TIA_guillotine
-	fire_only_once = no
-	is_triggered_only = yes
-	option = {
-		name = TIA.5.a
-		hidden_effect = {
-			country_event = {
-				id = TIA.4
-				days = 21
-			}
-			complete_national_focus = TIA_Lock_on_Abel
-		}
-	}
-}
-
-country_event = {
 	#马术社
 	id = TIA.6
 	title = TIA.6.t
@@ -174,58 +126,6 @@ country_event = {
 		name = TIA.6.a
 		hidden_effect = {
 			complete_national_focus = TIA_Join_equestrian_club
-		}
-	}
-}
-
-country_event = {
-	#福克罗德
-	id = TIA.7
-	title = TIA.7.t
-	desc = TIA.7.desc
-	picture = GFX_report_event_TIA_guillotine
-	fire_only_once = no
-	is_triggered_only = yes
-	option = {
-		name = TIA.7.a
-		hidden_effect = {
-			complete_national_focus = TIA_Contact_FaulkLeod_Chamber_Commerce
-		}
-	}
-}
-
-country_event = {
-	#舞会事件
-	id = TIA.8
-	title = TIA.8.t
-	desc = TIA.8.desc
-	picture = GFX_report_event_TIA_guillotine
-	fire_only_once = no
-	is_triggered_only = yes
-	option = {
-		name = TIA.8.a
-		hidden_effect = {
-			complete_national_focus = TIA_Prom_events
-			country_event = {
-				id = TIA.9
-				days = 21
-			}
-		}
-	}
-}
-
-country_event = {
-	#剑术大会便当
-	id = TIA.9
-	title = TIA.9.t
-	desc = TIA.9.desc
-	picture = GFX_report_event_TIA_guillotine
-	fire_only_once = no
-	is_triggered_only = yes
-	option = {
-		name = TIA.9.a
-		hidden_effect = {
-			complete_national_focus = TIA_Bento_kendo_tournament
 		}
 	}
 }
@@ -1184,6 +1084,22 @@ country_event = {
 		add_manpower = 5000
 		ai_chance = { factor = 100 }
 	}
+	option = {
+        name = TIA.31.e
+        trigger = {
+            has_country_flag = TIA_medical_reform_started
+            OR = {
+                has_country_flag = TIA_quarantine_network
+                has_country_flag = TIA_rural_doctors
+            }
+        }
+        add_political_power = 25
+        add_stability = 0.08
+        add_manpower = 3000
+        add_monthly_population = 0.05
+        custom_effect_tooltip = TIA.31.e_tt
+        ai_chance = { factor = 100 }
+    }
 }
 
 # 重建地方议会 → 第一次选举的混乱
@@ -2100,6 +2016,18 @@ country_event = {
 		add_political_power = 15
 		add_stability = 0.03
 		add_monthly_population = 0.05
+		hidden_effect = {
+            if = {
+                limit = {
+                    OR = {
+                        has_country_flag = TIA_quarantine_network
+                        has_country_flag = TIA_rural_doctors
+                        has_country_flag = TIA_basic_sanitation
+                    }
+                }
+                country_event = { id = TIA.67 days = 20 }
+            }
+		}
 		ai_chance = { factor = 50 }
 	}
 }
@@ -2335,6 +2263,1115 @@ country_event = {
 		ai_chance = { factor = 50 }
 	}
 }
+
+###################################
+# Plague Defense Chain System
+# Link: Medical Reform x Public Health x Potential Plague
+# Event ID Range: TIA.64 - TIA.70
+###################################
+
+country_event = {
+	id = TIA.64
+	title = TIA.64.t
+	desc = TIA.64.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.64.a
+		add_political_power = -50
+		custom_effect_tooltip = TIA.64.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_quarantine_network
+		}
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.64.b
+		add_political_power = -30
+		custom_effect_tooltip = TIA.64.b_tt
+		hidden_effect = {
+			set_country_flag = TIA_rural_doctors
+		}
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.64.c
+		add_political_power = 20
+		custom_effect_tooltip = TIA.64.c_tt
+		hidden_effect = {
+			set_country_flag = TIA_basic_sanitation
+		}
+		ai_chance = { factor = 20 }
+	}
+}
+
+country_event = {
+	id = TIA.65
+	title = TIA.65.t
+	desc = TIA.65.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.65.a
+		trigger = {
+			has_country_flag = TIA_quarantine_network
+		}
+		add_stability = 0.05
+		add_political_power = 20
+		custom_effect_tooltip = TIA.65.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_plague_rapid_response
+			country_event = { id = TIA.66 days = 30 }
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = TIA.65.b
+		trigger = {
+			has_country_flag = TIA_rural_doctors
+		}
+		add_stability = 0.03
+		add_political_power = 15
+		custom_effect_tooltip = TIA.65.b_tt
+		hidden_effect = {
+			set_country_flag = TIA_plague_early_detection
+			country_event = { id = TIA.66 days = 40 }
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = TIA.65.c
+		trigger = {
+			has_country_flag = TIA_basic_sanitation
+			NOT = { has_country_flag = TIA_quarantine_network }
+			NOT = { has_country_flag = TIA_rural_doctors }
+		}
+		add_stability = -0.03
+		add_political_power = -20
+		custom_effect_tooltip = TIA.65.c_tt
+		hidden_effect = {
+			set_country_flag = TIA_plague_scramble
+			country_event = { id = TIA.67 days = 50 }
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = TIA.65.d
+		trigger = {
+			NOT = { has_country_flag = TIA_quarantine_network }
+			NOT = { has_country_flag = TIA_rural_doctors }
+			NOT = { has_country_flag = TIA_basic_sanitation }
+		}
+		add_stability = -0.05
+		add_political_power = -40
+		add_war_support = -0.03
+		custom_effect_tooltip = TIA.65.d_tt
+		hidden_effect = {
+			country_event = { id = TIA.69 days = 30 }
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = {
+	id = TIA.66
+	title = TIA.66.t
+	desc = TIA.66.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.66.a
+		trigger = {
+			has_country_flag = TIA_plague_rapid_response
+		}
+		add_stability = 0.10
+		add_political_power = 50
+		add_war_support = 0.05
+		if = {
+			limit = { has_idea = TIA_potential_plague }
+			swap_ideas = {
+				remove_idea = TIA_potential_plague
+				add_idea = TIA_plague_shield
+			}
+		}
+		custom_effect_tooltip = TIA.66.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_plague_fully_contained
+			country_event = { id = TIA.67 days = 10 }
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = TIA.66.b
+		trigger = {
+			has_country_flag = TIA_plague_early_detection
+			NOT = { has_country_flag = TIA_plague_rapid_response }
+		}
+		add_stability = 0.05
+		add_political_power = 25
+		if = {
+			limit = { has_idea = TIA_potential_plague }
+			swap_ideas = {
+				remove_idea = TIA_potential_plague
+				add_idea = TIA_plague_weakened
+			}
+		}
+		custom_effect_tooltip = TIA.66.b_tt
+		hidden_effect = {
+			set_country_flag = TIA_plague_mostly_contained
+			country_event = { id = TIA.67 days = 15 }
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = TIA.66.c
+		trigger = {
+			has_country_flag = TIA_plague_scramble
+			NOT = { has_country_flag = TIA_plague_rapid_response }
+			NOT = { has_country_flag = TIA_plague_early_detection }
+		}
+		add_stability = -0.02
+		add_political_power = -15
+		if = {
+			limit = { has_idea = TIA_potential_plague }
+			swap_ideas = {
+				remove_idea = TIA_potential_plague
+				add_idea = TIA_plague_weakened
+			}
+		}
+		custom_effect_tooltip = TIA.66.c_tt
+		hidden_effect = {
+			set_country_flag = TIA_plague_barely_contained
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = {
+	id = TIA.67
+	title = TIA.67.t
+	desc = TIA.67.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.67.a
+		trigger = {
+			has_country_flag = TIA_quarantine_network
+		}
+		add_stability = 0.08
+		add_political_power = 30
+		add_monthly_population = 0.10
+		add_manpower = 5000
+		custom_effect_tooltip = TIA.67.a_tt
+		ai_chance = { factor = 60 }
+	}
+	option = {
+		name = TIA.67.b
+		trigger = {
+			has_country_flag = TIA_rural_doctors
+			NOT = { has_country_flag = TIA_quarantine_network }
+		}
+		add_stability = 0.05
+		add_political_power = 20
+		add_monthly_population = 0.08
+		add_manpower = 8000
+		custom_effect_tooltip = TIA.67.b_tt
+		ai_chance = { factor = 60 }
+	}
+	option = {
+		name = TIA.67.c
+		trigger = {
+			NOT = { has_country_flag = TIA_quarantine_network }
+			NOT = { has_country_flag = TIA_rural_doctors }
+		}
+		add_stability = 0.03
+		add_political_power = 10
+		add_monthly_population = 0.05
+		custom_effect_tooltip = TIA.67.c_tt
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = {
+	id = TIA.68
+	title = TIA.68.t
+	desc = TIA.68.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.68.a
+		trigger = {
+			has_country_flag = TIA_plague_fully_contained
+		}
+		add_political_power = 50
+		add_stability = 0.05
+		custom_effect_tooltip = TIA.68.a_tt
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = TIA.68.b
+		trigger = {
+			NOT = { has_country_flag = TIA_plague_fully_contained }
+		}
+		add_political_power = 25
+		add_stability = 0.02
+		custom_effect_tooltip = TIA.68.b_tt
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = {
+	id = TIA.69
+	title = TIA.69.t
+	desc = TIA.69.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.69.a
+		add_stability = -0.05
+		add_political_power = -60
+		add_manpower = -5000
+		hidden_effect = {
+			country_event = { id = TIA.70 days = 45 }
+		}
+		if = {
+			limit = { has_idea = TIA_potential_plague }
+			swap_ideas = {
+				remove_idea = TIA_potential_plague
+				add_idea = TIA_plague_scarred
+			}
+		}
+		custom_effect_tooltip = TIA.69.a_tt
+		ai_chance = { factor = 50 }
+	}
+	option = {
+		name = TIA.69.b
+		add_stability = -0.03
+		add_political_power = -80
+		add_war_support = -0.05
+		if = {
+			limit = { has_idea = TIA_potential_plague }
+			swap_ideas = {
+				remove_idea = TIA_potential_plague
+				add_idea = TIA_plague_weakened
+			}
+		}
+		custom_effect_tooltip = TIA.69.b_tt
+		ai_chance = { factor = 30 }
+	}
+	option = {
+		name = TIA.69.c
+		add_stability = -0.08
+		add_political_power = -30
+		add_manpower = -10000
+		hidden_effect = {
+			country_event = { id = TIA.70 days = 45 }
+		}
+		if = {
+			limit = { has_idea = TIA_potential_plague }
+			swap_ideas = {
+				remove_idea = TIA_potential_plague
+				add_idea = TIA_plague_scarred
+			}
+		}
+		custom_effect_tooltip = TIA.69.c_tt
+		ai_chance = { factor = 20 }
+	}
+}
+
+country_event = {
+	id = TIA.70
+	title = TIA.70.t
+	desc = TIA.70.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = TIA.70.a
+		add_political_power = -50
+		add_stability = 0.03
+		if = {
+			limit = { has_idea = TIA_plague_scarred }
+			swap_ideas = {
+				remove_idea = TIA_plague_scarred
+				add_idea = TIA_plague_weakened
+			}
+		}
+		hidden_effect = {
+			set_country_flag = TIA_basic_sanitation
+		}
+		custom_effect_tooltip = TIA.70.a_tt
+		ai_chance = { factor = 50 }
+	}
+	option = {
+		name = TIA.70.b
+		add_political_power = 20
+		add_war_support = 0.05
+		army_experience = 10
+		ai_chance = { factor = 50 }
+	}
+}
+
+###################################
+# 枫丹危机事件链
+###################################
+
+###################################
+# 情报与危机引爆
+###################################
+
+# 情报网建立后——刺玫会的秘密会议
+country_event = {
+	id = TIA.4
+	title = TIA.4.t
+	desc = TIA.4.desc
+	picture = GFX_report_event_TIA_fontaine_spy
+
+	is_triggered_only = yes
+
+	# 深入渗透刺玫会高层
+	option = {
+		name = TIA.4.a
+		add_political_power = -30
+		set_country_flag = TIA_fontaine_deep_infiltration
+		hidden_effect = {
+			country_event = {
+				id = TIA.5
+				days = 60
+				random_days = 30
+			}
+		}
+		custom_effect_tooltip = TIA.4.a_tt
+		ai_chance = {
+			factor = 50
+		}
+	}
+	# 只做外围监控，不冒险
+	option = {
+		name = TIA.4.b
+		add_political_power = -10
+		set_country_flag = TIA_fontaine_surface_watch
+		ai_chance = {
+			factor = 30
+		}
+	}
+	# 向枫丹总督通报情况
+	option = {
+		name = TIA.4.c
+		add_political_power = -15
+		add_stability = 0.01
+		hidden_effect = {
+			country_event = {
+				id = TIA.7
+				days = 30
+				random_days = 15
+			}
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# 深入渗透结果——发现刺玫会的独立路线图
+country_event = {
+	id = TIA.5
+	title = TIA.5.t
+	desc = TIA.5.desc
+	picture = GFX_report_event_TIA_fontaine_roadmap
+
+	is_triggered_only = yes
+
+	# 掌握了关键证据，现在有主动权
+	option = {
+		name = TIA.5.a
+		add_political_power = 50
+		set_country_flag = TIA_fontaine_has_evidence
+		custom_effect_tooltip = TIA.5.a_tt
+		ai_chance = {
+			factor = 60
+		}
+	}
+	# 通过秘密渠道将证据泄露给温和派
+	option = {
+		name = TIA.5.b
+		add_political_power = -20
+		FON = {
+			add_opinion_modifier = {
+				target = TIA
+				modifier = TIA_fontaine_moderate_trust
+			}
+		}
+		set_country_flag = TIA_fontaine_empowered_moderates
+		custom_effect_tooltip = TIA.5.b_tt
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+# 通报总督后——总督的两难
+country_event = {
+	id = TIA.7
+	title = TIA.7.t
+	desc = TIA.7.desc
+	picture = GFX_report_event_TIA_fontaine_governor
+
+	is_triggered_only = yes
+
+	# 总督建议加强管控
+	option = {
+		name = TIA.7.a
+		add_political_power = -15
+		add_war_support = 0.02
+		ai_chance = {
+			factor = 50
+		}
+	}
+	# 总督建议安抚为主
+	option = {
+		name = TIA.7.b
+		add_political_power = -10
+		add_stability = 0.02
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# 水神信仰联动——阿库娅正统引发枫丹怒火（由水神线TIA_faith.20触发，此处为后续）
+country_event = {
+	id = TIA.8
+	title = TIA.8.t
+	desc = TIA.8.desc
+	picture = GFX_report_event_TIA_fontaine_protest
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_country_flag = TIA_fontaine_crisis_started
+		OR = {
+			has_idea = TIA_Aqua_orthodoxy_established
+			has_idea = TIA_Aqua_militant_faith
+			has_idea = TIA_aqua_militant_theocracy_spirit
+		}
+		FON = {
+			exists = yes
+			is_subject_of = TIA
+		}
+		NOT = { has_country_flag = TIA_fontaine_aqua_protest_done }
+	}
+
+	mean_time_to_happen = {
+		days = 90
+	}
+
+	immediate = {
+		set_country_flag = TIA_fontaine_aqua_protest_done
+	}
+
+	# 压制抗议
+	option = {
+		name = TIA.8.a
+		add_stability = -0.05
+		add_political_power = -40
+		FON = {
+			add_opinion_modifier = {
+				target = TIA
+				modifier = TIA_fontaine_aqua_suppression
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+	# 忍耐——不在枫丹问题上火上浇油
+	option = {
+		name = TIA.8.b
+		add_stability = -0.03
+		add_war_support = -0.02
+		ai_chance = {
+			factor = 40
+		}
+	}
+	# 派遣阿库娅布道团"安抚"枫丹（需要布道团idea）
+	option = {
+		name = TIA.8.c
+		trigger = {
+			has_idea = TIA_divine_grace_mission_spirit
+		}
+		add_political_power = -50
+		add_stability = -0.08
+		FON = {
+			add_opinion_modifier = {
+				target = TIA
+				modifier = TIA_fontaine_aqua_provocation_severe
+			}
+		}
+		custom_effect_tooltip = TIA.8.c_tt
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# 水神信仰联动——世俗化对枫丹的影响
+country_event = {
+	id = TIA.9
+	title = TIA.9.t
+	desc = TIA.9.desc
+	picture = GFX_report_event_TIA_fontaine_secular_reaction
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_country_flag = TIA_fontaine_crisis_started
+		OR = {
+			has_idea = TIA_secular_tolerance
+			has_idea = TIA_enlightened_empire_spirit
+		}
+		FON = {
+			exists = yes
+			is_subject_of = TIA
+		}
+		NOT = { has_country_flag = TIA_fontaine_secular_effect_done }
+	}
+
+	mean_time_to_happen = {
+		days = 120
+	}
+
+	immediate = {
+		set_country_flag = TIA_fontaine_secular_effect_done
+	}
+
+	# 枫丹的宗教领袖对此表示困惑但不敌对
+	option = {
+		name = TIA.9.a
+		add_stability = 0.02
+		FON = {
+			add_opinion_modifier = {
+				target = TIA
+				modifier = TIA_fontaine_secular_neutral
+			}
+		}
+		custom_effect_tooltip = TIA.9.a_tt
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+###################################
+# FON侧事件（枫丹收到的通知）
+###################################
+
+# 枫丹收到帝国开始评估的通知
+country_event = {
+	id = TIA.71
+	title = TIA.71.t
+	desc = TIA.71.desc
+	picture = GFX_report_event_TIA_fontaine_notice
+
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.71.a
+		add_political_power = 10
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+###################################
+# 怀柔路线事件
+###################################
+
+# 自治权谈判——刺玫会的条件清单
+country_event = {
+	id = TIA.72
+	title = TIA.72.t
+	desc = TIA.72.desc
+	picture = GFX_report_event_TIA_fontaine_negotiation
+
+	is_triggered_only = yes
+
+	# 逐条讨论——展示诚意
+	option = {
+		name = TIA.72.a
+		add_political_power = -30
+		add_stability = 0.02
+		set_country_flag = TIA_fontaine_negotiation_sincere
+		custom_effect_tooltip = TIA.72.a_tt
+		ai_chance = {
+			factor = 50
+		}
+	}
+	# 直接提出帝国的底线
+	option = {
+		name = TIA.72.b
+		add_political_power = -15
+		set_country_flag = TIA_fontaine_negotiation_firm
+		custom_effect_tooltip = TIA.72.b_tt
+		ai_chance = {
+			factor = 30
+		}
+	}
+	# 利用情报优势施压（需要证据flag）
+	option = {
+		name = TIA.72.c
+		trigger = {
+			has_country_flag = TIA_fontaine_has_evidence
+		}
+		add_political_power = 25
+		add_stability = 0.03
+		FON = {
+			add_opinion_modifier = {
+				target = TIA
+				modifier = TIA_fontaine_intel_leverage
+			}
+		}
+		set_country_flag = TIA_fontaine_negotiation_leverage
+		custom_effect_tooltip = TIA.72.c_tt
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# 文化保护法的反响——枫丹市民的声音
+country_event = {
+	id = TIA.73
+	title = TIA.73.t
+	desc = TIA.73.desc
+	picture = GFX_report_event_TIA_fontaine_celebration
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_fontaine_cultural_protection
+		NOT = { has_country_flag = TIA_fontaine_culture_reaction_done }
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		set_country_flag = TIA_fontaine_culture_reaction_done
+	}
+
+	# 枫丹市民自发组织了感谢游行
+	option = {
+		name = TIA.73.a
+		add_stability = 0.03
+		add_political_power = 20
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 议会改革后——温和派与激进派的公开辩论
+country_event = {
+	id = TIA.74
+	title = TIA.74.t
+	desc = TIA.74.desc
+	picture = GFX_report_event_TIA_fontaine_debate
+
+	is_triggered_only = yes
+
+	# 温和派获胜——枫丹走上了合作道路
+	option = {
+		name = TIA.74.a
+		trigger = {
+			OR = {
+				has_country_flag = TIA_fontaine_negotiation_sincere
+				has_country_flag = TIA_fontaine_empowered_moderates
+			}
+		}
+		add_political_power = 40
+		add_stability = 0.03
+		FON = {
+			add_opinion_modifier = {
+				target = TIA
+				modifier = TIA_fontaine_goodwill
+			}
+		}
+		custom_effect_tooltip = TIA.74.a_tt
+		ai_chance = {
+			factor = 60
+		}
+	}
+	# 激进派仍占上风——需要更多努力
+	option = {
+		name = TIA.74.b
+		add_political_power = -20
+		add_stability = -0.02
+		custom_effect_tooltip = TIA.74.b_tt
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+# 和解仪式——帝国与枫丹的历史性握手
+country_event = {
+	id = TIA.75
+	title = TIA.75.t
+	desc = TIA.75.desc
+	picture = GFX_report_event_TIA_fontaine_handshake
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_fontaine_reconciliation
+		NOT = { has_country_flag = TIA_fontaine_handshake_done }
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	immediate = {
+		set_country_flag = TIA_fontaine_handshake_done
+	}
+
+	# 盛大的公开和解仪式
+	option = {
+		name = TIA.75.a
+		add_political_power = 50
+		add_stability = 0.05
+		every_country = {
+			limit = {
+				NOT = { tag = TIA }
+				NOT = { tag = FON }
+				NOT = { has_war_with = TIA }
+			}
+			add_opinion_modifier = {
+				target = TIA
+				modifier = TIA_fontaine_peace_prestige
+			}
+		}
+		custom_effect_tooltip = TIA.75.a_tt
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+###################################
+# 铁腕路线事件
+###################################
+
+# 撤销自治权——枫丹的愤怒
+country_event = {
+	id = TIA.76
+	title = TIA.76.t
+	desc = TIA.76.desc
+	picture = GFX_report_event_TIA_fontaine_rage
+
+	is_triggered_only = yes
+
+	# 枫丹街头爆发大规模抗议
+	option = {
+		name = TIA.76.a
+		add_stability = -0.05
+		add_political_power = -25
+		custom_effect_tooltip = TIA.76.a_tt
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 军管期间——士兵与平民的冲突
+country_event = {
+	id = TIA.77
+	title = TIA.77.t
+	desc = TIA.77.desc
+	picture = GFX_report_event_TIA_fontaine_clash
+
+	is_triggered_only = yes
+
+	# 严惩肇事士兵——维护帝国军纪
+	option = {
+		name = TIA.77.a
+		add_political_power = -20
+		add_stability = 0.02
+		add_war_support = -0.02
+		ai_chance = {
+			factor = 40
+		}
+	}
+	# 宣布宵禁——减少接触就减少摩擦
+	option = {
+		name = TIA.77.b
+		add_stability = -0.02
+		FON = {
+			add_opinion_modifier = {
+				target = TIA
+				modifier = TIA_fontaine_curfew_resentment
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+	# 替换驻军——从北方调来与枫丹没有矛盾的部队
+	option = {
+		name = TIA.77.c
+		add_political_power = -30
+		add_manpower = -3000
+		add_stability = 0.03
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# 刺玫会清剿——最后的据点
+country_event = {
+	id = TIA.78
+	title = TIA.78.t
+	desc = TIA.78.desc
+	picture = GFX_report_event_TIA_fontaine_last_stand
+
+	is_triggered_only = yes
+
+	# 强攻据点——彻底消灭
+	option = {
+		name = TIA.78.a
+		add_political_power = -30
+		add_manpower = -2000
+		add_war_support = 0.03
+		set_country_flag = TIA_fontaine_thorn_rose_destroyed
+		custom_effect_tooltip = TIA.78.a_tt
+		ai_chance = {
+			factor = 50
+		}
+	}
+	# 围而不攻——等他们弹尽粮绝
+	option = {
+		name = TIA.78.b
+		add_political_power = -15
+		set_country_flag = TIA_fontaine_thorn_rose_starved
+		hidden_effect = {
+			country_event = {
+				id = TIA.79
+				days = 30
+				random_days = 15
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+	# 最后通牒——投降者可获从宽处理
+	option = {
+		name = TIA.78.c
+		add_political_power = -20
+		set_country_flag = TIA_fontaine_thorn_rose_surrendered
+		custom_effect_tooltip = TIA.78.c_tt
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# 围困结果
+country_event = {
+	id = TIA.79
+	title = TIA.79.t
+	desc = TIA.79.desc
+	picture = GFX_report_event_TIA_fontaine_siege_end
+
+	is_triggered_only = yes
+
+	# 残余分子投降
+	option = {
+		name = TIA.79.a
+		add_stability = 0.02
+		add_political_power = 15
+		set_country_flag = TIA_fontaine_thorn_rose_destroyed
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 直辖化——最终吞并决定
+country_event = {
+	id = TIA.80
+	title = TIA.80.t
+	desc = TIA.80.desc
+	picture = GFX_report_event_TIA_fontaine_annexation
+
+	is_triggered_only = yes
+
+	# 正式吞并枫丹——附属国不复存在
+	option = {
+		name = TIA.80.a
+		annex_country = {
+			target = FON
+			transfer_troops = yes
+		}
+		add_political_power = -100
+		add_stability = -0.08
+		add_war_support = 0.05
+		every_owned_state = {
+			limit = { is_core_of = FON }
+			add_core_of = TIA
+			add_compliance = -30
+		}
+		add_ideas = TIA_fontaine_occupation_cost
+		set_country_flag = TIA_fontaine_annexed
+		every_country = {
+			limit = {
+				NOT = { tag = TIA }
+				NOT = { has_war_with = TIA }
+			}
+			add_opinion_modifier = {
+				target = TIA
+				modifier = TIA_fontaine_annexation_outrage
+			}
+		}
+		custom_effect_tooltip = TIA.80.a_tt
+		ai_chance = {
+			factor = 60
+		}
+	}
+	# 保留枫丹名义上的存在，但实权归帝国总督
+	option = {
+		name = TIA.80.b
+		add_political_power = -50
+		add_stability = -0.03
+		set_autonomy = {
+			target = FON
+			autonomy_state = autonomy_integrated_puppet
+		}
+		add_ideas = TIA_fontaine_direct_admin
+		set_country_flag = TIA_fontaine_puppet_tightened
+		custom_effect_tooltip = TIA.80.b_tt
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+###################################
+# 枫丹独立战争（危机失控时触发）
+###################################
+
+# 枫丹宣布独立——最坏情况
+country_event = {
+	id = TIA.81
+	title = TIA.81.t
+	desc = TIA.81.desc
+	picture = GFX_report_event_TIA_fontaine_independence
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		FON = {
+			exists = yes
+			is_subject_of = TIA
+		}
+		has_country_flag = TIA_fontaine_hardline_path
+		OR = {
+			has_idea = TIA_Aqua_militant_faith
+			has_idea = TIA_aqua_militant_theocracy_spirit
+		}
+		NOT = { has_country_flag = TIA_fontaine_thorn_rose_purged }
+		NOT = { has_country_flag = TIA_fontaine_independence_war_done }
+		stability < 0.4
+	}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+	immediate = {
+		set_country_flag = TIA_fontaine_independence_war_done
+	}
+
+	# 枫丹叛乱——战争爆发
+	option = {
+		name = TIA.81.a
+		TIA = {
+			set_autonomy = {
+				target = FON
+				autonomy_state = autonomy_free
+			}
+			declare_war_on = {
+				target = FON
+				type = annex_everything
+			}
+		}
+		add_stability = -0.10
+		add_war_support = 0.15
+		custom_effect_tooltip = TIA.81.a_tt
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# 穆露奈依特的反应——铁腕路线的外交代价
+country_event = {
+	id = TIA.82
+	title = TIA.82.t
+	desc = TIA.82.desc
+	picture = GFX_report_event_TIA_fontaine_mul_reaction
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_country_flag = TIA_fontaine_hardline_path
+		has_country_flag = TIA_fontaine_martial_law_declared
+		MUL = { exists = yes }
+		NOT = { has_country_flag = TIA_fontaine_mul_reaction_done }
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		set_country_flag = TIA_fontaine_mul_reaction_done
+	}
+
+	# 穆露奈依特发表声明谴责
+	option = {
+		name = TIA.82.a
+		MUL = {
+			add_opinion_modifier = {
+				target = TIA
+				modifier = TIA_fontaine_mul_condemn
+			}
+		}
+		add_political_power = -15
+		custom_effect_tooltip = TIA.82.a_tt
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
 
 country_event = {
 	#铁路人偶大受欢迎

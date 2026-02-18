@@ -242,7 +242,7 @@ focus_tree = {
 		id = TIA_Make_change
 		icon = GFX_focus_TIA_change_future
 		relative_position_id = TIA_Choice
-		x = 9
+		x = 15
 		y = 1
 		cost = 1
 		mutually_exclusive = {
@@ -351,15 +351,20 @@ focus_tree = {
 			focus = TIA_Make_change
 		}
 		completion_reward = {
-			custom_effect_tooltip = TIA_plague_change
-			hidden_effect = {
-				country_event = {
-					id = TIA.3
-					days = 365
-					random_days = 90
-				}
-			}
-		}
+        	custom_effect_tooltip = TIA_plague_change
+        	hidden_effect = {
+        	    set_country_flag = TIA_medical_reform_started
+        	    country_event = {
+            	    id = TIA.64
+            	    days = 60
+            	}
+            	country_event = {
+            	    id = TIA.3
+            	    days = 365
+            	    random_days = 90
+            	}
+        	}
+    }
 		ai_will_do = {
 			factor = 1
 		}
@@ -399,10 +404,537 @@ focus_tree = {
 		}
 	}
 
+	###################################
+	# 枫丹事务线
+	###################################
+
+	focus = {
+		#枫丹局势评估
+		id = TIA_fontaine_assessment
+		icon = GFX_focus_TIA_fontaine_assessment
+		relative_position_id = TIA_next_step_plan
+		x = -9
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_next_step_plan
+		}
+		available = {
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+		}
+		bypass = {
+			FON = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			add_political_power = 25
+			set_country_flag = TIA_fontaine_crisis_started
+			FON = {
+				country_event = {
+					id = TIA.71
+					days = 1
+				}
+			}
+			unlock_decision_category_tooltip = TIA_fontaine_monitoring_decisions
+			custom_effect_tooltip = TIA_fontaine_assessment_tt
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = {
+		#枫丹情报网
+		id = TIA_fontaine_intelligence_network
+		icon = GFX_focus_TIA_fontaine_intelligence_network
+		relative_position_id = TIA_fontaine_assessment
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_fontaine_assessment
+		}
+		available = {
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+		}
+		completion_reward = {
+			add_political_power = -25
+			set_country_flag = TIA_fontaine_intel_active
+			custom_effect_tooltip = TIA_fontaine_intelligence_network_tt
+			hidden_effect = {
+				country_event = {
+					id = TIA.4
+					days = 30
+					random_days = 30
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	###################################
+	# 怀柔路线
+	###################################
+
+	focus = {
+		#自治权谈判
+		id = TIA_fontaine_autonomy_negotiation
+		icon = GFX_focus_TIA_fontaine_autonomy_negotiation
+		relative_position_id = TIA_fontaine_intelligence_network
+		x = -3
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_fontaine_intelligence_network
+		}
+		mutually_exclusive = {
+			focus = TIA_fontaine_revoke_autonomy
+		}
+		available = {
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+			NOT = { has_war_with = FON }
+		}
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.03
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_fontaine_goodwill
+				}
+			}
+			set_country_flag = TIA_fontaine_conciliation_path
+			custom_effect_tooltip = TIA_fontaine_autonomy_negotiation_tt
+			hidden_effect = {
+				country_event = {
+					id = TIA.72
+					days = 15
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 3
+				has_completed_focus = TIA_fontaine_pilgrimage_concordat
+			}
+		}
+	}
+	focus = {
+		#枫丹文化保护法
+		id = TIA_fontaine_cultural_protection
+		icon = GFX_focus_TIA_fontaine_cultural_protection
+		relative_position_id = TIA_fontaine_autonomy_negotiation
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_fontaine_autonomy_negotiation
+		}
+		available = {
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+		}
+		completion_reward = {
+			add_political_power = -30
+			add_stability = 0.03
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_fontaine_cultural_respect
+				}
+				add_ideas = FON_cultural_protection_act
+			}
+			custom_effect_tooltip = TIA_fontaine_cultural_protection_tt
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	focus = {
+		#联合水利工程
+		id = TIA_fontaine_joint_waterworks
+		icon = GFX_focus_TIA_fontaine_joint_waterworks
+		relative_position_id = TIA_fontaine_cultural_protection
+		x = -1
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = TIA_fontaine_cultural_protection
+		}
+		available = {
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+			num_of_civilian_factories > 8
+		}
+		completion_reward = {
+			add_political_power = 25
+			FON = {
+				every_owned_state = {
+					limit = {
+						is_core_of = FON
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_fontaine_economic_bond
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = TIA
+					any_neighbor_state = {
+						is_core_of = FON
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = TIA
+					any_neighbor_state = {
+						is_core_of = FON
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = TIA_fontaine_economic_bound
+			custom_effect_tooltip = TIA_fontaine_joint_waterworks_tt
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	focus = {
+		#枫丹议会改革
+		id = TIA_fontaine_parliament_reform
+		icon = GFX_focus_TIA_fontaine_parliament_reform
+		relative_position_id = TIA_fontaine_cultural_protection
+		x = 1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_fontaine_cultural_protection
+		}
+		available = {
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+		}
+		completion_reward = {
+			add_political_power = -40
+			add_stability = 0.02
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_fontaine_goodwill
+				}
+			}
+			set_country_flag = TIA_fontaine_parliament_reformed
+			custom_effect_tooltip = TIA_fontaine_parliament_reform_tt
+			hidden_effect = {
+				country_event = {
+					id = TIA.74
+					days = 30
+					random_days = 15
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	focus = {
+		#帝国框架内的和解
+		id = TIA_fontaine_reconciliation
+		icon = GFX_focus_TIA_fontaine_reconciliation
+		relative_position_id = TIA_fontaine_cultural_protection
+		x = 0
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = TIA_fontaine_joint_waterworks
+			focus = TIA_fontaine_parliament_reform
+		}
+		available = {
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+			NOT = { has_war_with = FON }
+			has_country_flag = TIA_fontaine_economic_bound
+			has_country_flag = TIA_fontaine_parliament_reformed
+		}
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.10
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_fontaine_reconciliation_bond
+				}
+			}
+			add_ideas = TIA_fontaine_model_province
+			set_country_flag = TIA_fontaine_reconciled
+			custom_effect_tooltip = TIA_fontaine_reconciliation_tt
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	###################################
+	# 铁腕路线
+	###################################
+
+	focus = {
+		#撤销自治权
+		id = TIA_fontaine_revoke_autonomy
+		icon = GFX_focus_TIA_fontaine_revoke_autonomy
+		relative_position_id = TIA_fontaine_intelligence_network
+		x = 3
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_fontaine_intelligence_network
+		}
+		mutually_exclusive = {
+			focus = TIA_fontaine_autonomy_negotiation
+		}
+		available = {
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+		}
+		completion_reward = {
+			add_political_power = -75
+			add_stability = -0.05
+			add_war_support = 0.05
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_fontaine_autonomy_revoked
+				}
+			}
+			set_country_flag = TIA_fontaine_hardline_path
+			custom_effect_tooltip = TIA_fontaine_revoke_autonomy_tt
+			hidden_effect = {
+				country_event = {
+					id = TIA.76
+					days = 10
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 2
+				has_idea = TIA_Aqua_orthodoxy_established
+			}
+			modifier = {
+				factor = 2
+				has_idea = TIA_Aqua_militant_faith
+			}
+		}
+	}
+	focus = {
+		#军事管制令
+		id = TIA_fontaine_martial_law
+		icon = GFX_focus_TIA_fontaine_martial_law
+		relative_position_id = TIA_fontaine_revoke_autonomy
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_fontaine_revoke_autonomy
+		}
+		available = {
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+		}
+		completion_reward = {
+			add_political_power = -50
+			add_stability = -0.03
+			add_war_support = 0.03
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_fontaine_martial_law_anger
+				}
+			}
+			add_timed_idea = {
+				idea = TIA_fontaine_martial_law_cost
+				days = 180
+			}
+			set_country_flag = TIA_fontaine_martial_law_declared
+			custom_effect_tooltip = TIA_fontaine_martial_law_tt
+			hidden_effect = {
+				country_event = {
+					id = TIA.77
+					days = 45
+					random_days = 30
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	focus = {
+		#刺玫会清剿
+		id = TIA_fontaine_thorn_rose_purge
+		icon = GFX_focus_TIA_fontaine_thorn_rose_purge
+		relative_position_id = TIA_fontaine_martial_law
+		x = -1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_fontaine_martial_law
+		}
+		available = {
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+			has_country_flag = TIA_fontaine_martial_law_declared
+		}
+		completion_reward = {
+			add_political_power = -60
+			add_stability = -0.05
+			add_war_support = 0.05
+			FON = {
+				add_opinion_modifier = {
+					target = TIA
+					modifier = TIA_fontaine_purge_hatred
+				}
+			}
+			set_country_flag = TIA_fontaine_thorn_rose_purged
+			custom_effect_tooltip = TIA_fontaine_thorn_rose_purge_tt
+			hidden_effect = {
+				country_event = {
+					id = TIA.78
+					days = 20
+					random_days = 20
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	focus = {
+		#枫丹驻军强化
+		id = TIA_fontaine_garrison_reinforcement
+		icon = GFX_focus_TIA_fontaine_garrison_reinforcement
+		relative_position_id = TIA_fontaine_martial_law
+		x = 1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIA_fontaine_martial_law
+		}
+		available = {
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+		}
+		completion_reward = {
+			add_manpower = -8000
+			add_war_support = 0.03
+			FON = {
+				every_owned_state = {
+					limit = { is_core_of = FON }
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = {
+							all_provinces = yes
+						}
+						instant_build = yes
+					}
+				}
+			}
+			set_country_flag = TIA_fontaine_garrison_strengthened
+			custom_effect_tooltip = TIA_fontaine_garrison_reinforcement_tt
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	focus = {
+		#枫丹直辖化
+		id = TIA_fontaine_direct_rule
+		icon = GFX_focus_TIA_fontaine_direct_rule
+		relative_position_id = TIA_fontaine_martial_law
+		x = 0
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = TIA_fontaine_thorn_rose_purge
+			focus = TIA_fontaine_garrison_reinforcement
+		}
+		available = {
+			FON = {
+				exists = yes
+				is_subject_of = TIA
+			}
+			has_country_flag = TIA_fontaine_thorn_rose_purged
+			has_country_flag = TIA_fontaine_garrison_strengthened
+		}
+		completion_reward = {
+			custom_effect_tooltip = TIA_fontaine_direct_rule_tt
+			hidden_effect = {
+				country_event = {
+					id = TIA.80
+					days = 3
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
 	#核心圈
 	inlay_window = {
 		id = TIA_inner_circle_inlay_window
-		position = { x = 2400 y = 50 }
+		position = { x = 3000 y = 50 }
 	}
 
 	focus = {
@@ -842,8 +1374,10 @@ focus_tree = {
 			add_political_power = -30
 			add_stability = 0.05
 			hidden_effect = {
-				country_event = { id = TIA.31 days = 10 random_days = 10 }
-			}
+        		set_country_flag = TIA_public_health_started
+        		country_event = { id = TIA.31 days = 10 random_days = 10 }
+        		country_event = { id = TIA.65 days = 25 }
+    		}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1861,6 +2395,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
+			has_completed_focus = TIA_class_discrimination_reform
 		}
 		prerequisite = {
 			focus = TIA_purg_opposition
@@ -2212,7 +2747,7 @@ focus_tree = {
 		id = TIA_never_too_late_to_mend
 		icon = GFX_focus_TIA_never_too_late_to_mend
 		relative_position_id = TIA_dream
-		x = 35
+		x = 40
 		y = 0
 		cost = 5
 		available = {
@@ -3211,7 +3746,7 @@ focus_tree = {
 		id = TIA_Expansion_MCG
 		icon = GFX_focus_TIA_Expansion_MCG
 		relative_position_id = TIA_dream
-		x = 50
+		x = 55
 		y = 0
 		cost = 5
 		available = {
