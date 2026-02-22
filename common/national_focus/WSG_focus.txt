@@ -18,17 +18,17 @@ focus_tree = {
 	}
 	default = no
 	
-	continuous_focus_position = { x = 1000 y = 300 }
+	continuous_focus_position = { x = 2250 y = 300 }
 	
 	inlay_window = {
 		id = wsg_inner_circle_inlay_window
-		position = { x = 200 y = 1500 }
+		position = { x = 200 y = 200 }
 	}
 
 	focus = { 
 		id = WSG_stagnation_in_a_leading_nation
 		icon = GFX_focus_generic_improve_the_administration
-		x = 26
+		x = 0
 		y = 0
 		cost = 2
 		available = {
@@ -1324,7 +1324,7 @@ focus_tree = {
 	focus = { 
 		id = WSG_restart_the_archive
 		icon = GFX_SOV_national_academies_of_sciences_ccp_2d_sov_compatibility
-		x = 41
+		x = 15
 		y = 1
 		cost = 2
 		available = {
@@ -2298,7 +2298,7 @@ focus_tree = {
 		id = WSG_admiral_and_port_area
 		icon = GFX_focus_usa_guarantee_the_american_dream
 		relative_position_id = WSG_offspring_of_the_ancients
-		x = -10
+		x = -9
 		y = 1
 		cost = 2
 		available = {
@@ -3759,8 +3759,8 @@ focus_tree = {
 	focus = { 
 		id = WSG_warship_girl_r_attack
 		icon = GFX_goal_generic_territory_or_war
-		x = 36
-		y = 2
+		x = 14
+		y = 19
 		cost = 5
 		available = {
 			always = no
@@ -5217,7 +5217,7 @@ focus_tree = {
 	focus = { 
 		id = WSG_port_area_and_tomorrow
 		icon = GFX_unknown1
-		x = 16
+		x = -4
 		y = 17
 		cost = 5
 		available = {
@@ -5287,7 +5287,7 @@ focus_tree = {
 			has_completed_focus = WSG_super_port_area
 		}
 		completion_reward = {
-			custom_effect_tooltip = WSG_unlock_agenda_decision
+			custom_effect_tooltip = WSG_unlock_int_decision
 			unlock_decision_tooltip = WSG_industrial_integration
 		}
 		ai_will_do = {
@@ -5411,7 +5411,7 @@ focus_tree = {
 		id = WSG_dark_day
 		icon = GFX_unknown1
 		relative_position_id = WSG_from_the_deep_sea
-		x = 6
+		x = 10
 		y = 1
 		cost = 5
 		available = {
@@ -5682,6 +5682,10 @@ focus_tree = {
 		}
         prerequisite = { 
 			focus = WSG_bloodshed_march
+		}
+        prerequisite = { 
+			focus = WSG_multi_ethnic_joint_operations
+			focus = WSG_warship_girl_main_combat_power
 		}
 	}
 
@@ -6045,6 +6049,11 @@ focus_tree = {
 			focus = WSG_admirals_experience
 			focus = WSG_lifetime_secretary_ship
 		}
+        prerequisite = { 
+			focus = WSG_super_future_port_area_era
+			focus = WSG_multi_ethnic_joint_operations
+			focus = WSG_warship_girl_main_combat_power
+		}
 	}
 
 	focus = { 
@@ -6097,7 +6106,7 @@ focus_tree = {
 		id = WSG_victory_day
 		icon = GFX_unknown1
 		relative_position_id = WSG_from_the_deep_sea
-		x = -6
+		x = -10
 		y = 1
 		cost = 5
 		available = {
@@ -6384,6 +6393,9 @@ focus_tree = {
         prerequisite = { 
 			focus = WSG_great_revival
 		}
+        prerequisite = { 
+			focus = WSG_super_future_port_area_era
+		}
 	}
 
 	focus = { 
@@ -6447,1324 +6459,349 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = WSG_mainland_strategy
+		id = WSG_port_area_planning_phase_II_project
 		icon = GFX_unknown1
-		relative_position_id = WSG_from_the_deep_sea
-		x = 14
+		relative_position_id = WSG_state_of_emergency
+		x = -5
 		y = 1
-		cost = 2
+		cost = 5
 		available = {
-			#original_tag = WSG 
+			has_completed_focus = WSG_super_port_area
 		}
 		completion_reward = {
-			army_experience = 25
-	        air_experience = 25
 		}
 		ai_will_do = {
 			factor = 1
 		}
         prerequisite = { 
-			focus = WSG_from_the_deep_sea
+			focus = WSG_state_of_emergency
+			focus = WSG_victory_day
+			focus = WSG_dark_day
 		}
 	}
 
 	focus = { 
-		id = WSG_armor_breakthrough
+		id = WSG_port_development_fund
 		icon = GFX_unknown1
-		relative_position_id = WSG_mainland_strategy
-		x = -2
+		relative_position_id = WSG_port_area_planning_phase_II_project
+		x = 0
 		y = 1
-		cost = 3
-		available = {
-			#original_tag = WSG 
-			has_completed_focus = WSG_army_of_ship_girl_r
-		}
+		cost = 5
+		available = {}
 		completion_reward = {
-	        add_doctrine_cost_reduction = {
-		        name = WSG_armor_breakthrough
-		        cost_reduction = 0.5
-		        uses = 1
-		        category = land_doctrine
-	        }
 		}
 		ai_will_do = {
 			factor = 1
 		}
         prerequisite = { 
-			focus = WSG_mainland_strategy
+			focus = WSG_port_area_planning_phase_II_project
 		}
 	}
 
 	focus = { 
-		id = WSG_anti_infantry_firepower
+		id = WSG_engineering_supervision
 		icon = GFX_unknown1
-		relative_position_id = WSG_armor_breakthrough
+		relative_position_id =  WSG_port_area_planning_phase_II_project
+		x = -1
+		y = 2
+		cost = 5
+		available = {}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_port_area_planning_phase_II_project
+		}
+        prerequisite = { 
+			focus = WSG_dawn_of_the_port_area
+		}
+	}
+
+	focus = { 
+		id = WSG_stabilize_the_economy
+		icon = GFX_unknown1
+		relative_position_id =  WSG_port_area_planning_phase_II_project
+		x = 1
+		y = 2
+		cost = 5
+		available = {}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_admirals_exclusive_jurisdiction
+			focus = WSG_lexington_prime_minister
+		}
+	}
+
+	focus = { 
+		id = WSG_land_use_planning_for_the_port_area
+		icon = GFX_unknown1
+		relative_position_id =  WSG_port_development_fund
+		x = 0
+		y = 2
+		cost = 5
+		available = {}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_port_development_fund
+		}
+	}
+
+	focus = { 
+		id = WSG_port_energy_engineering
+		icon = GFX_unknown1
+		relative_position_id =  WSG_engineering_supervision
+		x = 0
+		y = 2
+		cost = 5
+		available = {}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_engineering_supervision
+		}
+	}
+
+	focus = { 
+		id = WSG_port_reconstruction_project
+		icon = GFX_unknown1
+		relative_position_id =  WSG_stabilize_the_economy
+		x = 0
+		y = 2
+		cost = 5
+		available = {}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_stabilize_the_economy
+		}
+	}
+
+	focus = { 
+		id = WSG_super_future_port_area_era
+		icon = GFX_unknown1
+		relative_position_id =  WSG_land_use_planning_for_the_port_area
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			NOT = { has_completed_focus = WSG_multi_ethnic_joint_operations }
+			NOT = { has_completed_focus = WSG_warship_girl_main_combat_power }
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_land_use_planning_for_the_port_area
+		}
+        prerequisite = { 
+			focus = WSG_port_energy_engineering
+			focus = WSG_port_reconstruction_project
+		}
+	}
+
+	focus = { 
+		id = WSG_military_reform_phase_II_project
+		icon = GFX_unknown1
+		relative_position_id = WSG_state_of_emergency
+		x = 5
+		y = 1
+		cost = 5
+		available = {
+			has_completed_focus = WSG_general_administration_of_war
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_victory_day
+			focus = WSG_state_of_emergency
+			focus = WSG_dark_day
+		}
+	}
+
+	focus = { 
+		id = WSG_strengthening_military_preparedness
+		icon = GFX_unknown1
+		relative_position_id = WSG_military_reform_phase_II_project
 		x = -1
 		y = 1
 		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
+		available = {}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			if = {
-				limit = { has_idea = WSG_armor_breakthrough_r1 }
-			    swap_ideas = {
-				    add_idea =  WSG_armor_breakthrough_1
-				    remove_idea =  WSG_armor_breakthrough_r1
-			    }
-			}
-			else = {
-				add_ideas = WSG_armor_breakthrough_l1
-			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
         prerequisite = { 
-			focus = WSG_armor_breakthrough
+			focus = WSG_admirals_exclusive_jurisdiction
+			focus = WSG_lexington_prime_minister
 		}
 	}
 
 	focus = { 
-		id = WSG_anti_armor_firepower
+		id = WSG_expand_recruitment
 		icon = GFX_unknown1
-		relative_position_id = WSG_armor_breakthrough
+		relative_position_id = WSG_military_reform_phase_II_project
 		x = 1
 		y = 1
 		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
+		available = {}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			if = {
-				limit = { has_idea = WSG_armor_breakthrough_l1 }
-			    swap_ideas = {
-				    add_idea =  WSG_armor_breakthrough_1
-				    remove_idea =  WSG_armor_breakthrough_l1
-			    }
-			}
-			else = {
-				add_ideas = WSG_armor_breakthrough_r1
-			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
         prerequisite = { 
-			focus = WSG_armor_breakthrough
+			focus = WSG_military_reform_phase_II_project
+		}
+        prerequisite = { 
+			focus = WSG_rancor_and_blood
 		}
 	}
 
 	focus = { 
-		id = WSG_armor_optimization
+		id = WSG_GALO_legion
 		icon = GFX_unknown1
-		relative_position_id = WSG_anti_infantry_firepower
+		relative_position_id = WSG_military_reform_phase_II_project
 		x = 0
-		y = 1
+		y = 2
 		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
+		available = {}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			if = {
-				limit = { has_idea = WSG_armor_breakthrough_r2 }
-			    swap_ideas = {
-				    add_idea =  WSG_armor_breakthrough_2
-				    remove_idea =  WSG_armor_breakthrough_r2
-			    }
-			}
-			else = {
-				swap_ideas = {
-				    add_idea = WSG_armor_breakthrough_l2
-				    remove_idea =  WSG_armor_breakthrough_1
-				}
-			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
         prerequisite = { 
-			focus = WSG_anti_infantry_firepower
-		}
-        prerequisite = { 
-			focus = WSG_anti_armor_firepower
+			focus = WSG_military_reform_phase_II_project
 		}
 	}
 
 	focus = { 
-		id = WSG_armor_rate_optimization
+		id = WSG_recruit_the_monster_girl
 		icon = GFX_unknown1
-		relative_position_id = WSG_anti_armor_firepower
+		relative_position_id = WSG_GALO_legion
 		x = 0
-		y = 1
+		y = 2
 		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
+		available = {}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			if = {
-				limit = { has_idea = WSG_armor_breakthrough_l2 }
-			    swap_ideas = {
-				    add_idea =  WSG_armor_breakthrough_2
-				    remove_idea =  WSG_armor_breakthrough_l2
-			    }
-			}
-			else = {
-				swap_ideas = {
-				    add_idea = WSG_armor_breakthrough_r2
-				    remove_idea =  WSG_armor_breakthrough_1
-				}
-			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
         prerequisite = { 
-			focus = WSG_anti_infantry_firepower
-		}
-        prerequisite = { 
-			focus = WSG_anti_armor_firepower
+			focus = WSG_GALO_legion
 		}
 	}
 
 	focus = { 
-		id = WSG_full_line_assault
+		id = WSG_homeland_defense_line
 		icon = GFX_unknown1
-		relative_position_id = WSG_armor_rate_optimization
+		relative_position_id = WSG_strengthening_military_preparedness
 		x = 0
-		y = 1
+		y = 2
+		cost = 5
+		available = {}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_strengthening_military_preparedness
+		}
+	}
+
+	focus = { 
+		id = WSG_militaristic_will
+		icon = GFX_unknown1
+		relative_position_id = WSG_expand_recruitment
+		x = 0
+		y = 2
+		cost = 5
+		available = {}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        prerequisite = { 
+			focus = WSG_expand_recruitment
+		}
+	}
+
+	focus = { 
+		id = WSG_multi_ethnic_joint_operations
+		icon = GFX_unknown1
+		relative_position_id = WSG_homeland_defense_line
+		x = 0
+		y = 2
 		cost = 5
 		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
+			NOT = { has_completed_focus = WSG_super_future_port_area_era }
 		}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-			swap_ideas = {
-				add_idea =  WSG_armor_breakthrough_r3
-				remove_idea =  WSG_armor_breakthrough_2
-			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
         mutually_exclusive = {
-			focus = WSG_key_breakthroughs
+			focus = WSG_warship_girl_main_combat_power
 		}
         prerequisite = { 
-			focus = WSG_armor_optimization
+			focus = WSG_recruit_the_monster_girl
 		}
         prerequisite = { 
-			focus = WSG_armor_rate_optimization
+			focus = WSG_homeland_defense_line
+			focus = WSG_militaristic_will
 		}
 	}
 
 	focus = { 
-		id =  WSG_key_breakthroughs
+		id = WSG_warship_girl_main_combat_power
 		icon = GFX_unknown1
-		relative_position_id = WSG_armor_optimization
+		relative_position_id = WSG_militaristic_will
 		x = 0
-		y = 1
+		y = 2
 		cost = 5
 		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
+			NOT = { has_completed_focus = WSG_super_future_port_area_era }
 		}
 		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-			swap_ideas = {
-				add_idea =  WSG_armor_breakthrough_l3
-				remove_idea =  WSG_armor_breakthrough_2
-			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
         mutually_exclusive = {
-			focus = WSG_full_line_assault
+			focus = WSG_multi_ethnic_joint_operations
 		}
         prerequisite = { 
-			focus = WSG_armor_optimization
+			focus = WSG_recruit_the_monster_girl
 		}
         prerequisite = { 
-			focus = WSG_armor_rate_optimization
-		}
-	}
-
-	focus = { 
-		id = WSG_armor_quantification_integration
-		icon = GFX_unknown1
-		relative_position_id = WSG_key_breakthroughs
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-			if = {
-				limit = { has_idea = WSG_armor_breakthrough_l3 }
-			    swap_ideas = {
-				    add_idea =  WSG_armor_breakthrough_lq
-				    remove_idea =  WSG_armor_breakthrough_l3
-			    }
-			}
-			else = {
-				swap_ideas = {
-				    add_idea = WSG_armor_breakthrough_rq
-				    remove_idea =  WSG_armor_breakthrough_r3
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_armor_performance_integration
-		}
-        prerequisite = { 
-			focus = WSG_full_line_assault
-			focus = WSG_key_breakthroughs
-		}
-	}
-
-	focus = { 
-		id = WSG_armor_performance_integration
-		icon = GFX_unknown1
-		relative_position_id = WSG_full_line_assault
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-			if = {
-				limit = { has_idea = WSG_armor_breakthrough_l3 }
-			    swap_ideas = {
-				    add_idea =  WSG_armor_breakthrough_lp
-				    remove_idea =  WSG_armor_breakthrough_l3
-			    }
-			}
-			else = {
-				swap_ideas = {
-				    add_idea = WSG_armor_breakthrough_rp
-				    remove_idea =  WSG_armor_breakthrough_r3
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_armor_quantification_integration
-		}
-        prerequisite = { 
-			focus = WSG_full_line_assault
-			focus = WSG_key_breakthroughs
-		}
-	}
-
-	focus = { 
-		id = WSG_air_strike
-		icon = GFX_unknown1
-		relative_position_id = WSG_mainland_strategy
-		x = 2
-		y = 1
-		cost = 3
-		available = {
-			#original_tag = WSG 
-			has_completed_focus = WSG_air_force_of_ship_girl_r
-		}
-		completion_reward = {
-	        add_doctrine_cost_reduction = {
-		        name = WSG_air_strike
-		        cost_reduction = 0.5
-		        uses = 1
-		        category = air_doctrine
-	        }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_mainland_strategy
-		}
-	}
-
-	focus = { 
-		id = WSG_mainly_light_fighter_aircraft
-		icon = GFX_unknown1
-		relative_position_id = WSG_air_strike
-		x = -1
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-			add_ideas = WSG_air_strike_l1
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_mainly_heavy_fighter_aircraft
-		}
-        prerequisite = { 
-			focus = WSG_air_strike
-		}
-	}
-
-	focus = { 
-		id = WSG_emphasize_close_air_support
-		icon = GFX_unknown1
-		relative_position_id = WSG_mainly_light_fighter_aircraft
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-			swap_ideas = {
-				add_idea = WSG_air_strike_l2
-				remove_idea = WSG_air_strike_l1
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_mainly_light_fighter_aircraft
-		}
-	}
-
-	focus = { 
-		id = WSG_enemy_rear_strike
-		icon = GFX_unknown1
-		relative_position_id =WSG_emphasize_tactical_bombing
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-			swap_ideas = {
-				add_idea = WSG_air_strike_r3
-				remove_idea = WSG_air_strike_r2
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_emphasize_tactical_bombing
-		}
-	}
-
-	focus = { 
-		id = WSG_air_force_equipment_performance_integration
-		icon = GFX_unknown1
-		relative_position_id = WSG_enemy_rear_strike
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip = WSG_different
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-			if = {
-				limit = { has_idea = WSG_air_strike_l3 }
-			    swap_ideas = {
-				    add_idea =  WSG_air_strike_lp
-				    remove_idea =  WSG_air_strike_l3
-			    }
-			}
-			else = {
-				swap_ideas = {
-				    add_idea = WSG_air_strike_rp
-				    remove_idea =  WSG_air_strike_r3
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_quantitative_integration_of_air_force_equipment
-		}
-        prerequisite = { 
-			focus = WSG_destruction_of_fortifications
-		}
-        prerequisite = { 
-			focus = WSG_enemy_rear_strike
-		}
-	}
-
-	focus = { 
-		id = WSG_mainly_heavy_fighter_aircraft
-		icon = GFX_unknown1
-		relative_position_id = WSG_air_strike
-		x = 1
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-			add_ideas = WSG_air_strike_r1
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_mainly_light_fighter_aircraft
-		}
-        prerequisite = { 
-			focus = WSG_air_strike
-		}
-	}
-
-	focus = { 
-		id = WSG_emphasize_tactical_bombing
-		icon = GFX_unknown1
-		relative_position_id = WSG_mainly_heavy_fighter_aircraft
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-			swap_ideas = {
-				add_idea = WSG_air_strike_r2
-				remove_idea = WSG_air_strike_r1
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_mainly_heavy_fighter_aircraft
-		}
-	}
-
-	focus = { 
-		id = WSG_destruction_of_fortifications
-		icon = GFX_unknown1
-		relative_position_id = WSG_emphasize_close_air_support
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-			swap_ideas = {
-				add_idea = WSG_air_strike_l3
-				remove_idea = WSG_air_strike_l2
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_emphasize_close_air_support
-		}
-	}
-
-	focus = { 
-		id = WSG_quantitative_integration_of_air_force_equipment
-		icon = GFX_unknown1
-		relative_position_id = WSG_destruction_of_fortifications
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip = WSG_different
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-			if = {
-				limit = { has_idea = WSG_air_strike_l3 }
-			    swap_ideas = {
-				    add_idea =  WSG_air_strike_lq
-				    remove_idea =  WSG_air_strike_l3
-			    }
-			}
-			else = {
-				swap_ideas = {
-				    add_idea = WSG_air_strike_rq
-				    remove_idea =  WSG_air_strike_r3
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_air_force_equipment_performance_integration
-		}
-        prerequisite = { 
-			focus = WSG_destruction_of_fortifications
-		}
-        prerequisite = { 
-			focus = WSG_enemy_rear_strike
-		}
-	}
-
-	focus = { 
-		id = WSG_ocean_strategy
-		icon = GFX_unknown1
-		relative_position_id = WSG_from_the_deep_sea
-		x = 23
-		y = 1
-		cost = 2
-		available = {
-			#original_tag = WSG 
-			has_completed_focus = WSG_navy_of_ship_girl_r
-		}
-		completion_reward = {
-			navy_experience = 50
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_from_the_deep_sea
-		}
-	}
-
-	focus = { 
-		id = WSG_sea_control
-		icon = GFX_unknown1
-		relative_position_id = WSG_ocean_strategy
-		x = -2
-		y = 1
-		cost = 3
-		available = {
-			#original_tag = WSG 
-		}
-		completion_reward = {
-	        add_doctrine_cost_reduction = {
-		        name = WSG_sea_control
-		        cost_reduction = 0.5
-		        uses = 1
-		        category = naval_doctrine
-	        }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_ocean_strategy
-		}
-	}
-
-	focus = { 
-		id = WSG_deep_sea_hunter
-		icon = GFX_unknown1
-		relative_position_id = WSG_sea_control
-		x = -1
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			if = {
-				limit = { has_idea = WSG_sea_control_r1 }
-			    swap_ideas = {
-				    add_idea =  WSG_sea_control_1
-				    remove_idea =  WSG_sea_control_r1
-			    }
-			}
-			else = {
-				add_ideas = WSG_sea_control_l1
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_sea_control
-		}
-	}
-
-	focus = { 
-		id = WSG_assault_blade
-		icon = GFX_unknown1
-		relative_position_id = WSG_deep_sea_hunter
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			if = {
-				limit = { has_idea = WSG_sea_control_r2 }
-			    swap_ideas = {
-				    add_idea =  WSG_sea_control_2
-				    remove_idea =  WSG_sea_control_r2
-			    }
-			}
-			else = {
-				swap_ideas = {
-				    add_idea = WSG_sea_control_l2
-				    remove_idea =  WSG_sea_control_1
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_deep_sea_hunter
-		}
-        prerequisite = { 
-			focus = WSG_deep_sea_search
-		}
-	}
-
-	focus = { 
-		id = WSG_deep_sea_search
-		icon = GFX_unknown1
-		relative_position_id = WSG_sea_control
-		x = 1
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			if = {
-				limit = { has_idea = WSG_sea_control_l1 }
-			    swap_ideas = {
-				    add_idea =  WSG_sea_control_1
-				    remove_idea =  WSG_sea_control_l1
-			    }
-			}
-			else = {
-				add_ideas = WSG_sea_control_r1
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_sea_control
-		}
-	}
-
-	focus = { 
-		id = WSG_maritime_escort
-		icon = GFX_unknown1
-		relative_position_id = WSG_deep_sea_search
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			if = {
-				limit = { has_idea = WSG_sea_control_l2 }
-			    swap_ideas = {
-				    add_idea =  WSG_sea_control_2
-				    remove_idea =  WSG_sea_control_l2
-			    }
-			}
-			else = {
-				swap_ideas = {
-				    add_idea = WSG_sea_control_r2
-				    remove_idea =  WSG_sea_control_1
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_deep_sea_search
-		}
-        prerequisite = { 
-			focus = WSG_deep_sea_hunter
-		}
-	}
-
-	focus = { 
-		id = WSG_naval_mobility
-		icon = GFX_unknown1
-		relative_position_id = WSG_assault_blade
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			swap_ideas = {
-				add_idea =  WSG_sea_control_l3
-				remove_idea =  WSG_sea_control_2
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_ocean_route
-		}
-        prerequisite = { 
-			focus = WSG_maritime_escort
-		}
-        prerequisite = { 
-			focus = WSG_assault_blade
-		}
-	}
-
-	focus = { 
-		id = WSG_ocean_route
-		icon = GFX_unknown1
-		relative_position_id = WSG_maritime_escort
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			swap_ideas = {
-				add_idea =  WSG_sea_control_r3
-				remove_idea =  WSG_sea_control_2
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_naval_mobility
-		}
-        prerequisite = { 
-			focus = WSG_maritime_escort
-		}
-        prerequisite = { 
-			focus = WSG_assault_blade
-		}
-	}
-
-	focus = { 
-		id = WSG_main_battle
-		icon = GFX_unknown1
-		relative_position_id = WSG_ocean_strategy
-		x = 2
-		y = 1
-		cost = 3
-		available = {
-			#original_tag = WSG 
-		}
-		completion_reward = {
-	        add_doctrine_cost_reduction = {
-		        name = WSG_main_battle
-		        cost_reduction = 0.5
-		        uses = 1
-		        category = naval_doctrine
-	        }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_ocean_strategy
-		}
-	}
-
-	focus = { 
-		id = WSG_super_aircraft_carrier
-		icon = GFX_unknown1
-		relative_position_id = WSG_main_battle
-		x = -1
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-		    add_ideas = WSG_main_battle_l1
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_large_ships_and_cannons
-		}
-        prerequisite = { 
-			focus = WSG_main_battle
-		}
-	}
-
-	focus = { 
-		id = WSG_large_ships_and_cannons
-		icon = GFX_unknown1
-		relative_position_id = WSG_main_battle
-		x = 1
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-		    add_ideas = WSG_main_battle_r1
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_super_aircraft_carrier
-		}
-        prerequisite = { 
-			focus = WSG_main_battle
-		}
-	}
-
-	focus = { 
-		id = WSG_focus_on_heavy_patrols
-		icon = GFX_unknown1
-		relative_position_id = WSG_large_ships_and_cannons
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			swap_ideas = {
-				add_idea = WSG_main_battle_r2
-				remove_idea = WSG_main_battle_r1
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_large_ships_and_cannons
-		}
-	}
-
-	focus = { 
-		id = WSG_focus_on_light_patrol
-		icon = GFX_unknown1
-		relative_position_id = WSG_super_aircraft_carrier
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			swap_ideas = {
-				add_idea = WSG_main_battle_l2
-				remove_idea = WSG_main_battle_l1
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_super_aircraft_carrier
-		}
-	}
-
-	focus = { 
-		id = WSG_strengthen_air_defense
-		icon = GFX_unknown1
-		relative_position_id = WSG_focus_on_heavy_patrols
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip = WSG_different
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			if = {
-				limit = { has_idea = WSG_main_battle_l3l }
-			    swap_ideas = {
-				    add_idea =  WSG_main_battle_l3
-				    remove_idea =  WSG_main_battle_l3l
-			    }
-			}
-			else_if = {
-				limit = { has_idea = WSG_main_battle_r3l }
-				swap_ideas = {
-				    add_idea = WSG_main_battle_r3
-				    remove_idea =  WSG_main_battle_r3l
-				}
-			}
-			else_if = {
-				limit = { has_idea = WSG_main_battle_l2 }
-				swap_ideas = {
-				    add_idea = WSG_main_battle_l3r
-				    remove_idea =  WSG_main_battle_l2
-				}
-			}
-			else = {
-				swap_ideas = {
-				    add_idea = WSG_main_battle_r3r
-				    remove_idea =  WSG_main_battle_r2
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_focus_on_heavy_patrols
-			focus = WSG_focus_on_light_patrol
-		}
-	}
-
-	focus = { 
-		id = WSG_strengthen_protection
-		icon = GFX_unknown1
-		relative_position_id = WSG_focus_on_light_patrol
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip = WSG_different
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			if = {
-				limit = { has_idea = WSG_main_battle_l3r }
-			    swap_ideas = {
-				    add_idea =  WSG_main_battle_l3
-				    remove_idea =  WSG_main_battle_l3r
-			    }
-			}
-			else_if = {
-				limit = { has_idea = WSG_main_battle_r3r }
-				swap_ideas = {
-				    add_idea = WSG_main_battle_r3
-				    remove_idea =  WSG_main_battle_r3r
-				}
-			}
-			else_if = {
-				limit = { has_idea = WSG_main_battle_l2 }
-				swap_ideas = {
-				    add_idea = WSG_main_battle_l3l
-				    remove_idea =  WSG_main_battle_l2
-				}
-			}
-			else = {
-				swap_ideas = {
-				    add_idea = WSG_main_battle_r3l
-				    remove_idea = WSG_main_battle_r2
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_focus_on_heavy_patrols
-			focus = WSG_focus_on_light_patrol
-		}
-	}
-
-	focus = { 
-		id = WSG_quantitative_integration_of_naval_equipment
-		icon = GFX_unknown1
-		relative_position_id = WSG_ocean_route
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip = WSG_different
-			custom_effect_tooltip = WSG_merge_idea
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-			if = {
-				limit = { has_idea = WSG_main_battle_l3 }
-			    swap_ideas = {
-				    add_idea =  WSG_main_battle_lq
-				    remove_idea =  WSG_main_battle_l3
-			    }
-			}
-			if = {
-				limit = { has_idea = WSG_main_battle_r3 }
-			    swap_ideas = {
-				    add_idea =  WSG_main_battle_lq
-				    remove_idea =  WSG_main_battle_r3
-			    }
-			}
-			if = {
-				limit = { has_idea = WSG_sea_control_l3 }
-			    swap_ideas = {
-				    add_idea =  WSG_sea_control_lq
-				    remove_idea =  WSG_sea_control_l3
-			    }
-			}
-			if = {
-				limit = { has_idea = WSG_sea_control_r3 }
-			    swap_ideas = {
-				    add_idea =  WSG_sea_control_rq
-				    remove_idea =  WSG_sea_control_r3
-			    }
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_navy_equipment_performance_integration
-		}
-        prerequisite = { 
-			focus = WSG_ocean_route
-			focus = WSG_naval_mobility
-		}
-        prerequisite = { 
-			focus = WSG_strengthen_air_defense
-			focus = WSG_strengthen_protection
-		}
-	}
-
-	focus = { 
-		id = WSG_navy_equipment_performance_integration
-		icon = GFX_unknown1
-		relative_position_id = WSG_strengthen_protection
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip = WSG_different
-			custom_effect_tooltip = WSG_merge_idea
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-			if = {
-				limit = { has_idea = WSG_main_battle_l3 }
-			    swap_ideas = {
-				    add_idea =  WSG_main_battle_lp
-				    remove_idea =  WSG_main_battle_l3
-			    }
-			}
-			if = {
-				limit = { has_idea = WSG_main_battle_r3 }
-			    swap_ideas = {
-				    add_idea =  WSG_main_battle_lp
-				    remove_idea =  WSG_main_battle_r3
-			    }
-			}
-			if = {
-				limit = { has_idea = WSG_sea_control_l3 }
-			    swap_ideas = {
-				    add_idea =  WSG_sea_control_lp
-				    remove_idea =  WSG_sea_control_l3
-			    }
-			}
-			if = {
-				limit = { has_idea = WSG_sea_control_r3 }
-			    swap_ideas = {
-				    add_idea =  WSG_sea_control_rp
-				    remove_idea =  WSG_sea_control_r3
-			    }
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        mutually_exclusive = {
-			focus = WSG_quantitative_integration_of_naval_equipment
-		}
-        prerequisite = { 
-			focus = WSG_ocean_route
-			focus = WSG_naval_mobility
-		}
-        prerequisite = { 
-			focus = WSG_strengthen_air_defense
-			focus = WSG_strengthen_protection
+			focus = WSG_homeland_defense_line
+			focus = WSG_militaristic_will
 		}
 	}
 }
