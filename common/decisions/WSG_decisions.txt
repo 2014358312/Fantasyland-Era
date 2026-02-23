@@ -15,7 +15,7 @@ WSG_balance_of_power_decision_category = {
 	    }
 		cost = 50
 		fire_only_once = no
-		days_remove = 180
+		days_remove = 90
 		modifier = {
 		}
 		complete_effect = {
@@ -45,7 +45,7 @@ WSG_balance_of_power_decision_category = {
 	    }
 		cost = 100
 		fire_only_once = no
-		days_remove = 180
+		days_remove = 90
 		modifier = {
 		}
 		complete_effect = {
@@ -76,7 +76,7 @@ WSG_balance_of_power_decision_category = {
 	    }
 		cost = 150
 		fire_only_once = no
-		days_remove = 180
+		days_remove = 90
 		modifier = {
 		}
 		complete_effect = {
@@ -261,7 +261,7 @@ WSG_balance_of_power_decision_category = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+                check_variable = { WSG_panci > 149 }
 			}
 	    }	
 	    visible = {
@@ -277,8 +277,8 @@ WSG_balance_of_power_decision_category = {
    			     id = WSG_balance_of_power
     		     value = -0.15
 			}
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                add_to_variable = { WSG_panci = -150 }
 		    add_breakthrough_progress = {
 				specialization = specialization_land
 				value = 1
@@ -611,8 +611,8 @@ WSG_secretary_ship_agenda_category = {
    			     value > 0.6
 			}
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
         }    
         visible = {
@@ -642,8 +642,8 @@ WSG_secretary_ship_agenda_category = {
                 }
             }
             add_offsite_building = { type = industrial_complex level = 5 }
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
         }
         ai_will_do = {
             factor = 50
@@ -661,8 +661,8 @@ WSG_secretary_ship_agenda_category = {
    			     value > 0.6
 			}
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
         }    
         visible = {
@@ -693,8 +693,8 @@ WSG_secretary_ship_agenda_category = {
             }
             add_offsite_building = { type = arms_factory level = 5 }
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = 100 }
+				tooltip = WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = 200 }
 			}
         }
         ai_will_do = {
@@ -713,8 +713,8 @@ WSG_secretary_ship_agenda_category = {
    			     value > 0.6
 			}
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
         }    
         visible = {
@@ -744,8 +744,8 @@ WSG_secretary_ship_agenda_category = {
                 }
             }
             add_offsite_building = { type = dockyard level = 5 }
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
         }
         ai_will_do = {
             factor = 50
@@ -803,9 +803,9 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Lexington_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_75
+		custom_cost_text = WSG_panci_100
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 74 }
+			check_variable = { WSG_panci > 99 }
 		}
         cost = 0
         fire_only_once = no
@@ -814,8 +814,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                    add_to_variable = { WSG_panci = -75 }
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
             }
 			add_daily_mastery = {
 				amount = 0.6
@@ -844,9 +844,9 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Lexington_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = no
@@ -855,8 +855,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -929,9 +929,9 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Vittorio_Veneto_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_75
+		custom_cost_text = WSG_panci_100
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 74 }
+			check_variable = { WSG_panci > 99 }
 		}
         cost = 0
         fire_only_once = no
@@ -941,8 +941,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                    add_to_variable = { WSG_panci = -75 }
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
             }
         }
         remove_effect = {
@@ -966,9 +966,9 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Vittorio_Veneto_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = no
@@ -977,8 +977,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
 	        army_experience = 50
 	        navy_experience = 50
@@ -1042,9 +1042,9 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Yubari_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_75
+		custom_cost_text = WSG_panci_100
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 74 }
+			check_variable = { WSG_panci > 99 }
 		}
         cost = 0
         fire_only_once = no
@@ -1054,8 +1054,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                    add_to_variable = { WSG_panci = -75 }
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
             }
         }
         remove_effect = {
@@ -1079,9 +1079,9 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Yubari_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = no
@@ -1090,8 +1090,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
 			add_research_slot = 1
         }
@@ -1154,9 +1154,9 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Hood_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_75
+		custom_cost_text = WSG_panci_100
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 74 }
+			check_variable = { WSG_panci > 99 }
 		}
         cost = 0
         fire_only_once = no
@@ -1165,8 +1165,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                    add_to_variable = { WSG_panci = -75 }
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
             }
 			add_daily_mastery = {
 				amount = 0.6
@@ -1195,9 +1195,9 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Hood_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = no
@@ -1207,8 +1207,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -1269,9 +1269,9 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_YiXian_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_75
+		custom_cost_text = WSG_panci_100
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 74 }
+			check_variable = { WSG_panci > 99 }
 		}
         cost = 0
         fire_only_once = no
@@ -1281,8 +1281,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                    add_to_variable = { WSG_panci = -75 }
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
             }
         }
         remove_effect = {
@@ -1306,9 +1306,9 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_YiXian_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = no
@@ -1317,8 +1317,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
 			random_state = {
 				limit = {
@@ -1391,9 +1391,9 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Jean_Bart_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_75
+		custom_cost_text = WSG_panci_100
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 74 }
+			check_variable = { WSG_panci > 99 }
 		}
         cost = 0
         fire_only_once = no
@@ -1402,8 +1402,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                    add_to_variable = { WSG_panci = -75 }
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
             }
 			add_daily_mastery = {
 				amount = 0.6
@@ -1432,9 +1432,9 @@ WSG_secretary_ship_agenda_category = {
 			    check_variable = { ROOT.FE_secondary = token:WSG_Jean_Bart_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = no
@@ -1444,8 +1444,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -1506,9 +1506,9 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Bubnov_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_75
+		custom_cost_text = WSG_panci_100
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 74 }
+			check_variable = { WSG_panci > 99 }
 		}
         cost = 0
         fire_only_once = no
@@ -1517,8 +1517,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                    add_to_variable = { WSG_panci = -75 }
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
             }
 			add_daily_mastery = {
 				amount = 0.6
@@ -1547,9 +1547,9 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Bubnov_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = no
@@ -1559,8 +1559,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -1621,9 +1621,9 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Clausewitz_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_75
+		custom_cost_text = WSG_panci_100
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 74 }
+			check_variable = { WSG_panci > 99 }
 		}
         cost = 0
         fire_only_once = no
@@ -1633,8 +1633,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                    add_to_variable = { WSG_panci = -75 }
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
             }
         }
         remove_effect = {
@@ -1658,9 +1658,9 @@ WSG_secretary_ship_agenda_category = {
 			    check_variable = { ROOT.FE_secondary = token:WSG_Clausewitz_head_of_government }
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = no
@@ -1670,8 +1670,8 @@ WSG_secretary_ship_agenda_category = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -1681,6 +1681,7 @@ WSG_secretary_ship_agenda_category = {
         }
     }
 }
+
 WSG_army_industrial_integration = {
 ###########################industrial_project###############################
 	WSG_industrial_integration = {
@@ -1695,9 +1696,9 @@ WSG_army_industrial_integration = {
             has_completed_focus = WSG_industrial_integration
 			NOT = { has_idea = WSG_industrial_integration_V }
         }
-		custom_cost_text = WSG_panci_200
+		custom_cost_text = WSG_panci_500
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 199 }
+			check_variable = { WSG_panci > 499 }
 		}
         cost = 0
         fire_only_once = no
@@ -1706,8 +1707,8 @@ WSG_army_industrial_integration = {
         }
         complete_effect = {
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                    add_to_variable = { WSG_panci = -200 }
+			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                    add_to_variable = { WSG_panci = -500 }
             }
             WSG = { WSG_remove_arms_factory_20 = yes }
         }
@@ -1769,9 +1770,9 @@ WSG_army_industrial_integration = {
             #has_completed_focus = WSG_industrial_integration
 			NOT = { has_country_flag = WSG_armor_project }
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -1781,8 +1782,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_armor_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -1813,9 +1814,9 @@ WSG_army_industrial_integration = {
             #has_completed_focus = WSG_industrial_integration
 			NOT = { has_country_flag = WSG_armor_project }
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -1825,8 +1826,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_armor_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -1860,9 +1861,9 @@ WSG_army_industrial_integration = {
 			    has_idea = WSG_armor_breakthrough_r2
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -1872,8 +1873,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_armor_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -1910,9 +1911,9 @@ WSG_army_industrial_integration = {
 			    has_idea = WSG_armor_breakthrough_l2
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -1922,8 +1923,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_armor_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -1957,9 +1958,9 @@ WSG_army_industrial_integration = {
 			NOT = { has_country_flag = WSG_armor_project }
             has_idea = WSG_armor_breakthrough_2
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -1969,8 +1970,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_armor_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -1995,9 +1996,9 @@ WSG_army_industrial_integration = {
 			NOT = { has_country_flag = WSG_armor_project }
             has_idea = WSG_armor_breakthrough_2
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2007,8 +2008,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_armor_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2036,9 +2037,9 @@ WSG_army_industrial_integration = {
 			    has_idea = WSG_armor_breakthrough_r3
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_500
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 499 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2048,8 +2049,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_armor_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                    add_to_variable = { WSG_panci = -500 }
             }
         }
         remove_effect = {
@@ -2086,9 +2087,9 @@ WSG_army_industrial_integration = {
 			    has_idea = WSG_armor_breakthrough_r3
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_500
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 499 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2098,8 +2099,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_armor_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                    add_to_variable = { WSG_panci = -500 }
             }
         }
         remove_effect = {
@@ -2136,9 +2137,9 @@ WSG_army_industrial_integration = {
 			NOT = { has_country_flag = WSG_aircraft_project }
 			NOT = { has_country_flag = WSG_mainly_heavy_fighter_aircraft }
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2149,8 +2150,8 @@ WSG_army_industrial_integration = {
 			set_country_flag = WSG_mainly_light_fighter_aircraft
 			set_country_flag = WSG_aircraft_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2172,9 +2173,9 @@ WSG_army_industrial_integration = {
 			NOT = { has_country_flag = WSG_aircraft_project }
 			has_idea = WSG_air_strike_l1
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2184,8 +2185,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_aircraft_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2210,9 +2211,9 @@ WSG_army_industrial_integration = {
 			NOT = { has_country_flag = WSG_aircraft_project }
 			has_idea = WSG_air_strike_l2
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2222,8 +2223,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_aircraft_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2249,9 +2250,9 @@ WSG_army_industrial_integration = {
 			NOT = { has_country_flag = WSG_aircraft_project }
 			NOT = { has_country_flag = WSG_mainly_light_fighter_aircraft }
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2262,8 +2263,8 @@ WSG_army_industrial_integration = {
 			set_country_flag = WSG_mainly_heavy_fighter_aircraft
 			set_country_flag = WSG_aircraft_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2285,9 +2286,9 @@ WSG_army_industrial_integration = {
 			NOT = { has_country_flag = WSG_aircraft_project }
 			has_idea = WSG_air_strike_r1
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2297,8 +2298,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_aircraft_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2323,9 +2324,9 @@ WSG_army_industrial_integration = {
 			NOT = { has_country_flag = WSG_aircraft_project }
 			has_idea = WSG_air_strike_r2
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2335,8 +2336,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_aircraft_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2364,9 +2365,9 @@ WSG_army_industrial_integration = {
 				has_idea = WSG_air_strike_l3
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_500
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 499 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2376,8 +2377,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_aircraft_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                    add_to_variable = { WSG_panci = -500 }
             }
         }
         remove_effect = {
@@ -2414,9 +2415,9 @@ WSG_army_industrial_integration = {
 				has_idea = WSG_air_strike_l3
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_500
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 499 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2426,8 +2427,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_aircraft_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                    add_to_variable = { WSG_panci = -500 }
             }
         }
         remove_effect = {
@@ -2463,9 +2464,9 @@ WSG_army_industrial_integration = {
             #has_completed_focus = WSG_industrial_integration
 			NOT = { has_country_flag = WSG_naval_project }
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2475,8 +2476,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_naval_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2507,9 +2508,9 @@ WSG_army_industrial_integration = {
             #has_completed_focus = WSG_industrial_integration
 			NOT = { has_country_flag = WSG_naval_project }
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2519,8 +2520,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_naval_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2554,9 +2555,9 @@ WSG_army_industrial_integration = {
 			    has_idea = WSG_sea_control_r2
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2566,8 +2567,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_naval_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2604,9 +2605,9 @@ WSG_army_industrial_integration = {
 			    has_idea = WSG_sea_control_l2
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2616,8 +2617,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_naval_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2651,9 +2652,9 @@ WSG_army_industrial_integration = {
 			NOT = { has_country_flag = WSG_naval_project }
 			has_idea = WSG_sea_control_2
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2663,8 +2664,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_naval_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2689,9 +2690,9 @@ WSG_army_industrial_integration = {
 			NOT = { has_country_flag = WSG_naval_project }
 			has_idea = WSG_sea_control_2
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2701,8 +2702,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_naval_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2728,9 +2729,9 @@ WSG_army_industrial_integration = {
 			NOT = { has_country_flag = WSG_naval_project }
 			NOT = { has_country_flag = WSG_large_ships_and_cannons }
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2741,8 +2742,8 @@ WSG_army_industrial_integration = {
 			set_country_flag = WSG_super_aircraft_carrier
 			set_country_flag = WSG_naval_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2764,9 +2765,9 @@ WSG_army_industrial_integration = {
 			NOT = { has_country_flag = WSG_naval_project }
 			has_idea = WSG_main_battle_l1
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2776,8 +2777,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_naval_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2803,9 +2804,9 @@ WSG_army_industrial_integration = {
 			NOT = { has_country_flag = WSG_naval_project }
 			NOT = { has_country_flag = WSG_super_aircraft_carrier }
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2816,8 +2817,8 @@ WSG_army_industrial_integration = {
 			set_country_flag = WSG_large_ships_and_cannons
 			set_country_flag = WSG_naval_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2839,9 +2840,9 @@ WSG_army_industrial_integration = {
 			NOT = { has_country_flag = WSG_naval_project }
 			has_idea = WSG_main_battle_r1
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2851,8 +2852,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_naval_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2880,9 +2881,9 @@ WSG_army_industrial_integration = {
 				has_idea = WSG_main_battle_l2
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2892,8 +2893,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_naval_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -2944,9 +2945,9 @@ WSG_army_industrial_integration = {
 				has_idea = WSG_main_battle_l2
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_150
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 149 }
 		}
         cost = 0
         fire_only_once = yes
@@ -2956,8 +2957,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_naval_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
             }
         }
         remove_effect = {
@@ -3012,9 +3013,9 @@ WSG_army_industrial_integration = {
 				has_idea = WSG_main_battle_l3
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_500
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 499 }
 		}
         cost = 0
         fire_only_once = yes
@@ -3024,8 +3025,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_naval_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                    add_to_variable = { WSG_panci = -500 }
             }
         }
         remove_effect = {
@@ -3081,9 +3082,9 @@ WSG_army_industrial_integration = {
 				has_idea = WSG_main_battle_l3
 			}
         }
-		custom_cost_text = WSG_panci_100
+		custom_cost_text = WSG_panci_500
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 99 }
+			check_variable = { WSG_panci > 499 }
 		}
         cost = 0
         fire_only_once = yes
@@ -3093,8 +3094,8 @@ WSG_army_industrial_integration = {
         complete_effect = {
 			set_country_flag = WSG_naval_project
 			hidden_effect = {
-			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                    add_to_variable = { WSG_panci = -100 }
+			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                    add_to_variable = { WSG_panci = -500 }
             }
         }
         remove_effect = {

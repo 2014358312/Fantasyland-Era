@@ -546,9 +546,22 @@ ideas = {
 			modifier = {
 				consumer_goods_expected_value = -0.05
 				research_speed_factor = 0.05
+				war_support_factor = 0.10
+				custom_modifier_tooltip = WSG_panci_monthly_add_15_tt
+			}
+		}
+
+		WSG_revival_of_holy_right_II = {
+			picture = WSG_revival_of_holy_right
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				research_speed_factor = 0.15
 				political_power_gain = 0.25
 				war_support_factor = 0.10
-				custom_modifier_tooltip = WSG_panci_monthly_add_25_tt
+				custom_modifier_tooltip = WSG_panci_monthly_add_30_tt
 			}
 		}
 
@@ -584,7 +597,6 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				stability_factor = 0.05
 				political_power_factor = -0.25
 				production_speed_buildings_factor = -0.05
 				consumer_goods_factor = 0.30
@@ -597,8 +609,6 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				stability_factor = 0.05
-				political_power_factor = 0.05
 				production_speed_buildings_factor = 0.05
 				consumer_goods_factor = 0.20
 			}
@@ -676,12 +686,18 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				stability_factor = 0.05
-				political_power_factor = 0.05
 				production_speed_buildings_factor = 0.10
 				local_resources_factor = 0.10
+			}
+		}
+
+		WSG_super_port_area_sta = {
+			picture = WSG_super_port_area
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
 				global_building_slots_factor = 0.25
-				global_building_slots = 1
 			}
 		}
 
@@ -691,7 +707,7 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				stability_factor = 0.10
+				stability_factor = 0.05
 			}
 		}
 
@@ -701,7 +717,7 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				stability_factor = 0.10
+				stability_factor = 0.05
 				political_power_factor = 0.05
 			}
 		}
@@ -712,7 +728,7 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				stability_factor = 0.10
+				stability_factor = 0.05
 				political_power_factor = 0.10
 			}
 		}
@@ -723,7 +739,7 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				war_support_factor = 0.10
+				war_support_factor = 0.05
 			}
 		}
 
@@ -733,7 +749,7 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				war_support_factor = 0.10
+				war_support_factor = 0.05
 				consumer_goods_factor = -0.05
 			}
 		}
@@ -744,7 +760,7 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				war_support_factor = 0.10
+				war_support_factor = 0.05
 				consumer_goods_factor = -0.10
 			}
 		}
@@ -947,7 +963,161 @@ ideas = {
 				production_speed_arms_factory_factor = -0.25
 			}
 		}
+
+		WSG_dawn_of_the_port_area = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				communism_drift = 0.1
+				political_power_gain = 0.2
+			}
+		}
+
+		WSG_praise_the_future = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				stability_weekly = 0.0025
+				war_support_weekly = 0.0025
+				production_speed_buildings_factor = 0.05
+				research_speed_factor = 0.15
+			}
+		}
+
+		WSG_the_most_beautiful_harbor_area = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				global_building_slots = 1
+				global_building_slots_factor = 0.15
+			}
+		}
+
+		WSG_the_most_beautiful_harbor_area_II = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				global_building_slots = 2
+				global_building_slots_factor = 0.25
+			}
+		}
+
+		WSG_our_admiral = {
+			picture = WSG_admiral
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.10
+			}
+		}
+
+		WSG_port_area_planning_phase_II_project = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.10
+			}
+		}
+
+		WSG_port_area_planning_phase_II_project_II = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				production_speed_arms_factory_factor = 0.15
+			}
+		}
+
+		WSG_port_energy_engineering = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				factory_energy_consumption = -0.15
+				energy_gain_factor = 0.15
+			}
+		}
+
+		WSG_super_future_port_area_era_r = {
+			picture = WSG_super_port_area
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_factory = 0.10
+				production_speed_buildings_factor = 0.15
+				local_resources_factor = 0.20
+				research_speed_factor = 0.15
+				factory_energy_consumption = -0.05
+			}
+		}
+
+		WSG_super_future_port_area_era_l = {
+			picture = WSG_super_port_area
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_factory = 0.20
+				production_factory_efficiency_gain_factor = 0.15
+				production_speed_buildings_factor = 0.15
+				local_resources_factor = 0.20
+				research_speed_factor = 0.15
+			}
+		}
 ##################################陆军###################################
+		WSG_passion_for_serving_the_ountry = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_org_factor = 0.05
+				army_strength_factor = 0.05
+			}
+		}
+
+		WSG_GALO_legion = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				recon_factor = 0.50
+				army_speed_factor = 0.05
+				army_attack_factor = 0.05
+			}
+		}
+
+		WSG_recruit_the_monster_girl = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				conscription = 0.015
+				army_strength_factor = 0.05
+
+				breakthrough_factor = 0.05
+			}
+		}
 
 		WSG_general_administration_of_war = {
 			picture = WSG_general_administration_of_war
@@ -3017,10 +3187,5 @@ ideas = {
 				electronics = 0.15
 			}
 		}
-    
-
-
-
-
 	}
 }

@@ -35,7 +35,7 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_political_power = 200
 		}
 		ai_will_do = {
 			factor = 1
@@ -53,7 +53,10 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
-			add_political_power = 100
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = 0.10
+			}
 		}
 		ai_will_do = {
 			factor = 2
@@ -518,7 +521,10 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
-			add_political_power = 100
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = 0.10
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -875,16 +881,20 @@ focus_tree = {
 			#original_tag = WSG 
 			power_balance_value = {
     			 id = WSG_balance_of_power
-   			     value > 0.95
+   			     value > 0.55
 			}
 		}
 		completion_reward = {
 			add_political_power = 300
+	        army_experience = 50
+	        navy_experience = 50
+	        air_experience = 50
 			add_research_slot = 4
 			swap_ideas = {
 				remove_idea =  WSG_stagnation_in_a_leading_nation_II 
 				add_idea =  WSG_offspring_of_the_ancients 
 			}
+			custom_effect_tooltip = WSG_open_dininghall_text
 		}
 		ai_will_do = {
 			factor = 1
@@ -915,7 +925,7 @@ focus_tree = {
    			     id = WSG_balance_of_power
     		     value = -0.20
 			}
-			every_state ={
+			every_owned_state ={
 				limit = {
 			        is_controlled_by = WSG
 			        is_core_of = WSG
@@ -1300,6 +1310,13 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = WSG_super_port_area
 				remove_idea = WSG_silent_society03
+			}
+			every_owned_state ={
+				limit = {
+			        is_controlled_by = WSG
+			        is_core_of = WSG
+		        }
+				add_ideas = WSG_super_port_area_sta
 			}
 		}
 		ai_will_do = {
@@ -2542,7 +2559,6 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = WSG_different
 			add_political_power = 100
-			add_stability = 0.05
 			if = {
 				limit = { has_idea = WSG_consolidate_rights_l2 }
 			    swap_ideas = {
@@ -3734,6 +3750,7 @@ focus_tree = {
    			     id = WSG_balance_of_power
     		     value = -0.20
 			}
+			hidden_effect = { set_variable = { WSG_ex_monthly_panci = 15 } }
 		}
 		ai_will_do = {
 			factor = 5
@@ -5227,6 +5244,7 @@ focus_tree = {
 	        }
 		}
 		completion_reward = {
+			add_political_power = 150
 		}
 		ai_will_do = {
 			factor = 1
@@ -5244,6 +5262,7 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			custom_effect_tooltip = WSG_from_the_deep_sea_text
 		}
 		ai_will_do = {
 			factor = 1
@@ -5421,6 +5440,8 @@ focus_tree = {
 	        }
 		}
 		completion_reward = {
+			add_stability = -0.5
+			add_war_support = 0.25
 		}
 		ai_will_do = {
 			factor = 1
@@ -5763,6 +5784,8 @@ focus_tree = {
 	        }
 		}
 		completion_reward = {
+			add_stability = -0.25
+			add_war_support = -0.25
 		}
 		ai_will_do = {
 			factor = 1
@@ -6116,6 +6139,8 @@ focus_tree = {
 	        }
 		}
 		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.10
 		}
 		ai_will_do = {
 			factor = 1
@@ -6136,6 +6161,7 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			add_timed_idea = { idea = WSG_dawn_of_the_port_area days = 180 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -6156,6 +6182,15 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			custom_effect_tooltip = WSG_the_most_beautiful_harbor_area_text
+			every_owned_state ={
+				limit = {
+			        is_controlled_by = WSG
+			        is_core_of = WSG
+					infrastructure = 5
+		        }
+				add_ideas = WSG_the_most_beautiful_harbor_area
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -6176,6 +6211,46 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+            add_trait = {
+                character = WSG_Lexington
+                ideology = trade_liberalism_subtype
+                trait = WSG_the_most_beautiful_ship_girl
+            }
+            add_trait = {
+                character = WSG_Vittorio_Veneto
+                ideology = trade_liberalism_subtype
+                trait = WSG_the_most_beautiful_ship_girl
+            }
+            add_trait = {
+                character = WSG_Yubari
+                ideology = trade_liberalism_subtype
+                trait = WSG_the_most_beautiful_ship_girl
+            }
+            add_trait = {
+                character = WSG_Hood
+                ideology = trade_liberalism_subtype
+                trait = WSG_the_most_beautiful_ship_girl
+            }
+            add_trait = {
+                character = WSG_Jean_Bart
+                ideology = trade_liberalism_subtype
+                trait = WSG_the_most_beautiful_ship_girl
+            }
+            add_trait = {
+                character = WSG_Bubnov
+                ideology = trade_liberalism_subtype
+                trait = WSG_the_most_beautiful_ship_girl
+            }
+            add_trait = {
+                character = WSG_Clausewitz
+                ideology = trade_liberalism_subtype
+                trait = WSG_the_most_beautiful_ship_girl
+            }
+            add_trait = {
+                character = WSG_YiXian
+                ideology = trade_liberalism_subtype
+                trait = WSG_the_most_beautiful_ship_girl
+            }
 		}
 		ai_will_do = {
 			factor = 1
@@ -6196,6 +6271,9 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			add_political_power = 100
+			custom_effect_tooltip =  WSG_panci_add_500_tt
+                add_to_variable = { WSG_panci = 500 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -6216,6 +6294,7 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			add_timed_idea = { idea = WSG_praise_the_future days = 360 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -6236,6 +6315,7 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			add_ideas = WSG_our_admiral
 		}
 		ai_will_do = {
 			factor = 1
@@ -6259,6 +6339,8 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.1 }
+			add_war_support = 0.10
 		}
 		ai_will_do = {
 			factor = 1
@@ -6269,82 +6351,54 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = WSG_our_people
-		icon = GFX_unknown1
-		relative_position_id = WSG_the_most_beautiful_ship_girl
-		x = -1
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-		}
-		completion_reward = {
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_the_most_beautiful_ship_girl
-		}
-	}
-
-	focus = { 
 		id = WSG_prosperous_port_area
 		icon = GFX_unknown1
-		relative_position_id = WSG_our_people
-		x = 0
+		relative_position_id = WSG_our_admiral
+		x = -2
 		y = 1
 		cost = 5
 		available = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			every_owned_state ={
+				limit = {
+			        is_controlled_by = WSG
+			        is_core_of = WSG
+					has_idea = WSG_the_most_beautiful_harbor_area
+		        }
+				swap_ideas = {
+				    add_idea = WSG_the_most_beautiful_harbor_area_II
+				    remove_idea = WSG_the_most_beautiful_harbor_area
+			    }
+			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
         prerequisite = { 
-			focus = WSG_our_people
-		}
-	}
-
-	focus = { 
-		id = WSG_our_military
-		icon = GFX_unknown1
-		relative_position_id = WSG_praise_the_future
-		x = 1
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-		}
-		completion_reward = {
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_praise_the_future
+			focus = WSG_our_admiral
 		}
 	}
 
 	focus = { 
 		id = WSG_passion_for_serving_the_ountry
 		icon = GFX_unknown1
-		relative_position_id = WSG_our_military
-		x = 0
+		relative_position_id = WSG_our_admiral
+		x = 2
 		y = 1
 		cost = 5
 		available = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			add_ideas = WSG_passion_for_serving_the_ountry
 		}
 		ai_will_do = {
 			factor = 1
 		}
         prerequisite = { 
-			focus = WSG_our_military
+			focus = WSG_our_admiral
 		}
 	}
 
@@ -6357,8 +6411,15 @@ focus_tree = {
 		cost = 5
 		available = {
 			#original_tag = WSG 
+			has_completed_focus = WSG_revival_of_holy_right
 		}
 		completion_reward = {
+			swap_ideas = {
+				add_idea = WSG_revival_of_holy_right_II
+				remove_idea = WSG_revival_of_holy_right
+			}
+			custom_effect_tooltip = WSG_panci_monthly_add_15_tt
+			hidden_effect = { set_variable = { WSG_ex_monthly_panci = 30 } }
 		}
 		ai_will_do = {
 			factor = 1
@@ -6469,6 +6530,13 @@ focus_tree = {
 			has_completed_focus = WSG_super_port_area
 		}
 		completion_reward = {
+			every_owned_state ={
+				limit = {
+			        is_controlled_by = WSG
+			        is_core_of = WSG
+		        }
+				add_timed_idea = { idea = WSG_port_area_planning_phase_II_project days = 180 }
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -6489,6 +6557,8 @@ focus_tree = {
 		cost = 5
 		available = {}
 		completion_reward = {
+			custom_effect_tooltip =  WSG_panci_add_1000_tt
+                add_to_variable = { WSG_panci = 1000 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -6507,6 +6577,25 @@ focus_tree = {
 		cost = 5
 		available = {}
 		completion_reward = {
+			if = {
+				limit = {
+					has_idea = WSG_port_area_planning_phase_II_project
+				}
+				swap_ideas = {
+					remove_idea =  WSG_port_area_planning_phase_II_project
+					add_idea =  WSG_port_area_planning_phase_II_project_II
+				}
+				modify_timed_idea = {
+					idea =  WSG_port_area_planning_phase_II_project_II
+					days = 180
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea =  WSG_port_area_planning_phase_II_project
+					days = 180
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -6547,6 +6636,28 @@ focus_tree = {
 		cost = 5
 		available = {}
 		completion_reward = {
+			custom_effect_tooltip = WSG_land_use_planning_for_the_port_area_text
+            for_each_loop = {
+		        array = core_states
+				if = {
+					limit = { 
+						var:v = { 
+							is_owned_and_controlled_by = ROOT 
+							industrial_complex > 4
+						} 
+					}
+					v = {
+				        remove_building = {
+                            type = industrial_complex
+                            level = 5
+                        }
+					}
+					ROOT = { 
+						add_offsite_building = { type = industrial_complex level = 5 }
+						add_to_variable = { WSG_panci = -100 }
+					}
+				}
+	        }
 		}
 		ai_will_do = {
 			factor = 1
@@ -6565,6 +6676,7 @@ focus_tree = {
 		cost = 5
 		available = {}
 		completion_reward = {
+			add_ideas = WSG_port_energy_engineering
 		}
 		ai_will_do = {
 			factor = 1
@@ -6604,6 +6716,19 @@ focus_tree = {
 			NOT = { has_completed_focus = WSG_warship_girl_main_combat_power }
 		}
 		completion_reward = {
+			if = {
+				limit = { has_idea = WSG_port_energy_engineering}
+				swap_ideas = {
+				    add_idea = WSG_super_future_port_area_era_l
+				    remove_idea = WSG_super_port_area
+			    }
+			}
+			else ={
+			    swap_ideas = {
+				    add_idea = WSG_super_future_port_area_era_r
+				    remove_idea = WSG_super_port_area
+			    }
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -6628,6 +6753,7 @@ focus_tree = {
 			has_completed_focus = WSG_general_administration_of_war
 		}
 		completion_reward = {
+			unlock_decision_category_tooltip = WSG_army_industrial_integration
 		}
 		ai_will_do = {
 			factor = 1
@@ -6688,6 +6814,7 @@ focus_tree = {
 		cost = 5
 		available = {}
 		completion_reward = {
+			add_ideas = WSG_GALO_legion
 		}
 		ai_will_do = {
 			factor = 1
@@ -6706,6 +6833,7 @@ focus_tree = {
 		cost = 5
 		available = {}
 		completion_reward = {
+			add_ideas = WSG_recruit_the_monster_girl
 		}
 		ai_will_do = {
 			factor = 1

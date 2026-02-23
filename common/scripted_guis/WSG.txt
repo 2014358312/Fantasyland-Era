@@ -2,8 +2,11 @@ scripted_gui = {
 	WSG_panci_gui = {	
 		window_name = "WSG_panci"
 		context_type = decision_category
-		visible = {	
-			
+		visible = {}
+		triggers = {
+			open_dininghall_btn_click_enabled = {
+				has_completed_focus = WSG_offspring_of_the_ancients
+			}
 		}
 		effects = {
 			open_dininghall_btn_click = {

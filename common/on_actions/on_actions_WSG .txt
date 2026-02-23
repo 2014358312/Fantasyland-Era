@@ -8,8 +8,8 @@ on_actions = {
    			            value > 0.59
 			        }
 				}
-				add_to_variable = { WSG_panci = 50 }
-				set_variable = { WSG_monthly_panci = 50 }
+				add_to_variable = { WSG_panci = 30 }
+				set_variable = { WSG_monthly_panci = 30 }
 			}
             else_if = {
 				limit = {
@@ -18,8 +18,8 @@ on_actions = {
    			            value > 0.19
 			        }
 				}
-				add_to_variable = { WSG_panci = 30 }
-				set_variable = { WSG_monthly_panci = 30 }
+				add_to_variable = { WSG_panci = 20 }
+				set_variable = { WSG_monthly_panci = 20 }
 			}
             else_if = {
 				limit = {
@@ -52,8 +52,12 @@ on_actions = {
 		effect = {
 			WSG = {
 				if = {
+					limit = { has_idea = WSG_revival_of_holy_right_II }
+					add_to_variable = { WSG_panci = 30 }
+				}
+				else_if = {
 					limit = { has_idea = WSG_revival_of_holy_right }
-					add_to_variable = { WSG_panci = 25 }
+					add_to_variable = { WSG_panci = 15 }
 				}
 				else = {}
 			}
