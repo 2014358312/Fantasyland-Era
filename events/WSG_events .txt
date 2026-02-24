@@ -68,6 +68,34 @@ country_event = {
 	}
 }
 
+country_event = { #WSG_convincing_the_secretary_ship
+	id = WSG_event.002
+	title = WSG_event.002.t
+	desc = WSG_event.002.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = WSG_event.002.a
+		add_stability = 0.05
+		add_popularity = { ideology = fascism popularity = 0.05 }
+		set_country_flag = WSG_secretary_ship_agree
+	}
+}
+
+country_event = { #WSG_letter_to_the_admiral
+	id = WSG_event.003
+	title = WSG_event.003.t
+	desc = WSG_event.003.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = WSG_event.003.a
+		add_stability = 0.05
+		add_popularity = { ideology = fascism popularity = 0.05 }
+		set_country_flag = WSG_admiral_agree
+	}
+}
+
 country_event = {
 	id = WSG_inner_circle_lexington.01
 

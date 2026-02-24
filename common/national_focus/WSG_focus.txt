@@ -5441,7 +5441,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_stability = -0.5
-			add_war_support = 0.25
 		}
 		ai_will_do = {
 			factor = 1
@@ -5462,6 +5461,7 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			add_timed_idea = { idea = WSG_rancor_and_blood days = 180 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -5482,6 +5482,8 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			add_popularity = { ideology = fascism popularity = 0.1 }
+			add_timed_idea = { idea = WSG_hate_propaganda days = 180 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -5503,6 +5505,8 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			add_popularity = { ideology = fascism popularity = 0.1 }
+			add_timed_idea = { idea = WSG_the_rise_of_militarism days = 360 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -5523,6 +5527,8 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			add_popularity = { ideology = fascism popularity = 0.1 }
+			add_war_support = 0.10
 		}
 		ai_will_do = {
 			factor = 1
@@ -5544,6 +5550,7 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			country_event = { id = WSG_event.003 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -5567,6 +5574,7 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			country_event = { id = WSG_event.002 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -5590,6 +5598,48 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			add_popularity = { ideology = fascism popularity = 0.1 }
+			set_politics = { ruling_party = fascism }
+            add_trait = {
+                character = WSG_Lexington
+                ideology = fascism_militarism_subtype
+                trait = WSG_embrace_militarism
+            }
+            add_trait = {
+                character = WSG_Vittorio_Veneto
+                ideology = fascism_militarism_subtype
+                trait = WSG_embrace_militarism
+            }
+            add_trait = {
+                character = WSG_Yubari
+                ideology = fascism_militarism_subtype
+                trait = WSG_embrace_militarism
+            }
+            add_trait = {
+                character = WSG_Hood
+                ideology = fascism_militarism_subtype
+                trait = WSG_embrace_militarism
+            }
+            add_trait = {
+                character = WSG_Jean_Bart
+                ideology = fascism_militarism_subtype
+                trait = WSG_embrace_militarism
+            }
+            add_trait = {
+                character = WSG_Bubnov
+                ideology = fascism_militarism_subtype
+                trait = WSG_embrace_militarism
+            }
+            add_trait = {
+                character = WSG_Clausewitz
+                ideology = fascism_militarism_subtype
+                trait = WSG_embrace_militarism
+            }
+            add_trait = {
+                character = WSG_YiXian
+                ideology = fascism_militarism_subtype
+                trait = WSG_embrace_militarism
+            }
 		}
 		ai_will_do = {
 			factor = 1
@@ -5613,6 +5663,7 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			add_timed_idea = { idea = WSG_expedited_production days = 360 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -5633,6 +5684,7 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			add_ideas = WSG_war_zone
 		}
 		ai_will_do = {
 			factor = 1
@@ -5653,6 +5705,13 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+	        army_experience = 50
+	        navy_experience = 50
+	        air_experience = 50
+			add_daily_mastery = {
+				amount = 0.6
+				days = 180
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -5673,6 +5732,27 @@ focus_tree = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			add_ideas = WSG_bloodshed_march
+			add_state_claim = 691
+			add_state_claim = 702
+			add_state_claim = 707
+			add_state_claim = 715
+			add_state_claim = 717
+			add_state_claim = 725
+			add_state_claim = 728
+			add_state_claim = 729
+			add_state_claim = 730
+			add_state_claim = 734
+			add_state_claim = 739
+			add_state_claim = 740
+			add_state_claim = 744
+			add_state_claim = 745
+			add_state_claim = 747
+			add_state_claim = 749
+			add_state_claim = 752
+			add_state_claim = 855
+			add_state_claim = 859
+			#有内海，是罗马（
 		}
 		ai_will_do = {
 			factor = 1
@@ -6622,6 +6702,9 @@ focus_tree = {
 			factor = 1
 		}
         prerequisite = { 
+			focus = WSG_port_area_planning_phase_II_project
+		}
+        prerequisite = { 
 			focus = WSG_admirals_exclusive_jurisdiction
 			focus = WSG_lexington_prime_minister
 		}
@@ -6779,6 +6862,9 @@ focus_tree = {
 			factor = 1
 		}
         prerequisite = { 
+			focus = WSG_military_reform_phase_II_project
+		}
+        prerequisite = { 
 			focus = WSG_admirals_exclusive_jurisdiction
 			focus = WSG_lexington_prime_minister
 		}
@@ -6793,6 +6879,7 @@ focus_tree = {
 		cost = 5
 		available = {}
 		completion_reward = {
+			add_ideas = WSG_expand_recruitment
 		}
 		ai_will_do = {
 			factor = 1
@@ -6870,6 +6957,10 @@ focus_tree = {
 		cost = 5
 		available = {}
 		completion_reward = {
+			    swap_ideas = {
+				    add_idea = WSG_militaristic_will
+				    remove_idea = WSG_expand_recruitment
+			    }
 		}
 		ai_will_do = {
 			factor = 1
@@ -6890,6 +6981,11 @@ focus_tree = {
 			NOT = { has_completed_focus = WSG_super_future_port_area_era }
 		}
 		completion_reward = {
+			if = {
+				limit = { has_completed_focus = WSG_militaristic_will }
+				add_ideas = WSG_multi_ethnic_joint_operations_r
+			}
+			else = { add_ideas = WSG_multi_ethnic_joint_operations_l }
 		}
 		ai_will_do = {
 			factor = 1
@@ -6917,6 +7013,11 @@ focus_tree = {
 			NOT = { has_completed_focus = WSG_super_future_port_area_era }
 		}
 		completion_reward = {
+			if = {
+				limit = { has_completed_focus = WSG_militaristic_will }
+				add_ideas = WSG_warship_girl_main_combat_power_r
+			}
+			else = { add_ideas = WSG_warship_girl_main_combat_power_l }
 		}
 		ai_will_do = {
 			factor = 1
