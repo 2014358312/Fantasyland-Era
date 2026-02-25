@@ -12,7 +12,7 @@ characters = {
 				small = GFX_idea_advisor_DKA_Amelia_Rozequarts
 			}
 		}
-		country_leader = {
+		country_leader = { #DKA Revolution Army Leader
 			ideology = communism_subtype
 			traits = {  }
 			expire = "1965.1.1.1"
@@ -34,26 +34,6 @@ characters = {
 		}
 		country_leader = {
 			ideology = neutrality_subtype
-			traits = {  }
-			expire = "1965.1.1.1"
-			id = -1
-		}
-	}
-
-	DKA_Alistair = {
-		name = DKA_Alistair
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_DKA_Alistair
-				small = GFX_idea_advisor_DKA_Alistair
-			}
-			army = {
-				large = GFX_Portrait_DKA_Alistair
-				small = GFX_idea_advisor_DKA_Alistair
-			}
-		}
-		country_leader = {
-			ideology = communism_subtype
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = -1
@@ -217,60 +197,6 @@ characters = {
 		}
 	}
 
-	DKA_Satie = {
-		name = DKA_Satie
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_DKA_Satie
-				small = GFX_idea_advisor_DKA_Satie
-			}
-			army = {
-				large = GFX_Portrait_DKA_Satie
-				small = GFX_idea_advisor_DKA_Satie
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = DKA_Satie
-			allowed = { DKA_is_demon_king_army_member = yes }
-			available = {
-				
-			}
-			cost = 150
-			traits = { loyal_maid }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	DKA_Suresia = {
-		name = DKA_Suresia
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_DKA_Suresia
-				small = GFX_idea_advisor_DKA_Suresia
-			}
-			army = {
-				large = GFX_Portrait_DKA_Suresia
-				small = GFX_idea_advisor_DKA_Suresia
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = DKA_Suresia
-			allowed = { DKA_is_demon_king_army_member = yes }
-			available = {
-				
-			}
-			cost = 150
-			traits = {  }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
 	DKA_White = {
 		name = DKA_White
 		portraits = {
@@ -286,6 +212,26 @@ characters = {
 		advisor = {
 			slot = head_of_government_character
 			idea_token = DKA_White_head_of_government_character
+			available = { no_head_of_gov_trigger = yes }
+			traits = { DKA_silent_worker }
+		}
+	}
+
+	DKA_Machina_Soleige = {
+		name = Machina_Soleige
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_DKA_Machina_Soleige
+				small = GFX_idea_advisor_DKA_Machina_Soleige
+			}
+			army = {
+				large = GFX_Portrait_DKA_Machina_Soleige
+				small = GFX_idea_advisor_DKA_Machina_Soleige
+			}
+		}
+		advisor = {
+			slot = head_of_government_character
+			idea_token = DKA_Machina_Soleige_head_of_government_character
 			available = { no_head_of_gov_trigger = yes }
 			traits = { DKA_silent_worker }
 		}
@@ -366,75 +312,6 @@ characters = {
 		}
 	}
 
-	DKA_Lufas_Maphaahl = {
-		name = Lufas_Maphaahl
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_DKA_Lufas_Maphaahl
-				small = GFX_idea_advisor_DKA_Lufas_Maphaahl
-			}
-			army = {
-				large = GFX_Portrait_DKA_Lufas_Maphaahl
-				small = GFX_idea_advisor_DKA_Lufas_Maphaahl
-			}
-		}
-		country_leader = {
-			ideology = fascism_subtype
-			traits = { hawk }
-			expire = "1965.1.1.1"
-			id = -1
-		}
-		field_marshal = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	DKA_Machina_Soleige = {
-		name = Machina_Soleige
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_DKA_Machina_Soleige
-				small = GFX_idea_advisor_DKA_Machina_Soleige
-			}
-			army = {
-				large = GFX_Portrait_DKA_Machina_Soleige
-				small = GFX_idea_advisor_DKA_Machina_Soleige
-			}
-		}
-		advisor = {
-			slot = head_of_government_character
-			idea_token = DKA_Machina_Soleige_head_of_government_character
-			available = { no_head_of_gov_trigger = yes }
-			traits = { DKA_silent_worker }
-		}
-	}
-
-	DKA_Provato_Pecora_Ariace = {
-		name = Provato_Pecora_Ariace
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_DKA_Provato_Pecora_Ariace
-				small = GFX_idea_advisor_DKA_Provato_Pecora_Ariace
-			}
-			army = {
-				large = GFX_Portrait_DKA_Provato_Pecora_Ariace
-				small = GFX_idea_advisor_DKA_Provato_Pecora_Ariace
-			}
-		}
-		country_leader = {
-			ideology = neutrality_subtype
-			traits = { PHI_mercantalist }
-			expire = "1965.1.1.1"
-			id = -1
-		}
-	}
-
 	DKA_Sophia_Karen = {
 		name = Sophia_Karen
 		portraits = {
@@ -478,6 +355,40 @@ characters = {
 			}
 		}
 	}
+	
+	####################################
+	####################################
+	##
+	##  ########  ##    ## ########  
+	##  ##     ## ##   ##  ##     ## 
+	##  ##     ## ##  ##   ##     ## 
+	##  ##     ## #####    ########  
+	##  ##     ## ##  ##   ##     ## 
+	##  ##     ## ##   ##  ##     ## 
+	##  ########  ##    ## ########  
+	##
+	####################################
+	####################################
+	
+	DKA_Alistair = {
+		name = DKA_Alistair
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_DKA_Alistair
+				small = GFX_idea_advisor_DKA_Alistair
+			}
+			army = {
+				large = GFX_Portrait_DKA_Alistair
+				small = GFX_idea_advisor_DKA_Alistair
+			}
+		}
+		country_leader = {
+			ideology = communism_subtype
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
 
 	DKA_Yoshida_Yuko = {
 		name = Yoshida_Yuko
@@ -519,6 +430,137 @@ characters = {
 			planning_skill = 1
 			logistics_skill = 1
 			legacy_id = -1
+		}
+	}
+
+	DKA_Suresia = {
+		name = DKA_Suresia
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_DKA_Suresia
+				small = GFX_idea_advisor_DKA_Suresia
+			}
+			army = {
+				large = GFX_Portrait_DKA_Suresia
+				small = GFX_idea_advisor_DKA_Suresia
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DKA_Suresia
+			allowed = { DKA_is_demon_king_army_member = yes }
+			available = {
+				
+			}
+			cost = 150
+			traits = {  }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	####################################
+	####################################
+	##
+	##	########  ##    ##  ######  
+	##	##     ## ##   ##  ##    ## 
+	##	##     ## ##  ##   ##       
+	##	##     ## #####    ##       
+	##	##     ## ##  ##   ##       
+	##	##     ## ##   ##  ##    ## 
+	##	########  ##    ##  ######  
+	##
+	####################################
+	####################################
+
+	DKA_Lufas_Maphaahl = {
+		name = Lufas_Maphaahl
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_DKA_Lufas_Maphaahl
+				small = GFX_idea_advisor_DKA_Lufas_Maphaahl
+			}
+			army = {
+				large = GFX_Portrait_DKA_Lufas_Maphaahl
+				small = GFX_idea_advisor_DKA_Lufas_Maphaahl
+			}
+		}
+		country_leader = {
+			ideology = fascism_subtype
+			traits = { hawk }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		field_marshal = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+	
+	####################################
+	####################################
+	##
+	##	########  ##    ## ########  
+	##	##     ## ##   ##  ##     ## 
+	##	##     ## ##  ##   ##     ## 
+	##	##     ## #####    ##     ## 
+	##	##     ## ##  ##   ##     ## 
+	##	##     ## ##   ##  ##     ## 
+	##	########  ##    ## ########  
+	##
+	####################################
+	####################################
+	
+	DKA_Provato_Pecora_Ariace = {
+		name = Provato_Pecora_Ariace
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_DKA_Provato_Pecora_Ariace
+				small = GFX_idea_advisor_DKA_Provato_Pecora_Ariace
+			}
+			army = {
+				large = GFX_Portrait_DKA_Provato_Pecora_Ariace
+				small = GFX_idea_advisor_DKA_Provato_Pecora_Ariace
+			}
+		}
+		country_leader = {
+			ideology = neutrality_subtype
+			traits = { PHI_mercantalist }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+
+	DKA_Satie = {
+		name = DKA_Satie
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_DKA_Satie
+				small = GFX_idea_advisor_DKA_Satie
+			}
+			army = {
+				large = GFX_Portrait_DKA_Satie
+				small = GFX_idea_advisor_DKA_Satie
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DKA_Satie
+			allowed = { DKA_is_demon_king_army_member = yes }
+			available = {
+				
+			}
+			cost = 150
+			traits = { loyal_maid }
+			ai_will_do = {
+				base = 1.000
+			}
 		}
 	}
 }

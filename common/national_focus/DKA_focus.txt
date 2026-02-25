@@ -60,10 +60,35 @@ focus_tree = {
 			factor = 1
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_POLITICAL_CHARACTER
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_political_power = 75
+			custom_effect_tooltip = available_political_advisor
+			#show_ideas_tooltip = 
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					impassable = no
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				random_select_amount = 2
+				add_extra_state_shared_building_slots = 2
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = DKA_industry_remain_to_be_done
+				bonus = 1
+				uses = 1
+				category = industry
+			}
 		}
 	}
 	focus = {
