@@ -465,7 +465,21 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			add_political_power = 50
+			army_experience = 5
+			navy_experience = 5
+			air_experience = 5
+			effect_tooltip = {
+				add_ideas = DKA_terrestrial_warfare_corps_fake
+				add_ideas = DKA_naval_warfare_fleet_fake
+			}
+			hidden_effect = {
+				add_dynamic_modifier = {
+					modifier = DKA_terrestrial_warfare_corps_dynamic_modifier
+				}
+				add_dynamic_modifier = {
+					modifier = DKA_naval_warfare_fleet_dynamic_modifier
+				}
+			}
 		}
 	}
 	focus = {
@@ -693,7 +707,15 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			add_political_power = 50
+			air_experience = 20
+			effect_tooltip = {
+				add_ideas = DKA_aerial_combat_command_fake
+			}
+			hidden_effect = {
+				add_dynamic_modifier = {
+					modifier = DKA_aerial_combat_command_dynamic_modifier
+				}
+			}
 		}
 	}
 	focus = {
