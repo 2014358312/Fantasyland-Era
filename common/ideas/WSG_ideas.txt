@@ -561,6 +561,7 @@ ideas = {
 				research_speed_factor = 0.15
 				political_power_gain = 0.25
 				war_support_factor = 0.10
+				communism_drift = 0.05
 				custom_modifier_tooltip = WSG_panci_monthly_add_30_tt
 			}
 		}
@@ -1022,6 +1023,38 @@ ideas = {
 			}
 		}
 
+		WSG_Admirals_rule = {
+			picture = WSG_admiral
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				political_advisor_cost_factor = -0.25
+				stability_factor = 0.05
+				political_power_factor = 0.05
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		WSG_Admirals_rule_II = {
+			picture = WSG_admiral
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				democratic_drift = 0.05
+		        mobilization_laws_cost_factor = -0.25
+		        trade_laws_cost_factor  = -0.25
+		        economy_cost_factor = -0.25
+				political_advisor_cost_factor = -0.25
+				stability_factor = 0.10
+				political_power_factor = 0.10
+				consumer_goods_factor = -0.10
+		        industrial_capacity_dockyard = 0.20
+		        industrial_capacity_factory = 0.20
+			}
+		}
+
 		WSG_port_area_planning_phase_II_project = {
 			picture = WSG_port_production_technology
 			allowed_civil_war = {
@@ -1130,6 +1163,92 @@ ideas = {
 				production_speed_arms_factory_factor = 0.15
 			}
 		}
+
+		WSG_pacify_the_people = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				stability_weekly = 0.005
+				democratic_drift = 0.05
+			}
+		}
+
+		WSG_public_opinion_supervision = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				democratic_drift = 0.05
+				fascism_drift = -0.05
+				communism_drift = -0.05
+			}
+		}
+
+		WSG_everything_is_settled = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				democratic_drift = 0.05
+				stability_weekly = 0.0025
+				war_support_weekly = 0.0025
+				consumer_goods_factor = -0.10
+				production_speed_buildings_factor = 0.05
+				political_power_factor = 0.05
+			}
+		}
+
+		WSG_back_on_track = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				democratic_drift = 0.05
+				stability_weekly = 0.0025
+				war_support_weekly = 0.0025
+				consumer_goods_factor = -0.15
+				production_speed_buildings_factor = 0.10
+				political_power_factor = 0.10
+			}
+		}
+
+		WSG_strengthening_military_preparedness = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				production_speed_arms_factory_factor = 0.10
+				production_speed_dockyard_factor = 0.10
+			}
+		}
+
+		WSG_stabilize_the_economy = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.10
+				production_speed_infrastructure_factor = 0.10
+			}
+		}
+
+		WSG_homeland_defense_line = {
+			picture = WSG_port_production_technology
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				production_speed_bunker_factor = 0.25
+			}
+		}
 ##################################陆军###################################
 		WSG_warship_girl_main_combat_power_r = {
 			picture = WSG_port_production_technology
@@ -1220,6 +1339,7 @@ ideas = {
 				always = no
 			}
 			modifier = {
+				fascism_drift = 0.05
 				conscription_factor = 0.15
 				non_core_manpower = 0.10
 				mobilization_speed = 0.50

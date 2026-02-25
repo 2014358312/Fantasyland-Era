@@ -30,6 +30,46 @@ leader_traits = {
 		}
 	}
 
+	WSG_sssistant_secretary_ship = {
+		random = no
+		stability_factor = 0.10
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	WSG_chief_secretary_ship = {
+		random = no
+		stability_factor = 0.10
+		war_support_factor = 0.10
+		political_advisor_cost_factor = -0.25
+		mobilization_laws_cost_factor = -0.25
+		trade_laws_cost_factor  = -0.25
+		economy_cost_factor = -0.25
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	WSG_lifetime_secretary_ship_trait = {
+		random = no
+		democratic_drift = 0.05
+		political_power_factor = 0.15
+		industrial_concern_cost_factor = -0.25
+		theorist_cost_factor = -0.25
+		army_chief_cost_factor = -0.25
+		navy_chief_cost_factor = -0.25
+		air_chief_cost_factor = -0.25
+		high_command_cost_factor = -0.25
+		sortie_efficiency = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	lexington_trait = {
 		random = no
 		consumer_goods_factor = -0.15
@@ -332,6 +372,7 @@ leader_traits = {
 			factor = 1
 		}
 	}
+
 	Eugen_trait = {
 		random = no				
         army_defence_factor = 0.05
@@ -342,6 +383,7 @@ leader_traits = {
 			factor = 1
 		}
 	}
+
     CV16_trait = {
         random = no
         paradrop_organization_factor = 1.20
@@ -359,6 +401,7 @@ leader_traits = {
         experience_gain_air = 0.15
 		ai_will_do = { factor = 1 }
 	}
+
     Albion_trait = {
         random = no
 		experience_gain_air = 0.2
@@ -366,6 +409,7 @@ leader_traits = {
 		air_strategic_bomber_bombing_factor = 0.09
 		ai_will_do = { factor = 1 }
 	}
+
 	fengnai_trait = {
 		random = no
 		air_attack_factor = 0.05
@@ -383,30 +427,29 @@ leader_traits = {
 		air_cas_present_factor = 0.1
 		ai_will_do = { factor = 1 }
 	}
+
 	Lexington_navy_advisor = {
-    random = no
-    naval_manufacturer_cost_factor = -0.1
-    aircraft_manufacturer_cost_factor = -0.1
-    refit_ic_cost = -0.1 #舰船改造花费
-    refit_speed = 1 #舰船改造速度
-    repair_speed_factor = 0.25 #舰船修理速度
-    experience_gain_navy = 0.2
-    experience_gain_air = 0.05
-    navy_carrier_air_attack_factor = 0.1 #航母攻击
-    navy_carrier_air_targetting_factor = 0.1 #航母索敌
-    navy_carrier_air_agility_factor = 0.1
-    naval_strike_attack_factor = 0.15
-    sortie_efficiency = 0.15 #出击效率
-    equipment_bonus = {
+        random = no
+        naval_manufacturer_cost_factor = -0.1
+        aircraft_manufacturer_cost_factor = -0.1
+        refit_ic_cost = -0.1 #舰船改造花费
+        refit_speed = 1 #舰船改造速度
+        repair_speed_factor = 0.25 #舰船修理速度
+        experience_gain_navy = 0.2
+        experience_gain_air = 0.05
+        navy_carrier_air_attack_factor = 0.1 #航母攻击
+        navy_carrier_air_targetting_factor = 0.1 #航母索敌
+        navy_carrier_air_agility_factor = 0.1
+        naval_strike_attack_factor = 0.15
+        sortie_efficiency = 0.15 #出击效率
+        equipment_bonus = {
         ship_hull_carrier = {
             build_cost_ic =  -0.1 carrier_size = 1
         }
         cv_small_plane_airframe = {
             air_attack = 0.25 
         }
-    }
-    ai_will_do = {factor = 1}
-}
-
-
+        }
+        ai_will_do = {factor = 1}
+	}
 }

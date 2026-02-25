@@ -32,6 +32,12 @@ characters = {
 			expire = "2000.1.1.1"
 			id = -1
 		}
+		country_leader = {
+			ideology = royal_constitutionalism_subtype
+			traits = { lexington_trait pioneer_in_aviation_tactics }
+			expire = "2000.1.1.1"
+			id = -1
+		}
 		field_marshal = {
 							traits = {
 								
@@ -81,6 +87,12 @@ characters = {
 		}
 		country_leader = {
 			ideology = fascism_militarism_subtype
+			traits = { vittorio_veneto_trait politician }
+			expire = "2000.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			ideology = royal_constitutionalism_subtype
 			traits = { vittorio_veneto_trait politician }
 			expire = "2000.1.1.1"
 			id = -1
@@ -148,6 +160,12 @@ characters = {
 			expire = "2000.1.1.1"
 			id = -1
 		}
+		country_leader = {
+			ideology = royal_constitutionalism_subtype
+			traits = { yubari_trait technology_leadership }
+			expire = "2000.1.1.1"
+			id = -1
+		}
 	}
 
 	WSG_Hood = {
@@ -179,6 +197,12 @@ characters = {
 		}
 		country_leader = {
 			ideology = fascism_militarism_subtype
+			traits = { hood_trait naval_decisive_battle_theorist }
+			expire = "2000.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			ideology = royal_constitutionalism_subtype
 			traits = { hood_trait naval_decisive_battle_theorist }
 			expire = "2000.1.1.1"
 			id = -1
@@ -229,6 +253,12 @@ characters = {
 			expire = "2000.1.1.1"
 			id = -1
 		}	
+		country_leader = {
+			ideology = royal_constitutionalism_subtype
+			traits = { jean_bart_trait strategist_of_decisive_battle_plans }
+			expire = "2000.1.1.1"
+			id = -1
+		}
 		navy_leader={
 			traits = {
 							WSG_navy_trait
@@ -242,7 +272,6 @@ characters = {
 						maneuvering_skill = 3
 						coordination_skill = 3
 		}
-	
 	}
 
 	WSG_Bubnov = {
@@ -274,6 +303,12 @@ characters = {
 		}
 		country_leader = {
 			ideology = fascism_militarism_subtype
+			traits = { bubnov_trait advantageous_firepower_theorist }
+			expire = "2000.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			ideology = royal_constitutionalism_subtype
 			traits = { bubnov_trait advantageous_firepower_theorist }
 			expire = "2000.1.1.1"
 			id = -1
@@ -313,6 +348,12 @@ characters = {
 			expire = "2000.1.1.1"
 			id = -1
 		}
+		country_leader = {
+			ideology = royal_constitutionalism_subtype
+			traits = { clausewitz_trait land_ground_coordination_theorist }
+			expire = "2000.1.1.1"
+			id = -1
+		}
 		field_marshal = {
 						traits={
 							trickster
@@ -340,35 +381,6 @@ characters = {
 						}
 	}
 
-	WSG_Lion = {
-		name = Lion
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_WSG_Lion
-				small = GFX_idea_advisor_WSG_Lion
-			}
-			army = {
-				large = GFX_Portrait_WSG_Lion
-				small = GFX_idea_advisor_WSG_Lion
-			}
-		}
-		country_leader = {
-			ideology = royal_constitutionalism_subtype
-			traits = {  }
-			expire = "2000.1.1.1"
-			id = -1
-		}
-		advisor = {
-			slot = theorist
-			idea_token = WSG_advisor_Lion
-			traits = { military_theorist }
-			cost = 100
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
 	WSG_YiXian = {
 		name = YiXian
 		portraits = {
@@ -402,6 +414,12 @@ characters = {
 			expire = "2000.1.1.1"
 			id = -1
 		}
+		country_leader = {
+			ideology = royal_constitutionalism_subtype
+			traits = { yixian_trait quartermaster }
+			expire = "2000.1.1.1"
+			id = -1
+		}
 		field_marshal = {
 						traits={
 							infantry_leader
@@ -423,7 +441,36 @@ characters = {
 						logistics_skill = 5
 						}
 	}
-	
+
+	WSG_Lion = {
+		name = Lion
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_WSG_Lion
+				small = GFX_idea_advisor_WSG_Lion
+			}
+			army = {
+				large = GFX_Portrait_WSG_Lion
+				small = GFX_idea_advisor_WSG_Lion
+			}
+		}
+		country_leader = {
+			ideology = royal_constitutionalism_subtype
+			traits = {  }
+			expire = "2000.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = theorist
+			idea_token = WSG_advisor_Lion
+			traits = { military_theorist }
+			cost = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	WSG_Bismarck = {
 		name = Bismarck
 		portraits = {
@@ -761,6 +808,7 @@ characters = {
 			factor = 1
 		}
 	}
+
 	WSG_Eugen = {
 		name = Eugen
 		portraits = {
@@ -871,6 +919,7 @@ characters = {
 			factor = 1
 		}
 	}
+
 	WSG_Montana = {  #蒙大拿
 		name = Montana
 		portraits = {
@@ -916,7 +965,6 @@ characters = {
 			factor = 1
 		}
 	}
-
 
 	WSG_Essex = {
 		name = Essex
@@ -971,6 +1019,7 @@ characters = {
 			factor = 1
 		}
 	}
+
 	WSG_Lexington_navy = {
 		name = Lexington
 		portraits={
@@ -1007,6 +1056,7 @@ characters = {
 						coordination_skill = 5
 		}
 	}
+
 	WSG_yimola = { #伊莫拉
 		name = yimola
 		portraits={
@@ -1085,6 +1135,7 @@ characters = {
                 coordination_skill = 3 #协同技能等级
 		}
 	}
+
 	WSG_geye = {   #葛夜
 		name = geye
 		civilian = {
@@ -1194,6 +1245,7 @@ characters = {
 						coordination_skill = 2
 		}
 	}
+
 	WSG_Claxton = { #小海狸
 		name = Claxton
 		portraits={
@@ -1263,6 +1315,7 @@ characters = {
 						coordination_skill = 3
 		}
 	}
+
 	WSG_AIII = { #我的天哪是AIII大人
 		name = AIII
 		portraits={
@@ -1300,6 +1353,7 @@ characters = {
 						coordination_skill = 4
 		}
 	}
+
 	WSG_CV16 = {
 		name = CV16
 		portraits = {
@@ -1317,6 +1371,7 @@ characters = {
 			factor = 1
 		}
 	}
+
 	WSG_Oyodo = {  #大淀
 		name = Oyodo
 		portraits = {
@@ -1334,6 +1389,7 @@ characters = {
 			factor = 1
 		}
 	}
+
 	WSG_Albion = {
 		name = Albion
 		portraits = {
@@ -1369,6 +1425,7 @@ characters = {
 			factor = 1
 		}
 	}
+
 	WSG_miya = { #米娅
 		name = miya
 		portraits = {
@@ -1386,6 +1443,7 @@ characters = {
 			factor = 1
 		}
 	}
+
     WSG_Vestal = {#女灶神
 		name = Vestal
 		portraits = {
@@ -1406,6 +1464,7 @@ characters = {
 			factor = 1
 		}
 	}
+
 	WSG_Indomitable = {
 		name = Indomitable
 		portraits = {
@@ -1428,5 +1487,4 @@ characters = {
 			factor = 1
 		}
 	}
-
 }
