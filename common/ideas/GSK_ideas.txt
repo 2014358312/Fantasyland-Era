@@ -425,6 +425,287 @@ ideas = {
             }
         }
 	}
+
+    country = { ##这个括号下由我新改了个昵称负责
+        GSK_Planning_idea = { ##暂定的计划
+            modifier = {
+                army_org_factor = -0.5
+                experience_gain_army_factor = 0.2
+                max_planning_factor = 0.05
+                stability_factor = -0.1
+                war_support_factor = -0.2
+                production_speed_buildings_factor = 0.05
+            }
+        }
+        GSK_Planning_idea_1 = { ##筹备计划
+            modifier = {
+                army_attack_factor = -0.4
+                army_org_factor = -0.25
+                experience_gain_army_factor = 0.2
+                max_planning_factor = 0.2
+                stability_factor = -0.05
+                war_support_factor = -0.1
+                production_speed_buildings_factor = 0.1
+            }
+        }
+        GSK_Planning_idea_2 = { ##计划雏形
+            modifier = {
+                army_attack_factor = -0.2
+                army_org_factor = -0.25
+                army_speed_factor = 0.1
+                org_loss_when_moving = -0.1
+                experience_gain_army_factor = 0.2
+                max_planning_factor = 0.25
+                stability_factor = 0.05
+                war_support_factor = -0.05
+                production_speed_buildings_factor = 0.1
+            }
+        }
+        GSK_Planning_idea_3 = { ##周密计划
+            modifier = {
+                army_attack_factor = 0.1
+                army_org_factor = -0.25
+                army_speed_factor = 0.2
+                org_loss_when_moving = -0.1
+                experience_gain_army_factor = 0.2
+                max_planning_factor = 0.25
+                stability_factor = 0.05
+                war_support_factor = 0.05
+                production_speed_buildings_factor = 0.1
+                army_core_attack_factor = 0.1
+                army_core_defence_factor = 0.1
+                custom_modifier_tooltip = GSK_Planning_idea_3_tt
+            }
+        }
+        GSK_Cooperation_idea = { ##合作的基础
+            modifier = {
+                political_power_factor = 0.05
+                stability_weekly = 0.005
+            }
+        }
+        GSK_Cooperation_idea_1 = { ##外交的手段
+            modifier = {
+                political_power_factor = 0.1
+                stability_weekly = 0.01
+                war_support_weekly = 0.005
+            }
+        }
+        ##折腾妖怪山
+        GSK_Infiltrate_army_idea = { ##渗透军队
+            targeted_modifier = {
+                tag = YKM
+                attack_bonus_against = 0.5
+                defence_bonus_against = 0.5
+            }
+        }
+        GSK_Steal_information_idea = { ##对妖怪的研究
+            modifier = {
+                intel_network_gain_factor = 0.5
+                operative_slot = 1
+            }
+        }
+        GSK_Plunder_resources_idea = { ##暗度陈仓
+            modifier = {
+                local_resources_factor = 0.1
+            }
+        }
+        GSK_Yukaris_suggestion_idea = { ##长远的目光
+            modifier = {
+                production_speed_buildings_factor = 0.1
+                army_attack_factor = 0.1
+                research_speed_factor = 0.1
+                justify_war_goal_time = -0.5
+            }
+        }
+        GSK_youkai_civil_war_idea = { ##先发制人
+            targeted_modifier = {
+                tag = YKM
+                attack_bonus_against = 0.5
+                defence_bonus_against = 0.1
+            }
+        }
+        GSK_Moriya_join_idea = { ##早苗的祝福
+            modifier = {
+                army_morale_factor = 0.1
+                max_dig_in_factor = 0.05
+                dig_in_speed_factor = 0.1
+                army_speed_factor = 0.1
+                army_fuel_consumption_factor = -0.1
+                air_fuel_consumption_factor = -0.1
+                navy_fuel_consumption_factor = -0.1
+            }
+        }
+        GSK_Kappa_join_idea = { ##超前的高达
+            modifier = {
+                research_speed_factor = 0.2
+                army_attack_factor = 0.3
+                army_speed_factor = 0.25
+                planning_speed = 0.8
+            }
+        }
+        GSK_Aid_of_the_Sanzu_River_idea = { ##四季审判
+            modifier = {
+                army_attack_factor = 0.2
+                equipment_capture = 0.1
+            }
+            equipment_bonus = {
+                support_equipment = {
+                    instant = yes
+                    build_cost_ic = -0.1
+                }
+                infantry_equipment = {
+                    instant = yes
+                    build_cost_ic = -0.1
+                }
+                armor = {
+                    instant = yes
+                    build_cost_ic = -0.15
+                }
+            }
+        }
+        GSK_the_end_of_youkai_idea = { ##混乱的集中
+            modifier = {
+                stability_factor = -0.2
+                war_support_factor = -0.1
+                conscription_factor = 0.2
+                weekly_manpower = 10000
+            }
+        }
+        ##折腾月都
+        GSK_Be_frugal_idea = { ##月兔后勤
+            modifier = {
+                production_speed_railway_factor = 0.1
+                production_speed_infrastructure_factor = 0.5
+                supply_node_range = 0.5
+                supply_consumption_factor = -0.2
+            }
+        }
+        GSK_Secret_of_Immortality_idea = { ##蓬莱试验品
+            modifier = {
+                conscription = 0.05
+                army_org_factor = 0.05
+                army_morale_factor = 0.15
+            }
+        }
+        GSK_Second_Lunar_War_idea = { ##再次的战争
+            cancel = {
+                LNC = {
+                    exists = no
+                }
+            }
+            modifier = {
+                army_core_attack_factor = 0.4
+                army_core_defence_factor = 0.4
+                attrition = -0.1
+                production_speed_buildings_factor = -0.5
+                stability_factor = -0.1
+                war_support_factor = 0.15
+            }
+        }
+        GSK_Case_of_Princess_Kaguya_idea = { ##迷途竹林协助
+            modifier = {
+                custom_modifier_tooltip = GSK_Case_of_Princess_Kaguya_idea_tt
+            }
+        }
+        GSK_Sages_Proposal_idea = { ##八意的智慧
+            modifier = {
+                research_speed_factor = 0.4
+                custom_modifier_tooltip = GSK_Sages_Proposal_idea_tt
+            }
+        }
+        GSK_Seize_the_inheritance_idea = { ##永恒的胜利
+            modifier = {
+                army_core_attack_factor = 0.2
+                army_core_defence_factor = 0.2
+                experience_gain_army_factor = 0.5
+                supply_consumption_factor = -0.1
+                army_fuel_consumption_factor = -0.05
+            }
+        }
+        GSK_rebuild_Gensokyo_idea = { ##重建规划
+            modifier = {
+                war_support_factor = -0.8
+                production_speed_buildings_factor = 2
+                consumer_goods_expected_value = 0.1
+                stability_factor = 0.05
+                conscription = -0.05
+            }
+        }
+        GSK_rebuild_Gensokyo_idea_1 = { ##重建规划
+            name = GSK_rebuild_Gensokyo_idea
+            modifier = {
+                war_support_factor = -0.8
+                production_speed_buildings_factor = 2
+                stability_factor = 0.05
+                conscription = -0.05
+                production_speed_industrial_complex_factor = 0.1
+                production_cost_industrial_complex_factor = -0.1
+            }
+        }
+        GSK_rebuild_Gensokyo_idea_2 = { ##重建规划
+            name = GSK_rebuild_Gensokyo_idea
+            modifier = {
+                war_support_factor = -0.8
+                production_speed_buildings_factor = 2.05
+                consumer_goods_expected_value = 0.1
+                stability_factor = 0.05
+                conscription = -0.03
+                resistance_target = -0.1
+            }
+        }
+        GSK_Chaotic_military_discipline = { ##混乱军纪
+            modifier = {
+                army_org_factor = -0.9
+                army_attack_factor = -0.5
+                experience_gain_army_factor = -0.4
+                experience_gain_navy_factor = -0.4
+                experience_gain_air_factor = -0.4
+                max_planning = -0.5
+                air_mission_efficiency = -0.5
+                naval_damage_factor = -0.8
+                training_time_factor = 0.8
+            }
+        }
+        GSK_Heaven_blessed_Army = { ##天佑军
+            modifier = {
+                army_attack_factor = 0.1
+                army_defence_factor = 0.1
+                army_speed_factor = 0.2
+                army_core_attack_factor = 0.4
+                army_core_defence_factor = 0.4
+                max_command_power = 300
+                army_armor_attack_factor = 0.1
+                max_planning = 0.1
+                planning_speed = 0.1
+                supply_consumption_factor = -0.1
+                max_dig_in = 10
+                dig_in_speed_factor = 0.1
+                air_mission_efficiency = 0.1
+            }
+            equipment_bonus = {
+                artillery = {
+                    instant = yes
+                    build_cost_ic = -0.1
+                }
+                armor = {
+                    instant = yes
+                    build_cost_ic = -0.1
+                }
+                small_plane_airframe = {
+                    instant = yes
+                    build_cost_ic = -0.1
+                }
+                medium_plane_airframe = {
+                    instant = yes
+                    build_cost_ic = -0.1
+                }
+                large_plane_airframe = {
+                    instant = yes
+                    build_cost_ic = -0.1
+                }
+            }
+        }
+    }
 }
 ##ideas ={
     hidden_ideas ={

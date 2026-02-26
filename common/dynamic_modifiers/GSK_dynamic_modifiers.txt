@@ -56,3 +56,34 @@ GSK_management_of_hakurei_hidden_dynamic_modifier = {
 	army_defence_factor = GSK_MOH_army_defence_factor_var
 	supply_consumption_factor = GSK_MOH_supply_consumption_factor_var
 }
+
+GSK_Secret_of_Immortality_dyn = {
+	icon = GFX_idea_man_five_year_plan_industry #我不到啊，所以先顶着
+	monthly_population = 0.5
+	local_building_slots = 10
+}
+
+GSK_Planning_idea_3_war = {
+	icon = GFX_idea_man_five_year_plan_industry #我不到啊，所以先顶着
+	enable = {
+		has_war = yes
+	}
+	production_speed_buildings_factor = 0.6
+	production_speed_arms_factory_factor = 0.3
+	production_speed_industrial_complex_factor = -0.1
+	local_resources_factor = 0.1
+	army_core_attack_factor = GSK_Planning_idea_3_war_core
+	army_core_defense_factor = GSK_Planning_idea_3_war_core
+}
+
+GSK_rebuild_Gensokyo_dyn = {
+	icon = GFX_idea_man_five_year_plan_industry #我不到啊，所以先顶着
+	war_support_factor = GSK_rebuild_Gensokyo_array^0
+    production_speed_buildings_factor = GSK_rebuild_Gensokyo_array^1
+    consumer_goods_expected_value = GSK_rebuild_Gensokyo_array^2
+    stability_factor = GSK_rebuild_Gensokyo_array^3
+    conscription = GSK_rebuild_Gensokyo_array^4
+    production_speed_industrial_complex_factor = GSK_rebuild_Gensokyo_array^5
+    production_cost_industrial_complex_factor = GSK_rebuild_Gensokyo_array^6
+	resistance_target = GSK_rebuild_Gensokyo_array^7
+}

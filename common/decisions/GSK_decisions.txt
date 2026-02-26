@@ -1,0 +1,75 @@
+GSK_rebuild_Gensokyo_dec = {
+	GSK_Restore_the_ecosystem = {
+		cost = 50
+		days_remove = 180
+		visible = {
+			check_variable = { GSK_Restore_the_ecosystem_count < 2 }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GSK_Restore_the_ecosystem_tt
+				always = yes
+			}
+		}
+		modifier = {
+			consumer_goods_expected_value = 0.05
+			production_speed_buildings_factor = -0.5
+			production_speed_arms_factory_factor = -0.5
+		}
+		remove_effect = {
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GSK_rebuild_Gensokyo_idea
+					add_idea = GSK_rebuild_Gensokyo_idea_1
+				}
+			}
+			add_to_variable = { GSK_rebuild_Gensokyo_array^2 = -0.1} #消费品基础值
+			add_to_variable = { GSK_rebuild_Gensokyo_array^5 = 0.1} #民工速度
+			add_to_variable = { GSK_rebuild_Gensokyo_array^6 = -0.1} #民工造价
+			add_to_variable = { GSK_Restore_the_ecosystem_count = 1} 
+		}
+	}
+	GSK_Expand_the_central_area = {
+		cost = 120
+		days_remove = 60
+		visible = {
+			check_variable = { GSK_Expand_the_central_area_count < 5 }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GSK_Expand_the_central_area_tt
+				always = yes
+			}
+		}
+		modifier = {
+			conscription = -0.05
+			consumer_goods_expected_value = 0.1
+			production_speed_buildings_factor = 0.1
+		}
+		remove_effect = {
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GSK_rebuild_Gensokyo_idea
+					add_idea = GSK_rebuild_Gensokyo_idea_2
+				}
+			}
+			add_to_variable = { GSK_rebuild_Gensokyo_array^4 = 0.02} #适役人口
+			add_to_variable = { GSK_rebuild_Gensokyo_array^1 = 0.05} #建造速度
+			add_to_variable = { GSK_rebuild_Gensokyo_array^7 = -0.1} #抵抗目标
+			add_to_variable = { GSK_Expand_the_central_area_count = 1} 
+		}
+	}
+	GSK_Integrate_the_troops = {
+		cost = 120
+		days_remove = 400
+		fire_only_once = yes
+		complete_effect = {
+			add_ideas = GSK_Chaotic_military_discipline
+		}
+
+		remove_effect = {
+			remove_ideas = GSK_Chaotic_military_discipline
+			add_ideas = GSK_Heaven_blessed_Army
+		}
+	}
+}

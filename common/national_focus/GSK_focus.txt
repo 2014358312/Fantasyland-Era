@@ -19,39 +19,14 @@ focus_tree = {
 		}
 	}##国家
 	default = no#默认国策树
-	continuous_focus_position = { x = 0 y = 0}#可持续性国策
+	continuous_focus_position = { x = 0 y = 0} ##可持续性国策
+	##小国策
 	focus = {
-		id = GSK_LEI ##单独国策id/名字例子：tag_xxx
+		id = GSK_TYL ##年复一日的异变盛典 ##单独国策id/名字例子：tag_xxx
 		#icon = ##在.gfx文件里的图片
-		x = 50
-		y = 0
-
-		cost = 1##天数1点=7天
-		##ai_will_do={
-			##base = 1
-			##modifier={
-			##	条件
-			##	add/factor=X
-			##}
-		##}
-		available = {
-
-		}##条件
-		bypass = {
-
-		}##跳过国策的条件
-		search_filters = {FOCUS_FILTER_MANPOWER}##过滤器
-		completion_reward ={
-			add_offsite_building = { type = industrial_complex level = 5 }
-			consumer_goods_factor = -0.5
-		}##效果
-	}##小国策
-	focus = {
-		id = GSK_TYL##异变的结束##单独国策id/名字例子：tag_xxx
-		#icon = ##在.gfx文件里的图片
-		relative_position_id = GSK_LEI##国策相对上一条国策，xy以相对国策的点进行移动
-		prerequisite ={ focus = GSK_LEI  }##前提国策ID，点完同一括弧内的任意国策可行，例子focus = GSK_XXXfocus = GSK_XX2,复数形式则为点完以上才行
-		mutually_exclusive ={}##互斥国策id
+		##relative_position_id = GSK_LEI ##国策相对上一条国策，xy以相对国策的点进行移动
+		##prerequisite ={ focus = GSK_LEI  }##前提国策ID，点完同一括弧内的任意国策可行，例子focus = GSK_XXXfocus = GSK_XX2,复数形式则为点完以上才行
+		##mutually_exclusive ={}##互斥国策id
 		##available_if_capitulated =yes/no 投降后是否能点
 		##cancel_if_invalid = yes/no 条件不满足是否取消
 		##continue_if_invalid = yes/no 条件不满足是否继续
@@ -59,8 +34,8 @@ focus_tree = {
 		##allow_branch = {条件}满足什么条件可以显示这个国策及以下国策树，配合mark_focus_tree_layout_dirty=yes效果刷新国策树
 		##例子为allow_branch = {has_completed_focus =GSK_XXX}
 		##国策图标显示，interface文件中的goals.gfx(正常图标)和goals_shine.gfx（闪烁）
-		x = 0
-		y = 1
+		x = 50
+		y = 0
 		cost = 1##天数1点=7天
 		##ai_will_do={
 			##base = 1
@@ -77,471 +52,532 @@ focus_tree = {
 		}##跳过国策的条件
 		search_filters = {FOCUS_FILTER_MANPOWER}##过滤器
 		completion_reward ={
-			army_experience =10
-			navy_experience =10
-			add_political_power =30
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_offsite_building = { type = arms_factory level = 2 }
+			add_stability = 0.1
 		}##效果
 	}
-	##左线，内战
 	focus ={
-		id = GSK_JJW##结界出现了问题，博丽灵梦的消失
-		relative_position_id = GSK_TYL
-		prerequisite ={ focus = GSK_TYL }
-		mutually_exclusive ={ focus = GSK_reqT }
-		x = -15
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			
-		}
-	}
-	focus ={
-		id = GSK_Jom##坚持维护结界，维护和平
-		relative_position_id = GSK_JJW
-		prerequisite ={ focus =GSK_JJW }
-		mutually_exclusive ={ focus = GSK_okm }
-		x = -6
-		y = 3
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_toyy##激进雏形
-		relative_position_id = GSK_Jom
-		prerequisite ={ focus =GSK_Jom }
-		x = 5
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_toma##帮派成立
-		relative_position_id = GSK_Jom
-		prerequisite ={ focus =GSK_Jom }
-		x = -5
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_ygzs##妖怪之山的宣言（妖怪宣言）
-		relative_position_id = GSK_toma
-		prerequisite ={ focus =GSK_toma }
-		x = 0
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_ygcx##妖怪内战（妖怪之山出现）
-		relative_position_id = GSK_ygzs
-		prerequisite ={ focus =GSK_ygzs }
-		x = 1
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_yzd##月之都（月都援助）
-		relative_position_id = GSK_ygzs
-		prerequisite ={ focus =GSK_ygzs }
-		x = -1
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_htkj##河童（缴获河童科技，获取装甲师）
-		relative_position_id = GSK_ygcx
-		prerequisite ={ focus =GSK_ygcx focus =GSK_yzd}
-		x = -1
-		y = 1
-		cost = 5
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_zcyp##融会贯通（研究出对面的科技，然后获得装甲加成）
-		relative_position_id = GSK_htkj
-		prerequisite ={ focus =GSK_htkj}
-		x = 0
-		y = 1
-		cost = 4
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_tg##稳定度，新精神
-		relative_position_id = GSK_zcyp
-		prerequisite ={ focus =GSK_zcyp}
-		x = -1
-		y = 1
-		cost = 4
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_xda##妖怪协定
-		relative_position_id = GSK_zcyp
-		prerequisite ={ focus =GSK_zcyp}
-		x = 1
-		y = 1
-		cost = 4
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-
-	focus ={
-		id = GSK_hmg##红雾掀起
-		relative_position_id = GSK_toyy
-		prerequisite ={ focus =GSK_toyy }
-		x = 0
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_hwyb##红雾战争
-		relative_position_id = GSK_hmg
-		prerequisite ={ focus =GSK_hmg }
-		x = 1
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_wzh##雾之湖
-		relative_position_id = GSK_hmg
-		prerequisite ={ focus =GSK_hmg }
-		x = -1
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_byz##八云
-		relative_position_id = GSK_hwyb
-		prerequisite ={ focus =GSK_hmg focus =GSK_wzh}
-		x = -1
-		y = 1
-		cost = 7
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_rjzl##人里
-		relative_position_id = GSK_byz
-		prerequisite ={ focus =GSK_byz}
-		x = 0
-		y = 1
-		cost = 5
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_inm##重建发展
-		relative_position_id = GSK_rjzl
-		prerequisite ={ focus =GSK_rjzl}
-		x = 1
-		y = 1
-		cost = 5
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_opk##剥削红雾
-		relative_position_id = GSK_rjzl
-		prerequisite ={ focus =GSK_rjzl}
-		x = -1
-		y = 1
-		cost = 5
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-
-	focus ={
-		id = GSK_ddhl##多地混乱
-		relative_position_id = GSK_toyy
-		prerequisite ={ focus =GSK_toyy focus =GSK_toma}
-		mutually_exclusive ={ focus = GSK_hmg }
-		mutually_exclusive ={ focus =GSK_ygzs }
-		x = -5
-		y = 1
-		cost = 4
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_yg##妖怪反叛
-		relative_position_id = GSK_ddhl
-		prerequisite ={ focus =GSK_ddhl }
-		x = 2
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_fmyg##炽燃天火
-		relative_position_id = GSK_yg
-		prerequisite ={ focus =GSK_yg focus =GSK_mfzs}
-		x = 1
-		y = 1
-		cost = 4
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_lldy##魔法协定
-		relative_position_id = GSK_yg
-		prerequisite ={ focus =GSK_yg focus =dx focus =GSK_mfzs}
-		x = -1
-		y = 1
-		cost = 4
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_dx##地下反击
-		relative_position_id = GSK_ddhl
-		prerequisite ={ focus =GSK_ddhl }
-		x = -2
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_zs##解决地下（苍穹落下，当地人力减少，但是提供科技加成）
-		relative_position_id = GSK_dx
-		prerequisite ={ focus =dx focus =GSK_mfzs }
-		x = -1
-		y = 1
-		cost = 4
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_tdxy##天地协定（地下世界投降，地下世界的那几块地资源获取率提升）
-		relative_position_id = GSK_dx
-		prerequisite ={ focus =GSK_yg focus =dx focus =GSK_mfzs }
-		x = 1
-		y = 1
-		cost = 4
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_mfzs##魔法之森
-		relative_position_id = GSK_ddhl
-		prerequisite ={ focus =GSK_ddhl }
-		x = 0
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_cxzh##整合势力
-		relative_position_id = GSK_tdxy
-		prerequisite ={ focus =GSK_tdxy focus =GSK_lldy focus =GSK_fmyg focus =GSK_zs}
-		x = 1
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_dgxs##成立议会（类似权利平衡，大火沸腾那种
-		relative_position_id = GSK_cxzh
-		prerequisite ={focus =GSK_cxzh}
-		x = 0
-		y = 1
-		cost = 12
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_hxxy##幻想乡一书（签订协议，要求全国土整合，
-		relative_position_id = GSK_dgxs
-		prerequisite ={focus =GSK_dgxs focus =GSK_tg focus =GSK_xda focus =GSK_inm focus =GSK_opk}
-		x = 0
-		y = 1
-		cost = 1
-		available = {}
-		completion_reward = {
-			add_political_power =75
-			add_ideas = GSK_hxx##添加精神
-		}
-	}
-	focus ={
-		id = GSK_lmhg##灵梦回归（但内在不是，
-		relative_position_id = GSK_hxxy
-		prerequisite ={focus =hxxy}
-		x = 0
-		y = 1
-		cost = 1
-		available = {}
-		completion_reward = {
-			add_political_power =75
-			
-		}
-	}
-
-	focus ={
-		id = GSK_okm##放弃结界，调整内部
-		relative_position_id = GSK_JJW
-		prerequisite ={ focus = GSK_JJW }
-		mutually_exclusive ={ focus = GSK_Jom }
-		x = 6
-		y = 3
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_ziim##寻求八云紫的帮助
-		relative_position_id = GSK_okm
-		prerequisite ={ focus = GSK_okm }
-		x = -1
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_oom##寻找博丽的遗产
-		relative_position_id = GSK_okm
-		prerequisite ={ focus = GSK_okm }
-		x = 1
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =150
-		}
-	}
-	focus ={
-		id = GSK_zhunbei##逐渐危险的政府
-		relative_position_id = GSK_oom
-		prerequisite ={ focus = GSK_oom }
-		x = 0
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =10
-			swap_ideas = { 
-				remove_idea = GSK_hunlun_zhengfu ##原本精神
-				add_idea = GSK_hunlun_zhengfu2 ##覆盖精神
-			 }##单数 但是替换精神
-		}
-	}
-	focus ={
-		id = GSK_xiayi##战争的初端
-		relative_position_id = GSK_ziim
-		prerequisite ={ focus = GSK_oom focus = GSK_ziim}
-		x = 0
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =10
-			add_ideas = GSK_zhanzheng##添加精神
-		}
-	}
-	focus ={
-		id = GSK_qiyi##部分地区起义！
-		relative_position_id = GSK_xiayi
-		prerequisite ={ focus = xiayi focus = GSK_zhunbei}
-		x = 1
-		y = 1
-		cost = 2
-		available = {}
-		completion_reward = {
-			add_political_power =10
-		}
-	}
-	##右侧国策线，为稳定幻想乡（暂时不做）
-	focus ={
-		id = GSK_reqT#有什么东西来了/怪事频出
+		id = GSK_duiduima ##真的结束了？
 		relative_position_id = GSK_TYL
 		prerequisite ={ focus = GSK_TYL}
-		mutually_exclusive ={ focus = GSK_JJW }
-		x = 4
+		x = 0
 		y = 1
-		cost = 2
+		cost = 3
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			add_stability = -0.05
+			country_event = GSK_event.1
+		}
+	}
+	focus ={
+		id = GSK_Temporary_alliance ##暂时的联盟
+		relative_position_id = GSK_duiduima
+		prerequisite ={ focus = GSK_duiduima}
+		mutually_exclusive ={ focus = GSK_Uncompromising_advice }
+		x = -5
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 100
+			add_ideas = GSK_Planning_idea
+		}
+	}
+	focus ={
+		id = GSK_Planning_1 ##计划扩展
+		relative_position_id = GSK_Temporary_alliance
+		prerequisite ={ focus = GSK_Temporary_alliance}
+		x = 0
+		y = 2
+		cost = 8
+		available = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = GSK_Planning_idea
+				add_idea = GSK_Planning_idea_1
+			}
+		}
+	}
+	focus ={
+		id = GSK_Planning_2 ##进一步的计划
+		relative_position_id = GSK_Planning_1
+		prerequisite ={ focus = GSK_Planning_1}
+		x = 0
+		y = 2
+		cost = 8
+		available = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = GSK_Planning_idea_1
+				add_idea = GSK_Planning_idea_2
+			}
+		}
+	}
+	focus ={
+		id = GSK_Planning_3 ##针对策略
+		relative_position_id = GSK_Planning_2
+		prerequisite ={ focus = GSK_Planning_2}
+		x = 0
+		y = 2
+		cost = 8
+		available = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = GSK_Planning_idea_2
+				add_idea = GSK_Planning_idea_3
+			}
+			add_dynamic_modifier = { modifier = GSK_Planning_idea_3_war }
+		}
+	}
+	focus ={
+		id = GSK_Cooperation_YKM ##与妖怪们的合作
+		relative_position_id = GSK_Temporary_alliance
+		prerequisite ={ focus = GSK_Temporary_alliance}
+		x = -4
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			complete_national_focus = GSK_yaoqi
+			if = {
+				limit = { has_idea = GSK_Cooperation_idea }
+				swap_ideas = {
+					remove_idea = GSK_Cooperation_idea
+					add_idea = GSK_Cooperation_idea_1
+				}
+			}
+			else = {
+				add_ideas = GSK_Cooperation_idea
+			}
+		}
+	}
+	focus ={
+		id = GSK_Infiltrate_army ##渗透军队
+		relative_position_id = GSK_Cooperation_YKM
+		prerequisite ={ focus = GSK_Cooperation_YKM}
+		x = -1
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_ideas = GSK_Infiltrate_army_idea
+		}
+	}
+	focus ={
+		id = GSK_Steal_information ##盗取机密
+		relative_position_id = GSK_Cooperation_YKM
+		prerequisite ={ focus = GSK_Cooperation_YKM}
+		x = 1
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_ideas = GSK_Steal_information_idea
+			add_research_slot = 1
+			steal_random_tech_bonus = {
+			    category = industry
+				instant = yes
+			    base_bonus = 2
+			    target = YKM
+			    uses = 1
+			}
+		}
+	}
+	focus ={
+		id = GSK_Plunder_resources ##掠夺资源
+		relative_position_id = GSK_Infiltrate_army
+		prerequisite ={ focus = GSK_Infiltrate_army}
+		prerequisite ={ focus = GSK_Steal_information}
+		x = 1
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_ideas = GSK_Plunder_resources_idea
+			add_resource = {
+			    type = steel
+			    amount = 10
+				state = 662
+			}
+			add_resource = {
+			    type = oil
+			    amount = 10
+				state = 662
+			}
+		}
+	}
+	focus ={
+		id = GSK_Yukaris_suggestion ##八云紫的建议
+		relative_position_id = GSK_Plunder_resources
+		prerequisite ={ focus = GSK_Plunder_resources}
+		x = 0
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_ideas = GSK_Yukaris_suggestion_idea
+			add_tech_bonus = {
+				ahead_reduction = 1
+			    uses = 1
+			    category = electronics
+			}
+		}
+	}
+	focus ={
+		id = GSK_youkai_civil_war ##妖怪内战
+		relative_position_id = GSK_Yukaris_suggestion
+		prerequisite ={ focus = GSK_Yukaris_suggestion}
+		x = -2
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_timed_idea = {
+				idea = GSK_youkai_civil_war_idea
+				days = 90
+			}
+		}
+	}
+	focus ={
+		id = GSK_Moriya_join ##守矢加入
+		relative_position_id = GSK_youkai_civil_war
+		prerequisite ={ focus = GSK_youkai_civil_war}
+		available = {
+			YKM = {
+				OR = {
+					casualties_inflicted_by = {
+					   opponent = GSK
+					   thousands > 50
+					}
+					exists = no
+				}
+			}
+		}
+		x = -1
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_ideas = GSK_Moriya_join_idea
+			##还有三个4步9坦带炮带铲的装甲师，记得写
+			division_template = {
+			    name = "Moriya's Tank Division"
+			    priority = 1
+			    template_counter = 0
+			    regiments = {
+			        infantry = { x = 0 y = 0 }
+			        infantry = { x = 0 y = 1 }
+			        infantry = { x = 0 y = 2 }
+			        infantry = { x = 0 y = 3 }
+					medium_armor = { x = 1 y = 0}
+					medium_armor = { x = 1 y = 1}
+					medium_armor = { x = 1 y = 2}
+					medium_armor = { x = 2 y = 0}
+					medium_armor = { x = 2 y = 1}
+					medium_armor = { x = 2 y = 2}
+					medium_armor = { x = 3 y = 0}
+					medium_armor = { x = 3 y = 1}
+					medium_armor = { x = 3 y = 2}
+			    }
+			    support = {
+			        engineer = { x = 0 y = 0 }
+			        artillery = { x = 0 y = 1 }
+			    }
+			}
+			capital_scope = {
+				create_unit = {
+				    division = "name = \"Moriya's Tank Division\" division_template = \"Moriya's Tank Division\" start_experience_factor = 0.5"
+				    owner = GSK
+    				count = 3
+				}
+			}
+		}
+	}
+	focus ={
+		id = GSK_Kappa_join ##河童投敌
+		relative_position_id = GSK_youkai_civil_war
+		prerequisite ={ focus = GSK_youkai_civil_war}
+		available = {
+			YKM = {
+				OR = {
+					surrender_progress > 0.6
+					exists = no
+				}
+			}
+		}
+		x = 1
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_ideas = GSK_Kappa_join_idea
+			##1.河童的试验品150pp，获得特殊科技河童高达
+			##2继承河童工业100 pp河童现代化坦克
+			##3.河童的新品 200pp河童的超音速飞机
+		}
+	}
+	focus ={
+		id = GSK_Aid_of_the_Sanzu_River ##三途川的援助
+		relative_position_id = GSK_Yukaris_suggestion
+		prerequisite ={ focus = GSK_Yukaris_suggestion}
+		x = 2
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_political_power = 150
+			add_ideas = GSK_Aid_of_the_Sanzu_River_idea
+		}
+	}
+	focus ={
+		id = GSK_the_end_of_youkai ##妖怪的结局
+		relative_position_id = GSK_Moriya_join
+		prerequisite ={ focus = GSK_Moriya_join}
+		prerequisite ={ focus = GSK_Kappa_join}
+		prerequisite ={ focus = GSK_Aid_of_the_Sanzu_River}
+		available = {
+			YKM = {
+				exists = no
+			}
+		}
+		x = 4
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			add_ideas = GSK_the_end_of_youkai_idea
+			add_offsite_building = { type = industrial_complex level = 10 }
+			YKM = {
+				every_unit_leader = {
+					set_nationality = GSK
+				}
+				every_core_state = {
+					add_extra_state_shared_building_slots = 5
+				}
+			}
+		}
+	}
+	focus ={
+		id = GSK_Cooperation_LNC ##与月免们的合作
+		relative_position_id = GSK_Temporary_alliance
+		prerequisite ={ focus = GSK_Temporary_alliance}
+		x = 4
+		y = 1
+		cost = 5
+		available = {
+			YKM = {
+				exists = yes
+			}
+		}
+		completion_reward = {
+			complete_national_focus = GSK_tech
+			if = {
+				limit = { has_idea = GSK_Cooperation_idea }
+				swap_ideas = {
+					remove_idea = GSK_Cooperation_idea
+					add_idea = GSK_Cooperation_idea_1
+				}
+			}
+			else = {
+				add_ideas = GSK_Cooperation_idea
+			}
+		}
+	}
+	focus ={
+		id = GSK_Be_frugal ##精打细算
+		relative_position_id = GSK_Cooperation_LNC
+		prerequisite ={ focus = GSK_Cooperation_LNC}
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			NOT = {
+				has_war_with = YKM
+			}
+		}
+		completion_reward = {
+			add_ideas = GSK_Be_frugal_idea
+		}
+	}
+	focus ={
+		id = GSK_Revelation_of_Betrayal ##背叛的揭秘
+		relative_position_id = GSK_Be_frugal
+		prerequisite ={ focus = GSK_Be_frugal}
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			NOT = {
+				has_war_with = YKM
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+			    type = take_core_state
+			    target = LNC
+			}
+		}
+	}
+	focus ={
+		id = GSK_Secret_of_Immortality ##永生之秘
+		relative_position_id = GSK_Cooperation_LNC
+		prerequisite ={ focus = GSK_Cooperation_LNC}
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			NOT = {
+				has_war_with = YKM
+			}
+		}
+		completion_reward = {
+			LNC = {
+				add_stability = -0.1
+			}
+			add_ideas = GSK_Secret_of_Immortality_idea
+			capital_scope = {
+				add_dynamic_modifier = { modifier = GSK_Secret_of_Immortality_dyn }
+			}
+		}
+	}
+	focus ={
+		id = GSK_Second_Lunar_War ##第二次月面战争
+		relative_position_id = GSK_Revelation_of_Betrayal
+		prerequisite ={ focus = GSK_Revelation_of_Betrayal}
+		prerequisite ={ focus = GSK_Secret_of_Immortality}
+		x = 1
+		y = 1
+		cost = 1
+		available = {
+			has_war_with = LNC
+		}
+		bypass = {
+			LNC = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			add_ideas = GSK_Second_Lunar_War_idea
+			LNC = {
+				add_ideas = GSK_Second_Lunar_War_idea
+			}
+		}
+	}
+	focus ={
+		id = GSK_Case_of_Princess_Kaguya ##辉夜姬的谜题
+		relative_position_id = GSK_Second_Lunar_War
+		prerequisite ={ focus = GSK_Second_Lunar_War}
+		x = -1
+		y = 1
+		cost = 5
+		completion_reward = {
+			add_ideas = GSK_Case_of_Princess_Kaguya_idea
+			division_template = {
+			    name = "Kaguya's Tank Division"
+			    priority = 1
+			    template_counter = 0
+				division_cap = 999
+			    regiments = {
+			        medium_armor = { x = 0 y = 0 }
+			        medium_armor = { x = 0 y = 1 }
+			        medium_armor = { x = 0 y = 2 }
+			        medium_armor = { x = 0 y = 3 }
+			        medium_armor = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0}
+					infantry = { x = 1 y = 1}
+					infantry = { x = 1 y = 2}
+					infantry = { x = 2 y = 0}
+					infantry = { x = 2 y = 1}
+					infantry = { x = 2 y = 2}
+					infantry = { x = 3 y = 0}
+					infantry = { x = 3 y = 1}
+					infantry = { x = 3 y = 2}
+			    }
+			}
+		}
+	}
+	focus ={
+		id = GSK_Sages_Proposal ##贤者的提议
+		relative_position_id = GSK_Second_Lunar_War
+		prerequisite ={ focus = GSK_Second_Lunar_War}
+		x = 1
+		y = 1
+		cost = 5
+		completion_reward = {
+			add_ideas = GSK_Sages_Proposal_idea
+		}
+	}
+	focus ={
+		id = GSK_Seize_the_inheritance ##夺取遗产
+		relative_position_id = GSK_Case_of_Princess_Kaguya
+		prerequisite ={ focus = GSK_Case_of_Princess_Kaguya}
+		prerequisite ={ focus = GSK_Sages_Proposal}
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			LNC = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			add_ideas = GSK_Seize_the_inheritance_idea
+		}
+	}
+	focus ={
+		id = GSK_rebuild_Gensokyo ##重整幻想乡
+		relative_position_id = GSK_Planning_3
+		prerequisite ={ focus = GSK_the_end_of_youkai}
+		prerequisite ={ focus = GSK_Planning_3}
+		prerequisite ={ focus = GSK_Seize_the_inheritance}
+		x = 0
+		y = 2
+		cost = 1
+		available = {
+			YKM = {
+				exists = no
+			}
+			LNC = {
+				exists = no
+			}
+			all_core_state = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				set_variable = { GSK_rebuild_Gensokyo_array^0 = -0.8 } #战争支持度
+				set_variable = { GSK_rebuild_Gensokyo_array^1 = 2 } #建造速度
+				set_variable = { GSK_rebuild_Gensokyo_array^2 = 0.1 } #消费品基础值
+				set_variable = { GSK_rebuild_Gensokyo_array^3 = 0.05 } #稳定度
+				set_variable = { GSK_rebuild_Gensokyo_array^4 = -0.05 } #适役人口
+				add_dynamic_modifier = { modifier = GSK_rebuild_Gensokyo_dyn }
+			}
+			effect_tooltip = {
+				add_ideas = GSK_rebuild_Gensokyo_idea
+			}
+		}
+	}
+	focus ={
+		id = GSK_Uncompromising_advice ##不被妥协的建议
+		relative_position_id = GSK_duiduima
+		prerequisite ={ focus = GSK_duiduima}
+		mutually_exclusive ={ focus = GSK_Temporary_alliance }
+		x = 5
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			declare_war_on = {
+			    target = YKM
+			    type = annex_everything
+			}
+			declare_war_on = {
+			    target = LNC
+			    type = annex_everything
+			}
 		}
 	}
 	##陆军线

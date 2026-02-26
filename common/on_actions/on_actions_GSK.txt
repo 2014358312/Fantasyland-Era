@@ -24,4 +24,36 @@ on_actions = {
 			}
 		}
 	}
+	on_weekly_GSK = {
+		effect = {
+			set_variable = {
+				GSK_Planning_idea_3_war_core = num_owned_states
+			}
+			subtract_from_variable = {
+				GSK_Planning_idea_3_war_core = num_owned_controlled_states
+			}
+			multiply_variable = {
+				GSK_Planning_idea_3_war_core = 0.05
+			}
+			add_to_variable = {
+				GSK_Planning_idea_3_war_core = 0.1
+			}
+		}
+	}
+	on_monthly_GSK = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = GSK_Case_of_Princess_Kaguya_idea
+				}
+				capital_scope = {
+					create_unit = {
+					    division = "name = \"Kaguya's Tank Division\" division_template = \"Kaguya's Tank Division\" start_experience_factor = 0.5"
+					    owner = GSK
+    					count = 1
+					}
+				}
+			}
+		}
+	}
 }

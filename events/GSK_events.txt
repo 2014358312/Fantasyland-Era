@@ -1,0 +1,43 @@
+﻿###########################
+# Goddesses Events
+###########################
+
+add_namespace = GSK_event
+
+country_event = {
+	id = GSK_event.1
+	title = GSK_event.1.t
+	desc = GSK_event.1.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			YKM = {
+				transfer_state = 660
+				add_state_core = 660
+				transfer_state = 661
+				add_state_core = 661
+				transfer_state = 659
+				add_state_core = 659
+				transfer_state = 465
+				add_state_core = 465
+			}
+			LNC = {
+				transfer_state = 460
+				add_state_core = 460
+				transfer_state = 652
+				add_state_core = 652
+				transfer_state = 461
+				add_state_core = 461
+				transfer_state = 464
+				add_state_core = 464
+			}
+		}
+	}
+
+	option = {
+		name = GSK_event.1.a
+	}
+}
