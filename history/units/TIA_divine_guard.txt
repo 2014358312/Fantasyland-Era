@@ -1,0 +1,49 @@
+###################################
+# 圣战军团 OOB
+###################################
+
+division_template = {
+	name = "神恩近卫师"
+	division_names_group = TIA_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+		field_hospital = { x = 0 y = 2 }
+	}
+	priority = 2
+}
+
+units = {
+	division = {
+		name = "第一神恩近卫师"
+		division_template = "神恩近卫师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.9
+		location = 5605
+	}
+	division = {
+		name = "第二神恩近卫师"
+		division_template = "神恩近卫师"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.8
+		location = 5605
+	}
+	division = {
+		name = "第三神恩近卫师"
+		division_template = "神恩近卫师"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.7
+		location = 5605
+	}
+}

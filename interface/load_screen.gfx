@@ -29,7 +29,19 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_clausewitz_logo"
 		texturefile = "gfx/interface/Fantasyland_era_logo_clean_cross.dds"
-	}	
+	}			
+
+	progressbartype = {
+		name = "GFX_loadingstatus_progress_bg"
+		color = { 0.0 0.5 0.0 }
+		colortwo = { 1.0 0.0 0.0 }
+		textureFile1 = "gfx//interface//LoadingScreen_Progress_bg.dds"
+		textureFile2 = "gfx//interface//LoadingScreen_Progress_bg.dds"
+		size = { x = 1980 y = 220 }
+		effectFile = "gfx//FX//progress.lua"
+		horizontal = yes
+		steps = 1000000
+	}
 
 	progressbartype = {
 		name = "GFX_loadingstatus_progress"
@@ -37,7 +49,7 @@ spriteTypes = {
 		colortwo = { 1.0 0.0 0.0 }
 		textureFile1 = "gfx//interface//LoadingScreen_Progress_2.dds"
 		textureFile2 = "gfx//interface//LoadingScreen_Progress_1.dds"
-		size = { x = 1980 y = 220 }
+		size = { x = 1980 y = 9 }
 		effectFile = "gfx//FX//progress.lua"
 		horizontal = yes
 		steps = 1000000

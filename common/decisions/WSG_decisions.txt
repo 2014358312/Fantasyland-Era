@@ -15,7 +15,7 @@ WSG_balance_of_power_decision_category = {
 	    }
 		cost = 50
 		fire_only_once = no
-		days_remove = 180
+		days_remove = 90
 		modifier = {
 		}
 		complete_effect = {
@@ -45,7 +45,7 @@ WSG_balance_of_power_decision_category = {
 	    }
 		cost = 100
 		fire_only_once = no
-		days_remove = 180
+		days_remove = 90
 		modifier = {
 		}
 		complete_effect = {
@@ -76,7 +76,7 @@ WSG_balance_of_power_decision_category = {
 	    }
 		cost = 150
 		fire_only_once = no
-		days_remove = 180
+		days_remove = 90
 		modifier = {
 		}
 		complete_effect = {
@@ -261,7 +261,7 @@ WSG_balance_of_power_decision_category = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+                check_variable = { WSG_panci > 149 }
 			}
 	    }	
 	    visible = {
@@ -277,8 +277,8 @@ WSG_balance_of_power_decision_category = {
    			     id = WSG_balance_of_power
     		     value = -0.15
 			}
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                add_to_variable = { WSG_panci = -150 }
 		    add_breakthrough_progress = {
 				specialization = specialization_land
 				value = 1
@@ -298,7 +298,6 @@ WSG_balance_of_power_decision_category = {
 			base = 50
 		}
     }
-
 }
 
 WSG_secretary_ship_decision_category = {
@@ -319,6 +318,9 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Lexington_head_of_government }
 			}
+			hidden_effect = { 
+				NOT = { has_completed_focus = WSG_lexington_prime_minister }
+			}
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -326,8 +328,26 @@ WSG_secretary_ship_decision_category = {
 				value = 1
 				days = 365
 			}
-			promote_character = {
-				character = WSG_Lexington
+			if = {
+				limit = { has_government = communism }
+				promote_character = {
+				    character = WSG_Lexington
+				    ideology = trade_liberalism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = fascism }
+				promote_character = {
+				    character = WSG_Lexington
+				    ideology = fascism_militarism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = democratic }
+				promote_character = {
+				    character = WSG_Lexington
+				    ideology = royal_constitutionalism_subtype
+			    }
 			}
 		}
 		ai_will_do = {
@@ -352,6 +372,9 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Vittorio_Veneto_head_of_government }
 			}
+			hidden_effect = { 
+				NOT = { has_completed_focus = WSG_lexington_prime_minister }
+			}
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -359,8 +382,26 @@ WSG_secretary_ship_decision_category = {
 				value = 1
 				days = 365
 			}
-			promote_character = {
-				character = WSG_Vittorio_Veneto
+			if = {
+				limit = { has_government = communism }
+				promote_character = {
+				    character = WSG_Vittorio_Veneto
+				    ideology = trade_liberalism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = fascism }
+				promote_character = {
+				    character = WSG_Vittorio_Veneto
+				    ideology = fascism_militarism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = democratic }
+				promote_character = {
+				    character = WSG_Vittorio_Veneto
+				    ideology = royal_constitutionalism_subtype
+			    }
 			}
 		}
 		ai_will_do = {
@@ -385,6 +426,9 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Yubari_head_of_government }
 			}
+			hidden_effect = { 
+				NOT = { has_completed_focus = WSG_lexington_prime_minister }
+			}
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -392,8 +436,26 @@ WSG_secretary_ship_decision_category = {
 				value = 1
 				days = 365
 			}
-			promote_character = {
-				character = WSG_Yubari
+			if = {
+				limit = { has_government = communism }
+				promote_character = {
+				    character = WSG_Yubari
+				    ideology = trade_liberalism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = fascism }
+				promote_character = {
+				    character = WSG_Yubari
+				    ideology = fascism_militarism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = democratic }
+				promote_character = {
+				    character = WSG_Yubari
+				    ideology = royal_constitutionalism_subtype
+			    }
 			}
 		}
 		ai_will_do = {
@@ -418,6 +480,9 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Hood_head_of_government }
 			}
+			hidden_effect = { 
+				NOT = { has_completed_focus = WSG_lexington_prime_minister }
+			}
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -425,8 +490,26 @@ WSG_secretary_ship_decision_category = {
 				value = 1
 				days = 365
 			}
-			promote_character = {
-				character = WSG_Hood
+			if = {
+				limit = { has_government = communism }
+				promote_character = {
+				    character = WSG_Hood
+				    ideology = trade_liberalism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = fascism }
+				promote_character = {
+				    character = WSG_Hood
+				    ideology = fascism_militarism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = democratic }
+				promote_character = {
+				    character = WSG_Hood
+				    ideology = royal_constitutionalism_subtype
+			    }
 			}
 		}
 		ai_will_do = {
@@ -451,6 +534,9 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_YiXian_head_of_government }
 			}
+			hidden_effect = { 
+				NOT = { has_completed_focus = WSG_lexington_prime_minister }
+			}
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -458,8 +544,26 @@ WSG_secretary_ship_decision_category = {
 				value = 1
 				days = 365
 			}
-			promote_character = {
-				character = WSG_YiXian
+			if = {
+				limit = { has_government = communism }
+				promote_character = {
+				    character = WSG_YiXian
+				    ideology = trade_liberalism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = fascism }
+				promote_character = {
+				    character = WSG_YiXian
+				    ideology = fascism_militarism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = democratic }
+				promote_character = {
+				    character = WSG_YiXian
+				    ideology = royal_constitutionalism_subtype
+			    }
 			}
 		}
 		ai_will_do = {
@@ -484,6 +588,9 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Jean_Bart_head_of_government }
 			}
+			hidden_effect = { 
+				NOT = { has_completed_focus = WSG_lexington_prime_minister }
+			}
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -491,8 +598,26 @@ WSG_secretary_ship_decision_category = {
 				value = 1
 				days = 365
 			}
-			promote_character = {
-				character = WSG_Jean_Bart
+			if = {
+				limit = { has_government = communism }
+				promote_character = {
+				    character = WSG_Jean_Bart
+				    ideology = trade_liberalism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = fascism }
+				promote_character = {
+				    character = WSG_Jean_Bart
+				    ideology = fascism_militarism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = democratic }
+				promote_character = {
+				    character = WSG_Jean_Bart
+				    ideology = royal_constitutionalism_subtype
+			    }
 			}
 		}
 		ai_will_do = {
@@ -517,6 +642,9 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Bubnov_head_of_government }
 			}
+			hidden_effect = { 
+				NOT = { has_completed_focus = WSG_lexington_prime_minister }
+			}
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -524,8 +652,26 @@ WSG_secretary_ship_decision_category = {
 				value = 1
 				days = 365
 			}
-			promote_character = {
-				character = WSG_Bubnov
+			if = {
+				limit = { has_government = communism }
+				promote_character = {
+				    character = WSG_Bubnov
+				    ideology = trade_liberalism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = fascism }
+				promote_character = {
+				    character = WSG_Bubnov
+				    ideology = fascism_militarism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = democratic }
+				promote_character = {
+				    character = WSG_Bubnov
+				    ideology = royal_constitutionalism_subtype
+			    }
 			}
 		}
 		ai_will_do = {
@@ -550,6 +696,9 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Clausewitz_head_of_government }
 			}
+			hidden_effect = { 
+				NOT = { has_completed_focus = WSG_lexington_prime_minister }
+			}
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -557,8 +706,26 @@ WSG_secretary_ship_decision_category = {
 				value = 1
 				days = 365
 			}
-			promote_character = {
-				character = WSG_Clausewitz
+			if = {
+				limit = { has_government = communism }
+				promote_character = {
+				    character = WSG_Clausewitz
+				    ideology = trade_liberalism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = fascism }
+				promote_character = {
+				    character = WSG_Clausewitz
+				    ideology = fascism_militarism_subtype
+			    }
+			}
+			else_if = {
+				limit = { has_government = democratic }
+				promote_character = {
+				    character =  WSG_Clausewitz
+				    ideology = royal_constitutionalism_subtype
+			    }
 			}
 		}
 		ai_will_do = {
@@ -585,7 +752,7 @@ WSG_secretary_ship_agenda_category = {
 		}
 		custom_cost_text = decision_cost_CP_50_pp_50
 		fire_only_once = no
-		days_re_enable = 180
+		days_re_enable = 90
 		modifier = {
 		}
 		complete_effect = {
@@ -602,7 +769,7 @@ WSG_secretary_ship_agenda_category = {
     }
 
     WSG_offsite_industrial_complex = {
-        icon = GFX_WSG_decision_category
+        icon =  GFX_non_available_factory_icon
         allowed = {
             original_tag = WSG
         }
@@ -612,8 +779,8 @@ WSG_secretary_ship_agenda_category = {
    			     value > 0.6
 			}
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
         }    
         visible = {
@@ -643,8 +810,8 @@ WSG_secretary_ship_agenda_category = {
                 }
             }
             add_offsite_building = { type = industrial_complex level = 5 }
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
         }
         ai_will_do = {
             factor = 50
@@ -652,7 +819,7 @@ WSG_secretary_ship_agenda_category = {
     }
 
     WSG_offsite_arms_factory = {
-        icon = GFX_WSG_decision_category
+        icon = GFX_military_factory_icon
         allowed = {
             original_tag = WSG
         }
@@ -662,8 +829,8 @@ WSG_secretary_ship_agenda_category = {
    			     value > 0.6
 			}
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
         }    
         visible = {
@@ -694,8 +861,8 @@ WSG_secretary_ship_agenda_category = {
             }
             add_offsite_building = { type = arms_factory level = 5 }
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = 100 }
+				tooltip = WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = 200 }
 			}
         }
         ai_will_do = {
@@ -704,7 +871,7 @@ WSG_secretary_ship_agenda_category = {
     }
 
     WSG_offsite_dockyard = {
-        icon = GFX_WSG_decision_category
+        icon = GFX_dockyard_icon
         allowed = {
             original_tag = WSG
         }
@@ -714,8 +881,8 @@ WSG_secretary_ship_agenda_category = {
    			     value > 0.6
 			}
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
 			}
         }    
         visible = {
@@ -745,8 +912,8 @@ WSG_secretary_ship_agenda_category = {
                 }
             }
             add_offsite_building = { type = dockyard level = 5 }
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
         }
         ai_will_do = {
             factor = 50
@@ -758,20 +925,20 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_50_tt
-                check_variable = { WSG_panci > 49 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Lexington = { 
 					is_country_leader = yes 
 				}
-				check_variable = { ROOT.FE_secondary = token:WSG_Lexington_head_of_government }
+				check_variable = { ROOT.FE_secondary = token:WSG_Lexington_head_of_government } 
+				hidden_effect = { has_completed_focus = WSG_admirals_rule }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -779,9 +946,11 @@ WSG_secretary_ship_agenda_category = {
 			production_speed_buildings_factor = 0.05
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
-        }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
+		}
         remove_effect = {
         }
         ai_will_do = {
@@ -794,12 +963,7 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_75_tt
-                check_variable = { WSG_panci > 74 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Lexington = {
@@ -808,16 +972,23 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Lexington_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
-			add_mastery = {
-				amount = 100
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
+			add_daily_mastery = {
+				amount = 0.6
+				days = 180
 				track = carriers
 			}
         }
@@ -833,12 +1004,7 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Lexington = {
@@ -847,28 +1013,34 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Lexington_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
 			random_state = {
 				limit = {
 			        is_controlled_by = WSG
 			        is_core_of = WSG
 		        }
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 4
                 add_building_construction = {
                     type = industrial_complex
-                    level = 2
+                    level = 4
                     instant_build = yes
                 }	
 			}
-        }
-        remove_effect = {
         }
         ai_will_do = {
             factor = 50
@@ -880,28 +1052,31 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_50_tt
-                check_variable = { WSG_panci > 49 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Vittorio_Veneto = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Vittorio_Veneto_head_of_government }
+				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+				hidden_effect = { has_completed_focus = WSG_admirals_rule }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
 			add_political_power = 50
         }
         remove_effect = {
@@ -916,20 +1091,20 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_75_tt
-                check_variable = { WSG_panci > 74 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Vittorio_Veneto = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Vittorio_Veneto_head_of_government }
+				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -937,8 +1112,10 @@ WSG_secretary_ship_agenda_category = {
 			political_power_gain = 0.5
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
         }
         remove_effect = {
         }
@@ -952,12 +1129,7 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Vittorio_Veneto = {
@@ -966,17 +1138,23 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Vittorio_Veneto_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-	        army_experience = 30
-	        navy_experience = 30
-	        air_experience = 30
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+	        army_experience = 50
+	        navy_experience = 50
+	        air_experience = 50
         }
         remove_effect = {
         }
@@ -990,29 +1168,32 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_50_tt
-                check_variable = { WSG_panci > 49 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Yubari = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Yubari_head_of_government }
+				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+				hidden_effect = { has_completed_focus = WSG_admirals_rule }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
-			research_speed_factor = 0.1
+			research_speed_factor = 0.15
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
         }
         remove_effect = {
         }
@@ -1026,29 +1207,31 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_75_tt
-                check_variable = { WSG_panci > 74 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Yubari = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Yubari_head_of_government }
+				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
-			production_factory_efficiency_gain_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.15
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
         }
         remove_effect = {
         }
@@ -1062,12 +1245,7 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Yubari = {
@@ -1076,14 +1254,20 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Yubari_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
 			add_research_slot = 1
         }
         remove_effect = {
@@ -1099,29 +1283,32 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_50_tt
-                check_variable = { WSG_panci > 49 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Hood = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Hood_head_of_government }
+				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+				hidden_effect = { has_completed_focus = WSG_admirals_rule }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
-			navy_experience = 30
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
+			navy_experience = 75
         }
         remove_effect = {
         }
@@ -1135,30 +1322,33 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_75_tt
-                check_variable = { WSG_panci > 74 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Hood = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Hood_head_of_government }
+				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
-			add_mastery = {
-				amount = 100
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
+			add_daily_mastery = {
+				amount = 0.6
+				days = 180
 				track = capital_ships
 			}
         }
@@ -1174,12 +1364,7 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Hood = {
@@ -1188,15 +1373,21 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Hood_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
-			industrial_capacity_dockyard = 0.2
+			industrial_capacity_dockyard = 0.25
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
         }
         remove_effect = {
         }
@@ -1210,29 +1401,32 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_50_tt
-                check_variable = { WSG_panci > 49 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_YiXian = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_YiXian_head_of_government }
+				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+				hidden_effect = { has_completed_focus = WSG_admirals_rule }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
-			industrial_capacity_factory = 0.1
+			industrial_capacity_factory = 0.15
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
         }
         remove_effect = {
         }
@@ -1246,29 +1440,31 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_75_tt
-                check_variable = { WSG_panci > 74 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_YiXian = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_YiXian_head_of_government }
+				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
-			supply_node_range = 0.1
+			supply_node_range = 0.15
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
         }
         remove_effect = {
         }
@@ -1282,12 +1478,7 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_YiXian = {
@@ -1296,23 +1487,29 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_YiXian_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
 			random_state = {
 				limit = {
 			        is_controlled_by = WSG
 			        is_core_of = WSG
 		        }
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 4
                 add_building_construction = {
                     type = arms_factory
-                    level = 2
+                    level = 4
                     instant_build = yes
                 }	
 			}
@@ -1329,20 +1526,21 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_50_tt
-                check_variable = { WSG_panci > 49 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Jean_Bart = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Jean_Bart_head_of_government }
+				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+				hidden_effect = { has_completed_focus = WSG_admirals_rule }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1350,8 +1548,10 @@ WSG_secretary_ship_agenda_category = {
 			army_defence_factor = 0.05
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
         }
         remove_effect = {
         }
@@ -1365,30 +1565,33 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_75_tt
-                check_variable = { WSG_panci > 74 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Jean_Bart = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Jean_Bart_head_of_government }
+				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
-			add_mastery = {
-				amount = 100
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
+			add_daily_mastery = {
+				amount = 0.6
+				days = 180
 				track = infantry
 			}
         }
@@ -1404,12 +1607,7 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Jean_Bart = {
@@ -1418,6 +1616,10 @@ WSG_secretary_ship_agenda_category = {
 			    check_variable = { ROOT.FE_secondary = token:WSG_Jean_Bart_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1425,8 +1627,10 @@ WSG_secretary_ship_agenda_category = {
 			max_dig_in = 10
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
         }
         remove_effect = {
         }
@@ -1440,20 +1644,21 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_50_tt
-                check_variable = { WSG_panci > 49 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Bubnov = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Bubnov_head_of_government }
+				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+				hidden_effect = { has_completed_focus = WSG_admirals_rule }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1461,8 +1666,10 @@ WSG_secretary_ship_agenda_category = {
 			army_attack_factor = 0.05
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
         }
         remove_effect = {
         }
@@ -1476,30 +1683,33 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_75_tt
-                check_variable = { WSG_panci > 74 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Bubnov = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Bubnov_head_of_government }
+				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
 			}
         }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
-			add_mastery = {
-				amount = 100
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
+			add_daily_mastery = {
+				amount = 0.6
+				days = 180
 				track = armor
 			}
         }
@@ -1515,12 +1725,7 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Bubnov = {
@@ -1529,6 +1734,10 @@ WSG_secretary_ship_agenda_category = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Bubnov_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1536,44 +1745,10 @@ WSG_secretary_ship_agenda_category = {
 			max_planning = 0.1
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-        }
-        remove_effect = {
-        }
-        ai_will_do = {
-            factor = 50
-        }
-    }
-
-	WSG_organize_offensive = {
-        icon = GFX_WSG_decision_category
-        allowed = {
-            original_tag = WSG
-        }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_50_tt
-                check_variable = { WSG_panci > 49 }
-			}
-        }    
-        visible = {
-			OR = {
-			    WSG_Clausewitz = {
-				    is_country_leader = yes
-			    }
-				check_variable = { ROOT.FE_secondary = token:WSG_Clausewitz_head_of_government }
-			}
-        }
-        cost = 0
-        fire_only_once = no
-        days_remove = 30
-        modifier = {
-			planning_speed = 0.5
-        }
-        complete_effect = {
-			custom_effect_tooltip = WSG_panci_reduce_50_tt
-                add_to_variable = { WSG_panci = -50 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
         }
         remove_effect = {
         }
@@ -1587,29 +1762,70 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_75_tt
-                check_variable = { WSG_panci > 74 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Clausewitz = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Clausewitz_head_of_government }
+				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+				hidden_effect = { has_completed_focus = WSG_admirals_rule }
 			}
         }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
         cost = 0
         fire_only_once = no
-        days_remove = 45
+        days_remove = 180
         modifier = {
 			dig_in_speed_factor = 0.5
         }
         complete_effect = {
-			custom_effect_tooltip = WSG_panci_reduce_75_tt
-                add_to_variable = { WSG_panci = -75 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_50_tt
+                    add_to_variable = { WSG_panci = -50 }
+            }
+        }
+        remove_effect = {
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_organize_offensive = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			OR = {
+			    WSG_Clausewitz = {
+				    is_country_leader = yes
+			    }
+				check_variable = { ROOT.FE_secondary = token:WSG_Clausewitz_head_of_government }
+				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+			}
+        }
+		custom_cost_text = WSG_panci_100
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 99 }
+		}
+        cost = 0
+        fire_only_once = no
+        days_remove = 180
+        modifier = {
+			planning_speed = 0.5
+        }
+        complete_effect = {
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_100_tt
+                    add_to_variable = { WSG_panci = -100 }
+            }
         }
         remove_effect = {
         }
@@ -1623,12 +1839,7 @@ WSG_secretary_ship_agenda_category = {
         allowed = {
             original_tag = WSG
         }
-        available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-        }    
+        available = {}    
         visible = {
 			OR = {
 			    WSG_Clausewitz = {
@@ -1637,6 +1848,10 @@ WSG_secretary_ship_agenda_category = {
 			    check_variable = { ROOT.FE_secondary = token:WSG_Clausewitz_head_of_government }
 			}
         }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 180
@@ -1644,8 +1859,10 @@ WSG_secretary_ship_agenda_category = {
 			land_night_attack = 0.15
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
         }
         remove_effect = {
         }
@@ -1653,31 +1870,36 @@ WSG_secretary_ship_agenda_category = {
             factor = 50
         }
     }
+}
 
+WSG_army_industrial_integration = {
+###########################industrial_project###############################
 	WSG_industrial_integration = {
         icon = GFX_WSG_decision_category
         allowed = {
             original_tag = WSG
         }
         available = {
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
 			arms_factory > 19
         }    
         visible = {
             has_completed_focus = WSG_industrial_integration
 			NOT = { has_idea = WSG_industrial_integration_V }
         }
+		custom_cost_text = WSG_panci_500
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 499 }
+		}
         cost = 0
         fire_only_once = no
         days_remove = 90
         modifier = {
         }
         complete_effect = {
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                    add_to_variable = { WSG_panci = -500 }
+            }
             WSG = { WSG_remove_arms_factory_20 = yes }
         }
         remove_effect = {
@@ -1719,6 +1941,1382 @@ WSG_secretary_ship_agenda_category = {
 			}
 			else = {
 				add_ideas = WSG_industrial_integration_I
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+###########################armor_project###############################
+
+	WSG_anti_infantry_firepower = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+            has_completed_focus = WSG_between_floating_worlds
+			NOT = { has_country_flag = WSG_armor_project }
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_armor_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_armor_project
+			if = {
+				limit = { has_idea = WSG_armor_breakthrough_r1 }
+			    swap_ideas = {
+				    add_idea =  WSG_armor_breakthrough_1
+				    remove_idea =  WSG_armor_breakthrough_r1
+			    }
+			}
+			else = {
+				add_ideas = WSG_armor_breakthrough_l1
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_anti_armor_firepower = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+            has_completed_focus = WSG_between_floating_worlds
+			NOT = { has_country_flag = WSG_armor_project }
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_armor_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_armor_project
+			if = {
+				limit = { has_idea = WSG_armor_breakthrough_l1 }
+			    swap_ideas = {
+				    add_idea =  WSG_armor_breakthrough_1
+				    remove_idea =  WSG_armor_breakthrough_l1
+			    }
+			}
+			else = {
+				add_ideas = WSG_armor_breakthrough_r1
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_armor_optimization = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_armor_project }
+			OR = {
+                has_idea = WSG_armor_breakthrough_1
+			    has_idea = WSG_armor_breakthrough_r2
+			}
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_armor_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_armor_project
+			if = {
+				limit = { has_idea = WSG_armor_breakthrough_r2 }
+			    swap_ideas = {
+				    add_idea =  WSG_armor_breakthrough_2
+				    remove_idea =  WSG_armor_breakthrough_r2
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_armor_breakthrough_l2
+				    remove_idea =  WSG_armor_breakthrough_1
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_armor_rate_optimization = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_armor_project }
+			OR = {
+                has_idea = WSG_armor_breakthrough_1
+			    has_idea = WSG_armor_breakthrough_l2
+			}
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_armor_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_armor_project
+			if = {
+				limit = { has_idea = WSG_armor_breakthrough_l2 }
+			    swap_ideas = {
+				    add_idea =  WSG_armor_breakthrough_2
+				    remove_idea =  WSG_armor_breakthrough_l2
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_armor_breakthrough_r2
+				    remove_idea =  WSG_armor_breakthrough_1
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_key_breakthroughs = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_armor_project }
+            has_idea = WSG_armor_breakthrough_2
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_armor_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_armor_project
+			swap_ideas = {
+				add_idea =  WSG_armor_breakthrough_l3
+				remove_idea =  WSG_armor_breakthrough_2
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_full_line_assault = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_armor_project }
+            has_idea = WSG_armor_breakthrough_2
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_armor_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_armor_project
+			swap_ideas = {
+				add_idea =  WSG_armor_breakthrough_r3
+				remove_idea =  WSG_armor_breakthrough_2
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_armor_quantification_integration = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_armor_project }
+			OR = {
+                has_idea = WSG_armor_breakthrough_l3
+			    has_idea = WSG_armor_breakthrough_r3
+			}
+        }
+		custom_cost_text = WSG_panci_500
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 499 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_armor_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                    add_to_variable = { WSG_panci = -500 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_armor_project
+			if = {
+				limit = { has_idea = WSG_armor_breakthrough_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_armor_breakthrough_lq
+				    remove_idea =  WSG_armor_breakthrough_l3
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_armor_breakthrough_rq
+				    remove_idea =  WSG_armor_breakthrough_r3
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_armor_performance_integration = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_armor_project }
+			OR = {
+                has_idea = WSG_armor_breakthrough_l3
+			    has_idea = WSG_armor_breakthrough_r3
+			}
+        }
+		custom_cost_text = WSG_panci_500
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 499 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_armor_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                    add_to_variable = { WSG_panci = -500 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_armor_project
+			if = {
+				limit = { has_idea = WSG_armor_breakthrough_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_armor_breakthrough_lp
+				    remove_idea =  WSG_armor_breakthrough_l3
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_armor_breakthrough_rp
+				    remove_idea =  WSG_armor_breakthrough_r3
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+###########################aircraft_project###############################
+
+	WSG_mainly_light_fighter_aircraft = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+            has_completed_focus = WSG_below_the_overarching_sky
+			NOT = { has_country_flag = WSG_aircraft_project }
+			NOT = { has_country_flag = WSG_mainly_heavy_fighter_aircraft }
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_mainly_light_fighter_aircraft
+			set_country_flag = WSG_aircraft_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_aircraft_project
+            add_ideas = WSG_air_strike_l1
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_emphasize_close_air_support = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_aircraft_project }
+			has_idea = WSG_air_strike_l1
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_aircraft_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_aircraft_project
+            swap_ideas = {
+				add_idea = WSG_air_strike_l2
+				remove_idea = WSG_air_strike_l1
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_destruction_of_fortifications = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_aircraft_project }
+			has_idea = WSG_air_strike_l2
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_aircraft_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_aircraft_project
+			swap_ideas = {
+				add_idea = WSG_air_strike_l3
+				remove_idea = WSG_air_strike_l2
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_mainly_heavy_fighter_aircraft = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+            has_completed_focus = WSG_below_the_overarching_sky
+			NOT = { has_country_flag = WSG_aircraft_project }
+			NOT = { has_country_flag = WSG_mainly_light_fighter_aircraft }
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_mainly_heavy_fighter_aircraft
+			set_country_flag = WSG_aircraft_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_aircraft_project
+            add_ideas = WSG_air_strike_r1
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_emphasize_tactical_bombing = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_aircraft_project }
+			has_idea = WSG_air_strike_r1
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_aircraft_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_aircraft_project
+            swap_ideas = {
+				add_idea = WSG_air_strike_r2
+				remove_idea = WSG_air_strike_r1
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_enemy_rear_strike = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_aircraft_project }
+			has_idea = WSG_air_strike_r2
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_aircraft_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_aircraft_project
+			swap_ideas = {
+				add_idea = WSG_air_strike_r3
+				remove_idea = WSG_air_strike_r2
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_quantitative_integration_of_air_force_equipment = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_aircraft_project }
+			OR = {
+			    has_idea = WSG_air_strike_r3
+				has_idea = WSG_air_strike_l3
+			}
+        }
+		custom_cost_text = WSG_panci_500
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 499 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_aircraft_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                    add_to_variable = { WSG_panci = -500 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_aircraft_project
+			if = {
+				limit = { has_idea = WSG_air_strike_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_air_strike_lq
+				    remove_idea =  WSG_air_strike_l3
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_air_strike_rq
+				    remove_idea =  WSG_air_strike_r3
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_air_force_equipment_performance_integration = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_aircraft_project }
+			OR = {
+			    has_idea = WSG_air_strike_r3
+				has_idea = WSG_air_strike_l3
+			}
+        }
+		custom_cost_text = WSG_panci_500
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 499 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_aircraft_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                    add_to_variable = { WSG_panci = -500 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_aircraft_project
+			if = {
+				limit = { has_idea = WSG_air_strike_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_air_strike_lp
+				    remove_idea =  WSG_air_strike_l3
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_air_strike_rp
+				    remove_idea =  WSG_air_strike_r3
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+###########################naval_project###############################
+
+	WSG_deep_sea_hunter = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+            has_completed_focus = WSG_above_the_byss
+			NOT = { has_country_flag = WSG_naval_project }
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_naval_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_naval_project
+			if = {
+				limit = { has_idea = WSG_sea_control_r1 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_1
+				    remove_idea =  WSG_sea_control_r1
+			    }
+			}
+			else = {
+				add_ideas = WSG_sea_control_l1
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_deep_sea_search = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+            has_completed_focus = WSG_above_the_byss
+			NOT = { has_country_flag = WSG_naval_project }
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_naval_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_naval_project
+			if = {
+				limit = { has_idea = WSG_sea_control_l1 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_1
+				    remove_idea =  WSG_sea_control_l1
+			    }
+			}
+			else = {
+				add_ideas = WSG_sea_control_r1
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_assault_blade = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_naval_project }
+			OR = {
+                has_idea = WSG_sea_control_1
+			    has_idea = WSG_sea_control_r2
+			}
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_naval_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_naval_project
+			if = {
+				limit = { has_idea = WSG_sea_control_r2 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_2
+				    remove_idea =  WSG_sea_control_r2
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_sea_control_l2
+				    remove_idea =  WSG_sea_control_1
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_maritime_escort = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_naval_project }
+			OR = {
+                has_idea = WSG_sea_control_1
+			    has_idea = WSG_sea_control_l2
+			}
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_naval_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_naval_project
+			if = {
+				limit = { has_idea = WSG_sea_control_l2 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_2
+				    remove_idea =  WSG_sea_control_l2
+			    }
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_sea_control_r2
+				    remove_idea =  WSG_sea_control_1
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_naval_mobility = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_naval_project }
+			has_idea = WSG_sea_control_2
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_naval_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_naval_project
+			swap_ideas = {
+				add_idea =  WSG_sea_control_l3
+				remove_idea =  WSG_sea_control_2
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_ocean_route = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_naval_project }
+			has_idea = WSG_sea_control_2
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_naval_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_naval_project
+			swap_ideas = {
+				add_idea =  WSG_sea_control_r3
+				remove_idea =  WSG_sea_control_2
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_super_aircraft_carrier = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+            has_completed_focus = WSG_above_the_byss
+			NOT = { has_country_flag = WSG_naval_project }
+			NOT = { has_country_flag = WSG_large_ships_and_cannons }
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_super_aircraft_carrier
+			set_country_flag = WSG_naval_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_naval_project
+            add_ideas = WSG_main_battle_l1
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_focus_on_light_patrol = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_naval_project }
+			has_idea = WSG_main_battle_l1
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_naval_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_naval_project
+           	swap_ideas = {
+				add_idea = WSG_main_battle_l2
+				remove_idea = WSG_main_battle_l1
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_large_ships_and_cannons = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+            has_completed_focus = WSG_above_the_byss
+			NOT = { has_country_flag = WSG_naval_project }
+			NOT = { has_country_flag = WSG_super_aircraft_carrier }
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_large_ships_and_cannons
+			set_country_flag = WSG_naval_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_naval_project
+            add_ideas = WSG_main_battle_r1
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_focus_on_heavy_patrols = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_naval_project }
+			has_idea = WSG_main_battle_r1
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_naval_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_naval_project
+           	swap_ideas = {
+				add_idea = WSG_main_battle_r2
+				remove_idea = WSG_main_battle_r1
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_strengthen_protection = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_naval_project }
+			OR = {
+				has_idea = WSG_main_battle_r2
+				has_idea = WSG_main_battle_l2
+			}
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_naval_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_naval_project
+			if = {
+				limit = { has_idea = WSG_main_battle_l3r }
+			    swap_ideas = {
+				    add_idea =  WSG_main_battle_l3
+				    remove_idea =  WSG_main_battle_l3r
+			    }
+			}
+			else_if = {
+				limit = { has_idea = WSG_main_battle_r3r }
+				swap_ideas = {
+				    add_idea = WSG_main_battle_r3
+				    remove_idea =  WSG_main_battle_r3r
+				}
+			}
+			else_if = {
+				limit = { has_idea = WSG_main_battle_l2 }
+				swap_ideas = {
+				    add_idea = WSG_main_battle_l3l
+				    remove_idea =  WSG_main_battle_l2
+				}
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_main_battle_r3l
+				    remove_idea = WSG_main_battle_r2
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_strengthen_air_defense = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_naval_project }
+			OR = {
+				has_idea = WSG_main_battle_r2
+				has_idea = WSG_main_battle_l2
+			}
+        }
+		custom_cost_text = WSG_panci_150
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 149 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_naval_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_150_tt
+                    add_to_variable = { WSG_panci = -150 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_naval_project
+			if = {
+				limit = { has_idea = WSG_main_battle_l3l }
+			    swap_ideas = {
+				    add_idea =  WSG_main_battle_l3
+				    remove_idea =  WSG_main_battle_l3l
+			    }
+			}
+			else_if = {
+				limit = { has_idea = WSG_main_battle_r3l }
+				swap_ideas = {
+				    add_idea = WSG_main_battle_r3
+				    remove_idea =  WSG_main_battle_r3l
+				}
+			}
+			else_if = {
+				limit = { has_idea = WSG_main_battle_l2 }
+				swap_ideas = {
+				    add_idea = WSG_main_battle_l3r
+				    remove_idea =  WSG_main_battle_l2
+				}
+			}
+			else = {
+				swap_ideas = {
+				    add_idea = WSG_main_battle_r3r
+				    remove_idea =  WSG_main_battle_r2
+				}
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_quantitative_integration_of_naval_equipment = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_naval_project }
+			OR = {
+				has_idea = WSG_sea_control_r3
+				has_idea = WSG_sea_control_l3
+			}
+			OR = {
+				has_idea = WSG_main_battle_r3
+				has_idea = WSG_main_battle_l3
+			}
+        }
+		custom_cost_text = WSG_panci_500
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 499 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_naval_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                    add_to_variable = { WSG_panci = -500 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_naval_project
+			if = {
+				limit = { has_idea = WSG_main_battle_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_main_battle_lq
+				    remove_idea =  WSG_main_battle_l3
+			    }
+			}
+			if = {
+				limit = { has_idea = WSG_main_battle_r3 }
+			    swap_ideas = {
+				    add_idea =  WSG_main_battle_lq
+				    remove_idea =  WSG_main_battle_r3
+			    }
+			}
+			if = {
+				limit = { has_idea = WSG_sea_control_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_lq
+				    remove_idea =  WSG_sea_control_l3
+			    }
+			}
+			if = {
+				limit = { has_idea = WSG_sea_control_r3 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_rq
+				    remove_idea =  WSG_sea_control_r3
+			    }
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+	WSG_navy_equipment_performance_integration = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {}    
+        visible = {
+			NOT = { has_country_flag = WSG_naval_project }
+			OR = {
+				has_idea = WSG_sea_control_r3
+				has_idea = WSG_sea_control_l3
+			}
+			OR = {
+				has_idea = WSG_main_battle_r3
+				has_idea = WSG_main_battle_l3
+			}
+        }
+		custom_cost_text = WSG_panci_500
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 499 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			set_country_flag = WSG_naval_project
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
+                    add_to_variable = { WSG_panci = -500 }
+            }
+        }
+        remove_effect = {
+			clr_country_flag = WSG_naval_project
+			if = {
+				limit = { has_idea = WSG_main_battle_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_main_battle_lp
+				    remove_idea =  WSG_main_battle_l3
+			    }
+			}
+			if = {
+				limit = { has_idea = WSG_main_battle_r3 }
+			    swap_ideas = {
+				    add_idea =  WSG_main_battle_lp
+				    remove_idea =  WSG_main_battle_r3
+			    }
+			}
+			if = {
+				limit = { has_idea = WSG_sea_control_l3 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_lp
+				    remove_idea =  WSG_sea_control_l3
+			    }
+			}
+			if = {
+				limit = { has_idea = WSG_sea_control_r3 }
+			    swap_ideas = {
+				    add_idea =  WSG_sea_control_rp
+				    remove_idea =  WSG_sea_control_r3
+			    }
 			}
         }
         ai_will_do = {
