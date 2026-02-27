@@ -97,6 +97,240 @@ country_event = { #WSG_letter_to_the_admiral
 }
 
 country_event = {
+	id = WSG_event.004
+	title = WSG_event.004.t
+	desc = WSG_event.004.d
+	is_triggered_only = no 
+	trigger = {
+		OR = {
+			date > 1002.6.1
+			has_completed_focus = WSG_complete_preliminary_reforms
+		}
+		tag = WSG
+		NOT = { has_completed_focus = WSG_port_area_and_tomorrow }
+	}
+	fire_only_once = yes
+	option = {
+		name = WSG_event.004.a
+		complete_national_focus = WSG_port_area_and_tomorrow
+	}
+}
+
+country_event = {
+	id = WSG_event.005
+	title = WSG_event.005.t
+	desc = WSG_event.005.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = WSG_event.005.a
+		complete_national_focus = WSG_victory_day
+	}
+}
+
+country_event = {
+	id = WSG_event.006
+	title = WSG_event.006.t
+	desc = WSG_event.006.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = WSG_event.006.a
+		complete_national_focus = WSG_state_of_emergency
+	}
+}
+
+country_event = {
+	id = WSG_event.007
+	title = WSG_event.007.t
+	desc = WSG_event.007.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = WSG_event.007.a
+		complete_national_focus = WSG_dark_day
+	}
+}
+
+country_event = {
+	id = WSG_event.008
+	title = WSG_event.008.t 
+	desc = WSG_event.008.d
+	is_triggered_only = yes
+	immediate = {
+		every_core_state = {
+			limit = { has_state_flag = WSG_deep_sea_attack }
+			save_event_target_as = WSG_from_the_deep_sea_attack
+		}
+        randomize_variable = {
+	        var = WSG_reduce_manpower  
+	        distribution = uniform 
+	        min = -5000 
+			max = -500
+        }
+		add_to_temp_variable = { WSG_reduce_manpower0 = WSG_reduce_manpower }
+		multiply_temp_variable = { WSG_reduce_manpower0 = -1 }
+		add_to_variable = { WSG_all_death = WSG_reduce_manpower0 }
+	}
+	option = {
+		name = WSG_event.008.a 
+		event_target:WSG_from_the_deep_sea_attack = {
+			clr_state_flag = WSG_deep_sea_attack
+			if = { 
+				limit = { industrial_complex > 0 } 
+			    remove_building = {  
+                    type = industrial_complex  
+                    level = 1 
+                } 
+				damage_building = {
+                    type = industrial_complex
+                    damage = 4
+                }
+			} 
+			if = {
+				limit = { arms_factory > 0 } 
+			    remove_building = { 
+                    type = arms_factory
+                    level = 1
+                }
+				damage_building = {
+                    type = arms_factory
+                    damage = 4
+                } 
+			}
+			if = {
+				limit = { dockyard > 0 }
+			    remove_building = {
+                    type = dockyard
+                    level = 1 
+                } 
+				damage_building = {
+                    type = dockyard
+                    damage = 4
+                }
+			}
+			damage_building = {
+                type = infrastructure
+                damage = 2
+            }
+		}
+		add_manpower = WSG_reduce_manpower
+		add_popularity = { ideology = fascism popularity = 0.01 }
+		add_stability = -0.03
+	}
+}
+
+country_event = {
+	id = WSG_event.009
+	title = WSG_event.009.t
+	desc = WSG_event.009.d
+	is_triggered_only = no 
+	trigger = { 
+		has_country_flag = WSG_from_the_deep_sea
+	}
+	fire_only_once = yes
+	immediate = { 
+		country_event = { days = 90 id = WSG_event.010 } 
+	}
+	option = {
+		name = WSG_event.009.a
+		add_to_variable = { WSG_left_line = 1 }
+	}
+	option = {
+		name = WSG_event.009.b
+		add_to_variable = { WSG_middle_line = 1 }
+	}
+	option = {
+		name = WSG_event.009.c
+		add_to_variable = { WSG_right_line = 1 }
+	}
+}
+
+country_event = {
+	id = WSG_event.010
+	title = WSG_event.010.t
+	desc = WSG_event.010.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { 
+		country_event = { days = 90 id = WSG_event.011 } 
+	}
+	option = {
+		name = WSG_event.010.a
+		add_to_variable = { WSG_right_line = 1 }
+	}
+	option = {
+		name = WSG_event.010.b
+		add_to_variable = { WSG_middle_line = 1 }
+	}
+	option = {
+		name = WSG_event.010.c
+		add_to_variable = { WSG_left_line = 1 }
+	}
+}
+
+country_event = {
+	id = WSG_event.011
+	title = WSG_event.011.t
+	desc = WSG_event.011.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { 
+		country_event = { days = 90 id = WSG_event.012 } 
+	}
+	option = {
+		name = WSG_event.011.a
+		add_to_variable = { WSG_right_line = 1 }
+	}
+	option = {
+		name = WSG_event.011.b
+		add_to_variable = { WSG_middle_line = 1 }
+	}
+	option = {
+		name = WSG_event.011.c
+		add_to_variable = { WSG_left_line = 1 }
+	}
+}
+
+country_event = {
+	id = WSG_event.012
+	title = WSG_event.012.t
+	desc = WSG_event.012.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = WSG_event.012.a
+		add_to_variable = { WSG_middle_line = 1 }
+	}
+	option = {
+		name = WSG_event.012.b
+		add_to_variable = { WSG_left_line = 1 }
+	}
+	option = {
+		name = WSG_event.012.c
+		add_to_variable = { WSG_right_line = 1 }
+	}
+}
+
+country_event = {
+	id = WSG_event.013
+	title = WSG_event.013.t
+	desc = WSG_event.013.d
+	is_triggered_only = no 
+	trigger = {
+		tag = WSG
+		date > 1003.6.1
+		has_completed_focus = WSG_port_area_and_tomorrow
+	}
+	fire_only_once = yes
+	option = {
+		name = WSG_event.013.a
+		add_stability = -0.10
+		complete_national_focus = WSG_from_the_deep_sea
+	}
+}
+
+country_event = {
 	id = WSG_inner_circle_lexington.01
 
 	hidden = yes
