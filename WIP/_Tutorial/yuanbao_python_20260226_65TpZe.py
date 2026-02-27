@@ -163,9 +163,16 @@ class CharacterCreatorApp:
                     charactersList = [k for k, v in charactersNode.items()]
                     if idea_token in charactersList:
                         characterNode = charactersNode[idea_token]
-                        characterNode.append("advisor", "123", in_group = True)
+                        try:
+                            characterNode.append("advisor", "123", in_group = True)
+                        except Exception as e:
+                            pass
                         characterAdvisorList = [v for k, v in characterNode.items() if k == "advisor"]
+                        characterAdvisorList.append(characterAdvisorList[0])
+                        #for i in characterAdvisorList:
+                        #    print(i)
                         characterHoGNode = characterAdvisorList[-1]
+                        #print(characterHoGNode)
                         characterHoGNode["slot"] = "head_of_government_character"
                         characterHoGNode["idea_token"] = f"{idea_token}_character"
                         characterHoGNode["available"] = {"#": "#"}
