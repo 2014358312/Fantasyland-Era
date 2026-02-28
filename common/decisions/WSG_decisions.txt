@@ -25,7 +25,11 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
+			modifier = {
+				factor = 0
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
     }
 
@@ -55,7 +59,11 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
+			modifier = {
+				factor = 0
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
     }
 
@@ -86,7 +94,11 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
+			modifier = {
+				factor = 0
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
     }
 
@@ -295,7 +307,14 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			base = 50
+			base = 1
+			modifier = {
+				add = 100
+				power_balance_value = {
+    			    id = WSG_balance_of_power
+   			        value > 0.99
+			    }
+			}
 		}
     }
 }
@@ -352,6 +371,10 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 0
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
 	}
 
@@ -406,6 +429,14 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 10
+				NOT = { has_completed_focus = WSG_complete_preliminary_reforms }
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
 	}
 
@@ -460,6 +491,10 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 0
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
 	}
 
@@ -514,6 +549,10 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 0
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
 	}
 
@@ -568,6 +607,10 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 0
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
 	}
 
@@ -622,6 +665,14 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
 	}
 
@@ -676,6 +727,14 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
 	}
 
@@ -730,6 +789,14 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
 	}
 }
@@ -764,7 +831,11 @@ WSG_secretary_ship_agenda_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 1
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
     }
 
@@ -1083,6 +1154,14 @@ WSG_secretary_ship_agenda_category = {
         }
         ai_will_do = {
             factor = 50
+			modifier = {
+				factor = 2
+				has_political_power < 50
+			}
+			modifier = {
+				factor = 2
+				has_political_power < 100
+			}
         }
     }
 
@@ -1121,6 +1200,14 @@ WSG_secretary_ship_agenda_category = {
         }
         ai_will_do = {
             factor = 50
+			modifier = {
+				factor = 2
+				has_political_power < 50
+			}
+			modifier = {
+				factor = 2
+				has_political_power < 100
+			}
         }
     }
 
@@ -1873,7 +1960,7 @@ WSG_secretary_ship_agenda_category = {
 }
 
 WSG_army_industrial_integration = {
-###########################industrial_project###############################
+ ##########################industrial_project###############################
 	WSG_industrial_integration = {
         icon = GFX_WSG_decision_category
         allowed = {
@@ -1943,12 +2030,16 @@ WSG_army_industrial_integration = {
 				add_ideas = WSG_industrial_integration_I
 			}
         }
-        ai_will_do = {
-            factor = 50
-        }
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 20
+				arms_factory > 200
+			}
+		}
     }
 
-###########################armor_project###############################
+ ##########################armor_project###############################
 
 	WSG_anti_infantry_firepower = {
         icon = GFX_WSG_decision_category
@@ -1990,7 +2081,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2034,7 +2129,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2084,7 +2183,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2134,7 +2237,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2172,7 +2279,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2210,7 +2321,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2260,7 +2375,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2310,11 +2429,15 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
-###########################aircraft_project###############################
+ ##########################aircraft_project###############################
 
 	WSG_mainly_light_fighter_aircraft = {
         icon = GFX_WSG_decision_category
@@ -2349,7 +2472,11 @@ WSG_army_industrial_integration = {
             add_ideas = WSG_air_strike_l1
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2387,7 +2514,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2425,7 +2556,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2462,7 +2597,11 @@ WSG_army_industrial_integration = {
             add_ideas = WSG_air_strike_r1
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2500,7 +2639,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2538,7 +2681,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2588,7 +2735,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2638,11 +2789,15 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
-###########################naval_project###############################
+ ##########################naval_project###############################
 
 	WSG_deep_sea_hunter = {
         icon = GFX_WSG_decision_category
@@ -2684,7 +2839,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2728,7 +2887,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2778,7 +2941,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2828,7 +2995,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2866,7 +3037,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2904,7 +3079,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2941,7 +3120,11 @@ WSG_army_industrial_integration = {
             add_ideas = WSG_main_battle_l1
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2979,7 +3162,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -3016,7 +3203,11 @@ WSG_army_industrial_integration = {
             add_ideas = WSG_main_battle_r1
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -3054,7 +3245,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -3118,7 +3313,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -3182,7 +3381,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -3251,7 +3454,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -3320,7 +3527,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 }
@@ -3359,15 +3570,21 @@ WSG_from_the_deep_sea_category = {
 		complete_effect = {
 			hidden_effect = {
 				if = {
-					limit = { check_variable = { WSG_left_line > 1 } }
-					country_event = { days = 10 id = WSG_event.005 }
+					limit = { 
+						check_variable = { WSG_right_line > 1 } 
+						check_variable = { WSG_all_death > 25000 }
+					}
+					country_event = { days = 10 id = WSG_event.007 }
 				}
 				else_if = {
-					limit = { check_variable = { WSG_middle_line > 1 } }
+					limit = { 
+						check_variable = { WSG_middle_line > 1 } 
+						check_variable = { WSG_all_death > 15000 }
+					}
 					country_event = { days = 10 id = WSG_event.006 }
 				}
 				else = {
-					country_event = { days = 10 id = WSG_event.007 }
+					country_event = { days = 10 id = WSG_event.005 }
 				}
 			}
 		}
@@ -3405,7 +3622,7 @@ WSG_from_the_deep_sea_category = {
 		allowed = { tag = WSG }
 	    available = {}	
 	    visible = { has_country_flag = WSG_from_the_deep_sea }
-		cost = 20
+		cost = 50
 		fire_only_once = no
 		days_re_enable = 30
 		modifier = {}
@@ -3416,7 +3633,7 @@ WSG_from_the_deep_sea_category = {
             }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 150
 		}
     }
 
@@ -3425,9 +3642,9 @@ WSG_from_the_deep_sea_category = {
 		allowed = { tag = WSG }
 	    available = {}	
 	    visible = { has_country_flag = WSG_from_the_deep_sea }
-		custom_cost_text = WSG_panci_10
+		custom_cost_text = WSG_panci_25
 		custom_cost_trigger = {
-			check_variable = { WSG_panci > 9 }
+			check_variable = { WSG_panci > 24 }
 		}
 		fire_only_once = no
 		days_re_enable = 30
@@ -3438,11 +3655,11 @@ WSG_from_the_deep_sea_category = {
                 days = 15
             }
 			hidden_effect = {
-                add_to_variable = { WSG_panci = -10 }
+                add_to_variable = { WSG_panci = -25 }
             }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 150
 		}
     }
 
@@ -3462,7 +3679,7 @@ WSG_from_the_deep_sea_category = {
             }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
     }
 
@@ -3488,7 +3705,7 @@ WSG_from_the_deep_sea_category = {
             }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
     }
 }
