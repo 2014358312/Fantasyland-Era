@@ -66,8 +66,13 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 75
-			custom_effect_tooltip = available_political_advisor
-			#show_ideas_tooltip = 
+			#custom_effect_tooltip = available_political_advisor
+			custom_override_tooltip = {
+				tooltip = available_political_advisor
+				
+				set_country_flag = DKA_industry_remain_to_be_done_flag
+			}
+			show_ideas_tooltip = DKA_Misa_Iliorogue
 			custom_effect_tooltip = generic_skip_one_line_tt
 			every_core_state = {
 				limit = {
@@ -105,7 +110,7 @@ focus_tree = {
 			factor = 1
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_INDUSTRY
 		}
 		completion_reward = {
 			effect_tooltip = {
@@ -116,6 +121,26 @@ focus_tree = {
 					modifier = DKA_industry_department_dynamic_modifier
 				}
 			}
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					impassable = no
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				random_select_amount = 1
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = DKA_national_industrial_integration_association
 		}
 	}
 	focus = {
