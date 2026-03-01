@@ -28,6 +28,7 @@ WSG_balance_of_power_decision_category = {
 			factor = 200
 			modifier = {
 				factor = 0
+				has_political_power < 200
 				has_country_flag = WSG_from_the_deep_sea
 			}
 		}
@@ -62,6 +63,7 @@ WSG_balance_of_power_decision_category = {
 			factor = 200
 			modifier = {
 				factor = 0
+				has_political_power < 250
 				has_country_flag = WSG_from_the_deep_sea
 			}
 		}
@@ -130,7 +132,7 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			base = 1
+			base = 0
 			modifier = {
 				add = 100
 				has_war = yes
@@ -165,7 +167,7 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			base = 50
+			base = 0
 			modifier = {
 				add = 100
 				has_war = yes
@@ -202,7 +204,7 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			base = 1
+			base = 0
 			modifier = {
 				add = 200
 				has_war = yes
@@ -233,7 +235,7 @@ WSG_balance_of_power_decision_category = {
 		complete_effect = {
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
-    		     value = -0.05
+    		     value = -0.20
 			}
 			every_state = {
 				limit = {
@@ -253,7 +255,7 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			base = 1
+			base = 0
 			modifier = {
 				add = 200
 				has_war = yes
@@ -307,7 +309,7 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			base = 1
+			base = 0
 			modifier = {
 				add = 100
 				power_balance_value = {
@@ -373,7 +375,10 @@ WSG_secretary_ship_decision_category = {
 			factor = 10
 			modifier = {
 				factor = 0
-				has_country_flag = WSG_from_the_deep_sea
+				OR = {
+					has_country_flag = WSG_from_the_deep_sea
+					NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+				}
 			}
 		}
 	}
@@ -493,7 +498,10 @@ WSG_secretary_ship_decision_category = {
 			factor = 10
 			modifier = {
 				factor = 0
-				has_country_flag = WSG_from_the_deep_sea
+				OR = {
+					has_country_flag = WSG_from_the_deep_sea
+					NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+				}
 			}
 		}
 	}
@@ -551,7 +559,10 @@ WSG_secretary_ship_decision_category = {
 			factor = 10
 			modifier = {
 				factor = 0
-				has_country_flag = WSG_from_the_deep_sea
+				OR = {
+					has_country_flag = WSG_from_the_deep_sea
+					NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+				}
 			}
 		}
 	}
@@ -609,7 +620,10 @@ WSG_secretary_ship_decision_category = {
 			factor = 10
 			modifier = {
 				factor = 0
-				has_country_flag = WSG_from_the_deep_sea
+				OR = {
+					has_country_flag = WSG_from_the_deep_sea
+					NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+				}
 			}
 		}
 	}
@@ -671,7 +685,10 @@ WSG_secretary_ship_decision_category = {
 			}
 			modifier = {
 				factor = 0
-				has_country_flag = WSG_from_the_deep_sea
+				OR = {
+					has_country_flag = WSG_from_the_deep_sea
+					NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+				}
 			}
 		}
 	}
@@ -733,7 +750,10 @@ WSG_secretary_ship_decision_category = {
 			}
 			modifier = {
 				factor = 0
-				has_country_flag = WSG_from_the_deep_sea
+				OR = {
+					has_country_flag = WSG_from_the_deep_sea
+					NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+				}
 			}
 		}
 	}
@@ -795,7 +815,10 @@ WSG_secretary_ship_decision_category = {
 			}
 			modifier = {
 				factor = 0
-				has_country_flag = WSG_from_the_deep_sea
+				OR = {
+					has_country_flag = WSG_from_the_deep_sea
+					NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+				}
 			}
 		}
 	}
@@ -1162,6 +1185,13 @@ WSG_secretary_ship_agenda_category = {
 				factor = 2
 				has_political_power < 100
 			}
+			modifier = {
+				factor = 0
+				OR = {
+				    has_political_power > 150
+				    has_country_flag = WSG_from_the_deep_sea
+				}
+			}
         }
     }
 
@@ -1208,6 +1238,13 @@ WSG_secretary_ship_agenda_category = {
 				factor = 2
 				has_political_power < 100
 			}
+			modifier = {
+				factor = 0
+				OR = {
+				    has_political_power > 150
+				    has_country_flag = WSG_from_the_deep_sea
+				}
+			}
         }
     }
 
@@ -1247,6 +1284,10 @@ WSG_secretary_ship_agenda_category = {
         }
         ai_will_do = {
             factor = 50
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+			}
         }
     }
 
