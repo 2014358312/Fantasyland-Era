@@ -20,6 +20,32 @@ characters = {
 		}
 	}
 
+	DKA_Verda_El_Hazard = {
+		name = Verda_El_Hazard
+		portraits = {
+			civilian = {
+				#large = GFX_Portrait_DKA_Verda_El_Hazard
+				small = GFX_idea_advisor_DKA_Verda_El_Hazard
+			}
+			army = {
+				large = GFX_Portrait_DKA_Verda_El_Hazard_scientist
+				small = GFX_idea_advisor_DKA_Verda_El_Hazard
+			}
+		}
+		country_leader = {
+			ideology = democratic_subtype
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		scientist = {
+			traits = { scientist_trait_bright scientist_trait_fast_learner }
+			skills = {
+				specialization_land = 1
+			}
+		}
+	}
+
 	DKA_Benetnash_Iverson = {
 		name = Benetnash_Iverson
 		portraits = {
@@ -281,7 +307,7 @@ characters = {
 			logistics_skill = 1
 			legacy_id = -1
 			visible = {
-				
+				always = no
 			}
 		}
 	}
@@ -307,7 +333,7 @@ characters = {
 			logistics_skill = 1
 			legacy_id = -1
 			visible = {
-				
+				always = no
 			}
 		}
 	}
@@ -335,26 +361,6 @@ characters = {
 			}
 		}
 	}
-
-	DKA_Verda_El_Hazard = {
-		name = Verda_El_Hazard
-		portraits = {
-			civilian = {
-				#large = GFX_Portrait_DKA_Verda_El_Hazard
-				small = GFX_idea_advisor_DKA_Verda_El_Hazard
-			}
-			army = {
-				large = GFX_Portrait_DKA_Verda_El_Hazard_scientist
-				small = GFX_idea_advisor_DKA_Verda_El_Hazard
-			}
-		}
-		scientist = {
-			traits = { scientist_trait_bright scientist_trait_fast_learner }
-			skills = {
-				specialization_land = 1
-			}
-		}
-	}
 	
 	DKA_Ginny_Fin_de_Salvan = {
 		name = Ginny_Fin_de_Salvan
@@ -366,6 +372,17 @@ characters = {
 			army = {
 				large = GFX_Portrait_DKA_Ginny_Fin_de_Salvan
 				small = GFX_idea_advisor_DKA_Ginny_Fin_de_Salvan
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DKA_Ginny_Fin_de_Salvan
+			allowed = { DKA_is_demon_king_army_member = yes }
+			available = { }
+			cost = 150
+			traits = { social_reformer }
+			ai_will_do = {
+				base = 1.000
 			}
 		}
 	}
@@ -382,6 +399,18 @@ characters = {
 				small = GFX_idea_advisor_DKA_Ireena_Litz_de_Olhyde
 			}
 		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+			visible = {
+				always = no
+			}
+		}
 	}
 
 	DKA_Lydia_Beginsgate = {
@@ -394,6 +423,18 @@ characters = {
 			army = {
 				large = GFX_Portrait_DKA_Lydia_Beginsgate
 				small = GFX_idea_advisor_DKA_Lydia_Beginsgate
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+			visible = {
+				always = no
 			}
 		}
 	}
@@ -413,6 +454,7 @@ characters = {
 		advisor = {
 			slot = theorist
 			idea_token = DKA_Olivia_vel_Vine
+			allowed = { DKA_is_demon_king_army_member = yes }
 			available = { }
 			cost = 100
 			traits = { military_theorist }
@@ -434,6 +476,18 @@ characters = {
 				small = GFX_idea_advisor_DKA_Sylphy_Marheaven
 			}
 		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+			visible = {
+				always = no
+			}
+		}
 	}
 
 	DKA_Misa_Iliorogue = {
@@ -451,6 +505,7 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = DKA_Misa_Iliorogue
+			allowed = { DKA_is_demon_king_army_member = yes }
 			available = {
 				custom_override_tooltip = {
 					tooltip = {
