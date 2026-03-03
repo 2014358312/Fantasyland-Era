@@ -24,7 +24,7 @@ characters = {
 		name = Verda_El_Hazard
 		portraits = {
 			civilian = {
-				#large = GFX_Portrait_DKA_Verda_El_Hazard
+				large = GFX_Portrait_DKA_Verda_El_Hazard
 				small = GFX_idea_advisor_DKA_Verda_El_Hazard
 			}
 			army = {
@@ -608,26 +608,30 @@ characters = {
 		}
 	}
 
-	DKA_Izabella = {
-		name = DKA_Izabella
+	DKA_Izabella_Voldigoad = {
+		name = Izabella_Voldigoad
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_DKA_Izabella
-				small = GFX_idea_advisor_DKA_Izabella
+				large = GFX_Portrait_DKA_Izabella_Voldigoad
+				small = GFX_idea_advisor_DKA_Izabella_Voldigoad
 			}
 			army = {
-				large = GFX_Portrait_DKA_Izabella
-				small = GFX_idea_advisor_DKA_Izabella
+				large = GFX_Portrait_DKA_Izabella_Voldigoad
+				small = GFX_idea_advisor_DKA_Izabella_Voldigoad
 			}
 		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
+		advisor = {
+			slot = political_advisor
+			idea_token = DKA_Izabella_Voldigoad
+			allowed = { DKA_is_demon_king_army_member = yes }
+			available = {
+				
+			}
+			cost = 150
+			traits = { NOR_temperate_miners_unionist }
+			ai_will_do = {
+				base = 1.000
+			}
 		}
 	}
 
