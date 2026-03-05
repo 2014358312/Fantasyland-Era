@@ -41,3 +41,110 @@ DKA_eyes_of_storm_decision_category = {
 		}
 	}
 }
+
+DKA_improve_industry_decision_category = {
+	DKA_industry_self_sufficient_mission = {
+		icon = eng_trade_unions_demand
+		activation = {
+			always = no
+		}
+		available = {
+			has_resources_in_collection = {
+				collection = collection:country_and_all_subjects
+				resource = steel
+				amount > 799 #This needs to correspond to the Bypass values in the previous focuses
+				extracted = yes
+				buildings = yes
+			}
+			has_resources_in_collection = {
+				collection = collection:country_and_all_subjects
+				resource = aluminium
+				amount > 199 #This needs to correspond to the Bypass values in the previous focuses
+				extracted = yes
+				buildings = yes
+			}
+			has_resources_in_collection = {
+				collection = collection:country_and_all_subjects
+				resource = oil
+				amount > 149 #This needs to correspond to the Bypass values in the previous focuses
+				extracted = yes
+				buildings = yes
+			}
+			has_resources_in_collection = {
+				collection = collection:country_and_all_subjects
+				resource = tungsten
+				amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+				extracted = yes
+				buildings = yes
+			}
+			has_resources_in_collection = {
+				collection = collection:country_and_all_subjects
+				resource = chromium
+				amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+				extracted = yes
+				buildings = yes
+			}
+			has_resources_in_collection = {
+				collection = collection:country_and_all_subjects
+				resource = rubber
+				amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+				extracted = yes
+				buildings = yes
+			}
+			has_resources_in_collection = {
+				collection = collection:country_and_all_subjects
+				resource = coal
+				amount > 499 #This needs to correspond to the Bypass values in the previous focuses
+				extracted = yes
+				buildings = yes
+			}
+		}
+		is_good = no
+		days_mission_timeout = 730
+		complete_effect = {
+			add_political_power = 500
+		}
+	}
+	
+	DKA_industry_seeking_alternatives_to_natural_resources = {
+		icon = hol_draw_up_staff_plans
+		available = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = has_completed_focus_ott
+					FOCUS = DKA_industry_self_sufficient
+				}
+				has_country_flag = DKA_industry_self_sufficient_flag
+			}
+			has_completed_focus = DKA_industry_self_sufficient
+			num_of_available_civilian_factories > 2
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+		}
+		modifier = {
+			civilian_factory_use = 3
+		}
+		remove_effect = {
+			add_tech_bonus = {
+				name = DKA_industry_seeking_alternatives_to_natural_resources
+				bonus = 1
+				uses = 1
+				category = excavation_tech
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = {
+				localization_key = swap_ideas_tt
+				IDEA = DKA_industry_department_dynamic_modifier
+			}
+			add_to_variable = { DKA_ID_research_speed_factor_var = 0.05 tooltip = research_speed_factor_tt }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 0
+			}
+		}
+	}
+}

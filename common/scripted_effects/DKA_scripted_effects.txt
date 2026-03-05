@@ -1,49 +1,13 @@
-DKA_improve_government_efficiency = {
-	custom_effect_tooltip = DKA_improve_government_efficiency_tt
-	if = {
-		limit = {
-			has_idea = DKA_government_efficiency_1
-		}
-		swap_ideas = {
-			remove_idea = DKA_government_efficiency_1
-			add_idea = DKA_government_efficiency_2
-		}
-	}
-	else_if = {
-		limit = {
-			has_idea = DKA_government_efficiency_2
-		}
-		swap_ideas = {
-			remove_idea = DKA_government_efficiency_2
-			add_idea = DKA_government_efficiency_3
-		}
-	}
-	else_if = {
-		limit = {
-			has_idea = DKA_government_efficiency_3
-		}
-		swap_ideas = {
-			remove_idea = DKA_government_efficiency_3
-			add_idea = DKA_government_efficiency_4
-		}
-	}
-	else_if = {
-		limit = {
-			has_idea = DKA_government_efficiency_4
-		}
-		swap_ideas = {
-			remove_idea = DKA_government_efficiency_4
-			add_idea = DKA_government_efficiency_5
-		}
-	}
-	else = {
-		effect_tooltip = {
-			swap_ideas = {
-				remove_idea = DKA_government_efficiency_1
-				add_idea = DKA_government_efficiency_2
-			}
-		}
-	}
+DKA_set_industry_department_sp_modifier = {
+	set_variable = { DKA_industry_department_modifier_num = 0 }
+	add_to_array = { DKA_industry_department_modifier_array = token:industry_research }
+	add_to_array = { DKA_industry_department_modifier_array_value = 0.05 }
+}
+
+DKA_add_industry_department_sp_modifier = {
+	add_to_variable = { DKA_industry_department_modifier_num = 1 }
+	add_to_array = { DKA_industry_department_modifier_array = token:excavation_tech_research }
+	add_to_array = { DKA_industry_department_modifier_array_value = 0.05 }
 }
 
 DKA_improve_brain = {

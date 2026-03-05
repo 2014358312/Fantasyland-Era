@@ -99,7 +99,7 @@ characters = {
 			}
 		}
 		field_marshal = {
-			traits = { }
+			traits = { organizer old_guard }
 			skill = 4
 			attack_skill = 2
 			defense_skill = 3
@@ -163,7 +163,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { }
+			traits = { urban_assault_specialist media_personality engineer_officer }
 			skill = 3
 			attack_skill = 3
 			defense_skill = 3
@@ -213,7 +213,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { }
+			traits = { media_personality trait_cautious trait_engineer }
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
@@ -276,7 +276,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { }
+			traits = { infantry_officer cavalry_officer armor_officer engineer_officer brilliant_strategist }
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
@@ -536,7 +536,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { }
+			traits = { war_hero commando camouflage_expert infantry_leader cavalry_leader }
 			skill = 3
 			attack_skill = 2
 			defense_skill = 2
@@ -560,10 +560,11 @@ characters = {
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = DKA_Abernyu
+			idea_token = DKA_Abernyu_political_advisor
 			allowed = { DKA_is_demon_king_army_member = yes }
 			available = {
-				
+				is_country_leader = no
+				not_already_hired_except_as = political_advisor
 			}
 			cost = 150
 			traits = { GER_revolutionary_nationalist }
@@ -571,8 +572,23 @@ characters = {
 				base = 1.000
 			}
 		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = DKA_Abernyu_air_chief
+			allowed = { DKA_is_demon_king_army_member = yes }
+			available = {
+				is_country_leader = no
+				not_already_hired_except_as = air_chief
+			}
+			cost = 150
+			traits = { air_chief_ground_support_3 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 		field_marshal = {
-			traits = { }
+			traits = { air_connected media_personality war_hero politically_connected trait_reckless harsh_leader organizer fast_planner skilled_staffer expert_delegator }
 			skill = 5
 			attack_skill = 6
 			defense_skill = 3
@@ -674,7 +690,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { }
+			traits = { war_hero harsh_leader organizer winter_specialist }
 			skill = 3
 			attack_skill = 2
 			defense_skill = 2
@@ -804,7 +820,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { }
+			traits = { career_officer trait_reckless infantry_leader }
 			skill = 2
 			attack_skill = 3
 			defense_skill = 1
@@ -826,8 +842,22 @@ characters = {
 				small = GFX_idea_advisor_DKA_Jessica_Arnet
 			}
 		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = DKA_Jessica_Arnet
+			allowed = { DKA_is_demon_king_army_member = yes }
+			available = {
+				
+			}
+			cost = 50
+			traits = { army_radio_intelligence_1 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
 		corps_commander = {
-			traits = { }
+			traits = { commando }
 			skill = 2
 			attack_skill = 2
 			defense_skill = 1
@@ -880,19 +910,19 @@ characters = {
 		advisor = {
 			slot = high_command
 			ledger = army
-			idea_token = DKA_Linka_Theorness
+			idea_token = DKA_Maia_Zemut
 			allowed = { DKA_is_demon_king_army_member = yes }
 			available = {
 				
 			}
-			cost = 50
-			traits = { army_radio_intelligence_1 }
+			cost = 100
+			traits = { army_cavalry_2 }
 			ai_will_do = {
 				base = 1.000
 			}
 		}
 		corps_commander = {
-			traits = { }
+			traits = { war_hero media_personality harsh_leader cavalry_officer cavalry_leader }
 			skill = 4
 			attack_skill = 2
 			defense_skill = 2
@@ -980,7 +1010,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { }
+			traits = { infantry_officer career_officer hill_fighter ranger }
 			skill = 4
 			attack_skill = 3
 			defense_skill = 3
@@ -1017,7 +1047,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { brilliant_strategist armor_officer panzer_leader fortress_buster }
+			traits = { brilliant_strategist armor_officer panzer_leader trait_engineer fortress_buster }
 			skill = 4
 			attack_skill = 5
 			defense_skill = 3

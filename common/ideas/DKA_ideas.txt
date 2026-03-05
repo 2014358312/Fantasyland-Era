@@ -888,12 +888,21 @@ ideas = {
 	}
 	industrial_concern = {
 		DKA_national_industrial_integration_association = {
-			picture = generic_research_bonus
+			picture = generic_industrial_concern_2
 			allowed = {
 				original_tag = DKA
 			}
 			allowed_civil_war = {
 				always = no
+			}
+			available = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = has_completed_focus_ott
+						FOCUS = DKA_industry_department
+					}
+					has_country_flag = DKA_industry_department_flag
+				}
 			}
 			removal_cost = -1
 			research_bonus = {

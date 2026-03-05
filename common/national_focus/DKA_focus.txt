@@ -66,6 +66,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 75
+			unlock_decision_category_tooltip = DKA_improve_industry_decision_category
 			#custom_effect_tooltip = available_political_advisor
 			custom_override_tooltip = {
 				tooltip = available_political_advisor
@@ -120,7 +121,9 @@ focus_tree = {
 				add_dynamic_modifier = {
 					modifier = DKA_industry_department_dynamic_modifier
 				}
+				DKA_set_industry_department_sp_modifier = yes
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			every_core_state = {
 				limit = {
 					is_fully_controlled_by = ROOT
@@ -139,7 +142,12 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			custom_effect_tooltip = available_industrial_concern
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_override_tooltip = {
+				tooltip = available_industrial_concern
+				
+				set_country_flag = DKA_industry_department_flag
+			}
 			show_ideas_tooltip = DKA_national_industrial_integration_association
 		}
 	}
@@ -160,7 +168,59 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			add_political_power = 50
+			set_country_flag = DKA_industry_self_sufficient_flag
+			activate_mission = DKA_industry_self_sufficient_mission
+			unlock_decision_tooltip = DKA_industry_seeking_alternatives_to_natural_resources
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = {
+				localization_key = swap_ideas_tt
+				IDEA = DKA_industry_department_dynamic_modifier
+			}
+			add_to_variable = { DKA_ID_local_resources_factor_var = 0.10 tooltip = local_resources_factor_tt }
+			custom_override_tooltip = {
+				tooltip = DKA_industry_department_ott
+				
+				DKA_add_industry_department_sp_modifier = yes
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					impassable = no
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				random_select_amount = 1
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					impassable = no
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				random_select_amount = 4
+				add_extra_state_shared_building_slots = 2
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = DKA_industry_self_sufficient
+				bonus = 1
+				uses = 1
+				category = excavation_tech
+			}
 		}
 	}
 	focus = {
