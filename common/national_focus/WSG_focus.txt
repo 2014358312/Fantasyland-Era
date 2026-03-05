@@ -1528,10 +1528,6 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip = WSG_unlock_sta_decision
-			unlock_decision_tooltip = WSG_offsite_industrial_complex
-			unlock_decision_tooltip = WSG_offsite_arms_factory
-			unlock_decision_tooltip = WSG_offsite_dockyard
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
     		     value = -0.10
@@ -5769,6 +5765,7 @@ focus_tree = {
 			has_completed_focus = WSG_super_port_area
 		}
 		completion_reward = {
+			unlock_decision_category_tooltip = WSG_army_industrial_integration
 			custom_effect_tooltip = WSG_unlock_int_decision
 			unlock_decision_tooltip = WSG_industrial_integration
 		}
@@ -5935,6 +5932,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
         prerequisite = { 
 			focus = WSG_dark_day
@@ -6386,6 +6387,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
         mutually_exclusive = {
 			focus = WSG_lexington_prime_minister
@@ -6428,6 +6433,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
         mutually_exclusive = {
 			focus = WSG_admirals_exclusive_jurisdiction
@@ -7504,6 +7513,10 @@ focus_tree = {
 		cost = 5
 		available = {}
 		completion_reward = {
+			custom_effect_tooltip = WSG_unlock_sta_decision
+			unlock_decision_tooltip = WSG_offsite_industrial_complex
+			unlock_decision_tooltip = WSG_offsite_arms_factory
+			unlock_decision_tooltip = WSG_offsite_dockyard
 			custom_effect_tooltip = WSG_land_use_planning_for_the_port_area_text
             for_each_loop = {
 		        array = core_states
@@ -7701,6 +7714,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			unlock_decision_category_tooltip = WSG_army_industrial_integration
+			custom_effect_tooltip = WSG_military_reform_phase_II_project_text
 		}
 		ai_will_do = {
 			factor = 5

@@ -862,158 +862,6 @@ WSG_secretary_ship_agenda_category = {
 		}
     }
 
-    WSG_offsite_industrial_complex = {
-        icon =  GFX_non_available_factory_icon
-        allowed = {
-            original_tag = WSG
-        }
-        available = {
-			power_balance_value = {
-    			 id = WSG_balance_of_power
-   			     value > 0.6
-			}
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-        }    
-        visible = {
-            has_completed_focus = WSG_super_port_area
-        }
-        target_trigger = {
-            FROM = {
-                is_core_of = ROOT
-                is_owned_and_controlled_by = ROOT
-                industrial_complex > 4
-            }
-        }
-        state_target = yes
-        on_map_mode = map_only
-        cost = 0
-        fire_only_once = no
-        days_remove = 60
-        modifier = {
-        }
-        complete_effect = {
-            }
-        remove_effect = {
-            FROM = {
-                remove_building = {
-                    type = industrial_complex
-                    level = 5
-                }
-            }
-            add_offsite_building = { type = industrial_complex level = 5 }
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-        }
-        ai_will_do = {
-            factor = 50
-        }
-    }
-
-    WSG_offsite_arms_factory = {
-        icon = GFX_military_factory_icon
-        allowed = {
-            original_tag = WSG
-        }
-        available = {
-			power_balance_value = {
-    			 id = WSG_balance_of_power
-   			     value > 0.6
-			}
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-        }    
-        visible = {
-            has_completed_focus = WSG_super_port_area
-        }
-        target_trigger = {
-            FROM = {
-                is_core_of = ROOT
-                is_owned_and_controlled_by = ROOT
-                arms_factory > 4
-            }
-        }
-        state_target = yes
-        on_map_mode = map_only
-        cost = 0
-        fire_only_once = no
-        days_remove = 60
-        modifier = {
-        }
-        complete_effect = {
-            }
-        remove_effect = {
-            FROM = {
-                remove_building = {
-                    type = arms_factory
-                    level = 5
-                }
-            }
-            add_offsite_building = { type = arms_factory level = 5 }
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = 200 }
-			}
-        }
-        ai_will_do = {
-            factor = 50
-        }
-    }
-
-    WSG_offsite_dockyard = {
-        icon = GFX_dockyard_icon
-        allowed = {
-            original_tag = WSG
-        }
-        available = {
-			power_balance_value = {
-    			 id = WSG_balance_of_power
-   			     value > 0.6
-			}
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-        }    
-        visible = {
-            has_completed_focus = WSG_super_port_area
-        }
-        target_trigger = {
-            FROM = {
-                is_core_of = ROOT
-                is_owned_and_controlled_by = ROOT
-                dockyard > 4
-            }
-        }
-        state_target = yes
-        on_map_mode = map_only
-        cost = 0
-        fire_only_once = no
-        days_remove = 60
-        modifier = {
-        }
-        complete_effect = {
-            }
-        remove_effect = {
-            FROM = {
-                remove_building = {
-                    type = dockyard
-                    level = 5
-                }
-            }
-            add_offsite_building = { type = dockyard level = 5 }
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-        }
-        ai_will_do = {
-            factor = 50
-        }
-    }
-
 	WSG_revitalize_the_port_area = {
         icon = GFX_WSG_decision_category
         allowed = {
@@ -2002,6 +1850,159 @@ WSG_secretary_ship_agenda_category = {
 
 WSG_army_industrial_integration = {
  ##########################industrial_project###############################
+
+    WSG_offsite_industrial_complex = {
+        icon =  GFX_non_available_factory_icon
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
+			}
+        }    
+        visible = {
+            has_completed_focus = WSG_land_use_planning_for_the_port_area
+        }
+        target_trigger = {
+            FROM = {
+                is_core_of = ROOT
+                is_owned_and_controlled_by = ROOT
+                industrial_complex > 4
+            }
+        }
+        state_target = yes
+        on_map_mode = map_only
+        cost = 0
+        fire_only_once = no
+        days_remove = 60
+        modifier = {
+        }
+        complete_effect = {
+            }
+        remove_effect = {
+            FROM = {
+                remove_building = {
+                    type = industrial_complex
+                    level = 5
+                }
+            }
+            add_offsite_building = { type = industrial_complex level = 5 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+    WSG_offsite_arms_factory = {
+        icon = GFX_military_factory_icon
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
+			}
+        }    
+        visible = {
+            has_completed_focus = WSG_land_use_planning_for_the_port_area
+        }
+        target_trigger = {
+            FROM = {
+                is_core_of = ROOT
+                is_owned_and_controlled_by = ROOT
+                arms_factory > 4
+            }
+        }
+        state_target = yes
+        on_map_mode = map_only
+        cost = 0
+        fire_only_once = no
+        days_remove = 60
+        modifier = {
+        }
+        complete_effect = {
+            }
+        remove_effect = {
+            FROM = {
+                remove_building = {
+                    type = arms_factory
+                    level = 5
+                }
+            }
+            add_offsite_building = { type = arms_factory level = 5 }
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = 200 }
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
+    WSG_offsite_dockyard = {
+        icon = GFX_dockyard_icon
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
+			}
+        }    
+        visible = {
+            has_completed_focus = WSG_land_use_planning_for_the_port_area
+        }
+        target_trigger = {
+            FROM = {
+                is_core_of = ROOT
+                is_owned_and_controlled_by = ROOT
+                dockyard > 4
+            }
+        }
+        state_target = yes
+        on_map_mode = map_only
+        cost = 0
+        fire_only_once = no
+        days_remove = 60
+        modifier = {
+        }
+        complete_effect = {
+            }
+        remove_effect = {
+            FROM = {
+                remove_building = {
+                    type = dockyard
+                    level = 5
+                }
+            }
+            add_offsite_building = { type = dockyard level = 5 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+
 	WSG_industrial_integration = {
         icon = GFX_WSG_decision_category
         allowed = {
@@ -3611,20 +3612,10 @@ WSG_from_the_deep_sea_category = {
 		complete_effect = {
 			hidden_effect = {
 				if = {
-					limit = { 
-						check_variable = { WSG_right_line > 1 } 
-						check_variable = { WSG_all_death > 25000 }
+					limit = {  
+						NOT = { has_country_flag = WSG_middle_line }
+						NOT = { has_country_flag = WSG_right_line }
 					}
-					country_event = { days = 10 id = WSG_event.007 }
-				}
-				else_if = {
-					limit = { 
-						check_variable = { WSG_middle_line > 1 } 
-						check_variable = { WSG_all_death > 15000 }
-					}
-					country_event = { days = 10 id = WSG_event.006 }
-				}
-				else = {
 					country_event = { days = 10 id = WSG_event.005 }
 				}
 			}
