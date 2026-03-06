@@ -260,7 +260,40 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			add_political_power = 50
+		custom_effect_tooltip = {
+				localization_key = swap_ideas_tt
+				IDEA = DKA_industry_department_dynamic_modifier
+			}
+			add_to_variable = { DKA_ID_production_speed_buildings_factor_var = 0.1 tooltip = production_speed_buildings_factor_tt }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					has_resources_amount = {
+						resource = oil
+						amount > 0
+					}
+				}
+				random_select_amount = 1
+				add_resource = {
+					type = oil
+					amount = 8
+				}
+			}
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					has_resources_amount = {
+						resource = steel
+						amount > 0
+					}
+				}
+				random_select_amount = 1
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+			}
 		}
 	}
 	focus = {
@@ -281,6 +314,35 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = {
+				localization_key = swap_ideas_tt
+				IDEA = DKA_industry_department_dynamic_modifier
+			}
+			add_to_variable = { DKA_ID_global_building_slots_factor_var = 0.2 tooltip = global_building_slots_factor_tt }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_override_tooltip = {
+				tooltip = available_political_advisor
+				
+				set_country_flag = DKA_land_planning_flag
+			}
+			show_ideas_tooltip = DKA_Shia_Minsheng
+			if = {
+				limit = {
+					amount_taken_ideas = {
+						amount < 3
+						slots = {
+							political_advisor
+						}
+					}
+				}
+				activate_advisor = DKA_Shia_Minsheng
+			}
+			else = {
+				add_political_power = 100
+			}
+			unlock_decision_tooltip = DKA_industry_into_city_decision
+			unlock_decision_tooltip = DKA_industry_into_country_decision
 		}
 	}
 	focus = {
@@ -301,6 +363,101 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
+			217 = {
+				if = {
+					limit = {
+						any_province_building_level = {
+							province = {
+								id = 4852
+							}
+							building = naval_base
+							level < 10
+						}
+					}
+					add_building_construction = {
+						province = 4852
+						type = naval_base
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			capital_scope = {
+				if = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					if = {
+						limit = {
+							is_coastal = yes
+							free_building_slots = {
+								building = dockyard
+								size > 0
+								include_locked = yes
+							}
+						}
+						add_building_construction = {
+							type = dockyard
+							level = 1
+							instant_build = yes
+						}
+					}
+					else_if = {
+						limit = {
+							is_coastal = no
+							free_building_slots = {
+								building = arms_factory
+								size > 0
+								include_locked = yes
+							}
+						}
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
+					else = {
+						effect_tooltip = {
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+				}
+			}
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				random_select_amount = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -320,7 +477,8 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_political_power = 120
+			add_ideas = free_trade
 		}
 	}
 	focus = {
