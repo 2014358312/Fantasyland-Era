@@ -1,50 +1,93 @@
 ﻿capital = 21
+set_oob = FON_1000
+
+#基础预设
 set_research_slots = 2
 set_convoys = 80
 set_stability = 0.65
 set_war_support = 0.35
 starting_train_buffer = 2
-set_oob = FON_1000
-set_technology = {
-	basic_train = 1
-	### Infantry ###
-	infantry_weapons = 1
-	infantry_weapons1 = 1
-	tech_support = 1
-	tech_engineers = 1
+
+#意识形态
+set_politics = {
+	ruling_party = neutrality
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 8
+	neutrality = 90
+	communism = 1
+	fascism = 1
 }
 
-# recruit_character = FON_Furina_de_Fontaine
-# recruit_character = FON_Fucarlos_de_Fontaine
-recruit_character = FON_Navia_Caspar
-set_cosmetic_tag = TIA_FON
-
+#国家面板和民族精神
 add_ideas = {
+	free_trade	
+	civilian_economy
+	volunteer_only
+#不是露露做的
 	FON_belief_of_hydro_archon
 	FON_pool_government
 	FON_oratrice_mecanique_d_analyse_cardinale
 	FON_fontaine_research_institute
 	FON_fontaine_industrial_system_fake
 	FON_fontaine_military_fake
+#我做的
+	FON_TIB_frontier
+	FON_Fontaine_separatism
+	FON_spina_di_rosula
+	FON_road_conflict
+	FON_Fontaine_cusp
 }
+
+#人物
+recruit_character = FON_Furina_de_Fontaine
+recruit_character = FON_Fucarlos_de_Fontaine
+recruit_character = FON_Navia_Caspar
+
+#国家标志
+set_cosmetic_tag = TIA_FON
+
+#变量
+	#FON_fontaine_industrial_system_dynamic_modifier
 set_variable = { FON_FIS_consumer_goods_factor_var = 0.20 }
 set_variable = { FON_FIS_production_speed_industrial_complex_factor_var = 0.10 }
 set_variable = { FON_FIS_production_speed_arms_factory_factor_var = -0.10 }
 set_variable = { FON_FIS_production_factory_efficiency_gain_factor_var = 0.05 }
 set_variable = { FON_FIS_production_factory_max_efficiency_factor_var = -0.05 }
 set_variable = { FON_FIS_industrial_concern_cost_factor_var = -0.15 }
-
+	#FON_fontaine_military_dynamic_modifier
 set_variable = { FON_FM_war_support_factor_var = -0.15 }
 set_variable = { FON_FM_war_stability_factor_var = -0.10 }
 
-set_politics = {
-	ruling_party = neutrality
-	elections_allowed = no
+#科技
+set_technology = {
+	basic_train = 1
+	#步兵装备
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	#火炮
+	gw_artillery = 1
+	#支援连
+	tech_support = 1
+	tech_engineers = 1
+	#摩托化
+	motorised_infantry = 1
 }
 
-set_popularities = {
-	democratic = 3
-	neutrality = 95
-	communism = 1
-	fascism = 1
+#装备库存
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 10000
+	producer = ROOT
+}
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 2400
+	producer = ROOT
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 1000
+	producer = ROOT
 }

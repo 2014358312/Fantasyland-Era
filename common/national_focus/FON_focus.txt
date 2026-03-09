@@ -1,0 +1,815 @@
+### search_filters = { FOCUS_FILTER_POLITICAL }
+### search_filters = { FOCUS_FILTER_RESEARCH }
+### search_filters = { FOCUS_FILTER_INDUSTRY }
+### search_filters = { FOCUS_FILTER_STABILITY }
+### search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+### search_filters = { FOCUS_FILTER_MANPOWER }
+### search_filters = { FOCUS_FILTER_ANNEXATION }
+### search_filters = { FOCUS_FILTER_USA_CONGRESS }
+
+focus_tree = {
+	id = FON_focus_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = FON
+		}
+	}
+
+	default = no
+
+    continuous_focus_position = { 
+        x = 20 
+        y = 1500 
+    }
+
+#政治抉择#
+	focus = { 
+		id = FON_election_coming
+		icon = GFX_focus_generic_improve_the_administration
+
+		x = 6
+		y = 0
+
+		cost = 1
+
+		allow_branch = {	
+	    }
+
+
+		available = {
+			always = no 
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+#和平线
+	focus = { 
+		id = FON_Navia_Caspar
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_election_coming
+		x = -2
+		y = 1
+
+		cost = 1
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_election_coming
+		}
+
+		available = {
+			always = no 
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = { 
+		id = FON_negotiation_amend_constitution
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_election_coming
+		x = -2
+		y = 2
+
+		cost = 5
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_Navia_Caspar
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = { 
+		id = FON_TIA_economic_cooperation
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_negotiation_amend_constitution
+		x = -2
+		y = 1
+
+		cost = 5
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_negotiation_amend_constitution
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = { 
+		id = FON_TIA_regional_integration
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_negotiation_amend_constitution
+		x = -2
+		y = 2
+
+		cost = 5
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_TIA_economic_cooperation
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = { 
+		id = FON_TIA_technological_support
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_negotiation_amend_constitution
+		x = -2
+		y = 3
+
+		cost = 3
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_TIA_regional_integration
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+
+	focus = { 
+		id = FON_propaganda_uniting_opinions
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_negotiation_amend_constitution
+		x = 0
+		y = 1
+
+		cost = 5
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_negotiation_amend_constitution
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = { 
+		id = FON_TIA_border_eagles
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_negotiation_amend_constitution
+		x = 0
+		y = 2
+
+		cost = 5
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_propaganda_uniting_opinions
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = { 
+		id = FON_tax_harmonization
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_negotiation_amend_constitution
+		x = 0
+		y = 3
+
+		cost = 5
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_TIA_border_eagles
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = { 
+		id = FON_embrace_TIA
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_negotiation_amend_constitution
+		x = 0
+		y = 4
+
+		cost = 5
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_tax_harmonization
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+#独立线
+	focus = { 
+		id = FON_Neuvillette
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_election_coming
+		x = 2
+		y = 1
+
+		cost = 1
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_election_coming
+		}
+
+		available = {
+			always = no 
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = { 
+		id = FON_amend_constitution
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_Neuvillette
+		x = 0
+		y = 1
+
+		cost = 3
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_Neuvillette
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = { 
+		id = FON_expand_armaments
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_Neuvillette
+		x = 2
+		y = 2
+
+		cost = 2
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_amend_constitution
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = { 
+		id = FON_recall_exiled_generals
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_Neuvillette
+		x = 2
+		y = 3
+
+		cost = 2
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_expand_armaments
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = { 
+		id = FON_seek_eternal_support
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_Neuvillette
+		x = 2
+		y = 4
+
+		cost = 2
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_expand_armaments
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = { 
+		id = FON_arouse_revolution_enthusiasm
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_Neuvillette
+		x = 0
+		y = 2
+
+		cost = 3
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_amend_constitution
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = { 
+		id = FON_run_war_machine
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_Neuvillette
+		x = 0
+		y = 3
+
+		cost = 3
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_arouse_revolution_enthusiasm
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = { 
+		id = FON_ban_TIA_tax
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_Neuvillette
+		x = 0
+		y = 4
+
+		cost = 3
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_run_war_machine
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+			#挑衅帝国边境冲突
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = { 
+		id = FON_independence_war
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_Neuvillette
+		x = 0
+		y = 5
+
+		cost = 2
+
+		allow_branch = {	
+	    }
+
+		prerequisite = { 		
+			focus = FON_ban_TIA_tax
+		}
+
+		available = {
+		}
+
+		completion_reward = {
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+#内战#
+	focus = { 
+		id = FON_mobilization
+		icon = GFX_focus_generic_improve_the_administration
+
+		relative_position_id = FON_independence_war
+		x = -2
+		y = 1
+
+		cost = 2
+
+		allow_branch = {
+	    }
+
+		prerequisite = { 		
+			focus = FON_independence_war
+		}
+
+		completion_reward = {
+            add_war_support = 0.2
+            swap_ideas = {
+			    remove_idea = civilian_economy
+			    add_idea = war_economy			
+		    }
+            swap_ideas = {
+			    remove_idea = free_tade
+			    add_idea = limited_exports
+            }
+            swap_ideas = {
+			    remove_idea = volunteer_only
+			    add_idea = extensive_conscription
+		    }			
+		}
+	
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = { 
+		id = FON_get_aid
+		icon = GFX_focus_generic_improve_the_administration
+
+        relative_position_id = FON_mobilization 
+		x = 4
+		y = 0
+
+		cost = 2
+
+		prerequisite = {
+            focus = FON_seek_eternal_support
+		} 
+		prerequisite = { 		
+			focus = FON_independence_war
+		}
+
+		completion_reward = {
+		    add_offsite_building = {   
+                type = arms_factory
+                level = 4
+            }
+            add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 2000
+   				producer = FON
+			}
+		}
+        
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    focus = { 
+		id = FON_comfort_injured
+		icon = GFX_focus_generic_improve_the_administration
+
+        relative_position_id = FON_mobilization
+		x = 0
+		y = 1
+
+		cost = 2
+
+		prerequisite = { 		
+			focus = FON_mobilization
+		}
+
+		completion_reward = {
+			#weekly_casualties_war_support = 0.1  #要写进民族精神或领袖里，此处仅仅做展示
+            #army_morale_factor = 0.1 #同上
+            add_war_support = 0.1
+		}
+        
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    focus = { 
+		id = FON_self_sufficiency
+		icon = GFX_focus_generic_improve_the_administration
+
+        relative_position_id = FON_mobilization
+		x = 4
+		y = 1
+
+		cost = 2
+
+		prerequisite = {
+            focus = FON_get_aid
+		} 
+
+		completion_reward = {
+            #production_speed_arms_factory_factor = 0.1 #同上
+            #local_resources_factor = 0.1 #同上
+            add_stability = 0.1
+            add_war_support = 0.1
+		} 
+
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    focus = { 
+		id = FON_never_surrender
+		icon = GFX_focus_generic_improve_the_administration
+
+        relative_position_id = FON_mobilization
+		x = 2
+		y = 2
+
+		cost = 2
+
+		prerequisite = {
+            focus = FON_self_sufficiency
+		} 
+		prerequisite = {
+            focus = FON_comfort_injured
+		} 
+
+		completion_reward = {
+	        #army_attack_factor = 0.1   #同上
+	        #breakthrough_factor = 0.1  #同上
+		} 
+
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		cancelable = yes
+		bypass_if_unavailable = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
