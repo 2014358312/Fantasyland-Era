@@ -165,7 +165,8 @@ focus_tree = {
 			factor = 1
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_RESEARCH
 		}
 		completion_reward = {
 			set_country_flag = DKA_industry_self_sufficient_flag
@@ -257,7 +258,7 @@ focus_tree = {
 			factor = 1
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_INDUSTRY
 		}
 		completion_reward = {
 		custom_effect_tooltip = {
@@ -310,7 +311,8 @@ focus_tree = {
 			factor = 1
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_POLITICAL_CHARACTER
 		}
 		completion_reward = {
 			add_political_power = 50
@@ -327,6 +329,7 @@ focus_tree = {
 				set_country_flag = DKA_land_planning_flag
 			}
 			show_ideas_tooltip = DKA_Shia_Minsheng
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					amount_taken_ideas = {
@@ -359,7 +362,7 @@ focus_tree = {
 			factor = 1
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_INDUSTRY
 		}
 		completion_reward = {
 			add_political_power = 50
@@ -515,10 +518,10 @@ focus_tree = {
 			factor = 1
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_INTERNATIONAL_TRADE
 		}
 		completion_reward = {
-			add_political_power = 50
+			add_ideas = DKA_agricultural_product_exports_idea
 		}
 	}
 	focus = {
@@ -598,10 +601,15 @@ focus_tree = {
 			factor = 1
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_POLITICAL_CHARACTER
 		}
 		completion_reward = {
-			add_political_power = 50
+			custom_override_tooltip = {
+				tooltip = available_industrial_concern
+				
+				set_country_flag = DKA_national_central_bank_flag
+			}
+			show_ideas_tooltip = DKA_national_industrial_integration_association
 		}
 	}
 	focus = {
@@ -619,7 +627,7 @@ focus_tree = {
 			factor = 1
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_INDUSTRY
 		}
 		completion_reward = {
 			add_political_power = 50

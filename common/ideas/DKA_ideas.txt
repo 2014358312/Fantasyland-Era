@@ -564,6 +564,23 @@ ideas = {
 				industry = 0.05
 			}
 		}
+		DKA_agricultural_product_exports_idea = {
+			name = DKA_agricultural_product_exports
+			picture = generic_agricultural_export
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.10
+				consumer_goods_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.10
+				resource_trade_cost_bonus_per_factory = 1
+			}
+		}
 		##强壮的魔族士兵
 		Strong_demon_soldiers = {
 			name = DKA_warlike_sentiment_dynamic_modifier
@@ -910,6 +927,31 @@ ideas = {
 				cat_production = 0.05
 			}
 			traits = { mining_zaibatsu }
+		}
+		
+		DKA_DNCB = {
+			picture = AUS_bankverein
+			allowed = {
+				original_tag = DKA
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = has_completed_focus_ott
+						FOCUS = DKA_national_central_bank
+					}
+					has_country_flag = DKA_national_central_bank_flag
+				}
+			}
+			removal_cost = -1
+			modifier = {
+				production_factory_start_efficiency_factor = 0.1
+				consumer_goods_factor = -0.10
+			}
+			traits = { cornerstone_of_financial_stability }
 		}
 		
 	}
