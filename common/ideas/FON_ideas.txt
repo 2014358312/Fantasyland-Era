@@ -1,7 +1,78 @@
 ideas = {
 	#我做的
 	country = {
-		FON_TIB_frontier = {
+		#和平线
+		FON_political_handover_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				political_power_cost = 0.02
+				stability_factor = 0.10
+				war_support_factor = -0.10
+			}
+		}
+		FON_TIA_economic_cooperation_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				production_speed_industrial_complex_factor = 0.20
+				consumer_goods_factor = -0.20
+			}
+		}		
+		FON_TIA_technological_support_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				research_speed_factor = 0.15
+			}
+		}		
+		FON_TIA_support_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				political_power_factor = 0.1
+			}
+		}
+
+		#开局民族精神
+		FON_TIB_frontier_idea = {
 			picture = 1  #记得上图片
 			allowed = {
 				original_tag = FON
@@ -17,7 +88,7 @@ ideas = {
 				conscription_factor = -0.15
 			}	
 		}
-		FON_Fontaine_separatism = {
+		FON_Fontaine_separatism_idea = {
 			picture = 1  #记得上图片
 			allowed = {
 				original_tag = FON
@@ -34,13 +105,8 @@ ideas = {
 				war_support_factor = 0.10
 				resistance_target_on_our_occupied_states = 0.05
 			}
-			targeted_modifier = {
-				tag = TIA
-				attack_bonus_against = 0.05
-				defense_bonus_against = 0.05
-			}	
 		}
-		FON_spina_di_rosula = {   #刺玫会
+		FON_spina_di_rosula_idea = {   #刺玫会
 			picture = 1  #记得上图片
 			allowed = {
 				original_tag = FON
@@ -56,7 +122,7 @@ ideas = {
 				political_power_gain = 0.10
 			}	
 		}
-		FON_road_conflict = {
+		FON_road_conflict_idea = {
 			picture = 1
 			allowed = {
 				original_tag = FON
@@ -71,7 +137,7 @@ ideas = {
 			modifier = {
 			}	
 		}
-		FON_Fontaine_cusp = {
+		FON_Fontaine_cusp_idea = {
 			picture = 1
 			allowed = {
 				original_tag = FON

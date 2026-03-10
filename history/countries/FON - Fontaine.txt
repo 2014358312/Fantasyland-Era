@@ -33,11 +33,11 @@ add_ideas = {
 	FON_fontaine_industrial_system_fake
 	FON_fontaine_military_fake
 #我做的
-	FON_TIB_frontier
-	FON_Fontaine_separatism
-	FON_spina_di_rosula
-	FON_road_conflict
-	FON_Fontaine_cusp
+	FON_TIB_frontier_idea
+	FON_Fontaine_separatism_idea
+	FON_spina_di_rosula_idea
+	FON_road_conflict_idea
+	FON_Fontaine_cusp_idea
 }
 
 #人物
@@ -47,6 +47,17 @@ recruit_character = FON_Navia_Caspar
 
 #国家标志
 set_cosmetic_tag = TIA_FON
+
+#动态修正
+every_core_state = {
+	limit = {
+		is_core_of = FON
+		is_controlled_by = FON
+	}
+	add_dynamic_modifier = {
+		modifier = FON_Fonese_bound_to_TIA_taxes
+	}
+}
 
 #变量
 	#FON_fontaine_industrial_system_dynamic_modifier

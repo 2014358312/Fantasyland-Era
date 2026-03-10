@@ -109,8 +109,18 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = FON_Fontaine_separatism_idea
+				add_idea = FON_political_handover_idea
+			}
+			add_political_power = 50
+			TIA = {
+				add_opinion_modifier = {
+					target = FON
+					modifier = FON_constitution_power_handover_opinion
+				}
+			}
 		}
-	
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -141,8 +151,12 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_ideas = FON_TIA_economic_cooperation_idea
+			add_offsite_building = { 
+				type = industrial_complex
+				level = 2
+			}
 		}
-	
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -173,8 +187,21 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		}
-	
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = FON_TIA_regional_integration
+				bonus = 1
+				uses = 2
+				category = industry 
+			}
+		}	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -205,6 +232,8 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_research_slot = 1
+			add_ideas = FON_TIA_technological_support_idea
 		}
 	
 		continue_if_invalid = yes
@@ -216,7 +245,6 @@ focus_tree = {
 			factor = 10
 		}
 	}
-
 
 	focus = { 
 		id = FON_propaganda_uniting_opinions
@@ -239,6 +267,14 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			TIA = {
+				add_opinion_modifier = {
+					target = FON
+					modifier = FON_unition_thinkings_opinion
+				}
+			}
+			add_stability = 0.05
+			add_ideas = FON_TIA_support_idea
 		}
 	
 		continue_if_invalid = yes
@@ -271,8 +307,25 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			capital_scope = {
+				create_unit = {
+					diviision = "name = \"枫丹测试队\" division_template = \"枫丹本土卫队\" start_experience_factor = 0.5"
+					count = 8
+					owner = ROOT
+				}	
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1000
+				producer = ROOT
+			}
+			add_tech_bonus = {
+				name = FON_TIA_border_eagles
+				bonus = 1.0
+				uses = 2
+				category = infantry_weapons
+			}
 		}
-	
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -303,8 +356,13 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			FROM = {
+				remove_dynamic_modifier = {
+					modifier = FON_Fonese_bound_to_TIA_taxes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
 		}
-	
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -335,6 +393,22 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			TIA = {
+				transfer_state = 12
+				transfer_state = 13
+				transfer_state = 14
+				transfer_state = 15
+				transfer_state = 16
+				transfer_state = 17
+				transfer_state = 18
+				transfer_state = 19
+				transfer_state = 20
+				transfer_state = 21
+				transfer_state = 22
+				transfer_state = 23
+				change_tag_from = FON
+			}
+
 		}
 	
 		continue_if_invalid = yes
@@ -490,7 +564,7 @@ focus_tree = {
 	    }
 
 		prerequisite = { 		
-			focus = FON_expand_armaments
+			focus = FON_recall_exiled_generals
 		}
 
 		available = {
@@ -626,6 +700,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			clr_cosmetic_tag = TIA_FON
 		}
 	
 		continue_if_invalid = yes
