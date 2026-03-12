@@ -16,6 +16,20 @@ NDefines.NGraphics.SUN_INTENSITY = 0.9
 NDefines_Graphics.NGraphics.BLOOM_SCALE = 0.0
 NDefines.NGraphics.COUNTRY_COLOR_SATURATION_MODIFIER = 0.9
 NDefines.NGraphics.GRADIENT_BORDERS_CAMERA_DISTANCE_OVERRIDE_COUNTRY = 0.08
+-- Vintage map style
+NDefines_Graphics.NGraphics.GRADIENT_BORDERS_COUNTRY_CENTER_THICKNESS = 0
+NDefines_Graphics.NGraphics.GRADIENT_BORDERS_THICKNESS_DIPLOMACY = 1
+NDefines_Graphics.NGraphics.BORDER_WIDTH = 1.0
+NDefines_Graphics.NGraphics.GRADIENT_BORDERS_FIELD_COUNTRY_LOW = 0.0 -- country area in sum of pixels ...
+NDefines_Graphics.NGraphics.GRADIENT_BORDERS_FIELD_COUNTRY_HIGH = 9000.0 -- ... the value is squared, so fe. country of size 100x100pix = 10000
+NDefines_Graphics.NGraphics.GRADIENT_BORDERS_THICKNESS_COUNTRY_LOW = 0.0 -- thickness in pixels
+NDefines_Graphics.NGraphics.GRADIENT_BORDERS_THICKNESS_COUNTRY_HIGH = 35.0
+NDefines_Graphics.NGraphics.GRADIENT_BORDERS_THICKNESS_STATE = 1.0
+NDefines_Graphics.NGraphics.GRADIENT_BORDERS_OUTLINE_CUTOFF_COUNTRY = 0.98
+NDefines_Graphics.NGraphics.GRADIENT_BORDERS_OUTLINE_CUTOFF_DIPLOMACY = 0.98
+
+NDefines_Graphics.NGraphics.COUNTRY_COLOR_SATURATION_MODIFIER = 0.85
+NDefines_Graphics.NGraphics.COUNTRY_COLOR_BRIGHTNESS_MODIFIER = 0.6
 -- modify national spirit slot
 NDefines_Graphics.NGraphics.POLITICAL_GRID_SMALL_BOX_LIMIT = 8				-- Limit for gridbox in political view before it will be replaced with extended gridbox
 -- modify state building slot
