@@ -35,12 +35,13 @@ characters = {
 			id = -1
 		}
 	}
+	#副手
 	FON_Navia_Caspar = {
 		name = Navia_Caspar
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/FON/FON_Navia_Caspar.dds"
-				#small = GFX_
+				small = "gfx/leaders/FON/FON_Navia_Caspar_small.png"
 			}
 		}
 		country_leader = {
@@ -50,5 +51,64 @@ characters = {
 			expire = "1965.1.1.1"
 			id = -1
 		}
+		advisor = {
+			slot = head_of_government_character
+			idea_token = FON_Navia_Caspar_head_of_government_character
+			available = { no_head_of_gov_trigger = yes }
+			traits = {  }
+		}
 	}
+	FON_Neuvillette = {
+		name = Neuvillette
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/FON/FON_Neuvillette.png"
+				small = "gfx/leaders/FON/small/FON_Neuvillette_small.png"
+			}
+		}
+		country_leader = {
+			ideology = dual_monarchy_subtype
+			traits = {
+			}
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = head_of_government_character
+			idea_token = FON_Neuvillette_head_of_government_character
+			available = { no_head_of_gov_trigger = yes }
+			traits = {  }
+		}
+	}
+	#陆军部长、元帅和将领
+	FON_Chevreuse = {
+		name = Chevreuse
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/FON/FON_Chevreuse.png"
+				small = "gfx/leaders/FON/small/FON_Chevreuse_small.png"
+			}
+		}
+		country_leader = {
+			ideology = dual_monarchy_subtype
+			traits = {	}
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = FON_Chevreuse_army_chief
+			available = {  }
+			traits = { ensure_laws_determine_punishment }
+		}
+		corps_commander = {
+			name = Chevreuse
+			traits = { harsh_leader politically_connected }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}	 
 }

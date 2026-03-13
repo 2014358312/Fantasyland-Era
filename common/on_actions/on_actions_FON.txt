@@ -2,6 +2,10 @@ on_actions = {
 	on_startup = {
 		effect = {
 			FON = {
+				country_event = { 
+					days = 1 
+					id = FON_politics.0 
+				}
 				remove_ideas = FON_fontaine_industrial_system_fake
 				add_dynamic_modifier = {
 					modifier = FON_fontaine_industrial_system_dynamic_modifier
@@ -11,6 +15,40 @@ on_actions = {
 					modifier = FON_fontaine_military_dynamic_modifier
 				}
 			}
+		}
+	}
+	on_weekly_FON = {
+		if = {
+			limit = {
+				has_idea = FON_MUL_military_support_idea
+				MUL = {
+					has_opinion = { 
+						target = FON
+						value > 19 
+					} 
+				}
+				country_exists = MUL 
+			}
+			add_manpower = 5000
+		}
+		else_if = {
+			limit = {
+				or = {
+					not = {
+						country_exists = MUL
+					}
+					MUL = {
+						has_opinion = { 
+							target = FON
+							value < 19 
+						} 
+					}
+				}
+			}
+			remove_ideas = FON_MUL_military_support_idea
+		}
+		else = {
+			#酌情增加国家事件
 		}
 	}
 }

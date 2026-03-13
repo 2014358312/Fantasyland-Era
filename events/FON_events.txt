@@ -1,0 +1,59 @@
+add_namespace = FON_politics
+add_namespace = FON_story
+add_namespace = FON_news
+
+###################
+###### 政治线 ######
+###################
+#大选
+country_event = {
+	id = FON_politics.0
+	title = FON_politics.0.t
+	desc = FON_politics.0.desc
+	#picture = GFX_report_event_EYP_01
+    fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = FON_politics.0.a
+        complete_national_focus = FON_Navia_Caspar_road
+        ai_chance = {
+			factor = 100
+		}
+	}
+    option = {
+		name = FON_politics.0.b
+        complete_national_focus = FON_Neuvillette_road
+        ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+##################
+###### 剧情 ######		#用于丰富游戏流程内容
+##################
+news_event = {
+	id = FON_news.0
+	title = FON_news.0.t
+	desc = FON_news.0.desc
+	#picture = GFX_report_event_EYP_01
+    fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = FON_news.0.a
+	}
+}
+
+country_event = {
+	id = FON_story.0
+	title = FON_story.0.t
+	desc = FON_story.0.desc
+	#picture = GFX_report_event_EYP_01
+    fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = FON_story.0.a
+		add_manpower = -30
+		add_stability = -5
+	}
+}

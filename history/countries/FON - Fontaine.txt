@@ -44,22 +44,25 @@ add_ideas = {
 recruit_character = FON_Furina_de_Fontaine
 recruit_character = FON_Fucarlos_de_Fontaine
 recruit_character = FON_Navia_Caspar
+recruit_character = FON_Neuvillette
 
 #国家标志
 set_cosmetic_tag = TIA_FON
 
-#动态修正
-every_core_state = {
-	limit = {
-		is_core_of = FON
-		is_controlled_by = FON
-	}
-	add_dynamic_modifier = {
-		modifier = FON_Fonese_bound_to_TIA_taxes
-	}
-}
-
 #变量
+	#副手的变量
+set_variable = { ROOT.FE_secondary = token:FON_Navia_Caspar_head_of_government }
+set_variable = { ROOT.FE_secondary = token:FON_Neuvillette_head_of_government }
+	#枫丹独立战争
+set_variable = { FON_FIW_army_attack_factor_var = 0 }
+set_variable = { FON_FIW_army_speed_factor_var = 0 }
+set_variable = { FON_FIW_supply_consumption_factor_var = 0 }
+set_variable = { FON_FIW_army_org_factor_var = 0 }
+set_variable = { FON_FIW_army_morale_factor_var = 0 }
+set_variable = { FON_FIW_breakthrough_factorr_var = 0 }
+set_variable = { FON_FIW_weekly_casualties_war_support_var = 0 }
+set_variable = { FON_FIW_production_speed_arms_factory_factor_var = 0 }
+set_variable = { FON_FIW_local_resources_factor_var = 0 }
 	#FON_fontaine_industrial_system_dynamic_modifier
 set_variable = { FON_FIS_consumer_goods_factor_var = 0.20 }
 set_variable = { FON_FIS_production_speed_industrial_complex_factor_var = 0.10 }
@@ -70,6 +73,17 @@ set_variable = { FON_FIS_industrial_concern_cost_factor_var = -0.15 }
 	#FON_fontaine_military_dynamic_modifier
 set_variable = { FON_FM_war_support_factor_var = -0.15 }
 set_variable = { FON_FM_war_stability_factor_var = -0.10 }
+
+#地区修正
+every_core_state = {
+	limit = {
+		is_core_of = FON
+		is_controlled_by = FON
+	}
+	add_dynamic_modifier = {
+		modifier = FON_Fonese_bound_to_TIA_taxes_modifier
+	}
+}
 
 #科技
 set_technology = {

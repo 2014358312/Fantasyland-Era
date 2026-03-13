@@ -26,7 +26,28 @@
 #	can be added to countries, states or unit leaders
 #	will only updated daily, unless forced by force_update_dynamic_modifier effect
 
-FON_Fonese_bound_to_TIA_taxes = {
+##其他##
+FON_independence_war_dynamic_modifier = { #枫丹独立战争
+	enable = { always = yes }
+	remove_trigger = { always = no }
+	icon = GFX_trait_anti_rain
+
+	army_attack_factor = FON_FIW_army_attack_factor_var
+	army_speed_factor = FON_FIW_army_speed_factor_var
+	supply_consumption_factor = FON_FIW_supply_consumption_factor_var
+	army_org_factor = FON_FIW_army_org_factor_var
+	army_morale_factor = FON_FIW_army_morale_factor_var
+	breakthrough_factor = FON_FIW_breakthrough_factorr_var
+	weekly_casualties_war_support = FON_FIW_weekly_casualties_war_support_var
+	production_speed_arms_factory_factor = FON_FIW_production_speed_arms_factory_factor_var
+	local_resources_factor = FON_FIW_local_resources_factor_var
+}
+
+
+
+
+##地区修正##
+FON_Fonese_bound_to_TIA_taxes_modifier = {  #被苛捐杂税压迫的枫丹人
 	enable = { always = yes }
 	icon = GFX_trait_anti_rain
 
@@ -37,7 +58,7 @@ FON_Fonese_bound_to_TIA_taxes = {
 	state_resources_factor = -0.20
 }
 
-
+##开局民族精神##
 FON_fontaine_industrial_system_dynamic_modifier = {
 	enable = { always = yes }
 	icon = GFX_idea_SOV_third_five_year_plan_civilian
