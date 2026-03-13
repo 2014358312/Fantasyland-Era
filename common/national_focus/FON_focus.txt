@@ -817,8 +817,7 @@ focus_tree = {
 		available = {
 		}
 
-		completion_reward = {
-			set_cosmetic_tag = FON_country
+		completion_reward = {			
 			remove_ideas = FON_TIB_frontier2_idea
 			TIA = {
 				set_autonomy = {
@@ -843,8 +842,11 @@ focus_tree = {
 			add_to_variable = {
 				FON_FIW_supply_consumption_factor_var = -0.05
 			}
-			news_event = {
-				id = FON_news.0
+			hidden_effect = {
+				set_cosmetic_tag = FON_country
+				news_event = {
+					id = FON_news.0
+				}				
 			}
 		}
 		continue_if_invalid = yes
