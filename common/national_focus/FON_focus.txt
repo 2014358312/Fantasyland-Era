@@ -308,10 +308,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			capital_scope = {
+			21 = {
 				create_unit = {
-					diviision = "name = \"枫丹测试队\" division_template = \"枫丹本土卫队\" start_experience_factor = 0.5"
-					count = 8
+					diviision = "name = \"枫丹卫队\" division_template = \"枫丹本土卫队\" start_experience_factor = 0.5"
+					count = 4
 					owner = ROOT
 				}	
 			}
@@ -484,6 +484,10 @@ focus_tree = {
 
 		completion_reward = {
 			add_war_support = 0.1
+			set_division_template_lock = {
+				division_template = "枫丹本土卫队"
+				is_locked = no
+			}
 			FON = {
 				if = {
 					limit = {
@@ -689,7 +693,6 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = -50
-			add_stability = 0.10
 			add_war_support = 0.05
 			swap_ideas = {
 				remove_idea = FON_TIB_frontier_idea
@@ -729,6 +732,13 @@ focus_tree = {
 		completion_reward = {
 			set_technology = { autoloader_guidelines = 1 }   #基础型主战坦克
 			add_ideas = FON_Fontaine_defense_agency_idea
+			21 = {
+				create_unit = {
+					diviision = "name = \"枫丹卫队\" division_template = \"枫丹本土卫队\" start_experience_factor = 0.5"
+					count = 8
+					owner = ROOT
+				}	
+			}
 		}
 	
 		continue_if_invalid = yes
@@ -761,16 +771,14 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_stability = 0.15
-			FROM = {
-				remove_dynamic_modifier = {
-					modifier = FON_Fonese_bound_to_TIA_taxes_modifier
-				}
-			}
+			add_stability = 0.10
 			every_core_state = {
 				limit = {
 					is_core_of = FON
 					is_controlled_by = FON
+				}
+				remove_dynamic_modifier = {
+					modifier = FON_Fonese_bound_to_TIA_taxes_modifier
 				}
 				add_building_construction = {
 					type = industrial_complex
@@ -817,7 +825,8 @@ focus_tree = {
 		available = {
 		}
 
-		completion_reward = {			
+		completion_reward = {	
+			set_country_flag = FON_FIW_decision_flag	
 			remove_ideas = FON_TIB_frontier2_idea
 			TIA = {
 				set_autonomy = {
@@ -829,24 +838,25 @@ focus_tree = {
 					type = annex_everything
 				}
 			}
-			add_dynamic_modifier = {
-				modifier = FON_independence_war_dynamic_modifier
-				scope = FON
-			}
-			add_to_variable = {
-				FON_FIW_army_attack_factor_var = 0.05
-			}
-			add_to_variable = {
-				FON_FIW_army_speed_factor_var = 0.05
-			}
-			add_to_variable = {
-				FON_FIW_supply_consumption_factor_var = -0.05
-			}
+			custom_effect_tooltip = FON_independence_war_FIW_tt
 			hidden_effect = {
 				set_cosmetic_tag = FON_country
 				news_event = {
 					id = FON_news.0
-				}				
+				}
+				add_dynamic_modifier = {
+					modifier = FON_independence_war_dynamic_modifier
+					scope = FON
+				}
+				add_to_variable = {
+					FON_FIW_army_attack_factor_var = 0.10
+				}
+				add_to_variable = {
+					FON_FIW_army_speed_factor_var = 0.10
+				}
+				add_to_variable = {
+					FON_FIW_supply_consumption_factor_var = -0.10
+				}							
 			}
 		}
 		continue_if_invalid = yes
@@ -878,7 +888,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-            add_war_support = 0.2
+            add_war_support = 0.1
 			FON = {
 				if = {
 					limit = {
@@ -1000,13 +1010,14 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_war_support = 0.1
 			add_to_variable = {
 				FON_FIW_army_morale_factor_var = 0.05
 			}
 			add_to_variable = {
 				FON_FIW_weekly_casualties_war_support_var = 0.10
 			}
-            add_war_support = 0.1
+			custom_effect_tooltip = FON_comfort_injured_FIW_tt
 		}
         
 		continue_if_invalid = yes
@@ -1040,8 +1051,8 @@ focus_tree = {
 			add_to_variable = {
 				FON_FIW_local_resources_factor_var = 0.10
 			}
-            add_stability = 0.1
             add_war_support = 0.1
+			custom_effect_tooltip = FON_self_sufficiency_FIW_tt
 		} 
 
 		continue_if_invalid = yes
@@ -1077,6 +1088,7 @@ focus_tree = {
 			add_to_variable = {
 				FON_FIW_breakthrough_factor_var = 0.10
 			}
+			custom_effect_tooltip = FON_never_surrender_FIW_tt
 		} 
 
 		continue_if_invalid = yes
