@@ -78,6 +78,11 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = FON_Navia_Caspar_head_of_government
+			remove_ideas = FON_road_conflict_idea
+			set_division_template_lock = {
+				division_template = "枫丹本土卫队"
+				is_locked = no
+			}
 		}
 	
 		continue_if_invalid = yes
@@ -308,13 +313,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			21 = {
-				create_unit = {
-					diviision = "name = \"枫丹卫队\" division_template = \"枫丹本土卫队\" start_experience_factor = 0.5"
-					count = 4
-					owner = ROOT
-				}	
-			}
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_1
 				amount = 1000
@@ -484,6 +482,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_war_support = 0.1
+			remove_ideas = FON_road_conflict_idea
 			set_division_template_lock = {
 				division_template = "枫丹本土卫队"
 				is_locked = no
@@ -732,13 +731,10 @@ focus_tree = {
 		completion_reward = {
 			set_technology = { autoloader_guidelines = 1 }   #基础型主战坦克
 			add_ideas = FON_Fontaine_defense_agency_idea
-			21 = {
-				create_unit = {
-					diviision = "name = \"枫丹卫队\" division_template = \"枫丹本土卫队\" start_experience_factor = 0.5"
-					count = 8
-					owner = ROOT
-				}	
+			hidden_effect = {
+				load_oob = "FON_independence_army"
 			}
+			custom_effect_tooltip = FON_run_war_machine_tt
 		}
 	
 		continue_if_invalid = yes

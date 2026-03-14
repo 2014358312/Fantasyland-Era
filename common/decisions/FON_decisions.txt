@@ -2,14 +2,16 @@ FON_Fontaine_independence_war_decision_category = {
     FON_revendication_bailu = {
         #icon = GAK_research_doll
         activation = {
-            has_country_flag = FON_FIW_decision_flag
             has_war_with = TIA
         }
         allowed = {
+            has_country_flag = FON_FIW_decision_flag
             tag = FON
         }
         available = {
-            controls_state = 9
+            FON = {
+                controls_state = 9
+            }
         }
         is_good = yes
 
@@ -22,8 +24,47 @@ FON_Fontaine_independence_war_decision_category = {
             FON = {
 				transfer_state = 9		             
             }
-            add_political_power = 20    
+            add_political_power = 50    
         }
     }
 
+    FON_get_independence_from_TIA = {
+        #icon = GAK_research_doll
+        activation = {
+            has_war_with = TIA
+        }
+        allowed = {
+            has_country_flag = FON_FIW_decision_flag
+            tag = FON
+        }
+        available = {
+            FON = {
+                controls_state = 10
+            }
+            TIA = {
+                surrender_progress > 0.10
+            }
+        }
+        is_good = yes
+
+        days_mission_timeout = 180
+        timeout_effect = {
+            FON = {
+                white_peace = TIA
+            }
+            news_event = {
+                id = FON_news.1
+                days = 1
+            }          
+        }
+        complete_effect = {
+            FON = {
+                white_peace = TIA
+            }
+            news_event = {
+                id = FON_news.2
+                days = 1
+            }
+        }
+    }
 }

@@ -108,7 +108,42 @@ ideas = {
 			modifier = {
 			}		
 		}
-
+		FON_independence_war_loser_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				add_stability = -0.10
+				consumer_goods_factor = 0.30
+				industrial_capacity_factory = -0.10
+				local_resources_factor = -0.20
+			}		
+		}		
+		FON_independence_war_winner_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				add_stability = 0.10
+				consumer_goods_factor = -0.30
+				industrial_capacity_factory = 0.10
+				local_resources_factor = 0.20
+			}		
+		}
 		#和平线
 		FON_political_handover_idea = {
 			picture = 1  #记得上图片
@@ -211,7 +246,12 @@ ideas = {
 			modifier = {
 				stability_factor = -0.10
 				war_support_factor = 0.10
-				resistance_target_on_our_occupied_states = 0.05
+				resistance_target_on_our_occupied_states = 0.10
+			}
+			targeted_modifier = {
+				tag = TIA
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
 			}
 		}
 		FON_spina_di_rosula_idea = {   #刺玫会
