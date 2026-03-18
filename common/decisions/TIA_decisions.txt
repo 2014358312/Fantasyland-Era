@@ -2341,3 +2341,514 @@ TIA_fontaine_monitoring_decisions = {
 		}
 	}
 }
+
+TIA_shrink_territory_management_category = {
+	###################################
+	# Phase 1: Send Imperial Inspectors
+	###################################
+ 
+	TIA_inspect_VBC = {
+		icon = generic_political_actions
+		available = {
+			NOT = { has_country_flag = TIA_inspected_VBC }
+			VBC = { exists = yes }
+		}
+		visible = {
+			VBC = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 25
+		days_remove = 30
+		modifier = {
+			political_power_factor = -0.05
+		}
+		remove_effect = {
+			set_country_flag = TIA_inspected_VBC
+			country_event = { id = TIA.83 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	TIA_inspect_CLV = {
+		icon = generic_political_actions
+		available = {
+			NOT = { has_country_flag = TIA_inspected_CLV }
+			CLV = { exists = yes }
+		}
+		visible = {
+			CLV = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 25
+		days_remove = 30
+		modifier = {
+			political_power_factor = -0.05
+		}
+		remove_effect = {
+			set_country_flag = TIA_inspected_CLV
+			country_event = { id = TIA.84 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	TIA_inspect_CDK = {
+		icon = generic_political_actions
+		available = {
+			NOT = { has_country_flag = TIA_inspected_CDK }
+			CDK = { exists = yes }
+		}
+		visible = {
+			CDK = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 25
+		days_remove = 30
+		modifier = {
+			political_power_factor = -0.05
+		}
+		remove_effect = {
+			set_country_flag = TIA_inspected_CDK
+			country_event = { id = TIA.85 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	TIA_inspect_CAB = {
+		icon = generic_political_actions
+		available = {
+			NOT = { has_country_flag = TIA_inspected_CAB }
+			CAB = { exists = yes }
+		}
+		visible = {
+			CAB = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 25
+		days_remove = 30
+		modifier = {
+			political_power_factor = -0.05
+		}
+		remove_effect = {
+			set_country_flag = TIA_inspected_CAB
+			country_event = { id = TIA.86 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	###################################
+	# Phase 2: Negotiate / Pressure
+	###################################
+ 
+	TIA_negotiate_VBC = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_inspected_VBC
+			NOT = { has_country_flag = TIA_negotiated_VBC }
+			VBC = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_inspected_VBC
+			VBC = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 45
+		modifier = {
+			political_power_factor = -0.10
+			stability_factor = -0.05
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = TIA_negotiating_VBC
+			}
+			country_event = { id = TIA.87 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	TIA_negotiate_CLV = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_inspected_CLV
+			NOT = { has_country_flag = TIA_negotiated_CLV }
+			CLV = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_inspected_CLV
+			CLV = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 45
+		modifier = {
+			political_power_factor = -0.10
+			stability_factor = -0.05
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = TIA_negotiating_CLV
+			}
+			country_event = { id = TIA.87 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	TIA_negotiate_CDK = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_inspected_CDK
+			NOT = { has_country_flag = TIA_negotiated_CDK }
+			CDK = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_inspected_CDK
+			CDK = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 45
+		modifier = {
+			political_power_factor = -0.10
+			stability_factor = -0.05
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = TIA_negotiating_CDK
+			}
+			country_event = { id = TIA.87 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	TIA_negotiate_CAB = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_inspected_CAB
+			NOT = { has_country_flag = TIA_negotiated_CAB }
+			CAB = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_inspected_CAB
+			CAB = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 45
+		modifier = {
+			political_power_factor = -0.10
+			stability_factor = -0.05
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = TIA_negotiating_CAB
+			}
+			country_event = { id = TIA.87 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	###################################
+	# Phase 3: Formal Integration (Annex)
+	###################################
+ 
+	TIA_integrate_VBC = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_negotiated_VBC
+			NOT = { has_country_flag = TIA_rebellion_VBC }
+			VBC = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_negotiated_VBC
+			VBC = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 75
+		days_remove = 60
+		modifier = {
+			political_power_factor = -0.10
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = TIA_integrating_VBC
+			}
+			country_event = { id = TIA.90 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	TIA_integrate_CLV = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_negotiated_CLV
+			NOT = { has_country_flag = TIA_rebellion_CLV }
+			CLV = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_negotiated_CLV
+			CLV = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 75
+		days_remove = 60
+		modifier = {
+			political_power_factor = -0.10
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = TIA_integrating_CLV
+			}
+			country_event = { id = TIA.90 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	TIA_integrate_CDK = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_negotiated_CDK
+			NOT = { has_country_flag = TIA_rebellion_CDK }
+			CDK = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_negotiated_CDK
+			CDK = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 75
+		days_remove = 60
+		modifier = {
+			political_power_factor = -0.10
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = TIA_integrating_CDK
+			}
+			country_event = { id = TIA.90 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	TIA_integrate_CAB = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_negotiated_CAB
+			NOT = { has_country_flag = TIA_rebellion_CAB }
+			CAB = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_negotiated_CAB
+			CAB = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 75
+		days_remove = 60
+		modifier = {
+			political_power_factor = -0.10
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = TIA_integrating_CAB
+			}
+			country_event = { id = TIA.90 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	###################################
+	# Rebellion Suppression (if triggered)
+	###################################
+ 
+	TIA_suppress_rebellion_VBC = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_rebellion_VBC
+			VBC = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_rebellion_VBC
+			VBC = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 30
+		modifier = {
+			war_support_factor = -0.05
+			stability_factor = -0.05
+		}
+		remove_effect = {
+			country_event = { id = TIA.89 }
+		}
+		ai_will_do = { factor = 100 }
+	}
+ 
+	TIA_suppress_rebellion_CLV = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_rebellion_CLV
+			CLV = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_rebellion_CLV
+			CLV = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 30
+		modifier = {
+			war_support_factor = -0.05
+			stability_factor = -0.05
+		}
+		remove_effect = {
+			country_event = { id = TIA.89 }
+		}
+		ai_will_do = { factor = 100 }
+	}
+ 
+	TIA_suppress_rebellion_CDK = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_rebellion_CDK
+			CDK = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_rebellion_CDK
+			CDK = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 30
+		modifier = {
+			war_support_factor = -0.05
+			stability_factor = -0.05
+		}
+		remove_effect = {
+			country_event = { id = TIA.89 }
+		}
+		ai_will_do = { factor = 100 }
+	}
+ 
+	TIA_suppress_rebellion_CAB = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_rebellion_CAB
+			CAB = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_rebellion_CAB
+			CAB = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 30
+		modifier = {
+			war_support_factor = -0.05
+			stability_factor = -0.05
+		}
+		remove_effect = {
+			country_event = { id = TIA.89 }
+		}
+		ai_will_do = { factor = 100 }
+	}
+ 
+	###################################
+	# Fontaine Rose Society (4 phases)
+	###################################
+ 
+	TIA_fon_assess = {
+		icon = generic_political_actions
+		available = {
+			NOT = { has_country_flag = TIA_fon_assessed }
+			FON = { exists = yes }
+		}
+		visible = {
+			FON = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 25
+		days_remove = 30
+		modifier = {
+			political_power_factor = -0.05
+		}
+		remove_effect = {
+			set_country_flag = TIA_fon_assessed
+			country_event = { id = TIA.92 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	TIA_fon_contact = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_fon_assessed
+			NOT = { has_country_flag = TIA_fon_contacted }
+			FON = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_fon_assessed
+			FON = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 45
+		modifier = {
+			political_power_factor = -0.10
+			stability_factor = -0.03
+		}
+		remove_effect = {
+			set_country_flag = TIA_fon_contacted
+			country_event = { id = TIA.93 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	TIA_fon_negotiate = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_fon_contacted
+			NOT = { has_country_flag = TIA_fon_negotiated }
+			NOT = { has_country_flag = TIA_fon_crisis_active }
+			FON = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_fon_contacted
+			FON = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 75
+		days_remove = 60
+		modifier = {
+			political_power_factor = -0.15
+			stability_factor = -0.05
+		}
+		remove_effect = {
+			set_country_flag = TIA_fon_negotiated
+			country_event = { id = TIA.94 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+ 
+	TIA_fon_integrate = {
+		icon = generic_political_actions
+		available = {
+			has_country_flag = TIA_fon_negotiated
+			NOT = { has_country_flag = TIA_fon_crisis_active }
+			FON = { exists = yes }
+		}
+		visible = {
+			has_country_flag = TIA_fon_negotiated
+			FON = { exists = yes }
+		}
+		fire_only_once = yes
+		cost = 100
+		days_remove = 90
+		modifier = {
+			political_power_factor = -0.10
+			stability_factor = -0.03
+		}
+		remove_effect = {
+			country_event = { id = TIA.96 }
+		}
+		ai_will_do = { factor = 10 }
+	}
+}
