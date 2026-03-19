@@ -3712,12 +3712,12 @@ country_event = {
  
 	option = {                                    # .a 公开审判（仅 VBC/CLV）
 		name = TIA.89.a
-		trigger = { NOT = { CDK } NOT = { CAB } }
+		trigger = { OR = { has_country_flag = TIA_rebellion_VBC has_country_flag = TIA_rebellion_CLV } }
 		# 仅处理 VBC/CLV flag
 	}
 	option = {                                    # .b 宽大处理（仅 VBC/CLV）
 		name = TIA.89.b
-		trigger = { NOT = { CDK } NOT = { CAB } }
+		trigger = { OR = { has_country_flag = TIA_rebellion_VBC has_country_flag = TIA_rebellion_CLV } }
 		# 仅处理 VBC/CLV flag
 	}
  
@@ -4169,6 +4169,108 @@ country_event = {
 		ai_chance = { factor = 100 }
 	}
 }
+
+###################################
+# Fontaine Post-War Governance
+###################################
+ 
+country_event = {
+	id = TIA.97
+	title = TIA.97.t
+	desc = {
+		text = TIA.97.desc_furina
+		trigger = { has_country_flag = TIA_chose_Furina }
+	}
+	desc = {
+		text = TIA.97.desc_akua
+		trigger = { has_country_flag = TIA_chose_Akua }
+	}
+	desc = {
+		text = TIA.97.desc_none
+		trigger = { has_country_flag = TIA_chose_none }
+	}
+	desc = {
+		text = TIA.97.desc
+		trigger = {
+			NOT = { has_country_flag = TIA_chose_Furina }
+			NOT = { has_country_flag = TIA_chose_Akua }
+			NOT = { has_country_flag = TIA_chose_none }
+		}
+	}
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	# Allow worship, reconcile
+	option = {
+		name = TIA.97.a
+		add_political_power = -50
+		add_stability = 0.05
+		custom_effect_tooltip = TIA.97.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_annexed_FON
+			set_country_flag = TIA_fon_postwar_reconciled
+		}
+		ai_chance = { factor = 40 }
+	}
+	# Restrict but tolerate
+	option = {
+		name = TIA.97.b
+		add_political_power = 25
+		add_stability = -0.03
+		custom_effect_tooltip = TIA.97.b_tt
+		hidden_effect = {
+			set_country_flag = TIA_annexed_FON
+			set_country_flag = TIA_fon_postwar_restricted
+		}
+		ai_chance = { factor = 40 }
+	}
+	# Full suppression
+	option = {
+		name = TIA.97.c
+		add_political_power = 50
+		add_stability = -0.08
+		add_war_support = 0.03
+		custom_effect_tooltip = TIA.97.c_tt
+		hidden_effect = {
+			set_country_flag = TIA_annexed_FON
+			set_country_flag = TIA_fon_postwar_suppressed
+		}
+		ai_chance = { factor = 10 }
+	}
+	# Bonus: Same faith heals wounds
+	option = {
+		name = TIA.97.d
+		trigger = {
+			has_country_flag = TIA_chose_Furina
+		}
+		add_political_power = -30
+		add_stability = 0.08
+		add_monthly_population = 0.05
+		custom_effect_tooltip = TIA.97.d_tt
+		hidden_effect = {
+			set_country_flag = TIA_annexed_FON
+			set_country_flag = TIA_fon_postwar_reconciled
+		}
+		ai_chance = { factor = 100 }
+	}
+	# Bonus: Concordat as healing framework
+	option = {
+		name = TIA.97.e
+		trigger = {
+			has_country_flag = TIA_fontaine_concordat_accepted
+			NOT = { has_country_flag = TIA_chose_Furina }
+		}
+		add_political_power = -40
+		add_stability = 0.05
+		custom_effect_tooltip = TIA.97.e_tt
+		hidden_effect = {
+			set_country_flag = TIA_annexed_FON
+			set_country_flag = TIA_fon_postwar_reconciled
+		}
+		ai_chance = { factor = 80 }
+	}
+}
+ 
 
 
 country_event = {

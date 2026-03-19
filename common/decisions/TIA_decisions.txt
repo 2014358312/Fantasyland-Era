@@ -2851,4 +2851,34 @@ TIA_shrink_territory_management_category = {
 		}
 		ai_will_do = { factor = 10 }
 	}
+
+	###################################
+	# Fontaine Post-War Governance
+	# (replaces FON decisions if conquered by force)
+	###################################
+ 
+	TIA_fon_postwar_governance = {
+		icon = generic_political_actions
+		available = {
+			has_completed_focus = TIA_fontaine_direct_rule
+			NOT = { has_country_flag = TIA_fon_postwar_done }
+			FON = { exists = no }
+		}
+		visible = {
+			has_completed_focus = TIA_fontaine_direct_rule
+			NOT = { has_country_flag = TIA_fon_postwar_done }
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 60
+		modifier = {
+			political_power_factor = -0.10
+			stability_factor = -0.05
+		}
+		remove_effect = {
+			set_country_flag = TIA_fon_postwar_done
+			country_event = { id = TIA.97 }
+		}
+		ai_will_do = { factor = 10 }
+	}
 }
