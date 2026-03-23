@@ -41,3 +41,353 @@ DKA_eyes_of_storm_decision_category = {
 		}
 	}
 }
+
+DKA_improve_industry_decision_category = {
+	DKA_industry_self_sufficient_mission = {
+		icon = eng_trade_unions_demand
+		activation = {
+			always = no
+		}
+		available = {
+			has_resources_in_collection = {
+				collection = collection:country_and_all_subjects
+				resource = steel
+				amount > 799 #This needs to correspond to the Bypass values in the previous focuses
+				extracted = yes
+				buildings = yes
+			}
+			has_resources_in_collection = {
+				collection = collection:country_and_all_subjects
+				resource = aluminium
+				amount > 199 #This needs to correspond to the Bypass values in the previous focuses
+				extracted = yes
+				buildings = yes
+			}
+			has_resources_in_collection = {
+				collection = collection:country_and_all_subjects
+				resource = oil
+				amount > 149 #This needs to correspond to the Bypass values in the previous focuses
+				extracted = yes
+				buildings = yes
+			}
+			has_resources_in_collection = {
+				collection = collection:country_and_all_subjects
+				resource = tungsten
+				amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+				extracted = yes
+				buildings = yes
+			}
+			has_resources_in_collection = {
+				collection = collection:country_and_all_subjects
+				resource = chromium
+				amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+				extracted = yes
+				buildings = yes
+			}
+			has_resources_in_collection = {
+				collection = collection:country_and_all_subjects
+				resource = rubber
+				amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+				extracted = yes
+				buildings = yes
+			}
+			has_resources_in_collection = {
+				collection = collection:country_and_all_subjects
+				resource = coal
+				amount > 499 #This needs to correspond to the Bypass values in the previous focuses
+				extracted = yes
+				buildings = yes
+			}
+		}
+		is_good = no
+		days_mission_timeout = 730
+		complete_effect = {
+			add_political_power = 500
+		}
+	}
+	
+	DKA_industry_seeking_alternatives_to_natural_resources = {
+		icon = hol_draw_up_staff_plans
+		available = {
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = has_completed_focus_ott
+					FOCUS = DKA_industry_self_sufficient
+				}
+				has_country_flag = DKA_industry_self_sufficient_flag
+			}
+			num_of_available_civilian_factories > 2
+		}
+		cost = 50
+		days_remove = 70
+		fire_only_once = yes
+		complete_effect = {
+		}
+		modifier = {
+			civilian_factory_use = 3
+		}
+		remove_effect = {
+			custom_effect_tooltip = {
+				localization_key = swap_ideas_tt
+				IDEA = DKA_industry_department_dynamic_modifier
+			}
+			add_to_variable = { DKA_ID_research_speed_factor_var = 0.05 tooltip = research_speed_factor_tt }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = DKA_industry_seeking_alternatives_to_natural_resources
+				bonus = 1
+				uses = 1
+				category = excavation_tech
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+			}
+		}
+	}
+	
+	DKA_industry_into_city_decision = {
+		icon = SOV_place_hq
+		available = {
+			has_idea = DKA_Shia_Minsheng
+			DKA_Shia_Minsheng = {
+				NOT = {
+					has_character_flag = character_investigation_flag
+				}
+			}
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = has_completed_focus_ott
+					FOCUS = DKA_land_planning
+				}
+				has_country_flag = DKA_land_planning_flag
+			}
+			any_core_state = {
+				is_owned_by = ROOT
+				is_controlled_by = ROOT
+				OR = {
+					has_state_category = city
+					has_state_category = large_city
+					has_state_category = metropolis
+					has_state_category = megalopolis
+				}
+			}
+		}
+		cost = 50
+		days_remove = 70
+		fire_only_once = no
+		complete_effect = {
+			DKA_Shia_Minsheng = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = disable_general_ott
+						CHARACTER = disable_general_ott_name
+						LEVEL = [?skill_level]
+						ATTACK = [?attack_skill_level]
+						DEFENSE = [?defense_skill_level]
+						PLANNING = [?planning_skill_level]
+						LOGISTICS = [?logistics_skill_level]
+					}
+					
+					set_character_flag = character_investigation_flag
+				}
+				add_to_variable = { THIS.DKA_Shia_Minsheng_trait_var = 1 }
+				unit_leader_event = {
+					id = the_journey_of_elaina.1
+					days = 10
+					random_days = 10
+				}
+			}
+		}
+		modifier = {
+			political_power_gain = -0.05
+		}
+		remove_effect = {
+			every_core_state = {
+				limit = {
+					is_owned_and_controlled_by = ROOT
+					OR = {
+						has_state_category = town
+						has_state_category = large_town
+					}
+				}
+				random_select_amount = 1
+				add_extra_state_shared_building_slots = 1
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			DKA_Shia_Minsheng = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = enable_general_ott
+						CHARACTER = enable_general_ott_name
+						LEVEL = [?skill_level]
+						ATTACK = [?attack_skill_level]
+						DEFENSE = [?defense_skill_level]
+						PLANNING = [?planning_skill_level]
+						LOGISTICS = [?logistics_skill_level]
+					}
+					
+					clr_character_flag = character_investigation_flag
+				}
+				gain_xp = 500
+				effect_tooltip = {
+					custom_effect_tooltip = DKA_Shia_Minsheng_trait_tt
+					remove_trait = {
+						slot = political_advisor
+						trait = PRC_rural_survey_trait
+					}
+					add_trait = {
+						slot = political_advisor
+						trait = PRC_agricultural_reformist
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							check_variable = {
+								DKA_Shia_Minsheng.DKA_Shia_Minsheng_trait_var = 2
+							}
+						}
+						remove_trait = {
+							slot = political_advisor
+							trait = PRC_rural_survey_trait
+						}
+						add_trait = {
+							slot = political_advisor
+							trait = PRC_agricultural_reformist
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+			}
+		}
+	}
+	DKA_industry_into_country_decision = {
+		icon = POL_looming_peasants_strike
+		available = {
+			has_idea = DKA_Shia_Minsheng
+			DKA_Shia_Minsheng = {
+				NOT = {
+					has_character_flag = character_investigation_flag
+				}
+			}
+			custom_override_tooltip = {
+				tooltip = {
+					localization_key = has_completed_focus_ott
+					FOCUS = DKA_land_planning
+				}
+				has_country_flag = DKA_land_planning_flag
+			}
+			any_core_state = {
+				is_owned_by = ROOT
+				is_controlled_by = ROOT
+				OR = {
+					has_state_category = town
+					has_state_category = large_town
+				}
+			}
+		}
+		cost = 50
+		days_remove = 70
+		fire_only_once = no
+		complete_effect = {
+			DKA_Shia_Minsheng = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = disable_general_ott
+						CHARACTER = disable_general_ott_name
+						LEVEL = [?skill_level]
+						ATTACK = [?attack_skill_level]
+						DEFENSE = [?defense_skill_level]
+						PLANNING = [?planning_skill_level]
+						LOGISTICS = [?logistics_skill_level]
+					}
+					
+					set_character_flag = character_investigation_flag
+				}
+				add_to_variable = { THIS.DKA_Shia_Minsheng_trait_var = 1 }
+				unit_leader_event = {
+					id = the_journey_of_elaina.1
+					days = 10
+					random_days = 10
+				}
+			}
+		}
+		modifier = {
+			political_power_gain = -0.05
+		}
+		remove_effect = {
+			every_core_state = {
+				limit = {
+					is_owned_and_controlled_by = ROOT
+					OR = {
+						has_state_category = city
+						has_state_category = large_city
+						has_state_category = metropolis
+						has_state_category = megalopolis
+					}
+				}
+				random_select_amount = 1
+				add_extra_state_shared_building_slots = 1
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			DKA_Shia_Minsheng = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = enable_general_ott
+						CHARACTER = enable_general_ott_name
+						LEVEL = [?skill_level]
+						ATTACK = [?attack_skill_level]
+						DEFENSE = [?defense_skill_level]
+						PLANNING = [?planning_skill_level]
+						LOGISTICS = [?logistics_skill_level]
+					}
+					
+					clr_character_flag = character_investigation_flag
+				}
+				gain_xp = 500
+				effect_tooltip = {
+					custom_effect_tooltip = DKA_Shia_Minsheng_trait_tt
+					remove_trait = {
+						slot = political_advisor
+						trait = PRC_rural_survey_trait
+					}
+					add_trait = {
+						slot = political_advisor
+						trait = PRC_agricultural_reformist
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							check_variable = {
+								DKA_Shia_Minsheng.DKA_Shia_Minsheng_trait_var = 2
+							}
+						}
+						remove_trait = {
+							slot = political_advisor
+							trait = PRC_rural_survey_trait
+						}
+						add_trait = {
+							slot = political_advisor
+							trait = PRC_agricultural_reformist
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+			}
+		}
+	}
+}

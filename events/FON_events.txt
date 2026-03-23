@@ -1,0 +1,193 @@
+add_namespace = FON_politics
+add_namespace = FON_story
+add_namespace = FON_news
+
+###################
+###### 政治线 ######
+###################
+#大选
+country_event = {
+	id = FON_politics.0
+	title = FON_politics.0.t
+	desc = FON_politics.0.desc
+	#picture = GFX_report_event_EYP_01
+    fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = FON_politics.0.a
+        complete_national_focus = FON_Navia_Caspar_road
+        ai_chance = {
+			factor = 100
+		}
+	}
+    option = {
+		name = FON_politics.0.b
+        complete_national_focus = FON_Neuvillette_road
+        ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+###################
+###### 新闻 ######
+###################
+
+news_event = {
+	id = FON_news.0
+	title = FON_news.0.t
+	desc = FON_news.0.desc
+	#picture = GFX_report_event_EYP_01
+	major = yes
+    fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = FON_news.0.a
+	}
+}
+#枫丹战败
+news_event = {
+	id = FON_news.1     
+	title = FON_news.1.t
+	desc = FON_news.1.desc
+	#picture = GFX_report_event_EYP_01
+	major = yes
+    fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = FON_news.1.a
+		trigger = {
+			tag = FON
+		}
+		add_timed_idea = {
+			idea = FON_independence_war_loser_idea
+			days = 90
+		}
+		TIA = {
+			set_autonomy = {
+				target = FON
+				autonomy_state = autonomy_puppet
+			}
+			transfer_state = 9
+		}
+		hidden_effect = {
+			FON = {
+				add_ideas = FON_Navia_Caspar_head_of_government
+				remove_ideas = FON_Neuvillette_head_of_government
+				complete_national_focus = FON_propaganda_uniting_opinions
+				clr_country_flag = FON_FIW_decision_flag
+			}
+		}
+		remove_ideas = FON_Fontaine_separatism_idea
+		remove_ideas = FON_Fontaine_cusp_idea
+		remove_dynamic_modifier = {
+			id = FON_independence_war_dynamic_modifier
+			scope = FON
+		}
+		add_ideas = FON_TIA_border_eagles
+	}
+	option = {
+		name = FON_news.1.b
+		trigger = {
+			tag = TIA
+		}
+		TIA = {
+			add_timed_idea = {
+				idea = FON_independence_war_winner_idea
+				days = 90
+			}
+			set_autonomy = {
+				target = FON
+				autonomy_state = autonomy_puppet
+			}
+			add_political_power = 50
+			transfer_state = 9
+		}
+	}
+	option = {
+		name = FON_news.1.c
+		trigger = {
+			NOT = {
+				tag = TIA
+				tag = FON
+			}
+		}
+	}
+}
+#枫丹战胜
+news_event = {
+	id = FON_news.2			
+	title = FON_news.2.t
+	desc = FON_news.2.desc
+	#picture = GFX_report_event_EYP_01
+	major = yes
+    fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = FON_news.2.a
+		trigger = {
+			tag = FON
+		}
+		add_timed_idea = {
+			idea = FON_independence_war_winner_idea
+			days = 90
+		}
+		clr_country_flag = FON_FIW_decision_flag
+		FON = {
+			transfer_state = 6
+			transfer_state = 7
+			transfer_state = 9
+			transfer_state = 11
+			transfer_state = 381
+		}
+		remove_ideas = FON_Fontaine_separatism_idea
+		remove_ideas = FON_Fontaine_cusp_idea
+		remove_dynamic_modifier = {
+			id = FON_independence_war_dynamic_modifier
+			scope = FON
+		}
+		#需要胜者的事件，以增加buff
+	}
+	option = {
+		name = FON_news.2.b
+		trigger = {
+			tag = TIA
+		}
+		add_timed_idea = {
+			idea = FON_independence_war_loser_idea
+			days = 90
+		}
+		FON = {
+			transfer_state = 6
+			transfer_state = 7
+			transfer_state = 9
+			transfer_state = 11
+			transfer_state = 381
+		}
+	}
+	option = {
+		name = FON_news.2.c
+		trigger = {
+			NOT = {
+				tag = TIA
+				tag = FON
+			}
+		}
+	}
+}
+##################
+###### 剧情 ######		
+##################
+country_event = {
+	id = FON_story.0
+	title = FON_story.0.t
+	desc = FON_story.0.desc
+	#picture = GFX_report_event_EYP_01
+    fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = FON_story.0.a
+		add_manpower = -30
+		add_stability = -0.05
+	}
+}

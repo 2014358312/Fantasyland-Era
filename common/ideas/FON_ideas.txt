@@ -1,75 +1,313 @@
 ideas = {
-	hidden_ideas = {
-
-		FON_fontaine_military_army_0 = {
-			name = FON_fontaine_army
-			allowed = {
-				always = no
-			}
-			
-			allowed_civil_war = {
-				always = no
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				army_org_factor = -0.10
-				supply_consumption_factor = -0.05
-				minimum_training_level = -0.10
-				army_speed_factor = -0.10
-				training_time_factor = 0.25
-				land_doctrine_cost_factor = 0.15
-				custom_modifier_tooltip = blank_null
-			}
-		}
-
-		FON_fontaine_military_navy_0 = {
-			name = FON_fontaine_navy
-			allowed = {
-				always = no
-			}
-			
-			allowed_civil_war = {
-				always = no
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				naval_detection = -0.15
-				screening_efficiency = 0.10
-				navy_capital_ship_attack_factor = -0.15
-				navy_capital_ship_defence_factor = -0.20
-				refit_speed = 0.05
-				repair_speed_factor = -0.10
-			}
-		}
-
-		FON_fontaine_military_air_force_0 = {
-			name = FON_fontaine_air_force
-			allowed = {
-				always = no
-			}
-			
-			allowed_civil_war = {
-				always = no
-			}
-			
-			removal_cost = -1
-			
-			modifier = {
-				air_accidents_factor = 0.15
-				air_training_xp_gain_factor = -0.10
-				air_mission_xp_gain_factor = 0.10
-				air_ace_generation_chance_factor = -0.50
-				air_range_factor = -0.75
-			}
-		}
-		
-	}
-	
+	#我做的
 	country = {
+		#独立线		
+		FON_expand_armaments_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+			}
+			equipment_bonus = {
+				infantry_weapons = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+		FON_MUL_military_support_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				custom_effect_tooltip = FON_MUL_military_support_custom_effect_tooltip
+			}
+		}
+		FON_TIB_frontier2_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				conscription_factor = -0.05
+			}	
+		}
+		FON_Fontaine_defense_agency_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+			}
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}			
+		}
+		FON_fiscal_sovereignty_restore_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				consumer_goods_factor = -0.30
+				political_power_cost = 0.05
+			}			
+		}
+		FON_independence_war_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+			}		
+		}
+		FON_independence_war_loser_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				add_stability = -0.10
+				consumer_goods_factor = 0.30
+				industrial_capacity_factory = -0.10
+				local_resources_factor = -0.20
+			}		
+		}		
+		FON_independence_war_winner_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				add_stability = 0.10
+				consumer_goods_factor = -0.30
+				industrial_capacity_factory = 0.10
+				local_resources_factor = 0.20
+			}		
+		}
+		#和平线
+		FON_political_handover_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				political_power_cost = 0.02
+				stability_factor = 0.10
+				war_support_factor = -0.10
+			}
+		}
+		FON_TIA_economic_cooperation_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				production_speed_industrial_complex_factor = 0.20
+				consumer_goods_factor = -0.20
+			}
+		}		
+		FON_TIA_technological_support_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				research_speed_factor = 0.15
+			}
+		}		
+		FON_TIA_support_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				political_power_factor = 0.1
+			}
+		}
+
+		#开局民族精神
+		FON_TIB_frontier_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				conscription_factor = -0.15
+			}	
+		}
+		FON_Fontaine_separatism_idea = {
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				stability_factor = -0.10
+				war_support_factor = 0.10
+				resistance_target_on_our_occupied_states = 0.10
+			}
+			targeted_modifier = {
+				tag = TIA
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.10
+			}
+		}
+		FON_spina_di_rosula_idea = {   #刺玫会
+			picture = 1  #记得上图片
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				political_power_gain = 0.10
+			}	
+		}
+		FON_road_conflict_idea = {
+			picture = 1
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+			}	
+		}
+		FON_Fontaine_cusp_idea = {
+			picture = 1
+			allowed = {
+				original_tag = FON
+			} 
+			allowed_civil_war = {
+				always = no
+			} 
+			removal_cost = -1
+			available = {}
+			cancel = {}
+			traits = {}	
+			modifier = {
+				opinion_gain_monthly_factor = -0.05
+			}	
+		}
+
+
+	}
+
+	#不是露露做的
+	country = {
+		#水神信仰
 		FON_belief_of_hydro_archon = {
 			picture = MEX_church_power_5
 			allowed = {
@@ -106,7 +344,7 @@ ideas = {
 			
 			on_remove = {}
 		}
-		
+		#政府
 		FON_pool_government = {
 			picture = generic_disjointed_gov
 			allowed = {
@@ -126,7 +364,7 @@ ideas = {
 				political_advisor_cost_factor = 0.25
 			}
 		}
-		
+		#裁机
 		FON_oratrice_mecanique_d_analyse_cardinale = {
 			allowed = {
 				always = no
@@ -143,7 +381,7 @@ ideas = {
 				political_power_factor = 0.10
 			}
 		}
-		
+		#研究
 		FON_fontaine_research_institute = {
 			allowed = {
 				always = no
@@ -161,6 +399,7 @@ ideas = {
 			}
 		}
 		
+		#假民族精神
 		FON_fontaine_industrial_system_fake = {
 			name = FON_fontaine_industrial_system_dynamic_modifier
 			picture = SOV_third_five_year_plan_civilian
@@ -186,8 +425,7 @@ ideas = {
 				production_factory_max_efficiency_factor = -0.05
 				industrial_concern_cost_factor = -0.15
 			}
-		}
-		
+		}	
 		FON_fontaine_military_fake = {
 			name = FON_fontaine_military_dynamic_modifier
 			picture = tur_disorganised_armed_forces
@@ -228,5 +466,73 @@ ideas = {
 				political_power_gain = 0.05
 			}
 		}
+	}
+
+	hidden_ideas = {
+		#用于动态本地化
+		FON_fontaine_military_army_0 = {
+			name = FON_fontaine_army
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = -0.10
+				supply_consumption_factor = -0.05
+				minimum_training_level = -0.10
+				army_speed_factor = -0.10
+				training_time_factor = 0.25
+				land_doctrine_cost_factor = 0.15
+				custom_modifier_tooltip = blank_null
+			}
+		}
+		FON_fontaine_military_navy_0 = {
+			name = FON_fontaine_navy
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				naval_detection = -0.15
+				screening_efficiency = 0.10
+				navy_capital_ship_attack_factor = -0.15
+				navy_capital_ship_defence_factor = -0.20
+				refit_speed = 0.05
+				repair_speed_factor = -0.10
+			}
+		}
+		FON_fontaine_military_air_force_0 = {
+			name = FON_fontaine_air_force
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				air_accidents_factor = 0.15
+				air_training_xp_gain_factor = -0.10
+				air_mission_xp_gain_factor = 0.10
+				air_ace_generation_chance_factor = -0.50
+				air_range_factor = -0.75
+			}
+		}
+		
 	}
 }

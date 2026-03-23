@@ -547,6 +547,40 @@ ideas = {
 				experience_gain_air_factor = 0.1
 			}
 		}
+		DKA_industry_department_fake = {
+			name = DKA_industry_department_dynamic_modifier
+			picture = DKA_aerial_combat_command
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.05
+			}
+			research_bonus = {
+				industry = 0.05
+			}
+		}
+		DKA_agricultural_product_exports_idea = {
+			name = DKA_agricultural_product_exports
+			picture = generic_agricultural_export
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.10
+				consumer_goods_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.10
+				resource_trade_cost_bonus_per_factory = 1
+			}
+		}
 		##强壮的魔族士兵
 		Strong_demon_soldiers = {
 			name = DKA_warlike_sentiment_dynamic_modifier
@@ -868,5 +902,57 @@ ideas = {
 				}
 			}
 		}
+	}
+	industrial_concern = {
+		DKA_national_industrial_integration_association = {
+			picture = generic_industrial_concern_2
+			allowed = {
+				original_tag = DKA
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = has_completed_focus_ott
+						FOCUS = DKA_industry_department
+					}
+					has_country_flag = DKA_industry_department_flag
+				}
+			}
+			removal_cost = -1
+			research_bonus = {
+				excavation_tech = 0.05
+				cat_production = 0.05
+			}
+			traits = { mining_zaibatsu }
+		}
+		
+		DKA_DNCB = {
+			picture = AUS_bankverein
+			allowed = {
+				original_tag = DKA
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = has_completed_focus_ott
+						FOCUS = DKA_national_central_bank
+					}
+					has_country_flag = DKA_national_central_bank_flag
+				}
+			}
+			removal_cost = -1
+			modifier = {
+				production_factory_start_efficiency_factor = 0.1
+				consumer_goods_factor = -0.10
+			}
+			traits = { cornerstone_of_financial_stability }
+		}
+		
 	}
 }

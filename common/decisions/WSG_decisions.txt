@@ -25,7 +25,12 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
+			modifier = {
+				factor = 0
+				has_political_power < 200
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
     }
 
@@ -55,7 +60,12 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
+			modifier = {
+				factor = 0
+				has_political_power < 250
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
     }
 
@@ -86,7 +96,11 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
+			modifier = {
+				factor = 0
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
     }
 
@@ -118,7 +132,7 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			base = 1
+			base = 0
 			modifier = {
 				add = 100
 				has_war = yes
@@ -153,7 +167,7 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			base = 50
+			base = 0
 			modifier = {
 				add = 100
 				has_war = yes
@@ -190,7 +204,7 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			base = 1
+			base = 0
 			modifier = {
 				add = 200
 				has_war = yes
@@ -221,7 +235,7 @@ WSG_balance_of_power_decision_category = {
 		complete_effect = {
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
-    		     value = -0.05
+    		     value = -0.20
 			}
 			every_state = {
 				limit = {
@@ -241,7 +255,7 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			base = 1
+			base = 0
 			modifier = {
 				add = 200
 				has_war = yes
@@ -295,7 +309,14 @@ WSG_balance_of_power_decision_category = {
 			}
 		}
 		ai_will_do = {
-			base = 50
+			base = 0
+			modifier = {
+				add = 100
+				power_balance_value = {
+    			    id = WSG_balance_of_power
+   			        value > 0.99
+			    }
+			}
 		}
     }
 }
@@ -352,6 +373,13 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = WSG_from_the_deep_sea
+					NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+				}
+			}
 		}
 	}
 
@@ -406,6 +434,14 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 10
+				NOT = { has_completed_focus = WSG_complete_preliminary_reforms }
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = WSG_from_the_deep_sea
+			}
 		}
 	}
 
@@ -460,6 +496,13 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = WSG_from_the_deep_sea
+					NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+				}
+			}
 		}
 	}
 
@@ -514,6 +557,13 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = WSG_from_the_deep_sea
+					NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+				}
+			}
 		}
 	}
 
@@ -568,6 +618,13 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = WSG_from_the_deep_sea
+					NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+				}
+			}
 		}
 	}
 
@@ -622,6 +679,17 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = WSG_from_the_deep_sea
+					NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+				}
+			}
 		}
 	}
 
@@ -676,6 +744,17 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = WSG_from_the_deep_sea
+					NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+				}
+			}
 		}
 	}
 
@@ -730,6 +809,17 @@ WSG_secretary_ship_decision_category = {
 		}
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = WSG_from_the_deep_sea
+					NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+				}
+			}
 		}
 	}
 }
@@ -764,160 +854,12 @@ WSG_secretary_ship_agenda_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 1
+			modifier = {
+				factor = 10
+				has_war = yes
+			}
 		}
-    }
-
-    WSG_offsite_industrial_complex = {
-        icon =  GFX_non_available_factory_icon
-        allowed = {
-            original_tag = WSG
-        }
-        available = {
-			power_balance_value = {
-    			 id = WSG_balance_of_power
-   			     value > 0.6
-			}
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-        }    
-        visible = {
-            has_completed_focus = WSG_super_port_area
-        }
-        target_trigger = {
-            FROM = {
-                is_core_of = ROOT
-                is_owned_and_controlled_by = ROOT
-                industrial_complex > 4
-            }
-        }
-        state_target = yes
-        on_map_mode = map_only
-        cost = 0
-        fire_only_once = no
-        days_remove = 60
-        modifier = {
-        }
-        complete_effect = {
-            }
-        remove_effect = {
-            FROM = {
-                remove_building = {
-                    type = industrial_complex
-                    level = 5
-                }
-            }
-            add_offsite_building = { type = industrial_complex level = 5 }
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-        }
-        ai_will_do = {
-            factor = 50
-        }
-    }
-
-    WSG_offsite_arms_factory = {
-        icon = GFX_military_factory_icon
-        allowed = {
-            original_tag = WSG
-        }
-        available = {
-			power_balance_value = {
-    			 id = WSG_balance_of_power
-   			     value > 0.6
-			}
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-        }    
-        visible = {
-            has_completed_focus = WSG_super_port_area
-        }
-        target_trigger = {
-            FROM = {
-                is_core_of = ROOT
-                is_owned_and_controlled_by = ROOT
-                arms_factory > 4
-            }
-        }
-        state_target = yes
-        on_map_mode = map_only
-        cost = 0
-        fire_only_once = no
-        days_remove = 60
-        modifier = {
-        }
-        complete_effect = {
-            }
-        remove_effect = {
-            FROM = {
-                remove_building = {
-                    type = arms_factory
-                    level = 5
-                }
-            }
-            add_offsite_building = { type = arms_factory level = 5 }
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = 200 }
-			}
-        }
-        ai_will_do = {
-            factor = 50
-        }
-    }
-
-    WSG_offsite_dockyard = {
-        icon = GFX_dockyard_icon
-        allowed = {
-            original_tag = WSG
-        }
-        available = {
-			power_balance_value = {
-    			 id = WSG_balance_of_power
-   			     value > 0.6
-			}
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_200_tt
-                check_variable = { WSG_panci > 199 }
-			}
-        }    
-        visible = {
-            has_completed_focus = WSG_super_port_area
-        }
-        target_trigger = {
-            FROM = {
-                is_core_of = ROOT
-                is_owned_and_controlled_by = ROOT
-                dockyard > 4
-            }
-        }
-        state_target = yes
-        on_map_mode = map_only
-        cost = 0
-        fire_only_once = no
-        days_remove = 60
-        modifier = {
-        }
-        complete_effect = {
-            }
-        remove_effect = {
-            FROM = {
-                remove_building = {
-                    type = dockyard
-                    level = 5
-                }
-            }
-            add_offsite_building = { type = dockyard level = 5 }
-			custom_effect_tooltip =  WSG_panci_reduce_200_tt
-                add_to_variable = { WSG_panci = -200 }
-        }
-        ai_will_do = {
-            factor = 50
-        }
     }
 
 	WSG_revitalize_the_port_area = {
@@ -1083,6 +1025,21 @@ WSG_secretary_ship_agenda_category = {
         }
         ai_will_do = {
             factor = 50
+			modifier = {
+				factor = 2
+				has_political_power < 50
+			}
+			modifier = {
+				factor = 2
+				has_political_power < 100
+			}
+			modifier = {
+				factor = 0
+				OR = {
+				    has_political_power > 150
+				    has_country_flag = WSG_from_the_deep_sea
+				}
+			}
         }
     }
 
@@ -1121,6 +1078,21 @@ WSG_secretary_ship_agenda_category = {
         }
         ai_will_do = {
             factor = 50
+			modifier = {
+				factor = 2
+				has_political_power < 50
+			}
+			modifier = {
+				factor = 2
+				has_political_power < 100
+			}
+			modifier = {
+				factor = 0
+				OR = {
+				    has_political_power > 150
+				    has_country_flag = WSG_from_the_deep_sea
+				}
+			}
         }
     }
 
@@ -1160,6 +1132,10 @@ WSG_secretary_ship_agenda_category = {
         }
         ai_will_do = {
             factor = 50
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = WSG_offspring_of_the_ancients }
+			}
         }
     }
 
@@ -1873,7 +1849,190 @@ WSG_secretary_ship_agenda_category = {
 }
 
 WSG_army_industrial_integration = {
-###########################industrial_project###############################
+ ##########################industrial_project###############################
+
+    WSG_offsite_industrial_complex = {
+        icon =  GFX_non_available_factory_icon
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
+			}
+        }    
+        visible = {
+            has_completed_focus = WSG_land_use_planning_for_the_port_area
+        }
+        target_trigger = {
+            FROM = {
+                is_core_of = ROOT
+                is_owned_and_controlled_by = ROOT
+                industrial_complex > 4
+            }
+        }
+        state_target = yes
+        on_map_mode = map_only
+        cost = 0
+        fire_only_once = no
+        days_remove = 60
+        modifier = {
+        }
+        complete_effect = {
+            }
+        remove_effect = {
+            FROM = {
+                remove_building = {
+                    type = industrial_complex
+                    level = 5
+                }
+            }
+            add_offsite_building = { type = industrial_complex level = 5 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+        }
+        ai_will_do = {
+            factor = 100
+			modifier = {
+               any_owned_state = {
+                    limit = { 
+                        is_controlled_by = ROOT 
+                        is_core_of = ROOT
+                    }
+                    free_building_slots = { building = industrial_complex size > 0 }
+                }
+				factor = 0
+            }
+        }
+    }
+
+    WSG_offsite_arms_factory = {
+        icon = GFX_military_factory_icon
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
+			}
+        }    
+        visible = {
+            has_completed_focus = WSG_land_use_planning_for_the_port_area
+        }
+        target_trigger = {
+            FROM = {
+                is_core_of = ROOT
+                is_owned_and_controlled_by = ROOT
+                arms_factory > 4
+            }
+        }
+        state_target = yes
+        on_map_mode = map_only
+        cost = 0
+        fire_only_once = no
+        days_remove = 60
+        modifier = {
+        }
+        complete_effect = {
+            }
+        remove_effect = {
+            FROM = {
+                remove_building = {
+                    type = arms_factory
+                    level = 5
+                }
+            }
+            add_offsite_building = { type = arms_factory level = 5 }
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = 200 }
+			}
+        }
+        ai_will_do = {
+            factor = 100
+			modifier = {
+                any_owned_state = {
+                    limit = { 
+                        is_controlled_by = ROOT 
+                        is_core_of = ROOT
+                    }
+                    free_building_slots = { building = arms_factory size > 0 }
+                }
+				factor = 0
+            }
+        }
+    }
+
+    WSG_offsite_dockyard = {
+        icon = GFX_dockyard_icon
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > 0.6
+			}
+			custom_trigger_tooltip = {
+				tooltip = WSG_panci_least_200_tt
+                check_variable = { WSG_panci > 199 }
+			}
+        }    
+        visible = {
+            has_completed_focus = WSG_land_use_planning_for_the_port_area
+        }
+        target_trigger = {
+            FROM = {
+                is_core_of = ROOT
+                is_owned_and_controlled_by = ROOT
+                dockyard > 4
+            }
+        }
+        state_target = yes
+        on_map_mode = map_only
+        cost = 0
+        fire_only_once = no
+        days_remove = 60
+        modifier = {
+        }
+        complete_effect = {
+            }
+        remove_effect = {
+            FROM = {
+                remove_building = {
+                    type = dockyard
+                    level = 5
+                }
+            }
+            add_offsite_building = { type = dockyard level = 5 }
+			custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                add_to_variable = { WSG_panci = -200 }
+        }
+        ai_will_do = {
+            factor = 100
+			modifier = {
+                any_owned_state = {
+                    limit = { 
+                        is_controlled_by = ROOT 
+                        is_core_of = ROOT
+                    }
+                    free_building_slots = { building = dockyard size > 0 }
+                }
+				factor = 0
+            }
+        }
+    }
+
 	WSG_industrial_integration = {
         icon = GFX_WSG_decision_category
         allowed = {
@@ -1943,12 +2102,16 @@ WSG_army_industrial_integration = {
 				add_ideas = WSG_industrial_integration_I
 			}
         }
-        ai_will_do = {
-            factor = 50
-        }
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 20
+				arms_factory > 200
+			}
+		}
     }
 
-###########################armor_project###############################
+ ##########################armor_project###############################
 
 	WSG_anti_infantry_firepower = {
         icon = GFX_WSG_decision_category
@@ -1990,7 +2153,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2034,7 +2201,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2084,7 +2255,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2134,7 +2309,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2172,7 +2351,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2210,7 +2393,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2260,7 +2447,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2310,11 +2501,15 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
-###########################aircraft_project###############################
+ ##########################aircraft_project###############################
 
 	WSG_mainly_light_fighter_aircraft = {
         icon = GFX_WSG_decision_category
@@ -2349,7 +2544,11 @@ WSG_army_industrial_integration = {
             add_ideas = WSG_air_strike_l1
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2387,7 +2586,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2425,7 +2628,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2462,7 +2669,11 @@ WSG_army_industrial_integration = {
             add_ideas = WSG_air_strike_r1
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2500,7 +2711,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2538,7 +2753,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2588,7 +2807,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2638,11 +2861,15 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
-###########################naval_project###############################
+ ##########################naval_project###############################
 
 	WSG_deep_sea_hunter = {
         icon = GFX_WSG_decision_category
@@ -2684,7 +2911,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2728,7 +2959,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2778,7 +3013,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2828,7 +3067,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2866,7 +3109,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2904,7 +3151,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2941,7 +3192,11 @@ WSG_army_industrial_integration = {
             add_ideas = WSG_main_battle_l1
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -2979,7 +3234,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -3016,7 +3275,11 @@ WSG_army_industrial_integration = {
             add_ideas = WSG_main_battle_r1
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -3054,7 +3317,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -3118,7 +3385,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -3182,7 +3453,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -3251,7 +3526,11 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
     }
 
@@ -3320,7 +3599,175 @@ WSG_army_industrial_integration = {
 			}
         }
         ai_will_do = {
-            factor = 50
+            factor = 100
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
         }
+    }
+}
+
+WSG_from_the_deep_sea_category = {
+	WSG_deep_sea_invasion = {     
+		icon = GFX_WSG_decision_category
+		days_mission_timeout = 15
+		allowed = { tag = WSG }
+		priority = 19
+		available = { 
+			OR = {
+				custom_trigger_tooltip = { 
+					tooltip = WSG_remove_from_the_deep_sea_invasion
+			        NOT = { has_country_flag = WSG_from_the_deep_sea }
+				    }
+				check_variable = { WSG_all_death > 100000 }
+			}
+		}   
+        activation = { has_country_flag = WSG_from_the_deep_sea } 
+		selectable_mission = no
+		is_good = no          
+		timeout_effect = {                      
+		    hidden_effect = {
+			    random_owned_controlled_state = {
+					limit = { 
+						is_core_of = WSG 
+						industrial_complex > 0
+					}
+				    set_state_flag = WSG_deep_sea_attack
+			    }		        
+		    }  
+			country_event = { id = WSG_event.008 }
+			activate_mission = WSG_deep_sea_invasion 
+		}       
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = {  
+						NOT = { has_country_flag = WSG_middle_line }
+						NOT = { has_country_flag = WSG_right_line }
+					}
+					country_event = { days = 10 id = WSG_event.005 }
+				}
+			}
+		}
+		cancel_trigger = {}
+		cancel_effect = {}
+	}
+
+	WSG_ebb_tide = {     
+		icon = GFX_WSG_decision_category
+		days_mission_timeout = 1080
+		allowed = { tag = WSG }
+		priority = 20
+		available = { 
+			OR = {
+				hidden_effect = { 
+			        NOT = { has_country_flag = WSG_from_the_deep_sea }
+				}
+				check_variable = { WSG_all_death > 100000 }
+			}
+		}    
+		activation = { has_country_flag = WSG_from_the_deep_sea }
+		selectable_mission = no
+		is_good = yes       
+		timeout_effect = { 
+			custom_effect_tooltip = WSG_remove_from_the_deep_sea_invasion
+			clr_country_flag = WSG_from_the_deep_sea
+		}       
+		complete_effect = {}
+		cancel_trigger = {}
+		cancel_effect = {}
+	}
+
+	WSG_deploy_troops = {
+		icon = GFX_WSG_decision_category
+		allowed = { tag = WSG }
+	    available = {}	
+	    visible = { has_country_flag = WSG_from_the_deep_sea }
+		cost = 50
+		fire_only_once = no
+		days_re_enable = 30
+		modifier = {}
+		complete_effect = {
+            add_days_mission_timeout  = {
+                mission = WSG_deep_sea_invasion
+                days = 15
+            }
+		}
+		ai_will_do = {
+			factor = 150
+		}
+    }
+
+	WSG_intensify_preparations = {
+		icon = GFX_WSG_decision_category
+		allowed = { tag = WSG }
+	    available = {}	
+	    visible = { has_country_flag = WSG_from_the_deep_sea }
+		custom_cost_text = WSG_panci_25
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 24 }
+		}
+		fire_only_once = no
+		days_re_enable = 30
+		modifier = {}
+		complete_effect = {
+            add_days_mission_timeout  = {
+                mission = WSG_deep_sea_invasion
+                days = 15
+            }
+			hidden_effect = {
+                add_to_variable = { WSG_panci = -25 }
+            }
+		}
+		ai_will_do = {
+			factor = 150
+		}
+    }
+
+	WSG_take_the_initiative = {
+		icon = GFX_WSG_decision_category
+		allowed = { tag = WSG }
+	    available = { has_manpower > 10000 }	
+	    visible = { has_country_flag = WSG_from_the_deep_sea }
+		cost = 100
+		fire_only_once = no
+		days_re_enable = 180
+		modifier = {}
+		complete_effect = {
+            add_days_mission_timeout  = {
+                mission = WSG_ebb_tide
+                days = -180
+            }
+		}
+		ai_will_do = {
+			factor = 200
+		}
+    }
+
+	WSG_launch_an_expedition = {
+		icon = GFX_WSG_decision_category
+		allowed = { tag = WSG }
+	    available = { has_manpower > 10000 }	
+	    visible = { has_country_flag = WSG_from_the_deep_sea }
+		custom_cost_text = WSG_panci_50
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 49 }
+		}
+		fire_only_once = no
+		days_re_enable = 180
+		modifier = {}
+		complete_effect = {
+            add_days_mission_timeout  = {
+                mission = WSG_ebb_tide
+                days = -180
+            }
+			hidden_effect = {
+                add_to_variable = { WSG_panci = -50 }
+            }
+		}
+		ai_will_do = {
+			factor = 200
+		}
     }
 }

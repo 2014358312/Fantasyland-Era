@@ -3372,6 +3372,906 @@ country_event = {
 	}
 }
 
+###################################
+# Phase 1: Inspection Reports
+###################################
+ 
+# VBC - Viscount Bellman
+country_event = {
+	id = TIA.83
+	title = TIA.83.t
+	desc = TIA.83.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	# Bellman is cooperative (Jinghai Forest ally)
+	option = {
+		name = TIA.83.a
+		add_political_power = 15
+		custom_effect_tooltip = TIA.83.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+ 
+# CLV - County Ludolu von
+country_event = {
+	id = TIA.84
+	title = TIA.84.t
+	desc = TIA.84.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	option = {
+		name = TIA.84.a
+		add_political_power = 10
+		custom_effect_tooltip = TIA.84.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+ 
+# CDK - County Dolkness
+country_event = {
+	id = TIA.85
+	title = TIA.85.t
+	desc = TIA.85.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	option = {
+		name = TIA.85.a
+		add_political_power = 5
+		custom_effect_tooltip = TIA.85.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+ 
+# CAB - County Asho Barton
+country_event = {
+	id = TIA.86
+	title = TIA.86.t
+	desc = TIA.86.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	option = {
+		name = TIA.86.a
+		add_political_power = 5
+		custom_effect_tooltip = TIA.86.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+ 
+###################################
+# Phase 2: Negotiation (Generic with conditional desc)
+###################################
+ 
+country_event = {
+	id = TIA.87
+	title = TIA.87.t
+	desc = {
+		text = TIA.87.desc_VBC
+		trigger = { has_country_flag = TIA_negotiating_VBC }
+	}
+	desc = {
+		text = TIA.87.desc_CLV
+		trigger = { has_country_flag = TIA_negotiating_CLV }
+	}
+	desc = {
+		text = TIA.87.desc_CDK
+		trigger = { has_country_flag = TIA_negotiating_CDK }
+	}
+	desc = {
+		text = TIA.87.desc_CAB
+		trigger = { has_country_flag = TIA_negotiating_CAB }
+	}
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	# Diplomatic approach
+	option = {
+		name = TIA.87.a
+		add_political_power = -25
+		add_stability = 0.03
+		custom_effect_tooltip = TIA.87.a_tt
+		set_country_flag = TIA_centralize_gradual
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = TIA_negotiating_VBC }
+				set_country_flag = TIA_negotiated_VBC
+				set_country_flag = TIA_diplomatic_VBC
+				clr_country_flag = TIA_negotiating_VBC
+			}
+			if = {
+				limit = { has_country_flag = TIA_negotiating_CLV }
+				set_country_flag = TIA_negotiated_CLV
+				set_country_flag = TIA_diplomatic_CLV
+				clr_country_flag = TIA_negotiating_CLV
+			}
+			if = {
+				limit = { has_country_flag = TIA_negotiating_CDK }
+				set_country_flag = TIA_negotiated_CDK
+				set_country_flag = TIA_diplomatic_CDK
+				clr_country_flag = TIA_negotiating_CDK
+			}
+			if = {
+				limit = { has_country_flag = TIA_negotiating_CAB }
+				set_country_flag = TIA_negotiated_CAB
+				set_country_flag = TIA_diplomatic_CAB
+				clr_country_flag = TIA_negotiating_CAB
+			}
+		}
+		ai_chance = { factor = 60 }
+	}
+ 
+	# Coercive approach
+	option = {
+		name = TIA.87.b
+		add_political_power = 25
+		add_stability = -0.03
+		add_war_support = 0.02
+		custom_effect_tooltip = TIA.87.b_tt
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = TIA_negotiating_VBC }
+				set_country_flag = TIA_negotiated_VBC
+				set_country_flag = TIA_forceful_VBC
+				clr_country_flag = TIA_negotiating_VBC
+				random_list = {
+					60 = { }
+					40 = { country_event = { id = TIA.88 days = 15 random_days = 15 } set_country_flag = TIA_rebellion_target_VBC }
+				}
+			}
+			if = {
+				limit = { has_country_flag = TIA_negotiating_CLV }
+				set_country_flag = TIA_negotiated_CLV
+				set_country_flag = TIA_forceful_CLV
+				clr_country_flag = TIA_negotiating_CLV
+				random_list = {
+					50 = { }
+					50 = { country_event = { id = TIA.88 days = 15 random_days = 15 } set_country_flag = TIA_rebellion_target_CLV }
+				}
+			}
+			if = {
+				limit = { has_country_flag = TIA_negotiating_CDK }
+				set_country_flag = TIA_negotiated_CDK
+				set_country_flag = TIA_forceful_CDK
+				clr_country_flag = TIA_negotiating_CDK
+				random_list = {
+					80 = { }
+					20 = { country_event = { id = TIA.88 days = 15 random_days = 15 } set_country_flag = TIA_rebellion_target_CDK }
+				}
+			}
+			if = {
+				limit = { has_country_flag = TIA_negotiating_CAB }
+				set_country_flag = TIA_negotiated_CAB
+				set_country_flag = TIA_forceful_CAB
+				clr_country_flag = TIA_negotiating_CAB
+				random_list = {
+					80 = { }
+					20 = { country_event = { id = TIA.88 days = 15 random_days = 15 } set_country_flag = TIA_rebellion_target_CAB }
+				}
+			}
+		}
+		ai_chance = { factor = 40 }
+	}
+ 
+	# Bonus: if previous centralization was gradual
+	option = {
+		name = TIA.87.c
+		trigger = {
+			has_country_flag = TIA_centralize_gradual
+		}
+		add_political_power = -10
+		add_stability = 0.05
+		custom_effect_tooltip = TIA.87.c_tt
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = TIA_negotiating_VBC }
+				set_country_flag = TIA_negotiated_VBC
+				set_country_flag = TIA_diplomatic_VBC
+				clr_country_flag = TIA_negotiating_VBC
+			}
+			if = {
+				limit = { has_country_flag = TIA_negotiating_CLV }
+				set_country_flag = TIA_negotiated_CLV
+				set_country_flag = TIA_diplomatic_CLV
+				clr_country_flag = TIA_negotiating_CLV
+			}
+			if = {
+				limit = { has_country_flag = TIA_negotiating_CDK }
+				set_country_flag = TIA_negotiated_CDK
+				set_country_flag = TIA_diplomatic_CDK
+				clr_country_flag = TIA_negotiating_CDK
+			}
+			if = {
+				limit = { has_country_flag = TIA_negotiating_CAB }
+				set_country_flag = TIA_negotiated_CAB
+				set_country_flag = TIA_diplomatic_CAB
+				clr_country_flag = TIA_negotiating_CAB
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+ 
+###################################
+# Rebellion Event
+###################################
+ 
+country_event = {
+	id = TIA.88
+	title = TIA.88.t
+	desc = {
+		text = TIA.88.desc_VBC
+		trigger = { has_country_flag = TIA_rebellion_target_VBC }
+	}
+	desc = {
+		text = TIA.88.desc_CLV
+		trigger = { has_country_flag = TIA_rebellion_target_CLV }
+	}
+	desc = {
+		text = TIA.88.desc_CDK
+		trigger = { has_country_flag = TIA_rebellion_target_CDK }
+	}
+	desc = {
+		text = TIA.88.desc_CAB
+		trigger = { has_country_flag = TIA_rebellion_target_CAB }
+	}
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	# Military suppression
+	option = {
+		name = TIA.88.a
+		add_stability = -0.05
+		add_war_support = -0.03
+		add_manpower = -3000
+		custom_effect_tooltip = TIA.88.a_tt
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = TIA_rebellion_target_VBC }
+				set_country_flag = TIA_rebellion_VBC
+				clr_country_flag = TIA_rebellion_target_VBC
+			}
+			if = {
+				limit = { has_country_flag = TIA_rebellion_target_CLV }
+				set_country_flag = TIA_rebellion_CLV
+				clr_country_flag = TIA_rebellion_target_CLV
+			}
+			if = {
+				limit = { has_country_flag = TIA_rebellion_target_CDK }
+				set_country_flag = TIA_rebellion_CDK
+				clr_country_flag = TIA_rebellion_target_CDK
+			}
+			if = {
+				limit = { has_country_flag = TIA_rebellion_target_CAB }
+				set_country_flag = TIA_rebellion_CAB
+				clr_country_flag = TIA_rebellion_target_CAB
+			}
+		}
+		ai_chance = { factor = 60 }
+	}
+ 
+	# Emergency concessions (back to diplomatic)
+	option = {
+		name = TIA.88.b
+		add_political_power = -75
+		add_stability = 0.03
+		custom_effect_tooltip = TIA.88.b_tt
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = TIA_rebellion_target_VBC }
+				clr_country_flag = TIA_forceful_VBC
+				set_country_flag = TIA_diplomatic_VBC
+				clr_country_flag = TIA_rebellion_target_VBC
+			}
+			if = {
+				limit = { has_country_flag = TIA_rebellion_target_CLV }
+				clr_country_flag = TIA_forceful_CLV
+				set_country_flag = TIA_diplomatic_CLV
+				clr_country_flag = TIA_rebellion_target_CLV
+			}
+			if = {
+				limit = { has_country_flag = TIA_rebellion_target_CDK }
+				clr_country_flag = TIA_forceful_CDK
+				set_country_flag = TIA_diplomatic_CDK
+				clr_country_flag = TIA_rebellion_target_CDK
+			}
+			if = {
+				limit = { has_country_flag = TIA_rebellion_target_CAB }
+				clr_country_flag = TIA_forceful_CAB
+				set_country_flag = TIA_diplomatic_CAB
+				clr_country_flag = TIA_rebellion_target_CAB
+			}
+		}
+		ai_chance = { factor = 40 }
+	}
+}
+ 
+###################################
+# Rebellion Suppressed
+###################################
+ 
+country_event = {
+	id = TIA.89
+	title = TIA.89.t
+	desc = {                                       # 条件描述：VBC/CLV
+		text = TIA.89.desc
+		trigger = { OR = { has_country_flag = TIA_rebellion_VBC has_country_flag = TIA_rebellion_CLV } }
+	}
+	desc = {                                      # 条件描述：CDK（尤蜜拉亲临）
+		text = TIA.89.desc_CDK
+		trigger = { has_country_flag = TIA_rebellion_CDK }
+	}
+	desc = {                                      # 条件描述：CAB（派翠克鞠躬）
+		text = TIA.89.desc_CAB
+		trigger = { has_country_flag = TIA_rebellion_CAB }
+	}
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	option = {                                    # .a 公开审判（仅 VBC/CLV）
+		name = TIA.89.a
+		trigger = { OR = { has_country_flag = TIA_rebellion_VBC has_country_flag = TIA_rebellion_CLV } }
+		# 仅处理 VBC/CLV flag
+	}
+	option = {                                    # .b 宽大处理（仅 VBC/CLV）
+		name = TIA.89.b
+		trigger = { OR = { has_country_flag = TIA_rebellion_VBC has_country_flag = TIA_rebellion_CLV } }
+		# 仅处理 VBC/CLV flag
+	}
+ 
+	option = {                                    # .c 尤蜜拉亲自处置（仅 CDK）
+		name = TIA.89.c
+		trigger = { has_country_flag = TIA_rebellion_CDK }
+		add_stability = 0.03
+		add_political_power = 10                  # 正向奖励
+	}
+	option = {                                    # .d 帝国军接管（仅 CDK）
+		name = TIA.89.d
+		trigger = { has_country_flag = TIA_rebellion_CDK }
+		add_stability = -0.02
+		add_political_power = -20
+		add_manpower = -1000
+	}
+ 
+	option = {                                    # .e 派翠克化解（仅 CAB）
+		name = TIA.89.e
+		trigger = { has_country_flag = TIA_rebellion_CAB }
+		add_stability = 0.05
+		add_political_power = 15                  # 最高正向奖励
+	}
+	option = {                                    # .f 帝国军介入（仅 CAB）
+		name = TIA.89.f
+		trigger = { has_country_flag = TIA_rebellion_CAB }
+		add_stability = -0.02
+		add_political_power = -15
+	}
+}
+ 
+###################################
+# Annexation Event (Generic)
+###################################
+ 
+country_event = {
+	id = TIA.90
+	title = TIA.90.t
+	desc = {
+		text = TIA.90.desc_VBC
+		trigger = { has_country_flag = TIA_integrating_VBC }
+	}
+	desc = {
+		text = TIA.90.desc_CLV
+		trigger = { has_country_flag = TIA_integrating_CLV }
+	}
+	desc = {
+		text = TIA.90.desc_CDK
+		trigger = { has_country_flag = TIA_integrating_CDK }
+	}
+	desc = {
+		text = TIA.90.desc_CAB
+		trigger = { has_country_flag = TIA_integrating_CAB }
+	}
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	# Annex with autonomy preserved
+	option = {
+		name = TIA.90.a
+		add_stability = 0.03
+		add_political_power = 25
+		custom_effect_tooltip = TIA.90.a_tt
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = TIA_integrating_VBC }
+				annex_country = { target = VBC transfer_troops = yes }
+				clr_country_flag = TIA_integrating_VBC
+				set_country_flag = TIA_annexed_VBC
+			}
+			if = {
+				limit = { has_country_flag = TIA_integrating_CLV }
+				annex_country = { target = CLV transfer_troops = yes }
+				clr_country_flag = TIA_integrating_CLV
+				set_country_flag = TIA_annexed_CLV
+			}
+			if = {
+				limit = { has_country_flag = TIA_integrating_CDK }
+				annex_country = { target = CDK transfer_troops = yes }
+				clr_country_flag = TIA_integrating_CDK
+				set_country_flag = TIA_annexed_CDK
+			}
+			if = {
+				limit = { has_country_flag = TIA_integrating_CAB }
+				annex_country = { target = CAB transfer_troops = yes }
+				clr_country_flag = TIA_integrating_CAB
+				set_country_flag = TIA_annexed_CAB
+			}
+			# Check if all four vassals annexed
+			if = {
+				limit = {
+					has_country_flag = TIA_annexed_VBC
+					has_country_flag = TIA_annexed_CLV
+					has_country_flag = TIA_annexed_CDK
+					has_country_flag = TIA_annexed_CAB
+				}
+				country_event = { id = TIA.91 days = 5 }
+			}
+		}
+		ai_chance = { factor = 60 }
+	}
+ 
+	# Annex with direct rule
+	option = {
+		name = TIA.90.b
+		add_stability = -0.02
+		add_political_power = 50
+		add_war_support = 0.02
+		custom_effect_tooltip = TIA.90.b_tt
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = TIA_integrating_VBC }
+				annex_country = { target = VBC transfer_troops = yes }
+				clr_country_flag = TIA_integrating_VBC
+				set_country_flag = TIA_annexed_VBC
+			}
+			if = {
+				limit = { has_country_flag = TIA_integrating_CLV }
+				annex_country = { target = CLV transfer_troops = yes }
+				clr_country_flag = TIA_integrating_CLV
+				set_country_flag = TIA_annexed_CLV
+			}
+			if = {
+				limit = { has_country_flag = TIA_integrating_CDK }
+				annex_country = { target = CDK transfer_troops = yes }
+				clr_country_flag = TIA_integrating_CDK
+				set_country_flag = TIA_annexed_CDK
+			}
+			if = {
+				limit = { has_country_flag = TIA_integrating_CAB }
+				annex_country = { target = CAB transfer_troops = yes }
+				clr_country_flag = TIA_integrating_CAB
+				set_country_flag = TIA_annexed_CAB
+			}
+			if = {
+				limit = {
+					has_country_flag = TIA_annexed_VBC
+					has_country_flag = TIA_annexed_CLV
+					has_country_flag = TIA_annexed_CDK
+					has_country_flag = TIA_annexed_CAB
+				}
+				country_event = { id = TIA.91 days = 5 }
+			}
+		}
+		ai_chance = { factor = 40 }
+	}
+}
+ 
+###################################
+# All Four Vassals Integrated
+###################################
+ 
+country_event = {
+	id = TIA.91
+	title = TIA.91.t
+	desc = TIA.91.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+	fire_only_once = yes
+ 
+	option = {
+		name = TIA.91.a
+		add_political_power = 100
+		add_stability = 0.10
+		add_war_support = 0.05
+		add_ideas = TIA_centralized_authority
+		ai_chance = { factor = 100 }
+	}
+}
+ 
+###################################
+# Fontaine Rose Society Chain
+###################################
+ 
+# FON Phase 1: Assessment
+country_event = {
+	id = TIA.92
+	title = TIA.92.t
+	desc = TIA.92.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	option = {
+		name = TIA.92.a
+		add_political_power = 10
+		custom_effect_tooltip = TIA.92.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+ 
+# FON Phase 2: Contact Rose Society
+country_event = {
+	id = TIA.93
+	title = TIA.93.t
+	desc = TIA.93.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	# Respect their faith, seek common ground
+	option = {
+		name = TIA.93.a
+		add_political_power = -20
+		add_stability = 0.03
+		custom_effect_tooltip = TIA.93.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_fon_respectful
+		}
+		ai_chance = { factor = 50 }
+	}
+	# Assert imperial authority
+	option = {
+		name = TIA.93.b
+		add_political_power = 20
+		add_stability = -0.03
+		add_war_support = 0.02
+		custom_effect_tooltip = TIA.93.b_tt
+		hidden_effect = {
+			set_country_flag = TIA_fon_assertive
+		}
+		ai_chance = { factor = 30 }
+	}
+	# Offer economic incentives
+	option = {
+		name = TIA.93.c
+		add_political_power = -40
+		add_consumer_goods_factor = 0.02
+		custom_effect_tooltip = TIA.93.c_tt
+		hidden_effect = {
+			set_country_flag = TIA_fon_economic
+		}
+		ai_chance = { factor = 20 }
+	}
+}
+ 
+# FON Phase 3: Negotiate Terms
+country_event = {
+	id = TIA.94
+	title = TIA.94.t
+	desc = TIA.94.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	# Guarantee religious freedom (easiest path)
+	option = {
+		name = TIA.94.a
+		trigger = {
+			has_country_flag = TIA_fon_respectful
+		}
+		add_political_power = -30
+		add_stability = 0.05
+		custom_effect_tooltip = TIA.94.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_fon_religious_freedom
+		}
+		ai_chance = { factor = 60 }
+	}
+	# Demand full submission
+	option = {
+		name = TIA.94.b
+		add_political_power = 30
+		add_stability = -0.05
+		add_war_support = 0.03
+		custom_effect_tooltip = TIA.94.b_tt
+		hidden_effect = {
+			random_list = {
+				40 = { set_country_flag = TIA_fon_submitted }
+				60 = {
+					set_country_flag = TIA_fon_crisis_active
+					country_event = { id = TIA.95 days = 10 }
+				}
+			}
+		}
+		ai_chance = { factor = 20 }
+	}
+	# Propose federal model (economic approach bonus)
+	option = {
+		name = TIA.94.c
+		trigger = {
+			has_country_flag = TIA_fon_economic
+		}
+		add_political_power = -50
+		add_stability = 0.03
+		add_consumer_goods_factor = -0.02
+		custom_effect_tooltip = TIA.94.c_tt
+		hidden_effect = {
+			set_country_flag = TIA_fon_federal_model
+		}
+		ai_chance = { factor = 40 }
+	}
+	# Standard diplomatic (assertive without crisis guarantee)
+	option = {
+		name = TIA.94.d
+		trigger = {
+			NOT = { has_country_flag = TIA_fon_respectful }
+			NOT = { has_country_flag = TIA_fon_economic }
+		}
+		add_political_power = -20
+		add_stability = -0.02
+		custom_effect_tooltip = TIA.94.d_tt
+		ai_chance = { factor = 50 }
+	}
+}
+ 
+# FON Crisis: Rose Society Resistance
+country_event = {
+	id = TIA.95
+	title = TIA.95.t
+	desc = TIA.95.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	# Military intervention
+	option = {
+		name = TIA.95.a
+		add_stability = -0.10
+		add_war_support = -0.05
+		add_manpower = -5000
+		add_political_power = -50
+		custom_effect_tooltip = TIA.95.a_tt
+		hidden_effect = {
+			clr_country_flag = TIA_fon_crisis_active
+			set_country_flag = TIA_fon_military_solution
+		}
+		ai_chance = { factor = 30 }
+	}
+	# Back down and offer concessions
+	option = {
+		name = TIA.95.b
+		add_political_power = -100
+		add_stability = 0.03
+		custom_effect_tooltip = TIA.95.b_tt
+		hidden_effect = {
+			clr_country_flag = TIA_fon_crisis_active
+			clr_country_flag = TIA_fon_assertive
+			set_country_flag = TIA_fon_respectful
+			set_country_flag = TIA_fon_religious_freedom
+		}
+		ai_chance = { factor = 50 }
+	}
+	# Request Aqua faction mediation (if faith events done)
+	option = {
+		name = TIA.95.c
+		trigger = {
+			has_country_flag = TIA_aqua_orthodoxy_declared
+		}
+		add_political_power = -30
+		add_stability = 0.02
+		custom_effect_tooltip = TIA.95.c_tt
+		hidden_effect = {
+			clr_country_flag = TIA_fon_crisis_active
+			set_country_flag = TIA_fon_mediated
+		}
+		ai_chance = { factor = 80 }
+	}
+}
+
+country_event = {
+	id = TIA.96
+	title = TIA.96.t
+	desc = {
+		text = TIA.96.desc_peaceful
+		trigger = {
+			OR = {
+				has_country_flag = TIA_fon_religious_freedom
+				has_country_flag = TIA_fon_federal_model
+				has_country_flag = TIA_fon_mediated
+			}
+		}
+	}
+	desc = {
+		text = TIA.96.desc_forced
+		trigger = {
+			OR = {
+				has_country_flag = TIA_fon_military_solution
+				has_country_flag = TIA_fon_submitted
+			}
+		}
+	}
+	desc = {
+		text = TIA.96.desc_standard
+		trigger = {
+			NOT = { has_country_flag = TIA_fon_religious_freedom }
+			NOT = { has_country_flag = TIA_fon_federal_model }
+			NOT = { has_country_flag = TIA_fon_mediated }
+			NOT = { has_country_flag = TIA_fon_military_solution }
+			NOT = { has_country_flag = TIA_fon_submitted }
+		}
+	}
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	# Peaceful / religious freedom integration
+	option = {
+		name = TIA.96.a
+		trigger = {
+			OR = {
+				has_country_flag = TIA_fon_religious_freedom
+				has_country_flag = TIA_fon_federal_model
+				has_country_flag = TIA_fon_mediated
+			}
+		}
+		add_stability = 0.08
+		add_political_power = 50
+		annex_country = { target = FON transfer_troops = yes }
+		custom_effect_tooltip = TIA.96.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_annexed_FON
+			set_country_flag = TIA_fon_peaceful_integration
+		}
+		ai_chance = { factor = 100 }
+	}
+	# Forced integration
+	option = {
+		name = TIA.96.b
+		trigger = {
+			OR = {
+				has_country_flag = TIA_fon_military_solution
+				has_country_flag = TIA_fon_submitted
+			}
+		}
+		add_stability = -0.05
+		add_political_power = 75
+		add_war_support = 0.03
+		annex_country = { target = FON transfer_troops = yes }
+		custom_effect_tooltip = TIA.96.b_tt
+		hidden_effect = {
+			set_country_flag = TIA_annexed_FON
+			set_country_flag = TIA_fon_forced_integration
+		}
+		ai_chance = { factor = 100 }
+	}
+	# Standard integration
+	option = {
+		name = TIA.96.c
+		trigger = {
+			NOT = { has_country_flag = TIA_fon_religious_freedom }
+			NOT = { has_country_flag = TIA_fon_federal_model }
+			NOT = { has_country_flag = TIA_fon_mediated }
+			NOT = { has_country_flag = TIA_fon_military_solution }
+			NOT = { has_country_flag = TIA_fon_submitted }
+		}
+		add_stability = 0.02
+		add_political_power = 30
+		annex_country = { target = FON transfer_troops = yes }
+		custom_effect_tooltip = TIA.96.c_tt
+		hidden_effect = {
+			set_country_flag = TIA_annexed_FON
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+###################################
+# Fontaine Post-War Governance
+###################################
+ 
+country_event = {
+	id = TIA.97
+	title = TIA.97.t
+	desc = {
+		text = TIA.97.desc_furina
+		trigger = { has_country_flag = TIA_chose_Furina }
+	}
+	desc = {
+		text = TIA.97.desc_akua
+		trigger = { has_country_flag = TIA_chose_Akua }
+	}
+	desc = {
+		text = TIA.97.desc_none
+		trigger = { has_country_flag = TIA_chose_none }
+	}
+	desc = {
+		text = TIA.97.desc
+		trigger = {
+			NOT = { has_country_flag = TIA_chose_Furina }
+			NOT = { has_country_flag = TIA_chose_Akua }
+			NOT = { has_country_flag = TIA_chose_none }
+		}
+	}
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	# Allow worship, reconcile
+	option = {
+		name = TIA.97.a
+		add_political_power = -50
+		add_stability = 0.05
+		custom_effect_tooltip = TIA.97.a_tt
+		hidden_effect = {
+			set_country_flag = TIA_annexed_FON
+			set_country_flag = TIA_fon_postwar_reconciled
+		}
+		ai_chance = { factor = 40 }
+	}
+	# Restrict but tolerate
+	option = {
+		name = TIA.97.b
+		add_political_power = 25
+		add_stability = -0.03
+		custom_effect_tooltip = TIA.97.b_tt
+		hidden_effect = {
+			set_country_flag = TIA_annexed_FON
+			set_country_flag = TIA_fon_postwar_restricted
+		}
+		ai_chance = { factor = 40 }
+	}
+	# Full suppression
+	option = {
+		name = TIA.97.c
+		add_political_power = 50
+		add_stability = -0.08
+		add_war_support = 0.03
+		custom_effect_tooltip = TIA.97.c_tt
+		hidden_effect = {
+			set_country_flag = TIA_annexed_FON
+			set_country_flag = TIA_fon_postwar_suppressed
+		}
+		ai_chance = { factor = 10 }
+	}
+	# Bonus: Same faith heals wounds
+	option = {
+		name = TIA.97.d
+		trigger = {
+			has_country_flag = TIA_chose_Furina
+		}
+		add_political_power = -30
+		add_stability = 0.08
+		add_monthly_population = 0.05
+		custom_effect_tooltip = TIA.97.d_tt
+		hidden_effect = {
+			set_country_flag = TIA_annexed_FON
+			set_country_flag = TIA_fon_postwar_reconciled
+		}
+		ai_chance = { factor = 100 }
+	}
+	# Bonus: Concordat as healing framework
+	option = {
+		name = TIA.97.e
+		trigger = {
+			has_country_flag = TIA_fontaine_concordat_accepted
+			NOT = { has_country_flag = TIA_chose_Furina }
+		}
+		add_political_power = -40
+		add_stability = 0.05
+		custom_effect_tooltip = TIA.97.e_tt
+		hidden_effect = {
+			set_country_flag = TIA_annexed_FON
+			set_country_flag = TIA_fon_postwar_reconciled
+		}
+		ai_chance = { factor = 80 }
+	}
+}
+ 
+
 
 country_event = {
 	#铁路人偶大受欢迎

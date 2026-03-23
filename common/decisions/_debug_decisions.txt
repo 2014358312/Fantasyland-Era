@@ -16,7 +16,7 @@ debug_decisions = {
 		}
 	}
 	debug_hide_decisions = {
-		priority = -1
+		priority = 100
 		allowed = {
 			always = yes
 		}
@@ -27,6 +27,28 @@ debug_decisions = {
 		}
 		complete_effect = {
 			clr_global_flag = show_debug_decisions_flag
+		}
+	}
+	debug_get_some_spy = {
+		visible = {
+			is_ai = no
+			is_debug = yes
+			has_global_flag = show_debug_decisions_flag
+			NOT = { has_idea = debug_get_spy }
+		}
+		complete_effect = {
+			add_ideas = debug_get_spy
+		}
+	}
+	debug_remove_these_spy = {
+		visible = {
+			is_ai = no
+			is_debug = yes
+			has_global_flag = show_debug_decisions_flag
+			has_idea = debug_get_spy
+		}
+		complete_effect = {
+			remove_ideas = debug_get_spy
 		}
 	}
 	debug_transfer_ideologies_communism = {
