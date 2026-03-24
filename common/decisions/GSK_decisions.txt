@@ -73,3 +73,34 @@ GSK_rebuild_Gensokyo_dec = {
 		}
 	}
 }
+GSK_Training_Plan_dec = {
+	GSK_Military_specialization = {
+		cost = 100
+		days_remove = 42
+		visible = {
+			check_variable = { GSK_Military_specialization_count < 2 }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GSK_Military_specialization_tt
+				always = yes
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = { has_idea = GSK_Training_Plan_idea_1 }
+				swap_ideas = {
+					remove_idea = GSK_Training_Plan_idea_1
+					add_idea = GSK_Training_Plan_idea_2
+				}
+			}
+			if = {
+				limit = { has_idea = GSK_Training_Plan_idea }
+				swap_ideas = {
+					remove_idea = GSK_Training_Plan_idea
+					add_idea = GSK_Training_Plan_idea_1
+				}
+			}
+		}
+	}
+}

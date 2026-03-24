@@ -593,20 +593,184 @@ focus_tree = {
 		}##跳过国策的条件
 		search_filters = {FOCUS_FILTER_MANPOWER}##过滤器
 		completion_reward ={
-			
+			add_ideas = GSK_lujun_idea
 		}##效果
 	}
 	focus ={
-		id = GSK_lingqi#灵力为主
+		id = GSK_lingqi #灵力为主
 		relative_position_id = GSK_lujun
 		prerequisite ={ focus = GSK_lujun}
 		mutually_exclusive ={ focus = GSK_tech focus = GSK_yaoqi}
 		x = 0
 		y = 1
-		cost = 2
+		cost = 5
 		available = {}
 		completion_reward = {
-			add_political_power =150
+			add_tech_bonus = {
+			    bonus = 1
+			    uses = 1
+			    category = support_tech
+			}
+			add_ideas = GSK_lingqi_idea
+		}
+	}
+	focus ={
+		id = GSK_Training_Plan #训练计划
+		relative_position_id = GSK_lingqi
+		prerequisite ={ focus = GSK_lingqi}
+		x = -1
+		y = 1
+		cost = 6
+		available = {
+			has_war_support > 0.5 
+		}
+		completion_reward = {
+			add_ideas = GSK_Training_Plan_idea
+		}
+	}
+	focus ={
+		id = GSK_Yin_Yang_Orb_Operation #阴阳玉行动
+		relative_position_id = GSK_Training_Plan
+		prerequisite ={ focus = GSK_Training_Plan}
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			has_army_manpower = {
+			    size > 100000
+			}
+			OR = {
+				has_war_with = LNC
+				has_war_with = YKM
+				NOT = {
+					AND = {
+						country_exists = LNC
+						country_exists = YKM
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+			    bonus = 2
+			    uses = 3
+			    category = support_tech
+			}
+			add_ideas = GSK_Yin_Yang_Orb_Operation_idea
+		}
+	}
+	focus ={
+		id = GSK_Sky_Operation #苍穹行动
+		relative_position_id = GSK_Yin_Yang_Orb_Operation
+		prerequisite ={ focus = GSK_Yin_Yang_Orb_Operation}
+		x = 0
+		y = 1
+		cost = 6
+		available = {
+			has_army_manpower = {
+			    size > 500000
+			}
+			OR = {
+				has_war_with = LNC
+				has_war_with = YKM
+				NOT = {
+					AND = {
+						country_exists = LNC
+						country_exists = YKM
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_timed_idea = {
+			    idea = GSK_Sky_Operation_idea
+  			    days = 720
+			}
+		}
+	}
+	focus ={
+		id = GSK_Army_Reorganization #军队重组
+		relative_position_id = GSK_lingqi
+		prerequisite ={ focus = GSK_lingqi}
+		x = 1
+		y = 1
+		cost = 8
+		available = {
+			has_stability > 0.6
+			has_war_support > 0.7
+		}
+		select_effect = { 
+			add_ideas = GSK_Army_Reorganization_idea
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = GSK_lujun_idea
+				add_idea = GSK_lujun_idea_1
+			}
+			hidden_effect = {
+				remove_ideas = GSK_Army_Reorganization_idea
+			}
+		}
+	}
+	focus ={
+		id = GSK_Military_Mustard #军事糕手
+		relative_position_id = GSK_Army_Reorganization
+		prerequisite ={ focus = GSK_Army_Reorganization}
+		x = 0
+		y = 1
+		cost = 4
+		available = {}
+		completion_reward = {
+			create_field_marshal = {
+				name = "Maurice Gamelin"
+				portrait_path = "GFX_portrait_FRA_maurice_gamelin"
+				traits = { GSK_Military_Mustard_trait }
+				skill = 1
+				attack_skill = 4
+				defense_skill = 3
+				planning_skill = 4
+				logistics_skill = 2
+			}
+			division_template = {
+    			name = "Shamaness Special Service Unit"
+    			division_names_group = USA_INF_01
+    			priority = 0
+    			template_counter = 0
+    			regiments = {
+    			    Shamaness = { x = 0 y = 0 }
+    			    Shamaness = { x = 0 y = 1 }
+    			    Shamaness = { x = 0 y = 2 }
+    			    Yin_Yang_Orb_Gunner = { x = 1 y = 0 }
+    			    Yin_Yang_Orb_Gunner = { x = 1 y = 1 }
+    			}
+			}
+			capital_scope = {
+				create_unit = {
+					division = " name = \"巫女特勤处\" division_template = \"Shamaness Special Service Unit\" "
+					owner = GSK
+					count = 3
+				}
+			}
+		}
+	}
+	focus ={
+		id = GSK_Spiritual_Power_Armor #灵力装甲
+		relative_position_id = GSK_Military_Mustard
+		prerequisite ={ focus = GSK_Military_Mustard}
+		x = 0
+		y = 1
+		cost = 8
+		available = {
+			has_stability > 0.5
+			has_war_support > 0.5
+		}
+		completion_reward = {
+			add_ideas = GSK_Spiritual_Power_Armor_idea
+			add_tech_bonus = {
+				ahead_reduction = 1
+				uses = 1
+				category = armor
+			}
 		}
 	}
 	focus ={
@@ -616,7 +780,7 @@ focus_tree = {
 		mutually_exclusive ={ focus = GSK_lingqi focus = GSK_tech}
 		x = -6
 		y = 1
-		cost = 2
+		cost = 5
 		available = {}
 		completion_reward = {
 			add_political_power =150
@@ -629,7 +793,7 @@ focus_tree = {
 		mutually_exclusive ={ focus = GSK_lingqi focus = GSK_yaoqi}
 		x = 6
 		y = 1
-		cost = 2
+		cost = 5
 		available = {}
 		completion_reward = {
 			add_political_power =150
