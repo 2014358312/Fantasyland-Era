@@ -5008,6 +5008,386 @@ country_event = {
 	}
 }
 
+
+###################################
+# National Focus Enhancement Events
+# Append to events/TIA_events.txt
+# Event ID Range: TIA.122 - TIA.131
+###################################
+
+# TIA.122 - Shrink Territory Management
+country_event = {
+	id = TIA.122
+	title = TIA.122.t
+	desc = TIA.122.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.122.a
+		add_political_power = 25
+		add_stability = 0.05
+		hidden_effect = {
+			set_country_flag = TIA_centralize_gradual
+		}
+		ai_chance = { factor = 50 }
+	}
+	option = {
+		name = TIA.122.b
+		add_political_power = -25
+		add_stability = -0.03
+		add_war_support = 0.05
+		hidden_effect = {
+			set_country_flag = TIA_centralize_forceful
+		}
+		ai_chance = { factor = 30 }
+	}
+	option = {
+		name = TIA.122.c
+		add_political_power = 15
+		add_stability = 0.03
+		hidden_effect = {
+			set_country_flag = TIA_centralize_compromise
+		}
+		ai_chance = { factor = 20 }
+	}
+}
+
+# TIA.123 - Soothe North
+country_event = {
+	id = TIA.123
+	title = TIA.123.t
+	desc = TIA.123.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.123.a
+		add_political_power = 30
+		add_stability = 0.05
+		hidden_effect = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = TIA }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.123.b
+		add_political_power = -20
+		add_war_support = 0.05
+		add_manpower = 5000
+		ai_chance = { factor = 30 }
+	}
+	option = {
+		name = TIA.123.c
+		trigger = {
+			has_country_flag = TIA_centralize_gradual
+		}
+		add_political_power = 50
+		add_stability = 0.08
+		add_manpower = 3000
+		hidden_effect = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = TIA }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+# TIA.124 - Abolish Slavery
+country_event = {
+	id = TIA.124
+	title = TIA.124.t
+	desc = TIA.124.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.124.a
+		add_political_power = 30
+		add_stability = 0.05
+		add_manpower = 10000
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.124.b
+		add_political_power = -30
+		add_stability = 0.08
+		add_manpower = 15000
+		hidden_effect = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = TIA free_building_slots = { building = industrial_complex size > 0 include_locked = yes } }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.124.c
+		add_political_power = 50
+		add_stability = -0.03
+		add_war_support = 0.03
+		ai_chance = { factor = 20 }
+	}
+}
+
+# TIA.125 - Contact Chamber of Commerce (Grain Import Agreement)
+country_event = {
+	id = TIA.125
+	title = TIA.125.t
+	desc = TIA.125.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	option = {
+		name = TIA.125.a
+		add_political_power = 50
+		add_stability = 0.05
+		add_consumer_goods_factor = 0.01
+		custom_effect_tooltip = TIA.125.a_tt
+		add_ideas = TIA_grain_agreement_signed
+
+		ai_chance = { factor = 100 }
+	}
+}
+
+# TIA.126 - Investigate Revolutionary Organizations
+country_event = {
+	id = TIA.126
+	title = TIA.126.t
+	desc = TIA.126.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.126.a
+		add_political_power = 30
+		add_stability = 0.03
+		hidden_effect = {
+			set_country_flag = TIA_revolution_infiltrated
+		}
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.126.b
+		add_political_power = -20
+		add_stability = 0.05
+		add_manpower = 5000
+		custom_effect_tooltip = TIA.126.b_tt
+		ai_chance = { factor = 30 }
+	}
+	option = {
+		name = TIA.126.c
+		add_political_power = 50
+		add_stability = -0.05
+		add_war_support = 0.05
+		ai_chance = { factor = 30 }
+	}
+}
+
+# TIA.127 - Dealing with Jinghai Forest
+country_event = {
+	id = TIA.127
+	title = TIA.127.t
+	desc = TIA.127.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.127.a
+		add_political_power = 30
+		add_stability = 0.05
+		add_manpower = 3000
+		custom_effect_tooltip = TIA.127.a_tt
+		ai_chance = { factor = 50 }
+	}
+	option = {
+		name = TIA.127.b
+		add_political_power = -10
+		add_research_speed_factor = 0.02
+		custom_effect_tooltip = TIA.127.b_tt
+		ai_chance = { factor = 50 }
+	}
+}
+
+# TIA.128 - Establishment of Princess Town
+country_event = {
+	id = TIA.128
+	title = TIA.128.t
+	desc = TIA.128.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.128.a
+		add_political_power = 20
+		add_stability = 0.05
+		add_manpower = 5000
+		hidden_effect = {
+			239 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_chance = { factor = 50 }
+	}
+	option = {
+		name = TIA.128.b
+		add_political_power = 30
+		add_war_support = 0.03
+		hidden_effect = {
+			239 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_chance = { factor = 50 }
+	}
+}
+
+# TIA.129 - Magnificent Kingdom Construction
+country_event = {
+	id = TIA.129
+	title = TIA.129.t
+	desc = TIA.129.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.129.a
+		add_political_power = 25
+		add_stability = 0.10
+		add_monthly_population = 0.05
+		custom_effect_tooltip = TIA.129.a_tt
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.129.b
+		add_political_power = 25
+		hidden_effect = {
+			every_owned_state = {
+				limit = { is_core_of = TIA }
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		custom_effect_tooltip = TIA.129.b_tt
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.129.c
+		add_political_power = 25
+		add_research_speed_factor = 0.03
+		add_research_slot = 1
+		custom_effect_tooltip = TIA.129.c_tt
+		ai_chance = { factor = 20 }
+	}
+}
+
+# TIA.130 - Expansion MCG
+country_event = {
+	id = TIA.130
+	title = TIA.130.t
+	desc = TIA.130.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.130.a
+		army_experience = 15
+		add_tech_bonus = {
+			name = TIA_mcg_doctrine
+			bonus = 1.0
+			uses = 1
+			category = land_doctrine
+		}
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.130.b
+		army_experience = 10
+		add_manpower = 5000
+		add_war_support = 0.03
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.130.c
+		army_experience = 20
+		add_political_power = 25
+		ai_chance = { factor = 20 }
+	}
+}
+
+# TIA.131 - Befriend Neighbors
+country_event = {
+	id = TIA.131
+	title = TIA.131.t
+	desc = TIA.131.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.131.a
+		add_political_power = 25
+		add_stability = 0.03
+		add_tech_bonus = {
+			name = TIA_foreign_exchange
+			bonus = 1.0
+			uses = 1
+			category = industry
+		}
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.131.b
+		add_political_power = 20
+		add_war_support = 0.03
+		add_manpower = 3000
+		ai_chance = { factor = 30 }
+	}
+	option = {
+		name = TIA.131.c
+		add_political_power = 30
+		add_consumer_goods_factor = -0.03
+		ai_chance = { factor = 30 }
+	}
+}
+
 ###################################
 # 水神信仰线 - 事件
 ###################################
