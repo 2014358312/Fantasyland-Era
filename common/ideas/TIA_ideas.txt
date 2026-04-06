@@ -1523,7 +1523,7 @@ ideas = {
 		}
 
 		TIA_grain_agreement_signed = {
-			picture = TIA_faith_chaplain_corps_permanent
+			picture = GFX_idea_TIA_famine_crisis
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
@@ -1531,7 +1531,43 @@ ideas = {
 				consumer_goods_factor = 0.15
 			}
 		}
+		
+		TIA_famine_emergency_purchase = {
+			picture = GFX_idea_TIA_famine_crisis
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.9
+			}
+		}
 
+		TIA_famine_crisis = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = GFX_idea_TIA_famine_crisis
+			modifier = {
+				monthly_population = -0.20
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				consumer_goods_factor = 0.05
+				conscription = -0.02
+			}
+		}
+ 
+		TIA_famine_devastation = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = GFX_idea_TIA_famine_devastation
+			modifier = {
+				monthly_population = -0.30
+				stability_factor = -0.10
+				war_support_factor = -0.10
+				consumer_goods_factor = 0.10
+				conscription = -0.03
+				industrial_capacity_factory = -0.15
+			}
+		}
 
 	}
 }
