@@ -24,7 +24,7 @@ focus_tree = {
 	focus = {
 		id = EDE_keep_traditional
 		icon = GFX_goal_support_fascism
-		x = 3
+		x = -10
 		y = 0
 		cost = 5
 		available = {
@@ -56,131 +56,743 @@ focus_tree = {
 			base = 1
 		}
 	}
-	
+
+	default = no
+	reset_on_civilwar = no
+
+	############################
+	# 共同前置主干
+	############################
+
 	focus = {
-		id = SHY_huang
-		icon = GFX_focus_rom_royal_dictatorship
+		id = EDN_forgotten_utopia
+		icon = GFX_goal_unknown_political
 		x = 8
 		y = 0
-		cost = 10
+		cost = 5
+		completion_reward = {
+			add_stability = -0.10
+			add_war_support = -0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = EDN_silence_of_feather_church
+		icon = GFX_goal_generic_propaganda
+		relative_position_id = EDN_forgotten_utopia
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_forgotten_utopia }
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = EDN_holy_city_council_debate
+		icon = GFX_goal_generic_demand_territory
+		relative_position_id = EDN_silence_of_feather_church
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_silence_of_feather_church }
+		completion_reward = {
+			# country_event = { id = eden.10 }
+		}
+	}
+
+	focus = {
+		id = EDN_why_were_we_forgotten
+		icon = GFX_goal_generic_intelligence_exchange
+		relative_position_id = EDN_holy_city_council_debate
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_holy_city_council_debate }
 		completion_reward = {
 			add_political_power = 100
+			add_ideas = EDN_lost_symbol
+		}
+	}
+
+	############################
+	# 路线一：羽教神权复辟
+	############################
+
+	focus = {
+		id = EDN_enthrone_saintess
+		icon = GFX_goal_generic_national_unity
+		relative_position_id = EDN_why_were_we_forgotten
+		x = -6
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_why_were_we_forgotten }
+		mutually_exclusive = {
+			focus = EDN_limit_church_power
+			focus = EDN_declare_martial_law
+		}
+		completion_reward = {
+			set_politics = {
+				ruling_party = neutrality
+			}
+			add_stability = 0.10
+			set_portraits = {
+    			character = EDE_Yohane_Bonaventura
+    			army = { large ="GFX_Portrait_EDE_Yohane_Bonaventura_theocracy" }
+    			civilian = { large ="GFX_Portrait_EDE_Yohane_Bonaventura_theocracy" }
+			}
+			set_party_name = {
+    			ideology = neutrality
+    			long_name = EDE_Yohane_Theocracy_long_name
+    			name = EDE_Yohane_Theocracy
+			}
+		}
+	}
+
+	focus = {
+		id = EDN_purge_secular_council
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = EDN_enthrone_saintess
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_enthrone_saintess }
+		completion_reward = {
+			remove_ideas = political_advisor_secular
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = EDN_doctrine_above_law
+		icon = GFX_goal_generic_forceful_treaty
+		relative_position_id = EDN_enthrone_saintess
+		x = 0
+		y = 2
+		cost = 5
+		prerequisite = { focus = EDN_purge_secular_council }
+		completion_reward = {
+			add_ideas = EDN_doctrine_supremacy
+		}
+	}
+
+	focus = {
+		id = EDN_holy_guard_oath
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = EDN_enthrone_saintess
+		x = 0
+		y = 3
+		cost = 5
+		prerequisite = { focus = EDN_doctrine_above_law }
+		completion_reward = {
+			army_experience = 25
+			add_ideas = EDN_holy_guard_spirit
+		}
+	}
+
+	# 神权分歧：温和神权
+	focus = {
+		id = EDN_moderate_theocracy
+		icon = GFX_goal_generic_improve_relations
+		relative_position_id = EDN_holy_guard_oath
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_holy_guard_oath }
+		mutually_exclusive = { focus = EDN_extreme_crusade }
+		completion_reward = {
+			add_ideas = EDN_religious_diplomacy
+		}
+	}
+
+	focus = {
+		id = EDN_religious_diplomacy
+		icon = GFX_goal_generic_alliance
+		relative_position_id = EDN_moderate_theocracy
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_moderate_theocracy }
+		completion_reward = {
+			add_opinion_modifier = {
+				modifier = EDN_religious_faction_friend
+			}
+		}
+	}
+
+	# 神权分歧：极端圣战
+	focus = {
+		id = EDN_extreme_crusade
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		relative_position_id = EDN_holy_guard_oath
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_holy_guard_oath }
+		mutually_exclusive = { focus = EDN_moderate_theocracy }
+		completion_reward = {
+			add_ideas = EDN_crusade_fervor
+		}
+	}
+
+	focus = {
+		id = EDN_heretic_purge_decree
+		icon = GFX_goal_generic_major_war
+		relative_position_id = EDN_extreme_crusade
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_extreme_crusade }
+		completion_reward = {
+			add_named_threat = {
+				threat = 5
+				name = EDN_heretic_purge
+			}
+			add_ideas = EDN_war_justification_speed
+		}
+	}
+
+	# 神权终局
+	focus = {
+		id = EDN_heaven_on_earth
+		icon = GFX_goal_generic_territory_or_war
+		relative_position_id = EDN_holy_guard_oath
+		x = 0
+		y = 3
+		cost = 5
+		prerequisite = {
+			focus = EDN_religious_diplomacy
+			focus = EDN_heretic_purge_decree
+		}
+		completion_reward = {
+			add_ideas = EDN_heaven_on_earth_spirit
+			remove_ideas = EDN_lost_symbol
+		}
+	}
+
+	############################
+	# 路线二：世俗理性改革
+	############################
+
+	focus = {
+		id = EDN_limit_church_power
+		icon = GFX_goal_generic_neutrality_focus
+		relative_position_id = EDN_why_were_we_forgotten
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_why_were_we_forgotten }
+		mutually_exclusive = {
+			focus = EDN_enthrone_saintess
+			focus = EDN_declare_martial_law
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.05
+			}
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = EDN_restore_parliament
+		icon = GFX_goal_generic_elections
+		relative_position_id = EDN_limit_church_power
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_limit_church_power }
+		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			# country_event = { id = eden.20 }
+		}
+	}
+
+	focus = {
+		id = EDN_freedom_of_faith_act
+		icon = GFX_goal_generic_consumer_goods
+		relative_position_id = EDN_limit_church_power
+		x = 0
+		y = 2
+		cost = 5
+		prerequisite = { focus = EDN_restore_parliament }
+		completion_reward = {
+			add_stability = 0.10
+			add_ideas = EDN_faith_freedom
+		}
+	}
+
+	focus = {
+		id = EDN_citizens_eden
+		icon = GFX_goal_generic_production
+		relative_position_id = EDN_limit_church_power
+		x = 0
+		y = 3
+		cost = 5
+		prerequisite = { focus = EDN_freedom_of_faith_act }
+		completion_reward = {
+			add_ideas = EDN_citizen_eden_spirit
+		}
+	}
+
+	# 世俗分歧：国际理想主义
+	focus = {
+		id = EDN_international_idealism
+		icon = GFX_goal_generic_alliance
+		relative_position_id = EDN_citizens_eden
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_citizens_eden }
+		mutually_exclusive = { focus = EDN_isolationist_guardian }
+		completion_reward = {
+			add_ideas = EDN_idealist_volunteers
+		}
+	}
+
+	focus = {
+		id = EDN_ideal_alliance
+		icon = GFX_goal_generic_improve_relations
+		relative_position_id = EDN_international_idealism
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_international_idealism }
+		completion_reward = {
+			add_ideas = EDN_trade_influence_up
+		}
+	}
+
+	# 世俗分歧：孤立守护者
+	focus = {
+		id = EDN_isolationist_guardian
+		icon = GFX_goal_generic_fortify_city
+		relative_position_id = EDN_citizens_eden
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_citizens_eden }
+		mutually_exclusive = { focus = EDN_international_idealism }
+		completion_reward = {
+			add_ideas = EDN_fortress_eden
+		}
+	}
+
+	focus = {
+		id = EDN_walls_and_neutrality
+		icon = GFX_goal_generic_construct_military
+		relative_position_id = EDN_isolationist_guardian
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_isolationist_guardian }
+		completion_reward = {
+			add_ideas = EDN_walls_neutrality_spirit
+		}
+	}
+
+	# 世俗终局
+	focus = {
+		id = EDN_true_utopia
+		icon = GFX_goal_generic_national_unity
+		relative_position_id = EDN_citizens_eden
+		x = 0
+		y = 3
+		cost = 5
+		prerequisite = {
+			focus = EDN_ideal_alliance
+			focus = EDN_walls_and_neutrality
+		}
+		completion_reward = {
+			add_stability = 0.20
+			add_war_support = -0.05
+			remove_ideas = EDN_lost_symbol
+			add_ideas = EDN_true_utopia_spirit
+		}
+	}
+
+	############################
+	# 路线三：军政强硬路线
+	############################
+
+	focus = {
+		id = EDN_declare_martial_law
+		icon = GFX_goal_generic_war_with_comintern
+		relative_position_id = EDN_why_were_we_forgotten
+		x = 6
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_why_were_we_forgotten }
+		mutually_exclusive = {
+			focus = EDN_enthrone_saintess
+			focus = EDN_limit_church_power
+		}
+		completion_reward = {
+			add_war_support = 0.15
+			add_stability = -0.05
+			set_portraits = {
+    			character = EDE_Yohane_Bonaventura
+    			army = { large ="GFX_Portrait_EDE_Yohane_Bonaventura_military" }
+    			civilian = { large ="GFX_Portrait_EDE_Yohane_Bonaventura_military" }
+			}
+			set_party_name = {
+    			ideology = neutrality
+    			long_name = EDE_military_government_long_name
+    			name = EDE_military_government
+			}
+			add_country_leader_role = {
+    			character = EDE_Yohane_Bonaventura
+   				promote_leader = yes
+    			country_leader = {
+        			ideology = militarism_subtype
+        			expire = "1965.1.1.1"
+        			traits = { popular_figurehead3 }
+    		}
+}
+		}
+	}
+
+	focus = {
+		id = EDN_dissolve_council
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = EDN_declare_martial_law
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_declare_martial_law }
+		completion_reward = {
 			set_politics = {
 				ruling_party = fascism
 				elections_allowed = no
 			}
 		}
 	}
-	
+
 	focus = {
-		id = SHY_mapi
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		prerequisite = { focus = SHY_huang }
-		relative_position_id = SHY_huang
-		x = -1
-		y = 1
-		cost = 10
-		completion_reward = {
-			add_ideas = neige
-		}
-	}
-	
-	focus = {
-		id = SHY_siren
-		icon = GFX_focus_generic_home_defense
-		prerequisite = { focus = SHY_mapi }
-		relative_position_id = SHY_mapi
+		id = EDN_military_committee
+		icon = GFX_goal_generic_army_doctrines
+		relative_position_id = EDN_declare_martial_law
 		x = 0
-		y = 1
-		cost = 10
-		completion_reward = {
-			add_ideas = weibing
-        }
-	}
-	
-	focus = {
-		id = SHY_13
-		icon = GFX_goal_support_fascism
-		prerequisite = { focus = SHY_huang }
-		relative_position_id = SHY_huang
-		x = -2
-		y = 3
+		y = 2
 		cost = 5
-		completion_reward = {
-			army_experience = 10
-			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.8
-				uses = 1
-				category = land_doctrine
-			}
-			add_ideas = fascist_influence
-		}
-	}
-	
-	focus = {
-		id = SHY_15
-		icon = GFX_goal_rhineland
-		prerequisite = { focus = SHY_huang }
-		relative_position_id = SHY_huang
-		x = 1
-		y = 1
-		cost = 5
-		completion_reward = {
-			army_experience = 15
-			navy_experience = 25
-			add_ideas = zili
-		}
-	}
-	
-	focus = {
-		id = SHY_junguo
-		icon = GFX_goal_generic_military_sphere
-		cost = 5
-		prerequisite = { focus = SHY_15 }
-		relative_position_id = SHY_15
-		x = 0
-		y = 1
+		prerequisite = { focus = EDN_dissolve_council }
 		completion_reward = {
 			army_experience = 25
-			add_ideas = paramilitarism_focus
 		}
 	}
-	
+
 	focus = {
-		id = SHY_zhengque
-		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = SHY_huang }
-		relative_position_id = SHY_huang
-		x = 2
-		y = 3
-		cost = 5
-		completion_reward = {
-			add_stability = 0.1
-			add_political_power = 100
-		}
-	}
-	
-	focus = {
-		id = SHY_43
-		icon = GFX_goal_yidian
-		prerequisite = { focus = SHY_huang }
-		relative_position_id = SHY_huang
+		id = EDN_instrumentalize_faith
+		icon = GFX_goal_generic_propaganda
+		relative_position_id = EDN_declare_martial_law
 		x = 0
 		y = 3
-		cost = 10
-		available = {
-			is_subject = no
-			is_in_faction = no
-		}
+		cost = 5
+		prerequisite = { focus = EDN_military_committee }
 		completion_reward = {
-			set_rule = { can_create_factions = yes }
-			add_country_leader_trait = SHY_emperor
-			create_faction = "羽教同萌会"
-			add_ideas = SHY_111
-			add_named_threat = { threat = 5 name = SHY_demand_memel_threat }
+			add_stability = -0.05
+			add_ideas = EDN_instrumentalized_faith
 		}
 	}
+
+	# 军政分歧：现实主义外交
+	focus = {
+		id = EDN_realist_diplomacy
+		icon = GFX_goal_generic_improve_relations
+		relative_position_id = EDN_instrumentalize_faith
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_instrumentalize_faith }
+		mutually_exclusive = { focus = EDN_iron_expansionism }
+		completion_reward = {
+			add_ideas = EDN_realist_diplo_spirit
+		}
+	}
+
+	focus = {
+		id = EDN_limited_war_theory
+		icon = GFX_goal_generic_intelligence_exchange
+		relative_position_id = EDN_realist_diplomacy
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_realist_diplomacy }
+		completion_reward = {
+			add_ideas = EDN_limited_war
+		}
+	}
+
+	# 军政分歧：铁血扩张主义
+	focus = {
+		id = EDN_iron_expansionism
+		icon = GFX_goal_generic_territory_or_war
+		relative_position_id = EDN_instrumentalize_faith
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_instrumentalize_faith }
+		mutually_exclusive = { focus = EDN_realist_diplomacy }
+		completion_reward = {
+			add_ideas = EDN_iron_expansion_spirit
+		}
+	}
+
+	focus = {
+		id = EDN_steel_expedition_force
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		relative_position_id = EDN_iron_expansionism
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDN_iron_expansionism }
+		completion_reward = {
+			add_ideas = EDN_steel_expedition
+		}
+	}
+
+	# 军政终局
+	focus = {
+		id = EDN_steel_eden
+		icon = GFX_goal_generic_major_war
+		relative_position_id = EDN_instrumentalize_faith
+		x = 0
+		y = 3
+		cost = 5
+		prerequisite = {
+			focus = EDN_limited_war_theory
+			focus = EDN_steel_expedition_force
+		}
+		completion_reward = {
+			add_ideas = EDN_steel_eden_spirit
+			remove_ideas = EDN_lost_symbol
+		}
+	}
+
+	############################
+	# 隐藏路线：信仰崩塌
+	############################
+
+	focus = {
+		id = EDN_broken_wings
+		icon = GFX_goal_generic_dangerous_deal
+		x = 15
+		y = 12
+		cost = 5
+		available = {
+			OR = {
+				has_stability < 0.30
+				has_country_flag = EDN_consecutive_defeats
+			}
+			OR = {
+				has_completed_focus = EDN_enthrone_saintess
+				has_completed_focus = EDN_limit_church_power
+				has_completed_focus = EDN_declare_martial_law
+			}
+		}
+		completion_reward = {
+			add_stability = -0.15
+			# country_event = { id = eden.100 }
+		}
+	}
+
+	focus = {
+		id = EDN_holy_city_civil_war
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 15
+		y = 13
+		cost = 5
+		prerequisite = { focus = EDN_broken_wings }
+		completion_reward = {
+			start_civil_war = {
+				ideology = neutrality
+				size = 0.3
+			}
+		}
+	}
+
+	focus = {
+		id = EDN_choice_in_ruins
+		icon = GFX_goal_generic_decision
+		x = 15
+		y = 14
+		cost = 5
+		prerequisite = { focus = EDN_holy_city_civil_war }
+		completion_reward = {
+			# country_event = { id = eden.101 }
+		}
+	}
+
+	# 崩坏分歧：纯军政府
+	focus = {
+		id = EDN_pure_military_junta
+		icon = GFX_goal_generic_army_doctrines
+		x = 13
+		y = 15
+		cost = 5
+		prerequisite = { focus = EDN_choice_in_ruins }
+		mutually_exclusive = { focus = EDN_total_republic }
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_ideas = EDN_junta_spirit
+		}
+	}
+
+	# 崩坏分歧：彻底共和国
+	focus = {
+		id = EDN_total_republic
+		icon = GFX_goal_generic_elections
+		x = 17
+		y = 15
+		cost = 5
+		prerequisite = { focus = EDN_choice_in_ruins }
+		mutually_exclusive = { focus = EDN_pure_military_junta }
+		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			add_ideas = EDN_republic_reborn_spirit
+		}
+	}
+	
+	# focus = {
+	# 	id = SHY_huang
+	# 	icon = GFX_focus_rom_royal_dictatorship
+	# 	x = 8
+	# 	y = 0
+	# 	cost = 5
+	# 	completion_reward = {
+	# 		add_political_power = 100
+	# 		set_politics = {
+	# 			ruling_party = fascism
+	# 			elections_allowed = no
+	# 		}
+	# 	}
+	# }
+	
+	# focus = {
+	# 	id = SHY_mapi
+	# 	icon = GFX_goal_tfv_strengthen_commonwealth_ties
+	# 	prerequisite = { focus = SHY_huang }
+	# 	relative_position_id = SHY_huang
+	# 	x = -1
+	# 	y = 1
+	# 	cost = 5
+	# 	completion_reward = {
+	# 		add_ideas = neige
+	# 	}
+	# }
+	
+	# focus = {
+	# 	id = SHY_siren
+	# 	icon = GFX_focus_generic_home_defense
+	# 	prerequisite = { focus = SHY_mapi }
+	# 	relative_position_id = SHY_mapi
+	# 	x = 0
+	# 	y = 1
+	# 	cost = 5
+	# 	completion_reward = {
+	# 		add_ideas = weibing
+    #     }
+	# }
+	
+	# focus = {
+	# 	id = SHY_13
+	# 	icon = GFX_goal_support_fascism
+	# 	prerequisite = { focus = SHY_huang }
+	# 	relative_position_id = SHY_huang
+	# 	x = -2
+	# 	y = 3
+	# 	cost = 5
+	# 	completion_reward = {
+	# 		army_experience = 10
+	# 		add_doctrine_cost_reduction = {
+	# 			name = land_doc_bonus
+	# 			cost_reduction = 0.8
+	# 			uses = 1
+	# 			category = land_doctrine
+	# 		}
+	# 		add_ideas = fascist_influence
+	# 	}
+	# }
+	
+	# focus = {
+	# 	id = SHY_15
+	# 	icon = GFX_goal_rhineland
+	# 	prerequisite = { focus = SHY_huang }
+	# 	relative_position_id = SHY_huang
+	# 	x = 1
+	# 	y = 1
+	# 	cost = 5
+	# 	completion_reward = {
+	# 		army_experience = 15
+	# 		navy_experience = 25
+	# 		add_ideas = zili
+	# 	}
+	# }
+	
+	# focus = {
+	# 	id = SHY_junguo
+	# 	icon = GFX_goal_generic_military_sphere
+	# 	cost = 5
+	# 	prerequisite = { focus = SHY_15 }
+	# 	relative_position_id = SHY_15
+	# 	x = 0
+	# 	y = 1
+	# 	completion_reward = {
+	# 		army_experience = 25
+	# 		add_ideas = paramilitarism_focus
+	# 	}
+	# }
+	
+	# focus = {
+	# 	id = SHY_zhengque
+	# 	icon = GFX_goal_generic_forceful_treaty
+	# 	prerequisite = { focus = SHY_huang }
+	# 	relative_position_id = SHY_huang
+	# 	x = 2
+	# 	y = 3
+	# 	cost = 5
+	# 	completion_reward = {
+	# 		add_stability = 0.1
+	# 		add_political_power = 100
+	# 	}
+	# }
+	
+	# focus = {
+	# 	id = SHY_43
+	# 	icon = GFX_goal_yidian
+	# 	prerequisite = { focus = SHY_huang }
+	# 	relative_position_id = SHY_huang
+	# 	x = 0
+	# 	y = 3
+	# 	cost = 5
+	# 	available = {
+	# 		is_subject = no
+	# 		is_in_faction = no
+	# 	}
+	# 	completion_reward = {
+	# 		set_rule = { can_create_factions = yes }
+	# 		add_country_leader_trait = SHY_emperor
+	# 		create_faction = "羽教同萌会"
+	# 		add_ideas = SHY_111
+	# 		add_named_threat = { threat = 5 name = SHY_demand_memel_threat }
+	# 	}
+	# }
 	
 	focus = {
 		id = EDE_develop_land
@@ -234,7 +846,7 @@ focus_tree = {
 		relative_position_id = EDE_support_bonaven_company
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		completion_reward = {
 			add_political_power = 100
 			add_tech_bonus = {
@@ -259,7 +871,7 @@ focus_tree = {
 		relative_position_id = EDE_mechanical_punk_research_society
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		completion_reward = {
 			add_ideas = SHY_103
 		}
@@ -272,7 +884,7 @@ focus_tree = {
 		relative_position_id = EDE_funding_mariana_corporation
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		completion_reward = {
 			add_tech_bonus = {
 				name = computer
@@ -286,7 +898,7 @@ focus_tree = {
 	focus = {
 		id = EDE_comprehensive_research_team
 		icon = GFX_focus_research
-		cost = 10
+		cost = 5
 		prerequisite = { focus = EDE_introduce_heavy_industrial_equipment }
 		prerequisite = { focus = EDE_developing_radar }
 		relative_position_id = EDE_introduce_heavy_industrial_equipment
@@ -302,7 +914,7 @@ focus_tree = {
 		icon = GFX_goal_generic_radar
 		x = 24
 		y = 0
-		cost = 10
+		cost = 5
 		completion_reward = {
 			add_tech_bonus = {
 				name = computer
@@ -357,7 +969,7 @@ focus_tree = {
 		relative_position_id = EDE_call_for_enlistment
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
@@ -382,7 +994,7 @@ focus_tree = {
 		relative_position_id = EDE_future_of_our_military
 		x = 2
 		y = 1
-		cost = 10
+		cost = 5
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = infantry_weapons_bonus
@@ -401,7 +1013,7 @@ focus_tree = {
 		relative_position_id = EDE_expand_dockyard
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		completion_reward = {
 			navy_experience = 50
 			add_tech_bonus = {
@@ -427,7 +1039,7 @@ focus_tree = {
 		relative_position_id = EDE_develop_fleet
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = infantry_weapons_bonus
@@ -458,7 +1070,7 @@ focus_tree = {
 		relative_position_id = EDE_future_of_our_military
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = air_doctrine
@@ -477,7 +1089,7 @@ focus_tree = {
 		relative_position_id = SHY_ensure_bluesky
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		completion_reward = {
 			add_ideas = SHY_104
 		}
@@ -532,7 +1144,7 @@ focus_tree = {
 		relative_position_id = EDE_fighter
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		completion_reward = {
 			add_tech_bonus = {
 				name = FRA_heavy_fighter_focus
@@ -553,7 +1165,7 @@ focus_tree = {
 		relative_position_id = EDE_fighter
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		completion_reward = {
 			add_tech_bonus = {
 				name = FRA_bomber_focus
@@ -578,7 +1190,7 @@ focus_tree = {
 		relative_position_id = EDE_naval_bomber
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		completion_reward = {
 			add_tech_bonus = {
 				name = FRA_naval_bomber_focus
@@ -592,7 +1204,7 @@ focus_tree = {
 	focus = {
 		id = SHY_25
 		icon = GFX_focus_rocketry
-		cost = 10
+		cost = 5
 		prerequisite = {
 		    focus = EDE_fighter_2
 			focus = EDE_heavy_boomber
