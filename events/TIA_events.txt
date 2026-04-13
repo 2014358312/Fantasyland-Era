@@ -263,7 +263,78 @@ country_event = {
 	#然后，革命发生了
 	id = TIA.15
 	title = TIA.15.t
-	desc = TIA.15.desc
+	desc = {
+		# All three dominos (original timeline)
+		text = TIA.15.desc_all
+		trigger = {
+			has_country_flag = TIA_famine_collapse
+			has_idea = TIA_plague_scarred
+			has_idea = TIA_legitimate_war
+		}
+	}
+	desc = {
+		# Famine + Plague
+		text = TIA.15.desc_famine_plague
+		trigger = {
+			has_country_flag = TIA_famine_collapse
+			has_idea = TIA_plague_scarred
+			NOT = { has_idea = TIA_legitimate_war }
+		}
+	}
+	desc = {
+		# Famine + Religion
+		text = TIA.15.desc_famine_faith
+		trigger = {
+			has_country_flag = TIA_famine_collapse
+			has_idea = TIA_legitimate_war
+			NOT = { has_idea = TIA_plague_scarred }
+		}
+	}
+	desc = {
+		# Plague + Religion
+		text = TIA.15.desc_plague_faith
+		trigger = {
+			has_idea = TIA_plague_scarred
+			has_idea = TIA_legitimate_war
+			NOT = { has_country_flag = TIA_famine_collapse }
+		}
+	}
+	desc = {
+		# Famine only
+		text = TIA.15.desc_famine
+		trigger = {
+			has_country_flag = TIA_famine_collapse
+			NOT = { has_idea = TIA_plague_scarred }
+			NOT = { has_idea = TIA_legitimate_war }
+		}
+	}
+	desc = {
+		# Plague only
+		text = TIA.15.desc_plague
+		trigger = {
+			has_idea = TIA_plague_scarred
+			NOT = { has_country_flag = TIA_famine_collapse }
+			NOT = { has_idea = TIA_legitimate_war }
+		}
+	}
+	desc = {
+		# Religion only
+		text = TIA.15.desc_faith
+		trigger = {
+			has_idea = TIA_legitimate_war
+			NOT = { has_country_flag = TIA_famine_collapse }
+			NOT = { has_idea = TIA_plague_scarred }
+		}
+	}
+	desc = {
+		# Fallback (original fate chain / unknown combination)
+		text = TIA.15.desc
+		trigger = {
+			NOT = { has_country_flag = TIA_famine_collapse }
+			NOT = { has_idea = TIA_plague_scarred }
+			NOT = { has_idea = TIA_legitimate_war }
+		}
+	}
 	picture = GFX_report_event_TIA_guillotine
 	fire_only_once = no
 	is_triggered_only = yes
@@ -5008,6 +5079,899 @@ country_event = {
 	}
 }
 
+
+###################################
+# National Focus Enhancement Events
+# Append to events/TIA_events.txt
+# Event ID Range: TIA.122 - TIA.131
+###################################
+
+# TIA.122 - Shrink Territory Management
+country_event = {
+	id = TIA.122
+	title = TIA.122.t
+	desc = TIA.122.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.122.a
+		add_political_power = 25
+		add_stability = 0.05
+		hidden_effect = {
+			set_country_flag = TIA_centralize_gradual
+		}
+		ai_chance = { factor = 50 }
+	}
+	option = {
+		name = TIA.122.b
+		add_political_power = -25
+		add_stability = -0.03
+		add_war_support = 0.05
+		hidden_effect = {
+			set_country_flag = TIA_centralize_forceful
+		}
+		ai_chance = { factor = 30 }
+	}
+	option = {
+		name = TIA.122.c
+		add_political_power = 15
+		add_stability = 0.03
+		hidden_effect = {
+			set_country_flag = TIA_centralize_compromise
+		}
+		ai_chance = { factor = 20 }
+	}
+}
+
+# TIA.123 - Soothe North
+country_event = {
+	id = TIA.123
+	title = TIA.123.t
+	desc = TIA.123.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.123.a
+		add_political_power = 30
+		add_stability = 0.05
+		hidden_effect = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = TIA }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.123.b
+		add_political_power = -20
+		add_war_support = 0.05
+		add_manpower = 5000
+		ai_chance = { factor = 30 }
+	}
+	option = {
+		name = TIA.123.c
+		trigger = {
+			has_country_flag = TIA_centralize_gradual
+		}
+		add_political_power = 50
+		add_stability = 0.08
+		add_manpower = 3000
+		hidden_effect = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = TIA }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+# TIA.124 - Abolish Slavery
+country_event = {
+	id = TIA.124
+	title = TIA.124.t
+	desc = TIA.124.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.124.a
+		add_political_power = 30
+		add_stability = 0.05
+		add_manpower = 10000
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.124.b
+		add_political_power = -30
+		add_stability = 0.08
+		add_manpower = 15000
+		hidden_effect = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = TIA free_building_slots = { building = industrial_complex size > 0 include_locked = yes } }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.124.c
+		add_political_power = 50
+		add_stability = -0.03
+		add_war_support = 0.03
+		ai_chance = { factor = 20 }
+	}
+}
+
+# TIA.125 - Contact Chamber of Commerce (Grain Import Agreement)
+country_event = {
+	id = TIA.125
+	title = TIA.125.t
+	desc = TIA.125.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	option = {
+		name = TIA.125.a
+		add_political_power = 50
+		add_stability = 0.05
+		add_consumer_goods_factor = 0.01
+		custom_effect_tooltip = TIA.125.a_tt
+		add_ideas = TIA_grain_agreement_signed
+
+		ai_chance = { factor = 100 }
+	}
+}
+
+# TIA.126 - Investigate Revolutionary Organizations
+country_event = {
+	id = TIA.126
+	title = TIA.126.t
+	desc = TIA.126.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.126.a
+		add_political_power = 30
+		add_stability = 0.03
+		hidden_effect = {
+			set_country_flag = TIA_revolution_infiltrated
+		}
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.126.b
+		add_political_power = -20
+		add_stability = 0.05
+		add_manpower = 5000
+		custom_effect_tooltip = TIA.126.b_tt
+		ai_chance = { factor = 30 }
+	}
+	option = {
+		name = TIA.126.c
+		add_political_power = 50
+		add_stability = -0.05
+		add_war_support = 0.05
+		ai_chance = { factor = 30 }
+	}
+}
+
+# TIA.127 - Dealing with Jinghai Forest
+country_event = {
+	id = TIA.127
+	title = TIA.127.t
+	desc = TIA.127.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+ 
+	option = {
+		name = TIA.127.a
+		add_political_power = 50
+		add_stability = 0.05
+		add_manpower = 3000
+		custom_effect_tooltip = TIA.127.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+
+# TIA.128 - Establishment of Princess Town
+country_event = {
+	id = TIA.128
+	title = TIA.128.t
+	desc = TIA.128.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.128.a
+		add_political_power = 20
+		add_stability = 0.05
+		add_manpower = 5000
+		hidden_effect = {
+			239 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_chance = { factor = 50 }
+	}
+	option = {
+		name = TIA.128.b
+		add_political_power = 30
+		add_war_support = 0.03
+		hidden_effect = {
+			239 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_chance = { factor = 50 }
+	}
+}
+
+# TIA.129 - Magnificent Kingdom Construction
+country_event = {
+	id = TIA.129
+	title = TIA.129.t
+	desc = TIA.129.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.129.a
+		add_political_power = 25
+		add_stability = 0.10
+		add_monthly_population = 0.05
+		custom_effect_tooltip = TIA.129.a_tt
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.129.b
+		add_political_power = 25
+		hidden_effect = {
+			every_owned_state = {
+				limit = { is_core_of = TIA }
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		custom_effect_tooltip = TIA.129.b_tt
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.129.c
+		add_political_power = 25
+		add_research_speed_factor = 0.03
+		add_research_slot = 1
+		custom_effect_tooltip = TIA.129.c_tt
+		ai_chance = { factor = 20 }
+	}
+}
+
+# TIA.130 - Expansion MCG
+country_event = {
+	id = TIA.130
+	title = TIA.130.t
+	desc = TIA.130.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.130.a
+		army_experience = 15
+		add_tech_bonus = {
+			name = TIA_mcg_doctrine
+			bonus = 1.0
+			uses = 1
+			category = land_doctrine
+		}
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.130.b
+		army_experience = 10
+		add_manpower = 5000
+		add_war_support = 0.03
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.130.c
+		army_experience = 20
+		add_political_power = 25
+		ai_chance = { factor = 20 }
+	}
+}
+
+# TIA.131 - Befriend Neighbors
+country_event = {
+	id = TIA.131
+	title = TIA.131.t
+	desc = TIA.131.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.131.a
+		add_political_power = 25
+		add_stability = 0.03
+		add_tech_bonus = {
+			name = TIA_foreign_exchange
+			bonus = 1.0
+			uses = 1
+			category = industry
+		}
+		ai_chance = { factor = 40 }
+	}
+	option = {
+		name = TIA.131.b
+		add_political_power = 20
+		add_war_support = 0.03
+		add_manpower = 3000
+		ai_chance = { factor = 30 }
+	}
+	option = {
+		name = TIA.131.c
+		add_political_power = 30
+		add_consumer_goods_factor = -0.03
+		ai_chance = { factor = 30 }
+	}
+}
+
+###################################
+# 饥荒事件
+# Hidden MTTH trigger after TIA_Make_change
+# Checks for TIA_grain_agreement_signed spirit
+# Event ID: TIA.132 - TIA.136
+###################################
+
+# Famine Strikes (hidden MTTH, no warning)
+country_event = {
+	id = TIA.132
+	title = TIA.132.t
+	desc = TIA.132.desc
+	picture = GFX_report_event_TIA_guillotine
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_Make_change
+		NOT = { has_country_flag = TIA_famine_occurred }
+		NOT = { has_war = yes }
+		date > 1002.1.1
+	}
+
+	mean_time_to_happen = {
+		days = 500
+		modifier = {
+			factor = 0.8
+			date > 1002.1.1
+		}
+		modifier = {
+			factor = 0.6
+			date > 1003.1.1
+		}
+	}
+
+	immediate = {
+		set_country_flag = TIA_famine_occurred
+	}
+
+	# Has grain agreement - smooth resolution
+	option = {
+		name = TIA.132.a
+		trigger = {
+			has_idea = TIA_grain_agreement_signed
+		}
+		add_stability = -0.03
+		add_political_power = -15
+		custom_effect_tooltip = TIA.132.a_tt
+		hidden_effect = {
+			country_event = { id = TIA.133 days = 15 }
+		}
+		ai_chance = { factor = 100 }
+	}
+
+	# No grain agreement - crisis begins
+	option = {
+		name = TIA.132.b
+		trigger = {
+			NOT = { has_idea = TIA_grain_agreement_signed }
+		}
+		add_stability = -0.10
+		add_political_power = -50
+		add_war_support = -0.05
+		add_timed_idea = {
+			idea = TIA_famine_crisis
+			days = 180
+		}
+		custom_effect_tooltip = TIA.132.b_tt
+		hidden_effect = {
+			country_event = { id = TIA.134 days = 30 }
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+# Famine Resolved (grain agreement path)
+country_event = {
+	id = TIA.133
+	title = TIA.133.t
+	desc = TIA.133.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.133.a
+		add_stability = 0.05
+		add_political_power = 50
+		custom_effect_tooltip = TIA.133.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+
+# Famine Escalation (no agreement path)
+country_event = {
+	id = TIA.134
+	title = TIA.134.t
+	desc = TIA.134.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	# Emergency grain purchase at extortionate prices
+	option = {
+		name = TIA.134.a
+		add_political_power = -100
+		add_stability = 0.03
+		custom_effect_tooltip = TIA.134.a_tt
+		add_timed_idea = {
+			idea = TIA_famine_emergency_purchase
+			days = 360
+		}
+		set_country_flag = TIA_famine_emergency_purchase
+		ai_chance = { factor = 50 }
+	}
+	# Forced requisition from nobles
+	option = {
+		name = TIA.134.b
+		add_stability = -0.05
+		add_political_power = 25
+		add_war_support = -0.05
+		custom_effect_tooltip = TIA.134.b_tt
+		set_country_flag = TIA_famine_requisition
+		country_event = { id = TIA.135 days = 45 random_days = 30 }
+		ai_chance = { factor = 30 }
+	}
+	# Do nothing, hope it passes
+	option = {
+		name = TIA.134.c
+		add_stability = -0.10
+		add_war_support = -0.10
+		add_manpower = -10000
+		custom_effect_tooltip = TIA.134.c_tt
+		set_country_flag = TIA_famine_ignored
+		country_event = { id = TIA.136 days = 60 }
+		ai_chance = { factor = 10 }
+	}
+}
+
+# Noble Backlash (requisition path)
+country_event = {
+	id = TIA.135
+	title = TIA.135.t
+	desc = TIA.135.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	# Suppress noble resistance
+	option = {
+		name = TIA.135.a
+		add_stability = -0.08
+		add_political_power = -50
+		add_war_support = -0.05
+		add_manpower = -5000
+		custom_effect_tooltip = TIA.135.a_tt
+		ai_chance = { factor = 50 }
+	}
+	# Back down, apologize
+	option = {
+		name = TIA.135.b
+		add_stability = -0.05
+		add_political_power = -75
+		add_consumer_goods_factor = 0.05
+		custom_effect_tooltip = TIA.135.b_tt
+		ai_chance = { factor = 30 }
+	}
+	# This spirals into revolt
+	option = {
+		name = TIA.135.c
+		trigger = {
+			has_stability < 0.3
+		}
+		add_stability = -0.15
+		add_war_support = -0.10
+		add_manpower = -15000
+		custom_effect_tooltip = TIA.135.c_tt
+		hidden_effect = {
+			set_country_flag = TIA_famine_revolt
+		}
+		ai_chance = { factor = 10 }
+	}
+}
+
+# Famine Ignored - Catastrophe
+country_event = {
+	id = TIA.136
+	title = TIA.136.t
+	desc = TIA.136.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	# Desperately try to contain
+	option = {
+		name = TIA.136.a
+		add_stability = -0.15
+		add_political_power = -100
+		add_war_support = -0.10
+		add_manpower = -20000
+		add_timed_idea = {
+			idea = TIA_famine_devastation
+			days = 360
+		}
+		custom_effect_tooltip = TIA.136.a_tt
+		ai_chance = { factor = 60 }
+	}
+	# It's too late
+	option = {
+		name = TIA.136.b
+		trigger = {
+			has_stability < 0.3
+		}
+		add_stability = -0.20
+		add_war_support = -0.15
+		add_manpower = -30000
+		custom_effect_tooltip = TIA.136.b_tt
+		set_country_flag = TIA_famine_collapse
+		country_event = { id = TIA.15 days = 60 }
+		ai_chance = { factor = 20 }
+	}
+}
+###################################
+# Health Reform Events
+# Event ID: TIA.137 - TIA.141
+###################################
+# Health Reform Launched
+country_event = {
+	id = TIA.137
+	title = TIA.137.t
+	desc = TIA.137.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.137.a
+		custom_effect_tooltip = TIA.137.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+
+# Field Medics Trained
+country_event = {
+	id = TIA.138
+	title = TIA.138.t
+	desc = TIA.138.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.138.a
+		custom_effect_tooltip = TIA.138.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+
+# Quarantine Infrastructure Built
+country_event = {
+	id = TIA.139
+	title = TIA.139.t
+	desc = TIA.139.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.139.a
+		custom_effect_tooltip = TIA.139.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+
+# Anne's Health Inspection
+country_event = {
+	id = TIA.140
+	title = TIA.140.t
+	desc = TIA.140.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.140.a
+		custom_effect_tooltip = TIA.140.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+
+# Epidemic Defense System Complete
+country_event = {
+	id = TIA.141
+	title = TIA.141.t
+	desc = TIA.141.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.141.a
+		custom_effect_tooltip = TIA.141.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+
+
+###################################
+# Fate Countdown System - Events
+# Hidden monthly tick + crisis triggers
+###################################
+
+###################################
+# Monthly Tick - Decrement all active timers
+###################################
+
+country_event = {
+	id = TIA.142
+	hidden = yes
+	fire_only_once = no
+
+	trigger = {
+		tag = TIA
+		has_country_flag = TIA_countdown_active
+		OR = {
+			AND = {
+				check_variable = { TIA_faith_timer > 0 }
+				NOT = { has_country_flag = TIA_faith_line_complete }
+			}
+			AND = {
+				check_variable = { TIA_health_timer > 0 }
+				NOT = { has_country_flag = TIA_epidemic_defense_complete }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 28
+	}
+
+	immediate = {
+		# Decrement faith timer
+		if = {
+			limit = {
+				check_variable = { TIA_faith_timer > 0 }
+				NOT = { has_country_flag = TIA_faith_line_complete }
+			}
+			subtract_from_variable = { TIA_faith_timer = 30 }
+		}
+		# Decrement health timer
+		if = {
+			limit = {
+				check_variable = { TIA_health_timer > 0 }
+				NOT = { has_country_flag = TIA_epidemic_defense_complete }
+			}
+			subtract_from_variable = { TIA_health_timer = 30 }
+		}
+
+		# Check faith expiry
+		if = {
+			limit = {
+				NOT = { check_variable = { TIA_faith_timer > 0 } }
+				NOT = { has_country_flag = TIA_faith_line_complete }
+				NOT = { has_country_flag = TIA_faith_crisis_fired }
+			}
+			set_country_flag = TIA_faith_crisis_fired
+			country_event = { id = TIA.144 days = 1 }
+		}
+		# Check health expiry
+		if = {
+			limit = {
+				NOT = { check_variable = { TIA_health_timer > 0 } }
+				NOT = { has_country_flag = TIA_epidemic_defense_complete }
+				NOT = { has_country_flag = TIA_health_crisis_fired }
+			}
+			set_country_flag = TIA_health_crisis_fired
+			country_event = { id = TIA.145 days = 1 }
+		}
+	}
+
+	option = { }
+}
+
+###################################
+# Food Timer Expired
+###################################
+
+country_event = {
+	id = TIA.143
+	title = TIA.143.t
+	desc = TIA.143.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.143.a
+		ai_chance = { factor = 100 }
+	}
+}
+
+###################################
+# Faith Timer Expired
+###################################
+
+country_event = {
+	id = TIA.144
+	title = TIA.144.t
+	desc = TIA.144.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.144.a
+		add_stability = -0.10
+		add_political_power = -50
+		add_war_support = -0.05
+		add_ideas = TIA_legitimate_war
+		hidden_effect = {
+			set_country_flag = TIA_domino_faith_fallen
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+###################################
+# Health Timer Expired
+###################################
+
+country_event = {
+	id = TIA.145
+	title = TIA.145.t
+	desc = TIA.145.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.145.a
+		add_stability = -0.10
+		add_political_power = -50
+		add_manpower = -10000
+		add_ideas = TIA_plague_scarred
+		hidden_effect = {
+			set_country_flag = TIA_domino_plague_fallen
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+###################################
+# All Three Settled Check (fires when all 3 are either complete or expired)
+###################################
+
+country_event = {
+	id = TIA.146
+	hidden = yes
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIA
+		has_country_flag = TIA_countdown_active
+		# All three lines resolved (complete or expired)
+		OR = {
+			has_country_flag = TIA_food_line_complete
+			has_country_flag = TIA_famine_collapse
+		}
+		OR = {
+			has_country_flag = TIA_faith_line_complete
+			has_country_flag = TIA_faith_crisis_fired
+		}
+		OR = {
+			has_country_flag = TIA_epidemic_defense_complete
+			has_country_flag = TIA_health_crisis_fired
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	immediate = {
+		# If any domino fell, trigger collapse check
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = TIA_famine_collapse
+					has_country_flag = TIA_domino_faith_fallen
+					has_country_flag = TIA_domino_plague_fallen
+				}
+			}
+			# Map to TIA.15 flags
+			country_event = { id = TIA.15 days = 30 }
+		}
+		# If all survived
+		if = {
+			limit = {
+				has_country_flag = TIA_food_line_complete
+				has_country_flag = TIA_faith_line_complete
+				has_country_flag = TIA_epidemic_defense_complete
+			}
+			country_event = { id = TIA.147 days = 15 }
+		}
+		clr_country_flag = TIA_countdown_active
+	}
+
+	option = { }
+}
+
+###################################
+# All Three Lines Complete - Fate Rewritten
+###################################
+
+country_event = {
+	id = TIA.147
+	title = TIA.147.t
+	desc = TIA.147.desc
+	picture = GFX_report_event_TIA_guillotine
+	is_triggered_only = yes
+
+	option = {
+		name = TIA.147.a
+		add_political_power = 150
+		add_stability = 0.15
+		add_war_support = 0.05
+		custom_effect_tooltip = TIA.147.a_tt
+		ai_chance = { factor = 100 }
+	}
+}
+
 ###################################
 # 水神信仰线 - 事件
 ###################################
@@ -6205,6 +7169,8 @@ country_event = {
 		}
 	}
 }
+
+
 
 country_event = {
 	id = tiam.101
