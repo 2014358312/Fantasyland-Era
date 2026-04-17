@@ -1,0 +1,2429 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+###################################
+# 超次元海王星 联合国策树 (Shared Focus Tree)
+# Shared by PLA / LAS / LOW / LEA
+# File: common/national_focus/HDN_shared_focus.txt
+#
+# Structure:
+# 1. Main story Phase 1 (Zero Dimension Call)
+# 2. Phase 2 branches (Goddess side x4 + Dark side x5)
+# 3. Autonomy line + Federation line
+# 4. Sister / Golden Shaman / Secret Society sidelines
+# 5. Military industrial line
+###################################
+
+###################################
+# 超次元海王星 联合国策树 - 主线一阶段
+# Shared focus tree for PLA / LAS / LOW / LEA
+# File: common/national_focus/HDN_shared_focus.txt
+###################################
+
+shared_focus = {
+	id = HDN_zero_dimension_call
+	icon = GFX_focus_HDN_zero_dimension_call
+	text_icon = NORDIC_focus_style
+	x = 100
+	y = 0
+	cost = 5
+	allow_branch = {
+		OR = { tag = PLA tag = LAS tag = LOW tag = LEA }
+	}
+	available = {
+		always = yes
+	}
+	completion_reward = {
+		add_political_power = 100
+		custom_effect_tooltip = HDN_zero_dimension_call_tt
+		hidden_effect = {
+			set_country_flag = HDN_main_story_started
+			# country_event = { id = HDN_main.1 days = 3 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_save_zero_dimension
+	icon = GFX_focus_HDN_save_zero_dimension
+	relative_position_id = HDN_zero_dimension_call
+	x = -3
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_zero_dimension_call}
+	mutually_exclusive = { focus = HDN_shadow_beneath }
+	completion_reward = {
+		add_stability = 0.10
+		add_war_support = 0.05
+		custom_effect_tooltip = HDN_save_zero_dimension_tt
+		hidden_effect = {
+			set_country_flag = HDN_goddess_side
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_shadow_beneath
+	icon = GFX_focus_HDN_shadow_beneath
+	relative_position_id = HDN_zero_dimension_call
+	x = 3
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_zero_dimension_call }
+	mutually_exclusive = { focus = HDN_save_zero_dimension }
+	completion_reward = {
+		add_political_power = 200
+		custom_effect_tooltip = HDN_shadow_beneath_tt
+		hidden_effect = {
+			set_country_flag = HDN_dark_side
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# Goddess Side Branch
+###################################
+
+shared_focus = {
+	id = HDN_strike_force
+	icon = GFX_focus_HDN_strike_force
+	relative_position_id = HDN_save_zero_dimension
+	x = -2
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_save_zero_dimension }
+	completion_reward = {
+		custom_effect_tooltip = HDN_strike_force_tt
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = HDN_goddesses_unlocked
+			# country_event = { id = HDN_main.10 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_otherworld_goddess
+	icon = GFX_focus_HDN_otherworld_goddess
+	relative_position_id = HDN_save_zero_dimension
+	x = 2
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_save_zero_dimension }
+	completion_reward = {
+		custom_effect_tooltip = HDN_otherworld_goddess_tt
+		add_political_power = 30
+		hidden_effect = {
+			set_country_flag = HDN_alt_goddesses_unlocked
+			# country_event = { id = HDN_main.11 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_external_support
+	icon = GFX_focus_HDN_external_support
+	relative_position_id = HDN_strike_force
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_strike_force }
+	completion_reward = {
+		custom_effect_tooltip = HDN_external_support_tt
+		add_political_power = 40
+		hidden_effect = {
+			set_country_flag = HDN_candidates_unlocked
+			# country_event = { id = HDN_main.12 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_collect_local_faith
+	icon = GFX_focus_HDN_collect_local_faith
+	relative_position_id = HDN_otherworld_goddess
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_otherworld_goddess }
+	completion_reward = {
+		custom_effect_tooltip = HDN_collect_local_faith_tt
+		add_stability = 0.05
+		hidden_effect = {
+			set_country_flag = HDN_local_faith_collected
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_contact_chaos
+	icon = GFX_focus_HDN_contact_chaos
+	relative_position_id = HDN_external_support
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_external_support }
+	completion_reward = {
+		custom_effect_tooltip = HDN_contact_chaos_tt
+		add_political_power = 50
+		hidden_effect = {
+			# country_event = { id = HDN_main.13 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_otherworld_traveler
+	icon = GFX_focus_HDN_otherworld_traveler
+	relative_position_id = HDN_collect_local_faith
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_collect_local_faith }
+	completion_reward = {
+		custom_effect_tooltip = HDN_otherworld_traveler_tt
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = HDN_big_nep_arrived
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_secret_organization
+	icon = GFX_focus_HDN_secret_organization
+	relative_position_id = HDN_contact_chaos
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_contact_chaos }
+	completion_reward = {
+		custom_effect_tooltip = HDN_secret_organization_tt
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = HDN_affimax_contacted
+			# country_event = { id = HDN_main.14 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_ancient_goddess
+	icon = GFX_focus_HDN_ancient_goddess
+	relative_position_id = HDN_otherworld_traveler
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_otherworld_traveler }
+	completion_reward = {
+		custom_effect_tooltip = HDN_ancient_goddess_tt
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = HDN_rei_cracker_met
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_next_gen_awakening
+	icon = GFX_focus_HDN_next_gen_awakening
+	relative_position_id = HDN_save_zero_dimension
+	x = 0
+	y = 5
+	cost = 10
+	prerequisite = { focus = HDN_secret_organization }
+	prerequisite = { focus = HDN_ancient_goddess }
+	completion_reward = {
+		custom_effect_tooltip = HDN_next_gen_awakening_tt
+		add_political_power = 100
+		add_stability = 0.05
+		hidden_effect = {
+			set_country_flag = HDN_next_gen_form_achieved
+			# country_event = { id = HDN_main.20 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# Dark Side Branch
+###################################
+
+shared_focus = {
+	id = HDN_void_and_destruction
+	icon = GFX_focus_HDN_void_and_destruction
+	relative_position_id = HDN_shadow_beneath
+	x = 0
+	y = 5
+	cost = 10
+	prerequisite = { focus = HDN_shadow_beneath }
+	completion_reward = {
+		custom_effect_tooltip = HDN_void_and_destruction_tt
+		add_political_power = 100
+		hidden_effect = {
+			set_country_flag = HDN_void_destruction_done
+			# country_event = { id = HDN_main.30 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# Decisive Battle - Trigger Event
+###################################
+
+shared_focus = {
+	id = HDN_decisive_battle_zero
+	icon = GFX_focus_HDN_decisive_battle
+	relative_position_id = HDN_zero_dimension_call
+	x = 0
+	y = 7
+	cost = 10
+	prerequisite = { focus = HDN_next_gen_awakening focus = HDN_void_and_destruction }
+	completion_reward = {
+		custom_effect_tooltip = HDN_decisive_battle_zero_tt
+		hidden_effect = {
+			# country_event = { id = HDN_main.40 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# 超次元海王星 联合国策树 - 主线二阶段
+# Phase 2 branch-in focuses triggered by decisive battle outcome
+###################################
+
+###################################
+# Goddess Side - 4 Branch Heads
+###################################
+
+shared_focus = {
+	id = HDN_goddess_triumph
+	icon = GFX_focus_HDN_goddess_triumph
+	relative_position_id = HDN_decisive_battle_zero
+	x = -30
+	y = 2
+	cost = 10
+	available = {
+		has_country_flag = HDN_next_gen_form_achieved
+		has_country_flag = HDN_decisive_battle_won
+	}
+	prerequisite = { focus = HDN_decisive_battle_zero }
+	completion_reward = {
+		custom_effect_tooltip = HDN_goddess_triumph_tt
+		add_political_power = 200
+		add_stability = 0.15
+		hidden_effect = {
+			set_country_flag = HDN_path_triumph
+			# country_event = { id = HDN_main.50 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_looming_threat
+	icon = GFX_focus_HDN_looming_threat
+	relative_position_id = HDN_decisive_battle_zero
+	x = -3
+	y = 2
+	cost = 10
+	available = {
+		has_country_flag = HDN_next_gen_form_achieved
+		has_country_flag = HDN_decisive_battle_lost
+	}
+	prerequisite = { focus = HDN_decisive_battle_zero }
+	completion_reward = {
+		custom_effect_tooltip = HDN_looming_threat_tt
+		add_political_power = 100
+		add_stability = -0.05
+		hidden_effect = {
+			set_country_flag = HDN_path_looming
+			# country_event = { id = HDN_main.51 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_shadow_awakening
+	icon = GFX_focus_HDN_shadow_awakening
+	relative_position_id = HDN_decisive_battle_zero
+	x = 3
+	y = 2
+	cost = 10
+	available = {
+		NOT = { has_country_flag = HDN_next_gen_form_achieved }
+		has_country_flag = HDN_decisive_battle_lost
+	}
+	prerequisite = { focus = HDN_decisive_battle_zero }
+	completion_reward = {
+		custom_effect_tooltip = HDN_shadow_awakening_tt
+		add_political_power = 100
+		hidden_effect = {
+			set_country_flag = HDN_path_shadow
+			# country_event = { id = HDN_main.52 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_turbulence_returns
+	icon = GFX_focus_HDN_turbulence_returns
+	relative_position_id = HDN_decisive_battle_zero
+	x = 9
+	y = 2
+	cost = 10
+	available = {
+		has_country_flag = HDN_decisive_battle_won
+		has_stability < 0.05
+	}
+	prerequisite = { focus = HDN_decisive_battle_zero }
+	completion_reward = {
+		custom_effect_tooltip = HDN_turbulence_returns_tt
+		add_political_power = 100
+		add_stability = 0.05
+		hidden_effect = {
+			set_country_flag = HDN_path_turbulence
+			# country_event = { id = HDN_main.53 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# Dark Side - 5 Branch Heads
+###################################
+
+shared_focus = {
+	id = HDN_dark_unification
+	icon = GFX_focus_HDN_dark_unification
+	relative_position_id = HDN_void_and_destruction
+	x = -8
+	y = 3
+	cost = 10
+	available = {
+		NOT = { has_country_flag = HDN_void_destruction_done }
+		has_country_flag = HDN_decisive_battle_won
+		has_country_flag = HDN_chaos_dominant
+	}
+	prerequisite = { focus = HDN_decisive_battle_zero }
+	completion_reward = {
+		custom_effect_tooltip = HDN_dark_unification_tt
+		add_political_power = 200
+		hidden_effect = {
+			set_country_flag = HDN_path_dark_unify
+			# country_event = { id = HDN_main.60 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_dark_apocalypse
+	icon = GFX_focus_HDN_dark_apocalypse
+	relative_position_id = HDN_void_and_destruction
+	x = -4
+	y = 3
+	cost = 10
+	available = {
+		has_country_flag = HDN_void_destruction_done
+		has_country_flag = HDN_decisive_battle_won
+	}
+	prerequisite = { focus = HDN_decisive_battle_zero }
+	completion_reward = {
+		custom_effect_tooltip = HDN_dark_apocalypse_tt
+		add_political_power = 200
+		add_war_support = 0.15
+		hidden_effect = {
+			set_country_flag = HDN_path_apocalypse
+			# country_event = { id = HDN_main.61 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_tari_line
+	icon = GFX_focus_HDN_tari_line
+	relative_position_id = HDN_void_and_destruction
+	x = 0
+	y = 3
+	cost = 10
+	available = {
+		has_country_flag = HDN_rei_proposal_accepted
+		has_country_flag = HDN_decisive_battle_won
+	}
+	prerequisite = { focus = HDN_decisive_battle_zero }
+	completion_reward = {
+		custom_effect_tooltip = HDN_tari_line_tt
+		add_political_power = 150
+		hidden_effect = {
+			set_country_flag = HDN_path_tari
+			# country_event = { id = HDN_main.62 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_uranus_interworld
+	icon = GFX_focus_HDN_uranus_interworld
+	relative_position_id = HDN_void_and_destruction
+	x = 4
+	y = 3
+	cost = 10
+	available = {
+		NOT = { has_country_flag = HDN_void_destruction_done }
+		has_country_flag = HDN_decisive_battle_lost
+	}
+	prerequisite = { focus = HDN_decisive_battle_zero }
+	completion_reward = {
+		custom_effect_tooltip = HDN_uranus_interworld_tt
+		add_political_power = 150
+		hidden_effect = {
+			set_country_flag = HDN_path_interworld
+			# country_event = { id = HDN_main.63 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_uranus_rebuild
+	icon = GFX_focus_HDN_uranus_rebuild
+	relative_position_id = HDN_void_and_destruction
+	x = 8
+	y = 3
+	cost = 10
+	available = {
+		has_country_flag = HDN_void_destruction_done
+		has_country_flag = HDN_decisive_battle_lost
+	}
+	prerequisite = { focus = HDN_decisive_battle_zero }
+	completion_reward = {
+		custom_effect_tooltip = HDN_uranus_rebuild_tt
+		add_political_power = 150
+		add_stability = 0.10
+		hidden_effect = {
+			set_country_flag = HDN_path_rebuild
+			# country_event = { id = HDN_main.64 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# 超次元海王星 联合国策树 - 自治线与联合政府线
+# Two mutually exclusive governance paths
+###################################
+
+###################################
+# Autonomy Line Head
+###################################
+
+shared_focus = {
+	id = HDN_city_state_autonomy
+	icon = GFX_focus_HDN_city_state_autonomy
+	relative_position_id = HDN_goddess_triumph
+	x = -10
+	y = 1
+	cost = 10
+	prerequisite = { focus = HDN_goddess_triumph }
+	mutually_exclusive = { focus = HDN_federation_government }
+	completion_reward = {
+		custom_effect_tooltip = HDN_city_state_autonomy_tt
+		add_political_power = 150
+		hidden_effect = {
+			set_country_flag = HDN_autonomy_path
+			# country_event = { id = HDN_gov.1 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# Autonomy: Four Goddess Branches
+###################################
+
+shared_focus = {
+	id = HDN_joint_defense
+	icon = GFX_focus_HDN_joint_defense
+	relative_position_id = HDN_city_state_autonomy
+	x = -6
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_city_state_autonomy }
+	completion_reward = {
+		custom_effect_tooltip = HDN_joint_defense_tt
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = HDN_blanc_branch_started
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_joint_military_exercise
+	icon = GFX_focus_HDN_joint_military_exercise
+	relative_position_id = HDN_joint_defense
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_joint_defense }
+	completion_reward = {
+		army_experience = 25
+		add_war_support = 0.05
+		custom_effect_tooltip = HDN_joint_military_exercise_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_joint_command
+	icon = GFX_focus_HDN_joint_command
+	relative_position_id = HDN_joint_military_exercise
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_joint_military_exercise }
+	completion_reward = {
+		#add_ideas = HDN_joint_command_spirit
+		custom_effect_tooltip = HDN_joint_command_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_unified_supply
+	icon = GFX_focus_HDN_unified_supply
+	relative_position_id = HDN_joint_command
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_joint_command }
+	completion_reward = {
+		#add_ideas = HDN_unified_supply_spirit
+		custom_effect_tooltip = HDN_unified_supply_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_new_army
+	icon = GFX_focus_HDN_new_army
+	relative_position_id = HDN_unified_supply
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_unified_supply }
+	completion_reward = {
+		add_manpower = 20000
+		army_experience = 30
+		custom_effect_tooltip = HDN_new_army_tt
+		hidden_effect = {
+			set_country_flag = HDN_new_army_built
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_political_cooperation
+	icon = GFX_focus_HDN_political_cooperation
+	relative_position_id = HDN_city_state_autonomy
+	x = -2
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_city_state_autonomy }
+	completion_reward = {
+		custom_effect_tooltip = HDN_political_cooperation_tt
+		add_political_power = 100
+		hidden_effect = {
+			set_country_flag = HDN_neptune_branch_started
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_intelligence_sharing
+	icon = GFX_focus_HDN_intelligence_sharing
+	relative_position_id = HDN_political_cooperation
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_political_cooperation }
+	completion_reward = {
+		custom_effect_tooltip = HDN_intelligence_sharing_tt
+		add_political_power = 50
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_guru_cabinet
+	icon = GFX_focus_HDN_guru_cabinet
+	relative_position_id = HDN_intelligence_sharing
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_intelligence_sharing }
+	completion_reward = {
+		#add_ideas = HDN_guru_cabinet_spirit
+		custom_effect_tooltip = HDN_guru_cabinet_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_research_sharing
+	icon = GFX_focus_HDN_research_sharing
+	relative_position_id = HDN_guru_cabinet
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_guru_cabinet }
+	completion_reward = {
+		add_research_slot = 1
+		custom_effect_tooltip = HDN_research_sharing_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_supreme_goddess_council
+	icon = GFX_focus_HDN_supreme_goddess_council
+	relative_position_id = HDN_research_sharing
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_research_sharing }
+	completion_reward = {
+		#add_ideas = HDN_supreme_council_spirit
+		custom_effect_tooltip = HDN_supreme_goddess_council_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_unbreakable_alliance
+	icon = GFX_focus_HDN_unbreakable_alliance
+	relative_position_id = HDN_supreme_goddess_council
+	x = 0
+	y = 1
+	cost = 10
+	prerequisite = { focus = HDN_supreme_goddess_council }
+	prerequisite = { focus = HDN_new_army }
+	completion_reward = {
+		add_political_power = 200
+		add_stability = 0.10
+		#add_ideas = HDN_unbreakable_alliance_spirit
+		custom_effect_tooltip = HDN_unbreakable_alliance_tt
+		hidden_effect = {
+			set_country_flag = HDN_autonomy_capstone_done
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_economic_union
+	icon = GFX_focus_HDN_economic_union
+	relative_position_id = HDN_city_state_autonomy
+	x = 2
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_city_state_autonomy }
+	completion_reward = {
+		custom_effect_tooltip = HDN_economic_union_tt
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = HDN_noire_branch_started
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_invest_in_cities
+	icon = GFX_focus_HDN_invest_in_cities
+	relative_position_id = HDN_economic_union
+	x = -1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_economic_union }
+	completion_reward = {
+		add_political_power = 50
+		custom_effect_tooltip = HDN_invest_in_cities_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_foreign_enterprise
+	icon = GFX_focus_HDN_foreign_enterprise
+	relative_position_id = HDN_economic_union
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_economic_union }
+	completion_reward = {
+		add_political_power = 50
+		custom_effect_tooltip = HDN_foreign_enterprise_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_supreme_goddess_bank
+	icon = GFX_focus_HDN_supreme_goddess_bank
+	relative_position_id = HDN_economic_union
+	x = 0
+	y = 2
+	cost = 5
+	prerequisite = { focus = HDN_invest_in_cities }
+	prerequisite = { focus = HDN_foreign_enterprise }
+	completion_reward = {
+		#add_ideas = HDN_goddess_bank_spirit
+		custom_effect_tooltip = HDN_supreme_goddess_bank_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_goddess_joint_mining
+	icon = GFX_focus_HDN_goddess_joint_mining
+	relative_position_id = HDN_supreme_goddess_bank
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_supreme_goddess_bank }
+	completion_reward = {
+		add_resource = { type = steel amount = 20 state = random }
+		add_resource = { type = tungsten amount = 10 state = random }
+		custom_effect_tooltip = HDN_goddess_joint_mining_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_joint_railway
+	icon = GFX_focus_HDN_joint_railway
+	relative_position_id = HDN_goddess_joint_mining
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_goddess_joint_mining }
+	completion_reward = {
+		custom_effect_tooltip = HDN_joint_railway_tt
+		add_political_power = 100
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_industrial_proposal
+	icon = GFX_focus_HDN_industrial_proposal
+	relative_position_id = HDN_city_state_autonomy
+	x = 7
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_city_state_autonomy }
+	completion_reward = {
+		custom_effect_tooltip = HDN_industrial_proposal_tt
+		add_political_power = 100
+		hidden_effect = {
+			set_country_flag = HDN_vert_branch_started
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_light_industry_boost
+	icon = GFX_focus_HDN_light_industry_boost
+	relative_position_id = HDN_industrial_proposal
+	x = -2
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_industrial_proposal }
+	completion_reward = {
+		add_political_power = 50
+		#add_ideas = HDN_light_industry_spirit
+		custom_effect_tooltip = HDN_light_industry_boost_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_aid_reconstruction
+	icon = GFX_focus_HDN_aid_reconstruction
+	relative_position_id = HDN_industrial_proposal
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_industrial_proposal }
+	completion_reward = {
+		add_political_power = 50
+		add_stability = 0.03
+		custom_effect_tooltip = HDN_aid_reconstruction_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_develop_mining
+	icon = GFX_focus_HDN_develop_mining
+	relative_position_id = HDN_industrial_proposal
+	x = 2
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_industrial_proposal }
+	completion_reward = {
+		add_resource = { type = steel amount = 10 state = random }
+		custom_effect_tooltip = HDN_develop_mining_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_local_dev_plan
+	icon = GFX_focus_HDN_local_dev_plan
+	relative_position_id = HDN_industrial_proposal
+	x = 0
+	y = 2
+	cost = 5
+	prerequisite = { focus = HDN_light_industry_boost }
+	prerequisite = { focus = HDN_aid_reconstruction }
+	prerequisite = { focus = HDN_develop_mining }
+	completion_reward = {
+		#add_ideas = HDN_local_dev_spirit
+		custom_effect_tooltip = HDN_local_dev_plan_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# Autonomy Capstone: Goddess Rule
+###################################
+
+shared_focus = {
+	id = HDN_goddess_rule
+	icon = GFX_focus_HDN_goddess_rule
+	relative_position_id = HDN_city_state_autonomy
+	x = 0
+	y = 7
+	cost = 10
+	prerequisite = { focus = HDN_unbreakable_alliance }
+	prerequisite = { focus = HDN_joint_railway }
+	prerequisite = { focus = HDN_local_dev_plan }
+	prerequisite = { focus = HDN_new_army }
+	completion_reward = {
+		#add_ideas = HDN_goddess_rule_spirit
+		add_political_power = 300
+		add_stability = 0.15
+		custom_effect_tooltip = HDN_goddess_rule_tt
+		hidden_effect = {
+			set_country_flag = HDN_inner_circle_unlocked
+			# country_event = { id = HDN_gov.10 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# Inner Circle: 4 Goddess Personal Branches (brief)
+###################################
+
+shared_focus = {
+	id = HDN_inner_noire
+	icon = GFX_focus_HDN_inner_noire
+	relative_position_id = HDN_goddess_rule
+	x = -6
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_goddess_rule }
+	completion_reward = {
+		#add_ideas = HDN_noire_workaholic
+		custom_effect_tooltip = HDN_inner_noire_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_inner_secretariat
+	icon = GFX_focus_HDN_inner_secretariat
+	relative_position_id = HDN_inner_noire
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_inner_noire }
+	completion_reward = {
+		add_political_power = 100
+		custom_effect_tooltip = HDN_inner_secretariat_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_inner_admin_reform
+	icon = GFX_focus_HDN_inner_admin_reform
+	relative_position_id = HDN_inner_secretariat
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_inner_secretariat }
+	completion_reward = {
+		#add_ideas = HDN_admin_reform_spirit
+		custom_effect_tooltip = HDN_inner_admin_reform_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_inner_neptune
+	icon = GFX_focus_HDN_inner_neptune
+	relative_position_id = HDN_goddess_rule
+	x = -2
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_goddess_rule }
+	completion_reward = {
+		custom_effect_tooltip = HDN_inner_neptune_tt
+		add_political_power = 100
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_inner_indirect_rule
+	icon = GFX_focus_HDN_inner_indirect_rule
+	relative_position_id = HDN_inner_neptune
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_inner_neptune }
+	completion_reward = {
+		#add_ideas = HDN_indirect_rule_spirit
+		custom_effect_tooltip = HDN_inner_indirect_rule_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_inner_close_trade
+	icon = GFX_focus_HDN_inner_close_trade
+	relative_position_id = HDN_inner_indirect_rule
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_inner_indirect_rule }
+	completion_reward = {
+		add_political_power = 50
+		custom_effect_tooltip = HDN_inner_close_trade_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_inner_vert
+	icon = GFX_focus_HDN_inner_vert
+	relative_position_id = HDN_goddess_rule
+	x = 2
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_goddess_rule }
+	completion_reward = {
+		custom_effect_tooltip = HDN_inner_vert_tt
+		add_political_power = 100
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_inner_south_wind
+	icon = GFX_focus_HDN_inner_south_wind
+	relative_position_id = HDN_inner_vert
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_inner_vert }
+	completion_reward = {
+		custom_effect_tooltip = HDN_inner_south_wind_tt
+		add_political_power = 50
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_inner_game_kingdom
+	icon = GFX_focus_HDN_inner_game_kingdom
+	relative_position_id = HDN_inner_south_wind
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_inner_south_wind }
+	completion_reward = {
+		#add_ideas = HDN_game_kingdom_spirit
+		custom_effect_tooltip = HDN_inner_game_kingdom_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_inner_blanc
+	icon = GFX_focus_HDN_inner_blanc
+	relative_position_id = HDN_goddess_rule
+	x = 6
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_goddess_rule }
+	completion_reward = {
+		custom_effect_tooltip = HDN_inner_blanc_tt
+		add_political_power = 100
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_inner_ancient_ruins
+	icon = GFX_focus_HDN_inner_ancient_ruins
+	relative_position_id = HDN_inner_blanc
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_inner_blanc }
+	completion_reward = {
+		add_research_slot = 1
+		custom_effect_tooltip = HDN_inner_ancient_ruins_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_inner_encourage_magic
+	icon = GFX_focus_HDN_inner_encourage_magic
+	relative_position_id = HDN_inner_ancient_ruins
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_inner_ancient_ruins }
+	completion_reward = {
+		#add_research_speed_factor = 0.05
+		custom_effect_tooltip = HDN_inner_encourage_magic_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# Federation Government Head
+###################################
+
+shared_focus = {
+	id = HDN_federation_government
+	icon = GFX_focus_HDN_federation_government
+	relative_position_id = HDN_goddess_triumph
+	x = 10
+	y = 1
+	cost = 10
+	prerequisite = { focus = HDN_goddess_triumph }
+	mutually_exclusive = { focus = HDN_city_state_autonomy }
+	completion_reward = {
+		custom_effect_tooltip = HDN_federation_government_tt
+		add_political_power = 150
+		hidden_effect = {
+			set_country_flag = HDN_federation_path
+			# country_event = { id = HDN_gov.20 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fed_campaign_noire
+	icon = GFX_focus_HDN_fed_campaign_noire
+	relative_position_id = HDN_federation_government
+	x = -2
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_federation_government }
+	mutually_exclusive = { focus = HDN_fed_campaign_vert }
+	completion_reward = {
+		custom_effect_tooltip = HDN_fed_campaign_noire_tt
+		add_political_power = 100
+		hidden_effect = {
+			set_country_flag = HDN_fed_noire_leading
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fed_campaign_vert
+	icon = GFX_focus_HDN_fed_campaign_vert
+	relative_position_id = HDN_federation_government
+	x = 2
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_federation_government }
+	mutually_exclusive = { focus = HDN_fed_campaign_noire }
+	completion_reward = {
+		custom_effect_tooltip = HDN_fed_campaign_vert_tt
+		add_political_power = 100
+		hidden_effect = {
+			set_country_flag = HDN_fed_vert_leading
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fed_industrial_combine
+	icon = GFX_focus_HDN_fed_industrial_combine
+	relative_position_id = HDN_fed_campaign_noire
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_fed_campaign_noire }
+	completion_reward = {
+		#add_ideas = HDN_lastation_industrial_combine
+		custom_effect_tooltip = HDN_fed_industrial_combine_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fed_streamline_admin
+	icon = GFX_focus_HDN_fed_streamline_admin
+	relative_position_id = HDN_fed_industrial_combine
+	x = -1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_fed_industrial_combine }
+	mutually_exclusive = { focus = HDN_fed_expand_admin }
+	completion_reward = {
+		add_stability = 0.03
+		add_political_power = 100
+		custom_effect_tooltip = HDN_fed_streamline_admin_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fed_expand_admin
+	icon = GFX_focus_HDN_fed_expand_admin
+	relative_position_id = HDN_fed_industrial_combine
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_fed_industrial_combine }
+	mutually_exclusive = { focus = HDN_fed_streamline_admin }
+	completion_reward = {
+		add_manpower = 10000
+		add_political_power = 50
+		custom_effect_tooltip = HDN_fed_expand_admin_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fed_modern_production
+	icon = GFX_focus_HDN_fed_modern_production
+	relative_position_id = HDN_fed_industrial_combine
+	x = 0
+	y = 2
+	cost = 5
+	prerequisite = { focus = HDN_fed_streamline_admin focus = HDN_fed_expand_admin }
+	completion_reward = {
+		#add_ideas = HDN_modern_production_spirit
+		custom_effect_tooltip = HDN_fed_modern_production_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fed_centralize
+	icon = GFX_focus_HDN_fed_centralize
+	relative_position_id = HDN_fed_modern_production
+	x = -1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_fed_modern_production }
+	mutually_exclusive = { focus = HDN_fed_decentralize }
+	completion_reward = {
+		#add_ideas = HDN_centralized_authority_fed
+		custom_effect_tooltip = HDN_fed_centralize_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fed_decentralize
+	icon = GFX_focus_HDN_fed_decentralize
+	relative_position_id = HDN_fed_modern_production
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_fed_modern_production }
+	mutually_exclusive = { focus = HDN_fed_centralize }
+	completion_reward = {
+		#add_ideas = HDN_decentralized_authority_fed
+		custom_effect_tooltip = HDN_fed_decentralize_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fed_unified_law
+	icon = GFX_focus_HDN_fed_unified_law
+	relative_position_id = HDN_fed_centralize
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_fed_centralize }
+	completion_reward = {
+		add_political_power = 100
+		add_stability = 0.05
+		custom_effect_tooltip = HDN_fed_unified_law_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fed_delegate_legislation
+	icon = GFX_focus_HDN_fed_delegate_legislation
+	relative_position_id = HDN_fed_decentralize
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_fed_decentralize }
+	completion_reward = {
+		add_political_power = 50
+		add_stability = 0.03
+		custom_effect_tooltip = HDN_fed_delegate_legislation_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fed_strengthen_ruling_faction
+	icon = GFX_focus_HDN_fed_strengthen_ruling_faction
+	relative_position_id = HDN_federation_government
+	x = 0
+	y = 7
+	cost = 5
+	prerequisite = { focus = HDN_fed_unified_law focus = HDN_fed_delegate_legislation }
+	mutually_exclusive = { focus = HDN_fed_strengthen_parliament }
+	completion_reward = {
+		add_political_power = 200
+		custom_effect_tooltip = HDN_fed_strengthen_ruling_faction_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fed_strengthen_parliament
+	icon = GFX_focus_HDN_fed_strengthen_parliament
+	relative_position_id = HDN_federation_government
+	x = 0
+	y = 7
+	cost = 5
+	prerequisite = { focus = HDN_fed_unified_law focus = HDN_fed_delegate_legislation }
+	mutually_exclusive = { focus = HDN_fed_strengthen_ruling_faction }
+	completion_reward = {
+		add_political_power = 100
+		add_stability = 0.08
+		custom_effect_tooltip = HDN_fed_strengthen_parliament_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fed_continue_elections
+	icon = GFX_focus_HDN_fed_continue_elections
+	relative_position_id = HDN_fed_strengthen_parliament
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_fed_strengthen_parliament }
+	completion_reward = {
+		#add_ideas = HDN_continued_elections_spirit
+		custom_effect_tooltip = HDN_fed_continue_elections_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fed_consolidate_power
+	icon = GFX_focus_HDN_fed_consolidate_power
+	relative_position_id = HDN_fed_strengthen_ruling_faction
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_fed_strengthen_ruling_faction }
+	completion_reward = {
+		#add_ideas = HDN_consolidated_power_spirit
+		custom_effect_tooltip = HDN_fed_consolidate_power_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# 超次元海王星 联合国策树 - 分线与军事线
+# Sister / Golden Shaman / Secret Society / Military / Dark Apocalypse
+###################################
+
+###################################
+# Sister Training Line
+###################################
+
+shared_focus = {
+	id = HDN_big_nep_visit
+	icon = GFX_focus_HDN_big_nep_visit
+	relative_position_id = HDN_looming_threat
+	x = -4
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_looming_threat }
+	completion_reward = {
+		custom_effect_tooltip = HDN_big_nep_visit_tt
+		add_political_power = 100
+		hidden_effect = {
+			set_country_flag = HDN_sister_line_started
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_otherworld_hero
+	icon = GFX_focus_HDN_otherworld_hero
+	relative_position_id = HDN_big_nep_visit
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_big_nep_visit }
+	completion_reward = {
+		custom_effect_tooltip = HDN_otherworld_hero_tt
+		add_political_power = 50
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_save_faith_crisis
+	icon = GFX_focus_HDN_save_faith_crisis
+	relative_position_id = HDN_otherworld_hero
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_otherworld_hero }
+	completion_reward = {
+		add_stability = 0.05
+		add_political_power = 50
+		custom_effect_tooltip = HDN_save_faith_crisis_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_hero_training
+	icon = GFX_focus_HDN_hero_training
+	relative_position_id = HDN_save_faith_crisis
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_save_faith_crisis }
+	completion_reward = {
+		custom_effect_tooltip = HDN_hero_training_tt
+		hidden_effect = {
+			set_country_flag = HDN_sister_training_unlocked
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_play_with_sisters
+	icon = GFX_focus_HDN_play_with_sisters
+	relative_position_id = HDN_hero_training
+	x = -3
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_hero_training }
+	completion_reward = {
+		add_political_power = 50
+		custom_effect_tooltip = HDN_play_with_sisters_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_explore_dungeon
+	icon = GFX_focus_HDN_explore_dungeon
+	relative_position_id = HDN_play_with_sisters
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_play_with_sisters }
+	completion_reward = {
+		custom_effect_tooltip = HDN_explore_dungeon_tt
+		army_experience = 15
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_sister_education
+	icon = GFX_focus_HDN_sister_education
+	relative_position_id = HDN_hero_training
+	x = -1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_hero_training }
+	completion_reward = {
+		#add_research_speed_factor = 0.03
+		custom_effect_tooltip = HDN_sister_education_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_guru_special_training
+	icon = GFX_focus_HDN_guru_special_training
+	relative_position_id = HDN_sister_education
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_sister_education }
+	completion_reward = {
+		add_political_power = 100
+		custom_effect_tooltip = HDN_guru_special_training_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_sister_practice
+	icon = GFX_focus_HDN_sister_practice
+	relative_position_id = HDN_hero_training
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_hero_training }
+	completion_reward = {
+		add_political_power = 50
+		add_stability = 0.03
+		custom_effect_tooltip = HDN_sister_practice_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_assist_rebuild
+	icon = GFX_focus_HDN_assist_rebuild
+	relative_position_id = HDN_sister_practice
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_sister_practice }
+	completion_reward = {
+		add_stability = 0.05
+		custom_effect_tooltip = HDN_assist_rebuild_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_fight_darkness_again
+	icon = GFX_focus_HDN_fight_darkness_again
+	relative_position_id = HDN_hero_training
+	x = 0
+	y = 3
+	cost = 10
+	prerequisite = { focus = HDN_explore_dungeon }
+	prerequisite = { focus = HDN_guru_special_training }
+	prerequisite = { focus = HDN_assist_rebuild }
+	completion_reward = {
+		#add_ideas = HDN_sister_bond_spirit
+		custom_effect_tooltip = HDN_fight_darkness_again_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# Golden Shaman Line
+###################################
+
+shared_focus = {
+	id = HDN_golden_rule
+	icon = GFX_focus_HDN_golden_rule
+	relative_position_id = HDN_looming_threat
+	x = -10
+	y = 1
+	cost = 10
+	prerequisite = { focus = HDN_looming_threat }
+	completion_reward = {
+		custom_effect_tooltip = HDN_golden_rule_tt
+		add_political_power = 200
+		hidden_effect = {
+			set_country_flag = HDN_golden_shaman_started
+			# country_event = { id = HDN_gold.1 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_build_golden_tower
+	icon = GFX_focus_HDN_build_golden_tower
+	relative_position_id = HDN_golden_rule
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_golden_rule }
+	completion_reward = {
+		custom_effect_tooltip = HDN_build_golden_tower_tt
+		#add_ideas = HDN_golden_tower_spirit
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_golden_power_usage
+	icon = GFX_focus_HDN_golden_power_usage
+	relative_position_id = HDN_build_golden_tower
+	x = -1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_build_golden_tower }
+	completion_reward = {
+		custom_effect_tooltip = HDN_golden_power_usage_tt
+		add_political_power = 100
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_convert_faith_power
+	icon = GFX_focus_HDN_convert_faith_power
+	relative_position_id = HDN_golden_power_usage
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_golden_power_usage }
+	completion_reward = {
+		custom_effect_tooltip = HDN_convert_faith_power_tt
+		hidden_effect = {
+			set_country_flag = HDN_faith_conversion_unlocked
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_strengthen_golden_tower
+	icon = GFX_focus_HDN_strengthen_golden_tower
+	relative_position_id = HDN_convert_faith_power
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_convert_faith_power }
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = HDN_golden_tower_spirit
+			add_idea = HDN_golden_tower_strengthened
+		}
+		custom_effect_tooltip = HDN_strengthen_golden_tower_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_another_planeptune
+	icon = GFX_focus_HDN_another_planeptune
+	relative_position_id = HDN_build_golden_tower
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_build_golden_tower }
+	completion_reward = {
+		custom_effect_tooltip = HDN_another_planeptune_tt
+		add_political_power = 50
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_summon_more_friends
+	icon = GFX_focus_HDN_summon_more_friends
+	relative_position_id = HDN_another_planeptune
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_another_planeptune }
+	completion_reward = {
+		custom_effect_tooltip = HDN_summon_more_friends_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_build_golden_matrix
+	icon = GFX_focus_HDN_build_golden_matrix
+	relative_position_id = HDN_summon_more_friends
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_summon_more_friends }
+	completion_reward = {
+		#add_ideas = HDN_golden_matrix_spirit
+		custom_effect_tooltip = HDN_build_golden_matrix_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_goddess_assistance
+	icon = GFX_focus_HDN_goddess_assistance
+	relative_position_id = HDN_strengthen_golden_tower
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_strengthen_golden_tower }
+	prerequisite = { focus = HDN_build_golden_matrix }
+	completion_reward = {
+		add_political_power = 150
+		custom_effect_tooltip = HDN_goddess_assistance_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_zero_dim_liaison
+	icon = GFX_focus_HDN_zero_dim_liaison
+	relative_position_id = HDN_goddess_assistance
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_goddess_assistance }
+	completion_reward = {
+		custom_effect_tooltip = HDN_zero_dim_liaison_tt
+		add_political_power = 100
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_united_will
+	icon = GFX_focus_HDN_united_will
+	relative_position_id = HDN_zero_dim_liaison
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_zero_dim_liaison }
+	completion_reward = {
+		#add_ideas = HDN_united_will_spirit
+		custom_effect_tooltip = HDN_united_will_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# Secret Society Line (AffimaX)
+###################################
+
+shared_focus = {
+	id = HDN_investigate_power_source
+	icon = GFX_focus_HDN_investigate_power_source
+	relative_position_id = HDN_looming_threat
+	x = 4
+	y = 1
+	cost = 10
+	prerequisite = { focus = HDN_looming_threat }
+	completion_reward = {
+		custom_effect_tooltip = HDN_investigate_power_source_tt
+		add_political_power = 100
+		hidden_effect = {
+			set_country_flag = HDN_secret_society_line_started
+			# country_event = { id = HDN_secret.1 days = 5 }
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_contact_secret_society
+	icon = GFX_focus_HDN_contact_secret_society
+	relative_position_id = HDN_investigate_power_source
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_investigate_power_source }
+	completion_reward = {
+		custom_effect_tooltip = HDN_contact_secret_society_tt
+		add_political_power = 50
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_affimax_company
+	icon = GFX_focus_HDN_affimax_company
+	relative_position_id = HDN_contact_secret_society
+	x = -3
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_contact_secret_society }
+	completion_reward = {
+		#add_ideas = HDN_affimax_spirit
+		custom_effect_tooltip = HDN_affimax_company_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_market_reform_total
+	icon = GFX_focus_HDN_market_reform_total
+	relative_position_id = HDN_affimax_company
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_affimax_company }
+	completion_reward = {
+		#add_ideas = HDN_total_marketization_spirit
+		custom_effect_tooltip = HDN_market_reform_total_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_acquire_city_enterprises
+	icon = GFX_focus_HDN_acquire_city_enterprises
+	relative_position_id = HDN_market_reform_total
+	x = -1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_market_reform_total }
+	completion_reward = {
+		add_political_power = 100
+		custom_effect_tooltip = HDN_acquire_city_enterprises_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_stockify_church_assets
+	icon = GFX_focus_HDN_stockify_church_assets
+	relative_position_id = HDN_market_reform_total
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_market_reform_total }
+	completion_reward = {
+		add_political_power = 100
+		custom_effect_tooltip = HDN_stockify_church_assets_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_real_estate_private
+	icon = GFX_focus_HDN_real_estate_private
+	relative_position_id = HDN_acquire_city_enterprises
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_acquire_city_enterprises }
+	prerequisite = { focus = HDN_stockify_church_assets }
+	completion_reward = {
+		#add_ideas = HDN_real_estate_private_spirit
+		custom_effect_tooltip = HDN_real_estate_private_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_taxation_expansion
+	icon = GFX_focus_HDN_taxation_expansion
+	relative_position_id = HDN_real_estate_private
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_real_estate_private }
+	completion_reward = {
+		add_political_power = 200
+		custom_effect_tooltip = HDN_taxation_expansion_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_general_authority
+	icon = GFX_focus_HDN_general_authority
+	relative_position_id = HDN_contact_secret_society
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_contact_secret_society }
+	completion_reward = {
+		add_political_power = 50
+		army_experience = 10
+		custom_effect_tooltip = HDN_general_authority_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_city_branches
+	icon = GFX_focus_HDN_city_branches
+	relative_position_id = HDN_general_authority
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_general_authority }
+	completion_reward = {
+		custom_effect_tooltip = HDN_city_branches_tt
+		add_political_power = 100
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_performance_review
+	icon = GFX_focus_HDN_performance_review
+	relative_position_id = HDN_city_branches
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_city_branches }
+	completion_reward = {
+		#add_ideas = HDN_performance_review_spirit
+		custom_effect_tooltip = HDN_performance_review_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_more_workers
+	icon = GFX_focus_HDN_more_workers
+	relative_position_id = HDN_performance_review
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_performance_review }
+	completion_reward = {
+		add_manpower = 20000
+		#add_ideas = HDN_more_workers_spirit
+		custom_effect_tooltip = HDN_more_workers_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_general_inside_deal
+	icon = GFX_focus_HDN_general_inside_deal
+	relative_position_id = HDN_contact_secret_society
+	x = 3
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_contact_secret_society }
+	completion_reward = {
+		custom_effect_tooltip = HDN_general_inside_deal_tt
+		add_political_power = 100
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_stemox_intelligence
+	icon = GFX_focus_HDN_stemox_intelligence
+	relative_position_id = HDN_general_inside_deal
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_general_inside_deal }
+	completion_reward = {
+		#add_ideas = HDN_stemox_intel_spirit
+		custom_effect_tooltip = HDN_stemox_intelligence_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_strengthen_general_warship
+	icon = GFX_focus_HDN_strengthen_general_warship
+	relative_position_id = HDN_stemox_intelligence
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_stemox_intelligence }
+	completion_reward = {
+		add_political_power = 100
+		custom_effect_tooltip = HDN_strengthen_general_warship_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_purchase_warships
+	icon = GFX_focus_HDN_purchase_warships
+	relative_position_id = HDN_strengthen_general_warship
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_strengthen_general_warship }
+	completion_reward = {
+		add_equipment_to_stockpile = {
+			type = destroyer_1
+			amount = 4
+			producer = ROOT
+		}
+		custom_effect_tooltip = HDN_purchase_warships_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_establish_shogunate
+	icon = GFX_focus_HDN_establish_shogunate
+	relative_position_id = HDN_purchase_warships
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_purchase_warships }
+	completion_reward = {
+		# #add_ideas = HDN_shogunate_spirit
+		add_political_power = 200
+		custom_effect_tooltip = HDN_establish_shogunate_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# 超次元海王星 联合国策树 - 军事工业线
+# Military & industry branch - from federation path
+###################################
+
+###################################
+# Military Head (requires federation path + some progress)
+###################################
+
+shared_focus = {
+	id = HDN_mil_aviation_industry
+	icon = GFX_focus_HDN_mil_aviation_industry
+	relative_position_id = HDN_fed_consolidate_power
+	x = -8
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_fed_consolidate_power focus = HDN_fed_continue_elections }
+	completion_reward = {
+		#add_ideas = HDN_aviation_industry_spirit
+		custom_effect_tooltip = HDN_mil_aviation_industry_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_communication
+	icon = GFX_focus_HDN_mil_communication
+	relative_position_id = HDN_mil_aviation_industry
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_aviation_industry }
+	completion_reward = {
+		#add_research_speed_factor = 0.05
+		custom_effect_tooltip = HDN_mil_communication_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_aircraft_development
+	icon = GFX_focus_HDN_mil_aircraft_development
+	relative_position_id = HDN_mil_communication
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_communication }
+	completion_reward = {
+		#add_tech_bonus = { name = HDN_aircraft_tech bonus = 1.0 uses = 2 category = light_fighter }
+		custom_effect_tooltip = HDN_mil_aircraft_development_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_pilot_training
+	icon = GFX_focus_HDN_mil_pilot_training
+	relative_position_id = HDN_mil_aircraft_development
+	x = -1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_aircraft_development }
+	completion_reward = {
+		air_experience = 50
+		custom_effect_tooltip = HDN_mil_pilot_training_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_next_gen_fighter
+	icon = GFX_focus_HDN_mil_next_gen_fighter
+	relative_position_id = HDN_mil_aircraft_development
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_aircraft_development }
+	completion_reward = {
+		#add_tech_bonus = { name = HDN_next_gen_fighter bonus = 1.0 uses = 1 category = light_fighter }
+		custom_effect_tooltip = HDN_mil_next_gen_fighter_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_paratroopers
+	icon = GFX_focus_HDN_mil_paratroopers
+	relative_position_id = HDN_mil_pilot_training
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_pilot_training }
+	prerequisite = { focus = HDN_mil_next_gen_fighter }
+	completion_reward = {
+		#add_tech_bonus = { name = HDN_paratroopers bonus = 1.0 uses = 1 category = land_doctrine }
+		custom_effect_tooltip = HDN_mil_paratroopers_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_carrier_research
+	icon = GFX_focus_HDN_mil_carrier_research
+	relative_position_id = HDN_mil_paratroopers
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_paratroopers }
+	completion_reward = {
+		#add_tech_bonus = { name = HDN_carrier bonus = 1.0 uses = 1 category = cv_tech }
+		custom_effect_tooltip = HDN_mil_carrier_research_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_efficient_ground_crew
+	icon = GFX_focus_HDN_mil_efficient_ground_crew
+	relative_position_id = HDN_mil_carrier_research
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_carrier_research }
+	completion_reward = {
+		air_experience = 40
+		#add_ideas = HDN_ground_crew_spirit
+		custom_effect_tooltip = HDN_mil_efficient_ground_crew_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# Naval Branch
+###################################
+
+shared_focus = {
+	id = HDN_mil_goddess_shipbuilding
+	icon = GFX_focus_HDN_mil_goddess_shipbuilding
+	relative_position_id = HDN_fed_consolidate_power
+	x = -2
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_fed_consolidate_power focus = HDN_fed_continue_elections }
+	completion_reward = {
+		#add_ideas = HDN_shipbuilding_spirit
+		custom_effect_tooltip = HDN_mil_goddess_shipbuilding_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_shipbuilding_industry
+	icon = GFX_focus_HDN_mil_shipbuilding_industry
+	relative_position_id = HDN_mil_goddess_shipbuilding
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_goddess_shipbuilding }
+	completion_reward = {
+		#add_tech_bonus = { name = HDN_ship_industry bonus = 1.0 uses = 2 category = naval_equipment }
+		custom_effect_tooltip = HDN_mil_shipbuilding_industry_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_carrier_planes
+	icon = GFX_focus_HDN_mil_carrier_planes
+	relative_position_id = HDN_mil_shipbuilding_industry
+	x = -1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_shipbuilding_industry }
+	completion_reward = {
+		#add_tech_bonus = { name = HDN_carrier_planes bonus = 1.0 uses = 2 category = cat_cas }
+		custom_effect_tooltip = HDN_mil_carrier_planes_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_amphibious
+	icon = GFX_focus_HDN_mil_amphibious
+	relative_position_id = HDN_mil_shipbuilding_industry
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_shipbuilding_industry }
+	completion_reward = {
+		#add_tech_bonus = { name = HDN_amphibious bonus = 1.0 uses = 1 category = land_doctrine }
+		custom_effect_tooltip = HDN_mil_amphibious_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_naval_research_bureau
+	icon = GFX_focus_HDN_mil_naval_research_bureau
+	relative_position_id = HDN_mil_shipbuilding_industry
+	x = 0
+	y = 2
+	cost = 5
+	prerequisite = { focus = HDN_mil_carrier_planes }
+	prerequisite = { focus = HDN_mil_amphibious }
+	completion_reward = {
+		#add_ideas = HDN_naval_research_spirit
+		custom_effect_tooltip = HDN_mil_naval_research_bureau_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_improved_fleet_support
+	icon = GFX_focus_HDN_mil_improved_fleet_support
+	relative_position_id = HDN_mil_naval_research_bureau
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_naval_research_bureau }
+	completion_reward = {
+		#add_tech_bonus = { name = HDN_fleet_support bonus = 1.0 uses = 1 category = naval_doctrine }
+		custom_effect_tooltip = HDN_mil_improved_fleet_support_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# Military Industrial Combine
+###################################
+
+shared_focus = {
+	id = HDN_mil_military_industrial
+	icon = GFX_focus_HDN_mil_military_industrial
+	relative_position_id = HDN_fed_consolidate_power
+	x = 3
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_fed_consolidate_power focus = HDN_fed_continue_elections }
+	completion_reward = {
+		#add_ideas = HDN_military_industrial_spirit
+		custom_effect_tooltip = HDN_mil_military_industrial_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_introduce_manufacturers
+	icon = GFX_focus_HDN_mil_introduce_manufacturers
+	relative_position_id = HDN_mil_military_industrial
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_military_industrial }
+	completion_reward = {
+		add_political_power = 100
+		custom_effect_tooltip = HDN_mil_introduce_manufacturers_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_light_armor
+	icon = GFX_focus_HDN_mil_light_armor
+	relative_position_id = HDN_mil_introduce_manufacturers
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_introduce_manufacturers }
+	completion_reward = {
+		#add_tech_bonus = { name = HDN_light_armor bonus = 1.0 uses = 2 category = light_tank }
+		custom_effect_tooltip = HDN_mil_light_armor_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_wartime_economy
+	icon = GFX_focus_HDN_mil_wartime_economy
+	relative_position_id = HDN_mil_military_industrial
+	x = 5
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_military_industrial }
+	completion_reward = {
+		#add_ideas = HDN_wartime_economy_spirit
+		custom_effect_tooltip = HDN_mil_wartime_economy_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_national_defense_invest
+	icon = GFX_focus_HDN_mil_national_defense_invest
+	relative_position_id = HDN_mil_wartime_economy
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_wartime_economy }
+	completion_reward = {
+		#add_ideas = HDN_defense_investment_spirit
+		custom_effect_tooltip = HDN_mil_national_defense_invest_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_wartime_lab
+	icon = GFX_focus_HDN_mil_wartime_lab
+	relative_position_id = HDN_mil_national_defense_invest
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_national_defense_invest }
+	completion_reward = {
+		add_research_slot = 1
+		custom_effect_tooltip = HDN_mil_wartime_lab_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_miracle_weapon
+	icon = GFX_focus_HDN_mil_miracle_weapon
+	relative_position_id = HDN_mil_wartime_lab
+	x = 0
+	y = 1
+	cost = 10
+	prerequisite = { focus = HDN_mil_wartime_lab }
+	completion_reward = {
+		#add_tech_bonus = { name = HDN_miracle_weapon bonus = 1.0 uses = 2 category = electronics }
+		#add_research_speed_factor = 0.10
+		custom_effect_tooltip = HDN_mil_miracle_weapon_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_logistics_coordination
+	icon = GFX_focus_HDN_mil_logistics_coordination
+	relative_position_id = HDN_mil_miracle_weapon
+	x = -2
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_miracle_weapon }
+	completion_reward = {
+		#add_ideas = HDN_logistics_spirit
+		custom_effect_tooltip = HDN_mil_logistics_coordination_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_mountain_troops
+	icon = GFX_focus_HDN_mil_mountain_troops
+	relative_position_id = HDN_mil_miracle_weapon
+	x = 2
+	y = 1
+	cost = 5
+	prerequisite = { focus = HDN_mil_miracle_weapon }
+	completion_reward = {
+		#add_tech_bonus = { name = HDN_mountain bonus = 1.0 uses = 1 category = land_doctrine }
+		custom_effect_tooltip = HDN_mil_mountain_troops_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+shared_focus = {
+	id = HDN_mil_elite_special_training
+	icon = GFX_focus_HDN_mil_elite_special_training
+	relative_position_id = HDN_mil_miracle_weapon
+	x = 0
+	y = 2
+	cost = 5
+	prerequisite = { focus = HDN_mil_logistics_coordination }
+	prerequisite = { focus = HDN_mil_mountain_troops }
+	completion_reward = {
+		army_experience = 50
+		#add_ideas = HDN_elite_training_spirit
+		custom_effect_tooltip = HDN_mil_elite_special_training_tt
+	}
+	ai_will_do = { factor = 10 }
+}
+
+###################################
+# New Army Reform Capstone
+###################################
+
+shared_focus = {
+	id = HDN_mil_new_army_reform
+	icon = GFX_focus_HDN_mil_new_army_reform
+	relative_position_id = HDN_fed_consolidate_power
+	x = 0
+	y = 8
+	cost = 10
+	prerequisite = { focus = HDN_mil_efficient_ground_crew }
+	prerequisite = { focus = HDN_mil_improved_fleet_support }
+	prerequisite = { focus = HDN_mil_elite_special_training }
+	completion_reward = {
+		#add_ideas = HDN_new_army_reform_spirit
+		army_experience = 100
+		add_political_power = 200
+		custom_effect_tooltip = HDN_mil_new_army_reform_tt
+		hidden_effect = {
+			set_country_flag = HDN_new_army_reform_done
+		}
+	}
+	ai_will_do = { factor = 10 }
+}
