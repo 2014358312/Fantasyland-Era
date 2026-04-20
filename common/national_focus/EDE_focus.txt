@@ -794,6 +794,16 @@ focus_tree = {
 	# 	}
 	# }
 	
+	############################
+	# 右侧分支：工业与军事
+	# Replaces old right-branch content
+	############################
+	
+	############################
+	# 工业线 Industry Line
+	# Root: EDE_develop_land (x=18, y=0)
+	############################
+	
 	focus = {
 		id = EDE_develop_land
 		icon = GFX_goal_generic_construct_infrastructure
@@ -801,420 +811,753 @@ focus_tree = {
 		y = 0
 		cost = 5
 		completion_reward = {
-				
+			add_political_power = 50
+			add_stability = 0.03
+			custom_effect_tooltip = EDE_develop_land_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
+	# Tier 1 branches - mutually exclusive
+	focus = {
+		id = EDE_consecrated_workshops
+		icon = GFX_goal_generic_production2
+		relative_position_id = EDE_develop_land
+		x = -3
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDE_develop_land }
+		mutually_exclusive = { focus = EDE_mechanical_punk_research_society }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EDE_consecrated_workshops_tb
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+			add_stability = 0.03
+			custom_effect_tooltip = EDE_consecrated_workshops_tt
+			hidden_effect = {
+				set_country_flag = EDE_path_consecrated_ind
+			}
+		}
+		ai_will_do = { factor = 10 }
+	}
+
 	focus = {
 		id = EDE_mechanical_punk_research_society
 		icon = GFX_goal_generic_production2
-		prerequisite = { focus = EDE_develop_land }
 		relative_position_id = EDE_develop_land
-		x = 0
+		x = 3
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_develop_land }
+		mutually_exclusive = { focus = EDE_consecrated_workshops }
 		completion_reward = {
 			add_tech_bonus = {
-				name = industrial_bonus
+				name = EDE_mechanical_punk_tb
 				bonus = 1
 				uses = 2
 				category = industry
 			}
+			add_political_power = 25
+			custom_effect_tooltip = EDE_mechanical_punk_tt
+			hidden_effect = {
+				set_country_flag = EDE_path_secular_ind
+			}
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
+	# Consecrated branch continued
 	focus = {
-		id = EDE_support_bonaven_company
+		id = EDE_saints_hammer
 		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = EDE_mechanical_punk_research_society }
-		relative_position_id = EDE_mechanical_punk_research_society
-		x = -1
-		y = 1
-		cost = 5
-		completion_reward = {
-			add_ideas = SHY_101
-		}
-		ai_will_do = {
-			factor = 3
-		}
-	}
-	
-	focus = {
-		id = EDE_introduce_heavy_industrial_equipment
-		icon = GFX_goal_generic_production
-		prerequisite = { focus = EDE_support_bonaven_company }
-		relative_position_id = EDE_support_bonaven_company
+		relative_position_id = EDE_consecrated_workshops
 		x = 0
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_consecrated_workshops }
 		completion_reward = {
-			add_political_power = 100
+			add_ideas = EDE_saints_hammer_spirit
+			custom_effect_tooltip = EDE_saints_hammer_tt
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	focus = {
+		id = EDE_temple_metallurgy
+		icon = GFX_goal_generic_production
+		relative_position_id = EDE_saints_hammer
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDE_saints_hammer }
+		completion_reward = {
 			add_tech_bonus = {
-				name = construction_tech
+				name = EDE_temple_metallurgy_tb
 				bonus = 1
 				uses = 1
 				category = construction_tech
 			}
 			add_tech_bonus = {
-				name = industrial_bonus
+				name = EDE_temple_metallurgy_tb2
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			custom_effect_tooltip = EDE_temple_metallurgy_tt
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	# Secular branch continued
+	focus = {
+		id = EDE_support_bonaven_company
+		icon = GFX_goal_generic_small_arms
+		relative_position_id = EDE_mechanical_punk_research_society
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDE_mechanical_punk_research_society }
+		completion_reward = {
+			add_ideas = EDE_bonaven_company_spirit
+			custom_effect_tooltip = EDE_bonaven_company_tt
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	focus = {
+		id = EDE_introduce_heavy_industrial_equipment
+		icon = GFX_goal_generic_production
+		relative_position_id = EDE_support_bonaven_company
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDE_support_bonaven_company }
+		completion_reward = {
+			add_political_power = 100
+			add_tech_bonus = {
+				name = EDE_heavy_industry_tb
+				bonus = 1
+				uses = 1
+				category = construction_tech
+			}
+			add_tech_bonus = {
+				name = EDE_heavy_industry_tb2
 				bonus = 1
 				uses = 1
 				category = industry
 			}
+			custom_effect_tooltip = EDE_heavy_industry_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
+	# Mining / Mariana branches - mutually exclusive
+	focus = {
+		id = EDE_holy_silver_veins
+		icon = GFX_goal_generic_production
+		relative_position_id = EDE_develop_land
+		x = -1
+		y = 4
+		cost = 5
+		prerequisite = { focus = EDE_temple_metallurgy }
+		mutually_exclusive = { focus = EDE_funding_mariana_corporation }
+		completion_reward = {
+			add_resource = { type = steel amount = 30 state = random }
+			add_resource = { type = chromium amount = 10 state = random }
+			custom_effect_tooltip = EDE_holy_silver_veins_tt
+		}
+		ai_will_do = { factor = 10 }
+	}
+
 	focus = {
 		id = EDE_funding_mariana_corporation
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = EDE_mechanical_punk_research_society }
-		relative_position_id = EDE_mechanical_punk_research_society
+		relative_position_id = EDE_develop_land
 		x = 1
-		y = 1
+		y = 4
 		cost = 5
+		prerequisite = { focus = EDE_introduce_heavy_industrial_equipment }
+		mutually_exclusive = { focus = EDE_holy_silver_veins }
 		completion_reward = {
-			add_ideas = SHY_103
+			add_ideas = EDE_mariana_corporation_spirit
+			custom_effect_tooltip = EDE_mariana_corporation_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
+	# Radar depends on Mariana (secular path)
 	focus = {
 		id = EDE_developing_radar
 		icon = GFX_goal_generic_radar
-		prerequisite = { focus = EDE_funding_mariana_corporation }
 		relative_position_id = EDE_funding_mariana_corporation
 		x = 0
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_funding_mariana_corporation }
 		completion_reward = {
 			add_tech_bonus = {
-				name = computer
-				bonus = 2.5
+				name = EDE_radar_tb
+				bonus = 2
 				uses = 1
 				category = electronics
 			}
+			add_tech_bonus = {
+				name = EDE_radar_tb2
+				bonus = 1
+				uses = 1
+				category = radar_tech
+			}
+			custom_effect_tooltip = EDE_developing_radar_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
+	# Divine oracle depends on Holy Silver (consecrated path)
+	focus = {
+		id = EDE_divine_oracle_computation
+		icon = GFX_goal_generic_radar
+		relative_position_id = EDE_holy_silver_veins
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDE_holy_silver_veins }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EDE_divine_oracle_tb
+				bonus = 1.5
+				uses = 1
+				category = electronics
+			}
+			add_research_speed_factor = 0.03
+			custom_effect_tooltip = EDE_divine_oracle_tt
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	# Industry capstone - requires EITHER path's second-tier
 	focus = {
 		id = EDE_comprehensive_research_team
 		icon = GFX_focus_research
-		cost = 5
-		prerequisite = { focus = EDE_introduce_heavy_industrial_equipment }
-		prerequisite = { focus = EDE_developing_radar }
-		relative_position_id = EDE_introduce_heavy_industrial_equipment
-		x = 1
-		y = 1
+		relative_position_id = EDE_develop_land
+		x = 0
+		y = 6
+		cost = 10
+		prerequisite = {
+			focus = EDE_divine_oracle_computation
+			focus = EDE_developing_radar
+		}
 		completion_reward = {
 			add_research_slot = 1
+			add_tech_bonus = {
+				name = EDE_research_team_tb
+				bonus = 0.5
+				uses = 1
+				category = electronics
+				category = industry
+			}
+			custom_effect_tooltip = EDE_research_team_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
+	# Industry final spirit
+	focus = {
+		id = EDE_sanctuary_steam_age
+		icon = GFX_goal_generic_production2
+		relative_position_id = EDE_comprehensive_research_team
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = { focus = EDE_comprehensive_research_team }
+		completion_reward = {
+			add_ideas = EDE_sanctuary_steam_age_spirit
+			add_political_power = 100
+			custom_effect_tooltip = EDE_sanctuary_steam_age_tt
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	############################
+	# 军事线 Military Line
+	# Root: EDE_future_of_our_military (x=36, y=0)
+	############################
+
 	focus = {
 		id = EDE_future_of_our_military
-		icon = GFX_goal_generic_radar
-		x = 24
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 30
 		y = 0
 		cost = 5
 		completion_reward = {
-			add_tech_bonus = {
-				name = computer
-				bonus = 2.5
-				uses = 1
-				category = electronics
-			}
+			army_experience = 10
+			add_political_power = 50
+			custom_effect_tooltip = EDE_future_of_our_military_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
+	############################
+	# 陆军分支 Army branch
+	############################
+
+	# Tier 1: Angel Knights vs Secular New Army - mutually exclusive
 	focus = {
-		id = EDE_household_troops
-		text = SHY_10
+		id = EDE_angel_knights_order
 		icon = GFX_goal_generic_axis_build_infantry
-		prerequisite = { focus = EDE_future_of_our_military }
 		relative_position_id = EDE_future_of_our_military
-		x = -2
+		x = -6
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_future_of_our_military }
+		mutually_exclusive = { focus = EDE_household_troops }
 		completion_reward = {
-			army_experience = 10
 			add_tech_bonus = {
-				name = infantry_weapons_bonus
+				name = EDE_angel_knights_tb
 				bonus = 1
 				uses = 2
 				category = infantry_weapons
 				category = artillery
 			}
+			army_experience = 20
+			add_war_support = 0.05
+			custom_effect_tooltip = EDE_angel_knights_tt
+			hidden_effect = {
+				set_country_flag = EDE_path_consecrated_army
+			}
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
+	focus = {
+		id = EDE_household_troops
+		icon = GFX_goal_generic_axis_build_infantry
+		relative_position_id = EDE_future_of_our_military
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDE_future_of_our_military }
+		mutually_exclusive = { focus = EDE_angel_knights_order }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EDE_household_troops_tb
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+			army_experience = 10
+			add_manpower = 20000
+			custom_effect_tooltip = EDE_household_troops_tt
+			hidden_effect = {
+				set_country_flag = EDE_path_secular_army
+			}
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	# Angel Knights branch: Holy Sword Oath
+	focus = {
+		id = EDE_holy_sword_oath
+		icon = GFX_goal_generic_military_sphere
+		relative_position_id = EDE_angel_knights_order
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDE_angel_knights_order }
+		completion_reward = {
+			add_ideas = EDE_holy_sword_oath_spirit
+			custom_effect_tooltip = EDE_holy_sword_oath_tt
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	focus = {
+		id = EDE_holy_war_conscription
+		icon = GFX_goal_demand_sudetenland
+		relative_position_id = EDE_holy_sword_oath
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDE_holy_sword_oath }
+		completion_reward = {
+			add_manpower = 50000
+			add_ideas = EDE_holy_war_conscription_spirit
+			custom_effect_tooltip = EDE_holy_war_conscription_tt
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	# Household Troops branch: Girls und Panzer reference / Secular conscription
 	focus = {
 		id = EDE_call_for_enlistment
-		text = SHY_11
 		icon = GFX_goal_demand_sudetenland
-		prerequisite = { focus = EDE_household_troops }
 		relative_position_id = EDE_household_troops
 		x = 0
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_household_troops }
 		completion_reward = {
-			add_ideas = SHY_102
+			add_ideas = EDE_secular_conscription_spirit
 			add_manpower = 100000
+			custom_effect_tooltip = EDE_call_for_enlistment_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
 	focus = {
 		id = EDE_girls_and_panzer
-		text = SHY_12
 		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = EDE_call_for_enlistment }
 		relative_position_id = EDE_call_for_enlistment
-		x = -1
+		x = 0
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_call_for_enlistment }
 		completion_reward = {
 			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.8
+				name = EDE_girls_panzer_doc
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
 			add_tech_bonus = {
-				name = armor_bonus
+				name = EDE_girls_panzer_tb
 				bonus = 1
 				uses = 2
 				category = armor
 			}
+			custom_effect_tooltip = EDE_girls_panzer_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
+	# Army capstone - requires either path's capstone
+	focus = {
+		id = EDE_armored_saints
+		icon = GFX_goal_generic_army_tanks
+		relative_position_id = EDE_future_of_our_military
+		x = -4
+		y = 4
+		cost = 10
+		prerequisite = {
+			focus = EDE_holy_war_conscription
+			focus = EDE_girls_and_panzer
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = EDE_armored_saints_tb
+				bonus = 1.5
+				uses = 1
+				category = armor
+			}
+			army_experience = 50
+			add_ideas = EDE_armored_saints_spirit
+			custom_effect_tooltip = EDE_armored_saints_tt
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	############################
+	# 海军分支 Navy branch
+	############################
+
 	focus = {
 		id = EDE_expand_dockyard
-		text = SHY_4
 		icon = GFX_goal_generic_construct_naval_dockyard
-		prerequisite = { focus = EDE_future_of_our_military }
 		relative_position_id = EDE_future_of_our_military
-		x = 2
+		x = 4
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_future_of_our_military }
 		completion_reward = {
 			add_doctrine_cost_reduction = {
-				name = infantry_weapons_bonus
-				cost_reduction = 0.8
+				name = EDE_dockyard_doc
+				cost_reduction = 0.5
 				uses = 1
 				category = naval_doctrine
 			}
+			navy_experience = 15
+			custom_effect_tooltip = EDE_expand_dockyard_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
 	focus = {
 		id = EDE_develop_fleet
-		text = SHY_17
 		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = EDE_expand_dockyard }
 		relative_position_id = EDE_expand_dockyard
 		x = 0
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_expand_dockyard }
 		completion_reward = {
 			navy_experience = 50
 			add_tech_bonus = {
-				name = cl_tech_bonus
-				bonus = 2.5
+				name = EDE_cruiser_tb
+				bonus = 1.5
 				uses = 1
 				category = cl_tech
 			}
 			add_doctrine_cost_reduction = {
-				name = cl_tech_bonus
-				cost_reduction = 0.8
+				name = EDE_fleet_doc
+				cost_reduction = 0.5
 				uses = 2
 				category = naval_doctrine
 			}
+			custom_effect_tooltip = EDE_develop_fleet_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
+	# Naval ME: Holy Flagship vs Cruiser Doctrine
 	focus = {
-		id = SHY_high_school_fleet
-		text = SHY_29
-		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = EDE_develop_fleet }
+		id = EDE_holy_name_battleships
+		icon = GFX_goal_generic_navy_battleship
 		relative_position_id = EDE_develop_fleet
-		x = 1
+		x = -2
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_develop_fleet }
+		mutually_exclusive = { focus = EDE_cruiser_doctrine }
 		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = infantry_weapons_bonus
-				cost_reduction = 0.8
+			add_tech_bonus = {
+				name = EDE_battleship_tb
+				bonus = 1
 				uses = 2
-				category = naval_doctrine
-			}
-			add_tech_bonus = {
-				name = ca_tech
-				bonus = 1
-				uses = 1
-				category = ca_tech
-			}
-			add_tech_bonus = {
-				name = bc_tech
-				bonus = 1
-				uses = 1
+				category = bb_tech
 				category = bc_tech
 			}
+			custom_effect_tooltip = EDE_holy_name_battleships_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
 	focus = {
-		id = SHY_ensure_bluesky
-		text = SHY_18
-		icon = GFX_goal_generic_air_doctrine
-		prerequisite = { focus = EDE_future_of_our_military }
-		relative_position_id = EDE_future_of_our_military
-		x = 0
+		id = EDE_cruiser_doctrine
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		relative_position_id = EDE_develop_fleet
+		x = 2
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_develop_fleet }
+		mutually_exclusive = { focus = EDE_holy_name_battleships }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EDE_cruiser_doc_tb
+				bonus = 1
+				uses = 2
+				category = ca_tech
+				category = cl_tech
+			}
+			add_doctrine_cost_reduction = {
+				name = EDE_cruiser_doc
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+			custom_effect_tooltip = EDE_cruiser_doctrine_tt
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	focus = {
+		id = EDE_high_school_fleet
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		relative_position_id = EDE_develop_fleet
+		x = 0
+		y = 2
+		cost = 5
+		prerequisite = { focus = EDE_holy_name_battleships focus = EDE_cruiser_doctrine }
 		completion_reward = {
 			add_doctrine_cost_reduction = {
-				name = air_doctrine
-				cost_reduction = 0.8
+				name = EDE_high_school_fleet_doc
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+			navy_experience = 30
+			custom_effect_tooltip = EDE_high_school_fleet_tt
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	############################
+	# 空军分支 Air branch
+	############################
+
+	focus = {
+		id = EDE_ensure_bluesky
+		icon = GFX_goal_generic_air_doctrine
+		relative_position_id = EDE_future_of_our_military
+		x = 10
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDE_future_of_our_military }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = EDE_bluesky_doc
+				cost_reduction = 0.5
 				uses = 2
 				category = air_doctrine
 			}
+			air_experience = 25
+			custom_effect_tooltip = EDE_ensure_bluesky_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
 	focus = {
 		id = EDE_establish_lucientes_company
-		text = SHY_19
 		icon = GFX_goal_generic_air_doctrine
-		prerequisite = { focus = SHY_ensure_bluesky }
-		relative_position_id = SHY_ensure_bluesky
+		relative_position_id = EDE_ensure_bluesky
 		x = 0
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_ensure_bluesky }
 		completion_reward = {
-			add_ideas = SHY_104
+			add_ideas = EDE_lucientes_company_spirit
+			custom_effect_tooltip = EDE_lucientes_company_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
-	focus = {
-		id = EDE_naval_bomber
-		text = SHY_23
-		icon = GFX_goal_generic_air_naval_bomber
-		prerequisite = { focus = EDE_establish_lucientes_company }
-		prerequisite = { focus = EDE_develop_fleet }
-		relative_position_id = EDE_establish_lucientes_company
-		x = 1
-		y = 1
-		cost = 5
-		completion_reward = {
-			add_tech_bonus = {
-				name = nav_bomber_bonus
-				bonus = 1
-				ahead_reduction = 2
-				uses = 1
-				category = light_air
-			}
-		}
-	}
-	
+
 	focus = {
 		id = EDE_fighter
-		text = SHY_20
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = EDE_establish_lucientes_company }
-		prerequisite = { focus = EDE_call_for_enlistment }
 		relative_position_id = EDE_establish_lucientes_company
-		x = -1
+		x = -2
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_establish_lucientes_company }
 		completion_reward = {
 			add_tech_bonus = {
-				name = light_fighter_bonus
+				name = EDE_fighter_tb
 				bonus = 1
 				uses = 1
 				category = light_air
 			}
+			custom_effect_tooltip = EDE_fighter_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
 	focus = {
 		id = EDE_fighter_2
-		text = SHY_21
 		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = EDE_fighter }
 		relative_position_id = EDE_fighter
 		x = -1
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_fighter }
 		completion_reward = {
 			add_tech_bonus = {
-				name = FRA_heavy_fighter_focus
+				name = EDE_fighter2_tb
 				bonus = 1
-				uses = 1
 				ahead_reduction = 2
+				uses = 1
 				category = medium_air
 				category = light_air
 			}
+			custom_effect_tooltip = EDE_fighter_2_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
 	focus = {
-		id = EDE_heavy_boomber
-		text = SHY_22
+		id = EDE_heavy_bomber
 		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = EDE_fighter }
 		relative_position_id = EDE_fighter
 		x = 1
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_fighter }
 		completion_reward = {
 			add_tech_bonus = {
-				name = FRA_bomber_focus
+				name = EDE_bomber_tb
 				bonus = 1
 				uses = 1
 				category = medium_air
 			}
 			add_tech_bonus = {
-				name = FRA_heavy_bomber_focus
+				name = EDE_heavy_bomber_tb
 				bonus = 1
 				uses = 1
 				category = heavy_air
 			}
+			custom_effect_tooltip = EDE_heavy_bomber_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
+	focus = {
+		id = EDE_naval_bomber
+		icon = GFX_goal_generic_air_naval_bomber
+		relative_position_id = EDE_establish_lucientes_company
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = EDE_establish_lucientes_company }
+		prerequisite = { focus = EDE_develop_fleet }
+		completion_reward = {
+			add_tech_bonus = {
+				name = EDE_naval_bomber_tb
+				bonus = 1
+				ahead_reduction = 2
+				uses = 1
+				category = light_air
+			}
+			custom_effect_tooltip = EDE_naval_bomber_tt
+		}
+		ai_will_do = { factor = 10 }
+	}
+
 	focus = {
 		id = EDE_naval_fighter
-		text = SHY_24
-		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = EDE_naval_bomber }
+		icon = GFX_goal_generic_air_fighter2
 		relative_position_id = EDE_naval_bomber
 		x = 1
 		y = 1
 		cost = 5
+		prerequisite = { focus = EDE_naval_bomber }
 		completion_reward = {
 			add_tech_bonus = {
-				name = FRA_naval_bomber_focus
+				name = EDE_naval_fighter_tb
 				bonus = 1
 				uses = 1
 				category = light_air
 			}
+			custom_effect_tooltip = EDE_naval_fighter_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
-	
+
+	# Air capstone - Sacred Flame rocketry (miracle weapon)
 	focus = {
-		id = SHY_25
+		id = EDE_sacred_flame_project
 		icon = GFX_focus_rocketry
-		cost = 5
+		relative_position_id = EDE_establish_lucientes_company
+		x = 0
+		y = 5
+		cost = 10
 		prerequisite = {
-		    focus = EDE_fighter_2
-			focus = EDE_heavy_boomber
+			focus = EDE_fighter_2
+			focus = EDE_heavy_bomber
 			focus = EDE_naval_fighter
 		}
-		relative_position_id = EDE_heavy_boomber
-		x = 0
-		y = 1
+		prerequisite = { focus = EDE_comprehensive_research_team }
 		completion_reward = {
-			add_ideas = GER_rocketry_idea
+			add_ideas = EDE_sacred_flame_spirit
+			add_tech_bonus = {
+				name = EDE_sacred_flame_tb
+				bonus = 1.5
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+			custom_effect_tooltip = EDE_sacred_flame_tt
 		}
+		ai_will_do = { factor = 10 }
 	}
 }
