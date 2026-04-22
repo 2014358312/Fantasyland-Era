@@ -179,11 +179,6 @@ characters = {
 			idea_token = LAN_Christina_Morgan_head_of_government_character
 			available = { no_head_of_gov_trigger = yes }
 			traits = { heroic_marshal }
-			on_add = {
-				hidden_effect = {
-					set_variable = { FE_secondary = token:LAN_Christina_Morgan_head_of_government }
-				}
-			}
 		}
 		advisor = {
 			slot = political_advisor
@@ -221,11 +216,11 @@ characters = {
 				small = GFX_idea_advisor_LAN_Claire_Boyancia
 			}
 		}
-		country_leader = {
-			ideology = industrial_liberalism_subtype
+		advisor = {
+			slot = head_of_government_character
+			idea_token = LAN_Claire_Boyancia_head_of_government_character
+			available = { no_head_of_gov_trigger = yes }
 			traits = { business_tycoon }
-			expire = "1965.1.1.1"
-			id = -1
 		}
 		advisor = {
 			slot = political_advisor
@@ -234,6 +229,14 @@ characters = {
 			available = {
 				is_country_leader = no
 				ROOT = {
+					custom_override_tooltip = {
+						tooltip = {
+							localization_key = has_deactivated_hog_role
+							CHARACTER = Claire_Boyancia
+						}
+						
+						NOT = { has_idea = LAN_Claire_Boyancia_head_of_government }
+					}
 					NOT = {
 						has_idea_with_trait = austerity_expert
 						has_country_leader_with_trait = business_tycoon
@@ -288,7 +291,13 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology = dual_monarchy_subtype
+			ideology = committee_constitutional_monarchy_subtype
+			traits = { royal_highness_princess foodie_eustiana }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			ideology = neutrality_subtype
 			traits = { royal_highness_princess foodie_eustiana }
 			expire = "1965.1.1.1"
 			id = -1
