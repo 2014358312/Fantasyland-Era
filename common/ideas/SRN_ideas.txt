@@ -1,6 +1,6 @@
 ideas = { 
     ##################################################萨丁帝国
-    country = { #国家精神（显示）
+    country = { #静态国家精神（显示）
 	    SRN_faxisgemingshiyuandi_guojiajingshen = { #法西斯革命始源地
 			allowed = {
 				always = no
@@ -17,13 +17,49 @@ ideas = {
 	        modifier = {
 		        army_core_attack_factor = 0.1
 		        army_core_defence_factor = 0.1
-
 				fascism_drift = 0.03
-				communism_drift = -0.05
+		    } 
+	    }
+
+	    SRN_minzhudezhongjie_guojiajingshen = { #民主的终结
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_faxisgemingshiyuandi_guojiajingshen
+			
+		    removal_cost = -1
+			
+	        modifier = {
 				democratic_drift = -0.05
 				neutrality_drift = -0.05
 				surrender_limit = 0.1
 		        MAX_SURRENDER_LIMIT_OFFSET = 0.1
+		    } 
+	    }
+
+	    SRN_shodaokongzhidegongrenyundong_guojiajingshen = { #受到控制的工人运动
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_faxisgemingshiyuandi_guojiajingshen
+			
+		    removal_cost = -1
+			
+	        modifier = {
+				political_power_gain = -0.1
+				communism_drift = -0.05
+			    industrial_capacity_factory = 0.1
+		        industrial_capacity_dockyard = 0.1
 		    } 
 	    }
 	}
@@ -38,10 +74,10 @@ ideas = {
 			}
 			cost = 100
 			research_bonus = {
-				industry = 0.2
-				electronics= 0.2
-				infantry_weapons = 0.2
-				armor = 0.2
+				industry = 0.1
+				electronics= 0.1
+				infantry_weapons = 0.1
+				armor = 0.1
 			}
 			traits = { 
 				SRN_jungongfuhetixindijia_gongyejituan 
