@@ -1,14 +1,8 @@
 characters = {
 	##################################################萨丁帝国
-	###########萨丁帝国
 	#领袖
 	SRN_Vittorio_Veneto = { #维托里奥·维内托
 		name = Vittorio_Veneto
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/SRN/lingxiu/SRN_Vittorio_Veneto.dds"
-			}
-		}
 		country_leader = {
 			ideology = fascism_ideology
 			traits = {  }
@@ -23,7 +17,7 @@ characters = {
 		portraits = {
 			army = {
 				large = "gfx/leaders/SRN/haijunjiangling/SRN_balakalashangxiao.png"
-				small = "gfx/interface/ideas/weituoliaoweinibeierdi.png"
+				small = "gfx/interface/ideas/SRN/haijunjiangling/SRN_balakalashangxiao.png"
 			}
 		}
         scientist = {
@@ -37,6 +31,12 @@ characters = {
 				specialization_nuclear = 3
 				}		
 		    }
+		advisor = {
+			cost = 100
+			slot = navy_chief #海军部长
+			idea_token = SRN_balakalashangxiao
+			traits = { SRN_balakalashangxiao_traits } #天生的冒险家
+		}
 		navy_leader = {
             traits = {
 			    seawolf
@@ -57,7 +57,7 @@ characters = {
 		portraits = {
 			army = {
 				large = "gfx/leaders/SRN/haijunjiangling/SRN_tuolichaili.png"
-				small = "gfx/interface/ideas/weituoliaoweinibeierdi.png"
+				small = "gfx/interface/ideas/SRN/haijunjiangling/SRN_tuolichaili.png"
 			}
 		}
         scientist = {
@@ -91,7 +91,7 @@ characters = {
 		portraits = {
 			army = {
 				large = "gfx/leaders/SRN/haijunjiangling/SRN_laiangnaduodafenqi.png"
-				small = "gfx/interface/ideas/weituoliaoweinibeierdi.png"
+				small = "gfx/interface/ideas/SRN/haijunjiangling/SRN_laiangnaduodafenqi.png"
 			}
 		}
         scientist = {
@@ -125,8 +125,8 @@ characters = {
 		name = SRN_jiaosuaikaerduqi #焦苏埃·卡尔杜齐
 		portraits = {
 			army = {
-				large = "gfx/leaders/SRN/haijunjiangling/SRN_laiangnaduodafenqi.png"
-				small = "gfx/interface/ideas/weituoliaoweinibeierdi.png"
+				large = "gfx/leaders/SRN/haijunjiangling/SRN_jiaosuaikaerduqi.png"
+				small = "gfx/interface/ideas/SRN/haijunjiangling/SRN_jiaosuaikaerduqi.png"
 			}
 		}
         scientist = {
@@ -158,11 +158,11 @@ characters = {
 	}
 
 	SRN_weituoliaoweinibeierdi = { 
-		name = SRN_weituoliaoweinibeierdi #维托里奥·库尼贝尔蒂（军队司令)
+		name = SRN_weituoliaoweinibeierdi #维托里奥·库尼贝尔蒂
 		portraits = {
 			army = {
-				large = "gfx/leaders/befanglianheyusadingdiguo/weituoliaoweinibeierdi.png"
-				small = "gfx/interface/ideas/weituoliaoweinibeierdi.png"
+				large = "gfx/leaders/SRN/haijunjiangling/SRN_weituoliaoweinibeierdi.png"
+				small = "gfx/interface/ideas/SRN/haijunjiangling/SRN_weituoliaoweinibeierdi.png"
 			}
 		}
         scientist = {
@@ -176,12 +176,6 @@ characters = {
 				specialization_nuclear = 3
 				}		
 		    }
-		advisor = {
-			cost = 100
-			slot = high_command
-			idea_token = weituoliaoweinibeierdi
-			traits = { idea_weituoliaoweinibeierdi }
-		}
 		navy_leader = {
             traits = {
 			    seawolf
@@ -200,11 +194,11 @@ characters = {
 	}
 
 	SRN_pangpeimageruo = { 
-		name = SRN_pangpeimageruo #庞培·马格诺（海军理论)
+		name = SRN_pangpeimageruo #庞培·马格诺
 		portraits = {
 			army = {
-				large = "gfx/leaders/befanglianheyusadingdiguo/pangpeimageruo.png"
-				small = "gfx/interface/ideas/pangpeimageruo.png"
+				large = "gfx/leaders/SRN/haijunjiangling/SRN_pangpeimageruo.png"
+				small = "gfx/interface/ideas/SRN/haijunjiangling/SRN_pangpeimageruo.png"
 			}
 		}
         scientist = {
@@ -218,12 +212,6 @@ characters = {
 				specialization_nuclear = 3
 				}		
 		    }
-		advisor = {
-			cost = 100
-			slot = theorist
-			idea_token = weituoliaoweinibeierdi
-			traits = { idea_pangpeimageruo }
-		}
 		navy_leader = {
             traits = {
 			    seawolf
@@ -243,11 +231,11 @@ characters = {
 	}
 
 	SRN_adiliaoleigeluo = { 
-		name = SRN_adiliaoleigeluo #阿蒂利奥·雷戈洛（海军部长)
+		name = SRN_adiliaoleigeluo #阿蒂利奥·雷戈洛
 		portraits = {
 			army = {
-				large = "gfx/leaders/befanglianheyusadingdiguo/adiliaoleigeluo.png"
-				small = "gfx/interface/ideas/adiliaoleigeluo.png"
+				large = "gfx/leaders/SRN/haijunjiangling/SRN_adiliaoleigeluo.png"
+				small = "gfx/interface/ideas/SRN/haijunjiangling/SRN_adiliaoleigeluo.png"
 			}
 		}
         scientist = {
@@ -263,9 +251,9 @@ characters = {
 		    }
 		advisor = {
 			cost = 100
-			slot = navy_chief
-			idea_token = weituoliaoweinibeierdi
-			traits = { idea_adiliaoleigeluo }
+			slot = navy_chief #海军部长
+			idea_token = SRN_adiliaoleigeluo
+			traits = { SRN_adiliaoleigeluo_traits } #黑白兔公爵的拥抱
 		}
 		navy_leader = {
             traits = {
@@ -289,8 +277,8 @@ characters = {
 		name = SRN_longqibing #龙骑兵
 		portraits = {
 			army = {
-				large = "gfx/leaders/befanglianheyusadingdiguo/longqibing.png"
-				small = "gfx/interface/ideas/adiliaoleigeluo.png"
+				large = "gfx/leaders/SRN/haijunjiangling/SRN_longqibing.png"
+				small = "gfx/interface/ideas/SRN/haijunjiangling/SRN_longqibing.png"
 			}
 		}
         scientist = {
@@ -326,8 +314,8 @@ characters = {
 		name = SRN_aerfuleiduoaoliyani #阿尔弗雷多·奥里亚尼 
 		portraits = {
 			army = {
-				large = "gfx/leaders/befanglianheyusadingdiguo/aerfuleiduoaoliyani.png"
-				small = "gfx/interface/ideas/adiliaoleigeluo.png"
+				large = "gfx/leaders/SRN/haijunjiangling/SRN_aerfuleiduoaoliyani.png"
+				small = "gfx/interface/ideas/SRN/haijunjiangling/SRN_aerfuleiduoaoliyani.png"
 			}
 		}
         scientist = {
@@ -365,15 +353,15 @@ characters = {
 		name = SRN_nabuleisi #那不勒斯
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/nabuleisi.png"
-                small= "gfx/interface/ideas/nabuleisi.png" 
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_nabuleisi.png"
+                small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_nabuleisi.png" 
 			}
 		}
 		advisor = {
-			cost = 200
-			slot = high_command
-			idea_token = weituoliaoweinibeierdi
-			traits = { idea_nabuleisi }
+			cost = 100
+			slot = army_chief #陆军部长
+			idea_token = SRN_nabuleisi
+			traits = { SRN_nabuleisi_traits }
 		}
         scientist = {
 		    traits = {
@@ -408,7 +396,8 @@ characters = {
 		name = SRN_zhala #扎拉
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/zhala.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_zhala.png"
+                small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_zhala.png" 
 			}
 		}
         scientist = {
@@ -444,7 +433,8 @@ characters = {
 		name = SRN_bola #波拉
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/bola.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_bola.png"
+                small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_bola.png" 
 			}
 		}
         scientist = {
@@ -458,6 +448,12 @@ characters = {
 				specialization_nuclear = 3
 				}		
 		    }
+		advisor = {
+			cost = 100
+			slot = army_chief #陆军部长
+			idea_token = SRN_nabuleisi
+			traits = { SRN_bola_traits }
+		}
         corps_commander = {
             traits = {
 			    brilliant_strategist
@@ -480,10 +476,10 @@ characters = {
 		name = SRN_geliqiya #戈里齐亚
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/geliqiya.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_geliqiya.png"
+                small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_geliqiya.png"
 			}
 		}
-
         scientist = {
 		    traits = {
 				scientist_trait_resourceful
@@ -495,6 +491,12 @@ characters = {
 				specialization_nuclear = 3
 				}		
 		    }
+		advisor = {
+			cost = 100
+			slot = high_command #军队司令
+			idea_token = SRN_geliqiya
+			traits = { SRN_geliqiya_traits } #幻象紫雨
+		}
         corps_commander = {
             traits = {
 			    brilliant_strategist
@@ -517,10 +519,10 @@ characters = {
 		name = SRN_deliyasite #的里雅斯特
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/deliyasite.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_deliyasite.png"
+                small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_deliyasite.png"
 			}
 		}
-
         scientist = {
 		    traits = {
 				scientist_trait_resourceful
@@ -553,10 +555,10 @@ characters = {
 		name = SRN_boerzharuo #博尔扎诺 
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/boerzharuo.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_boerzharuo.png"
+                small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_boerzharuo.png"
 			}
 		}
-
         scientist = {
 		    traits = {
 				scientist_trait_resourceful
@@ -590,10 +592,10 @@ characters = {
 		name = SRN_abuluqigongjue #阿布鲁齐公爵 
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/abuluqigongjue.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_abuluqigongjue.png"
+                small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_abuluqigongjue.png"
 			}
 		}
-
         scientist = {
 		    traits = {
 				scientist_trait_resourceful
@@ -605,6 +607,12 @@ characters = {
 				specialization_nuclear = 3
 				}		
 		    }
+		advisor = {
+			cost = 100
+			slot = high_command #军队司令
+			idea_token = SRN_abuluqigongjue
+			traits = { SRN_abuluqigongjue_traits } #黑衫军神射手军团指挥官
+		}
         corps_commander = {
             traits = {
 			    brilliant_strategist
@@ -615,6 +623,7 @@ characters = {
 				swamp_fox
 				hill_fighter
 				infantry_expert
+				SRN_heishanjunzhihuiguan_fmy #黑衫军指挥官
 			}
             skill = 3
             attack_skill = 3
@@ -628,10 +637,10 @@ characters = {
 		name = SRN_zhusaipeijialibodi #朱塞佩·加里波第  
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/zhusaipeijialibodi.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_zhusaipeijialibodi.png"
+                small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_zhusaipeijialibodi.png"
 			}
 		}
-
         scientist = {
 		    traits = {
 				scientist_trait_resourceful
@@ -665,10 +674,10 @@ characters = {
 		name = SRN_batuoluomeiaokelaiaoni #巴托洛梅奥·科莱奥尼  
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/batuoluomeiaokelaiaoni.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_batuoluomeiaokelaiaoni.png"
+                small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_batuoluomeiaokelaiaoni.png"
 			}
 		}
-
         scientist = {
 		    traits = {
 				scientist_trait_resourceful
@@ -702,10 +711,10 @@ characters = {
 		name = SRN_aerbeituodizhusairuo #阿尔贝托·迪·朱塞诺
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/aerbeituodizhusairuo.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_aerbeituodizhusairuo.png"
+                small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_aerbeituodizhusairuo.png"
 			}
 		}
-
         scientist = {
 		    traits = {
 				scientist_trait_resourceful
@@ -741,7 +750,8 @@ characters = {
 		name = SRN_lituoliao #利托里奥（军队元帅）
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/lituoliao.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_lituoliao.png"
+                small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_lituoliao.png"
 			}
 		}
         scientist = {
@@ -755,6 +765,12 @@ characters = {
 				specialization_nuclear = 3
 				}		
 		    }
+		advisor = {  
+			slot = political_advisor #政治顾问
+			idea_token = SRN_makeboluo
+			cost = 100
+			traits = { SRN_lituoliao_traits } #魅力四射的法西斯革命家
+		}
         field_marshal = {
             traits = { 
 				expert_delegator
@@ -768,6 +784,7 @@ characters = {
 				winter_expert
 				adaptable
 				commando
+				SRN_heishanjunzhihuiguan_fmy #黑衫军指挥官
 			}
             skill = 3
             attack_skill = 3
@@ -781,15 +798,15 @@ characters = {
 		name = SRN_makeboluo #马可·波罗（军队元帅）
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/makeboluo.png"
-				small= "gfx/interface/ideas/makeboluo.png" 
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_makeboluo.png"
+				small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_makeboluo.png" 
 			}
 		}
-		advisor = {
+		advisor = {  
+			slot = high_command #军队司令
+			idea_token = SRN_makeboluo
 			cost = 100
-			slot = high_command
-			idea_token = weituoliaoweinibeierdi
-			traits = { idea_makeboluo }
+			traits = { SRN_makeboluo_traits } #黑衫军全国总指挥官
 		}
         scientist = {
 		    traits = {
@@ -815,6 +832,7 @@ characters = {
 				winter_expert
 				adaptable
 				commando
+				SRN_heishanjunzhihuiguan_fmy #黑衫军指挥官
 			}
             skill = 3
             attack_skill = 3
@@ -828,10 +846,10 @@ characters = {
 		name = SRN_lafeer #拉斐洛·桑齐奥·达·乌尔比诺
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/lafeer.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_lafeer.png"
+				small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_lafeer.png" 
 			}
 		}
-
         scientist = {
 		    traits = {
 				scientist_trait_resourceful
@@ -843,6 +861,12 @@ characters = {
 				specialization_nuclear = 3
 				}		
 		    }
+		advisor = {  
+			slot = political_advisor #政治顾问
+			idea_token = SRN_luoma
+			cost = 100
+			traits = { SRN_lafeer_traits } #狂喜与毁灭之诗歌
+		}
         corps_commander = {
             traits = {
 			    brilliant_strategist
@@ -850,6 +874,7 @@ characters = {
 				trait_cautious
 				infantry_officer
 				bearer_of_artillery	
+				SRN_heishanjunzhihuiguan_fmy #黑衫军指挥官
 			}
             skill = 3
             attack_skill = 3
@@ -863,7 +888,8 @@ characters = {
 		name = SRN_weituoliaoweintuo #维托里奥·维内托（军队元帅）
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/weituoliaoweintuo.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_weituoliaoweintuo.png"
+				small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_weituoliaoweintuo.png" 
 			}
 		}
         scientist = {
@@ -905,7 +931,8 @@ characters = {
 		name = SRN_luoma #罗马
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/luoma.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_luoma.png"
+				small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_luoma.png" 
 			}
 		}
         scientist = {
@@ -919,6 +946,12 @@ characters = {
 				specialization_nuclear = 3
 				}		
 		    }
+		advisor = {  
+			slot = political_advisor #政治顾问
+			idea_token = SRN_luoma
+			cost = 100
+			traits = { SRN_luoma_traits } #法团主义经济设计师
+		}
         corps_commander = {
             traits = {
 			    brilliant_strategist
@@ -928,6 +961,7 @@ characters = {
 				bearer_of_artillery	
 				ranger
 				urban_assault_specialist
+				SRN_heishanjunzhihuiguan_fmy #黑衫军指挥官
 			}
             skill = 3
             attack_skill = 3
@@ -941,7 +975,8 @@ characters = {
 		name = SRN_zhuliaokaisa #朱利奥·凯撒
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/zhuliaokaisa.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_zhuliaokaisa.png"
+				small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_zhuliaokaisa.png" 
 			}
 		}
         scientist = {
@@ -954,7 +989,14 @@ characters = {
 				skills = {
 				specialization_nuclear = 3
 				}		
-		    }
+		    }		
+		advisor = {  
+			slot = theorist #
+			idea_token = tierpici_bilan #军事理论
+			cost = 100
+			ledger = army
+			traits = { SRN_zhuliaokaisa_traits } #
+		}
         corps_commander = {
             traits = {
 			    brilliant_strategist
@@ -964,6 +1006,7 @@ characters = {
 				bearer_of_artillery	
 				naval_liason
 				infantry_expert
+				SRN_heishanjunzhihuiguan_fmy #黑衫军指挥官
 			}
             skill = 3
             attack_skill = 3
@@ -977,7 +1020,8 @@ characters = {
 		name = SRN_andelieyaduoliya #安德烈亚·多利亚
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/andelieyaduoliya.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_andelieyaduoliya.png"
+				small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_andelieyaduoliya.png" 
 			}
 		}
         scientist = {
@@ -991,6 +1035,12 @@ characters = {
 				specialization_nuclear = 3
 				}		
 		    }
+		advisor = {
+			cost = 100
+			slot = high_command #军队司令
+			idea_token = SRN_andelieyaduoliya
+			traits = { SRN_andelieyaduoliya_traits } #引领后辈的火光
+		}
         corps_commander = {
             traits = {
 			    brilliant_strategist
@@ -1014,10 +1064,10 @@ characters = {
 		name = SRN_fulangxisikekalaqiaoluo #弗朗西斯科·卡拉乔洛
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/fulangxisikekalaqiaoluo.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_fulangxisikekalaqiaoluo.png"
+				small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_fulangxisikekalaqiaoluo.png" 
 			}
 		}
-
         scientist = {
 		    traits = {
 				scientist_trait_resourceful
@@ -1040,6 +1090,7 @@ characters = {
 				harsh_leader
 				trickster
 				infantry_leader
+				SRN_heishanjunzhihuiguan_fmy #黑衫军指挥官
 			}
             skill = 3
             attack_skill = 3
@@ -1054,7 +1105,8 @@ characters = {
 		name = SRN_diguo #帝国
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/diguo.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_diguo.png"
+				small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_diguo.png"
 			}
 		}
         scientist = {
@@ -1065,9 +1117,15 @@ characters = {
 				scientist_trait_gifted_engineer
 				}
 				skills = {
-				specialization_nuclear = 3
+			specialization_nuclear = 3
 				}		
 		    }
+		advisor = {  
+			cost = 100
+			slot = air_chief #空军部长
+			idea_token = yuekecheng_bilan
+			traits = { SRN_diguo_traits } #重振帝国荣光
+		}
         corps_commander = {
             traits = {
 			    brilliant_strategist
@@ -1079,6 +1137,7 @@ characters = {
 				trickster
 				camouflage_expert
 				expert_improviser
+				SRN_heishanjunzhihuiguan_fmy #黑衫军指挥官
 			}
             skill = 3
             attack_skill = 3
@@ -1092,7 +1151,8 @@ characters = {
 		name = SRN_tianying #天鹰
 	    portraits = {
 			army = {
-				large= "gfx/leaders/befanglianheyusadingdiguo/tianying.png"
+				large= "gfx/leaders/SRN/lujunjiangling/SRN_tianying.png"
+				small= "gfx/interface/ideas/SRN/lujunjiangling/SRN_tianying.png"
 			}
 		}
         scientist = {
@@ -1106,6 +1166,12 @@ characters = {
 				specialization_nuclear = 3
 				}		
 		    }
+		advisor = {  
+			cost = 100
+			slot = air_chief #空军部长
+			idea_token = yuekecheng_bilan
+			traits = { SRN_tianying_traits } #星辰之光
+		}
         corps_commander = {
             traits = {
 			    brilliant_strategist
@@ -1123,6 +1189,6 @@ characters = {
             defense_skill = 3
 			planning_skill = 3
  			logistics_skill= 3
-		}
+        }
 	}
 }
