@@ -53,10 +53,10 @@ SRN_zhanzhengshengchanzongweiyuanhui_organization = { #战争生产总委员会
 		position = { x = 0 y = 0 }
 
 		organization_modifier = {
-            military_industrial_organization_research_bonus = 0.1
-			military_industrial_organization_funds_gain = 0.1
-            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
-			military_industrial_organization_size_up_requirement = -0.1     
+            military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_funds_gain = 0.05
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.05
+			military_industrial_organization_size_up_requirement = -0.05   
 		}
 	}
     trait = {
@@ -236,12 +236,12 @@ SRN_zhanzhengshengchanzongweiyuanhui_organization = { #战争生产总委员会
 	 	}
 	}
 	trait = {
-		token = SRN_lujunzhizao
-		name = SRN_lujunzhizao
+		token = SRN_lujunzhizao_15
+		name = SRN_lujunzhizao_15
 		icon = GFX_SRN_shengchan_organization_icon
 
 		position = { x = 2 y = 4 }
-        any_parent = {SRN_lujunzhizao_14}
+        any_parent = { SRN_lujunzhizao_14 }
 
 		production_bonus ={
             production_cost_factor = -0.02
@@ -429,10 +429,10 @@ SRN_guojiabubingwuqizhizaolianmeng_organization = { #国家步枪设计辛迪加
 		position = { x = 0 y = 0 }
 
 		organization_modifier = {
-            military_industrial_organization_research_bonus = 0.1
-			military_industrial_organization_funds_gain = 0.1
-            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
-			military_industrial_organization_size_up_requirement = -0.1     
+            military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_funds_gain = 0.05
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.05
+			military_industrial_organization_size_up_requirement = -0.05   
 		}
 	}
     trait = {
@@ -699,6 +699,696 @@ SRN_guojiabubingwuqizhizaolianmeng_organization = { #国家步枪设计辛迪加
 		equipment_bonus ={
            defense = 0.03
            reliability = 0.03
+		}
+	}
+}
+
+SRN_zhanshenmaersihuopaoshejiju_organization = { #战神马尔斯火炮设计局
+    icon = GFX_SRN_zhanshenmaersihuopaoshejiju_organization_icon
+	allowed = {	
+		tag = SRN
+		has_dlc = "Arms Against Tyranny"
+	}
+	ai_will_do = {
+		base = 3
+	}
+	on_tech_research_completed = {
+        FROM = { add_cic = 3000 }
+    }
+    equipment_type = {
+        artillery_equipment
+		rocket_artillery_equipment
+		motorized_rocket_equipment
+		super_heavy_artillery_equipment
+		anti_tank_equipment
+		anti_air_equipment
+	}
+    research_categories = {
+        mio_cat_all_artillery_equipment
+    }
+    initial_trait = {#自带属性
+        organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1
+        }
+    }
+    trait = {
+		token = SRN_huopao_1
+		name = SRN_huopao_1
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 0 y = 0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_funds_gain = 0.05
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.05
+			military_industrial_organization_size_up_requirement = -0.05   
+		}
+	}
+    trait = {
+		token = SRN_huopao_2
+		name = SRN_huopao_2
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 0 y = 1 }
+		any_parent = {SRN_huopao_1}
+
+		equipment_bonus ={
+            soft_attack = 0.03
+            hard_attack = 0.03
+            ap_attack = 0.03
+            air_attack = 0.03
+		    breakthrough = 0.03
+        }
+	}
+    trait = {
+		token = SRN_huopao_5
+		name = SRN_huopao_5
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 0 y = 4 }
+		any_parent = {SRN_huopao_4}
+
+		equipment_bonus ={
+            soft_attack = 0.03
+            hard_attack = 0.03
+            ap_attack = 0.03
+            air_attack = 0.03
+		    breakthrough = 0.03
+        }
+	}
+    trait = {
+		token = SRN_huopao_4
+		name = SRN_huopao_4
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 0 y = 3 }
+		any_parent = {SRN_huopao_3}
+
+		equipment_bonus ={
+            soft_attack = 0.03
+            hard_attack = 0.03
+            ap_attack = 0.03
+            air_attack = 0.03
+		    breakthrough = 0.03
+        }
+	}
+    trait = {
+		token = SRN_huopao_3
+		name = SRN_huopao_3
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 0 y = 2 }
+		any_parent = {SRN_huopao_2}
+
+		equipment_bonus ={
+            soft_attack = 0.03
+            hard_attack = 0.03
+            ap_attack = 0.03
+            air_attack = 0.03
+		    breakthrough = 0.03
+        }
+	}
+	trait = {
+		token = SRN_huopao_11
+		name = SRN_huopao_11
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 2 y =0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1  
+        }
+	}
+    trait = {
+		token = SRN_huopao_12
+		name = SRN_huopao_12
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 2 y = 1 }
+        any_parent = {SRN_huopao_11}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+		   hardness = 0.05
+           entrenchment = 0.5
+           fuel_capacity = 0.05
+        }
+	}
+    trait = {
+		token = SRN_huopao_13
+		name = SRN_huopao_13
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 2 y = 2 }
+        any_parent = {SRN_huopao_12}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+		   hardness = 0.05
+           entrenchment = 0.5
+           fuel_capacity = 0.05
+        }
+	}
+    trait = {
+		token = SRN_huopao_23
+		name = SRN_huopao_23
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 5 y = 2 }
+        any_parent = {SRN_huopao_22}
+
+		equipment_bonus ={
+            soft_attack = 0.03
+            hard_attack = 0.03
+            ap_attack = 0.03
+            air_attack = 0.03
+		    breakthrough = 0.03
+        }
+	}
+    trait = {
+		token = SRN_huopao_32
+		name = SRN_huopao_32
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 7 y = 1 }
+        any_parent = {SRN_huopao_31}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+		   hardness = 0.05
+           entrenchment = 0.5
+           fuel_capacity = 0.05
+		}
+	}
+    trait = {
+		token = SRN_huopao_14
+		name = SRN_huopao_14
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 2 y = 3 }
+        any_parent = {SRN_huopao_13}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+		   hardness = 0.05
+           entrenchment = 0.5
+           fuel_capacity = 0.05
+        }
+	}
+	trait = {
+		token = SRN_huopao_15
+		name = SRN_huopao_15
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 2 y = 4 }
+        any_parent = {SRN_huopao_14}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+		   hardness = 0.05
+           entrenchment = 0.5
+           fuel_capacity = 0.05
+        }
+	}
+	trait = {
+		token = SRN_huopao_24
+		name = SRN_huopao_24
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 5 y = 3 }
+        any_parent = {SRN_huopao_23}
+
+		equipment_bonus ={
+            soft_attack = 0.03
+            hard_attack = 0.03
+            ap_attack = 0.03
+            air_attack = 0.03
+		    breakthrough = 0.03
+        }
+	}
+	trait = {
+		token = SRN_huopao_22
+		name = SRN_huopao_22
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 5 y = 1 }
+        any_parent = {SRN_huopao_21}
+
+		equipment_bonus ={
+            soft_attack = 0.03
+            hard_attack = 0.03
+            ap_attack = 0.03
+            air_attack = 0.03
+		    breakthrough = 0.03
+        }
+	}
+	trait = {
+		token = SRN_huopao_31
+		name = SRN_huopao_31
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 7 y = 0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1 
+		}
+	}
+	trait = {
+		token = SRN_huopao_21
+		name = SRN_huopao_21
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 5 y = 0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1 
+        }
+	}
+	trait = {
+		token = SRN_huopao_33
+		name = SRN_huopao_33
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 7 y = 2 }
+        any_parent = {SRN_huopao_32}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+		   hardness = 0.05
+           entrenchment = 0.5
+           fuel_capacity = 0.05
+		}
+	}
+	trait = {
+		token = SRN_huopao_25
+		name = SRN_huopao_25
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 5 y = 4 }
+        any_parent = {SRN_huopao_24}
+
+		equipment_bonus ={
+            soft_attack = 0.03
+            hard_attack = 0.03
+            ap_attack = 0.03
+            air_attack = 0.03
+		    breakthrough = 0.03
+        }
+	}
+	trait = {
+		token = SRN_huopao_34
+		name = SRN_huopao_34
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 7 y = 3 }
+        any_parent = {SRN_huopao_33}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+		   hardness = 0.05
+           entrenchment = 0.5
+           fuel_capacity = 0.05
+		}
+	}
+	trait = {
+		token = SRN_huopao_35
+		name = SRN_huopao_35
+		icon = GFX_SRN_huopao_organization_icon
+
+		position = { x = 7 y = 4 }
+        any_parent = {SRN_huopao_34}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+		   hardness = 0.05
+           entrenchment = 0.5
+           fuel_capacity = 0.05
+		}
+	}
+}
+
+SRN_guojiajidonghuayuhqinglianhehui_organization = { #国家机动化与后勤联合会
+    icon = GFX_SRN_guojiajidonghuayuhqinglianhehui_organization_icon
+	allowed = {	
+		tag = SRN
+		has_dlc = "Arms Against Tyranny"
+	}
+	ai_will_do = {
+		base = 3
+	}
+	on_tech_research_completed = {
+        FROM = { add_cic = 3000 }
+    }
+    equipment_type = {
+		motorized_equipment
+		mechanized_equipment
+		amphibious_mechanized_equipment
+		train_equipment
+	}
+    research_categories = {
+        mio_cat_tech_all_motorized_mechanized
+		cat_armored_cars
+		train_tech
+    }
+    initial_trait = {#自带属性
+        organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1
+        }
+    }
+    trait = {
+		token = SRN_cheliang_1
+		name = SRN_cheliang_1
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 0 y = 0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_funds_gain = 0.05
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.05
+			military_industrial_organization_size_up_requirement = -0.05     
+		}
+	}
+    trait = {
+		token = SRN_cheliang_2
+		name = SRN_cheliang_2
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 0 y = 1 }
+		any_parent = {SRN_cheliang_1}
+
+		equipment_bonus ={
+           breakthrough = 0.05
+           soft_attack = 0.05
+           hard_attack = 0.05
+           ap_attack = 0.05
+        }
+	}
+    trait = {
+		token = SRN_cheliang_5
+		name = SRN_cheliang_5
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 0 y = 4 }
+		any_parent = {SRN_cheliang_4}
+
+		equipment_bonus ={
+           breakthrough = 0.05
+           soft_attack = 0.05
+           hard_attack = 0.05
+           ap_attack = 0.05
+        }
+	}
+    trait = {
+		token = SRN_cheliang_4
+		name = SRN_cheliang_4
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 0 y = 3 }
+		any_parent = {SRN_cheliang_3}
+
+		equipment_bonus ={
+           breakthrough = 0.05
+           soft_attack = 0.05
+           hard_attack = 0.05
+           ap_attack = 0.05
+        }
+	}
+    trait = {
+		token = SRN_cheliang_3
+		name = SRN_cheliang_3
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 0 y = 2 }
+		any_parent = {SRN_cheliang_2}
+
+		equipment_bonus ={
+           breakthrough = 0.05
+           soft_attack = 0.05
+           hard_attack = 0.05
+           ap_attack = 0.05
+        }
+	}
+	trait = {
+		token = SRN_cheliang_11
+		name = SRN_cheliang_11
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 2 y =0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1  
+        }
+	}
+    trait = {
+		token = SRN_cheliang_12
+		name = SRN_cheliang_12
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 2 y = 1 }
+        any_parent = {SRN_cheliang_11}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+           fuel_consumption = -0.05
+		   hardness = 0.05
+        }
+	}
+    trait = {
+		token = SRN_cheliang_13
+		name = SRN_cheliang_13
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 2 y = 2 }
+        any_parent = {SRN_cheliang_12}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+           fuel_consumption = -0.05
+		   hardness = 0.05
+        }
+	}
+    trait = {
+		token = SRN_cheliang_23
+		name = SRN_cheliang_23
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 5 y = 2 }
+        any_parent = {SRN_cheliang_22}
+
+		equipment_bonus ={
+           breakthrough = 0.05
+           soft_attack = 0.05
+           hard_attack = 0.05
+           ap_attack = 0.05
+        }
+	}
+    trait = {
+		token = SRN_cheliang_32
+		name = SRN_cheliang_32
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 7 y = 1 }
+        any_parent = {SRN_cheliang_31}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+           fuel_consumption = -0.05
+		   hardness = 0.05
+		}
+	}
+    trait = {
+		token = SRN_cheliang_14
+		name = SRN_cheliang_14
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 2 y = 3 }
+        any_parent = {SRN_cheliang_13}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+           fuel_consumption = -0.05
+		   hardness = 0.05
+        }
+	}
+	trait = {
+		token = SRN_cheliang_15
+		name = SRN_cheliang_15
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 2 y = 4 }
+        any_parent = {SRN_cheliang_14}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+           fuel_consumption = -0.05
+		   hardness = 0.05
+        }
+	}
+	trait = {
+		token = SRN_cheliang_24
+		name = SRN_cheliang_24
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 5 y = 3 }
+        any_parent = {SRN_cheliang_23}
+
+		equipment_bonus ={
+           breakthrough = 0.05
+           soft_attack = 0.05
+           hard_attack = 0.05
+           ap_attack = 0.05
+        }
+	}
+	trait = {
+		token = SRN_cheliang_22
+		name = SRN_cheliang_22
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 5 y = 1 }
+        any_parent = {SRN_cheliang_21}
+
+		equipment_bonus ={
+           breakthrough = 0.05
+           soft_attack = 0.05
+           hard_attack = 0.05
+           ap_attack = 0.05
+        }
+	}
+	trait = {
+		token = SRN_cheliang_31
+		name = SRN_cheliang_31
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 7 y = 0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1 
+		}
+	}
+	trait = {
+		token = SRN_cheliang_21
+		name = SRN_cheliang_21
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 5 y = 0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1 
+        }
+	}
+	trait = {
+		token = SRN_cheliang_33
+		name = SRN_cheliang_33
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 7 y = 2 }
+        any_parent = {SRN_cheliang_32}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+           fuel_consumption = -0.05
+		   hardness = 0.05
+		}
+	}
+	trait = {
+		token = SRN_cheliang_25
+		name = SRN_cheliang_25
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 5 y = 4 }
+        any_parent = {SRN_cheliang_24}
+
+		equipment_bonus ={
+           breakthrough = 0.05
+           soft_attack = 0.05
+           hard_attack = 0.05
+           ap_attack = 0.05
+        }
+	}
+	trait = {
+		token = SRN_cheliang_34
+		name = SRN_cheliang_34
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 7 y = 3 }
+        any_parent = {SRN_cheliang_33}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+           fuel_consumption = -0.05
+		   hardness = 0.05
+		}
+	}
+	trait = {
+		token = SRN_cheliang_35
+		name = SRN_cheliang_35
+		icon = GFX_SRN_cheliang_organization_icon   
+
+		position = { x = 7 y = 4 }
+        any_parent = {SRN_cheliang_34}
+
+		equipment_bonus ={
+           defense = 0.05
+           reliability = 0.05
+           armor_value = 0.05
+           fuel_consumption = -0.05
+		   hardness = 0.05
 		}
 	}
 }

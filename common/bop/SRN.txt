@@ -1,0 +1,88 @@
+SRN_balance_of_power = { #有机国家张力指数
+	##################################################萨丁社会共和国
+	initial_value = 1 
+	left_side = SRN_quanlipinghen_zuihaodexiaoguo_side #左侧名称 有机国家的解耦
+	right_side = SRN_quanlipinghen_zuihuaidexiaoguo_side #右侧名称 完美的有机谐律
+	#decision_category = SRN_decision_of_power_decision_category #下面决议的大类别，决议和普通决议一样
+	range = { #中间
+		id = SRN_quanlipinghen_jiejihezshenghuatuise_range #阶级合作神话褪色
+		min = -0.2
+		max = 0.2
+		modifier = {
+			poltical_power_factor = -0.05
+			consumer_goods_factor = 0.05
+	        consumer_goods_expected_value = 0.05
+			line_change_production_efficiency_factor = -0.05
+	        prouction_factory_efficiency_gain_factor = -0.05
+	        production_factory_max_efficiency_factor = -0.05
+	        production_factory_start_efficiency_factor = -0.05
+		}
+	}
+	
+	side = { #左边
+		id = SRN_quanlipinghen_zuihaodexiaoguo_side #有机国家的解耦
+		icon = SRN_bop_SRN_quanlipinghen_zuihaodexiaoguo_side
+		range = {
+			id = SRN_quanlipinghen_wanquanjieou_side_trust #完全解耦
+			min = -1
+			max = -0.8
+			modifier = {
+				political_power_factor = -0.15
+				consumer_goods_factor = 0.15
+	            consumer_goods_expected_value = 0.15
+				line_change_production_efficiency_factor = -0.15
+	            production_factory_efficiency_gain_factor = -0.15
+	            production_factory_max_efficiency_factor = -0.15
+	            production_factory_start_efficiency_factor = -0.15
+			}
+		}
+		range = {
+			id = SRN_quanlipinghen_huaisikaishi_side_trust #坏死开始
+			min = -0.2
+			max = -0.6
+			modifier = {
+				political_power_factor = -0.1
+				consumer_goods_factor = 0.1
+	            consumer_goods_expected_value = 0.1
+				line_change_production_efficiency_factor = -0.1
+	            production_factory_efficiency_gain_factor = -0.1
+	            production_factory_max_efficiency_factor = -0.1
+	            production_factory_start_efficiency_factor = -0.1
+			}
+		}
+	}
+	
+	side = { #右边
+		id = SRN_quanlipinghen_zuihuaidexiaoguo_side #完美的有机谐律
+		icon = GFX_bop_SRN_quanlipinghen_zuihuaidexiaoguo_side
+		range = { #轻微僵硬
+			id = SRN_quanlipinghen_qingdujiangying_side_trust
+			min = 0.2
+			max = 0.6
+			modifier = {
+			    poltical_power_factor = 0.03
+			    consumer_goods_factor = -0.03
+	            consumer_goods_expected_value = -0.03
+			    line_change_production_efficiency_factor = 0.03
+	            prouction_factory_efficiency_gain_factor = 0.03
+	            production_factory_max_efficiency_factor = 0.03
+	            production_factory_start_efficiency_factor = 0.03
+			}
+		}
+		range = { #完美谐律
+			id = SRN_quanlipinghen_wanmeixiel_side_trust
+			min = 0.8
+			max = 1
+			modifier = {
+			    poltical_power_factor = 0.06
+			    consumer_goods_factor = -0.06
+	            consumer_goods_expected_value = -0.06
+			    line_change_production_efficiency_factor = 0.06
+	            prouction_factory_efficiency_gain_factor = 0.06
+	            production_factory_max_efficiency_factor = 0.06
+	            production_factory_start_efficiency_factor = 0.06
+			}
+		}
+	}
+}
+

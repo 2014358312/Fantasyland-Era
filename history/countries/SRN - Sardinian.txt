@@ -1,19 +1,75 @@
 ﻿capital = 443
 
 ##################################################萨丁社会共和国
-set_research_slots = 2
+set_research_slots = 4
 set_convoys = 80
 set_stability = 0.65
-set_war_support = 0.35
+set_war_support = 0.8
 starting_train_buffer = 2.0
 
-set_technology = {
+set_technology = { #初始科技
+    #步枪
+    infantry_weapons = 1
+    infantry_weapons1 = 1
+    infantry_weapons2 = 1
+    support_weapons = 1
+    motorised_infantry = 1
 	basic_train = 1
-	### Infantry ###
-	infantry_weapons = 1
-	infantry_weapons1 = 1
+	militia_tech = 1 #民兵
+    #支援
 	tech_support = 1
 	tech_engineers = 1
+	tech_military_police = 1
+    #火炮
+    interwar_antiair = 1
+    interwar_antitank = 1
+	gw_artillery = 1
+	interwar_artillery = 1
+	artillery1 = 1
+	###海军
+	#潜艇
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	#配件
+	sonar = 1
+	improved_sonar = 1
+	smoke_generator = 1
+	basic_depth_charges = 1
+    #驱逐
+	early_ship_hull_submarine = 1
+	basic_ship_hull_submarine = 1
+    #鱼雷
+	basic_torpedo = 1
+	improved_ship_torpedo_launcher = 1
+	###飞机
+	#轻型
+	iw_small_airframe = 1
+	basic_small_airframe = 1
+	#工程学
+	electronic_mechanical_engineering = 1
+	radio = 1
+	mechanical_computing = 1
+	#工业
+	basic_machine_tools = 1
+	construction1 = 1
+	excavation1 = 1
+}
+
+add_equipment_to_stockpile = { #开局装备
+    type = motorized_equipment_1 #卡车
+    amount = 50
+}
+add_equipment_to_stockpile = { #开局装备
+    type = infantry_weapons1 #步枪
+    amount = 1500
+}
+add_equipment_to_stockpile = { #开局装备
+    type = tech_support #支援装备
+    amount = 50
+}
+add_equipment_to_stockpile = { #开局装备
+    type = artillery1 #火炮
+    amount = 50
 }
 
 set_politics = {
@@ -73,6 +129,16 @@ add_ideas = {
     SRN_minzhudezhongjie_guojiajingshen
 	SRN_shodaokongzhidegongrenyundong_guojiajingshen
 	SRN_guojiafaxisidang_head_of_government_character
+    SRN_faxisiducai_guojiajingshen
+	SRN_hshanjun_guojiajingshen
+    limited_conscription #有限征兵制
+    partial_economic_mobilisation #部分经济动员
+}
+
+#权利平衡
+set_power_balance = {
+    id = SRN_balance_of_power
+	set_default = yes
 }
 
 #####动态变量
@@ -81,6 +147,7 @@ set_variable = { #萨丁社会共和国_国家法西斯党
 	ROOT.FE_secondary = token:SRN_guojiafaxisidang_head_of_government_character
 }
 
+#
 
 
 

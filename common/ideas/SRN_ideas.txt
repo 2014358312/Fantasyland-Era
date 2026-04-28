@@ -17,7 +17,7 @@ ideas = {
 	        modifier = {
 		        army_core_attack_factor = 0.1
 		        army_core_defence_factor = 0.1
-				fascism_drift = 0.03
+				fascism_drift = 0.01
 		    } 
 	    }
 
@@ -35,8 +35,8 @@ ideas = {
 		    removal_cost = -1
 			
 	        modifier = {
-				democratic_drift = -0.05
-				neutrality_drift = -0.05
+				democratic_drift = -0.03
+				neutrality_drift = -0.03
 				surrender_limit = 0.1
 		        MAX_SURRENDER_LIMIT_OFFSET = 0.1
 		    } 
@@ -57,9 +57,66 @@ ideas = {
 			
 	        modifier = {
 				political_power_gain = -0.1
-				communism_drift = -0.05
-			    industrial_capacity_factory = 0.1
-		        industrial_capacity_dockyard = 0.1
+				communism_drift = -0.03
+			    industrial_capacity_factory = 0.05
+		        industrial_capacity_dockyard = 0.05
+		    } 
+	    }
+
+		SRN_faxisiducai_guojiajingshen = { #法西斯独裁
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_faxisgemingshiyuandi_guojiajingshen
+			
+		    removal_cost = -1
+			
+	        modifier = {
+				surrender_limit = 0.05
+		        MAX_SURRENDER_LIMIT_OFFSET = 0.05
+				consumer_goods_factor = 0.05
+	            consumer_goods_expected_value = 0.05
+				min_export = -0.05
+				political_power_gain = -0.1
+				political_power_cost = 0.1
+				stability_weekly = 0.0005
+				army_attack_factor = 0.05
+	            army_defence_factor = 0.05
+	            breakthrough_factor = 0.05
+				fascism_drift = 0.01
+				defensive_war_stability_factor = 0.1
+	            offensive_war_stability_factor = 0.1
+		    } 
+	    }
+
+		SRN_hshanjun_guojiajingshen = { #黑衫军
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_faxisgemingshiyuandi_guojiajingshen
+			
+		    removal_cost = -1
+			
+	        modifier = {
+				political_power_gain = -0.1
+				political_power_cost = 0.1
+				army_infantry_attack_factor = 0.1
+	            army_infantry_defence_factor = 0.1
+				army_org_factor = 0.1
+				army_org = 5
+	            army_morale_factor = 0.1
+	            army_morale = 5
+				planning_speed =-0.1
 		    } 
 	    }
 	}
