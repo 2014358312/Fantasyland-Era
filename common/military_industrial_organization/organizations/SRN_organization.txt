@@ -1,0 +1,704 @@
+##################################################萨丁社会共和国
+##########军工组织
+#####生产组织
+#陆军
+SRN_zhanzhengshengchanzongweiyuanhui_organization = { #战争生产总委员会
+    icon = GFX_SRN_zhanzhengshengchanzongweiyuanhui_organization_icon
+	allowed = {	
+		tag = SRN
+		has_dlc = "Arms Against Tyranny"
+	}
+	ai_will_do = {
+		base = 3
+	}
+	on_tech_research_completed = {
+        FROM = { add_cic = 3000 }
+    }
+    equipment_type = {
+		infantry_equipment
+		support_equipment
+		motorized_equipment
+		mechanized_equipment
+		amphibious_mechanized_equipment
+		train_equipment
+        artillery_equipment
+		rocket_artillery_equipment
+		motorized_rocket_equipment
+		super_heavy_artillery_equipment
+		anti_tank_equipment
+		anti_air_equipment
+	}
+    research_categories = {
+        infantry_weapons
+		support_tech
+        cat_special_forces_generic
+        mio_cat_tech_all_motorized_mechanized
+		cat_armored_cars
+		train_tech
+        mio_cat_all_artillery_equipment
+    }
+    initial_trait = {#自带属性
+        organization_modifier = {
+             military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1  
+        }
+    }
+    trait = {
+		token = SRN_lujunzhizao_1
+		name = SRN_lujunzhizao_1
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 0 y = 0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1     
+		}
+	}
+    trait = {
+		token = SRN_lujunzhizao_2
+		name = SRN_lujunzhizao_2
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 0 y = 1 }
+		any_parent = {SRN_lujunzhizao_1}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+    trait = {
+		token = SRN_lujunzhizao_5
+		name = SRN_lujunzhizao_5
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 0 y = 4 }
+		any_parent = {SRN_lujunzhizao_4}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+    trait = {
+		token = SRN_lujunzhizao_4
+		name = SRN_lujunzhizao_4
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 0 y = 3 }
+		any_parent = {SRN_lujunzhizao_3}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+    trait = {
+		token = SRN_lujunzhizao_3
+		name = SRN_lujunzhizao_3
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 0 y = 2 }
+		any_parent = {SRN_lujunzhizao_2}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+	trait = {
+		token = SRN_lujunzhizao_11
+		name = SRN_lujunzhizao_11
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 2 y =0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1  
+        }
+	}
+    trait = {
+		token = SRN_lujunzhizao_12
+		name = SRN_lujunzhizao_12
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 2 y = 1 }
+        any_parent = {SRN_lujunzhizao_11}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+    trait = {
+		token = SRN_lujunzhizao_13
+		name = SRN_lujunzhizao_13
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 2 y = 2 }
+        any_parent = {SRN_lujunzhizao_12}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+    trait = {
+		token = SRN_lujunzhizao_23
+		name = SRN_lujunzhizao_23
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 5 y = 2 }
+        any_parent = {SRN_lujunzhizao_22}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+    trait = {
+		token = SRN_lujunzhizao_32
+		name = SRN_lujunzhizao_32
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 7 y = 1 }
+        any_parent = {SRN_lujunzhizao_31}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+    trait = {
+		token = SRN_lujunzhizao_14
+		name = SRN_lujunzhizao_14
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 2 y = 3 }
+        any_parent = {SRN_lujunzhizao_13}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+	trait = {
+		token = SRN_lujunzhizao
+		name = SRN_lujunzhizao
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 2 y = 4 }
+        any_parent = {SRN_lujunzhizao_14}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+	trait = {
+		token = SRN_lujunzhizao_24
+		name = SRN_lujunzhizao_24
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 5 y = 3 }
+        any_parent = {SRN_lujunzhizao_23}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+	trait = {
+		token = SRN_lujunzhizao_22
+		name = SRN_lujunzhizao_22
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 5 y = 1 }
+        any_parent = {SRN_lujunzhizao_21}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+	trait = {
+		token = SRN_lujunzhizao_31
+		name = SRN_lujunzhizao_31
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 7 y = 0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1 
+		}
+	}
+	trait = {
+		token = SRN_lujunzhizao_21
+		name = SRN_lujunzhizao_21
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 5 y = 0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1 
+        }
+	}
+	trait = {
+		token = SRN_lujunzhizao_33
+		name = SRN_lujunzhizao_33
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 7 y = 2 }
+        any_parent = {SRN_lujunzhizao_32}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+	trait = {
+		token = SRN_lujunzhizao_25
+		name = SRN_lujunzhizao_25
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 5 y = 4 }
+        any_parent = {SRN_lujunzhizao_24}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+	trait = {
+		token = SRN_lujunzhizao_34
+		name = SRN_lujunzhizao_34
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 7 y = 3 }
+        any_parent = {SRN_lujunzhizao_33}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+	trait = {
+		token = SRN_lujunzhizao_35
+		name = SRN_lujunzhizao_35
+		icon = GFX_SRN_shengchan_organization_icon
+
+		position = { x = 7 y = 4 }
+        any_parent = {SRN_lujunzhizao_34}
+
+		production_bonus ={
+            production_cost_factor = -0.02
+            production_capacity_factor = 0.04
+            production_efficiency_cap_factor = 0.04
+            production_efficiency_gain_factor = 0.04
+            production_resource_need_factor = -0.04
+            production_resource_penalty_factor = -0.04
+            production_conversion_speed_factor = 0.04
+	 	}
+	}
+}
+
+#步兵支援
+SRN_guojiabubingwuqizhizaolianmeng_organization = { #国家步枪设计辛迪加
+    icon = GFX_SRN_guojiabubingwuqizhizaolianmeng_organization_icon
+	allowed = {	
+		tag = SRN
+		has_dlc = "Arms Against Tyranny"
+	}
+	ai_will_do = {
+		base = 3
+	}
+	on_tech_research_completed = {
+        FROM = { add_cic = 3000 }
+    }
+    equipment_type = {
+		infantry_equipment
+		support_equipment
+	}
+    research_categories = {
+        infantry_weapons
+		support_tech
+        cat_special_forces_generic
+    }
+    initial_trait = {#自带属性
+        organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1
+        }
+    }
+    trait = {
+		token = SRN_bubingzhiyuan_1
+		name = SRN_bubingzhiyuan_1
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 0 y = 0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1     
+		}
+	}
+    trait = {
+		token = SRN_bubingzhiyuan_2
+		name = SRN_bubingzhiyuan_2
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 0 y = 1 }
+		any_parent = {SRN_bubingzhiyuan_1}
+
+		equipment_bonus ={
+           breakthrough = 0.03
+           soft_attack = 0.03
+           hard_attack = 0.03
+           ap_attack = 0.03
+        }
+	}
+    trait = {
+		token = SRN_bubingzhiyuan_5
+		name = SRN_bubingzhiyuan_5
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 0 y = 4 }
+		any_parent = {SRN_bubingzhiyuan_4}
+
+		equipment_bonus ={
+           breakthrough = 0.03
+           soft_attack = 0.03
+           hard_attack = 0.03
+           ap_attack = 0.03
+        }
+	}
+    trait = {
+		token = SRN_bubingzhiyuan_4
+		name = SRN_bubingzhiyuan_4
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 0 y = 3 }
+		any_parent = {SRN_bubingzhiyuan_3}
+
+		equipment_bonus ={
+           breakthrough = 0.03
+           soft_attack = 0.03
+           hard_attack = 0.03
+           ap_attack = 0.03
+        }
+	}
+    trait = {
+		token = SRN_bubingzhiyuan_3
+		name = SRN_bubingzhiyuan_3
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 0 y = 2 }
+		any_parent = {SRN_bubingzhiyuan_2}
+
+		equipment_bonus ={
+           breakthrough = 0.03
+           soft_attack = 0.03
+           hard_attack = 0.03
+           ap_attack = 0.03
+        }
+	}
+	trait = {
+		token = SRN_bubingzhiyuan_11
+		name = SRN_bubingzhiyuan_11
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 2 y =0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1  
+        }
+	}
+    trait = {
+		token = SRN_bubingzhiyuan_12
+		name = SRN_bubingzhiyuan_12
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 2 y = 1 }
+        any_parent = {SRN_bubingzhiyuan_11}
+
+		equipment_bonus ={
+           defense = 0.03
+           reliability = 0.03
+        }
+	}
+    trait = {
+		token = SRN_bubingzhiyuan_13
+		name = SRN_bubingzhiyuan_13
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 2 y = 2 }
+        any_parent = {SRN_bubingzhiyuan_12}
+
+		equipment_bonus ={
+           defense = 0.03
+           reliability = 0.03
+        }
+	}
+    trait = {
+		token = SRN_bubingzhiyuan_23
+		name = SRN_bubingzhiyuan_23
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 5 y = 2 }
+        any_parent = {SRN_bubingzhiyuan_22}
+
+		equipment_bonus ={
+           breakthrough = 0.03
+           soft_attack = 0.03
+           hard_attack = 0.03
+           ap_attack = 0.03
+        }
+	}
+    trait = {
+		token = SRN_bubingzhiyuan_32
+		name = SRN_bubingzhiyuan_32
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 7 y = 1 }
+        any_parent = {SRN_bubingzhiyuan_31}
+
+		equipment_bonus ={
+           defense = 0.03
+           reliability = 0.03
+		}
+	}
+    trait = {
+		token = SRN_bubingzhiyuan_14
+		name = SRN_bubingzhiyuan_14
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 2 y = 3 }
+        any_parent = {SRN_bubingzhiyuan_13}
+
+		equipment_bonus ={
+           defense = 0.03
+           reliability = 0.03
+        }
+	}
+	trait = {
+		token = SRN_bubingzhiyuan_15
+		name = SRN_bubingzhiyuan_15
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 2 y = 4 }
+        any_parent = {SRN_bubingzhiyuan_14}
+
+		equipment_bonus ={
+           defense = 0.03
+           reliability = 0.03
+        }
+	}
+	trait = {
+		token = SRN_bubingzhiyuan_24
+		name = SRN_bubingzhiyuan_24
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 5 y = 3 }
+        any_parent = {SRN_bubingzhiyuan_23}
+
+		equipment_bonus ={
+           breakthrough = 0.03
+           soft_attack = 0.03
+           hard_attack = 0.03
+           ap_attack = 0.03
+        }
+	}
+	trait = {
+		token = SRN_bubingzhiyuan_22
+		name = SRN_bubingzhiyuan_22
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 5 y = 1 }
+        any_parent = {SRN_bubingzhiyuan_21}
+
+		equipment_bonus ={
+           breakthrough = 0.03
+           soft_attack = 0.03
+           hard_attack = 0.03
+           ap_attack = 0.03
+        }
+	}
+	trait = {
+		token = SRN_bubingzhiyuan_31
+		name = SRN_bubingzhiyuan_31
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 7 y = 0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1 
+		}
+	}
+	trait = {
+		token = SRN_bubingzhiyuan_21
+		name = SRN_bubingzhiyuan_21
+		icon = GFX_SRN_zhizaoshangjiacheng_organization_icon
+
+		position = { x = 5 y = 0 }
+
+		organization_modifier = {
+            military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.1
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.1
+			military_industrial_organization_size_up_requirement = -0.1 
+        }
+	}
+	trait = {
+		token = SRN_bubingzhiyuan_33
+		name = SRN_bubingzhiyuan_33
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 7 y = 2 }
+        any_parent = {SRN_bubingzhiyuan_32}
+
+		equipment_bonus ={
+           defense = 0.03
+           reliability = 0.03
+		}
+	}
+	trait = {
+		token = SRN_bubingzhiyuan_25
+		name = SRN_bubingzhiyuan_25
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 5 y = 4 }
+        any_parent = {SRN_bubingzhiyuan_24}
+
+		equipment_bonus ={
+           breakthrough = 0.03
+           soft_attack = 0.03
+           hard_attack = 0.03
+           ap_attack = 0.03
+        }
+	}
+	trait = {
+		token = SRN_bubingzhiyuan_34
+		name = SRN_bubingzhiyuan_34
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 7 y = 3 }
+        any_parent = {SRN_bubingzhiyuan_33}
+
+		equipment_bonus ={
+           defense = 0.03
+           reliability = 0.03
+		}
+	}
+	trait = {
+		token = SRN_bubingzhiyuan_35
+		name = SRN_bubingzhiyuan_35
+		icon = GFX_SRN_buqiangshejijiacheng_organization_icon
+
+		position = { x = 7 y = 4 }
+        any_parent = {SRN_bubingzhiyuan_34}
+
+		equipment_bonus ={
+           defense = 0.03
+           reliability = 0.03
+		}
+	}
+}

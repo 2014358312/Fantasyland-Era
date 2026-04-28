@@ -1,26 +1,46 @@
 characters = {
-	##################################################萨丁帝国
-	#领袖
-	SRN_Vittorio_Veneto = { #维托里奥·维内托
-		name = Vittorio_Veneto
+	##################################################萨丁社会共和国
+	#第一领袖
+	SRN_weituoliaoweintuo_lingxiu = { #维托里奥·维内托
+		name = SRN_weituoliaoweintuo_lingxiu
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SRN/lingxiu/SRN_weituoliaoweintuo_lingxiu.png"
+			}
+		}
 		country_leader = {
-			ideology = fascism_ideology
-			traits = {  }
+			ideology = ziyishixingtai_chuantongfaxisizhuyi #子意识形态_传统法西斯主义
+			desc = SRN_weituoliaoweintuo_lingxiu_desc
+			traits = { 
+				SRN_guojiafaxisidang_weituoliaoweintuo #DUCE
+			}
 			expire = "2000.1.1.1"
 		}
 	}
 
-	SRN_guojiafaxisidang_lingxiu = { #国家法西斯党
-		name = SRN_guojiafaxisidang_lingxiu
+	#副手
+	SRN_guojiafaxisidang_head_of_government_character = { #国家法西斯党
+		name = SRN_guojiafaxisidang_head_of_government_character
 		portraits = {
-			army = {
-				large = "gfx/leaders/SRN/lingxiu/SRN_guojiafaxisidang_lingxiu.png"
+			civilian = {
+				large = "gfx/leaders/SRN/fusho/SRN_guojiafaxisidang_head_of_government_character.png"
 			}
 		}
 		country_leader = {
-			ideology = fascism_ideology
-			traits = {  }
+			ideology = ziyishixingtai_chuantongfaxisizhuyi #子意识形态_传统法西斯主义
+			desc = SRN_weituoliaoweintuo_lingxiu_desc
+			traits = { 
+				SRN_guojiafaxisidang_weiyi #唯一
+			}
 			expire = "2000.1.1.1"
+		}
+		advisor = {
+            slot = head_of_government_character #第二领袖
+			idea_token = SRN_guojiafaxisidang_head_of_government_character 
+			available = { no_head_of_gov_trigger = yes }
+			traits = { 
+				SRN_guojiafaxisidang_weiyi #唯一
+			}
 		}
 	}
 
