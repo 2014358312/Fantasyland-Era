@@ -13,6 +13,8 @@ set_technology = { #初始科技
     infantry_weapons1 = 1
     infantry_weapons2 = 1
     support_weapons = 1
+	support_weapons2 = 1
+	tech_trucks = 1
     motorised_infantry = 1
 	basic_train = 1
 	militia_tech = 1 #民兵
@@ -27,24 +29,40 @@ set_technology = { #初始科技
 	interwar_artillery = 1
 	artillery1 = 1
 	###海军
-	#潜艇
-	early_ship_hull_light = 1
-	basic_ship_hull_light = 1
-	#配件
-	sonar = 1
-	improved_sonar = 1
-	smoke_generator = 1
-	basic_depth_charges = 1
-    #驱逐
+    #潜艇
 	early_ship_hull_submarine = 1
 	basic_ship_hull_submarine = 1
     #鱼雷
 	basic_torpedo = 1
 	improved_ship_torpedo_launcher = 1
+	magnetic_detonator = 1
+	#驱逐
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	#驱逐配件
+	sonar = 1
+	improved_sonar = 1
+	smoke_generator = 1
+	basic_depth_charges = 1
+	basic_battery = 1
+	#舰炮
+	basic_light_battery = 1
+	basic_light_shell = 1
+	basic_medium_battery = 1
+	#运输
+	mtg_transport = 1
 	###飞机
 	#轻型
 	iw_small_airframe = 1
 	basic_small_airframe = 1
+	#配件
+	engines_1 = 1
+	engines_2 = 1
+	aa_lmg = 1
+	early_bombs = 1
+	armor_piercing_bombs = 1
+	range_improvements = 1
+	###工业
 	#工程学
 	electronic_mechanical_engineering = 1
 	radio = 1
@@ -55,21 +73,37 @@ set_technology = { #初始科技
 	excavation1 = 1
 }
 
+#刷装备
+#陆军
 add_equipment_to_stockpile = { #开局装备
     type = motorized_equipment_1 #卡车
+    amount = 150
+}
+add_equipment_to_stockpile = { #开局装备
+    type = infantry_equipment_1 #步枪
+    amount = 4000
+}
+add_equipment_to_stockpile = { #开局装备
+    type = support_equipment_1 #支援装备
+    amount = 200
+}
+add_equipment_to_stockpile = { #开局装备
+    type = train_equipment_1 #民用火车
+    amount = 30
+}
+add_equipment_to_stockpile = { #开局装备
+    type = artillery_equipment_2 #火炮
     amount = 50
 }
 add_equipment_to_stockpile = { #开局装备
-    type = infantry_weapons1 #步枪
-    amount = 1500
-}
-add_equipment_to_stockpile = { #开局装备
-    type = tech_support #支援装备
+    type = anti_air_equipment_1 #防空炮
     amount = 50
 }
+
+#海军
 add_equipment_to_stockpile = { #开局装备
-    type = artillery1 #火炮
-    amount = 50
+    type = convoy_1 #运输船
+    amount = 400
 }
 
 set_politics = {
@@ -141,18 +175,99 @@ set_power_balance = {
 	set_default = yes
 }
 
+#军队编制
+division_template = { #国家安全志愿军
+	name = "国家安全志愿军"
+	is_locked = no #锁定
+	priority = 3 
+	regiments = { #主要编制
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 0 y = 3 }
+
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+		militia = { x = 1 y = 3 }
+
+		militia = { x = 2 y = 0 }
+		militia = { x = 2 y = 1 }
+	}
+}
+
+division_template = { #黑衫军
+	name = "黑衫军"
+	is_locked = no #锁定
+	priority = 3 
+	regiments = { #主要编制
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+
+
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+
+
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		infantry = { x = 2 y = 3 }
+
+		artillery_brigade = { x = 3 y = 0 }
+		artillery_brigade = { x = 3 y = 1 }
+
+	}
+	support = { #支援连
+		engineer = { x = 0 y = 0 } 
+		artillery = { x = 0 y = 1 }
+		anti_air = { x = 0 y = 2 }
+	} 
+}
+
+#刷兵
+capital_scope = {
+	create_unit = { #国家安全志愿军
+		division = " name = \"国家安全志愿军\" division_template = \"国家安全志愿军\" start_equipment_factor = 1"
+		owner = ROOT
+		count = 8
+	}
+	create_unit = { #黑衫军
+		division = " name = \"黑衫军\" division_template = \"黑衫军\" start_equipment_factor = 1"
+		owner = ROOT
+		count = 2
+	}
+}
+
+#开局空军装备 
+create_equipment_variant = { #制空战机
+	name = "射手座"
+	type = small_plane_airframe_1
+	modules = {
+		fixed_main_weapon_slot = light_mg_4x #主要武器
+		fixed_auxiliary_weapon_slot_1 = light_mg_4x #副武器
+		engine_type_slot = engine_2_1x #引擎
+		special_type_slot_1 = fuel_tanks_small #特殊功能
+		special_type_slot_2 = drop_tanks #特殊功能
+	}
+}
+create_equipment_variant = { #支援战机
+	name = "金牛座"
+	type = small_plane_cas_airframe_1
+	modules = {
+		fixed_main_weapon_slot = bomb_locks #主要武器
+		fixed_auxiliary_weapon_slot_1 = bomb_locks #副武器
+		engine_type_slot = engine_2_1x #引擎
+		special_type_slot_1 = fuel_tanks_small #特殊功能
+	}
+}
+
 #####动态变量
 #副手
 set_variable = { #萨丁社会共和国_国家法西斯党
 	ROOT.FE_secondary = token:SRN_guojiafaxisidang_head_of_government_character
 }
-
-#
-
-
-
-
-
-
-
-

@@ -1,6 +1,49 @@
 ideas = { 
     ##################################################萨丁社会共和国
-    country = { #静态国家精神
+    country = { 
+	    ###静态国家精神
+
+
+		#国策获得
+		SRN_hshanjun_guojiajingshen = { #黑衫军
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_faxisgemingshiyuandi_guojiajingshen
+			
+		    removal_cost = -1
+			
+	        modifier = {
+				political_power_gain = -0.1
+				political_power_cost = 0.1
+				army_infantry_attack_factor = 0.1
+	            army_infantry_defence_factor = 0.1
+				army_org_factor = 0.1
+				army_org = 5
+	            army_morale_factor = 0.1
+	            army_morale = 5
+				planning_speed =-0.1
+				recon_factor_while_entrenched = 0.05
+				army_armor_attack_factor = -0.2
+	            army_armor_defence_factor = -0.2
+				dig_in_speed_factor = 0.05
+		        max_dig_in_factor = 0.05 
+		        max_dig_in = 5
+				consumer_goods_factor = 0.05
+		        consumer_goods_expected_value = 0.05
+				max_command_power = 60
+				command_power_gain_mult = 0.1
+		        max_command_power_mult = 0.1
+				command_power_gain = 0.1
+		    } 
+	    }
+
+		#开局获得
 	    SRN_faxisgemingshiyuandi_guojiajingshen = { #法西斯革命始源地
 			allowed = {
 				always = no
@@ -30,7 +73,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_faxisgemingshiyuandi_guojiajingshen
+		    picture = GFX_idea_SRN_minzhudezhongjie_guojiajingshen
 			
 		    removal_cost = -1
 			
@@ -60,6 +103,8 @@ ideas = {
 				communism_drift = -0.03
 			    industrial_capacity_factory = 0.05
 		        industrial_capacity_dockyard = 0.05
+				army_armor_attack_factor = -0.1
+	            army_armor_defence_factor = -0.1
 		    } 
 	    }
 
@@ -72,7 +117,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_faxisgemingshiyuandi_guojiajingshen
+		    picture = GFX_idea_SRN_faxisiducai_guojiajingshen
 			
 		    removal_cost = -1
 			
@@ -91,32 +136,6 @@ ideas = {
 				fascism_drift = 0.01
 				defensive_war_stability_factor = 0.1
 	            offensive_war_stability_factor = 0.1
-		    } 
-	    }
-
-		SRN_hshanjun_guojiajingshen = { #黑衫军
-			allowed = {
-				always = no
-			}
-			
-			allowed_civil_war = {
-				always = no
-			}
-
-		    picture = GFX_idea_SRN_faxisgemingshiyuandi_guojiajingshen
-			
-		    removal_cost = -1
-			
-	        modifier = {
-				political_power_gain = -0.1
-				political_power_cost = 0.1
-				army_infantry_attack_factor = 0.1
-	            army_infantry_defence_factor = 0.1
-				army_org_factor = 0.1
-				army_org = 5
-	            army_morale_factor = 0.1
-	            army_morale = 5
-				planning_speed =-0.1
 		    } 
 	    }
 	}
