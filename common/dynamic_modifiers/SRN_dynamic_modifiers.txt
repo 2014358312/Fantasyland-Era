@@ -1,0 +1,81 @@
+##################################################萨丁社会共和国
+SRN_guojiaanquanzhiyuanjun_dongtaiguojiajingshen = { #国家安全志愿军（动态国家精神）
+	enable = { always = yes }
+	icon = GFX_idea_SRN_guojiaanquanzhiyuanjun_guojiajingshen
+
+	#具体加成
+	political_power_cost = SRN_guojiaanquanzhiyuanjun_political_power_cost #政治点消耗
+    modifier_army_sub_unit_militia_attack_factor = SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_attack_factor #民兵攻击
+	modifier_army_sub_unit_militia_defence_factor = SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_defence_factor #民兵防御
+	modifier_army_sub_unit_militia_speed_factor = SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_speed_factor #民兵速度
+	required_garrison_factor = SRN_guojiaanquanzhiyuanjun_required_garrison_factor #驻军需求
+	army_core_attack_factor = SRN_guojiaanquanzhiyuanjun_army_core_attack_factor #陆军核心攻击
+	army_core_defence_factor = SRN_guojiaanquanzhiyuanjun_army_core_defence_factor #陆军核心防御
+    no_supply_grace = SRN_guojiaanquanzhiyuanjun_no_supply_grace #随行补给
+    supply_consumption_factor = SRN_guojiaanquanzhiyuanjun_supply_consumption_factor #补给消耗
+    out_of_supply_factor = SRN_guojiaanquanzhiyuanjun_out_of_supply_factor #补给耗尽时受到的惩罚降低
+    supply_combat_penalties_on_core_factor = SRN_guojiaanquanzhiyuanjun_supply_combat_penalties_on_core_factor #陆军核心位于核心地块补给耗尽时的惩罚降低防御
+    supply_node_range = SRN_guojiaanquanzhiyuanjun_supply_node_range #补给范围
+    truck_attrition_factor = SRN_guojiaanquanzhiyuanjun_truck_attrition_factor #卡车损耗
+}
+
+SRN_heshanjun_dongtaiguojiajingshen = { #黑衫军（动态国家精神）
+	enable = { always = yes }
+	icon = GFX_idea_SRN_heshanjun_guojiajingshen
+
+	#具体加成
+	political_power_cost = SRN_heshanjun_political_power_cost #政治点消耗
+	army_core_attack_factor = SRN_heshanjun_army_core_attack_factor #陆军核心攻击
+	army_core_defence_factor = SRN_heshanjun_army_core_attack_factor #陆军核心防御
+	recon_factor_while_entrenched = SRN_heshanjun_recon_factor_while_entrenched #位于堑壕中的侦察值
+    dig_in_speed_factor = SRN_heshanjun_dig_in_speed_factor #堑壕速度
+    max_dig_in_factor = SRN_heshanjun_max_dig_in_factor #最大堑壕%
+    max_dig_in = SRN_heshanjun_max_dig_in #最大堑壕
+	planning_speed = SRN_heshanjun_planning_speed #计划速度
+	max_planning_factor = SRN_heshanjun_max_planning_factor #计划上限%
+	max_planning = SRN_heshanjun_max_planning #计划上限
+	army_artillery_attack_factor = SRN_heshanjun_army_artillery_attack_factor #炮兵攻击
+	army_artillery_defence_factor = SRN_heshanjun_army_artillery_defence_factor #炮兵防御
+	army_infantry_attack_factor = SRN_heshanjun_army_infantry_attack_factor #步兵攻击
+    army_infantry_defence_factor = SRN_heshanjun_army_infantry_defence_factor #步兵防御
+	army_org_factor = SRN_heshanjun_army_org_factor #陆军组织度%
+	army_org = SRN_heshanjun_army_org #陆军组织度
+	army_morale_factor = SRN_heshanjun_army_morale_factor #组织度恢复%
+	army_morale = SRN_heshanjun_army_morale #组织度恢复
+}
+
+SRN_guojiafatuanzhuyijingji_dongtaiguojiajingshen = { #国家法团主义经济（动态国家精神）
+	enable = { always = yes }
+	icon = GFX_idea_SRN_guojiafatuanzhuyijingji_guojiajingshen
+
+	#具体加成
+	industrial_capacity_factory = SRN_guojiafatuanzhuyijingji_industrial_capacity_factory #工厂产出
+	industrial_capacity_dockyard = SRN_guojiafatuanzhuyijingji_industrial_capacity_dockyard #船坞产出
+	consumer_goods_factor = SRN_guojiafatuanzhuyijingji_consumer_goods_factor #生活消费品系数
+	consumer_goods_expected_value = SRN_guojiafatuanzhuyijingji_consumer_goods_expected_value #生活消费品期望
+	production_factory_max_efficiency_factor = SRN_guojiafatuanzhuyijingji_production_factory_max_efficiency_factor #生产效率上限
+	production_factory_efficiency_gain_factor = SRN_guojiafatuanzhuyijingji_production_factory_efficiency_gain_factor #生产效率增长
+	line_change_production_efficiency_factor = SRN_guojiafatuanzhuyijingji_line_change_production_efficiency_factor #生产效率保持
+	production_factory_start_efficiency_factor = SRN_guojiafatuanzhuyijingji_production_factory_start_efficiency_factor #基础生产效率
+	production_lack_of_resource_penalty_factor = SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor #缺乏资源时的产线惩罚
+	local_resources_factor = SRN_guojiafatuanzhuyijingji_local_resources_factor #战略资源获取率
+	global_building_slots_factor = SRN_guojiafatuanzhuyijingji_global_building_slots_factor #地区最大工业值%
+	global_building_slots = SRN_guojiafatuanzhuyijingji_global_building_slots #地区建筑槽位数量
+	production_speed_buildings_factor = SRN_guojiafatuanzhuyijingji_production_speed_buildings_factor #建造速度
+}
+
+SRN_faxisidaweiyuanhui_dongtaiguojiajingshen = { #法西斯大委员会（动态国家精神）
+	enable = { always = yes }
+
+	#icon = 
+
+	#具体加成
+	fascism_drift = SRN_faxisidaweiyuanhui_fascism_drift #黑色意识形态增加
+	drift_defence_factor =SRN_faxisidaweiyuanhui_drift_defence_factor #意识形态抵制力度
+	political_power_factor = SRN_faxisidaweiyuanhui_political_power_factor #每日政治点增加%
+	political_power_gain = SRN_faxisidaweiyuanhui_political_power_gain #每日政治点增加
+	political_power_cost = SRN_faxisidaweiyuanhui_political_power_cost #每日政治点消耗
+	stability_factor = SRN_faxisidaweiyuanhui_stability_factor #稳定度
+	war_support_factor = SRN_faxisidaweiyuanhui_war_support_factor #战争支持度
+	production_speed_buildings_factor = SRN_faxisidaweiyuanhui_production_speed_buildings_factor #建造速度
+}

@@ -2,44 +2,32 @@ ideas = {
     ##################################################萨丁社会共和国
     country = { 
 	    ###静态国家精神
-
-
 		#国策获得
-		SRN_hshanjun_guojiajingshen = { #黑衫军
+		SRN_xiongyiingxingdong_guojiajingshen = { #雄鹰行动
 			allowed = {
 				always = no
 			}
-			
 			allowed_civil_war = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_faxisgemingshiyuandi_guojiajingshen
+		    picture = GFX_idea_SRN_xiongyiingxingdong_guojiajingshen
 			
 		    removal_cost = -1
 			
 	        modifier = {
-				political_power_gain = -0.1
-				political_power_cost = 0.1
-				army_infantry_attack_factor = 0.1
-	            army_infantry_defence_factor = 0.1
-				army_org_factor = 0.1
-				army_org = 5
-	            army_morale_factor = 0.1
-	            army_morale = 5
-				planning_speed =-0.1
-				recon_factor_while_entrenched = 0.05
-				army_armor_attack_factor = -0.2
-	            army_armor_defence_factor = -0.2
-				dig_in_speed_factor = 0.05
-		        max_dig_in_factor = 0.05 
-		        max_dig_in = 5
-				consumer_goods_factor = 0.05
-		        consumer_goods_expected_value = 0.05
-				max_command_power = 60
-				command_power_gain_mult = 0.1
-		        max_command_power_mult = 0.1
-				command_power_gain = 0.1
+				modifier_army_sub_unit_militia_attack_factor = 0.4
+				modifier_army_sub_unit_militia_defence_factor = 0.4
+				modifier_army_sub_unit_militia_speed_factor = 0.4
+				max_planning_factor = 0.2
+				SRN_heshanjun_max_planning = 10
+				planning_speed = 0.4
+				army_org_factor = 2
+				army_org = 20
+				army_core_attack_factor = 2
+				army_core_defence_factor = 2
+				army_morale_factor = 2
+				army_morale = 20
 		    } 
 	    }
 
@@ -78,8 +66,8 @@ ideas = {
 		    removal_cost = -1
 			
 	        modifier = {
-				democratic_drift = -0.03
-				neutrality_drift = -0.03
+				democratic_drift = -0.01
+				neutrality_drift = -0.01
 				surrender_limit = 0.1
 		        MAX_SURRENDER_LIMIT_OFFSET = 0.1
 		    } 
@@ -100,7 +88,7 @@ ideas = {
 			
 	        modifier = {
 				political_power_gain = -0.1
-				communism_drift = -0.03
+				communism_drift = -0.01
 			    industrial_capacity_factory = 0.05
 		        industrial_capacity_dockyard = 0.05
 				army_armor_attack_factor = -0.1
@@ -136,10 +124,11 @@ ideas = {
 				fascism_drift = 0.01
 				defensive_war_stability_factor = 0.1
 	            offensive_war_stability_factor = 0.1
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
 		    } 
 	    }
 	}
-
     ##########工业集团
 	industrial_concern = { 
 		SRN_jungongfuhetixindijia_gongyejituan = { #军工复合体辛迪加

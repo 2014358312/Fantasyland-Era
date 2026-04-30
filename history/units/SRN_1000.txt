@@ -1,0 +1,169 @@
+﻿##################################################萨丁社会共和国
+#开局军队编制
+division_template = { #国家安全志愿军
+	name = "国家安全志愿军"
+	is_locked = no #锁定
+	priority = 3 
+	regiments = { #主要编制
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 0 y = 3 }
+
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+		militia = { x = 1 y = 3 }
+
+		militia = { x = 2 y = 0 }
+		militia = { x = 2 y = 1 }
+	}
+}
+division_template = { #黑衫军
+	name = "黑衫军"
+	is_locked = no #锁定
+	priority = 3 
+	regiments = { #主要编制
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+
+
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+
+
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		infantry = { x = 2 y = 3 }
+
+		artillery_brigade = { x = 3 y = 0 }
+		artillery_brigade = { x = 3 y = 1 }
+
+	}
+	support = { #支援连
+		engineer = { x = 0 y = 0 } 
+		artillery = { x = 0 y = 1 }
+		anti_air = { x = 0 y = 2 }
+	} 
+}
+
+#开局陆军部队
+units = {
+	division = { #国家安全志愿军
+		name = "国家安全志愿军"
+		location = 2449
+		division_template = "国家安全志愿军" 
+		start_equipment_factor = 1
+	}
+	division = { #国家安全志愿军
+		name = "国家安全志愿军"
+		location = 2449
+		division_template = "国家安全志愿军" 
+		start_equipment_factor = 1
+	}
+	division = { #国家安全志愿军
+		name = "国家安全志愿军"
+		location = 2449
+		division_template = "国家安全志愿军" 
+		start_equipment_factor = 1
+	}
+	division = { #国家安全志愿军
+		name = "国家安全志愿军"
+		location = 7381
+		division_template = "国家安全志愿军" 
+		start_equipment_factor = 1
+	}
+	division = { #国家安全志愿军
+		name = "国家安全志愿军"
+		location = 1595
+		division_template = "国家安全志愿军" 
+		start_equipment_factor = 1
+	}
+	division = { #国家安全志愿军
+		name = "国家安全志愿军"
+		location = 1595
+		division_template = "国家安全志愿军" 
+		start_equipment_factor = 1
+	}
+	division = { #国家安全志愿军
+		name = "国家安全志愿军"
+		location = 618
+		division_template = "国家安全志愿军" 
+		start_equipment_factor = 1
+	}
+	division = { #国家安全志愿军
+		name = "国家安全志愿军"
+		location = 618
+		division_template = "国家安全志愿军" 
+		start_equipment_factor = 1
+
+	}
+	division= { #黑衫军
+		name = "黑衫军"
+		location = 903
+		division_template = "黑衫军"
+		start_experience_factor = 0.5 #军队经验
+		start_equipment_factor = 1
+	}
+	division= {	#黑衫军
+		name = "黑衫军"
+		location = 903
+		division_template = "黑衫军"
+		start_experience_factor = 0.5 #军队经验
+		start_equipment_factor = 1
+	}
+	division= { #黑衫军
+		name = "黑衫军"
+		location = 903
+		division_template = "黑衫军"
+		start_experience_factor = 0.5 #军队经验
+		start_equipment_factor = 1
+	}
+	division= {	#黑衫军
+		name = "黑衫军"
+		location = 903
+		division_template = "黑衫军"
+		start_experience_factor = 0.5 #军队经验
+		start_equipment_factor = 1
+	}
+}
+
+#开局生产线
+instant_effect = { 
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "SRN"
+		}
+		requested_factories = 2
+		progress = 0.1
+		efficiency = 100 #初始生产效率
+		industrial_manufacturer = mio:SRN_zhanzhengshengchanzongweiyuanhui_organization
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "SRN" 
+		}
+		requested_factories = 1
+		progress = 0.4
+		efficiency = 100 #初始生产效率
+		industrial_manufacturer = mio:SRN_zhanzhengshengchanzongweiyuanhui_organization
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_2
+			creator = "SRN" 
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 100 #初始生产效率
+		industrial_manufacturer = mio:SRN_zhanzhengshengchanzongweiyuanhui_organization
+	}
+
+}

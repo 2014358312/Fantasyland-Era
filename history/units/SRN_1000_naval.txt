@@ -1,0 +1,51 @@
+﻿units = {
+	#海军
+	fleet = {
+		name = "法西斯革命海军第一舰队"			
+		naval_base = 4022 #
+		task_force = {				
+			name = "法西斯革命海军第一潜艇大队"
+			location = 4022 
+			ship = { name = "SS—2" definition = submarine equipment = { ship_hull_submarine_2 = {amount = 1 owner = SRN version_name = "SS—2" } } }
+			ship = { name = "SS—2" definition = submarine equipment = { ship_hull_submarine_2 = {amount = 1 owner = SRN version_name = "SS—2" } } }
+			ship = { name = "SS—2" definition = submarine equipment = { ship_hull_submarine_2 = {amount = 1 owner = SRN version_name = "SS—2" } } }
+			ship = { name = "SS—2" definition = submarine equipment = { ship_hull_submarine_2 = {amount = 1 owner = SRN version_name = "SS—2" } } }
+			ship = { name = "SS—2" definition = submarine equipment = { ship_hull_submarine_2 = {amount = 1 owner = SRN version_name = "SS—2" } } }
+			ship = { name = "SS—2" definition = submarine equipment = { ship_hull_submarine_2 = {amount = 1 owner = SRN version_name = "SS—2" } } }
+			ship = { name = "SS—2" definition = submarine equipment = { ship_hull_submarine_2 = {amount = 1 owner = SRN version_name = "SS—2" } } }
+			ship = { name = "SS—2" definition = submarine equipment = { ship_hull_submarine_2 = {amount = 1 owner = SRN version_name = "SS—2" } } }
+		}		
+		task_force = {				
+			name = "法西斯革命海军第一驱逐大队"
+			location = 4022 
+			ship = { name = "DD—2" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = SRN version_name = "DD—2" } } }
+			ship = { name = "DD—2" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = SRN version_name = "DD—2" } } }
+		}
+	}
+}
+
+#开局生产线
+instant_effect = {
+	add_equipment_production = {	
+		equipment = {
+			type = ship_hull_submarine_2
+			creator = "SRN" 
+			version_name = "SS—2"
+		}
+		requested_factories = 2
+		progress = 0.9
+		amount = 3
+		industrial_manufacturer = mio:SRN_guojiahaijunzhuangbeizhituan_organization
+	}	
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "SRN" 
+			version_name = "DD—2"
+		}
+		requested_factories = 2
+		progress = 0.2
+		amount = 1
+		industrial_manufacturer = mio:SRN_guojiahaijunzhuangbeizhituan_organization
+	}
+}
