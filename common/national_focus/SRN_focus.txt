@@ -18,7 +18,6 @@ focus_tree = {
 		}
 	}
 	focus = {
-		#一阶段国家焦点 雄鹰行动
 		id = SRN_guojiajiaodian_yijieduan_xiongyingxingdong
 		x = 7
 		y = 0
@@ -26,6 +25,7 @@ focus_tree = {
 		icon = GFX_SRN_guojiajiaodian_yijieduan_xiongyingxingdong
 		continue_if_invalid = no
 		cancel_if_invalid = yes
+		#一阶段国家焦点 雄鹰行动
 		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
@@ -34,7 +34,7 @@ focus_tree = {
 			add_timed_idea = {
 				#添加临时民族精神 雄鹰行动
 				idea = SRN_xiongyiingxingdong_guojiajingshen
-				days = 90
+				days = 365
 			}
 			declare_war_on = {
 				#立即宣战
@@ -47,10 +47,10 @@ focus_tree = {
 				type = annex_everything
 			}
 			add_manpower = 20000
+            add_country_leader_trait = SRN_weituoliaoweintuo_xiongyingxingdong
 		}
 	}
 	focus = {
-		#一阶段国家焦点 第二次繁荣
 		id = SRN_guojiajiaodian_yijieduan_diercifanrong
 		x = 5
 		y = 1
@@ -58,6 +58,7 @@ focus_tree = {
 		icon = GFX_SRN_guojiajiaodian_yijieduan_diercifanrong
 		continue_if_invalid = no
 		cancel_if_invalid = yes
+		#一阶段国家焦点 第二次繁荣
 		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
@@ -79,7 +80,6 @@ focus_tree = {
 		}
 	}
 	focus = {
-		#一阶段国家焦点 鹰之巢穴
 		id = SRN_guojiajiaodian_yijieduan_yingzhichaoxue
 		x = 4
 		y = 2
@@ -87,6 +87,7 @@ focus_tree = {
 		icon = GFX_focus_Support_Princess_Elisabeth
 		continue_if_invalid = no
 		cancel_if_invalid = yes
+		#一阶段国家焦点 鹰之巢穴
 		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
@@ -109,14 +110,13 @@ focus_tree = {
 				#建造速度
 				SRN_guojiafatuanzhuyijingji_production_speed_buildings_factor = 0.05
 			}
-            add_to_variable = { 
+			add_to_variable = {
 				#缺乏资源时的产线惩罚
-	            SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = -0.1
-            }
+				SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = -0.1
+			}
 		}
 	}
 	focus = {
-		#一阶段国家焦点 企业与束棒
 		id = SRN_guojiajiaodian_yijieduan_qiyeyushubang
 		x = 2
 		y = 2
@@ -124,6 +124,7 @@ focus_tree = {
 		icon = GFX_SRN_guojiajiaodian_yijieduan_qiyeyushubang
 		continue_if_invalid = no
 		cancel_if_invalid = yes
+		#一阶段国家焦点 企业与束棒
 		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
@@ -135,13 +136,16 @@ focus_tree = {
 			add_stability = -0.2
 			add_war_support = -0.2
 			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			add_offsite_building = {
 				type = arms_factory
-				level = 4
+				level = 2
 			}
 		}
 	}
 	focus = {
-		#一阶段国家焦点 特别时期 特别措施
 		id = SRN_guojiajiaodian_yijieduan_tebieshiqitebiecuoshi
 		x = 6
 		y = 2
@@ -149,6 +153,7 @@ focus_tree = {
 		icon = GFX_focus_Utilize_Fascist_Militias
 		continue_if_invalid = no
 		cancel_if_invalid = yes
+		#一阶段国家焦点 特别时期 特别措施
 		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
@@ -157,11 +162,121 @@ focus_tree = {
 			focus = SRN_guojiajiaodian_yijieduan_diercifanrong
 		}
 		completion_reward = {
-
+			custom_effect_tooltip = SRN_guojiajiaodian_yijieduan_tebieshiqitebiecuoshi_custom_effect_tooltip
+			#国家法团主义经济（动态国家精神）
+			add_to_variable = {
+				#生产效率上限
+				SRN_guojiafatuanzhuyijingji_production_factory_max_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#生产效率增长
+				SRN_guojiafatuanzhuyijingji_production_factory_efficiency_gain_factor = 0.05
+			}
+			add_to_variable = {
+				#生产效率保持
+				SRN_guojiafatuanzhuyijingji_line_change_production_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#基础生产效率
+				SRN_guojiafatuanzhuyijingji_production_factory_start_efficiency_factor = 0.05
+			}
+			add_political_power = 50
 		}
 	}
 	focus = {
-		#一阶段国家焦点 动员国家安全志愿军
+		id = SRN_focus_jinjizhanbeizhuanhuan
+		x = 4
+		y = 3
+		cost = 2
+		icon = GFX_SRN_focus_jinjizhanbeizhuanhuan
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		#一阶段国家焦点 紧急战备转换
+		prerequisite = {
+			focus = SRN_guojiajiaodian_yijieduan_yingzhichaoxue
+			focus = SRN_guojiajiaodian_yijieduan_qiyeyushubang
+		}
+		completion_reward = {
+	        444 = {
+		        add_extra_state_shared_building_slots = 2
+		            add_building_construction = {
+			        type = arms_factory
+			        level = 2
+			        instant_build = yes 
+				}
+		    }
+	    }
+	}
+	focus = {
+		id = SRN_focus_baozhangguojiawending
+		x = 6
+		y = 3
+		cost = 2
+		icon = GFX_SRN_focus_baozhangguojiawending
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 保障国家稳定
+		prerequisite = {
+			focus = SRN_guojiajiaodian_yijieduan_yingzhichaoxue
+			focus = SRN_guojiajiaodian_yijieduan_qiyeyushubang
+		}
+		prerequisite = {
+			focus = SRN_guojiajiaodian_yijieduan_tebieshiqitebiecuoshi
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.1
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = SRN_focus_shojilaojiuwuqi
+		x = 6
+		y = 4
+		cost = 2
+		icon = GFX_SRN_focus_shojilaojiuwuqi
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		#一阶段国家焦点 收集老旧武器
+		prerequisite = {
+			focus = SRN_focus_baozhangguojiawending
+		}
+		prerequisite = {
+			focus = SRN_focus_jinjizhanbeizhuanhuan
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				#刷装备
+				type = infantry_equipment_1#步枪
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				#刷装备
+				type = support_equipment_1 #支援装备
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				#刷装备
+				type = artillery_equipment_2 #火炮
+				amount = 150
+			}
+			add_equipment_to_stockpile = {
+				#刷装备
+				type = small_plane_airframe_1
+				producer = "SRN"
+				amount = 50
+				variant_name = "射手座"
+			}
+			add_equipment_to_stockpile = {
+				#刷装备
+				type = small_plane_cas_airframe_1
+				producer = "SRN"
+				amount = 25
+				variant_name = "金牛座"
+			}
+		}
+	}
+	focus = {
 		id = SRN_guojiajiaodian_yijieduan_dongyuanguojiaanquanzhiyuanjun
 		x = 8
 		y = 1
@@ -169,6 +284,7 @@ focus_tree = {
 		icon = GFX_focus_National_Rebirth
 		continue_if_invalid = no
 		cancel_if_invalid = yes
+		#一阶段国家焦点 动员国家安全志愿军
 		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
@@ -188,7 +304,6 @@ focus_tree = {
 		}
 	}
 	focus = {
-		#一阶段国家焦点 不灭之轮
 		id = SRN_guojiajiaodian_yijieduan_bumiezhilun
 		x = 8
 		y = 2
@@ -196,6 +311,7 @@ focus_tree = {
 		icon = GFX_SRN_guojiajiaodian_yijieduan_dongyuanguojiaanquanzhiyuanjun
 		continue_if_invalid = no
 		cancel_if_invalid = yes
+		#一阶段国家焦点 不灭之轮
 		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
@@ -226,18 +342,17 @@ focus_tree = {
 				#陆军核心防御
 				SRN_guojiaanquanzhiyuanjun_army_core_defence_factor = 0.05
 			}
-			add_manpower = 4000
 		}
 	}
 	focus = {
-		#一阶段国家焦点 清除自由主义病毒
-		id = SRN_guojiajiaodian_yijieduan_qingchuziyouzhuyibingdu
-		x = 7
+		id = SRN_guojiajiaodian_yijieduan_kuodaguojiaanquanzhiyuanjunquanli
+		x = 8
 		y = 3
 		cost = 2
-		icon = GFX_focus_socialism_bad
+		icon = GFX_SRN_guojiajiaodian_yijieduan_kuodaguojiaanquanzhiyuanjunquanli
 		continue_if_invalid = no
 		cancel_if_invalid = yes
+		#一阶段国家焦点 扩大国家安全志愿军权利
 		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
@@ -245,40 +360,126 @@ focus_tree = {
 		prerequisite = {
 			focus = SRN_guojiajiaodian_yijieduan_bumiezhilun
 		}
-		prerequisite = {
-			focus = SRN_guojiajiaodian_yijieduan_yingzhichaoxue
+		completion_reward = {
+			custom_effect_tooltip = SRN_guojiajiaodian_yijieduan_kuodaguojiaanquanzhiyuanjunquanli_custom_effect_tooltip
+			#国家安全志愿军（动态国家精神）
+			add_to_variable = {
+				#民兵攻击
+				SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_attack_factor = 0.05
+			}
+			add_to_variable = {
+				#民兵防御
+				SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_defence_factor = 0.05
+			}
+			add_to_variable = {
+				#民兵速度
+				SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_speed_factor = 0.05
+			}
+			add_to_variable = {
+				#驻军需求
+				SRN_guojiaanquanzhiyuanjun_required_garrison_factor = -0.05
+			}
+			add_to_variable = {
+				#位于核心地块补给耗尽时的惩罚降低
+				SRN_guojiaanquanzhiyuanjun_supply_combat_penalties_on_core_factor = -0.05
+			}
+			add_manpower = 2000
+		}
+	}
+	focus = {
+		id = SRN_guojiajiaodian_yijieduan_faxisizhandoujingshen
+		x = 8
+		y = 4
+		cost = 2
+		icon = GFX_SRN_guojiajiaodian_yijieduan_faxisizhandoujingshen
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 法西斯战斗精神
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
 		}
 		prerequisite = {
-			focus = SRN_guojiajiaodian_yijieduan_qiyeyushubang
-		}
-		prerequisite = {
-			focus = SRN_guojiajiaodian_yijieduan_tebieshiqitebiecuoshi
+			focus = SRN_guojiajiaodian_yijieduan_kuodaguojiaanquanzhiyuanjunquanli
 		}
 		completion_reward = {
-            add_equipment_to_stockpile = { #刷装备
-                type = infantry_equipment_1 #步枪
-                amount = 2000
-            }
-            add_equipment_to_stockpile = { #刷装备
-                type = support_equipment_1 #支援装备
-                amount = 50
-            }
-            add_equipment_to_stockpile = { #刷装备
-                type = artillery_equipment_2 #火炮
-                amount = 150
-            }
-            add_equipment_to_stockpile = { #刷装备
-	            type = small_plane_cas_airframe_1
-	            producer = "SRN" 
-	            amount = 50
-	            variant_name = "射手座"
-            }
-            add_equipment_to_stockpile = { #刷装备
-	            type = small_plane_cas_airframe_1
-	            producer = "SRN" 
-	            amount = 25
-	            variant_name = "金牛座"
-            }
+			custom_effect_tooltip = SRN_guojiajiaodian_yijieduan_faxisizhandoujingshen_custom_effect_tooltip
+			#国家安全志愿军（动态国家精神）
+			add_to_variable = {
+				#陆军核心攻击
+				SRN_guojiaanquanzhiyuanjun_army_core_attack_factor = 0.05
+			}
+			add_to_variable = {
+				#陆军核心防御
+				SRN_guojiaanquanzhiyuanjun_army_core_defence_factor = 0.05
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"国家安全志愿军\" division_template = \"国家安全志愿军\" start_equipment_factor = 1"
+					owner = ROOT
+					count = 2
+				}
+			}
+		}
+	}
+	focus = {
+		id = SRN_guojiajiaodian_yijieduan_qingchuziyouzhuyibingdu
+		x = 7
+		y = 5
+		cost = 2
+		icon = GFX_SRN_guojiajiaodian_yijieduan_qingchuziyouzhuyibingdu
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 清除自由主义病毒
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_guojiajiaodian_yijieduan_faxisizhandoujingshen
+		}
+		prerequisite = {
+			focus = SRN_focus_shojilaojiuwuqi
+		}
+		completion_reward = {
+			add_timed_idea = {
+				#添加临时民族精神 清除自由主义病毒
+				idea = SRN_qingchuziyouzhuyibingdu_guojiajingshen
+				days = 180
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"黑衫军\" division_template = \"黑衫军\" start_equipment_factor = 1"
+					owner = ROOT
+					count = 2
+				}
+			}
+			add_manpower = 2000
+		}
+	}
+	focus = {
+		id = SRN_guojiajiaodian_yijieduan_shuyusadingdeshengli
+		x = 7
+		y = 6
+		cost = 2
+		icon = GFX_SRN_guojiajiaodian_yijieduan_shuyusadingdeshengli
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 属于萨丁的胜利
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_guojiajiaodian_yijieduan_qingchuziyouzhuyibingdu
+		}
+		available = {
+            NOT = { country_exists = USS }
+            NOT = { country_exists = ROC }
+		}
+		completion_reward = {
+			#focus_unlock = yes
+            remove_country_leader_trait = SRN_weituoliaoweintuo_xiongyingxingdong
 		}
 	}
 }
