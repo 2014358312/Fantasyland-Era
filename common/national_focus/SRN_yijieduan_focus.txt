@@ -26,7 +26,6 @@ focus_tree = {
 		continue_if_invalid = no
 		cancel_if_invalid = yes
 		#一阶段国家焦点 雄鹰行动
-		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
 		}
@@ -59,7 +58,6 @@ focus_tree = {
 		continue_if_invalid = no
 		cancel_if_invalid = yes
 		#一阶段国家焦点 第二次繁荣
-		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
 		}
@@ -88,7 +86,6 @@ focus_tree = {
 		continue_if_invalid = no
 		cancel_if_invalid = yes
 		#一阶段国家焦点 鹰之巢穴
-		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
 		}
@@ -125,7 +122,6 @@ focus_tree = {
 		continue_if_invalid = no
 		cancel_if_invalid = yes
 		#一阶段国家焦点 企业与束棒
-		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
 		}
@@ -154,7 +150,6 @@ focus_tree = {
 		continue_if_invalid = no
 		cancel_if_invalid = yes
 		#一阶段国家焦点 特别时期 特别措施
-		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
 		}
@@ -285,7 +280,6 @@ focus_tree = {
 		continue_if_invalid = no
 		cancel_if_invalid = yes
 		#一阶段国家焦点 动员国家安全志愿军
-		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
 		}
@@ -312,7 +306,6 @@ focus_tree = {
 		continue_if_invalid = no
 		cancel_if_invalid = yes
 		#一阶段国家焦点 不灭之轮
-		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
 		}
@@ -353,7 +346,6 @@ focus_tree = {
 		continue_if_invalid = no
 		cancel_if_invalid = yes
 		#一阶段国家焦点 扩大国家安全志愿军权利
-		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
 		}
@@ -395,7 +387,6 @@ focus_tree = {
 		continue_if_invalid = no
 		cancel_if_invalid = yes
 		#一阶段国家焦点 法西斯战斗精神
-		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
 		}
@@ -431,7 +422,6 @@ focus_tree = {
 		continue_if_invalid = no
 		cancel_if_invalid = yes
 		#一阶段国家焦点 清除自由主义病毒
-		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
 		}
@@ -466,7 +456,6 @@ focus_tree = {
 		continue_if_invalid = no
 		cancel_if_invalid = yes
 		#一阶段国家焦点 属于萨丁的胜利
-		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 1
 		}
@@ -478,8 +467,13 @@ focus_tree = {
             NOT = { country_exists = ROC }
 		}
 		completion_reward = {
-			#focus_unlock = yes
+			custom_effect_tooltip = SRN_guojiajiaodian_yijieduan_shuyusadingdeshengli_custom_effect_tooltip
             remove_country_leader_trait = SRN_weituoliaoweintuo_xiongyingxingdong
+            load_focus_tree = { #切换国策
+                tree = SRN_guojiajiaodian_erjieduan
+                keep_completed = yes
+            }
 		}
 	}
 }
+

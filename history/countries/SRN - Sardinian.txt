@@ -89,12 +89,6 @@ add_ideas = {
     partial_economic_mobilisation #部分经济动员
 }
 
-#权利平衡
-set_power_balance = {
-    id = SRN_balance_of_power
-	set_default = yes
-}
-
 #####动态变量
 #副手
 set_variable = { #萨丁社会共和国_国家法西斯党
@@ -139,7 +133,7 @@ set_variable = { #位于核心地块补给耗尽时的惩罚降低
 	SRN_guojiaanquanzhiyuanjun_supply_combat_penalties_on_core_factor = -0.1
 }
 set_variable = { #补给范围
-	SRN_guojiaanquanzhiyuanjun_supply_node_range = 0.1
+	SRN_guojiaanquanzhiyuanjun_supply_node_range = 0.05
 }
 set_variable = { #卡车损耗
 	SRN_guojiaanquanzhiyuanjun_truck_attrition_factor = -0.1
@@ -151,12 +145,6 @@ add_dynamic_modifier = { #解锁动态国家精神
 }
 set_variable = { #政治点消耗
 	SRN_heshanjun_political_power_cost = 0.1
-}
-set_variable = { #陆军核心攻击
-	SRN_heshanjun_army_core_attack_factor = 0.05
-}
-set_variable = { #陆军核心防御
-	SRN_heshanjun_army_core_attack_factor = 0.05
 }
 set_variable = { #位于堑壕中的侦察值
 	SRN_heshanjun_recon_factor_while_entrenched = 0.1
@@ -209,10 +197,10 @@ add_dynamic_modifier = { #解锁动态国家精神
     modifier = SRN_guojiafatuanzhuyijingji_dongtaiguojiajingshen
 }
 set_variable = { #工厂产出
-	SRN_guojiafatuanzhuyijingji_industrial_capacity_factory = 0.1
+	SRN_guojiafatuanzhuyijingji_industrial_capacity_factory = 0.05
 }
 set_variable = { #船坞产出
-	SRN_guojiafatuanzhuyijingji_industrial_capacity_dockyard = 0.1
+	SRN_guojiafatuanzhuyijingji_industrial_capacity_dockyard = 0.05
 }
 set_variable = { #生活消费品系数
 	SRN_guojiafatuanzhuyijingji_consumer_goods_factor = 0.2
@@ -221,22 +209,22 @@ set_variable = { #生活消费品期望
 	SRN_guojiafatuanzhuyijingji_consumer_goods_expected_value = 0.2
 }
 set_variable = { #生产效率上限
-    SRN_guojiafatuanzhuyijingji_production_factory_max_efficiency_factor = -0.3
+    SRN_guojiafatuanzhuyijingji_production_factory_max_efficiency_factor = -0.4
 }
 set_variable = { #生产效率增长
-	SRN_guojiafatuanzhuyijingji_production_factory_efficiency_gain_factor = -0.3
+	SRN_guojiafatuanzhuyijingji_production_factory_efficiency_gain_factor = -0.4
 }
 set_variable = { #生产效率保持
-	SRN_guojiafatuanzhuyijingji_line_change_production_efficiency_factor = -0.3
+	SRN_guojiafatuanzhuyijingji_line_change_production_efficiency_factor = -0.4
 }
 set_variable = { #基础生产效率
-	SRN_guojiafatuanzhuyijingji_production_factory_start_efficiency_factor = -0.3
+	SRN_guojiafatuanzhuyijingji_production_factory_start_efficiency_factor = -0.4
 }
 set_variable = { #缺乏资源时的产线惩罚
-	SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = 0.3
+	SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = 0.4
 }
 set_variable = { #战略资源获取率
-	SRN_guojiafatuanzhuyijingji_local_resources_factor = 0.1
+	SRN_guojiafatuanzhuyijingji_local_resources_factor = 0.05
 }
 set_variable = { #地区最大工业值%
 	SRN_guojiafatuanzhuyijingji_global_building_slots_factor = 0.1
@@ -259,10 +247,10 @@ set_variable = { #每日政治点增加%
 	SRN_faxisidaweiyuanhui_political_power_factor = 0.1
 }
 set_variable = { #每日政治点增加
-	SRN_faxisidaweiyuanhui_political_power_gain = 0.05
+	SRN_faxisidaweiyuanhui_political_power_gain = 0.1
 }
 set_variable = { #每日政治点消耗
-    SRN_faxisidaweiyuanhui_political_power_cost = 0.1
+    SRN_faxisidaweiyuanhui_political_power_cost = -0.1
 }
 set_variable = { #稳定度
 	SRN_faxisidaweiyuanhui_stability_factor = -0.2
