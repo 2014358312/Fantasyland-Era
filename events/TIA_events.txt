@@ -7,6 +7,20 @@ add_namespace = TIA_waiting_for_result
 add_namespace = tiam
 add_namespace = TIA_state_event
 add_namespace = TIA_faith
+add_namespace = TIA_inner_circle
+
+# 三个 tier 的国策完成时间
+@inner_circle_time_tier_1 = 70
+@inner_circle_time_tier_2 = 70
+@inner_circle_time_tier_3 = 70
+@inner_circle_time_tier_4 = 70
+ 
+# 同步的flag倒计时（用于UI显示"剩余X天完成"）
+@inner_circle_time_tier_1_flag = 71
+@inner_circle_time_tier_2_flag = 71
+@inner_circle_time_tier_3_flag = 71
+@inner_circle_time_tier_4_flag = 71
+
 country_event = {
 	#启示
 	id = TIA.1
@@ -7201,6 +7215,1338 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = TIA.1001.a
+	}
+}
+###################################
+# 堤亚穆内阁核心圈 - 自动点国策系统
+# 双事件循环：.01 启动国策（高亮）→ .02 完成国策（侧边通知）→ .01 启动下一个
+###################################
+
+###################################
+# Miabel - 启动国策（高亮）
+###################################
+country_event = {
+	id = TIA_inner_circle.1
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Miabel_Runa_Tiamun
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 1 }
+			check_variable = { TIA_ascended_advisor_2 = 1 }
+			check_variable = { TIA_ascended_advisor_3 = 1 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Miabel_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_empire_tomorrow }
+			}
+			activate_shine_on_focus = TIA_empire_tomorrow
+			set_country_flag = {
+				flag = TIA_empire_tomorrow_in_progress_flag
+				days = @inner_circle_time_tier_4_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.2 days = @inner_circle_time_tier_4 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_reaffirming_imperial_power }
+			}
+			activate_shine_on_focus = TIA_reaffirming_imperial_power
+			set_country_flag = {
+				flag = TIA_reaffirming_imperial_power_in_progress_flag
+				days = @inner_circle_time_tier_1_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.2 days = @inner_circle_time_tier_1 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_royal_edict }
+			}
+			activate_shine_on_focus = TIA_royal_edict
+			set_country_flag = {
+				flag = TIA_royal_edict_in_progress_flag
+				days = @inner_circle_time_tier_2_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.2 days = @inner_circle_time_tier_2 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_new_dawn_for_tearmoon }
+			}
+			activate_shine_on_focus = TIA_new_dawn_for_tearmoon
+			set_country_flag = {
+				flag = TIA_new_dawn_for_tearmoon_in_progress_flag
+				days = @inner_circle_time_tier_3_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.2 days = @inner_circle_time_tier_3 }
+		}
+		else = {
+			# 子树全部完成，停止循环
+			set_country_flag = TIA_cabinet_Miabel_complete
+		}
+	}
+}
+
+###################################
+# Miabel - 完成国策（侧边通知）
+###################################
+country_event = {
+	id = TIA_inner_circle.2
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Miabel_Runa_Tiamun
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 1 }
+			check_variable = { TIA_ascended_advisor_2 = 1 }
+			check_variable = { TIA_ascended_advisor_3 = 1 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Miabel_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_reaffirming_imperial_power
+			}
+			complete_national_focus = {
+				focus = TIA_reaffirming_imperial_power
+				use_side_message = yes
+				originator_name = TIA_miabel_runa_tiamun
+			}
+			clr_country_flag = TIA_reaffirming_imperial_power_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.1
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_royal_edict
+			}
+			complete_national_focus = {
+				focus = TIA_royal_edict
+				use_side_message = yes
+				originator_name = TIA_miabel_runa_tiamun
+			}
+			clr_country_flag = TIA_royal_edict_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.1
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_new_dawn_for_tearmoon
+			}
+			complete_national_focus = {
+				focus = TIA_new_dawn_for_tearmoon
+				use_side_message = yes
+				originator_name = TIA_miabel_runa_tiamun
+			}
+			clr_country_flag = TIA_new_dawn_for_tearmoon_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.1
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_empire_tomorrow
+			}
+			complete_national_focus = {
+				focus = TIA_empire_tomorrow
+				use_side_message = yes
+				originator_name = TIA_miabel_runa_tiamun
+			}
+			clr_country_flag = TIA_empire_tomorrow_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.1
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else = {
+			# 没有正在推进的国策（异常情况，记录日志）
+			# log = "TIA inner circle Miabel: no focus in progress to complete"
+		}
+	}
+}
+
+###################################
+# Alice - 启动国策（高亮）
+###################################
+country_event = {
+	id = TIA_inner_circle.3
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Alice_Bedford
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 2 }
+			check_variable = { TIA_ascended_advisor_2 = 2 }
+			check_variable = { TIA_ascended_advisor_3 = 2 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Alice_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_light_reason }
+			}
+			activate_shine_on_focus = TIA_light_reason
+			set_country_flag = {
+				flag = TIA_light_reason_in_progress_flag
+				days = @inner_circle_time_tier_1_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.4 days = @inner_circle_time_tier_1 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_magic_technology_fusion }
+			}
+			activate_shine_on_focus = TIA_magic_technology_fusion
+			set_country_flag = {
+				flag = TIA_magic_technology_fusion_in_progress_flag
+				days = @inner_circle_time_tier_2_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.4 days = @inner_circle_time_tier_2 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_military_research_budget_restarted }
+			}
+			activate_shine_on_focus = TIA_military_research_budget_restarted
+			set_country_flag = {
+				flag = TIA_military_research_budget_restarted_in_progress_flag
+				days = @inner_circle_time_tier_3_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.4 days = @inner_circle_time_tier_3 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_reshaping_country_reason }
+			}
+			activate_shine_on_focus = TIA_reshaping_country_reason
+			set_country_flag = {
+				flag = TIA_reshaping_country_reason_in_progress_flag
+				days = @inner_circle_time_tier_4_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.4 days = @inner_circle_time_tier_4 }
+		}
+		else = {
+			# 子树全部完成，停止循环
+			set_country_flag = TIA_cabinet_Alice_complete
+		}
+	}
+}
+
+###################################
+# Alice - 完成国策（侧边通知）
+###################################
+country_event = {
+	id = TIA_inner_circle.4
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Alice_Bedford
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 2 }
+			check_variable = { TIA_ascended_advisor_2 = 2 }
+			check_variable = { TIA_ascended_advisor_3 = 2 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Alice_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_light_reason
+			}
+			complete_national_focus = {
+				focus = TIA_light_reason
+				use_side_message = yes
+				originator_name = TIA_alice_bedford
+			}
+			clr_country_flag = TIA_light_reason_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.3
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_magic_technology_fusion
+			}
+			complete_national_focus = {
+				focus = TIA_magic_technology_fusion
+				use_side_message = yes
+				originator_name = TIA_alice_bedford
+			}
+			clr_country_flag = TIA_magic_technology_fusion_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.3
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_military_research_budget_restarted
+			}
+			complete_national_focus = {
+				focus = TIA_military_research_budget_restarted
+				use_side_message = yes
+				originator_name = TIA_alice_bedford
+			}
+			clr_country_flag = TIA_military_research_budget_restarted_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.3
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_reshaping_country_reason
+			}
+			complete_national_focus = {
+				focus = TIA_reshaping_country_reason
+				use_side_message = yes
+				originator_name = TIA_alice_bedford
+			}
+			clr_country_flag = TIA_reshaping_country_reason_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.3
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else = {
+			# 没有正在推进的国策（异常情况，记录日志）
+			# log = "TIA inner circle Alice: no focus in progress to complete"
+		}
+	}
+}
+
+###################################
+# Anne - 启动国策（高亮）
+###################################
+country_event = {
+	id = TIA_inner_circle.5
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Anne_Littstein
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 3 }
+			check_variable = { TIA_ascended_advisor_2 = 3 }
+			check_variable = { TIA_ascended_advisor_3 = 3 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Anne_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_relief_food_distribution }
+			}
+			activate_shine_on_focus = TIA_relief_food_distribution
+			set_country_flag = {
+				flag = TIA_relief_food_distribution_in_progress_flag
+				days = @inner_circle_time_tier_1_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.6 days = @inner_circle_time_tier_1 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_public_health_campaigns }
+			}
+			activate_shine_on_focus = TIA_public_health_campaigns
+			set_country_flag = {
+				flag = TIA_public_health_campaigns_in_progress_flag
+				days = @inner_circle_time_tier_2_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.6 days = @inner_circle_time_tier_2 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_rebuilding_local_councils }
+			}
+			activate_shine_on_focus = TIA_rebuilding_local_councils
+			set_country_flag = {
+				flag = TIA_rebuilding_local_councils_in_progress_flag
+				days = @inner_circle_time_tier_3_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.6 days = @inner_circle_time_tier_3 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_people_are_empire }
+			}
+			activate_shine_on_focus = TIA_people_are_empire
+			set_country_flag = {
+				flag = TIA_people_are_empire_in_progress_flag
+				days = @inner_circle_time_tier_4_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.6 days = @inner_circle_time_tier_4 }
+		}
+		else = {
+			# 子树全部完成，停止循环
+			set_country_flag = TIA_cabinet_Anne_complete
+		}
+	}
+}
+
+###################################
+# Anne - 完成国策（侧边通知）
+###################################
+country_event = {
+	id = TIA_inner_circle.6
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Anne_Littstein
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 3 }
+			check_variable = { TIA_ascended_advisor_2 = 3 }
+			check_variable = { TIA_ascended_advisor_3 = 3 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Anne_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_relief_food_distribution
+			}
+			complete_national_focus = {
+				focus = TIA_relief_food_distribution
+				use_side_message = yes
+				originator_name = TIA_anne_littstein
+			}
+			clr_country_flag = TIA_relief_food_distribution_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.5
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_public_health_campaigns
+			}
+			complete_national_focus = {
+				focus = TIA_public_health_campaigns
+				use_side_message = yes
+				originator_name = TIA_anne_littstein
+			}
+			clr_country_flag = TIA_public_health_campaigns_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.5
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_rebuilding_local_councils
+			}
+			complete_national_focus = {
+				focus = TIA_rebuilding_local_councils
+				use_side_message = yes
+				originator_name = TIA_anne_littstein
+			}
+			clr_country_flag = TIA_rebuilding_local_councils_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.5
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_people_are_empire
+			}
+			complete_national_focus = {
+				focus = TIA_people_are_empire
+				use_side_message = yes
+				originator_name = TIA_anne_littstein
+			}
+			clr_country_flag = TIA_people_are_empire_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.5
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else = {
+			# 没有正在推进的国策（异常情况，记录日志）
+			# log = "TIA inner circle Anne: no focus in progress to complete"
+		}
+	}
+}
+
+###################################
+# Ekure - 启动国策（高亮）
+###################################
+country_event = {
+	id = TIA_inner_circle.7
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Ekure
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 4 }
+			check_variable = { TIA_ascended_advisor_2 = 4 }
+			check_variable = { TIA_ascended_advisor_3 = 4 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Ekure_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_rectify_military_discipline }
+			}
+			activate_shine_on_focus = TIA_rectify_military_discipline
+			set_country_flag = {
+				flag = TIA_rectify_military_discipline_in_progress_flag
+				days = @inner_circle_time_tier_1_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.8 days = @inner_circle_time_tier_1 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_imperial_spirit }
+			}
+			activate_shine_on_focus = TIA_imperial_spirit
+			set_country_flag = {
+				flag = TIA_imperial_spirit_in_progress_flag
+				days = @inner_circle_time_tier_2_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.8 days = @inner_circle_time_tier_2 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_iron_and_blood_recast }
+			}
+			activate_shine_on_focus = TIA_iron_and_blood_recast
+			set_country_flag = {
+				flag = TIA_iron_and_blood_recast_in_progress_flag
+				days = @inner_circle_time_tier_3_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.8 days = @inner_circle_time_tier_3 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_unified_military_command_system }
+			}
+			activate_shine_on_focus = TIA_unified_military_command_system
+			set_country_flag = {
+				flag = TIA_unified_military_command_system_in_progress_flag
+				days = @inner_circle_time_tier_4_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.8 days = @inner_circle_time_tier_4 }
+		}
+		else = {
+			# 子树全部完成，停止循环
+			set_country_flag = TIA_cabinet_Ekure_complete
+		}
+	}
+}
+
+###################################
+# Ekure - 完成国策（侧边通知）
+###################################
+country_event = {
+	id = TIA_inner_circle.8
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Ekure
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 4 }
+			check_variable = { TIA_ascended_advisor_2 = 4 }
+			check_variable = { TIA_ascended_advisor_3 = 4 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Ekure_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_rectify_military_discipline
+			}
+			complete_national_focus = {
+				focus = TIA_rectify_military_discipline
+				use_side_message = yes
+				originator_name = TIA_ekure
+			}
+			clr_country_flag = TIA_rectify_military_discipline_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.7
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_imperial_spirit
+			}
+			complete_national_focus = {
+				focus = TIA_imperial_spirit
+				use_side_message = yes
+				originator_name = TIA_ekure
+			}
+			clr_country_flag = TIA_imperial_spirit_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.7
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_iron_and_blood_recast
+			}
+			complete_national_focus = {
+				focus = TIA_iron_and_blood_recast
+				use_side_message = yes
+				originator_name = TIA_ekure
+			}
+			clr_country_flag = TIA_iron_and_blood_recast_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.7
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_unified_military_command_system
+			}
+			complete_national_focus = {
+				focus = TIA_unified_military_command_system
+				use_side_message = yes
+				originator_name = TIA_ekure
+			}
+			clr_country_flag = TIA_unified_military_command_system_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.7
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else = {
+			# 没有正在推进的国策（异常情况，记录日志）
+			# log = "TIA inner circle Ekure: no focus in progress to complete"
+		}
+	}
+}
+
+###################################
+# Tiona - 启动国策（高亮）
+###################################
+country_event = {
+	id = TIA_inner_circle.9
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Tiona_Rudolvon
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 7 }
+			check_variable = { TIA_ascended_advisor_2 = 7 }
+			check_variable = { TIA_ascended_advisor_3 = 7 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Tiona_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_imperial_national_integration_bureau }
+			}
+			activate_shine_on_focus = TIA_imperial_national_integration_bureau
+			set_country_flag = {
+				flag = TIA_imperial_national_integration_bureau_in_progress_flag
+				days = @inner_circle_time_tier_1_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.10 days = @inner_circle_time_tier_1 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_border_autonomy_experiment }
+			}
+			activate_shine_on_focus = TIA_border_autonomy_experiment
+			set_country_flag = {
+				flag = TIA_border_autonomy_experiment_in_progress_flag
+				days = @inner_circle_time_tier_2_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.10 days = @inner_circle_time_tier_2 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_assimilation_policy }
+			}
+			activate_shine_on_focus = TIA_assimilation_policy
+			set_country_flag = {
+				flag = TIA_assimilation_policy_in_progress_flag
+				days = @inner_circle_time_tier_3_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.10 days = @inner_circle_time_tier_3 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_common_destiny_empire }
+			}
+			activate_shine_on_focus = TIA_common_destiny_empire
+			set_country_flag = {
+				flag = TIA_common_destiny_empire_in_progress_flag
+				days = @inner_circle_time_tier_4_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.10 days = @inner_circle_time_tier_4 }
+		}
+		else = {
+			# 子树全部完成，停止循环
+			set_country_flag = TIA_cabinet_Tiona_complete
+		}
+	}
+}
+
+###################################
+# Tiona - 完成国策（侧边通知）
+###################################
+country_event = {
+	id = TIA_inner_circle.10
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Tiona_Rudolvon
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 7 }
+			check_variable = { TIA_ascended_advisor_2 = 7 }
+			check_variable = { TIA_ascended_advisor_3 = 7 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Tiona_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_imperial_national_integration_bureau
+			}
+			complete_national_focus = {
+				focus = TIA_imperial_national_integration_bureau
+				use_side_message = yes
+				originator_name = TIA_tiona_rudolvon
+			}
+			clr_country_flag = TIA_imperial_national_integration_bureau_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.9
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_border_autonomy_experiment
+			}
+			complete_national_focus = {
+				focus = TIA_border_autonomy_experiment
+				use_side_message = yes
+				originator_name = TIA_tiona_rudolvon
+			}
+			clr_country_flag = TIA_border_autonomy_experiment_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.9
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_assimilation_policy
+			}
+			complete_national_focus = {
+				focus = TIA_assimilation_policy
+				use_side_message = yes
+				originator_name = TIA_tiona_rudolvon
+			}
+			clr_country_flag = TIA_assimilation_policy_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.9
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_common_destiny_empire
+			}
+			complete_national_focus = {
+				focus = TIA_common_destiny_empire
+				use_side_message = yes
+				originator_name = TIA_tiona_rudolvon
+			}
+			clr_country_flag = TIA_common_destiny_empire_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.9
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else = {
+			# 没有正在推进的国策（异常情况，记录日志）
+			# log = "TIA inner circle Tiona: no focus in progress to complete"
+		}
+	}
+}
+
+###################################
+# Ludwig - 启动国策（高亮）
+###################################
+country_event = {
+	id = TIA_inner_circle.11
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Ludwig_Hewitt
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 6 }
+			check_variable = { TIA_ascended_advisor_2 = 6 }
+			check_variable = { TIA_ascended_advisor_3 = 6 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Ludwig_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_fiscal_austerity_orders }
+			}
+			activate_shine_on_focus = TIA_fiscal_austerity_orders
+			set_country_flag = {
+				flag = TIA_fiscal_austerity_orders_in_progress_flag
+				days = @inner_circle_time_tier_1_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.12 days = @inner_circle_time_tier_1 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_empire_bond_issue }
+			}
+			activate_shine_on_focus = TIA_empire_bond_issue
+			set_country_flag = {
+				flag = TIA_empire_bond_issue_in_progress_flag
+				days = @inner_circle_time_tier_2_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.12 days = @inner_circle_time_tier_2 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_nationalization_chamber_commerce }
+			}
+			activate_shine_on_focus = TIA_nationalization_chamber_commerce
+			set_country_flag = {
+				flag = TIA_nationalization_chamber_commerce_in_progress_flag
+				days = @inner_circle_time_tier_3_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.12 days = @inner_circle_time_tier_3 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_financial_miracle }
+			}
+			activate_shine_on_focus = TIA_financial_miracle
+			set_country_flag = {
+				flag = TIA_financial_miracle_in_progress_flag
+				days = @inner_circle_time_tier_4_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.12 days = @inner_circle_time_tier_4 }
+		}
+		else = {
+			# 子树全部完成，停止循环
+			set_country_flag = TIA_cabinet_Ludwig_complete
+		}
+	}
+}
+
+###################################
+# Ludwig - 完成国策（侧边通知）
+###################################
+country_event = {
+	id = TIA_inner_circle.12
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Ludwig_Hewitt
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 6 }
+			check_variable = { TIA_ascended_advisor_2 = 6 }
+			check_variable = { TIA_ascended_advisor_3 = 6 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Ludwig_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_fiscal_austerity_orders
+			}
+			complete_national_focus = {
+				focus = TIA_fiscal_austerity_orders
+				use_side_message = yes
+				originator_name = TIA_ludwig_hewitt
+			}
+			clr_country_flag = TIA_fiscal_austerity_orders_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.11
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_empire_bond_issue
+			}
+			complete_national_focus = {
+				focus = TIA_empire_bond_issue
+				use_side_message = yes
+				originator_name = TIA_ludwig_hewitt
+			}
+			clr_country_flag = TIA_empire_bond_issue_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.11
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_nationalization_chamber_commerce
+			}
+			complete_national_focus = {
+				focus = TIA_nationalization_chamber_commerce
+				use_side_message = yes
+				originator_name = TIA_ludwig_hewitt
+			}
+			clr_country_flag = TIA_nationalization_chamber_commerce_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.11
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_financial_miracle
+			}
+			complete_national_focus = {
+				focus = TIA_financial_miracle
+				use_side_message = yes
+				originator_name = TIA_ludwig_hewitt
+			}
+			clr_country_flag = TIA_financial_miracle_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.11
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else = {
+			# 没有正在推进的国策（异常情况，记录日志）
+			# log = "TIA inner circle Ludwig: no focus in progress to complete"
+		}
+	}
+}
+
+###################################
+# Livia - 启动国策（高亮）
+###################################
+country_event = {
+	id = TIA_inner_circle.13
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Livia
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 5 }
+			check_variable = { TIA_ascended_advisor_2 = 5 }
+			check_variable = { TIA_ascended_advisor_3 = 5 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Livia_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_industrial_revitalization }
+			}
+			activate_shine_on_focus = TIA_industrial_revitalization
+			set_country_flag = {
+				flag = TIA_industrial_revitalization_in_progress_flag
+				days = @inner_circle_time_tier_1_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.14 days = @inner_circle_time_tier_1 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_north_south_transportation_plan }
+			}
+			activate_shine_on_focus = TIA_north_south_transportation_plan
+			set_country_flag = {
+				flag = TIA_north_south_transportation_plan_in_progress_flag
+				days = @inner_circle_time_tier_2_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.14 days = @inner_circle_time_tier_2 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_rebuilding_imperial_capital }
+			}
+			activate_shine_on_focus = TIA_rebuilding_imperial_capital
+			set_country_flag = {
+				flag = TIA_rebuilding_imperial_capital_in_progress_flag
+				days = @inner_circle_time_tier_3_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.14 days = @inner_circle_time_tier_3 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_empire_steel }
+			}
+			activate_shine_on_focus = TIA_empire_steel
+			set_country_flag = {
+				flag = TIA_empire_steel_in_progress_flag
+				days = @inner_circle_time_tier_4_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.14 days = @inner_circle_time_tier_4 }
+		}
+		else = {
+			# 子树全部完成，停止循环
+			set_country_flag = TIA_cabinet_Livia_complete
+		}
+	}
+}
+
+###################################
+# Livia - 完成国策（侧边通知）
+###################################
+country_event = {
+	id = TIA_inner_circle.14
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Livia
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 5 }
+			check_variable = { TIA_ascended_advisor_2 = 5 }
+			check_variable = { TIA_ascended_advisor_3 = 5 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Livia_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_industrial_revitalization
+			}
+			complete_national_focus = {
+				focus = TIA_industrial_revitalization
+				use_side_message = yes
+				originator_name = TIA_livia
+			}
+			clr_country_flag = TIA_industrial_revitalization_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.13
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_north_south_transportation_plan
+			}
+			complete_national_focus = {
+				focus = TIA_north_south_transportation_plan
+				use_side_message = yes
+				originator_name = TIA_livia
+			}
+			clr_country_flag = TIA_north_south_transportation_plan_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.13
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_rebuilding_imperial_capital
+			}
+			complete_national_focus = {
+				focus = TIA_rebuilding_imperial_capital
+				use_side_message = yes
+				originator_name = TIA_livia
+			}
+			clr_country_flag = TIA_rebuilding_imperial_capital_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.13
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_empire_steel
+			}
+			complete_national_focus = {
+				focus = TIA_empire_steel
+				use_side_message = yes
+				originator_name = TIA_livia
+			}
+			clr_country_flag = TIA_empire_steel_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.13
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else = {
+			# 没有正在推进的国策（异常情况，记录日志）
+			# log = "TIA inner circle Livia: no focus in progress to complete"
+		}
+	}
+}
+
+###################################
+# Yumiella - 启动国策（高亮）
+###################################
+country_event = {
+	id = TIA_inner_circle.15
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Yumiella_Dolkness
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 8 }
+			check_variable = { TIA_ascended_advisor_2 = 8 }
+			check_variable = { TIA_ascended_advisor_3 = 8 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Yumiella_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_mana_drain_research }
+			}
+			activate_shine_on_focus = TIA_mana_drain_research
+			set_country_flag = {
+				flag = TIA_mana_drain_research_in_progress_flag
+				days = @inner_circle_time_tier_1_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.16 days = @inner_circle_time_tier_1 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_magic_industrialization }
+			}
+			activate_shine_on_focus = TIA_magic_industrialization
+			set_country_flag = {
+				flag = TIA_magic_industrialization_in_progress_flag
+				days = @inner_circle_time_tier_2_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.16 days = @inner_circle_time_tier_2 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_restoration_taboo_documents }
+			}
+			activate_shine_on_focus = TIA_restoration_taboo_documents
+			set_country_flag = {
+				flag = TIA_restoration_taboo_documents_in_progress_flag
+				days = @inner_circle_time_tier_3_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.16 days = @inner_circle_time_tier_3 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIA_Tearmoon_regeneration_technique }
+			}
+			activate_shine_on_focus = TIA_Tearmoon_regeneration_technique
+			set_country_flag = {
+				flag = TIA_Tearmoon_regeneration_technique_in_progress_flag
+				days = @inner_circle_time_tier_4_flag
+				value = 1
+			}
+			country_event = { id = TIA_inner_circle.16 days = @inner_circle_time_tier_4 }
+		}
+		else = {
+			# 子树全部完成，停止循环
+			set_country_flag = TIA_cabinet_Yumiella_complete
+		}
+	}
+}
+
+###################################
+# Yumiella - 完成国策（侧边通知）
+###################################
+country_event = {
+	id = TIA_inner_circle.16
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = TIA
+		has_completed_focus = TIA_cabinet_Yumiella_Dolkness
+		OR = {
+			check_variable = { TIA_ascended_advisor_1 = 8 }
+			check_variable = { TIA_ascended_advisor_2 = 8 }
+			check_variable = { TIA_ascended_advisor_3 = 8 }
+		}
+		NOT = { has_country_flag = TIA_cabinet_Yumiella_complete }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_mana_drain_research
+			}
+			complete_national_focus = {
+				focus = TIA_mana_drain_research
+				use_side_message = yes
+				originator_name = TIA_yumiella_dolkness
+			}
+			clr_country_flag = TIA_mana_drain_research_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.15
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_magic_industrialization
+			}
+			complete_national_focus = {
+				focus = TIA_magic_industrialization
+				use_side_message = yes
+				originator_name = TIA_yumiella_dolkness
+			}
+			clr_country_flag = TIA_magic_industrialization_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.15
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_restoration_taboo_documents
+			}
+			complete_national_focus = {
+				focus = TIA_restoration_taboo_documents
+				use_side_message = yes
+				originator_name = TIA_yumiella_dolkness
+			}
+			clr_country_flag = TIA_restoration_taboo_documents_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.15
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIA_Tearmoon_regeneration_technique
+			}
+			complete_national_focus = {
+				focus = TIA_Tearmoon_regeneration_technique
+				use_side_message = yes
+				originator_name = TIA_yumiella_dolkness
+			}
+			clr_country_flag = TIA_Tearmoon_regeneration_technique_in_progress_flag
+			country_event = {
+				id = TIA_inner_circle.15
+				days = TIA_inner_circle_days_to_start_focus
+				random_days = TIA_inner_circle_random_days
+			}
+		}
+		else = {
+			# 没有正在推进的国策（异常情况，记录日志）
+			# log = "TIA inner circle Yumiella: no focus in progress to complete"
+		}
 	}
 }
 
