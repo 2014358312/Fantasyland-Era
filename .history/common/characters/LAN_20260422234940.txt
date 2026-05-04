@@ -1,31 +1,4 @@
 characters = {
-	LAN_Tokukawa_Riri = {
-		name = Tokukawa_Riri
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Tokukawa_Riri
-				small = GFX_idea_advisor_LAN_Tokukawa_Riri
-			}
-			army = {
-				large = GFX_Portrait_LAN_Tokukawa_Riri
-				small = GFX_idea_advisor_LAN_Tokukawa_Riri
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Tokukawa_Riri
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = {  }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-	
 	LAN_Agato_Shifuna = {
 		name = Agato_Shifuna
 		portraits = {
@@ -445,13 +418,14 @@ characters = {
 				base = 1.000
 			}
 		}
-		navy_leader = {
-			traits = { navy_career_officer aviation_enthusiast superior_tactician }
-			skill = 5
-			attack_skill = 4
-			defense_skill = 3
-			maneuvering_skill = 4
-			coordination_skill = 5
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
 		}
 	}
 
@@ -935,7 +909,7 @@ characters = {
 			idea_token = LAN_Kirihara_Kasumi
 			allowed = { original_tag = LAN }
 			available = {
-				
+				has_completed_focus = LAN_mi6
 			}
 			cost = 150
 			traits = { detective_in_capital }
@@ -1417,8 +1391,8 @@ characters = {
 			available = {
 				
 			}
-			cost = 50
-			traits = { army_chief_drill_1 }
+			cost = 100
+			traits = { army_chief_drill_2 }
 			ai_will_do = {
 				base = 1.000
 			}
