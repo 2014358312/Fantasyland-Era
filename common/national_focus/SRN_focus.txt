@@ -1,0 +1,1203 @@
+##################################################萨丁社会共和国
+#筛选器标签：
+#政治 search_filters = {FOCUS_FILTER_POLITICAL}
+#科研 search_filters = {FOCUS_FILTER_RESEARCH}
+#工业 search_filters = {FOCUS_FILTER_INDUSTRY}
+#稳定度 search_filters = {FOCUS_FILTER_STABILITY}
+#战争支持度 search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+#人力 search_filters = {FOCUS_FILTER_MANPOWER}
+#吞并 search_filters = {FOCUS_FILTER_ANNEXATION}
+##########一阶段国家焦点
+focus_tree = {
+	id = SRN_National_Focus_one
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SRN
+		}
+	}
+	focus = {
+		id = SRN_National_Focus_one_xiongyingxingdong
+		x = 3
+		y = -6
+		cost = 2
+		icon = GFX_SRN_National_Focus_one_xiongyingxingdong
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 雄鹰行动
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				#添加临时民族精神 雄鹰行动
+				idea = SRN_xiongyiingxingdong_National_Spirit
+				days = 365
+			}
+			declare_war_on = {
+				#立即宣战
+				target = USS
+				type = annex_everything
+			}
+			declare_war_on = {
+				#立即宣战
+				target = ROC
+				type = annex_everything
+			}
+			add_manpower = 20000
+			add_country_leader_trait = SRN_weituoliaoweintuo_xiongyingxingdong
+		}
+	}
+	focus = {
+		id = SRN_National_Focus_one_diercifanrong
+		x = -2
+		y = 1
+		cost = 2
+		icon = GFX_SRN_National_Focus_one_diercifanrong
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 第二次繁荣
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_one_xiongyingxingdong
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_one_diercifanrong_custom_effect_tooltip
+			#国家法团主义经济（动态国家精神）
+			add_to_variable = {
+				#生活消费品系数
+				SRN_guojiafatuanzhuyijingji_consumer_goods_factor = -0.1
+			}
+			add_to_variable = {
+				#生活消费品期望
+				SRN_guojiafatuanzhuyijingji_consumer_goods_expected_value = -0.1
+			}
+		}
+		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
+	}
+	focus = {
+		id = SRN_National_Focus_one_yingzhichaoxue
+		x = -3
+		y = 2
+		cost = 2
+		icon = GFX_SRN_National_Focus_one_yingzhichaoxue
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 鹰之巢穴
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_one_diercifanrong
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_one_yingzhichaoxue_custom_effect_tooltip
+			#国家法团主义经济（动态国家精神）
+			add_to_variable = {
+				#地区最大工业值%
+				SRN_guojiafatuanzhuyijingji_global_building_slots_factor = 0.1
+			}
+			add_to_variable = {
+				#地区建筑槽位数量
+				SRN_guojiafatuanzhuyijingji_global_building_slots = 1
+			}
+			add_to_variable = {
+				#建造速度
+				SRN_guojiafatuanzhuyijingji_production_speed_buildings_factor = 0.05
+			}
+			add_to_variable = {
+				#缺乏资源时的产线惩罚
+				SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = -0.1
+			}
+		}
+		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
+	}
+	focus = {
+		id = SRN_National_Focus_one_qiyeyushubang
+		x = -5
+		y = 2
+		cost = 2
+		icon = GFX_SRN_National_Focus_one_qiyeyushubang
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 企业与束棒
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_one_diercifanrong
+		}
+		completion_reward = {
+			add_stability = -0.2
+			add_war_support = -0.2
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+		}
+		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
+	}
+	focus = {
+		id = SRN_National_Focus_one_tebieshiqitebiecuoshi
+		x = -1
+		y = 2
+		cost = 2
+		icon = GFX_focus_Utilize_Fascist_Militias
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 特别时期 特别措施
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_one_diercifanrong
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_one_tebieshiqitebiecuoshi_custom_effect_tooltip
+			#国家法团主义经济（动态国家精神）
+			add_to_variable = {
+				#生产效率上限
+				SRN_guojiafatuanzhuyijingji_production_factory_max_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#生产效率增长
+				SRN_guojiafatuanzhuyijingji_production_factory_efficiency_gain_factor = 0.05
+			}
+			add_to_variable = {
+				#生产效率保持
+				SRN_guojiafatuanzhuyijingji_line_change_production_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#基础生产效率
+				SRN_guojiafatuanzhuyijingji_production_factory_start_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#缺乏资源时的产线惩罚
+				SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = -0.05
+			}
+			add_political_power = 50
+		}
+		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
+	}
+	focus = {
+		id = SRN_National_Focus_one_jinjizhanbeizhuanhuan
+		x = -3
+		y = 3
+		cost = 2
+		icon = GFX_SRN_National_Focus_one_jinjizhanbeizhuanhuan
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 紧急战备转换
+		prerequisite = {
+			focus = SRN_National_Focus_one_yingzhichaoxue
+			focus = SRN_National_Focus_one_qiyeyushubang
+		}
+		completion_reward = {
+			444 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
+	}
+	focus = {
+		id = SRN_National_Focus_one_baozhangguojiawending
+		x = -1
+		y = 3
+		cost = 2
+		icon = GFX_SRN_National_Focus_one_baozhangguojiawending
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 保障国家稳定
+		prerequisite = {
+			focus = SRN_National_Focus_one_yingzhichaoxue
+			focus = SRN_National_Focus_one_qiyeyushubang
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_one_tebieshiqitebiecuoshi
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.1
+			add_political_power = 50
+		}
+		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
+	}
+	focus = {
+		id = SRN_National_Focus_one_shojilaojiuwuqi
+		x = -1
+		y = 4
+		cost = 2
+		icon = GFX_SRN_National_Focus_one_shojilaojiuwuqi
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 收集老旧武器
+		prerequisite = {
+			focus = SRN_National_Focus_one_baozhangguojiawending
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_one_jinjizhanbeizhuanhuan
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				#刷装备
+				type = infantry_equipment_1				#步枪
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				#刷装备
+				type = support_equipment_1				#支援装备
+				amount = 50
+			}
+			add_equipment_to_stockpile = {
+				#刷装备
+				type = artillery_equipment_2				#火炮
+				amount = 150
+			}
+			add_equipment_to_stockpile = {
+				#刷装备
+				type = small_plane_airframe_1
+				producer = "SRN"
+				amount = 50
+				variant_name = "射手座"
+			}
+			add_equipment_to_stockpile = {
+				#刷装备
+				type = small_plane_cas_airframe_1
+				producer = "SRN"
+				amount = 25
+				variant_name = "金牛座"
+			}
+		}
+		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
+	}
+	focus = {
+		id = SRN_National_Focus_one_dongyuanguojiaanquanzhiyuanjun
+		x = 1
+		y = 1
+		cost = 2
+		icon = GFX_focus_National_Rebirth
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 动员国家安全志愿军
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_one_xiongyingxingdong
+		}
+		completion_reward = {
+			capital_scope = {
+				create_unit = {
+					division = "name = \"国家安全志愿军\" division_template = \"国家安全志愿军\" start_equipment_factor = 1"
+					owner = ROOT
+					count = 4
+				}
+			}
+			add_manpower = 8000
+		}
+		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
+	}
+	focus = {
+		id = SRN_National_Focus_one_bumiezhilun
+		x = 1
+		y = 2
+		cost = 2
+		icon = GFX_SRN_National_Focus_one_dongyuanguojiaanquanzhiyuanjun
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 不灭之轮
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_one_dongyuanguojiaanquanzhiyuanjun
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_one_dongyuanguojiaanquanzhiyuanjun_custom_effect_tooltip
+			#国家安全志愿军（动态国家精神）
+			add_to_variable = {
+				#民兵攻击
+				SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_attack_factor = 0.05
+			}
+			add_to_variable = {
+				#民兵防御
+				SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_defence_factor = 0.05
+			}
+			add_to_variable = {
+				#民兵速度
+				SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_speed_factor = 0.05
+			}
+			add_to_variable = {
+				#陆军核心攻击
+				SRN_guojiaanquanzhiyuanjun_army_core_attack_factor = 0.05
+			}
+			add_to_variable = {
+				#陆军核心防御
+				SRN_guojiaanquanzhiyuanjun_army_core_defence_factor = 0.05
+			}
+		}
+		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
+	}
+	focus = {
+		id = SRN_National_Focus_one_kuodaguojiaanquanzhiyuanjunquanli
+		x = 1
+		y = 3
+		cost = 2
+		icon = GFX_SRN_National_Focus_one_kuodaguojiaanquanzhiyuanjunquanli
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 扩大国家安全志愿军权利
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_one_bumiezhilun
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_one_kuodaguojiaanquanzhiyuanjunquanli_custom_effect_tooltip
+			#国家安全志愿军（动态国家精神）
+			add_to_variable = {
+				#民兵攻击
+				SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_attack_factor = 0.05
+			}
+			add_to_variable = {
+				#民兵防御
+				SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_defence_factor = 0.05
+			}
+			add_to_variable = {
+				#民兵速度
+				SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_speed_factor = 0.05
+			}
+			add_to_variable = {
+				#驻军需求
+				SRN_guojiaanquanzhiyuanjun_required_garrison_factor = -0.05
+			}
+			add_to_variable = {
+				#位于核心地块补给耗尽时的惩罚降低
+				SRN_guojiaanquanzhiyuanjun_supply_combat_penalties_on_core_factor = -0.05
+			}
+			add_manpower = 2000
+		}
+		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
+	}
+	focus = {
+		id = SRN_National_Focus_one_faxisizhandoujingshen
+		x = 1
+		y = 4
+		cost = 2
+		icon = GFX_SRN_National_Focus_one_faxisizhandoujingshen
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 法西斯战斗精神
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_one_kuodaguojiaanquanzhiyuanjunquanli
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_one_faxisizhandoujingshen_custom_effect_tooltip
+			#国家安全志愿军（动态国家精神）
+			add_to_variable = {
+				#陆军核心攻击
+				SRN_guojiaanquanzhiyuanjun_army_core_attack_factor = 0.05
+			}
+			add_to_variable = {
+				#陆军核心防御
+				SRN_guojiaanquanzhiyuanjun_army_core_defence_factor = 0.05
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"国家安全志愿军\" division_template = \"国家安全志愿军\" start_equipment_factor = 1"
+					owner = ROOT
+					count = 2
+				}
+			}
+		}
+		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
+	}
+	focus = {
+		id = SRN_National_Focus_one_qingchuziyouzhuyibingdu
+		x = 0
+		y = 5
+		cost = 2
+		icon = GFX_SRN_National_Focus_one_qingchuziyouzhuyibingdu
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 清除自由主义病毒
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_one_faxisizhandoujingshen
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_one_shojilaojiuwuqi
+		}
+		completion_reward = {
+			add_timed_idea = {
+				#添加临时民族精神 清除自由主义病毒
+				idea = SRN_qingchuziyouzhuyibingdu_National_Spirit
+				days = 180
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"黑衫军\" division_template = \"黑衫军\" start_equipment_factor = 1"
+					owner = ROOT
+					count = 2
+				}
+			}
+			add_manpower = 2000
+		}
+		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
+	}
+	focus = {
+		id = SRN_National_Focus_one_shuyusadingdeshengli
+		x = 0
+		y = 6
+		cost = 2
+		icon = GFX_SRN_National_Focus_one_shuyusadingdeshengli
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#一阶段国家焦点 属于萨丁的胜利
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				country_exists = USS
+			}
+			NOT = {
+				country_exists = ROC
+			}
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_one_qingchuziyouzhuyibingdu
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_one_shuyusadingdeshengli_custom_effect_tooltip
+			remove_country_leader_trait = SRN_weituoliaoweintuo_xiongyingxingdong
+		}
+		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
+	}
+	##################################################二阶段国家焦点通用分支
+	focus = {
+		id = SRN_National_Focus_two_fascism_the_New_Era
+		x = 0
+		y = 7
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 法西斯新时代
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_one_shuyusadingdeshengli
+		}
+		completion_reward = {
+			add_political_power = 150
+			create_faction = Fascist_Revolutionary_International			#创建阵营
+			#add_dynamic_modifier = { #解锁动态国家精神
+			#modifier = SRN_faxisidaweiyuanhui_National_Spirit #法西斯大委员会（动态国家精神）
+			#}
+			add_stability = -0.1
+			add_war_support = -0.4
+		}
+		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
+	}
+	focus = {
+		id = SRN_National_Focus_two_Stable_and_Prosperous
+		x = -1
+		y = 1
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 稳定与秩序
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_fascism_the_New_Era
+		}
+		completion_reward = {
+			add_ideas = {
+				#解锁国家精神
+				SRN_Stable_and_Prosperous_National_Spirit				#稳定与繁荣
+			}
+		}
+		relative_position_id = SRN_National_Focus_two_fascism_the_New_Era
+	}
+	focus = {
+		id = SRN_National_Focus_two_Pride_and_Glory
+		x = 1
+		y = 1
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 骄傲与自豪
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_fascism_the_New_Era
+		}
+		completion_reward = {
+			add_ideas = {
+				#解锁国家精神
+				SRN_Pride_and_Glory_National_Spirit				#骄傲与自豪
+			}
+		}
+		relative_position_id = SRN_National_Focus_two_fascism_the_New_Era
+	}
+	focus = {
+		id = SRN_National_Focus_two_Rebuild_the_New_Era
+		x = 0
+		y = 2
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 再造新时代
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_Stable_and_Prosperous
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_Pride_and_Glory
+		}
+		completion_reward = {
+			add_political_power = -100
+			#添加核心地区
+			#add_state_core = 
+			#add_state_core =
+		}
+		relative_position_id = SRN_National_Focus_two_fascism_the_New_Era
+	}
+	##################################################二阶段国家焦点经济分支
+	focus = {
+		id = SRN_National_Focus_two_New_Economic_Policy
+		x = 12
+		y = 3
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 萨丁新经济政策
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_Rebuild_the_New_Era
+		}
+		completion_reward = {
+			add_political_power = 200
+			add_stability = -0.4
+			add_war_support = -0.2
+		}
+		relative_position_id = SRN_National_Focus_two_fascism_the_New_Era
+	}
+	focus = {
+		id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+		x = -3
+		y = 1
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 重组国家法团委员会
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_New_Economic_Policy
+		}
+		completion_reward = {
+			unlock_decision_category_tooltip = SRN_decision_categories_National_Corporate_Committee
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation_custom_effect_tooltip
+			#国家法团主义经济（动态国家精神）
+			add_to_variable = {
+				#生产效率上限
+				SRN_guojiafatuanzhuyijingji_production_factory_max_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#生产效率增长
+				SRN_guojiafatuanzhuyijingji_production_factory_efficiency_gain_factor = 0.05
+			}
+			add_to_variable = {
+				#生产效率保持
+				SRN_guojiafatuanzhuyijingji_line_change_production_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#基础生产效率
+				SRN_guojiafatuanzhuyijingji_production_factory_start_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#缺乏资源时的产线惩罚
+				SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = -0.05
+			}
+		}
+		relative_position_id = SRN_National_Focus_two_New_Economic_Policy
+	}
+	focus = {
+		id = SRN_National_Focus_two_Labor_Glory_Charter
+		x = -2
+		y = 1
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 劳动光荣宪章
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_two_Labor_Glory_Charter_custom_effect_tooltip
+			hidden_effect = {
+				#除去的民族精神
+				remove_ideas = SRN_shodaokongzhidegongrenyundong_National_Spirit
+				#添加的民族精神
+				add_ideas = SRN_Labor_Glory_Charter_National_Spirit
+			}
+		}
+		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+	}
+	focus = {
+		id = SRN_National_Focus_two_labour_dignity_temp
+		x = -2
+		y = 2
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 劳动尊严运动
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_Labor_Glory_Charter
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_two_labour_dignity_temp_custom_effect_tooltip
+			#国家法团主义经济（动态国家精神）
+			add_to_variable = {
+				#生活消费品系数
+				SRN_guojiafatuanzhuyijingji_consumer_goods_factor = 0.05
+			}
+			add_to_variable = {
+				#生活消费品期望
+				SRN_guojiafatuanzhuyijingji_consumer_goods_expected_value = 0.05
+			}
+			add_to_variable = {
+				#地区最大工业值%
+				SRN_guojiafatuanzhuyijingji_global_building_slots_factor = 0.1
+			}
+			add_to_variable = {
+				#地区建筑槽位数量
+				SRN_guojiafatuanzhuyijingji_global_building_slots = 1
+			}
+		}
+		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+	}
+	focus = {
+		id = SRN_National_Focus_two_Total_Community_Education
+		x = -2
+		y = 3
+		cost = 0
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 全民共同体教育
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_labour_dignity_temp
+		}
+		completion_reward = {
+			add_research_slot = 1
+			custom_effect_tooltip = SRN_National_Focus_two_Total_Community_Education_custom_effect_tooltip
+			#国家法团主义经济（动态国家精神）
+			add_to_variable = {
+				#生产效率上限
+				SRN_guojiafatuanzhuyijingji_production_factory_max_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#生产效率增长
+				SRN_guojiafatuanzhuyijingji_production_factory_efficiency_gain_factor = 0.05
+			}
+			add_to_variable = {
+				#生产效率保持
+				SRN_guojiafatuanzhuyijingji_line_change_production_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#基础生产效率
+				SRN_guojiafatuanzhuyijingji_production_factory_start_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#缺乏资源时的产线惩罚
+				SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = -0.05
+			}
+		}
+		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+	}
+	focus = {
+		id = SRN_National_Focus_two_Bureau_of_National_Corporatist_Regulation
+		x = 0
+		y = 1
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 国家法团统制局
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+		}
+		completion_reward = {
+			add_ideas = SRN_Bureau_of_National_Corporatist_Regulation_National_Spirit
+		}
+		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+	}
+	focus = {
+		id = SRN_National_Focus_two_Forced_Cartelization
+		x = 0
+		y = 2
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 强制卡特尔化
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_Bureau_of_National_Corporatist_Regulation
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_two_Forced_Cartelization_custom_effect_tooltip
+			#国家法团主义经济（动态国家精神）
+			add_to_variable = {
+				#生产效率上限
+				SRN_guojiafatuanzhuyijingji_production_factory_max_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#生产效率增长
+				SRN_guojiafatuanzhuyijingji_production_factory_efficiency_gain_factor = 0.05
+			}
+			add_to_variable = {
+				#生产效率保持
+				SRN_guojiafatuanzhuyijingji_line_change_production_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#基础生产效率
+				SRN_guojiafatuanzhuyijingji_production_factory_start_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#缺乏资源时的产线惩罚
+				SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = -0.05
+			}
+		}
+		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+	}
+	focus = {
+		id = SRN_National_Focus_two_cult_of_the_absolute_standard
+		x = 0
+		y = 3
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 绝对标准崇拜
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_Forced_Cartelization
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_two_cult_of_the_absolute_standard_custom_effect_tooltip
+			#国家法团主义经济（动态国家精神）
+			add_to_variable = {
+				#生产效率上限
+				SRN_guojiafatuanzhuyijingji_production_factory_max_efficiency_factor = 0.1
+			}
+			add_to_variable = {
+				#生产效率增长
+				SRN_guojiafatuanzhuyijingji_production_factory_efficiency_gain_factor = 0.1
+			}
+			add_to_variable = {
+				#生产效率保持
+				SRN_guojiafatuanzhuyijingji_line_change_production_efficiency_factor = 0.1
+			}
+			add_to_variable = {
+				#基础生产效率
+				SRN_guojiafatuanzhuyijingji_production_factory_start_efficiency_factor = 0.1
+			}
+			add_to_variable = {
+				#缺乏资源时的产线惩罚
+				SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = -0.1
+			}
+		}
+		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+	}
+	focus = {
+		id = SRN_National_Focus_two_Expropriation_of_the_Rentier_Class
+		x = 2
+		y = 1
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 剥夺食利阶级
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_two_Expropriation_of_the_Rentier_Class_custom_effect_tooltip
+			#国家法团主义经济（动态国家精神）
+			add_to_variable = {
+				#生活消费品系数
+				SRN_guojiafatuanzhuyijingji_consumer_goods_factor = -0.25
+			}
+			add_to_variable = {
+				#生活消费品期望
+				SRN_guojiafatuanzhuyijingji_consumer_goods_expected_value = -0.25
+			}
+			add_stability = -0.2
+			add_political_power = 50
+		}
+		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+	}
+	focus = {
+		id = SRN_National_Focus_two_class_conciliation_canteen
+		x = 2
+		y = 2
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 阶级调和食堂
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_Expropriation_of_the_Rentier_Class
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_two_class_conciliation_canteen_custom_effect_tooltip
+			#国家法团主义经济（动态国家精神）
+			add_to_variable = {
+				#生产效率上限
+				SRN_guojiafatuanzhuyijingji_production_factory_max_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#生产效率增长
+				SRN_guojiafatuanzhuyijingji_production_factory_efficiency_gain_factor = 0.05
+			}
+			add_to_variable = {
+				#生产效率保持
+				SRN_guojiafatuanzhuyijingji_line_change_production_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#基础生产效率
+				SRN_guojiafatuanzhuyijingji_production_factory_start_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				#缺乏资源时的产线惩罚
+				SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = -0.05
+			}
+		}
+		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+	}
+	focus = {
+		id = SRN_National_Focus_two_dignity_of_labour
+		x = 2
+		y = 3
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 国家关怀体系
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_class_conciliation_canteen
+		}
+		completion_reward = {
+			add_ideas = SRN_dignity_of_labour_National_Spirit
+		}
+		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+	}
+	focus = {
+		id = SRN_National_Focus_two_NationalSolidarity
+		x = 0
+		y = 4
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 团结一致
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_dignity_of_labour
+			focus = SRN_National_Focus_two_cult_of_the_absolute_standard
+			focus = SRN_National_Focus_two_Total_Community_Education
+		}
+		completion_reward = {
+			custom_effect_tooltip = SRN_National_Focus_two_NationalSolidarity_custom_effect_tooltip
+			#国家法团主义经济（动态国家精神）
+			add_to_variable = {
+				#生产效率上限
+				SRN_guojiafatuanzhuyijingji_production_factory_max_efficiency_factor = 0.1
+			}
+			add_to_variable = {
+				#生产效率增长
+				SRN_guojiafatuanzhuyijingji_production_factory_efficiency_gain_factor = 0.1
+			}
+			add_to_variable = {
+				#生产效率保持
+				SRN_guojiafatuanzhuyijingji_line_change_production_efficiency_factor = 0.1
+			}
+			add_to_variable = {
+				#基础生产效率
+				SRN_guojiafatuanzhuyijingji_production_factory_start_efficiency_factor = 0.1
+			}
+			add_to_variable = {
+				#缺乏资源时的产线惩罚
+				SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = -0.1
+			}
+			add_to_variable = {
+				#工厂产出
+				SRN_guojiafatuanzhuyijingji_industrial_capacity_factory = 0.05
+			}
+			add_to_variable = {
+				#船坞产出
+				SRN_guojiafatuanzhuyijingji_industrial_capacity_dockyard = -0.05
+			}
+			add_political_power = -100
+		}
+		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+	}
+	focus = {
+		id = SRN_National_Focus_two_guojiayoujilun
+		x = 3
+		y = 1
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 国家有机论
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_New_Economic_Policy
+		}
+		completion_reward = {
+			set_power_balance = {
+				#启动权利平衡
+				id = SRN_balance_of_power
+				set_default = yes
+			}
+		}
+		relative_position_id = SRN_National_Focus_two_New_Economic_Policy
+	}
+	focus = {
+		id = SRN_National_Focus_two_hanweirenmin
+		x = -2
+		y = 1
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 捍卫人民
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_guojiayoujilun
+		}
+		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+	}
+	focus = {
+		id = SRN_National_Focus_two_qiulizuidishehuibaozhang
+		x = -2
+		y = 2
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 确定最低社会保障
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_hanweirenmin
+		}
+		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+	}
+	focus = {
+		id = SRN_National_Focus_two_gongpingyuzhengyi
+		x = -2
+		y = 3
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 公平与正义
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_qiulizuidishehuibaozhang
+		}
+		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+	}
+	focus = {
+		id = SRN_National_Focus_two_youxingdedasho
+		x = 0
+		y = 1
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 有型的大手
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_guojiayoujilun
+		}
+		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+	}
+	focus = {
+		id = SRN_National_Focus_two_zengjiagonggongsheshitouzi
+		x = 0
+		y = 2
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 增加公共设施投入
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_youxingdedasho
+		}
+		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+	}
+	focus = {
+		id = SRN_National_Focus_two_qingchutindebingdu
+		x = 0
+		y = 3
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 清除体内病毒
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_zengjiagonggongsheshitouzi
+		}
+		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+	}
+	focus = {
+		id = SRN_National_Focus_two_dajiguatou
+		x = 2
+		y = 1
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 打击寡头
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_guojiayoujilun
+		}
+		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+	}
+	focus = {
+		id = SRN_National_Focus_two_jiaqiangjishuguanliaopeiyang
+		x = 2
+		y = 2
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 加强技术官僚
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_dajiguatou
+		}
+		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+	}
+	focus = {
+		id = SRN_National_Focus_two_guojiaxiaolyanjiuyuan
+		x = 2
+		y = 3
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 国家效率研究院
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_jiaqiangjishuguanliaopeiyang
+		}
+		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+	}
+	focus = {
+		id = SRN_National_Focus_two_guojiayoujigongtongtixuanyan
+		x = 0
+		y = 4
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 国家有机共同体宣言
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_gongpingyuzhengyi
+			focus = SRN_National_Focus_two_qingchutindebingdu
+			focus = SRN_National_Focus_two_guojiaxiaolyanjiuyuan
+		}
+		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+	}
+	focus = {
+		id = SRN_National_Focus_two_Golden_Age_of_the_Corporatist_State
+		x = 0
+		y = 6
+		cost = 4.4
+		continue_if_invalid = no
+		cancel_if_invalid = yes
+		#二阶段国家焦点 萨丁黄金时代
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_guojiayoujigongtongtixuanyan
+		}
+		prerequisite = {
+			focus = SRN_National_Focus_two_NationalSolidarity
+		}
+		completion_reward = {
+            add_ideas = SRN_Golden_Age_of_the_Corporatist_State_National_Spirit
+		}
+		relative_position_id = SRN_National_Focus_two_New_Economic_Policy
+	}
+}
