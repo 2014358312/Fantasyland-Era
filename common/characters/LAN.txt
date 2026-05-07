@@ -1,4 +1,32 @@
 characters = {
+
+	LAN_Tokukawa_Riri = {
+		name = Tokukawa_Riri
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Tokukawa_Riri
+				small = GFX_idea_advisor_LAN_Tokukawa_Riri
+			}
+			army = {
+				large = GFX_Portrait_LAN_Tokukawa_Riri
+				small = GFX_idea_advisor_LAN_Tokukawa_Riri
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Tokukawa_Riri
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 150
+			traits = {  }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
 	LAN_Agato_Shifuna = {
 		name = Agato_Shifuna
 		portraits = {
@@ -418,14 +446,13 @@ characters = {
 				base = 1.000
 			}
 		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
+		navy_leader = {
+			traits = { navy_career_officer aviation_enthusiast superior_tactician }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 3
+			maneuvering_skill = 4
+			coordination_skill = 5
 		}
 	}
 
@@ -643,7 +670,7 @@ characters = {
 			idea_token = LAN_Illya_Onstein
 			allowed = { original_tag = LAN }
 			available = {
-				
+				is_a_fascism_government = yes
 			}
 			cost = 100
 			traits = { air_chief_night_operations_2 }
@@ -652,7 +679,7 @@ characters = {
 			}
 		}
 		field_marshal = {
-			traits = { }
+			traits = { trait_SPA_nationalist_sympathies }
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
@@ -707,7 +734,7 @@ characters = {
 			idea_token = LAN_Izumo_Miyako
 			allowed = { original_tag = LAN }
 			available = {
-				
+				is_a_fascism_government = yes
 			}
 			cost = 150
 			traits = { navy_chief_commerce_raiding_3 }
@@ -744,7 +771,7 @@ characters = {
 			idea_token = LAN_Kamiki_Shinobu
 			allowed = { original_tag = LAN }
 			available = {
-				
+				is_a_fascism_government = yes
 			}
 			cost = 50
 			traits = { army_radio_intelligence_1 }
@@ -753,7 +780,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { }
+			traits = { trait_SPA_nationalist_sympathies }
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
@@ -854,7 +881,7 @@ characters = {
 			idea_token = LAN_Kazemiya_Akari
 			allowed = { original_tag = LAN }
 			available = {
-				
+				is_a_fascism_government = yes
 			}
 			cost = 100
 			traits = { navy_amphibious_assault_2 }
@@ -882,7 +909,7 @@ characters = {
 			idea_token = LAN_Kazemiya_Yori
 			allowed = { original_tag = LAN }
 			available = {
-				
+				is_a_fascism_government = yes
 			}
 			cost = 100
 			traits = { navy_capital_ship_2 }
@@ -909,7 +936,7 @@ characters = {
 			idea_token = LAN_Kirihara_Kasumi
 			allowed = { original_tag = LAN }
 			available = {
-				has_completed_focus = LAN_mi6
+				
 			}
 			cost = 150
 			traits = { detective_in_capital }
@@ -1391,8 +1418,8 @@ characters = {
 			available = {
 				
 			}
-			cost = 100
-			traits = { army_chief_drill_2 }
+			cost = 50
+			traits = { army_chief_drill_1 }
 			ai_will_do = {
 				base = 1.000
 			}

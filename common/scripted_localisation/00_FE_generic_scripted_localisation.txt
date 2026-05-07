@@ -86,6 +86,12 @@ defined_text = {
 		trigger = {
 			has_country_flag = FE_historical_country_flag
 		}
+		localization_key = "FE_historical_country_[ROOT.GetTag]_[?ROOT.FE_now_page]"
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = FE_historical_country_flag }
+		}
 		localization_key = "FE_historical_country_[ROOT.GetTag]"
 	}
 	text = {

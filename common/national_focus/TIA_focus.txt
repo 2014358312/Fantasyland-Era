@@ -333,6 +333,10 @@ focus_tree = {
 			add_war_support = -0.05
 			add_ideas = TIA_national_belief_prepare
 			country_event = { id = TIA.11 days = 1 }
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 140
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -551,7 +555,7 @@ focus_tree = {
 		relative_position_id = TIA_fontaine_cultural_protection
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = TIA_fontaine_cultural_protection
 		}
@@ -659,7 +663,7 @@ focus_tree = {
 		relative_position_id = TIA_fontaine_cultural_protection
 		x = 0
 		y = 2
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = TIA_fontaine_joint_waterworks
 			focus = TIA_fontaine_parliament_reform
@@ -869,7 +873,7 @@ focus_tree = {
 		relative_position_id = TIA_fontaine_martial_law
 		x = 0
 		y = 2
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = TIA_fontaine_thorn_rose_purge
 			focus = TIA_fontaine_garrison_reinforcement
@@ -984,6 +988,9 @@ focus_tree = {
 					check_variable = { TIA_ascended_advisor_3 = 0 }
 				}
 				set_variable = { TIA_ascended_advisor_3 = 1 }
+			}
+			hidden_effect = {
+				country_event = { id = TIA_inner_circle.1 days = 35 }
 			}
 		}
 		ai_will_do = {
@@ -1134,6 +1141,9 @@ focus_tree = {
 					check_variable = { TIA_ascended_advisor_3 = 0 }
 				}
 				set_variable = { TIA_ascended_advisor_3 = 2 }
+			}
+			hidden_effect = {
+				country_event = { id = TIA_inner_circle.3 days = 35 }
 			}
 		}
 		ai_will_do = {
@@ -1289,6 +1299,9 @@ focus_tree = {
 				}
 				set_variable = { TIA_ascended_advisor_3 = 3 }
 			}
+			hidden_effect = {
+				country_event = { id = TIA_inner_circle.5 days = 35 }
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1340,6 +1353,10 @@ focus_tree = {
         		country_event = { id = TIA.31 days = 10 random_days = 10 }
         		country_event = { id = TIA.65 days = 25 }
     		}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_health
+				days = 70
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1435,6 +1452,9 @@ focus_tree = {
 					check_variable = { TIA_ascended_advisor_3 = 0 }
 				}
 				set_variable = { TIA_ascended_advisor_3 = 4 }
+			}
+			hidden_effect = {
+				country_event = { id = TIA_inner_circle.7 days = 35 }
 			}
 		}
 		ai_will_do = {
@@ -1587,6 +1607,9 @@ focus_tree = {
 				}
 				set_variable = { TIA_ascended_advisor_3 = 7 }
 			}
+			hidden_effect = {
+				country_event = { id = TIA_inner_circle.9 days = 35 }
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1729,6 +1752,9 @@ focus_tree = {
 					check_variable = { TIA_ascended_advisor_3 = 0 }
 				}
 				set_variable = { TIA_ascended_advisor_3 = 6 }
+			}
+			hidden_effect = {
+				country_event = { id = TIA_inner_circle.11 days = 35 }
 			}
 		}
 		ai_will_do = {
@@ -1874,6 +1900,9 @@ focus_tree = {
 					check_variable = { TIA_ascended_advisor_3 = 0 }
 				}
 				set_variable = { TIA_ascended_advisor_3 = 5 }
+			}
+			hidden_effect = {
+				country_event = { id = TIA_inner_circle.13 days = 35 }
 			}
 		}
 		ai_will_do = {
@@ -2047,6 +2076,9 @@ focus_tree = {
 					check_variable = { TIA_ascended_advisor_3 = 0 }
 				}
 				set_variable = { TIA_ascended_advisor_3 = 8 }
+			}
+			hidden_effect = {
+				country_event = { id = TIA_inner_circle.15 days = 35 }
 			}
 		}
 		ai_will_do = {
@@ -2272,7 +2304,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
-			country_event = { id = TIA.125 days = 3 }
+			# unlock_military_industrial_organization_tooltip = mio:TIA_Winkler_Chamber_Commerce_organization
 		}
 		ai_will_do = {
 			factor = 1
@@ -2452,7 +2484,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
-			add_ideas = TIA_import_wheat
+			country_event = { id = TIA.125 days = 3 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -4810,6 +4842,10 @@ focus_tree = {
 				remove_idea = TIA_Funina_national_belief
 				add_idea = TIA_Funina_orthodoxy_established
 			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
+			}
 			hidden_effect = {
 				country_event = {
 					id = TIA_faith.1
@@ -4842,6 +4878,10 @@ focus_tree = {
 			remove_ideas = TIA_legitimate_dispute
 			add_ideas = TIA_water_court
 			unlock_decision_category_tooltip = TIA_water_court_decisions
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -4880,6 +4920,10 @@ focus_tree = {
 				target = FON
 				modifier = TIA_pilgrimage_concordat_opinion
 			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
+			}
 			custom_effect_tooltip = TIA_fontaine_pilgrimage_concordat_tt
 		}
 		ai_will_do = {
@@ -4909,6 +4953,10 @@ focus_tree = {
 			add_timed_idea = {
 				idea = TIA_southern_purification
 				days = 180
+			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
 			}
 			custom_effect_tooltip = TIA_suppress_southern_aqua_tt
 		}
@@ -4946,6 +4994,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
+			}
 			custom_effect_tooltip = TIA_sacred_land_development_tt
 		}
 		ai_will_do = {
@@ -4975,6 +5027,10 @@ focus_tree = {
 				remove_idea = TIA_Funina_orthodoxy_established
 				add_idea = TIA_Funina_orthodoxy_enforced
 			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
+			}
 			custom_effect_tooltip = TIA_quell_southern_unrest_tt
 		}
 		ai_will_do = {
@@ -4988,7 +5044,7 @@ focus_tree = {
 		relative_position_id = TIA_sacred_land_development
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = TIA_sacred_land_development
 		}
@@ -5015,7 +5071,7 @@ focus_tree = {
 		relative_position_id = TIA_quell_southern_unrest
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = TIA_quell_southern_unrest
 		}
@@ -5066,6 +5122,10 @@ focus_tree = {
 				add_idea = TIA_secularization_chaos
 			}
 			remove_ideas = TIA_legitimate_dispute
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
+			}
 			hidden_effect = {
 				country_event = { id = TIA_faith.10	days = 45 random_days = 45 }
 			}
@@ -5095,6 +5155,10 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = TIA_secularization_chaos
 				add_idea = TIA_secularization_transition
+			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
 			}
 			custom_effect_tooltip = TIA_weather_the_storm_tt
 		}
@@ -5128,6 +5192,10 @@ focus_tree = {
 				}
 				add_research_slot = 1
 			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
+			}
 			custom_effect_tooltip = TIA_age_of_reason_proclamation_tt
 		}
 		ai_will_do = {
@@ -5156,6 +5224,10 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = TIA_age_of_reason
 				add_idea = TIA_secular_tolerance
+			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
 			}
 			custom_effect_tooltip = TIA_freedom_of_faith_act_tt
 		}
@@ -5187,6 +5259,10 @@ focus_tree = {
 				remove_idea = TIA_age_of_reason
 				add_idea = TIA_state_atheism_spirit
 			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
+			}
 			custom_effect_tooltip = TIA_state_atheism_tt
 		}
 		ai_will_do = {
@@ -5200,7 +5276,7 @@ focus_tree = {
 		relative_position_id = TIA_freedom_of_faith_act
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = TIA_freedom_of_faith_act
 		}
@@ -5227,7 +5303,7 @@ focus_tree = {
 		relative_position_id = TIA_state_atheism
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = TIA_state_atheism
 		}
@@ -5276,6 +5352,10 @@ focus_tree = {
 				remove_idea = TIA_Akua_national_belief
 				add_idea = TIA_Aqua_orthodoxy_established
 			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
+			}
 			hidden_effect = {
 				country_event = { id = TIA_faith.20	days = 80 random_days = 40 }
 			}
@@ -5304,6 +5384,10 @@ focus_tree = {
 			remove_ideas = TIA_legitimate_dispute
 			add_ideas = TIA_divine_grace_mission_spirit
 			unlock_decision_category_tooltip = TIA_grace_mission_decisions
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -5332,6 +5416,10 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = TIA_Aqua_orthodoxy_established
 				add_idea = TIA_Aqua_militant_faith
+			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
 			}
 			custom_effect_tooltip = TIA_holy_conscription_tt
 		}
@@ -5364,6 +5452,10 @@ focus_tree = {
 				remove_idea = TIA_Aqua_orthodoxy_established
 				add_idea = TIA_Aqua_pragmatic_faith
 			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
+			}
 			custom_effect_tooltip = TIA_reconcile_northern_scholars_tt
 		}
 		ai_will_do = {
@@ -5387,6 +5479,10 @@ focus_tree = {
 			add_manpower = 30000
 			add_war_support = 0.05
 			custom_effect_tooltip = TIA_sacred_army_formation_tt
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
+			}
 			hidden_effect = {
 				load_oob = TIA_divine_guard
 			}
@@ -5419,6 +5515,10 @@ focus_tree = {
 				remove_idea = TIA_Aqua_pragmatic_faith
 				add_idea = TIA_Aqua_enlightened_faith
 			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_faith
+				days = 70
+			}
 			custom_effect_tooltip = TIA_aqua_cultural_renaissance_tt
 		}
 		ai_will_do = {
@@ -5432,7 +5532,7 @@ focus_tree = {
 		relative_position_id = TIA_sacred_army_formation
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = TIA_sacred_army_formation
 		}
@@ -5459,7 +5559,7 @@ focus_tree = {
 		relative_position_id = TIA_aqua_cultural_renaissance
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = TIA_aqua_cultural_renaissance
 		}
@@ -5503,6 +5603,10 @@ focus_tree = {
 				set_country_flag = TIA_health_reform_started
 				country_event = { id = TIA.137 days = 5 }
 			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_health
+				days = 70
+			}
 		}
 		ai_will_do = {
 			factor = 10
@@ -5534,6 +5638,10 @@ focus_tree = {
 				set_country_flag = TIA_field_medics_trained
 				country_event = { id = TIA.138 days = 5 }
 			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_health
+				days = 70
+			}
 		}
 		ai_will_do = {
 			factor = 5
@@ -5560,6 +5668,10 @@ focus_tree = {
 			add_political_power = 25
 			add_stability = 0.05
 			custom_effect_tooltip = TIA_quarantine_infrastructure_tt
+			add_days_mission_timeout = {
+				mission = TIA_countdown_health
+				days = 70
+			}
 			hidden_effect = {
 				set_country_flag = TIA_quarantine_built
 				random_owned_controlled_state = {
@@ -5602,6 +5714,10 @@ focus_tree = {
 			hidden_effect = {
 				set_country_flag = TIA_anne_health_done
 				country_event = { id = TIA.140 days = 5 }
+			}
+			add_days_mission_timeout = {
+				mission = TIA_countdown_health
+				days = 70
 			}
 		}
 		ai_will_do = {
