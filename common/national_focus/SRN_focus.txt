@@ -994,7 +994,7 @@ focus_tree = {
 		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
 	}
 	focus = {
-		id = SRN_National_Focus_two_guojiayoujilun
+		id = SRN_National_Focus_two_National_Corporatist_Committee
 		x = 3
 		y = 1
 		cost = 4.4
@@ -1013,11 +1013,14 @@ focus_tree = {
 				id = SRN_balance_of_power
 				set_default = yes
 			}
+			add_political_power = 100
+			unlock_decision_category_tooltip = SRN_decision_categories_Organic_State_Tension_Index
+			unlock_decision_tooltip = SRN_decision_National_Corporatist_Committee
 		}
 		relative_position_id = SRN_National_Focus_two_New_Economic_Policy
 	}
 	focus = {
-		id = SRN_National_Focus_two_hanweirenmin
+		id = SRN_National_Focus_two_Defense_of_the_People
 		x = -2
 		y = 1
 		cost = 4.4
@@ -1028,12 +1031,20 @@ focus_tree = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = SRN_National_Focus_two_guojiayoujilun
+			focus = SRN_National_Focus_two_National_Corporatist_Committee
 		}
-		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+		completion_reward = {
+			add_power_balance_value = {
+				id = SRN_balance_of_power
+				value = 0.1
+			}
+			#解锁国家精神
+			add_ideas = SRN_Defense_of_the_People_National_Spirit
+		}
+		relative_position_id = SRN_National_Focus_two_National_Corporatist_Committee
 	}
 	focus = {
-		id = SRN_National_Focus_two_qiulizuidishehuibaozhang
+		id = SRN_National_Focus_two_Establish_Minimum_Social_Security
 		x = -2
 		y = 2
 		cost = 4.4
@@ -1044,12 +1055,24 @@ focus_tree = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = SRN_National_Focus_two_hanweirenmin
+			focus = SRN_National_Focus_two_Defense_of_the_People
 		}
-		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+		completion_reward = {
+			add_power_balance_value = {
+				id = SRN_balance_of_power
+				value = 0.1
+			}
+        unlock_decision_tooltip = SRN_decision_Enact_Minimum_Wage_Standards
+		unlock_decision_tooltip = SRN_decision_Establish_National_Unemployment_Insurance_Fund
+		unlock_decision_tooltip = SRN_decision_Launch_Universal_Basic_Medical_Insurance
+		unlock_decision_tooltip = SRN_decision_Implement_Universal_Pension_Scheme
+		unlock_decision_tooltip = SRN_decision_Expand_Public_Housing_Security_Program
+		unlock_decision_tooltip = SRN_decision_Introduce_Basic_Food_and_Nutrition_Subsidies
+		}
+		relative_position_id = SRN_National_Focus_two_National_Corporatist_Committee
 	}
 	focus = {
-		id = SRN_National_Focus_two_gongpingyuzhengyi
+		id = SRN_National_Focus_two_Fairness_and_Justice
 		x = -2
 		y = 3
 		cost = 4.4
@@ -1060,25 +1083,44 @@ focus_tree = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = SRN_National_Focus_two_qiulizuidishehuibaozhang
+			focus = SRN_National_Focus_two_Establish_Minimum_Social_Security
 		}
-		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+		completion_reward = {
+			add_power_balance_value = {
+				id = SRN_balance_of_power
+				value = 0.1
+			}
+        unlock_decision_tooltip = SRN_decision_Enact_Equal_Education_Opportunity_Act
+		unlock_decision_tooltip = SRN_decision_Promote_Urban_Rural_Compulsory_Education_Integration
+		unlock_decision_tooltip = SRN_decision_Establish_Universal_Healthcare_Equity_Fund
+		unlock_decision_tooltip = SRN_decision_Eliminate_Regional_Healthcare_Inequality
+		unlock_decision_tooltip = SRN_decision_Strengthen_Community_Safety_and_Crime_Prevention
+		unlock_decision_tooltip = SRN_decision_Construct_Social_Safety_Net_Floor
+		}
+		relative_position_id = SRN_National_Focus_two_National_Corporatist_Committee
 	}
 	focus = {
-		id = SRN_National_Focus_two_youxingdedasho
+		id = SRN_National_Focus_two_The_Visible_Hand
 		x = 0
 		y = 1
 		cost = 4.4
 		continue_if_invalid = no
 		cancel_if_invalid = yes
-		#二阶段国家焦点 有型的大手
+		#二阶段国家焦点 有形的大手
 		ai_will_do = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = SRN_National_Focus_two_guojiayoujilun
+			focus = SRN_National_Focus_two_National_Corporatist_Committee
 		}
-		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+		completion_reward = {
+			add_power_balance_value = {
+				id = SRN_balance_of_power
+				value = 0.1
+			}
+            add_ideas = SRN_The_Visible_Hand_National_Spirit
+		}
+		relative_position_id = SRN_National_Focus_two_National_Corporatist_Committee
 	}
 	focus = {
 		id = SRN_National_Focus_two_zengjiagonggongsheshitouzi
@@ -1092,9 +1134,16 @@ focus_tree = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = SRN_National_Focus_two_youxingdedasho
+			focus = SRN_National_Focus_two_The_Visible_Hand
 		}
-		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+		completion_reward = {
+			add_power_balance_value = {
+				id = SRN_balance_of_power
+				value = 0.1
+			}
+
+		}
+		relative_position_id = SRN_National_Focus_two_National_Corporatist_Committee
 	}
 	focus = {
 		id = SRN_National_Focus_two_qingchutindebingdu
@@ -1110,7 +1159,14 @@ focus_tree = {
 		prerequisite = {
 			focus = SRN_National_Focus_two_zengjiagonggongsheshitouzi
 		}
-		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+		completion_reward = {
+			add_power_balance_value = {
+				id = SRN_balance_of_power
+				value = 0.1
+			}
+
+		}
+		relative_position_id = SRN_National_Focus_two_National_Corporatist_Committee
 	}
 	focus = {
 		id = SRN_National_Focus_two_dajiguatou
@@ -1124,9 +1180,16 @@ focus_tree = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = SRN_National_Focus_two_guojiayoujilun
+			focus = SRN_National_Focus_two_National_Corporatist_Committee
 		}
-		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+		completion_reward = {
+			add_power_balance_value = {
+				id = SRN_balance_of_power
+				value = 0.1
+			}
+
+		}
+		relative_position_id = SRN_National_Focus_two_National_Corporatist_Committee
 	}
 	focus = {
 		id = SRN_National_Focus_two_jiaqiangjishuguanliaopeiyang
@@ -1142,10 +1205,17 @@ focus_tree = {
 		prerequisite = {
 			focus = SRN_National_Focus_two_dajiguatou
 		}
-		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+		completion_reward = {
+			add_power_balance_value = {
+				id = SRN_balance_of_power
+				value = 0.1
+			}
+
+		}
+		relative_position_id = SRN_National_Focus_two_National_Corporatist_Committee
 	}
 	focus = {
-		id = SRN_National_Focus_two_guojiaxiaolyanjiuyuan
+		id = SRN_National_Focus_two_National_Efficiency_Research_Institute
 		x = 2
 		y = 3
 		cost = 4.4
@@ -1158,10 +1228,18 @@ focus_tree = {
 		prerequisite = {
 			focus = SRN_National_Focus_two_jiaqiangjishuguanliaopeiyang
 		}
-		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+		completion_reward = {
+			add_power_balance_value = {
+				id = SRN_balance_of_power
+				value = 0.1
+			}
+			#解锁国家精神
+            add_ideas = SRN_National_Efficiency_Research_Institute_National_Spirit
+		}
+		relative_position_id = SRN_National_Focus_two_National_Corporatist_Committee
 	}
 	focus = {
-		id = SRN_National_Focus_two_guojiayoujigongtongtixuanyan
+		id = SRN_National_Focus_two_Declaration_of_the_Organic_State_Community
 		x = 0
 		y = 4
 		cost = 4.4
@@ -1172,11 +1250,19 @@ focus_tree = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = SRN_National_Focus_two_gongpingyuzhengyi
+			focus = SRN_National_Focus_two_Fairness_and_Justice
 			focus = SRN_National_Focus_two_qingchutindebingdu
-			focus = SRN_National_Focus_two_guojiaxiaolyanjiuyuan
+			focus = SRN_National_Focus_two_National_Efficiency_Research_Institute
 		}
-		relative_position_id = SRN_National_Focus_two_guojiayoujilun
+		completion_reward = {
+			add_power_balance_value = {
+				id = SRN_balance_of_power
+				value = 0.1
+			}
+			#解锁国家精神
+            add_ideas = SRN_Declaration_of_the_Organic_State_Community_National_Spirit
+		}
+		relative_position_id = SRN_National_Focus_two_National_Corporatist_Committee
 	}
 	focus = {
 		id = SRN_National_Focus_two_Golden_Age_of_the_Corporatist_State
@@ -1190,12 +1276,13 @@ focus_tree = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = SRN_National_Focus_two_guojiayoujigongtongtixuanyan
+			focus = SRN_National_Focus_two_Declaration_of_the_Organic_State_Community
 		}
 		prerequisite = {
 			focus = SRN_National_Focus_two_NationalSolidarity
 		}
 		completion_reward = {
+			#解锁国家精神
             add_ideas = SRN_Golden_Age_of_the_Corporatist_State_National_Spirit
 		}
 		relative_position_id = SRN_National_Focus_two_New_Economic_Policy

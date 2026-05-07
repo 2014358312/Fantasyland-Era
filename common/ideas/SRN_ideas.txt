@@ -158,6 +158,86 @@ ideas = {
             }
 	    }
 
+	    SRN_National_Efficiency_Research_Institute_National_Spirit = { #国家效率研究院
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Efficiency_Research_Institute_National_Spirit
+			
+		    removal_cost = -1
+            modifier = {
+				political_power_cost = 0.1
+				production_factory_max_efficiency_factor = 0.1
+		        production_factory_efficiency_gain_factor = 0.1
+		        line_change_production_efficiency_factor = 0.1
+		        production_factory_start_efficiency_factor = 0.1
+		        production_lack_of_resource_penalty_factor = -0.1
+            }
+	    }
+	
+	    SRN_Defense_of_the_People_National_Spirit = { #捍卫人民
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_Defense_of_the_People_National_Spirit
+			
+		    removal_cost = -1
+            modifier = {
+				stability_weekly = 0.0005
+				war_support_weekly = 0.0005
+				power_balance_weekly = 0.01
+            }
+	    }
+
+	    SRN_The_Visible_Hand_National_Spirit = { #有型的大手
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_The_Visible_Hand_National_Spirit
+			
+		    removal_cost = -1
+            modifier = {
+				political_power_cost = 0.1
+				stability_factor = 0.2
+				war_support_factor = 0.2
+				consumer_goods_factor = -0.1
+				consumer_goods_expected_value = -0.1
+				power_balance_weekly = 0.01
+            }
+	    }
+
+	    SRN_Declaration_of_the_Organic_State_Community_National_Spirit = { #国家有机共同体宣言
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_Declaration_of_the_Organic_State_Community_National_Spirit
+			
+		    removal_cost = -1
+            modifier = {
+				stability_weekly_factor = 0.2
+				WAR_SUPPORT_WEEKLY_FACTOR = 0.2
+				surrender_limit = 0.1
+				max_surrender_limit_offset = 0.1
+				power_balance_weekly = 0.01
+            }
+	    }
+
 	    SRN_Golden_Age_of_the_Corporatist_State_National_Spirit = { #萨丁黄金时代
 			allowed = {
 				always = no
@@ -173,6 +253,7 @@ ideas = {
 				political_power_gain = 0.1
 				political_power_factor = 0.1
                 stability_factor = 0.1
+				party_popularity_stability_factor = 0.1
 				defensive_war_stability_factor = 0.1
 	            offensive_war_stability_factor = 0.1
 				war_support_factor = 0.1
@@ -272,6 +353,7 @@ ideas = {
 	            army_defence_factor = 0.05
 	            breakthrough_factor = 0.05
 				fascism_drift = 0.01
+				party_popularity_stability_factor = 0.1
 				defensive_war_stability_factor = 0.1
 	            offensive_war_stability_factor = 0.1
 				army_core_attack_factor = 0.1

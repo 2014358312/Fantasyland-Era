@@ -1,219 +1,439 @@
-NEB_constitution_reform_decision_category = {
-	NEB_committee_vots_on_constitutional_reform_proposal_mission = {
-		icon = eng_install_government
-		allowed = { always = yes }
-		available = {
-			hidden_trigger = {
-				has_completed_focus = NEB_premier_riefenstahl_013
-			}
-		}
-		activation = { always = no }
-		days_mission_timeout = 180
-		is_good = yes
-		timeout_effect = {
-			custom_effect_tooltip = NEB_committee_vots_on_constitutional_reform_proposal_mission_tt
-			hidden_effect = {
-				country_event = nebulis.1
-				NEB_constitution_event_killing_effect = yes
-			}
-		}
-		ai_will_do = {
-			factor = 200
-		}
-	}
+##################################################萨丁社会共和国
+#####国家法团委员会
+SRN_decision_categories_National_Corporate_Committee = {
+
 	
-	NEB_CR_guide_public_opinion_decision = {
-		icon = GFX_decision_eng_install_government
-		visible = {
-			has_completed_focus = NEB_premier_riefenstahl_001
-			OR = {
-				check_variable = {
-					var = NEB_CR_guide_public_opinion
-					value = 3
-					compare = greater_than_or_equals
-				}
-				NOT = { has_active_mission = NEB_committee_vots_on_constitutional_reform_proposal_mission }
-			}
-			NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
-		}
-		available = {
-			hidden_trigger = { always = no }
-			has_completed_focus = NEB_premier_riefenstahl_004
-			NEB_constitution_reform_progress = yes
-			custom_trigger_tooltip = {
-				tooltip = NEB_CR_guide_public_opinion_decision_ttt
-				check_variable = {
-					var = NEB_CR_guide_public_opinion
-					value = 3
-					compare = less_than
-				}
-			}
-		}
-		cost = 0
-	}
-	
-	NEB_CR_guide_public_opinion_1_decision = {
-		icon = GFX_decision_eng_install_government
-		visible = {
-			has_completed_focus = NEB_premier_riefenstahl_004
-			NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
-			NEB_constitution_reform_progress = yes
-			check_variable = {
-				var = NEB_CR_guide_public_opinion
-				value = 3
-				compare = less_than
-			}
-		}
-		available = {
-			has_completed_focus = NEB_premier_riefenstahl_004
-			NEB_constitution_reform_progress = yes
-			custom_trigger_tooltip = {
-				tooltip = NEB_CR_guide_public_opinion_decision_ttt
-				check_variable = {
-					var = NEB_CR_guide_public_opinion
-					value = 3
-					compare = less_than
-				}
-			}
-		}
-		fire_only_once = yes
-		cost = 15
-		complete_effect = {
-			NEB_constitution_noble_better_medium = yes
-			add_to_variable = { NEB_CR_guide_public_opinion = 1 }
-		}
-	}
-	
-	NEB_CR_guide_public_opinion_2_decision = {
-		icon = GFX_decision_eng_install_government
-		visible = {
-			has_completed_focus = NEB_premier_riefenstahl_004
-			NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
-			NEB_constitution_reform_progress = yes
-			check_variable = {
-				var = NEB_CR_guide_public_opinion
-				value = 3
-				compare = less_than
-			}
-		}
-		available = {
-			has_completed_focus = NEB_premier_riefenstahl_004
-			NEB_constitution_reform_progress = yes
-			custom_trigger_tooltip = {
-				tooltip = NEB_CR_guide_public_opinion_decision_ttt
-				check_variable = {
-					var = NEB_CR_guide_public_opinion
-					value = 3
-					compare = less_than
-				}
-			}
-		}
-		fire_only_once = yes
-		cost = 15
-		complete_effect = {
-			NEB_constitution_civil_service_better_medium = yes
-			add_to_variable = { NEB_CR_guide_public_opinion = 1 }
-		}
-	}
-	
-	NEB_CR_guide_public_opinion_3_decision = {
-		icon = GFX_decision_eng_install_government
-		visible = {
-			has_completed_focus = NEB_premier_riefenstahl_004
-			NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
-			NEB_constitution_reform_progress = yes
-			check_variable = {
-				var = NEB_CR_guide_public_opinion
-				value = 3
-				compare = less_than
-			}
-		}
-		available = {
-			has_completed_focus = NEB_premier_riefenstahl_004
-			NEB_constitution_reform_progress = yes
-			custom_trigger_tooltip = {
-				tooltip = NEB_CR_guide_public_opinion_decision_ttt
-				check_variable = {
-					var = NEB_CR_guide_public_opinion
-					value = 3
-					compare = less_than
-				}
-			}
-		}
-		fire_only_once = yes
-		cost = 15
-		complete_effect = {
-			NEB_constitution_mod_better_medium = yes
-			add_to_variable = { NEB_CR_guide_public_opinion = 1 }
-		}
-	}
-	
-	NEB_CR_guide_public_opinion_4_decision = {
-		icon = GFX_decision_eng_install_government
-		visible = {
-			has_completed_focus = NEB_premier_riefenstahl_004
-			NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
-			NEB_constitution_reform_progress = yes
-			check_variable = {
-				var = NEB_CR_guide_public_opinion
-				value = 3
-				compare = less_than
-			}
-		}
-		available = {
-			has_completed_focus = NEB_premier_riefenstahl_004
-			NEB_constitution_reform_progress = yes
-			custom_trigger_tooltip = {
-				tooltip = NEB_CR_guide_public_opinion_decision_ttt
-				check_variable = {
-					var = NEB_CR_guide_public_opinion
-					value = 3
-					compare = less_than
-				}
-			}
-		}
-		fire_only_once = yes
-		cost = 15
-		complete_effect = {
-			NEB_constitution_church_better_medium = yes
-			add_to_variable = { NEB_CR_guide_public_opinion = 1 }
-		}
-	}
-	
-	NEB_CR_guide_public_opinion_5_decision = {
-		icon = GFX_decision_eng_install_government
-		visible = {
-			has_completed_focus = NEB_premier_riefenstahl_004
-			NOT = { has_completed_focus = NEB_premier_riefenstahl_013 }
-			NEB_constitution_reform_progress = yes
-			check_variable = {
-				var = NEB_CR_guide_public_opinion
-				value = 3
-				compare = less_than
-			}
-		}
-		available = {
-			has_completed_focus = NEB_premier_riefenstahl_004
-			NEB_constitution_reform_progress = yes
-			custom_trigger_tooltip = {
-				tooltip = NEB_CR_guide_public_opinion_decision_ttt
-				check_variable = {
-					var = NEB_CR_guide_public_opinion
-					value = 3
-					compare = less_than
-				}
-			}
-		}
-		fire_only_once = yes
-		cost = 15
-		complete_effect = {
-			NEB_constitution_merchant_better_medium = yes
-			add_to_variable = { NEB_CR_guide_public_opinion = 1 }
-		}
-	}
+
 }
 
-NEB_faction_management_decision_category = {
-	
+#####有机国家张力指数
+SRN_decision_categories_Organic_State_Tension_Index = {
+###循环任务
+	SRN_decision_National_Corporatist_Committee = {
+	#国家机器腐化
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_National_Corporatist_Committee
+	}
+	allowed = {
+		original_tag = SRN
+	}
+	available = { #任务完成条件                          
+		always = no
+	}
+	activation = { #任务显示条件               
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_National_Corporatist_Committee
+	} 
+	is_good = yes
+	days_mission_timeout = 30 #任务时限天数
+	timeout_effect = {         
+		add_stability = -0.05
+		add_war_support = -0.05             
+			add_power_balance_value = {
+				id = SRN_balance_of_power
+				value = -0.1
+			}
+			activate_mission = SRN_decision_National_Corporatist_Committee         
+		}       
+	complete_effect = {
+		add_stability = -0.05
+		add_war_support = -0.05                    
+			add_power_balance_value = {
+				id = SRN_balance_of_power
+				value = -0.1
+			}   
+			activate_mission = SRN_decision_National_Corporatist_Committee       
+		}
+	}
+
+
+###单次决议
+#确定最低社会保障
+	SRN_decision_Enact_Minimum_Wage_Standards = {
+	#推行最低工资标准
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Establish_Minimum_Social_Security
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9
+            }
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		}	
+	}
+
+	SRN_decision_Establish_National_Unemployment_Insurance_Fund = {
+	#设立国家失业保险基金
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Establish_Minimum_Social_Security
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9
+            }
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		}	
+	}
+
+	SRN_decision_Launch_Universal_Basic_Medical_Insurance = {
+	#启动全民基本医疗保险
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Establish_Minimum_Social_Security
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9
+            }
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		}	
+	}
+
+	SRN_decision_Implement_Universal_Pension_Scheme = {
+	#实施普惠养老金制度
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Establish_Minimum_Social_Security
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9
+            }
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		}	
+	}
+
+	SRN_decision_Expand_Public_Housing_Security_Program = {
+	#扩大公共住房保障计划
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Establish_Minimum_Social_Security
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9
+            }
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+	    add_power_balance_value = {
+		    id = SRN_balance_of_power
+		    value = 0.05
+			}
+		}	
+	}
+
+	SRN_decision_Introduce_Basic_Food_and_Nutrition_Subsidies = {
+	#引入基本食物与营养补贴
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Establish_Minimum_Social_Security
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9   
+			} 
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		}	
+	}
+
+#公平与正义
+	SRN_decision_Enact_Equal_Education_Opportunity_Act = {
+	#实施教育机会均等法案
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Fairness_and_Justice
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9   
+			} 
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		}	
+	}
+
+	SRN_decision_Promote_Urban_Rural_Compulsory_Education_Integration = {
+	#推进义务教育城乡一体化
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Fairness_and_Justice
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9   
+			} 
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		}	
+	}
+
+	SRN_decision_Establish_Universal_Healthcare_Equity_Fund = {
+	#建立全民医疗公平基金
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Fairness_and_Justice
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9   
+			} 
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		}	
+	}
+
+	SRN_decision_Eliminate_Regional_Healthcare_Inequality = {
+	#消除医疗资源地区分配不公
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Fairness_and_Justice
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9   
+			} 
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		}	
+	}
+
+	SRN_decision_Strengthen_Community_Safety_and_Crime_Prevention = {
+	#强化社区公共安全与犯罪预防
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Fairness_and_Justice
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9   
+			} 
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		}	
+	}
+
+	SRN_decision_Construct_Social_Safety_Net_Floor = {
+	#构建社会安全兜底保障网
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Fairness_and_Justice
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9   
+			} 
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		}	
+	}
 }
 

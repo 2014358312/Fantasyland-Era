@@ -2,13 +2,19 @@
 SRN_decision_categories_National_Corporate_Committee = { #国家法团委员会
 	#icon = GAK_16lab_icon
 	#picture = GFX_decision_category_16_lab
-
+	visible = {
+		original_tag = SRN
+	}
 	allowed = {
 		original_tag = SRN
 	}
+	visible_when_empty = yes
 }
 SRN_decision_categories_Organic_State_Tension_Index = { #有机国家张力指数 权利平衡
-
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_National_Corporatist_Committee
+	}
 	allowed = {
 		original_tag = SRN
 	}
