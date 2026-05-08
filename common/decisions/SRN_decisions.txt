@@ -1,14 +1,98 @@
 ##################################################萨丁社会共和国
 #####国家法团委员会
 SRN_decision_categories_National_Corporate_Committee = {
+###重复决议
+#国家法团委员会
+	SRN_decision_Enforce_Standardized_Corporatist_Production = {
+	#推广法团标准化生产规范
+	icon = GFX_SRN_decision_National_Corporate_Committee
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        always = yes
+    }
+	ai_will_do = {
+		factor = 1
+	}
+	fire_only_once = no
+	cost = 50
+	days_remove = 100
+	days_re_enable = 30
+	modifier = {
+		production_factory_max_efficiency_factor = 0.1
+		production_factory_efficiency_gain_factor = 0.1
+		line_change_production_efficiency_factor = 0.1
+		production_factory_start_efficiency_factor = 0.1	
+	   	}		
+	}
 
-	
 
+	SRN_decision_Implement_Emergency_Corporatist_Production_Quotas = {
+	#实施法团企业紧急生产配额
+	icon = GFX_SRN_decision_National_Corporate_Committee
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        always = yes
+    }
+	ai_will_do = {
+		factor = 1
+	}
+	fire_only_once = no
+	cost = 50
+	days_remove = 100
+	days_re_enable = 30
+	modifier = {
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.1	
+	   	}	
+	}
+
+	SRN_decision_Mobilize_Corporatist_Worker_Efficiency_Drives = {
+	#动员法团技术工人效率攻关
+	icon = GFX_SRN_decision_National_Corporate_Committee
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
+	}
+    available = {
+        always = yes
+    }
+	ai_will_do = {
+		factor = 1
+	}
+	fire_only_once = no
+	cost = 50
+	days_remove = 100
+	days_re_enable = 30
+	modifier = {
+		production_speed_buildings_factor = 0.1
+		production_speed_nuclear_reactor_factor = 0.1
+		production_speed_arms_factory_factor = 0.1
+		production_speed_industrial_complex_factor = 0.1
+		production_speed_synthetic_refinery_factor = 0.1
+		production_speed_dockyard_factor = 0.1
+		production_speed_bunker_factor = 0.1
+		production_speed_naval_base_factor = 0.1
+		production_speed_infrastructure_factor = 0.1	
+	   	}	
+	}
 }
 
 #####有机国家张力指数
 SRN_decision_categories_Organic_State_Tension_Index = {
 ###循环任务
+#有机国家张力指数
 	SRN_decision_National_Corporatist_Committee = {
 	#国家机器腐化
 	icon = GFX_SRN_decision_Organic_State_Tension_Index
@@ -23,7 +107,7 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 		always = no
 	}
 	activation = { #任务显示条件               
-		original_tag = SRN
+        original_tag = SRN
 		has_completed_focus = SRN_National_Focus_two_National_Corporatist_Committee
 	} 
 	is_good = yes
@@ -80,6 +164,14 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 			id = SRN_balance_of_power
 			value = 0.05
 			}
+		442 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes 
+                }
+            }
 		}	
 	}
 
@@ -112,6 +204,14 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 			id = SRN_balance_of_power
 			value = 0.05
 			}
+		443 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes 
+                }
+            }
 		}	
 	}
 
@@ -144,6 +244,14 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 			id = SRN_balance_of_power
 			value = 0.05
 			}
+		444 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes 
+                }
+            }
 		}	
 	}
 
@@ -176,6 +284,14 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 			id = SRN_balance_of_power
 			value = 0.05
 			}
+		445 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes 
+                }
+            }
 		}	
 	}
 
@@ -208,6 +324,14 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 		    id = SRN_balance_of_power
 		    value = 0.05
 			}
+		446 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes 
+                }
+            }
 		}	
 	}
 
@@ -240,6 +364,14 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 			id = SRN_balance_of_power
 			value = 0.05
 			}
+		447 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes 
+                }
+            }
 		}	
 	}
 
@@ -273,6 +405,14 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 			id = SRN_balance_of_power
 			value = 0.05
 			}
+		449 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+                }
+            }
 		}	
 	}
 
@@ -305,6 +445,14 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 			id = SRN_balance_of_power
 			value = 0.05
 			}
+		449 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+                }
+            }
 		}	
 	}
 
@@ -337,6 +485,14 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 			id = SRN_balance_of_power
 			value = 0.05
 			}
+		450 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+                }
+            }
 		}	
 	}
 
@@ -369,6 +525,14 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 			id = SRN_balance_of_power
 			value = 0.05
 			}
+		450 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+                }
+            }
 		}	
 	}
 
@@ -401,6 +565,14 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 			id = SRN_balance_of_power
 			value = 0.05
 			}
+		447 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+                }
+            }
 		}	
 	}
 
@@ -433,6 +605,248 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 			id = SRN_balance_of_power
 			value = 0.05
 			}
+		447 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+                }
+            }
+		}	
+	}
+
+#打击寡头
+	SRN_decision_Confiscate_Oligarchs_Illegal_Assets_to_State_Treasury = {
+	#没收寡头非法资产并移交国家财政
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Crackdown_on_Oligarchs
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9   
+			} 
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+		    }
+		443 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes 
+                }
+            }
+		}	
+	}
+
+	SRN_decision_Implement_Highly_Progressive_Inheritance_Tax_System = {
+	#实施高额累进遗产税制度
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Crackdown_on_Oligarchs
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9   
+			} 
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		443 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes 
+                }
+            }
+		}	
+	}
+
+	SRN_decision_Mandate_Excess_Inheritance_Transfer_to_Social_Security_Fund = {
+	#超额遗产强制转入社会保障基金
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Crackdown_on_Oligarchs
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9   
+			} 
+        }
+    }
+	ai_will_do = {
+		factor = 3
+	}
+	fire_only_once = yes
+	cost = 50
+	days_remove = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		442 = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes 
+                }
+            }
+		}	
+	}
+
+###重复决议
+#清除体内病毒
+	SRN_decision_Establish_National_Independent_Anti_Corruption_Commission = {
+	#设立国家独立反腐败监察署
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Purge_Internal_Sickness
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9   
+			} 
+			has_stability > 0.9 #稳定度大于或小于多少
+	        has_war_support > 0.9 #战争支持度大于或小于多少
+        }
+    }
+	ai_will_do = {
+		factor = 1
+	}
+	fire_only_once = no
+	cost = 50
+	days_remove = 30
+	days_re_enable = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		add_stability = 0.05
+	    add_war_support = 0.05
+		}	
+	}
+
+	SRN_decision_Enforce_Mandatory_Asset_Disclosure_for_Officials = {
+	#推行公职人员财产强制申报与公开
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Purge_Internal_Sickness
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9   
+			} 
+			has_stability > 0.9 #稳定度大于或小于多少
+	        has_war_support > 0.9 #战争支持度大于或小于多少
+        }
+    }
+	ai_will_do = {
+		factor = 1
+	}
+	fire_only_once = no
+	cost = 50
+	days_remove = 30
+	days_re_enable = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		add_stability = 0.05
+	    add_war_support = 0.05
+		}	
+	}
+
+	SRN_decision_Initiate_Deep_Government_Self_Purification_Operation = {
+	#启动政府机构深度自我净化行动
+	icon = GFX_SRN_decision_Organic_State_Tension_Index
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_Purge_Internal_Sickness
+	}
+	allowed = {
+		original_tag = SRN
+	}
+    available = {
+        NOT = {
+            power_balance_value = {
+                id = SRN_balance_of_power
+                value > 0.9   
+			} 
+			has_stability > 0.9 #稳定度大于或小于多少
+	        has_war_support > 0.9 #战争支持度大于或小于多少
+        }
+    }
+	ai_will_do = {
+		factor = 1
+	}
+	fire_only_once = no
+	cost = 50
+	days_remove = 30
+	days_re_enable = 30
+	remove_effect = {
+		add_power_balance_value = {
+			id = SRN_balance_of_power
+			value = 0.05
+			}
+		add_stability = 0.05
+	    add_war_support = 0.05
 		}	
 	}
 }

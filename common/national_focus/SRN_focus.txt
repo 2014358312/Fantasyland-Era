@@ -46,7 +46,7 @@ focus_tree = {
 				type = annex_everything
 			}
 			add_manpower = 20000
-			add_country_leader_trait = SRN_weituoliaoweintuo_xiongyingxingdong
+			add_country_leader_trait = SRN_traits_Grand_Eagle_Operation
 		}
 	}
 	focus = {
@@ -488,7 +488,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = SRN_National_Focus_one_shuyusadingdeshengli_custom_effect_tooltip
-			remove_country_leader_trait = SRN_weituoliaoweintuo_xiongyingxingdong
+			remove_country_leader_trait = SRN_traits_Grand_Eagle_Operation
 		}
 		relative_position_id = SRN_National_Focus_one_xiongyingxingdong
 	}
@@ -649,6 +649,9 @@ focus_tree = {
 				#缺乏资源时的产线惩罚
 				SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = -0.05
 			}
+        unlock_decision_tooltip = SRN_decision_Enforce_Standardized_Corporatist_Production
+		unlock_decision_tooltip = SRN_decision_Implement_Emergency_Corporatist_Production_Quotas
+		unlock_decision_tooltip = SRN_decision_Mobilize_Corporatist_Worker_Efficiency_Drives
 		}
 		relative_position_id = SRN_National_Focus_two_New_Economic_Policy
 	}
@@ -674,6 +677,22 @@ focus_tree = {
 				#添加的民族精神
 				add_ideas = SRN_Labor_Glory_Charter_National_Spirit
 			}
+            453 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes 
+                } 
+            }
+            450 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes 
+                } 
+            }
 		}
 		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
 	}
@@ -704,12 +723,28 @@ focus_tree = {
 			}
 			add_to_variable = {
 				#地区最大工业值%
-				SRN_guojiafatuanzhuyijingji_global_building_slots_factor = 0.1
+				SRN_guojiafatuanzhuyijingji_global_building_slots_factor = 0.2
 			}
 			add_to_variable = {
 				#地区建筑槽位数量
-				SRN_guojiafatuanzhuyijingji_global_building_slots = 1
+				SRN_guojiafatuanzhuyijingji_global_building_slots = 2
 			}
+            445 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes 
+                } 
+            }
+            446 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes 
+                } 
+            }
 		}
 		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
 	}
@@ -751,6 +786,14 @@ focus_tree = {
 				#缺乏资源时的产线惩罚
 				SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = -0.05
 			}
+            443 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = nuclear_reactor
+                    level = 1
+                    instant_build = yes 
+                } 
+            }
 		}
 		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
 	}
@@ -770,6 +813,34 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = SRN_Bureau_of_National_Corporatist_Regulation_National_Spirit
+			445 = {
+                add_building_construction = {
+                type = fuel_silo #储油罐
+                level = 2
+                instant_build = yes 
+                }
+            }	
+			445 = {
+                add_building_construction = {
+                type = synthetic_refinery #合成炼油厂
+                level = 1
+                instant_build = yes 
+                }
+            }
+			446 = {
+                add_building_construction = {
+                type = fuel_silo #储油罐
+                level = 2
+                instant_build = yes 
+                }
+            }
+			446 = {
+                add_building_construction = {
+                type = synthetic_refinery #合成炼油厂
+                level = 1
+                instant_build = yes 
+                }
+            }
 		}
 		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
 	}
@@ -809,6 +880,24 @@ focus_tree = {
 			add_to_variable = {
 				#缺乏资源时的产线惩罚
 				SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = -0.05
+			}
+			445 = { 
+				set_state_category = megalopolis 
+			}
+			446 = { 
+				set_state_category = megalopolis 
+			}
+			447 = { 
+				set_state_category = megalopolis 
+			}
+			448 = { 
+				set_state_category = megalopolis 
+			}
+			449 = { 
+				set_state_category = megalopolis 
+			}
+			450 = { 
+				set_state_category = megalopolis 
 			}
 		}
 		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
@@ -880,6 +969,22 @@ focus_tree = {
 			}
 			add_stability = -0.2
 			add_political_power = 50
+			445 = {
+				add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                type = industrial_complex
+                level = 2
+                instant_build = yes 
+                }
+            }	
+		    448 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                type = industrial_complex
+                level = 2
+                instant_build = yes 
+                }
+            }	
 		}
 		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
 	}
@@ -920,6 +1025,8 @@ focus_tree = {
 				#缺乏资源时的产线惩罚
 				SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = -0.05
 			}
+			#解锁国家精神
+            add_ideas = SRN_class_conciliation_canteen_National_Spirit
 		}
 		relative_position_id = SRN_National_Focus_two_Reform_of_the_Fascist_Corporation
 	}
@@ -1141,12 +1248,121 @@ focus_tree = {
 				id = SRN_balance_of_power
 				value = 0.1
 			}
-
+		    442 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+				}
+            }	
+		    443 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+				}
+            }
+		    444 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+				}
+            }
+		    445 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+				}
+            }
+		    446 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+				}
+            }
+		    447 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+				}
+            }
+		    448 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+				}
+            }
+		    449 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+				}
+            }
+		    450 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+				}
+            }
+		    453 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes 
+				}
+			}
+		    449 = {
+			    add_resource = {
+				    type = steel
+				    amount = 60
+			    }   
+            }
+		    448 = {
+			    add_resource = {
+				    type = steel
+				    amount = 80
+			    }   
+            }
+		    447 = {
+			    add_resource = {
+				    type = oil
+				    amount = 200
+			    }   
+            }
+		    443 = {
+			    add_resource = {
+				    type = aluminium
+				    amount = 40
+			    }   
+            }
+		    442 = {
+			    add_resource = {
+				    type = chromium
+				    amount = 40
+			    }   
+            }
 		}
 		relative_position_id = SRN_National_Focus_two_National_Corporatist_Committee
 	}
 	focus = {
-		id = SRN_National_Focus_two_qingchutindebingdu
+		id = SRN_National_Focus_two_Purge_Internal_Sickness
 		x = 0
 		y = 3
 		cost = 4.4
@@ -1164,12 +1380,14 @@ focus_tree = {
 				id = SRN_balance_of_power
 				value = 0.1
 			}
-
+        unlock_decision_tooltip = SRN_decision_Establish_National_Independent_Anti_Corruption_Commission
+		unlock_decision_tooltip = SRN_decision_Enforce_Mandatory_Asset_Disclosure_for_Officials
+		unlock_decision_tooltip = SRN_decision_Initiate_Deep_Government_Self_Purification_Operation
 		}
 		relative_position_id = SRN_National_Focus_two_National_Corporatist_Committee
 	}
 	focus = {
-		id = SRN_National_Focus_two_dajiguatou
+		id = SRN_National_Focus_two_Crackdown_on_Oligarchs
 		x = 2
 		y = 1
 		cost = 4.4
@@ -1187,12 +1405,14 @@ focus_tree = {
 				id = SRN_balance_of_power
 				value = 0.1
 			}
-
+        unlock_decision_tooltip = SRN_decision_Confiscate_Oligarchs_Illegal_Assets_to_State_Treasury
+		unlock_decision_tooltip = SRN_decision_Implement_Highly_Progressive_Inheritance_Tax_System
+		unlock_decision_tooltip = SRN_decision_Mandate_Excess_Inheritance_Transfer_to_Social_Security_Fund
 		}
 		relative_position_id = SRN_National_Focus_two_National_Corporatist_Committee
 	}
 	focus = {
-		id = SRN_National_Focus_two_jiaqiangjishuguanliaopeiyang
+		id = SRN_National_Focus_two_Strengthen_Technocrats
 		x = 2
 		y = 2
 		cost = 4.4
@@ -1203,14 +1423,23 @@ focus_tree = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = SRN_National_Focus_two_dajiguatou
+			focus = SRN_National_Focus_two_Crackdown_on_Oligarchs
 		}
 		completion_reward = {
 			add_power_balance_value = {
 				id = SRN_balance_of_power
 				value = 0.1
 			}
-
+			#解锁国家精神
+            add_ideas = SRN_Strengthen_Technocrats_National_Spirit
+            446 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = nuclear_reactor
+                    level = 1
+                    instant_build = yes 
+                } 
+            }
 		}
 		relative_position_id = SRN_National_Focus_two_National_Corporatist_Committee
 	}
@@ -1226,7 +1455,7 @@ focus_tree = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = SRN_National_Focus_two_jiaqiangjishuguanliaopeiyang
+			focus = SRN_National_Focus_two_Strengthen_Technocrats
 		}
 		completion_reward = {
 			add_power_balance_value = {
@@ -1251,7 +1480,7 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = SRN_National_Focus_two_Fairness_and_Justice
-			focus = SRN_National_Focus_two_qingchutindebingdu
+			focus = SRN_National_Focus_two_Purge_Internal_Sickness
 			focus = SRN_National_Focus_two_National_Efficiency_Research_Institute
 		}
 		completion_reward = {
@@ -1284,6 +1513,7 @@ focus_tree = {
 		completion_reward = {
 			#解锁国家精神
             add_ideas = SRN_Golden_Age_of_the_Corporatist_State_National_Spirit
+			add_country_leader_trait = SRN_traits_Peoples_Corporatist_Economy
 		}
 		relative_position_id = SRN_National_Focus_two_New_Economic_Policy
 	}
