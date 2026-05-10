@@ -1,31 +1,414 @@
 ﻿capital = 443
 
-set_research_slots = 2
+##################################################萨丁社会共和国
+set_research_slots = 4
 set_convoys = 80
 set_stability = 0.65
-set_war_support = 0.35
+set_war_support = 0.8
 starting_train_buffer = 2.0
 
-set_technology = {
+#开局军队设置
+set_oob = SRN_1000 #陆军
+set_air_oob = SRN_1000_air #空军
+set_naval_oob = SRN_1000_naval #海军
+
+set_technology = { #初始科技
+    #步枪
+    infantry_weapons = 1
+    infantry_weapons1 = 1
+    infantry_weapons2 = 1
+    support_weapons = 1
+	support_weapons2 = 1
+	tech_trucks = 1
+    motorised_infantry = 1
 	basic_train = 1
-	### Infantry ###
-	infantry_weapons = 1
-	infantry_weapons1 = 1
+	militia_tech = 1 #民兵
+    #支援
 	tech_support = 1
 	tech_engineers = 1
+	tech_military_police = 1
+    #火炮
+    interwar_antiair = 1
+    interwar_antitank = 1
+	gw_artillery = 1
+	interwar_artillery = 1
+	artillery1 = 1
+	###海军
+    #潜艇
+	early_ship_hull_submarine = 1
+	basic_ship_hull_submarine = 1
+    #鱼雷
+	basic_torpedo = 1
+	improved_ship_torpedo_launcher = 1
+	magnetic_detonator = 1
+	#驱逐
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	#驱逐配件
+	sonar = 1
+	improved_sonar = 1
+	smoke_generator = 1
+	basic_depth_charges = 1
+	basic_battery = 1
+	#舰炮
+	basic_light_battery = 1
+	basic_light_shell = 1
+	basic_medium_battery = 1
+	#运输
+	mtg_transport = 1
+	###飞机
+	#轻型
+	iw_small_airframe = 1
+	basic_small_airframe = 1
+	#配件
+	engines_1 = 1
+	engines_2 = 1
+	aa_lmg = 1
+	early_bombs = 1
+	armor_piercing_bombs = 1
+	range_improvements = 1
+	###工业
+	#工程学
+	electronic_mechanical_engineering = 1
+	radio = 1
+	mechanical_computing = 1
+	#工业
+	basic_machine_tools = 1
+	construction1 = 1
+	excavation1 = 1
 }
 
-recruit_character = SRN_Vittorio_Veneto
+#静态国家精神
+add_ideas = {
+	SRN_faxisgemingshiyuandi_National_Spirit
+    SRN_minzhudezhongjie_National_Spirit
+	SRN_shodaokongzhidegongrenyundong_National_Spirit
+	SRN_guojiafaxisidang_head_of_government_character
+    SRN_faxisiducai_National_Spirit
+    limited_conscription #有限征兵制
+    partial_economic_mobilisation #部分经济动员
+}
 
+#####动态变量
+#副手
+set_variable = { #萨丁社会共和国_国家法西斯党
+	ROOT.FE_secondary = token:SRN_guojiafaxisidang_head_of_government_character
+}
+
+#国家安全志愿军（动态国家精神）
+add_dynamic_modifier = { #解锁动态国家精神
+    modifier = SRN_guojiaanquanzhiyuanjun_National_Spirit
+}
+set_variable = { #政治点消耗
+	SRN_guojiaanquanzhiyuanjun_political_power_cost = 0.1
+}
+set_variable = { #民兵攻击
+	SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_attack_factor = 0.05
+}
+set_variable = { #民兵防御
+	SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_defence_factor = 0.05
+}
+set_variable = { #民兵速度
+	SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_speed_factor = 0.05
+}
+set_variable = { #驻军需求
+	SRN_guojiaanquanzhiyuanjun_required_garrison_factor = -0.1
+}
+set_variable = { #陆军核心攻击
+	SRN_guojiaanquanzhiyuanjun_army_core_attack_factor = 0.05
+}
+set_variable = { #陆军核心防御
+	SRN_guojiaanquanzhiyuanjun_army_core_defence_factor = 0.05
+}
+set_variable = { #随行补给
+	SRN_guojiaanquanzhiyuanjun_no_supply_grace = 12
+}
+set_variable = { #补给消耗
+	SRN_guojiaanquanzhiyuanjun_supply_consumption_factor = -0.05
+}
+set_variable = { #补给耗尽时受到的惩罚降低
+	SRN_guojiaanquanzhiyuanjun_out_of_supply_factor = -0.1
+}
+set_variable = { #位于核心地块补给耗尽时的惩罚降低
+	SRN_guojiaanquanzhiyuanjun_supply_combat_penalties_on_core_factor = -0.1
+}
+set_variable = { #补给范围
+	SRN_guojiaanquanzhiyuanjun_supply_node_range = 0.05
+}
+set_variable = { #卡车损耗
+	SRN_guojiaanquanzhiyuanjun_truck_attrition_factor = -0.1
+}
+
+#黑衫军（动态国家精神）
+add_dynamic_modifier = { #解锁动态国家精神
+    modifier = SRN_heshanjun_National_Spirit
+}
+set_variable = { #政治点消耗
+	SRN_heshanjun_political_power_cost = 0.1
+}
+set_variable = { #位于堑壕中的侦察值
+	SRN_heshanjun_recon_factor_while_entrenched = 0.1
+}
+set_variable = { #堑壕速度
+    SRN_heshanjun_dig_in_speed_factor = 0.05
+}
+set_variable = { #最大堑壕
+	SRN_heshanjun_max_dig_in_factor = 0.05
+}
+set_variable = { #最大堑壕%
+	SRN_heshanjun_max_dig_in = 5
+}
+set_variable = { #计划速度
+	SRN_heshanjun_planning_speed = -0.1
+}
+set_variable = { #计划上限%
+	SRN_heshanjun_max_planning_factor = -0.1
+}
+set_variable = { #计划上限
+	SRN_heshanjun_max_planning = -0.2
+}
+set_variable = { #炮兵攻击
+	SRN_heshanjun_army_artillery_attack_factor = -0.1
+}
+set_variable = { #炮兵防御
+	SRN_heshanjun_army_artillery_defence_factor = -0.1
+}
+set_variable = { #步兵攻击
+	SRN_heshanjun_army_infantry_attack_factor = 0.05
+}
+set_variable = { #步兵防御
+	SRN_heshanjun_army_infantry_defence_factor = 0.05
+}
+set_variable = { #陆军组织度%
+	SRN_heshanjun_army_org_factor = 0.05
+}
+set_variable = { #陆军组织度
+	SRN_heshanjun_army_org = 1
+}
+set_variable = { #组织度恢复%
+	SRN_heshanjun_army_morale_factor = 0.05
+}
+set_variable = { #组织度恢复
+	SRN_heshanjun_army_morale = 1
+}
+
+#国家法团主义经济（动态国家精神）
+add_dynamic_modifier = { #解锁动态国家精神
+    modifier = SRN_guojiafatuanzhuyijingji_National_Spirit
+}
+set_variable = { #工厂产出
+	SRN_guojiafatuanzhuyijingji_industrial_capacity_factory = 0.05
+}
+set_variable = { #船坞产出
+	SRN_guojiafatuanzhuyijingji_industrial_capacity_dockyard = 0.05
+}
+set_variable = { #生活消费品系数
+	SRN_guojiafatuanzhuyijingji_consumer_goods_factor = 0.2
+}
+set_variable = { #生活消费品期望
+	SRN_guojiafatuanzhuyijingji_consumer_goods_expected_value = 0.2
+}
+set_variable = { #生产效率上限
+    SRN_guojiafatuanzhuyijingji_production_factory_max_efficiency_factor = -0.4
+}
+set_variable = { #生产效率增长
+	SRN_guojiafatuanzhuyijingji_production_factory_efficiency_gain_factor = -0.4
+}
+set_variable = { #生产效率保持
+	SRN_guojiafatuanzhuyijingji_line_change_production_efficiency_factor = -0.4
+}
+set_variable = { #基础生产效率
+	SRN_guojiafatuanzhuyijingji_production_factory_start_efficiency_factor = -0.4
+}
+set_variable = { #缺乏资源时的产线惩罚
+	SRN_guojiafatuanzhuyijingji_production_lack_of_resource_penalty_factor = 0.4
+}
+set_variable = { #战略资源获取率
+	SRN_guojiafatuanzhuyijingji_local_resources_factor = 0.05
+}
+set_variable = { #地区最大工业值%
+	SRN_guojiafatuanzhuyijingji_global_building_slots_factor = 0.1
+}
+set_variable = { #地区建筑槽位数量
+	SRN_guojiafatuanzhuyijingji_global_building_slots = 1
+}
+set_variable = { #建造速度
+	SRN_guojiafatuanzhuyijingji_production_speed_buildings_factor = 0.05
+}
+
+#法西斯大委员会（动态国家精神）
+set_variable = { #黑色意识形态增加
+	SRN_faxisidaweiyuanhui_fascism_drift = 0.05
+}
+set_variable = { #意识形态抵制力度
+	SRN_faxisidaweiyuanhui_drift_defence_factor = 0.2
+}
+set_variable = { #每日政治点增加%
+	SRN_faxisidaweiyuanhui_political_power_factor = 0.1
+}
+set_variable = { #每日政治点增加
+	SRN_faxisidaweiyuanhui_political_power_gain = 0.1
+}
+set_variable = { #每日政治点消耗
+    SRN_faxisidaweiyuanhui_political_power_cost = -0.1
+}
+set_variable = { #稳定度
+	SRN_faxisidaweiyuanhui_stability_factor = -0.2
+}
+set_variable = { #战争支持度
+	SRN_faxisidaweiyuanhui_war_support_factor = -0.2
+}
+set_variable = { #建造速度
+	SRN_faxisidaweiyuanhui_production_speed_buildings_factor = 0.05
+}
+
+#####领袖
+#领袖
+recruit_character = SRN_weituoliaoweintuo_lingxiu
+#####开局将领
+###海军将领
+#潜艇
+recruit_character = SRN_balakalashangxiao
+recruit_character = SRN_tuolichaili
+recruit_character = SRN_laiangnaduodafenqi
+recruit_character = SRN_jiaosuaikaerduqi
+recruit_character = SRN_weituoliaoweinibeierdi
+recruit_character = SRN_pangpeimageruo
+recruit_character = SRN_adiliaoleigeluo
+recruit_character = SRN_longqibing
+recruit_character = SRN_aerfuleiduoaoliyani
+###海军将领
+#巡洋
+recruit_character = SRN_nabuleisi
+recruit_character = SRN_zhala
+recruit_character = SRN_bola
+recruit_character = SRN_geliqiya
+recruit_character = SRN_deliyasite
+recruit_character = SRN_boerzharuo
+recruit_character = SRN_abuluqigongjue
+recruit_character = SRN_batuoluomeiaokelaiaoni
+recruit_character = SRN_aerbeituodizhusairuo
+#战列
+recruit_character = SRN_lituoliao
+recruit_character = SRN_makeboluo
+recruit_character = SRN_lafeer
+recruit_character = SRN_weituoliaoweintuo
+recruit_character = SRN_luoma
+recruit_character = SRN_zhuliaokaisa
+recruit_character = SRN_andelieyaduoliya
+recruit_character = SRN_fulangxisikekalaqiaoluo
+#航母
+recruit_character = SRN_diguo
+recruit_character = SRN_tianying
+
+#刷装备
+#陆军
+add_equipment_to_stockpile = { #开局装备
+    type = motorized_equipment_1 #卡车
+    amount = 150
+}
+add_equipment_to_stockpile = { #开局装备
+    type = infantry_equipment_1 #步枪
+    amount = 4000
+}
+add_equipment_to_stockpile = { #开局装备
+    type = support_equipment_1 #支援装备
+    amount = 200
+}
+add_equipment_to_stockpile = { #开局装备
+    type = train_equipment_1 #民用火车
+    amount = 30
+}
+add_equipment_to_stockpile = { #开局装备
+    type = artillery_equipment_2 #火炮
+    amount = 50
+}
+add_equipment_to_stockpile = { #开局装备
+    type = anti_air_equipment_1 #防空炮
+    amount = 50
+}
+
+#海军
+add_equipment_to_stockpile = { #开局装备
+    type = convoy_1 #运输船
+    amount = 400
+}
+
+#空军
+add_equipment_to_stockpile = { #开局装备
+	type = small_plane_airframe_1
+	producer = "SRN" 
+	amount = 100
+	variant_name = "射手座"
+}
+
+add_equipment_to_stockpile = { #开局装备
+	type = small_plane_cas_airframe_1
+	producer = "SRN" 
+	amount = 100
+	variant_name = "金牛座"
+}
+
+#开局意识形态
 set_politics = {
 	ruling_party = fascism
 	elections_allowed = no
 }
 
+#开局意识形态占比
 set_popularities = {
-	democratic = 3
-	neutrality = 95
-	communism = 1
-	fascism = 1
+	democratic = 4
+	neutrality = 4
+	communism = 4
+	fascism = 88
+}
+
+#开局空军装备设计
+create_equipment_variant = { #制空战机
+	name = "射手座"
+	type = small_plane_airframe_1
+	design_team = mio:SRN_lieyingzhandoujilianheti_organization
+	modules = {
+		fixed_main_weapon_slot = light_mg_4x #主要武器
+		fixed_auxiliary_weapon_slot_1 = light_mg_4x #副武器
+		engine_type_slot = engine_2_1x #引擎
+		special_type_slot_1 = fuel_tanks_small #特殊功能
+		special_type_slot_2 = drop_tanks #特殊功能
+	}
+}
+create_equipment_variant = { #支援战机
+	name = "金牛座"
+	type = small_plane_cas_airframe_1
+	design_team = mio:SRN_fuchongzhiyinggongjijilianmeng_organization
+	modules = {
+		fixed_main_weapon_slot = bomb_locks #主要武器
+		fixed_auxiliary_weapon_slot_1 = bomb_locks #副武器
+		engine_type_slot = engine_2_1x #引擎
+		special_type_slot_1 = fuel_tanks_small #特殊功能
+	}
+}
+
+#开局空军装备设计
+create_equipment_variant = { #潜艇
+	name = "SS—2"
+	type = ship_hull_submarine_2
+	design_team = mio:SRN_guojiaqiantingshejilianheti_organization
+	modules = {
+		fixed_ship_engine_slot = sub_ship_engine_2 #引擎
+		front_1_custom_slot = ship_torpedo_sub_2 #舰首自选装备1
+		fixed_ship_torpedo_slot = ship_torpedo_sub_2 #鱼雷
+	}
+}
+create_equipment_variant = { #驱逐
+	name = "DD—2"
+	type = ship_hull_light_2
+	design_team = mio:SRN_qingxingshuimianjiantingshejiju_organization
+	modules = {
+		fixed_ship_engine_slot = sub_ship_engine_2 #引擎
+		front_1_custom_slot = ship_torpedo_sub_2 #舰首自选装备1
+		front_2_custom_slot = ship_torpedo_sub_2 #舰首自选装备2
+		fixed_ship_torpedo_slot = ship_torpedo_sub_2 #鱼雷
+		fixed_ship_battery_slot = ship_light_battery_2 #轻炮
+	}
 }
 

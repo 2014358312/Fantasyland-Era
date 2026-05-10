@@ -1,0 +1,163 @@
+SRN_balance_of_power = { #有机国家张力指数
+	##################################################萨丁社会共和国
+	initial_value = -1 
+	left_side = SRN_quanlipinghen_zuihuaidexiaoguo_side #左侧名称 有机国家的解耦
+	right_side = SRN_quanlipinghen_zuihaodexiaoguo_side #右侧名称 完美的有机谐律
+	decision_category = SRN_decision_categories_Organic_State_Tension_Index #下面决议的大类别，决议和普通决议一样
+	range = { #中间
+		id = SRN_quanlipinghen_jiejihezshenghuatuise_range #阶级合作神话褪色
+		min = -0.2
+		max = 0.2
+		modifier = {
+			    political_power_factor = -0.05
+				mobilization_speed = -0.05
+				stability_factor = -0.05
+	            stability_weekly = -0.0005
+	            stability_weekly_factor = -0.05
+		        consumer_goods_factor = 0.05
+		        consumer_goods_expected_value = 0.05
+		        min_export = 0.05
+		        production_factory_max_efficiency_factor = -0.05
+		        production_factory_efficiency_gain_factor = -0.05
+		        line_change_production_efficiency_factor = -0.05
+		        production_factory_start_efficiency_factor = -0.05
+		        production_lack_of_resource_penalty_factor = 0.05
+		        industrial_capacity_factory = -0.05
+		        industrial_capacity_dockyard = -0.05
+		        FACTORY_ENERGY_CONSUMPTION = 0.05
+		        industrial_capacity_dockyard_powered = -0.05
+                industrial_capacity_factory_powered = -0.05
+                out_of_power_impact_factor = -0.05
+                production_speed_buildings_powered_factor = -0.05
+                energy_gain_factor = -0.05
+		        local_factory_energy_consumption = 0.05
+		}
+	}
+	
+	side = { #左边
+		id = SRN_quanlipinghen_zuihuaidexiaoguo_side #有机国家的解耦
+		icon = GFX_bop_SRN_quanlipinghen_zuihuaidexiaoguo_side
+		range = {
+			id = SRN_quanlipinghen_wanquanjieou_side_trust #完全解耦
+			min = -1
+			max = -0.8
+			modifier = {
+			    political_power_factor = -0.15
+				mobilization_speed = -0.15
+				stability_factor = -0.15
+	            stability_weekly = -0.0015
+	            stability_weekly_factor = -0.15
+		        consumer_goods_factor = 0.15
+		        consumer_goods_expected_value = 0.15
+		        min_export = 0.15
+		        production_factory_max_efficiency_factor = -0.15
+		        production_factory_efficiency_gain_factor = -0.15
+		        line_change_production_efficiency_factor = -0.15
+		        production_factory_start_efficiency_factor = -0.15
+		        production_lack_of_resource_penalty_factor = 0.15
+		        industrial_capacity_factory = -0.15
+		        industrial_capacity_dockyard = -0.15
+		        FACTORY_ENERGY_CONSUMPTION = 0.15
+		        industrial_capacity_dockyard_powered = -0.15
+                industrial_capacity_factory_powered = -0.15
+                out_of_power_impact_factor = -0.15
+                production_speed_buildings_powered_factor = -0.15
+                energy_gain_factor = -0.15
+		        local_factory_energy_consumption = 0.15
+			}
+		}
+		range = {
+			id = SRN_quanlipinghen_huaisikaishi_side_trust #坏死开始
+			min = -0.6
+			max = -0.2
+			modifier = {
+				political_power_factor = -0.1
+				mobilization_speed = -0.1
+				stability_factor = -0.1
+	            stability_weekly = -0.001
+	            stability_weekly_factor = -0.1
+		        consumer_goods_factor = 0.1
+		        consumer_goods_expected_value = 0.1
+		        min_export = 0.1
+		        production_factory_max_efficiency_factor = -0.1
+		        production_factory_efficiency_gain_factor = -0.1
+		        line_change_production_efficiency_factor = -0.1
+		        production_factory_start_efficiency_factor = -0.1
+		        production_lack_of_resource_penalty_factor = 0.1
+		        industrial_capacity_factory = -0.1
+		        industrial_capacity_dockyard = -0.1
+		        FACTORY_ENERGY_CONSUMPTION = 0.1
+		        industrial_capacity_dockyard_powered = -0.1
+                industrial_capacity_factory_powered = -0.1
+                out_of_power_impact_factor = -0.1
+                production_speed_buildings_powered_factor = -0.1
+                energy_gain_factor = -0.1
+		        local_factory_energy_consumption = 0.1
+			}
+		}
+	}
+	
+	side = { #右边
+		id = SRN_quanlipinghen_zuihaodexiaoguo_side #完美的有机谐律
+		icon = SRN_bop_SRN_quanlipinghen_zuihaodexiaoguo_side
+		range = { #轻微僵硬
+			id = SRN_quanlipinghen_qingdujiangying_side_trust
+			min = 0.2
+			max = 0.6
+			modifier = {
+			    political_power_factor = 0.05
+				mobilization_speed = 0.05
+				stability_factor = 0.05
+	            stability_weekly = 0.0005
+	            stability_weekly_factor = 0.05
+		        consumer_goods_factor = -0.05
+		        consumer_goods_expected_value = -0.05
+		        min_export = -0.05
+		        production_factory_max_efficiency_factor = 0.05
+		        production_factory_efficiency_gain_factor = 0.05
+		        line_change_production_efficiency_factor = 0.05
+		        production_factory_start_efficiency_factor = 0.05
+		        production_lack_of_resource_penalty_factor = -0.05
+		        industrial_capacity_factory = 0.05
+		        industrial_capacity_dockyard = 0.05
+		        FACTORY_ENERGY_CONSUMPTION = -0.05
+		        industrial_capacity_dockyard_powered = 0.05
+                industrial_capacity_factory_powered = 0.05
+                out_of_power_impact_factor = 0.05
+                production_speed_buildings_powered_factor = 0.05
+                energy_gain_factor = 0.05
+		        local_factory_energy_consumption = -0.05
+			}
+		}
+		range = { #完美谐律
+			id = SRN_quanlipinghen_wanmeixiel_side_trust
+			min = 0.8
+			max = 1
+			modifier = {
+			    political_power_factor = 0.1
+				mobilization_speed = 0.1
+				stability_factor = 0.1
+	            stability_weekly = 0.001
+	            stability_weekly_factor = 0.1
+		        consumer_goods_factor = -0.1
+		        consumer_goods_expected_value = -0.1
+		        min_export = -0.1
+		        production_factory_max_efficiency_factor = 0.1
+		        production_factory_efficiency_gain_factor = 0.1
+		        line_change_production_efficiency_factor = 0.1
+		        production_factory_start_efficiency_factor = 0.1
+		        production_lack_of_resource_penalty_factor = -0.1
+		        industrial_capacity_factory = 0.1
+		        industrial_capacity_dockyard = 0.1
+		        FACTORY_ENERGY_CONSUMPTION = -0.1
+		        industrial_capacity_dockyard_powered = 0.1
+                industrial_capacity_factory_powered = 0.1
+                out_of_power_impact_factor = 0.1
+                production_speed_buildings_powered_factor = 0.1
+                energy_gain_factor = 0.1
+		        local_factory_energy_consumption = -0.1
+			}
+		}
+	}
+}
+

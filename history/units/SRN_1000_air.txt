@@ -1,0 +1,44 @@
+﻿##################################################萨丁社会共和国
+#开局空军部队
+air_wings = { 
+	443 = {
+		small_plane_airframe_1 =  { #制空战机
+			owner = "SRN" 
+			amount = 100
+			creator = "SRN"
+			version_name = "射手座"
+		}
+		small_plane_cas_airframe_1 =  { #支援战机
+			owner = "SRN" 
+			amount = 100
+			creator = "SRN"
+			version_name = "金牛座"
+		}
+	}
+}
+
+#开局生产线
+instant_effect = {
+	add_equipment_production = { #制空战机
+		equipment = {
+			type = small_plane_airframe_1
+			creator = "SRN" 
+			version_name = "射手座"
+		}
+		requested_factories = 1
+		progress = 0.4
+		efficiency = 100
+		industrial_manufacturer = mio:SRN_guojiahangkongzhituan_organization
+	}
+	add_equipment_production = { #支援战机
+		equipment = {
+			type = small_plane_cas_airframe_1
+			creator = "SRN" 
+			version_name = "金牛座"
+		}
+		requested_factories = 2
+		progress = 0.6
+		efficiency = 100
+		industrial_manufacturer = mio:SRN_guojiahangkongzhituan_organization
+	}
+}
