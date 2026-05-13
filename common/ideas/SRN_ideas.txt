@@ -3,7 +3,7 @@ ideas = {
     country = { 
 	    ###静态国家精神
 		#国策获得
-		SRN_xiongyiingxingdong_National_Spirit = { #雄鹰行动
+		SRN_National_Spirit_Grand_Eagle_Operation = { #雄鹰行动
 			allowed = {
 				always = no
 			}
@@ -11,7 +11,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_xiongyiingxingdong_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_Grand_Eagle_Operation
 			
 		    removal_cost = -1
 			
@@ -31,7 +31,7 @@ ideas = {
 		    } 
 	    }
 
-	    SRN_qingchuziyouzhuyibingdu_National_Spirit = { #清除自由主义病毒
+	    SRN_National_Spirit_qingchuziyouzhuyibingdu = { #清除自由主义病毒
 			allowed = {
 				always = no
 			}
@@ -39,7 +39,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_qingchuziyouzhuyibingdu_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_qingchuziyouzhuyibingdu
 			
 		    removal_cost = -1
             targeted_modifier = {
@@ -56,7 +56,7 @@ ideas = {
             }
 	    }
 
-	    SRN_Stable_and_Prosperous_National_Spirit = { #稳定与繁荣
+	    SRN_National_Spirit_Stable_and_Prosperous = { #稳定与繁荣
 			allowed = {
 				always = no
 			}
@@ -64,7 +64,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_Stable_and_Prosperous_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_Stable_and_Prosperous
 			
 		    removal_cost = -1
             modifier = {
@@ -74,7 +74,7 @@ ideas = {
             }
 	    }
 
-	    SRN_Pride_and_Glory_National_Spirit = { #骄傲与自豪
+	    SRN_National_Spirit_Pride_and_Glory = { #骄傲与自豪
 			allowed = {
 				always = no
 			}
@@ -82,7 +82,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_Pride_and_Glory_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_Pride_and_Glory
 			
 		    removal_cost = -1
             modifier = {
@@ -92,7 +92,7 @@ ideas = {
             }
 	    }
 
-	    SRN_Labor_Glory_Charter_National_Spirit = { #劳动光荣宪章
+	    SRN_National_Spirit_Labor_Glory_Charter = { #劳动光荣宪章
 			allowed = {
 				always = no
 			}
@@ -100,7 +100,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_Labor_Glory_Charter_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_Labor_Glory_Charter
 			
 		    removal_cost = -1
             modifier = {
@@ -114,7 +114,7 @@ ideas = {
             }
 	    }
 
-	    SRN_Bureau_of_National_Corporatist_Regulation_National_Spirit = { #国家法团统制局
+	    SRN_National_Spirit_Bureau_of_National_Corporatist_Regulation = { #国家法团统制局
 			allowed = {
 				always = no
 			}
@@ -122,7 +122,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_Bureau_of_National_Corporatist_Regulation_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_Bureau_of_National_Corporatist_Regulation
 			
 		    removal_cost = -1
             modifier = {
@@ -138,7 +138,7 @@ ideas = {
             }
 	    }
 
-	    SRN_class_conciliation_canteen_National_Spirit = { #阶级调和食堂
+	    SRN_National_Spirit_class_conciliation_canteen = { #阶级调和食堂
 			allowed = {
 				always = no
 			}
@@ -146,7 +146,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_class_conciliation_canteen_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_class_conciliation_canteen
 			
 		    removal_cost = -1
             modifier = {
@@ -157,10 +157,11 @@ ideas = {
 				fuel_gain_factor_from_states = 0.2
 				fuel_gain_factor = 0.2
 				max_fuel_factor = 0.2
+				energy_gain_factor = 0.2
             }
 	    }
 
-	    SRN_dignity_of_labour_National_Spirit = { #国家关怀体系
+	    SRN_National_Spirit_dignity_of_labour = { #国家关怀体系
 			allowed = {
 				always = no
 			}
@@ -168,19 +169,18 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_dignity_of_labour_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_dignity_of_labour
 			
 		    removal_cost = -1
             modifier = {
 				political_power_cost = 0.1
                 monthly_population = 0.2
 				conscription_factor = 0.1
-				weekly_manpower = 500
 				mobilization_speed = 0.2
             }
 	    }
 
-	    SRN_Strengthen_Technocrats_National_Spirit = { #加强技术官僚
+	    SRN_National_Spirit_NationalSolidarity = { #团结一致
 			allowed = {
 				always = no
 			}
@@ -188,7 +188,40 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_Strengthen_Technocrats_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_NationalSolidarity
+			
+		    removal_cost = -1
+            modifier = {
+		        political_power_gain = -0.1
+		        consumer_goods_factor = -0.1
+		        consumer_goods_expected_value = -0.1
+		        min_export = -0.1
+		        production_factory_max_efficiency_factor = 0.1
+		        production_factory_efficiency_gain_factor = 0.1
+		        line_change_production_efficiency_factor = 0.1
+		        production_factory_start_efficiency_factor = 0.1
+		        production_lack_of_resource_penalty_factor = -0.1
+		        industrial_capacity_factory = 0.1
+		        industrial_capacity_dockyard = 0.1
+		        FACTORY_ENERGY_CONSUMPTION = -0.1
+		        industrial_capacity_dockyard_powered = 0.1
+                industrial_capacity_factory_powered = 0.1
+                out_of_power_impact_factor = 0.1
+                production_speed_buildings_powered_factor = 0.1
+                energy_gain_factor = 0.1
+		        local_factory_energy_consumption = -0.1
+            }
+	    }
+
+	    SRN_National_Spirit_Strengthen_Technocrats = { #加强技术官僚
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Spirit_Strengthen_Technocrats
 			
 		    removal_cost = -1
             modifier = {
@@ -197,7 +230,7 @@ ideas = {
             }
 	    }
 
-	    SRN_National_Efficiency_Research_Institute_National_Spirit = { #国家效率研究院
+	    SRN_National_Spirit_National_Efficiency_Research_Institute = { #国家效率研究院
 			allowed = {
 				always = no
 			}
@@ -205,7 +238,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_National_Efficiency_Research_Institute_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_National_Efficiency_Research_Institute
 			
 		    removal_cost = -1
             modifier = {
@@ -218,7 +251,7 @@ ideas = {
             }
 	    }
 	
-	    SRN_Defense_of_the_People_National_Spirit = { #捍卫人民
+	    SRN_National_Spirit_Defense_of_the_People = { #捍卫人民
 			allowed = {
 				always = no
 			}
@@ -226,7 +259,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_Defense_of_the_People_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_Defense_of_the_People
 			
 		    removal_cost = -1
             modifier = {
@@ -236,7 +269,7 @@ ideas = {
             }
 	    }
 
-	    SRN_The_Visible_Hand_National_Spirit = { #有形的大手
+	    SRN_National_Spirit_The_Visible_Hand = { #有形的大手
 			allowed = {
 				always = no
 			}
@@ -244,7 +277,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_The_Visible_Hand_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_The_Visible_Hand
 			
 		    removal_cost = -1
             modifier = {
@@ -257,7 +290,7 @@ ideas = {
             }
 	    }
 
-	    SRN_Declaration_of_the_Organic_State_Community_National_Spirit = { #国家有机共同体宣言
+	    SRN_National_Spirit_Declaration_of_the_Organic_State_Community = { #国家有机共同体宣言
 			allowed = {
 				always = no
 			}
@@ -265,7 +298,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_Declaration_of_the_Organic_State_Community_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_Declaration_of_the_Organic_State_Community
 			
 		    removal_cost = -1
             modifier = {
@@ -277,7 +310,7 @@ ideas = {
             }
 	    }
 
-	    SRN_Golden_Age_of_the_Corporatist_State_National_Spirit = { #萨丁黄金时代
+	    SRN_National_Spirit_Golden_Age_of_the_Corporatist_State = { #萨丁黄金时代
 			allowed = {
 				always = no
 			}
@@ -285,7 +318,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_Golden_Age_of_the_Corporatist_State_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_Golden_Age_of_the_Corporatist_State
 			
 		    removal_cost = -1
             modifier = {
@@ -301,8 +334,138 @@ ideas = {
             }
 	    }
 
+	    SRN_National_Spirit_Neo_fascist_Revolutionary_Navy_Command = { #新法西斯革命海军司令部
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Spirit_Neo_fascist_Revolutionary_Navy_Command
+			
+		    removal_cost = -1
+            modifier = {
+				experience_gain_navy_factor = 0.05
+				navy_submarine_attack_factor = 0.1
+                navy_submarine_defence_factor = 0.1
+				navy_capital_ship_attack_factor = 0.1
+				navy_capital_ship_defence_factor = 0.1
+	            navy_screen_attack_factor = 0.1
+				navy_screen_defence_factor = 0.1
+				naval_critical_score_chance_factor = 0.1
+				positioning = 0.1
+            }
+	    }
+
+	    SRN_National_Spirit_National_Vessel_Program = { #国家舰计划
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Spirit_National_Vessel_Program
+			
+		    removal_cost = -1
+            equipment_bonus = {
+                ship_hull_submarine = {
+                    instant = yes
+                    build_cost_ic = -0.1
+					reliability = 0.1
+		        }
+				ship_hull_light = {
+					instant = yes
+					build_cost_ic = -0.1
+					reliability = 0.1
+				}
+				ship_hull_cruiser = {
+					instant = yes
+					build_cost_ic = -0.1
+					reliability = 0.1
+				}
+				ship_hull_heavy = {
+					instant = yes
+					build_cost_ic = -0.1
+					reliability = 0.1
+				}
+				ship_hull_carrier = {
+					instant = yes
+					build_cost_ic = 1
+					reliability = -1
+				}
+            }
+	    }
+
+	    SRN_National_Spirit_Maritime_Guerrilla_Warfare = { #海上游击战
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Spirit_Maritime_Guerrilla_Warfare
+			
+		    removal_cost = -1
+            modifier = {
+				experience_gain_navy_factor = 0.05
+				navy_weather_penalty = 0.1
+		        navy_visibility = 0.1
+		        spotting_chance = 0.1
+		        naval_detection = 0.1
+		        night_spotting_chance = 0.1
+				naval_hit_chance = 0.1
+				air_carrier_night_penalty_reduction_factor = -0.2
+		        carrier_capacity_penalty_reduction = 0.2
+		        navy_carrier_air_attack_factor = -0.2
+		        navy_carrier_air_targetting_factor = -0.2
+            }
+	    }
+
+	    SRN_National_Spirit_Construction_of_Sea_Air_Integration = { #海上航空一体化建设
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Spirit_Construction_of_Sea_Air_Integration
+			
+		    removal_cost = -1
+            modifier = {
+				experience_gain_navy = 0.1
+				experience_gain_air = 0.1
+				air_nav_efficiency = 0.1
+		        NAVAL_STRIKE_TARGETTING_FACTOR = 0.1
+				naval_strike_attack_factor = 0.1
+            }
+	    }
+
+	    SRN_National_Spirit_Our_loyal_and_powerful_army = { #我们忠诚而强大的军队
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Spirit_Our_loyal_and_powerful_army
+			
+		    removal_cost = -1
+            modifier = {
+				political_power_cost = 0.1
+				army_attack_factor = 0.1
+                army_defence_factor = 0.1
+				breakthrough_factor = 0.1
+				land_night_attack = 0.1
+            }
+	    }
+
 		#开局获得
-	    SRN_faxisgemingshiyuandi_National_Spirit = { #法西斯革命始源地
+	    SRN_National_Spirit_faxisgemingshiyuandi = { #法西斯革命始源地
 			allowed = {
 				always = no
 			}
@@ -311,7 +474,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_faxisgemingshiyuandi_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_faxisgemingshiyuandi
 			
 		    removal_cost = -1
 			
@@ -322,7 +485,7 @@ ideas = {
 		    } 
 	    }
 
-	    SRN_minzhudezhongjie_National_Spirit = { #民主的终结
+	    SRN_National_Spirit_minzhudezhongjie = { #民主的终结
 			allowed = {
 				always = no
 			}
@@ -331,7 +494,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_minzhudezhongjie_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_minzhudezhongjie
 			
 		    removal_cost = -1
 			
@@ -343,7 +506,7 @@ ideas = {
 		    } 
 	    }
 
-	    SRN_shodaokongzhidegongrenyundong_National_Spirit = { #受到控制的工人运动
+	    SRN_National_Spirit_shodaokongzhidegongrenyundong = { #受到控制的工人运动
 			allowed = {
 				always = no
 			}
@@ -352,7 +515,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_faxisgemingshiyuandi_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_shodaokongzhidegongrenyundong
 			
 		    removal_cost = -1
 			
@@ -366,7 +529,7 @@ ideas = {
 		    } 
 	    }
 
-		SRN_faxisiducai_National_Spirit = { #法西斯独裁
+		SRN_National_Spirit_faxisiducai = { #法西斯独裁
 			allowed = {
 				always = no
 			}
@@ -375,7 +538,7 @@ ideas = {
 				always = no
 			}
 
-		    picture = GFX_idea_SRN_faxisiducai_National_Spirit
+		    picture = GFX_idea_SRN_National_Spirit_faxisiducai
 			
 		    removal_cost = -1
 			
@@ -400,11 +563,12 @@ ideas = {
 		    } 
 	    }
 	}
+	
     ##########工业集团
 	industrial_concern = { 
-		SRN_jungongfuhetixindijia_Industrial_Group = { #军工复合体辛迪加
+		SRN_National_Spirit_jungongfuhetixindijia_Industrial_Group = { #军工复合体辛迪加
             name = SRN_jungongfuhetixindijia_Industrial_Group_desc
-			picture = GFX_idea_SRN_jungongfuhetixindijia_Industrial_Group
+			picture = GFX_idea_SRN_National_Spirit_jungongfuhetixindijia_Industrial_Group
 			allowed = {
 				original_tag = SRN
 			}
@@ -419,20 +583,6 @@ ideas = {
 			}
 			traits = { 
 				SRN_jungongfuhetixindijia_Industrial_Group 
-			}
-			ai_will_do = {
-				factor = 3
-			}
-		}
-	    SRN_quanguozonggonghui_Industrial_Group = { #全国总工会
-            name = SRN_quanguozonggonghui_Industrial_Group_desc
-			picture = GFX_idea_SRN_quanguozonggonghui_Industrial_Group
-			allowed = {
-				original_tag = SRN
-			}
-			cost = 100
-			traits = { 
-				SRN_quanguozonggonghui_Industrial_Group 
 			}
 			ai_will_do = {
 				factor = 3

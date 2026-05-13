@@ -31,7 +31,6 @@ SRN_decision_categories_National_Corporate_Committee = {
 	   	}		
 	}
 
-
 	SRN_decision_Implement_Emergency_Corporatist_Production_Quotas = {
 	#实施法团企业紧急生产配额
 	icon = GFX_SRN_decision_National_Corporate_Committee
@@ -87,6 +86,39 @@ SRN_decision_categories_National_Corporate_Committee = {
 		production_speed_infrastructure_factor = 0.1	
 	   	}	
 	}
+}
+
+#####新萨丁国家军
+SRN_decision_categories_New_National_Army = {
+###重复决议
+#新萨丁国家军
+	SRN_decision_Organize_Army_Exercises = {
+	#组织陆军演戏
+	icon = GFX_SRN_decision_New_National_Army
+	visible = {
+		original_tag = SRN
+		has_completed_focus = SRN_National_Focus_two_New_National_Army
+	}
+	allowed = {
+		has_war = no
+		has_war_support > 0.6
+	}
+    available = {
+        has_war = no
+		has_war_support > 0.6
+    }
+	ai_will_do = {
+		factor = 1
+	}
+	fire_only_once = no
+	cost = 20
+	days_remove = 60
+	days_re_enable = 30
+	remove_effect = {
+        army_experience = 20
+	    }
+	}
+
 }
 
 #####有机国家张力指数

@@ -80,11 +80,12 @@ set_technology = { #初始科技
 
 #静态国家精神
 add_ideas = {
-	SRN_faxisgemingshiyuandi_National_Spirit
-    SRN_minzhudezhongjie_National_Spirit
-	SRN_shodaokongzhidegongrenyundong_National_Spirit
+	SRN_National_Spirit_faxisgemingshiyuandi
+    SRN_National_Spirit_minzhudezhongjie
+	SRN_National_Spirit_shodaokongzhidegongrenyundong
+    SRN_National_Spirit_faxisiducai
+
 	SRN_guojiafaxisidang_head_of_government_character
-    SRN_faxisiducai_National_Spirit
     limited_conscription #有限征兵制
     partial_economic_mobilisation #部分经济动员
 }
@@ -97,7 +98,7 @@ set_variable = { #萨丁社会共和国_国家法西斯党
 
 #国家安全志愿军（动态国家精神）
 add_dynamic_modifier = { #解锁动态国家精神
-    modifier = SRN_guojiaanquanzhiyuanjun_National_Spirit
+    modifier = SRN_National_Spirit_guojiaanquanzhiyuanjun
 }
 set_variable = { #政治点消耗
 	SRN_guojiaanquanzhiyuanjun_political_power_cost = 0.1
@@ -141,7 +142,7 @@ set_variable = { #卡车损耗
 
 #黑衫军（动态国家精神）
 add_dynamic_modifier = { #解锁动态国家精神
-    modifier = SRN_heshanjun_National_Spirit
+    modifier = SRN_National_Spirit_heshanjun
 }
 set_variable = { #政治点消耗
 	SRN_heshanjun_political_power_cost = 0.1
@@ -194,7 +195,7 @@ set_variable = { #组织度恢复
 
 #国家法团主义经济（动态国家精神）
 add_dynamic_modifier = { #解锁动态国家精神
-    modifier = SRN_guojiafatuanzhuyijingji_National_Spirit
+    modifier = SRN_National_Spirit_guojiafatuanzhuyijingji
 }
 set_variable = { #工厂产出
 	SRN_guojiafatuanzhuyijingji_industrial_capacity_factory = 0.05
