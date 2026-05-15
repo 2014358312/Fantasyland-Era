@@ -173,10 +173,10 @@ ideas = {
 			
 		    removal_cost = -1
             modifier = {
-				political_power_cost = 0.1
-                monthly_population = 0.2
-				conscription_factor = 0.1
-				mobilization_speed = 0.2
+                political_power_cost = 0.1
+				stability_weekly = 0.0005
+				war_support_weekly = 0.0005
+                monthly_population = 0.4
             }
 	    }
 
@@ -287,6 +287,8 @@ ideas = {
 				consumer_goods_factor = -0.1
 				consumer_goods_expected_value = -0.1
 				power_balance_weekly = 0.01
+				army_armor_attack_factor  = -0.2
+				army_armor_defence_factor  = -0.2
             }
 	    }
 
@@ -334,6 +336,197 @@ ideas = {
             }
 	    }
 
+	    SRN_National_Spirit_New_National_Mobilization_System = { #新国家动员体系
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Spirit_New_National_Mobilization_System
+			
+		    removal_cost = -1
+            modifier = {
+				political_power_cost = 0.1
+				conscription = 0.01
+				conscription_factor = 0.2
+				mobilization_speed = 0.2
+				weekly_manpower = 300
+            }
+	    }
+
+	    SRN_National_Spirit_Arditi_Assault_Corps = { #阿尔迪蒂敢死队
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Spirit_Arditi_Assault_Corps
+
+			removal_cost = -1
+            modifier = {
+				modifier_army_sub_unit_blackshirt_assault_battalion_attack_factor = 0.2
+                modifier_army_sub_unit_blackshirt_assault_battalion_defence_factor = 0.2
+                modifier_army_sub_unit_blackshirt_assault_battalion_max_org_factor = 0.2
+				army_armor_attack_factor = -0.2
+				army_armor_defence_factor = -0.2
+            }		
+	    }
+
+	    SRN_National_Spirit_Armor_Hunter = { #装甲猎人
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Spirit_Armor_Hunter
+
+			removal_cost = -1
+            modifier = {
+				army_armor_attack_factor = -0.2
+				army_armor_defence_factor = -0.2
+            }
+            equipment_bonus = {
+                infantry_equipment = {
+                    instant = yes
+                    ap_attack = 0.6
+		        }
+				anti_tank_equipment = {
+					instant = yes
+					ap_attack = 0.2
+				}
+            }			
+	    }
+
+	    SRN_National_Spirit_Modernized_Artillery_System = { #现代化炮兵体系
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Spirit_Modernized_Artillery_System
+
+			removal_cost = -1
+            modifier = {
+				modifier_army_sub_unit_category_rocket_artillery_attack_factor  = 0.2
+				army_armor_attack_factor = -0.2
+				army_armor_defence_factor = -0.2
+            }
+            equipment_bonus = {
+                super_heavy_artillery_equipment = {
+                    instant = yes
+                    soft_attack = 0.1
+					hard_attack = 0.1
+					defense = 0.2
+		        }
+				motorized_rocket_equipment = {
+					instant = yes
+					soft_attack = 0.1
+					hard_attack = 0.1
+					defense = 0.2
+				}
+            }			
+	    }
+
+	    SRN_National_Spirit_Independent_National_Air_Force = { #独立国家空军
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Spirit_Independent_National_Air_Force
+
+		    removal_cost = -1
+			modifier = {
+                experience_gain_air_factor = 0.05
+				air_attack_factor = 0.1
+				air_defence_factor = 0.1
+				air_agility_factor = 0.1
+				air_maximum_speed_factor = 0.1
+				air_accidents_factor = -0.1
+				air_range_factor = 0.2
+			}
+	    }
+
+	    SRN_National_Spirit_Joint_Strike = { #联合打击
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Spirit_Joint_Strike
+
+		    removal_cost = -1
+            equipment_bonus = {
+                small_plane_cas_airframe = {
+                    instant = yes
+                    air_ground_attack = 0.2
+		        }
+				medium_plane_airframe = {
+					instant = yes
+					air_ground_attack = 0.2
+				}
+				large_plane_airframe = {
+					instant = yes
+					air_bombing = 0.2
+				}
+            }
+	    }
+
+	    SRN_National_Spirit_Promote_cluster_bombs = { #推广集束炸弹
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Spirit_Promote_cluster_bombs
+
+		    removal_cost = -1
+            modifier = {
+				experience_gain_air = 0.1
+				air_cas_efficiency = 0.1
+				air_cas_present_factor = 0.1
+				ground_attack_factor = 0.1
+				air_strategic_bomber_bombing_factor = 0.1
+				air_bombing_targetting = 0.1
+				strategic_bomb_visibility = -0.1
+            }		
+	    }
+
+	    SRN_National_Spirit_Homeland_Air_Defense_Command = { #国土防空司令部
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+
+		    picture = GFX_idea_SRN_National_Spirit_Homeland_Air_Defense_Command
+
+		    removal_cost = -1
+            modifier = {
+				army_bonus_air_superiority_factor = 0.1
+				enemy_army_bonus_air_superiority_factor = -0.1
+				air_superiority_bonus_in_combat = 0.1
+                cas_damage_reduction = 0.2
+				static_anti_air_damage_factor = 0.2
+				static_anti_air_hit_chance_factor = 0.2
+            }		
+	    }
+
 	    SRN_National_Spirit_Neo_fascist_Revolutionary_Navy_Command = { #新法西斯革命海军司令部
 			allowed = {
 				always = no
@@ -369,6 +562,10 @@ ideas = {
 		    picture = GFX_idea_SRN_National_Spirit_National_Vessel_Program
 			
 		    removal_cost = -1
+            modifier = {
+				industrial_capacity_dockyard = 0.2
+				repair_speed_factor = 0.4
+            }
             equipment_bonus = {
                 ship_hull_submarine = {
                     instant = yes
@@ -410,9 +607,9 @@ ideas = {
 			
 		    removal_cost = -1
             modifier = {
-				experience_gain_navy_factor = 0.05
-				navy_weather_penalty = 0.1
-		        navy_visibility = 0.1
+				experience_gain_navy = 0.05
+				navy_weather_penalty = -0.1
+		        navy_visibility = -0.2
 		        spotting_chance = 0.1
 		        naval_detection = 0.1
 		        night_spotting_chance = 0.1
@@ -438,9 +635,9 @@ ideas = {
             modifier = {
 				experience_gain_navy = 0.1
 				experience_gain_air = 0.1
-				air_nav_efficiency = 0.1
-		        NAVAL_STRIKE_TARGETTING_FACTOR = 0.1
-				naval_strike_attack_factor = 0.1
+				air_nav_efficiency = 0.2
+		        NAVAL_STRIKE_TARGETTING_FACTOR = 0.2
+				naval_strike_attack_factor = 0.2
             }
 	    }
 

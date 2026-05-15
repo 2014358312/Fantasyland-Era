@@ -109,11 +109,11 @@ set_variable = { #民兵攻击
 set_variable = { #民兵防御
 	SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_defence_factor = 0.05
 }
-set_variable = { #民兵速度
-	SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_speed_factor = 0.05
+set_variable = { #民兵组织度
+	SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_max_org_factor = 0.05
 }
-set_variable = { #驻军需求
-	SRN_guojiaanquanzhiyuanjun_required_garrison_factor = -0.1
+set_variable = { #民兵组织度恢复上限
+	SRN_guojiaanquanzhiyuanjun_modifier_army_sub_unit_militia_org_recovery_cap_factor = 0.05
 }
 set_variable = { #陆军核心攻击
 	SRN_guojiaanquanzhiyuanjun_army_core_attack_factor = 0.05
@@ -139,6 +139,36 @@ set_variable = { #补给范围
 set_variable = { #卡车损耗
 	SRN_guojiaanquanzhiyuanjun_truck_attrition_factor = -0.1
 }
+set_variable = { #抵抗目标
+	SRN_guojiaanquanzhiyuanjun_resistance_target = 0
+}
+set_variable = { #顺从度增长速度
+	SRN_guojiaanquanzhiyuanjun_compliance_growth = 0
+}
+set_variable = { #每日顺从度增长
+	SRN_guojiaanquanzhiyuanjun_compliance_gain = 0
+}
+set_variable = { #我们被敌人占领地区的抵抗目标
+	SRN_guojiaanquanzhiyuanjun_resistance_target_on_our_occupied_states = 0
+}
+set_variable = { #我们被敌人占领地区的抵抗下降速度
+	SRN_guojiaanquanzhiyuanjun_resistance_decay_on_our_occupied_states = 0
+}
+set_variable = { #我们占领地区的抵抗度增长速度
+	SRN_guojiaanquanzhiyuanjun_resistance_growth_on_our_occupied_states = 0
+}
+set_variable = { #我们被敌人占领地区的顺从度增长速度
+	SRN_guojiaanquanzhiyuanjun_compliance_growth_on_our_occupied_states = 0
+}
+set_variable = { #驻军需求
+	SRN_guojiaanquanzhiyuanjun_required_garrison_factor = 0
+}
+set_variable = { #驻军伤害
+	SRN_guojiaanquanzhiyuanjun_resistance_damage_to_garrison = 0
+}
+set_variable = { #我们被敌方占领地区的驻军所受伤害
+	SRN_guojiaanquanzhiyuanjun_resistance_damage_to_garrison_on_our_occupied_states = 0
+}
 
 #黑衫军（动态国家精神）
 add_dynamic_modifier = { #解锁动态国家精神
@@ -148,22 +178,22 @@ set_variable = { #政治点消耗
 	SRN_heshanjun_political_power_cost = 0.1
 }
 set_variable = { #位于堑壕中的侦察值
-	SRN_heshanjun_recon_factor_while_entrenched = 0.1
+	SRN_heshanjun_recon_factor_while_entrenched = 0
 }
 set_variable = { #堑壕速度
-    SRN_heshanjun_dig_in_speed_factor = 0.05
-}
-set_variable = { #最大堑壕
-	SRN_heshanjun_max_dig_in_factor = 0.05
+    SRN_heshanjun_dig_in_speed_factor = 0
 }
 set_variable = { #最大堑壕%
-	SRN_heshanjun_max_dig_in = 5
+	SRN_heshanjun_max_dig_in_factor = 0
+}
+set_variable = { #最大堑壕
+	SRN_heshanjun_max_dig_in = 0
 }
 set_variable = { #计划速度
-	SRN_heshanjun_planning_speed = -0.1
+	SRN_heshanjun_planning_speed = -0.2
 }
 set_variable = { #计划上限%
-	SRN_heshanjun_max_planning_factor = -0.1
+	SRN_heshanjun_max_planning_factor = -0.2
 }
 set_variable = { #计划上限
 	SRN_heshanjun_max_planning = -0.2
@@ -180,17 +210,26 @@ set_variable = { #步兵攻击
 set_variable = { #步兵防御
 	SRN_heshanjun_army_infantry_defence_factor = 0.05
 }
+set_variable = { #机械化攻击
+	SRN_heshanjun_mechanized_attack_factor = 0
+}
+set_variable = { #机械化防御
+	SRN_heshanjun_mechanized_defence_factor = 0
+}
 set_variable = { #陆军组织度%
-	SRN_heshanjun_army_org_factor = 0.05
+	SRN_heshanjun_army_org_factor = 0
 }
 set_variable = { #陆军组织度
-	SRN_heshanjun_army_org = 1
+	SRN_heshanjun_army_org = 0
 }
 set_variable = { #组织度恢复%
-	SRN_heshanjun_army_morale_factor = 0.05
+	SRN_heshanjun_army_morale_factor = 0
 }
 set_variable = { #组织度恢复
-	SRN_heshanjun_army_morale = 1
+	SRN_heshanjun_army_morale = 0
+}
+set_variable = { #HP（黄条）
+	SRN_heshanjun_army_strength_factor = 0
 }
 
 #国家法团主义经济（动态国家精神）
