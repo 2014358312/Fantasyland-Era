@@ -1,0 +1,1008 @@
+###########################################################################
+# 国家政府领导组 (National Government Leadership Group) — 弹出式大窗口
+#  · 政治界面按钮(FE_gov_cabinet_button_window)点击开关大窗口
+#  · 大窗口(FE_gov_cabinet_window)居中弹出，8 部门 ×(1 正部长+2 副部长)
+#  · 立绘/姓名/悬停说明由 scripted_gui + scripted_localisation 动态绑定
+#  · 立绘 156x210、边框 GFX_pol_leader_frame 172x258；姓名置于边框下方，避免重叠
+#  · 悬停部长立绘可见其效果（GetGovTip_*）
+#
+# ★政治界面里那个开关按钮的位置请用 @BTN_X/@BTN_Y 微调★
+###########################################################################
+
+# —— 政治界面里的开关按钮位置（默认在“政府与法律”那一行）——
+@BTN_X = 164
+@BTN_Y = 556
+
+# —— 大窗口尺寸（居中弹出）——
+@WIN_W = 980
+@WIN_H = 760
+
+# —— 立绘缩放 ——
+@MIN_SCALE = 0.5
+@VICE_SCALE = 0.38
+
+guiTypes = {
+
+	# =========================================================
+	#  政治界面内的开关按钮
+	# =========================================================
+	containerWindowType = {
+		name = "FE_gov_cabinet_button_window"
+		position = { x = @BTN_X y = @BTN_Y }
+		size = { width = 230 height = 40 }
+		clipping = no
+
+		buttonType = {
+			name = "FE_gov_cabinet_open_btn"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_button_221x34"
+			buttonText = "FE_gov_cabinet_title"
+			buttonFont = "hoi_18mbs"
+			pdx_tooltip = "FE_gov_cabinet_btn_tt"
+			clicksound = click_default
+		}
+	}
+
+	# =========================================================
+	#  国家政府领导组 大窗口
+	# =========================================================
+	containerWindowType = {
+		name = "FE_gov_cabinet_window"
+		orientation = center
+		origo = center
+		position = { x = 0 y = 0 }
+		size = { width = @WIN_W height = @WIN_H }
+		moveable = yes
+		clipping = no
+		click_to_front = yes
+		show_sound = open_sub_window
+		hide_sound = menu_close_window
+
+		background = {
+			name = "FE_gov_cabinet_bg"
+			quadTextureSprite = "GFX_tiled_plain_bg"
+		}
+
+		instantTextBoxType = {
+			name = "FE_gov_cabinet_title"
+			position = { x = 0 y = 16 }
+			font = "hoi_20b"
+			text = "FE_gov_cabinet_title"
+			maxWidth = @WIN_W
+			maxHeight = 28
+			format = center
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "FE_gov_cabinet_close_btn"
+			position = { x = -40 y = 12 }
+			quadTextureSprite = "GFX_closebutton"
+			Orientation = "UPPER_RIGHT"
+			shortcut = "ESCAPE"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+
+		# ===== 部门：finance =====
+		containerWindowType = {
+			name = "gov_finance_block"
+			position = { x = 12 y = 50 }
+			size = { width = 232 height = 340 }
+			clipping = no
+
+			instantTextBoxType = {
+				name = "gov_finance_dept_label"
+				position = { x = 0 y = 2 }
+				font = "hoi_18mbs"
+				text = "FE_gov_dept_finance"
+				maxWidth = 232
+				maxHeight = 22
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 正部长 ——
+			instantTextBoxType = {
+				name = "gov_finance_minister_role"
+				position = { x = 0 y = 26 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_minister"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_finance_minister_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 73 y = 46 }
+				scale = @MIN_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_finance_minister_portrait"
+				position = { x = 77 y = 53 }
+				scale = @MIN_SCALE
+				pdx_tooltip = "[GetGovTip_finance_minister]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_finance_minister_name"
+				position = { x = 16 y = 178 }
+				font = "hoi_16mbs"
+				text = "[GetGovName_finance_minister]"
+				maxWidth = 200
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 副部长 ——
+			instantTextBoxType = {
+				name = "gov_finance_vice_role"
+				position = { x = 0 y = 200 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_vice"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_finance_vice1_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 28 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_finance_vice1_portrait"
+				position = { x = 31 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_finance_vice1]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_finance_vice1_name"
+				position = { x = 12 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_finance_vice1]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_finance_vice2_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 139 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_finance_vice2_portrait"
+				position = { x = 142 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_finance_vice2]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_finance_vice2_name"
+				position = { x = 130 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_finance_vice2]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+		}
+
+		# ===== 部门：justice =====
+		containerWindowType = {
+			name = "gov_justice_block"
+			position = { x = 252 y = 50 }
+			size = { width = 232 height = 340 }
+			clipping = no
+
+			instantTextBoxType = {
+				name = "gov_justice_dept_label"
+				position = { x = 0 y = 2 }
+				font = "hoi_18mbs"
+				text = "FE_gov_dept_justice"
+				maxWidth = 232
+				maxHeight = 22
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 正部长 ——
+			instantTextBoxType = {
+				name = "gov_justice_minister_role"
+				position = { x = 0 y = 26 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_minister"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_justice_minister_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 73 y = 46 }
+				scale = @MIN_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_justice_minister_portrait"
+				position = { x = 77 y = 53 }
+				scale = @MIN_SCALE
+				pdx_tooltip = "[GetGovTip_justice_minister]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_justice_minister_name"
+				position = { x = 16 y = 178 }
+				font = "hoi_16mbs"
+				text = "[GetGovName_justice_minister]"
+				maxWidth = 200
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 副部长 ——
+			instantTextBoxType = {
+				name = "gov_justice_vice_role"
+				position = { x = 0 y = 200 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_vice"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_justice_vice1_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 28 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_justice_vice1_portrait"
+				position = { x = 31 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_justice_vice1]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_justice_vice1_name"
+				position = { x = 12 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_justice_vice1]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_justice_vice2_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 139 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_justice_vice2_portrait"
+				position = { x = 142 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_justice_vice2]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_justice_vice2_name"
+				position = { x = 130 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_justice_vice2]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+		}
+
+		# ===== 部门：defense =====
+		containerWindowType = {
+			name = "gov_defense_block"
+			position = { x = 492 y = 50 }
+			size = { width = 232 height = 340 }
+			clipping = no
+
+			instantTextBoxType = {
+				name = "gov_defense_dept_label"
+				position = { x = 0 y = 2 }
+				font = "hoi_18mbs"
+				text = "FE_gov_dept_defense"
+				maxWidth = 232
+				maxHeight = 22
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 正部长 ——
+			instantTextBoxType = {
+				name = "gov_defense_minister_role"
+				position = { x = 0 y = 26 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_minister"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_defense_minister_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 73 y = 46 }
+				scale = @MIN_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_defense_minister_portrait"
+				position = { x = 77 y = 53 }
+				scale = @MIN_SCALE
+				pdx_tooltip = "[GetGovTip_defense_minister]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_defense_minister_name"
+				position = { x = 16 y = 178 }
+				font = "hoi_16mbs"
+				text = "[GetGovName_defense_minister]"
+				maxWidth = 200
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 副部长 ——
+			instantTextBoxType = {
+				name = "gov_defense_vice_role"
+				position = { x = 0 y = 200 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_vice"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_defense_vice1_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 28 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_defense_vice1_portrait"
+				position = { x = 31 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_defense_vice1]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_defense_vice1_name"
+				position = { x = 12 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_defense_vice1]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_defense_vice2_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 139 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_defense_vice2_portrait"
+				position = { x = 142 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_defense_vice2]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_defense_vice2_name"
+				position = { x = 130 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_defense_vice2]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+		}
+
+		# ===== 部门：foreign =====
+		containerWindowType = {
+			name = "gov_foreign_block"
+			position = { x = 732 y = 50 }
+			size = { width = 232 height = 340 }
+			clipping = no
+
+			instantTextBoxType = {
+				name = "gov_foreign_dept_label"
+				position = { x = 0 y = 2 }
+				font = "hoi_18mbs"
+				text = "FE_gov_dept_foreign"
+				maxWidth = 232
+				maxHeight = 22
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 正部长 ——
+			instantTextBoxType = {
+				name = "gov_foreign_minister_role"
+				position = { x = 0 y = 26 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_minister"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_foreign_minister_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 73 y = 46 }
+				scale = @MIN_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_foreign_minister_portrait"
+				position = { x = 77 y = 53 }
+				scale = @MIN_SCALE
+				pdx_tooltip = "[GetGovTip_foreign_minister]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_foreign_minister_name"
+				position = { x = 16 y = 178 }
+				font = "hoi_16mbs"
+				text = "[GetGovName_foreign_minister]"
+				maxWidth = 200
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 副部长 ——
+			instantTextBoxType = {
+				name = "gov_foreign_vice_role"
+				position = { x = 0 y = 200 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_vice"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_foreign_vice1_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 28 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_foreign_vice1_portrait"
+				position = { x = 31 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_foreign_vice1]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_foreign_vice1_name"
+				position = { x = 12 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_foreign_vice1]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_foreign_vice2_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 139 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_foreign_vice2_portrait"
+				position = { x = 142 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_foreign_vice2]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_foreign_vice2_name"
+				position = { x = 130 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_foreign_vice2]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+		}
+
+		# ===== 部门：psec =====
+		containerWindowType = {
+			name = "gov_psec_block"
+			position = { x = 12 y = 402 }
+			size = { width = 232 height = 340 }
+			clipping = no
+
+			instantTextBoxType = {
+				name = "gov_psec_dept_label"
+				position = { x = 0 y = 2 }
+				font = "hoi_18mbs"
+				text = "FE_gov_dept_psec"
+				maxWidth = 232
+				maxHeight = 22
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 正部长 ——
+			instantTextBoxType = {
+				name = "gov_psec_minister_role"
+				position = { x = 0 y = 26 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_minister"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_psec_minister_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 73 y = 46 }
+				scale = @MIN_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_psec_minister_portrait"
+				position = { x = 77 y = 53 }
+				scale = @MIN_SCALE
+				pdx_tooltip = "[GetGovTip_psec_minister]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_psec_minister_name"
+				position = { x = 16 y = 178 }
+				font = "hoi_16mbs"
+				text = "[GetGovName_psec_minister]"
+				maxWidth = 200
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 副部长 ——
+			instantTextBoxType = {
+				name = "gov_psec_vice_role"
+				position = { x = 0 y = 200 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_vice"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_psec_vice1_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 28 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_psec_vice1_portrait"
+				position = { x = 31 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_psec_vice1]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_psec_vice1_name"
+				position = { x = 12 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_psec_vice1]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_psec_vice2_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 139 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_psec_vice2_portrait"
+				position = { x = 142 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_psec_vice2]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_psec_vice2_name"
+				position = { x = 130 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_psec_vice2]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+		}
+
+		# ===== 部门：edu =====
+		containerWindowType = {
+			name = "gov_edu_block"
+			position = { x = 252 y = 402 }
+			size = { width = 232 height = 340 }
+			clipping = no
+
+			instantTextBoxType = {
+				name = "gov_edu_dept_label"
+				position = { x = 0 y = 2 }
+				font = "hoi_18mbs"
+				text = "FE_gov_dept_edu"
+				maxWidth = 232
+				maxHeight = 22
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 正部长 ——
+			instantTextBoxType = {
+				name = "gov_edu_minister_role"
+				position = { x = 0 y = 26 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_minister"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_edu_minister_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 73 y = 46 }
+				scale = @MIN_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_edu_minister_portrait"
+				position = { x = 77 y = 53 }
+				scale = @MIN_SCALE
+				pdx_tooltip = "[GetGovTip_edu_minister]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_edu_minister_name"
+				position = { x = 16 y = 178 }
+				font = "hoi_16mbs"
+				text = "[GetGovName_edu_minister]"
+				maxWidth = 200
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 副部长 ——
+			instantTextBoxType = {
+				name = "gov_edu_vice_role"
+				position = { x = 0 y = 200 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_vice"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_edu_vice1_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 28 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_edu_vice1_portrait"
+				position = { x = 31 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_edu_vice1]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_edu_vice1_name"
+				position = { x = 12 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_edu_vice1]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_edu_vice2_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 139 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_edu_vice2_portrait"
+				position = { x = 142 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_edu_vice2]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_edu_vice2_name"
+				position = { x = 130 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_edu_vice2]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+		}
+
+		# ===== 部门：bank =====
+		containerWindowType = {
+			name = "gov_bank_block"
+			position = { x = 492 y = 402 }
+			size = { width = 232 height = 340 }
+			clipping = no
+
+			instantTextBoxType = {
+				name = "gov_bank_dept_label"
+				position = { x = 0 y = 2 }
+				font = "hoi_18mbs"
+				text = "FE_gov_dept_bank"
+				maxWidth = 232
+				maxHeight = 22
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 正部长 ——
+			instantTextBoxType = {
+				name = "gov_bank_minister_role"
+				position = { x = 0 y = 26 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_minister"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_bank_minister_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 73 y = 46 }
+				scale = @MIN_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_bank_minister_portrait"
+				position = { x = 77 y = 53 }
+				scale = @MIN_SCALE
+				pdx_tooltip = "[GetGovTip_bank_minister]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_bank_minister_name"
+				position = { x = 16 y = 178 }
+				font = "hoi_16mbs"
+				text = "[GetGovName_bank_minister]"
+				maxWidth = 200
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 副部长 ——
+			instantTextBoxType = {
+				name = "gov_bank_vice_role"
+				position = { x = 0 y = 200 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_vice"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_bank_vice1_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 28 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_bank_vice1_portrait"
+				position = { x = 31 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_bank_vice1]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_bank_vice1_name"
+				position = { x = 12 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_bank_vice1]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_bank_vice2_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 139 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_bank_vice2_portrait"
+				position = { x = 142 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_bank_vice2]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_bank_vice2_name"
+				position = { x = 130 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_bank_vice2]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+		}
+
+		# ===== 部门：sci =====
+		containerWindowType = {
+			name = "gov_sci_block"
+			position = { x = 732 y = 402 }
+			size = { width = 232 height = 340 }
+			clipping = no
+
+			instantTextBoxType = {
+				name = "gov_sci_dept_label"
+				position = { x = 0 y = 2 }
+				font = "hoi_18mbs"
+				text = "FE_gov_dept_sci"
+				maxWidth = 232
+				maxHeight = 22
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 正部长 ——
+			instantTextBoxType = {
+				name = "gov_sci_minister_role"
+				position = { x = 0 y = 26 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_minister"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_sci_minister_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 73 y = 46 }
+				scale = @MIN_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_sci_minister_portrait"
+				position = { x = 77 y = 53 }
+				scale = @MIN_SCALE
+				pdx_tooltip = "[GetGovTip_sci_minister]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_sci_minister_name"
+				position = { x = 16 y = 178 }
+				font = "hoi_16mbs"
+				text = "[GetGovName_sci_minister]"
+				maxWidth = 200
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+
+			# —— 副部长 ——
+			instantTextBoxType = {
+				name = "gov_sci_vice_role"
+				position = { x = 0 y = 200 }
+				font = "hoi_16mbs"
+				text = "FE_gov_role_vice"
+				maxWidth = 232
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_sci_vice1_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 28 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_sci_vice1_portrait"
+				position = { x = 31 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_sci_vice1]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_sci_vice1_name"
+				position = { x = 12 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_sci_vice1]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_sci_vice2_frame"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 139 y = 220 }
+				scale = @VICE_SCALE
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "gov_sci_vice2_portrait"
+				position = { x = 142 y = 225 }
+				scale = @VICE_SCALE
+				pdx_tooltip = "[GetGovTip_sci_vice2]"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "gov_sci_vice2_name"
+				position = { x = 130 y = 320 }
+				font = "hoi_14mbs"
+				text = "[GetGovName_sci_vice2]"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+		}
+
+	}
+}
