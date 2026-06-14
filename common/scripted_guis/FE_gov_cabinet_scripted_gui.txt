@@ -1,0 +1,73 @@
+################################################################
+# 国家政府领导组 - 脚本化GUI（弹出式大窗口）
+#  · FE_gov_cabinet_button：政治界面里的开关按钮，点击切换 country_flag
+#  · FE_gov_cabinet：大窗口本体，按 country_flag 显示；纯展示无任命点击
+#  任命只能由国策/事件 set_variable = { FE_gov_<dept>_<role> = token:角色 } 完成。
+################################################################
+
+scripted_gui = {
+
+	# —— 政治界面里的开关按钮 ——
+	FE_gov_cabinet_button = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "FE_gov_cabinet_button_window"
+
+		visible = { always = yes }
+
+		effects = {
+			FE_gov_cabinet_open_btn_click = {
+				if = {
+					limit = { has_country_flag = FE_gov_cabinet_open }
+					clr_country_flag = FE_gov_cabinet_open
+				}
+				else = {
+					set_country_flag = FE_gov_cabinet_open
+				}
+			}
+		}
+	}
+
+	# —— 国家政府领导组 大窗口 ——
+	FE_gov_cabinet = {
+		context_type = player_context
+		window_name = "FE_gov_cabinet_window"
+
+		visible = {
+			has_country_flag = FE_gov_cabinet_open
+		}
+
+		effects = {
+			FE_gov_cabinet_close_btn_click = {
+				clr_country_flag = FE_gov_cabinet_open
+			}
+		}
+
+		properties = {
+			gov_finance_minister_portrait = { image = "[GetGovPortrait_finance_minister]" }
+			gov_finance_vice1_portrait = { image = "[GetGovPortrait_finance_vice1]" }
+			gov_finance_vice2_portrait = { image = "[GetGovPortrait_finance_vice2]" }
+			gov_justice_minister_portrait = { image = "[GetGovPortrait_justice_minister]" }
+			gov_justice_vice1_portrait = { image = "[GetGovPortrait_justice_vice1]" }
+			gov_justice_vice2_portrait = { image = "[GetGovPortrait_justice_vice2]" }
+			gov_defense_minister_portrait = { image = "[GetGovPortrait_defense_minister]" }
+			gov_defense_vice1_portrait = { image = "[GetGovPortrait_defense_vice1]" }
+			gov_defense_vice2_portrait = { image = "[GetGovPortrait_defense_vice2]" }
+			gov_foreign_minister_portrait = { image = "[GetGovPortrait_foreign_minister]" }
+			gov_foreign_vice1_portrait = { image = "[GetGovPortrait_foreign_vice1]" }
+			gov_foreign_vice2_portrait = { image = "[GetGovPortrait_foreign_vice2]" }
+			gov_psec_minister_portrait = { image = "[GetGovPortrait_psec_minister]" }
+			gov_psec_vice1_portrait = { image = "[GetGovPortrait_psec_vice1]" }
+			gov_psec_vice2_portrait = { image = "[GetGovPortrait_psec_vice2]" }
+			gov_edu_minister_portrait = { image = "[GetGovPortrait_edu_minister]" }
+			gov_edu_vice1_portrait = { image = "[GetGovPortrait_edu_vice1]" }
+			gov_edu_vice2_portrait = { image = "[GetGovPortrait_edu_vice2]" }
+			gov_bank_minister_portrait = { image = "[GetGovPortrait_bank_minister]" }
+			gov_bank_vice1_portrait = { image = "[GetGovPortrait_bank_vice1]" }
+			gov_bank_vice2_portrait = { image = "[GetGovPortrait_bank_vice2]" }
+			gov_sci_minister_portrait = { image = "[GetGovPortrait_sci_minister]" }
+			gov_sci_vice1_portrait = { image = "[GetGovPortrait_sci_vice1]" }
+			gov_sci_vice2_portrait = { image = "[GetGovPortrait_sci_vice2]" }
+		}
+	}
+}

@@ -1,0 +1,26 @@
+###########################################################################
+# 国家政府领导组 - 部长“职位效果”精神（隐藏）
+#  · 每位部长的修正效果做成一条 hidden_ideas，任命时 add_ideas 上、解职时 remove_ideas 撤
+#  · hidden_ideas (hidden=yes)：不在民族精神栏显示，但修正照常生效——
+#    效果改为在面板里“悬停部长立绘”查看（见 GetGovTip_* / FE_gov_tip_* 文案）
+#  · allowed = { always = no }：不会自动获得，只能由脚本(add_ideas)赋予
+#
+#  示例：堤亚穆帝国 路德维希·休伊特 的财政部长效果（数值取自原 Finance_minister 特质）
+###########################################################################
+
+ideas = {
+	hidden_ideas = {
+
+		# 财政部长（路德维希·休伊特）：稳定度 +5%，消费品 -15%
+		TIA_finance_minister_Ludwig = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.15
+			}
+		}
+	}
+}

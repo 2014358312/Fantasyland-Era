@@ -50,14 +50,20 @@ idea_categories = {
 		politics_tab = no
 	}
 	
+	# 智囊团（政治顾问栏）已被“国家政府领导组”取代：
+	# politics_tab = no 让该分类不再显示于政治界面（玩家无法点选顾问），
+	# 但 head_of_government / political_advisor 槽位在代码层依旧存在，可由事件/国策赋予。
+	# 如需恢复原版顾问栏，删除下面这行 politics_tab = no 即可。
 	brain_trust = {
 		slot = head_of_government
 		character_slot = political_advisor
 		character_slot = political_advisor
 		character_slot = political_advisor
-		
+
 		ledger = civilian
-		
+
+		politics_tab = no
+
 		cost = 150
 		removal_cost = 0
 	}

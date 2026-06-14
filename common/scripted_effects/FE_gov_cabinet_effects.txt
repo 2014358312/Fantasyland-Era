@@ -1,0 +1,71 @@
+################################################################
+# 国家政府领导组 - 任命/解职 约定 与 示例效果
+#--------------------------------------------------------------
+# 任命一位部长 = 两步：
+#   ① set_variable = { FE_gov_<dept>_<role> = <整数ID> }  面板显示立绘/姓名/悬停说明
+#   ② add_ideas = <该部长的隐藏精神>                       应用修正效果（不在民族精神栏显示）
+# 解职 = clear_variable + remove_ideas，撤掉显示与效果。
+#
+# 登记一位部长（三处）：
+#   1) interface/FE_gov_cabinet.gfx        注册 GFX_Portrait_<名字> 立绘
+#   2) common/ideas/FE_gov_cabinet_ideas.txt  写一条 hidden_ideas 带 modifier（效果）
+#   3) common/scripted_localisation/FE_gov_cabinet_scripted_localisation.txt
+#        在该槽位的 GetGovPortrait/GetGovName/GetGovTip 各加一行 ID 分支
+#   然后在国策/事件里 set_variable=该ID + add_ideas=该精神。
+#
+# 24 个槽位变量：FE_gov_<dept>_<role>（值为整数ID，0/未设=空缺）
+#   dept: finance/justice/defense/foreign/psec/edu/bank/sci
+#   role: minister(正部长)/vice1/vice2(副部长)
+# 注：智囊团(政治顾问)分类已 politics_tab=no 隐藏；部长效果用隐藏精神，
+#     不在政治界面/民族精神栏显示、玩家无法点选，但修正照常生效，悬停部长立绘可见说明。
+################################################################
+
+# 一键清空整套领导组的“显示”（重置/换届用；如需同时撤效果请各自 remove_ideas）
+FE_gov_clear_cabinet_display = {
+	clear_variable = FE_gov_finance_minister
+	clear_variable = FE_gov_finance_vice1
+	clear_variable = FE_gov_finance_vice2
+	clear_variable = FE_gov_justice_minister
+	clear_variable = FE_gov_justice_vice1
+	clear_variable = FE_gov_justice_vice2
+	clear_variable = FE_gov_defense_minister
+	clear_variable = FE_gov_defense_vice1
+	clear_variable = FE_gov_defense_vice2
+	clear_variable = FE_gov_foreign_minister
+	clear_variable = FE_gov_foreign_vice1
+	clear_variable = FE_gov_foreign_vice2
+	clear_variable = FE_gov_psec_minister
+	clear_variable = FE_gov_psec_vice1
+	clear_variable = FE_gov_psec_vice2
+	clear_variable = FE_gov_edu_minister
+	clear_variable = FE_gov_edu_vice1
+	clear_variable = FE_gov_edu_vice2
+	clear_variable = FE_gov_bank_minister
+	clear_variable = FE_gov_bank_vice1
+	clear_variable = FE_gov_bank_vice2
+	clear_variable = FE_gov_sci_minister
+	clear_variable = FE_gov_sci_vice1
+	clear_variable = FE_gov_sci_vice2
+}
+
+################################################################
+# 示例（成果）：开局任命 堤亚穆帝国 路德维希·休伊特 为财政部长
+#  · 面板“财政部·正部长”槽显示其立绘/姓名
+#  · 职位效果用隐藏精神 TIA_finance_minister_Ludwig（开局即生效）：
+#      稳定度 +5%、消费品 -15%（取自原 Finance_minister 特质数值）
+#  · 不用 add_ideas=TIA_Ludwig_Hewitt 的原因：该顾问 available 需先完成
+#    TIA_Financial_issues 国策，开局加上去会处于未激活、无修正状态。
+#  在 common/on_actions/on_actions_TIA.txt 的 on_startup 里被调用。
+################################################################
+FE_TIA_appoint_Ludwig_finance = {
+	# ① 面板显示：ID 1 -> 立绘 GFX_Portrait_TIA_Ludwig_Hewitt + 姓名 GOV_TIA_Ludwig_Hewitt_name
+	#    （ID 与立绘/姓名的对应关系登记在 scripted_localisation 里）
+	set_variable = { FE_gov_finance_minister = 1 }
+	# ② 职位效果：开局即生效的隐藏精神（稳定度+5%、消费品-15%）
+	add_ideas = TIA_finance_minister_Ludwig
+}
+
+FE_TIA_dismiss_finance = {
+	clear_variable = FE_gov_finance_minister
+	remove_ideas = TIA_finance_minister_Ludwig
+}

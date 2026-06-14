@@ -1,0 +1,381 @@
+################################################################
+# 国家政府领导组 - 脚本本地化（立绘 / 姓名 / 悬停效果）
+#--------------------------------------------------------------
+# 采用“整数ID登记表”方式（稳定，不依赖动态token）：
+#   每个槽位变量 FE_gov_<dept>_<role> 存一个整数 ID（1,2,3...）
+#   下面为每个 ID 写一行 check_variable 分支，指向其立绘/姓名/效果说明。
+#   未设置(空缺/=0) -> 回落到 GFX_leader_unknown / 空缺 / 通用说明。
+#
+# 新增一位部长时，在对应槽位的三个函数里各加一行 ID 分支即可，例如：
+#   text = { trigger = { check_variable = { FE_gov_finance_minister = 2 } } localization_key = GFX_Portrait_某人 }
+#
+# 立绘 localization_key 写 GFX_ 立绘名（直接当图片用）；
+# 姓名/效果 localization_key 写本地化键（会被翻译成文字）。
+# dept: finance/justice/defense/foreign/psec/edu/bank/sci
+# role: minister(正部长)/vice1/vice2(副部长)
+################################################################
+
+defined_text = {
+	name = GetGovPortrait_finance_minister
+	# ID 1 = 堤亚穆帝国 路德维希·休伊特
+	text = { trigger = { check_variable = { FE_gov_finance_minister = 1 } } localization_key = GFX_Portrait_TIA_Ludwig_Hewitt }
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_finance_minister
+	text = { trigger = { check_variable = { FE_gov_finance_minister = 1 } } localization_key = GOV_TIA_Ludwig_Hewitt_name }
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_finance_minister
+	text = { trigger = { check_variable = { FE_gov_finance_minister = 1 } } localization_key = FE_gov_tip_TIA_Ludwig }
+	text = { localization_key = FE_gov_minister_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_finance_vice1
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_finance_vice1
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_finance_vice1
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_finance_vice2
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_finance_vice2
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_finance_vice2
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_justice_minister
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_justice_minister
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_justice_minister
+	text = { localization_key = FE_gov_minister_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_justice_vice1
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_justice_vice1
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_justice_vice1
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_justice_vice2
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_justice_vice2
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_justice_vice2
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_defense_minister
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_defense_minister
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_defense_minister
+	text = { localization_key = FE_gov_minister_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_defense_vice1
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_defense_vice1
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_defense_vice1
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_defense_vice2
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_defense_vice2
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_defense_vice2
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_foreign_minister
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_foreign_minister
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_foreign_minister
+	text = { localization_key = FE_gov_minister_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_foreign_vice1
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_foreign_vice1
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_foreign_vice1
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_foreign_vice2
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_foreign_vice2
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_foreign_vice2
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_psec_minister
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_psec_minister
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_psec_minister
+	text = { localization_key = FE_gov_minister_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_psec_vice1
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_psec_vice1
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_psec_vice1
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_psec_vice2
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_psec_vice2
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_psec_vice2
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_edu_minister
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_edu_minister
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_edu_minister
+	text = { localization_key = FE_gov_minister_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_edu_vice1
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_edu_vice1
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_edu_vice1
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_edu_vice2
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_edu_vice2
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_edu_vice2
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_bank_minister
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_bank_minister
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_bank_minister
+	text = { localization_key = FE_gov_minister_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_bank_vice1
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_bank_vice1
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_bank_vice1
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_bank_vice2
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_bank_vice2
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_bank_vice2
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_sci_minister
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_sci_minister
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_sci_minister
+	text = { localization_key = FE_gov_minister_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_sci_vice1
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_sci_vice1
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_sci_vice1
+	text = { localization_key = FE_gov_vice_tt }
+}
+
+defined_text = {
+	name = GetGovPortrait_sci_vice2
+	text = { localization_key = GFX_leader_unknown }
+}
+
+defined_text = {
+	name = GetGovName_sci_vice2
+	text = { localization_key = FE_gov_vacant }
+}
+
+defined_text = {
+	name = GetGovTip_sci_vice2
+	text = { localization_key = FE_gov_vice_tt }
+}
+
