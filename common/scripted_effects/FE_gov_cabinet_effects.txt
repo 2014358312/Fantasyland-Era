@@ -1,17 +1,19 @@
 ################################################################
 # 国家政府领导组 - 任命/解职 约定 与 示例效果
 #--------------------------------------------------------------
-# 任命一位部长 = 两步：
-#   ① set_variable = { FE_gov_<dept>_<role> = <整数ID> }  面板显示立绘/姓名/悬停说明
-#   ② add_ideas = <该部长的隐藏精神>                       应用修正效果（不在民族精神栏显示）
-# 解职 = clear_variable + remove_ideas，撤掉显示与效果。
+# 任命一位部长 = 面板显示 + 效果：
+#   显示：set_variable = { FE_gov_<dept>_<role> = <整数ID> }（立绘/姓名/悬停说明）
+#   效果：add_ideas = <该部长的隐藏精神>（修正，不在民族精神栏显示）
+#         —— 若该角色已有合适的隐藏精神（如堤亚穆内阁的 TIA_minister_finance_idea 等），
+#            直接复用、用其原有机制赋予即可，不必再建新 idea。
+# 解职 = clear_variable + remove_ideas。
 #
-# 登记一位部长（三处）：
+# 登记一位“新”部长（三处）：
 #   1) interface/FE_gov_cabinet.gfx        注册 GFX_Portrait_<名字> 立绘
-#   2) common/ideas/FE_gov_cabinet_ideas.txt  写一条 hidden_ideas 带 modifier（效果）
+#   2) common/ideas/FE_gov_cabinet_ideas.txt  写一条 hidden_ideas 带 modifier（效果，可选）
 #   3) common/scripted_localisation/FE_gov_cabinet_scripted_localisation.txt
 #        在该槽位的 GetGovPortrait/GetGovName/GetGovTip 各加一行 ID 分支
-#   然后在国策/事件里 set_variable=该ID + add_ideas=该精神。
+#   然后在国策/事件里 set_variable=该ID（+ add_ideas=效果精神）。
 #
 # 24 个槽位变量：FE_gov_<dept>_<role>（值为整数ID，0/未设=空缺）
 #   dept: finance/justice/defense/foreign/psec/edu/bank/sci
@@ -49,23 +51,12 @@ FE_gov_clear_cabinet_display = {
 }
 
 ################################################################
-# 示例（成果）：开局任命 堤亚穆帝国 路德维希·休伊特 为财政部长
-#  · 面板“财政部·正部长”槽显示其立绘/姓名
-#  · 职位效果用隐藏精神 TIA_finance_minister_Ludwig（开局即生效）：
-#      稳定度 +5%、消费品 -15%（取自原 Finance_minister 特质数值）
-#  · 不用 add_ideas=TIA_Ludwig_Hewitt 的原因：该顾问 available 需先完成
-#    TIA_Financial_issues 国策，开局加上去会处于未激活、无修正状态。
-#  在 common/on_actions/on_actions_TIA.txt 的 on_startup 里被调用。
+# 成果：堤亚穆帝国内阁 8 位部长 已接入领导组
+#  · 不在此文件单独写任命效果——而是直接在各 TIA_cabinet_* 国策的
+#    completion_reward 里 hidden_effect = { set_variable = { FE_gov_<部门>_minister = 1 } }
+#  · 效果仍由各内阁隐藏精神（TIA_minister_finance_idea 等）提供，
+#    沿用原 ascended_advisor 机制，本次未改动效果系统（与旧内圈并存）。
+#  · 立绘/姓名/悬停说明登记在 FE_gov_cabinet.gfx 与 scripted_localisation。
+#  映射：财政=Ludwig 司法=Miabel 国防=Ekure 外交=Tiona
+#        公安=Anne 教育=Yumiella 中央银行=Livia 科学院=Alice（均为正部长, ID 1）
 ################################################################
-FE_TIA_appoint_Ludwig_finance = {
-	# ① 面板显示：ID 1 -> 立绘 GFX_Portrait_TIA_Ludwig_Hewitt + 姓名 GOV_TIA_Ludwig_Hewitt_name
-	#    （ID 与立绘/姓名的对应关系登记在 scripted_localisation 里）
-	set_variable = { FE_gov_finance_minister = 1 }
-	# ② 职位效果：开局即生效的隐藏精神（稳定度+5%、消费品-15%）
-	add_ideas = TIA_finance_minister_Ludwig
-}
-
-FE_TIA_dismiss_finance = {
-	clear_variable = FE_gov_finance_minister
-	remove_ideas = TIA_finance_minister_Ludwig
-}

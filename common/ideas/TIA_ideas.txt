@@ -1078,7 +1078,33 @@ ideas = {
 			}
 		}
 
-		# 莉薇娅线终点
+		# —— 焦点效果完善：联系温克勒商会 ——
+        TIA_winkler_chamber_spirit = {
+            picture = free_trade
+            allowed = { always = no }
+            allowed_civil_war = { always = yes }
+            removal_cost = -1
+            modifier = {
+                consumer_goods_factor = -0.05
+                production_speed_industrial_complex_factor = 0.10
+                trade_opinion_factor = 0.10
+            }
+        }
+
+        # —— 焦点效果完善：国家公共工程开发计划 ——
+        TIA_national_public_works_spirit = {
+            picture = generic_industrial_concern_2
+            allowed = { always = no }
+            allowed_civil_war = { always = yes }
+            removal_cost = -1
+            modifier = {
+                production_speed_buildings_factor = 0.10
+                production_speed_infrastructure_factor = 0.15
+                consumer_goods_factor = -0.03
+            }
+        }
+
+        # 莉薇娅线终点
 		TIA_empire_steel_spirit = {
 			picture = TIA_empire_steel_spirit
 			allowed = { always = no }

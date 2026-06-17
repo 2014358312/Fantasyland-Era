@@ -1,10 +1,4 @@
-on_actions = {
-	# 开局：堤亚穆帝国 路德维希·休伊特 就任财政部长（含 Finance_minister 效果）
-	on_startup = {
-		effect = {
-			TIA = {
-				FE_TIA_appoint_Ludwig_finance = yes
-			}
-		}
-	}
-}
+# 堤亚穆帝国 on_actions
+# 注：国家政府领导组的部长任命已改为「由内阁国策驱动」——
+# 各 TIA_cabinet_* 国策完成时会 set_variable = { FE_gov_<部门>_minister = 1 }，
+# 故此处不再做开局自动任命。
