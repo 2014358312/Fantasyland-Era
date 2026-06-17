@@ -1,23 +1,14 @@
 ################################################################
-# 国家政府领导组 - 脚本本地化（立绘 / 姓名 / 悬停效果）
-#--------------------------------------------------------------
-# 采用“整数ID登记表”方式（稳定，不依赖动态token）：
-#   每个槽位变量 FE_gov_<dept>_<role> 存一个整数 ID（1,2,3...）
-#   下面为每个 ID 写一行 check_variable 分支，指向其立绘/姓名/效果说明。
-#   未设置(空缺/=0) -> 回落到 GFX_leader_unknown / 空缺 / 通用说明。
-#
-# 新增一位部长时，在对应槽位的三个函数里各加一行 ID 分支即可，例如：
-#   text = { trigger = { check_variable = { FE_gov_finance_minister = 2 } } localization_key = GFX_Portrait_某人 }
-#
-# 立绘 localization_key 写 GFX_ 立绘名（直接当图片用）；
-# 姓名/效果 localization_key 写本地化键（会被翻译成文字）。
-# dept: finance/justice/defense/foreign/psec/edu/bank/sci
-# role: minister(正部长)/vice1/vice2(副部长)
+# National Government Leadership Group - portrait / name / hover tip
+# Integer-ID registry (reliable, no dynamic tokens).
+# Each slot var FE_gov_<dept>_<role> stores an integer ID; add a
+# check_variable branch per ID -> sprite / name loc / tip loc.
+# Unset(=0) -> GFX_leader_unknown / FE_gov_vacant / generic tip.
+# TIA cabinet ministers are all wired as ID 1 of their department.
 ################################################################
 
 defined_text = {
 	name = GetGovPortrait_finance_minister
-	# ID 1 = 堤亚穆帝国 路德维希·休伊特
 	text = { trigger = { check_variable = { FE_gov_finance_minister = 1 } } localization_key = GFX_Portrait_TIA_Ludwig_Hewitt }
 	text = { localization_key = GFX_leader_unknown }
 }
@@ -66,16 +57,19 @@ defined_text = {
 
 defined_text = {
 	name = GetGovPortrait_justice_minister
+	text = { trigger = { check_variable = { FE_gov_justice_minister = 1 } } localization_key = GFX_Portrait_TIA_Miabel_Runa_Tiamun }
 	text = { localization_key = GFX_leader_unknown }
 }
 
 defined_text = {
 	name = GetGovName_justice_minister
+	text = { trigger = { check_variable = { FE_gov_justice_minister = 1 } } localization_key = GOV_TIA_Miabel_name }
 	text = { localization_key = FE_gov_vacant }
 }
 
 defined_text = {
 	name = GetGovTip_justice_minister
+	text = { trigger = { check_variable = { FE_gov_justice_minister = 1 } } localization_key = FE_gov_tip_TIA_Miabel }
 	text = { localization_key = FE_gov_minister_tt }
 }
 
@@ -111,16 +105,19 @@ defined_text = {
 
 defined_text = {
 	name = GetGovPortrait_defense_minister
+	text = { trigger = { check_variable = { FE_gov_defense_minister = 1 } } localization_key = GFX_Portrait_TIA_Ekure }
 	text = { localization_key = GFX_leader_unknown }
 }
 
 defined_text = {
 	name = GetGovName_defense_minister
+	text = { trigger = { check_variable = { FE_gov_defense_minister = 1 } } localization_key = GOV_TIA_Ekure_name }
 	text = { localization_key = FE_gov_vacant }
 }
 
 defined_text = {
 	name = GetGovTip_defense_minister
+	text = { trigger = { check_variable = { FE_gov_defense_minister = 1 } } localization_key = FE_gov_tip_TIA_Ekure }
 	text = { localization_key = FE_gov_minister_tt }
 }
 
@@ -156,16 +153,19 @@ defined_text = {
 
 defined_text = {
 	name = GetGovPortrait_foreign_minister
+	text = { trigger = { check_variable = { FE_gov_foreign_minister = 1 } } localization_key = GFX_Portrait_TIA_Tiona_Rudolvon }
 	text = { localization_key = GFX_leader_unknown }
 }
 
 defined_text = {
 	name = GetGovName_foreign_minister
+	text = { trigger = { check_variable = { FE_gov_foreign_minister = 1 } } localization_key = GOV_TIA_Tiona_name }
 	text = { localization_key = FE_gov_vacant }
 }
 
 defined_text = {
 	name = GetGovTip_foreign_minister
+	text = { trigger = { check_variable = { FE_gov_foreign_minister = 1 } } localization_key = FE_gov_tip_TIA_Tiona }
 	text = { localization_key = FE_gov_minister_tt }
 }
 
@@ -201,16 +201,19 @@ defined_text = {
 
 defined_text = {
 	name = GetGovPortrait_psec_minister
+	text = { trigger = { check_variable = { FE_gov_psec_minister = 1 } } localization_key = GFX_Portrait_TIA_Anne_Littstein }
 	text = { localization_key = GFX_leader_unknown }
 }
 
 defined_text = {
 	name = GetGovName_psec_minister
+	text = { trigger = { check_variable = { FE_gov_psec_minister = 1 } } localization_key = GOV_TIA_Anne_name }
 	text = { localization_key = FE_gov_vacant }
 }
 
 defined_text = {
 	name = GetGovTip_psec_minister
+	text = { trigger = { check_variable = { FE_gov_psec_minister = 1 } } localization_key = FE_gov_tip_TIA_Anne }
 	text = { localization_key = FE_gov_minister_tt }
 }
 
@@ -246,16 +249,19 @@ defined_text = {
 
 defined_text = {
 	name = GetGovPortrait_edu_minister
+	text = { trigger = { check_variable = { FE_gov_edu_minister = 1 } } localization_key = GFX_Portrait_TIA_Yumiella_Dolkness }
 	text = { localization_key = GFX_leader_unknown }
 }
 
 defined_text = {
 	name = GetGovName_edu_minister
+	text = { trigger = { check_variable = { FE_gov_edu_minister = 1 } } localization_key = GOV_TIA_Yumiella_name }
 	text = { localization_key = FE_gov_vacant }
 }
 
 defined_text = {
 	name = GetGovTip_edu_minister
+	text = { trigger = { check_variable = { FE_gov_edu_minister = 1 } } localization_key = FE_gov_tip_TIA_Yumiella }
 	text = { localization_key = FE_gov_minister_tt }
 }
 
@@ -291,16 +297,19 @@ defined_text = {
 
 defined_text = {
 	name = GetGovPortrait_bank_minister
+	text = { trigger = { check_variable = { FE_gov_bank_minister = 1 } } localization_key = GFX_Portrait_TIA_Livia }
 	text = { localization_key = GFX_leader_unknown }
 }
 
 defined_text = {
 	name = GetGovName_bank_minister
+	text = { trigger = { check_variable = { FE_gov_bank_minister = 1 } } localization_key = GOV_TIA_Livia_name }
 	text = { localization_key = FE_gov_vacant }
 }
 
 defined_text = {
 	name = GetGovTip_bank_minister
+	text = { trigger = { check_variable = { FE_gov_bank_minister = 1 } } localization_key = FE_gov_tip_TIA_Livia }
 	text = { localization_key = FE_gov_minister_tt }
 }
 
@@ -336,16 +345,19 @@ defined_text = {
 
 defined_text = {
 	name = GetGovPortrait_sci_minister
+	text = { trigger = { check_variable = { FE_gov_sci_minister = 1 } } localization_key = GFX_Portrait_TIA_Alice_Bedford }
 	text = { localization_key = GFX_leader_unknown }
 }
 
 defined_text = {
 	name = GetGovName_sci_minister
+	text = { trigger = { check_variable = { FE_gov_sci_minister = 1 } } localization_key = GOV_TIA_Alice_name }
 	text = { localization_key = FE_gov_vacant }
 }
 
 defined_text = {
 	name = GetGovTip_sci_minister
+	text = { trigger = { check_variable = { FE_gov_sci_minister = 1 } } localization_key = FE_gov_tip_TIA_Alice }
 	text = { localization_key = FE_gov_minister_tt }
 }
 

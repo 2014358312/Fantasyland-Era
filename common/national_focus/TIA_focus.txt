@@ -305,6 +305,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = TIA_Ludwig_Hewitt
+				custom_effect_tooltip = FE_gov_appoint_Ludwig_tt
+				hidden_effect = { set_variable = { FE_gov_finance_minister = 1 } }
 			swap_ideas = {
 				remove_idea = TIA_financial_emergency
 				add_idea = TIA_financial_emergency_1
@@ -388,6 +390,9 @@ focus_tree = {
 			focus = TIA_Financial_issues
 		}
 		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_research_slot = 1
+			add_stability = 0.05
 			add_political_power = 100
 			hidden_effect = {
 				country_event = { id = TIA.2 days = 90 random_days = 30	}
@@ -964,6 +969,8 @@ focus_tree = {
 				CHARACTER = Miabel_Runa_Tiamun
 			}
 			show_ideas_tooltip = TIA_royal_heirs_idea
+				custom_effect_tooltip = FE_gov_appoint_Miabel_tt
+				hidden_effect = { set_variable = { FE_gov_justice_minister = 1 } } #国家政府领导组：司法部正部长
 
 			custom_effect_tooltip = TIA_skip_one_line_tt
 
@@ -1117,6 +1124,8 @@ focus_tree = {
 				CHARACTER = Alice_Bedford
 			}
 			show_ideas_tooltip = TIA_chief_scientific_officer_idea
+				custom_effect_tooltip = FE_gov_appoint_Alice_tt
+				hidden_effect = { set_variable = { FE_gov_sci_minister = 1 } } #国家政府领导组：科学院院长
 
 			custom_effect_tooltip = TIA_skip_one_line_tt
 
@@ -1165,6 +1174,8 @@ focus_tree = {
 			always = no
 		}
 		completion_reward = {
+			add_research_slot = 1
+			add_stability = 0.03
 			add_political_power = 25
 			hidden_effect = {
 				country_event = { id = TIA.27 days = 5 }
@@ -1274,6 +1285,8 @@ focus_tree = {
 				CHARACTER = Anne_Littstein
 			}
 			show_ideas_tooltip = TIA_livelihood_consultant_idea
+				custom_effect_tooltip = FE_gov_appoint_Anne_tt
+				hidden_effect = { set_variable = { FE_gov_psec_minister = 1 } } #国家政府领导组：公安部正部长
 
 			custom_effect_tooltip = TIA_skip_one_line_tt
 
@@ -1428,6 +1441,8 @@ focus_tree = {
 				CHARACTER = Ekure
 			}
 			show_ideas_tooltip = TIA_military_commander_idea
+				custom_effect_tooltip = FE_gov_appoint_Ekure_tt
+				hidden_effect = { set_variable = { FE_gov_defense_minister = 1 } } #国家政府领导组：国防部正部长
 
 			custom_effect_tooltip = TIA_skip_one_line_tt
 
@@ -1582,6 +1597,8 @@ focus_tree = {
 				CHARACTER = Tiona_Rudolvon
 			}
 			show_ideas_tooltip = TIA_minister_ethnic_affairs_idea
+				custom_effect_tooltip = FE_gov_appoint_Tiona_tt
+				hidden_effect = { set_variable = { FE_gov_foreign_minister = 1 } } #国家政府领导组：外交部正部长
 
 			custom_effect_tooltip = TIA_skip_one_line_tt
 
@@ -1728,6 +1745,8 @@ focus_tree = {
 				CHARACTER = Ludwig_Hewitt
 			}
 			show_ideas_tooltip = TIA_minister_finance_idea
+				custom_effect_tooltip = FE_gov_appoint_Ludwig_tt
+				hidden_effect = { set_variable = { FE_gov_finance_minister = 1 } } #国家政府领导组：财政部正部长
 
 			custom_effect_tooltip = TIA_skip_one_line_tt
 
@@ -1876,6 +1895,8 @@ focus_tree = {
 				CHARACTER = Livia
 			}
 			show_ideas_tooltip = TIA_minister_infrastructure_idea
+				custom_effect_tooltip = FE_gov_appoint_Livia_tt
+				hidden_effect = { set_variable = { FE_gov_bank_minister = 1 } } #国家政府领导组：中央银行行长
 
 			custom_effect_tooltip = TIA_skip_one_line_tt
 
@@ -1985,6 +2006,8 @@ focus_tree = {
 			always = no
 		}
 		completion_reward = {
+			unlock_military_industrial_organization_tooltip = mio:TIA_imperial_steelworks_organization
+			mio:TIA_imperial_steelworks_organization = { add_mio_size = 1 }
 			add_political_power = 25
 			random_owned_controlled_state = {
 				limit = { is_core_of = TIA free_building_slots = { building = industrial_complex size > 0 include_locked = yes } }
@@ -2052,6 +2075,8 @@ focus_tree = {
 				CHARACTER = Yumiella_Dolkness
 			}
 			show_ideas_tooltip = TIA_chief_magic_officer_idea
+				custom_effect_tooltip = FE_gov_appoint_Yumiella_tt
+				hidden_effect = { set_variable = { FE_gov_edu_minister = 1 } } #国家政府领导组：教育部正部长
 
 			custom_effect_tooltip = TIA_skip_one_line_tt
 
@@ -2157,6 +2182,8 @@ focus_tree = {
 			always = no
 		}
 		completion_reward = {
+			unlock_military_industrial_organization_tooltip = mio:TIA_magic_academy_organization
+			mio:TIA_magic_academy_organization = { add_mio_size = 1 }
 			add_political_power = 25
 			add_offsite_building = { type = industrial_complex level = 2 }
 			add_offsite_building = { type = synthetic_refinery level = 1 }
@@ -2304,7 +2331,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
-			# unlock_military_industrial_organization_tooltip = mio:TIA_Winkler_Chamber_Commerce_organization
+			add_offsite_building = { type = industrial_complex level = 1 }
+				add_stability = 0.03
+				add_ideas = TIA_winkler_chamber_spirit
+				unlock_military_industrial_organization_tooltip = mio:TIA_Winkler_Chamber_Commerce_organization
+				mio:TIA_Winkler_Chamber_Commerce_organization = { add_mio_size = 1 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -2382,6 +2413,8 @@ focus_tree = {
 			focus = TIA_Shrink_territory_management
 		}
 		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.03
     		add_political_power = 25
        		country_event = { id = TIA.123 days = 5 }
 		}
@@ -2429,6 +2462,8 @@ focus_tree = {
 			focus = TIA_abolish_slavery
 		}
 		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_stability = 0.03
 			add_political_power = 50
 			251 = {
 				state_event = {
@@ -2459,6 +2494,8 @@ focus_tree = {
 			focus = TIA_Soothe_North
 		}
 		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_stability = 0.03
 			add_political_power = 25
 			country_event = { id = TIA.129 days = 3 }
 		}
@@ -2483,6 +2520,8 @@ focus_tree = {
 			focus = TIA_Contact_Chamber_Commerce
 		}
 		completion_reward = {
+			add_stability = 0.05
+			add_manpower = 5000
 			add_political_power = 50
 			country_event = { id = TIA.125 days = 3 }
 		}
@@ -2559,6 +2598,8 @@ focus_tree = {
 			focus = TIA_Establishment_Princess_Directly_Governed_Territory
 		}
 		completion_reward = {
+			unlock_military_industrial_organization_tooltip = mio:TIA_Saint_Noel_Academy_organization
+			mio:TIA_Saint_Noel_Academy_organization = { add_mio_size = 1 }
 			add_political_power = 50
 			add_research_slot = 1
 			hidden_effect = {
@@ -3326,6 +3367,8 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 50
 			set_country_flag = TIA_National_Public_Development_Plans_flag
+				add_offsite_building = { type = industrial_complex level = 1 }
+				add_ideas = TIA_national_public_works_spirit
 			custom_effect_tooltip = TIA_National_Public_Development_Plans_strat
 		}
 		ai_will_do = {
@@ -3750,7 +3793,9 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 50
 			army_experience = 50
-			country_event = { id = TIA.130 days = 5 }
+			unlock_military_industrial_organization_tooltip = mio:TIA_Marcino_Girls_Academy_organization
+				mio:TIA_Marcino_Girls_Academy_organization = { add_mio_size = 1 }
+				country_event = { id = TIA.130 days = 5 }
 		}
 		ai_will_do = {
 			factor = 1

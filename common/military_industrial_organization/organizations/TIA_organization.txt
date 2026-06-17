@@ -664,3 +664,140 @@ TIA_GARDERNERS_artillery_organization = {
 		has_dlc = "Arms Against Tyranny"
 	}
 } 
+
+###########################
+# 温克勒商会 兵工部（商业联合体 -> 火炮/工业，完成"联系温克勒商会"后解锁）
+###########################
+TIA_Winkler_Chamber_Commerce_organization = {
+	include = generic_artillery_organization
+	icon = GFX_idea_GARDERNERS
+	allowed = {
+		tag = TIA
+		has_dlc = "Arms Against Tyranny"
+	}
+	available = {
+		owner = { has_completed_focus = TIA_Contact_Chamber_Commerce }
+	}
+
+	initial_trait = {
+		token = TIA_mio_winkler_initial
+		name = TIA_mio_winkler_initial
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		production_bonus = {
+			production_cost_factor = -0.05
+			production_conversion_speed_factor = 0.15
+		}
+	}
+}
+
+###########################
+# 马奇诺女子学院（精英军事学院 -> 步兵装备，完成"扩建马奇诺女子学院"后解锁）
+###########################
+TIA_Marcino_Girls_Academy_organization = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_SOURCE_CITADEL
+	allowed = {
+		tag = TIA
+		has_dlc = "Arms Against Tyranny"
+	}
+	available = {
+		owner = { has_completed_focus = TIA_Expansion_MCG }
+	}
+
+	initial_trait = {
+		token = TIA_mio_marcino_initial
+		name = TIA_mio_marcino_initial
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+			production_cost_factor = -0.03
+		}
+	}
+}
+###########################
+# 魔学院兵工部（尤蜜拉魔能工业化 -> 魔导飞行器，完成"魔能工业化"后解锁）
+###########################
+TIA_magic_academy_organization = {
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_NIGHT_CHAINS
+	allowed = {
+		tag = TIA
+		has_dlc = "Arms Against Tyranny"
+	}
+	available = {
+		owner = { has_completed_focus = TIA_magic_industrialization }
+	}
+
+	initial_trait = {
+		token = TIA_mio_magic_initial
+		name = TIA_mio_magic_initial
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.08
+		}
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+		}
+	}
+}
+
+###########################
+# 帝国制铁所（莉薇娅钢铁帝国 -> 重装甲，完成"工业再兴"后解锁）
+###########################
+TIA_imperial_steelworks_organization = {
+	include = generic_heavy_tank_organization
+	icon = GFX_idea_B.C.R.L
+	allowed = {
+		tag = TIA
+		has_dlc = "Arms Against Tyranny"
+	}
+	available = {
+		owner = { has_completed_focus = TIA_industrial_revitalization }
+	}
+
+	initial_trait = {
+		token = TIA_mio_steel_initial
+		name = TIA_mio_steel_initial
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_cost_factor = -0.05
+		}
+	}
+}
+
+###########################
+# 圣诺尔学院（堤亚穆名门学府，湖中之岛 -> 海军，完成"圣诺尔学院"国策后解锁）
+###########################
+TIA_Saint_Noel_Academy_organization = {
+	include = generic_escort_ship_organization
+	icon = GFX_idea_GARDERNERS
+	allowed = {
+		tag = TIA
+		has_dlc = "Arms Against Tyranny"
+	}
+	available = {
+		owner = { has_completed_focus = TIA_build_school }
+	}
+
+	initial_trait = {
+		token = TIA_mio_saintnoel_initial
+		name = TIA_mio_saintnoel_initial
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.08
+		}
+		production_bonus = {
+			production_conversion_speed_factor = 0.15
+		}
+	}
+}
