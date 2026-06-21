@@ -16,3 +16,15 @@ FGU_anti_terrorism_war_decision_category = {
 	priority = 100
 }
 
+
+HDN_zero_dimension_decision_category = {
+	icon = generic_political_discourse
+	picture = GFX_decision_cat_picture_RGC_fate_of_royal
+	allowed = { is_game_goddess_country = yes }
+	visible = {
+		is_game_goddess_country = yes
+		has_country_flag = HDN_main_story_started
+		NOT = { has_global_flag = HDN_zero_battle_done }
+	}
+	priority = 200
+}

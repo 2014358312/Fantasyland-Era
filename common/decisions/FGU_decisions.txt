@@ -1,3 +1,133 @@
+# 既有：反恐战争决议分类（留空占位）
 FGU_anti_terrorism_war_decision_category = {
-	
+
+}
+
+###############################################
+# 超次元海王星 主线一阶段 - 决战零次元 备战决议
+###############################################
+HDN_zero_dimension_decision_category = {
+
+	HDN_decision_strike_minions = {
+		icon = generic_political_discourse
+		allowed = { is_game_goddess_country = yes }
+		visible = { has_country_flag = HDN_dec_strike_minions  NOT = { has_global_flag = HDN_zero_battle_done } }
+		available = { NOT = { has_global_flag = HDN_zero_battle_done } }
+		cost = 0
+		days_remove = 30
+		remove_effect = {
+			add_to_variable = { global.FGU_zero_countdown = 15 }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	HDN_decision_external_faith = {
+		icon = generic_political_discourse
+		allowed = { is_game_goddess_country = yes }
+		visible = { has_country_flag = HDN_dec_external_faith  NOT = { has_global_flag = HDN_zero_battle_done } }
+		available = { NOT = { has_global_flag = HDN_zero_battle_done } }
+		cost = 0
+		days_remove = 20
+		remove_effect = {
+			add_political_power = -50
+			add_to_variable = { global.FGU_combat_power = 10 }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	HDN_decision_collect_monster_faith = {
+		icon = generic_political_discourse
+		allowed = { is_game_goddess_country = yes }
+		visible = { has_country_flag = HDN_dec_collect_monster  NOT = { has_global_flag = HDN_zero_battle_done } }
+		available = { NOT = { has_global_flag = HDN_zero_battle_done } }
+		cost = 0
+		days_remove = 10
+		remove_effect = {
+			add_political_power = 20
+			subtract_from_variable = { global.FGU_enemy_combat_power = 5 }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	HDN_decision_accelerate_front = {
+		icon = generic_political_discourse
+		allowed = { is_game_goddess_country = yes }
+		visible = { has_country_flag = HDN_dec_accelerate  NOT = { has_global_flag = HDN_zero_battle_done } }
+		available = { NOT = { has_global_flag = HDN_zero_battle_done } }
+		cost = 0
+		days_remove = 20
+		remove_effect = {
+			add_to_variable = { global.FGU_combat_power = 10 }
+			subtract_from_variable = { global.FGU_zero_countdown = 10 }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	HDN_decision_develop_society = {
+		icon = generic_political_discourse
+		allowed = { is_game_goddess_country = yes }
+		visible = { has_country_flag = HDN_dec_develop_society  NOT = { has_global_flag = HDN_zero_battle_done } }
+		available = { NOT = { has_global_flag = HDN_zero_battle_done } }
+		cost = 0
+		days_remove = 10
+		remove_effect = {
+			add_to_variable = { global.FGU_combat_power = 20 }
+			add_stability = -0.05
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	HDN_decision_awaken_power = {
+		icon = generic_political_discourse
+		allowed = { is_game_goddess_country = yes }
+		visible = { has_country_flag = HDN_dec_awaken  NOT = { has_global_flag = HDN_zero_battle_done } }
+		available = { NOT = { has_global_flag = HDN_zero_battle_done } }
+		cost = 0
+		days_remove = 30
+		remove_effect = {
+			add_to_variable = { global.FGU_zero_countdown = 10 }
+			add_stability = -0.10
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	HDN_decision_use_crime_god = {
+		icon = generic_political_discourse
+		allowed = { is_game_goddess_country = yes }
+		visible = { has_country_flag = HDN_dec_crime_god  NOT = { has_global_flag = HDN_zero_battle_done } }
+		available = { NOT = { has_global_flag = HDN_zero_battle_done } }
+		cost = 0
+		days_remove = 30
+		remove_effect = {
+			add_to_variable = { global.FGU_combat_power = 30 }
+			add_to_variable = { global.FGU_zero_countdown = 20 }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	HDN_decision_redeploy = {
+		icon = generic_political_discourse
+		allowed = { is_game_goddess_country = yes }
+		visible = { has_country_flag = HDN_dec_redeploy  NOT = { has_global_flag = HDN_zero_battle_done } }
+		available = { NOT = { has_global_flag = HDN_zero_battle_done } }
+		cost = 0
+		days_remove = 15
+		remove_effect = {
+			add_to_variable = { global.FGU_combat_power = 5 }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	HDN_decision_recruit_talent = {
+		icon = generic_political_discourse
+		allowed = { is_game_goddess_country = yes }
+		visible = { has_country_flag = HDN_dec_recruit  NOT = { has_global_flag = HDN_zero_battle_done } }
+		available = { NOT = { has_global_flag = HDN_zero_battle_done } }
+		cost = 0
+		days_remove = 20
+		remove_effect = {
+			add_to_variable = { global.FGU_combat_power = 10 }
+		}
+		ai_will_do = { factor = 1 }
+	}
 }

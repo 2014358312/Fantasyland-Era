@@ -36,3 +36,61 @@ country_event = {
 		}
 	}
 }
+###########################
+# 超次元海王星 主线一阶段 - 决战零次元机制
+# 全局变量：FGU_combat_power(我方战力) / FGU_enemy_combat_power(对方战力) / FGU_zero_countdown(决战倒计时·日)
+###########################
+add_namespace = HDN_main
+
+# 倒计时滴答（隐藏，每7日一次；归零则触发决战）
+country_event = {
+	id = HDN_main.1
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = HDN_zero_battle_done }
+				check_variable = { global.FGU_zero_countdown > 0 }
+			}
+			subtract_from_variable = { global.FGU_zero_countdown = 7 }
+			country_event = { id = HDN_main.1 days = 7 }
+		}
+		else_if = {
+			limit = { NOT = { has_global_flag = HDN_zero_battle_done } }
+			country_event = { id = HDN_main.2 days = 1 }
+		}
+	}
+	option = { name = HDN_main.1.a }
+}
+
+# 零次元决战（比较我方/对方战力，决定胜负，写入全局flag供二阶段分支判定）
+country_event = {
+	id = HDN_main.2
+	title = HDN_main.2.t
+	desc = HDN_main.2.desc
+	picture = GFX_report_event_EYP_01
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = HDN_zero_battle_done
+		if = {
+			limit = { check_variable = { global.FGU_combat_power >= global.FGU_enemy_combat_power } }
+			set_global_flag = HDN_zero_won
+		}
+		else = {
+			set_global_flag = HDN_zero_lost
+		}
+	}
+	option = {
+		name = HDN_main.2.a
+		trigger = { has_global_flag = HDN_zero_won }
+		add_war_support = 0.10
+		add_stability = 0.05
+	}
+	option = {
+		name = HDN_main.2.b
+		trigger = { has_global_flag = HDN_zero_lost }
+		add_stability = -0.10
+		add_war_support = 0.05
+	}
+}
