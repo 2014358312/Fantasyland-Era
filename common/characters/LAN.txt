@@ -1,20 +1,116 @@
 characters = {
 
+	LAN_Precia_Wiseman = {
+		name = Precia_Wiseman
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Precia_Wiseman_civilian
+				small = GFX_idea_advisor_LAN_Precia_Wiseman_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Precia_Wiseman_army
+				small = GFX_idea_advisor_LAN_Precia_Wiseman_army
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Precia_Wiseman_political_advisor
+			allowed = { original_tag = LAN }
+			available = {
+				#is_a_fascism_government = yes
+			}
+			cost = 150
+			traits = { alcoholic_accountant }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = LAN_Precia_Wiseman_high_command
+			allowed = { original_tag = LAN }
+			available = {
+				#is_a_fascism_government = yes
+			}
+			cost = 150
+			traits = {  }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
 	LAN_Tokukawa_Riri = {
 		name = Tokukawa_Riri
 		portraits = {
 			civilian = {
 				large = GFX_Portrait_LAN_Tokukawa_Riri_civilian
-				small = GFX_idea_advisor_LAN_Tokukawa_Riri
+				small = GFX_idea_advisor_LAN_Tokukawa_Riri_civilian
 			}
 			army = {
 				large = GFX_Portrait_LAN_Tokukawa_Riri_army
-				small = GFX_idea_advisor_LAN_Tokukawa_Riri
+				small = GFX_idea_advisor_LAN_Tokukawa_Riri_army
 			}
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = LAN_Tokukawa_Riri
+			idea_token = LAN_Tokukawa_Riri_political_advisor
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 150
+			traits = { alcoholic_accountant }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = LAN_Tokukawa_Riri_high_command
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 150
+			traits = {  }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Kuou_Ria = {
+		name = Kuou_Ria
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Kuou_Ria
+				small = GFX_idea_advisor_LAN_Kuou_Ria
+			}
+			army = {
+				large = GFX_Portrait_LAN_Kuou_Ria_army
+				small = GFX_idea_advisor_LAN_Kuou_Ria_army
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Kuou_Ria_political_advisor
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 150
+			traits = { alcoholic_accountant }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = LAN_Kuou_Ria_high_command
 			allowed = { original_tag = LAN }
 			available = {
 				is_a_fascism_government = yes
