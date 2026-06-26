@@ -113,7 +113,8 @@ if __name__ == "__main__":
 	fileGFX = []
 	image_files, cur_dir = scan_image_files(".")
 	path0 = "gfx/leaders"
-	path = path0 + "/" + cur_dir
+	path1 = "gfx/interface/ideas/advisors"
+	path = path1 + "/" + cur_dir
 	for i in image_files:
 		i[0] = path + "/" + i[0]
 		i[0] = i[0].replace(".", "")

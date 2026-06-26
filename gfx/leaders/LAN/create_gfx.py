@@ -113,6 +113,7 @@ if __name__ == "__main__":
 	fileGFX = []
 	image_files, cur_dir = scan_image_files(".")
 	path0 = "gfx/leaders"
+	path1 = "gfx/interface/ideas/advisors"
 	path = path0 + "/" + cur_dir
 	for i in image_files:
 		i[0] = path + "/" + i[0]
