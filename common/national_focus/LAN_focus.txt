@@ -351,22 +351,18 @@ focus_tree = {
 		id = LAN_stimulate_local_economy
 		dynamic = yes
 		icon = {
-			trigger = {
+			GFX_focus_generic_reorient_production = {
 				OR = {
 					has_country_flag = eylstadt_drift_defence_war_member_flag
 					has_war = yes
 				}
 			}
-			value = GFX_focus_generic_reorient_production
-		}
-		icon = {
-			trigger = {
+			GFX_focus_generic_economic_recovery = {
 				NOT = { has_country_flag = eylstadt_drift_defence_war_member_flag }
 				has_war = no
 			}
-			value = GFX_focus_generic_economic_recovery
+			GFX_focus_generic_economic_recovery = yes
 		}
-		icon = { value = GFX_focus_generic_economic_recovery }
 		prerequisite = { focus = LAN_call_on_the_people }
 		prerequisite = {
 			focus = LAN_economic_sanctions

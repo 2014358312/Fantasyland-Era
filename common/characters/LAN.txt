@@ -1,5 +1,93 @@
 characters = {
 
+	LAN_Tokukawa_Riri = {
+		name = Tokukawa_Riri
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Tokukawa_Riri_civilian
+				small = GFX_idea_advisor_LAN_Tokukawa_Riri_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Tokukawa_Riri_army
+				small = GFX_idea_advisor_LAN_Tokukawa_Riri_army
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = LAN_Tokukawa_Riri
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 150
+			traits = { air_naval_strike_3 }
+			on_add = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.03
+					}
+				}
+			}
+			on_remove = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = -0.03
+					}
+				}
+			}
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Kuou_Ria = {
+		name = Kuou_Ria
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Kuou_Ria_alt
+				small = GFX_idea_advisor_LAN_Kuou_Ria_alt
+			}
+			army = {
+				large = GFX_Portrait_LAN_Kuou_Ria_army
+				small = GFX_idea_advisor_LAN_Kuou_Ria_army
+			}
+		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = LAN_Kuou_Ria
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 100
+			traits = { air_chief_night_operations_2 }
+			on_add = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.02
+					}
+				}
+			}
+			on_remove = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = -0.02
+					}
+				}
+			}
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
 	LAN_Precia_Wiseman = {
 		name = Precia_Wiseman
 		portraits = {
@@ -20,116 +108,381 @@ characters = {
 				#is_a_fascism_government = yes
 			}
 			cost = 150
-			traits = { alcoholic_accountant }
+			traits = { PER_head_of_military_police }
+			on_add = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.03
+					}
+				}
+			}
+			on_remove = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = -0.03
+					}
+				}
+			}
 			ai_will_do = {
 				base = 1.000
 			}
 		}
 	}
 
-	LAN_Tokukawa_Riri = {
-		name = Tokukawa_Riri
+	LAN_Haraiki_Eru = {
+		name = Haraiki_Eru
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_LAN_Tokukawa_Riri_civilian
-				small = GFX_idea_advisor_LAN_Tokukawa_Riri_civilian
+			#	large = GFX_Portrait_LAN_Haraiki_Eru
+				small = GFX_idea_advisor_LAN_Haraiki_Eru
 			}
 			army = {
-				large = GFX_Portrait_LAN_Tokukawa_Riri_army
-				small = GFX_idea_advisor_LAN_Tokukawa_Riri_army
+				large = GFX_Portrait_LAN_Haraiki_Eru_scientist
+				small = GFX_idea_advisor_LAN_Haraiki_Eru
 			}
 		}
-		advisor = {
-			slot = high_command
-			ledger = army
-			idea_token = LAN_Tokukawa_Riri_high_command
-			allowed = { original_tag = LAN }
-			available = {
-				is_a_fascism_government = yes
-			}
-			cost = 150
-			traits = {  }
-			ai_will_do = {
-				base = 1.000
+		scientist = {
+			traits = { scientist_trait_rocketry_specialist scientist_trait_bright scientist_trait_resourceful }
+			skills = {
+				specialization_air = 1
 			}
 		}
 	}
 
-	LAN_Kuou_Ria = {
-		name = Kuou_Ria
+	LAN_Kuro_Chie = {
+		name = Kuro_Chie
 		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Kuou_Ria
-				small = GFX_idea_advisor_LAN_Kuou_Ria
-			}
+			#civilian = {
+			#	large = GFX_Portrait_LAN_Kuro_Chie
+			#	small = GFX_idea_advisor_LAN_Kuro_Chie
+			#}
 			army = {
-				large = GFX_Portrait_LAN_Kuou_Ria_army
-				small = GFX_idea_advisor_LAN_Kuou_Ria_army
+				large = GFX_Portrait_LAN_Kuro_Chie_army
+				small = GFX_idea_advisor_LAN_Kuro_Chie_army
 			}
 		}
 		advisor = {
-			slot = high_command
-			ledger = army
-			idea_token = LAN_Kuou_Ria
-			allowed = { original_tag = LAN }
-			available = {
-				is_a_fascism_government = yes
-			}
-			cost = 150
-			traits = {  }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-	
-	LAN_Agato_Shifuna = {
-		name = Agato_Shifuna
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Agato_Shifuna
-				small = GFX_idea_advisor_LAN_Agato_Shifuna
-			}
-			army = {
-				large = GFX_Portrait_LAN_Agato_Shifuna
-				small = GFX_idea_advisor_LAN_Agato_Shifuna
-			}
-		}
-		advisor = {
-			slot = theorist
-			idea_token = LAN_Agato_Shifuna
+			slot = air_chief
+			ledger = air
+			idea_token = LAN_Kuro_Chie
 			allowed = { original_tag = LAN }
 			available = {
 				
 			}
 			cost = 150
-			traits = { dive_bomber }
+			traits = { air_chief_safety_3 }
 			ai_will_do = {
 				base = 1.000
 			}
 		}
 	}
 
-	LAN_Aki_Makoto = {
-		name = Aki_Makoto
+	LAN_Unaka_Kururu = {
+		name = Unaka_Kururu
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_LAN_Aki_Makoto
-				small = GFX_idea_advisor_LAN_Aki_Makoto
+				large = GFX_Portrait_LAN_Unaka_Kururu_civilian
+				small = GFX_idea_advisor_LAN_Unaka_Kururu_civilian
 			}
-			army = {
-				large = GFX_Portrait_LAN_Aki_Makoto
-				small = GFX_idea_advisor_LAN_Aki_Makoto
+			#army = {
+			#	large = GFX_Portrait_LAN_Unaka_Kururu
+			#	small = GFX_idea_advisor_LAN_Unaka_Kururu
+			#}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Unaka_Kururu
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { finance_graduate }
+			ai_will_do = {
+				base = 1.000
 			}
 		}
-		field_marshal = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
+	}
+
+	LAN_Lind = {
+		name = LAN_Lind
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Lind_civilian
+				small = GFX_idea_advisor_LAN_Lind_civilian
+			}
+			#army = {
+			#	large = GFX_Portrait_LAN_Lind
+			#	small = GFX_idea_advisor_LAN_Lind
+			#}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Lind
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { lieutenant_of_industry }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Wurm = {
+		name = LAN_Wurm
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Wurm_civilian
+				small = GFX_idea_advisor_LAN_Wurm_civilian
+			}
+			#army = {
+			#	large = GFX_Portrait_LAN_Wurm
+			#	small = GFX_idea_advisor_LAN_Wurm
+			#}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = LAN_Wurm
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 100
+			traits = { army_logistics_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Bundei_Yamato = {
+		name = Bundei_Yamato
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_LAN_Bundei_Yamato
+			#	small = GFX_idea_advisor_LAN_Bundei_Yamato
+			#}
+			army = {
+				large = GFX_Portrait_LAN_Bundei_Yamato_army
+				small = GFX_idea_advisor_LAN_Bundei_Yamato_army
+			}
+		}
+		navy_leader = {
+			traits = { battleship_adherent bold cuts_corners fleet_protector destroyer_leader }
+			skill = 4
+			attack_skill = 5
 			defense_skill = 1
-			planning_skill = 1
+			maneuvering_skill = 4
+			coordination_skill = 3
+		}
+	}
+
+	LAN_Bundei_Wakana = {
+		name = Bundei_Wakana
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Bundei_Wakana_civilian
+				small = GFX_idea_advisor_LAN_Bundei_Wakana_civilian
+			}
+			#army = {
+			#	large = GFX_Portrait_LAN_Bundei_Wakana
+			#	small = GFX_idea_advisor_LAN_Bundei_Wakana
+			#}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = LAN_Bundei_Wakana
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 150
+			traits = { army_logistics_3 }
+			on_add = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.03
+					}
+				}
+			}
+			on_remove = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = -0.03
+					}
+				}
+			}
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Bandei_Fubuki = {
+		name = Bandei_Fubuki
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_LAN_Bandei_Fubuki
+			#	small = GFX_idea_advisor_LAN_Bandei_Fubuki
+			#}
+			army = {
+				large = GFX_Portrait_LAN_Bandei_Fubuki_scientist
+			#	small = GFX_idea_advisor_LAN_Bandei_Fubuki
+			}
+		}
+		scientist = {
+			traits = {  }
+			skills = {
+				specialization_land = 1
+			}
+		}
+	}
+
+	LAN_Noto_Mahiru = {
+		name = Noto_Mahiru
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_LAN_Noto_Mahiru
+			#	small = GFX_idea_advisor_LAN_Noto_Mahiru
+			#}
+			army = {
+				large = GFX_Portrait_LAN_Noto_Mahiru_army
+				small = GFX_idea_advisor_LAN_Noto_Mahiru_army
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	LAN_Rima = {
+		name = LAN_Rima
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Rima_alt
+				small = GFX_idea_advisor_LAN_Rima_alt
+			}
+			army = {
+				large = GFX_Portrait_LAN_Rima
+				small = GFX_idea_advisor_LAN_Rima
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = LAN_Rima
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 100
+			traits = { army_chief_maneuver_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Kashiwazaki_Shiori = {
+		name = Kashiwazaki_Shiori
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Kashiwazaki_Shiori
+				small = GFX_idea_advisor_LAN_Kashiwazaki_Shiori
+			}
+			army = {
+				large = GFX_Portrait_LAN_Kashiwazaki_Shiori_army_alt
+				small = GFX_idea_advisor_LAN_Kashiwazaki_Shiori_army
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = LAN_Kashiwazaki_Shiori
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { grand_battle_plan_expert }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { engineer_officer ranger }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+
+	LAN_Morichika_Rin = {
+		name = Morichika_Rin
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Morichika_Rin
+				small = GFX_idea_advisor_LAN_Morichika_Rin
+			}
+			army = {
+				large = GFX_Portrait_LAN_Morichika_Rin_army
+				small = GFX_idea_advisor_LAN_Morichika_Rin_army
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
 			logistics_skill = 1
 			legacy_id = -1
+		}
+	}
+
+	LAN_Sasaki_Saren = {
+		name = Sasaki_Saren
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Sasaki_Saren_civilian
+				small = GFX_idea_advisor_LAN_Sasaki_Saren_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Sasaki_Saren_army
+				small = GFX_idea_advisor_LAN_Sasaki_Saren_army
+			}
+		}
+		country_leader = {
+			ideology = social_democracy_subtype
+			traits = {
+				#link_of_red_army      #added by focus
+				champion_of_the_people
+			}
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = head_of_government_character
+			idea_token = LAN_Sasaki_Saren_head_of_government_character
+			available = { no_head_of_gov_trigger = yes }
+			traits = { the_future_star }
 		}
 	}
 
@@ -137,8 +490,8 @@ characters = {
 		name = Amano_Suzume
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_LAN_Amano_Suzume
-				small = GFX_idea_advisor_LAN_Amano_Suzume
+				large = GFX_Portrait_LAN_Amano_Suzume_civilian
+				small = GFX_idea_advisor_LAN_Amano_Suzume_civilian
 			}
 			army = {
 				large = GFX_Portrait_LAN_Amano_Suzume
@@ -161,40 +514,210 @@ characters = {
 		}
 	}
 
-	LAN_Arisa = {
-		name = Arisa
+	LAN_Kuribayashi_Kurumi = {
+		name = Kuribayashi_Kurumi
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_LAN_Arisa_alt
-				small = GFX_idea_advisor_LAN_Arisa_alt
+				large = GFX_Portrait_LAN_Kuribayashi_Kurumi
+				small = GFX_idea_advisor_LAN_Kuribayashi_Kurumi
 			}
 			army = {
-				large = GFX_Portrait_LAN_Arisa
-				small = GFX_idea_advisor_LAN_Arisa
+				large = GFX_Portrait_LAN_Kuribayashi_Kurumi_army
+				small = GFX_idea_advisor_LAN_Kuribayashi_Kurumi_army
 			}
 		}
 		advisor = {
 			slot = high_command
-			ledger = air
-			idea_token = LAN_Arisa
+			ledger = navy
+			idea_token = LAN_Kuribayashi_Kurumi
 			allowed = { original_tag = LAN }
 			available = {
 				
 			}
 			cost = 100
-			traits = { air_tactical_bombing_2 }
+			traits = { navy_screen_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Hojo_Ayane = {
+		name = Hojo_Ayane
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Hojo_Ayane_civilian
+				small = GFX_idea_advisor_LAN_Hojo_Ayane_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Hojo_Ayane
+				small = GFX_idea_advisor_LAN_Hojo_Ayane
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Hojo_Ayane
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { adventurous_daredevil }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Shingyoji_Yuni = {
+		name = Shingyoji_Yuni
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Shingyoji_Yuni_civilian
+				small = GFX_idea_advisor_LAN_Shingyoji_Yuni_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Shingyoji_Yuni
+				small = GFX_idea_advisor_LAN_Shingyoji_Yuni
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Shingyoji_Yuni
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { internet_giantess }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Kuroe_Hanako = {
+		name = Kuroe_Hanako
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Kuroe_Hanako
+				small = GFX_idea_advisor_LAN_Kuroe_Hanako
+			}
+			army = {
+				large = GFX_Portrait_LAN_Kuroe_Hanako_army
+				small = GFX_idea_advisor_LAN_Kuroe_Hanako_army
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = LAN_Kuroe_Hanako
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 50
+			traits = { army_commando_1 }
 			ai_will_do = {
 				base = 1.000
 			}
 		}
 		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
+			traits = { trait_cautious commando skirmisher }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 4
 			planning_skill = 1
-			logistics_skill = 1
+			logistics_skill = 6
 			legacy_id = -1
+		}
+	}
+	
+	LAN_Kazama_Chieru = {
+		name = Kazama_Chieru
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Kazama_Chieru
+				small = GFX_idea_advisor_LAN_Kazama_Chieru
+			}
+			army = {
+				large = GFX_Portrait_LAN_Kazama_Chieru_army
+				small = GFX_idea_advisor_LAN_Kazama_Chieru_army
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = LAN_Kazama_Chieru
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { blitzkrieg_theorist }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Todo_Akino = {
+		name = Todo_Akino
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Todo_Akino_civilian_alt
+				small = GFX_idea_advisor_LAN_Todo_Akino_civilian_alt
+			}
+			army = {
+				large = GFX_Portrait_LAN_Todo_Akino_army
+				small = GFX_idea_advisor_LAN_Todo_Akino_army
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Todo_Akino
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { lady_of_the_consortium_advisor }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Ogami_Mifuyu = {
+		name = Ogami_Mifuyu
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Ogami_Mifuyu_civilian
+				small = GFX_idea_advisor_LAN_Ogami_Mifuyu_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Ogami_Mifuyu_army
+				small = GFX_idea_advisor_LAN_Ogami_Mifuyu_army
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Ogami_Mifuyu
+			allowed = { original_tag = LAN }
+			available = {
+				OR = {
+					has_country_leader = {
+						character = LAN_Todo_Akino
+						ruling_only = yes
+					}
+					has_idea = LAN_Todo_Akino
+					has_country_flag = LAN_support_mercury_foundation_flag
+				}
+			}
+			cost = 0
+			traits = { efficiency_highest }
+			ai_will_do = {
+				base = 1.000
+			}
 		}
 	}
 
@@ -202,12 +725,12 @@ characters = {
 		name = Ayase_Yukari
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_LAN_Ayase_Yukari
-				small = GFX_idea_advisor_LAN_Ayase_Yukari
+				large = GFX_Portrait_LAN_Ayase_Yukari_civilian
+				small = GFX_idea_advisor_LAN_Ayase_Yukari_civilian
 			}
 			army = {
-				large = GFX_Portrait_LAN_Ayase_Yukari
-				small = GFX_idea_advisor_LAN_Ayase_Yukari
+				large = GFX_Portrait_LAN_Ayase_Yukari_army_alt
+				small = GFX_idea_advisor_LAN_Ayase_Yukari_army
 			}
 		}
 		advisor = {
@@ -232,16 +755,1000 @@ characters = {
 		}
 	}
 
+	LAN_Miyasaka_Tamaki = {
+		name = Miyasaka_Tamaki
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Miyasaka_Tamaki_civilian_alt
+				small = GFX_idea_advisor_LAN_Miyasaka_Tamaki_civilian_alt
+			}
+			army = {
+				large = GFX_Portrait_LAN_Miyasaka_Tamaki
+				small = GFX_idea_advisor_LAN_Miyasaka_Tamaki
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Miyasaka_Tamaki
+			allowed = { original_tag = LAN }
+			available = {
+				OR = {
+					has_country_leader = {
+						character = LAN_Todo_Akino
+						ruling_only = yes
+					}
+					has_idea = LAN_Todo_Akino
+					has_country_flag = LAN_support_mercury_foundation_flag
+				}
+			}
+			cost = 0
+			traits = { phantom_cat }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Akane_Mimi = {
+		name = Akane_Mimi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Akane_Mimi
+				small = GFX_idea_advisor_LAN_Akane_Mimi
+			}
+			army = {
+				large = GFX_Portrait_LAN_Akane_Mimi_army
+				small = GFX_idea_advisor_LAN_Akane_Mimi_army
+			}
+		}
+		navy_leader = {
+			traits = { navy_career_officer green_water_expert seawolf }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}
+
+	LAN_Hodaka_Misogi = {
+		name = Hodaka_Misogi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Hodaka_Misogi
+				small = GFX_idea_advisor_LAN_Hodaka_Misogi
+			}
+			army = {
+				large = GFX_Portrait_LAN_Hodaka_Misogi_army
+				small = GFX_idea_advisor_LAN_Hodaka_Misogi_army
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = navy
+			idea_token = LAN_Hodaka_Misogi
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 50
+			traits = { navy_submarine_1 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Hikawa_Kyoka = {
+		name = Hikawa_Kyoka
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Hikawa_Kyoka
+				small = GFX_idea_advisor_LAN_Hikawa_Kyoka
+			}
+			army = {
+				large = GFX_Portrait_LAN_Hikawa_Kyoka_army_alt
+				small = GFX_idea_advisor_LAN_Hikawa_Kyoka_army_alt
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			ledger = navy
+			idea_token = LAN_Hikawa_Kyoka
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 100
+			traits = { navy_chief_decisive_battle_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		navy_leader = {
+			traits = { naval_lineage aviation_enthusiast search_pattern_expert air_controller spotter }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 5
+			maneuvering_skill = 3
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	LAN_Illya_Onstein = {
+		name = Illya_Onstein
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Illya_Onstein_civilian
+				small = GFX_idea_advisor_LAN_Illya_Onstein_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Illya_Onstein_army
+				small = GFX_idea_advisor_LAN_Illya_Onstein_army
+			}
+		}
+		field_marshal = {
+			traits = { trait_SPA_nationalist_sympathies infantry_officer harsh_leader trait_engineer fortress_buster urban_assault_specialist }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	LAN_Kazemiya_Akari = {
+		name = Kazemiya_Akari
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Kazemiya_Akari
+				small = GFX_idea_advisor_LAN_Kazemiya_Akari
+			}
+			army = {
+				large = GFX_Portrait_LAN_Kazemiya_Akari_army_alt
+				small = GFX_idea_advisor_LAN_Kazemiya_Akari_army_alt
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = navy
+			idea_token = LAN_Kazemiya_Akari
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 100
+			traits = { navy_amphibious_assault_2 }
+			on_add = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.02
+					}
+				}
+			}
+			on_remove = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = -0.02
+					}
+				}
+			}
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Kazemiya_Yori = {
+		name = Kazemiya_Yori
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Kazemiya_Yori
+				small = GFX_idea_advisor_LAN_Kazemiya_Yori
+			}
+			army = {
+				large = GFX_Portrait_LAN_Kazemiya_Yori_army_alt
+				small = GFX_idea_advisor_LAN_Kazemiya_Yori_army_alt
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			ledger = navy
+			idea_token = LAN_Kazemiya_Yori
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 100
+			traits = { navy_chief_maneuver_2 }
+			on_add = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.02
+					}
+				}
+			}
+			on_remove = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = -0.02
+					}
+				}
+			}
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Izumo_Miyako = {
+		name = Izumo_Miyako
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_LAN_Izumo_Miyako
+			#	small = GFX_idea_advisor_LAN_Izumo_Miyako
+			#}
+			army = {
+				large = GFX_Portrait_LAN_Izumo_Miyako_army
+				small = GFX_idea_advisor_LAN_Izumo_Miyako_army
+			}
+		}
+		navy_leader = {
+			traits = { gunnery_expert inshore_fighter superior_tactician }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 5
+			maneuvering_skill = 2
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	LAN_Kamiki_Shinobu = {
+		name = Kamiki_Shinobu
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Kamiki_Shinobu_civilian
+				small = GFX_idea_advisor_LAN_Kamiki_Shinobu_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Kamiki_Shinobu_army
+				small = GFX_idea_advisor_LAN_Kamiki_Shinobu_army
+			}
+			navy = {
+				large = GFX_Portrait_LAN_Kamiki_Shinobu_navy
+				small = GFX_idea_advisor_LAN_Kamiki_Shinobu_navy
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = LAN_Kamiki_Shinobu
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 50
+			traits = { army_radio_intelligence_1 }
+			on_add = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.01
+					}
+				}
+			}
+			on_remove = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = -0.01
+					}
+				}
+			}
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { trait_SPA_nationalist_sympathies }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+			visible = { always = no }
+		}
+	}
+
+	LAN_Unohana_Ran = {
+		name = Unohana_Ran
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_LAN_Unohana_Ran
+			#	small = GFX_idea_advisor_LAN_Unohana_Ran
+			#}
+			army = {
+				large = GFX_Portrait_LAN_Unohana_Ran_army
+				small = GFX_idea_advisor_LAN_Unohana_Ran_army
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = LAN_Unohana_Ran
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 150
+			traits = { air_strategic_bombing_3 }
+			on_add = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.03
+					}
+				}
+			}
+			on_remove = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = -0.03
+					}
+				}
+			}
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Shikiba_Nea = {
+		name = Shikiba_Nea
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Shikiba_Nea
+				small = GFX_idea_advisor_LAN_Shikiba_Nea
+			}
+			army = {
+				large = GFX_Portrait_LAN_Shikiba_Nea_army
+				small = GFX_idea_advisor_LAN_Shikiba_Nea_army
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = LAN_Shikiba_Nea
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 150
+			traits = { army_concealment_3 }
+			on_add = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.03
+					}
+				}
+			}
+			on_remove = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = -0.03
+					}
+				}
+			}
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Nagare_Misora = {
+		name = Nagare_Misora
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Nagare_Misora
+				small = GFX_idea_advisor_LAN_Nagare_Misora
+			}
+			army = {
+				large = GFX_Portrait_LAN_Nagare_Misora_army
+				small = GFX_idea_advisor_LAN_Nagare_Misora_army
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Nagare_Misora
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { head_of_intelligence }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Sakurai_Nozomi = {
+		name = Sakurai_Nozomi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Sakurai_Nozomi_civilian_alt
+				small = GFX_idea_advisor_LAN_Sakurai_Nozomi_civilian_alt
+			}
+			army = {
+				large = GFX_Portrait_LAN_Sakurai_Nozomi_army
+				small = GFX_idea_advisor_LAN_Sakurai_Nozomi_army
+			}
+			navy = {
+				large = GFX_Portrait_LAN_Sakurai_Nozomi_navy
+				small = GFX_idea_advisor_LAN_Sakurai_Nozomi_navy
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = LAN_Sakurai_Nozomi
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { army_chief_morale_3 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Misumi_Chika = {
+		name = Misumi_Chika
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Misumi_Chika_civilian_alt
+				small = GFX_idea_advisor_LAN_Misumi_Chika_civilian_alt
+			}
+			army = {
+				large = GFX_Portrait_LAN_Misumi_Chika
+				small = GFX_idea_advisor_LAN_Misumi_Chika
+			}
+			navy = {
+				large = GFX_Portrait_LAN_Misumi_Chika_navy
+				small = GFX_idea_advisor_LAN_Misumi_Chika_navy
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			ledger = navy
+			idea_token = LAN_Misumi_Chika
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 100
+			traits = { navy_chief_naval_aviation_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		navy_leader = {
+			traits = { blue_water_expert navy_career_officer aviation_enthusiast navy_media_personality blockade_runner air_controller }
+			skill = 5
+			attack_skill = 8
+			defense_skill = 2
+			maneuvering_skill = 5
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+	
+	LAN_Mayumiya_Tsumugi = {
+		name = Mayumiya_Tsumugi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Mayumiya_Tsumugi_civilian
+				small = GFX_idea_advisor_LAN_Mayumiya_Tsumugi_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Mayumiya_Tsumugi_army
+				small = GFX_idea_advisor_LAN_Mayumiya_Tsumugi_army
+			}
+			navy = {
+				large = GFX_Portrait_LAN_Mayumiya_Tsumugi_navy
+				small = GFX_idea_advisor_LAN_Mayumiya_Tsumugi_navy
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Mayumiya_Tsumugi
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = {  }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	LAN_Akira_Mosakuji = {
+		name = Akira_Mosakuji
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Akira_Mosakuji_civilian
+				small = GFX_idea_advisor_LAN_Akira_Mosakuji_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Akira_Mosakuji_army
+				small = GFX_idea_advisor_LAN_Akira_Mosakuji_army
+			}
+		}
+		advisor = {
+			slot = head_of_government_character
+			idea_token = LAN_Akira_Mosakuji_head_of_government_character
+			available = { no_head_of_gov_trigger = yes }
+			traits = {  }
+		}
+	}
+
+	LAN_Hoshino_Shizuru = {
+		name = Hoshino_Shizuru
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Hoshino_Shizuru_civilian
+				small = GFX_idea_advisor_LAN_Hoshino_Shizuru_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Hoshino_Shizuru_army
+				small = GFX_idea_advisor_LAN_Hoshino_Shizuru_army
+			}
+		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = LAN_Hoshino_Shizuru
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 100
+			traits = { air_chief_all_weather_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { air_connected infantry_leader skilled_staffer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	LAN_Inosaki_Rino = {
+		name = Inosaki_Rino
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Inosaki_Rino_civilian_alt
+				small = GFX_idea_advisor_LAN_Inosaki_Rino_civilian_alt
+			} 
+			army = {
+				large = GFX_Portrait_LAN_Inosaki_Rino_army
+				small = GFX_idea_advisor_LAN_Inosaki_Rino_army
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = LAN_Inosaki_Rino
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { superior_firepower_expert }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Tachiarai_Ruka = {
+		name = Tachiarai_Ruka
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Tachiarai_Ruka
+				small = GFX_idea_advisor_LAN_Tachiarai_Ruka
+			}
+			army = {
+				large = GFX_Portrait_LAN_Tachiarai_Ruka_army
+				small = GFX_idea_advisor_LAN_Tachiarai_Ruka_army
+			}
+			navy = {
+				large = GFX_Portrait_LAN_Tachiarai_Ruka_navy
+				small = GFX_idea_advisor_LAN_Tachiarai_Ruka_navy
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = LAN_Tachiarai_Ruka
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 100
+			traits = { military_theorist }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Yoigahama_Mitsuki = {
+		name = Yoigahama_Mitsuki
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Yoigahama_Mitsuki_civilian
+				small = GFX_idea_advisor_LAN_Yoigahama_Mitsuki_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Yoigahama_Mitsuki_army
+				small = GFX_idea_advisor_LAN_Yoigahama_Mitsuki_army
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Yoigahama_Mitsuki
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = {  }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Kuraishi_Eriko = {
+		name = Kuraishi_Eriko
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Kuraishi_Eriko_civilian
+				small = GFX_idea_advisor_LAN_Kuraishi_Eriko_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Kuraishi_Eriko_army
+				small = GFX_idea_advisor_LAN_Kuraishi_Eriko_army
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Kuraishi_Eriko
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { prince_of_terror }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Tanno_Nanaka = {
+		name = Tanno_Nanaka
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Tanno_Nanaka_civilian
+				small = GFX_idea_advisor_LAN_Tanno_Nanaka_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Tanno_Nanaka
+				small = GFX_idea_advisor_LAN_Tanno_Nanaka
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = LAN_Tanno_Nanaka
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 100
+			traits = { air_close_air_support_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Hiiragi_Anna = {
+		name = Hiiragi_Anna
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Hiiragi_Anna
+				small = GFX_idea_advisor_LAN_Hiiragi_Anna
+			}
+			army = {
+				large = GFX_Portrait_LAN_Hiiragi_Anna_army
+				small = GFX_idea_advisor_LAN_Hiiragi_Anna_army
+			}
+			navy = {
+				large = GFX_Portrait_LAN_Hiiragi_Anna_navy
+				small = GFX_idea_advisor_LAN_Hiiragi_Anna_navy
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = LAN_Hiiragi_Anna
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { naval_theorist }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Hasekura_Io = {
+		name = Hasekura_Io
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Hasekura_Io_civilian
+				small = GFX_idea_advisor_LAN_Hasekura_Io_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Hasekura_Io_civilian_alt
+				small = GFX_idea_advisor_LAN_Hasekura_Io_civilian_alt
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = LAN_Hasekura_Io
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { naval_aviation_pioneer }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		navy_leader = {
+			traits = { navy_career_officer superior_tactician }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 3
+			maneuvering_skill = 4
+			coordination_skill = 5
+		}
+	}
+	
+	LAN_Tamaizumi_Misaki = {
+		name = Tamaizumi_Misaki
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Tamaizumi_Misaki_civilian
+				small = GFX_idea_advisor_LAN_Tamaizumi_Misaki_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Tamaizumi_Misaki_army_alt
+				small = GFX_idea_advisor_LAN_Tamaizumi_Misaki_army_alt
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Tamaizumi_Misaki
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = {  }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Minami_Suzuna = {
+		name = Minami_Suzuna
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Minami_Suzuna_civilian
+				small = GFX_idea_advisor_LAN_Minami_Suzuna_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Minami_Suzuna_army
+				small = GFX_idea_advisor_LAN_Minami_Suzuna_army
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = LAN_Minami_Suzuna
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 100
+			traits = { army_armored_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { armor_officer media_personality brilliant_strategist organizer panzer_leader }
+			skill = 5
+			attack_skill = 8
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	
+	LAN_Aikawa_Misato = {
+		name = Aikawa_Misato
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Aikawa_Misato_civilian
+				small = GFX_idea_advisor_LAN_Aikawa_Misato_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Aikawa_Misato
+				small = GFX_idea_advisor_LAN_Aikawa_Misato
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = LAN_Aikawa_Misato
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 50
+			traits = { army_guerilla_organizer_1 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Kashiwazaki_Hatsune = {
+		name = Kashiwazaki_Hatsune
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Kashiwazaki_Hatsune
+				small = GFX_idea_advisor_LAN_Kashiwazaki_Hatsune
+			}
+			army = {
+				large = GFX_Portrait_LAN_Kashiwazaki_Hatsune_civilian
+				small = GFX_idea_advisor_LAN_Kashiwazaki_Hatsune_civilian
+			}
+			navy = {
+				large = GFX_Portrait_LAN_Kashiwazaki_Hatsune_civilian_navy
+				small = GFX_idea_advisor_LAN_Kashiwazaki_Hatsune_civilian_navy
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = LAN_Kashiwazaki_Hatsune
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 100
+			traits = { army_regrouping_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Futaba_Aoi = {
+		name = Futaba_Aoi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Futaba_Aoi_civilian_alt
+				small = GFX_idea_advisor_LAN_Futaba_Aoi_civilian_alt
+			}
+			army = {
+				large = GFX_Portrait_LAN_Futaba_Aoi_army
+				small = GFX_idea_advisor_LAN_Futaba_Aoi_army
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = LAN_Futaba_Aoi
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 100
+			traits = { army_concealment_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Shirogane_Jun = {
+		name = Shirogane_Jun
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Shirogane_Jun
+				small = GFX_idea_advisor_LAN_Shirogane_Jun
+			}
+			army = {
+				large = GFX_Portrait_LAN_Shirogane_Jun_army
+				small = GFX_idea_advisor_LAN_Shirogane_Jun_army
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = LAN_Shirogane_Jun
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 100
+			traits = { army_chief_defensive_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		field_marshal = {
+			traits = { war_hero inflexible_strategist organizer infantry_leader }
+			skill = 5
+			attack_skill = 2
+			defense_skill = 6
+			planning_skill = 5
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+
 	LAN_Christina_Morgan = {
 		name = Christina_Morgan
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_LAN_Christina_Morgan_alt
-				small = GFX_idea_advisor_LAN_Christina_Morgan_alt
+				large = GFX_Portrait_LAN_Christina_Morgan_civilian
+				small = GFX_idea_advisor_LAN_Christina_Morgan_civilian
 			}
 			army = {
-				large = GFX_Portrait_LAN_Christina_Morgan
-				small = GFX_idea_advisor_LAN_Christina_Morgan
+				large = GFX_Portrait_LAN_Christina_Morgan_army
+				small = GFX_idea_advisor_LAN_Christina_Morgan_army
 			}
 		}
 		advisor = {
@@ -264,13 +1771,500 @@ characters = {
 			}
 		}
 		field_marshal = {
-			traits = { }
+			traits = { war_hero media_personality harsh_leader cavalry_officer cavalry_leader }
 			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 6
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	LAN_Mikuma_Tomo = {
+		name = Mikuma_Tomo
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Mikuma_Tomo
+				small = GFX_idea_advisor_LAN_Mikuma_Tomo
+			}
+			army = {
+				large = GFX_Portrait_LAN_Mikuma_Tomo_army_alt2
+				small = GFX_idea_advisor_LAN_Mikuma_Tomo_army_alt2
+			}
+		}
+		corps_commander = {
+			traits = { media_personality infantry_leader naval_invader }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+
+	LAN_Orihara_Matsuri = {
+		name = Orihara_Matsuri
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Orihara_Matsuri
+				small = GFX_idea_advisor_LAN_Orihara_Matsuri
+			}
+			army = {
+				large = GFX_Portrait_LAN_Orihara_Matsuri_army
+				small = GFX_idea_advisor_LAN_Orihara_Matsuri_army
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	LAN_Harusaki_Hiyori = {
+		name = Harusaki_Hiyori
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Harusaki_Hiyori_army
+				small = GFX_idea_advisor_LAN_Harusaki_Hiyori_army
+			}
+			army = {
+				large = GFX_Portrait_LAN_Harusaki_Hiyori_army_alt2
+				small = GFX_idea_advisor_LAN_Harusaki_Hiyori_army_alt2
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Harusaki_Hiyori
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { armaments_organizer }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Kusano_Yui = {
+		name = Kusano_Yui
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Kusano_Yui_civilian_alt
+				small = GFX_idea_advisor_LAN_Kusano_Yui_civilian_alt
+			}
+			army = {
+				large = GFX_Portrait_LAN_Kusano_Yui_civilian_alt3
+				small = GFX_idea_advisor_LAN_Kusano_Yui_civilian_alt3
+			}
+		}
+		country_leader = {
+			ideology = social_conservatism_subtype
+			expire = "1965.1.1.1"
+			traits = { power_of_disputes }
+		}
+		advisor = {
+			slot = head_of_government_character
+			idea_token = LAN_Kusano_Yui_head_of_government_character
+			available = { no_head_of_gov_trigger = yes }
+			traits = { silent_workhorse }
+		}
+	}
+
+	LAN_Shijo_Rei = {
+		name = Shijo_Rei
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Shijo_Rei_civilian
+				small = GFX_idea_advisor_LAN_Shijo_Rei_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Shijo_Rei_army_alt2
+				small = GFX_idea_advisor_LAN_Shijo_Rei_army_alt2
+			}
+			navy = {
+				large = GFX_Portrait_LAN_Shijo_Rei_navy
+				small = GFX_idea_advisor_LAN_Shijo_Rei_navy
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Shijo_Rei
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { quartermaster_general }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Monika_Weisswind = {
+		name = Monika_Weisswind
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Monika_Weisswind_civilian
+				small = GFX_idea_advisor_LAN_Monika_Weisswind_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Monika_Weisswind_army
+				small = GFX_idea_advisor_LAN_Monika_Weisswind_army
+			}
+		}
+		corps_commander = {
+			traits = { career_officer infantry_officer jungle_rat ranger }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 5
+			legacy_id = -1
+		}
+	}
+
+	LAN_Nijimura_Yuki = {
+		name = Nijimura_Yuki
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Nijimura_Yuki_civilian_alt
+				small = GFX_idea_advisor_LAN_Nijimura_Yuki_civilian_alt
+			}
+			army = {
+				large = GFX_Portrait_LAN_Nijimura_Yuki_army
+				small = GFX_idea_advisor_LAN_Nijimura_Yuki_army
+			}
+		}
+		corps_commander = {
+			traits = { trait_cautious armor_officer brilliant_strategist skilled_staffer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	LAN_Ninon_Joubert = {
+		name = Ninon_Joubert
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Ninon_Joubert
+				small = GFX_idea_advisor_LAN_Ninon_Joubert
+			}
+			army = {
+				large = GFX_Portrait_LAN_Ninon_Joubert_army_alt
+				small = GFX_idea_advisor_LAN_Ninon_Joubert_army_alt
+			}
+		}
+		corps_commander = {
+			traits = { commando corps_officer }
+			skill = 2
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	LAN_Tomi_Kuuka = {
+		name = Tomi_Kuuka
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Tomi_Kuuka_civilian
+				small = GFX_idea_advisor_LAN_Tomi_Kuuka_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Tomi_Kuuka_army_alt
+				small = GFX_idea_advisor_LAN_Tomi_Kuuka_army_alt
+			}
+		}
+		navy_leader = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	LAN_Ishibashi_Ayumi = {
+		name = Ishibashi_Ayumi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Ishibashi_Ayumi_civilian
+				small = GFX_idea_advisor_LAN_Ishibashi_Ayumi_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Ishibashi_Ayumi_army
+				small = GFX_idea_advisor_LAN_Ishibashi_Ayumi_army
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
 			attack_skill = 1
 			defense_skill = 1
 			planning_skill = 1
 			logistics_skill = 1
 			legacy_id = -1
+		}
+	}
+
+	LAN_Eustiana_von_Astraea = {
+		name = Eustiana_von_Astraea
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Eustiana_von_Astraea_civilian_alt
+				small = GFX_idea_advisor_LAN_Eustiana_von_Astraea_civilian_alt
+			}
+			army = {
+				large = GFX_Portrait_LAN_Eustiana_von_Astraea_army
+				small = GFX_idea_advisor_LAN_Eustiana_von_Astraea_army
+			}
+		}
+		country_leader = {
+			ideology = committee_constitutional_monarchy_subtype
+			traits = { royal_highness_princess foodie_eustiana }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			ideology = neutrality_subtype
+			traits = { royal_highness_princess foodie_eustiana }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = head_of_government_character
+			idea_token = LAN_Eustiana_von_Astraea_head_of_government_character
+			available = { no_head_of_gov_trigger = yes }
+			traits = { pecorine foodie_eustiana }
+		}
+	}
+
+	LAN_Natsume_Kokoro = {
+		name = Natsume_Kokoro
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Natsume_Kokoro_civilian_alt
+				small = GFX_idea_advisor_LAN_Natsume_Kokoro_civilian_alt
+			}
+			army = {
+				large = GFX_Portrait_LAN_Natsume_Kokoro_army
+				small = GFX_idea_advisor_LAN_Natsume_Kokoro_army
+			}
+		}
+		country_leader = {
+			ideology = social_conservatism_subtype
+			traits = { friendly_mediator livelihood_carer }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = head_of_government_character
+			idea_token = LAN_Natsume_Kokoro_head_of_government_character
+			available = { no_head_of_gov_trigger = yes }
+			traits = { little_guardian }
+		}
+	}
+
+	LAN_Momochi_Kiruya = {
+		name = Momochi_Kiruya
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Momochi_Kiruya_civilian_alt
+				small = GFX_idea_advisor_LAN_Momochi_Kiruya_civilian_alt
+			}
+			army = {
+				large = GFX_Portrait_LAN_Momochi_Kiruya_army_alt
+				small = GFX_idea_advisor_LAN_Momochi_Kiruya_army_alt
+			}
+		}
+		country_leader = {
+			ideology = classical_liberalism_subtype
+			expire = "1965.1.1.1"
+			traits = { lord_kiruya }
+		}
+		advisor = {
+			slot = head_of_government_character
+			idea_token = LAN_Momochi_Kiruya_head_of_government_character
+			available = { no_head_of_gov_trigger = yes }
+			traits = { lord_kiruya }
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Momochi_Kiruya
+			allowed = { original_tag = LAN }
+			available = {
+				ROOT = {
+					NOT = {
+						has_idea_with_trait = free_market_economists
+						has_country_leader_with_trait = reformer_kiruya
+					}
+				}
+				not_already_hired_except_as = political_advisor
+			}
+			cost = 150
+			traits = { austerity_expert }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { brilliant_strategist }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	LAN_Agato_Shifuna = {
+		name = Agato_Shifuna
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Agato_Shifuna_civilian
+				small = GFX_idea_advisor_LAN_Agato_Shifuna_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Agato_Shifuna_army_alt
+				small = GFX_idea_advisor_LAN_Agato_Shifuna_army_alt
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = LAN_Agato_Shifuna
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { dive_bomber }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Himemiya_Maho = {
+		name = Himemiya_Maho
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Himemiya_Maho_civilian
+				small = GFX_idea_advisor_LAN_Himemiya_Maho_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Himemiya_Maho_army
+				small = GFX_idea_advisor_LAN_Himemiya_Maho_army
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Himemiya_Maho
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { communist_mobilizer }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Aki_Makoto = {
+		name = Aki_Makoto
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Aki_Makoto_civilian
+				small = GFX_idea_advisor_LAN_Aki_Makoto_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Aki_Makoto_army_alt
+				small = GFX_idea_advisor_LAN_Aki_Makoto_army_alt
+			}
+		}
+		field_marshal = {
+			traits = { engineer_officer politically_connected organizer thorough_planner }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	LAN_Kirihara_Kasumi = {
+		name = Kirihara_Kasumi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Kirihara_Kasumi_civilian_alt2
+				small = GFX_idea_advisor_LAN_Kirihara_Kasumi_civilian_alt2
+			}
+			army = {
+				large = GFX_Portrait_LAN_Kirihara_Kasumi
+				small = GFX_idea_advisor_LAN_Kirihara_Kasumi
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Kirihara_Kasumi
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { detective_in_capital }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	
+	LAN_Kyan_Kaori = {
+		name = Kyan_Kaori
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Kyan_Kaori
+				small = GFX_idea_advisor_LAN_Kyan_Kaori
+			}
+			army = {
+				large = GFX_Portrait_LAN_Kyan_Kaori_army
+				small = GFX_idea_advisor_LAN_Kyan_Kaori_army
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = LAN_Kyan_Kaori
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 100
+			traits = { army_chief_offensive_2 }
+			ai_will_do = {
+				base = 1.000
+			}
 		}
 	}
 
@@ -321,6 +2315,333 @@ characters = {
 		}
 	}
 
+	LAN_Louise_Marie = {
+		name = Louise_Marie
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Louise_Marie
+				small = GFX_idea_advisor_LAN_Louise_Marie
+			}
+			army = {
+				large = GFX_Portrait_LAN_Louise_Marie
+				small = GFX_idea_advisor_LAN_Louise_Marie
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Louise_Marie
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { national_alchemist }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Tono_Homare = {
+		name = Tono_Homare
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_LAN_Tono_Homare
+			#	small = GFX_idea_advisor_LAN_Tono_Homare
+			#}
+			army = {
+				large = GFX_Portrait_LAN_Tono_Homare_civilian
+				small = GFX_idea_advisor_LAN_Tono_Homare_civilian
+			}
+		}
+		advisor = {
+			slot = air_chief
+			ledger = air
+			idea_token = LAN_Tono_Homare
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 150
+			traits = { air_chief_ground_support_3 }
+			on_add = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.03
+					}
+				}
+			}
+			on_remove = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = -0.03
+					}
+				}
+			}
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Kidou_Kaya = {
+		name = Kidou_Kaya
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Kidou_Kaya_civilian
+				small = GFX_idea_advisor_LAN_Kidou_Kaya_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Kidou_Kaya_army
+				small = GFX_idea_advisor_LAN_Kidou_Kaya_army
+			}
+		}
+		corps_commander = {
+			traits = { trait_SPA_nationalist_sympathies }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	LAN_Ichinose_Inori = {
+		name = Ichinose_Inori
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Ichinose_Inori_civilian
+				small = GFX_idea_advisor_LAN_Ichinose_Inori_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Ichinose_Inori_army_alt
+				small = GFX_idea_advisor_LAN_Ichinose_Inori_army_alt
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = LAN_Ichinose_Inori
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 100
+			traits = { army_chief_morale_2 }
+			on_add = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.02
+					}
+				}
+			}
+			on_remove = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = -0.02
+					}
+				}
+			}
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Ichige_Botan = {
+		name = Ichige_Botan
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_LAN_Ichige_Botan
+			#	small = GFX_idea_advisor_LAN_Ichige_Botan
+			#}
+			army = {
+				large = GFX_Portrait_LAN_Ichige_Botan_army
+				small = GFX_idea_advisor_LAN_Ichige_Botan_army
+			}
+		}
+		corps_commander = {
+			traits = { trait_SPA_nationalist_sympathies }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	LAN_Shikiba_Nera = {
+		name = Shikiba_Nera
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Shikiba_Nera_civilian
+				small = GFX_idea_advisor_LAN_Shikiba_Nera_civilian
+			}
+			#army = {
+			#	large = GFX_Portrait_LAN_Shikiba_Nera
+			#	small = GFX_idea_advisor_LAN_Shikiba_Nera
+			#}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = LAN_Shikiba_Nera
+			allowed = { original_tag = LAN }
+			available = {
+				#is_a_fascism_government = yes
+			}
+			cost = 150
+			traits = { naval_architect }
+			on_add = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.02
+					}
+				}
+			}
+			on_remove = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = -0.02
+					}
+				}
+			}
+		}
+	}
+
+	LAN_Kasukano_Kasuri = {
+		name = Kasukano_Kasuri
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_LAN_Kasukano_Kasuri
+			#	small = GFX_idea_advisor_LAN_Kasukano_Kasuri
+			#}
+			army = {
+				large = GFX_Portrait_LAN_Kasukano_Kasuri_army
+				small = GFX_idea_advisor_LAN_Kasukano_Kasuri_army
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = LAN_Kasukano_Kasuri
+			allowed = { original_tag = LAN }
+			available = {
+				is_a_fascism_government = yes
+			}
+			cost = 100
+			traits = { army_chief_offensive_2 }
+			on_add = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.02
+					}
+				}
+			}
+			on_remove = {
+				ROOT = {
+					add_popularity = {
+						ideology = fascism
+						popularity = -0.02
+					}
+				}
+			}
+		}
+	}
+
+	LAN_Karin_Kanzaki = {
+		name = Karin_Kanzaki
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Karin_Kanzaki_civilian
+				small = GFX_idea_advisor_LAN_Karin_Kanzaki_civilian
+			}
+			army = {
+				large = GFX_Portrait_LAN_Karin_Kanzaki
+				small = GFX_idea_advisor_LAN_Karin_Kanzaki
+			}
+		}
+		advisor = {
+			slot = head_of_government_character
+			idea_token = LAN_Karin_Kanzaki_head_of_government_character
+			available = { no_head_of_gov_trigger = yes }
+			traits = { conservative_grandee }
+		}
+	}
+
+	LAN_Utsushimi_Neneka = {
+		name = Utsushimi_Neneka
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Utsushimi_Neneka
+				small = GFX_idea_advisor_LAN_Utsushimi_Neneka
+			}
+			army = {
+				large = GFX_Portrait_LAN_Utsushimi_Neneka_civilian
+				small = GFX_idea_advisor_LAN_Utsushimi_Neneka_civilian
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = navy
+			idea_token = LAN_Utsushimi_Neneka
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 150
+			traits = { navy_carrier_3 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+
+	LAN_Arisa = {
+		name = Arisa
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_LAN_Arisa_alt
+				small = GFX_idea_advisor_LAN_Arisa_alt
+			}
+			army = {
+				large = GFX_Portrait_LAN_Arisa
+				small = GFX_idea_advisor_LAN_Arisa
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = LAN_Arisa
+			allowed = { original_tag = LAN }
+			available = {
+				
+			}
+			cost = 100
+			traits = { air_tactical_bombing_2 }
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
 	LAN_Djeeta = {
 		name = Djeeta
 		portraits = {
@@ -342,66 +2663,6 @@ characters = {
 			}
 			cost = 150
 			traits = { assault_avaition }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Eustiana_von_Astraea = {
-		name = Eustiana_von_Astraea
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Eustiana_von_Astraea_civilian
-				small = GFX_idea_advisor_LAN_Eustiana_von_Astraea
-			}
-			army = {
-				large = GFX_Portrait_LAN_Eustiana_von_Astraea_alt2
-				small = GFX_idea_advisor_LAN_Eustiana_von_Astraea_alt2
-			}
-		}
-		country_leader = {
-			ideology = committee_constitutional_monarchy_subtype
-			traits = { royal_highness_princess foodie_eustiana }
-			expire = "1965.1.1.1"
-			id = -1
-		}
-		country_leader = {
-			ideology = neutrality_subtype
-			traits = { royal_highness_princess foodie_eustiana }
-			expire = "1965.1.1.1"
-			id = -1
-		}
-		advisor = {
-			slot = head_of_government_character
-			idea_token = LAN_Eustiana_von_Astraea_head_of_government_character
-			available = { no_head_of_gov_trigger = yes }
-			traits = { pecorine foodie_eustiana }
-		}
-	}
-
-	LAN_Futaba_Aoi = {
-		name = Futaba_Aoi
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Futaba_Aoi
-				small = GFX_idea_advisor_LAN_Futaba_Aoi
-			}
-			army = {
-				large = GFX_Portrait_LAN_Futaba_Aoi
-				small = GFX_idea_advisor_LAN_Futaba_Aoi
-			}
-		}
-		advisor = {
-			slot = high_command
-			ledger = army
-			idea_token = LAN_Futaba_Aoi
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { army_concealment_3 }
 			ai_will_do = {
 				base = 1.000
 			}
@@ -436,68 +2697,6 @@ characters = {
 		}
 	}
 
-	LAN_Harusaki_Hiyori = {
-		name = Harusaki_Hiyori
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Harusaki_Hiyori_alt2
-				small = GFX_idea_advisor_LAN_Harusaki_Hiyori
-			}
-			army = {
-				large = GFX_Portrait_LAN_Harusaki_Hiyori_alt
-				small = GFX_idea_advisor_LAN_Harusaki_Hiyori_alt
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Harusaki_Hiyori
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { armaments_organizer }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Hasekura_Io = {
-		name = Hasekura_Io
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Hasekura_Io
-				small = GFX_idea_advisor_LAN_Hasekura_Io
-			}
-			army = {
-				large = GFX_Portrait_LAN_Hasekura_Io
-				small = GFX_idea_advisor_LAN_Hasekura_Io
-			}
-		}
-		advisor = {
-			slot = theorist
-			idea_token = LAN_Hasekura_Io
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { naval_aviation_pioneer }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		navy_leader = {
-			traits = { navy_career_officer aviation_enthusiast superior_tactician }
-			skill = 5
-			attack_skill = 4
-			defense_skill = 3
-			maneuvering_skill = 4
-			coordination_skill = 5
-		}
-	}
-
 	LAN_Hashimoto_Kanna = {
 		name = Hashimoto_Kanna
 		portraits = {
@@ -521,1231 +2720,16 @@ characters = {
 		}
 	}
 
-	LAN_Hiiragi_Anna = {
-		name = Hiiragi_Anna
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Hiiragi_Anna
-				small = GFX_idea_advisor_LAN_Hiiragi_Anna
-			}
-			army = {
-				large = GFX_Portrait_LAN_Hiiragi_Anna
-				small = GFX_idea_advisor_LAN_Hiiragi_Anna
-			}
-		}
-		advisor = {
-			slot = theorist
-			idea_token = LAN_Hiiragi_Anna
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { blitzkrieg_theorist }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Hikawa_Kyoka = {
-		name = Hikawa_Kyoka
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Hikawa_Kyoka
-				small = GFX_idea_advisor_LAN_Hikawa_Kyoka
-			}
-			army = {
-				large = GFX_Portrait_LAN_Hikawa_Kyoka
-				small = GFX_idea_advisor_LAN_Hikawa_Kyoka
-			}
-		}
-		advisor = {
-			slot = navy_chief
-			ledger = navy
-			idea_token = LAN_Hikawa_Kyoka
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 100
-			traits = { navy_chief_decisive_battle_2 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		navy_leader = {
-			traits = {  }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			maneuvering_skill = 1
-			coordination_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Himemiya_Maho = {
-		name = Himemiya_Maho
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Himemiya_Maho
-				small = GFX_idea_advisor_LAN_Himemiya_Maho
-			}
-			army = {
-				large = GFX_Portrait_LAN_Himemiya_Maho
-				small = GFX_idea_advisor_LAN_Himemiya_Maho
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Himemiya_Maho
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { communist_mobilizer }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Hojo_Ayane = {
-		name = Hojo_Ayane
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Hojo_Ayane
-				small = GFX_idea_advisor_LAN_Hojo_Ayane
-			}
-			army = {
-				large = GFX_Portrait_LAN_Hojo_Ayane
-				small = GFX_idea_advisor_LAN_Hojo_Ayane
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Hojo_Ayane
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { adventurous_daredevil }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Hoshino_Shizuru = {
-		name = Hoshino_Shizuru
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Hoshino_Shizuru
-				small = GFX_idea_advisor_LAN_Hoshino_Shizuru
-			}
-			army = {
-				large = GFX_Portrait_LAN_Hoshino_Shizuru_alt
-				small = GFX_idea_advisor_LAN_Hoshino_Shizuru_alt
-			}
-		}
-		advisor = {
-			slot = air_chief
-			ledger = air
-			idea_token = LAN_Hoshino_Shizuru
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { air_chief_all_weather_3 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Illya_Onstein = {
-		name = Illya_Onstein
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Illya_Onstein_alt
-				small = GFX_idea_advisor_LAN_Illya_Onstein_alt
-			}
-			army = {
-				large = GFX_Portrait_LAN_Illya_Onstein
-				small = GFX_idea_advisor_LAN_Illya_Onstein
-			}
-		}
-		advisor = {
-			slot = air_chief
-			ledger = air
-			idea_token = LAN_Illya_Onstein
-			allowed = { original_tag = LAN }
-			available = {
-				is_a_fascism_government = yes
-			}
-			cost = 100
-			traits = { air_chief_night_operations_2 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		field_marshal = {
-			traits = { trait_SPA_nationalist_sympathies }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Inosaki_Rino = {
-		name = Inosaki_Rino
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Inosaki_Rino
-				small = GFX_idea_advisor_LAN_Inosaki_Rino
-			} 
-			army = {
-				large = GFX_Portrait_LAN_Inosaki_Rino
-				small = GFX_idea_advisor_LAN_Inosaki_Rino
-			}
-		}
-		advisor = {
-			slot = theorist
-			idea_token = LAN_Inosaki_Rino
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { superior_firepower_expert }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Izumo_Miyako = {
-		name = Izumo_Miyako
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Izumo_Miyako
-				small = GFX_idea_advisor_LAN_Izumo_Miyako
-			}
-			army = {
-				large = GFX_Portrait_LAN_Izumo_Miyako
-				small = GFX_idea_advisor_LAN_Izumo_Miyako
-			}
-		}
-		advisor = {
-			slot = navy_chief
-			ledger = navy
-			idea_token = LAN_Izumo_Miyako
-			allowed = { original_tag = LAN }
-			available = {
-				is_a_fascism_government = yes
-			}
-			cost = 150
-			traits = { navy_chief_commerce_raiding_3 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		navy_leader = {
-			traits = {  }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			maneuvering_skill = 1
-			coordination_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Kamiki_Shinobu = {
-		name = Kamiki_Shinobu
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Kamiki_Shinobu
-				small = GFX_idea_advisor_LAN_Kamiki_Shinobu
-			}
-			army = {
-				large = GFX_Portrait_LAN_Kamiki_Shinobu
-				small = GFX_idea_advisor_LAN_Kamiki_Shinobu
-			}
-		}
-		advisor = {
-			slot = high_command
-			ledger = army
-			idea_token = LAN_Kamiki_Shinobu
-			allowed = { original_tag = LAN }
-			available = {
-				is_a_fascism_government = yes
-			}
-			cost = 50
-			traits = { army_radio_intelligence_1 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		corps_commander = {
-			traits = { trait_SPA_nationalist_sympathies }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Kashiwazaki_Hatsune = {
-		name = Kashiwazaki_Hatsune
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Kashiwazaki_Hatsune
-				small = GFX_idea_advisor_LAN_Kashiwazaki_Hatsune
-			}
-			army = {
-				large = GFX_Portrait_LAN_Kashiwazaki_Hatsune
-				small = GFX_idea_advisor_LAN_Kashiwazaki_Hatsune
-			}
-		}
-		advisor = {
-			slot = high_command
-			ledger = army
-			idea_token = LAN_Kashiwazaki_Hatsune
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 100
-			traits = { army_artillery_2 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Kashiwazaki_Shiori = {
-		name = Kashiwazaki_Shiori
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Kashiwazaki_Shiori
-				small = GFX_idea_advisor_LAN_Kashiwazaki_Shiori
-			}
-			army = {
-				large = GFX_Portrait_LAN_Kashiwazaki_Shiori
-				small = GFX_idea_advisor_LAN_Kashiwazaki_Shiori
-			}
-		}
-		advisor = {
-			slot = theorist
-			idea_token = LAN_Kashiwazaki_Shiori
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { grand_battle_plan_expert }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Kazemiya_Akari = {
-		name = Kazemiya_Akari
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Kazemiya_Akari
-				small = GFX_idea_advisor_LAN_Kazemiya_Akari
-			}
-			army = {
-				large = GFX_Portrait_LAN_Kazemiya_Akari
-				small = GFX_idea_advisor_LAN_Kazemiya_Akari
-			}
-		}
-		advisor = {
-			slot = high_command
-			ledger = navy
-			idea_token = LAN_Kazemiya_Akari
-			allowed = { original_tag = LAN }
-			available = {
-				is_a_fascism_government = yes
-			}
-			cost = 100
-			traits = { navy_amphibious_assault_2 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Kazemiya_Yori = {
-		name = Kazemiya_Yori
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Kazemiya_Yori
-				small = GFX_idea_advisor_LAN_Kazemiya_Yori
-			}
-			army = {
-				large = GFX_Portrait_LAN_Kazemiya_Yori
-				small = GFX_idea_advisor_LAN_Kazemiya_Yori
-			}
-		}
-		advisor = {
-			slot = high_command
-			ledger = navy
-			idea_token = LAN_Kazemiya_Yori
-			allowed = { original_tag = LAN }
-			available = {
-				is_a_fascism_government = yes
-			}
-			cost = 100
-			traits = { navy_capital_ship_2 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Kirihara_Kasumi = {
-		name = Kirihara_Kasumi
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Kirihara_Kasumi
-				small = GFX_idea_advisor_LAN_Kirihara_Kasumi
-			}
-			army = {
-				large = GFX_Portrait_LAN_Kirihara_Kasumi
-				small = GFX_idea_advisor_LAN_Kirihara_Kasumi
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Kirihara_Kasumi
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { detective_in_capital }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Kuraishi_Eriko = {
-		name = Kuraishi_Eriko
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Kuraishi_Eriko
-				small = GFX_idea_advisor_LAN_Kuraishi_Eriko
-			}
-			army = {
-				large = GFX_Portrait_LAN_Kuraishi_Eriko
-				small = GFX_idea_advisor_LAN_Kuraishi_Eriko
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Kuraishi_Eriko
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { prince_of_terror }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Kuribayashi_Kurumi = {
-		name = Kuribayashi_Kurumi
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Kuribayashi_Kurumi
-				small = GFX_idea_advisor_LAN_Kuribayashi_Kurumi
-			}
-			army = {
-				large = GFX_Portrait_LAN_Kuribayashi_Kurumi
-				small = GFX_idea_advisor_LAN_Kuribayashi_Kurumi
-			}
-		}
-		advisor = {
-			slot = high_command
-			ledger = navy
-			idea_token = LAN_Kuribayashi_Kurumi
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 100
-			traits = { navy_screen_2 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Kuro_Chie = {
-		name = Kuro_Chie
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Kuro_Chie
-				small = GFX_idea_advisor_LAN_Kuro_Chie
-			}
-			army = {
-				large = GFX_Portrait_LAN_Kuro_Chie
-				small = GFX_idea_advisor_LAN_Kuro_Chie
-			}
-		}
-		advisor = {
-			slot = air_chief
-			ledger = air
-			idea_token = LAN_Kuro_Chie
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { air_chief_safety_3 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Kuroe_Hanako = {
-		name = Kuroe_Hanako
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Kuroe_Hanako
-				small = GFX_idea_advisor_LAN_Kuroe_Hanako
-			}
-			army = {
-				large = GFX_Portrait_LAN_Kuroe_Hanako
-				small = GFX_idea_advisor_LAN_Kuroe_Hanako
-			}
-		}
-		advisor = {
-			slot = high_command
-			ledger = army
-			idea_token = LAN_Kuroe_Hanako
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 50
-			traits = { army_commando_1 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 4
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Kusano_Yui = {
-		name = Kusano_Yui
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Kusano_Yui
-				small = GFX_idea_advisor_LAN_Kusano_Yui
-			}
-			army = {
-				large = GFX_Portrait_LAN_Kusano_Yui_alt
-				small = GFX_idea_advisor_LAN_Kusano_Yui_alt
-			}
-		}
-		country_leader = {
-			ideology = social_conservatism_subtype
-			expire = "1965.1.1.1"
-			traits = { power_of_disputes }
-		}
-		advisor = {
-			slot = head_of_government_character
-			idea_token = LAN_Kusano_Yui_head_of_government_character
-			available = { no_head_of_gov_trigger = yes }
-			traits = { silent_workhorse }
-		}
-	}
-
-	LAN_Kyan_Kaori = {
-		name = Kyan_Kaori
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Kyan_Kaori
-				small = GFX_idea_advisor_LAN_Kyan_Kaori
-			}
-			army = {
-				large = GFX_Portrait_LAN_Kyan_Kaori
-				small = GFX_idea_advisor_LAN_Kyan_Kaori
-			}
-		}
-		advisor = {
-			slot = army_chief
-			ledger = army
-			idea_token = LAN_Kyan_Kaori
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 100
-			traits = { army_chief_offensive_2 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Haraiki_Eru = {
-		name = Haraiki_Eru
-		portraits = {
-			#civilian = {
-			#	large = GFX_Portrait_LAN_Haraiki_Eru
-			#	small = GFX_idea_advisor_LAN_Haraiki_Eru
-			#}
-			army = {
-				large = GFX_Portrait_LAN_Haraiki_Eru_scientist
-				small = GFX_idea_advisor_LAN_Haraiki_Eru
-			}
-		}
-#		advisor = {
-#			slot = theorist
-#			idea_token = LAN_Haraiki_Eru
-#			allowed = { original_tag = LAN }
-#			available = {
-#				
-#			}
-#			cost = 150
-#			research_bonus = {
-#				rocketry = 0.15
-#			}
-#			traits = { rocket_scientist }
-#			ai_will_do = {
-#				base = 1.000
-#			}
-#		}
-		scientist = {
-			traits = { scientist_trait_rocketry_specialist scientist_trait_bright scientist_trait_resourceful }
-			skills = {
-				specialization_air = 1
-			}
-		}
-	}
-
-	LAN_Mikuma_Tomo = {
-		name = Mikuma_Tomo
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Mikuma_Tomo
-				small = GFX_idea_advisor_LAN_Mikuma_Tomo
-			}
-			army = {
-				large = GFX_Portrait_LAN_Mikuma_Tomo
-				small = GFX_idea_advisor_LAN_Mikuma_Tomo
-			}
-		}
-		advisor = {
-			slot = army_chief
-			ledger = army
-			idea_token = LAN_Mikuma_Tomo
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 100
-			traits = { army_chief_planning_2 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Minami_Suzuna = {
-		name = Minami_Suzuna
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Minami_Suzuna_alt
-				small = GFX_idea_advisor_LAN_Minami_Suzuna_alt
-			}
-			army = {
-				large = GFX_Portrait_LAN_Minami_Suzuna
-				small = GFX_idea_advisor_LAN_Minami_Suzuna
-			}
-		}
-		advisor = {
-			slot = high_command
-			ledger = army
-			idea_token = LAN_Minami_Suzuna
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 100
-			traits = { army_armored_2 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		field_marshal = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Minerva = {
-		name = Minerva
-		portraits = {
-			#civilian = {
-			#	large = GFX_Portrait_LAN_Minerva
-			#	small = GFX_idea_advisor_LAN_Minerva
-			#}
-			army = {
-				large = GFX_Portrait_LAN_Minerva_scientist
-				small = GFX_idea_advisor_LAN_Minerva
-			}
-		}
-#		advisor = {
-#			slot = theorist
-#			idea_token = LAN_Minerva
-#			allowed = { original_tag = LAN }
-#			available = {
-#				
-#			}
-#			cost = 150
-#			research_bonus = {
-#				nuclear = 0.15
-#			}
-#			traits = { nuclear_scientist }
-#			ai_will_do = {
-#				base = 1.000
-#			}
-#		}
-		scientist = {
-			traits = { scientist_trait_nuclear_specialist scientist_trait_bright scientist_trait_fast_learner }
-			skills = {
-				specialization_nuclear = 1
-			}
-		}
-	}
-
-	LAN_Misumi_Chika = {
-		name = Misumi_Chika
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Misumi_Chika
-				small = GFX_idea_advisor_LAN_Misumi_Chika
-			}
-			army = {
-				large = GFX_Portrait_LAN_Misumi_Chika
-				small = GFX_idea_advisor_LAN_Misumi_Chika
-			}
-		}
-		advisor = {
-			slot = navy_chief
-			ledger = navy
-			idea_token = LAN_Misumi_Chika
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 100
-			traits = { navy_chief_naval_aviation_2 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		navy_leader = {
-			traits = {  }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			maneuvering_skill = 1
-			coordination_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Miyasaka_Tamaki = {
-		name = Miyasaka_Tamaki
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Miyasaka_Tamaki
-				small = GFX_idea_advisor_LAN_Miyasaka_Tamaki
-			}
-			army = {
-				large = GFX_Portrait_LAN_Miyasaka_Tamaki
-				small = GFX_idea_advisor_LAN_Miyasaka_Tamaki
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Miyasaka_Tamaki
-			allowed = { original_tag = LAN }
-			available = {
-				OR = {
-					has_country_leader = {
-						character = LAN_Todo_Akino
-						ruling_only = yes
-					}
-					has_idea = LAN_Todo_Akino
-					has_country_flag = LAN_support_mercury_foundation_flag
-				}
-			}
-			cost = 0
-			traits = { phantom_cat }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Momochi_Kiruya = {
-		name = Momochi_Kiruya
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Momochi_Kiruya
-				small = GFX_idea_advisor_LAN_Momochi_Kiruya_alt
-			}
-			army = {
-				large = GFX_Portrait_LAN_Momochi_Kiruya_alt2
-				small = GFX_idea_advisor_LAN_Momochi_Kiruya_alt2
-			}
-		}
-		country_leader = {
-			ideology = classical_liberalism_subtype
-			expire = "1965.1.1.1"
-			traits = { lord_kiruya }
-		}
-		advisor = {
-			slot = head_of_government_character
-			idea_token = LAN_Momochi_Kiruya_head_of_government_character
-			available = { no_head_of_gov_trigger = yes }
-			traits = { lord_kiruya }
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Momochi_Kiruya
-			allowed = { original_tag = LAN }
-			available = {
-				ROOT = {
-					NOT = {
-						has_idea_with_trait = free_market_economists
-						has_country_leader_with_trait = reformer_kiruya
-					}
-				}
-				not_already_hired_except_as = political_advisor
-			}
-			cost = 150
-			traits = { austerity_expert }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Monika_Weisswind = {
-		name = Monika_Weisswind
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Monika_Weisswind
-				small = GFX_idea_advisor_LAN_Monika_Weisswind
-			}
-			army = {
-				large = GFX_Portrait_LAN_Monika_Weisswind
-				small = GFX_idea_advisor_LAN_Monika_Weisswind
-			}
-		}
-		advisor = {
-			slot = army_chief
-			ledger = army
-			idea_token = LAN_Monika_Weisswind
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 50
-			traits = { army_chief_drill_1 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Natsume_Kokoro = {
-		name = Natsume_Kokoro
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Natsume_Kokoro_alt2
-				small = GFX_idea_advisor_LAN_Natsume_Kokoro
-			}
-			army = {
-				large = GFX_Portrait_LAN_Natsume_Kokoro
-				small = GFX_idea_advisor_LAN_Natsume_Kokoro
-			}
-		}
-		country_leader = {
-			ideology = social_conservatism_subtype
-			traits = { friendly_mediator livelihood_carer }
-			expire = "1965.1.1.1"
-			id = -1
-		}
-		advisor = {
-			slot = head_of_government_character
-			idea_token = LAN_Natsume_Kokoro_head_of_government_character
-			available = { no_head_of_gov_trigger = yes }
-			traits = { little_guardian }
-		}
-	}
-
-	LAN_Nijimura_Yuki = {
-		name = Nijimura_Yuki
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Nijimura_Yuki
-				small = GFX_idea_advisor_LAN_Nijimura_Yuki
-			}
-			army = {
-				large = GFX_Portrait_LAN_Nijimura_Yuki
-				small = GFX_idea_advisor_LAN_Nijimura_Yuki
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Ninon_Joubert = {
-		name = Ninon_Joubert
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Ninon_Joubert
-				small = GFX_idea_advisor_LAN_Ninon_Joubert
-			}
-			army = {
-				large = GFX_Portrait_LAN_Ninon_Joubert
-				small = GFX_idea_advisor_LAN_Ninon_Joubert
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Ogami_Mifuyu = {
-		name = Ogami_Mifuyu
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Ogami_Mifuyu
-				small = GFX_idea_advisor_LAN_Ogami_Mifuyu
-			}
-			army = {
-				large = GFX_Portrait_LAN_Ogami_Mifuyu
-				small = GFX_idea_advisor_LAN_Ogami_Mifuyu
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Ogami_Mifuyu
-			allowed = { original_tag = LAN }
-			available = {
-				OR = {
-					has_country_leader = {
-						character = LAN_Todo_Akino
-						ruling_only = yes
-					}
-					has_idea = LAN_Todo_Akino
-					has_country_flag = LAN_support_mercury_foundation_flag
-				}
-			}
-			cost = 0
-			traits = { efficiency_highest }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		navy_leader = {
-			traits = {  }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			maneuvering_skill = 1
-			coordination_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Orihara_Matsuri = {
-		name = Orihara_Matsuri
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Orihara_Matsuri
-				small = GFX_idea_advisor_LAN_Orihara_Matsuri
-			}
-			army = {
-				large = GFX_Portrait_LAN_Orihara_Matsuri
-				small = GFX_idea_advisor_LAN_Orihara_Matsuri
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Rima = {
-		name = Rima
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Rima
-				small = GFX_idea_advisor_LAN_Rima
-			}
-			army = {
-				large = GFX_Portrait_LAN_Rima
-				small = GFX_idea_advisor_LAN_Rima
-			}
-		}
-		advisor = {
-			slot = army_chief
-			ledger = army
-			idea_token = LAN_Rima
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 100
-			traits = { army_chief_maneuver_2 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Sakurai_Nozomi = {
-		name = Sakurai_Nozomi
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Sakurai_Nozomi
-				small = GFX_idea_advisor_LAN_Sakurai_Nozomi
-			}
-			army = {
-				large = GFX_Portrait_LAN_Sakurai_Nozomi
-				small = GFX_idea_advisor_LAN_Sakurai_Nozomi
-			}
-		}
-		advisor = {
-			slot = army_chief
-			ledger = army
-			idea_token = LAN_Sakurai_Nozomi
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { army_chief_morale_3 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Sasaki_Saren = {
-		name = Sasaki_Saren
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Sasaki_Saren
-				small = GFX_idea_advisor_LAN_Sasaki_Saren
-			}
-			army = {
-				large = GFX_Portrait_LAN_Sasaki_Saren
-				small = GFX_idea_advisor_LAN_Sasaki_Saren
-			}
-		}
-		country_leader = {
-			ideology = social_democracy_subtype
-			traits = {
-				#link_of_red_army      #added by focus
-				champion_of_the_people
-			}
-			expire = "1965.1.1.1"
-			id = -1
-		}
-		advisor = {
-			slot = head_of_government_character
-			idea_token = LAN_Sasaki_Saren_head_of_government_character
-			available = { no_head_of_gov_trigger = yes }
-			traits = { the_future_star }
-		}
-		advisor = {
-			slot = high_command
-			ledger = army
-			idea_token = LAN_Sasaki_Saren
-			allowed = { original_tag = LAN }
-			available = {
-				is_country_leader = no
-				not_already_hired_except_as = high_command
-			}
-			cost = 100
-			traits = { army_regrouping_2 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		corps_commander = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-			visible = {
-				ROOT = { check_variable = { FE_secondary = LAN_Sasaki_Saren_head_of_government } }
-			}
-		}
-	}
-
 	LAN_Senri_Mana = {
 		name = Senri_Mana
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_LAN_Senri_Mana
-				small = GFX_idea_advisor_LAN_Senri_Mana
+				large = GFX_Portrait_LAN_Senri_Mana_civilian
+				small = GFX_idea_advisor_LAN_Senri_Mana_civilian
 			}
 			army = {
-				large = GFX_Portrait_LAN_Senri_Mana_alt
-				small = GFX_idea_advisor_LAN_Senri_Mana_alt
+				large = GFX_Portrait_LAN_Senri_Mana_super_army
+				small = GFX_idea_advisor_LAN_Senri_Mana_super_army
 			}
 		}
 		country_leader = {
@@ -1761,103 +2745,12 @@ characters = {
 			traits = { JUNO_national_socialist_vanguard }
 		}
 		field_marshal = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
-		}
-	}
-
-	LAN_Shijo_Rei = {
-		name = Shijo_Rei
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Shijo_Rei
-				small = GFX_idea_advisor_LAN_Shijo_Rei
-			}
-			army = {
-				large = GFX_Portrait_LAN_Shijo_Rei_alt
-				small = GFX_idea_advisor_LAN_Shijo_Rei_alt2
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Shijo_Rei
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { quartermaster_general }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Shingyoji_Yuni = {
-		name = Shingyoji_Yuni
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Shingyoji_Yuni
-				small = GFX_idea_advisor_LAN_Shingyoji_Yuni
-			}
-			army = {
-				large = GFX_Portrait_LAN_Shingyoji_Yuni
-				small = GFX_idea_advisor_LAN_Shingyoji_Yuni
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Shingyoji_Yuni
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { internet_giantess }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Shirogane_Jun = {
-		name = Shirogane_Jun
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Shirogane_Jun
-				small = GFX_idea_advisor_LAN_Shirogane_Jun
-			}
-			army = {
-				large = GFX_Portrait_LAN_Shirogane_Jun
-				small = GFX_idea_advisor_LAN_Shirogane_Jun
-			}
-		}
-		advisor = {
-			slot = army_chief
-			ledger = army
-			idea_token = LAN_Shirogane_Jun
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 100
-			traits = { army_chief_defensive_2 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		field_marshal = {
-			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
+			traits = { war_hero media_personality infantry_leader organizer cavalry_leader }
+			skill = 6
+			attack_skill = 8
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
 			legacy_id = -1
 		}
 	}
@@ -1866,12 +2759,12 @@ characters = {
 		name = Sonoue_Muimi
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_LAN_Sonoue_Muimi
-				small = GFX_idea_advisor_LAN_Sonoue_Muimi
+				large = GFX_Portrait_LAN_Sonoue_Muimi_civilian
+				small = GFX_idea_advisor_LAN_Sonoue_Muimi_civilian
 			}
 			army = {
-				large = GFX_Portrait_LAN_Sonoue_Muimi_alt
-				small = GFX_idea_advisor_LAN_Sonoue_Muimi_alt
+				large = GFX_Portrait_LAN_Sonoue_Muimi_super_army
+				small = GFX_idea_advisor_LAN_Sonoue_Muimi_super_army
 			}
 		}
 		advisor = {
@@ -1890,159 +2783,92 @@ characters = {
 		}
 		corps_commander = {
 			traits = { }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
+			skill = 5
+			attack_skill = 6
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 4
 			legacy_id = -1
 		}
 	}
 
-	LAN_Tachiarai_Ruka = {
-		name = Tachiarai_Ruka
+	LAN_Minerva = {
+		name = LAN_Minerva
 		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Tachiarai_Ruka
-				small = GFX_idea_advisor_LAN_Tachiarai_Ruka
-			}
+			#civilian = {
+			#	large = GFX_Portrait_LAN_Minerva
+			#	small = GFX_idea_advisor_LAN_Minerva
+			#}
 			army = {
-				large = GFX_Portrait_LAN_Tachiarai_Ruka
-				small = GFX_idea_advisor_LAN_Tachiarai_Ruka
+				large = GFX_Portrait_LAN_Minerva_scientist
+				small = GFX_idea_advisor_LAN_Minerva
 			}
 		}
-		advisor = {
-			slot = theorist
-			idea_token = LAN_Tachiarai_Ruka
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 100
-			traits = { military_theorist }
-			ai_will_do = {
-				base = 1.000
+		scientist = {
+			traits = { scientist_trait_nuclear_specialist scientist_trait_bright scientist_trait_fast_learner }
+			skills = {
+				specialization_nuclear = 1
 			}
 		}
 	}
 
-	LAN_Tanno_Nanaka = {
-		name = Tanno_Nanaka
+	LAN_Eris = {
+		name = LAN_Eris
 		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Tanno_Nanaka
-				small = GFX_idea_advisor_LAN_Tanno_Nanaka
-			}
+			#civilian = {
+			#	large = GFX_Portrait_LAN_Eris
+			#	small = GFX_idea_advisor_LAN_Eris
+			#}
 			army = {
-				large = GFX_Portrait_LAN_Tanno_Nanaka
-				small = GFX_idea_advisor_LAN_Tanno_Nanaka
+				large = GFX_Portrait_LAN_Eris_scientist
+				small = GFX_idea_advisor_LAN_Eris
 			}
 		}
-		advisor = {
-			slot = high_command
-			ledger = air
-			idea_token = LAN_Tanno_Nanaka
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 100
-			traits = { air_close_air_support_2 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Todo_Akino = {
-		name = Todo_Akino
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Todo_Akino
-				small = GFX_idea_advisor_LAN_Todo_Akino
-			}
-			army = {
-				large = GFX_Portrait_LAN_Todo_Akino_alt
-				small = GFX_idea_advisor_LAN_Todo_Akino_alt
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = LAN_Todo_Akino
-			allowed = { original_tag = LAN }
-			available = {
-				is_country_leader = no
-			}
-			cost = 150
-			traits = { lady_of_the_consortium_advisor }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Tono_Homare = {
-		name = Tono_Homare
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Tono_Homare
-				small = GFX_idea_advisor_LAN_Tono_Homare
-			}
-			army = {
-				large = GFX_Portrait_LAN_Tono_Homare
-				small = GFX_idea_advisor_LAN_Tono_Homare
-			}
-		}
-		advisor = {
-			slot = high_command
-			ledger = army
-			idea_token = LAN_Tono_Homare
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 50
-			traits = { army_combined_arms_1 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-	}
-
-	LAN_Utsushimi_Neneka = {
-		name = Utsushimi_Neneka
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_LAN_Utsushimi_Neneka
-				small = GFX_idea_advisor_LAN_Utsushimi_Neneka
-			}
-			army = {
-				large = GFX_Portrait_LAN_Utsushimi_Neneka
-				small = GFX_idea_advisor_LAN_Utsushimi_Neneka
-			}
-		}
-		advisor = {
-			slot = high_command
-			ledger = navy
-			idea_token = LAN_Utsushimi_Neneka
-			allowed = { original_tag = LAN }
-			available = {
-				
-			}
-			cost = 150
-			traits = { navy_carrier_3 }
-			ai_will_do = {
-				base = 1.000
-			}
-		}
-		navy_leader = {
+		scientist = {
 			traits = {  }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			maneuvering_skill = 1
-			coordination_skill = 1
-			legacy_id = -1
+			skills = {
+				specialization_air = 1
+			}
+		}
+	}
+
+	LAN_Nebbia = {
+		name = LAN_Nebbia
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_LAN_Nebbia
+			#	small = GFX_idea_advisor_LAN_Nebbia
+			#}
+			army = {
+				large = GFX_Portrait_LAN_Nebbia_scientist
+				small = GFX_idea_advisor_LAN_Nebbia
+			}
+		}
+		scientist = {
+			traits = {  }
+			skills = {
+				specialization_naval = 1
+			}
+		}
+	}
+
+	LAN_Ameth = {
+		name = LAN_Ameth
+		portraits = {
+			#civilian = {
+			#	large = GFX_Portrait_LAN_Ameth
+			#	small = GFX_idea_advisor_LAN_Ameth
+			#}
+			army = {
+				large = GFX_Portrait_LAN_Ameth_scientist
+				small = GFX_idea_advisor_LAN_Ameth
+			}
+		}
+		scientist = {
+			traits = {  }
+			skills = {
+				specialization_land = 1
+			}
 		}
 	}
 
