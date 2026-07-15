@@ -13,6 +13,8 @@ add_namespace = WSG_inner_circle_clausewitz
 add_namespace = WSG_event
 add_namespace = feiyuguantou_shijian
 
+@inner_circle_time_tier = 70
+@inner_circle_time_tier_flag = 71
 
 country_event = {
 	id = WSG_event.001
@@ -378,22 +380,37 @@ country_event = {
 			limit = {
 				NOT = { has_completed_focus = WSG_lexington_plan }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_lexington_plan
-			country_event = { id = WSG_inner_circle_lexington.02 days = 70 }
+			country_event = { id = WSG_inner_circle_lexington.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_expand_resource_output }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_expand_resource_output
-			country_event = { id = WSG_inner_circle_lexington.02 days = 70 }
+			country_event = { id = WSG_inner_circle_lexington.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_ship_girl_reserve_army }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_ship_girl_reserve_army
-			country_event = { id = WSG_inner_circle_lexington.02 days = 70 }
+			country_event = { id = WSG_inner_circle_lexington.02 days = @inner_circle_time_tier }
 		}
 	}
 }
@@ -424,6 +441,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Lexington
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id = WSG_inner_circle_lexington.01 days = 30 }
 		}
 		else_if = {
@@ -435,6 +453,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Lexington
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id = WSG_inner_circle_lexington.01 days = 30 }
 		}
 		else_if = {
@@ -446,6 +465,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Lexington
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 		}
 	}
 }
@@ -473,22 +493,37 @@ country_event = {
 			limit = {
 				NOT = { has_completed_focus = WSG_vittorio_veneto_plan }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_vittorio_veneto_plan
-			country_event = { id =  WSG_inner_circle_vittorio_veneto.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_vittorio_veneto.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_restricting_resource_exports }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_restricting_resource_exports
-			country_event = { id =  WSG_inner_circle_vittorio_veneto.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_vittorio_veneto.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_port_defense_army }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_port_defense_army
-			country_event = { id =  WSG_inner_circle_vittorio_veneto.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_vittorio_veneto.02 days = @inner_circle_time_tier }
 		}
 	}
 }
@@ -519,6 +554,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Vittorio_Veneto
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id =  WSG_inner_circle_vittorio_veneto.01 days = 30 }
 		}
 		else_if = {
@@ -530,6 +566,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Vittorio_Veneto
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id =  WSG_inner_circle_vittorio_veneto.01 days = 30 }
 		}
 		else_if = {
@@ -541,6 +578,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Vittorio_Veneto
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 		}
 	}
 }
@@ -566,22 +604,37 @@ country_event = {
 			limit = {
 				NOT = { has_completed_focus = WSG_government_efficiency }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_government_efficiency
-			country_event = { id =  WSG_inner_circle_yubari.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_yubari.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_efficient_cabinet }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_efficient_cabinet
-			country_event = { id =  WSG_inner_circle_yubari.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_yubari.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_wartime_laws_and_regulations }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_wartime_laws_and_regulations
-			country_event = { id =  WSG_inner_circle_yubari.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_yubari.02 days = @inner_circle_time_tier }
 		}
 	}
 }
@@ -612,6 +665,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Yubari
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id =  WSG_inner_circle_yubari.01 days = 30 }
 		}
 		else_if = {
@@ -623,6 +677,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Yubari
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id =  WSG_inner_circle_yubari.01 days = 30 }
 		}
 		else_if = {
@@ -634,6 +689,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Yubari
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 		}
 	}
 }
@@ -661,22 +717,37 @@ country_event = {
 			limit = {
 				NOT = { has_completed_focus = WSG_efficient_construction }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_efficient_construction
-			country_event = { id =  WSG_inner_circle_hood.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_hood.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_technological_advantages }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_technological_advantages
-			country_event = { id =  WSG_inner_circle_hood.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_hood.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_efficient_internal_affairs }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_efficient_internal_affairs
-			country_event = { id =  WSG_inner_circle_hood.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_hood.02 days = @inner_circle_time_tier }
 		}
 	}
 }
@@ -707,6 +778,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Hood
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id =  WSG_inner_circle_hood.01 days = 30 }
 		}
 		else_if = {
@@ -718,6 +790,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Hood
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id =  WSG_inner_circle_hood.01 days = 30 }
 		}
 		else_if = {
@@ -729,6 +802,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Hood
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 		}
 	}
 }
@@ -756,22 +830,37 @@ country_event = {
 			limit = {
 				NOT = { has_completed_focus = WSG_internal_stability }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_internal_stability
-			country_event = { id =  WSG_inner_circle_yixian.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_yixian.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_homeland_defense }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_homeland_defense
-			country_event = { id =  WSG_inner_circle_yixian.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_yixian.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_cost_reduction_and_efficiency_improvement }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_cost_reduction_and_efficiency_improvement
-			country_event = { id =  WSG_inner_circle_yixian.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_yixian.02 days = @inner_circle_time_tier }
 		}
 	}
 }
@@ -802,6 +891,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_YiXian
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id =  WSG_inner_circle_yixian.01 days = 30 }
 		}
 		else_if = {
@@ -813,6 +903,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_YiXian
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id =  WSG_inner_circle_yixian.01 days = 30 }
 		}
 		else_if = {
@@ -824,6 +915,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_YiXian
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 		}
 	}
 }
@@ -851,22 +943,37 @@ country_event = {
 			limit = {
 				NOT = { has_completed_focus = WSG_rapid_restructuring }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_rapid_restructuring
-			country_event = { id =  WSG_inner_circle_jean_bart.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_jean_bart.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_strengthen_the_position }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_strengthen_the_position
-			country_event = { id =  WSG_inner_circle_jean_bart.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_jean_bart.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_save_strength }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_save_strength
-			country_event = { id =  WSG_inner_circle_jean_bart.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_jean_bart.02 days = @inner_circle_time_tier }
 		}
 	}
 }
@@ -897,6 +1004,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Jean_Bart
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id =  WSG_inner_circle_jean_bart.01 days = 30 }
 		}
 		else_if = {
@@ -908,6 +1016,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Jean_Bart
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id =  WSG_inner_circle_jean_bart.01 days = 30 }
 		}
 		else_if = {
@@ -919,6 +1028,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Jean_Bart
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 		}
 	}
 }
@@ -946,22 +1056,37 @@ country_event = {
 			limit = {
 				NOT = { has_completed_focus = WSG_indomitable_will }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_indomitable_will
-			country_event = { id =  WSG_inner_circle_bubnov.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_bubnov.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_fierce_offensive }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_fierce_offensive
-			country_event = { id =  WSG_inner_circle_bubnov.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_bubnov.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_accumulation_of_experience }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_accumulation_of_experience
-			country_event = { id =  WSG_inner_circle_bubnov.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_bubnov.02 days = @inner_circle_time_tier }
 		}
 	}
 }
@@ -992,6 +1117,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Bubnov
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id =  WSG_inner_circle_bubnov.01 days = 30 }
 		}
 		else_if = {
@@ -1003,6 +1129,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Bubnov
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id =  WSG_inner_circle_bubnov.01 days = 30 }
 		}
 		else_if = {
@@ -1014,6 +1141,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Bubnov
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 		}
 	}
 }
@@ -1041,22 +1169,37 @@ country_event = {
 			limit = {
 				NOT = { has_completed_focus = WSG_army_mobility }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_army_mobility
-			country_event = { id =  WSG_inner_circle_clausewitz.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_clausewitz.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_preemptive_strike }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_preemptive_strike
-			country_event = { id =  WSG_inner_circle_clausewitz.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_clausewitz.02 days = @inner_circle_time_tier }
 		}
 		else_if = {
 			limit = {
 				NOT = { has_completed_focus = WSG_rapid_construction }
 			}
+			set_country_flag = {
+				flag = WSG_national_focus_in_progress_flag
+				days = @inner_circle_time_tier_flag
+				value = 1
+			}
 			activate_shine_on_focus = WSG_rapid_construction
-			country_event = { id =  WSG_inner_circle_clausewitz.02 days = 70 }
+			country_event = { id =  WSG_inner_circle_clausewitz.02 days = @inner_circle_time_tier }
 		}
 	}
 }
@@ -1087,6 +1230,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Clausewitz
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id =  WSG_inner_circle_clausewitz.01 days = 30 }
 		}
 		else_if = {
@@ -1098,6 +1242,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Clausewitz
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 			country_event = { id =  WSG_inner_circle_clausewitz.01 days = 30 }
 		}
 		else_if = {
@@ -1109,6 +1254,7 @@ country_event = {
 				use_side_message = yes
 				originator_name = WSG_Clausewitz
 			}
+			clr_country_flag = WSG_national_focus_in_progress_flag
 		}
 	}
 }

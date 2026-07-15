@@ -116,7 +116,7 @@ WSG_balance_of_power_decision_category = {
 			}
 	    }	
 	    visible = {
-			always = yes
+			has_completed_focus = WSG_pre_mobilization
 	    }
 		cost = 50
 		fire_only_once = no
@@ -152,13 +152,13 @@ WSG_balance_of_power_decision_category = {
 			}
 	    }	
 	    visible = {
-			always = yes
+			has_completed_focus = WSG_port_industry
 	    }
 		cost = 100
 		fire_only_once = no
 		days_remove = 180
 		modifier = {
-			production_factory_efficiency_gain_factor = 0.15
+			production_factory_efficiency_gain_factor = 0.25
 		}
 		complete_effect = {
 			add_power_balance_value = {
@@ -187,7 +187,7 @@ WSG_balance_of_power_decision_category = {
 			}
 	    }	
 	    visible = {
-			always = yes
+			has_completed_focus = WSG_general_administration_of_war
 	    }
 		cost = 150
 		fire_only_once = no
@@ -274,14 +274,14 @@ WSG_balance_of_power_decision_category = {
    			     value > 0.6
 			}
 			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
+				tooltip = WSG_panci_least_150_tt
                 check_variable = { WSG_panci > 149 }
 			}
 	    }	
 	    visible = {
 			has_completed_focus = WSG_restart_the_archive
 	    }
-		cost = 50
+		cost = 100
 		fire_only_once = no
 		days_remove = 180
 		modifier = {
@@ -289,7 +289,7 @@ WSG_balance_of_power_decision_category = {
 		complete_effect = {
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
-    		     value = -0.15
+    		     value = 0.05
 			}
 			custom_effect_tooltip =  WSG_panci_reduce_150_tt
                 add_to_variable = { WSG_panci = -150 }
@@ -315,6 +315,66 @@ WSG_balance_of_power_decision_category = {
 				power_balance_value = {
     			    id = WSG_balance_of_power
    			        value > 0.99
+			    }
+			}
+		}
+    }
+
+	WSG_temporary_tax_increase = {
+		icon = GFX_WSG_decision_category
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			power_balance_value = {
+    			 id = WSG_balance_of_power
+   			     value > -0.9
+			}
+	    }	
+	    visible = {
+			has_completed_focus = WSG_from_the_deep_sea
+	    }
+		cost = 50
+		fire_only_once = no
+		days_remove = 30
+		modifier = {
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = -0.10
+			}
+			custom_effect_tooltip =  WSG_panci_add_150_tt
+                add_to_variable = { WSG_panci = 150 }
+        }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				check_variable = { WSG_panci < 50 }
+			}
+			modifier = {
+				add = 10
+				check_variable = { WSG_panci < 100 }
+			}
+			modifier = {
+				add = 10
+				check_variable = { WSG_panci < 150 }
+			}
+			modifier = {
+				factor = 0.5
+				power_balance_value = {
+    			    id = WSG_balance_of_power
+   			        value < 0.3
+			    }
+			}
+			modifier = {
+				factor = 0
+				power_balance_value = {
+    			    id = WSG_balance_of_power
+   			        value < -0.3
 			    }
 			}
 		}
@@ -2111,6 +2171,248 @@ WSG_army_industrial_integration = {
 		}
     }
 
+	WSG_resource_synthesis_I = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+        }    
+        visible = {
+            has_completed_focus = WSG_resource_synthesis
+        }
+		custom_cost_text = WSG_panci_200
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 199 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                    add_to_variable = { WSG_panci = -200 }
+            }
+        }
+        remove_effect = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = steel
+				    amount = 32
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = tungsten
+				    amount = 20
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = chromium
+				    amount = 16
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = aluminium
+				    amount = 32
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = rubber 
+				    amount = 18
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = oil
+				    amount = 36
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = coal
+				    amount = 34
+			    }
+			}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+    }
+
+	WSG_resource_synthesis_II = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+        }    
+        visible = {
+            has_completed_focus = WSG_resource_synthesis
+        }
+		custom_cost_text = WSG_panci_200
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 199 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                    add_to_variable = { WSG_panci = -200 }
+            }
+        }
+        remove_effect = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = steel
+				    amount = 73
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = tungsten
+				    amount = 32
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = chromium
+				    amount = 24
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = aluminium
+				    amount = 42
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = rubber 
+				    amount = 29
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = oil
+				    amount = 47
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = coal
+				    amount = 49
+			    }
+			}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+    }
+
+	WSG_resource_synthesis_III = {
+        icon = GFX_WSG_decision_category
+        allowed = {
+            original_tag = WSG
+        }
+        available = {
+        }    
+        visible = {
+            has_completed_focus = WSG_resource_synthesis
+        }
+		custom_cost_text = WSG_panci_200
+		custom_cost_trigger = {
+			check_variable = { WSG_panci > 199 }
+		}
+        cost = 0
+        fire_only_once = yes
+        days_remove = 90
+        modifier = {
+        }
+        complete_effect = {
+			hidden_effect = {
+			    custom_effect_tooltip =  WSG_panci_reduce_200_tt
+                    add_to_variable = { WSG_panci = -200 }
+            }
+        }
+        remove_effect = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = steel
+				    amount = 112
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = tungsten
+				    amount = 32
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = chromium
+				    amount = 36
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = aluminium
+				    amount = 32
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = rubber 
+				    amount = 24
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = oil
+				    amount = 56
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = WSG }
+				add_resource = {
+				    type = coal
+				    amount = 53
+			    }
+			}
+        }
+		ai_will_do = {
+			factor = 100
+		}
+    }
  ##########################armor_project###############################
 
 	WSG_anti_infantry_firepower = {

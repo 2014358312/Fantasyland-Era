@@ -18,18 +18,18 @@ focus_tree = {
 	}
 	default = no
 	
-	continuous_focus_position = { x = 10 y = 10 }
+	continuous_focus_position = { x = 1300 y = 1600 }
 	
 	inlay_window = {
 		id = wsg_inner_circle_inlay_window
-		position = { x = 2540 y = 900 }
+		position = { x = 300 y = 850 }
 	}
 
 	focus = { 
 		id = WSG_stagnation_in_a_leading_nation
 		icon = GFX_focus_generic_improve_the_administration
-		x = 0
-		y = 0
+		x = -18
+		y = 11
 		cost = 2
 		search_filters = {FOCUS_FILTER_POLITICAL}
 		available = {
@@ -1098,8 +1098,8 @@ focus_tree = {
 	focus = { 
 		id = WSG_offspring_of_the_ancients
 		icon = GFX_goal_support_democracy
-		x = 19
-		y = 1
+		x = 0
+		y = 0
 		cost = 10
 		search_filters = {FOCUS_FILTER_POLITICAL}
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
@@ -1116,12 +1116,10 @@ focus_tree = {
 	        army_experience = 50
 	        navy_experience = 50
 	        air_experience = 50
-			add_research_slot = 4
 			swap_ideas = {
 				remove_idea =  WSG_stagnation_in_a_leading_nation_II 
 				add_idea =  WSG_offspring_of_the_ancients 
 			}
-			custom_effect_tooltip = WSG_open_dininghall_text
 		}
 		ai_will_do = {
 			factor = 1
@@ -1134,7 +1132,7 @@ focus_tree = {
 		id = WSG_port_area_planning
 		icon = GFX_focus_generic_modernize_industry
 		relative_position_id = WSG_offspring_of_the_ancients
-		x = 0
+		x = -14
 		y = 1
 		cost = 2
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -1148,7 +1146,7 @@ focus_tree = {
 		completion_reward = {
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
-    		     value = -0.20
+    		     value = -0.10
 			}
 			every_owned_state ={
 				limit = {
@@ -1517,14 +1515,14 @@ focus_tree = {
 		id = WSG_super_port_area
 		icon = GFX_focus_generic_low_cost_housing
 		relative_position_id = WSG_port_area_planning
-		x = 0
+		x = -4
 		y = 3
 		cost = 5
 		available = {
 			#original_tag = WSG 
 			power_balance_value = {
     			 id = WSG_balance_of_power
-   			     value > 0.6
+   			     value > 0.2
 			}
 		}
 		completion_reward = {
@@ -1549,188 +1547,63 @@ focus_tree = {
 		}
         prerequisite = { 
 			focus = WSG_eastern_special_economic_zone
-		}
-        prerequisite = { 
 			focus = WSG_western_mixed_industry
-		}
-        prerequisite = { 
 			focus = WSG_southern_shipyard
+			focus = WSG_northern_heavy_industry_base
 		}
         prerequisite = { 
-			focus = WSG_northern_heavy_industry_base
+			focus = WSG_port_area_planning
+		}
+        prerequisite = { 
+			focus = WSG_port_engineering_institute
 		}
 	}
 
-##########################科技线####################################
-
-	focus = { 
+	focus = {
 		id = WSG_restart_the_archive
 		icon = GFX_SOV_national_academies_of_sciences_ccp_2d_sov_compatibility
-		x = 40
-		y = 2
+		relative_position_id = WSG_port_area_planning
+		x = -6
+		y = 0
 		cost = 2
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		available = {
-			#original_tag = WSG 
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > 0.2
 			}
-			has_completed_focus = WSG_offspring_of_the_ancients
 		}
 		completion_reward = {
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
-    		     value = -0.05
+    		     value = -0.10
 			}
-			add_political_power = 100
-			add_research_slot = 1
-			unlock_decision_tooltip = WSG_technical_potential
+			add_research_slot = 5
 		}
 		ai_will_do = {
 			factor = 10
 		}
         prerequisite = { 
+			focus = WSG_offspring_of_the_ancients
 		}
 	}
 
-	focus = { 
-		id = WSG_technical_potential_I
-		icon = GFX_SOV_the_ussr_academy_of_sciences_ccp_2d_sov_compatibility
+	focus = {
+		id = WSG_port_engineering_institute
+		icon = GFX_focus_generic_modernize_industry
 		relative_position_id = WSG_restart_the_archive
 		x = 0
 		y = 1
 		cost = 5
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		available = {
-			#original_tag = WSG 
-			power_balance_value = {
-    			 id = WSG_balance_of_power
-   			     value > 0.2
-			}
 		}
 		completion_reward = {
-			add_power_balance_value = {
-   			     id = WSG_balance_of_power
-    		     value = -0.05
-			}
 	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 0
-		        category = infantry_weapons
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
+		        name = WSG_port_engineering_institute
 		        bonus = 5
 		        uses = 5
-		        ahead_reduction = 0
-		        category = support_tech
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 3
-		        ahead_reduction = 0
-		        category = artillery
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 4
-		        ahead_reduction = 0
-		        category = armor
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 0
-		        category = light_air
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 0
-		        category = medium_air
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 0
-		        category = heavy_air
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 0
-		        category = air_equipment
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 4
-		        ahead_reduction = 0
-		        category = naval_equipment
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 0
-		        category =  mio_cat_tech_all_carrier_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 0
-		        category = mio_cat_tech_all_capital_ship_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 0
-		        category = mio_cat_tech_all_cruiser_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 0
-		        category =  mio_cat_tech_all_destroyer_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 0
-		        category =  mio_cat_tech_all_submarine_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 0
-		        category = electronics
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 0
-		        category = industry
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_I
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 0
+		        ahead_reduction = 2
 		        category = construction_tech
 	        }
 		}
@@ -1742,811 +1615,217 @@ focus_tree = {
 		}
 	}
 
-	focus = { 
-		id = WSG_technical_potential_II
-		icon = GFX_SOV_the_ussr_academy_of_sciences_ccp_2d_sov_compatibility
-		relative_position_id = WSG_technical_potential_I
-		x = 0
+	focus = {
+		id = WSG_port_area_academy_of_sciences
+		icon = GFX_focus_ARG_universidad_de_buenos_aires
+		relative_position_id = WSG_restart_the_archive
+		x = -2
 		y = 1
 		cost = 5
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		available = {
-			#original_tag = WSG 
-			power_balance_value = {
-    			 id = WSG_balance_of_power
-   			     value > 0.2
-			}
 		}
 		completion_reward = {
-			add_power_balance_value = {
-   			     id = WSG_balance_of_power
-    		     value = -0.05
-			}
 	        add_tech_bonus = {
-		        name = WSG_technical_potential_II
+		        name = WSG_port_area_academy_of_sciences
 		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 1
-		        category = infantry_weapons
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_II
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 1
-		        category = cat_special_forces_generic
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_II
-		        bonus = 5
-		        uses = 5
-		        ahead_reduction = 1
-		        category = support_tech
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_II
-		        bonus = 5
-		        uses = 3
-		        ahead_reduction = 1
-		        category = artillery
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_II
-		        bonus = 5
-		        uses = 4
-		        ahead_reduction = 1
-		        category = armor
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_II
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 1
+		        uses = 10
+		        ahead_reduction = 2
 		        category = electronics
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_II
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 1
-		        category = industry
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_II
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 1
-		        category = construction_tech
 	        }
 		}
 		ai_will_do = {
 			factor = 10
 		}
         prerequisite = { 
-			focus = WSG_technical_potential_I
+			focus = WSG_restart_the_archive
 		}
 	}
 
-	focus = { 
-		id = WSG_technical_potential_III
+	focus = {
+		id = WSG_special_project
 		icon = GFX_SOV_the_ussr_academy_of_sciences_ccp_2d_sov_compatibility
-		relative_position_id = WSG_technical_potential_II
-		x = 0
+		relative_position_id = WSG_port_area_academy_of_sciences
+		x = -1
 		y = 1
-		cost = 4
+		cost = 5
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		available = {
-			#original_tag = WSG 
-			power_balance_value = {
-    			 id = WSG_balance_of_power
-   			     value > 0.2
-			}
 		}
 		completion_reward = {
-			add_power_balance_value = {
-   			     id = WSG_balance_of_power
-    		     value = -0.05
-			}
 	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
+		        name = WSG_special_project
 		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 2
-		        category = infantry_weapons
+		        uses = 1
+		        ahead_reduction = 1
+		        category = nuclear 
 	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 5
-		        ahead_reduction = 2
-		        category = support_tech
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
+			add_tech_bonus = {
+		        name = WSG_special_project
+		        bonus = 2
 		        uses = 3
 		        ahead_reduction = 2
-		        category = artillery
+		        technology = sp_rockets_dual_chamber_rocket_engine_1
 	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 4
+			add_tech_bonus = {
+		        name = WSG_special_project
+		        bonus = 2
+		        uses = 3
 		        ahead_reduction = 2
-		        category = armor
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 2
-		        category = light_air
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 2
-		        category = medium_air
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 2
-		        category = heavy_air
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 2
-		        category = air_equipment
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 4
-		        ahead_reduction = 2
-		        category = naval_equipment
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 2
-		        category =  mio_cat_tech_all_carrier_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 2
-		        category = mio_cat_tech_all_capital_ship_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 2
-		        category = mio_cat_tech_all_cruiser_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 0
-		        category =  mio_cat_tech_all_destroyer_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 2
-		        category =  mio_cat_tech_all_submarine_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 2
-		        category = electronics
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 2
-		        category = industry
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_III
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 2
-		        category = construction_tech
+		        technology = sp_rockets_rocket_bomber
 	        }
 		}
 		ai_will_do = {
 			factor = 10
 		}
         prerequisite = { 
-			focus = WSG_technical_potential_II
+			focus = WSG_port_area_academy_of_sciences
 		}
 	}
 
-	focus = { 
-		id = WSG_technical_potential_IV
+	focus = {
+		id = WSG_technical_potential
 		icon = GFX_SOV_the_ussr_academy_of_sciences_ccp_2d_sov_compatibility
-		relative_position_id = WSG_technical_potential_III
-		x = 0
+		relative_position_id = WSG_port_area_academy_of_sciences
+		x = 1
 		y = 1
 		cost = 5
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		available = {
-			#original_tag = WSG 
-			power_balance_value = {
-    			 id = WSG_balance_of_power
-   			     value > 0.6
-			}
 		}
 		completion_reward = {
-			add_power_balance_value = {
-   			     id = WSG_balance_of_power
-    		     value = -0.05
-			}
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_IV
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 3
-		        category = infantry_weapons
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_IV
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 3
-		        category = cat_special_forces_generic
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_IV
-		        bonus = 5
-		        uses = 5
-		        ahead_reduction = 3
-		        category = support_tech
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_IV
-		        bonus = 5
-		        uses = 3
-		        ahead_reduction = 3
-		        category = artillery
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_IV
-		        bonus = 5
-		        uses = 3
-		        ahead_reduction = 4
-		        category = armor
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_IV
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 3
-		        category = electronics
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_IV
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 3
-		        category = industry
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_IV
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 3
-		        category = construction_tech
-	        }
+			unlock_decision_tooltip = WSG_technical_potential
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 10
 		}
         prerequisite = { 
-			focus = WSG_technical_potential_III
+			focus = WSG_port_area_academy_of_sciences
 		}
 	}
 
-	focus = { 
-		id = WSG_technical_potential_V
-		icon = GFX_SOV_the_ussr_academy_of_sciences_ccp_2d_sov_compatibility
-		relative_position_id = WSG_technical_potential_IV
-		x = 0
+	focus = {
+		id = WSG_resource_synthesis
+		icon =GFX_focus_generic_steel
+		relative_position_id = WSG_port_engineering_institute
+		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		available = {
-			#original_tag = WSG 
-			power_balance_value = {
-    			 id = WSG_balance_of_power
-   			     value > 0.6
-			}
 		}
 		completion_reward = {
-			add_power_balance_value = {
-   			     id = WSG_balance_of_power
-    		     value = -0.05
-			}
+			unlock_decision_category_tooltip = WSG_army_industrial_integration
+			custom_effect_tooltip = WSG_unlock_int_decision
+			unlock_decision_tooltip = WSG_resource_synthesis_I
+			unlock_decision_tooltip = WSG_resource_synthesis_II
+			unlock_decision_tooltip = WSG_resource_synthesis_III
+		}
+		ai_will_do = {
+			factor = 10
+		}
+        prerequisite = { 
+			focus = WSG_port_engineering_institute
+		}
+	}
+
+	focus = {
+		id = WSG_port_industry
+		icon = GFX_goal_generic_production2
+		relative_position_id = WSG_port_engineering_institute
+		x = 0
+		y = 2
+		cost = 5
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		available = {
+		}
+		completion_reward = {
+			unlock_decision_tooltip = WSG_promoting_production
 	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 4
-		        category = infantry_weapons
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
+		        name = WSG_port_industry
 		        bonus = 5
 		        uses = 5
-		        ahead_reduction = 4
-		        category = support_tech
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 3
-		        ahead_reduction = 4
-		        category = artillery
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 4
-		        ahead_reduction = 4
-		        category = armor
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 4
-		        category = light_air
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 4
-		        category = medium_air
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 4
-		        category = heavy_air
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 4
-		        category = air_equipment
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 4
-		        ahead_reduction = 4
-		        category = naval_equipment
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 4
-		        category =  mio_cat_tech_all_carrier_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 4
-		        category = mio_cat_tech_all_capital_ship_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 4
-		        category = mio_cat_tech_all_cruiser_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 4
-		        category =  mio_cat_tech_all_destroyer_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 4
-		        category =  mio_cat_tech_all_submarine_and_modules
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 4
-		        category = electronics
-	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 2
-		        ahead_reduction = 4
+		        ahead_reduction = 2
 		        category = industry
 	        }
-	        add_tech_bonus = {
-		        name = WSG_technical_potential_V
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 4
-		        category = construction_tech
-	        }
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 10
 		}
         prerequisite = { 
-			focus = WSG_technical_potential_IV
+			focus = WSG_port_engineering_institute
+		}
+        prerequisite = { 
+			focus = WSG_technical_potential
 		}
 	}
 
-	focus = { 
-		id = WSG_resource_synthesis_I
-		icon = GFX_focus_generic_steel
-		relative_position_id = WSG_technical_potential_I
-		x = 2
-		y = 1
+	focus = {
+		id = WSG_industrial_integration
+		icon = GFX_goal_generic_construction
+		relative_position_id = WSG_port_area_planning
+		x = 0
+		y = 4
 		cost = 5
+		search_filters = {FOCUS_FILTER_RESEARCH}
 		available = {
-			#original_tag = WSG 
-			power_balance_value = {
-    			 id = WSG_balance_of_power
-   			     value > 0.2
-			}
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			add_power_balance_value = {
-   			     id = WSG_balance_of_power
-    		     value = -0.05
-			}
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = steel
-				    amount = 32
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = tungsten
-				    amount = 20
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = chromium
-				    amount = 16
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = aluminium
-				    amount = 32
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = rubber 
-				    amount = 18
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = oil
-				    amount = 36
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = coal
-				    amount = 34
-			    }
-			}
-		}
-		ai_will_do = {
-			factor = 5
-		}
-        prerequisite = { 
-			focus = WSG_technical_potential_I
-		}
-	}
-
-	focus = { 
-		id = WSG_resource_synthesis_II
-		icon = GFX_focus_generic_steel
-		relative_position_id = WSG_technical_potential_II
-		x = 2
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			power_balance_value = {
-    			 id = WSG_balance_of_power
-   			     value > 0.2
-			}
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			add_power_balance_value = {
-   			     id = WSG_balance_of_power
-    		     value = -0.05
-			}
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = steel
-				    amount = 73
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = tungsten
-				    amount = 32
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = chromium
-				    amount = 24
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = aluminium
-				    amount = 42
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = rubber 
-				    amount = 29
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = oil
-				    amount = 47
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = coal
-				    amount = 49
-			    }
-			}
-		}
-		ai_will_do = {
-			factor = 5
-		}
-        prerequisite = { 
-			focus = WSG_technical_potential_II
-		}
-	}
-
-	focus = { 
-		id = WSG_resource_synthesis_III
-		icon = GFX_focus_generic_steel
-		relative_position_id = WSG_technical_potential_III
-		x = 2
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > 0.6
 			}
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
 		}
 		completion_reward = {
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
-    		     value = -0.05
+    		     value = -0.20
 			}
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = steel
-				    amount = 112
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = tungsten
-				    amount = 32
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = chromium
-				    amount = 36
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = aluminium
-				    amount = 32
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = rubber 
-				    amount = 24
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = oil
-				    amount = 56
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = coal
-				    amount = 53
-			    }
-			}
+			custom_effect_tooltip = WSG_unlock_int_decision
+			unlock_decision_tooltip = WSG_industrial_integration
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 10
 		}
         prerequisite = { 
-			focus = WSG_technical_potential_III
-		}
-	}
-
-	focus = { 
-		id = WSG_resource_synthesis_IV
-		icon = GFX_focus_generic_steel
-		relative_position_id = WSG_technical_potential_IV
-		x = 2
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			power_balance_value = {
-    			 id = WSG_balance_of_power
-   			     value > 0.6
-			}
-			custom_trigger_tooltip = {
-				tooltip = WSG_panci_least_100_tt
-                check_variable = { WSG_panci > 99 }
-			}
-		}
-		completion_reward = {
-			add_power_balance_value = {
-   			     id = WSG_balance_of_power
-    		     value = -0.05
-			}
-			custom_effect_tooltip =  WSG_panci_reduce_100_tt
-                add_to_variable = { WSG_panci = -100 }
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = steel
-				    amount = 145
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = tungsten
-				    amount = 32
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = chromium
-				    amount = 38
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = aluminium
-				    amount = 42
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = rubber 
-				    amount = 36
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = oil
-				    amount = 64
-			    }
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = WSG }
-				add_resource = {
-				    type = coal
-				    amount = 68
-			    }
-			}
-		}
-		ai_will_do = {
-			factor = 5
+			focus = WSG_port_industry
 		}
         prerequisite = { 
-			focus = WSG_technical_potential_IV
+			focus = WSG_super_port_area
+		}
+        prerequisite = { 
+			focus = WSG_war_engine
 		}
 	}
 
 #######################政治线##############################
+	focus = {
+		id = WSG_revival_speech
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = WSG_admiral_and_port_area
+		x = -4
+		y = 1
+		cost = 5
+		search_filters = {FOCUS_FILTER_STABILITY}
+		available = {
+		}
+		completion_reward = {
+			add_power_balance_value = {
+   			     id = WSG_balance_of_power
+    		     value = 0.15
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+        prerequisite = { 
+			focus = WSG_admiral_and_port_area
+		}
+	}
 
 	focus = { 
 		id = WSG_admiral_and_port_area
 		icon = GFX_focus_usa_guarantee_the_american_dream
 		relative_position_id = WSG_offspring_of_the_ancients
-		x = -9
+		x = 0
 		y = 1
 		cost = 2
 		search_filters = {FOCUS_FILTER_STABILITY}
@@ -2562,6 +1841,7 @@ focus_tree = {
    			     id = WSG_balance_of_power
     		     value = -0.20
 			}
+			custom_effect_tooltip = WSG_open_dininghall_text
 			add_political_power = 100
 			add_stability = 0.05
 		}
@@ -2787,7 +2067,7 @@ focus_tree = {
 		id = WSG_admiral_and_secretary_ship
 		icon = GFX_focus_SWE_form_rfsu
 		relative_position_id = WSG_admiral_and_port_area
-		x = 0
+		x = -4
 		y = 4
 		cost = 5
 		search_filters = {FOCUS_FILTER_POLITICAL}
@@ -2833,6 +2113,9 @@ focus_tree = {
         prerequisite = { 
 			focus = WSG_admiral_first
 			focus = WSG_secretary_ship_auxiliary_politics
+		}
+        prerequisite = { 
+			focus = WSG_revival_speech
 		}
 	}
 
@@ -4029,202 +3312,41 @@ focus_tree = {
 		}
 	}
 
-#########################外交线###############################
-
-	focus = { 
-		id = WSG_warship_girl_r_attack
-		icon = GFX_goal_generic_territory_or_war
-		x = 35
-		y = 2
-		cost = 5
-		available = {
-			always = no
-		}
-		completion_reward = {
-			custom_effect_tooltip = WSG_unfinished
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	focus = { 
-		id = WSG_diplomatic_posture
-		icon = GFX_goal_generic_major_alliance
-		relative_position_id = WSG_warship_girl_r_attack
-		x = -2
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-		}
-		completion_reward = {
-
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_warship_girl_r_attack
-		}
-	}
-
-	focus = { 
-		id = WSG_allies_from_other_continents
-		icon = GFX_focus_BRA_reach_out_to_military_dem
-		relative_position_id = WSG_diplomatic_posture
-		x = -1
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-		}
-		completion_reward = {
-
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_diplomatic_posture
-		}
-	}
-
-	focus = { 
-		id = WSG_new_world_alliance
-		icon = GFX_SOV_policy_of_collective_security_ccp_2d_sov_compatibility
-		relative_position_id = WSG_diplomatic_posture
-		x = 1
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-		}
-		completion_reward = {
-
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_diplomatic_posture
-		}
-	}
-
-	focus = { 
-		id = WSG_imminent_threat
-		icon = GFX_SOV_consolidate_power_ccp_2d_sov_compatibility
-		relative_position_id = WSG_warship_girl_r_attack
-		x = 2
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-		}
-		completion_reward = {
-
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_warship_girl_r_attack
-		}
-	}
-
-	focus = { 
-		id = WSG_cut_off_the_threat
-		icon = GFX_SOV_claims_on_poland_ccp_2d_sov_compatibility
-		relative_position_id = WSG_imminent_threat
-		x = -1
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-		}
-		completion_reward = {
-
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_imminent_threat
-		}
-	}
-
-	focus = { 
-		id = WSG_grand_arbitration
-		icon = GFX_SOV_claims_in_baltic_ccp_2d_sov_compatibility
-		relative_position_id = WSG_imminent_threat
-		x = 1
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-		}
-		completion_reward = {
-
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_imminent_threat
-		}
-	}
-
-	focus = { 
-		id = WSG_ancient_archenemy
-		icon = GFX_SOV_offer_autonomy_to_former_soviet_republics_ccp_2d_sov_compatibility
-		relative_position_id = WSG_warship_girl_r_attack
-		x = 0
-		y = 1
-		cost = 10
-		available = {
-			always = no
-		}
-		completion_reward = {
-
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_warship_girl_r_attack
-		}
-	}
-
-	focus = { 
-		id = WSG_battle_in_heaven
-		icon = GFX_goal_generic_major_war
-		relative_position_id = WSG_ancient_archenemy
-		x = 0
-		y = 2
-		cost = 10
-		available = {
-			#original_tag = WSG 
-		}
-		completion_reward = {
-
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_ancient_archenemy
-		}
-	}
-
 #########################军事线###########################
+	focus = { #动员
+		id = WSG_pre_mobilization
+		icon = GFX_focus_generic_reorient_production
+		relative_position_id = WSG_port_area_planning
+		x = 7
+		y = 0
+		cost = 5
+		available = {
+			threat > 0.5
+		}
+		completion_reward = {
+			add_ideas = { partial_economic_mobilisation }
+			add_ideas = { limited_conscription}
+			unlock_decision_tooltip = WSG_call_on_the_people
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+        prerequisite = { 
+			focus = WSG_offspring_of_the_ancients
+		}
+	}
 
 	focus = { 
 		id = WSG_wartime_port_area
 		icon = GFX_focus_generic_reorient_production
-		relative_position_id = WSG_offspring_of_the_ancients
-		x = 9
+		relative_position_id = WSG_pre_mobilization
+		x = 0
 		y = 1
-		cost = 2
+		cost = 5
 		available = {
 			#original_tag = WSG 
 			power_balance_value = {
@@ -4251,7 +3373,7 @@ focus_tree = {
 			}
 		}
         prerequisite = { 
-			focus = WSG_offspring_of_the_ancients
+			focus = WSG_pre_mobilization
 		}
 	}
 
@@ -4374,14 +3496,15 @@ focus_tree = {
 	focus = { 
 		id = WSG_general_administration_of_war
 		icon = GFX_focus_generic_league_of_nations
-		relative_position_id = WSG_war_engine
-		x = 0
+		relative_position_id = WSG_offspring_of_the_ancients
+		x = 14
 		y = 1
 		cost = 5
 		available = {
 			#original_tag = WSG 
 		}
 		completion_reward = {
+			unlock_decision_tooltip = WSG_war_gear
 			add_ideas = WSG_general_administration_of_war
 	        army_experience = 25
 	        navy_experience = 25
@@ -4395,7 +3518,7 @@ focus_tree = {
 			}
 		}
         prerequisite = { 
-			focus = WSG_war_engine
+			focus = WSG_offspring_of_the_ancients
 		}
 	}
 
@@ -4418,7 +3541,34 @@ focus_tree = {
    			     id = WSG_balance_of_power
     		     value = -0.20
 			}
-			army_experience = 50
+	        add_tech_bonus = {
+		        name = WSG_between_floating_worlds
+		        bonus = 5
+		        uses = 10
+		        ahead_reduction = 2
+		        category = infantry_weapons
+	        }
+	        add_tech_bonus = {
+		        name = WSG_between_floating_worlds
+		        bonus = 5
+		        uses = 10
+		        ahead_reduction = 2
+		        category = support_tech
+	        }
+	        add_tech_bonus = {
+		        name = WSG_between_floating_worlds
+		        bonus = 5
+		        uses = 10
+		        ahead_reduction = 2
+		        category = artillery
+	        }
+	        add_tech_bonus = {
+		        name = WSG_between_floating_worlds
+		        bonus = 5
+		        uses = 10
+		        ahead_reduction = 2
+		        category = armor
+	        }
 		}
 		ai_will_do = {
 			factor = 3
@@ -4447,7 +3597,7 @@ focus_tree = {
 				add_idea =  WSG_outdated_army_theory04
 				remove_idea =  WSG_outdated_army_theory03 
 			}
-			army_experience = 25
+			army_experience = 50
 		}
 		ai_will_do = {
 			factor = 3
@@ -4915,7 +4065,34 @@ focus_tree = {
    			     id = WSG_balance_of_power
     		     value = -0.20
 			}
-			air_experience = 50
+			add_tech_bonus = {
+		        name = WSG_below_the_overarching_sky
+		        bonus = 5
+		        uses = 3
+		        ahead_reduction = 2
+		        category = light_air
+	        }
+	        add_tech_bonus = {
+		        name = WSG_below_the_overarching_sky
+		        bonus = 5
+		        uses = 3
+		        ahead_reduction = 2
+		        category = medium_air
+	        }
+	        add_tech_bonus = {
+		        name = WSG_below_the_overarching_sky
+		        bonus = 5
+		        uses = 3
+		        ahead_reduction = 2
+		        category = heavy_air
+	        }
+	        add_tech_bonus = {
+		        name = WSG_below_the_overarching_sky
+		        bonus = 5
+		        uses = 10
+		        ahead_reduction = 2
+		        category = air_equipment
+	        }
 		}
 		ai_will_do = {
 			factor = 2
@@ -5121,7 +4298,7 @@ focus_tree = {
 				add_idea =  WSG_outdated_air_force04
 				remove_idea =  WSG_outdated_air_force03
 			}
-			air_experience = 25
+			air_experience = 50
 		}
 		ai_will_do = {
 			factor = 2
@@ -5324,7 +4501,48 @@ focus_tree = {
    			     id = WSG_balance_of_power
     		     value = -0.20
 			}
-			navy_experience = 50
+	        add_tech_bonus = {
+		        name = WSG_above_the_byss
+		        bonus = 5
+		        uses = 10
+		        ahead_reduction = 2
+		        category = naval_equipment
+	        }
+	        add_tech_bonus = {
+		        name = WSG_above_the_byss
+		        bonus = 5
+		        uses = 3
+		        ahead_reduction = 2
+		        category =  mio_cat_tech_all_carrier_and_modules
+	        }
+	        add_tech_bonus = {
+		        name = WSG_above_the_byss
+		        bonus = 5
+		        uses = 3
+		        ahead_reduction = 2
+		        category = mio_cat_tech_all_capital_ship_and_modules
+	        }
+	        add_tech_bonus = {
+		        name = WSG_above_the_byss
+		        bonus = 5
+		        uses = 3
+		        ahead_reduction = 2
+		        category = mio_cat_tech_all_cruiser_and_modules
+	        }
+	        add_tech_bonus = {
+		        name = WSG_above_the_byss
+		        bonus = 5
+		        uses = 3
+		        ahead_reduction = 2
+		        category =  mio_cat_tech_all_destroyer_and_modules
+	        }
+	        add_tech_bonus = {
+		        name = WSG_above_the_byss
+		        bonus = 5
+		        uses = 3
+		        ahead_reduction = 2
+		        category =  mio_cat_tech_all_submarine_and_modules
+	        }
 		}
 		ai_will_do = {
 			factor = 2
@@ -5496,7 +4714,7 @@ focus_tree = {
 				add_idea =  WSG_fading_glory_navy04
 				remove_idea =  WSG_fading_glory_navy03
 			}
-			navy_experience = 25
+			navy_experience = 50
 		}
 		ai_will_do = {
 			factor = 2
@@ -5670,8 +4888,8 @@ focus_tree = {
 	focus = { 
 		id = WSG_port_area_and_tomorrow
 		icon = GFX_focus_TUR_ratify_the_six_arrows
-		x = -18
-		y = 1
+		x = 11
+		y = 9
 		cost = 5
 		search_filters = {FOCUS_FILTER_POLITICAL}
 		available = {
@@ -5709,6 +4927,7 @@ focus_tree = {
 				activate_mission = WSG_deep_sea_invasion 
 				activate_mission = WSG_ebb_tide 
 			}
+			unlock_decision_tooltip = WSG_temporary_tax_increase
 		}
 		ai_will_do = {
 			factor = 10
@@ -5727,165 +4946,6 @@ focus_tree = {
 		}
         prerequisite = { 
 			focus = WSG_port_area_and_tomorrow
-		}
-	}
-
-	focus = { 
-		id = WSG_port_area_academy_of_sciences
-		icon = GFX_SOV_national_academies_of_sciences_ccp_2d_sov_compatibility
-		relative_position_id = WSG_technical_potential_V
-		x = 0
-		y = 1
-		cost = 5
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		available = {
-			#original_tag = WSG 
-			has_completed_focus = WSG_revival_of_holy_right
-		}
-		completion_reward = {
-			add_research_slot = 1
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_technical_potential_V
-		}
-	}
-
-	focus = { 
-		id = WSG_industrial_integration
-		icon = GFX_goal_generic_construction
-		relative_position_id = WSG_technical_potential_V
-		x = 2
-		y = 1
-		cost = 5
-		available = {
-			#original_tag = WSG 
-			has_completed_focus = WSG_super_port_area
-		}
-		completion_reward = {
-			unlock_decision_category_tooltip = WSG_army_industrial_integration
-			custom_effect_tooltip = WSG_unlock_int_decision
-			unlock_decision_tooltip = WSG_industrial_integration
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_technical_potential_V
-		}
-	}
-
-	focus = { 
-		id = WSG_rocket_engine_project
-		icon = GFX_SOV_the_ussr_academy_of_sciences_ccp_2d_sov_compatibility
-		relative_position_id = WSG_port_area_academy_of_sciences
-		x = -1
-		y = 1
-		cost = 2
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		available = {
-			#original_tag = WSG 
-		}
-		completion_reward = {
-	        add_tech_bonus = {
-		        name = WSG_rocket_engine_project
-		        bonus = 2
-		        uses = 1
-		        ahead_reduction = 1
-		        technology = experimental_rockets
-	        }
-	        add_tech_bonus = {
-		        name = WSG_rocket_engine_project
-		        bonus = 2
-		        uses = 1
-		        ahead_reduction = 2
-		        technology = sp_rockets_rocket_bomber
-	        }
-	        add_tech_bonus = {
-		        name = WSG_rocket_engine_project
-		        bonus = 2
-		        uses = 1
-		        ahead_reduction = 3
-		        technology = sp_rockets_improved_rocket_bomber
-	        }
-		}
-		ai_will_do = {
-			factor = 10
-		}
-        prerequisite = { 
-			focus = WSG_port_area_academy_of_sciences
-		}
-	}
-
-	focus = { 
-		id = WSG_jet_engine_project
-		icon = GFX_SOV_the_ussr_academy_of_sciences_ccp_2d_sov_compatibility
-		relative_position_id = WSG_port_area_academy_of_sciences
-		x = 1
-		y = 1
-		cost = 2
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		available = {
-			#original_tag = WSG 
-		}
-		completion_reward = {
-	        add_tech_bonus = {
-		        name = WSG_jet_engine_project
-		        bonus = 2
-		        uses = 1
-		        ahead_reduction = 1
-		        technology = sp_rockets_improved_guidance
-	        }
-	        add_tech_bonus = {
-		        name = WSG_jet_engine_project
-		        bonus = 2
-		        uses = 1
-		        ahead_reduction = 2
-		        technology = sp_rockets_dual_chamber_rocket_engine_1
-	        }
-	        add_tech_bonus = {
-		        name = WSG_jet_engine_project
-		        bonus = 2
-		        uses = 1
-		        ahead_reduction = 3
-		        technology = sp_rockets_dual_chamber_rocket_engine_2
-	        }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_port_area_academy_of_sciences
-		}
-	}
-
-	focus = { 
-		id = WSG_atomic_engineering
-		icon = GFX_SOV_the_ussr_academy_of_sciences_ccp_2d_sov_compatibility
-		relative_position_id = WSG_port_area_academy_of_sciences
-		x = 0
-		y = 2
-		cost = 2
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		available = {
-			#original_tag = WSG 
-		}
-		completion_reward = {
-	        add_tech_bonus = {
-		        name = WSG_atomic_engineering
-		        bonus = 5
-		        uses = 1
-		        ahead_reduction = 1
-		        category = nuclear 
-	        }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-        prerequisite = { 
-			focus = WSG_port_area_academy_of_sciences
 		}
 	}
 
@@ -7652,8 +6712,6 @@ focus_tree = {
 		cost = 5
 		available = {
 			has_completed_focus = WSG_super_port_area
-			NOT = { has_completed_focus = WSG_multi_ethnic_joint_operations }
-			NOT = { has_completed_focus = WSG_warship_girl_main_combat_power }
 		}
 		completion_reward = {
 			custom_effect_tooltip = WSG_super_future_port_area_era_text01
@@ -8051,7 +7109,6 @@ focus_tree = {
 		y = 2
 		cost = 5
 		available = {
-			NOT = { has_completed_focus = WSG_super_future_port_area_era }
 		}
 		completion_reward = {
 			custom_effect_tooltip = WSG_warship_girl_main_combat_power_text01
@@ -8094,7 +7151,6 @@ focus_tree = {
 		y = 2
 		cost = 5
 		available = {
-			NOT = { has_completed_focus = WSG_super_future_port_area_era }
 		}
 		completion_reward = {
 			custom_effect_tooltip = WSG_warship_girl_main_combat_power_text01
