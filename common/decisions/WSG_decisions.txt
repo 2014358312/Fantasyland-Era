@@ -328,7 +328,7 @@ WSG_balance_of_power_decision_category = {
 	    available = {
 			power_balance_value = {
     			 id = WSG_balance_of_power
-   			     value > -0.9
+   			     value > -0.95
 			}
 	    }	
 	    visible = {
@@ -340,12 +340,12 @@ WSG_balance_of_power_decision_category = {
 		modifier = {
 		}
 		complete_effect = {
-		}
-		remove_effect = {
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
     		     value = -0.10
 			}
+		}
+		remove_effect = {
 			custom_effect_tooltip =  WSG_panci_add_150_tt
                 add_to_variable = { WSG_panci = 150 }
         }
@@ -399,9 +399,7 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Lexington_head_of_government }
 			}
-			hidden_effect = { 
-				NOT = { has_completed_focus = WSG_lexington_prime_minister }
-			}
+			NOT = { has_completed_focus = WSG_lexington_prime_minister }
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -460,9 +458,7 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Vittorio_Veneto_head_of_government }
 			}
-			hidden_effect = { 
-				NOT = { has_completed_focus = WSG_lexington_prime_minister }
-			}
+            NOT = { has_completed_focus = WSG_lexington_prime_minister }
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -522,9 +518,7 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Yubari_head_of_government }
 			}
-			hidden_effect = { 
-				NOT = { has_completed_focus = WSG_lexington_prime_minister }
-			}
+            NOT = { has_completed_focus = WSG_lexington_prime_minister }
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -583,9 +577,7 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Hood_head_of_government }
 			}
-			hidden_effect = { 
-				NOT = { has_completed_focus = WSG_lexington_prime_minister }
-			}
+            NOT = { has_completed_focus = WSG_lexington_prime_minister }
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -644,9 +636,7 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_YiXian_head_of_government }
 			}
-			hidden_effect = { 
-				NOT = { has_completed_focus = WSG_lexington_prime_minister }
-			}
+            NOT = { has_completed_focus = WSG_lexington_prime_minister }
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -705,9 +695,7 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Jean_Bart_head_of_government }
 			}
-			hidden_effect = { 
-				NOT = { has_completed_focus = WSG_lexington_prime_minister }
-			}
+            NOT = { has_completed_focus = WSG_lexington_prime_minister }
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -770,9 +758,7 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Bubnov_head_of_government }
 			}
-			hidden_effect = { 
-				NOT = { has_completed_focus = WSG_lexington_prime_minister }
-			}
+            NOT = { has_completed_focus = WSG_lexington_prime_minister }
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -835,9 +821,7 @@ WSG_secretary_ship_decision_category = {
 			NOT = {
 				check_variable = { ROOT.FE_secondary = token:WSG_Clausewitz_head_of_government }
 			}
-			hidden_effect = { 
-				NOT = { has_completed_focus = WSG_lexington_prime_minister }
-			}
+            NOT = { has_completed_focus = WSG_lexington_prime_minister }
 		}
 		complete_effect = {
 			set_country_flag = {
@@ -895,6 +879,7 @@ WSG_secretary_ship_agenda_category = {
 	    }	
 	    visible = {
 			has_country_flag = secretary_ship_cd
+			NOT = { has_completed_focus = WSG_lexington_prime_minister }
 	    }
 		custom_cost_trigger = {
 			command_power > 49
@@ -934,7 +919,7 @@ WSG_secretary_ship_agenda_category = {
 					is_country_leader = yes 
 				}
 				check_variable = { ROOT.FE_secondary = token:WSG_Lexington_head_of_government } 
-				hidden_effect = { has_completed_focus = WSG_admirals_rule }
+				has_completed_focus = WSG_admirals_rule
 			}
         }
 		custom_cost_text = WSG_panci_50
@@ -1061,8 +1046,8 @@ WSG_secretary_ship_agenda_category = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Vittorio_Veneto_head_of_government }
-				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
-				hidden_effect = { has_completed_focus = WSG_admirals_rule }
+				has_completed_focus = WSG_the_reign_of_lexington
+				has_completed_focus = WSG_admirals_rule
 			}
         }
 		custom_cost_text = WSG_panci_50
@@ -1115,7 +1100,7 @@ WSG_secretary_ship_agenda_category = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Vittorio_Veneto_head_of_government }
-				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+				has_completed_focus = WSG_the_reign_of_lexington
 			}
         }
 		custom_cost_text = WSG_panci_100
@@ -1211,8 +1196,8 @@ WSG_secretary_ship_agenda_category = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Yubari_head_of_government }
-				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
-				hidden_effect = { has_completed_focus = WSG_admirals_rule }
+				has_completed_focus = WSG_the_reign_of_lexington
+				has_completed_focus = WSG_admirals_rule
 			}
         }
 		custom_cost_text = WSG_panci_50
@@ -1250,7 +1235,7 @@ WSG_secretary_ship_agenda_category = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Yubari_head_of_government }
-				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+				has_completed_focus = WSG_the_reign_of_lexington
 			}
         }
 		custom_cost_text = WSG_panci_100
@@ -1261,7 +1246,7 @@ WSG_secretary_ship_agenda_category = {
         fire_only_once = no
         days_remove = 180
         modifier = {
-			production_factory_efficiency_gain_factor = 0.15
+			production_factory_efficiency_gain_factor = 0.25
         }
         complete_effect = {
 			hidden_effect = {
@@ -1326,8 +1311,8 @@ WSG_secretary_ship_agenda_category = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Hood_head_of_government }
-				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
-				hidden_effect = { has_completed_focus = WSG_admirals_rule }
+				has_completed_focus = WSG_the_reign_of_lexington
+				has_completed_focus = WSG_admirals_rule
 			}
         }
 		custom_cost_text = WSG_panci_50
@@ -1365,7 +1350,7 @@ WSG_secretary_ship_agenda_category = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Hood_head_of_government }
-				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+				has_completed_focus = WSG_the_reign_of_lexington
 			}
         }
 		custom_cost_text = WSG_panci_100
@@ -1444,8 +1429,8 @@ WSG_secretary_ship_agenda_category = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_YiXian_head_of_government }
-				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
-				hidden_effect = { has_completed_focus = WSG_admirals_rule }
+				has_completed_focus = WSG_the_reign_of_lexington
+				has_completed_focus = WSG_admirals_rule
 			}
         }
 		custom_cost_text = WSG_panci_50
@@ -1483,7 +1468,7 @@ WSG_secretary_ship_agenda_category = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_YiXian_head_of_government }
-				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+				has_completed_focus = WSG_the_reign_of_lexington
 			}
         }
 		custom_cost_text = WSG_panci_100
@@ -1569,8 +1554,8 @@ WSG_secretary_ship_agenda_category = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Jean_Bart_head_of_government }
-				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
-				hidden_effect = { has_completed_focus = WSG_admirals_rule }
+				has_completed_focus = WSG_the_reign_of_lexington
+				has_completed_focus = WSG_admirals_rule
 			}
         }
 		custom_cost_text = WSG_panci_50
@@ -1608,7 +1593,7 @@ WSG_secretary_ship_agenda_category = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Jean_Bart_head_of_government }
-				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+				has_completed_focus = WSG_the_reign_of_lexington
 			}
         }
 		custom_cost_text = WSG_panci_100
@@ -1687,8 +1672,8 @@ WSG_secretary_ship_agenda_category = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Bubnov_head_of_government }
-				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
-				hidden_effect = { has_completed_focus = WSG_admirals_rule }
+				has_completed_focus = WSG_the_reign_of_lexington
+				has_completed_focus = WSG_admirals_rule
 			}
         }
 		custom_cost_text = WSG_panci_50
@@ -1726,7 +1711,7 @@ WSG_secretary_ship_agenda_category = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Bubnov_head_of_government }
-				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+				has_completed_focus = WSG_the_reign_of_lexington
 			}
         }
 		custom_cost_text = WSG_panci_100
@@ -1805,8 +1790,8 @@ WSG_secretary_ship_agenda_category = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Clausewitz_head_of_government }
-				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
-				hidden_effect = { has_completed_focus = WSG_admirals_rule }
+				has_completed_focus = WSG_the_reign_of_lexington
+				has_completed_focus = WSG_admirals_rule
 			}
         }
 		custom_cost_text = WSG_panci_50
@@ -1844,7 +1829,7 @@ WSG_secretary_ship_agenda_category = {
 				    is_country_leader = yes
 			    }
 				check_variable = { ROOT.FE_secondary = token:WSG_Clausewitz_head_of_government }
-				hidden_effect = { has_completed_focus = WSG_the_reign_of_lexington }
+				has_completed_focus = WSG_the_reign_of_lexington
 			}
         }
 		custom_cost_text = WSG_panci_100
@@ -1933,7 +1918,7 @@ WSG_army_industrial_integration = {
             FROM = {
                 is_core_of = ROOT
                 is_owned_and_controlled_by = ROOT
-                industrial_complex > 4
+                industrial_complex > 3
             }
         }
         state_target = yes
@@ -1949,10 +1934,10 @@ WSG_army_industrial_integration = {
             FROM = {
                 remove_building = {
                     type = industrial_complex
-                    level = 5
+                    level = 4
                 }
             }
-            add_offsite_building = { type = industrial_complex level = 5 }
+            add_offsite_building = { type = industrial_complex level = 6 }
 			custom_effect_tooltip =  WSG_panci_reduce_200_tt
                 add_to_variable = { WSG_panci = -200 }
         }
@@ -1993,7 +1978,7 @@ WSG_army_industrial_integration = {
             FROM = {
                 is_core_of = ROOT
                 is_owned_and_controlled_by = ROOT
-                arms_factory > 4
+                arms_factory > 3
             }
         }
         state_target = yes
@@ -2009,10 +1994,10 @@ WSG_army_industrial_integration = {
             FROM = {
                 remove_building = {
                     type = arms_factory
-                    level = 5
+                    level = 4
                 }
             }
-            add_offsite_building = { type = arms_factory level = 5 }
+            add_offsite_building = { type = arms_factory level = 6 }
 			custom_trigger_tooltip = {
 				tooltip = WSG_panci_reduce_200_tt
                 add_to_variable = { WSG_panci = 200 }
@@ -2055,7 +2040,7 @@ WSG_army_industrial_integration = {
             FROM = {
                 is_core_of = ROOT
                 is_owned_and_controlled_by = ROOT
-                dockyard > 4
+                dockyard > 3
             }
         }
         state_target = yes
@@ -2071,10 +2056,10 @@ WSG_army_industrial_integration = {
             FROM = {
                 remove_building = {
                     type = dockyard
-                    level = 5
+                    level = 4
                 }
             }
-            add_offsite_building = { type = dockyard level = 5 }
+            add_offsite_building = { type = dockyard level = 6 }
 			custom_effect_tooltip =  WSG_panci_reduce_200_tt
                 add_to_variable = { WSG_panci = -200 }
         }
@@ -2099,7 +2084,7 @@ WSG_army_industrial_integration = {
             original_tag = WSG
         }
         available = {
-			arms_factory > 19
+			arms_factory > 14
         }    
         visible = {
             has_completed_focus = WSG_industrial_integration
@@ -2119,7 +2104,7 @@ WSG_army_industrial_integration = {
 			    custom_effect_tooltip =  WSG_panci_reduce_500_tt
                     add_to_variable = { WSG_panci = -500 }
             }
-            WSG = { WSG_remove_arms_factory_20 = yes }
+            WSG = { WSG_remove_arms_factory_15 = yes }
         }
         remove_effect = {
 			if = {
@@ -2201,7 +2186,7 @@ WSG_army_industrial_integration = {
 				limit = { is_core_of = WSG }
 				add_resource = {
 				    type = steel
-				    amount = 32
+				    amount = 72
 			    }
 			}
 			random_owned_controlled_state = {
@@ -3947,6 +3932,7 @@ WSG_from_the_deep_sea_category = {
 					limit = {  
 						NOT = { has_country_flag = WSG_middle_line }
 						NOT = { has_country_flag = WSG_right_line }
+						NOT = { has_completed_focus = WSG_victory_day }
 					}
 					country_event = { days = 10 id = WSG_event.005 }
 				}
@@ -3961,14 +3947,7 @@ WSG_from_the_deep_sea_category = {
 		days_mission_timeout = 1080
 		allowed = { tag = WSG }
 		priority = 20
-		available = { 
-			OR = {
-				hidden_effect = { 
-			        NOT = { has_country_flag = WSG_from_the_deep_sea }
-				}
-				check_variable = { WSG_all_death > 100000 }
-			}
-		}    
+		available = {}    
 		activation = { has_country_flag = WSG_from_the_deep_sea }
 		selectable_mission = no
 		is_good = yes       
@@ -3977,7 +3956,9 @@ WSG_from_the_deep_sea_category = {
 			clr_country_flag = WSG_from_the_deep_sea
 		}       
 		complete_effect = {}
-		cancel_trigger = {}
+		cancel_trigger = {
+			NOT = { has_country_flag = WSG_from_the_deep_sea }
+		}
 		cancel_effect = {}
 	}
 
@@ -4070,6 +4051,262 @@ WSG_from_the_deep_sea_category = {
 		}
 		ai_will_do = {
 			factor = 200
+		}
+    }
+}
+
+WSG_debug_decision_category = {
+	WSG_add_power_balance_value_10 = {
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			power_balance_value = {
+    			id = WSG_balance_of_power
+   			    value < 1
+			}
+		}	
+	    visible = {
+			is_debug = yes
+		}
+		fire_only_once = no
+		modifier = {}
+		complete_effect = {
+			add_power_balance_value = {
+   			    id = WSG_balance_of_power
+    		    value = 0.10
+			}
+		}
+    }
+
+	WSG_reduce_power_balance_value_10 = {
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			power_balance_value = {
+    			id = WSG_balance_of_power
+   			    value > -1
+			}
+		}	
+	    visible = {
+			is_debug = yes
+		}
+		fire_only_once = no
+		modifier = {}
+		complete_effect = {
+			add_power_balance_value = {
+   			    id = WSG_balance_of_power
+    		    value = -0.10
+			}
+		}
+    }
+
+	WSG_add_power_balance_value_100 = {
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			power_balance_value = {
+    			id = WSG_balance_of_power
+   			    value < 1
+			}
+		}	
+	    visible = {
+			is_debug = yes
+		}
+		fire_only_once = no
+		modifier = {}
+		complete_effect = {
+			add_power_balance_value = {
+   			    id = WSG_balance_of_power
+    		    value = 1
+			}
+		}
+    }
+
+	WSG_reduce_power_balance_value_100 = {
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			power_balance_value = {
+    			id = WSG_balance_of_power
+   			    value > -1
+			}
+		}	
+	    visible = {
+			is_debug = yes
+		}
+		fire_only_once = no
+		modifier = {}
+		complete_effect = {
+			add_power_balance_value = {
+   			    id = WSG_balance_of_power
+    		    value = -1
+			}
+		}
+    }
+
+	WSG_add_wsg_panci_100 = {
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {}	
+	    visible = {
+			is_debug = yes
+		}
+		fire_only_once = no
+		modifier = {}
+		complete_effect = {
+			add_to_variable = { WSG_panci = 100 }
+		}
+    }
+
+	WSG_reduce_wsg_panci_100 = {
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {}	
+	    visible = {
+			is_debug = yes
+		}
+		fire_only_once = no
+		modifier = {}
+		complete_effect = {
+			add_to_variable = { WSG_panci = -100 }
+		}
+    }
+
+	WSG_add_wsg_panci_1000 = {
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {}	
+	    visible = {
+			is_debug = yes
+		}
+		fire_only_once = no
+		modifier = {}
+		complete_effect = {
+			add_to_variable = { WSG_panci = 1000 }
+		}
+    }
+
+	WSG_reduce_wsg_panci_1000 = {
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {}	
+	    visible = {
+			is_debug = yes
+		}
+		fire_only_once = no
+		modifier = {}
+		complete_effect = {
+			add_to_variable = { WSG_panci = -1000 }
+		}
+    }
+
+	WSG_complete_national_focus_port_area_and_tomorrow = {
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			NOT = { has_completed_focus = WSG_port_area_and_tomorrow }
+		}	
+	    visible = {
+			is_debug = yes
+		}
+		fire_only_once = no
+		modifier = {}
+		complete_effect = {
+			complete_national_focus = WSG_port_area_and_tomorrow
+		}
+    }
+
+	WSG_complete_national_focus_victory_day = {
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			NOT = { has_completed_focus = WSG_victory_day }
+		}	
+	    visible = {
+			is_debug = yes
+		}
+		fire_only_once = no
+		modifier = {}
+		complete_effect = {
+			complete_national_focus = WSG_victory_day
+		}
+    }
+
+	WSG_complete_national_focus_state_of_emergency = {
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			NOT = { has_completed_focus = WSG_state_of_emergency }
+		}	
+	    visible = {
+			is_debug = yes
+		}
+		fire_only_once = no
+		modifier = {}
+		complete_effect = {
+			complete_national_focus = WSG_state_of_emergency
+		}
+    }
+
+	WSG_complete_national_focus_dark_day = {
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {}	
+	    visible = {
+			is_debug = yes
+		}
+		fire_only_once = no
+		modifier = {
+			NOT = { has_completed_focus = WSG_dark_day }
+		}
+		complete_effect = {
+			complete_national_focus = WSG_dark_day
+		}
+    }
+
+	WSG_complete_national_focus_pre_mobilization = {
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			NOT = { has_completed_focus = WSG_pre_mobilization }
+		}	
+	    visible = {
+			is_debug = yes
+		}
+		fire_only_once = no
+		modifier = {}
+		complete_effect = {
+			complete_national_focus = WSG_pre_mobilization
+		}
+    }
+
+	WSG_clr_country_flag_WSG_from_the_deep_sea = {
+		allowed = {
+			original_tag = WSG
+		}
+	    available = {
+			has_country_flag = WSG_from_the_deep_sea
+		}	
+	    visible = {
+			is_debug = yes
+		}
+		fire_only_once = no
+		modifier = {}
+		complete_effect = {
+			clr_country_flag = WSG_from_the_deep_sea
 		}
     }
 }

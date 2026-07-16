@@ -1,0 +1,66 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#       attacker_modifier = no  # if yes this modifier will also be read in combat for 
+#                               # people engaging in the combat even if not in the state
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+WSG_stagnation_in_a_leading_nation = {
+	icon = GFX_WSG_decision_category
+	enable = { always = yes }
+
+    local_building_slots = 2
+	state_production_speed_buildings_factor = -0.3
+}
+
+WSG_offspring_of_the_ancients = {
+	icon = GFX_WSG_decision_category
+	enable = { always = yes }
+
+    local_building_slots = 2
+	local_factories = 0.5
+	state_production_speed_buildings_factor = -0.3
+}
+
+WSG_super_port_area_sta = {
+	icon = GFX_WSG_decision_category
+	enable = { always = yes }
+
+    local_building_slots_factor = 0.25
+}
+
+WSG_the_most_beautiful_harbor_area = {
+	icon = GFX_WSG_decision_category
+	enable = { always = yes }
+
+    local_building_slots_factor = 0.15
+}
+
+WSG_the_most_beautiful_harbor_area_II = {
+	icon = GFX_WSG_decision_category
+	enable = { always = yes }
+
+	state_resources_factor = 0.15
+	local_building_slots_factor = 0.25
+}

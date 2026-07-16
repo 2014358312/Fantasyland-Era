@@ -8,8 +8,7 @@ on_actions = {
    			            value > 0.59
 			        }
 				}
-				add_to_variable = { WSG_panci = 30 }
-				set_variable = { WSG_monthly_panci = 30 }
+				set_variable = { WSG_monthly_panci = 50 }
 			}
             else_if = {
 				limit = {
@@ -18,8 +17,7 @@ on_actions = {
    			            value > 0.19
 			        }
 				}
-				add_to_variable = { WSG_panci = 25 }
-				set_variable = { WSG_monthly_panci = 25 }
+				set_variable = { WSG_monthly_panci = 40 }
 			}
             else_if = {
 				limit = {
@@ -28,8 +26,7 @@ on_actions = {
    			            value > -0.21
 			        }
 				}
-				add_to_variable = { WSG_panci = 20 }
-				set_variable = { WSG_monthly_panci = 20 }
+				set_variable = { WSG_monthly_panci = 30 }
 			}
             else_if = {
 				limit = {
@@ -38,51 +35,28 @@ on_actions = {
    			            value > -0.61
 			        }
 				}
-				add_to_variable = { WSG_panci = 15 }
-				set_variable = { WSG_monthly_panci = 15 }
+				set_variable = { WSG_monthly_panci = 20 }
 			}
            else = {
-				add_to_variable = { WSG_panci = 10 }
 				set_variable = { WSG_monthly_panci = 10 }
 			}
+			add_to_variable = { WSG_panci = var:WSG_monthly_panci }
 		}
 	}
 
 	on_monthly_WSG = {
 		effect = {
-			WSG = {
-				if = {
-					limit = { has_idea = WSG_revival_of_holy_right_II }
-					add_to_variable = { WSG_panci = 30 }
-				}
-				else_if = {
-					limit = { has_idea = WSG_revival_of_holy_right }
-					add_to_variable = { WSG_panci = 15 }
-				}
-				else = {}
+			set_variable = { WSG_ex_monthly_panci = 0 }
+			if = {
+				limit = { has_idea = WSG_revival_of_holy_right_II }
+				add_to_variable = { WSG_ex_monthly_panci = 15 }
 			}
-		}
-	}
-
-	on_startup = {
-		effect = {
-			WSG = {
-			    if = {
-				    limit = {
-					    is_ai = no
-				    }
-				    country_event = { id = WSG_event.001 }
-			    }
-				else_if = {
-					limit = {
-						is_ai = yes
-					}
-					add_offsite_building = { type = industrial_complex level = 100 }
-		            add_offsite_building = { type = arms_factory level = 15 }
-		            add_offsite_building = { type = dockyard level = 25 }
-		            set_variable = { WSG_panci = 300 }
-				}
-		    }
+			if = {
+				limit = { has_idea = WSG_revival_of_holy_right }
+				add_to_variable = { WSG_ex_monthly_panci = 15 }
+			}
+			else = {}
+			add_to_variable = { WSG_panci = var:WSG_ex_monthly_panci }
 		}
 	}
 }

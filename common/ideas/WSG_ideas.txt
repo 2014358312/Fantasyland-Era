@@ -269,11 +269,10 @@ ideas = {
 				research_speed_factor = -0.80
 				stability_factor = 0.10
 				war_support_factor = -1
-				army_core_attack_factor = 1
-		        army_core_defence_factor = 1
-				army_attack_factor = -0.50
-		        army_defence_factor = -0.50
-				global_building_slots = 2
+				army_core_attack_factor = 0.5
+		        army_core_defence_factor = 0.5
+				army_non_core_attack_factor = -0.50
+		        army_non_core_defence_factor = -0.50
 			}
 			rule = {
 				can_send_volunteers = no
@@ -299,11 +298,10 @@ ideas = {
 				research_speed_factor = -0.40
 				stability_factor = 0.10
 				war_support_factor = -0.50
-				army_core_attack_factor = 1
-		        army_core_defence_factor = 1
-				army_attack_factor = -0.50
-		        army_defence_factor = -0.50
-				global_building_slots = 3
+				army_core_attack_factor = 0.5
+		        army_core_defence_factor = 0.5
+				army_non_core_attack_factor = -0.50
+		        army_non_core_defence_factor = -0.50
 			}
 			rule = {
 				can_create_factions = no
@@ -326,7 +324,6 @@ ideas = {
 				mobilization_laws_cost_factor = -0.20
 				trade_laws_cost_factor  = -0.20
 				economy_cost_factor = -0.20
-				global_building_slots = 3
 			}
 			rule = {
 				can_create_factions = yes
@@ -348,7 +345,6 @@ ideas = {
 				mobilization_laws_cost_factor = -0.20
 				trade_laws_cost_factor  = -0.20
 				economy_cost_factor = -0.20
-				global_building_slots = 3
 			}
 			rule = {
 				can_create_factions = yes
@@ -370,7 +366,6 @@ ideas = {
 				mobilization_laws_cost_factor = -0.30
 				trade_laws_cost_factor  = -0.30
 				economy_cost_factor = -0.30
-				global_building_slots = 3
 			}
 			rule = {
 				can_create_factions = yes
@@ -392,7 +387,6 @@ ideas = {
 				mobilization_laws_cost_factor = -0.30
 				trade_laws_cost_factor  = -0.30
 				economy_cost_factor = -0.30
-				global_building_slots = 3
 		        defensive_war_stability_factor = 0.10
 		        offensive_war_stability_factor = 0.10
 			}
@@ -416,7 +410,6 @@ ideas = {
 				mobilization_laws_cost_factor = -0.20
 				trade_laws_cost_factor  = -0.20
 				economy_cost_factor = -0.20
-				global_building_slots = 3
 				production_speed_buildings_factor = 0.05
 			}
 			rule = {
@@ -439,7 +432,6 @@ ideas = {
 				mobilization_laws_cost_factor = -0.20
 				trade_laws_cost_factor  = -0.20
 				economy_cost_factor = -0.20
-				global_building_slots = 3
 				production_speed_buildings_factor = 0.05
 			}
 			rule = {
@@ -462,7 +454,6 @@ ideas = {
 				mobilization_laws_cost_factor = -0.20
 				trade_laws_cost_factor  = -0.20
 				economy_cost_factor = -0.20
-				global_building_slots = 3
 				political_power_factor = 0.10
 				production_speed_buildings_factor = 0.05
 			}
@@ -486,7 +477,6 @@ ideas = {
 				mobilization_laws_cost_factor = -0.20
 				trade_laws_cost_factor  = -0.20
 				economy_cost_factor = -0.20
-				global_building_slots = 3
 			}
 			rule = {
 				can_create_factions = yes
@@ -508,7 +498,6 @@ ideas = {
 				mobilization_laws_cost_factor = -0.20
 				trade_laws_cost_factor  = -0.20
 				economy_cost_factor = -0.20
-				global_building_slots = 3
 			}
 			rule = {
 				can_create_factions = yes
@@ -530,7 +519,6 @@ ideas = {
 				mobilization_laws_cost_factor = -0.20
 				trade_laws_cost_factor  = -0.20
 				economy_cost_factor = -0.20
-				global_building_slots = 3
 				consumer_goods_factor = -0.10
 			}
 			rule = {
@@ -689,16 +677,6 @@ ideas = {
 			modifier = {
 				production_speed_buildings_factor = 0.10
 				local_resources_factor = 0.10
-			}
-		}
-
-		WSG_super_port_area_sta = {
-			picture = GFX_WSG_decision_category
-			allowed_civil_war = {
-				always = no
-			}
-			modifier = {
-				local_building_slots_factor = 0.25
 			}
 		}
 
@@ -1054,23 +1032,23 @@ ideas = {
 		}
 
 		WSG_port_area_planning_phase_II_project = {
-			picture = GFX_WSG_decision_category
+			picture = WSG_port_production_technology
 			allowed_civil_war = {
 				always = no
 			}
 			modifier = {
-				state_production_speed_buildings_factor = 0.10
+				production_speed_buildings_factor = 0.10
 			}
 		}
 
 		WSG_port_area_planning_phase_II_project_II = {
-			picture = GFX_WSG_decision_category
+			picture = WSG_port_production_technology
 			allowed_civil_war = {
 				always = no
 			}
 			modifier = {
-				state_production_speed_buildings_factor = 0.10
-				state_production_speed_arms_factory_factor = 0.15
+				production_speed_buildings_factor = 0.10
+				production_speed_arms_factory_factor = 0.15
 			}
 		}
 
@@ -1092,9 +1070,9 @@ ideas = {
 			}
 			modifier = {
 				industrial_capacity_factory = 0.10
-				production_speed_buildings_factor = 0.15
-				local_resources_factor = 0.20
-				research_speed_factor = 0.15
+				production_speed_buildings_factor = 0.10
+				local_resources_factor = 0.10
+				research_speed_factor = 0.10
 				factory_energy_consumption = -0.05
 			}
 		}
@@ -1240,12 +1218,12 @@ ideas = {
 		}
 
 		WSG_port_reconstruction_project = {
-			picture = GFX_WSG_decision_category
+			picture = WSG_port_production_technology
 			allowed_civil_war = {
 				always = no
 			}
 			modifier = {
-				state_production_speed_buildings_factor = 0.10
+				production_speed_buildings_factor = 0.10
 				industry_repair_factor = 0.50
 			}
 		}
@@ -1257,6 +1235,29 @@ ideas = {
 			}
 			modifier = {
 				production_speed_bunker_factor = 0.25
+			}
+		}
+
+		WSG_stagnation_in_a_leading_nation_sta = {
+			picture = GFX_WSG_decision_category
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				local_building_slots = 2
+	            state_production_speed_buildings_factor = -0.3
+			}
+		}
+
+		WSG_offspring_of_the_ancients_sta = {
+			picture = GFX_WSG_decision_category
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				local_building_slots = 2
+	            local_factories = 0.5
+	            state_production_speed_buildings_factor = -0.3
 			}
 		}
 ##################################陆军###################################
@@ -1275,6 +1276,7 @@ ideas = {
 				naval_hit_chance = 0.05
 				air_ace_generation_chance_factor = 0.25
 				air_agility_factor = 0.05
+				breakthrough_factor = 0.05
 			}
 		}
 
@@ -1284,13 +1286,13 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				initiative_factor = 0.10
-				army_org_factor = 0.10
+				initiative_factor = 0.05
+				army_org_factor = 0.05
 				shore_bombardment_bonus = 0.15
 				naval_invasion_penalty = -0.10
 				naval_damage_factor = 0.05
 				naval_hit_chance = 0.05
-				air_ace_generation_chance_factor = 0.15
+				air_ace_generation_chance_factor = 0.10
 				air_agility_factor = 0.05
 			}
 		}
@@ -1321,9 +1323,9 @@ ideas = {
 			modifier = {
 				coordination_bonus = 0.10
 				army_morale_factor = 0.10
-				recon_factor = 0.25
-				special_forces_attack_factor = 0.10
-				special_forces_defence_factor = 0.10
+				recon_factor = 0.15
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
 				positioning = 0.05
 				naval_detection = 0.10
 				air_cas_efficiency = 0.10
@@ -1444,7 +1446,7 @@ ideas = {
 				land_doctrine_cost_factor = 1
 				army_attack_factor = -0.25
 		        army_defence_factor = -0.25
-				land_reinforce_rate = -0.05
+				land_reinforce_rate = -0.03
 		        coordination_bonus = -0.1
 			}
 		}

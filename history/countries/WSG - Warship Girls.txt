@@ -72,6 +72,16 @@ add_ideas = {
 	WSG_fading_glory_navy
 }
 
+every_owned_state ={
+	limit = {
+		is_controlled_by = WSG
+		is_core_of = WSG
+	}
+	add_dynamic_modifier = {
+		modifier = WSG_stagnation_in_a_leading_nation
+	}
+}
+
 recruit_character = WSG_Lexington
 recruit_character = WSG_Vittorio_Veneto
 recruit_character = WSG_Yubari
@@ -118,6 +128,9 @@ set_power_balance = {
 	id = WSG_balance_of_power
 	set_value = -1
 }
+
+set_variable = { WSG_panci = 300 }
+set_variable = { WSG_monthly_panci = 10 }
 
 set_variable = { WSG_ascended_advisor_1 = 0 }
 set_variable = { WSG_ascended_advisor_2 = 0 }
