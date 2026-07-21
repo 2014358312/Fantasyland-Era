@@ -2398,6 +2398,7 @@ WSG_army_industrial_integration = {
 			factor = 100
 		}
     }
+
  ##########################armor_project###############################
 
 	WSG_anti_infantry_firepower = {
@@ -2408,6 +2409,7 @@ WSG_army_industrial_integration = {
         available = {}    
         visible = {
             has_completed_focus = WSG_between_floating_worlds
+			has_completed_focus = WSG_military_reform_phase_II_project
 			NOT = { has_country_flag = WSG_armor_project }
         }
 		custom_cost_text = WSG_panci_150
@@ -2456,6 +2458,7 @@ WSG_army_industrial_integration = {
         available = {}    
         visible = {
             has_completed_focus = WSG_between_floating_worlds
+			has_completed_focus = WSG_military_reform_phase_II_project
 			NOT = { has_country_flag = WSG_armor_project }
         }
 		custom_cost_text = WSG_panci_150
@@ -2806,6 +2809,7 @@ WSG_army_industrial_integration = {
         available = {}    
         visible = {
             has_completed_focus = WSG_below_the_overarching_sky
+			has_completed_focus = WSG_military_reform_phase_II_project
 			NOT = { has_country_flag = WSG_aircraft_project }
 			NOT = { has_country_flag = WSG_mainly_heavy_fighter_aircraft }
         }
@@ -2931,6 +2935,7 @@ WSG_army_industrial_integration = {
         available = {}    
         visible = {
             has_completed_focus = WSG_below_the_overarching_sky
+			has_completed_focus = WSG_military_reform_phase_II_project
 			NOT = { has_country_flag = WSG_aircraft_project }
 			NOT = { has_country_flag = WSG_mainly_light_fighter_aircraft }
         }
@@ -3166,6 +3171,7 @@ WSG_army_industrial_integration = {
         available = {}    
         visible = {
             has_completed_focus = WSG_above_the_byss
+			has_completed_focus = WSG_military_reform_phase_II_project
 			NOT = { has_country_flag = WSG_naval_project }
         }
 		custom_cost_text = WSG_panci_150
@@ -3214,6 +3220,7 @@ WSG_army_industrial_integration = {
         available = {}    
         visible = {
             has_completed_focus = WSG_above_the_byss
+			has_completed_focus = WSG_military_reform_phase_II_project
 			NOT = { has_country_flag = WSG_naval_project }
         }
 		custom_cost_text = WSG_panci_150
@@ -3454,6 +3461,7 @@ WSG_army_industrial_integration = {
         available = {}    
         visible = {
             has_completed_focus = WSG_above_the_byss
+			has_completed_focus = WSG_military_reform_phase_II_project
 			NOT = { has_country_flag = WSG_naval_project }
 			NOT = { has_country_flag = WSG_large_ships_and_cannons }
         }
@@ -3537,6 +3545,7 @@ WSG_army_industrial_integration = {
         available = {}    
         visible = {
             has_completed_focus = WSG_above_the_byss
+			has_completed_focus = WSG_military_reform_phase_II_project
 			NOT = { has_country_flag = WSG_naval_project }
 			NOT = { has_country_flag = WSG_super_aircraft_carrier }
         }
@@ -3902,12 +3911,9 @@ WSG_from_the_deep_sea_category = {
 		allowed = { tag = WSG }
 		priority = 19
 		available = { 
-			OR = {
-				custom_trigger_tooltip = { 
-					tooltip = WSG_remove_from_the_deep_sea_invasion
-			        NOT = { has_country_flag = WSG_from_the_deep_sea }
-				    }
-				check_variable = { WSG_all_death > 100000 }
+			custom_trigger_tooltip = { 
+				tooltip = WSG_remove_from_the_deep_sea_invasion
+			    NOT = { has_country_flag = WSG_from_the_deep_sea }
 			}
 		}   
         activation = { has_country_flag = WSG_from_the_deep_sea } 
@@ -3930,9 +3936,9 @@ WSG_from_the_deep_sea_category = {
 			hidden_effect = {
 				if = {
 					limit = {  
-						NOT = { has_country_flag = WSG_middle_line }
-						NOT = { has_country_flag = WSG_right_line }
 						NOT = { has_completed_focus = WSG_victory_day }
+						NOT = { has_completed_focus = WSG_state_of_emergency }
+						NOT = { has_completed_focus = WSG_dark_day }
 					}
 					country_event = { days = 10 id = WSG_event.005 }
 				}
