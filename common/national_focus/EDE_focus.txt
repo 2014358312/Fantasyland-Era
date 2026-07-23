@@ -357,6 +357,20 @@ focus_tree = {
 		mutually_exclusive = { focus = EDN_isolationist_guardian }
 		completion_reward = {
 			add_ideas = EDN_idealist_volunteers
+			add_country_leader_role = {
+				character = EDE_Miki_Asai
+    			promote_leader = yes
+    			country_leader = {
+        		ideology = Party_State_Capitalism_subtype
+        		expire = "1965.1.1.1"
+        		traits = { }
+    			}
+			}
+			set_politics = {
+				ruling_party = neutrality
+    			elections_allowed = no
+			}
+			set_party_name = { ideology = neutrality long_name = "伊甸共产党" name = "伊甸共产党" } 
 		}
 	}
 

@@ -1021,12 +1021,12 @@ northwest_continent_debug_decisions = {
 				}
 			}
 			every_country = {
-				limit = { has_character = TIA_Luna }
-				TIA_Luna = { set_nationality = SOS }
+				limit = { has_character = TIA_Luna_Ashley }
+				TIA_Luna_Ashley = { set_nationality = SOS }
 			}
 			hidden_effect = {
 				every_country = {
-					limit = { has_character = TIA_Luna }
+					limit = { has_character = TIA_Luna_Ashley }
 					if = {
 						limit = { NOT = { has_government = democratic } }
 						set_politics = {
@@ -1034,7 +1034,7 @@ northwest_continent_debug_decisions = {
 						}
 					}
 					add_country_leader_role = {
-						character = TIA_Luna
+						character = TIA_Luna_Ashley
 						country_leader = {
 							ideology = classical_liberalism_subtype
 							expire = "1965.1.1.1"
