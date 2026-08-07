@@ -7,6 +7,10 @@
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 ### search_filters = {FOCUS_FILTER_USA_CONGRESS}
 
+@inner_circle_time_tier_1 = 10
+@inner_circle_time_tier_2 = 10
+@inner_circle_time_tier_3 = 10
+
 focus_tree = {
 	id = WSG_focus_tree
 	country = {
@@ -2200,12 +2204,33 @@ focus_tree = {
 		relative_position_id = WSG_secretary_lexington
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_1
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_lexington_plan_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_1 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Lexington
+						FLAG_DAYS = [?WSG_lexington_plan_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Lexington
+						FOCUS = WSG_secretary_lexington
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			add_ideas = WSG_port_area_construction_l01
@@ -2224,12 +2249,33 @@ focus_tree = {
 		relative_position_id = WSG_lexington_plan
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_2
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_expand_resource_output_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_2 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Lexington
+						FLAG_DAYS = [?WSG_expand_resource_output_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Lexington
+						FOCUS = WSG_lexington_plan
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2251,13 +2297,34 @@ focus_tree = {
 		relative_position_id = WSG_expand_resource_output
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_3
 		search_filters = {FOCUS_FILTER_MANPOWER}
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_ship_girl_reserve_army_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_3 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Lexington
+						FLAG_DAYS = [?WSG_ship_girl_reserve_army_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Lexington
+						FOCUS = WSG_expand_resource_output
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2341,12 +2408,33 @@ focus_tree = {
 		relative_position_id = WSG_secretary_vittorio_veneto
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_1
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_vittorio_veneto_plan_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_1 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Vittorio_Veneto
+						FLAG_DAYS = [?WSG_vittorio_veneto_plan_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Vittorio_Veneto
+						FOCUS = WSG_secretary_vittorio_veneto
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			add_ideas = WSG_port_area_construction_r01
@@ -2365,12 +2453,33 @@ focus_tree = {
 		relative_position_id = WSG_vittorio_veneto_plan
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_2
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_restricting_resource_exports_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_2 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Vittorio_Veneto
+						FLAG_DAYS = [?WSG_restricting_resource_exports_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Vittorio_Veneto
+						FOCUS = WSG_vittorio_veneto_plan
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2392,13 +2501,34 @@ focus_tree = {
 		relative_position_id = WSG_restricting_resource_exports
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_3
 		search_filters = {FOCUS_FILTER_MANPOWER}
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_port_defense_army_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_3 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Vittorio_Veneto
+						FLAG_DAYS = [?WSG_port_defense_army_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Vittorio_Veneto
+						FOCUS = WSG_restricting_resource_exports
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2485,12 +2615,33 @@ focus_tree = {
 		relative_position_id = WSG_secretary_yubari
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_1
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_government_efficiency_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_1 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Yubari
+						FLAG_DAYS = [?WSG_government_efficiency_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Yubari
+						FOCUS = WSG_secretary_yubari
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2512,12 +2663,33 @@ focus_tree = {
 		relative_position_id = WSG_government_efficiency
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_2
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_efficient_cabinet_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_2 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Yubari
+						FLAG_DAYS = [?WSG_efficient_cabinet_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Yubari
+						FOCUS = WSG_government_efficiency
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2539,12 +2711,33 @@ focus_tree = {
 		relative_position_id = WSG_efficient_cabinet
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_3
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_wartime_laws_and_regulations_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_3 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Yubari
+						FLAG_DAYS = [?WSG_wartime_laws_and_regulations_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Yubari
+						FOCUS = WSG_efficient_cabinet
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2631,12 +2824,33 @@ focus_tree = {
 		relative_position_id = WSG_secretary_hood
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_1
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_efficient_construction_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_1 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Hood
+						FLAG_DAYS = [?WSG_efficient_construction_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Hood
+						FOCUS = WSG_secretary_hood
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2658,12 +2872,33 @@ focus_tree = {
 		relative_position_id = WSG_efficient_construction
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_2
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_technological_advantages_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_2 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Hood
+						FLAG_DAYS = [?WSG_technological_advantages_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Hood
+						FOCUS = WSG_efficient_construction
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2685,12 +2920,33 @@ focus_tree = {
 		relative_position_id = WSG_technological_advantages
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_3
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_efficient_internal_affairs_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_3 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Hood
+						FLAG_DAYS = [?WSG_efficient_internal_affairs_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Hood
+						FOCUS = WSG_technological_advantages
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2775,16 +3031,37 @@ focus_tree = {
 	focus = { 
 		id = WSG_internal_stability
 		icon = GFX_focus_SWI_neutrality_on_the_move
-		relative_position_id =WSG_secretary_yixian
+		relative_position_id = WSG_secretary_yixian
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_1
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_internal_stability_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_1 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_YiXian
+						FLAG_DAYS = [?WSG_internal_stability_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_YiXian
+						FOCUS = WSG_secretary_yixian
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2806,12 +3083,33 @@ focus_tree = {
 		relative_position_id = WSG_internal_stability
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_2
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_homeland_defense_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_2 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_YiXian
+						FLAG_DAYS = [?WSG_homeland_defense_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_YiXian
+						FOCUS = WSG_internal_stability
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2833,12 +3131,33 @@ focus_tree = {
 		relative_position_id = WSG_homeland_defense
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_3
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_cost_reduction_and_efficiency_improvement_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_3 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_YiXian
+						FLAG_DAYS = [?WSG_cost_reduction_and_efficiency_improvement_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_YiXian
+						FOCUS = WSG_homeland_defense
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2925,12 +3244,33 @@ focus_tree = {
 		relative_position_id = WSG_secretary_jean_bart
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_1
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_rapid_restructuring_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_1 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Jean_Bart
+						FLAG_DAYS = [?WSG_rapid_restructuring_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Jean_Bart
+						FOCUS = WSG_secretary_jean_bart
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			add_ideas = WSG_emphasize_defense01
@@ -2949,12 +3289,33 @@ focus_tree = {
 		relative_position_id = WSG_rapid_restructuring
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_2
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_strengthen_the_position_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_2 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Jean_Bart
+						FLAG_DAYS = [?WSG_strengthen_the_position_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Jean_Bart
+						FOCUS = WSG_rapid_restructuring
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -2976,12 +3337,33 @@ focus_tree = {
 		relative_position_id = WSG_strengthen_the_position
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_3
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_save_strength_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_3 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Jean_Bart
+						FLAG_DAYS = [?WSG_save_strength_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Jean_Bart
+						FOCUS = WSG_strengthen_the_position
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -3069,12 +3451,33 @@ focus_tree = {
 		relative_position_id = WSG_secretary_bubnov
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_1
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_indomitable_will_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_1 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Bubnov
+						FLAG_DAYS = [?WSG_indomitable_will_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Bubnov
+						FOCUS = WSG_secretary_bubnov
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			add_ideas = WSG_emphasize_attack01
@@ -3093,12 +3496,33 @@ focus_tree = {
 		relative_position_id = WSG_indomitable_will
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_2
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_fierce_offensive_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_2 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Bubnov
+						FLAG_DAYS = [?WSG_fierce_offensive_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Bubnov
+						FOCUS = WSG_indomitable_will
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -3120,12 +3544,33 @@ focus_tree = {
 		relative_position_id = WSG_fierce_offensive
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_3
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_accumulation_of_experience_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_3 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Bubnov
+						FLAG_DAYS = [?WSG_accumulation_of_experience_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Bubnov
+						FOCUS = WSG_fierce_offensive
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -3212,12 +3657,33 @@ focus_tree = {
 		relative_position_id = WSG_secretary_clausewitz
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_1
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_army_mobility_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_1 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Clausewitz
+						FLAG_DAYS = [?WSG_army_mobility_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Clausewitz
+						FOCUS = WSG_secretary_clausewitz
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			add_ideas = WSG_rapid_response01
@@ -3236,12 +3702,33 @@ focus_tree = {
 		relative_position_id = WSG_army_mobility
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_2
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_preemptive_strike_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_2 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Clausewitz
+						FLAG_DAYS = [?WSG_preemptive_strike_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Clausewitz
+						FOCUS = WSG_army_mobility
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -3263,12 +3750,33 @@ focus_tree = {
 		relative_position_id = WSG_preemptive_strike
 		x = 0
 		y = 1
-		cost = 10
+		cost = @inner_circle_time_tier_3
 		available = {
-	        custom_trigger_tooltip = {
-		    tooltip = WSG_completed_by_the_secretary
-		    always = no
-	        }
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = WSG_rapid_construction_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @inner_circle_time_tier_3 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = WSG_Clausewitz
+						FLAG_DAYS = [?WSG_rapid_construction_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = WSG_Clausewitz
+						FOCUS = WSG_preemptive_strike
+					}
+					always = no
+				}
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
