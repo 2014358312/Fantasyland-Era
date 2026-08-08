@@ -12,15 +12,15 @@ starting_train_buffer = 2.0
 set_oob = AIL_1000_nsb
 set_naval_oob = AIL_1000_naval_mtg
 set_technology = {
-	infantry_weapons = 1
-	infantry_weapons1 = 1
+	FE_infantry_weapons_1 = 1
+	FE_infantry_weapons_2 = 1
 	tech_recon = 1
 	tech_support = 1		
 	tech_engineers = 1
 	tech_military_police = 1
 	tech_mountaineers = 1
-	tech_trucks = 1
-	motorised_infantry = 1
+	FE_vehicle_light_armored_cavalry = 1
+	FE_vehicle_armored_personnel_carrier = 1
 	gw_artillery = 1
 	basic_train = 1
 	synth_oil_experiments = 1
@@ -63,10 +63,6 @@ set_technology = {
 	mtg_transport = 1
 	basic_fire_control_system = 1
 	basic_dp_light_battery = 1
-}
-
-set_technology = {
-	armored_car1 = 1
 }
 
 activate_mission = EYP_hundred_day_crisis_mission_fake
@@ -217,7 +213,7 @@ if = {
 }
 
 add_equipment_to_stockpile = {
-	type = infantry_equipment_1
+	type = FE_infantry_weapons_2
 	amount = 100000
 }
 add_equipment_to_stockpile = {

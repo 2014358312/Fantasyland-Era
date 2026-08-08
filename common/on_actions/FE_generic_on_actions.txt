@@ -64,7 +64,7 @@ on_actions = {
 			every_country = {
 				if = {
 					limit = {
-						has_tech = advanced_infantry_weapons
+						has_tech = FE_infantry_weapons_4
 					}
 					set_variable = {
 						infantry_equipment_level_var = 4
@@ -72,7 +72,7 @@ on_actions = {
 				}
 				else_if = {
 					limit = {
-						has_tech = improved_infantry_weapons
+						has_tech = FE_infantry_weapons_3
 					}
 					set_variable = {
 						infantry_equipment_level_var = 3
@@ -80,10 +80,7 @@ on_actions = {
 				}
 				else_if = {
 					limit = {
-						OR = {
-							has_tech = infantry_weapons1
-							has_tech = magic_infantry_weapons1
-						}
+						has_tech = FE_infantry_weapons_2
 					}
 					set_variable = {
 						infantry_equipment_level_var = 2
@@ -91,7 +88,7 @@ on_actions = {
 				}
 				else_if = {
 					limit = {
-						has_tech = infantry_weapons
+						has_tech = FE_infantry_weapons_1
 					}
 					set_variable = {
 						infantry_equipment_level_var = 1
@@ -207,7 +204,8 @@ on_actions = {
 				add_to_array = { FE_welcome_continent_east_history_page_array = 1 }
 				add_to_array = { FE_welcome_continent_east_history_page_array = 2 }
 				set_variable = { FE_continent_desc_now_var = 1 }
-				capital_scope = {
+				every_owned_controlled_state = {
+					limit = { is_capital = yes }
 					if = {
 						limit = { is_on_continent = ristania }
 						set_variable = { PREV.FE_continent_var = 1 }
