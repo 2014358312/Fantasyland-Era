@@ -1090,7 +1090,7 @@ guiTypes = {
 
 				instantTextBoxType = {
 					name = "infantry_subtitle_motorized"
-					position = { x = 30 y = 510 }
+					position = { x = 1000 y = 560 }
 					textureFile = ""
 					font = "hoi_33"
 					borderSize = { x = 0 y = 0}
@@ -1107,7 +1107,7 @@ guiTypes = {
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
-					text = "982"
+					text = "996"
 					maxWidth = 170
 					maxHeight = 32
 					format = left
@@ -1120,7 +1120,7 @@ guiTypes = {
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
-					text = "988"
+					text = "998"
 					maxWidth = 170
 					maxHeight = 32
 					format = left
@@ -1223,7 +1223,7 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "infantry_year13"
-					position = { x = 1945 y = 50 }
+					position = { x = 1975 y = 50 }
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
 					text = "1012"
@@ -1232,24 +1232,32 @@ guiTypes = {
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
+				instantTextBoxType = {
+					name = "infantry_year14"
+					position = { x = 2110 y = 50 }
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "1014"
+					maxWidth = 170
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
 
 			}
 
-			iconType = {
-				name = "highlight_infantry_1"
-				spriteType = "GFX_tutorial_research_small_item_icon_glow"
-				position = { x=135 y=170}
-				hide = yes
-				alwaystransparent = yes
-			}
+			containerWindowType = {
+				name = "tiled_research_bg"
+				position = { x=50 y=400 }
+				size = { width = 950 height = 275 }
+				clipping = no
 
-			gridboxtype = {
-				name = "night_vision_tree"
-				position = { x = 140 y = 310 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_tiled_research_bg"
+				}
 			}
-
+			
 			gridboxtype = {
 				name = "FE_infantry_weapons_1_tree"
 				position = { x = 140 y = 325 }
@@ -1258,7 +1266,7 @@ guiTypes = {
 			}
 
 			gridboxtype = {
-				name = "FE_vehicle_light_armored_cavalry_tree"
+				name = "FE_potion_pack_beast_tree"
 				position = { x = 140 y = 310 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
@@ -4337,6 +4345,14 @@ guiTypes = {
 			}
 			
 			#########################################
+
+			gridboxtype = {
+				name = "FE_infantry_alchemy_standardization_tree"
+				position = { x = 100 y = 172 }
+				size = { width = 520 height = 800 }
+				slotsize = { width = 70 height = 70 }
+				format = "UP"
+			}
 
 			gridboxtype = {
 				name = "basic_machine_tools_tree"

@@ -1,7 +1,7 @@
 technologies = {
 
-	@982 = 0
-	@988 = 2
+	@996 = 0
+	@998 = 2
 	@1000 = 4
 	@1001 = 5
 	@1002 = 6
@@ -764,87 +764,6 @@ technologies = {
 
 	}
 
-
-	night_vision = {
-
-		land_night_attack = 0.1
-
-		path = {
-			leads_to_tech = night_vision2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2.5
-		start_year = 1007
-		folder = {
-			name = infantry_folder
-			position = { x = 0 y = @1007 }
-		}
-
-		categories = {
-			night_vision
-		}
-
-		ai_will_do = {
-			factor = 4
-
-			modifier = {
-				factor = 2
-				date > "1006.1.9"
-			}
-
-			modifier = {
-				factor = 2
-				date > "1007.1.1"
-			}
-
-			modifier = {
-				factor = 5
-				date > "1007.1.6"
-			}
-
-			modifier = {
-				factor = 5
-				date > "1010.1.1"
-			}
-		}
-	}
-
-	night_vision2 = {
-
-		land_night_attack = 0.15
-
-		research_cost = 2
-		start_year = 1010
-		folder = {
-			name = infantry_folder
-			position = { x = 0 y = @1010 }
-		}
-
-		categories = {
-			night_vision
-		}
-
-		ai_will_do = {
-			factor = 4
-
-			modifier = {
-				factor = 2
-				date > "1009.1.9"
-			}
-
-			modifier = {
-				factor = 2
-				date > "1010.1.1"
-			}
-
-			modifier = {
-				factor = 5
-				date > "1010.1.6"
-			}
-		}
-	}
-
  	militia_tech = {
  		allow = { always = no }
 		enable_subunits = {
@@ -1261,11 +1180,11 @@ technologies = {
 		}
 	}
 
-		###========================================================================
-	### 一、魔法单兵武器线（附魔冷兵器 → 自推进弹丸投射器）
 	###========================================================================
-	FE_infantry_weapons_1 = { #附魔冷兵器（初级步兵装备）
-		start_year = 982
+	### 一、魔法单兵武器线 + 支援线（附魔装备 → 自推进弹丸投射器 / 破防爆弹）
+	###========================================================================
+	FE_infantry_weapons_1 = { #附魔装备（初级步兵装备）
+		start_year = 996
 		research_cost = 1
 		##=== 继承自旧科技 infantry_weapons（替换保留）===
 		enable_equipments = {
@@ -1279,30 +1198,33 @@ technologies = {
 		enable_subunits = {
 			infantry
 		}
-		##===============================================
 		folder = {
 			name = infantry_folder
-			position = { x = 1 y = @982 }
+			position = { x = -1 y = @996 }
 		}
 		categories = {
 			infantry_weapons
 		}
-		## 注：策划案要求前置"炼金规范化"，原计划引用 vanilla machine_tool_1。
-		## 但模组 industry.txt 覆盖了 vanilla industry.txt（该文件使用旧科技名 basic_machine_tools），
-		## 导致 machine_tool_1 不存在、依赖无效（日志: technology.cpp:2949）。
-		## 待模组工业线迁移到 1.15+ 科技命名后再恢复此前置。
 		path = {
 			leads_to_tech = FE_infantry_propulsion_array
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = FE_support_powered_weapons
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = FE_potion_practical_pharmaceutics
 			research_cost_coeff = 1
 		}
 	}
 
 	FE_infantry_propulsion_array = { #推进法阵
-		start_year = 988
+		start_year = 998
 		research_cost = 1
 		folder = {
 			name = infantry_folder
-			position = { x = 1 y = @988 }
+			position = { x = 0 y = @998 }
 		}
 		categories = {
 			infantry_weapons
@@ -1313,166 +1235,8 @@ technologies = {
 		}
 	}
 
-	FE_infantry_weapons_2 = { #制式法杖（解锁二级步枪）
-		start_year = 1000
-		research_cost = 1
-		##=== 继承自旧科技 infantry_weapons1（替换保留）===
-		enable_equipments = {
-			FE_infantry_weapons_2
-		}
-		##===============================================
-		folder = {
-			name = infantry_folder
-			position = { x = 1 y = @1000 }
-		}
-		categories = {
-			infantry_weapons
-		}
-		path = {
-			leads_to_tech = FE_infantry_high_speed_propulsion
-			research_cost_coeff = 1
-		}
-	}
-
-	FE_infantry_high_speed_propulsion = { #高速推进法阵
-		start_year = 1002
-		research_cost = 1
-		##=== 继承自旧科技 improved_infantry_weapons_2（类别加成，待策划调整）===
-		category_light_infantry = {
-			soft_attack = 0.05
-		}
-		category_cavalry = {
-			soft_attack = 0.05
-		}
-		category_vehicle_infantry = {
-			soft_attack = 0.05
-		}
-		##===============================================
-		folder = {
-			name = infantry_folder
-			position = { x = 1 y = @1002 }
-		}
-		categories = {
-			infantry_weapons
-		}
-		path = {
-			leads_to_tech = FE_infantry_weapons_3
-			research_cost_coeff = 1
-		}
-	}
-
-	FE_infantry_weapons_3 = { #极速激发（解锁三级步枪）
-		start_year = 1004
-		research_cost = 1
-		##=== 继承自旧科技 improved_infantry_weapons（三级步枪=equipment_2）===
-		enable_equipments = {
-			FE_infantry_weapons_3
-		}
-		##=== 继承自旧科技 infantry_weapons2（类别加成，待策划调整）===
-		category_light_infantry = {
-			soft_attack = 0.05
-		}
-		category_cavalry = {
-			soft_attack = 0.05
-		}
-		category_vehicle_infantry = {
-			soft_attack = 0.05
-		}
-		##===============================================
-		folder = {
-			name = infantry_folder
-			position = { x = 1 y = @1004 }
-		}
-		categories = {
-			infantry_weapons
-		}
-		path = {
-			leads_to_tech = FE_infantry_shaped_orb
-			research_cost_coeff = 1
-		}
-	}
-
-	FE_infantry_shaped_orb = { #塑形法球（提高硬攻和少量穿深）
-		start_year = 1008
-		research_cost = 1
-		##=== 继承自旧科技 infantry_at / infantry_at2（反坦克穿深，待策划调整）===
-		category_all_infantry = {
-			hard_attack = 0.25
-			ap_attack = 1
-		}
-		category_cavalry = {
-			hard_attack = 0.1
-			ap_attack = 0.4
-		}
-		##===============================================
-		folder = {
-			name = infantry_folder
-			position = { x = 1 y = @1008 }
-		}
-		categories = {
-			infantry_weapons
-		}
-		path = {
-			leads_to_tech = FE_infantry_weapons_4
-			research_cost_coeff = 1
-		}
-	}
-
-	FE_infantry_weapons_4 = { #单兵炮台（解锁四级步枪，需要塑形法球+约束笼）
-		start_year = 1010
-		research_cost = 1
-		##=== 继承自旧科技 advanced_infantry_weapons（四级步枪=equipment_3）===
-		enable_equipments = {
-			FE_infantry_weapons_4
-		}
-		##===============================================
-		folder = {
-			name = infantry_folder
-			position = { x = 1 y = @1010 }
-		}
-		categories = {
-			infantry_weapons
-		}
-		dependencies = {
-			FE_support_constraint_cage = 1 #需要以上两个：约束笼（支援线）
-		}
-		path = {
-			leads_to_tech = FE_infantry_self_propelled_launcher
-			research_cost_coeff = 1
-		}
-	}
-
-	FE_infantry_self_propelled_launcher = { #自推进弹丸投射器（提高软硬攻）
-		start_year = 1014
-		research_cost = 1
-		##=== 继承自旧科技 advanced_infantry_weapons2（类别加成，待策划调整）===
-		category_light_infantry = {
-			soft_attack = 0.05
-		}
-		category_cavalry = {
-			soft_attack = 0.05
-		}
-		category_vehicle_infantry = {
-			soft_attack = 0.1
-		}
-		##===============================================
-		folder = {
-			name = infantry_folder
-			position = { x = 1 y = @1014 }
-		}
-		categories = {
-			infantry_weapons
-		}
-		dependencies = {
-			FE_support_one_shot_ap_cannon = 1 #结合一次性思路（支援线）
-		}
-	}
-
-	###========================================================================
-	### 二、支援线（动力武器 → 破防爆弹）
-	###========================================================================
-	FE_support_powered_weapons = { #动力武器（解锁团属重武器连）
-		start_year = 988
+	FE_support_powered_weapons = { #动力武器
+		start_year = 998
 		research_cost = 1
 		##=== 继承自旧科技 support_weapons（支援武器加成，待策划调整）===
 		category_infantry_and_bicycle = {
@@ -1494,13 +1258,35 @@ technologies = {
 		##===============================================
 		folder = {
 			name = infantry_folder
-			position = { x = -2 y = @988 }
+			position = { x = -2 y = @998 }
 		}
 		categories = {
 			support_tech
 		}
-		dependencies = {
-			FE_infantry_weapons_1 = 1 #承接魔法单兵武器线
+		path = {
+			leads_to_tech = FE_infantry_weapons_2
+			research_cost_coeff = 1
+		}
+	}
+
+	FE_infantry_weapons_2 = { #制式法杖（解锁二级步枪）
+		start_year = 1000
+		research_cost = 1
+		##=== 继承自旧科技 infantry_weapons1（替换保留）===
+		enable_equipments = {
+			FE_infantry_weapons_2
+		}
+		##===============================================
+		folder = {
+			name = infantry_folder
+			position = { x = -1 y = @1000 }
+		}
+		categories = {
+			infantry_weapons
+		}
+		path = {
+			leads_to_tech = FE_infantry_high_speed_propulsion
+			research_cost_coeff = 1
 		}
 		path = {
 			leads_to_tech = FE_support_enhanced_demolition
@@ -1508,7 +1294,34 @@ technologies = {
 		}
 	}
 
-	FE_support_enhanced_demolition = { #强化爆破（提高团属支援连的突破和防御）
+	FE_infantry_high_speed_propulsion = { #高速推进法阵
+		start_year = 1002
+		research_cost = 1
+		##=== 继承自旧科技 improved_infantry_weapons_2（类别加成，待策划调整）===
+		category_light_infantry = {
+			soft_attack = 0.05
+		}
+		category_cavalry = {
+			soft_attack = 0.05
+		}
+		category_vehicle_infantry = {
+			soft_attack = 0.05
+		}
+		##===============================================
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @1002 }
+		}
+		categories = {
+			infantry_weapons
+		}
+		path = {
+			leads_to_tech = FE_support_hand_cannon
+			research_cost_coeff = 1
+		}
+	}
+
+	FE_support_enhanced_demolition = { #强化弹丸（设计稿名；ID保留以兼容SRN历史文件）
 		start_year = 1002
 		research_cost = 1
 		folder = {
@@ -1519,33 +1332,17 @@ technologies = {
 			support_tech
 		}
 		path = {
-			leads_to_tech = FE_support_hand_cannon
+			leads_to_tech = FE_infantry_rapid_excitation
 			research_cost_coeff = 1
 		}
 	}
 
-	FE_support_hand_cannon = { #魔导手炮（提高团属支援连的软攻）
+	FE_support_hand_cannon = { #魔导手炮
 		start_year = 1004
 		research_cost = 1
 		folder = {
 			name = infantry_folder
-			position = { x = -2 y = @1004 }
-		}
-		categories = {
-			support_tech
-		}
-		path = {
-			leads_to_tech = FE_support_alchemy_bullet
-			research_cost_coeff = 1
-		}
-	}
-
-	FE_support_alchemy_bullet = { #炼金弹丸（解锁狙击小组，具有高防御）
-		start_year = 1006
-		research_cost = 1
-		folder = {
-			name = infantry_folder
-			position = { x = -2 y = @1006 }
+			position = { x = 0 y = @1004 }
 		}
 		categories = {
 			support_tech
@@ -1556,15 +1353,105 @@ technologies = {
 		}
 	}
 
+	FE_infantry_rapid_excitation = { #极速激发（普通科技，不再解锁武器）
+		start_year = 1004
+		research_cost = 1
+		##=== 继承自旧科技 improved_infantry_weapons（类别加成，待策划调整）===
+		category_light_infantry = {
+			soft_attack = 0.05
+		}
+		category_cavalry = {
+			soft_attack = 0.05
+		}
+		category_vehicle_infantry = {
+			soft_attack = 0.05
+		}
+		##===============================================
+		folder = {
+			name = infantry_folder
+			position = { x = -2 y = @1004 }
+		}
+		categories = {
+			infantry_weapons
+		}
+		path = {
+			leads_to_tech = FE_support_alchemy_bullet
+			research_cost_coeff = 1
+		}
+	}
+
 	FE_support_constraint_cage = { #约束笼（解锁喷火器师属支援连）
-		start_year = 1008
+		start_year = 1006
 		research_cost = 1
 		folder = {
 			name = infantry_folder
-			position = { x = -2 y = @1008 }
+			position = { x = 0 y = @1006 }
 		}
 		categories = {
 			support_tech
+		}
+		path = {
+			leads_to_tech = FE_infantry_weapons_3
+			research_cost_coeff = 1
+		}
+	}
+
+	FE_support_alchemy_bullet = { #炼金弹丸
+		start_year = 1006
+		research_cost = 1
+		folder = {
+			name = infantry_folder
+			position = { x = -2 y = @1006 }
+		}
+		categories = {
+			support_tech
+		}
+		path = {
+			leads_to_tech = FE_infantry_weapons_3
+			research_cost_coeff = 1
+		}
+	}
+
+	FE_infantry_weapons_3 = { #单兵炮台（解锁三级步枪）
+		start_year = 1008
+		research_cost = 1
+		##=== 继承自旧科技 advanced_infantry_weapons（替换保留）===
+		enable_equipments = {
+			FE_infantry_weapons_3
+		}
+		##===============================================
+		folder = {
+			name = infantry_folder
+			position = { x = -1 y = @1008 }
+		}
+		categories = {
+			infantry_weapons
+		}
+		path = {
+			leads_to_tech = FE_infantry_shaped_orb
+			research_cost_coeff = 1
+		}
+	}
+
+	FE_infantry_shaped_orb = { #塑形法球（提高硬攻和少量穿深）
+		start_year = 1010
+		research_cost = 1
+		##=== 继承自旧科技 infantry_at / infantry_at2（反坦克穿深，待策划调整）===
+		category_all_infantry = {
+			hard_attack = 0.25
+			ap_attack = 1
+		}
+		category_cavalry = {
+			hard_attack = 0.1
+			ap_attack = 0.4
+		}
+		##===============================================
+		folder = {
+			name = infantry_folder
+			position = { x = -1 y = @1010 }
+		}
+		categories = {
+			infantry_weapons
 		}
 		path = {
 			leads_to_tech = FE_support_one_shot_ap_cannon
@@ -1577,13 +1464,14 @@ technologies = {
 		research_cost = 1
 		folder = {
 			name = infantry_folder
-			position = { x = -2 y = @1012 }
+			position = { x = -1 y = @1012 }
 		}
 		categories = {
 			support_tech
 		}
-		dependencies = {
-			FE_infantry_shaped_orb = 1 #基于破甲法球技术（魔法单兵武器线）
+		path = {
+			leads_to_tech = FE_infantry_self_propelled_launcher
+			research_cost_coeff = 1
 		}
 		path = {
 			leads_to_tech = FE_support_armor_breaking_shell
@@ -1591,12 +1479,41 @@ technologies = {
 		}
 	}
 
-	FE_support_armor_breaking_shell = { #破防爆弹（提高团属支援连的软硬防突）
+	FE_infantry_self_propelled_launcher = { #自推进弹丸投射器（提高软硬攻，与破防爆弹互斥）
 		start_year = 1014
 		research_cost = 1
+		allow = {
+			NOT = { has_tech = FE_support_armor_breaking_shell } #与破防爆弹互斥
+		}
+		##=== 继承自旧科技 advanced_infantry_weapons2（类别加成，待策划调整）===
+		category_light_infantry = {
+			soft_attack = 0.05
+		}
+		category_cavalry = {
+			soft_attack = 0.05
+		}
+		category_vehicle_infantry = {
+			soft_attack = 0.1
+		}
+		##===============================================
 		folder = {
 			name = infantry_folder
 			position = { x = -2 y = @1014 }
+		}
+		categories = {
+			infantry_weapons
+		}
+	}
+
+	FE_support_armor_breaking_shell = { #破防爆弹（与自推进弹丸投射器互斥）
+		start_year = 1014
+		research_cost = 1
+		allow = {
+			NOT = { has_tech = FE_infantry_self_propelled_launcher } #与自推进弹丸投射器互斥
+		}
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @1014 }
 		}
 		categories = {
 			support_tech
@@ -1604,14 +1521,14 @@ technologies = {
 	}
 
 	###========================================================================
-	### 三、魔药线（实用药剂学 → 重型魔能引擎）
+	### 二、魔药线（炼金规范化 → 实用药剂学 → 大承重驼兽 → 重型魔能引擎）
 	###========================================================================
 	FE_potion_practical_pharmaceutics = { #实用药剂学（解锁魔药生产和支援连）
-		start_year = 982
+		start_year = 996
 		research_cost = 1
 		folder = {
 			name = infantry_folder
-			position = { x = 6 y = @982 }
+			position = { x = 3 y = @996 }
 		}
 		categories = {
 			support_tech
@@ -1624,14 +1541,17 @@ technologies = {
 			leads_to_tech = FE_potion_aerosolization
 			research_cost_coeff = 1
 		}
+		dependencies = {
+			FE_infantry_alchemy_standardization = 1
+		}
 	}
 
 	FE_potion_enhanced_injection = { #强化针剂（与高效雾化互斥）
-		start_year = 988
+		start_year = 998
 		research_cost = 1
 		folder = {
 			name = infantry_folder
-			position = { x = 6 y = @988 }
+			position = { x = 4 y = @998 }
 		}
 		categories = {
 			support_tech
@@ -1646,11 +1566,11 @@ technologies = {
 	}
 
 	FE_potion_aerosolization = { #高效雾化（与强化针剂互斥）
-		start_year = 1001
+		start_year = 998
 		research_cost = 1
 		folder = {
 			name = infantry_folder
-			position = { x = 6 y = @1001 }
+			position = { x = 2 y = @998 }
 		}
 		categories = {
 			support_tech
@@ -1665,14 +1585,18 @@ technologies = {
 	}
 
 	FE_potion_microcapsule = { #魔药微囊
-		start_year = 1001
+		start_year = 1000
 		research_cost = 1
 		folder = {
 			name = infantry_folder
-			position = { x = 6 y = @1001 }
+			position = { x = 3 y = @1000 }
 		}
 		categories = {
 			support_tech
+		}
+		path = {
+			leads_to_tech = FE_potion_nasal_powder
+			research_cost_coeff = 1
 		}
 		path = {
 			leads_to_tech = FE_potion_implanted_organ
@@ -1680,12 +1604,28 @@ technologies = {
 		}
 	}
 
-	FE_potion_implanted_organ = { #内置器官
-		start_year = 1003
+	FE_potion_nasal_powder = { #鼻用粉雾剂（设计稿新增）
+		start_year = 1002
 		research_cost = 1
 		folder = {
 			name = infantry_folder
-			position = { x = 6 y = @1003 }
+			position = { x = 2 y = @1002 }
+		}
+		categories = {
+			support_tech
+		}
+		path = {
+			leads_to_tech = FE_potion_cursing_technique
+			research_cost_coeff = 1
+		}
+	}
+
+	FE_potion_implanted_organ = { #内置器官
+		start_year = 1002
+		research_cost = 1
+		folder = {
+			name = infantry_folder
+			position = { x = 4 y = @1002 }
 		}
 		categories = {
 			support_tech
@@ -1697,27 +1637,26 @@ technologies = {
 	}
 
 	FE_potion_cursing_technique = { #诅咒技法化用
-		start_year = 1005
+		start_year = 1004
 		research_cost = 1
 		folder = {
 			name = infantry_folder
-			position = { x = 6 y = @1005 }
+			position = { x = 3 y = @1004 }
 		}
 		categories = {
 			support_tech
 		}
-		path = {
-			leads_to_tech = FE_potion_pack_beast
-			research_cost_coeff = 1
-		}
 	}
 
+	###========================================================================
+	### 三、卡车及机械化线（轻装甲铁骑 → 元素魔导车，含半悬浮载具）
+	###========================================================================
 	FE_potion_pack_beast = { #大承重驼兽
-		start_year = 1008
+		start_year = 1006
 		research_cost = 1
 		folder = {
 			name = infantry_folder
-			position = { x = 6 y = @1008 }
+			position = { x = 5 y = @1006 }
 		}
 		categories = {
 			support_tech
@@ -1726,25 +1665,42 @@ technologies = {
 			leads_to_tech = FE_potion_heavy_engine
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = FE_vehicle_light_armored_cavalry
+			research_cost_coeff = 1
+		}
 	}
 
 	FE_potion_heavy_engine = { #重型魔能引擎
-		start_year = 1009
+		start_year = 1008
 		research_cost = 1
 		folder = {
 			name = infantry_folder
-			position = { x = 6 y = @1009 }
+			position = { x = 5 y = @1008 }
 		}
 		categories = {
 			support_tech
 		}
+		path = {
+			leads_to_tech = FE_vehicle_semi_hovering
+			research_cost_coeff = 1
+		}
+	}
+	
+	FE_vehicle_semi_hovering = { #半悬浮载具（设计稿新增）
+		start_year = 1012
+		research_cost = 1
+		folder = {
+			name = infantry_folder
+			position = { x = 5 y = @1012 }
+		}
+		categories = {
+			motorized_equipment
+		}
 	}
 
-	###========================================================================
-	### 四、卡车及机械化线（轻装甲铁骑 → 元素魔导车）
-	###========================================================================
 	FE_vehicle_light_armored_cavalry = { #轻装甲铁骑
-		start_year = 982
+		start_year = 1008
 		research_cost = 1
 		##=== 继承自旧科技 armored_car1/2/3 + armored_car_at_upgrade（替换保留）===
 		enable_subunits = {
@@ -1759,13 +1715,10 @@ technologies = {
 		##===============================================
 		folder = {
 			name = infantry_folder
-			position = { x = 4 y = @982 }
+			position = { x = 7 y = @1008 }
 		}
 		categories = {
 			motorized_equipment
-		}
-		dependencies = {
-			FE_potion_heavy_engine = 1 #基于重型魔能引擎（魔药线）
 		}
 		path = {
 			leads_to_tech = FE_vehicle_armored_personnel_carrier
@@ -1774,7 +1727,7 @@ technologies = {
 	}
 
 	FE_vehicle_armored_personnel_carrier = { #全装甲运兵车
-		start_year = 1005
+		start_year = 1010
 		research_cost = 1
 		##=== 继承自旧科技 tech_trucks + motorised_infantry + motorized_rocket_unit（替换保留）===
 		enable_subunits = {
@@ -1806,7 +1759,7 @@ technologies = {
 		##===============================================
 		folder = {
 			name = infantry_folder
-			position = { x = 4 y = @1005 }
+			position = { x = 7 y = @1010 }
 		}
 		categories = {
 			motorized_equipment
@@ -1818,7 +1771,7 @@ technologies = {
 	}
 
 	FE_vehicle_elemental_magic_car = { #元素魔导车（连接步战车线）
-		start_year = 1010
+		start_year = 1014
 		research_cost = 1
 		##=== 继承自旧科技 mechanised_infantry1/2/3 + amphibious_mechanized_infantry1/2（替换保留）===
 		enable_subunits = {
@@ -1857,7 +1810,7 @@ technologies = {
 		##===============================================
 		folder = {
 			name = infantry_folder
-			position = { x = 4 y = @1010 }
+			position = { x = 7 y = @1014 }
 		}
 		categories = {
 			motorized_equipment
