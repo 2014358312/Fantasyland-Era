@@ -425,19 +425,19 @@ country_can_be_reasonable_target_of_wargoal = { #Expected scopes: Target country
 
 big_communist_exists = {
 	any_other_country = {
-		is_major = yes 
+		is_major = yes
 		has_government = communism
-		has_capitulated = no 
-		exists = yes 
+		has_capitulated = no
+		exists = yes
 	}
 }
 
 big_fascist_exists = {
 	any_other_country = {
-		is_major = yes 
+		is_major = yes
 		has_government = fascism
-		has_capitulated = no 
-		exists = yes 
+		has_capitulated = no
+		exists = yes
 	}
 }
 
@@ -461,13 +461,13 @@ has_hide_rule = {
 ###########################################################################################
 ###########################################################################################
 
-							########    ###       ###    ######## 
-							   ##      ## ##     ## ##      ##    
-							   ##     ##   ##   ##   ##     ##    
-							   ##    ##     ## ##     ##    ##    
-							   ##    ######### #########    ##    
-							   ##    ##     ## ##     ##    ##    
-							   ##    ##     ## ##     ##    ##    
+							########    ###       ###    ########
+							   ##      ## ##     ## ##      ##
+							   ##     ##   ##   ##   ##     ##
+							   ##    ##     ## ##     ##    ##
+							   ##    ######### #########    ##
+							   ##    ##     ## ##     ##    ##
+							   ##    ##     ## ##     ##    ##
 
 ###########################################################################################
 ###########################################################################################
@@ -565,32 +565,32 @@ can_unlock_new_special_forces_tree = {
 		}
 	}
 }
-# These are to make strength comparisons easier 
+# These are to make strength comparisons easier
 
 FROM_is_stronger = {
 	strength_ratio = {
-		tag = FROM 
+		tag = FROM
 		ratio < 1
 	}
 }
 
 FROM_is_twice_as_strong = {
 	strength_ratio = {
-		tag = FROM 
+		tag = FROM
 		ratio < 0.5
 	}
 }
 
 FROM_is_weaker = {
 	strength_ratio = {
-		tag = FROM 
+		tag = FROM
 		ratio > 1
 	}
 }
 
 FROM_is_twice_as_weak = {
 	strength_ratio = {
-		tag = FROM 
+		tag = FROM
 		ratio > 2
 	}
 }
@@ -632,12 +632,12 @@ ai_has_completed_naval_doctrine = {
 	}
 }
 
-### Neutrality Act - only trade with countries at peace 
+### Neutrality Act - only trade with countries at peace
 trade_partner_not_at_war = {
 	custom_trigger_tooltip = {
 		tooltip = trade_partner_not_at_war_tt
-		FROM = { 
-			has_war = yes 
+		FROM = {
+			has_war = yes
 		}
 	}
 }
@@ -654,12 +654,12 @@ is_democratic_seller_trigger = {
 #Subsidy Seller Triggers
 is_fascist_seller_trigger = {
 	NOT = { has_war_with = ROOT	}
-	has_government = fascism 
+	has_government = fascism
 }
 
 is_democracy_seller_trigger = {
 	NOT = { has_war_with = ROOT	}
-	has_government = democratic 
+	has_government = democratic
 }
 
 is_allied_seller_trigger = {
@@ -668,4 +668,3 @@ is_allied_seller_trigger = {
 		FROM = { is_in_faction_with = ROOT }
 	}
 }
-

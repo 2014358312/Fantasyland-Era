@@ -1,5 +1,5 @@
 scripted_gui = {
-	WSG_panci_gui = {	
+	WSG_panci_gui = {
 		window_name = "WSG_panci"
 		context_type = decision_category
 		visible = {}
@@ -10,35 +10,35 @@ scripted_gui = {
 		}
 		effects = {
 			open_dininghall_btn_click = {
-				
+
 				if = {
 					limit = {
 						has_country_flag = show_dininghall_window
 					}
 					clr_country_flag = show_dininghall_window
-					
+
 				}
 				else = {
 					set_country_flag = show_dininghall_window
-					
+
 				}
 			}
-			
-		}	
+
+		}
 	}
     dininghall_window_gui = {
         window_name = "dininghall_window"
 		context_type = player_context
-		visible = {	
-			
+		visible = {
+
             has_country_flag = show_dininghall_window
 		}
 		effects = {
 			dininghall_btn_exit_click = {
-             clr_country_flag = show_dininghall_window			 
+             clr_country_flag = show_dininghall_window
             }
             menu_1_btn_click ={                          #鲱鱼罐头
-                
+
 			if = {
 					limit = {
 						not = { has_country_flag = qiyong_feiyuguantou }
@@ -46,7 +46,7 @@ scripted_gui = {
 					set_variable = {
 						feiyuguantou_cishu = 1
 					}
-					
+
 				}
 				else = {
 					limit = {
@@ -58,22 +58,22 @@ scripted_gui = {
 				}
 			random_list = {
 				10 = {  country_event = { days = 0 id = feiyuguantou_shijian.5 } }
-                
+
 				30 = {  country_event = { days = 0 id = feiyuguantou_shijian.6 } }
-				
-				
+
+
 				}
-				
+
 			add_to_variable = {
 				var = WSG_panci
 				value = -25
 			}
-            set_country_flag = { flag = WSG_start_cooking value = 1 days = 60 } 
-			
-			
-			custom_effect_tooltip = menu_1_btn_tt					
-	   	}    
-        
+            set_country_flag = { flag = WSG_start_cooking value = 1 days = 60 }
+
+
+			custom_effect_tooltip = menu_1_btn_tt
+	   	}
+
 		menu_2_btn_click = {     #甜豆花
             add_to_variable = {
 				var = WSG_panci
@@ -83,10 +83,10 @@ scripted_gui = {
             idea = WSG_tiandouhua_buff
             days = 60
             }
-			set_country_flag = { flag = WSG_start_cooking value = 1 days = 60 } 
+			set_country_flag = { flag = WSG_start_cooking value = 1 days = 60 }
 			custom_effect_tooltip = menu_2_btn_tt
 		}
-        
+
 		menu_3_btn_click = {     #苹果派
             add_to_variable = {
 				var = WSG_panci
@@ -96,10 +96,10 @@ scripted_gui = {
             idea = WSG_applepie_buff
             days = 60
             }
-			set_country_flag = { flag = WSG_start_cooking value = 1 days = 60 } 
+			set_country_flag = { flag = WSG_start_cooking value = 1 days = 60 }
 			custom_effect_tooltip = menu_3_btn_tt
 		}
-        
+
 		menu_4_btn_click = {     #鱼雷果汁
             add_to_variable = {
 				var = WSG_panci
@@ -109,7 +109,7 @@ scripted_gui = {
             idea = WSG_torpedo_juice_buff
             days = 60
             }
-			set_country_flag = { flag = WSG_start_cooking value = 1 days = 60 } 
+			set_country_flag = { flag = WSG_start_cooking value = 1 days = 60 }
 			custom_effect_tooltip = menu_4_btn_tt
 		}
 
@@ -122,10 +122,10 @@ scripted_gui = {
             idea = WSG_black_forest_cake_buff
             days = 60
             }
-			set_country_flag = { flag = WSG_start_cooking value = 1 days = 60 } 
+			set_country_flag = { flag = WSG_start_cooking value = 1 days = 60 }
 			custom_effect_tooltip = menu_5_btn_tt
 		}
-        
+
 		menu_6_btn_click = {      #冰淇淋
             add_to_variable = {
 				var = WSG_panci
@@ -135,7 +135,7 @@ scripted_gui = {
             idea = WSG_F4U_buff
             days = 60
             }
-			set_country_flag = { flag = WSG_start_cooking value = 1 days = 60 } 
+			set_country_flag = { flag = WSG_start_cooking value = 1 days = 60 }
 			custom_effect_tooltip = menu_6_btn_tt
 		}
 
@@ -167,6 +167,6 @@ scripted_gui = {
 				check_variable = { WSG_panci > 99 }
 				not = { has_country_flag = WSG_start_cooking }
 			}
-	}			    
+	}
 }
 }

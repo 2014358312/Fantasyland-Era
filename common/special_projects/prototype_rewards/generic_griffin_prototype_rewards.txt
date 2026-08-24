@@ -34,15 +34,15 @@ sp_griffin_generic_reward_scientist_xp_1 = {
 			}
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_scientist_xp
-		
+
 		iteration_output = {
 			scientist_effects = {
 				if = {
 					limit = {
-						
+
 					}
 					add_scientist_xp = {
 						experience = constant:sp_scientist_xp_gain.low
@@ -86,10 +86,10 @@ sp_griffin_generic_reward_scientist_xp_2 = {
 			}
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_scientist_xp
-		
+
 		iteration_output = {
 			scientist_effects = {
 				if = {
@@ -141,10 +141,10 @@ sp_griffin_generic_reward_scientist_xp_3 = {
 			}
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_scientist_xp
-		
+
 		iteration_output = {
 			scientist_effects = {
 				if = {
@@ -175,12 +175,12 @@ sp_griffin_generic_reward_scientist_xp_3 = {
 #Low Army XP
 sp_griffin_generic_reward_army_xp_1 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 50
 		max = 100
 	}
-	
+
 	# ROOT is the project
 	# FROM is the Country
 	# var:facility_state is the State where the facility is (ensured to be set in this case)
@@ -193,10 +193,10 @@ sp_griffin_generic_reward_army_xp_1 = {
 			has_project_flag = sp_griffin_generic_reward_army_xp_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_army_xp
-		
+
 		iteration_output = {
 			country_effects = {
 				army_experience = constant:sp_military_xp_gain.low
@@ -209,12 +209,12 @@ sp_griffin_generic_reward_army_xp_1 = {
 #medium Army XP
 sp_griffin_generic_reward_army_xp_2 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 50
 		max = 100
 	}
-	
+
 	# ROOT is the project
 	# FROM is the Country
 	# var:facility_state is the State where the facility is (ensured to be set in this case)
@@ -227,10 +227,10 @@ sp_griffin_generic_reward_army_xp_2 = {
 			has_project_flag = sp_griffin_generic_reward_army_xp_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_army_xp
-		
+
 		iteration_output = {
 			country_effects = {
 				army_experience = constant:sp_military_xp_gain.medium
@@ -243,12 +243,12 @@ sp_griffin_generic_reward_army_xp_2 = {
 #High Army XP
 sp_griffin_generic_reward_army_xp_3 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 50
 		max = 100
 	}
-	
+
 	# ROOT is the project
 	# FROM is the Country
 	# var:facility_state is the State where the facility is (ensured to be set in this case)
@@ -261,14 +261,14 @@ sp_griffin_generic_reward_army_xp_3 = {
 			has_project_flag = sp_griffin_generic_reward_army_xp_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_army_xp
-		
+
 		iteration_output = {
 			country_effects = {
 				army_experience = constant:sp_military_xp_gain.high
-				
+
 				add_breakthrough_progress = {
 					specialization = specialization_griffin
 					value = sp_breakthrough_progress.medium
@@ -288,7 +288,7 @@ sp_griffin_generic_reward_major_progress_1 = {
 		min = 0
 		max = 100
 	}
-	
+
 	# ROOT is the project
 	# FROM is the Country
 	# var:facility_state is the State where the facility is (ensured to be set in this case)
@@ -301,15 +301,15 @@ sp_griffin_generic_reward_major_progress_1 = {
 			has_project_flag = sp_griffin_generic_reward_major_progress_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_major_breakthrough
-		
+
 		iteration_output = {
 			country_effects = {
 				FROM = {
-					add_project_progress_ratio = constant:sp_progress.gain.low				
-					
+					add_project_progress_ratio = constant:sp_progress.gain.low
+
 					set_project_flag = sp_griffin_generic_reward_major_progress_flag
 				}
 			}
@@ -340,7 +340,7 @@ sp_griffin_generic_reward_major_progress_2 = {
 		min = 0
 		max = 100
 	}
-	
+
 	# ROOT is the project
 	# FROM is the Country
 	# var:facility_state is the State where the facility is (ensured to be set in this case)
@@ -353,15 +353,15 @@ sp_griffin_generic_reward_major_progress_2 = {
 			has_project_flag = sp_griffin_generic_reward_major_progress_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_major_breakthrough
-		
+
 		iteration_output = {
 			country_effects = {
 				FROM = {
-					add_project_progress_ratio = constant:sp_progress.gain.medium				
-					
+					add_project_progress_ratio = constant:sp_progress.gain.medium
+
 					set_project_flag = sp_griffin_generic_reward_major_progress_flag
 				}
 			}
@@ -392,7 +392,7 @@ sp_griffin_generic_reward_major_progress_3 = {
 		min = 0
 		max = 100
 	}
-	
+
 	# ROOT is the project
 	# FROM is the Country
 	# var:facility_state is the State where the facility is (ensured to be set in this case)
@@ -405,15 +405,15 @@ sp_griffin_generic_reward_major_progress_3 = {
 			has_project_flag = sp_griffin_generic_reward_major_progress_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_major_breakthrough
-		
+
 		iteration_output = {
 			country_effects = {
 				FROM = {
-					add_project_progress_ratio = constant:sp_progress.gain.high				
-					
+					add_project_progress_ratio = constant:sp_progress.gain.high
+
 					set_project_flag = sp_griffin_generic_reward_major_progress_flag
 				}
 
@@ -444,12 +444,12 @@ sp_griffin_generic_reward_major_progress_3 = {
 #Low Progress Loss
 sp_griffin_generic_reward_test_failure_1 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 15 #Loss is 5
 		max = 100
 	}
-	
+
 	# ROOT is the project
 	# FROM is the Country
 	# var:facility_state is the State where the facility is (ensured to be set in this case)
@@ -462,12 +462,12 @@ sp_griffin_generic_reward_test_failure_1 = {
 			has_project_flag = sp_griffin_generic_reward_test_failure_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_test_failure
-		
+
 		iteration_output = {
-			country_effects = { 
+			country_effects = {
 				FROM = {
 					add_project_progress_ratio = constant:sp_progress.loss.low
 
@@ -496,12 +496,12 @@ sp_griffin_generic_reward_test_failure_1 = {
 #Medium Progress Loss
 sp_griffin_generic_reward_test_failure_2 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 30 #Loss is 10
 		max = 100
 	}
-	
+
 	# ROOT is the project
 	# FROM is the Country
 	# var:facility_state is the State where the facility is (ensured to be set in this case)
@@ -514,12 +514,12 @@ sp_griffin_generic_reward_test_failure_2 = {
 			has_project_flag = sp_griffin_generic_reward_test_failure_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_test_failure
-		
+
 		iteration_output = {
-			country_effects = { 
+			country_effects = {
 				FROM = {
 					add_project_progress_ratio = constant:sp_progress.loss.medium
 
@@ -548,12 +548,12 @@ sp_griffin_generic_reward_test_failure_2 = {
 #High Progress Loss
 sp_griffin_generic_reward_test_failure_3 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 50 #Loss is 15
 		max = 100
 	}
-	
+
 	# ROOT is the project
 	# FROM is the Country
 	# var:facility_state is the State where the facility is (ensured to be set in this case)
@@ -566,12 +566,12 @@ sp_griffin_generic_reward_test_failure_3 = {
 			has_project_flag = sp_griffin_generic_reward_test_failure_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_test_failure
-		
+
 		iteration_output = {
-			country_effects = { 
+			country_effects = {
 				FROM = {
 					add_project_progress_ratio = constant:sp_progress.loss.high
 
@@ -605,7 +605,7 @@ sp_griffin_generic_reward_test_failure_3 = {
 #Low Tech Bonus
 sp_griffin_generic_reward_armor_tech_1 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 0
 		max = 100
@@ -623,12 +623,12 @@ sp_griffin_generic_reward_armor_tech_1 = {
 			has_project_flag = sp_griffin_generic_reward_armor_tech_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_armor_tech
-		
+
 		iteration_output = {
-			country_effects = { 
+			country_effects = {
 				add_tech_bonus = {
 					name = sp_griffin_generic_reward_option_armor_tech_bonus_name
 					bonus = 0.1
@@ -645,7 +645,7 @@ sp_griffin_generic_reward_armor_tech_1 = {
 #Medium Tech Bonus
 sp_griffin_generic_reward_armor_tech_2 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 0
 		max = 100
@@ -663,12 +663,12 @@ sp_griffin_generic_reward_armor_tech_2 = {
 			has_project_flag = sp_griffin_generic_reward_armor_tech_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_armor_tech
-		
+
 		iteration_output = {
-			country_effects = { 
+			country_effects = {
 				add_tech_bonus = {
 					name = sp_griffin_generic_reward_option_armor_tech_bonus_name
 					bonus = 0.2
@@ -685,7 +685,7 @@ sp_griffin_generic_reward_armor_tech_2 = {
 #High Tech Bonus
 sp_griffin_generic_reward_armor_tech_3 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 0
 		max = 100
@@ -703,12 +703,12 @@ sp_griffin_generic_reward_armor_tech_3 = {
 			has_project_flag = sp_griffin_generic_reward_armor_tech_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_armor_tech
-		
+
 		iteration_output = {
-			country_effects = { 
+			country_effects = {
 				add_tech_bonus = {
 					name = sp_griffin_generic_reward_option_armor_tech_bonus_name
 					bonus = 0.35
@@ -730,7 +730,7 @@ sp_griffin_generic_reward_armor_tech_3 = {
 #Low Tech Bonus
 sp_griffin_generic_reward_artillery_tech_1 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 0
 		max = 100
@@ -748,10 +748,10 @@ sp_griffin_generic_reward_artillery_tech_1 = {
 			has_project_flag = sp_griffin_generic_reward_artillery_tech_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_artillery_tech
-		
+
 		iteration_output = {
 			country_effects = {
 				add_tech_bonus = {
@@ -770,7 +770,7 @@ sp_griffin_generic_reward_artillery_tech_1 = {
 #Medium Tech Bonus
 sp_griffin_generic_reward_artillery_tech_2 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 0
 		max = 100
@@ -788,10 +788,10 @@ sp_griffin_generic_reward_artillery_tech_2 = {
 			has_project_flag = sp_griffin_generic_reward_artillery_tech_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_artillery_tech
-		
+
 		iteration_output = {
 			country_effects = {
 				add_tech_bonus = {
@@ -810,7 +810,7 @@ sp_griffin_generic_reward_artillery_tech_2 = {
 #High Tech Bonus
 sp_griffin_generic_reward_artillery_tech_3 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 0
 		max = 100
@@ -828,10 +828,10 @@ sp_griffin_generic_reward_artillery_tech_3 = {
 			has_project_flag = sp_griffin_generic_reward_artillery_tech_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_artillery_tech
-		
+
 		iteration_output = {
 			country_effects = {
 				add_tech_bonus = {
@@ -855,7 +855,7 @@ sp_griffin_generic_reward_artillery_tech_3 = {
 #Armor Bonus
 sp_griffin_generic_reward_armor_bonus_1 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 50
 		max = 100
@@ -873,17 +873,17 @@ sp_griffin_generic_reward_armor_bonus_1 = {
 			has_project_flag = sp_griffin_generic_reward_armor_bonus_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_armor_bonus
-		
+
 		iteration_output = {
 			equipment_bonus = {
 				armor = {
 					armor_value = 0.02
 				}
 			}
-			
+
 			country_effects = {
 				FROM = { set_project_flag = sp_griffin_generic_reward_armor_bonus_flag }
 			}
@@ -894,7 +894,7 @@ sp_griffin_generic_reward_armor_bonus_1 = {
 #Hardness Bonus
 sp_griffin_generic_reward_armor_bonus_2 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 50
 		max = 100
@@ -912,17 +912,17 @@ sp_griffin_generic_reward_armor_bonus_2 = {
 			has_project_flag = sp_griffin_generic_reward_armor_bonus_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_armor_bonus
-		
+
 		iteration_output = {
 			equipment_bonus = {
 				armor = {
 					hardness = 0.02
 				}
 			}
-			
+
 			country_effects = {
 				FROM = { set_project_flag = sp_griffin_generic_reward_armor_bonus_flag }
 			}
@@ -933,7 +933,7 @@ sp_griffin_generic_reward_armor_bonus_2 = {
 #Armor + Hardness Bonus
 sp_griffin_generic_reward_armor_bonus_3 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 50
 		max = 100
@@ -951,10 +951,10 @@ sp_griffin_generic_reward_armor_bonus_3 = {
 			has_project_flag = sp_griffin_generic_reward_armor_bonus_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_armor_bonus
-		
+
 		iteration_output = {
 			equipment_bonus = {
 				armor = {
@@ -962,7 +962,7 @@ sp_griffin_generic_reward_armor_bonus_3 = {
 					hardness = 0.02
 				}
 			}
-			
+
 			country_effects = {
 				add_breakthrough_progress = {
 					specialization = specialization_griffin
@@ -978,7 +978,7 @@ sp_griffin_generic_reward_armor_bonus_3 = {
 #Max Speed
 sp_griffin_generic_reward_engine_bonus_1 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 50
 		max = 100
@@ -996,10 +996,10 @@ sp_griffin_generic_reward_engine_bonus_1 = {
 			has_project_flag = sp_griffin_generic_reward_engine_bonus_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_engine_bonus
-		
+
 		iteration_output = {
 			equipment_bonus = {
 				armor = {
@@ -1017,7 +1017,7 @@ sp_griffin_generic_reward_engine_bonus_1 = {
 #Reliability
 sp_griffin_generic_reward_engine_bonus_2 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 50
 		max = 100
@@ -1035,10 +1035,10 @@ sp_griffin_generic_reward_engine_bonus_2 = {
 			has_project_flag = sp_griffin_generic_reward_engine_bonus_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_engine_bonus
-		
+
 		iteration_output = {
 			equipment_bonus = {
 				armor = {
@@ -1056,7 +1056,7 @@ sp_griffin_generic_reward_engine_bonus_2 = {
 #Max Speed + Reliability
 sp_griffin_generic_reward_engine_bonus_3 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 50
 		max = 100
@@ -1074,10 +1074,10 @@ sp_griffin_generic_reward_engine_bonus_3 = {
 			has_project_flag = sp_griffin_generic_reward_engine_bonus_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_engine_bonus
-		
+
 		iteration_output = {
 			equipment_bonus = {
 				armor = {
@@ -1101,7 +1101,7 @@ sp_griffin_generic_reward_engine_bonus_3 = {
 #Arty Soft Attack
 sp_griffin_generic_reward_artillery_bonus_1 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 50
 		max = 100
@@ -1119,10 +1119,10 @@ sp_griffin_generic_reward_artillery_bonus_1 = {
 			has_project_flag = sp_griffin_generic_reward_artillery_bonus_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_artillery_bonus
-		
+
 		iteration_output = {
 			equipment_bonus = {
 				artillery = {
@@ -1140,7 +1140,7 @@ sp_griffin_generic_reward_artillery_bonus_1 = {
 #AT Hard Attack + AA Air Attack
 sp_griffin_generic_reward_artillery_bonus_2 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 50
 		max = 100
@@ -1158,10 +1158,10 @@ sp_griffin_generic_reward_artillery_bonus_2 = {
 			has_project_flag = sp_griffin_generic_reward_artillery_bonus_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_artillery_bonus
-		
+
 		iteration_output = {
 			equipment_bonus = {
 				anti_tank = {
@@ -1182,7 +1182,7 @@ sp_griffin_generic_reward_artillery_bonus_2 = {
 #Arty Soft Attack + AT Hard Attack + AA Air Attack
 sp_griffin_generic_reward_artillery_bonus_3 = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 50
 		max = 100
@@ -1200,10 +1200,10 @@ sp_griffin_generic_reward_artillery_bonus_3 = {
 			has_project_flag = sp_griffin_generic_reward_artillery_bonus_flag
 		}
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_artillery_bonus
-		
+
 		iteration_output = {
 			equipment_bonus = {
 				artillery = {
@@ -1231,7 +1231,7 @@ sp_griffin_generic_reward_artillery_bonus_3 = {
 
 sp_griffin_generic_reward_resource_scarcity = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 25
 		max = 80
@@ -1245,12 +1245,12 @@ sp_griffin_generic_reward_resource_scarcity = {
 	weight = {
 		base = 0.5
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_resource_scarcity
-		
+
 		iteration_output = {
-			country_effects = { 
+			country_effects = {
 				FROM = { add_project_progress_ratio = constant:sp_progress.loss.low }
 			}
 
@@ -1266,7 +1266,7 @@ sp_griffin_generic_reward_resource_scarcity = {
 
 sp_griffin_generic_reward_critical_failure = {
 	fire_only_once = yes
-	
+
 	threshold = {
 		min = 25
 		max = 80
@@ -1280,12 +1280,12 @@ sp_griffin_generic_reward_critical_failure = {
 	weight = {
 		base = 0.25
 	}
-	
+
 	option = {
 		token = sp_griffin_generic_reward_option_critical_failure
-		
+
 		iteration_output = {
-			country_effects = { 
+			country_effects = {
 				FROM = { add_project_progress_ratio = constant:sp_progress.loss.medium }
 			}
 
@@ -1309,7 +1309,7 @@ sp_griffin_generic_reward_critical_failure = {
 }
 
 
-#OBSOLETE translated strings: 
+#OBSOLETE translated strings:
 #sp_griffin_generic_reward_scientist_xp_1_desc
 #sp_griffin_generic_reward_army_xp_1_desc
 #sp_griffin_generic_reward_major_progress_1_desc

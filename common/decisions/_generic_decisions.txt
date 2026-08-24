@@ -107,7 +107,7 @@ economy_decisions = {
 
 		icon = GFX_decision_generic_construction
 
-		visible = { 
+		visible = {
 			OR = {
 				is_major = no
 				AND = {
@@ -141,20 +141,20 @@ economy_decisions = {
 			check_variable = { node_goal < num_of_supply_nodes } #if the number of supply nodes exceeds the old number by +3, immediately cancel
 		}
 	}
-	
+
 	seize_some_trains_woo = { #repeating train seize
 
-		icon = GFX_decision_hol_draw_up_staff_plans	
+		icon = GFX_decision_hol_draw_up_staff_plans
 
-		visible = { 
+		visible = {
 			num_of_factories < 60
 		}
-		
+
 		available = {
 			has_equipment = { train_equipment < 101 }
 			has_tech = basic_train
 		}
-		
+
 		days_remove = 180
 
 		ai_will_do = {
@@ -172,12 +172,12 @@ economy_decisions = {
 			}
 			add_stability = -0.05
 		}
-	}			
+	}
 }
 
 propaganda_efforts = {
 
-	war_propaganda = { 
+	war_propaganda = {
 
 		icon = generic_prepare_civil_war
 
@@ -188,7 +188,7 @@ propaganda_efforts = {
 
 		visible = {
 			OR = {
-				has_war_with_non_exiled_country = yes  
+				has_war_with_non_exiled_country = yes
 				any_neighbor_country = {
 					AND = {
 						NOT = { has_government = ROOT }
@@ -226,8 +226,8 @@ propaganda_efforts = {
 			}
 		}
 	}
-	
-	war_propaganda_casualties = { 
+
+	war_propaganda_casualties = {
 
 		icon = generic_prepare_civil_war
 
@@ -244,11 +244,11 @@ propaganda_efforts = {
 		fire_only_once = no
 
 		days_remove = 180
-		
+
 		remove_trigger = {
 			has_war = no
         }
-		
+
 		cost = 100
 
 		modifier = {
@@ -296,8 +296,8 @@ propaganda_efforts = {
 			}
 		}
 	}
-	
-	war_propaganda_convoys = { 
+
+	war_propaganda_convoys = {
 
 		icon = GFX_decision_generic_naval
 
@@ -314,11 +314,11 @@ propaganda_efforts = {
 		fire_only_once = no
 
 		days_remove = 180
-		
+
 		remove_trigger = {
 			has_war = no
         }
-		
+
 		cost = 100
 
 		modifier = {
@@ -351,8 +351,8 @@ propaganda_efforts = {
 			}
 		}
 	}
-	
-	war_propaganda_bombing = { 
+
+	war_propaganda_bombing = {
 
 		icon = GFX_decision_generic_air
 
@@ -369,11 +369,11 @@ propaganda_efforts = {
 		fire_only_once = no
 
 		days_remove = 180
-		
+
 		remove_trigger = {
 			has_war = no
         }
-		
+
 		cost = 100
 
 		modifier = {
@@ -421,8 +421,8 @@ propaganda_efforts = {
 			}
 		}
 	}
-	
-	war_propaganda_radio_industry = { 
+
+	war_propaganda_radio_industry = {
 
 		icon = generic_prepare_civil_war
 
@@ -450,12 +450,12 @@ propaganda_efforts = {
 			}
 		}
 	}
-	
-	war_propaganda_film_industry = { 
+
+	war_propaganda_film_industry = {
 
 		icon = generic_prepare_civil_war
 
-		available = { 
+		available = {
 			has_war_with_non_exiled_country = yes
 			OR = {
 				is_major = yes
@@ -475,12 +475,12 @@ propaganda_efforts = {
 		}
 
 		visible = {
-			
+
 		}
 
 		fire_only_once = yes
 
-		cost = 100 
+		cost = 100
 
 		complete_effect = {
 			effect_tooltip = {
@@ -499,7 +499,7 @@ propaganda_efforts = {
 			}
 		}
 	}
-	
+
 }
 
 operations = {
@@ -507,11 +507,11 @@ operations = {
 }
 
 special_projects = {
-	
+
 }
 
 war_measures = {
-	
+
 	emergency_factory_conversion_defensive = {
 
 		icon = generic_industry
@@ -523,7 +523,7 @@ war_measures = {
 		visible = {
 			has_defensive_war = yes
 			has_offensive_war = no
-			num_of_controlled_states > 0			
+			num_of_controlled_states > 0
 		}
 
 		fire_only_once = no
@@ -775,7 +775,7 @@ war_measures = {
 			}
 		}
     }
-	
+
 	diversify_special_forces = {
 
 		icon = GFX_decision_generic_military
@@ -807,7 +807,7 @@ war_measures = {
 			}
 		}
 	}
-	
+
 }
 
 foreign_politics = {
@@ -849,7 +849,7 @@ foreign_politics = {
 			#FROM = { has_sent_attache = yes } # Make such trigger to optimize if it becomes a performance problem again.
 			any_enemy_country = {
 				has_attache_from = FROM
-			}			
+			}
 		}
 
         complete_effect = {
@@ -944,14 +944,14 @@ economy_decisions = {
         fire_only_once = no
 
         available = {
-			IF = { 
-				limit = { 
-					OR = { 
-						has_dlc = "Man the Guns" 	
-						has_dlc = "By Blood Alone" 
+			IF = {
+				limit = {
+					OR = {
+						has_dlc = "Man the Guns"
+						has_dlc = "By Blood Alone"
 					}
 				}
-				has_war_with_non_exiled_country = yes   
+				has_war_with_non_exiled_country = yes
 			}
 			ELSE = {
 				has_war = yes

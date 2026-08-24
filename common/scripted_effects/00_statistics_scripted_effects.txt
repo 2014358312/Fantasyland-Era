@@ -20,7 +20,7 @@ GLOBAL_statistics_clear_all_array = {
 GLOBAL_statistics_clear_all_unknown_area = {
 	for_each_scope_loop = {
 		array = global.global_rank_array
-		
+
 		set_variable = { ranking_level = global.rank_index }
 		add_to_variable = { global.rank_index = 1 }
 	}
@@ -85,7 +85,7 @@ GLOBAL_statistics_load_countries = {
 	GLOBAL_statistics_clear_all_unknown_area = yes
 	for_each_scope_loop = {
 		array = global.global_rank_array
-		
+
 		set_variable = { industry_value = var:num_of_factories }
 		set_variable = { deployed_army_manpower_k_value = var:deployed_army_manpower_k }
 		if = {

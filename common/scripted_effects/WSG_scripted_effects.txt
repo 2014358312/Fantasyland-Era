@@ -59,25 +59,25 @@ WSG_state_category_up = {
 			or = {
 				has_state_category = town
 				has_state_category = large_town
-			}                
+			}
 		}
 		set_state_category = city
 	}
 	else_if = { # city -> large_city
 		limit = {
-			has_state_category = city                
+			has_state_category = city
 		}
-		set_state_category = large_city 
+		set_state_category = large_city
 	}
 	else_if = { # large_city -> metropolis
 		limit = {
-			has_state_category = large_city                
+			has_state_category = large_city
 		}
 		set_state_category = metropolis
 	}
 	else_if = { # metropolis -> megalopolis
 		limit = {
-			has_state_category = metropolis                
+			has_state_category = metropolis
 		}
 		set_state_category = megalopolis
 	}

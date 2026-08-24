@@ -21,15 +21,15 @@ focus_tree = {
 		}
 	}
 	default = no
-	
+
 	continuous_focus_position = { x = 1300 y = 1600 }
-	
+
 	inlay_window = {
 		id = wsg_inner_circle_inlay_window
 		position = { x = 300 y = 850 }
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_stagnation_in_a_leading_nation
 		icon = GFX_focus_generic_improve_the_administration
 		x = -18
@@ -37,7 +37,7 @@ focus_tree = {
 		cost = 1
 		search_filters = {FOCUS_FILTER_POLITICAL}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			country_event = { id = WSG_event.001 }
@@ -47,7 +47,7 @@ focus_tree = {
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_reorganizing_the_economy
 		icon = GFX_focus_usa_reestablish_the_gold_standard
 		relative_position_id = WSG_stagnation_in_a_leading_nation
@@ -55,7 +55,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_power_balance_value = {
@@ -66,12 +66,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_stagnation_in_a_leading_nation
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_industrial_development
 		icon = GFX_goal_generic_construct_mil_factory
 		relative_position_id = WSG_reorganizing_the_economy
@@ -165,12 +165,12 @@ focus_tree = {
 			    }
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_reorganizing_the_economy
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_pursue_progress_while_ensuring_stability
 		icon = GFX_goal_generic_construct_civ_factory
 		relative_position_id = WSG_industrial_development
@@ -179,7 +179,7 @@ focus_tree = {
 		cost = 3
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -264,12 +264,12 @@ focus_tree = {
 			    }
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_industrial_development
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_to_bide_ones_time
 		icon = GFX_goal_generic_construct_infrastructure
 		relative_position_id = WSG_pursue_progress_while_ensuring_stability
@@ -278,7 +278,7 @@ focus_tree = {
 		cost = 4
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -286,7 +286,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			random_owned_controlled_state = {
-				limit = { 
+				limit = {
 					is_core_of = WSG
 					is_owned_and_controlled_by = WSG
 					NOT = { has_state_category = metropolis }
@@ -295,7 +295,7 @@ focus_tree = {
 				WSG_state_category_up = yes
 			}
 			random_owned_controlled_state = {
-				limit = { 
+				limit = {
 					is_core_of = WSG
 					is_owned_and_controlled_by = WSG
 					NOT = { has_state_category = metropolis }
@@ -304,7 +304,7 @@ focus_tree = {
 				WSG_state_category_up = yes
 			}
 			random_owned_controlled_state = {
-				limit = { 
+				limit = {
 					is_core_of = WSG
 					is_owned_and_controlled_by = WSG
 					NOT = { has_state_category = metropolis }
@@ -313,7 +313,7 @@ focus_tree = {
 				WSG_state_category_up = yes
 			}
 			random_owned_controlled_state = {
-				limit = { 
+				limit = {
 					is_core_of = WSG
 					is_owned_and_controlled_by = WSG
 					NOT = { has_state_category = metropolis }
@@ -322,7 +322,7 @@ focus_tree = {
 				WSG_state_category_up = yes
 			}
 			random_owned_controlled_state = {
-				limit = { 
+				limit = {
 					is_core_of = WSG
 					is_owned_and_controlled_by = WSG
 					NOT = { has_state_category = metropolis }
@@ -348,12 +348,12 @@ focus_tree = {
 			    }
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_pursue_progress_while_ensuring_stability
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_reassure_the_public
 		icon = GFX_goal_generic_propaganda
 		relative_position_id = WSG_reorganizing_the_economy
@@ -381,12 +381,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_reorganizing_the_economy
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_inspire_social_vitality
 		icon = GFX_focus_HUN_devalue_the_pengo
 		relative_position_id = WSG_reassure_the_public
@@ -395,7 +395,7 @@ focus_tree = {
 		cost = 3
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -403,8 +403,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				add_idea =   WSG_silent_society02 
-				remove_idea =  WSG_silent_society01 
+				add_idea =   WSG_silent_society02
+				remove_idea =  WSG_silent_society01
 			}
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
@@ -414,12 +414,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_reassure_the_public
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_leading_society
 		icon = GFX_focus_generic_support_the_left_right
 		relative_position_id = WSG_inspire_social_vitality
@@ -427,7 +427,7 @@ focus_tree = {
 		y = 1
 		cost = 4
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -435,8 +435,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				add_idea =   WSG_silent_society03 
-				remove_idea =  WSG_silent_society02 
+				add_idea =   WSG_silent_society03
+				remove_idea =  WSG_silent_society02
 			}
 				add_power_balance_value = {
    			     id = WSG_balance_of_power
@@ -446,12 +446,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_inspire_social_vitality
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_focus_on_peoples_livelihood
 		icon = GFX_goal_generic_consumer_goods
 		relative_position_id = WSG_reorganizing_the_economy
@@ -459,7 +459,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -467,8 +467,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				add_idea =   WSG_national_economy01 
-				remove_idea =  WSG_national_economy 
+				add_idea =   WSG_national_economy01
+				remove_idea =  WSG_national_economy
 			}
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
@@ -488,12 +488,12 @@ focus_tree = {
 			    }
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_reorganizing_the_economy
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_livelihood_construction_projects
 		icon = GFX_focus_SWE_rations
 		relative_position_id = WSG_focus_on_peoples_livelihood
@@ -501,7 +501,7 @@ focus_tree = {
 		y = 1
 		cost = 3
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -509,8 +509,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				add_idea =   WSG_national_economy02 
-				remove_idea =  WSG_national_economy01 
+				add_idea =   WSG_national_economy02
+				remove_idea =  WSG_national_economy01
 			}
 			set_technology = {
 				construction1 = 1
@@ -533,12 +533,12 @@ focus_tree = {
 			    }
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_focus_on_peoples_livelihood
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_economic_cycle
 		icon = GFX_focus_spa_the_spanish_miracle
 		relative_position_id = WSG_livelihood_construction_projects
@@ -546,7 +546,7 @@ focus_tree = {
 		y = 1
 		cost = 4
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -554,8 +554,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				add_idea =   WSG_national_economy03 
-				remove_idea =  WSG_national_economy02 
+				add_idea =   WSG_national_economy03
+				remove_idea =  WSG_national_economy02
 			}
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
@@ -575,12 +575,12 @@ focus_tree = {
 			    }
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_livelihood_construction_projects
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_reorganize_the_military
 		icon = GFX_focus_generic_combined_arms
 		relative_position_id = WSG_stagnation_in_a_leading_nation
@@ -588,7 +588,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_power_balance_value = {
@@ -603,12 +603,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_stagnation_in_a_leading_nation
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_rectify_army_discipline
 		icon = GFX_goal_generic_allies_build_infantry
 		relative_position_id = WSG_reorganize_the_military
@@ -616,7 +616,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -624,8 +624,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				add_idea =   WSG_outdated_army_theory01 
-				remove_idea =  WSG_outdated_army_theory 
+				add_idea =   WSG_outdated_army_theory01
+				remove_idea =  WSG_outdated_army_theory
 			}
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
@@ -652,12 +652,12 @@ focus_tree = {
 				}
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_reorganize_the_military
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_strengthen_basic_training
 		icon = GFX_SOV_an_adaptable_army_ccp_2d_sov_compatibility
 		relative_position_id = WSG_rectify_army_discipline
@@ -665,7 +665,7 @@ focus_tree = {
 		y = 1
 		cost = 3
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -673,8 +673,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				add_idea =   WSG_outdated_army_theory02 
-				remove_idea =  WSG_outdated_army_theory01 
+				add_idea =   WSG_outdated_army_theory02
+				remove_idea =  WSG_outdated_army_theory01
 			}
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
@@ -701,12 +701,12 @@ focus_tree = {
 				}
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_rectify_army_discipline
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_strengthen_collaborative_operations
 		icon = GFX_goal_generic_special_forces
 		relative_position_id = WSG_strengthen_basic_training
@@ -714,7 +714,7 @@ focus_tree = {
 		y = 1
 		cost = 4
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -722,8 +722,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				add_idea =   WSG_outdated_army_theory03 
-				remove_idea =  WSG_outdated_army_theory02 
+				add_idea =   WSG_outdated_army_theory03
+				remove_idea =  WSG_outdated_army_theory02
 			}
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
@@ -750,12 +750,12 @@ focus_tree = {
 				}
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_strengthen_basic_training
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_rectify_the_air_force
 		icon = GFX_goal_generic_build_airforce
 		relative_position_id = WSG_reorganize_the_military
@@ -763,7 +763,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -771,8 +771,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				add_idea =   WSG_outdated_air_force01 
-				remove_idea =  WSG_outdated_air_force 
+				add_idea =   WSG_outdated_air_force01
+				remove_idea =  WSG_outdated_air_force
 			}
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
@@ -799,12 +799,12 @@ focus_tree = {
 				}
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_reorganize_the_military
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_strengthen_training
 		icon = GFX_goal_generic_occupy_start_war
 		relative_position_id = WSG_rectify_the_air_force
@@ -812,7 +812,7 @@ focus_tree = {
 		y = 1
 		cost = 3
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -820,8 +820,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				add_idea =   WSG_outdated_air_force02 
-				remove_idea =  WSG_outdated_air_force01 
+				add_idea =   WSG_outdated_air_force02
+				remove_idea =  WSG_outdated_air_force01
 			}
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
@@ -848,12 +848,12 @@ focus_tree = {
 				}
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_rectify_the_air_force
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_equipment_upgrade
 	    icon = GFX_goal_generic_build_tank
 		relative_position_id = WSG_strengthen_training
@@ -861,7 +861,7 @@ focus_tree = {
 		y = 1
 		cost = 4
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -869,8 +869,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				add_idea =   WSG_outdated_air_force03 
-				remove_idea =  WSG_outdated_air_force02 
+				add_idea =   WSG_outdated_air_force03
+				remove_idea =  WSG_outdated_air_force02
 			}
 			set_technology = {
 				aircraft_construction = 1
@@ -902,12 +902,12 @@ focus_tree = {
 				}
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_strengthen_training
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_naval_overhaul
 		icon = GFX_goal_generic_build_navy
 		relative_position_id = WSG_reorganize_the_military
@@ -915,7 +915,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -923,8 +923,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				add_idea =   WSG_fading_glory_navy01 
-				remove_idea =  WSG_fading_glory_navy 
+				add_idea =   WSG_fading_glory_navy01
+				remove_idea =  WSG_fading_glory_navy
 			}
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
@@ -951,12 +951,12 @@ focus_tree = {
 				}
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_reorganize_the_military
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_training_aviation_forces
 		icon = GFX_goal_generic_navy_carrier
 		relative_position_id = WSG_naval_overhaul
@@ -964,7 +964,7 @@ focus_tree = {
 		y = 1
 		cost = 3
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -972,8 +972,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				add_idea =   WSG_fading_glory_navy02 
-				remove_idea =  WSG_fading_glory_navy01 
+				add_idea =   WSG_fading_glory_navy02
+				remove_idea =  WSG_fading_glory_navy01
 			}
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
@@ -1000,12 +1000,12 @@ focus_tree = {
 				}
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_naval_overhaul
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_train_sailors
 		icon = GFX_goal_generic_occupy_states_coastal
 		relative_position_id = WSG_training_aviation_forces
@@ -1013,7 +1013,7 @@ focus_tree = {
 		y = 1
 		cost = 4
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > -1
@@ -1021,8 +1021,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				add_idea =   WSG_fading_glory_navy03 
-				remove_idea =  WSG_fading_glory_navy02 
+				add_idea =   WSG_fading_glory_navy03
+				remove_idea =  WSG_fading_glory_navy02
 			}
 			add_power_balance_value = {
    			     id = WSG_balance_of_power
@@ -1049,12 +1049,12 @@ focus_tree = {
 				}
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_training_aviation_forces
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_complete_preliminary_reforms
 		icon = GFX_focus_hol_the_foundations_of_defense
 		relative_position_id = WSG_stagnation_in_a_leading_nation
@@ -1064,12 +1064,12 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_POLITICAL}
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
-				remove_idea =  WSG_stagnation_in_a_leading_nation 
-				add_idea =  WSG_stagnation_in_a_leading_nation_II 
+				remove_idea =  WSG_stagnation_in_a_leading_nation
+				add_idea =  WSG_stagnation_in_a_leading_nation_II
 			}
 			add_political_power = 150
 	        army_experience = 25
@@ -1079,27 +1079,27 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_to_bide_ones_time
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_leading_society
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_economic_cycle
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_strengthen_collaborative_operations
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_equipment_upgrade
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_train_sailors
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_offspring_of_the_ancients
 		icon = GFX_goal_support_democracy
 		x = 0
@@ -1108,7 +1108,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_POLITICAL}
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			has_completed_focus = WSG_complete_preliminary_reforms
 			power_balance_value = {
     			 id = WSG_balance_of_power
@@ -1121,8 +1121,8 @@ focus_tree = {
 	        navy_experience = 50
 	        air_experience = 50
 			swap_ideas = {
-				remove_idea =  WSG_stagnation_in_a_leading_nation_II 
-				add_idea =  WSG_offspring_of_the_ancients 
+				remove_idea =  WSG_stagnation_in_a_leading_nation_II
+				add_idea =  WSG_offspring_of_the_ancients
 			}
 			effect_tooltip = {
 				every_owned_state ={
@@ -1146,7 +1146,7 @@ focus_tree = {
 					    modifier = WSG_stagnation_in_a_leading_nation
 				    }
 				    add_dynamic_modifier = {
-					    modifier = WSG_offspring_of_the_ancients 
+					    modifier = WSG_offspring_of_the_ancients
 				    }
 		        }
 			}
@@ -1158,7 +1158,7 @@ focus_tree = {
 
 ############################工业线###############################
 
-	focus = { 
+	focus = {
 		id = WSG_port_area_planning
 		icon = GFX_focus_generic_modernize_industry
 		relative_position_id = WSG_offspring_of_the_ancients
@@ -1167,7 +1167,7 @@ focus_tree = {
 		cost = 2
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > 0.2
@@ -1194,12 +1194,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_offspring_of_the_ancients
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_eastern_provinces
 		icon = GFX_goal_generic_production
 		relative_position_id = WSG_port_area_planning
@@ -1207,7 +1207,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			680 = { WSG_state_category_up = yes }
@@ -1219,12 +1219,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_area_planning
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_eastern_special_economic_zone
 		icon = GFX_goal_generic_construct_civ_factory
 		relative_position_id = WSG_eastern_provinces
@@ -1233,7 +1233,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			680 = {
@@ -1280,12 +1280,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_eastern_provinces
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_western_provinces
 		icon = GFX_goal_generic_production
 		relative_position_id = WSG_port_area_planning
@@ -1293,7 +1293,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			678 = { WSG_state_category_up = yes }
@@ -1307,12 +1307,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_area_planning
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_western_mixed_industry
 		icon = GFX_goal_generic_construction
 		relative_position_id = WSG_western_provinces
@@ -1321,7 +1321,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			678 = {
@@ -1389,12 +1389,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_western_provinces
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_southern_provinces
 		icon = GFX_goal_generic_production
 		relative_position_id = WSG_port_area_planning
@@ -1402,7 +1402,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			688 = { WSG_state_category_up = yes }
@@ -1414,12 +1414,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_area_planning
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_southern_shipyard
 		icon = GFX_goal_generic_construct_naval_dockyard
 		relative_position_id = WSG_southern_provinces
@@ -1428,7 +1428,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			706 = {
@@ -1459,12 +1459,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_southern_provinces
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_northern_provinces
 		icon = GFX_goal_generic_production
 		relative_position_id = WSG_port_area_planning
@@ -1472,7 +1472,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			672 = { WSG_state_category_up = yes }
@@ -1483,12 +1483,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_area_planning
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_northern_heavy_industry_base
 		icon = GFX_goal_generic_construct_mil_factory
 		relative_position_id = WSG_northern_provinces
@@ -1497,7 +1497,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			672 = {
@@ -1536,12 +1536,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_northern_provinces
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_super_port_area
 		icon = GFX_focus_generic_low_cost_housing
 		relative_position_id = WSG_port_area_planning
@@ -1549,7 +1549,7 @@ focus_tree = {
 		y = 3
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > 0.2
@@ -1577,16 +1577,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_eastern_special_economic_zone
 			focus = WSG_western_mixed_industry
 			focus = WSG_southern_shipyard
 			focus = WSG_northern_heavy_industry_base
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_area_planning
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_engineering_institute
 		}
 	}
@@ -1615,7 +1615,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 15
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_offspring_of_the_ancients
 		}
 	}
@@ -1642,7 +1642,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 15
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_restart_the_archive
 		}
 	}
@@ -1669,7 +1669,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 15
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_restart_the_archive
 		}
 	}
@@ -1690,7 +1690,7 @@ focus_tree = {
 		        bonus = 5
 		        uses = 1
 		        ahead_reduction = 1
-		        category = nuclear 
+		        category = nuclear
 	        }
 			add_tech_bonus = {
 		        name = WSG_special_project
@@ -1710,7 +1710,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_area_academy_of_sciences
 		}
 	}
@@ -1731,7 +1731,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 15
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_area_academy_of_sciences
 		}
 	}
@@ -1755,7 +1755,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_engineering_institute
 		}
 	}
@@ -1783,10 +1783,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 15
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_engineering_institute
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_technical_potential
 		}
 	}
@@ -1816,13 +1816,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_industry
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_super_port_area
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_war_engine
 		}
 	}
@@ -1849,12 +1849,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admiral_and_port_area
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_admiral_and_port_area
 		icon = GFX_focus_usa_guarantee_the_american_dream
 		relative_position_id = WSG_offspring_of_the_ancients
@@ -1876,12 +1876,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_offspring_of_the_ancients
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_consolidate_the_power_of_the_admiral
 		icon = GFX_goal_generic_neutrality_focus
 		relative_position_id = WSG_admiral_and_port_area
@@ -1890,7 +1890,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_consolidate_rights_l1
@@ -1901,12 +1901,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_consolidate_the_power_of_the_secretary_ship
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admiral_and_port_area
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_encouragement_from_the_admiral
 		icon = GFX_goal_generic_national_unity
 		relative_position_id = WSG_consolidate_the_power_of_the_admiral
@@ -1915,7 +1915,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_political_power = 100
@@ -1923,13 +1923,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_consolidate_the_power_of_the_admiral
 			focus = WSG_consolidate_the_power_of_the_secretary_ship
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_commanders_order
 		icon = GFX_focus_generic_military_mission
 		relative_position_id = WSG_consolidate_the_power_of_the_admiral
@@ -1938,7 +1938,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_POLITICAL}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_stability = 0.10
@@ -1946,12 +1946,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_consolidate_the_power_of_the_admiral
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_admiral_first
 		icon = GFX_goal_generic_demand_territory
 		relative_position_id = WSG_commanders_order
@@ -1973,12 +1973,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_consolidate_the_power_of_the_admiral
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_consolidate_the_power_of_the_secretary_ship
 		icon = GFX_goal_generic_neutrality_focus
 		relative_position_id = WSG_admiral_and_port_area
@@ -1987,7 +1987,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_consolidate_rights_r1
@@ -1998,12 +1998,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_consolidate_the_power_of_the_admiral
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admiral_and_port_area
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_the_job_of_a_secretary_ship
 		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
 		relative_position_id = WSG_consolidate_the_power_of_the_secretary_ship
@@ -2012,7 +2012,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_war_support = 0.10
@@ -2020,12 +2020,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_consolidate_the_power_of_the_secretary_ship
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_secretary_ship_privilege
 		icon = GFX_goal_generic_intelligence_exchange
 		relative_position_id = WSG_consolidate_the_power_of_the_secretary_ship
@@ -2033,7 +2033,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 	        army_experience = 50
@@ -2044,13 +2044,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_consolidate_the_power_of_the_admiral
 			focus = WSG_consolidate_the_power_of_the_secretary_ship
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_secretary_ship_auxiliary_politics
 		icon = GFX_focus_generic_self_management
 		relative_position_id = WSG_secretary_ship_privilege
@@ -2072,12 +2072,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_consolidate_the_power_of_the_secretary_ship
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_admiral_and_secretary_ship
 		icon = GFX_focus_SWE_form_rfsu
 		relative_position_id = WSG_admiral_and_port_area
@@ -2127,16 +2127,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admiral_first
 			focus = WSG_secretary_ship_auxiliary_politics
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_revival_speech
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_secretary_lexington
 		icon = GFX_focus_WSG_Lexington
 		relative_position_id = WSG_admiral_and_secretary_ship
@@ -2144,7 +2144,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			WSG_Lexington = {
 				is_country_leader = yes
 			}
@@ -2193,12 +2193,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_secretary_vittorio_veneto
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admiral_and_secretary_ship
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_lexington_plan
 		icon = GFX_focus_generic_industry_3
 		relative_position_id = WSG_secretary_lexington
@@ -2218,7 +2218,7 @@ focus_tree = {
 						CHARACTER = WSG_Lexington
 						FLAG_DAYS = [?WSG_lexington_plan_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -2238,12 +2238,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_secretary_lexington
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_expand_resource_output
 		icon = GFX_SOV_planned_economy_ccp_2d_sov_compatibility
 		relative_position_id = WSG_lexington_plan
@@ -2263,7 +2263,7 @@ focus_tree = {
 						CHARACTER = WSG_Lexington
 						FLAG_DAYS = [?WSG_expand_resource_output_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -2286,12 +2286,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_lexington_plan
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_ship_girl_reserve_army
 		icon = GFX_focus_generic_manpower
 		relative_position_id = WSG_expand_resource_output
@@ -2312,7 +2312,7 @@ focus_tree = {
 						CHARACTER = WSG_Lexington
 						FLAG_DAYS = [?WSG_ship_girl_reserve_army_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -2335,12 +2335,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_expand_resource_output
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_secretary_vittorio_veneto
 		icon = GFX_focus_WSG_Vittorio_Veneto
 		relative_position_id = WSG_admiral_and_secretary_ship
@@ -2348,7 +2348,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			WSG_Vittorio_Veneto = {
 				is_country_leader = yes
 			}
@@ -2397,12 +2397,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_secretary_lexington
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admiral_and_secretary_ship
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_vittorio_veneto_plan
 		icon = GFX_focus_generic_industry_2
 		relative_position_id = WSG_secretary_vittorio_veneto
@@ -2422,7 +2422,7 @@ focus_tree = {
 						CHARACTER = WSG_Vittorio_Veneto
 						FLAG_DAYS = [?WSG_vittorio_veneto_plan_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -2442,12 +2442,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_secretary_vittorio_veneto
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_restricting_resource_exports
 		icon = GFX_goal_generic_trade
 		relative_position_id = WSG_vittorio_veneto_plan
@@ -2467,7 +2467,7 @@ focus_tree = {
 						CHARACTER = WSG_Vittorio_Veneto
 						FLAG_DAYS = [?WSG_restricting_resource_exports_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -2490,12 +2490,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_vittorio_veneto_plan
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_port_defense_army
 		icon = GFX_focus_generic_full_employment
 		relative_position_id = WSG_restricting_resource_exports
@@ -2516,7 +2516,7 @@ focus_tree = {
 						CHARACTER = WSG_Vittorio_Veneto
 						FLAG_DAYS = [?WSG_port_defense_army_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -2539,12 +2539,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_restricting_resource_exports
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_secretary_yubari
 		icon = GFX_focus_WSG_Yubari
 		relative_position_id = WSG_admiral_and_secretary_ship
@@ -2552,7 +2552,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			WSG_Yubari = {
 				is_country_leader = yes
 			}
@@ -2604,12 +2604,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_secretary_yixian
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admiral_and_secretary_ship
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_government_efficiency
 		icon = GFX_focus_ARG_strengthening_the_concordancia
 		relative_position_id = WSG_secretary_yubari
@@ -2629,7 +2629,7 @@ focus_tree = {
 						CHARACTER = WSG_Yubari
 						FLAG_DAYS = [?WSG_government_efficiency_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -2652,12 +2652,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_secretary_yubari
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_efficient_cabinet
 		icon = GFX_goal_generic_plotting
 		relative_position_id = WSG_government_efficiency
@@ -2677,7 +2677,7 @@ focus_tree = {
 						CHARACTER = WSG_Yubari
 						FLAG_DAYS = [?WSG_efficient_cabinet_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -2700,12 +2700,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_government_efficiency
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_wartime_laws_and_regulations
 		icon = GFX_focus_AUS_lawmaking_leniency
 		relative_position_id = WSG_efficient_cabinet
@@ -2725,7 +2725,7 @@ focus_tree = {
 						CHARACTER = WSG_Yubari
 						FLAG_DAYS = [?WSG_wartime_laws_and_regulations_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -2748,12 +2748,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_efficient_cabinet
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_secretary_hood
 		icon = GFX_focus_WSG_Hood
 		relative_position_id = WSG_admiral_and_secretary_ship
@@ -2761,7 +2761,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			WSG_Hood = {
 				is_country_leader = yes
 			}
@@ -2813,12 +2813,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_secretary_yixian
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admiral_and_secretary_ship
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_efficient_construction
 		icon = GFX_goal_generic_construct_infrastructure
 		relative_position_id = WSG_secretary_hood
@@ -2838,7 +2838,7 @@ focus_tree = {
 						CHARACTER = WSG_Hood
 						FLAG_DAYS = [?WSG_efficient_construction_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -2861,12 +2861,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_secretary_hood
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_technological_advantages
 		icon = GFX_focus_ARG_universidad_de_buenos_aires
 		relative_position_id = WSG_efficient_construction
@@ -2886,7 +2886,7 @@ focus_tree = {
 						CHARACTER = WSG_Hood
 						FLAG_DAYS = [?WSG_technological_advantages_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -2909,12 +2909,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_efficient_construction
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_efficient_internal_affairs
 		icon = GFX_focus_generic_court
 		relative_position_id = WSG_technological_advantages
@@ -2934,7 +2934,7 @@ focus_tree = {
 						CHARACTER = WSG_Hood
 						FLAG_DAYS = [?WSG_efficient_internal_affairs_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -2957,12 +2957,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_technological_advantages
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_secretary_yixian
 		icon = GFX_focus_WSG_YiXian
 		relative_position_id = WSG_admiral_and_secretary_ship
@@ -2971,7 +2971,7 @@ focus_tree = {
 		cost = 2
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			WSG_YiXian = {
 				is_country_leader = yes
 			}
@@ -3023,12 +3023,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_secretary_yubari
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admiral_and_secretary_ship
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_internal_stability
 		icon = GFX_focus_SWI_neutrality_on_the_move
 		relative_position_id = WSG_secretary_yixian
@@ -3049,7 +3049,7 @@ focus_tree = {
 						CHARACTER = WSG_YiXian
 						FLAG_DAYS = [?WSG_internal_stability_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -3072,12 +3072,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_secretary_yixian
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_homeland_defense
 		icon = GFX_goal_generic_defence
 		relative_position_id = WSG_internal_stability
@@ -3097,7 +3097,7 @@ focus_tree = {
 						CHARACTER = WSG_YiXian
 						FLAG_DAYS = [?WSG_homeland_defense_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -3120,12 +3120,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_internal_stability
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_cost_reduction_and_efficiency_improvement
 		icon = GFX_focus_generic_devaluation
 		relative_position_id = WSG_homeland_defense
@@ -3145,7 +3145,7 @@ focus_tree = {
 						CHARACTER = WSG_YiXian
 						FLAG_DAYS = [?WSG_cost_reduction_and_efficiency_improvement_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -3168,12 +3168,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_homeland_defense
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_secretary_jean_bart
 		icon = GFX_focus_WSG_Jean_Bart
 		relative_position_id = WSG_admiral_and_secretary_ship
@@ -3181,7 +3181,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			WSG_Jean_Bart = {
 				is_country_leader = yes
 			}
@@ -3233,12 +3233,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_secretary_clausewitz
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admiral_and_secretary_ship
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_rapid_restructuring
 		icon = GFX_focus_ETH_freedom_at_gunpoint
 		relative_position_id = WSG_secretary_jean_bart
@@ -3258,7 +3258,7 @@ focus_tree = {
 						CHARACTER = WSG_Jean_Bart
 						FLAG_DAYS = [?WSG_rapid_restructuring_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -3278,12 +3278,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_secretary_jean_bart
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_strengthen_the_position
 		icon = GFX_focus_FIN_weapon_caches
 		relative_position_id = WSG_rapid_restructuring
@@ -3303,7 +3303,7 @@ focus_tree = {
 						CHARACTER = WSG_Jean_Bart
 						FLAG_DAYS = [?WSG_strengthen_the_position_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -3326,12 +3326,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_rapid_restructuring
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_save_strength
 		icon = GFX_focus_BRA_deal_with_the_cangaco
 		relative_position_id = WSG_strengthen_the_position
@@ -3351,7 +3351,7 @@ focus_tree = {
 						CHARACTER = WSG_Jean_Bart
 						FLAG_DAYS = [?WSG_save_strength_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -3374,12 +3374,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_strengthen_the_position
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_secretary_bubnov
 		icon = GFX_focus_WSG_Bubnov
 		relative_position_id = WSG_admiral_and_secretary_ship
@@ -3388,7 +3388,7 @@ focus_tree = {
 		cost = 2
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			WSG_Bubnov = {
 				is_country_leader = yes
 			}
@@ -3440,12 +3440,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_secretary_clausewitz
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admiral_and_secretary_ship
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_indomitable_will
 		icon = GFX_focus_SWE_varnplikt
 		relative_position_id = WSG_secretary_bubnov
@@ -3465,7 +3465,7 @@ focus_tree = {
 						CHARACTER = WSG_Bubnov
 						FLAG_DAYS = [?WSG_indomitable_will_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -3485,12 +3485,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_secretary_bubnov
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_fierce_offensive
 		icon = GFX_focus_AUS_frontmiliz_focus
 		relative_position_id = WSG_indomitable_will
@@ -3510,7 +3510,7 @@ focus_tree = {
 						CHARACTER = WSG_Bubnov
 						FLAG_DAYS = [?WSG_fierce_offensive_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -3533,12 +3533,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_indomitable_will
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_accumulation_of_experience
 		icon = GFX_focus_CHL_departemento_de_las_tropas_nacistas_de_asalto
 		relative_position_id = WSG_fierce_offensive
@@ -3558,7 +3558,7 @@ focus_tree = {
 						CHARACTER = WSG_Bubnov
 						FLAG_DAYS = [?WSG_accumulation_of_experience_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -3581,12 +3581,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_fierce_offensive
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_secretary_clausewitz
 		icon = GFX_focus_WSG_Clausewitz
 		relative_position_id = WSG_admiral_and_secretary_ship
@@ -3594,7 +3594,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			WSG_Clausewitz = {
 				is_country_leader = yes
 			}
@@ -3646,12 +3646,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_secretary_jean_bart
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admiral_and_secretary_ship
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_army_mobility
 		icon = GFX_focus_ETH_boots_on_the_shore
 		relative_position_id = WSG_secretary_clausewitz
@@ -3671,7 +3671,7 @@ focus_tree = {
 						CHARACTER = WSG_Clausewitz
 						FLAG_DAYS = [?WSG_army_mobility_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -3691,12 +3691,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_secretary_clausewitz
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_preemptive_strike
 		icon = GFX_goal_generic_position_armies
 		relative_position_id = WSG_army_mobility
@@ -3716,7 +3716,7 @@ focus_tree = {
 						CHARACTER = WSG_Clausewitz
 						FLAG_DAYS = [?WSG_preemptive_strike_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -3739,12 +3739,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_army_mobility
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_rapid_construction
 		icon = GFX_SOV_increase_state_reserves_ccp_2d_sov_compatibility
 		relative_position_id = WSG_preemptive_strike
@@ -3764,7 +3764,7 @@ focus_tree = {
 						CHARACTER = WSG_Clausewitz
 						FLAG_DAYS = [?WSG_rapid_construction_in_progress_flag:days]
 					}
-					always = no 
+					always = no
 				}
 			}
 			else = { #NOT BEEN WORKED ON (Just Explain)
@@ -3787,12 +3787,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_preemptive_strike
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_revival_of_holy_right
 		icon = GFX_goal_generic_dangerous_deal
 		relative_position_id = WSG_admiral_and_secretary_ship
@@ -3800,7 +3800,7 @@ focus_tree = {
 		y = 5
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > 0.6
@@ -3817,16 +3817,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_ship_girl_reserve_army
 			focus = WSG_port_defense_army
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_wartime_laws_and_regulations
 			focus = WSG_efficient_internal_affairs
 			focus = WSG_cost_reduction_and_efficiency_improvement
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_save_strength
 			focus = WSG_accumulation_of_experience
 			focus = WSG_rapid_construction
@@ -3856,12 +3856,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_offspring_of_the_ancients
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_wartime_port_area
 		icon = GFX_focus_generic_reorient_production
 		relative_position_id = WSG_pre_mobilization
@@ -3869,7 +3869,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > 0.2
@@ -3893,12 +3893,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_pre_mobilization
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_naval_construction
 		icon = GFX_focus_generic_refit_civilian_ships
 		relative_position_id = WSG_wartime_port_area
@@ -3906,7 +3906,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_naval_construction
@@ -3918,12 +3918,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_wartime_port_area
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_strengthening_heavy_industry
 		icon = GFX_focus_SOV_merge_plants
 		relative_position_id = WSG_wartime_port_area
@@ -3931,7 +3931,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_strengthening_heavy_industry
@@ -3943,12 +3943,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_wartime_port_area
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_port_production_technology
 		icon = GFX_goal_generic_production2
 		relative_position_id = WSG_wartime_port_area
@@ -3956,7 +3956,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_port_production_technology
@@ -3964,12 +3964,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_wartime_port_area
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_war_engine
 		icon = GFX_focus_SOV_organize_wreckers
 		relative_position_id = WSG_wartime_port_area
@@ -3977,7 +3977,7 @@ focus_tree = {
 		y = 2
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > 0.6
@@ -4003,18 +4003,18 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_naval_construction
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_strengthening_heavy_industry
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_production_technology
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_general_administration_of_war
 		icon = GFX_focus_generic_league_of_nations
 		relative_position_id = WSG_offspring_of_the_ancients
@@ -4022,7 +4022,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			unlock_decision_tooltip = WSG_war_gear
@@ -4038,12 +4038,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_offspring_of_the_ancients
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_between_floating_worlds
 		icon = GFX_focus_focus_fra_fascist_threat
 		relative_position_id = WSG_general_administration_of_war
@@ -4051,7 +4051,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > 0.2
@@ -4098,12 +4098,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_general_administration_of_war
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_army_theoretical_innovation_I
 		icon = GFX_goal_generic_army_doctrines
 		relative_position_id = WSG_between_floating_worlds
@@ -4111,12 +4111,12 @@ focus_tree = {
 		y = 2
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
 				add_idea =  WSG_outdated_army_theory04
-				remove_idea =  WSG_outdated_army_theory03 
+				remove_idea =  WSG_outdated_army_theory03
 			}
 			army_experience = 50
 		}
@@ -4127,13 +4127,13 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_rebuilding_the_army_system
 			focus = WSG_rebuilding_the_command_system
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_army_theoretical_innovation_II
 		icon = GFX_goal_generic_army_doctrines
 		relative_position_id = WSG_army_theoretical_innovation_I
@@ -4141,7 +4141,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4162,12 +4162,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_army_theoretical_innovation_I
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_army_theoretical_innovation_III
 		icon = GFX_goal_generic_army_doctrines
 		relative_position_id = WSG_army_theoretical_innovation_II
@@ -4175,7 +4175,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4191,12 +4191,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_army_theoretical_innovation_II
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_shipborne_combat_tactics
 		icon = GFX_goal_generic_army_doctrines
 		relative_position_id = WSG_army_theoretical_innovation_III
@@ -4204,7 +4204,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4219,12 +4219,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_army_theoretical_innovation_III
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_rebuilding_the_command_system
 		icon = GFX_focus_generic_commonwealth_build_infantry
 		relative_position_id = WSG_between_floating_worlds
@@ -4232,7 +4232,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			if = {
@@ -4253,12 +4253,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_between_floating_worlds
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_rebuilding_the_army_system
 		icon = GFX_focus_chi_army_reform
 		relative_position_id = WSG_between_floating_worlds
@@ -4266,7 +4266,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			if = {
@@ -4287,12 +4287,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_between_floating_worlds
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_marine_ship_installation
 		icon = GFX_focus_RAJ_lions_of_the_great_war
 		relative_position_id = WSG_between_floating_worlds
@@ -4300,7 +4300,7 @@ focus_tree = {
 		y = 2
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4315,15 +4315,15 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_rebuilding_the_command_system
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_rebuilding_the_army_system
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_special_warship_equipment
 		icon = GFX_focus_eng_special_air_service
 		relative_position_id = WSG_marine_ship_installation
@@ -4331,7 +4331,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4349,12 +4349,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_general_naval_equipment
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_marine_ship_installation
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_general_naval_equipment
 		icon = GFX_goal_generic_small_arms
 		relative_position_id = WSG_marine_ship_installation
@@ -4362,7 +4362,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4380,12 +4380,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_special_warship_equipment
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_marine_ship_installation
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_cross_river_combat
 		icon = GFX_SOV_naval_infantry_ccp_2d_sov_compatibility
 		relative_position_id = WSG_marine_ship_installation
@@ -4393,7 +4393,7 @@ focus_tree = {
 		y = 2
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_cross_river_combat
@@ -4408,13 +4408,13 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_cross_sea_operations
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_special_warship_equipment
 			focus = WSG_general_naval_equipment
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_cross_sea_operations
 		icon = GFX_focus_PER_wether_the_storm
 		relative_position_id = WSG_marine_ship_installation
@@ -4422,7 +4422,7 @@ focus_tree = {
 		y = 2
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_cross_sea_operations
@@ -4437,13 +4437,13 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_cross_river_combat
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_special_warship_equipment
 			focus = WSG_general_naval_equipment
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_long_range_supply
 		icon = GFX_focus_generic_truck
 		relative_position_id = WSG_marine_ship_installation
@@ -4451,7 +4451,7 @@ focus_tree = {
 		y = 3
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_long_range_supply
@@ -4466,13 +4466,13 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_efficient_supply
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_cross_sea_operations
 			focus = WSG_cross_river_combat
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_efficient_supply
 		icon = GFX_focus_generic_railroad
 		relative_position_id = WSG_marine_ship_installation
@@ -4480,7 +4480,7 @@ focus_tree = {
 		y = 3
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_efficient_supply
@@ -4495,13 +4495,13 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_long_range_supply
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_cross_sea_operations
 			focus = WSG_cross_river_combat
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_army_of_ship_girl_r
 		icon = GFX_focus_ARG_the_war_machine
 		relative_position_id = WSG_marine_ship_installation
@@ -4509,7 +4509,7 @@ focus_tree = {
 		y = 4
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > 0.6
@@ -4555,13 +4555,13 @@ focus_tree = {
         prerequisite = {
 			focus = WSG_shipborne_combat_tactics
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_long_range_supply
 			focus = WSG_efficient_supply
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_below_the_overarching_sky
 		icon = GFX_goal_generic_air_fighter2
 		relative_position_id = WSG_general_administration_of_war
@@ -4569,7 +4569,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > 0.2
@@ -4616,12 +4616,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_general_administration_of_war
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_air_combat_auxiliary_ship_installation
 		icon = GFX_focus_generic_cas_aircraft
 		relative_position_id = WSG_below_the_overarching_sky
@@ -4629,7 +4629,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_air_force_of_ship_girl_r01
@@ -4641,12 +4641,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_below_the_overarching_sky
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_ship_mounted_technical_equipment
 		icon = GFX_focus_generic_multi_role_aircraft
 		relative_position_id = WSG_air_combat_auxiliary_ship_installation
@@ -4654,7 +4654,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4669,12 +4669,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_air_combat_auxiliary_ship_installation
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_air_combat_ship_girl
 		icon = GFX_focus_ICE_hrafninn_flygur
 		relative_position_id = WSG_ship_mounted_technical_equipment
@@ -4682,7 +4682,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4697,12 +4697,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_ship_mounted_technical_equipment
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_near_earth_support
 		icon = GFX_focus_generic_tank_air_support
 		relative_position_id = WSG_air_combat_ship_girl
@@ -4710,7 +4710,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4729,12 +4729,12 @@ focus_tree = {
 			focus = WSG_specialized_aerial_combat
 			focus = WSG_long_range_bombing
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_air_combat_ship_girl
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_specialized_aerial_combat
 		icon = GFX_goal_generic_air_fighter
 		relative_position_id = WSG_air_combat_ship_girl
@@ -4742,7 +4742,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4761,12 +4761,12 @@ focus_tree = {
 			focus = WSG_near_earth_support
 			focus = WSG_long_range_bombing
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_air_combat_ship_girl
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_long_range_bombing
 		icon = GFX_focus_generic_long_range_aircraft
 		relative_position_id = WSG_air_combat_ship_girl
@@ -4774,7 +4774,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4793,12 +4793,12 @@ focus_tree = {
 			focus = WSG_specialized_aerial_combat
 			focus = WSG_near_earth_support
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_air_combat_ship_girl
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_air_force_theoretical_innovation_I
 		icon = GFX_goal_generic_air_doctrine
 		relative_position_id = WSG_below_the_overarching_sky
@@ -4806,7 +4806,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4822,12 +4822,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_below_the_overarching_sky
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_air_force_theoretical_innovation_II
 		icon = GFX_goal_generic_air_doctrine
 		relative_position_id = WSG_air_force_theoretical_innovation_I
@@ -4835,7 +4835,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4856,12 +4856,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_air_force_theoretical_innovation_I
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_air_force_theoretical_innovation_III
 		icon = GFX_goal_generic_air_doctrine
 		relative_position_id = WSG_air_force_theoretical_innovation_II
@@ -4869,7 +4869,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4885,12 +4885,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_air_force_theoretical_innovation_II
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_ship_aircraft_integration
 		icon = GFX_goal_generic_air_doctrine
 		relative_position_id = WSG_air_force_theoretical_innovation_III
@@ -4898,7 +4898,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -4913,12 +4913,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_air_force_theoretical_innovation_III
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_air_force_of_ship_girl_r
 		icon = GFX_focus_BRA_air_force
 		relative_position_id = WSG_specialized_aerial_combat
@@ -4926,7 +4926,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > 0.6
@@ -4981,17 +4981,17 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_specialized_aerial_combat
 			focus = WSG_near_earth_support
 			focus = WSG_long_range_bombing
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_ship_aircraft_integration
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_above_the_byss
 		icon = GFX_goal_generic_navy_battleship
 		relative_position_id = WSG_general_administration_of_war
@@ -4999,7 +4999,7 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > 0.2
@@ -5060,12 +5060,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_general_administration_of_war
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_naval_warfare_ship_equipment
 		icon = GFX_focus_SWE_Vasa_II
 		relative_position_id = WSG_above_the_byss
@@ -5073,7 +5073,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_navy_of_ship_girl_r01
@@ -5085,12 +5085,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_above_the_byss
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_warships_and_ship_equipment
 		icon = GFX_focus_generic_navy_battleship2
 		relative_position_id = WSG_naval_warfare_ship_equipment
@@ -5098,7 +5098,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -5113,12 +5113,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_naval_warfare_ship_equipment
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_sea_air_collaboration
 		icon = GFX_focus_GER_graf_zeppelin
 		relative_position_id = WSG_warships_and_ship_equipment
@@ -5126,7 +5126,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -5141,12 +5141,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_warships_and_ship_equipment
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_overwhelming_fire_power
 		icon = GFX_focus_SWE_let_fly_all_guns
 		relative_position_id = WSG_sea_air_collaboration
@@ -5154,7 +5154,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -5172,12 +5172,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_air_superiority
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_sea_air_collaboration
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_air_superiority
 		icon = GFX_focus_SMB_blue_water_fleet
 		relative_position_id = WSG_sea_air_collaboration
@@ -5185,7 +5185,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -5203,12 +5203,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_overwhelming_fire_power
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_sea_air_collaboration
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_naval_theoretical_innovation_I
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		relative_position_id = WSG_above_the_byss
@@ -5216,7 +5216,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -5232,12 +5232,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_above_the_byss
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_naval_theoretical_innovation_II
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		relative_position_id = WSG_naval_theoretical_innovation_I
@@ -5245,7 +5245,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -5266,12 +5266,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_naval_theoretical_innovation_I
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_naval_theoretical_innovation_III
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		relative_position_id = WSG_naval_theoretical_innovation_II
@@ -5279,7 +5279,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -5295,12 +5295,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_naval_theoretical_innovation_II
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_honor_navy
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		relative_position_id = WSG_naval_theoretical_innovation_III
@@ -5308,7 +5308,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -5323,12 +5323,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_naval_theoretical_innovation_III
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_navy_of_ship_girl_r
 		icon = GFX_focus_ICE_modernizing_the_coast_guard
 		relative_position_id = WSG_sea_air_collaboration
@@ -5336,7 +5336,7 @@ focus_tree = {
 		y = 2
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			power_balance_value = {
     			 id = WSG_balance_of_power
    			     value > 0.6
@@ -5379,16 +5379,16 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_overwhelming_fire_power
 			focus = WSG_air_superiority
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_honor_navy
 		}
 	}
 ########################觉醒——复兴分割线##################
-	focus = { 
+	focus = {
 		id = WSG_port_area_and_tomorrow
 		icon = GFX_focus_TUR_ratify_the_six_arrows
 		x = 11
@@ -5413,7 +5413,7 @@ focus_tree = {
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_from_the_deep_sea
 		icon = GFX_focus_DEN_heavy_regulations
 		relative_position_id = WSG_port_area_and_tomorrow
@@ -5421,14 +5421,14 @@ focus_tree = {
 		y = 1
 		cost = 1
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			custom_effect_tooltip = WSG_from_the_deep_sea_text
 			set_country_flag = WSG_from_the_deep_sea
 			hidden_effect = {
-				activate_mission = WSG_deep_sea_invasion 
-				activate_mission = WSG_ebb_tide 
+				activate_mission = WSG_deep_sea_invasion
+				activate_mission = WSG_ebb_tide
 			}
 			unlock_decision_tooltip = WSG_temporary_tax_increase
 		}
@@ -5447,12 +5447,12 @@ focus_tree = {
 				date > 1001.11.1
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_area_and_tomorrow
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_dark_day
 		icon = GFX_focus_generic_swooping_falcon
 		relative_position_id = WSG_from_the_deep_sea
@@ -5471,12 +5471,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_from_the_deep_sea
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_rancor_and_blood
 		icon = GFX_focus_RAJ_give_me_blood_and_i_will_grant_you_freedom
 		relative_position_id = WSG_dark_day
@@ -5484,7 +5484,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_power_balance_value = {
@@ -5500,12 +5500,12 @@ focus_tree = {
 				has_country_flag = WSG_from_the_deep_sea
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_dark_day
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_hate_propaganda
 		icon = GFX_focus_eng_organise_the_blackshirts
 		relative_position_id = WSG_rancor_and_blood
@@ -5513,7 +5513,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_power_balance_value = {
@@ -5528,13 +5528,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_rancor_and_blood
 		}
 	}
 
 
-	focus = { 
+	focus = {
 		id = WSG_the_rise_of_militarism
 		icon = GFX_focus_generic_advanced_military_studies
 		relative_position_id = WSG_rancor_and_blood
@@ -5544,7 +5544,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_STABILITY}
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_power_balance_value = {
@@ -5557,12 +5557,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus =  WSG_rancor_and_blood
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_revenge_fever
 		icon = GFX_focus_spr_masters_of_our_own_fate
 		relative_position_id =  WSG_rancor_and_blood
@@ -5571,7 +5571,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_power_balance_value = {
@@ -5584,13 +5584,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus =  WSG_rancor_and_blood
 		}
 	}
 
 
-	focus = { 
+	focus = {
 		id = WSG_letter_to_the_admiral
 		icon = GFX_focus_hol_the_foundations_of_defense
 		relative_position_id = WSG_the_rise_of_militarism
@@ -5598,7 +5598,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			country_event = { id = WSG_event.003 }
@@ -5606,15 +5606,15 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_the_rise_of_militarism
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_hate_propaganda
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_convincing_the_secretary_ship
 		icon = GFX_goal_molotov_ribbentrop_pact
 		relative_position_id = WSG_the_rise_of_militarism
@@ -5622,7 +5622,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			country_event = { id = WSG_event.002 }
@@ -5630,15 +5630,15 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_the_rise_of_militarism
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_revenge_fever
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_right_full_rudder
 		icon = GFX_goal_support_fascism
 		relative_position_id = WSG_the_rise_of_militarism
@@ -5647,7 +5647,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_popularity = { ideology = fascism popularity = 0.1 }
@@ -5700,15 +5700,15 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_letter_to_the_admiral
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_convincing_the_secretary_ship
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_expedited_production
 		icon = GFX_goal_generic_crush_unions
 		relative_position_id = WSG_right_full_rudder
@@ -5716,7 +5716,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_timed_idea = { idea = WSG_expedited_production days = 360 }
@@ -5724,12 +5724,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_right_full_rudder
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_war_zone
 		icon = GFX_focus_ITA_new_horizons
 		relative_position_id = WSG_expedited_production
@@ -5737,7 +5737,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_war_zone
@@ -5745,12 +5745,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_expedited_production
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_military_fanaticism
 		icon = GFX_focus_CHI_decisive_battles
 		relative_position_id = WSG_right_full_rudder
@@ -5758,7 +5758,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 	        army_experience = 50
@@ -5772,12 +5772,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_right_full_rudder
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_bloodshed_march
 		icon = GFX_focus_JAP_new_order_movement
 		relative_position_id = WSG_military_fanaticism
@@ -5785,7 +5785,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_bloodshed_march
@@ -5813,12 +5813,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_military_fanaticism
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_go_to_war
 		icon = GFX_focus_eng_global_defense
 		relative_position_id = WSG_right_full_rudder
@@ -5826,7 +5826,7 @@ focus_tree = {
 		y = 3
 		cost = 10
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			custom_effect_tooltip = WSG_unfinished
@@ -5834,19 +5834,19 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_war_zone
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_bloodshed_march
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_multi_ethnic_joint_operations
 			focus = WSG_warship_girl_main_combat_power
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_head_south
 		icon = GFX_focus_ETH_the_one_true_heir_of_solomon
 		relative_position_id = WSG_go_to_war
@@ -5854,19 +5854,19 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 		}
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_go_to_war
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_westward_expansion
 		icon = GFX_focus_usa_focus_on_europe
 		relative_position_id = WSG_go_to_war
@@ -5874,19 +5874,19 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 		}
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_go_to_war
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_east_exit
 		icon = GFX_focus_usa_focus_on_asia
 		relative_position_id = WSG_go_to_war
@@ -5894,19 +5894,19 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 		}
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_go_to_war
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_state_of_emergency
 		icon = GFX_focus_CHI_tongzi_jun
 		relative_position_id = WSG_from_the_deep_sea
@@ -5926,12 +5926,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_from_the_deep_sea
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_admirals_exclusive_jurisdiction
 		icon = GFX_goal_generic_parliament2
 		relative_position_id = WSG_state_of_emergency
@@ -5940,7 +5940,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_popularity = { ideology = democratic popularity = 0.1 }
@@ -5958,12 +5958,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_lexington_prime_minister
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_state_of_emergency
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_lexington_prime_minister
 		icon = GFX_goal_generic_female_rights
 		relative_position_id = WSG_state_of_emergency
@@ -5972,14 +5972,14 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_popularity = { ideology = democratic popularity = 0.1 }
 			set_politics = { ruling_party = democratic }
 			if = {
 				limit = {
-					WSG_Lexington = { is_country_leader = no } 
+					WSG_Lexington = { is_country_leader = no }
 				}
 				promote_character = {
 				    character = WSG_Lexington
@@ -6004,12 +6004,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_admirals_exclusive_jurisdiction
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_state_of_emergency
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_pacify_the_people
 		icon = GFX_focus_PRC_land_revolution_expedited
 		relative_position_id = WSG_state_of_emergency
@@ -6018,7 +6018,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_timed_idea = { idea = WSG_pacify_the_people days = 180 }
@@ -6030,13 +6030,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admirals_exclusive_jurisdiction
 			focus = WSG_lexington_prime_minister
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_public_opinion_supervision
 		icon = GFX_focus_PER_limit_foreign_influence
 		relative_position_id = WSG_pacify_the_people
@@ -6044,7 +6044,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_power_balance_value = {
@@ -6056,12 +6056,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_pacify_the_people
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_suppressing_militarism
 		icon = GFX_focus_generic_anti_fascist_diplomacy
 		relative_position_id = WSG_pacify_the_people
@@ -6070,7 +6070,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_power_balance_value = {
@@ -6083,12 +6083,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_pacify_the_people
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_settle_a_situation
 		icon = GFX_SOV_autonomous_soviet_republics_ccp_2d_sov_compatibility
 		relative_position_id = WSG_pacify_the_people
@@ -6098,7 +6098,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_STABILITY}
 		search_filters = {FOCUS_FILTER_POLITICAL}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_popularity = { ideology = democratic popularity = 0.1 }
@@ -6113,15 +6113,15 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_public_opinion_supervision
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_suppressing_militarism
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_admirals_rule
 		icon = GFX_goal_generic_government_deals
 		relative_position_id = WSG_settle_a_situation
@@ -6130,7 +6130,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			has_completed_focus = WSG_admirals_exclusive_jurisdiction
 		}
 		completion_reward = {
@@ -6179,12 +6179,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_settle_a_situation
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_admirals_experience
 		icon = GFX_goal_generic_air_command
 		relative_position_id = WSG_admirals_rule
@@ -6193,7 +6193,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -6204,12 +6204,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admirals_rule
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_the_reign_of_lexington
 		icon = GFX_goal_generic_financial_markets
 		relative_position_id = WSG_settle_a_situation
@@ -6217,7 +6217,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			has_completed_focus = WSG_lexington_prime_minister
 		}
 		completion_reward = {
@@ -6226,12 +6226,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_settle_a_situation
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_lifetime_secretary_ship
 		icon = GFX_focus_SWI_establish_pro_helvetia
 		relative_position_id = WSG_the_reign_of_lexington
@@ -6239,7 +6239,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
             add_trait = {
@@ -6251,12 +6251,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_the_reign_of_lexington
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_everything_is_settled
 		icon = GFX_goal_generic_castle
 		relative_position_id = WSG_settle_a_situation
@@ -6265,7 +6265,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_timed_idea = { idea = WSG_everything_is_settled days = 180 }
@@ -6277,12 +6277,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_settle_a_situation
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_back_on_track
 		icon = GFX_focus_CHI_negotiate_the_nine_powers_treaty
 		relative_position_id = WSG_everything_is_settled
@@ -6291,7 +6291,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			custom_effect_tooltip = WSG_back_on_track_text
@@ -6310,7 +6310,7 @@ focus_tree = {
 				add_timed_idea = {
 					idea =  WSG_everything_is_settled
 					days = 180
-				}  
+				}
 			}
 			custom_effect_tooltip = WSG_skip_one_line_tt
 			add_power_balance_value = {
@@ -6344,12 +6344,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_everything_is_settled
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_the_future_of_the_port_area
 		icon = GFX_focus_PHI_open_borders
 		relative_position_id = WSG_back_on_track
@@ -6357,7 +6357,7 @@ focus_tree = {
 		y = 1
 		cost = 10
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			custom_effect_tooltip = WSG_unfinished
@@ -6365,21 +6365,21 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_back_on_track
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admirals_experience
 			focus = WSG_lifetime_secretary_ship
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_super_future_port_area_era
 			focus = WSG_multi_ethnic_joint_operations
 			focus = WSG_warship_girl_main_combat_power
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_stand_aloof_from_the_world
 		icon = GFX_focus_generic_the_giant_wakes
 		relative_position_id = WSG_the_future_of_the_port_area
@@ -6387,7 +6387,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 		}
@@ -6397,12 +6397,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_dealing_with_threats
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_the_future_of_the_port_area
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_dealing_with_threats
 		icon = GFX_goal_generic_military_deal
 		relative_position_id = WSG_the_future_of_the_port_area
@@ -6410,7 +6410,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 		}
@@ -6420,12 +6420,12 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_stand_aloof_from_the_world
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_the_future_of_the_port_area
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_victory_day
 		icon = GFX_focus_JAP_gather_royal_pacifists_support
 		relative_position_id = WSG_from_the_deep_sea
@@ -6447,12 +6447,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_from_the_deep_sea
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_dawn_of_the_port_area
 		icon = GFX_focus_RAJ_the_sun_sets
 		relative_position_id = WSG_victory_day
@@ -6460,7 +6460,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_power_balance_value = {
@@ -6472,12 +6472,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_victory_day
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_the_most_beautiful_harbor_area
 		icon = GFX_focus_PRC_bolshevik_urbanization_1
 		relative_position_id = WSG_dawn_of_the_port_area
@@ -6485,7 +6485,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			custom_effect_tooltip = WSG_the_most_beautiful_harbor_area_text
@@ -6503,12 +6503,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_dawn_of_the_port_area
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_the_most_beautiful_ship_girl
 		icon = GFX_focus_PHI_utang_na_loob
 		relative_position_id = WSG_the_most_beautiful_harbor_area
@@ -6518,7 +6518,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_STABILITY}
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
             add_trait = {
@@ -6565,12 +6565,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_the_most_beautiful_harbor_area
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_praise_the_present_moment
 		icon = GFX_focus_focus_fra_revolution_utmost
 		relative_position_id = WSG_dawn_of_the_port_area
@@ -6579,7 +6579,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_POLITICAL}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_political_power = 100
@@ -6593,12 +6593,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_dawn_of_the_port_area
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_praise_the_future
 		icon = GFX_focus_por_workers_of_iberia
 		relative_position_id = WSG_praise_the_present_moment
@@ -6607,7 +6607,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_power_balance_value = {
@@ -6619,12 +6619,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_praise_the_present_moment
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_our_admiral
 		icon = GFX_focus_GER_expand_gestapo
 		relative_position_id = WSG_dawn_of_the_port_area
@@ -6633,7 +6633,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_our_admiral
@@ -6641,15 +6641,15 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_the_most_beautiful_ship_girl
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_praise_the_future
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_standing_tall_in_the_world
 		icon = GFX_focus_generic_improve_the_administration_2
 		relative_position_id = WSG_our_admiral
@@ -6658,7 +6658,7 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_power_balance_value = {
@@ -6671,12 +6671,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_our_admiral
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_prosperous_port_area
 		icon = GFX_focus_PRC_bolshevik_urbanization_completed
 		relative_position_id = WSG_our_admiral
@@ -6684,7 +6684,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			custom_effect_tooltip =  WSG_prosperous_port_area_text
@@ -6713,12 +6713,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_our_admiral
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_passion_for_serving_the_ountry
 		icon = GFX_focus_CHI_weaponise_the_faithful
 		relative_position_id = WSG_our_admiral
@@ -6726,7 +6726,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			add_ideas = WSG_passion_for_serving_the_ountry
@@ -6738,12 +6738,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_our_admiral
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_great_revival
 		icon = GFX_focus_generic_democratic_europe
 		relative_position_id = WSG_standing_tall_in_the_world
@@ -6751,7 +6751,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 			has_completed_focus = WSG_revival_of_holy_right
 		}
 		completion_reward = {
@@ -6765,18 +6765,18 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_standing_tall_in_the_world
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_prosperous_port_area
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_passion_for_serving_the_ountry
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_focus_on_the_world
 		icon = GFX_focus_generic_democratic_asia
 		relative_position_id = WSG_great_revival
@@ -6784,7 +6784,7 @@ focus_tree = {
 		y = 1
 		cost = 10
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 			custom_effect_tooltip = WSG_unfinished
@@ -6792,15 +6792,15 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_great_revival
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_super_future_port_area_era
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_western_continent_strategy
 		icon = GFX_goal_generic_alliance
 		relative_position_id = WSG_focus_on_the_world
@@ -6808,19 +6808,19 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 		}
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_focus_on_the_world
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_new_world_strategy
 		icon = GFX_focus_rom_abdicate
 		relative_position_id = WSG_focus_on_the_world
@@ -6828,19 +6828,19 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 		}
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_focus_on_the_world
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_eastern_continent_strategy
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
 		relative_position_id = WSG_focus_on_the_world
@@ -6848,19 +6848,19 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			#original_tag = WSG 
+			#original_tag = WSG
 		}
 		completion_reward = {
 		}
 		ai_will_do = {
 			factor = 1
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_focus_on_the_world
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_port_area_planning_phase_II_project
 		icon = GFX_focus_JAP_manchuria_airplane_manufacturing_company
 		relative_position_id = WSG_state_of_emergency
@@ -6876,14 +6876,14 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_state_of_emergency
 			focus = WSG_victory_day
 			focus = WSG_dark_day
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_port_development_fund
 		icon = GFX_focus_generic_stockpile_currency
 		relative_position_id = WSG_port_area_planning_phase_II_project
@@ -6898,12 +6898,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_area_planning_phase_II_project
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_engineering_supervision
 		icon = GFX_focus_PRC_urbanization
 		relative_position_id =  WSG_port_area_planning_phase_II_project
@@ -6921,14 +6921,14 @@ focus_tree = {
 				modify_timed_idea = {
 					idea =  WSG_port_area_planning_phase_II_project_II
 					days = 180
-				} 
+				}
 			}
 			custom_effect_tooltip =  WSG_otherwise
 			effect_tooltip ={
 				add_timed_idea = {
 					idea =  WSG_port_area_planning_phase_II_project
 					days = 360
-				}  
+				}
 			}
 			hidden_effect = {
 				if = {
@@ -6949,21 +6949,21 @@ focus_tree = {
 					    idea =  WSG_port_area_planning_phase_II_project
 					    days = 360
 				    }
-			    } 
+			    }
 			}
 		}
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_area_planning_phase_II_project
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_dawn_of_the_port_area
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_stabilize_the_economy
 		icon = GFX_focus_IRQ_decouple_from_the_pound
 		relative_position_id =  WSG_port_area_planning_phase_II_project
@@ -7038,16 +7038,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_area_planning_phase_II_project
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admirals_exclusive_jurisdiction
 			focus = WSG_lexington_prime_minister
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_land_use_planning_for_the_port_area
 		icon = GFX_focus_JAP_a_functionalist_housing_policy
 		relative_position_id =  WSG_port_development_fund
@@ -7064,11 +7064,11 @@ focus_tree = {
             for_each_loop = {
 		        array = core_states
 				if = {
-					limit = { 
-						var:v = { 
-							is_owned_and_controlled_by = ROOT 
+					limit = {
+						var:v = {
+							is_owned_and_controlled_by = ROOT
 							industrial_complex > 3
-						} 
+						}
 					}
 					var:v = {
 				        remove_building = {
@@ -7076,7 +7076,7 @@ focus_tree = {
                             level = 4
                         }
 					}
-					ROOT = { 
+					ROOT = {
 						add_offsite_building = { type = industrial_complex level = 6 }
 						add_to_variable = { WSG_panci = -100 }
 					}
@@ -7086,12 +7086,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_development_fund
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_port_energy_engineering
 		icon = GFX_focus_CHI_planned_economy
 		relative_position_id =  WSG_engineering_supervision
@@ -7105,12 +7105,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_engineering_supervision
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_port_reconstruction_project
 		icon = GFX_focus_JAP_ganbarou
 		relative_position_id =  WSG_stabilize_the_economy
@@ -7128,14 +7128,14 @@ focus_tree = {
 				modify_timed_idea = {
 					idea =  WSG_port_area_planning_phase_II_project_II
 					days = 180
-				}     
+				}
 			}
 			custom_effect_tooltip =  WSG_otherwise
 			effect_tooltip ={
 				add_timed_idea = {
 					idea =  WSG_port_area_planning_phase_II_project
 					days = 360
-				}  
+				}
 			}
 			hidden_effect = {
 				if = {
@@ -7162,12 +7162,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_stabilize_the_economy
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_super_future_port_area_era
 		icon = GFX_focus_JAP_further_urban_investments
 		relative_position_id =  WSG_land_use_planning_for_the_port_area
@@ -7211,16 +7211,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_land_use_planning_for_the_port_area
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_port_energy_engineering
 			focus = WSG_port_reconstruction_project
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_military_reform_phase_II_project
 		icon = GFX_focus_PER_construct_air_defenses
 		relative_position_id = WSG_state_of_emergency
@@ -7228,7 +7228,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
-			OR = { 
+			OR = {
 				has_completed_focus = WSG_between_floating_worlds
 				has_completed_focus = WSG_below_the_overarching_sky
 				has_completed_focus = WSG_above_the_byss
@@ -7245,14 +7245,14 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_victory_day
 			focus = WSG_state_of_emergency
 			focus = WSG_dark_day
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_strengthening_military_preparedness
 		icon = GFX_focus_PRC_equipment_from_copper_coins
 		relative_position_id = WSG_military_reform_phase_II_project
@@ -7331,16 +7331,16 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_military_reform_phase_II_project
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_admirals_exclusive_jurisdiction
 			focus = WSG_lexington_prime_minister
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_expand_recruitment
 		icon = GFX_focus_CHI_military_mission
 		relative_position_id = WSG_military_reform_phase_II_project
@@ -7359,15 +7359,15 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_military_reform_phase_II_project
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_rancor_and_blood
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_GALO_legion
 		icon = GFX_focus_BEL_the_flemish_question
 		relative_position_id = WSG_military_reform_phase_II_project
@@ -7385,12 +7385,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_military_reform_phase_II_project
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_recruit_the_monster_girl
 		icon = GFX_focus_CHI_meritocratic_principles
 		relative_position_id = WSG_GALO_legion
@@ -7409,12 +7409,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_GALO_legion
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_homeland_defense_line
 		icon = GFX_SOV_westward_bound_ccp_2d_sov_compatibility
 		relative_position_id = WSG_strengthening_military_preparedness
@@ -7534,12 +7534,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_strengthening_military_preparedness
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_militaristic_will
 		icon = GFX_focus_JAP_unify_the_air_forces
 		relative_position_id = WSG_expand_recruitment
@@ -7560,12 +7560,12 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_expand_recruitment
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_multi_ethnic_joint_operations
 		icon = GFX_focus_SWE_lottakoren
 		relative_position_id = WSG_homeland_defense_line
@@ -7598,16 +7598,16 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_warship_girl_main_combat_power
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_recruit_the_monster_girl
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_homeland_defense_line
 			focus = WSG_militaristic_will
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = WSG_warship_girl_main_combat_power
 		icon = GFX_focus_SWI_helvetic_junta
 		relative_position_id = WSG_militaristic_will
@@ -7627,7 +7627,7 @@ focus_tree = {
 					limit = { has_completed_focus = WSG_militaristic_will }
 					add_ideas = WSG_warship_girl_main_combat_power_r
 				}
-				else = { add_ideas = WSG_warship_girl_main_combat_power_l }	
+				else = { add_ideas = WSG_warship_girl_main_combat_power_l }
 				}
 			}
 		ai_will_do = {
@@ -7640,10 +7640,10 @@ focus_tree = {
         mutually_exclusive = {
 			focus = WSG_multi_ethnic_joint_operations
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_recruit_the_monster_girl
 		}
-        prerequisite = { 
+        prerequisite = {
 			focus = WSG_homeland_defense_line
 			focus = WSG_militaristic_will
 		}

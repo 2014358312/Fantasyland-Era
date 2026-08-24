@@ -3,7 +3,7 @@ scripted_gui = {
 		context_type = player_context
 		parent_window_token = politics_tab
 		window_name = "balance_of_power_disallow"
-		
+
 		visible = { has_any_power_balance = no }
 	}
 }
@@ -13,7 +13,7 @@ scripted_gui = {
 		context_type = player_context
 		parent_window_token = politics_tab
 		window_name = "ruling_party_detail"
-		
+
 		visible = { always = yes }
 	}
 }
@@ -25,7 +25,7 @@ scripted_gui = {
 		window_name = "diplomacy_subideology_container"
 
 		#ai_enabled = { always = no }
-		
+
 		visible = { always = yes }
 	}
 }
@@ -37,7 +37,7 @@ scripted_gui = {
 		window_name = "diplomacy_circle"
 
 		#ai_enabled = { always = no }
-		
+
 		visible = { always = yes }
 	}
 }
@@ -47,9 +47,9 @@ scripted_gui = {
 		context_type = player_context
 		parent_window_token = politics_tab
 		window_name = "vice_leader"
-		
+
 		visible = { always = yes }
-		
+
 		properties = {
 			vice_leader_picture = {
 				image = "[VL_picture]"
@@ -63,9 +63,9 @@ scripted_gui = {
 		context_type = selected_country_context
 		parent_window_token = selected_country_view_diplomacy
 		window_name = "diplomacy_vice_leader"
-		
+
 		visible = { always = yes }
-		
+
 		properties = {
 			vice_leader_portrait = {
 				image = "[VL_picture]"
@@ -79,9 +79,9 @@ scripted_gui = {
 		context_type = player_context
 		parent_window_token = politics_tab
 		window_name = "country_special_mechanism"
-		
+
 		visible = { always = yes }
-		
+
 		triggers = {
 			country_special_icon_visible = {
 				is_debug = no
@@ -103,7 +103,7 @@ scripted_gui = {
 		window_name = "diplomacy_unknown"
 
 		#ai_enabled = { always = no }
-		
+
 		visible = {
 			FROM = {
 				has_country_flag = unknown_country_flag
@@ -124,7 +124,7 @@ scripted_gui = {
 		parent_window_token = deployment_tab
 		window_name = "max_unit_window"
 		dirty = max_unit_window_variable
-		
+
 		visible = {
 			always = yes
 		}
@@ -145,7 +145,7 @@ scripted_gui = {
 		context_type = player_context
 		parent_window_token = top_bar
 		window_name = "FE_EventWindow_News"
-		
+
 		visible = {
 			has_variable = FE_EventWindow_News_var
 		}
@@ -156,7 +156,7 @@ scripted_gui = {
 				image = GFX_news_event_vertical_coronation_of_yufiria
 			}
 		}
-		
+
 		dynamic_lists = {
 			FE_options_grid = {
 				entry_container = "FE_event_option_entry"
@@ -166,7 +166,7 @@ scripted_gui = {
 				change_scope = yes
 			}
 		}
-		
+
 		effects = {
 			FE_btn_minimize_click = {
 				#close gui

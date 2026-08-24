@@ -2,9 +2,9 @@ scripted_gui = {
 	FE_welcome_window_title = {
 		context_type = player_context
 		window_name = "FE_welcome_window_title"
-		
+
 		visible = { always = yes }
-		
+
 		effects = {
 			close_button_click = {
 				if = {
@@ -17,13 +17,13 @@ scripted_gui = {
 			}
 		}
 	}
-	
+
 	FE_welcome_window = {
 		context_type = player_context
 		window_name = "FE_welcome_window"
-		
+
 		visible = { has_country_flag = FE_welcome_flag }
-		
+
 		properties = {
 			country_picture = { image = [GETCountryPicture] }
 			#tab_button_1 = { frame = FE_welcome_tab_array^0 }
@@ -31,7 +31,7 @@ scripted_gui = {
 			#tab_button_3 = { frame = FE_welcome_tab_array^2 }
 			#tab_button_4 = { frame = FE_welcome_tab_array^3 }
 		}
-		
+
 		effects = {
 			tab_button_1_click = {
 				set_variable = { FE_now_page = 0 }
@@ -40,7 +40,7 @@ scripted_gui = {
 					array = FE_welcome_tab_array
 					index = i
 					value = v
-					
+
 					set_variable = { FE_welcome_tab_array^i = 0 }
 				}
 				set_variable = { FE_welcome_tab_array^0 = 1 }
@@ -71,7 +71,7 @@ scripted_gui = {
 					array = FE_welcome_tab_array
 					index = i
 					value = v
-					
+
 					set_variable = { FE_welcome_tab_array^i = 0 }
 				}
 				set_variable = { FE_welcome_tab_array^1 = 1 }
@@ -102,12 +102,12 @@ scripted_gui = {
 					array = FE_welcome_tab_array
 					index = i
 					value = v
-					
+
 					set_variable = { FE_welcome_tab_array^i = 0 }
 				}
 				set_variable = { FE_welcome_tab_array^2 = 1 }
 				### CUSTOMIZATION ###
-				
+
 				#####################
 				#set_variable = { FE_now_page =  }
 				#set_variable = { FE_total_page =  }
@@ -119,12 +119,12 @@ scripted_gui = {
 					array = FE_welcome_tab_array
 					index = i
 					value = v
-					
+
 					set_variable = { FE_welcome_tab_array^i = 0 }
 				}
 				set_variable = { FE_welcome_tab_array^3 = 1 }
 				### CUSTOMIZATION ###
-				
+
 				#####################
 				#set_variable = { FE_now_page =  }
 				#set_variable = { FE_total_page =  }
@@ -148,7 +148,7 @@ scripted_gui = {
 					array = FE_welcome_tab_array
 					index = i
 					value = v
-					
+
 					set_variable = { FE_welcome_tab_array^i = 0 }
 				}
 				set_variable = { FE_now_page = 0 }
@@ -156,7 +156,7 @@ scripted_gui = {
 				clr_country_flag = FE_welcome_flag
 			}
 		}
-		
+
 		triggers = {
 			previous_page_visible = {
 				NOT = { check_variable = { FE_total_page = 0 } }

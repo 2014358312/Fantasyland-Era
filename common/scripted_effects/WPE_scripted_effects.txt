@@ -29,7 +29,7 @@ WPE_calculate_kujo_alisa_array = {
 			array = WPE_kujo_alisa_available_foci_array
 			index = i
 			value = v
-			
+
 			log = "[GetDateText]: [Root.GetName]: Kujo Alisa focus list member [?WPE_kujo_alisa_available_foci_array^i.GetTokenLocalizedKey]"
 			if = {
 				limit = { check_variable = { i = WPE_kujo_alisa_available_foci_array_num } }
@@ -50,7 +50,7 @@ WPE_calculate_kujo_alisa_array = {
 			FOCUS = "[?WPE_kujo_alisa_next_focus_var.GetTokenKey]"
 			DAYS = "[?WPE_kujo_alisa_next_focus_time_var]"
 			TEMP_DAYS = "[?WPE_kujo_alisa_next_focus_time_flag_var]"
-		}	
+		}
 		log = "[GetDateText]: [Root.GetName]: Kujo Alisa start focus [?WPE_kujo_alisa_next_focus_var.GetTokenLocalizedKey]"
 	}
 }
@@ -338,7 +338,7 @@ WPE_refresh_sangvis_ferri_net_modifier = {
 	set_variable = { WPE_SFN_air_chief_negative_var = WPE_SFN_air_chief_negative_base_var }
 	set_variable = { WPE_SFN_navy_chief_positive_var = WPE_SFN_navy_chief_positive_base_var }
 	set_variable = { WPE_SFN_navy_chief_negative_var = WPE_SFN_navy_chief_negative_base_var }
-	
+
 	if = {
 		limit = { has_country_flag = WPE_Sangvis_Ferri_Net_army_chief_flag }
 		subtract_from_variable = { WPE_SFN_army_chief_positive_var = WPE_SFN_base_factor_var }

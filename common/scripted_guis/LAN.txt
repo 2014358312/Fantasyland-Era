@@ -19,7 +19,7 @@ scripted_gui = {
 				frame = landsol_congress_national_frame
 			}
 		}
-		
+
 		effects = {
 			congress_detail_click = {
 				if = {
@@ -37,7 +37,7 @@ scripted_gui = {
 			}
 		}
 	}
-	
+
 	LAN_landsol_congress_main_ui = {
 		context_type = player_context
 		window_name = "landsol_congress_main"
@@ -95,10 +95,10 @@ scripted_gui = {
 				image = "GFX_landsol_congress_tab_buttombar_image_[?guid_leader_idv]"
 			}
 		}
-		
+
 		triggers = {
 		}
-		
+
 		effects = {
 			close_button_click = {
 				clr_country_flag = LAN_landsol_congress_main_flag
@@ -149,14 +149,14 @@ scripted_gui = {
 					limit = { check_variable = { congressCouncilFrame^council_seat_idx = 3 } }
 					set_variable = { congressCouncilFrame^council_seat_idx = 4 }
 				}
-				
+
 				set_variable = { current_icon_member = council_seat_idx }
 				set_variable = { current_member = current_icon_member }
 				clear_array = congressCouncilMemberArray
 				for_loop_effect = {
 					start = 0
 					end = 3
-					
+
 					set_variable = { temp_current_icon_member = current_icon_member }
 					if = {
 						limit = { check_variable = { temp_current_icon_member < 1 } }
@@ -176,9 +176,9 @@ scripted_gui = {
 				subtract_from_variable = { congressCouncilMemberArray^0 = 1 }
 				subtract_from_variable = { congressCouncilMemberArray^1 = 1 }
 				subtract_from_variable = { congressCouncilMemberArray^2 = 1 }
-				
+
 				set_temp_variable = { current_union = congressCouncilMemberArray^0 }
-				
+
 				for_each_loop = {
 					array = congressCouncilFrame
 					value = status
@@ -201,7 +201,7 @@ scripted_gui = {
 					limit = { check_variable = { congressCouncilFrame^current_union = 3 } }
 					set_variable = { congressCouncilFrame^current_union = 4 }
 				}
-				
+
 				if = {
 					limit = { check_variable = { congressCouncilMemberArray^0 < 1 } }
 					add_to_variable = { congressCouncilMemberArray^0 = 10 }
@@ -214,21 +214,21 @@ scripted_gui = {
 					limit = { check_variable = { congressCouncilMemberArray^2 < 1 } }
 					add_to_variable = { congressCouncilMemberArray^2 = 10 }
 				}
-				
+
 				set_variable = { current_member = current_union }
 			}
 			congressCouncilUnionNext_click = {
 				add_to_variable = { congressCouncilMemberArray^0 = 1 }
 				add_to_variable = { congressCouncilMemberArray^1 = 1 }
 				add_to_variable = { congressCouncilMemberArray^2 = 1 }
-				
+
 				set_temp_variable = { current_union = congressCouncilMemberArray^0 }
-				
+
 				if = {
 					limit = { check_variable = { current_union > 9 } }
 					subtract_from_temp_variable = { current_union = 10 }
 				}
-				
+
 				for_each_loop = {
 					array = congressCouncilFrame
 					value = status
@@ -251,7 +251,7 @@ scripted_gui = {
 					limit = { check_variable = { congressCouncilFrame^current_union = 3 } }
 					set_variable = { congressCouncilFrame^current_union = 4 }
 				}
-				
+
 				if = {
 					limit = { check_variable = { congressCouncilMemberArray^0 > 10 } }
 					subtract_from_variable = { congressCouncilMemberArray^0 = 10 }
@@ -264,12 +264,12 @@ scripted_gui = {
 					limit = { check_variable = { congressCouncilMemberArray^2 > 10 } }
 					subtract_from_variable = { congressCouncilMemberArray^2 = 10 }
 				}
-				
+
 				set_variable = { current_member = current_union }
 			}
 		}
 	}
-	
+
 	landsol_congress_main_tab_2_1_ui = {
 		context_type = player_context
 		window_name = "landsol_congress_main_tab_2_1"
@@ -287,7 +287,7 @@ scripted_gui = {
 				frame = congressStateFrame^state_seat_idx
 			}
 		}
-		
+
 		dynamic_lists = {
 			congressStateDiaContainer = {
 				array = congressStateX
@@ -297,7 +297,7 @@ scripted_gui = {
 			}
 		}
 	}
-	
+
 	landsol_industry_decision_ui = {
 		context_type = decision_category
 		window_name = "landsol_industry_main"
@@ -324,7 +324,7 @@ scripted_gui = {
 				image = "GFX_landsol_industry_icon_[?industry_icon_var]_eureka"
 			}
 		}
-		
+
 		effects = {
 			tab_click = {
 				set_variable = { industry_icon_var = industry_tab_idx }
@@ -344,4 +344,3 @@ scripted_gui = {
 		}
 	}
 }
-

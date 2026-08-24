@@ -4,12 +4,12 @@ NEB_refresh_party_management_status = {
 			end = 3
 			compare = less_than_or_equals
 			value = faction
-			
+
 			for_loop_effect = {
 				end = 4
 				compare = less_than_or_equals
 				value = status
-				
+
 				if = {
 					limit = {
 						meta_trigger = {
@@ -29,7 +29,7 @@ NEB_refresh_party_management_status = {
 			for_each_loop = {
 				array = NEB_faction_managemant_attitude_array
 				index = i
-				
+
 				if = {
 					limit = { check_variable = { faction = i } }
 					meta_effect = {

@@ -18,7 +18,7 @@ country_event = {
 		name = eylstadt.1.a
 		hidden_effect = {
 			create_equipment_variant = {
-				name = "Hawker Fury" 
+				name = "Hawker Fury"
 				type = small_plane_airframe_1
 				modules = {
 					fixed_main_weapon_slot = light_mg_4x
@@ -57,7 +57,7 @@ country_event = {
 	fire_only_once = yes
 
 	is_triggered_only = yes
-	
+
 	immediate = {
 		hidden_effect = {
 			country_event = { id = eylstadt.3 days = 2 }
@@ -79,7 +79,7 @@ country_event = {
 	fire_only_once = yes
 
 	is_triggered_only = yes
-	
+
 	immediate = {
 		hidden_effect = {
 			EYP = { country_event = { id = eylstadt.4 days = 2 } }
@@ -186,7 +186,7 @@ country_event = {
 	fire_only_once = yes
 
 	is_triggered_only = yes
-	
+
 	immediate = {
 		hidden_effect = {
 			remove_ideas = EYP_rudolf_iii
@@ -286,7 +286,7 @@ country_event = {
 				type = infantry_equipment
 				amount = -2000
 			}
-			FROM = { 
+			FROM = {
 				set_country_flag = EYP_get_infantry_equipment_flag
 				country_event = eylstadt.11
 			}
@@ -309,7 +309,7 @@ country_event = {
 				type = support_equipment
 				amount = -500
 			}
-			FROM = { 
+			FROM = {
 				set_country_flag = EYP_get_support_equipment_flag
 				country_event = eylstadt.11
 			}
@@ -332,7 +332,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			FROM = { 
+			FROM = {
 				set_country_flag = EYP_get_artillery_equipment_flag
 				country_event = eylstadt.11
 			}
@@ -409,7 +409,7 @@ country_event = {
 		}
 		NOT = { has_completed_focus = EYP_startup_coronation }
 	}
-	
+
 	mean_time_to_happen = {
 		days = 60
 		#modifier = {
@@ -420,7 +420,7 @@ country_event = {
 		#	}
 		#}
 	}
-	
+
 	immediate = {
 		hidden_effect = {
 			set_country_flag = EYP_late_wedding_flag

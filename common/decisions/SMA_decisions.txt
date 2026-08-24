@@ -20,7 +20,7 @@ SMA_balance_of_power_decision_category = {
 }
 
 SMA_army_reform_decision_category = {
-	
+
 	SMA_army_reform = {
 		icon = generic_protection
 		allowed = {
@@ -31,7 +31,7 @@ SMA_army_reform_decision_category = {
 		}
 		cost = 0
 		complete_effect = {
-			
+
 		}
 	}
 
@@ -66,7 +66,7 @@ SMA_army_reform_decision_category = {
 			factor = 200
 		}
 	}
-	
+
 	SMA_force_roxy_to_resign = {
 		icon = generic_protection
 		allowed = {
@@ -101,7 +101,7 @@ SMA_army_reform_decision_category = {
 }
 
 SMA_rebuild_industry_decision_category = {
-	
+
 	SMA_construction_bidding = {
 		icon = generic_protection
 		state_target = yes
@@ -156,7 +156,7 @@ SMA_rebuild_industry_decision_category = {
 			base = 5
 		}
 	}
-	
+
 	SMA_upgrade_the_NRB = {
 		icon = generic_political_rally
 		available = {
@@ -196,7 +196,7 @@ SMA_fascism_influence_decision_category = {
 			add_war_support = 0.05
 		}
 	}
-	
+
 	SMA_develop_war_support_medium = {
 		icon = generic_political_discourse
 		available = { has_war_support < var:war_support_expectation_value }
@@ -214,7 +214,7 @@ SMA_fascism_influence_decision_category = {
 			add_war_support = 0.10
 		}
 	}
-	
+
 	SMA_develop_war_support_high = {
 		icon = generic_political_address
 		available = { has_war_support < var:war_support_expectation_value }
@@ -232,7 +232,7 @@ SMA_fascism_influence_decision_category = {
 			add_war_support = 0.15
 		}
 	}
-	
+
 	SMA_government_crisis = {
 		icon = oppression
 		available = { NOT = { has_war_support < var:war_support_expectation_value } }
@@ -249,7 +249,7 @@ SMA_fascism_influence_decision_category = {
 			add_to_variable = { SMA_SOR_party_popularity_stability_factor_var = -0.10 tooltip = party_popularity_stability_factor_tt }
 		}
 	}
-	
+
 	SMA_change_cost_method = {
 		icon = generic_consumer_goods
 		available = { always = yes }
@@ -291,7 +291,7 @@ SMA_fascism_influence_decision_category = {
 			factor = 200
 		}
 	}
-	
+
 	SMA_issues_securities = {
 		icon = eng_trade_unions_support
 		available = { has_war = no }
@@ -357,11 +357,11 @@ SMA_fascism_influence_decision_category = {
 				add_stability = -0.025
 				custom_effect_tooltip = SMA_modify_chivalric_order
 				add_to_variable = { SMA_CO_consumer_goods_factor_var = 0.025 tooltip = consumer_goods_factor_tt }
-				
+
 			}
 		}
 	}
-	
+
 	SMA_expropriate_production_lines = {
 		icon = eng_trade_unions_support
 		available = { has_war = no }

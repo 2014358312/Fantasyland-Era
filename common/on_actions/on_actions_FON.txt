@@ -2,9 +2,9 @@ on_actions = {
 	on_startup = {
 		effect = {
 			FON = {
-				country_event = { 
-					days = 1 
-					id = FON_politics.0 
+				country_event = {
+					days = 1
+					id = FON_politics.0
 				}
 				remove_ideas = FON_fontaine_industrial_system_fake
 				add_dynamic_modifier = {
@@ -22,12 +22,12 @@ on_actions = {
 			limit = {
 				has_idea = FON_MUL_military_support_idea
 				MUL = {
-					has_opinion = { 
+					has_opinion = {
 						target = FON
-						value > 19 
-					} 
+						value > 19
+					}
 				}
-				country_exists = MUL 
+				country_exists = MUL
 			}
 			add_manpower = 5000
 		}
@@ -38,10 +38,10 @@ on_actions = {
 						country_exists = MUL
 					}
 					MUL = {
-						has_opinion = { 
+						has_opinion = {
 							target = FON
-							value < 19 
-						} 
+							value < 19
+						}
 					}
 				}
 			}

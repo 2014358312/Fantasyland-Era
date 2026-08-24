@@ -31,7 +31,7 @@ PAT_initialize_Yufiria_level = {
 	set_variable = { PAT_talented_king_Yufiria_s_level_var = 1 }
 	set_variable = { PAT_talented_king_Yufiria_k_level_var = 4 }
 	set_variable = { PAT_talented_king_Yufiria_r_level_var = 3 }
-	
+
 	set_variable = { PAT_talented_king_d_cost_var = PAT_talented_king_Yufiria_d_level_var }
 	multiply_variable = { PAT_talented_king_d_cost_var = 25 }
 	set_variable = { PAT_talented_king_m_cost_var = PAT_talented_king_Yufiria_m_level_var }
@@ -51,7 +51,7 @@ PAT_initialize_Algard_level = {
 	set_variable = { PAT_talented_king_Algard_s_level_var = 3 }
 	set_variable = { PAT_talented_king_Algard_k_level_var = 1 }
 	set_variable = { PAT_talented_king_Algard_r_level_var = 4 }
-	
+
 }
 
 PAT_calculate_successor_cost = {
@@ -1642,7 +1642,7 @@ PAT_settle_successor_modifier = {
 	for_each_loop = {
 		array = PAT_talented_king_Yufiria_array
 		index = i
-		
+
 		log = "123 -- [?i]: [?PAT_talented_king_Yufiria_array_value^i] and [?PAT_talented_king_Yufiria_array^i.GetTokenKey] -- 321"
 		if = {
 			limit = { check_variable = { PAT_talented_king_Yufiria_array^i = token:MODIFIER_COMPLIANCE_GAIN_ADD } }
@@ -1712,7 +1712,7 @@ PAT_settle_successor_modifier = {
 	for_each_loop = {
 		array = PAT_talented_king_Algard_array
 		index = i
-		
+
 		if = {
 			limit = { check_variable = { PAT_talented_king_Algard_array^i = token:MODIFIER_COMPLIANCE_GAIN_ADD } }
 			set_variable = { PAT_TK_Algard_compliance_gain_var = PAT_talented_king_Algard_array_value^i }
@@ -1862,9 +1862,9 @@ PAT_over_successor_to_the_throne = {
 			promote_leader = yes
 		}
 	}
-	# if the scores are tied, 
+	# if the scores are tied,
 	# there will be an event before that to determine the true winner.
-	
+
 	clr_country_flag = PAT_successor_to_the_throne_flag
 	hidden_effect = {
 		add_dynamic_modifier = {
@@ -1962,7 +1962,7 @@ PAT_heir_AI_underway_Anisufia = {#AI对面继承人的行动
 		limit = {
 			check_variable = { PAT_heir_points_Anisufia^4 < 10 }
 		}
-		add_to_variable = { PAT_heir_points_Anisufia^4 = 2 } 
+		add_to_variable = { PAT_heir_points_Anisufia^4 = 2 }
 		custom_effect_tooltip = PAT_heir_AI_Anisufia_add_erudite_tt
 		if = {
 			limit = {
@@ -1977,7 +1977,7 @@ PAT_heir_AI_underway_Anisufia = {#AI对面继承人的行动
 		limit = {
 			check_variable = { PAT_heir_points_Anisufia^0 < 10 }
 		}
-		add_to_variable = { PAT_heir_points_Anisufia^0 = 2 } 
+		add_to_variable = { PAT_heir_points_Anisufia^0 = 2 }
 		custom_effect_tooltip = PAT_heir_AI_Anisufia_add_dip_tt
 		if = {
 			limit = {
@@ -1992,7 +1992,7 @@ PAT_heir_AI_underway_Anisufia = {#AI对面继承人的行动
 		limit = {
 			check_variable = { PAT_heir_points_Anisufia^2 < 10 }
 		}
-		add_to_variable = { PAT_heir_points_Anisufia^2 = 2 } 
+		add_to_variable = { PAT_heir_points_Anisufia^2 = 2 }
 		custom_effect_tooltip = PAT_heir_AI_Anisufia_add_mana_tt
 		if = {
 			limit = {
@@ -2007,7 +2007,7 @@ PAT_heir_AI_underway_Anisufia = {#AI对面继承人的行动
 		limit = {
 			check_variable = { PAT_heir_points_Anisufia^1 < 10 }
 		}
-		add_to_variable = { PAT_heir_points_Anisufia^1 = 2 } 
+		add_to_variable = { PAT_heir_points_Anisufia^1 = 2 }
 		custom_effect_tooltip = PAT_heir_AI_Anisufia_add_mil_tt
 		if = {
 			limit = {
@@ -2022,7 +2022,7 @@ PAT_heir_AI_underway_Anisufia = {#AI对面继承人的行动
 		limit = {
 			check_variable = { PAT_heir_points_Anisufia^3 < 10 }
 		}
-		add_to_variable = { PAT_heir_points_Anisufia^3 = 2 } 
+		add_to_variable = { PAT_heir_points_Anisufia^3 = 2 }
 		custom_effect_tooltip = PAT_heir_AI_Anisufia_add_tactics_tt
 		if = {
 			limit = {
@@ -2039,7 +2039,7 @@ PAT_heir_AI_underway_Algard = {
 		limit = {
 			check_variable = { PAT_heir_points_Algard^1 < 10 }
 		}
-		add_to_variable = { PAT_heir_points_Algard^1 = 2 } 
+		add_to_variable = { PAT_heir_points_Algard^1 = 2 }
 		custom_effect_tooltip = PAT_heir_AI_Algard_add_mil_tt
 		if = {
 			limit = {
@@ -2054,7 +2054,7 @@ PAT_heir_AI_underway_Algard = {
 		limit = {
 			check_variable = { PAT_heir_points_Algard^2 < 10 }
 		}
-		add_to_variable = { PAT_heir_points_Algard^2 = 2 } 
+		add_to_variable = { PAT_heir_points_Algard^2 = 2 }
 		custom_effect_tooltip = PAT_heir_AI_Algard_add_mana_tt
 		if = {
 			limit = {
@@ -2069,7 +2069,7 @@ PAT_heir_AI_underway_Algard = {
 		limit = {
 			check_variable = { PAT_heir_points_Algard^3 < 10 }
 		}
-		add_to_variable = { PAT_heir_points_Algard^3 = 2 } 
+		add_to_variable = { PAT_heir_points_Algard^3 = 2 }
 		custom_effect_tooltip = PAT_heir_AI_Algard_add_tactics_tt
 		if = {
 			limit = {
@@ -2084,7 +2084,7 @@ PAT_heir_AI_underway_Algard = {
 		limit = {
 			check_variable = { PAT_heir_points_Algard^0 < 10 }
 		}
-		add_to_variable = { PAT_heir_points_Algard^0 = 2 } 
+		add_to_variable = { PAT_heir_points_Algard^0 = 2 }
 		custom_effect_tooltip = PAT_heir_AI_Algard_add_dip_tt
 		if = {
 			limit = {
@@ -2099,7 +2099,7 @@ PAT_heir_AI_underway_Algard = {
 		limit = {
 			check_variable = { PAT_heir_points_Algard^4 < 10 }
 		}
-		add_to_variable = { PAT_heir_points_Algard^4 = 2 } 
+		add_to_variable = { PAT_heir_points_Algard^4 = 2 }
 		custom_effect_tooltip = PAT_heir_AI_Algard_add_erudite_tt
 		if = {
 			limit = {

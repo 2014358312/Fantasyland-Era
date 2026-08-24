@@ -1,10 +1,10 @@
 #	Example:
-# 
+#
 #	example_dynamic_modifier = {
 #		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
 #		enable = { always = yes } #optional, the modifier won't apply if not enabled
 #		remove_trigger = { always = no } #optional, will remove the modifier if true
-#       attacker_modifier = no  # if yes this modifier will also be read in combat for 
+#       attacker_modifier = no  # if yes this modifier will also be read in combat for
 #                               # people engaging in the combat even if not in the state
 #
 #		# list of modifiers
@@ -27,14 +27,14 @@
 #	will only updated daily, unless forced by force_update_dynamic_modifier effect
 
 sabotaged_resources = {
-	remove_trigger = { 
+	remove_trigger = {
 		ROOT = {
 			has_resistance = no
 		}
 	}
-	
+
 	icon = GFX_modifiers_sabotaged_resource
-	
+
 	temporary_state_resource_oil = sabotaged_oil
 	temporary_state_resource_aluminium = sabotaged_aluminium
 	temporary_state_resource_rubber = sabotaged_rubber
@@ -47,7 +47,7 @@ autonomous_state = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_sabotaged_resource
-	
+
 	recruitable_population_factor = -0.5
 	local_building_slots_factor = -0.25
 	state_resources_factor = -0.25
@@ -60,7 +60,7 @@ semi_autonomous_state = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_sabotaged_resource
-	
+
 	local_building_slots_factor = -0.25
 	state_resources_factor = -0.25
 	state_production_speed_buildings_factor = -0.25
@@ -72,7 +72,7 @@ kurdish_agitation = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_tur_kurdish_agitation
-	
+
 	resistance_growth = 0.03
 	resistance_target = 0.1
 	resistance_decay = -0.1
@@ -83,7 +83,7 @@ kurdish_separatism = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_tur_kurdish_separatism
-	
+
 	compliance_growth = -0.05
 	resistance_growth = 0.05
 	resistance_target = 0.20
@@ -101,7 +101,7 @@ dense_rural_infrastructure = { #State Modifier
 	}
 
 	icon = GFX_modifiers_SOV_civilian_labor_in_defense
-	
+
 	local_non_core_supply_impact_factor = 0.35
 }
 
@@ -109,7 +109,7 @@ yellow_river_blown = { #State Modifier
 	enable = { always = yes }
 
 	icon = GFX_decision_hol_inundate_water_lines
-	
+
 	local_supply_impact_factor = 0.5
 	disable_strategic_redeployment = 1
 	state_resources_factor = -0.25
@@ -121,7 +121,7 @@ kurdish_rebellion = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_tur_kurdish_rebellion
-	
+
 	compliance_growth = -0.1
 	resistance_growth = 0.07
 	resistance_target = 0.35
@@ -134,7 +134,7 @@ separatist_fatigue = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_tur_kurdish_fatigue
-	
+
 	compliance_growth = 0.05
 	resistance_decay = 0.15
 	state_resources_factor = -0.33
@@ -144,7 +144,7 @@ turanist_assimilation = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_tur_pan_turkic_propaganda
-	
+
 	local_non_core_manpower = 0.25
 	compliance_growth = 0.05
 	resistance_growth = -0.1
@@ -154,7 +154,7 @@ conscription_exemptions_granted = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_conscription_exemptions_granted
-	
+
 	recruitable_population_factor = -0.85
 }
 
@@ -162,7 +162,7 @@ islamist_opposition = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_tur_traditionalist_unrest
-	
+
 	recruitable_population_factor = -0.05
 	local_building_slots_factor = -0.1
 	state_resources_factor = -0.1
@@ -173,7 +173,7 @@ islamist_sedition = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_tur_traditionalist_sedition
-	
+
 	recruitable_population_factor = -0.25
 	local_building_slots_factor = -0.25
 	state_resources_factor = -0.25
@@ -185,7 +185,7 @@ islamist_insurgency = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_tur_traditionalist_insurgency
-	
+
 	recruitable_population_factor = -0.5
 	local_building_slots_factor = -0.33
 	state_resources_factor = -0.5
@@ -197,7 +197,7 @@ islamists_placated = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_tur_traditionalist_placated
-	
+
 	state_production_speed_buildings_factor = 0.05
 }
 
@@ -205,7 +205,7 @@ devout_islamists = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_tur_traditionalist_placated
-	
+
 	recruitable_population_factor = 0.15
 	state_production_speed_buildings_factor = 0.1
 }
@@ -214,7 +214,7 @@ kemalist_loyalties = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_tur_kemalist_loyalties
-	
+
 	recruitable_population_factor = 0.15
 	state_production_speed_buildings_factor = 0.1
 }
@@ -223,7 +223,7 @@ kemalist_schemers = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_tur_kemalist_unrest
-	
+
 	recruitable_population_factor = -0.33
 	state_production_speed_buildings_factor = -0.25
 	army_speed_factor_for_controller = -0.5
@@ -246,7 +246,7 @@ skirmishes_against_imro = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_bul_macedonian_revolutionaries
-	
+
 	state_resources_factor = -0.75
 	state_production_speed_buildings_factor = -0.75
 	army_speed_factor_for_controller = -0.25
@@ -259,7 +259,7 @@ widespread_bulgarian_sentiment_01 = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_bul_arranged_bulgarian_occupation
-	
+
 	compliance_growth = -0.1
 	resistance_growth = 0.1
 	resistance_target = 0.1
@@ -272,7 +272,7 @@ widespread_bulgarian_sentiment_02 = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_bul_arranged_bulgarian_occupation
-	
+
 	compliance_growth = 0.1
 	resistance_growth = -0.1
 	resistance_target = -0.1
@@ -285,7 +285,7 @@ bulgarian_territorial_expansion_arranged = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_bul_arranged_territorial_expansion
-	
+
 	custom_modifier_tooltip = BUL_bulgarian_territorial_expansion_arranged_tt
 }
 
@@ -303,7 +303,7 @@ international_city = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_sabotaged_resource
-	
+
 	state_resources_factor = -1
 	recruitable_population_factor = -1
 	local_factories = -1
@@ -314,7 +314,7 @@ international_city_2 = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_sabotaged_resource
-	
+
 	state_resources_factor = -0.75
 	recruitable_population_factor = -0.75
 	local_factories = -0.75
@@ -326,7 +326,7 @@ international_city_3 = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_sabotaged_resource
-	
+
 	state_resources_factor = -0.5
 	recruitable_population_factor = -0.5
 	local_factories = -0.5
@@ -339,7 +339,7 @@ international_city_4 = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_sabotaged_resource
-	
+
 	state_resources_factor = -0.25
 	recruitable_population_factor = -0.25
 	local_factories = -0.25
@@ -352,7 +352,7 @@ unity_propaganda = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_sabotaged_resource
-	
+
 	compliance_gain = 0.7
 }
 
@@ -360,7 +360,7 @@ military_appeasement = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_sabotaged_resource
-	
+
 	resistance_growth = -0.5
 }
 
@@ -368,7 +368,7 @@ POL_plan_modifier = {
 	enable = { always = yes }
 
 	icon = GFX_modifiers_generic_military_plans
-	
+
 	state_production_speed_bunker_factor = 0.3
 }
 
@@ -428,7 +428,7 @@ SOV_defend_moscow = { #STATE MODIFIER
 	enable = { always = yes }
 
 	icon = GFX_modifiers_SOV_defend_moscow
-	
+
 	recruitable_population_factor = 0.25
 	army_core_defence_factor = 0.1
 	local_factories = -1
@@ -450,7 +450,7 @@ SOV_invaders_must_die = { #STATE MODIFIER
 	enable = { always = yes }
 
 	icon = GFX_modifiers_SOV_invaders_must_die
-	
+
 	compliance_growth = -0.05
 	resistance_growth = 0.05
 	resistance_target = 0.15
@@ -463,7 +463,7 @@ SOV_seraya_loshad_battery = { #STATE MODIFIER
 	enable = { always = yes }
 
 	icon = GFX_modifiers_SOV_armored_battery
-	
+
 	army_defence_factor = 0.1
 	cas_damage_reduction = 0.1
 	dig_in_speed_factor = 0.25
@@ -475,7 +475,7 @@ SOV_krasnaya_gorka_battery = { #STATE MODIFIER
 	enable = { always = yes }
 
 	icon = GFX_modifiers_SOV_armored_battery
-	
+
 	army_defence_factor = 0.1
 	cas_damage_reduction = 0.1
 	dig_in_speed_factor = 0.25
@@ -487,7 +487,7 @@ SOV_armored_battery_35 = { #STATE MODIFIER #German designation Maksim Gorky
 	enable = { always = yes }
 
 	icon = GFX_modifiers_SOV_armored_battery
-	
+
 	army_defence_factor = 0.1
 	cas_damage_reduction = 0.1
 	dig_in_speed_factor = 0.25
@@ -499,7 +499,7 @@ SOV_factory_worker_militias_raised = { #STATE MODIFIER
 	enable = { always = yes }
 
 	icon = GFX_modifiers_SOV_factory_worker_militias
-	
+
 	army_core_defence_factor = 0.05
 	local_org_regain = 0.1
 	local_factories = -1
@@ -510,7 +510,7 @@ SOV_civilian_labor_in_defense_mod = { #STATE MODIFIER
 	enable = { always = yes }
 
 	icon = GFX_modifiers_SOV_civilian_labor_in_defense
-	
+
 	army_core_defence_factor = 0.05
 	state_production_speed_bunker_factor = 0.6
 	state_production_speed_coastal_bunker_factor = 0.6
@@ -567,7 +567,7 @@ SOV_third_five_year_plan_dynamic_modifier = { #NATIONAL SPIRIT - Basic
 
 	#INITIAL
 	industrial_concern_cost_factor = SOV_fyp_industrial_concern_cost_factor #-0.15
-	
+
 	#EXTRA IMPROVEMENTS
 	local_resources_factor = SOV_fyp_local_resources_factor #0.10 -> Increase State Reserves
 }
@@ -583,7 +583,7 @@ SOV_third_five_year_plan_civilian_dynamic_modifier = { #NATIONAL SPIRIT - Civili
 	consumer_goods_factor = SOV_fyp_consumer_goods_factor #0.08
 	production_speed_industrial_complex_factor = SOV_fyp_production_speed_industrial_complex_factor #0.1
 	industrial_concern_cost_factor = SOV_fyp_industrial_concern_cost_factor #-0.15
-	
+
 	#EXTRA IMPROVEMENTS
 	local_resources_factor = SOV_fyp_local_resources_factor #0.10 -> Increase State Reserves
 	line_change_production_efficiency_factor = SOV_fyp_line_change_production_efficiency_factor #0.1 -> Industrial Modernization
@@ -604,7 +604,7 @@ SOV_third_five_year_plan_military_dynamic_modifier = { #NATIONAL SPIRIT - Milita
 	consumer_goods_factor = SOV_fyp_consumer_goods_factor #0.1
 	production_speed_industrial_complex_factor = SOV_fyp_production_speed_industrial_complex_factor #0
 	industrial_concern_cost_factor = SOV_fyp_industrial_concern_cost_factor #-0.15
-	
+
 	#INITIAL -> Shift to Armaments Production
 	production_speed_arms_factory_factor = SOV_fyp_production_speed_arms_factory_factor #0.10
 
@@ -657,7 +657,7 @@ SOV_third_five_year_plan_dynamic_modifier_alt = { #NATIONAL SPIRIT - Basic
 
 	#INITIAL
 	industrial_concern_cost_factor = SOV_fyp_industrial_concern_cost_factor #-0.15
-	
+
 	#EXTRA IMPROVEMENTS
 	local_resources_factor = SOV_fyp_local_resources_factor #0.10 -> Increase State Reserves
 }
@@ -673,7 +673,7 @@ SOV_third_five_year_plan_civilian_dynamic_modifier_alt = { #NATIONAL SPIRIT - Ci
 	consumer_goods_factor = SOV_fyp_consumer_goods_factor #0.008
 	production_speed_industrial_complex_factor = SOV_fyp_production_speed_industrial_complex_factor #0.1
 	industrial_concern_cost_factor = SOV_fyp_industrial_concern_cost_factor #-0.15
-	
+
 	#EXTRA IMPROVEMENTS
 	local_resources_factor = SOV_fyp_local_resources_factor #0.10 -> Increase State Reserves
 	line_change_production_efficiency_factor = SOV_fyp_line_change_production_efficiency_factor #0.1 -> Industrial Modernization
@@ -694,7 +694,7 @@ SOV_third_five_year_plan_military_dynamic_modifier_alt = { #NATIONAL SPIRIT - Mi
 	consumer_goods_factor = SOV_fyp_consumer_goods_factor #0.1
 	production_speed_industrial_complex_factor = SOV_fyp_production_speed_industrial_complex_factor #0
 	industrial_concern_cost_factor = SOV_fyp_industrial_concern_cost_factor #-0.15
-	
+
 	#INITIAL -> Shift to Armaments Production
 	production_speed_arms_factory_factor = SOV_fyp_production_speed_arms_factory_factor #0.10
 
@@ -1158,7 +1158,7 @@ SOV_the_politburo_good_dynamic_modifier = {
 	enable = { always = yes }
 
 	icon = GFX_idea_SOV_the_politburo_ccp_2d_sov_compatibility
-	
+
 	#INITIAL
 	drift_defence_factor = SOV_the_politburo_drift_defence_factor #0.05
 
@@ -1180,14 +1180,14 @@ SOV_the_politburo_good_dynamic_modifier = {
 	opinion_gain_monthly_same_ideology_factor = SOV_the_politburo_opinion_gain_monthly_same_ideology_factor #0.25 -> The Construction of Communism
 }
 
-SOV_factionalism_modifier = { 
+SOV_factionalism_modifier = {
 	enable = { always = yes }
 
 	icon = GFX_idea_SOV_factionalism_modifier
-	
-	
+
+
 	political_power_factor = SOV_factionalism_political_power_factor # -0.1 The Left Opposition, the Right opposition
-	
+
 
 	political_advisor_cost_factor = SOV_factionalism_political_advisor_cost_factor # 0.2 -> Cooperation Against stalin
 	party_popularity_stability_factor = SOV_factionalism_popularity_stability_cost_factor # -0.15 -> Cooperation Against stalin
@@ -1197,18 +1197,18 @@ SOV_factionalism_modifier = {
 	custom_modifier_tooltip = SOV_factionalism_modifier_tt
 }
 
-SOV_opposition_popular_support = { 
+SOV_opposition_popular_support = {
 	enable = { has_civil_war = yes }
 	icon = GFX_idea_FRA_scw_intervention_republicans_focus
-	
+
 	surrender_limit = SOV_surrender_modifier
-	custom_modifier_tooltip = SOV_opposition_popular_support_tt 
+	custom_modifier_tooltip = SOV_opposition_popular_support_tt
 }
 
-SOV_planned_economy_dynamic_modifier = { 
+SOV_planned_economy_dynamic_modifier = {
 	enable = { always = yes }
 	icon = GFX_idea_eng_for_the_good_of_the_revolution
-	
+
 	industrial_capacity_factory = SOV_planned_economy_industrial_capacity_factory_initial #+0.01% (extra +0.01% per puppet - max +0.1%)
 	production_lack_of_resource_penalty_factor = SOV_planned_economy_production_lack_of_resource_penalty_factor_initial #-0.01% (extra -0.01% per puppet - max -0.1%)
 
@@ -1229,7 +1229,7 @@ RAJ_agrarian_society_dynamic = { #NATIONAL SPIRIT
 	enable = { always = yes }
 
 	icon = GFX_idea_generic_agrarian_society
-	
+
 	conscription_factor = RAJ_agrarian_society_value
 }
 
@@ -1291,17 +1291,17 @@ GER_poor_iron_quality = {
 
 ################################
 
-###  ##  ### #    ##  #  # ###  
- #  #  # #   #   #  # ## # #  # 
- #  #    ##  #   #### # ## #  # 
- #  #  # #   #   #  # #  # #  # 
-###  ##  ### ### #  # #  # ###  
+###  ##  ### #    ##  #  # ###
+ #  #  # #   #   #  # ## # #  #
+ #  #    ##  #   #### # ## #  #
+ #  #  # #   #   #  # #  # #  #
+###  ##  ### ### #  # #  # ###
 
 ################################
 
 ICE_the_icelandic_economy_modifier = {
 	enable = { always = yes }
-	icon = GFX_idea_tur_balkan_central_bank_wealthy_greece 
+	icon = GFX_idea_tur_balkan_central_bank_wealthy_greece
 
 	research_speed_factor = ICE_economy_research_speed_factor
 	production_factory_max_efficiency_factor = ICE_economy_production_factory_max_efficiency_factor
@@ -1326,13 +1326,13 @@ ICE_transformation_of_nature_state_modifier = {
 ##################################################################
 ##################################################################
 
-    ##    ##  #######  ########  ##      ##    ###    ##    ## 
-    ###   ## ##     ## ##     ## ##  ##  ##   ## ##    ##  ##  
-    ####  ## ##     ## ##     ## ##  ##  ##  ##   ##    ####   
-    ## ## ## ##     ## ########  ##  ##  ## ##     ##    ##    
-    ##  #### ##     ## ##   ##   ##  ##  ## #########    ##    
-    ##   ### ##     ## ##    ##  ##  ##  ## ##     ##    ##    
-    ##    ##  #######  ##     ##  ###  ###  ##     ##    ##    
+    ##    ##  #######  ########  ##      ##    ###    ##    ##
+    ###   ## ##     ## ##     ## ##  ##  ##   ## ##    ##  ##
+    ####  ## ##     ## ##     ## ##  ##  ##  ##   ##    ####
+    ## ## ## ##     ## ########  ##  ##  ## ##     ##    ##
+    ##  #### ##     ## ##   ##   ##  ##  ## #########    ##
+    ##   ### ##     ## ##    ##  ##  ##  ## ##     ##    ##
+    ##    ##  #######  ##     ##  ###  ###  ##     ##    ##
 
 ##################################################################
 ##################################################################
@@ -1342,28 +1342,28 @@ ICE_transformation_of_nature_state_modifier = {
   ### Historical Democratic ###
 NOR_prep_his_dmod_1 = {
 	enable = {
-		
+
 	}
 	remove_trigger = {
-		
+
 	}
-	icon = GFX_modifiers_generic_construction   
-	# Positive 
+	icon = GFX_modifiers_generic_construction
+	# Positive
 	state_production_speed_industrial_complex_factor = 0.25
-	local_manpower = 0.1 
+	local_manpower = 0.1
 	# Negative
-	state_production_speed_bunker_factor = -0.1 
-	state_production_speed_coastal_bunker_factor = -0.1 
+	state_production_speed_bunker_factor = -0.1
+	state_production_speed_coastal_bunker_factor = -0.1
 }
 
 NOR_prep_his_dmod_2 = {
 	enable = {
-		
+
 	}
 	remove_trigger = {
-		
+
 	}
-	icon = GFX_modifiers_generic_construction  
+	icon = GFX_modifiers_generic_construction
 	# Positive
 	local_manpower = 0.1
 	state_production_speed_industrial_complex_factor = 0.25
@@ -1371,19 +1371,19 @@ NOR_prep_his_dmod_2 = {
 	state_resources_factor = 0.1
 	# Negative
 	max_dig_in_factor = -0.2
-	state_production_speed_bunker_factor = -0.1 
+	state_production_speed_bunker_factor = -0.1
 	state_production_speed_coastal_bunker_factor = -0.1
-	state_production_speed_arms_factory_factor = -0.15 
+	state_production_speed_arms_factory_factor = -0.15
 }
 
 NOR_prep_his_dmod_3 = {
 	enable = {
-		
+
 	}
 	remove_trigger = {
-		
+
 	}
-	icon = GFX_modifiers_generic_construction   
+	icon = GFX_modifiers_generic_construction
 	# Positive
 	local_manpower = 0.1
 	state_production_speed_industrial_complex_factor = 0.25
@@ -1395,8 +1395,8 @@ NOR_prep_his_dmod_3 = {
 	local_org_regain = -0.1
 	local_supplies = -0.1
 	max_dig_in_factor = -0.2
-	state_production_speed_bunker_factor = -0.1 
-	state_production_speed_coastal_bunker_factor = -0.1 
+	state_production_speed_bunker_factor = -0.1
+	state_production_speed_coastal_bunker_factor = -0.1
 	state_production_speed_arms_factory_factor = -0.15
 }
 
@@ -1408,11 +1408,11 @@ NOR_prep_resistance_dmod = {
 	resistance_decay = -0.2
 }
 
-NOR_defend_state_dmod = { #Added when deploying Level 1 Prep 
+NOR_defend_state_dmod = { #Added when deploying Level 1 Prep
 	enable = { always = yes }
-	
-	icon = GFX_modifiers_generic_defense  
-	
+
+	icon = GFX_modifiers_generic_defense
+
 	remove_trigger = {
 	}
 	army_morale_factor = 0.1
@@ -1425,58 +1425,58 @@ NOR_defend_state_dmod = { #Added when deploying Level 1 Prep
 
 NOR_prep_fasc_dmod_1 = {
 	enable = {
-		always = yes   
+		always = yes
 	}
 	remove_trigger = {
-		
+
 	}
 	icon = GFX_modifiers_NOR_fascism
 	# Positive
 	recruitable_population_factor = 0.05
 	# Negative
 	state_production_speed_buildings_factor = -0.15
-	local_factories = NOR_prep_fasc_dmod_factories #-0.2  
+	local_factories = NOR_prep_fasc_dmod_factories #-0.2
 	local_supplies =  NOR_prep_fasc_dmod_local_supplies #-0.15
 
 }
 
 NOR_prep_fasc_dmod_2 = {
 	enable = {
-		always = yes  
+		always = yes
 	}
 	remove_trigger = {
-		
+
 	}
 	icon = GFX_modifiers_NOR_fascism
 	# Positive
 	recruitable_population_factor = 0.05
 	# Negative
 	state_production_speed_buildings_factor = -0.15
-	local_factories = NOR_prep_fasc_dmod_factories #-0.15   
+	local_factories = NOR_prep_fasc_dmod_factories #-0.15
 	local_supplies =  NOR_prep_fasc_dmod_local_supplies #-0.15
 }
 
 NOR_prep_fasc_dmod_3 = {
 	enable = {
-		always = yes  
+		always = yes
 	}
 	remove_trigger = {
-		
+
 	}
-	icon = GFX_modifiers_NOR_fascism  
+	icon = GFX_modifiers_NOR_fascism
 	# Positive
 	recruitable_population_factor = 0.05
 	# Negative
 	state_production_speed_buildings_factor = -0.15
-	local_factories = NOR_prep_fasc_dmod_factories #-0.12   
+	local_factories = NOR_prep_fasc_dmod_factories #-0.12
 	local_supplies =  NOR_prep_fasc_dmod_local_supplies #-0.15
 }
 
-#### Monarchist ##### 
+#### Monarchist #####
 NOR_royal_defenses = {
 	enable = {
-		always = yes 
-	}	
+		always = yes
+	}
 	remove_trigger = {
 	}
 
@@ -1501,7 +1501,7 @@ NOR_independent_norway_dmod = { # Added at the start of the Civilian Industrial 
 
 	icon = GFX_idea_generic_morale_bonus
 
-	political_power_factor = 0.1 # Making this one a number so I don't need to make a tooltip just for this.  
+	political_power_factor = 0.1 # Making this one a number so I don't need to make a tooltip just for this.
 	consumer_goods_factor = NOR.NOR_independent_norway_dmod_consumer_goods_factor #-0.1
 	production_speed_industrial_complex_factor = NOR.NOR_independent_norway_dmod_production_speed_industrial_complex_factor #0.15 then 0.30
 	production_speed_infrastructure_factor = NOR.NOR_independent_norway_dmod_production_speed_infrastructure_factor #0.2
@@ -1509,33 +1509,33 @@ NOR_independent_norway_dmod = { # Added at the start of the Civilian Industrial 
 	production_speed_supply_node_factor = NOR.NOR_independent_norway_dmod_production_speed_supply_node #0.15
 	production_speed_naval_base_factor = NOR.NOR_independent_norway_dmod_modifier_production_speed_naval_base_factor #0.15
 	army_org_factor = NOR.NOR_independent_norway_dmod_army_org_factor #0.15 (A New Norway Focus)
-	navy_org_factor = NOR.NOR_independent_norway_dmod_navy_org_factor #0.1 (A New Norway Focus) 
-	war_stability_factor = NOR.NOR_independent_norway_dmod_war_stability_factor #0.2 (A New Norway Focus) 
-	war_support_factor = NOR.NOR_independent_norway_dmod_war_support_factor #0.15 (A New Norway Focus) 
+	navy_org_factor = NOR.NOR_independent_norway_dmod_navy_org_factor #0.1 (A New Norway Focus)
+	war_stability_factor = NOR.NOR_independent_norway_dmod_war_stability_factor #0.2 (A New Norway Focus)
+	war_support_factor = NOR.NOR_independent_norway_dmod_war_support_factor #0.15 (A New Norway Focus)
 }
 
-NOR_army_air_force_dmod = { # Remeber to copy any change to the royal version. 
+NOR_army_air_force_dmod = { # Remeber to copy any change to the royal version.
 	enable = {
 		always = yes
 	}
 
-	icon = GFX_idea_air_support_focus 
+	icon = GFX_idea_air_support_focus
 
 	air_mission_efficiency = 0.1 # Starting bonus
 	air_mission_xp_gain_factor = 0.12 # Starting bonus
 	license_air_purchase_cost = NOR.NOR_army_air_force_dmod_license_air_purchase_cost #-0.4
-	production_speed_air_base_factor = NOR.NOR_army_air_force_dmod_production_speed_air_base_factor #0.45   
+	production_speed_air_base_factor = NOR.NOR_army_air_force_dmod_production_speed_air_base_factor #0.45
 	production_speed_anti_air_building_factor = NOR.NOR_army_air_force_dmod_production_speed_anti_air_building_factor #0.25
 	air_doctrine_cost_factor = NOR.NOR_army_air_force_dmod_air_doctrine_cost_factor #-0.1 then -0.2
-	air_ace_bonuses_factor = NOR.NOR_army_air_force_dmod_air_ace_bonuses_factor #0.15 
+	air_ace_bonuses_factor = NOR.NOR_army_air_force_dmod_air_ace_bonuses_factor #0.15
 	air_ace_generation_chance_factor = NOR.NOR_army_air_force_dmod_air_ace_generation_chance_factor # 0.25
 	air_attack_factor = NOR.NOR_army_air_force_dmod_air_attack_factor #0.1
 	air_defence_factor = NOR.NOR_army_air_force_dmod_air_defence_factor #0.1
 	air_nav_efficiency = NOR.NOR_army_air_force_dmod_air_nav_efficiency #0.25
 }
 
-NOR_royal_air_force_dmod = { #This is a duplicate of the army arforce one right above so we can change name 
-	
+NOR_royal_air_force_dmod = { #This is a duplicate of the army arforce one right above so we can change name
+
 	icon = GFX_idea_NOR_luftforsvaret_ns
 
 	enable = {
@@ -1547,10 +1547,10 @@ NOR_royal_air_force_dmod = { #This is a duplicate of the army arforce one right 
 	air_mission_efficiency = 0.1 # Starting bonus
 	air_mission_xp_gain_factor = 0.12 # Starting bonus
 	license_air_purchase_cost = NOR.NOR_army_air_force_dmod_license_air_purchase_cost #-0.4
-	production_speed_air_base_factor = NOR.NOR_army_air_force_dmod_production_speed_air_base_factor #0.45   
+	production_speed_air_base_factor = NOR.NOR_army_air_force_dmod_production_speed_air_base_factor #0.45
 	production_speed_anti_air_building_factor = NOR.NOR_army_air_force_dmod_production_speed_anti_air_building_factor #0.25
 	air_doctrine_cost_factor = NOR.NOR_army_air_force_dmod_air_doctrine_cost_factor #-0.1 then -0.2
-	air_ace_bonuses_factor = NOR.NOR_army_air_force_dmod_air_ace_bonuses_factor #0.15 
+	air_ace_bonuses_factor = NOR.NOR_army_air_force_dmod_air_ace_bonuses_factor #0.15
 	air_ace_generation_chance_factor = NOR.NOR_army_air_force_dmod_air_ace_generation_chance_factor # 0.25
 	air_attack_factor = NOR.NOR_army_air_force_dmod_air_attack_factor #0.1
 	air_defence_factor = NOR.NOR_army_air_force_dmod_air_defence_factor #0.1
@@ -1558,21 +1558,21 @@ NOR_royal_air_force_dmod = { #This is a duplicate of the army arforce one right 
 }
 
 NOR_royal_navy_dmod = {
-	
+
 	icon = GFX_idea_NOR_royal_navy_dmod
-	
+
 	enable = {
 		always = yes
 	}
 
-	icon =  GFX_idea_NOR_royal_navy_dmod 
-	
+	icon =  GFX_idea_NOR_royal_navy_dmod
+
 	naval_coordination = 0.1 # Starting bonus
-	naval_morale_factor = 0.1 # Starting bonus 
+	naval_morale_factor = 0.1 # Starting bonus
 	industrial_capacity_dockyard = NOR.NOR_royal_navy_dmod_industrial_capacity_dockyard
 	convoy_escort_efficiency = NOR.NOR_royal_navy_dmod_convoy_escort_efficiency #0.3
 	naval_strike_attack_factor = NOR.NOR_royal_navy_dmod_naval_strike_attack_factor #0.25
-	naval_strike_targetting_factor = NOR.NOR_royal_navy_dmod_naval_strike_targetting_factor #0.2 
+	naval_strike_targetting_factor = NOR.NOR_royal_navy_dmod_naval_strike_targetting_factor #0.2
 	spotting_chance = NOR.NOR_royal_navy_dmod_spotting_chance # 0.25
 	sortie_efficiency = NOR.NOR_royal_navy_dmod_sortie_efficiency #0.2
 	mines_planting_by_fleets_factor = NOR.NOR_royal_navy_dmod_mines_planting_by_fleets_factor # 0.35
@@ -1582,7 +1582,7 @@ NOR_royal_navy_dmod = {
 	convoy_retreat_speed = NOR.NOR_royal_navy_dmod_convoy_retreat_speed # 0.2
 }
 
-NOR_administrative_council_dmod = { # Added in the Historical side of the Fascist Path 
+NOR_administrative_council_dmod = { # Added in the Historical side of the Fascist Path
 	enable = {
 		always = yes
 	}
@@ -1599,7 +1599,7 @@ NOR_administrative_council_dmod = { # Added in the Historical side of the Fascis
 
 NOR_oppressed_civilians_dmod = {
 		enable = {
-			always = yes 
+			always = yes
 		}
 		remove_trigger = {
 			NOT = { has_government = fascism }
@@ -1610,7 +1610,7 @@ NOR_oppressed_civilians_dmod = {
 		resistance_growth = -0.15
 		resistance_target = -0.1
 		stability_factor = 0.2
-		consumer_goods_factor = 0.1	
+		consumer_goods_factor = 0.1
 		conscription_factor = NOR.NOR_oppressed_civilians_dmod_recruitable_population_factor #0.15
 }
 
@@ -1635,13 +1635,13 @@ NOR_kingdom_of_norway_dmod = {
 	modifier_army_sub_unit_mountaineers_max_org_factor = NOR_kingdom_of_norway_dmod_modifier_army_sub_unit_mountaineers_max_org_factor #0.10
 	modifier_army_sub_unit_marines_max_org_factor = NOR_kingdom_of_norway_dmod_modifier_army_sub_unit_marines_max_org_factor #0.10
 	conscription_factor = NOR_kingdom_of_norway_dmod_recruitable_population_factor # 0.2
-	army_defence_factor = NOR_kingdom_of_norway_dmod_army_defence_factor # 0.2 
-	army_morale_factor = NOR_kingdom_of_norway_dmod_army_morale_factor # 0.15 
+	army_defence_factor = NOR_kingdom_of_norway_dmod_army_defence_factor # 0.2
+	army_morale_factor = NOR_kingdom_of_norway_dmod_army_morale_factor # 0.15
 	army_org_factor = NOR_kingdom_of_norway_dmod_army_org_factor # 0.15
 	justify_war_goal_time = NOR_kingdom_of_norway_dmod_justify_war_goal_time # -0.2
 	production_speed_coastal_bunker_factor =  NOR_kingdom_of_norway_dmod_production_speed_coastal_bunker_factor # 0.35
 	production_speed_naval_base_factor = NOR_kingdom_of_norway_dmod_production_speed_naval_base_factor # 0.4
-	production_speed_dockyard_factor = NOR_kingdom_of_norway_dmod_production_speed_dockyard_factor # 0.2 
+	production_speed_dockyard_factor = NOR_kingdom_of_norway_dmod_production_speed_dockyard_factor # 0.2
 	naval_mines_damage_factor = NOR_kingdom_of_norway_dmod_naval_mines_damage_factor # 0.2
 	spotting_chance = NOR_kingdom_of_norway_dmod_spotting_chance # 0.35
 	navy_max_range_factor = NOR_kingdom_of_norway_dmod_navy_max_range_factor # 0.15
@@ -1782,7 +1782,7 @@ DEN_neglected_military_dynamic_modifier = {
 	planning_speed = DEN_neglected_military_planning_speed # -0.1
 }
 
-DEN_economic_crisis_dynamic_modifier = { 
+DEN_economic_crisis_dynamic_modifier = {
 	enable = { always = yes }
 	icon = GFX_idea_generic_economic_crisis
 
@@ -1937,7 +1937,7 @@ DEN_political_edicts_dynamic_modifier = {
 		check_variable = { DEN_political_edicts_conscription_factor = 0 }
 		check_variable = { DEN_political_edicts_operative_slot = 0 }
 	}
-	
+
 	drift_defence_factor = DEN_political_edicts_drift_defence_factor #0
 	conscription_factor = DEN_political_edicts_conscription_factor #0
 	operative_slot = DEN_political_edicts_operative_slot #0
@@ -1950,7 +1950,7 @@ DEN_occupation_laws_dynamic_modifier = {
 	remove_trigger = {
 		is_subject = no
 	}
-	
+
 	cic_to_overlord_factor = DEN_occupation_laws_cic_to_overlord
 	mic_to_overlord_factor = DEN_occupation_laws_mic_to_overlord
 	autonomy_manpower_share = DEN_occupation_laws_autonomy_manpower_share
@@ -2165,7 +2165,7 @@ DEN_flyvevabnet_dynamic_modifier_max_improved = { #Make sure to change all effec
 #### STATE MODIFIERS ####
 DEN_development_projects_state_modifier = {
 	enable = { always = yes }
-	icon = GFX_modifiers_ETH_state_development 
+	icon = GFX_modifiers_ETH_state_development
 
 	remove_trigger = {
 		ROOT = { NOT = { is_core_of = ROOT.controller } } # ROOT refers to the state on which the modifier is added
@@ -2180,7 +2180,7 @@ DEN_development_projects_state_modifier = {
 
 DEN_development_projects_mainland_state_modifier = {
 	enable = { always = yes }
-	icon = GFX_modifiers_ETH_state_development 
+	icon = GFX_modifiers_ETH_state_development
 
 	remove_trigger = {
 		ROOT = { NOT = { is_core_of = ROOT.controller } } # ROOT refers to the state on which the modifier is added
@@ -2195,7 +2195,7 @@ DEN_development_projects_mainland_state_modifier = {
 
 DEN_military_projects_state_modifier = {
 	enable = { always = yes }
-	icon = GFX_modifiers_generic_military_industry 
+	icon = GFX_modifiers_generic_military_industry
 
 	remove_trigger = {
 		ROOT = { NOT = { is_core_of = ROOT.controller } } # ROOT refers to the state on which the modifier is added
@@ -2250,13 +2250,13 @@ DEN_pan_scandinavianism_modifier = {
 ###################################################################################################
 ###################################################################################################
 
-######## #### ##    ## ##          ###    ##    ## ########  
-##        ##  ###   ## ##         ## ##   ###   ## ##     ## 
-##        ##  ####  ## ##        ##   ##  ####  ## ##     ## 
-######    ##  ## ## ## ##       ##     ## ## ## ## ##     ## 
-##        ##  ##  #### ##       ######### ##  #### ##     ## 
-##        ##  ##   ### ##       ##     ## ##   ### ##     ## 
-##       #### ##    ## ######## ##     ## ##    ## ########  
+######## #### ##    ## ##          ###    ##    ## ########
+##        ##  ###   ## ##         ## ##   ###   ## ##     ##
+##        ##  ####  ## ##        ##   ##  ####  ## ##     ##
+######    ##  ## ## ## ##       ##     ## ## ## ## ##     ##
+##        ##  ##  #### ##       ######### ##  #### ##     ##
+##        ##  ##   ### ##       ##     ## ##   ### ##     ##
+##       #### ##    ## ######## ##     ## ##    ## ########
 
 ###################################################################################################
 ###################################################################################################
@@ -2444,13 +2444,13 @@ FIN_confederation_of_finno_russian_republics_dm = {
 ###########################################################
 ###########################################################
 
-    ##    ##  #######  ########  ########  ####  ######  
-    ###   ## ##     ## ##     ## ##     ##  ##  ##    ## 
-    ####  ## ##     ## ##     ## ##     ##  ##  ##       
-    ## ## ## ##     ## ########  ##     ##  ##  ##       
-    ##  #### ##     ## ##   ##   ##     ##  ##  ##       
-    ##   ### ##     ## ##    ##  ##     ##  ##  ##    ## 
-    ##    ##  #######  ##     ## ########  ####  ######  
+    ##    ##  #######  ########  ########  ####  ######
+    ###   ## ##     ## ##     ## ##     ##  ##  ##    ##
+    ####  ## ##     ## ##     ## ##     ##  ##  ##
+    ## ## ## ##     ## ########  ##     ##  ##  ##
+    ##  #### ##     ## ##   ##   ##     ##  ##  ##
+    ##   ### ##     ## ##    ##  ##     ##  ##  ##    ##
+    ##    ##  #######  ##     ## ########  ####  ######
 
 ###########################################################
 ###########################################################
@@ -2463,7 +2463,7 @@ FIN_confederation_of_finno_russian_republics_dm = {
 NORDIC_efficient_resource_extraction = {
 	enable = { always = yes }
 	icon = GFX_modifiers_generic_construction
-	
+
 	state_resources_factor = 0.1
 }
 
@@ -2493,7 +2493,7 @@ NORDIC_airforces_originator_dmod = {
 
 	experience_gain_air = 0.2
 	air_cas_present_factor = NORDIC_airforces_originator_dmod_cas_factor #0.25
-	air_strategic_bomber_bombing_factor = NORDIC_airforces_originator_dmod_strat_bombing_factor #0.35 
+	air_strategic_bomber_bombing_factor = NORDIC_airforces_originator_dmod_strat_bombing_factor #0.35
 	air_intercept_efficiency = NORDIC_airforces_originator_dmod_intercept_efficiency #0.25
 	air_superiority_efficiency = NORDIC_airforces_originator_dmod_superiority_efficiency #0.25
 	air_range_factor = NORDIC_airforces_originator_dmod_range_factor # 0.3
@@ -2511,7 +2511,7 @@ NORDIC_airforces_member_dmod = {
 
 	experience_gain_air = 0.1
 	air_cas_present_factor = NORDIC_airforces_member_dmod_cas_factor #0.15
-	air_strategic_bomber_bombing_factor = NORDIC_airforces_member_dmod_strat_bombing_factor #0.2 
+	air_strategic_bomber_bombing_factor = NORDIC_airforces_member_dmod_strat_bombing_factor #0.2
 	air_intercept_efficiency = NORDIC_airforces_member_dmod_intercept_efficiency #0.15
 	air_superiority_efficiency = NORDIC_airforces_member_dmod_superiority_efficiency #0.15
 	air_range_factor = NORDIC_airforces_member_dmod_range_factor # 0.2
@@ -2554,7 +2554,7 @@ NORDIC_mil_industry_originator_dmod = {
 	production_factory_max_efficiency_factor = 0.1
 	production_speed_arms_factory_factor = NORDIC_mil_industry_originator_production_speed_arms_factory_factor # 0.15
 	production_factory_efficiency_gain_factor = NORDIC_mil_industry_originator_dmod_efficiency_gain_factor # 0.2
-	equipment_conversion_speed = NORDIC_mil_industry_originator_dmod_equipment_conversion_speed # 0.25 
+	equipment_conversion_speed = NORDIC_mil_industry_originator_dmod_equipment_conversion_speed # 0.25
 	production_factory_start_efficiency_factor = NORDIC_mil_industry_originator_dmod_start_efficiency_factor # 0.2
 }
 
@@ -2581,7 +2581,7 @@ NORDIC_democratic_alliance_leader_dmod = {
 	democratic_drift = 0.025
 	production_speed_buildings_factor = 0.15
 	consumer_goods_factor = 0.2
-	research_speed_factor = NORDIC_democratic_alliance_leader_dmod_research # 0.075 
+	research_speed_factor = NORDIC_democratic_alliance_leader_dmod_research # 0.075
 	training_time_factor = NORDIC_democratic_alliance_leader_dmod_training_time # 0.12
 	production_factory_start_efficiency_factor = NORDIC_democratic_alliance_leader_dmod_prod_eff_start # 0.2
 	war_support_factor = NORDIC_democratic_alliance_leader_dmod_war_support # -0.15
@@ -2596,15 +2596,15 @@ NORDIC_democratic_alliance_member_dmod = {
 	democratic_drift = 0.015
 	production_speed_buildings_factor = 0.10
 	consumer_goods_factor = 0.12
-	research_speed_factor = NORDIC_democratic_alliance_member_dmod_research # 0.05 
+	research_speed_factor = NORDIC_democratic_alliance_member_dmod_research # 0.05
 	training_time_factor = NORDIC_democratic_alliance_member_dmod_training_time # 0.08
-	production_factory_start_efficiency_factor = NORDIC_democratic_alliance_member_dmod_prod_eff_start # 0.15	
+	production_factory_start_efficiency_factor = NORDIC_democratic_alliance_member_dmod_prod_eff_start # 0.15
 	war_support_factor = NORDIC_democratic_alliance_member_dmod_war_support # -0.1
 }
 
 NORDIC_communist_alliance_leader_dmod = {
 	enable = { always = yes }
-	icon = GFX_idea_NORDIC_northern_union 
+	icon = GFX_idea_NORDIC_northern_union
 
 	remove_trigger = {  }
 
@@ -2631,7 +2631,7 @@ NORDIC_communist_alliance_member_dmod = {
 	research_speed_factor = NORDIC_communist_alliance_member_dmod_research # 0.05
 	production_lack_of_resource_penalty_factor = NORDIC_communist_alliance_member_dmod_resource_penalty # 0.06
 }
-NORDIC_monarchist_alliance_leader_dmod = {	
+NORDIC_monarchist_alliance_leader_dmod = {
 	enable = { always = yes }
 	icon = GFX_idea_NORDIC_kalmar_league
 
@@ -2643,12 +2643,12 @@ NORDIC_monarchist_alliance_leader_dmod = {
 	production_factory_efficiency_gain_factor = NORDIC_monarchist_alliance_leader_dmod_prod_eff_gain # 0.25
 	production_speed_buildings_factor = NORDIC_monarchist_alliance_leader_dmod_construction # -0.1
 	army_org_factor = NORDIC_monarchist_alliance_leader_dmod_max_org # 0.2
-	fascism_drift = NORDIC_monarchist_alliance_leader_dmod_drift_defense # -0.15 
+	fascism_drift = NORDIC_monarchist_alliance_leader_dmod_drift_defense # -0.15
 }
 
-NORDIC_monarchist_alliance_member_dmod = {	
+NORDIC_monarchist_alliance_member_dmod = {
 	enable = { always = yes }
-	icon = GFX_idea_NORDIC_kalmar_league 
+	icon = GFX_idea_NORDIC_kalmar_league
 
 	remove_trigger = {  }
 
@@ -2658,7 +2658,7 @@ NORDIC_monarchist_alliance_member_dmod = {
 	production_factory_efficiency_gain_factor = NORDIC_monarchist_alliance_member_dmod_prod_eff_gain # 0.17
 	production_speed_buildings_factor = NORDIC_monarchist_alliance_member_dmod_construction # -0.7
 	army_org_factor = NORDIC_monarchist_alliance_member_dmod_max_org # 0.12
-	fascism_drift = NORDIC_monarchist_alliance_member_dmod_drift_defense # -0.1  
+	fascism_drift = NORDIC_monarchist_alliance_member_dmod_drift_defense # -0.1
 }
 
 #	Example:
@@ -2744,7 +2744,7 @@ ETH_army_2_dynamic_modifier = { #NATIONAL SPIRIT
 	modifier_army_sub_unit_infantry_attack_factor = ETH_army_modifier_army_sub_unit_infantry_attack_factor
 	modifier_army_sub_unit_infantry_defence_factor = ETH_army_modifier_army_sub_unit_infantry_defence_factor
 	modifier_army_sub_unit_infantry_speed_factor = 	ETH_army_modifier_army_sub_unit_infantry_speed_factor
-	
+
 
 	modifier_army_sub_unit_irregular_infantry_attack_factor = ETH_army_modifier_army_sub_unit_irregular_infantry_attack_factor
 	supply_consumption_factor = ETH_army_supply_consumption_factor
@@ -3955,7 +3955,7 @@ ITA_anti_colonialism_sentiment = {
 ITA_mafia_on_the_rise_no_lar = {
 	enable = { always = yes }
 	remove_trigger = { # ROOT refers to the state on which the modifier is added
-		
+
 	}
 	icon = GFX_modifiers_ITA_mafia_on_the_rise
 
@@ -3968,7 +3968,7 @@ ITA_mafia_on_the_rise_no_lar = {
 ITA_mafia_on_the_rise = {
 	enable = { always = yes }
 	remove_trigger = { # ROOT refers to the state on which the modifier is added
-		
+
 	}
 	icon = GFX_modifiers_ITA_mafia_on_the_rise
 
@@ -3983,7 +3983,7 @@ ITA_mafia_on_the_rise = {
 ITA_established_mafia_no_lar = {
 	enable = { always = yes }
 	remove_trigger = { # ROOT refers to the state on which the modifier is added
-		
+
 	}
 	icon = GFX_modifiers_ITA_established_mafia
 
@@ -3995,7 +3995,7 @@ ITA_established_mafia_no_lar = {
 ITA_established_mafia = {
 	enable = { always = yes }
 	remove_trigger = { # ROOT refers to the state on which the modifier is added
-		
+
 	}
 	icon = GFX_modifiers_ITA_established_mafia
 
@@ -4087,7 +4087,7 @@ SWI_fake_active_citizen_militia_for_the_tooltip = { # I swear this is the last t
 }
 
 SWI_gold_trade_with_switzerland = {
-	enable = { 
+	enable = {
 		always = yes
 	}
 	icon = GFX_idea_SPR_seize_the_gold_reserves
@@ -4100,7 +4100,7 @@ SWI_gold_trade_with_switzerland = {
 }
 
 SWI_swiss_gold_market = {
-	enable = { 
+	enable = {
 		always = yes
 	 }
 	icon = GFX_idea_SPR_seize_the_gold_reserves
@@ -4137,7 +4137,7 @@ SWI_stole_our_gold_reserves = {
 #### State Modifiers ####
 
 SWI_attack_from_the_mountains = {
-	enable = { always = yes } 
+	enable = { always = yes }
 	army_attack_factor = 2
 	state_production_speed_bunker_factor = -0.35
 	icon = GFX_modifiers_generic_military_plans
@@ -4145,7 +4145,7 @@ SWI_attack_from_the_mountains = {
 }
 
 SWI_frontier_defense = {
-	enable = { always = yes} 
+	enable = { always = yes}
 	icon = GFX_modifiers_SOV_invaders_must_die
 	army_defence_factor = 1.5
 }
@@ -4160,8 +4160,8 @@ SWI_heer_und_haus_mod = {
 }
 
 SWI_Ortswehren_dynamic_mod = {
-	enable = { always = yes } 
-	icon = GFX_modifiers_generic_military_plans 
+	enable = { always = yes }
+	icon = GFX_modifiers_generic_military_plans
 
 	army_defence_factor = 0.25
 	land_reinforce_rate = 0.03
@@ -4173,7 +4173,7 @@ SWI_Ortswehren_dynamic_mod = {
 
 SWI_citizen_supply_mandate_mod = {
 	enable = { always = yes }
-	icon = GFX_modifiers_generic_military_plans 
+	icon = GFX_modifiers_generic_military_plans
 
 	local_supplies = 0.5
 }
@@ -4484,7 +4484,7 @@ CHL_navy_modifier = { #NATIONAL SPIRIT
 
 	icon = GFX_idea_CHL_armada_de_chile
 
-	experience_gain_navy = JUNO_navy_experience_gain_navy_factor 
+	experience_gain_navy = JUNO_navy_experience_gain_navy_factor
 	mines_planting_by_fleets_factor = JUNO_navy_mines_planting_by_fleets_factor
 	navy_anti_air_attack_factor = JUNO_navy_navy_anti_air_attack_factor
 	navy_spirit_category_type_cost_factor = JUNO_navy_navy_spirit_category_type_cost_factor
@@ -4502,8 +4502,8 @@ CHL_navy_modifier = { #NATIONAL SPIRIT
 	naval_equipment_upgrade_xp_cost = JUNO_navy_naval_equipment_upgrade_xp_cost
 	naval_morale_factor = JUNO_naval_morale_factor
 	screening_efficiency =	JUNO_screening_efficiency
-	convoy_escort_efficiency =	JUNO_convoy_escort_efficiency		
-	navy_capital_ship_defence_factor =	JUNO_navy_capital_ship_defence_factor  
+	convoy_escort_efficiency =	JUNO_convoy_escort_efficiency
+	navy_capital_ship_defence_factor =	JUNO_navy_capital_ship_defence_factor
 	naval_accidents_chance = JUNO_naval_accidents_chance
 	navy_screen_defence_factor = JUNO_navy_screen_defence_factor
 	production_speed_coastal_bunker_factor = JUNO_modifier_production_speed_coastal_bunker_factor
@@ -4516,7 +4516,7 @@ BRA_navy_modifier = { #NATIONAL SPIRIT
 
 	icon = GFX_idea_BRA_navy
 
-	experience_gain_navy = JUNO_navy_experience_gain_navy_factor 
+	experience_gain_navy = JUNO_navy_experience_gain_navy_factor
 	mines_planting_by_fleets_factor = JUNO_navy_mines_planting_by_fleets_factor
 	navy_anti_air_attack_factor = JUNO_navy_navy_anti_air_attack_factor
 	navy_spirit_category_type_cost_factor = JUNO_navy_navy_spirit_category_type_cost_factor
@@ -4534,8 +4534,8 @@ BRA_navy_modifier = { #NATIONAL SPIRIT
 	naval_equipment_upgrade_xp_cost = JUNO_navy_naval_equipment_upgrade_xp_cost
 	naval_morale_factor = JUNO_naval_morale_factor
 	screening_efficiency =	JUNO_screening_efficiency
-	convoy_escort_efficiency =	JUNO_convoy_escort_efficiency		
-	navy_capital_ship_defence_factor =	JUNO_navy_capital_ship_defence_factor  
+	convoy_escort_efficiency =	JUNO_convoy_escort_efficiency
+	navy_capital_ship_defence_factor =	JUNO_navy_capital_ship_defence_factor
 	naval_accidents_chance = JUNO_naval_accidents_chance
 	navy_screen_defence_factor = JUNO_navy_screen_defence_factor
 	production_speed_coastal_bunker_factor = JUNO_modifier_production_speed_coastal_bunker_factor
@@ -4547,7 +4547,7 @@ ARG_navy_modifier = { #NATIONAL SPIRIT
 
 	icon = GFX_idea_ARG_navy
 
-	experience_gain_navy = JUNO_navy_experience_gain_navy_factor 
+	experience_gain_navy = JUNO_navy_experience_gain_navy_factor
 	mines_planting_by_fleets_factor = JUNO_navy_mines_planting_by_fleets_factor
 	navy_anti_air_attack_factor = JUNO_navy_navy_anti_air_attack_factor
 	navy_spirit_category_type_cost_factor = JUNO_navy_navy_spirit_category_type_cost_factor
@@ -4565,8 +4565,8 @@ ARG_navy_modifier = { #NATIONAL SPIRIT
 	naval_equipment_upgrade_xp_cost = JUNO_navy_naval_equipment_upgrade_xp_cost
 	naval_morale_factor = JUNO_naval_morale_factor
 	screening_efficiency =	JUNO_screening_efficiency
-	convoy_escort_efficiency =	JUNO_convoy_escort_efficiency		
-	navy_capital_ship_defence_factor =	JUNO_navy_capital_ship_defence_factor  
+	convoy_escort_efficiency =	JUNO_convoy_escort_efficiency
+	navy_capital_ship_defence_factor =	JUNO_navy_capital_ship_defence_factor
 	naval_accidents_chance = JUNO_naval_accidents_chance
 	navy_screen_defence_factor = JUNO_navy_screen_defence_factor
 	#production_speed_bunker_factor = JUNO_modifier_production_speed_bunker_factor
@@ -4579,7 +4579,7 @@ south_american_navy_modifier = { #NATIONAL SPIRIT
 
 	icon = GFX_idea_generic_navy_bonus
 
-	experience_gain_navy = JUNO_navy_experience_gain_navy_factor 
+	experience_gain_navy = JUNO_navy_experience_gain_navy_factor
 	mines_planting_by_fleets_factor = JUNO_navy_mines_planting_by_fleets_factor
 	navy_anti_air_attack_factor = JUNO_navy_navy_anti_air_attack_factor
 	navy_spirit_category_type_cost_factor = JUNO_navy_navy_spirit_category_type_cost_factor
@@ -4597,8 +4597,8 @@ south_american_navy_modifier = { #NATIONAL SPIRIT
 	naval_equipment_upgrade_xp_cost = JUNO_navy_naval_equipment_upgrade_xp_cost
 	naval_morale_factor = JUNO_naval_morale_factor
 	screening_efficiency =	JUNO_screening_efficiency
-	convoy_escort_efficiency =	JUNO_convoy_escort_efficiency		
-	navy_capital_ship_defence_factor =	JUNO_navy_capital_ship_defence_factor  
+	convoy_escort_efficiency =	JUNO_convoy_escort_efficiency
+	navy_capital_ship_defence_factor =	JUNO_navy_capital_ship_defence_factor
 	naval_accidents_chance = JUNO_naval_accidents_chance
 	navy_screen_defence_factor = JUNO_navy_screen_defence_factor
 	production_speed_coastal_bunker_factor = JUNO_modifier_production_speed_coastal_bunker_factor
@@ -4714,7 +4714,7 @@ BRA_estado_moderno_modifier = { #NATIONAL SPIRIT
 
 ARG_political_corruption_modifier = { #NATIONAL SPIRIT
 	enable = { always = yes }
-	icon = GFX_idea_ARG_political_corruption_modifier 
+	icon = GFX_idea_ARG_political_corruption_modifier
 	political_power_factor = ARG_corruption_political_power_factor
 	production_factory_max_efficiency_factor = ARG_corruption_production_factory_max_efficiency_factor
 	production_speed_buildings_factor = ARG_corruption_production_speed_buildings_factor
@@ -4723,7 +4723,7 @@ ARG_political_corruption_modifier = { #NATIONAL SPIRIT
 
 ARG_corruption_crackdown_modifier = { #NATIONAL SPIRIT
 	enable = { always = yes }
-	icon = GFX_idea_great_depression 
+	icon = GFX_idea_great_depression
 	stability_factor = ARG_corruption_crackdown_stability_factor
 	production_factory_max_efficiency_factor = ARG_corruption_crackdown_production_factory_max_efficiency_factor
 	neutrality_drift = ARG_corruption_crackdown_neutrality_factor
@@ -4733,7 +4733,7 @@ ARG_corruption_crackdown_modifier = { #NATIONAL SPIRIT
 
 ARG_anti_corruption_modifier = { #NATIONAL SPIRIT
 	enable = { always = yes }
-	icon = GFX_idea_great_depression 
+	icon = GFX_idea_great_depression
 	stability_factor = ARG_anti_corruption_stability_factor
 	production_factory_max_efficiency_factor = ARG_anti_corruption_production_factory_max_efficiency_factor
 	neutrality_drift = ARG_anti_corruption_neutrality_factor
@@ -4826,7 +4826,7 @@ CHL_deeper_mines_modifier = {
 BRA_new_capital_modifier = { #State Modifier
 	enable = { always = yes }
 	icon = GFX_decision_generic_electricity
-	
+
 	state_production_speed_infrastructure_factor = 0.1
 	state_production_speed_rail_way_factor = 0.1
 	local_manpower = 0.1
@@ -4846,7 +4846,7 @@ BRA_cangaceiro_state = {
 
 ARG_federal_intervention_modifier = {
 	enable = { always = yes }
-	icon = GFX_modifiers_generic_defense 
+	icon = GFX_modifiers_generic_defense
 	army_core_defence_factor = 0.05
 	local_manpower = 0.04
 	local_org_regain = 0.05
@@ -4862,7 +4862,7 @@ ARG_military_owned_state = {
 
 BRA_amazonian_settlement_modifier = {
 	enable = { always = yes }
-	icon = GFX_modifiers_SOV_civilian_labor_in_defense 
+	icon = GFX_modifiers_SOV_civilian_labor_in_defense
 	local_supplies = 0.1
 	local_resources = 0.1
 	state_production_speed_infrastructure_factor = 0.15
@@ -4870,14 +4870,14 @@ BRA_amazonian_settlement_modifier = {
 
 JUNO_immigration_promoted = {
 	enable = { always = yes }
-	icon = GFX_modifiers_generic_immigration_promoted 
+	icon = GFX_modifiers_generic_immigration_promoted
 	local_manpower = 0.4
 	state_production_speed_buildings_factor = 0.05
 }
 
 
 idea_PAR_river_navy = { #STATE MODIFIER
-	remove_trigger = { 
+	remove_trigger = {
 
 	}
 	icon = GFX_MODIFIER_NAVAL_INVASION_CAPACITY
@@ -4890,7 +4890,7 @@ idea_PAR_river_navy = { #STATE MODIFIER
 }
 
 idea_URG_ruralism_good = { #STATE MODIFIER
-	remove_trigger = { 
+	remove_trigger = {
 
 	}
 
@@ -4903,7 +4903,7 @@ idea_URG_ruralism_good = { #STATE MODIFIER
 }
 
 idea_URG_ruralism_good_2 = { #STATE MODIFIER
-	remove_trigger = { 
+	remove_trigger = {
 
 	}
 
@@ -4916,7 +4916,7 @@ idea_URG_ruralism_good_2 = { #STATE MODIFIER
 }
 
 idea_URG_ruralism_bad = { #STATE MODIFIER
-	remove_trigger = { 
+	remove_trigger = {
 
 	}
 	icon = BRA_neglected_state_dynamic_modifier
@@ -4924,7 +4924,7 @@ idea_URG_ruralism_bad = { #STATE MODIFIER
 }
 
 idea_URG_ruralism_bad_2 = { #STATE MODIFIER
-	remove_trigger = { 
+	remove_trigger = {
 
 	}
 	icon = BRA_neglected_state_dynamic_modifier
@@ -5041,7 +5041,7 @@ HABSBURG_joint_industry_modifier = { #NATIONAL SPIRIT
 	industry_air_damage_factor = global.HABSBURG_industry_industry_air_damage_factor
 	production_lack_of_resource_penalty_factor = global.HABSBURG_industry_production_lack_of_resource_penalty_factor
 	production_factory_max_efficiency_factor = global.HABSBURG_industry_production_factory_max_efficiency_factor
-	
+
 }
 
 
@@ -5093,7 +5093,7 @@ AUS_austrofascism = {
 	drift_defence_factor = AUS_austrofascism_drift_defence_factor
 	political_power_factor = AUS_austrofascism_political_power_factor
 	war_support_factor = AUS_austrofascism_war_support_factor
-	production_speed_industrial_complex_factor = AUS_austrofascism_production_speed_industrial_complex_factor 
+	production_speed_industrial_complex_factor = AUS_austrofascism_production_speed_industrial_complex_factor
 	production_speed_arms_factory_factor = AUS_austrofascism_production_speed_arms_factory_factor
 	production_speed_infrastructure_factor = AUS_austrofascism_production_speed_infrastructure_factor
 	conscription_factor = AUS_austrofascism_conscription_factor
@@ -5386,13 +5386,13 @@ HUN_academy_of_sciences = {
 ###################################################################################################
 ###################################################################################################
 
- ######   ######## ########  ##     ##    ###    ##    ## ##    ## 
-##    ##  ##       ##     ## ###   ###   ## ##   ###   ##  ##  ##  
-##        ##       ##     ## #### ####  ##   ##  ####  ##   ####   
-##   #### ######   ########  ## ### ## ##     ## ## ## ##    ##    
-##    ##  ##       ##   ##   ##     ## ######### ##  ####    ##    
-##    ##  ##       ##    ##  ##     ## ##     ## ##   ###    ##    
- ######   ######## ##     ## ##     ## ##     ## ##    ##    ##    
+ ######   ######## ########  ##     ##    ###    ##    ## ##    ##
+##    ##  ##       ##     ## ###   ###   ## ##   ###   ##  ##  ##
+##        ##       ##     ## #### ####  ##   ##  ####  ##   ####
+##   #### ######   ########  ## ### ## ##     ## ## ## ##    ##
+##    ##  ##       ##   ##   ##     ## ######### ##  ####    ##
+##    ##  ##       ##    ##  ##     ## ##     ## ##   ###    ##
+ ######   ######## ##     ## ##     ## ##     ## ##    ##    ##
 
 ###################################################################################################
 ###################################################################################################
@@ -5420,7 +5420,7 @@ GER_mefo_bills_modifier = { #MEFO Bills and Economy of Conquest uses the same co
 	industry_air_damage_factor = GER_industrial_industry_air_damage_factor
 	research_speed_factor = GER_industrial_research_speed_factor
 	industrial_concern_cost_factor = GER_industrial_industrial_concern_cost_factor
-	tank_manufacturer_cost_factor = GER_industrial_capacity_tank_manufacturer_cost_factor 
+	tank_manufacturer_cost_factor = GER_industrial_capacity_tank_manufacturer_cost_factor
 	naval_manufacturer_cost_factor = GER_industrial_capacity_naval_manufacturer_cost_factor
 	aircraft_manufacturer_cost_factor = GER_industrial_capacity_aircraft_manufacturer_cost_factor
 	materiel_manufacturer_cost_factor = GER_industrial_capacity_materiel_manufacturer_cost_factor
@@ -5448,7 +5448,7 @@ GER_economy_of_conquest_modifier = { #MEFO Bills and Economy of Conquest uses th
 	industry_air_damage_factor = GER_industrial_industry_air_damage_factor
 	research_speed_factor = GER_industrial_research_speed_factor
 	industrial_concern_cost_factor = GER_industrial_industrial_concern_cost_factor
-	tank_manufacturer_cost_factor = GER_industrial_capacity_tank_manufacturer_cost_factor 
+	tank_manufacturer_cost_factor = GER_industrial_capacity_tank_manufacturer_cost_factor
 	naval_manufacturer_cost_factor = GER_industrial_capacity_naval_manufacturer_cost_factor
 	aircraft_manufacturer_cost_factor = GER_industrial_capacity_aircraft_manufacturer_cost_factor
 	materiel_manufacturer_cost_factor = GER_industrial_capacity_materiel_manufacturer_cost_factor
@@ -5479,7 +5479,7 @@ GER_recovering_economy_modifier = { #Recovering Economy NS #Aufrüstung and Reco
 	economy_cost_factor = GER_industrial_economy_cost_factor
 	trade_laws_cost_factor = GER_industrial_trade_laws_cost_factor
 	industrial_concern_cost_factor = GER_industrial_industrial_concern_cost_factor
-	tank_manufacturer_cost_factor = GER_industrial_capacity_tank_manufacturer_cost_factor 
+	tank_manufacturer_cost_factor = GER_industrial_capacity_tank_manufacturer_cost_factor
 	naval_manufacturer_cost_factor = GER_industrial_capacity_naval_manufacturer_cost_factor
 	aircraft_manufacturer_cost_factor = GER_industrial_capacity_aircraft_manufacturer_cost_factor
 	materiel_manufacturer_cost_factor = GER_industrial_capacity_materiel_manufacturer_cost_factor
@@ -5509,7 +5509,7 @@ GER_wirtschaftswunder_modifier = { #Wirtschaftswunder NS #Aufrüstung and Recove
 	economy_cost_factor = GER_industrial_economy_cost_factor
 	trade_laws_cost_factor = GER_industrial_trade_laws_cost_factor
 	industrial_concern_cost_factor = GER_industrial_industrial_concern_cost_factor
-	tank_manufacturer_cost_factor = GER_industrial_capacity_tank_manufacturer_cost_factor 
+	tank_manufacturer_cost_factor = GER_industrial_capacity_tank_manufacturer_cost_factor
 	naval_manufacturer_cost_factor = GER_industrial_capacity_naval_manufacturer_cost_factor
 	aircraft_manufacturer_cost_factor = GER_industrial_capacity_aircraft_manufacturer_cost_factor
 	materiel_manufacturer_cost_factor = GER_industrial_capacity_materiel_manufacturer_cost_factor
@@ -5612,7 +5612,7 @@ GER_navy_fascist_modifier = { #Fascist Navy NS
 	enable = { always = yes }
 	icon = GFX_idea_GER_navy
 
-	custom_modifier_tooltip = GER_military_modifier_tt #Bonuses applied via hidden NS or tech 
+	custom_modifier_tooltip = GER_military_modifier_tt #Bonuses applied via hidden NS or tech
 	naval_heavy_gun_hit_chance_factor = GER_military_naval_heavy_gun_hit_chance_factor
 	screening_efficiency = GER_military_screening_efficiency
 	screening_without_screens = GER_military_screening_without_screens
@@ -5627,7 +5627,7 @@ GER_navy_democratic_modifier = { #Democratic Navy NS
 	enable = { always = yes }
 	icon = GFX_idea_GER_navy
 
-	custom_modifier_tooltip = GER_military_modifier_tt #Bonuses applied via hidden NS or tech 
+	custom_modifier_tooltip = GER_military_modifier_tt #Bonuses applied via hidden NS or tech
 	naval_heavy_gun_hit_chance_factor = GER_military_naval_heavy_gun_hit_chance_factor
 	screening_efficiency = GER_military_screening_efficiency
 	screening_without_screens = GER_military_screening_without_screens
@@ -5642,7 +5642,7 @@ GER_navy_imperial_modifier = { #Imperial Navy NS
 	enable = { always = yes }
 	icon = GFX_idea_GER_navy
 
-	custom_modifier_tooltip = GER_military_modifier_tt #Bonuses applied via hidden NS or tech 
+	custom_modifier_tooltip = GER_military_modifier_tt #Bonuses applied via hidden NS or tech
 	naval_heavy_gun_hit_chance_factor = GER_military_naval_heavy_gun_hit_chance_factor
 	screening_efficiency = GER_military_screening_efficiency
 	screening_without_screens = GER_military_screening_without_screens
@@ -5656,7 +5656,7 @@ GER_navy_communist_modifier = { #Communist Navy NS
 	enable = { always = yes }
 	icon = GFX_idea_GER_navy
 
-	custom_modifier_tooltip = GER_military_modifier_tt #Bonuses applied via hidden NS or tech 
+	custom_modifier_tooltip = GER_military_modifier_tt #Bonuses applied via hidden NS or tech
 	naval_heavy_gun_hit_chance_factor = GER_military_naval_heavy_gun_hit_chance_factor
 	screening_efficiency = GER_military_screening_efficiency
 	screening_without_screens = GER_military_screening_without_screens
@@ -5699,7 +5699,7 @@ GER_airforce_communist_modifier = { #Communnist Airforce NS
 
 GER_wunderwaffen_modifier = { #Wunderwaffen NS
 	enable = { always = yes }
-	icon = GFX_idea_GER_wunderwaffen 
+	icon = GFX_idea_GER_wunderwaffen
 
 	special_project_speed_factor = GER_wunderwaffen_special_project_speed_factor
 	production_speed_facility_factor = GER_wunderwaffen_production_speed_facility_factor
@@ -5724,10 +5724,10 @@ GER_wunderwaffen_modifier = { #Wunderwaffen NS
 GER_wehrwirtschaft_modifier = { #Autarky NS
 	enable = { always = yes }
 	icon = GFX_idea_GER_autarky
-	local_resources_factor = GER_wehrwirtschaft_local_resources_factor 
-	#min_export = GER_autarky_min_export 
-	production_speed_buildings_factor = GER_wehrwirtschaft_production_speed_buildings_factor 
-	production_oil_factor = GER_wehrwirtschaft_production_oil_factor 
+	local_resources_factor = GER_wehrwirtschaft_local_resources_factor
+	#min_export = GER_autarky_min_export
+	production_speed_buildings_factor = GER_wehrwirtschaft_production_speed_buildings_factor
+	production_oil_factor = GER_wehrwirtschaft_production_oil_factor
 	production_speed_fuel_silo_factor = GER_wehrwirtschaft_production_speed_fuel_silo_factor
 	production_speed_synthetic_refinery_factor = GER_wehrwirtschaft_production_speed_synthetic_refinery_factor
 }
@@ -5736,7 +5736,7 @@ GER_wehrwirtschaft_modifier = { #Autarky NS
 GER_military_intelligence_service_modifier = { #Spy Stuff
 	enable = { always = yes }
 	icon = GFX_idea_generic_secret_police
-	
+
 	# Basic
 	master_ideology_drift = GER_military_intelligence_service_master_ideology_drift
 	consumer_goods_factor = GER_military_intelligence_service_consumer_goods_factor
@@ -5754,7 +5754,7 @@ GER_military_intelligence_service_modifier = { #Spy Stuff
 	encryption_factor = GER_military_intelligence_service_encryption_factor
 	decryption_factor = GER_military_intelligence_service_decryption_factor
 	subversive_activites_upkeep = GER_military_intelligence_service_subversive_activites_upkeep
-	
+
 }
 
 #############################
@@ -5786,7 +5786,7 @@ GER_stasi_modifier = {
 	icon = GFX_idea_generic_spy_intel
 
 	remove_trigger = {
-		NOT = { 
+		NOT = {
 			has_government = communism
 		}
 	}
@@ -5794,7 +5794,7 @@ GER_stasi_modifier = {
 	drift_defence_factor = GER_communist_intel_drift_defence_factor
 	communism_drift = GER_communist_intel_communism_drift
 	operative_slot = GER_communist_intel_operative_slot
-	stability_factor = GER_communist_intel_stability_factor 
+	stability_factor = GER_communist_intel_stability_factor
 	operation_cost = GER_communist_intel_operation_cost
 	subversive_activites_upkeep = GER_communist_intel_subversive_activities_upkeep
 	intel_network_gain_factor = GER_communist_intel_intel_network_gain
@@ -5807,7 +5807,7 @@ GER_politburo_modifier = {
 	icon = GFX_idea_trotskyite_plot_purged
 
 	remove_trigger = {
-		NOT = { 
+		NOT = {
 			has_government = communism
 		}
 	}
@@ -5845,7 +5845,7 @@ GER_industrial_relocation_resources = {
 GER_alfred_rosenberg_modifier = { # Alfred Rosenberg NS
 	enable = { always = yes }
 	# This one granting the modifiers is hidden but they can be observed in the scripted GUI by hovering over Rosenberg
-	#icon = GFX_portrait_GER_alfred_rosenberg_small  Yes this is intentional 
+	#icon = GFX_portrait_GER_alfred_rosenberg_small  Yes this is intentional
 	consumer_goods_factor = GER_alfred_rosenberg_modifier_consumer_goods_factor
 	production_speed_arms_factory_factor = GER_alfred_rosenberg_modifier_production_speed_arms_factory_factor
 	industrial_capacity_factory = GER_alfred_rosenberg_modifier_industrial_capacity_factory
@@ -5875,15 +5875,15 @@ GER_the_inner_circle_dm = {
 
 #BLITZKRIEG and BEWEGUNGSKRIEG MODIFIERS
 GER_motor_and_mech_attack_modifier = { #Attack bonuses for Germany in enemy states
-	enable = { always = yes } 
-	#icon = GFX_modifiers_GER_blitzkrieg #This is a hidden modifier 
+	enable = { always = yes }
+	#icon = GFX_modifiers_GER_blitzkrieg #This is a hidden modifier
 
 	motorized_attack_factor = 0.05
 	mechanized_attack_factor = 0.05
 }
 
 GER_blitzkrieg_modifier = { #Attack bonuses for Germany in enemy states
-	enable = { always = yes } 
+	enable = { always = yes }
 	icon = GFX_modifiers_GER_blitzkrieg
 
 	breakthrough_factor = 0.05
@@ -5894,7 +5894,7 @@ GER_blitzkrieg_modifier = { #Attack bonuses for Germany in enemy states
 	custom_modifier_tooltip = GER_motor_and_mech_attack_tt
 }
 GER_blitzkrieg_modifier_lvl_2 = { #Attack bonuses for Germany in enemy states
-	enable = { always = yes } 
+	enable = { always = yes }
 	icon = GFX_modifiers_GER_blitzkrieg
 
 	breakthrough_factor = 0.05
@@ -5902,10 +5902,10 @@ GER_blitzkrieg_modifier_lvl_2 = { #Attack bonuses for Germany in enemy states
 	army_armor_speed_factor = 0.1
 	#motorized_attack_factor = GER_motor_and_mech_attack_motorized_attack_factor
 	#mechanized_attack_factor = GER_motor_and_mech_attack_mechanized_attack_factor
-	custom_modifier_tooltip = GER_motor_and_mech_attack_tt 
+	custom_modifier_tooltip = GER_motor_and_mech_attack_tt
 }
 GER_blitzkrieg_modifier_lvl_3 = { #Attack bonuses for Germany in enemy states
-	enable = { always = yes } 
+	enable = { always = yes }
 	icon = GFX_modifiers_GER_blitzkrieg
 
 	breakthrough_factor = 0.1
@@ -5913,31 +5913,31 @@ GER_blitzkrieg_modifier_lvl_3 = { #Attack bonuses for Germany in enemy states
 	army_armor_speed_factor = 0.1
 	#motorized_attack_factor = GER_motor_and_mech_attack_motorized_attack_factor
 	#mechanized_attack_factor = GER_motor_and_mech_attack_mechanized_attack_factor
-	custom_modifier_tooltip = GER_motor_and_mech_attack_tt 
+	custom_modifier_tooltip = GER_motor_and_mech_attack_tt
 }
 
 GER_bewegungskrieg_modifier = { #Attack Bonuses for Germany in enemy states
-	enable = { always = yes } 
+	enable = { always = yes }
 	icon = GFX_modifiers_GER_blitzkrieg
 
 	breakthrough_factor = 0.05
 	army_infantry_attack_factor = 0.05
 	#motorized_attack_factor = GER_motor_and_mech_attack_motorized_attack_factor
 	#mechanized_attack_factor = GER_motor_and_mech_attack_mechanized_attack_factor
-	custom_modifier_tooltip = GER_motor_and_mech_attack_tt 
+	custom_modifier_tooltip = GER_motor_and_mech_attack_tt
 }
 GER_bewegungskrieg_modifier_lvl_2 = { #Attack Bonuses for Germany in enemy states
-	enable = { always = yes } 
+	enable = { always = yes }
 	icon = GFX_modifiers_GER_blitzkrieg
 
 	breakthrough_factor = 0.05
 	army_infantry_attack_factor = 0.1
 	#motorized_attack_factor = GER_motor_and_mech_attack_motorized_attack_factor
 	#mechanized_attack_factor = GER_motor_and_mech_attack_mechanized_attack_factor
-	custom_modifier_tooltip = GER_motor_and_mech_attack_tt 
+	custom_modifier_tooltip = GER_motor_and_mech_attack_tt
 }
 GER_bewegungskrieg_modifier_lvl_3 = { #Attack Bonuses for Germany in enemy states
-	enable = { always = yes } 
+	enable = { always = yes }
 	icon = GFX_modifiers_GER_blitzkrieg
 
 	breakthrough_factor = 0.05
@@ -5945,10 +5945,10 @@ GER_bewegungskrieg_modifier_lvl_3 = { #Attack Bonuses for Germany in enemy state
 	army_artillery_attack_factor = 0.1
 	#motorized_attack_factor = GER_motor_and_mech_attack_motorized_attack_factor
 	#mechanized_attack_factor = GER_motor_and_mech_attack_mechanized_attack_factor
-	custom_modifier_tooltip = GER_motor_and_mech_attack_tt 
+	custom_modifier_tooltip = GER_motor_and_mech_attack_tt
 }
 GER_bewegungskrieg_modifier_lvl_4 = { #Attack Bonuses for Germany in enemy states
-	enable = { always = yes } 
+	enable = { always = yes }
 	icon = GFX_modifiers_GER_blitzkrieg
 
 	breakthrough_factor = 0.1
@@ -5956,7 +5956,7 @@ GER_bewegungskrieg_modifier_lvl_4 = { #Attack Bonuses for Germany in enemy state
 	army_artillery_attack_factor = 0.1
 	#motorized_attack_factor = GER_motor_and_mech_attack_motorized_attack_factor
 	#mechanized_attack_factor = GER_motor_and_mech_attack_mechanized_attack_factor
-	custom_modifier_tooltip = GER_motor_and_mech_attack_tt 
+	custom_modifier_tooltip = GER_motor_and_mech_attack_tt
 }
 
 GER_overburdened_state_modifier = {
@@ -5974,20 +5974,20 @@ GER_overburdened_state_modifier = {
 	resistance_growth = 0.1
 }
 
-GER_nationalized_industries_modifier = { 
-	enable = { always = yes } 
+GER_nationalized_industries_modifier = {
+	enable = { always = yes }
 	icon = GFX_modifiers_SOV_civilian_labor_in_defense
 
 	remove_trigger = {
-		#NOT = { controller = { original_tag = GER } } 
+		#NOT = { controller = { original_tag = GER } }
 	}
 
 	state_resources_factor = 0.1
 	state_production_speed_buildings_factor = 0.1
 }
 
-GER_reichs_labor_initiative_modifier = { 
-	enable = { always = yes } 
+GER_reichs_labor_initiative_modifier = {
+	enable = { always = yes }
 	icon = GFX_modifiers_SOV_civilian_labor_in_defense
 
 	remove_trigger = {
@@ -5997,8 +5997,8 @@ GER_reichs_labor_initiative_modifier = {
 	state_production_speed_buildings_factor = 0.1
 }
 
-GER_public_works_modifier = { 
-	enable = { always = yes } 
+GER_public_works_modifier = {
+	enable = { always = yes }
 	icon = GFX_modifiers_SOV_civilian_labor_in_defense
 
 	remove_trigger = {
@@ -6008,8 +6008,8 @@ GER_public_works_modifier = {
 	state_production_speed_buildings_factor = 0.1
 }
 
-GER_four_year_plan_initiative_modifier = { 
-	enable = { always = yes } 
+GER_four_year_plan_initiative_modifier = {
+	enable = { always = yes }
 	icon = GFX_modifiers_SOV_civilian_labor_in_defense
 
 	remove_trigger = {
@@ -6024,7 +6024,7 @@ GER_south_east_asian_construction_modifier = {
 	icon = GFX_modifiers_generic_construction
 
 	remove_trigger = {
-		#ROOT = { NOT = { controller = { original_tag = GER } } } 
+		#ROOT = { NOT = { controller = { original_tag = GER } } }
 	}
 
 	state_production_speed_infrastructure_factor = 0.1
@@ -6037,7 +6037,7 @@ GER_south_east_asian_resources_modifier = {
 	icon = GFX_modifiers_SOV_civilian_labor_in_defense
 
 	remove_trigger = {
-		#ROOT = { NOT = { controller = { original_tag = GER } } } 
+		#ROOT = { NOT = { controller = { original_tag = GER } } }
 	}
 
 	local_building_slots_factor = -0.2
@@ -6082,7 +6082,7 @@ GER_proletariat_uprising_modifier = {
 		#	GER = {
 		#		has_government = communism
 		#	}
-		#	ROOT = { 
+		#	ROOT = {
 		#		NOT = {
 		#			controller = { original_tag = GER }
 		#		}
@@ -6235,15 +6235,15 @@ enable = { always = yes }
 BEL_mobilize_the_nation_dynamic_modifier = {
 enable = { always = yes }
 	icon = GFX_idea_generic_manpower_bonus
-	
+
 	conscription = BEL_mobilize_the_nation_conscription
 }
 
 #Royal Military Academy
 BEL_royal_military_academy_dynamic_modifier = {
 enable = { always = yes }
-	icon = GFX_idea_generic_army_war_college 
-	
+	icon = GFX_idea_generic_army_war_college
+
 	army_leader_cost_factor = BEL_royal_military_academy_army_leader_cost_factor
 	army_org_factor = BEL_royal_military_academy_army_org_factor
 	initiative_factor = BEL_royal_military_academy_initiative_factor
@@ -6257,8 +6257,8 @@ enable = { always = yes }
 #Corruption
 BEL_corruption_dynamic_modifier = {
 enable = { always = yes }
-	icon = GFX_idea_ARG_political_corruption_modifier 
-	
+	icon = GFX_idea_ARG_political_corruption_modifier
+
 	political_power_gain = BEL_corruption_political_power_gain
 	stability_factor = BEL_corruption_stability_factor
 	production_speed_buildings_factor = BEL_corruption_production_speed_buildings_factor
@@ -6268,9 +6268,9 @@ enable = { always = yes }
 #Economic Downturn
 BEL_economic_downturn_dynamic_modifier = {
 enable = { always = yes }
-	icon = GFX_idea_generic_economic_crisis 
+	icon = GFX_idea_generic_economic_crisis
 
-	remove_trigger = { 
+	remove_trigger = {
 		AND = {
 			check_variable = {
 				var = BEL_economic_downturn_consumer_goods_factor
@@ -6281,10 +6281,10 @@ enable = { always = yes }
 				var = BEL_economic_downturn_industrial_capacity_factory
 				value = 0
 				compare = greater_than_or_equals
-			}	
+			}
 		}
 	}
-	
+
 	consumer_goods_factor = BEL_economic_downturn_consumer_goods_factor
 	industrial_capacity_factory = BEL_economic_downturn_industrial_capacity_factory
 
@@ -6293,8 +6293,8 @@ enable = { always = yes }
 #Belgian Legion
 BEL_belgian_legion_dynamic_modifier = {
 enable = { always = yes }
-	icon = GFX_idea_NORDIC_army_monarchist 
-	
+	icon = GFX_idea_NORDIC_army_monarchist
+
 	army_infantry_attack_factor = BEL_belgian_legion_army_infantry_attack_factor
 	exile_manpower_factor = BEL_belgian_legion_exile_manpower_factor
 	army_core_attack_factor = BEL_belgian_legion_army_core_attack_factor
@@ -6304,15 +6304,15 @@ enable = { always = yes }
 #Belgian Gold Reserves
 BEL_gold_reserves_dynamic_modifier = {
 enable = { always = yes }
-	icon = GFX_idea_SPR_seize_the_gold_reserves 
-	
+	icon = GFX_idea_SPR_seize_the_gold_reserves
+
 	consumer_goods_factor = BEL_gold_reserves_consumer_goods_factor
 }
 
 #Rexist Legion
 BEL_rexist_legion_dynamic_modifier = {
 	enable = { always = yes }
-	icon = GFX_idea_BEL_rexist_legion 
+	icon = GFX_idea_BEL_rexist_legion
 
 	army_core_attack_factor = BEL_rexist_legion_army_core_attack_factor
 	army_core_defence_factor = BEL_rexist_legion_army_core_defence_factor
@@ -6326,7 +6326,7 @@ BEL_rexist_legion_dynamic_modifier = {
 #European Crusade
 BEL_european_crusade_dynamic_modifier = {
 	enable = { always = yes }
-	icon = GFX_idea_BEL_european_crusade 
+	icon = GFX_idea_BEL_european_crusade
 
 	conscription_factor = BEL_european_crusade_conscription_factor #Rex
 	production_factory_max_efficiency_factor = BEL_european_crusade_production_factory_max_efficiency_factor #Rex
@@ -6346,10 +6346,10 @@ BEL_socialism_on_the_rise_dynamic_modifier = {
 	party_popularity_stability_factor = BEL_socialism_on_the_rise_party_popularity_stability_factor
 	political_power_factor = BEL_socialism_on_the_rise_political_power_factor
 	stability_factor = BEL_socialism_on_the_rise_stability_factor
-	war_support_factor = BEL_socialism_on_the_rise_war_support_factor 
+	war_support_factor = BEL_socialism_on_the_rise_war_support_factor
 	production_speed_arms_factory_factor = BEL_socialism_on_the_rise_production_speed_arms_factory_factor
 	research_speed_factor = BEL_socialism_on_the_rise_research_speed_factor
-	
+
 }
 
 # Dynamic Modifier for Belgian Special Projects
@@ -6500,7 +6500,7 @@ BEL_belgian_congo_colonial_returns_dynamic_modifier = {
 	political_power_factor = BEL.BEL_belgian_congo_colonial_returns_dynamic_modifier_political_power_factor
 	resource_trade_cost_bonus_per_factory = BEL.BEL_belgian_congo_colonial_returns_dynamic_modifier_resource_trade_cost_bonus_per_factory
 	production_lack_of_resource_penalty_factor = BEL.BEL_belgian_congo_colonial_returns_dynamic_modifier_production_lack_of_resource_penalty_factor
-	industrial_capacity_factory = BEL.BEL_belgian_congo_colonial_returns_dynamic_modifier_industrial_capacity_factory 
+	industrial_capacity_factory = BEL.BEL_belgian_congo_colonial_returns_dynamic_modifier_industrial_capacity_factory
 	industrial_capacity_dockyard = BEL.BEL_belgian_congo_colonial_returns_dynamic_modifier_industrial_capacity_dockyard
 	autonomy_manpower_share = BEL.BEL_belgian_congo_colonial_returns_dynamic_modifier_autonomy_manpower_share
 	consumer_goods_factor = BEL.BEL_belgian_congo_colonial_returns_dynamic_modifier_consumer_goods_factor
@@ -6510,13 +6510,13 @@ BEL_belgian_congo_colonial_returns_dynamic_modifier = {
 
 ### STATE MODIFIERS ###
 
-COG_rwandan_separatism_modifier = { 
-	enable = { always = yes } 
+COG_rwandan_separatism_modifier = {
+	enable = { always = yes }
 
 	icon = GFX_modifiers_COG_rwandan_separatism
 
 	remove_trigger = {
-		
+
 	}
 
 	production_speed_buildings_factor = -0.1
@@ -6525,9 +6525,9 @@ COG_rwandan_separatism_modifier = {
 	local_manpower = -0.02
 }
 
-COG_burundian_separatism_modifier = { 
-	enable = { always = yes } 
-	
+COG_burundian_separatism_modifier = {
+	enable = { always = yes }
+
 	icon = GFX_modifiers_COG_burundian_separatism
 
 	remove_trigger = {
@@ -6539,9 +6539,9 @@ COG_burundian_separatism_modifier = {
 	local_manpower = -0.02
 }
 
-COG_kasai_separatism_modifier = { 
-	enable = { always = yes } 
-	
+COG_kasai_separatism_modifier = {
+	enable = { always = yes }
+
 	icon = GFX_modifiers_COG_kasai_separatism
 
 	remove_trigger = {
@@ -6551,9 +6551,9 @@ COG_kasai_separatism_modifier = {
 	local_manpower = -0.1
 }
 
-COG_katanga_separatism_modifier = { 
-	enable = { always = yes } 
-	
+COG_katanga_separatism_modifier = {
+	enable = { always = yes }
+
 	icon = GFX_modifiers_COG_katanga_separatism
 
 	remove_trigger = {
@@ -6565,9 +6565,9 @@ COG_katanga_separatism_modifier = {
 
 }
 
-COG_state_loyal_to_belgium_modifier = { 
-	enable = { always = yes } 
-	
+COG_state_loyal_to_belgium_modifier = {
+	enable = { always = yes }
+
 	icon = GFX_modifiers_COG_state_loyal_to_belgium
 
 	remove_trigger = {
@@ -6575,9 +6575,9 @@ COG_state_loyal_to_belgium_modifier = {
 
 }
 
-COG_state_loyal_to_free_congo_modifier = { 
-	enable = { always = yes } 
-	
+COG_state_loyal_to_free_congo_modifier = {
+	enable = { always = yes }
+
 	icon = GFX_modifiers_COG_state_loyal_to_free_congo
 
 	remove_trigger = {
@@ -6585,11 +6585,11 @@ COG_state_loyal_to_free_congo_modifier = {
 			ROOT = { # ROOT refers to the state on which the modifier is added
 				NOT = {
 					OR = {
-						is_owned_by = COG 
-						is_owned_by = BEL 
+						is_owned_by = COG
+						is_owned_by = BEL
 					}
 				}
-			} 
+			}
 			has_global_flag = COG_uprising_happened_flag
 		}
 	}
@@ -6597,8 +6597,8 @@ COG_state_loyal_to_free_congo_modifier = {
 }
 
 idea_COG_river_navy = { #STATE MODIFIER
-	remove_trigger = { 
-		COG = { has_capitulated = yes } 
+	remove_trigger = {
+		COG = { has_capitulated = yes }
 	}
 	icon = GFX_MODIFIER_NAVAL_INVASION_CAPACITY
 	army_core_defence_factor = 0.1
@@ -6610,15 +6610,15 @@ idea_COG_river_navy = { #STATE MODIFIER
 }
 
 COG_urban_area_investments_modifier = { #STATE MODIFIER
-	remove_trigger = { 
-		#NOT = { 
-		#	owner = { 
+	remove_trigger = {
+		#NOT = {
+		#	owner = {
 		#		OR = {
-		#			original_tag = COG 
-		#			original_tag = KAT 
+		#			original_tag = COG
+		#			original_tag = KAT
 		#		}
-		#	} 
-		#} 
+		#	}
+		#}
 	}
 	icon = GFX_modifiers_SOV_civilian_labor_in_defense
 	local_manpower = 0.1
@@ -6628,15 +6628,15 @@ COG_urban_area_investments_modifier = { #STATE MODIFIER
 }
 
 COG_the_echo_of_katanga_modifier = { #STATE MODIFIER
-	remove_trigger = { 
-		#NOT = { 
-		#	owner = { 
+	remove_trigger = {
+		#NOT = {
+		#	owner = {
 		#		OR = {
-		#			original_tag = COG 
-		#			original_tag = KAT 
+		#			original_tag = COG
+		#			original_tag = KAT
 		#		}
-		#	} 
-		#} 
+		#	}
+		#}
 	}
 	icon = GFX_modifiers_ETH_state_development
 	local_manpower = 0.15
@@ -6654,8 +6654,8 @@ COG_state_supporting_resistance_modifier = {
 	compliance_growth = -0.1
 }
 
-GER_lokot_autonomy_modifier = { 
-	enable = { always = yes } 
+GER_lokot_autonomy_modifier = {
+	enable = { always = yes }
 
 	icon = GFX_modifiers_GER_lokot_autonomy
 

@@ -2,7 +2,7 @@ scripted_gui = {
 
 	intelligence_warfare_title_ui = {
 		context_type = player_context
-		    
+
 		window_name = "agency_title"
 		parent_window_name = countryintelligenceagencyview
 
@@ -20,13 +20,13 @@ scripted_gui = {
 				frame = agency_detail_status
 			}
 		}
-		
+
 		triggers = {
 			title_button_click_enabled = {
 				NOT = { has_country_flag = ALN_cold_war_is_over }
 			}
 		}
-		
+
 		effects = {
 			title_button_click = {
 				if = {
@@ -41,7 +41,7 @@ scripted_gui = {
 
 					if = {
 						limit = {
-							check_variable = { v = 1 }	
+							check_variable = { v = 1 }
 						}
 						set_variable = { agency_department_tab_array^i = 2 }
 					}
@@ -50,10 +50,10 @@ scripted_gui = {
 			}
 		}
 	}
-	
+
 	intelligence_warfare_detail_ui = {
 		context_type = player_context
-		    
+
 		window_name = "agency_detail"
 
 		visible = {
@@ -64,8 +64,8 @@ scripted_gui = {
 			check_variable = { agency_detail_status = 2 }
 			NOT = { has_country_flag = ALN_cold_war_is_over }
 		}
-		
-		
+
+
 		dynamic_lists = {
 			agency_tab_gridbox = {
 				array = agency_department_tab_array
@@ -80,7 +80,7 @@ scripted_gui = {
 				frame = agency_tab_v
 			}
 		}
-		
+
 		effects = {
 			close_button_click = {
 				set_variable = { agency_detail_status = 1 }
@@ -91,7 +91,7 @@ scripted_gui = {
 
 					if = {
 						limit = {
-							check_variable = { v = 1 }	
+							check_variable = { v = 1 }
 						}
 						set_variable = { agency_department_tab_array^i = 2 }
 					}
@@ -107,7 +107,7 @@ scripted_gui = {
 
 					if = {
 						limit = {
-							check_variable = { v = 1 }	
+							check_variable = { v = 1 }
 						}
 						set_variable = { agency_department_tab_array^i = 2 }
 					}
@@ -116,10 +116,10 @@ scripted_gui = {
 			}
 		}
 	}
-	
+
 	intelligence_warfare_detail_tab_0_ui = {
 		context_type = player_context
-		    
+
 		window_name = "agency_detail_tab_0"
 		parent_window_name = agency_detail
 
@@ -131,8 +131,8 @@ scripted_gui = {
 			check_variable = { agency_detail_status = 2 }
 			check_variable = { agency_department_tab_array^0 = 1 }
 		}
-		
-		
+
+
 		dynamic_lists = {
 			agency_member_gridbox = {
 				array = THIS.agency_member_list_array
@@ -148,10 +148,10 @@ scripted_gui = {
 			}
 		}
 	}
-	
+
 	intelligence_warfare_detail_tab_1_1_ui = {
 		context_type = player_context
-		    
+
 		window_name = "agency_detail_tab_1_1"
 		parent_window_name = agency_detail
 
@@ -163,7 +163,7 @@ scripted_gui = {
 			check_variable = { agency_detail_status = 2 }
 			check_variable = { agency_department_tab_array^1 = 1 }
 		}
-		
+
 		properties = {
 			state_284_icon = { frame = agency_operation_map_active_array^0 }
 			state_285_icon = { frame = agency_operation_map_active_array^1 }
@@ -193,7 +193,7 @@ scripted_gui = {
 			state_627_icon = { frame = agency_operation_map_active_array^25 }
 			state_628_icon = { frame = agency_operation_map_active_array^26 }
 		}
-		
+
 		triggers = {
 			###########
 			### OLD ###
@@ -235,7 +235,7 @@ scripted_gui = {
 				check_variable = { agency_operation_map_active_array^17 = 2 }
 			}
 		}
-		
+
 		effects = {
 			###########
 			### OLD ###
@@ -361,10 +361,10 @@ scripted_gui = {
 			}
 		}
 	}
-	
+
 	intelligence_warfare_detail_tab_1_2_ui = {
 		context_type = player_context
-		    
+
 		window_name = "agency_detail_tab_1_2"
 		parent_window_name = agency_detail
 
@@ -378,4 +378,3 @@ scripted_gui = {
 		}
 	}
 }
-

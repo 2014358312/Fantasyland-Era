@@ -9,7 +9,7 @@ Orientation = UPPER_RIGHT 右上方
 Orientation = CENTER_UP 正上方
 Orientation = CENTER 正中方
 Orientation = CENTER_DOWN 正下方
-parent_window_name = 
+parent_window_name =
 
 123\n456 = 文本描述进入下一行
 123
@@ -40,7 +40,7 @@ oligarchism 寡头政治
 moderatism 温和主义
 centrism 中间路线
 
-#国策研究加成代码 
+#国策研究加成代码
 	add_tech_bonus = {
 		name = 名字
 		bonus = 加成多少
@@ -60,11 +60,11 @@ centrism 中间路线
 	research_bonus = {
 		种类 = 加成速度
 	}
-	
+
 #研究加成种类（可以是直接的科技，也可以是种类，直接的科技去科技文件复制，种类去科技tags找）
 	construction_tech = 建筑科技
 	excavation_tech = 挖掘技术
-	synth_resources = 合成资源 
+	synth_resources = 合成资源
 	industry = 工业
 	electronics = 电子学
 	nuclear = 核能
@@ -73,7 +73,7 @@ centrism 中间路线
 	support_tech = 支援连科技
 	land_doctrine = 陆军学说
 	cat_mobile_warfare = 机动作战
-	motorized_equipment = 摩托化装备		
+	motorized_equipment = 摩托化装备
 	artillery = 火炮
 	cat_anti_tank = 反坦克炮
 	armor = 装甲
@@ -102,7 +102,7 @@ centrism 中间路线
 	available = {
 		条件
 	}
-	
+
 	#需要其中之一的条件代码(加在available条件中)(事件触发条件也可用)
 	or = {
 		条件
@@ -110,7 +110,7 @@ centrism 中间路线
 #跳过国策条件代码
 	bypass = {
 		条件
-	}	
+	}
 #决议、内阁是否看得见的代码(随时检测)
 	visible = {
 		条件
@@ -121,10 +121,10 @@ centrism 中间路线
 	}
 #条件提示（隐藏条件，显示提示，放在available内）
 	custom_trigger_tooltip = {
-		tooltip = 条件特定提示代码(拿到本地化文件翻译)	
+		tooltip = 条件特定提示代码(拿到本地化文件翻译)
 		条件
 	}
-	
+
 #条件种类(包括国策的和事件的和决议的)
 	is_in_faction_with = 与某国在同一阵营的国家代码
 	has_stability < = 稳定度大于或小于多少
@@ -167,36 +167,36 @@ centrism 中间路线
 	has_tech = 拥有科技
 	has = 有（可以试着加在变量前，编出代码，比如 has_manpower > 人力大于多少）
 	is_subject_of = 是哪个国家附庸的国家代码
-	has_army_manpower = { size > 兵力人数 } = 陆军现役兵力大于或小于多少 
+	has_army_manpower = { size > 兵力人数 } = 陆军现役兵力大于或小于多少
 	has_deployed_air_force_size { size > 兵力人数 } = 部署的飞机数量大于或少于多少
-	
+
 	#tag国家评价至少60#
-	has_opinion = { 
+	has_opinion = {
 		target = tag
-		value > 59 
-	}  
+		value > 59
+	}
 	#某个国策完成进度条件
 	focus_progress = {
 		focus = 国策代码
 		progress > 进度大于多少
 	}
-	
+
 	#要求战前控制某省份，且战时控制权在此国家手上代码
 		要求控制的地区代码 = {
-			is_owned_and_controlled_by = 受哪国控制的国家代码 
+			is_owned_and_controlled_by = 受哪国控制的国家代码
 		}
-	
+
 	#某地区控制国条件
 		地区代码 = {
-			controller = {		
+			controller = {
 				条件
 			}
 		}
-	
+
 	#比较关系
 		available = {
 			要比较的国家(国家代码) = {
-				has_opinion = {  
+				has_opinion = {
 					target = 对谁的关系(国家代码) value > 大于多少
 				}
 			}
@@ -213,7 +213,7 @@ centrism 中间路线
 	days_re_enable = 决议完成后会再次出现的间隔天数
 	days_remove = 决议持续天数
 	complete_effect = { 决议点击时的效果 } = 决议点击时要实现的效果代码
-	remove_effect = { 决议移除后的效果 } = 决议移除后要实现的效果代码		
+	remove_effect = { 决议移除后的效果 } = 决议移除后要实现的效果代码
 	mutually_exclusive = { focus = 相互排斥的国策代码 }
 	prerequisite = { focus = 要求完成的国策代码 } = （国策线连接）
 	available_if_capitulated = yes 投降可以点 no则反之
@@ -222,7 +222,7 @@ centrism 中间路线
 	relative_position_id = 相对的国策id = 相对国策位置
 	modifier = 修正效果，放在民族精神下面，或者直接放在决议下面，决议未移除时会一直加成（代码见下面#民族精神效果）
 	highlight_state_targets = { state = 219 } = 鼠标移到此决议时，目标地区省份会亮起，可打多个省份
-	complete_tooltip = { 国策完成后显示的效果（直接复制国策效果代码进入）}	
+	complete_tooltip = { 国策完成后显示的效果（直接复制国策效果代码进入）}
 	#以下代码可放在国家代码位置
 		ROOT = 当前国家，比如当前事件触发的国家、使用此国策树的国家
 		FROM = 让这个事件触发的国家(例如某国的某个事件触发了在另一个国家发生的某个事件)
@@ -233,7 +233,7 @@ centrism 中间路线
 	clr_global_flag = 名字 = 移除全球标记
 	set_country_flag = 名字 = 添加国家标记
 	set_country_flag = { flag = 添加国家标记 value = 1 days = 天数 } = 添加限时国家标记
-	clr_country_flag = 名字 = 移除国家标记		
+	clr_country_flag = 名字 = 移除国家标记
 	set_technology = { 要添加的科技代码 = 1 } = 添加科技
 	set_party_name = { ideology = 意识形态 long_name = 要改成的名称 name = 要改成的名称 } = 修改政党名称
 	本地化打 = 要改成什么名称_long
@@ -272,7 +272,7 @@ centrism 中间路线
 	create_faction = 创建的阵营名 = 创建阵营
 	create_country_leader = 创造国家领袖(领袖格式去历史文件找)
 	remove_country_leader_trait = 领袖特质 = 移除领袖特质
-	set_capital = 省份代码 = 设置首都		
+	set_capital = 省份代码 = 设置首都
 	load_oob = "文件名（不用打后缀名）" 载入军队文件（爆兵用的，军队文件在历史军队文件）
 	add_command_power = 添加指挥点数
 	add_state_core = 添加核心地区
@@ -292,8 +292,8 @@ centrism 中间路线
 		target = TAG
 		autonomy_state = #autonomy_free #autonomy_colony（殖民地） #autonomy_dominion（自治领） #autonomy_puppet（傀儡） #autonomy_integrated_puppet（半吞傀儡）
 	}
-	
-	
+
+
 	#规则设定（可到ideologies意识形态文件找种类）
 		set_rule = { 规则种类 = yes 或者 no } = 规则设定格式
 		#规则种类
@@ -301,10 +301,10 @@ centrism 中间路线
 			can_send_volunteers = 规则设定，是否可以派遣志愿军
 			can_declare_war_on_same_ideology = 规则设定，是否可以对同意识形态国家宣战
 			can_only_justify_war_on_threat_country = 规则设定，是否只能对造成紧张度的国家宣战
-	
+
 	#全体将领增加技能代码
 		every_army_leader = {
-			添加的技能			
+			添加的技能
 		}
 		#技能代码
 			add_attack = 添加攻击技能
@@ -313,14 +313,14 @@ centrism 中间路线
 			add_logistics = 添加后勤技能
 			add_skill_level = 省级
 			add_unit_leader_trait = 增加特质
-	
+
 	#全体将领加入某国
 	哪个国家将领的国家代码 = {
 		every_unit_leader = {
 			set_nationality = 加入哪个国家的国家代码
 		}
-	}			
-			
+	}
+
 	#加入阵营代码
 		阵营领导国家代码 = {
 			add_to_faction = 要加入的国家代码
@@ -333,19 +333,19 @@ centrism 中间路线
 		take_claimed_state = 割让领土
 	#隐藏效果(加在国策效果下面或者事件选项下面)
 		hidden_effect = {
-			
+
 		}
-	
+
 	#几率效果代码
 		random_list = { 70 = { add_political_power = 200 } 30 = { add_political_power = -100 } }
 						几率	 		条件				几率			条件
-		
+
 	#替换民族精神(民族精神附加效果)代码
 		swap_ideas = {
 			remove_idea = 除去的民族精神
-			add_idea = 添加的民族精神			
+			add_idea = 添加的民族精神
 		}
-		
+
 	#国策独立代码
 		宗主国代码 = {
 			set_autonomy = {
@@ -359,10 +359,10 @@ centrism 中间路线
 			localization = 本地化(显示在自治度上的名称)
 		}
 	#国策设定政治现状
-			set_politics = { 
-			parties = { 	
-				democratic = { popularity = 0 } fascism = { popularity = 0 } communism = { popularity = 0 } neutrality = { popularity = 0 } 
-			} 
+			set_politics = {
+			parties = {
+				democratic = { popularity = 0 } fascism = { popularity = 0 } communism = { popularity = 0 } neutrality = { popularity = 0 }
+			}
 			ruling_party = 执政党(意识形态) last_election = "最后一次选举日期" election_frequency = 选举频率(单位 = 月，一般48个月) elections_allowed = 是否允许选举 yes or no
 		}
 		不改的部分可以不打
@@ -384,7 +384,7 @@ centrism 中间路线
 		}
 		#多个if是同时执行，else_if是否则执行另一种情况(如果if里面的条件不满足，则检测和执行else_if里面的)
 		#else里面只能放效果，如果if条件不满足，则直接执行else里面的效果（else = 否则）
-			
+
 	#添加装备
 	add_equipment_to_stockpile = {
 		type = 种类
@@ -401,7 +401,7 @@ centrism 中间路线
 			instant_build = yes 立刻完成 no反之
 		}
 	}
-	
+
 	#特殊地区代码地区代码(放在地区代码位置,是全世界每一个地区，所以请加上限制范围)
 		random_state = 随机地区
 		every_state = 每一个州
@@ -412,7 +412,7 @@ centrism 中间路线
 			is_core_of = 哪个国家的核心
 		}
 		不用的可以不加，别的条件可到汉化文件找
-		
+
 	#添加地图外工厂
 		add_offsite_building = { type = 工厂种类 level = 数量 }
 	#地区建筑种类
@@ -464,10 +464,10 @@ centrism 中间路线
 	rural = 乡村地区 初始 2 建筑槽
 	small_island = 小岛 初始 1 建筑槽
 	pastoral = 牧区	初始 1 建筑槽
-	wasteland = 荒漠 初始 0 建筑槽		
-	enclave = 飞地 初始 0 建筑槽	
+	wasteland = 荒漠 初始 0 建筑槽
+	enclave = 飞地 初始 0 建筑槽
 	tiny_island = 极小岛屿 初始 0 建筑槽
-	
+
 #民族精神效果（加在modifier下面）
 	civilian_factory_use = 决议需要暂时使用的民用工厂数量
 	send_volunteer_divisions_required = 可以派遣志愿军的师数下限
@@ -605,7 +605,7 @@ centrism 中间路线
 	air_weather_penalty = 空军天气惩罚
 	air_attack_factor = 对空攻击
 	air_ace_generation_chance_factor = 空战王牌生成机率
-	air_mission_efficiency = 空军任务效率 
+	air_mission_efficiency = 空军任务效率
 	air_superiority_efficiency = 制空权效率
 	air_intercept_efficiency = 空军拦截效率
 	air_cas_efficiency = 空中支援任务效率
@@ -613,7 +613,7 @@ centrism 中间路线
 	air_range_factor = 空军航程
 	air_agility_factor = 空军机动性能（闪避）
 	air_escort_efficiency = 护航效率
-	air_strategic_bomber_bombing_factor 
+	air_strategic_bomber_bombing_factor
 	invasion_preparation = 登陆准备时间
 	amphibious_invasion = 两栖登陆速度
 	ai_focus_aggressive_factor = ai修正:专注进攻的值
@@ -628,17 +628,17 @@ centrism 中间路线
 	remove_contested_owner = 移除争议地区
 	activate_shine_on_focus = 激活国策光环
 	deactivate_shine_on_focus = 取消国策光环
-	
+
 #隐藏民族精神代码
-	（将country替换为hidden_ideas然后在下面打民族精神即可）	
-	
+	（将country替换为hidden_ideas然后在下面打民族精神即可）
+
 #添加规则设定（直接打不用加在modifier下面）
 	rule = { 规则种类（可打多个） = yes 或 no }
-	
+
 #针对某种武器的加成(直接打不用加在modifier下面)
 	equipment_bonus = {
 		装备种类 = {
-			
+
 			instant = yes
 		}
 	}
@@ -648,41 +648,41 @@ centrism 中间路线
 		unit = carrier
 		unit = destroyer
 		unit = heavy_cruiser
-		
+
 		type = submarine
 		type = screen_ship
 		type = capital_ship
 
 		size > 9
 	}
-	
-	
+
+
 	submarine
     screen_ship
     capital_ship
     carrier
-	#武器代码	
+	#武器代码
 		fighter_equipment = 战斗机
 		cv_fighter_equipment = 舰载战斗机
 		strat_bomber_equipment = 战略轰炸机
 		tac_bomber_equipment = 战术轰炸机
 		nav_bomber_equipment = 海军轰炸机
 		CAS_equipment = 近距离支援机
-		cv_CAS_equipment = 舰载近距离支援机	
+		cv_CAS_equipment = 舰载近距离支援机
 	#加成代码
 		air_bombing = 战略轰炸
 		air_range = 作战半径
 		reliability = 可靠性
 		air_ground_attack = 空军对地攻击
 		naval_strike_attack = 空军对海攻击
-		
+
 		lg_attack = 海军轻火炮
 		hg_attack = 海军重火炮
 		armor_value = 装甲厚度
 		maximum_speed = 最大速度
 		naval_range = 海军航程
 		carrier_size = 机库容量
-		
+
 		defense = 防御
 		breakthrough = 突破
 		hardness = 装甲率
@@ -690,7 +690,7 @@ centrism 中间路线
 		hard_attack = 对装甲杀伤
 		ap_attack = 穿甲深度
 		air_attack = 对空攻击
-				
+
 #对某国战斗修正(直接打不用加在modifier下面)
 	targeted_modifier = {
 		tag = 对哪个国家的战斗修正
@@ -699,8 +699,8 @@ centrism 中间路线
 		defense_bonus_against = 防御修正
 		trade_cost_for_target_factor = 0.5
 	}
-	
-	
+
+
 #建造花费代码(直接打不用加在modifier下面)
 	equipment_bonus = {
 		装备种类 = {
@@ -723,7 +723,7 @@ centrism 中间路线
 		mechanized_equipment = 机械化装备
 		fighter_equipment = 战斗机
 		CAS_equipment = 近距支援机
-		
+
 #定义内阁小黑图标代码(加在特性里面)
 	sprite = 数字 = 决定特性(显示在内阁下面的小黑图标)的黑色小图标是哪一个，具体去知乎看
 
@@ -731,12 +731,12 @@ centrism 中间路线
 	ai_will_do = {
 		factor = 10 = 正常时的倾向
 		modifier = {
-			has_war = yes   = 处于战争 	
+			has_war = yes   = 处于战争
 			factor = 50   	= 处于战争时的倾向
 		}
 	}
 	# modifier 的意思是修正(注:如果修正内放的是国家，那么一个修正只能放一个国家，不能打多个tag，需要重新打modifier进行修正，否则无效)
-	
+
 #事件代码
 	fire_only_once = yes 仅触发一次
 	is_triggered_only = yes = 仅供调出(不会自己触发)
@@ -744,12 +744,12 @@ centrism 中间路线
 	#以下代码可放在国家代码位置
 		ROOT = 触发事件的国家(就是当前国家，也可以放在在其他需要打国家代码的位置)
 		FROM = 让这个事件触发的国家(例如某国的某个事件触发了在另一个国家发生的某个事件)
-		
+
 #事件弹出同时执行效果代码
 	immediate = {
 		执行的效果(如添加标记等)
-	}		
-	
+	}
+
 #事件触发代码
 	trigger = {
 		触发条件
@@ -770,7 +770,7 @@ capital_scope = {
 	create_unit = {
 		division = "name = \"Infantry Division\" division_template = \"皇家步兵师\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
 		owner = ROOT
-	}	
+	}
 }
 
 division_template = {
@@ -780,9 +780,9 @@ division_template = {
 	regiments = {
 		motorized = { x = 0 y = 0 }
 	}
-	support = { 
+	support = {
 		mot_recon = { x = 0 y = 0 }
-	} 
+	}
 }
 
 #军队编制兵种
@@ -794,7 +794,7 @@ division_template = {
 	medium_armor = 中型坦克
 	heavy_armor = 重型坦克
 	modern_armor = 现代坦克
-	
+
 	infantry
 	cavalry
 	camelry
@@ -834,7 +834,7 @@ division_template = {
 	heavy_tank_destroyer_brigade
 	super_heavy_tank_destroyer_brigade
 	modern_tank_destroyer_brigade
-	
+
 	shipgirl_brigade
 #支援连
 	engineer = 工兵联
@@ -852,11 +852,11 @@ division_template = {
 	maintenance_company 维修
 	rocket_artillery 火箭炮
 	signal_company 通讯
-	
+
 	fight_shipgirl
 	command_shipgirl
-	
-	
+
+
 #ai_strategy设定ai战略
 
 	#在国策、事件、决议里加战略
@@ -867,7 +867,7 @@ division_template = {
 			value = 数值
 		}
 	}
-	
+
 	随便打个id不重要 = {
 		enable = {
 			开启战略的条件（只要满足条件且当前未开启就可以无限重复）
@@ -876,78 +876,78 @@ division_template = {
 			战略终止的条件
 		}
 		abort_when_not_enabled = yes = 未满足启用条件时终止（只要满足条件且当前已经开启此战略就可以无限重复，根据情况与"abort"战略终止的条件来选择使用）
-		
+
 		战略
-		
-	}	
-	
-	#战略格式	
+
+	}
+
+	#战略格式
 	ai_strategy = {
 		type = 战略种类
 		id = 战略里要执行的种类(如装备，兵种，模板等)
 		value = ai倾向值
 	}
-	
-		#战略种类			
+
+		#战略种类
 			unit_ratio = 兵种的比率(AI训练部队的倾向)
 			role_ratio = 某种模板的倾向(模板在ai_templates/templates_XXX里)
 			equipment_production_factor = 装备生产
 			equipment_variant_production_factor = 装备的变形体生产(不是创造变形体倾向，是生产，就是放在生产线生产的倾向)
 			template_prio = 某种兵种模板的训练倾向
 			building_target = 建造建筑倾向（建筑种类去上面找）
-	#其它模板的战略种类		
+	#其它模板的战略种类
 		ai_strategy = {
 			type = alliance 									 --联盟(可用于防止不同意识形态ai退出阵营)
 			id = "结盟对象国家代码"
 			value = ai倾向值
 		}
-		
-		ai_strategy = {      
+
+		ai_strategy = {
 			type = equipment_stockpile_surplus_ratio             -- 装备储存因数
 			value = ai倾向值
 		}
-		
+
 		ai_strategy = {                                          -- 给某国派志愿兵因数
 			type = send_volunteers_desire
 			id = "给哪个国家派"
 			value = ai倾向值
 		}
-		
+
 		ai_strategy = {
 			type = spare_unit_factor                              -- 备用设备因素(应该是ai留库存因素)
 			value = 50
 		}
-		
+
 		ai_strategy = {											  -- 与某国结盟倾向值
 			type = 种类
 			id = "战略对象国家代码"
 			value = 数值
 		}
-		
+
 		ai_strategy = {											 -- 强制造兵值(装备不足时强制造兵)
 			type = force_build_armies
 			value = 100
 		}
-		
+
 		ai_strategy = {											-- 对某国准备战争
 			type = prepare_for_war
 			id = "国家代码"
 			value = 数值
 		}
-	
-	
+
+
 #模板文件编写修改说明(在ai_templates文件内，一般改标注的内容就可以了，这里以本子为参考)
-	
+
 	infantry_JAP = {           -- 名字可以随便起
 
 		available_for = {          -- 仅适用于某国
 			JAP
 		}
-		
+
 		roles = {
 			infantry                -- 角色，这个下面打的东西要放在ai战略里面的role_ratio里
 		}
-		
+
 		upgrade_prio = {            -- 重要性
 			factor = 2
 
@@ -957,15 +957,15 @@ division_template = {
 					NOT = {
 						JAP = { has_war_with = USA }
 					}
-					
+
 				}
 			}
 		}
-		
+
 		match_to_count = 0.60 #0.45 to 0.70 to 0.6 -- 不明
 
 		infantry_default_JAP = {						-- 名字可以随便打
-		
+
 			upgrade_prio = {							-- 编制升级优先级，作用不明，可以不理
 				factor = 5
 
@@ -977,12 +977,12 @@ division_template = {
 					}
 				}
 			}
-			
+
 			target_width = 40                           -- 编制战斗宽度
 			width_weight = 2							-- 不明
 			column_swap_factor = 0.5					-- 不明
-			
-			stat_weights = {							--不明	
+
+			stat_weights = {							--不明
 				0.00 #-- default_morale
 				0.00 #-- defense
 				1.00 #-- breakthrough
@@ -1019,25 +1019,25 @@ division_template = {
 				0.00 #-- acc_cold_gain
 				0.00 #-- build_cost_ic
 			}
-			
+
 			target_template = {
 				weight = 5								-- 不明，可以不理
 				match_value = 80000						-- 同类模板里选择这个编制的倾向
-				
+
 				support = {								-- 编制支援连的内容(注意:如果不想要可以这样打: 支援连 = 0 ，千万不能不打，否则会检测不出)
 					engineer = 1
 					artillery = 1
 					recon = 1
 				}
-				
+
 				regiments = {							-- 编制的内容
 					infantry = 16
 					artillery_brigade = 8
 				}
 			}
-			
+
 			allowed_types = {							-- 允许存在模板里的兵种
-				infantry		
+				infantry
 				engineer
 				recon
 				signal_company
@@ -1055,16 +1055,16 @@ division_template = {
 			#replace_at_match = 0.6
 			#replace_with = infantry_JAP_2
 			#target_min_match = 0.5
-		}	
+		}
 
 		infantry_JAP_2 = {                -- 名字可以随便起
-		
+
 			upgrade_prio = {              -- -- 编制升级优先级，作用不明，可以不理
 				factor = 20
 
 				modifier = {
 					factor = 0
-					
+
 					date < 1940.1.1
 					CHI = {
 						is_ai = yes
@@ -1074,7 +1074,7 @@ division_template = {
 					}
 				}
 			}
-			
+
 			# more expensive infantry template. we save it for later
 			enable = {                      = 开启条件
 				#date > 1940.1.1
@@ -1091,7 +1091,7 @@ division_template = {
 			target_width = 40                -- 编制的战斗宽度
 			width_weight = 5.0
 			column_swap_factor = 0.5
-			
+
 			stat_weights = {                 -- 不明
 				0.00 #-- default_morale
 				0.00 #-- defense
@@ -1129,26 +1129,26 @@ division_template = {
 				0.00 #-- acc_cold_gain
 				0.00 #-- build_cost_ic
 			}
-			
+
 			target_template = {
 				weight = 0.9         				-- 不明，可以不理
 				match_value = 6000.0				-- 同类模板里选择这个编制的倾向
-				
+
 				support = {         			 	-- 编制支援连的内容
 					engineer = 1
 					recon = 1
 					artillery = 1
 					anti_tank = 1
 				}
-				
+
 				regiments = {        				-- 编制的内容
 					infantry = 16
 					artillery_brigade = 8
 				}
 			}
-			
+
 			allowed_types = {        				-- 允许存在模板里的兵种
-				infantry		
+				infantry
 				engineer
 				recon
 				signal_company
@@ -1162,14 +1162,14 @@ division_template = {
 				artillery_brigade
 				rocket_artillery_brigade
 			}
-		}	
+		}
 	}
-		
+
 
 #将领技能图表定义接口文件
 	陆军将领 = unitleaderwindow
 	海军将领 = mtg_traits
-	
+
 #开局生产线和开局军队在历史文件军队文件里面自己去看
 
 #创建将领代码
@@ -1184,7 +1184,7 @@ division_template = {
 			planning_skill = 计划技能等级
 			logistics_skill = 后勤技能等级
 		}
-		
+
 	#创建元帅
 		create_field_marshal = {
 			name = "名字"
@@ -1196,7 +1196,7 @@ division_template = {
 			planning_skill = 计划技能等级
 			logistics_skill = 后勤技能等级
 		}
-		
+
 	#创建海军将领
 		create_navy_leader = {
 			name = "名字"
@@ -1208,7 +1208,7 @@ division_template = {
 			maneuvering_skill = 机动技能等级
 			coordination_skill = 协同技能等级
 		}
-		
+
 
 #原版将领特质(陆军)
 	#将领特性(天生的，不可在战斗中获得)
@@ -1222,18 +1222,18 @@ division_template = {
 		trait_reckless = 鲁莽
 		media_personality = 媒体人物
 		harsh_leader = 严厉将领
-		bearer_of_artillery = 炮兵搬运工		
+		bearer_of_artillery = 炮兵搬运工
 		infantry_officer = 步兵军官
 		cavalry_officer = 骑兵军官
 		armor_officer = 装甲军官
-		
+
 	#将领特性(包括地形特质，可从战斗中获得)
 		organizer = 组织者
 		cavalry_leader = 骑兵将领
 		infantry_leader = 步兵将领
 		skilled_staffer = 熟练参谋
 		trickster = 奇袭专家
-		winter_specialist = 冬季专家		
+		winter_specialist = 冬季专家
 		trait_engineer = 工兵
 		panzer_leader = 装甲专家
 		commando = 特战专家
@@ -1245,7 +1245,7 @@ division_template = {
 		ranger = 巡林者
 		urban_assault_specialist = 巷战专家
 		naval_invader = 入侵者
-		
+
 	#可分配的特性(需要习得指定特性之后才可点)
 		adaptable = 强于适应
 		winter_expert = 冬季专家
@@ -1263,7 +1263,7 @@ division_template = {
 		camouflage_expert = 伪装专家
 		expert_improviser = 随机应变的专家
 		guerilla_fighter = 游击战士
-		
+
 	#元帅特性
 		logistics_wizard = 后勤专家
 		offensive_doctrine = 进攻专家
@@ -1289,41 +1289,3 @@ division_template = {
 		inshore_fighter = 近海战士
 		blue_water_expert = 蓝水海军专家
 		green_water_expert = 绿水海军专家
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

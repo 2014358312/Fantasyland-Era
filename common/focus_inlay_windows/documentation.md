@@ -8,7 +8,7 @@ An inlay window is defined using the following syntax
 ```
 inlay_window_id = {
     window_name = gui_component_name
-    internal = yes/no # If true, then the inlay window is only visible to the country itself (defaults no) 
+    internal = yes/no # If true, then the inlay window is only visible to the country itself (defaults no)
     visible = visibility_trigger # when not visible, no evaluations will be done
     scripted_images = { # list of images that should have dynamic sprites
         icon_name = { # Name of the icon (must be a subcomponent of "gui_component_name")

@@ -64,7 +64,7 @@ country_event = {
 	id = WSG_event.004
 	title = WSG_event.004.t
 	desc = WSG_event.004.d
-	is_triggered_only = no 
+	is_triggered_only = no
 	trigger = {
 		OR = {
 			date > 1001.1.1
@@ -99,7 +99,7 @@ country_event = {
 	is_triggered_only = no
 	trigger = {
 		has_country_flag = WSG_from_the_deep_sea
-		check_variable = { WSG_middle_line > 2 } 
+		check_variable = { WSG_middle_line > 2 }
 		check_variable = { WSG_all_death > 20000 }
 	}
 	fire_only_once = yes
@@ -116,7 +116,7 @@ country_event = {
 	is_triggered_only = no
 	trigger = {
 		has_country_flag = WSG_from_the_deep_sea
-		check_variable = { WSG_right_line > 2 } 
+		check_variable = { WSG_right_line > 2 }
 		check_variable = { WSG_all_death > 30000 }
 	}
 	fire_only_once = yes
@@ -128,7 +128,7 @@ country_event = {
 
 country_event = {
 	id = WSG_event.008
-	title = WSG_event.008.t 
+	title = WSG_event.008.t
 	desc = WSG_event.008.d
 	is_triggered_only = yes
 	immediate = {
@@ -137,9 +137,9 @@ country_event = {
 			save_event_target_as = WSG_from_the_deep_sea_attack
 		}
         randomize_variable = {
-	        var = WSG_reduce_manpower  
-	        distribution = uniform 
-	        min = -5000 
+	        var = WSG_reduce_manpower
+	        distribution = uniform
+	        min = -5000
 			max = -500
         }
 		add_to_temp_variable = { WSG_reduce_manpower0 = WSG_reduce_manpower }
@@ -147,37 +147,37 @@ country_event = {
 		add_to_variable = { WSG_all_death = WSG_reduce_manpower0 }
 	}
 	option = {
-		name = WSG_event.008.a 
+		name = WSG_event.008.a
 		event_target:WSG_from_the_deep_sea_attack = {
 			clr_state_flag = WSG_deep_sea_attack
-			if = { 
-				limit = { industrial_complex > 0 } 
-			    remove_building = {  
-                    type = industrial_complex  
-                    level = 1 
-                } 
+			if = {
+				limit = { industrial_complex > 0 }
+			    remove_building = {
+                    type = industrial_complex
+                    level = 1
+                }
 				damage_building = {
                     type = industrial_complex
                     damage = 4
                 }
-			} 
+			}
 			if = {
-				limit = { arms_factory > 0 } 
-			    remove_building = { 
+				limit = { arms_factory > 0 }
+			    remove_building = {
                     type = arms_factory
                     level = 1
                 }
 				damage_building = {
                     type = arms_factory
                     damage = 4
-                } 
+                }
 			}
 			if = {
 				limit = { dockyard > 0 }
 			    remove_building = {
                     type = dockyard
-                    level = 1 
-                } 
+                    level = 1
+                }
 				damage_building = {
                     type = dockyard
                     damage = 4
@@ -198,13 +198,13 @@ country_event = {
 	id = WSG_event.009
 	title = WSG_event.009.t
 	desc = WSG_event.009.d
-	is_triggered_only = no 
-	trigger = { 
+	is_triggered_only = no
+	trigger = {
 		has_country_flag = WSG_from_the_deep_sea
 	}
 	fire_only_once = yes
-	immediate = { 
-		country_event = { days = 90 id = WSG_event.010 } 
+	immediate = {
+		country_event = { days = 90 id = WSG_event.010 }
 	}
 	option = {
 		name = WSG_event.009.a
@@ -230,8 +230,8 @@ country_event = {
 	desc = WSG_event.010.d
 	is_triggered_only = yes
 	fire_only_once = yes
-	immediate = { 
-		country_event = { days = 90 id = WSG_event.011 } 
+	immediate = {
+		country_event = { days = 90 id = WSG_event.011 }
 	}
 	option = {
 		name = WSG_event.010.a
@@ -256,8 +256,8 @@ country_event = {
 	desc = WSG_event.011.d
 	is_triggered_only = yes
 	fire_only_once = yes
-	immediate = { 
-		country_event = { days = 90 id = WSG_event.012 } 
+	immediate = {
+		country_event = { days = 90 id = WSG_event.012 }
 	}
 	option = {
 		name = WSG_event.011.a
@@ -304,7 +304,7 @@ country_event = {
 	id = WSG_event.013
 	title = WSG_event.013.t
 	desc = WSG_event.013.d
-	is_triggered_only = no 
+	is_triggered_only = no
 	trigger = {
 		tag = WSG
 		date > 1002.1.1
@@ -1221,7 +1221,7 @@ country_event = {
 
 
 country_event = {
-    id = feiyuguantou_shijian.1    
+    id = feiyuguantou_shijian.1
     is_triggered_only = no
     fire_only_once = yes
     title = feiyuguantou_shijian.1.t
@@ -1237,7 +1237,7 @@ country_event = {
 }
 
 country_event = {
-    id = feiyuguantou_shijian.2    
+    id = feiyuguantou_shijian.2
     is_triggered_only = no
     fire_only_once = yes
     title = feiyuguantou_shijian.2.t
@@ -1252,8 +1252,8 @@ country_event = {
     }
 }
 country_event = {
-    id = feiyuguantou_shijian.3    
-    is_triggered_only = no        
+    id = feiyuguantou_shijian.3
+    is_triggered_only = no
     title = feiyuguantou_shijian.3.t
     desc = feiyuguantou_shijian.3.d
 	picture = GFX_event_surstromming3
@@ -1263,17 +1263,17 @@ country_event = {
     }
     mean_time_to_happen = {days = 1}
     option = {
-    name = feiyuguantou_shijian.3.a   
+    name = feiyuguantou_shijian.3.a
     add_timed_idea = {
     idea = gangqu_revolution
     days = 30
-    }    
+    }
 }
-}   
+}
 
 country_event = {
-    id = feiyuguantou_shijian.4    
-    is_triggered_only = no        
+    id = feiyuguantou_shijian.4
+    is_triggered_only = no
     title = feiyuguantou_shijian.3.t
     desc = feiyuguantou_shijian.3.d
 	picture = GFX_event_surstromming3
@@ -1282,17 +1282,17 @@ country_event = {
     }
     mean_time_to_happen = {days = 1}
     option = {
-    name = feiyuguantou_shijian.3.a   
+    name = feiyuguantou_shijian.3.a
     if = {
         limit = {
           not={  has_idea = gangqu_revolution}
         }
-    
+
     add_timed_idea = {
     idea = gangqu_revolution
     days = 30
-    } 
-    }   
+    }
+    }
     else = {
         limit = { has_idea = gangqu_revolution}
         modify_timed_idea = {
@@ -1304,13 +1304,13 @@ country_event = {
 }
 
 country_event = {
-    id = feiyuguantou_shijian.5    
-    is_triggered_only = yes        
+    id = feiyuguantou_shijian.5
+    is_triggered_only = yes
     title = feiyuguantou_shijian.5.t
     desc = feiyuguantou_shijian.5.d
 	picture = GFX_event_surstromming4
-    
-    
+
+
     option = {
     name = feiyuguantou_shijian.5.a
     set_country_flag = qiyong_feiyuguantou
@@ -1319,13 +1319,13 @@ country_event = {
 }
 
 country_event = {
-    id = feiyuguantou_shijian.6    
-    is_triggered_only = yes        
+    id = feiyuguantou_shijian.6
+    is_triggered_only = yes
     title = feiyuguantou_shijian.6.t
     desc = feiyuguantou_shijian.6.d
 	picture = GFX_event_surstromming5
-    
-    
+
+
     option = {
     name = feiyuguantou_shijian.6.a
     set_country_flag = qiyong_feiyuguantou

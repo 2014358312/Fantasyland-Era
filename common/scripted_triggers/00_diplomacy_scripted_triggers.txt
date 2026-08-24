@@ -246,9 +246,9 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			}
 			has_dlc = "Trial of Allegiance"
 			original_tag = CHL
-			NOT = { 
+			NOT = {
 				OR = {
-					has_completed_focus = CHL_crusade_against_imperialism 
+					has_completed_focus = CHL_crusade_against_imperialism
 					has_completed_focus = CHL_endorse_the_constitution
 				}
 			}
@@ -272,9 +272,9 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			}
 			has_dlc = "Trial of Allegiance"
 			original_tag = CAN
-			NOT = { 
+			NOT = {
 				OR = {
-					has_completed_focus = CAN_forced_quebec_conscription 
+					has_completed_focus = CAN_forced_quebec_conscription
 					has_completed_focus = CAN_compromise_with_quebec
 				}
 			}
@@ -640,7 +640,7 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 				option = FREE
 			}
 			has_dlc = "Battle for the Bosporus"
-			OR = { 
+			OR = {
 				original_tag = TUR
 				original_tag = SYR
 				original_tag = PER
@@ -1129,7 +1129,7 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 			}
 		}
 		if = {
-			limit = { 
+			limit = {
 				ROOT = {
 					has_country_flag = can_send_volunteers_to_@FROM
 				}
@@ -1158,7 +1158,7 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 }
 
 DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
-	if = { 
+	if = {
 		limit = {
 			NOT = { has_global_flag = ethiopia_recognized_flag }
 			OR = {
@@ -1169,20 +1169,20 @@ DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
 					tag = ETH
 				}
 			}
-			
+
 		}
 		custom_trigger_tooltip = {
 			tooltip = LON_NON_INTERFERENCE_RESOLUTION_JOIN
 			always = no
 		}
 	}
-	if = { 
+	if = {
 		limit = {
 			has_dlc = "Arms Against Tyranny"
 			ROOT = {
 				original_tag = ICE
 				has_idea = neutrality_idea
-				is_subject = yes 
+				is_subject = yes
 			}
 		}
 		custom_trigger_tooltip = {
@@ -1190,13 +1190,13 @@ DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
 			always = no
 		}
 	}
-	if = { 
+	if = {
 		limit = {
 			has_dlc = "Arms Against Tyranny"
 			ROOT = {
 				original_tag = DEN
 				has_country_flag = DEN_is_protectorate_flag
-				is_subject = yes 
+				is_subject = yes
 			}
 		}
 		custom_trigger_tooltip = {
@@ -1206,7 +1206,7 @@ DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
 	}
 }
 DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
-	if = { 
+	if = {
 		limit = {
 			NOT = { has_global_flag = ethiopia_recognized_flag }
 			OR = {
@@ -1217,20 +1217,20 @@ DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
 					tag = ETH
 				}
 			}
-			
+
 		}
 		custom_trigger_tooltip = {
 			tooltip = LON_NON_INTERFERENCE_RESOLUTION_CALL
 			always = no
 		}
 	}
-	if = { 
+	if = {
 		limit = {
 			has_dlc = "Arms Against Tyranny"
 			FROM = {
 				original_tag = ICE
 				has_idea = neutrality_idea
-				is_subject = yes 
+				is_subject = yes
 			}
 		}
 		custom_trigger_tooltip = {
@@ -1238,13 +1238,13 @@ DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
 			always = no
 		}
 	}
-	if = { 
+	if = {
 		limit = {
 			has_dlc = "Arms Against Tyranny"
 			FROM = {
 				original_tag = DEN
 				has_country_flag = DEN_is_protectorate_flag
-				is_subject = yes 
+				is_subject = yes
 			}
 		}
 		custom_trigger_tooltip = {
@@ -1254,12 +1254,12 @@ DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
 	}
 }
 DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
-	if = { 
+	if = {
 		limit = {
 			has_dlc = "Arms Against Tyranny"
 			original_tag = DEN
 			has_country_flag = DEN_is_protectorate_flag
-			is_subject = yes 
+			is_subject = yes
 
 		}
 		custom_trigger_tooltip = {
@@ -1269,13 +1269,13 @@ DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
 	}
 }
 DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
-	if = { 
+	if = {
 		limit = {
 			has_dlc = "Arms Against Tyranny"
 			FROM = {
 				original_tag = DEN
 				has_country_flag = DEN_is_protectorate_flag
-				is_subject = yes 
+				is_subject = yes
 			}
 		}
 		custom_trigger_tooltip = {

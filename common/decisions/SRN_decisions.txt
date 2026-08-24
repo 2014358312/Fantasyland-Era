@@ -27,8 +27,8 @@ SRN_decision_categories_National_Corporate_Committee = {
 		production_factory_max_efficiency_factor = 0.1
 		production_factory_efficiency_gain_factor = 0.1
 		line_change_production_efficiency_factor = 0.1
-		production_factory_start_efficiency_factor = 0.1	
-	   	}		
+		production_factory_start_efficiency_factor = 0.1
+	   	}
 	}
 
 	SRN_decision_Implement_Emergency_Corporatist_Production_Quotas = {
@@ -53,8 +53,8 @@ SRN_decision_categories_National_Corporate_Committee = {
 	days_re_enable = 30
 	modifier = {
 		industrial_capacity_factory = 0.1
-		industrial_capacity_dockyard = 0.1	
-	   	}	
+		industrial_capacity_dockyard = 0.1
+	   	}
 	}
 
 	SRN_decision_Mobilize_Corporatist_Worker_Efficiency_Drives = {
@@ -83,8 +83,8 @@ SRN_decision_categories_National_Corporate_Committee = {
 		production_speed_dockyard_factor = 0.1
 		production_speed_bunker_factor = 0.1
 		production_speed_naval_base_factor = 0.1
-		production_speed_infrastructure_factor = 0.1	
-	   	}	
+		production_speed_infrastructure_factor = 0.1
+	   	}
 	}
 }
 
@@ -135,32 +135,32 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 	allowed = {
 		original_tag = SRN
 	}
-	available = { #任务完成条件                          
+	available = { #任务完成条件
 		always = no
 	}
-	activation = { #任务显示条件               
+	activation = { #任务显示条件
         original_tag = SRN
 		has_completed_focus = SRN_National_Focus_two_National_Corporatist_Committee
-	} 
+	}
 	is_good = yes
 	days_mission_timeout = 30 #任务时限天数
-	timeout_effect = {         
+	timeout_effect = {
 		add_stability = -0.05
-		add_war_support = -0.05             
+		add_war_support = -0.05
 			add_power_balance_value = {
 				id = SRN_balance_of_power
 				value = -0.1
 			}
-			activate_mission = SRN_decision_National_Corporatist_Committee         
-		}       
+			activate_mission = SRN_decision_National_Corporatist_Committee
+		}
 	complete_effect = {
 		add_stability = -0.05
-		add_war_support = -0.05                    
+		add_war_support = -0.05
 			add_power_balance_value = {
 				id = SRN_balance_of_power
 				value = -0.1
-			}   
-			activate_mission = SRN_decision_National_Corporatist_Committee       
+			}
+			activate_mission = SRN_decision_National_Corporatist_Committee
 		}
 	}
 
@@ -201,10 +201,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = industrial_complex
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 	SRN_decision_Establish_National_Unemployment_Insurance_Fund = {
@@ -241,10 +241,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = industrial_complex
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 	SRN_decision_Launch_Universal_Basic_Medical_Insurance = {
@@ -281,10 +281,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = industrial_complex
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 	SRN_decision_Implement_Universal_Pension_Scheme = {
@@ -321,10 +321,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = industrial_complex
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 	SRN_decision_Expand_Public_Housing_Security_Program = {
@@ -361,10 +361,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = industrial_complex
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 	SRN_decision_Introduce_Basic_Food_and_Nutrition_Subsidies = {
@@ -381,8 +381,8 @@ SRN_decision_categories_Organic_State_Tension_Index = {
         NOT = {
             power_balance_value = {
                 id = SRN_balance_of_power
-                value > 0.9   
-			} 
+                value > 0.9
+			}
         }
     }
 	ai_will_do = {
@@ -401,10 +401,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = industrial_complex
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 #公平与正义
@@ -422,8 +422,8 @@ SRN_decision_categories_Organic_State_Tension_Index = {
         NOT = {
             power_balance_value = {
                 id = SRN_balance_of_power
-                value > 0.9   
-			} 
+                value > 0.9
+			}
         }
     }
 	ai_will_do = {
@@ -442,10 +442,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = infrastructure
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 	SRN_decision_Promote_Urban_Rural_Compulsory_Education_Integration = {
@@ -462,8 +462,8 @@ SRN_decision_categories_Organic_State_Tension_Index = {
         NOT = {
             power_balance_value = {
                 id = SRN_balance_of_power
-                value > 0.9   
-			} 
+                value > 0.9
+			}
         }
     }
 	ai_will_do = {
@@ -482,10 +482,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = infrastructure
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 	SRN_decision_Establish_Universal_Healthcare_Equity_Fund = {
@@ -502,8 +502,8 @@ SRN_decision_categories_Organic_State_Tension_Index = {
         NOT = {
             power_balance_value = {
                 id = SRN_balance_of_power
-                value > 0.9   
-			} 
+                value > 0.9
+			}
         }
     }
 	ai_will_do = {
@@ -522,10 +522,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = infrastructure
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 	SRN_decision_Eliminate_Regional_Healthcare_Inequality = {
@@ -542,8 +542,8 @@ SRN_decision_categories_Organic_State_Tension_Index = {
         NOT = {
             power_balance_value = {
                 id = SRN_balance_of_power
-                value > 0.9   
-			} 
+                value > 0.9
+			}
         }
     }
 	ai_will_do = {
@@ -562,10 +562,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = infrastructure
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 	SRN_decision_Strengthen_Community_Safety_and_Crime_Prevention = {
@@ -582,8 +582,8 @@ SRN_decision_categories_Organic_State_Tension_Index = {
         NOT = {
             power_balance_value = {
                 id = SRN_balance_of_power
-                value > 0.9   
-			} 
+                value > 0.9
+			}
         }
     }
 	ai_will_do = {
@@ -602,10 +602,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = infrastructure
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 	SRN_decision_Construct_Social_Safety_Net_Floor = {
@@ -622,8 +622,8 @@ SRN_decision_categories_Organic_State_Tension_Index = {
         NOT = {
             power_balance_value = {
                 id = SRN_balance_of_power
-                value > 0.9   
-			} 
+                value > 0.9
+			}
         }
     }
 	ai_will_do = {
@@ -642,10 +642,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = infrastructure
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 #打击寡头
@@ -663,8 +663,8 @@ SRN_decision_categories_Organic_State_Tension_Index = {
         NOT = {
             power_balance_value = {
                 id = SRN_balance_of_power
-                value > 0.9   
-			} 
+                value > 0.9
+			}
         }
     }
 	ai_will_do = {
@@ -683,10 +683,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = industrial_complex
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 	SRN_decision_Implement_Highly_Progressive_Inheritance_Tax_System = {
@@ -703,8 +703,8 @@ SRN_decision_categories_Organic_State_Tension_Index = {
         NOT = {
             power_balance_value = {
                 id = SRN_balance_of_power
-                value > 0.9   
-			} 
+                value > 0.9
+			}
         }
     }
 	ai_will_do = {
@@ -723,10 +723,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = industrial_complex
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 	SRN_decision_Mandate_Excess_Inheritance_Transfer_to_Social_Security_Fund = {
@@ -743,8 +743,8 @@ SRN_decision_categories_Organic_State_Tension_Index = {
         NOT = {
             power_balance_value = {
                 id = SRN_balance_of_power
-                value > 0.9   
-			} 
+                value > 0.9
+			}
         }
     }
 	ai_will_do = {
@@ -763,10 +763,10 @@ SRN_decision_categories_Organic_State_Tension_Index = {
             add_building_construction = {
                     type = industrial_complex
                     level = 1
-                    instant_build = yes 
+                    instant_build = yes
                 }
             }
-		}	
+		}
 	}
 
 ###重复决议
@@ -785,8 +785,8 @@ SRN_decision_categories_Organic_State_Tension_Index = {
         NOT = {
             power_balance_value = {
                 id = SRN_balance_of_power
-                value > 0.9   
-			} 
+                value > 0.9
+			}
 			has_stability > 0.9 #稳定度大于或小于多少
 	        has_war_support > 0.9 #战争支持度大于或小于多少
         }
@@ -805,7 +805,7 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 			}
 		add_stability = 0.05
 	    add_war_support = 0.05
-		}	
+		}
 	}
 
 	SRN_decision_Enforce_Mandatory_Asset_Disclosure_for_Officials = {
@@ -822,8 +822,8 @@ SRN_decision_categories_Organic_State_Tension_Index = {
         NOT = {
             power_balance_value = {
                 id = SRN_balance_of_power
-                value > 0.9   
-			} 
+                value > 0.9
+			}
 			has_stability > 0.9 #稳定度大于或小于多少
 	        has_war_support > 0.9 #战争支持度大于或小于多少
         }
@@ -842,7 +842,7 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 			}
 		add_stability = 0.05
 	    add_war_support = 0.05
-		}	
+		}
 	}
 
 	SRN_decision_Initiate_Deep_Government_Self_Purification_Operation = {
@@ -859,8 +859,8 @@ SRN_decision_categories_Organic_State_Tension_Index = {
         NOT = {
             power_balance_value = {
                 id = SRN_balance_of_power
-                value > 0.9   
-			} 
+                value > 0.9
+			}
 			has_stability > 0.9 #稳定度大于或小于多少
 	        has_war_support > 0.9 #战争支持度大于或小于多少
         }
@@ -879,7 +879,6 @@ SRN_decision_categories_Organic_State_Tension_Index = {
 			}
 		add_stability = 0.05
 	    add_war_support = 0.05
-		}	
+		}
 	}
 }
-

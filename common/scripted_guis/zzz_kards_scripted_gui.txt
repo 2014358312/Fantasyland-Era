@@ -4,7 +4,7 @@ scripted_gui = {
 		window_name = "GLOBAL_kards_main"
 
 		visible = { always = yes }
-		
+
 		effects = {
 			close_button_click = {
 				if = {
@@ -18,9 +18,9 @@ scripted_gui = {
 	global_kards_container = {
 		context_type = player_context
 		window_name = "GLOBAL_kards_container"
-		
+
 		visible = { has_country_flag = country_kards_open_flag }
-		
+
 		dynamic_lists = {
 			cards_gridbox = {
 				array = global.cards_array
@@ -29,13 +29,13 @@ scripted_gui = {
 				entry_container = cards_list_window
 			}
 		}
-		
+
 		properties = {
 			card = {
 				image = "GFX_global_kards_cards_[?c_v]"
 			}
 		}
-		
+
 		effects = {
 			close_button_click = {
 				if = {

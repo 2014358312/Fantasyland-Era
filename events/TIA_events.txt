@@ -14,7 +14,7 @@ add_namespace = TIA_inner_circle
 @inner_circle_time_tier_2 = 35
 @inner_circle_time_tier_3 = 35
 @inner_circle_time_tier_4 = 35
- 
+
 # 同步的flag倒计时（用于UI显示"剩余X天完成"）
 @inner_circle_time_tier_1_flag = 36
 @inner_circle_time_tier_2_flag = 36
@@ -597,9 +597,9 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = TIA.16.a
-		annex_country = { 
-			target = TMB 
-			transfer_troops = no 
+		annex_country = {
+			target = TMB
+			transfer_troops = no
 		}
 		TIA = {
 			country_event = {
@@ -610,7 +610,7 @@ country_event = {
 	}
 	option = {
 		name = TIA.16.b
-		
+
 	}
 }
 
@@ -661,9 +661,9 @@ country_event = {
 	option = {
 		name = TIA.19.a
 		TIA = {
-			annex_country = { 
-				target = TCC 
-				transfer_troops = yes 
+			annex_country = {
+				target = TCC
+				transfer_troops = yes
 			}
 			change_tag_from = TCC
 			set_cosmetic_tag = TIA_empire_federation
@@ -3460,7 +3460,7 @@ country_event = {
 ###################################
 # Phase 1: Inspection Reports
 ###################################
- 
+
 # VBC - Viscount Bellman
 country_event = {
 	id = TIA.83
@@ -3468,7 +3468,7 @@ country_event = {
 	desc = TIA.83.desc
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	# Bellman is cooperative (Jinghai Forest ally)
 	option = {
 		name = TIA.83.a
@@ -3477,7 +3477,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 	}
 }
- 
+
 # CLV - County Ludolu von
 country_event = {
 	id = TIA.84
@@ -3485,7 +3485,7 @@ country_event = {
 	desc = TIA.84.desc
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	option = {
 		name = TIA.84.a
 		add_political_power = 10
@@ -3493,7 +3493,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 	}
 }
- 
+
 # CDK - County Dolkness
 country_event = {
 	id = TIA.85
@@ -3501,7 +3501,7 @@ country_event = {
 	desc = TIA.85.desc
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	option = {
 		name = TIA.85.a
 		add_political_power = 5
@@ -3509,7 +3509,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 	}
 }
- 
+
 # CAB - County Asho Barton
 country_event = {
 	id = TIA.86
@@ -3517,7 +3517,7 @@ country_event = {
 	desc = TIA.86.desc
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	option = {
 		name = TIA.86.a
 		add_political_power = 5
@@ -3525,11 +3525,11 @@ country_event = {
 		ai_chance = { factor = 100 }
 	}
 }
- 
+
 ###################################
 # Phase 2: Negotiation (Generic with conditional desc)
 ###################################
- 
+
 country_event = {
 	id = TIA.87
 	title = TIA.87.t
@@ -3551,7 +3551,7 @@ country_event = {
 	}
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	# Diplomatic approach
 	option = {
 		name = TIA.87.a
@@ -3587,7 +3587,7 @@ country_event = {
 		}
 		ai_chance = { factor = 60 }
 	}
- 
+
 	# Coercive approach
 	option = {
 		name = TIA.87.b
@@ -3639,7 +3639,7 @@ country_event = {
 		}
 		ai_chance = { factor = 40 }
 	}
- 
+
 	# Bonus: if previous centralization was gradual
 	option = {
 		name = TIA.87.c
@@ -3678,11 +3678,11 @@ country_event = {
 		ai_chance = { factor = 100 }
 	}
 }
- 
+
 ###################################
 # Rebellion Event
 ###################################
- 
+
 country_event = {
 	id = TIA.88
 	title = TIA.88.t
@@ -3704,7 +3704,7 @@ country_event = {
 	}
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	# Military suppression
 	option = {
 		name = TIA.88.a
@@ -3736,7 +3736,7 @@ country_event = {
 		}
 		ai_chance = { factor = 60 }
 	}
- 
+
 	# Emergency concessions (back to diplomatic)
 	option = {
 		name = TIA.88.b
@@ -3772,11 +3772,11 @@ country_event = {
 		ai_chance = { factor = 40 }
 	}
 }
- 
+
 ###################################
 # Rebellion Suppressed
 ###################################
- 
+
 country_event = {
 	id = TIA.89
 	title = TIA.89.t
@@ -3794,7 +3794,7 @@ country_event = {
 	}
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	option = {                                    # .a 公开审判（仅 VBC/CLV）
 		name = TIA.89.a
 		trigger = { OR = { has_country_flag = TIA_rebellion_VBC has_country_flag = TIA_rebellion_CLV } }
@@ -3805,7 +3805,7 @@ country_event = {
 		trigger = { OR = { has_country_flag = TIA_rebellion_VBC has_country_flag = TIA_rebellion_CLV } }
 		# 仅处理 VBC/CLV flag
 	}
- 
+
 	option = {                                    # .c 尤蜜拉亲自处置（仅 CDK）
 		name = TIA.89.c
 		trigger = { has_country_flag = TIA_rebellion_CDK }
@@ -3819,7 +3819,7 @@ country_event = {
 		add_political_power = -20
 		add_manpower = -1000
 	}
- 
+
 	option = {                                    # .e 派翠克化解（仅 CAB）
 		name = TIA.89.e
 		trigger = { has_country_flag = TIA_rebellion_CAB }
@@ -3833,11 +3833,11 @@ country_event = {
 		add_political_power = -15
 	}
 }
- 
+
 ###################################
 # Annexation Event (Generic)
 ###################################
- 
+
 country_event = {
 	id = TIA.90
 	title = TIA.90.t
@@ -3859,7 +3859,7 @@ country_event = {
 	}
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	# Annex with autonomy preserved
 	option = {
 		name = TIA.90.a
@@ -3904,7 +3904,7 @@ country_event = {
 		}
 		ai_chance = { factor = 60 }
 	}
- 
+
 	# Annex with direct rule
 	option = {
 		name = TIA.90.b
@@ -3950,11 +3950,11 @@ country_event = {
 		ai_chance = { factor = 40 }
 	}
 }
- 
+
 ###################################
 # All Four Vassals Integrated
 ###################################
- 
+
 country_event = {
 	id = TIA.91
 	title = TIA.91.t
@@ -3962,7 +3962,7 @@ country_event = {
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
 	fire_only_once = yes
- 
+
 	option = {
 		name = TIA.91.a
 		add_political_power = 100
@@ -3972,11 +3972,11 @@ country_event = {
 		ai_chance = { factor = 100 }
 	}
 }
- 
+
 ###################################
 # Fontaine Rose Society Chain
 ###################################
- 
+
 # FON Phase 1: Assessment
 country_event = {
 	id = TIA.92
@@ -3984,7 +3984,7 @@ country_event = {
 	desc = TIA.92.desc
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	option = {
 		name = TIA.92.a
 		add_political_power = 10
@@ -3992,7 +3992,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 	}
 }
- 
+
 # FON Phase 2: Contact Rose Society
 country_event = {
 	id = TIA.93
@@ -4000,7 +4000,7 @@ country_event = {
 	desc = TIA.93.desc
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	# Respect their faith, seek common ground
 	option = {
 		name = TIA.93.a
@@ -4036,7 +4036,7 @@ country_event = {
 		ai_chance = { factor = 20 }
 	}
 }
- 
+
 # FON Phase 3: Negotiate Terms
 country_event = {
 	id = TIA.94
@@ -4044,7 +4044,7 @@ country_event = {
 	desc = TIA.94.desc
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	# Guarantee religious freedom (easiest path)
 	option = {
 		name = TIA.94.a
@@ -4105,7 +4105,7 @@ country_event = {
 		ai_chance = { factor = 50 }
 	}
 }
- 
+
 # FON Crisis: Rose Society Resistance
 country_event = {
 	id = TIA.95
@@ -4113,7 +4113,7 @@ country_event = {
 	desc = TIA.95.desc
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	# Military intervention
 	option = {
 		name = TIA.95.a
@@ -4193,7 +4193,7 @@ country_event = {
 	}
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	# Peaceful / religious freedom integration
 	option = {
 		name = TIA.96.a
@@ -4258,7 +4258,7 @@ country_event = {
 ###################################
 # Fontaine Post-War Governance
 ###################################
- 
+
 country_event = {
 	id = TIA.97
 	title = TIA.97.t
@@ -4284,7 +4284,7 @@ country_event = {
 	}
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	# Allow worship, reconcile
 	option = {
 		name = TIA.97.a
@@ -4355,7 +4355,7 @@ country_event = {
 		ai_chance = { factor = 80 }
 	}
 }
- 
+
 
 
 country_event = {
@@ -5242,7 +5242,7 @@ country_event = {
 	desc = TIA.125.desc
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	option = {
 		name = TIA.125.a
 		add_political_power = 50
@@ -5296,7 +5296,7 @@ country_event = {
 	desc = TIA.127.desc
 	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
- 
+
 	option = {
 		name = TIA.127.a
 		add_political_power = 50
@@ -7232,7 +7232,7 @@ country_event = {
 	id = TIA_inner_circle.1
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Miabel_Runa_Tiamun
@@ -7243,7 +7243,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Miabel_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -7307,7 +7307,7 @@ country_event = {
 	id = TIA_inner_circle.2
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Miabel_Runa_Tiamun
@@ -7318,7 +7318,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Miabel_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -7398,7 +7398,7 @@ country_event = {
 	id = TIA_inner_circle.3
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Alice_Bedford
@@ -7409,7 +7409,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Alice_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -7473,7 +7473,7 @@ country_event = {
 	id = TIA_inner_circle.4
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Alice_Bedford
@@ -7484,7 +7484,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Alice_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -7564,7 +7564,7 @@ country_event = {
 	id = TIA_inner_circle.5
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Anne_Littstein
@@ -7575,7 +7575,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Anne_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -7639,7 +7639,7 @@ country_event = {
 	id = TIA_inner_circle.6
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Anne_Littstein
@@ -7650,7 +7650,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Anne_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -7730,7 +7730,7 @@ country_event = {
 	id = TIA_inner_circle.7
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Ekure
@@ -7741,7 +7741,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Ekure_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -7805,7 +7805,7 @@ country_event = {
 	id = TIA_inner_circle.8
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Ekure
@@ -7816,7 +7816,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Ekure_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -7896,7 +7896,7 @@ country_event = {
 	id = TIA_inner_circle.9
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Tiona_Rudolvon
@@ -7907,7 +7907,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Tiona_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -7971,7 +7971,7 @@ country_event = {
 	id = TIA_inner_circle.10
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Tiona_Rudolvon
@@ -7982,7 +7982,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Tiona_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -8062,7 +8062,7 @@ country_event = {
 	id = TIA_inner_circle.11
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Ludwig_Hewitt
@@ -8073,7 +8073,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Ludwig_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -8137,7 +8137,7 @@ country_event = {
 	id = TIA_inner_circle.12
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Ludwig_Hewitt
@@ -8148,7 +8148,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Ludwig_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -8228,7 +8228,7 @@ country_event = {
 	id = TIA_inner_circle.13
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Livia
@@ -8239,7 +8239,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Livia_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -8303,7 +8303,7 @@ country_event = {
 	id = TIA_inner_circle.14
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Livia
@@ -8314,7 +8314,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Livia_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -8394,7 +8394,7 @@ country_event = {
 	id = TIA_inner_circle.15
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Yumiella_Dolkness
@@ -8405,7 +8405,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Yumiella_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -8469,7 +8469,7 @@ country_event = {
 	id = TIA_inner_circle.16
 	hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		tag = TIA
 		has_completed_focus = TIA_cabinet_Yumiella_Dolkness
@@ -8480,7 +8480,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = TIA_cabinet_Yumiella_complete }
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -8576,9 +8576,9 @@ state_event = {
     title = TIA_state_event.1.t
     desc = TIA_state_event.1.desc
     picture = GFX_report_event_TIA_
-    
+
     is_triggered_only = yes
-    
+
     option = {
         name = TIA_state_event.1.a
 		251 = {

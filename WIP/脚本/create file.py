@@ -6,7 +6,7 @@ def create_gfx_files(identifier):
 	# 构建文件名
 	advisor_file = f"{identifier}_advisor.gfx"
 	character_file = f"{identifier}_character.gfx"
-	
+
 	# 定义文件内容
 	advisor_content = [
 		"spriteTypes = {",
@@ -17,7 +17,7 @@ def create_gfx_files(identifier):
 		"\t}",
 		"}"
 	]
-	
+
 	character_content = [
 		"spriteTypes = {",
 		"",
@@ -33,7 +33,7 @@ def create_gfx_files(identifier):
 	for file_path in [advisor_file, character_file]:
 		if os.path.exists(file_path):
 			existing_files.append(file_path)
-	
+
 	# 处理覆盖确认
 	if existing_files:
 		print(f"检测到以下文件已存在:")
@@ -43,7 +43,7 @@ def create_gfx_files(identifier):
 		if confirm != 'y':
 			print("操作已取消")
 			return
-	
+
 	try:
 		# 写入advisor文件
 		with open(advisor_file, 'w+', encoding='utf-8') as f:
@@ -55,11 +55,11 @@ def create_gfx_files(identifier):
 			for j in character_content:
 				f.write(j)
 				f.write("\n")
-		
+
 		print(f"成功创建文件:")
 		print(f"  {advisor_file} ({len(advisor_content)} 字符)")
 		print(f"  {character_file} ({len(character_content)} 字符)")
-		
+
 	except IOError as e:
 		print(f"文件操作失败: {str(e)}")
 		raise
@@ -70,15 +70,15 @@ def main():
 		description="根据输入参数生成特定格式的gfx文件",
 		formatter_class=argparse.ArgumentDefaultsHelpFormatter
 	)
-	
+
 	# 添加位置参数
 	parser.add_argument('identifier', 
 						type=str,
 						help="用于生成文件名的唯一标识符")
-	
+
 	# 解析参数
 	args = parser.parse_args()
-	
+
 	# 执行文件创建
 	create_gfx_files(args.identifier)
 

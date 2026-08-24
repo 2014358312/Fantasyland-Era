@@ -21,13 +21,13 @@ focus_tree = {
 
 	default = no
 
-    continuous_focus_position = { 
-        x = 20 
-        y = 1500 
+    continuous_focus_position = {
+        x = 20
+        y = 1500
     }
 
 #政治抉择#
-	focus = { 
+	focus = {
 		id = FON_election_coming
 		icon = GFX_focus_FON_election_coming
 		x = 6
@@ -35,17 +35,17 @@ focus_tree = {
 
 		cost = 1
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
 
 		available = {
-			always = no 
+			always = no
 		}
 
 		completion_reward = {
 		}
-	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -56,7 +56,7 @@ focus_tree = {
 		}
 	}
 #和平线
-	focus = { 
+	focus = {
 		id = FON_Navia_Caspar_road
 		icon = GFX_focus_FON_Navia_Caspar_road
 		relative_position_id = FON_election_coming
@@ -65,15 +65,15 @@ focus_tree = {
 
 		cost = 1
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_election_coming
 		}
 
 		available = {
-			always = no 
+			always = no
 		}
 
 		completion_reward = {
@@ -84,7 +84,7 @@ focus_tree = {
 				is_locked = no
 			}
 		}
-	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -94,7 +94,7 @@ focus_tree = {
 			factor = 1
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_negotiation_amend_constitution
 		icon = GFX_focus_FON_negotiation_amend_constitution
 		relative_position_id = FON_election_coming
@@ -103,10 +103,10 @@ focus_tree = {
 
 		cost = 5
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_Navia_Caspar_road
 		}
 
@@ -135,7 +135,7 @@ focus_tree = {
 			factor = 10
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_TIA_economic_cooperation
 		icon = GFX_focus_FON_TIA_economic_cooperation
 		relative_position_id = FON_negotiation_amend_constitution
@@ -144,10 +144,10 @@ focus_tree = {
 
 		cost = 5
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_negotiation_amend_constitution
 		}
 
@@ -156,7 +156,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = FON_TIA_economic_cooperation_idea
-			add_offsite_building = { 
+			add_offsite_building = {
 				type = industrial_complex
 				level = 2
 			}
@@ -170,7 +170,7 @@ focus_tree = {
 			factor = 10
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_TIA_regional_integration
 		icon = GFX_focus_FON_TIA_regional_integration
 		relative_position_id = FON_negotiation_amend_constitution
@@ -179,10 +179,10 @@ focus_tree = {
 
 		cost = 5
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_TIA_economic_cooperation
 		}
 
@@ -201,9 +201,9 @@ focus_tree = {
 				name = FON_TIA_regional_integration
 				bonus = 1
 				uses = 2
-				category = industry 
+				category = industry
 			}
-		}	
+		}
 
 		continue_if_invalid = yes
 		available_if_capitulated = no
@@ -214,7 +214,7 @@ focus_tree = {
 			factor = 10
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_TIA_technological_support
 		icon = GFX_focus_FON_TIA_technological_support
 		relative_position_id = FON_negotiation_amend_constitution
@@ -223,10 +223,10 @@ focus_tree = {
 
 		cost = 3
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_TIA_regional_integration
 		}
 
@@ -237,7 +237,7 @@ focus_tree = {
 			add_research_slot = 1
 			add_ideas = FON_TIA_technological_support_idea
 		}
-	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -248,7 +248,7 @@ focus_tree = {
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = FON_propaganda_uniting_opinions
 		icon = GFX_focus_FON_propaganda_uniting_opinions
 		relative_position_id = FON_negotiation_amend_constitution
@@ -257,10 +257,10 @@ focus_tree = {
 
 		cost = 5
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_negotiation_amend_constitution
 		}
 
@@ -277,7 +277,7 @@ focus_tree = {
 			add_stability = 0.05
 			add_ideas = FON_TIA_support_idea
 		}
-	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -287,7 +287,7 @@ focus_tree = {
 			factor = 1
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_TIA_border_eagles
 		icon = GFX_focus_FON_TIA_border_eagles
 		relative_position_id = FON_negotiation_amend_constitution
@@ -296,10 +296,10 @@ focus_tree = {
 
 		cost = 5
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_propaganda_uniting_opinions
 		}
 
@@ -328,7 +328,7 @@ focus_tree = {
 			factor = 1
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_tax_harmonization
 		icon = GFX_focus_FON_tax_harmonization
 		relative_position_id = FON_negotiation_amend_constitution
@@ -337,10 +337,10 @@ focus_tree = {
 
 		cost = 5
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_TIA_border_eagles
 		}
 
@@ -351,7 +351,7 @@ focus_tree = {
 			FROM = {
 				remove_dynamic_modifier = {
 					modifier = FON_Fonese_bound_to_TIA_taxes_modifier
-				}			
+				}
 			}
 			every_core_state = {
 				limit = {
@@ -370,7 +370,7 @@ focus_tree = {
 			factor = 1
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_embrace_TIA
 		icon = GFX_focus_FON_embrace_TIA
 		relative_position_id = FON_negotiation_amend_constitution
@@ -379,10 +379,10 @@ focus_tree = {
 
 		cost = 5
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_tax_harmonization
 		}
 
@@ -407,7 +407,7 @@ focus_tree = {
 			}
 
 		}
-	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -418,7 +418,7 @@ focus_tree = {
 		}
 	}
 #独立线
-	focus = { 
+	focus = {
 		id = FON_Neuvillette_road
 		icon = GFX_focus_FON_Neuvillette_road
 		relative_position_id = FON_election_coming
@@ -427,21 +427,21 @@ focus_tree = {
 
 		cost = 1
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_election_coming
 		}
 
 		available = {
-			always = no 
+			always = no
 		}
 
 		completion_reward = {
 			add_ideas = FON_Neuvillette_head_of_government
 		}
-	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -451,7 +451,7 @@ focus_tree = {
 			factor = 1
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_amend_constitution
 		icon = GFX_focus_FON_amend_constitution
 		relative_position_id = FON_Neuvillette_road
@@ -460,10 +460,10 @@ focus_tree = {
 
 		cost = 3
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_Neuvillette_road
 		}
 
@@ -488,7 +488,7 @@ focus_tree = {
 					}
 				}
 				else = {
-					add_political_power = 100 
+					add_political_power = 100
 				}
 			}
 			FON = {
@@ -509,13 +509,13 @@ focus_tree = {
 						remove_idea = disarmed_nation
 						add_idea = limited_conscription
 					}
-				}				
+				}
 				else = {
-					add_political_power = 100 
+					add_political_power = 100
 				}
 			}
 		}
-	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -525,7 +525,7 @@ focus_tree = {
 			factor = 1
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_expand_armaments
 		icon = GFX_focus_FON_expand_armaments
 		relative_position_id = FON_Neuvillette_road
@@ -534,10 +534,10 @@ focus_tree = {
 
 		cost = 2
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_amend_constitution
 		}
 
@@ -546,12 +546,12 @@ focus_tree = {
 
 		completion_reward = {
 			add_offsite_building = { type = arms_factory level = 4 }
-			add_timed_idea = { 
-				idea = FON_expand_armaments_idea 
-				days = 365 
+			add_timed_idea = {
+				idea = FON_expand_armaments_idea
+				days = 365
 			}
 		}
-	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -561,7 +561,7 @@ focus_tree = {
 			factor = 10
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_recall_exiled_generals
 		icon = GFX_focus_FON_recall_exiled_generals
 		relative_position_id = FON_Neuvillette_road
@@ -570,10 +570,10 @@ focus_tree = {
 
 		cost = 2
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_expand_armaments
 		}
 
@@ -587,7 +587,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = recruit_character_FON_Chevreuse_tt
 		}
-	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -597,7 +597,7 @@ focus_tree = {
 			factor = 10
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_seek_eternal_support
 		icon = GFX_focus_FON_seek_eternal_support
 		relative_position_id = FON_Neuvillette_road
@@ -606,20 +606,20 @@ focus_tree = {
 
 		cost = 2
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_recall_exiled_generals
 		}
 
 		available = {
-			MUL = {	
-				has_opinion = { 
+			MUL = {
+				has_opinion = {
 					target = FON
-					value > 29 
+					value > 29
 				}
-			} 
+			}
 		}
 
 		completion_reward = {
@@ -647,7 +647,7 @@ focus_tree = {
 			add_ideas = FON_MUL_military_support_idea
 			add_manpower = 5000
 		}
-	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -657,7 +657,7 @@ focus_tree = {
 			factor = 10
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_arouse_revolution_enthusiasm
 		icon = GFX_focus_FON_arouse_revolution_enthusiasm
 		relative_position_id = FON_Neuvillette_road
@@ -666,10 +666,10 @@ focus_tree = {
 
 		cost = 3
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_amend_constitution
 		}
 
@@ -684,7 +684,7 @@ focus_tree = {
 				add_idea = FON_TIB_frontier2_idea
 			}
 		}
-	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -694,7 +694,7 @@ focus_tree = {
 			factor = 10
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_run_war_machine
 		icon = GFX_focus_FON_run_war_machine
 		relative_position_id = FON_Neuvillette_road
@@ -703,10 +703,10 @@ focus_tree = {
 
 		cost = 3
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_arouse_revolution_enthusiasm
 		}
 
@@ -721,7 +721,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = FON_run_war_machine_tt
 		}
-	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -731,7 +731,7 @@ focus_tree = {
 			factor = 10
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_ban_TIA_tax
 		icon = GFX_focus_FON_ban_TIA_tax
 		relative_position_id = FON_Neuvillette_road
@@ -740,10 +740,10 @@ focus_tree = {
 
 		cost = 3
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_run_war_machine
 		}
 
@@ -766,16 +766,16 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_timed_idea = { 
+			add_timed_idea = {
 				idea = FON_fiscal_sovereignty_restore_idea
-				days = 365 
+				days = 365
 			}
 			country_event = {
 				days = 1
 				id = FON_story.0
 			}
 		}
-	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -785,7 +785,7 @@ focus_tree = {
 			factor = 10
 		}
 	}
-	focus = { 
+	focus = {
 		id = FON_independence_war
 		icon = GFX_focus_FON_independence_war
 		relative_position_id = FON_Neuvillette_road
@@ -794,25 +794,25 @@ focus_tree = {
 
 		cost = 2
 
-		allow_branch = {	
+		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_ban_TIA_tax
 		}
 
 		available = {
 		}
 
-		completion_reward = {	
-			set_country_flag = FON_FIW_decision_flag	
+		completion_reward = {
+			set_country_flag = FON_FIW_decision_flag
 			remove_ideas = FON_TIB_frontier2_idea
 			TIA = {
 				set_autonomy = {
 					target = FON
 					autonomy_state = autonomy_free
 				}
-				declare_war_on = { 
+				declare_war_on = {
 					target = FON
 					type = annex_everything
 				}
@@ -835,7 +835,7 @@ focus_tree = {
 				}
 				add_to_variable = {
 					FON_FIW_supply_consumption_factor_var = -0.10
-				}							
+				}
 			}
 		}
 		continue_if_invalid = yes
@@ -849,7 +849,7 @@ focus_tree = {
 	}
 
 #内战#
-	focus = { 
+	focus = {
 		id = FON_mobilization
 		icon = GFX_focus_FON_mobilization
 		relative_position_id = FON_independence_war
@@ -861,7 +861,7 @@ focus_tree = {
 		allow_branch = {
 	    }
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_independence_war
 		}
 
@@ -907,7 +907,7 @@ focus_tree = {
 					swap_ideas = {
 						remove_idea = free_trade
 						add_idea = limited_exports
-					}	
+					}
 				}
 				else_if = {
 					limit = {
@@ -921,9 +921,9 @@ focus_tree = {
 				else = {
 					add_political_power = 100
 				}
-			}		
+			}
 		}
-	
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -934,10 +934,10 @@ focus_tree = {
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = FON_get_aid
 		icon = GFX_focus_FON_get_aid
-        relative_position_id = FON_mobilization 
+        relative_position_id = FON_mobilization
 		x = 4
 		y = 0
 
@@ -945,13 +945,13 @@ focus_tree = {
 
 		prerequisite = {
             focus = FON_seek_eternal_support
-		} 
-		prerequisite = { 		
+		}
+		prerequisite = {
 			focus = FON_independence_war
 		}
 
 		completion_reward = {
-		    add_offsite_building = {   
+		    add_offsite_building = {
                 type = arms_factory
                 level = 4
             }
@@ -961,7 +961,7 @@ focus_tree = {
    				producer = FON
 			}
 		}
-        
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -972,7 +972,7 @@ focus_tree = {
 		}
 	}
 
-    focus = { 
+    focus = {
 		id = FON_comfort_injured
 		icon = GFX_focus_FON_comfort_injured
         relative_position_id = FON_mobilization
@@ -981,7 +981,7 @@ focus_tree = {
 
 		cost = 2
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = FON_mobilization
 		}
 
@@ -995,7 +995,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = FON_comfort_injured_FIW_tt
 		}
-        
+
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		cancelable = yes
@@ -1006,7 +1006,7 @@ focus_tree = {
 		}
 	}
 
-    focus = { 
+    focus = {
 		id = FON_self_sufficiency
 		icon = GFX_focus_FON_self_sufficiency
         relative_position_id = FON_mobilization
@@ -1017,7 +1017,7 @@ focus_tree = {
 
 		prerequisite = {
             focus = FON_get_aid
-		} 
+		}
 
 		completion_reward = {
 			add_to_variable = {
@@ -1028,7 +1028,7 @@ focus_tree = {
 			}
             add_war_support = 0.1
 			custom_effect_tooltip = FON_self_sufficiency_FIW_tt
-		} 
+		}
 
 		continue_if_invalid = yes
 		available_if_capitulated = no
@@ -1039,7 +1039,7 @@ focus_tree = {
 			factor = 1
 		}
 	}
-    focus = { 
+    focus = {
 		id = FON_never_surrender
 		icon = GFX_focus_FON_never_surrender
         relative_position_id = FON_mobilization
@@ -1050,10 +1050,10 @@ focus_tree = {
 
 		prerequisite = {
             focus = FON_self_sufficiency
-		} 
+		}
 		prerequisite = {
             focus = FON_comfort_injured
-		} 
+		}
 
 		completion_reward = {
 			add_to_variable = {
@@ -1063,7 +1063,7 @@ focus_tree = {
 				FON_FIW_breakthrough_factor_var = 0.10
 			}
 			custom_effect_tooltip = FON_never_surrender_FIW_tt
-		} 
+		}
 
 		continue_if_invalid = yes
 		available_if_capitulated = no

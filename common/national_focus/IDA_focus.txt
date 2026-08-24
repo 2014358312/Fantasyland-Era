@@ -17,7 +17,7 @@ focus_tree = {
 	}
 	default = no
 	continuous_focus_position = { x = 20 y = 1500 } #持续性国策位置调整
-	
+
 	#测试国策
 	focus = {
 		id = IDA_GCCS #GCCS测试
@@ -28,8 +28,8 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
-			
+		prerequisite = {
+
 		}
      #前置国策 如果在同一个框内增加一个“focus = xxx”则效果为“完成其中一个国策即可”
 	 #如果采用两个或以上个“prerequisite”则效果为“必须完成多个pr框内的国策才能点击”
@@ -41,9 +41,9 @@ focus_tree = {
 		available = { #国策可以点击时的条件
 
 		}
- 
+
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -61,7 +61,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -93,7 +93,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -107,7 +107,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -127,7 +127,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC1
 		}
 
@@ -140,7 +140,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -154,7 +154,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -174,7 +174,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC1
 		}
 
@@ -187,7 +187,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -201,7 +201,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -221,7 +221,7 @@ focus_tree = {
 
 		cost = 3 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC1
 		}
 
@@ -234,7 +234,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -248,7 +248,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -268,12 +268,12 @@ focus_tree = {
 
 		cost = 5 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2
 		}
-		mutually_exclusive = { 
+		mutually_exclusive = {
 			focus = IDA_GC2B
-		} #冲突的国策，需要两边都写 
+		} #冲突的国策，需要两边都写
 
 		ai_will_do = { #ai点击该国策的倾向
 			factor = 4
@@ -284,7 +284,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -298,7 +298,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -318,7 +318,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2A
 		}
 
@@ -333,7 +333,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -353,7 +353,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2A
 		}
 
@@ -368,7 +368,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -388,7 +388,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2A2
 		}
 
@@ -403,7 +403,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -423,7 +423,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2A1
 		}
 
@@ -438,7 +438,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -458,10 +458,10 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2A4
 		}
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2A3
 		}
 
@@ -476,7 +476,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -496,12 +496,12 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2
 		}
-		mutually_exclusive = { 
+		mutually_exclusive = {
 			focus = IDA_GC2A
-		} #冲突的国策，需要两边都写 
+		} #冲突的国策，需要两边都写
 
 		ai_will_do = { #ai点击该国策的倾向
 			factor = 4
@@ -512,7 +512,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -526,7 +526,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -546,7 +546,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2B
 		}
 
@@ -559,7 +559,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -573,7 +573,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -593,7 +593,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2B
 		}
 
@@ -606,7 +606,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -620,7 +620,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -640,10 +640,10 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2B2
 		}
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2B1
 		}
 
@@ -656,7 +656,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -670,7 +670,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -690,7 +690,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2B3
 		}
 
@@ -703,7 +703,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -717,7 +717,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -737,7 +737,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2A5 focus = IDA_GC2B4
 		}
 
@@ -750,7 +750,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -758,13 +758,13 @@ focus_tree = {
 		}
 
 		select_effect = { #点击国策时的效果
-		    
+
 		}
 
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -792,7 +792,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2C
 		}
 
@@ -805,7 +805,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -819,7 +819,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -839,7 +839,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2C1
 		}
 
@@ -852,7 +852,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -866,7 +866,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -886,7 +886,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2C
 		}
 
@@ -899,7 +899,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -913,7 +913,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -933,7 +933,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2C3
 		}
 
@@ -946,7 +946,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -960,7 +960,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -980,7 +980,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2C3
 		}
 
@@ -993,7 +993,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1007,7 +1007,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1027,10 +1027,10 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2C5
 		}
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2C4
 		}
 
@@ -1043,7 +1043,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1057,7 +1057,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1077,7 +1077,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2C
 		}
 
@@ -1090,7 +1090,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1104,7 +1104,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1124,7 +1124,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2C7
 		}
 
@@ -1137,7 +1137,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1151,7 +1151,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1171,10 +1171,10 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2C2
 		}
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2C4
 		}
 
@@ -1187,7 +1187,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1201,7 +1201,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1221,10 +1221,10 @@ focus_tree = {
 
 		cost = 70 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2C5
 		}
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2C8
 		}
 
@@ -1237,7 +1237,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1251,7 +1251,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1271,13 +1271,13 @@ focus_tree = {
 
 		cost = 30 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
-			focus = IDA_GC2C6 
+		prerequisite = {
+			focus = IDA_GC2C6
 		}
-		prerequisite = { 		
-			focus = IDA_GC2C9 
+		prerequisite = {
+			focus = IDA_GC2C9
 		}
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC2C10
 		}
 
@@ -1290,7 +1290,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1304,7 +1304,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1324,7 +1324,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC1
 		}
 
@@ -1337,7 +1337,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1351,7 +1351,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1371,7 +1371,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC3
 		}
 
@@ -1384,7 +1384,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1398,7 +1398,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1418,7 +1418,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC3
 		}
 
@@ -1431,7 +1431,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1445,7 +1445,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1465,7 +1465,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC3
 		}
 
@@ -1478,7 +1478,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1492,7 +1492,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1512,7 +1512,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC3
 		}
 
@@ -1525,7 +1525,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1539,7 +1539,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1559,16 +1559,16 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC3_3
 		}
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC3_4
 		}
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC3_1
 		}
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC3_2
 		}
 
@@ -1581,7 +1581,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1595,7 +1595,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1615,12 +1615,12 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC3_5
 		}
-		mutually_exclusive = { 
+		mutually_exclusive = {
 			focus = IDA_GC3B
-		} #冲突的国策，需要两边都写 
+		} #冲突的国策，需要两边都写
 
 		ai_will_do = { #ai点击该国策的倾向
 			factor = 4
@@ -1631,7 +1631,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1645,7 +1645,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1665,7 +1665,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC3A
 		}
 
@@ -1678,7 +1678,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1692,7 +1692,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1712,7 +1712,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC3A
 		}
 
@@ -1725,7 +1725,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1739,7 +1739,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1759,7 +1759,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC3A
 		}
 
@@ -1772,7 +1772,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1786,7 +1786,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1806,12 +1806,12 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC3_5
 		}
-		mutually_exclusive = { 
+		mutually_exclusive = {
 			focus = IDA_GC3A
-		} #冲突的国策，需要两边都写 
+		} #冲突的国策，需要两边都写
 
 		ai_will_do = { #ai点击该国策的倾向
 			factor = 4
@@ -1822,7 +1822,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1836,7 +1836,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1860,8 +1860,8 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
-			
+		prerequisite = {
+
 		}
 
 		ai_will_do = { #ai点击该国策的倾向
@@ -1873,7 +1873,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1887,7 +1887,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1907,7 +1907,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC_Jun1
 		}
 
@@ -1920,7 +1920,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1934,7 +1934,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -1954,7 +1954,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC_Jun1
 		}
 
@@ -1967,7 +1967,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -1981,7 +1981,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -2001,7 +2001,7 @@ focus_tree = {
 
 		cost = 2 #完成国策所需要的时间=填写的数字×7
 
-		prerequisite = { 		
+		prerequisite = {
 			focus = IDA_GC_Jun1
 		}
 
@@ -2014,7 +2014,7 @@ focus_tree = {
 		}
 
 		allow_branch = { #该国策可显示的条件
-		
+
 	    }
 
 		bypass = { #跳过该国策的条件（不会给国策效果）
@@ -2028,7 +2028,7 @@ focus_tree = {
 		available_if_capitulated = no #投降后是否可用
 		cancelable = yes #国策能否被取消
 		cancel_if_invalid = yes #不满足某一条件时国策是否取消
-		 
+
 		bypass_if_unavailable = no #不满足某一条件后国策是否跳过
 
 		#will_lead_to_war_with = 国家代码 #当准备战争的时候，向对应国家提示（正当化提示）
@@ -2038,5 +2038,5 @@ focus_tree = {
 
 		}
 	}
-	 
+
 }
