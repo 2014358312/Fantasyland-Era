@@ -38,20 +38,16 @@ equipments = {
 
 
 	}
-
-	anti_air_equipment_1 = {
-		year = 1936
-
+	FE_artillery_small_rapid_array = {
+		year = 1000
 		archetype = anti_air_equipment
 		priority = 80
 		visual_level = 0
 	}
-
-	anti_air_equipment_2 = {
-		year = 1940
-
+	FE_artillery_intermittent_jet = {
+		year = 1004
 		archetype = anti_air_equipment
-		parent = anti_air_equipment_1
+		parent = FE_artillery_small_rapid_array
 		priority = 80
 		visual_level = 1
 
@@ -65,20 +61,16 @@ equipments = {
 			steel = 2
 		}
 	}
-
-	anti_air_equipment_3 = {
-		year = 1943
-
+	FE_artillery_anti_air_torrent = {
+		year = 1011
 		archetype = anti_air_equipment
-		parent = anti_air_equipment_2
+		parent = FE_artillery_intermittent_jet
 		priority = 80
 		visual_level = 2
-
 		soft_attack = 4
 		hard_attack = 15
 		ap_attack = 88
 		air_attack = 32
-
 		build_cost_ic = 6
 		resources = {
 			steel = 3

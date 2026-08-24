@@ -1,13 +1,10 @@
 ﻿capital = 52
-
 add_manpower = 280000
-
 set_research_slots = 2
 set_convoys = 80
 set_stability = 0.65
 set_war_support = 0.35
-starting_train_buffer = 2.0
-
+starting_train_buffer = 2
 set_oob = EYP_1000_nsb
 set_technology = {
 	FE_infantry_weapons_1 = 1
@@ -18,7 +15,7 @@ set_technology = {
 	tech_mountaineers = 1
 	FE_vehicle_light_armored_cavalry = 1
 	FE_vehicle_armored_personnel_carrier = 1
-	gw_artillery = 1
+	FE_artillery_simple_magic_cannon = 1
 	basic_train = 1
 	fleet_in_being = 1
 }
@@ -53,7 +50,10 @@ add_days_mission_timeout = {
 	days = -65
 }
 
-country_event = { id = eylstadt.7 days = 46 }
+country_event = {
+	id = eylstadt.7
+	days = 46
+}
 
 add_ideas = {
 	EYP_settlement_of_witch
@@ -61,7 +61,12 @@ add_ideas = {
 	EYP_resource_export
 	EYP_resistance_of_rearmament
 }
-add_timed_idea = { idea = EYP_order_of_fighter days = 16 }
+
+add_timed_idea = {
+	idea = EYP_order_of_fighter
+	days = 16
+}
+
 recruit_character = EYP_Bianca
 recruit_character = EYP_Elvira
 recruit_character = EYP_Ferna
@@ -79,8 +84,13 @@ recruit_character = EYP_Tobias
 recruit_character = EYP_Varma
 recruit_character = EYP_IWS2000
 add_ideas = EYP_Varma_head_of_government
-set_variable = { ROOT.FE_secondary = token:EYP_Varma_head_of_government }
-set_variable = { VL_status_var = 2 }
+set_variable = {
+	ROOT.FE_secondary = token:EYP_Varma_head_of_government
+}
+
+set_variable = {
+	VL_status_var = 2
+}
 
 set_politics = {
 	ruling_party = neutrality
@@ -97,11 +107,13 @@ add_equipment_to_stockpile = {
 	type = FE_infantry_weapons_2
 	amount = 8000
 }
+
 add_equipment_to_stockpile = {
 	type = support_equipment_1
 	amount = 1000
 }
+
 add_equipment_to_stockpile = {
-	type = artillery_equipment_1
+	type = FE_artillery_simple_magic_cannon
 	amount = 800
 }

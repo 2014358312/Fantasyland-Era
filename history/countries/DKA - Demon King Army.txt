@@ -1,5 +1,4 @@
 ﻿capital = 219
-
 ########################################
 ######### - Section 01: Base - #########
 ########################################
@@ -8,7 +7,6 @@ set_war_support = 0.35
 set_research_slots = 4
 set_convoys = 80
 starting_train_buffer = 2
-
 #########################################
 #### - Section 02: Technology&Unit - ####
 #########################################
@@ -18,21 +16,21 @@ set_technology = {
 	FE_infantry_weapons_1 = 1
 	FE_vehicle_light_armored_cavalry = 1
 	tech_mountaineers = 1
-
 	### Support ###
 	tech_support = 1
 	tech_engineers = 1
 	tech_recon = 1
-
 	### Artillery ###
-	gw_artillery = 1
-
+	FE_artillery_simple_magic_cannon = 1
 	### Trains ###
 	basic_train = 1
 }
+
 ### - Armor(NSB) - ###
 if = {
-	limit = { has_dlc_nsb = yes }
+	limit = {
+		has_dlc_nsb = yes
+	}
 	set_technology = {
 		gwtank_chassis = 1
 	}
@@ -44,9 +42,12 @@ if = {
 		}
 	}
 }
+
 ### - Warship(MTG) - ###
 if = {
-	limit = { has_dlc_mtg = yes }
+	limit = {
+		has_dlc_mtg = yes
+	}
 	set_technology = {
 		early_ship_hull_light = 1
 	}
@@ -57,10 +58,13 @@ if = {
 		}
 	}
 }
+
 set_naval_oob = FEN_naval_1936
 ### - Plane(BBA) - ###
 if = {
-	limit = { has_dlc_bba = yes }
+	limit = {
+		has_dlc_bba = yes
+	}
 	set_technology = {
 		iw_small_airframe = 1
 		aa_lmg = 1
@@ -83,7 +87,6 @@ add_to_faction = DKA
 add_to_faction = DKB
 add_to_faction = DKC
 add_to_faction = DKD
-
 #########################################
 ## - Section 04: Ideas and Characters - #
 #########################################
@@ -96,18 +99,44 @@ add_ideas = {
 	DKA_militia_system
 	DKA_warlike_sentiment_fake
 }
-set_variable = { DKA_WS_army_org_factor_var = 2.00 }
-set_variable = { DKA_WS_army_morale_factor_var = 0.50 }
-set_variable = { DKA_WS_org_loss_when_moving_var = -0.50 }
-set_variable = { DKA_WS_breakthrough_factor_var = 1.00 }
-set_variable = { DKA_WS_army_attack_factor_var = 1.00 }
-set_variable = { DKA_WS_army_defence_factor_var = 2.00 }
-set_variable = { DKA_WS_army_speed_factor_var = -0.20 }
+
+set_variable = {
+	DKA_WS_army_org_factor_var = 2
+}
+
+set_variable = {
+	DKA_WS_army_morale_factor_var = 0.5
+}
+
+set_variable = {
+	DKA_WS_org_loss_when_moving_var = -0.5
+}
+
+set_variable = {
+	DKA_WS_breakthrough_factor_var = 1
+}
+
+set_variable = {
+	DKA_WS_army_attack_factor_var = 1
+}
+
+set_variable = {
+	DKA_WS_army_defence_factor_var = 2
+}
+
+set_variable = {
+	DKA_WS_army_speed_factor_var = -0.2
+}
+
 #add_dynamic_modifier = { modifier = DKA_warlike_sentiment_dynamic_modifier }
+add_dynamic_modifier = {
+	modifier = DKA_path_to_modernized_country_dynamic_modifier
+}
 
-add_dynamic_modifier = { modifier = DKA_path_to_modernized_country_dynamic_modifier }
+set_variable = {
+	DKA_ID_production_speed_buildings_factor_var = 0.05
+}
 
-set_variable = { DKA_ID_production_speed_buildings_factor_var = 0.05 }
 #add_dynamic_modifier = { modifier = DKA_industry_department_dynamic_modifier }
 ### - Character - ###
 recruit_character = DKA_Amelia_Rozequarts
@@ -153,8 +182,13 @@ recruit_character = DKA_Sasha_Necron
 recruit_character = DKA_Shia_Minsheng
 recruit_character = DKA_Zeshia_Bianca
 add_ideas = DKA_Machina_Soleige_head_of_government
-set_variable = { ROOT.FE_secondary = token:DKA_Machina_Soleige_head_of_government }
-set_variable = { VL_status_var = 20 }
+set_variable = {
+	ROOT.FE_secondary = token:DKA_Machina_Soleige_head_of_government
+}
+
+set_variable = {
+	VL_status_var = 20
+}
 
 #########################################
 ######## - Section 05: Politics - #######
@@ -164,12 +198,14 @@ set_politics = {
 	ruling_party = fascism
 	elections_allowed = no
 }
+
 set_popularities = {
 	democratic = 13
 	neutrality = 14
 	communism = 20
 	fascism = 53
 }
+
 ### - Balance of Power - ###
 set_power_balance = {
 	id = DKA_balance_of_power
@@ -181,7 +217,6 @@ set_power_balance = {
 #########################################
 ####### - Section 06: Equipments - ######
 #########################################
-
 #########################################
 ######### - Section 07: Others - ########
 #########################################
@@ -189,13 +224,16 @@ add_equipment_to_stockpile = {
 	type = FE_infantry_weapons_2
 	amount = 8000
 }
+
 add_equipment_to_stockpile = {
 	type = support_equipment_1
 	amount = 1000
 }
+
 add_equipment_to_stockpile = {
-	type = artillery_equipment_1
+	type = FE_artillery_simple_magic_cannon
 	amount = 800
 }
+
 add_manpower = 280000
 activate_mission = DKA_eyes_of_storm_mission

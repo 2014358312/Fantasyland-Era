@@ -3,97 +3,162 @@
 	is_locked = yes
 	force_allow_recruiting = no
 	division_names_group = FON_INF_01
-
 	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-        infantry = { x = 1 y = 0 }
-		infantry = { x = 1 y = 1 }
-		infantry = { x = 1 y = 2 }
-        infantry = { x = 2 y = 0 }
-		infantry = { x = 2 y = 1 }
-		infantry = { x = 2 y = 2 }
+		infantry = {
+			x = 0
+			y = 0
+		}
+		infantry = {
+			x = 0
+			y = 1
+		}
+		infantry = {
+			x = 0
+			y = 2
+		}
+		infantry = {
+			x = 1
+			y = 0
+		}
+		infantry = {
+			x = 1
+			y = 1
+		}
+		infantry = {
+			x = 1
+			y = 2
+		}
+		infantry = {
+			x = 2
+			y = 0
+		}
+		infantry = {
+			x = 2
+			y = 1
+		}
+		infantry = {
+			x = 2
+			y = 2
+		}
 	}
 	support = {
-       	engineer = { x = 0 y = 0 }
+		engineer = {
+			x = 0
+			y = 0
+		}
 	}
 }
 
 ####### OOB #######
 units = {
 	#陆军
-	division= {
+	division = {
 		name = "枫丹庭卫队"
 		location = 4867
 		division_template = "枫丹本土卫队"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.9
-        force_equipment_variants = { FE_infantry_weapons_1 = { creator = "TIA" } }
+		force_equipment_variants = {
+			FE_infantry_weapons_1 = {
+				creator = "TIA"
+			}
+		}
 	}
-	division= {
+	division = {
 		name = "步兵第 281 枫丹师"
 		location = 5384
 		division_template = "枫丹本土卫队"
 		start_experience_factor = 0.25
 		start_equipment_factor = 0.7
-        force_equipment_variants = { FE_infantry_weapons_1 = { creator = "TIA" } }
+		force_equipment_variants = {
+			FE_infantry_weapons_1 = {
+				creator = "TIA"
+			}
+		}
 	}
-	division= {
+	division = {
 		name = "欧庇克莱卫队"
 		location = 1899
 		division_template = "枫丹本土卫队"
 		start_experience_factor = 0.25
 		start_equipment_factor = 0.5
-        force_equipment_variants = { FE_infantry_weapons_1 = { creator = "TIA" } }
+		force_equipment_variants = {
+			FE_infantry_weapons_1 = {
+				creator = "TIA"
+			}
+		}
 	}
-	division= {
+	division = {
 		name = "卡布狄斯堡卫队"
 		location = 4955
 		division_template = "枫丹本土卫队"
 		start_experience_factor = 0.35
 		start_equipment_factor = 0.4
-        force_equipment_variants = { FE_infantry_weapons_1 = { creator = "TIA" } }
+		force_equipment_variants = {
+			FE_infantry_weapons_1 = {
+				creator = "TIA"
+			}
+		}
 	}
-	division= {
+	division = {
 		name = "马奇诺女子学院警备队"
 		location = 5379
 		division_template = "枫丹本土卫队"
 		start_experience_factor = 0.65
 		start_equipment_factor = 0.2
-        force_equipment_variants = { FE_infantry_weapons_1 = { creator = "TIA" } }
+		force_equipment_variants = {
+			FE_infantry_weapons_1 = {
+				creator = "TIA"
+			}
+		}
 	}
-	division= {
+	division = {
 		name = "梅洛彼得堡警备队"
 		location = 5356
 		division_template = "枫丹本土卫队"
 		start_experience_factor = 0.35
 		start_equipment_factor = 0.8
-        force_equipment_variants = { FE_infantry_weapons_1 = { creator = "TIA" } }
+		force_equipment_variants = {
+			FE_infantry_weapons_1 = {
+				creator = "TIA"
+			}
+		}
 	}
-	division= {
+	division = {
 		name = "佩特莉可卫队"
 		location = 4613
 		division_template = "枫丹本土卫队"
 		start_experience_factor = 0.35
 		start_equipment_factor = 0.75
-        force_equipment_variants = { FE_infantry_weapons_1 = { creator = "TIA" } }
+		force_equipment_variants = {
+			FE_infantry_weapons_1 = {
+				creator = "TIA"
+			}
+		}
 	}
-	division= {
+	division = {
 		name = "拉修赫特城市卫队"
 		location = 312
 		division_template = "枫丹本土卫队"
 		start_experience_factor = 0.75
 		start_equipment_factor = 0.35
-        force_equipment_variants = { FE_infantry_weapons_1 = { creator = "TIA" } }
+		force_equipment_variants = {
+			FE_infantry_weapons_1 = {
+				creator = "TIA"
+			}
+		}
 	}
-	division= {
+	division = {
 		name = "伯赫罗斯边境常备师"
 		location = 5501
 		division_template = "枫丹本土卫队"
 		start_experience_factor = 0.8
 		start_equipment_factor = 1
-        force_equipment_variants = { FE_infantry_weapons_1 = { creator = "TIA" } }
+		force_equipment_variants = {
+			FE_infantry_weapons_1 = {
+				creator = "TIA"
+			}
+		}
 	}
 }
 
@@ -108,7 +173,6 @@ instant_effect = {
 		efficiency = 100
 		# industrial_manufacturer = mio:TIA_SOURCE_CITADEL_arsenal_organization
 	}
-
 	add_equipment_production = {
 		equipment = {
 			type = support_equipment_1
@@ -118,10 +182,9 @@ instant_effect = {
 		progress = 0.3
 		efficiency = 100
 	}
-
 	add_equipment_production = {
 		equipment = {
-			type = artillery_equipment_1
+			type = FE_artillery_simple_magic_cannon
 			creator = "FON"
 		}
 		requested_factories = 10
