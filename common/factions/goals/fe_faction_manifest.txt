@@ -1,0 +1,177 @@
+faction_manifest_a_narrow_strip_of_water = {
+	name = a_narrow_strip_of_water
+	description = a_narrow_strip_of_water_desc
+	is_manifest = yes
+	ratio_progress = {
+		total_amount_collection = {
+			input = game:all_countries
+			operators = {
+				limit = {
+					has_opinion_modifier = historical_ally
+				}
+			}
+			name = collection_historical_ally
+		}
+		completed_amount_collection = {
+			input = game:all_countries
+			operators = {
+				limit = {
+					has_opinion_modifier = historical_ally
+					is_ally_with = ROOT
+				}
+			}
+			name = collection_faction_historical_ally
+		}
+		scale = {
+			faction_trade_opinion_factor = 1
+			political_power_factor = 0.1
+		}
+		progress_sections = {
+			manifest_fulfilled = {
+				min = 0.75
+				modifier = {
+					army_core_defence_factor = 0.2
+					naval_invasion_penalty = -0.1
+				}
+			}
+		}
+	}
+}
+faction_manifest_from_the_ruins_risen_newly = {
+	name = from_the_ruins_risen_newly
+	description = from_the_ruins_risen_newly_desc
+	is_manifest = yes
+	ratio_progress = {
+		total_amount_collection = {
+			input = game:all_countries
+			operators = {
+				limit = {
+					capital_scope = {
+						is_on_same_continent_as = ROOT
+					}
+				}
+			}
+			name = COLLECTION_COUNTRIES_MY_CONTINENT
+		}
+		completed_amount_collection = {
+			input = game:scope
+			operators = {
+				faction_members
+				limit = {
+					capital_scope = {
+						is_on_same_continent_as = ROOT
+					}
+				}
+			}
+			name = COLLECTION_FACTION_MEMBERS_MY_CONTINENT
+		}
+		scale = {
+			production_speed_buildings_factor = 0.1
+		}
+		progress_sections = {
+			first_phase_fulfilled = {
+				min = 0.25
+				max = 1
+				modifier = {
+					guarantee_cost = -0.5
+				}
+			}
+			second_phase_fulfilled = {
+				min = 0.0
+				max = 0.5
+				modifier = {
+					research_speed_factor = -0.05
+					special_project_speed_factor = -0.05
+				}
+			}
+			third_phase_fulfilled = {
+				min = 0.75
+				max = 1
+				modifier = {
+					defensive_war_stability_factor = 0.2
+				}
+			}
+			manifest_fulfilled = {
+				min = 1
+				on_activate = {
+					set_faction_manifest = faction_manifest_hold_the_torch
+				}
+			}
+		}
+	}
+}
+faction_manifest_hold_the_torch = {
+	name = hold_the_torch
+	description = hold_the_torch_desc
+	is_manifest = yes
+	ratio_progress = {
+		total_amount_collection = game:all_countries
+		completed_amount_collection = {
+			input = game:scope
+			operators = { faction_members }
+			name = COLLECTION_FACTION_MEMBERS
+		}
+		scale = {
+			army_attack_against_major_factor = 0.1
+			army_defence_against_major_factor = 0.1
+			army_breakthrough_against_major_factor = 0.1
+			democratic_drift_from_guarantees = 0.2
+		}
+		progress_sections = {
+			manifest_fulfilled = {
+				min = 0
+				modifier = {
+					production_speed_buildings_factor = 0.1
+					guarantee_cost = -0.5
+					war_stability_factor = 0.2
+				}
+			}
+		}
+	}
+}
+faction_manifest_war_tradition = {
+	name = war_tradition_name
+	description = conquest_of_territory_goal_desc
+	is_manifest = yes
+	ratio_progress = {
+		total_amount_collection = {
+			input = game:scope
+			operators = {
+				faction_members
+				owned_states
+				limit = {
+					is_core_of = PREV 
+				}
+			}
+			name = COLLECTION_FACTION_OWNED_CORE_STATES
+		}
+		completed_amount_collection = collection:{
+			input = game:scope
+			operators = {
+				faction_members
+				controlled_states
+				limit = {
+					NOT = { is_core_of = PREV }
+				}
+			}
+			name = COLLECTION_FACTION_CONTROLLED_NON_CORE_STATES
+		}
+		range = {
+			max = 1
+		}
+		scale = {
+			conscription_factor = 0.1
+			justify_war_goal_time = -0.2
+			army_non_core_attack_factor = 0.1
+		}
+		progress_sections = {
+			manifest_fulfilled = {
+				min = 0.5
+				modifier = {
+					annex_cost_factor = -0.2
+					resistance_target = -0.1
+				}
+			}
+		}
+	}
+}

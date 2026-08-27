@@ -27,7 +27,9 @@ add_ideas = {
 	PLA_warrior_culture
 }
 
-create_faction = four_goddesses_union
+create_faction_from_template = {
+	template = faction_template_four_goddesses_union
+}
 add_to_faction = ROOT
 add_to_faction = LOW
 add_to_faction = LAS
@@ -43,6 +45,10 @@ every_other_country = {
 	add_ideas = FGU_goddesses_peace_treaty
 	add_ideas = PLA_technology_pioneer_allies
 	add_to_tech_sharing_group = four_goddesses_union_research
+	add_opinion_modifier = { target = ROOT modifier = historical_ally }
+	ROOT = {
+		add_opinion_modifier = { target = PREV modifier = historical_ally }
+	}
 }
 
 set_politics = {
