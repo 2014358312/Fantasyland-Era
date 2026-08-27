@@ -70,18 +70,18 @@ faction_manifest_from_the_ruins_risen_newly = {
 		}
 		progress_sections = {
 			first_phase_fulfilled = {
-				min = 0.25
-				max = 1
-				modifier = {
-					guarantee_cost = -0.5
-				}
-			}
-			second_phase_fulfilled = {
 				min = 0.0
 				max = 0.5
 				modifier = {
 					research_speed_factor = -0.05
 					special_project_speed_factor = -0.05
+				}
+			}
+			second_phase_fulfilled = {
+				min = 0.25
+				max = 1
+				modifier = {
+					guarantee_cost = -0.5
 				}
 			}
 			third_phase_fulfilled = {
@@ -92,7 +92,7 @@ faction_manifest_from_the_ruins_risen_newly = {
 				}
 			}
 			manifest_fulfilled = {
-				min = 1
+				min = 0.9
 				on_activate = {
 					set_faction_manifest = faction_manifest_hold_the_torch
 				}
@@ -130,7 +130,7 @@ faction_manifest_hold_the_torch = {
 	}
 }
 faction_manifest_war_tradition = {
-	name = war_tradition_name
+	name = war_tradition
 	description = conquest_of_territory_goal_desc
 	is_manifest = yes
 	ratio_progress = {
