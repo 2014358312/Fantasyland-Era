@@ -1,87 +1,86 @@
 technologies = {
-	@anti_air = -7
-	@anti_tank = 7
-	@rocket_artillery = 3
-
-	gw_artillery = {
-
+	@998 = 0
+	@1000 = 2
+	@1002 = 4
+	@1004 = 6
+	@1008 = 10
+	@1011 = 12
+	@1014 = 14
+	###========================================================================
+	### 一、火炮线（简易魔导炮 → 法阵拓展 → 标准型法球投射器 → 超级击码/爆弹从天而降/地狱火 → 目视锁敌/附魔飞弹/灼烧与窒息 → 最终型法球发射器 → 宏电子球/巡飞弹/共振魔弹）
+	###========================================================================
+	FE_artillery_simple_magic_cannon = {
+		#简易魔导炮（代替原版一级火炮，解锁一级火炮装备）
+		start_year = 998
+		research_cost = 1.5
+		##=== 继承自旧科技 gw_artillery（替换保留）===
 		enable_equipments = {
-			artillery_equipment_1
+			FE_artillery_simple_magic_cannon
 		}
-
 		armored_car = {
 			soft_attack = 0.1
 		}
-
-		path = {
-			leads_to_tech = interwar_artillery
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = interwar_antitank
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = interwar_antiair
-			research_cost_coeff = 1
-		}
-
 		enable_equipment_modules = {
 			ship_anti_air_1
 			tank_small_cannon
 			secondary_turret_small_cannon
 		}
-
-		on_research_complete = {
-			if = {
-				limit = {
-					has_dlc = "Gotterdammerung"
-				}
-				custom_effect_tooltip = {
-					localization_key = SP_UNLOCK_PROJECT
-					PROJECT = sp_land_super_heavy_howitzer
-				}
-			}
-		}
-
-		research_cost = 1.5
-
+		# on_research_complete = {
+		# 	if = {
+		# 		limit = {
+		# 			has_dlc = "Gotterdammerung"
+		# 		}
+		# 		custom_effect_tooltip = {
+		# 			localization_key = SP_UNLOCK_PROJECT
+		# 			PROJECT = sp_land_super_heavy_howitzer
+		# 		}
+		# 	}
+		# }
+		##===============================================
 		folder = {
 			name = artillery_folder
-			position = { x = 0 y = 0 }
+			position = {
+				x = 0
+				y = @998
+			}
 		}
-
 		categories = {
 			artillery
 			mio_cat_all_artillery_equipment
-			mio_cat_artillery #Only Artillery
+			mio_cat_artillery			#Only Artillery
 		}
-		special_project_specialization = { specialization_land }
-
+		special_project_specialization = {
+			specialization_land
+		}
+		path = {
+			leads_to_tech = FE_artillery_array_expansion
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = FE_artillery_small_rapid_array
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = FE_artillery_physical_shell
+			research_cost_coeff = 1
+		}
 		ai_will_do = {
 			factor = 2
-
 			modifier = {
 				factor = 2
+				date > "1000.1.1"
+			}
+			modifier = {
+				factor = 5
 				date > "1001.1.1"
-			}
-
-			modifier = {
-				factor = 5
-				date > "1002.1.1"
-			}
-
-			modifier = {
-				factor = 5
-				date > "1003.1.1"
 			}
 		}
 	}
-
-	interwar_artillery = {
-
+	FE_artillery_array_expansion = {
+		#法阵拓展
+		start_year = 1000
+		research_cost = 1
+		##=== 继承自旧科技 artillery2（类别加成，待策划调整）===
 		artillery = {
 			soft_attack = 0.1
 		}
@@ -92,198 +91,122 @@ technologies = {
 			soft_attack = 0.1
 		}
 		category_self_propelled_artillery = {
-			soft_attack = 0.15
+			soft_attack = 0.1
 		}
-
-		enable_equipment_modules = {
-			tank_small_cannon_2
-			tank_close_support_gun
-			#secondary_turret_close_support_gun #MM: Has art and loc but no module definition
-		}
-
-		path = {
-			leads_to_tech = artillery1
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 1000
-
+		##===============================================
 		folder = {
 			name = artillery_folder
-			position = { x = 0 y = 2 }
+			position = {
+				x = 0
+				y = @1000
+			}
 		}
-
 		categories = {
 			artillery
 			mio_cat_all_artillery_equipment
-			mio_cat_artillery #Only Artillery
+			mio_cat_artillery			#Only Artillery
 		}
-		special_project_specialization = { specialization_land }
-
-		ai_will_do = {
-			factor = 2
-
-			modifier = { #This is needed for a lot of tank designs
-				factor = 2.0
-				is_major = yes
-			}
-
-			modifier = {
-				factor = 2
-				date > "1001.1.1"
-			}
-
-			modifier = {
-				factor = 2
-				date > "1002.1.1"
-			}
-
-			modifier = {
-				factor = 5
-				date > "1003.1.1"
-			}
-
-			# It is imperative to prepare military tech for the war with China
-			modifier = {
-				factor = 5
-				original_tag = JAP
-			}
+		special_project_specialization = {
+			specialization_land
+		}
+		path = {
+			leads_to_tech = FE_artillery_standard_orb_projector
+			research_cost_coeff = 1
 		}
 	}
-
-	artillery1 = {
-
+	FE_artillery_standard_orb_projector = {
+		#标准型法球投射器（代替原版二级火炮，解锁二级火炮装备）
+		start_year = 1002
+		research_cost = 1
+		##=== 继承自旧科技 artillery1（替换保留）===
 		enable_equipments = {
-			artillery_equipment_2
+			FE_artillery_standard_orb_projector
 		}
-
 		armored_car = {
 			soft_attack = 0.1
 		}
-
 		enable_equipment_modules = {
 			tank_medium_howitzer
 			tank_medium_cannon
-			lc_medium_cannon_turret #Module for Land Cruiser
-			lc_assault_gun #Module for Land Cruiser
+			lc_medium_cannon_turret			#Module for Land Cruiser
+			lc_assault_gun			#Module for Land Cruiser
+			tank_small_cannon_2
+			tank_close_support_gun
 		}
-
-		path = {
-			leads_to_tech = artillery2
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = sp_artillery_rocket_assisted_projectiles_tech
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = sp_artillery_purpose_built_gun_motor_carriages_tech
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-
-		start_year = 1003
-
+		##===============================================
 		folder = {
 			name = artillery_folder
-			position = { x = 0 y = 4 }
+			position = {
+				x = 0
+				y = @1002
+			}
 		}
-
 		categories = {
 			artillery
 			mio_cat_all_artillery_equipment
-			mio_cat_artillery #Only Artillery
+			mio_cat_artillery			#Only Artillery
 		}
-		special_project_specialization = { specialization_land }
-
+		special_project_specialization = {
+			specialization_land
+		}
+		path = {
+			leads_to_tech = FE_artillery_super_strike_code
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = FE_artillery_air_drop_bomb
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = FE_artillery_hellfire
+			research_cost_coeff = 1
+		}
 		ai_will_do = {
 			factor = 2
-
-			modifier = {
-				factor = 2
-				date > "1002.1.9"
-			}
-
 			modifier = {
 				factor = 2
 				date > "1003.1.1"
 			}
-
 			modifier = {
 				factor = 5
-				date > "1003.1.6"
+				date > "1004.1.1"
 			}
 		}
 	}
-
-	artillery2 = {
-
-		artillery = {
-			soft_attack = 0.1
-		}
-		artillery_brigade = {
-			soft_attack = 0.1
-		}
-		mot_artillery_brigade = {
-			soft_attack = 0.1
-		}
-		category_self_propelled_artillery = {
-			soft_attack = 0.1
-		}
-
-		path = {
-			leads_to_tech = artillery3
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = rocket_artillery
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-
+	FE_artillery_super_strike_code = {
+		#超级击码（火炮/防空炮分支共享）
 		start_year = 1004
-
+		research_cost = 1
+		##=== 继承自旧科技 interwar_artillery（类别加成，待策划调整）===
+		category_self_propelled_artillery = {
+			soft_attack = 0.15
+		}
+		##===============================================
 		folder = {
 			name = artillery_folder
-			position = { x = 0 y = 6 }
+			position = {
+				x = -2
+				y = @1004
+			}
 		}
-
 		categories = {
 			artillery
 			mio_cat_all_artillery_equipment
-			mio_cat_artillery #Only Artillery
+			mio_cat_artillery			#Only Artillery
 		}
-		special_project_specialization = { specialization_land }
-
-		ai_will_do = {
-			factor = 2
-
-			modifier = {
-				factor = 2
-				date > "1004.1.6"
-			}
-
-			modifier = {
-				factor = 2
-				date > "1005.1.1"
-			}
-
-			modifier = {
-				factor = 5
-				date > "1006.1.1"
-			}
+		special_project_specialization = {
+			specialization_land
+		}
+		path = {
+			leads_to_tech = FE_artillery_visual_targeting
+			research_cost_coeff = 1
 		}
 	}
-
-	artillery3 = {
-
+	FE_artillery_air_drop_bomb = {
+		#爆弹从天而降
+		start_year = 1004
+		research_cost = 1
+		##=== 继承自旧科技 artillery5（类别加成，待策划调整）===
 		artillery = {
 			soft_attack = 0.1
 		}
@@ -296,432 +219,336 @@ technologies = {
 		category_self_propelled_artillery = {
 			soft_attack = 0.05
 		}
-
-		enable_equipment_modules = {
-			tank_medium_howitzer_2
-		}
-		path = {
-			leads_to_tech = artillery4
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-
-		start_year = 1005
-
+		##===============================================
 		folder = {
 			name = artillery_folder
-			position = { x = 0 y = 8 }
+			position = {
+				x = 0
+				y = @1004
+			}
 		}
-
 		categories = {
 			artillery
 			mio_cat_all_artillery_equipment
-			mio_cat_artillery #Only Artillery
+			mio_cat_artillery			#Only Artillery
 		}
-		special_project_specialization = { specialization_land }
-
-		ai_will_do = {
-			factor = 2
-
-			modifier = {
-				factor = 2
-				date > "1005.1.6"
-			}
-
-			modifier = {
-				factor = 5
-				date > "1006.1.1"
-			}
+		special_project_specialization = {
+			specialization_land
+		}
+		path = {
+			leads_to_tech = FE_artillery_enchanted_missile
+			research_cost_coeff = 1
 		}
 	}
-
-	artillery4 = {
-
-		enable_equipments = {
-			artillery_equipment_3
+	FE_artillery_hellfire = {
+		#地狱火
+		start_year = 1004
+		research_cost = 1
+		artillery = {
+			soft_attack = 0.1
 		}
-
+		artillery_brigade = {
+			soft_attack = 0.1
+		}
+		mot_artillery_brigade = {
+			soft_attack = 0.1
+		}
+		category_self_propelled_artillery = {
+			soft_attack = 0.05
+		}
+		folder = {
+			name = artillery_folder
+			position = {
+				x = 2
+				y = @1004
+			}
+		}
+		categories = {
+			artillery
+			mio_cat_all_artillery_equipment
+			mio_cat_artillery			#Only Artillery
+		}
+		special_project_specialization = {
+			specialization_land
+		}
+		path = {
+			leads_to_tech = FE_artillery_burn_and_suffocate
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = FE_artillery_rapid_shell
+			research_cost_coeff = 1
+		}
+	}
+	FE_artillery_visual_targeting = {
+		#目视锁敌
+		start_year = 1008
+		research_cost = 1
+		category_self_propelled_artillery = {
+			soft_attack = 0.1
+		}
+		folder = {
+			name = artillery_folder
+			position = {
+				x = -2
+				y = @1008
+			}
+		}
+		categories = {
+			artillery
+			mio_cat_all_artillery_equipment
+			mio_cat_artillery			#Only Artillery
+		}
+		special_project_specialization = {
+			specialization_land
+		}
+		path = {
+			leads_to_tech = FE_artillery_final_orb_launcher
+			research_cost_coeff = 1
+		}
+	}
+	FE_artillery_enchanted_missile = {
+		#附魔飞弹
+		start_year = 1008
+		research_cost = 1
+		artillery = {
+			soft_attack = 0.1
+		}
+		artillery_brigade = {
+			soft_attack = 0.1
+		}
+		mot_artillery_brigade = {
+			soft_attack = 0.1
+		}
+		category_self_propelled_artillery = {
+			soft_attack = 0.05
+		}
+		folder = {
+			name = artillery_folder
+			position = {
+				x = 0
+				y = @1008
+			}
+		}
+		categories = {
+			artillery
+			mio_cat_all_artillery_equipment
+			mio_cat_artillery			#Only Artillery
+		}
+		special_project_specialization = {
+			specialization_land
+		}
+		path = {
+			leads_to_tech = FE_artillery_final_orb_launcher
+			research_cost_coeff = 1
+		}
+	}
+	FE_artillery_burn_and_suffocate = {
+		#灼烧与窒息
+		start_year = 1008
+		research_cost = 1
+		artillery = {
+			soft_attack = 0.1
+		}
+		artillery_brigade = {
+			soft_attack = 0.1
+		}
+		mot_artillery_brigade = {
+			soft_attack = 0.1
+		}
+		category_self_propelled_artillery = {
+			soft_attack = 0.1
+		}
+		folder = {
+			name = artillery_folder
+			position = {
+				x = 2
+				y = @1008
+			}
+		}
+		categories = {
+			artillery
+			mio_cat_all_artillery_equipment
+			mio_cat_artillery			#Only Artillery
+		}
+		special_project_specialization = {
+			specialization_land
+		}
+		path = {
+			leads_to_tech = FE_artillery_final_orb_launcher
+			research_cost_coeff = 1
+		}
+	}
+	FE_artillery_final_orb_launcher = {
+		#最终型法球发射器（代替原版三级火炮，解锁三级火炮装备）
+		start_year = 1011
+		research_cost = 1
+		##=== 继承自旧科技 artillery4（替换保留）===
+		enable_equipments = {
+			FE_artillery_final_orb_launcher
+		}
 		armored_car = {
 			soft_attack = 0.1
 		}
-
 		enable_equipment_modules = {
 			tank_medium_cannon_2
-		}
-
-		path = {
-			leads_to_tech = artillery5
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2
-
-		start_year = 1006
-
-		folder = {
-			name = artillery_folder
-			position = { x = 0 y = 10 }
-		}
-
-		categories = {
-			artillery
-			mio_cat_all_artillery_equipment
-			mio_cat_artillery #Only Artillery
-		}
-		special_project_specialization = { specialization_land }
-
-		ai_will_do = {
-			factor = 2
-
-			modifier = {
-				factor = 2
-				date > "1005.1.9"
-			}
-
-			modifier = {
-				factor = 2
-				date > "1006.1.1"
-			}
-
-			modifier = {
-				factor = 5
-				date > "1006.1.6"
-			}
-		}
-	}
-
-	artillery5 = {
-
-		artillery = {
-			soft_attack = 0.1
-		}
-		artillery_brigade = {
-			soft_attack = 0.1
-		}
-		mot_artillery_brigade = {
-			soft_attack = 0.1
-		}
-		category_self_propelled_artillery = {
-			soft_attack = 0.05
-		}
-
-		enable_equipment_modules = {
+			tank_medium_howitzer_2
 			auto_loader
 			tank_heavy_howitzer
 		}
-
-		research_cost = 1
-
-		start_year = 1007
-
+		##===============================================
 		folder = {
 			name = artillery_folder
-			position = { x = 0 y = 12 }
+			position = {
+				x = 0
+				y = @1011
+			}
 		}
-
 		categories = {
 			artillery
 			mio_cat_all_artillery_equipment
-			mio_cat_artillery #Only Artillery
+			mio_cat_artillery			#Only Artillery
 		}
-		special_project_specialization = { specialization_land }
-
+		special_project_specialization = {
+			specialization_land
+		}
+		path = {
+			leads_to_tech = FE_artillery_macro_orb
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = FE_artillery_loitering_munition
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = FE_artillery_resonance_shell
+			research_cost_coeff = 1
+		}
 		ai_will_do = {
 			factor = 2
-
 			modifier = {
 				factor = 2
-				date > "1007.1.6"
-			}
-
-			modifier = {
-				factor = 2
-				date > "1008.1.1"
-			}
-
-			modifier = {
-				factor = 5
 				date > "1009.1.1"
 			}
+			modifier = {
+				factor = 5
+				date > "1011.1.1"
+			}
 		}
 	}
-
-	mountain_gun = {
-
+	FE_artillery_macro_orb = {
+		#宏电子球
+		start_year = 1014
 		research_cost = 1
-
-		# only from focus!!! #####
-		allow = {
-			always = no
+		category_self_propelled_artillery = {
+			soft_attack = 0.1
 		}
-
+		folder = {
+			name = artillery_folder
+			position = {
+				x = -2
+				y = @1014
+			}
+		}
+		categories = {
+			artillery
+			mio_cat_all_artillery_equipment
+			mio_cat_artillery			#Only Artillery
+		}
+		special_project_specialization = {
+			specialization_land
+		}
+	}
+	FE_artillery_loitering_munition = {
+		#巡飞弹
+		start_year = 1014
+		research_cost = 1
+		artillery = {
+			soft_attack = 0.1
+		}
 		artillery_brigade = {
-			mountain = {
-				attack = 0.08
-				movement = 0.15 #If you change this - Change the custom tooltip too: mountain_guns_tt ROM_modern_at_guns_tech_tt
-			}
+			soft_attack = 0.1
 		}
-
-		anti_tank_brigade = {
-			mountain = {
-				attack = 0.08
-				movement = 0.15 #If you change this - Change the custom tooltip too: mountain_guns_tt ROM_modern_at_guns_tech_tt
-			}
+		mot_artillery_brigade = {
+			soft_attack = 0.1
 		}
-	}
-
-	rocket_artillery = {
-
-		enable_equipments = {
-			rocket_artillery_equipment_1
+		category_self_propelled_artillery = {
+			soft_attack = 0.1
 		}
-
-#		enable_subunits = {
-#			rocket_artillery_brigade
-#		}
-
-		enable_equipment_modules = {
-			tank_rocket_launcher
-			rocket_rails
-			lc_rocket_launcher #Module for Land Cruiser
-		}
-
-		path = {
-			leads_to_tech = rocket_artillery2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2
-
-		start_year = 1004
-
 		folder = {
 			name = artillery_folder
-			position = { x = @rocket_artillery y = 6 }
-		}
-
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 2
-				tag = SOV
+			position = {
+				x = 0
+				y = @1014
 			}
 		}
-
 		categories = {
-			rocketry
+			artillery
 			mio_cat_all_artillery_equipment
+			mio_cat_artillery			#Only Artillery
 		}
-		special_project_specialization = { specialization_air }
+		special_project_specialization = {
+			specialization_land
+		}
 	}
-
-	rocket_artillery2 = {
-
-		rocket_artillery = {
-			soft_attack = 0.15
-		}
-		rocket_artillery_brigade = {
-			soft_attack = 0.15
-		}
-		mot_rocket_artillery_brigade = {
-			soft_attack = 0.15
-		}
-		motorized_rocket_brigade = {
-			soft_attack = 0.15
-		}
-
-		path = {
-			leads_to_tech = rocket_artillery3
-			research_cost_coeff = 1
-		}
-
+	FE_artillery_resonance_shell = {
+		#共振魔弹
+		start_year = 1014
 		research_cost = 1
-
-		start_year = 1005
-
+		artillery = {
+			soft_attack = 0.1
+		}
+		artillery_brigade = {
+			soft_attack = 0.1
+		}
+		mot_artillery_brigade = {
+			soft_attack = 0.1
+		}
+		category_self_propelled_artillery = {
+			soft_attack = 0.1
+		}
 		folder = {
 			name = artillery_folder
-			position = { x = @rocket_artillery y = 8 }
-		}
-
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 2
-				tag = SOV
+			position = {
+				x = 2
+				y = @1014
 			}
 		}
-
 		categories = {
-			rocketry
+			artillery
 			mio_cat_all_artillery_equipment
+			mio_cat_artillery			#Only Artillery
 		}
-		special_project_specialization = { specialization_air }
+		special_project_specialization = {
+			specialization_land
+		}
 	}
-
-	rocket_artillery3 = {
-
-		rocket_artillery = {
-			soft_attack = 0.15
-		}
-		rocket_artillery_brigade = {
-			soft_attack = 0.15
-		}
-		mot_rocket_artillery_brigade = {
-			soft_attack = 0.15
-		}
-		motorized_rocket_brigade = {
-			soft_attack = 0.15
-		}
-
-		path = {
-			leads_to_tech = rocket_artillery4
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-
-		start_year = 1006
-
-		folder = {
-			name = artillery_folder
-			position = { x = @rocket_artillery y = 10 }
-		}
-
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 2
-				tag = SOV
-			}
-		}
-
-		categories = {
-			rocketry
-			mio_cat_all_artillery_equipment
-		}
-		special_project_specialization = { specialization_air }
-	}
-
-	rocket_artillery4 = {
-
+	###========================================================================
+	### 二、防空炮线（小型速射阵 → 连发，轻而易举啊！ → 间歇性喷射 → 极细法术射线 → 禁空洪流 → 死亡风暴；另 更远，更准，更快 自火箭线汇入）
+	###========================================================================
+	FE_artillery_small_rapid_array = {
+		#小型速射阵（代替原版一级防空炮，解锁一级防空炮装备）
+		start_year = 1000
+		research_cost = 1.5
+		##=== 继承自旧科技 interwar_antiair（替换保留）===
 		enable_equipments = {
-			rocket_artillery_equipment_2
+			FE_artillery_small_rapid_array
 		}
-		motorized_rocket_brigade = {
-			soft_attack = 0.3
-		}
-		enable_equipment_modules = {
-			tank_rocket_launcher_2
-		}
-		research_cost = 1
-
-		start_year = 1007
-
-		folder = {
-			name = artillery_folder
-			position = { x = @rocket_artillery y = 12 }
-		}
-
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 2
-				tag = SOV
-			}
-		}
-
-		categories = {
-			rocketry
-			mio_cat_all_artillery_equipment
-		}
-		special_project_specialization = { specialization_air }
-	}
-
-	interwar_antiair = {
-
-		enable_equipments = {
-			anti_air_equipment_1
-		}
-
 		armored_car = {
 			hard_attack = 0.1
 		}
-
 		enable_equipment_modules = {
 			ship_anti_air_2
 			tank_auto_cannon
 			tank_anti_air_cannon
 			tank_heavy_cannon
-			lc_light_anti_air_battery #Module for Land Cruiser
+			lc_light_anti_air_battery			#Module for Land Cruiser
 		}
-
 		enable_building = {
 			building = anti_air_building
 			level = 5
 		}
-
-		path = {
-			leads_to_tech = antiair1
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 1000
-
-		folder = {
-			name = artillery_folder
-			position = { x = @anti_air y = 2 }
-		}
-
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 0.5
-
-				OR = {
-					tag = CHI
-					tag = PRC
-					tag = XSM
-					tag = SIK
-					tag = GXC
-					tag = SHX
-					tag = YUN
-				}
-			}
-			modifier = {
-				factor = 2
-				date > "1001.1.1"
-			}
-
-			modifier = {
-				factor = 5
-				date > "1002.1.1"
-			}
-
-			modifier = {
-				factor = 5
-				date > "1003.1.1"
-			}
-		}
-
-		categories = {
-			artillery
-			cat_anti_air
-			mio_cat_all_artillery_equipment
-		}
-		special_project_specialization = { specialization_land specialization_air }
-	}
-
-	antiair1 = {
-
+		##=== 继承自旧科技 antiair1（类别加成，待策划调整）===
 		anti_air = {
 			air_attack = 0.1
 		}
@@ -735,109 +562,100 @@ technologies = {
 			air_attack = 0.15
 		}
 		tech_air_damage_factor = -0.02
-
-		path = {
-			leads_to_tech = antiair2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-
-		start_year = 1003
-
+		##===============================================
 		folder = {
 			name = artillery_folder
-			position = { x = @anti_air y = 4 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				OR = {
-					tag = JAP
-					tag = ENG
-					tag = USA
-				}
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-					has_war_with = ENG
-				}
-				factor = 5
+			position = {
+				x = -4
+				y = @1000
 			}
 		}
-
 		categories = {
 			artillery
 			cat_anti_air
 			mio_cat_all_artillery_equipment
 		}
-		special_project_specialization = { specialization_land specialization_air }
+		special_project_specialization = {
+			specialization_land
+			specialization_air
+		}
+		path = {
+			leads_to_tech = FE_artillery_rapid_fire
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = FE_artillery_dragon_breath_cannon
+			research_cost_coeff = 1
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				date > "1001.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "1002.1.1"
+			}
+		}
 	}
-
-	antiair2 = {
-
+	FE_artillery_rapid_fire = {
+		#连发，轻而易举啊！
+		start_year = 1002
+		research_cost = 1
+		anti_air = {
+			air_attack = 0.1
+		}
+		anti_air_brigade = {
+			air_attack = 0.1
+		}
+		mot_anti_air_brigade = {
+			air_attack = 0.1
+		}
+		category_self_propelled_anti_air = {
+			air_attack = 0.15
+		}
+		tech_air_damage_factor = -0.02
+		folder = {
+			name = artillery_folder
+			position = {
+				x = -4
+				y = @1002
+			}
+		}
+		categories = {
+			artillery
+			cat_anti_air
+			mio_cat_all_artillery_equipment
+		}
+		special_project_specialization = {
+			specialization_land
+			specialization_air
+		}
+		path = {
+			leads_to_tech = FE_artillery_intermittent_jet
+			research_cost_coeff = 1
+		}
+	}
+	FE_artillery_intermittent_jet = {
+		#间歇性喷射（代替原版二级防空炮，解锁二级防空炮装备）
+		start_year = 1004
+		research_cost = 1
+		##=== 继承自旧科技 antiair2（替换保留）===
 		enable_equipments = {
-			anti_air_equipment_2
+			FE_artillery_intermittent_jet
 		}
 		armored_car = {
 			hard_attack = 0.1
 		}
 		static_anti_air_damage_factor = 0.1
-
 		enable_equipment_modules = {
 			ship_anti_air_3
 			tank_auto_cannon_2
 			tank_anti_air_cannon_2
-			lc_heavy_anti_air_battery #Module for Land Cruiser
+			lc_heavy_anti_air_battery			#Module for Land Cruiser
+			tank_heavy_cannon_2
 		}
-
-		path = {
-			leads_to_tech = antiair3
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = sp_shock_hardening_techniques
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-
-		start_year = 1004
-
-		folder = {
-			name = artillery_folder
-			position = { x = @anti_air y = 6 }
-		}
-
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				OR = {
-					tag = JAP
-					tag = ENG
-					tag = USA
-				}
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-					has_war_with = ENG
-				}
-				factor = 5
-			}
-		}
-
-		categories = {
-			artillery
-			cat_anti_air
-			mio_cat_all_artillery_equipment
-		}
-		special_project_specialization = { specialization_land specialization_air }
-	}
-
-	antiair3 = {
-
 		anti_air = {
 			air_attack = 0.1
 		}
@@ -850,53 +668,142 @@ technologies = {
 		category_self_propelled_anti_air = {
 			air_attack = 0.1
 		}
-		enable_equipment_modules = {
-			tank_heavy_cannon_2
-		}
-
 		tech_air_damage_factor = -0.02
-
-		path = {
-			leads_to_tech = antiair4
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-
-		start_year = 1005
-
+		##===============================================
 		folder = {
 			name = artillery_folder
-			position = { x = @anti_air y = 8 }
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				OR = {
-					tag = JAP
-					tag = ENG
-					tag = USA
-				}
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-					has_war_with = ENG
-				}
-				factor = 5
+			position = {
+				x = -4
+				y = @1004
 			}
 		}
-
 		categories = {
 			artillery
 			cat_anti_air
 			mio_cat_all_artillery_equipment
 		}
-		special_project_specialization = { specialization_land specialization_air }
+		special_project_specialization = {
+			specialization_land
+			specialization_air
+		}
+		path = {
+			leads_to_tech = FE_artillery_fine_spell_ray
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = FE_artillery_super_strike_code
+			research_cost_coeff = 1
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "1005.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "1006.1.1"
+			}
+		}
 	}
-
-	antiair4 = {
-
+	FE_artillery_farther_accurate_faster = {
+		#更远，更准，更快（火箭炮/防空炮分支共享）
+		start_year = 1004
+		research_cost = 1
+		anti_air = {
+			air_attack = 0.1
+		}
+		anti_air_brigade = {
+			air_attack = 0.1
+		}
+		mot_anti_air_brigade = {
+			air_attack = 0.1
+		}
+		category_self_propelled_anti_air = {
+			air_attack = 0.1
+		}
+		folder = {
+			name = artillery_folder
+			position = {
+				x = -6
+				y = @1004
+			}
+		}
+		categories = {
+			artillery
+			cat_anti_air
+			mio_cat_all_artillery_equipment
+		}
+		special_project_specialization = {
+			specialization_land
+			specialization_air
+		}
+		path = {
+			leads_to_tech = FE_artillery_roarer
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = FE_artillery_fine_spell_ray
+			research_cost_coeff = 1
+		}
+	}
+	FE_artillery_fine_spell_ray = {
+		#极细法术射线
+		start_year = 1008
+		research_cost = 1
+		anti_air = {
+			air_attack = 0.1
+		}
+		anti_air_brigade = {
+			air_attack = 0.1
+		}
+		mot_anti_air_brigade = {
+			air_attack = 0.1
+		}
+		category_self_propelled_anti_air = {
+			air_attack = 0.1
+		}
+		tech_air_damage_factor = -0.02
+		folder = {
+			name = artillery_folder
+			position = {
+				x = -4
+				y = @1008
+			}
+		}
+		categories = {
+			artillery
+			cat_anti_air
+			mio_cat_all_artillery_equipment
+		}
+		special_project_specialization = {
+			specialization_land
+			specialization_air
+		}
+		path = {
+			leads_to_tech = FE_artillery_anti_air_torrent
+			research_cost_coeff = 1
+		}
+	}
+	FE_artillery_anti_air_torrent = {
+		#禁空洪流（代替原版三级防空炮，解锁三级防空炮装备）
+		start_year = 1011
+		research_cost = 1
+		##=== 继承自旧科技 antiair5（替换保留）===
+		enable_equipments = {
+			FE_artillery_anti_air_torrent
+		}
+		armored_car = {
+			hard_attack = 0.1
+		}
+		static_anti_air_damage_factor = 0.1
+		enable_equipment_modules = {
+			ship_anti_air_4
+			tank_heavy_cannon_3
+			tank_anti_air_cannon_3
+			auto_loader
+			lc_heavy_anti_air_platform			#Module for Land Cruiser
+		}
 		anti_air = {
 			air_attack = 0.1
 		}
@@ -909,104 +816,340 @@ technologies = {
 		category_self_propelled_anti_air = {
 			air_attack = 0.05
 		}
-
 		tech_air_damage_factor = -0.02
-
+		##===============================================
+		folder = {
+			name = artillery_folder
+			position = {
+				x = -4
+				y = @1011
+			}
+		}
+		categories = {
+			artillery
+			cat_anti_air
+			mio_cat_all_artillery_equipment
+		}
+		special_project_specialization = {
+			specialization_land
+			specialization_air
+		}
 		path = {
-			leads_to_tech = antiair5
+			leads_to_tech = FE_artillery_death_storm
 			research_cost_coeff = 1
 		}
-
-		research_cost = 1
-
-		start_year = 1006
-
-		folder = {
-			name = artillery_folder
-			position = { x = @anti_air y = 10 }
-		}
-
 		ai_will_do = {
-			factor = 1
+			factor = 2
 			modifier = {
-				OR = {
-					tag = JAP
-					tag = ENG
-					tag = USA
-				}
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-					has_war_with = ENG
-				}
+				factor = 2
+				date > "1010.1.1"
+			}
+			modifier = {
 				factor = 5
+				date > "1011.1.1"
 			}
 		}
-
+	}
+	FE_artillery_death_storm = {
+		#死亡风暴
+		start_year = 1014
+		research_cost = 1
+		anti_air = {
+			air_attack = 0.1
+		}
+		anti_air_brigade = {
+			air_attack = 0.1
+		}
+		mot_anti_air_brigade = {
+			air_attack = 0.1
+		}
+		category_self_propelled_anti_air = {
+			air_attack = 0.05
+		}
+		tech_air_damage_factor = -0.02
+		folder = {
+			name = artillery_folder
+			position = {
+				x = -4
+				y = @1014
+			}
+		}
 		categories = {
 			artillery
 			cat_anti_air
 			mio_cat_all_artillery_equipment
 		}
-		special_project_specialization = { specialization_land specialization_air }
+		special_project_specialization = {
+			specialization_land
+			specialization_air
+		}
 	}
-
-	antiair5 = {
-
+	###========================================================================
+	### 三、火箭炮线（龙息炮 → 更大，更多，更强 / 更远，更准，更快 → 咆哮者 → 魔能坍缩 → 时空咒术）
+	###========================================================================
+	FE_artillery_dragon_breath_cannon = {
+		#龙息炮（代替原版一级火箭炮，解锁一级火箭炮装备）
+		start_year = 1002
+		research_cost = 2
+		##=== 继承自旧科技 rocket_artillery（替换保留）===
 		enable_equipments = {
-			anti_air_equipment_3
+			FE_artillery_dragon_breath_cannon
 		}
-		armored_car = {
-			hard_attack = 0.1
-		}
-		static_anti_air_damage_factor = 0.1
-
 		enable_equipment_modules = {
-			ship_anti_air_4
-			tank_heavy_cannon_3
-			tank_anti_air_cannon_3
-			auto_loader
-			lc_heavy_anti_air_platform #Module for Land Cruiser
+			tank_rocket_launcher
+			rocket_rails
+			lc_rocket_launcher			#Module for Land Cruiser
 		}
-
-		research_cost = 1
-
-		start_year = 1007
-
+		##=== 继承自旧科技 rocket_artillery2（类别加成，待策划调整）===
+		rocket_artillery = {
+			soft_attack = 0.15
+		}
+		rocket_artillery_brigade = {
+			soft_attack = 0.15
+		}
+		mot_rocket_artillery_brigade = {
+			soft_attack = 0.15
+		}
+		motorized_rocket_brigade = {
+			soft_attack = 0.15
+		}
+		##===============================================
 		folder = {
 			name = artillery_folder
-			position = { x = @anti_air y = 12 }
+			position = {
+				x = -7
+				y = @1002
+			}
 		}
-
+		categories = {
+			rocketry
+			mio_cat_all_artillery_equipment
+		}
+		special_project_specialization = {
+			specialization_air
+		}
+		path = {
+			leads_to_tech = FE_artillery_bigger_more_stronger
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = FE_artillery_farther_accurate_faster
+			research_cost_coeff = 1
+		}
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				OR = {
-					tag = JAP
-					tag = ENG
-					tag = USA
-				}
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-					has_war_with = ENG
-				}
-				factor = 5
+				factor = 2
+				tag = SOV
 			}
 		}
-
+	}
+	FE_artillery_bigger_more_stronger = {
+		#更大，更多，更强
+		start_year = 1004
+		research_cost = 1
+		rocket_artillery = {
+			soft_attack = 0.15
+		}
+		rocket_artillery_brigade = {
+			soft_attack = 0.15
+		}
+		mot_rocket_artillery_brigade = {
+			soft_attack = 0.15
+		}
+		motorized_rocket_brigade = {
+			soft_attack = 0.15
+		}
+		folder = {
+			name = artillery_folder
+			position = {
+				x = -8
+				y = @1004
+			}
+		}
 		categories = {
-			artillery
-			cat_anti_air
+			rocketry
 			mio_cat_all_artillery_equipment
 		}
-		special_project_specialization = { specialization_land specialization_air }
+		special_project_specialization = {
+			specialization_air
+		}
+		path = {
+			leads_to_tech = FE_artillery_roarer
+			research_cost_coeff = 1
+		}
 	}
-
-	interwar_antitank = {
-
+	FE_artillery_roarer = {
+		#咆哮者（代替原版二级火箭炮，解锁二级火箭炮装备）
+		start_year = 1008
+		research_cost = 1
+		##=== 继承自旧科技 rocket_artillery4（替换保留）===
 		enable_equipments = {
-			anti_tank_equipment_1
+			FE_artillery_roarer
+		}
+		motorized_rocket_brigade = {
+			soft_attack = 0.3
+		}
+		enable_equipment_modules = {
+			tank_rocket_launcher_2
+		}
+		rocket_artillery = {
+			soft_attack = 0.15
+		}
+		rocket_artillery_brigade = {
+			soft_attack = 0.15
+		}
+		mot_rocket_artillery_brigade = {
+			soft_attack = 0.15
+		}
+		motorized_rocket_brigade = {
+			soft_attack = 0.15
+		}
+		##===============================================
+		folder = {
+			name = artillery_folder
+			position = {
+				x = -7
+				y = @1008
+			}
+		}
+		categories = {
+			rocketry
+			mio_cat_all_artillery_equipment
+		}
+		special_project_specialization = {
+			specialization_air
+		}
+		path = {
+			leads_to_tech = FE_artillery_mana_collapse
+			research_cost_coeff = 1
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				tag = SOV
+			}
+		}
+	}
+	FE_artillery_mana_collapse = {
+		#魔能坍缩
+		start_year = 1011
+		research_cost = 1
+		rocket_artillery = {
+			soft_attack = 0.15
+		}
+		rocket_artillery_brigade = {
+			soft_attack = 0.15
+		}
+		mot_rocket_artillery_brigade = {
+			soft_attack = 0.15
+		}
+		motorized_rocket_brigade = {
+			soft_attack = 0.15
+		}
+		folder = {
+			name = artillery_folder
+			position = {
+				x = -7
+				y = @1011
+			}
+		}
+		categories = {
+			rocketry
+			mio_cat_all_artillery_equipment
+		}
+		special_project_specialization = {
+			specialization_air
+		}
+		path = {
+			leads_to_tech = FE_artillery_time_space_spell
+			research_cost_coeff = 1
+		}
+	}
+	FE_artillery_time_space_spell = {
+		#时空咒术（代替原版三级火箭炮）
+		start_year = 1014
+		research_cost = 1
+		rocket_artillery = {
+			soft_attack = 0.15
+		}
+		rocket_artillery_brigade = {
+			soft_attack = 0.15
+		}
+		mot_rocket_artillery_brigade = {
+			soft_attack = 0.15
+		}
+		motorized_rocket_brigade = {
+			soft_attack = 0.15
+		}
+		folder = {
+			name = artillery_folder
+			position = {
+				x = -7
+				y = @1014
+			}
+		}
+		categories = {
+			rocketry
+			mio_cat_all_artillery_equipment
+		}
+		special_project_specialization = {
+			specialization_air
+		}
+	}
+	###========================================================================
+	### 四、反坦克炮线（实体弹丸 → 银色战车 → 急速炮弹 → 飞行死神 → 钢针 → 灵能飞弹）
+	###========================================================================
+	FE_artillery_physical_shell = {
+		#实体弹丸
+		start_year = 1000
+		research_cost = 1
+		##=== 继承自旧科技 antitank3（类别加成，待策划调整）===
+		anti_tank = {
+			hard_attack = 0.1
+			ap_attack = 0.1
+		}
+		anti_tank_brigade = {
+			hard_attack = 0.1
+			ap_attack = 0.1
+		}
+		mot_anti_tank_brigade = {
+			hard_attack = 0.1
+			ap_attack = 0.1
+		}
+		category_tank_destroyers = {
+			hard_attack = 0.1
+			ap_attack = 0.05
+		}
+		##===============================================
+		folder = {
+			name = artillery_folder
+			position = {
+				x = 4
+				y = @1000
+			}
+		}
+		categories = {
+			artillery
+			cat_anti_tank
+			mio_cat_all_artillery_equipment
+		}
+		special_project_specialization = {
+			specialization_land
+		}
+		path = {
+			leads_to_tech = FE_artillery_silver_chariot
+			research_cost_coeff = 1
+		}
+	}
+	FE_artillery_silver_chariot = {
+		#银色战车（代替原版一级反坦克炮，解锁一级反坦克炮装备）
+		start_year = 1002
+		research_cost = 1.5
+		##=== 继承自旧科技 interwar_antitank（替换保留）===
+		enable_equipments = {
+			FE_artillery_silver_chariot
 		}
 		armored_car = {
 			ap_attack = 0.1
@@ -1015,170 +1158,90 @@ technologies = {
 			tank_high_velocity_cannon
 			tank_heavy_cannon
 			tank_buster_1
-			lc_high_velocity_cannon_turret #Module for Land Cruiser
+			lc_high_velocity_cannon_turret			#Module for Land Cruiser
+			tank_medium_cannon
+			squeezebore_adaptor
 		}
-
-		path = {
-			leads_to_tech = antitank1
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
-
-		start_year = 1000
-
+		##===============================================
 		folder = {
 			name = artillery_folder
-			position = { x = @anti_tank y = 2 }
-		}
-
-		ai_will_do = {
-			base = 1
-
-			modifier = {
-				factor = 0.2
-
-				OR = {
-					tag = CHI
-					tag = PRC
-					tag = XSM
-					tag = SIK
-					tag = GXC
-					tag = SHX
-					tag = YUN
-				}
-			}
-			modifier = {
-				tag = JAP
-				not = {
-					OR = {
-						has_war_with = SOV
-						has_war_with = USA
-					}
-				}
-				factor = 0.5
-			}
-			modifier = { #This is needed for a lot of tank designs
-				factor = 4.0
-				is_major = yes
-			}
-			modifier = {
-				factor = 2
-				date > "1001.1.1"
-			}
-
-			modifier = {
-				factor = 5
-				date > "1002.1.1"
-			}
-
-			modifier = {
-				factor = 5
-				date > "1003.1.1"
-			}
-			modifier = {
-				factor = 10
-				any_enemy_country = {
-					ROOT = {
-						estimated_intel_max_armor = {
-							tag = PREV
-							value > 30
-						}
-					}
-				}
+			position = {
+				x = 4
+				y = @1002
 			}
 		}
-
 		categories = {
 			artillery
 			cat_anti_tank
 			mio_cat_all_artillery_equipment
 		}
-		special_project_specialization = { specialization_land }
-	}
-
-	antitank1 = {
-
-		category_tank_destroyers = {
-			hard_attack = 0.15
-			ap_attack = 0.2
-		}
-
-		anti_tank = {
-			hard_attack = 0.1
-			ap_attack = 0.2
-		}
-		anti_tank_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.2
-		}
-		mot_anti_tank_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.2
-		}
-
-		enable_equipment_modules = {
-			tank_medium_cannon
-			squeezebore_adaptor
+		special_project_specialization = {
+			specialization_land
 		}
 		path = {
-			leads_to_tech = antitank2
+			leads_to_tech = FE_artillery_rapid_shell
 			research_cost_coeff = 1
 		}
-
-		research_cost = 1
-
-		start_year = 1003
-
-		folder = {
-			name = artillery_folder
-			position = { x = @anti_tank y = 4 }
-		}
-
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 10
-				any_enemy_country = {
-					ROOT = {
-						estimated_intel_max_armor = {
-							tag = PREV
-							value > 30
-						}
-					}
-				}
-			}
-			modifier = {
-				tag = JAP
-				not = {
-					OR = {
-						has_War_with = SOV
-						has_war_with = USA
-					}
-				}
-				factor = 0.5
-			}
-			modifier = {
 				factor = 2
-				date > "1003.1.6"
+				date > "1003.1.1"
 			}
-
 			modifier = {
 				factor = 5
 				date > "1004.1.1"
 			}
 		}
-
+	}
+	FE_artillery_rapid_shell = {
+		#急速炮弹（反坦克炮/火炮分支共享）
+		start_year = 1004
+		research_cost = 1
+		anti_tank = {
+			hard_attack = 0.1
+			ap_attack = 0.1
+		}
+		anti_tank_brigade = {
+			hard_attack = 0.1
+			ap_attack = 0.1
+		}
+		mot_anti_tank_brigade = {
+			hard_attack = 0.05
+			ap_attack = 0.1
+		}
+		category_tank_destroyers = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+		folder = {
+			name = artillery_folder
+			position = {
+				x = 4
+				y = @1004
+			}
+		}
 		categories = {
 			artillery
 			cat_anti_tank
 			mio_cat_all_artillery_equipment
 		}
-		special_project_specialization = { specialization_land }
+		special_project_specialization = {
+			specialization_land
+		}
+		path = {
+			leads_to_tech = FE_artillery_flying_reaper
+			research_cost_coeff = 1
+		}
 	}
-
-	antitank2 = {
-
+	FE_artillery_flying_reaper = {
+		#飞行死神（代替原版二级反坦克炮，解锁二级反坦克炮装备）
+		start_year = 1008
+		research_cost = 1
+		##=== 继承自旧科技 antitank2（替换保留）===
+		enable_equipments = {
+			FE_artillery_flying_reaper
+		}
 		mot_anti_tank_brigade = {
 			hard_attack = 0.1
 			ap_attack = 0.1
@@ -1186,165 +1249,47 @@ technologies = {
 		armored_car = {
 			ap_attack = 0.1
 		}
-		enable_equipments = {
-			anti_tank_equipment_2
-		}
 		enable_equipment_modules = {
 			tank_heavy_cannon_2
 			tank_buster_2
-		}
-		path = {
-			leads_to_tech = antitank3
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-
-		start_year = 1004
-
-		folder = {
-			name = artillery_folder
-			position = { x = @anti_tank y = 6 }
-		}
-
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 2
-				date > "1003.1.9"
-			}
-			modifier = {
-				tag = JAP
-				not = {
-					OR = {
-						has_War_with = SOV
-						has_war_with = USA
-					}
-				}
-				factor = 0.5
-			}
-			modifier = {
-				factor = 2
-				date > "1004.1.1"
-			}
-			modifier = {
-				tag = USA
-				has_War = no
-				factor = 0.5 #this tank nonsense will never catch on
-			}
-			modifier = {
-				factor = 5
-				date > "1004.1.6"
-			}
-			modifier = {
-				factor = 10
-				any_enemy_country = {
-					ROOT = {
-						estimated_intel_max_armor = {
-							tag = PREV
-							value > 32
-						}
-					}
-				}
-			}
-		}
-
-		categories = {
-			artillery
-			cat_anti_tank
-			mio_cat_all_artillery_equipment
-		}
-		special_project_specialization = { specialization_land }
-	}
-
-	antitank3 = {
-		enable_equipment_modules = {
 			tank_medium_cannon_2
 		}
-		anti_tank = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		anti_tank_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		mot_anti_tank_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		category_tank_destroyers = {
-			hard_attack = 0.1
-			ap_attack = 0.05
-		}
-
-		path = {
-			leads_to_tech = antitank4
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-
-		start_year = 1005
-
+		##===============================================
 		folder = {
 			name = artillery_folder
-			position = { x = @anti_tank y = 8 }
+			position = {
+				x = 4
+				y = @1008
+			}
 		}
-
 		categories = {
 			artillery
 			cat_anti_tank
 			mio_cat_all_artillery_equipment
 		}
-
-		special_project_specialization = { specialization_land }
-
+		special_project_specialization = {
+			specialization_land
+		}
+		path = {
+			leads_to_tech = FE_artillery_steel_needle
+			research_cost_coeff = 1
+		}
 		ai_will_do = {
 			factor = 1
-
 			modifier = {
 				factor = 2
-				date > "1005.1.6"
-			}
-			modifier = {
-				tag = JAP
-				not = {
-					OR = {
-						has_War_with = SOV
-						has_war_with = USA
-					}
-				}
-				factor = 0.5
-			}
-			modifier = {
-				factor = 2
-				date > "1006.1.1"
-			}
-
-			modifier = {
-				factor = 5
 				date > "1007.1.1"
 			}
 			modifier = {
-				factor = 10
-				any_enemy_country = {
-					ROOT = {
-						estimated_intel_max_armor = {
-							tag = PREV
-							value > 32
-						}
-					}
-				}
+				factor = 5
+				date > "1008.1.1"
 			}
 		}
 	}
-
-	antitank4 = {
-		enable_equipment_modules = {
-			tank_high_velocity_cannon_2
-		}
+	FE_artillery_steel_needle = {
+		#钢针
+		start_year = 1011
+		research_cost = 1
 		anti_tank = {
 			hard_attack = 0.1
 			ap_attack = 0.1
@@ -1361,67 +1306,33 @@ technologies = {
 			hard_attack = 0.05
 			ap_attack = 0.05
 		}
-
-		path = {
-			leads_to_tech = antitank5
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1
-
-		start_year = 1006
-
 		folder = {
 			name = artillery_folder
-			position = { x = @anti_tank y = 10 }
-		}
-
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 2
-				date > "1006.1.6"
-			}
-			modifier = {
-				tag = JAP
-				not = {
-					OR = {
-						has_War_with = SOV
-						has_war_with = USA
-					}
-				}
-				factor = 0.5
-			}
-			modifier = {
-				factor = 5
-				date > "1007.1.1"
-			}
-			modifier = {
-				factor = 10
-				any_enemy_country = {
-					ROOT = {
-						estimated_intel_max_armor = {
-							tag = PREV
-							value > 35
-						}
-					}
-				}
+			position = {
+				x = 4
+				y = @1011
 			}
 		}
-
 		categories = {
 			artillery
 			cat_anti_tank
 			mio_cat_all_artillery_equipment
 		}
-		special_project_specialization = { specialization_land }
+		special_project_specialization = {
+			specialization_land
+		}
+		path = {
+			leads_to_tech = FE_artillery_psionic_missile
+			research_cost_coeff = 1
+		}
 	}
-
-	antitank5 = {
-
+	FE_artillery_psionic_missile = {
+		#灵能飞弹（代替原版三级反坦克炮，解锁三级反坦克炮装备）
+		start_year = 1014
+		research_cost = 1
+		##=== 继承自旧科技 antitank5（替换保留）===
 		enable_equipments = {
-			anti_tank_equipment_3
+			FE_artillery_psionic_missile
 		}
 		armored_car = {
 			ap_attack = 0.1
@@ -1430,304 +1341,23 @@ technologies = {
 			tank_high_velocity_cannon_3
 			tank_heavy_cannon_3
 			auto_loader
-			lc_heavy_high_velocity_cannons #Module for Land Cruiser
+			lc_heavy_high_velocity_cannons			#Module for Land Cruiser
 		}
-
-		research_cost = 1
-
-		start_year = 1007
-
+		##===============================================
 		folder = {
 			name = artillery_folder
-			position = { x = @anti_tank y = 12 }
-		}
-
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 2
-				date > "1006.1.9"
-			}
-			modifier = {
-				tag = JAP
-				not = {
-					OR = {
-						has_War_with = SOV
-						has_war_with = USA
-					}
-				}
-				factor = 0.5
-			}
-			modifier = {
-				factor = 2
-				date > "1007.1.1"
-			}
-
-			modifier = {
-				factor = 5
-				date > "1007.1.6"
-			}
-			modifier = {
-				factor = 10
-				any_enemy_country = {
-					ROOT = {
-						estimated_intel_max_armor = {
-							tag = PREV
-							value > 35
-						}
-					}
-				}
+			position = {
+				x = 4
+				y = @1014
 			}
 		}
-
 		categories = {
 			artillery
 			cat_anti_tank
 			mio_cat_all_artillery_equipment
 		}
-		special_project_specialization = { specialization_land }
-	}
-
-	SWE_bofors_antitank_gun = {
-
-		research_cost = 1
-
-		# only from focus!!! Bofors anti tank gun #####
-		allow = {
-			always = no
-		}
-
-		anti_tank = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		anti_tank_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		mot_anti_tank_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		light_tank_destroyer_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		medium_tank_destroyer_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		heavy_tank_destroyer_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		super_heavy_tank_destroyer_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		modern_tank_destroyer_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-
-		categories = {
-			cat_anti_tank
-			artillery
-			mio_cat_all_artillery_equipment
+		special_project_specialization = {
+			specialization_land
 		}
 	}
-
-
-	### SPECIAL PROJECTS ###
-
-	sp_artillery_rocket_assisted_projectiles_tech = {
-
-		allow_branch = {
-			 has_dlc = "Gotterdammerung"
-		}
-
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_land_super_heavy_howitzer
-				has_tech = experimental_rockets
-			}
-		}
-
-		is_special_project_tech = yes
-
-		super_heavy_artillery = {
-			soft_attack = 0.1
-		}
-
-		self_propelled_super_heavy_artillery = {
-			soft_attack = 0.1
-		}
-
-		research_cost = 1.5
-
-		start_year = 1004
-
-		folder = {
-			name = artillery_folder
-			position = { x = -2 y = 6 }
-		}
-
-		categories = {
-			artillery
-			mio_cat_all_artillery_equipment
-			mio_cat_artillery #Only Artillery
-		}
-		special_project_specialization = { specialization_land }
-
-		ai_will_do = {
-			base = 5
-			modifier = {
-				factor = 2
-				is_major = yes
-			}
-			modifier = {
-				factor = 2
-				date > "1006.1.1"
-			}
-		}
-	}
-
-
-	sp_artillery_purpose_built_gun_motor_carriages_tech = {
-
-		allow_branch = {
-			 has_dlc = "Gotterdammerung"
-		}
-
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_land_self_propelled_super_heavy_howitzer
-			}
-		}
-
-		is_special_project_tech = yes
-
-		super_heavy_artillery = {
-			reliability = 0.07
-			supply_consumption = -0.1
-		}
-
-		self_propelled_super_heavy_artillery = {
-			reliability = 0.07
-			supply_consumption = -0.1
-		}
-
-		research_cost = 1.5
-
-		start_year = 1004
-
-		folder = {
-			name = artillery_folder
-			position = { x = -4 y = 6 }
-		}
-
-		categories = {
-			artillery
-			mio_cat_all_artillery_equipment
-			mio_cat_artillery #Only Artillery
-		}
-		special_project_specialization = { specialization_land }
-
-		ai_will_do = {
-			base = 5
-			modifier = {
-				factor = 2
-				is_major = yes
-			}
-			modifier = {
-				factor = 2
-				date > "1006.1.1"
-			}
-		}
-	}
-
-	sp_shock_hardening_techniques = {
-
-		allow_branch = {
-			 has_dlc = "Gotterdammerung"
-		}
-
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_naval_proximity_fuze
-			}
-		}
-
-		static_anti_air_damage_factor = 0.15
-		static_anti_air_hit_chance_factor = 0.3
-
-		path = {
-			leads_to_tech = sp_variable_time_fuze_shells
-			research_cost_coeff = 1
-		}
-
-        force_use_small_tech_layout = yes
-		is_special_project_tech = yes
-		research_cost = 1.5
-		start_year = 1005
-		folder = {
-			name = artillery_folder
-			position = { x = -9 y = 8 }
-		}
-
-		categories = {
-			artillery
-			mio_cat_all_artillery_equipment
-			mio_cat_artillery
-		}
-
-		special_project_specialization = { specialization_land specialization_air }
-	}
-
-	sp_variable_time_fuze_shells = {
-		allow_branch = {
-			 has_dlc = "Gotterdammerung"
-		}
-
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_naval_proximity_fuze
-			}
-		}
-
-		artillery = {
-			soft_attack = 0.1
-		}
-		artillery_brigade = {
-			soft_attack = 0.2
-		}
-		mot_artillery_brigade = {
-			soft_attack = 0.2
-		}
-		category_self_propelled_artillery = {
-			soft_attack = 0.1
-		}
-
-		force_use_small_tech_layout = yes
-		research_cost = 1.5
-		start_year = 1006
-		is_special_project_tech = yes
-
-		folder = {
-			name = artillery_folder
-			position = { x = -9 y = 10 }
-		}
-
-		categories = {
-			artillery
-			mio_cat_all_artillery_equipment
-			mio_cat_artillery
-		}
-
-		special_project_specialization = { specialization_land specialization_air }
-	}
-
-
-
 }

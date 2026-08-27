@@ -7,7 +7,7 @@ equipments = {
 		picture = archetype_anti_tank_equipment
 		type = {
 			anti_tank
-			infantry #adding infantry type
+			infantry			#adding infantry type
 		}
 		group_by = archetype
 
@@ -37,26 +37,20 @@ equipments = {
 			steel = 2
 		}
 	}
-
-	anti_tank_equipment_1 = {
-		year = 1936
-
+	FE_artillery_silver_chariot = {
+		year = 1002
 		archetype = anti_tank_equipment
 		priority = 90
 		visual_level = 0
 	}
-
-	anti_tank_equipment_2 = {
-		year = 1940
-
+	FE_artillery_flying_reaper = {
+		year = 1008
 		archetype = anti_tank_equipment
-		parent = anti_tank_equipment_1
+		parent = FE_artillery_silver_chariot
 		priority = 90
 		visual_level = 1
-
 		hard_attack = 22
 		ap_attack = 90
-
 		build_cost_ic = 5
 		resources = {
 			tungsten = 2
@@ -64,18 +58,14 @@ equipments = {
 			steel = 2
 		}
 	}
-
-	anti_tank_equipment_3 = {
-		year = 1943
-
+	FE_artillery_psionic_missile = {
+		year = 1014
 		archetype = anti_tank_equipment
-		parent = anti_tank_equipment_2
+		parent = FE_artillery_flying_reaper
 		priority = 90
 		visual_level = 2
-
 		hard_attack = 30
 		ap_attack = 125
-
 		build_cost_ic = 6
 		resources = {
 			tungsten = 2
