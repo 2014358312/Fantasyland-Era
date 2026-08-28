@@ -91,12 +91,6 @@ faction_manifest_from_the_ruins_risen_newly = {
 					defensive_war_stability_factor = 0.2
 				}
 			}
-			manifest_fulfilled = {
-				min = 0.9
-				on_activate = {
-					set_faction_manifest = faction_manifest_hold_the_torch
-				}
-			}
 		}
 	}
 }
@@ -124,8 +118,52 @@ faction_manifest_hold_the_torch = {
 					production_speed_buildings_factor = 0.1
 					guarantee_cost = -0.5
 					war_stability_factor = 0.2
+					subversive_activites_upkeep = -0.3
 				}
 			}
+		}
+	}
+}
+faction_goal_je_suis_la_deluge = {
+	name = FRA_je_suis_la_deluge
+	description = hold_the_torch_desc
+	category = long_term
+	group = FOCUS_FILTER_POLITICAL_CHARACTER
+	visible = {
+		FROM = {
+			has_faction_goal = faction_manifest_from_the_ruins_risen_newly
+		}
+	}
+	ratio_progress = {
+		total_amount_collection = game:all_countries
+		completed_amount_collection = {
+			input = game:scope
+			operators = { faction_members }
+			name = COLLECTION_FACTION_MEMBERS
+		}
+		scale = {
+			democratic_drift_from_guarantees = 0.2
+		}
+		progress_sections = {
+			phased_breakthrough = {
+				min = 0.2
+				modifier = {
+					subversive_activites_upkeep = -0.3
+				}
+			}
+		}
+	}
+	completed = {
+		faction_manifest_fulfillment > 0.9
+	}
+	complete_effect = {
+		add_faction_power_projection = 1000
+		add_faction_initiative = 1
+		set_faction_manifest = faction_manifest_hold_the_torch
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = ALL_FACTION_MEMBERS
+		every_faction_member = {
+			add_political_power = 100
 		}
 	}
 }
