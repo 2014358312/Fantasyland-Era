@@ -13,7 +13,7 @@ def create_gfx_files(identifier):
 		"",
 		"\tspriteType = {",
 		f"\t\tname = \"GFX_idea_advisor_{identifier}_\"",
-		f"\t\ttexturefile = \"gfx/interface/ideas/advisors/{identifier}/idea_advisor_{identifier}_.dds\"",
+		f"\t\ttexturefile = \"gfx/characters/character/advisors/{identifier}/idea_advisor_{identifier}_.dds\"",
 		"\t}",
 		"}"
 	]
@@ -23,7 +23,7 @@ def create_gfx_files(identifier):
 		"",
 		"\tspriteType = {",
 		f"\t\tname = \"GFX_Portrait_{identifier}_\"",
-		f"\t\ttexturefile = \"gfx/leaders/{identifier}/Portrait_{identifier}_.dds\"",
+		f"\t\ttexturefile = \"gfx/characters/character/leaders/{identifier}/Portrait_{identifier}_.dds\"",
 		"\t}",
 		"}"
 	]
