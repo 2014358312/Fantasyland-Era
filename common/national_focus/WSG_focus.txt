@@ -2352,9 +2352,11 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG
-			WSG_Lexington = {
-				is_country_leader = yes
+			OR = {
+                WSG_Lexington = {
+				    is_country_leader = yes
+			    }
+			    has_completed_focus = WSG_the_reign_of_lexington
 			}
 		}
 		completion_reward = {
@@ -2556,9 +2558,11 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG
-			WSG_Vittorio_Veneto = {
-				is_country_leader = yes
+			OR = {
+                WSG_Vittorio_Veneto = {
+				    is_country_leader = yes
+			    }
+			    has_completed_focus = WSG_the_reign_of_lexington
 			}
 		}
 		completion_reward = {
@@ -2760,9 +2764,11 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG
-			WSG_Yubari = {
-				is_country_leader = yes
+			OR = {
+                WSG_Yubari = {
+				    is_country_leader = yes
+			    }
+			    has_completed_focus = WSG_the_reign_of_lexington
 			}
 		}
 		completion_reward = {
@@ -2969,9 +2975,11 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG
-			WSG_Hood = {
-				is_country_leader = yes
+			OR = {
+                WSG_Hood = {
+				    is_country_leader = yes
+			    }
+			    has_completed_focus = WSG_the_reign_of_lexington
 			}
 		}
 		completion_reward = {
@@ -3179,9 +3187,11 @@ focus_tree = {
 		cost = 2
 		search_filters = {FOCUS_FILTER_STABILITY}
 		available = {
-			#original_tag = WSG
-			WSG_YiXian = {
-				is_country_leader = yes
+			OR = {
+                WSG_YiXian = {
+				    is_country_leader = yes
+			    }
+			    has_completed_focus = WSG_the_reign_of_lexington
 			}
 		}
 		completion_reward = {
@@ -3389,9 +3399,11 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG
-			WSG_Jean_Bart = {
-				is_country_leader = yes
+			OR = {
+                WSG_Jean_Bart = {
+				    is_country_leader = yes
+			    }
+			    has_completed_focus = WSG_the_reign_of_lexington
 			}
 		}
 		completion_reward = {
@@ -3596,9 +3608,11 @@ focus_tree = {
 		cost = 2
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
 		available = {
-			#original_tag = WSG
-			WSG_Bubnov = {
-				is_country_leader = yes
+			OR = {
+                WSG_Bubnov = {
+				    is_country_leader = yes
+			    }
+			    has_completed_focus = WSG_the_reign_of_lexington
 			}
 		}
 		completion_reward = {
@@ -3802,9 +3816,11 @@ focus_tree = {
 		y = 1
 		cost = 2
 		available = {
-			#original_tag = WSG
-			WSG_Clausewitz = {
-				is_country_leader = yes
+			OR = {
+                WSG_Clausewitz = {
+				    is_country_leader = yes
+			    }
+			    has_completed_focus = WSG_the_reign_of_lexington
 			}
 		}
 		completion_reward = {
@@ -5634,10 +5650,8 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = WSG_from_the_deep_sea_text
 			set_country_flag = WSG_from_the_deep_sea
-			hidden_effect = {
-				activate_mission = WSG_deep_sea_invasion
-				activate_mission = WSG_ebb_tide
-			}
+			activate_mission = WSG_deep_sea_invasion
+			activate_mission = WSG_ebb_tide
 			unlock_decision_tooltip = WSG_temporary_tax_increase
 		}
 		ai_will_do = {
@@ -5700,6 +5714,10 @@ focus_tree = {
     		    value = 0.10
 			}
 			add_timed_idea = { idea = WSG_rancor_and_blood days = 180 }
+			add_days_mission_timeout  = {
+                mission = WSG_deep_sea_invasion
+                days = 45
+            }
 		}
 		ai_will_do = {
 			factor = 5
@@ -5732,6 +5750,10 @@ focus_tree = {
                 add_to_variable = { WSG_panci = 500 }
 			add_popularity = { ideology = fascism popularity = 0.1 }
 			add_timed_idea = { idea = WSG_hate_propaganda days = 180 }
+			add_days_mission_timeout  = {
+                mission = WSG_ebb_tide
+                days = -360
+            }
 		}
 		ai_will_do = {
 			factor = 5
@@ -5761,6 +5783,10 @@ focus_tree = {
 			}
 			add_popularity = { ideology = fascism popularity = 0.1 }
 			add_timed_idea = { idea = WSG_the_rise_of_militarism days = 360 }
+			add_days_mission_timeout  = {
+                mission = WSG_deep_sea_invasion
+                days = 90
+            }
 		}
 		ai_will_do = {
 			factor = 5
@@ -5788,6 +5814,10 @@ focus_tree = {
 			}
 			add_popularity = { ideology = fascism popularity = 0.1 }
 			add_war_support = 0.10
+			add_days_mission_timeout  = {
+                mission = WSG_ebb_tide
+                days = -360
+            }
 		}
 		ai_will_do = {
 			factor = 5
@@ -6130,6 +6160,10 @@ focus_tree = {
 		completion_reward = {
 			add_stability = -0.10
 			add_war_support = -0.10
+			add_days_mission_timeout  = {
+                mission = WSG_deep_sea_invasion
+                days = 30
+            }
 		}
 		ai_will_do = {
 			factor = 1
@@ -6157,6 +6191,10 @@ focus_tree = {
 			add_popularity = { ideology = democratic popularity = 0.1 }
 			set_politics = { ruling_party = democratic }
 			add_ideas = WSG_Admirals_rule
+			add_days_mission_timeout  = {
+                mission = WSG_deep_sea_invasion
+                days = 90
+            }
 			#为什么这里不把提督变成国家领导人呢？臣以为，港区背景板就要有背景板的样子，绝对不是我懒得去找可堪一用的提督肖像
 		}
 		ai_will_do = {
@@ -6204,6 +6242,10 @@ focus_tree = {
             }
 			custom_effect_tooltip = WSG_lexington_prime_minister_text
             clr_country_flag = secretary_ship_cd
+			add_days_mission_timeout  = {
+                mission = WSG_deep_sea_invasion
+                days = 60
+            }
 		}
 		ai_will_do = {
 			factor = 5
@@ -6320,6 +6362,14 @@ focus_tree = {
    			    id = WSG_balance_of_power
     		    value = 0.05
 			}
+			add_days_mission_timeout  = {
+                mission = WSG_ebb_tide
+                days = -90
+            }
+			add_days_mission_timeout  = {
+                mission = WSG_deep_sea_invasion
+                days = 45
+            }
 		}
 		ai_will_do = {
 			factor = 5
@@ -6484,6 +6534,10 @@ focus_tree = {
    			    id = WSG_balance_of_power
     		    value = 0.10
 			}
+			add_days_mission_timeout  = {
+                mission = WSG_ebb_tide
+                days = -180
+            }
 		}
 		ai_will_do = {
 			factor = 5
@@ -6505,6 +6559,10 @@ focus_tree = {
 			#original_tag = WSG
 		}
 		completion_reward = {
+			add_days_mission_timeout  = {
+                mission = WSG_ebb_tide
+                days = -180
+            }
 			custom_effect_tooltip = WSG_back_on_track_text
 			effect_tooltip ={
 				swap_ideas = {
