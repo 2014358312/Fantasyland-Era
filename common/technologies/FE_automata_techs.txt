@@ -1,0 +1,455 @@
+# ============================================================
+# 自动机科技（科研-自动机.drawio.pdf）
+# 结构：左列魔核/灵能傀儡线，中列雕纹魔像线，右列重型魔像/巨构线
+#       动力系统优化为左右两线共同前置，雕纹魔像引出重型魔像
+# 注意：具体效果为占位数值，待策划案确定后调整 —— 图标为占位图
+# ============================================================
+technologies = {
+	@984 = 0
+	@988 = 1
+	@992 = 2
+	@996 = 3
+	@1000 = 4
+	@1004 = 5
+	@1008 = 6
+	@1012 = 7
+
+	# ---------------- 第一列：魔核与灵能线 ----------------
+	fe_basic_craft_puppet = { #基础工艺傀儡
+		research_cost = 1
+		start_year = 984
+		folder = {
+			name = fe_automata_folder
+			position = { x = 0 y = @984 }
+		}
+		categories = {
+			automata_tech
+		}
+		production_factory_start_efficiency_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_powertrain_optimization
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_powertrain_optimization = { #动力系统优化
+		research_cost = 1
+		start_year = 988
+		folder = {
+			name = fe_automata_folder
+			position = { x = 0 y = @988 }
+		}
+		categories = {
+			automata_tech
+		}
+		line_change_production_efficiency_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_micro_core_puppet
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fe_inscribed_golem
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_micro_core_puppet = { #微型魔核傀儡
+		research_cost = 1
+		start_year = 992
+		folder = {
+			name = fe_automata_folder
+			position = { x = 0 y = @992 }
+		}
+		categories = {
+			automata_tech
+		}
+		tactical_doll_research = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_high_intelligence_core
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_high_intelligence_core = { #高智能核心
+		research_cost = 1.25
+		start_year = 996
+		folder = {
+			name = fe_automata_folder
+			position = { x = 0 y = @996 }
+		}
+		categories = {
+			automata_tech
+		}
+		tactical_doll_research = 0.05
+		research_speed_factor = 0.02
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_anti_interference_sealing
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_anti_interference_sealing = { #防干扰封装
+		research_cost = 1.25
+		start_year = 1000
+		folder = {
+			name = fe_automata_folder
+			position = { x = 0 y = @1000 }
+		}
+		categories = {
+			automata_tech
+		}
+		tactical_doll_research = 0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_psychic_reshaping_puppet
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_psychic_reshaping_puppet = { #灵能重塑傀儡
+		research_cost = 1.5
+		start_year = 1004
+		folder = {
+			name = fe_automata_folder
+			position = { x = 0 y = @1004 }
+		}
+		categories = {
+			automata_tech
+		}
+		research_speed_factor = 0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_deathspirit
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_deathspirit = { #死魂灵
+		research_cost = 1.75
+		start_year = 1008
+		folder = {
+			name = fe_automata_folder
+			position = { x = 0 y = @1008 }
+		}
+		categories = {
+			automata_tech
+		}
+		tactical_doll_research = 0.10
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# ---------------- 第二列：雕纹魔像线 ----------------
+	fe_inscribed_golem = { #雕纹魔像
+		research_cost = 1
+		start_year = 988
+		folder = {
+			name = fe_automata_folder
+			position = { x = 1 y = @988 }
+		}
+		categories = {
+			automata_tech
+		}
+		line_change_production_efficiency_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_golem_frame_simplification
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fe_heavy_golem
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_golem_frame_simplification = { #魔像框架简化
+		research_cost = 1
+		start_year = 992
+		folder = {
+			name = fe_automata_folder
+			position = { x = 1 y = @992 }
+		}
+		categories = {
+			automata_tech
+		}
+		production_factory_max_efficiency_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_multi_leg_steel_beast
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_multi_leg_steel_beast = { #多足钢铁兽
+		research_cost = 1.25
+		start_year = 996
+		folder = {
+			name = fe_automata_folder
+			position = { x = 1 y = @996 }
+		}
+		categories = {
+			automata_tech
+		}
+		org_loss_when_moving = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_position_expansion
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_position_expansion = { #定位扩展
+		research_cost = 1.25
+		start_year = 1000
+		folder = {
+			name = fe_automata_folder
+			position = { x = 1 y = @1000 }
+		}
+		categories = {
+			automata_tech
+		}
+		tactical_doll_research = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_spacetime_voyage
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_spacetime_voyage = { #超时空奇旅
+		research_cost = 1.5
+		start_year = 1004
+		folder = {
+			name = fe_automata_folder
+			position = { x = 1 y = @1004 }
+		}
+		categories = {
+			automata_tech
+		}
+		supply_consumption_factor = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_possession_spirit
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_possession_spirit = { #附身魔灵
+		research_cost = 1.5
+		start_year = 1008
+		folder = {
+			name = fe_automata_folder
+			position = { x = 1 y = @1008 }
+		}
+		categories = {
+			automata_tech
+		}
+		experience_gain_army_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_void_nightmare
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_void_nightmare = { #虚空梦魇
+		research_cost = 2
+		start_year = 1012
+		folder = {
+			name = fe_automata_folder
+			position = { x = 1 y = @1012 }
+		}
+		categories = {
+			automata_tech
+		}
+		research_speed_factor = 0.05
+		tactical_doll_research = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# ---------------- 第三列：重型魔像与巨构线 ----------------
+	fe_heavy_golem = { #重型魔像
+		research_cost = 1
+		start_year = 992
+		folder = {
+			name = fe_automata_folder
+			position = { x = 2 y = @992 }
+		}
+		categories = {
+			automata_tech
+		}
+		production_factory_max_efficiency_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_war_megastructure
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_war_megastructure = { #战争巨构
+		research_cost = 1.25
+		start_year = 996
+		folder = {
+			name = fe_automata_folder
+			position = { x = 2 y = @996 }
+		}
+		categories = {
+			automata_tech
+		}
+		production_speed_buildings_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_roaring_king
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_roaring_king = { #咆哮之王
+		research_cost = 1.25
+		start_year = 1000
+		folder = {
+			name = fe_automata_folder
+			position = { x = 2 y = @1000 }
+		}
+		categories = {
+			automata_tech
+		}
+		land_reinforce_rate = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_selfrepair_carrier
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_selfrepair_carrier = { #自修复载体
+		research_cost = 1.5
+		start_year = 1004
+		folder = {
+			name = fe_automata_folder
+			position = { x = 2 y = @1004 }
+		}
+		categories = {
+			automata_tech
+		}
+		out_of_supply_factor = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_intelligence_implantation
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_intelligence_implantation = { #智能灌输
+		research_cost = 1.5
+		start_year = 1008
+		folder = {
+			name = fe_automata_folder
+			position = { x = 2 y = @1008 }
+		}
+		categories = {
+			automata_tech
+		}
+		tactical_doll_research = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_titan_godsoldier
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_titan_godsoldier = { #巨神兵
+		research_cost = 1.75
+		start_year = 1012
+		folder = {
+			name = fe_automata_folder
+			position = { x = 2 y = @1012 }
+		}
+		categories = {
+			automata_tech
+		}
+		industrial_capacity_factory = 0.05
+		tactical_doll_research = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

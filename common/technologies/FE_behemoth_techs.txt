@@ -1,0 +1,537 @@
+# ============================================================
+# 战争巨兽科技（科研-战争巨兽.drawio.pdf）
+# 结构：根科技"凡兽骑兵"分出驯兽线（左）与驯化线（右），
+#       驯化线再延伸出重骑线 / 龙线 / 泰坦线
+# 注意：具体效果为占位数值，待策划案确定后调整 —— 图标为占位图
+# ============================================================
+technologies = {
+	@984 = 0
+	@988 = 1
+	@992 = 2
+	@996 = 3
+	@1000 = 4
+	@1004 = 5
+	@1008 = 6
+
+	fe_mundane_beast_cavalry = { #凡兽骑兵
+		research_cost = 1
+		start_year = 984
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 1 y = @984 }
+		}
+		categories = {
+			war_behemoth
+		}
+		category_cavalry = {
+			maximum_speed = 0.05
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_beast_tamer
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fe_exotic_beast_taming
+			research_cost_coeff = 1
+		}
+	}
+
+	# ---------------- 第一列：驯兽线 ----------------
+	fe_beast_tamer = { #驯兽者
+		research_cost = 1
+		start_year = 988
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 0 y = @988 }
+		}
+		categories = {
+			war_behemoth
+		}
+		category_cavalry = {
+			defense = 0.05
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_transformation_spell
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_transformation_spell = { #变形术
+		research_cost = 1
+		start_year = 992
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 0 y = @992 }
+		}
+		categories = {
+			war_behemoth
+		}
+		category_cavalry = {
+			soft_attack = 0.05
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_nature_favored
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_nature_favored = { #自然眷属
+		research_cost = 1.25
+		start_year = 996
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 0 y = @996 }
+		}
+		categories = {
+			war_behemoth
+		}
+		army_speed_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_children_of_the_forest
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_children_of_the_forest = { #森林之子
+		research_cost = 1.25
+		start_year = 1000
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 0 y = @1000 }
+		}
+		categories = {
+			war_behemoth
+		}
+		dig_in_speed_factor = 0.10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_green_hell
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_green_hell = { #绿色地狱
+		research_cost = 1.5
+		start_year = 1004
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 0 y = @1004 }
+		}
+		categories = {
+			war_behemoth
+		}
+		supply_consumption_factor = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# ---------------- 第二列：异兽驯化线 ----------------
+	fe_exotic_beast_taming = { #异兽驯化
+		research_cost = 1
+		start_year = 988
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 1 y = @988 }
+		}
+		categories = {
+			war_behemoth
+		}
+		category_cavalry = {
+			maximum_speed = 0.05
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_magicbeast_cavalry
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fe_dragons_nest
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fe_titan_spirit
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_magicbeast_cavalry = { #魔兽骑兵
+		research_cost = 1
+		start_year = 992
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 1 y = @992 }
+		}
+		categories = {
+			war_behemoth
+		}
+		category_cavalry = {
+			breakthrough = 0.05
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_call_of_the_wild
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fe_fullyarmored_heavy_cavalry
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_call_of_the_wild = { #野性呼唤
+		research_cost = 1.25
+		start_year = 996
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 1 y = @996 }
+		}
+		categories = {
+			war_behemoth
+		}
+		experience_gain_army_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_beastsoul_blessing
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_beastsoul_blessing = { #兽灵护佑
+		research_cost = 1.25
+		start_year = 1000
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 1 y = @1000 }
+		}
+		categories = {
+			war_behemoth
+		}
+		category_cavalry = {
+			defense = 0.05
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_ancestors_are_calling
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_ancestors_are_calling = { #祖先在召唤
+		research_cost = 1.5
+		start_year = 1004
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 1 y = @1004 }
+		}
+		categories = {
+			war_behemoth
+		}
+		org_loss_when_moving = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# ---------------- 第三列：全甲重骑线 ----------------
+	fe_fullyarmored_heavy_cavalry = { #全甲重骑
+		research_cost = 1
+		start_year = 992
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 2 y = @992 }
+		}
+		categories = {
+			war_behemoth
+		}
+		category_cavalry = {
+			defense = 0.10
+			breakthrough = 0.05
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_raging_behemoth
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_raging_behemoth = { #狂暴巨兽
+		research_cost = 1.25
+		start_year = 996
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 2 y = @996 }
+		}
+		categories = {
+			war_behemoth
+		}
+		category_cavalry = {
+			soft_attack = 0.10
+			breakthrough = 0.05
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_truedragon_rider
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_truedragon_rider = { #真龙骑手
+		research_cost = 1.25
+		start_year = 1000
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 2 y = @1000 }
+		}
+		categories = {
+			war_behemoth
+		}
+		category_cavalry = {
+			breakthrough = 0.10
+			maximum_speed = 0.05
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_emperors_credentials
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_emperors_credentials = { #帝王之证
+		research_cost = 1.5
+		start_year = 1004
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 2 y = @1004 }
+		}
+		categories = {
+			war_behemoth
+		}
+		category_cavalry = {
+			soft_attack = 0.10
+			hard_attack = 0.10
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# ---------------- 第四列：巨龙之巢线 ----------------
+	fe_dragons_nest = { #巨龙之巢
+		research_cost = 1.25
+		start_year = 996
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 3 y = @996 }
+		}
+		categories = {
+			war_behemoth
+		}
+		experience_gain_army_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_raging_behemoth
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fe_bio_alchemy
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_bio_alchemy = { #生体炼金
+		research_cost = 1.25
+		start_year = 1000
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 3 y = @1000 }
+		}
+		categories = {
+			war_behemoth
+		}
+		land_reinforce_rate = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_chimera
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fe_titanism
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_chimera = { #奇美拉
+		research_cost = 1.5
+		start_year = 1004
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 3 y = @1004 }
+		}
+		categories = {
+			war_behemoth
+		}
+		category_cavalry = {
+			soft_attack = 0.10
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_beneath_the_dragon
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_beneath_the_dragon = { #异龙之下
+		research_cost = 1.75
+		start_year = 1008
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 3 y = @1008 }
+		}
+		categories = {
+			war_behemoth
+		}
+		category_cavalry = {
+			breakthrough = 0.15
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# ---------------- 第五列：泰坦巨灵线 ----------------
+	fe_titan_spirit = { #泰坦巨灵
+		research_cost = 1.25
+		start_year = 996
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 4 y = @996 }
+		}
+		categories = {
+			war_behemoth
+		}
+		category_cavalry = {
+			defense = 0.10
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_titanism
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_titanism = { #巨灵观
+		research_cost = 1.5
+		start_year = 1004
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 4 y = @1004 }
+		}
+		categories = {
+			war_behemoth
+		}
+		supply_consumption_factor = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_jormungandr
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_jormungandr = { #耶梦加德
+		research_cost = 1.75
+		start_year = 1008
+		folder = {
+			name = fe_behemoth_folder
+			position = { x = 4 y = @1008 }
+		}
+		categories = {
+			war_behemoth
+		}
+		category_cavalry = {
+			soft_attack = 0.15
+			hard_attack = 0.15
+			maximum_speed = 0.05
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

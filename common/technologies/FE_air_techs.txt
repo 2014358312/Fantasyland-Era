@@ -1,0 +1,591 @@
+# ============================================================
+# 幻想航空科技（科研-飞机.drawio.pdf）
+# 结构：四条载具主线（个人飞行载具 / 空骑兵 / 空中战舰 / 悬浮法阵）
+#       + 右侧机载武备与指挥分支（前置布局 / 快装弩机 / 航弹）
+# 注意：具体效果为占位数值，待策划案确定后调整 —— 图标为占位图
+# ============================================================
+technologies = {
+	@984 = 0
+	@988 = 1
+	@992 = 2
+	@996 = 3
+	@1000 = 4
+	@1004 = 5
+	@1008 = 6
+	@1012 = 7
+
+	# ---------------- 第一列：个人飞行载具线 ----------------
+	fe_personal_flight_vehicle = { #个人飞行载具
+		research_cost = 1
+		start_year = 984
+		folder = {
+			name = fe_air_folder
+			position = { x = 0 y = @984 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+			light_air
+		}
+		experience_gain_air_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_mana_boat
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_mana_boat = { #魔能艇
+		research_cost = 1
+		start_year = 992
+		folder = {
+			name = fe_air_folder
+			position = { x = 0 y = @992 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+			light_air
+		}
+		air_accidents_factor = -0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_armored_mana_boat
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_armored_mana_boat = { #装甲魔艇
+		research_cost = 1.25
+		start_year = 1000
+		folder = {
+			name = fe_air_folder
+			position = { x = 0 y = @1000 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+			light_air
+		}
+		air_defence_factor = 0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_demonrealm_dart
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_demonrealm_dart = { #魔界尖梭
+		research_cost = 1.5
+		start_year = 1008
+		folder = {
+			name = fe_air_folder
+			position = { x = 0 y = @1008 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+			light_air
+		}
+		air_agility_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# ---------------- 第二列：空骑兵与战机线 ----------------
+	fe_air_cavalry = { #空骑兵
+		research_cost = 1
+		start_year = 984
+		folder = {
+			name = fe_air_folder
+			position = { x = 1 y = @984 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+			light_air
+		}
+		army_bonus_air_superiority_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_traditional_aircraft
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_traditional_aircraft = { #传统构想飞行器
+		research_cost = 1
+		start_year = 992
+		folder = {
+			name = fe_air_folder
+			position = { x = 1 y = @992 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+			light_air
+		}
+		air_mission_efficiency = 0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_drag_reduction_fighter
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_drag_reduction_fighter = { #褪阻力战机
+		research_cost = 1.25
+		start_year = 1000
+		folder = {
+			name = fe_air_folder
+			position = { x = 1 y = @1000 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+			light_air
+		}
+		air_agility_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_multipurpose_aircraft
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_multipurpose_aircraft = { #泛用飞行器
+		research_cost = 1.5
+		start_year = 1008
+		folder = {
+			name = fe_air_folder
+			position = { x = 1 y = @1008 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+			light_air
+		}
+		air_attack_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# ---------------- 第三列：空中战舰线 ----------------
+	fe_sky_warship = { #空中战舰
+		research_cost = 1
+		start_year = 984
+		folder = {
+			name = fe_air_folder
+			position = { x = 2 y = @984 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+			heavy_air
+		}
+		air_strategic_bomber_bombing_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_sky_island
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_sky_island = { #空岛
+		research_cost = 1
+		start_year = 992
+		folder = {
+			name = fe_air_folder
+			position = { x = 2 y = @992 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+			heavy_air
+		}
+		air_cas_present_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_aerospace_carrier
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_aerospace_carrier = { #空天母舰
+		research_cost = 1.25
+		start_year = 1000
+		folder = {
+			name = fe_air_folder
+			position = { x = 2 y = @1000 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+			heavy_air
+		}
+		air_superiority_detect_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_stratospheric_fortress
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_stratospheric_fortress = { #同温层堡垒
+		research_cost = 1.75
+		start_year = 1008
+		folder = {
+			name = fe_air_folder
+			position = { x = 2 y = @1008 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+			heavy_air
+		}
+		air_strategic_bomber_bombing_factor = 0.10
+		air_defence_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# ---------------- 第四列：悬浮法阵与引擎线 ----------------
+	fe_small_levitation_circle = { #小型悬浮法阵
+		research_cost = 1
+		start_year = 984
+		folder = {
+			name = fe_air_folder
+			position = { x = 3 y = @984 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+		}
+		air_accidents_factor = -0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_antigravity_formation
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_antigravity_formation = { #反重力术式
+		research_cost = 1
+		start_year = 992
+		folder = {
+			name = fe_air_folder
+			position = { x = 3 y = @992 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+		}
+		air_agility_factor = 0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_high_speed_engine
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_high_speed_engine = { #高速引擎
+		research_cost = 1.25
+		start_year = 1000
+		folder = {
+			name = fe_air_folder
+			position = { x = 3 y = @1000 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+		}
+		air_mission_efficiency = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_omnidirectional_engine
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_omnidirectional_engine = { #全向机动引擎
+		research_cost = 1.75
+		start_year = 1008
+		folder = {
+			name = fe_air_folder
+			position = { x = 3 y = @1008 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+		}
+		air_agility_factor = 0.10
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# ---------------- 第五列：前置布局与指挥线 ----------------
+	fe_front_layout = { #前置布局
+		research_cost = 1
+		start_year = 988
+		folder = {
+			name = fe_air_folder
+			position = { x = 4 y = @988 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+		}
+		air_attack_factor = 0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_rear_layout
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fe_quickmount_ballista
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_rear_layout = { #后置布局
+		research_cost = 1
+		start_year = 996
+		folder = {
+			name = fe_air_folder
+			position = { x = 4 y = @996 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+		}
+		air_defence_factor = 0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_central_command_aircraft
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_central_command_aircraft = { #中枢指挥机
+		research_cost = 1.5
+		start_year = 1004
+		folder = {
+			name = fe_air_folder
+			position = { x = 4 y = @1004 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+		}
+		air_ace_generation_chance_factor = 0.05
+		air_mission_efficiency = 0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_air_ground_integration
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fe_autonomous_combat_fairy
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_autonomous_combat_fairy = { #自律战斗妖精
+		research_cost = 2
+		start_year = 1012
+		folder = {
+			name = fe_air_folder
+			position = { x = 4 y = @1012 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+		}
+		air_ace_generation_chance_factor = 0.05
+		air_accidents_factor = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# ---------------- 第六列：快装弩机与巡飞弹线 ----------------
+	fe_quickmount_ballista = { #快装弩机
+		research_cost = 1
+		start_year = 988
+		folder = {
+			name = fe_air_folder
+			position = { x = 5 y = @988 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+		}
+		air_attack_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_rapidfire_magic_device
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = fe_aerial_bomb
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_rapidfire_magic_device = { #速射魔导器
+		research_cost = 1.25
+		start_year = 996
+		folder = {
+			name = fe_air_folder
+			position = { x = 5 y = @996 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+		}
+		air_attack_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_loitering_munition
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_air_ground_integration = { #空地一体机
+		research_cost = 1.5
+		start_year = 1008
+		folder = {
+			name = fe_air_folder
+			position = { x = 5 y = @1008 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+		}
+		air_cas_present_factor = 0.10
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# ---------------- 第七列：航弹线 ----------------
+	fe_aerial_bomb = { #航弹
+		research_cost = 1.25
+		start_year = 996
+		folder = {
+			name = fe_air_folder
+			position = { x = 6 y = @996 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+		}
+		air_strategic_bomber_bombing_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		path = {
+			leads_to_tech = fe_loitering_munition
+			research_cost_coeff = 1
+		}
+	}
+
+	fe_loitering_munition = { #巡飞弹
+		research_cost = 1.5
+		start_year = 1004
+		folder = {
+			name = fe_air_folder
+			position = { x = 6 y = @1004 }
+		}
+		categories = {
+			fantasy_aircraft
+			air_equipment
+		}
+		air_attack_factor = 0.05
+		air_mission_efficiency = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
