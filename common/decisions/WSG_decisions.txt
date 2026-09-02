@@ -3953,7 +3953,12 @@ WSG_from_the_deep_sea_category = {
 		days_mission_timeout = 1080
 		allowed = { tag = WSG }
 		priority = 20
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = WSG_remove_from_the_deep_sea_invasion
+			    NOT = { has_country_flag = WSG_from_the_deep_sea }
+			}
+		}
 		activation = { has_country_flag = WSG_from_the_deep_sea }
 		selectable_mission = no
 		is_good = yes
@@ -3962,9 +3967,7 @@ WSG_from_the_deep_sea_category = {
 			clr_country_flag = WSG_from_the_deep_sea
 		}
 		complete_effect = {}
-		cancel_trigger = {
-			NOT = { has_country_flag = WSG_from_the_deep_sea }
-		}
+		cancel_trigger = {}
 		cancel_effect = {}
 	}
 

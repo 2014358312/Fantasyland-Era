@@ -132,19 +132,21 @@ country_event = {
 	desc = WSG_event.008.d
 	is_triggered_only = yes
 	immediate = {
-		every_core_state = {
-			limit = { has_state_flag = WSG_deep_sea_attack }
-			save_event_target_as = WSG_from_the_deep_sea_attack
+		hidden_effect = {
+			every_core_state = {
+				limit = { has_state_flag = WSG_deep_sea_attack }
+				save_event_target_as = WSG_from_the_deep_sea_attack
+			}
+      	    randomize_variable = {
+	  	        var = WSG_reduce_manpower
+	  	        distribution = uniform
+	    	    min = -5000
+				max = -500
+        	}
+			add_to_temp_variable = { WSG_reduce_manpower0 = WSG_reduce_manpower }
+			multiply_temp_variable = { WSG_reduce_manpower0 = -1 }
+			add_to_variable = { WSG_all_death = WSG_reduce_manpower0 }
 		}
-        randomize_variable = {
-	        var = WSG_reduce_manpower
-	        distribution = uniform
-	        min = -5000
-			max = -500
-        }
-		add_to_temp_variable = { WSG_reduce_manpower0 = WSG_reduce_manpower }
-		multiply_temp_variable = { WSG_reduce_manpower0 = -1 }
-		add_to_variable = { WSG_all_death = WSG_reduce_manpower0 }
 	}
 	option = {
 		name = WSG_event.008.a
@@ -204,7 +206,9 @@ country_event = {
 	}
 	fire_only_once = yes
 	immediate = {
-		country_event = { days = 90 id = WSG_event.010 }
+		hidden_effect = {
+		    country_event = { days = 90 id = WSG_event.010 }
+		}
 	}
 	option = {
 		name = WSG_event.009.a
@@ -231,7 +235,9 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	immediate = {
-		country_event = { days = 90 id = WSG_event.011 }
+		hidden_effect = {
+		    country_event = { days = 90 id = WSG_event.011 }
+		}
 	}
 	option = {
 		name = WSG_event.010.a
@@ -257,7 +263,9 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	immediate = {
-		country_event = { days = 90 id = WSG_event.012 }
+		hidden_effect = {
+		    country_event = { days = 90 id = WSG_event.012 }
+		}
 	}
 	option = {
 		name = WSG_event.011.a
