@@ -319,14 +319,11 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 		on_complete = {
 			hidden_effect = {
 				set_variable = {
-					LAN_research_bonus_tasks_trigger = number_of_currently_assigned_tasks
+					LAN_research_bonus_temp = number_of_currently_assigned_tasks
 				}
 				clamp_variable = {
-					var = LAN_research_bonus_tasks_trigger
+					var = LAN_research_bonus_temp
 					max = 4
-				}
-				set_temp_variable = {
-					LAN_research_bonus_temp = LAN_research_bonus_tasks_trigger
 				}
 				multiply_temp_variable = {
 					LAN_research_bonus_temp = 0.05
