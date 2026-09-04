@@ -201,13 +201,226 @@ LAN_skystar_technology_materiel_organization = {
 }
 
 LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
-	include = generic_artillery_organization
+	include = fe_artillery_organization
+	name = LAN_landsol_royal_artillery_arsenal_factory_materiel_organization
 	icon = GFX_idea_SMA_amber
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
 		FROM = { original_tag = LAN }
 	}
 	visible = { FROM = { original_tag = LAN } }
+	equipment_type = {
+		mio_cat_eq_all_artillery
+		FE_infantry_weapons_3
+	}
+	on_industrial_manufacturer_assigned = {
+		if = {
+			limit = {
+				is_mio_trait_completed = fe_mio_artillery_research
+				NOT = {
+					check_variable = {
+						number_of_currently_assigned_tasks > 4
+					}
+				}
+			}
+			add_mio_research_bonus = 0.05
+		}
+	}
+	on_industrial_manufacturer_unassigned = {
+		hidden_effect = {
+			if = {
+				limit = {
+					is_mio_trait_completed = fe_mio_artillery_research
+					check_variable = {
+						number_of_currently_assigned_tasks < 4
+					}
+				}
+				add_mio_research_bonus = -0.05
+			}
+		}
+	}
+	on_design_team_assigned_to_tech = {
+		if = {
+			limit = {
+				is_mio_trait_completed = fe_mio_artillery_research
+				NOT = {
+					check_variable = {
+						LAN_mio_research_bonus > number_of_currently_assigned_tasks
+					}
+				}
+			}
+			add_mio_research_bonus = 0.05
+		}
+	}
+	on_tech_research_cancelled = {
+		hidden_effect = {
+			if = {
+				limit = {
+					is_mio_trait_completed = fe_mio_artillery_research
+					check_variable = {
+						number_of_currently_assigned_tasks < 4
+					}
+				}
+				add_mio_research_bonus = -0.05
+			}
+		}
+	}
+	on_tech_research_completed = {
+		if = {
+			limit = {
+				is_mio_trait_completed = fe_mio_artillery_fund
+			}
+			add_mio_funds_gain_factor = 0.05
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					is_mio_trait_completed = fe_mio_artillery_research
+					check_variable = {
+						number_of_currently_assigned_tasks < 4
+					}
+				}
+				add_mio_research_bonus = -0.05
+			}
+		}
+	}
+	tree_header_text = {
+		text = mio_header_design_and_production
+		x = 2
+	}
+	tree_header_text = {
+		text = mio_header_armament_and_ammunition
+		x = 6
+	}
+	tree_header_text = {
+		text = infantry_equipment
+		x = 8
+	}
+	initial_trait = {
+		name = "魔导重武器设计商"
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.2
+		}
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+	}
+	override_trait = {
+		token = fe_mio_artillery_design
+		position = { x=1 y=0 }
+	}
+	override_trait = {
+		token = fe_mio_artillery_research
+		special_trait_background = yes
+		organization_modifier = {
+			custom_modifier_tooltip = LAN_mio_artillery_research_tt
+		}
+		on_complete = {
+			hidden_effect = {
+				set_variable = {
+					LAN_research_bonus_tasks_trigger = number_of_currently_assigned_tasks
+				}
+				clamp_variable = {
+					var = LAN_research_bonus_tasks_trigger
+					max = 4
+				}
+				set_temp_variable = {
+					LAN_research_bonus_temp = LAN_research_bonus_tasks_trigger
+				}
+				multiply_temp_variable = {
+					LAN_research_bonus_temp = 0.05
+				}
+				add_mio_research_bonus = LAN_research_bonus_temp
+			}
+		}
+	}
+	override_trait = {
+		token = fe_mio_artillery_fund
+		name = "科技融资"
+		special_trait_background = yes
+		production_bonus = {
+			production_capacity_factor = 0
+		}
+		organization_modifier = {
+			custom_modifier_tooltip = LAN_mio_artillery_fund_tt
+		}
+	}
+	override_trait = {
+		token = fe_mio_artillery_defense
+		mutually_exclusive = { fe_mio_artillery_infantry_cost }
+	}
+	override_trait = {
+		token = fe_mio_artillery_soft_attack
+		mutually_exclusive = { fe_mio_artillery_ap_attack fe_mio_artillery_infantry_attack }
+	}
+	override_trait = {
+		token = fe_mio_artillery_ap_attack
+		mutually_exclusive = { fe_mio_artillery_soft_attack fe_mio_artillery_infantry_attack }
+	}
+	add_trait = {
+		token = fe_mio_artillery_infantry_cost
+		name = "单人术式"
+		icon = GFX_generic_mio_department_icon_infantry_quality
+		position = { x=2 y=0 }
+		relative_position_id = fe_mio_artillery_defense
+		mutually_exclusive = {
+			fe_mio_artillery_defense
+		}
+		limit_to_equipment_type = {
+			FE_infantry_weapons_3
+		}
+		equipment_bonus = {
+			build_cost_ic = -0.2
+			reliability = -0.05
+		}
+	}
+	add_trait = {
+		token = fe_mio_artillery_infantry_attack
+		name = "魔导单元小型化"
+		icon = GFX_military_industrial_organization_infantry_equipment
+		position = { x=0 y=2 }
+		relative_position_id = fe_mio_artillery_infantry_cost
+		any_parent = {
+			fe_mio_artillery_infantry_cost
+			fe_mio_artillery_reliability
+		}
+		mutually_exclusive = {
+			fe_mio_artillery_soft_attack
+			fe_mio_artillery_ap_attack
+		}
+		limit_to_equipment_type = {
+			FE_infantry_weapons_3
+		}
+		equipment_bonus = {
+			soft_attack = 0.15
+			hard_attack = 0.15
+			ap_attack = 0.15
+			reliability = -0.05
+		}
+	}
+	add_trait = {
+		token = fe_mio_artillery_infantry_capacity
+		name = "量产化设计"
+		icon = GFX_generic_mio_department_icon_infantry_line_efficiency
+		position = { x=0 y=2 }
+		relative_position_id = fe_mio_artillery_infantry_attack
+		all_parents = {
+			fe_mio_artillery_infantry_attack
+		}
+		limit_to_equipment_type = {
+			FE_infantry_weapons_3
+		}
+		production_bonus = {
+			production_efficiency_cap_factor = 0.1
+			production_efficiency_gain_factor = 0.1
+			production_capacity_factor = 0.05
+			production_cost_factor = -0.05
+		}
+		equipment_bonus = {
+			reliability = -0.05
+		}
+	}
 }
 
 LAN_little_lyrical_workshop_materiel_organization = {
