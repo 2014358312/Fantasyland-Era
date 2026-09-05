@@ -1,4 +1,85 @@
 defined_text = {
+	name = GETToolName
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { tool_index = v } }
+			}
+		}
+		localization_key = "FE_tool_name_[?tool_index]"
+	}
+	text = { localization_key = general_null }
+}
+
+defined_text = {
+	name = GETBUFFName
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { buff_index = v } }
+			}
+		}
+		localization_key = "FE_tool_show_buff_name_text_[?buff_index]"
+	}
+	text = { localization_key = general_null }
+}
+
+defined_text = {
+	name = GETBUFFTabCategory
+	text = {
+		trigger = {
+			check_variable = { FE_show_buff_tab_array^1 = 1 }
+			check_variable = { FE_show_buff_tab_array^2 = 2 }
+			check_variable = { FE_show_buff_tab_array^3 = 2 }
+			check_variable = { FE_show_buff_tab_array^4 = 2 }
+			check_variable = { FE_show_buff_tab_array^5 = 2 }
+		}
+		localization_key = "FE_tool_show_buff_category_1"
+	}
+	text = {
+		trigger = {
+			check_variable = { FE_show_buff_tab_array^1 = 2 }
+			check_variable = { FE_show_buff_tab_array^2 = 1 }
+			check_variable = { FE_show_buff_tab_array^3 = 2 }
+			check_variable = { FE_show_buff_tab_array^4 = 2 }
+			check_variable = { FE_show_buff_tab_array^5 = 2 }
+		}
+		localization_key = "FE_tool_show_buff_category_2"
+	}
+	text = {
+		trigger = {
+			check_variable = { FE_show_buff_tab_array^1 = 2 }
+			check_variable = { FE_show_buff_tab_array^2 = 2 }
+			check_variable = { FE_show_buff_tab_array^3 = 1 }
+			check_variable = { FE_show_buff_tab_array^4 = 2 }
+			check_variable = { FE_show_buff_tab_array^5 = 2 }
+		}
+		localization_key = "FE_tool_show_buff_category_3"
+	}
+	text = {
+		trigger = {
+			check_variable = { FE_show_buff_tab_array^1 = 2 }
+			check_variable = { FE_show_buff_tab_array^2 = 2 }
+			check_variable = { FE_show_buff_tab_array^3 = 2 }
+			check_variable = { FE_show_buff_tab_array^4 = 1 }
+			check_variable = { FE_show_buff_tab_array^5 = 2 }
+		}
+		localization_key = "FE_tool_show_buff_category_4"
+	}
+	text = {
+		trigger = {
+			check_variable = { FE_show_buff_tab_array^1 = 2 }
+			check_variable = { FE_show_buff_tab_array^2 = 2 }
+			check_variable = { FE_show_buff_tab_array^3 = 2 }
+			check_variable = { FE_show_buff_tab_array^4 = 2 }
+			check_variable = { FE_show_buff_tab_array^5 = 1 }
+		}
+		localization_key = "FE_tool_show_buff_category_5"
+	}
+	text = { localization_key = general_null }
+}
+
+defined_text = {
 	name = GETStatisticsClassificationIndex
 	text = {
 		trigger = {
@@ -6,7 +87,7 @@ defined_text = {
 				text = { set_temp_variable = { classification_index = c_v } }
 			}
 		}
-		localization_key = "classification_index_[?c_v]"
+		localization_key = "classification_index_[?classification_index]"
 	}
 	text = { localization_key = general_null }
 }

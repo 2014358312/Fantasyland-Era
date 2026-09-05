@@ -84,13 +84,32 @@ scripted_gui = {
 
 		triggers = {
 			country_special_icon_visible = {
-				is_debug = no
+				#is_debug = no
+				always = yes
 			}
 		}
 
 		effects = {
 			country_special_gui_click = {
-				GLOBAL_statistics_refresh_countries = yes
+				if = {
+					limit = {
+						OR = {
+							is_in_array = { FE_statistics_tools_show_array = 2 }
+							check_variable = { FE_statistics_tools_box_show_var = 2 }
+						}
+					}
+					set_variable = { FE_statistics_tools_box_show_var = 1 }
+					for_each_loop = {
+						array = FE_statistics_tools_show_array
+						index = i
+						
+						set_variable = { FE_statistics_tools_show_array^i = 1 }
+					}
+				}
+				else = {
+					set_variable = { FE_statistics_tools_box_show_var = 2 }
+					FE_calc_tools = yes
+				}
 			}
 		}
 	}

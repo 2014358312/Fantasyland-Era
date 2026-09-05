@@ -1,3 +1,80 @@
+FE_refresh_statistics_tools_box = {
+	if = {
+		limit = {
+			NOT = { check_variable = { FE_statistics_tools_box_dirty_var = 0 } }
+		}
+		set_variable = { FE_statistics_tools_box_dirty_var = 0 }
+	}
+	else = { add_to_variable = { FE_statistics_tools_box_dirty_var = 1 } }
+}
+
+FE_calc_tools = {
+	clear_array = FE_tools_array
+	add_to_array = { FE_tools_array = 1 }
+	add_to_array = { FE_tools_array = 2 }
+	clear_array = FE_statistics_tools_show_array
+	for_each_loop = {
+		array = FE_tools_array
+		
+		add_to_array = { FE_statistics_tools_show_array = 1 }
+	}
+	
+	FE_refresh_statistics_tools_box = yes
+}
+
+FE_tool_exec_1 = {
+	for_each_loop = {
+		array = FE_statistics_tools_show_array
+		index = i
+		
+		set_variable = { FE_statistics_tools_show_array^i = 1 }
+	}
+	set_variable = { FE_statistics_tools_show_array^0 = 2 }
+	set_variable = { FE_statistics_tools_box_show_var = 1 }
+	
+	clear_array = FE_show_buff_tab_array
+	add_to_array = { FE_show_buff_tab_array = 114514 } #Placeholder
+	add_to_array = { FE_show_buff_tab_array = 1 }
+	add_to_array = { FE_show_buff_tab_array = 2 }
+	add_to_array = { FE_show_buff_tab_array = 2 }
+	add_to_array = { FE_show_buff_tab_array = 2 }
+	add_to_array = { FE_show_buff_tab_array = 2 }
+	clear_array = FE_tool_show_buff_array
+	for_loop_effect = {
+		start = 1
+		end = 21
+		compare = less_than_or_equals
+		value = temp_v
+		
+		add_to_array = { FE_tool_show_buff_array = temp_v }
+	}
+	
+	FE_refresh_statistics_tools_box = yes
+}
+
+FE_tool_1_init_tab = {
+	for_each_loop = {
+		array = FE_show_buff_tab_array
+		index = i
+		
+		set_variable = { FE_show_buff_tab_array^i = 2 }
+	}
+}
+
+FE_tool_exec_2 = {
+	for_each_loop = {
+		array = FE_statistics_tools_show_array
+		index = i
+		
+		set_variable = { FE_statistics_tools_show_array^i = 1 }
+	}
+	set_variable = { FE_statistics_tools_show_array^1 = 2 }
+	set_variable = { FE_statistics_tools_box_show_var = 1 }
+	GLOBAL_statistics_refresh_countries = yes
+	
+	FE_refresh_statistics_tools_box = yes
+}
+
 GLOBAL_statistics_refresh_countries = {
 	hidden_effect = {
 		if = {
