@@ -5783,62 +5783,12 @@ country_event = {
 	fire_only_once = no
 
 	trigger = {
-		tag = TIA
-		has_country_flag = TIA_countdown_active
-		OR = {
-			AND = {
-				check_variable = { TIA_faith_timer > 0 }
-				NOT = { has_country_flag = TIA_faith_line_complete }
-			}
-			AND = {
-				check_variable = { TIA_health_timer > 0 }
-				NOT = { has_country_flag = TIA_epidemic_defense_complete }
-			}
-		}
 	}
 
 	mean_time_to_happen = {
-		days = 28
 	}
 
 	immediate = {
-		# Decrement faith timer
-		if = {
-			limit = {
-				check_variable = { TIA_faith_timer > 0 }
-				NOT = { has_country_flag = TIA_faith_line_complete }
-			}
-			subtract_from_variable = { TIA_faith_timer = 30 }
-		}
-		# Decrement health timer
-		if = {
-			limit = {
-				check_variable = { TIA_health_timer > 0 }
-				NOT = { has_country_flag = TIA_epidemic_defense_complete }
-			}
-			subtract_from_variable = { TIA_health_timer = 30 }
-		}
-
-		# Check faith expiry
-		if = {
-			limit = {
-				NOT = { check_variable = { TIA_faith_timer > 0 } }
-				NOT = { has_country_flag = TIA_faith_line_complete }
-				NOT = { has_country_flag = TIA_faith_crisis_fired }
-			}
-			set_country_flag = TIA_faith_crisis_fired
-			country_event = { id = TIA.144 days = 1 }
-		}
-		# Check health expiry
-		if = {
-			limit = {
-				NOT = { check_variable = { TIA_health_timer > 0 } }
-				NOT = { has_country_flag = TIA_epidemic_defense_complete }
-				NOT = { has_country_flag = TIA_health_crisis_fired }
-			}
-			set_country_flag = TIA_health_crisis_fired
-			country_event = { id = TIA.145 days = 1 }
-		}
 	}
 
 	option = { }
@@ -5878,9 +5828,7 @@ country_event = {
 		add_political_power = -50
 		add_war_support = -0.05
 		add_ideas = TIA_legitimate_war
-		hidden_effect = {
-			set_country_flag = TIA_domino_faith_fallen
-		}
+		set_country_flag = TIA_faith_crisis_fired
 		ai_chance = { factor = 100 }
 	}
 }

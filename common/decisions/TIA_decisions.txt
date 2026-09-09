@@ -1695,10 +1695,6 @@ TIA_grace_mission_decisions = {
 }
 
 ###################################
-# 水神信仰线 - 后期追加决议
-###################################
-
-###################################
 # 芙宁娜线 - 朝圣经济决议（圣地开发后解锁）
 ###################################
 
@@ -2892,6 +2888,8 @@ TIA_countdown_category = {
 	TIA_countdown_food = {
 		icon = generic_crisis
 		allowed = { tag = TIA }
+		days_mission_timeout = TIA_food_timer
+		is_good = no
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = TIA_countdown_food_status_tt
@@ -2900,27 +2898,24 @@ TIA_countdown_category = {
 		}
 		visible = {
 			has_country_flag = TIA_countdown_active
+		}
+		activation = {
+			custom_trigger_tooltip = {
+				tooltip = TIA_countdown_food_status_tt
+				check_variable = { TIA_food_timer > 0 }
+			}
+			has_country_flag = TIA_countdown_active
 			NOT = { has_country_flag = TIA_food_line_complete }
-			NOT = { has_country_flag = TIA_food_crisis_fired }
 		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-		}
-		ai_will_do = { factor = 0 }
-	}
-
-	TIA_countdown_food_complete = {
-		icon = generic_political_actions
-		allowed = { tag = TIA }
 		available = {
-			always = no
-		}
-		visible = {
 			has_country_flag = TIA_food_line_complete
 		}
-		fire_only_once = no
-		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = TIA_countdown_food_complete_tt
+		}
+		timeout_effect = {
+			country_event = { id = TIA.143 }
+		}
 		ai_will_do = { factor = 0 }
 	}
 
@@ -2932,6 +2927,10 @@ TIA_countdown_category = {
 		icon = generic_crisis
 		allowed = { tag = TIA }
 		days_mission_timeout = TIA_faith_timer
+		is_good = no
+		visible = {
+			has_country_flag = TIA_countdown_active
+		}
 		activation = {
 			custom_trigger_tooltip = {
 				tooltip = TIA_countdown_faith_status_tt
@@ -2939,29 +2938,16 @@ TIA_countdown_category = {
 			}
 			has_country_flag = TIA_countdown_active
 			NOT = { has_country_flag = TIA_faith_line_complete }
-			NOT = { has_country_flag = TIA_faith_crisis_fired }
 		}
 		available = {
-			OR = {
-				has_country_flag = TIA_faith_line_complete
-				has_country_flag = TIA_faith_crisis_fired
-			}
-		}
-		is_good = no
-	}
-
-	TIA_countdown_faith_complete = {
-		icon = generic_political_actions
-		allowed = { tag = TIA }
-		available = {
-			always = no
-		}
-		visible = {
 			has_country_flag = TIA_faith_line_complete
 		}
-		fire_only_once = no
-		cost = 0
-		ai_will_do = { factor = 0 }
+		complete_effect = {
+			custom_effect_tooltip = TIA_countdown_faith_complete_tt
+		}
+		timeout_effect = {
+			country_event = { id = TIA.144 }
+		}
 	}
 
 	###################################
@@ -2970,8 +2956,12 @@ TIA_countdown_category = {
 
 	TIA_countdown_health = {
 		icon = generic_crisis
-		days_mission_timeout = TIA_health_timer
 		allowed = { tag = TIA }
+		days_mission_timeout = TIA_health_timer
+		is_good = no
+		visible = {
+			has_country_flag = TIA_countdown_active
+		}
 		activation = {
 			custom_trigger_tooltip = {
 				tooltip = TIA_countdown_health_status_tt
@@ -2979,28 +2969,15 @@ TIA_countdown_category = {
 			}
 			has_country_flag = TIA_countdown_active
 			NOT = { has_country_flag = TIA_epidemic_defense_complete }
-			NOT = { has_country_flag = TIA_health_crisis_fired }
 		}
 		available = {
-			OR = {
-				has_country_flag = TIA_epidemic_defense_complete
-				has_country_flag = TIA_health_crisis_fired
-			}
-		}
-		is_good = no
-	}
-
-	TIA_countdown_health_complete = {
-		icon = generic_political_actions
-		allowed = { tag = TIA }
-		available = {
-			always = no
-		}
-		visible = {
 			has_country_flag = TIA_epidemic_defense_complete
 		}
-		fire_only_once = no
-		cost = 0
-		ai_will_do = { factor = 0 }
+		complete_effect = {
+			custom_effect_tooltip = TIA_countdown_health_complete_tt
+		}
+		timeout_effect = {
+			country_event = { id = TIA.145 }
+		}
 	}
 }
