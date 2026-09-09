@@ -732,3 +732,127 @@ SMA_subtract_industry_program_start_cost = {
 	subtract_from_variable = { SMA_industry_program_var = 25 }
 	custom_effect_tooltip = generic_skip_one_line_tt
 }
+
+SMA_init_divide_states = {
+	SMA_point_western_core_states = yes
+	SMA_point_northern_core_states = yes
+	SMA_point_eastern_core_states = yes
+	SMA_point_southern_core_states = yes
+	SMA_point_centre_core_states = yes
+	SMA_point_regicide_states = yes
+	SMA_point_walther_states = yes
+}
+
+SMA_point_western_core_states = {
+	every_state = {
+		limit = {
+			OR = {
+				state = 68
+				state = 69
+				state = 70
+				state = 71
+				state = 89
+				state = 90
+			}
+		}
+		set_state_flag = SMA_western_core_states_flag
+	}
+}
+
+SMA_point_northern_core_states = {
+	every_state = {
+		limit = {
+			OR = {
+				state = 72
+				state = 73
+				state = 74
+				state = 75
+				state = 76
+				state = 77
+				state = 575
+				state = 94
+			}
+		}
+		set_state_flag = SMA_northern_core_states_flag
+	}
+}
+
+SMA_point_eastern_core_states = {
+	every_state = {
+		limit = {
+			OR = {
+				state = 573
+				state = 78
+				state = 79
+				state = 80
+				state = 81
+				state = 99
+				state = 100
+				state = 101
+			}
+		}
+		set_state_flag = SMA_eastern_core_states_flag
+	}
+}
+
+SMA_point_southern_core_states = {
+	every_state = {
+		limit = {
+			OR = {
+				state = 82
+				state = 83
+				state = 84
+				state = 85
+			}
+		}
+		set_state_flag = SMA_southern_core_states_flag
+	}
+}
+
+SMA_point_centre_core_states = {
+	every_state = {
+		limit = {
+			OR = {
+				state = 95
+				state = 96
+				state = 97
+				state = 98
+			}
+		}
+		set_state_flag = SMA_centre_core_states_flag
+	}
+}
+
+SMA_point_regicide_states = {
+	every_state = {
+		limit = {
+			OR = {
+				state = 86
+				state = 91
+				state = 92
+				state = 852
+				state = 853
+			}
+		}
+		set_state_flag = SMA_regicide_states_flag
+	}
+}
+
+SMA_point_walther_states = {
+	every_state = {
+		limit = {
+			OR = {
+				state = 65
+				state = 66
+				state = 67
+				state = 87
+				state = 88
+				state = 848
+				state = 849
+				state = 850
+				state = 851
+			}
+		}
+		set_state_flag = SMA_walther_states_flag
+	}
+}

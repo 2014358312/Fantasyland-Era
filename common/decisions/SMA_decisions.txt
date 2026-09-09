@@ -102,6 +102,327 @@ SMA_army_reform_decision_category = {
 
 SMA_rebuild_industry_decision_category = {
 
+	SMA_invest_in_western = {
+		icon = generic_political_rally
+		available = {
+			num_of_available_civilian_factories > 0
+			hidden_trigger = {
+				any_controlled_state = {
+					has_state_flag = SMA_western_core_states_flag
+				}
+			}
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = SMA_western_core_states_flag
+			}
+		}
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+		modifier = { civilian_factory_use = 1 }
+		remove_effect = {
+			every_state = {
+				limit = {
+					has_state_flag = SMA_western_core_states_flag
+				}
+				add_dynamic_modifier = {
+					modifier = SMA_investment_fund_for_rebuild_industry_state_dynamic_modifier
+					scope = SMA
+					days = 365
+				}
+			}
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				all_controlled_state = {
+					NOT = { has_state_flag = SMA_western_core_states_flag }
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 10
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	SMA_invest_in_northern = {
+		icon = generic_political_rally
+		available = {
+			num_of_available_civilian_factories > 0
+			hidden_trigger = {
+				any_controlled_state = {
+					has_state_flag = SMA_northern_core_states_flag
+				}
+			}
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = SMA_northern_core_states_flag
+			}
+		}
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+		modifier = { civilian_factory_use = 1 }
+		remove_effect = {
+			every_state = {
+				limit = {
+					has_state_flag = SMA_northern_core_states_flag
+				}
+				add_dynamic_modifier = {
+					modifier = SMA_investment_fund_for_rebuild_industry_state_dynamic_modifier
+					scope = SMA
+					days = 365
+				}
+			}
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				all_controlled_state = {
+					NOT = { has_state_flag = SMA_northern_core_states_flag }
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 10
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	SMA_invest_in_eastern = {
+		icon = generic_political_rally
+		available = {
+			num_of_available_civilian_factories > 0
+			hidden_trigger = {
+				any_controlled_state = {
+					has_state_flag = SMA_eastern_core_states_flag
+				}
+			}
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = SMA_eastern_core_states_flag
+			}
+		}
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+		modifier = { civilian_factory_use = 1 }
+		remove_effect = {
+			every_state = {
+				limit = {
+					has_state_flag = SMA_eastern_core_states_flag
+				}
+				add_dynamic_modifier = {
+					modifier = SMA_investment_fund_for_rebuild_industry_state_dynamic_modifier
+					scope = SMA
+					days = 365
+				}
+			}
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				all_controlled_state = {
+					NOT = { has_state_flag = SMA_eastern_core_states_flag }
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 10
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	SMA_invest_in_southern = {
+		icon = generic_political_rally
+		available = {
+			num_of_available_civilian_factories > 0
+			hidden_trigger = {
+				any_controlled_state = {
+					has_state_flag = SMA_southern_core_states_flag
+					is_demilitarized_zone = no
+				}
+			}
+			NOT = { is_in_faction_with = LAN }
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = SMA_southern_core_states_flag
+			}
+		}
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+		modifier = { civilian_factory_use = 1 }
+		remove_effect = {
+			every_state = {
+				limit = {
+					has_state_flag = SMA_southern_core_states_flag
+					is_demilitarized_zone = no
+				}
+				add_dynamic_modifier = {
+					modifier = SMA_investment_fund_for_rebuild_industry_state_dynamic_modifier
+					scope = SMA
+					days = 365
+				}
+			}
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				all_controlled_state = {
+					NOT = { has_state_flag = SMA_southern_core_states_flag }
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 10
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	SMA_invest_in_centre = {
+		icon = generic_political_rally
+		available = {
+			num_of_available_civilian_factories > 0
+			hidden_trigger = {
+				any_controlled_state = {
+					has_state_flag = SMA_centre_core_states_flag
+					is_demilitarized_zone = no
+				}
+			}
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = SMA_centre_core_states_flag
+			}
+		}
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+		modifier = { civilian_factory_use = 1 }
+		remove_effect = {
+			every_state = {
+				limit = {
+					has_state_flag = SMA_centre_core_states_flag
+					is_demilitarized_zone = no
+				}
+				add_dynamic_modifier = {
+					modifier = SMA_investment_fund_for_rebuild_industry_state_dynamic_modifier
+					scope = SMA
+					days = 365
+				}
+			}
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				all_controlled_state = {
+					NOT = { has_state_flag = SMA_centre_core_states_flag }
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 10
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	SMA_invest_in_regicide = {
+		icon = generic_political_rally
+		available = {
+			num_of_available_civilian_factories > 0
+			any_controlled_state = {
+				custom_trigger_tooltip = {
+					tooltip = SMA_invest_in_regicide_ttt
+					
+					has_state_flag = SMA_regicide_states_flag
+				}
+			}
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = SMA_regicide_states_flag
+			}
+		}
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+		modifier = { civilian_factory_use = 1 }
+		remove_effect = {
+			every_state = {
+				limit = {
+					has_state_flag = SMA_regicide_states_flag
+				}
+				add_dynamic_modifier = {
+					modifier = SMA_investment_fund_for_rebuild_industry_state_dynamic_modifier
+					scope = SMA
+					days = 365
+				}
+			}
+		}
+		cancel_trigger = {
+			all_controlled_state = {
+				custom_trigger_tooltip = {
+					tooltip = SMA_invest_in_regicide_ttt2
+					
+					NOT = { has_state_flag = SMA_regicide_states_flag }
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 30
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	SMA_invest_in_walther = {
+		icon = generic_political_rally
+		available = {
+			num_of_available_civilian_factories > 0
+			any_controlled_state = {
+				custom_trigger_tooltip = {
+					tooltip = SMA_invest_in_walther_ttt
+					
+					has_state_flag = SMA_walther_states_flag
+				}
+			}
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = SMA_walther_states_flag
+			}
+		}
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+		modifier = { civilian_factory_use = 1 }
+		remove_effect = {
+			every_state = {
+				limit = {
+					has_state_flag = SMA_walther_states_flag
+				}
+				add_dynamic_modifier = {
+					modifier = SMA_investment_fund_for_rebuild_industry_state_dynamic_modifier
+					scope = SMA
+					days = 365
+				}
+			}
+		}
+		cancel_trigger = {
+			all_controlled_state = {
+				custom_trigger_tooltip = {
+					tooltip = SMA_invest_in_walther_ttt2
+					
+					NOT = { has_state_flag = SMA_walther_states_flag }
+				}
+			}
+		}
+		cancel_effect = {
+			add_political_power = 30
+		}
+		ai_will_do = { factor = 1 }
+	}
+
 	SMA_construction_bidding = {
 		icon = generic_protection
 		state_target = yes

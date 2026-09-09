@@ -154,3 +154,14 @@ SMA_efficient_scheduling_capability_state_dynamic_modifier = {
 	local_supply_impact_factor = 0.10
 	local_non_core_supply_impact_factor = -0.10
 }
+
+SMA_investment_fund_for_rebuild_industry_state_dynamic_modifier = {
+	icon = GFX_modifiers_generic_construction
+	enable = { always = yes }
+	remove_trigger = {
+		ROOT = { NOT = { controller = { original_tag = SMA } } }
+	}
+
+	state_production_speed_buildings_factor = 0.25
+	state_resources_factor = 0.1
+}
