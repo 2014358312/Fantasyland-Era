@@ -856,3 +856,35 @@ SMA_point_walther_states = {
 		set_state_flag = SMA_walther_states_flag
 	}
 }
+
+SMA_calc_congress = {
+	clamp_variable = {
+		var = senators_support
+		min = 0
+		max = senators_total
+	}
+	clamp_variable = {
+		var = representatives_support
+		min = 0
+		max = representatives_total
+	}
+
+	set_temp_variable = { temp_senators_radio = senators_support }
+	multiply_temp_variable = { temp_senators_radio = 21 }
+	divide_temp_variable = { temp_senators_radio = senators_total }
+	set_variable = { current_senate_icon_frame = temp_senators_radio }
+	round_variable = current_senate_icon_frame
+	set_temp_variable = { temp_representatives_radio = representatives_support }
+	multiply_temp_variable = { temp_representatives_radio = 21 }
+	divide_temp_variable = { temp_representatives_radio = representatives_total }
+	set_variable = { current_house_icon_frame = temp_representatives_radio }
+	round_variable = current_house_icon_frame
+}
+
+SMA_init_congress = {
+	set_variable = { senators_total = 105 }
+	set_variable = { representatives_total = 210 }
+	set_variable = { senators_support = 21 }
+	set_variable = { representatives_support = 23 }
+	SMA_calc_congress = yes
+}

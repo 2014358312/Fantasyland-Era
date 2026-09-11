@@ -26,7 +26,6 @@ country_event = {
 		ai_chance = {
 			base = 10
 		}
-		complete_national_focus = SMA_fate_of_night
 		set_politics = {
 			ruling_party = fascism
 			elections_allowed = no
@@ -36,26 +35,50 @@ country_event = {
 			popularity = 0.1
 		}
 		effect_tooltip = { promote_character = SMA_Iris_Midgar }
+		remove_country_leader_role = {
+			character = GIA_Richard_Turner
+			ideology = interim_government_d_subtype
+		}
+	}
+
+	option = {
+		name = san_magnolia.1.b
+		ai_chance = {
+			base = 0
+		}
+		effect_tooltip = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			retire_ideology_leader = democratic
+		}
 		hidden_effect = {
 			remove_country_leader_role = {
 				character = GIA_Richard_Turner
 				ideology = interim_government_d_subtype
 			}
-			add_country_leader_role = {
-				character = SMA_Freed_Reinhardt
-				country_leader = {
-					ideology = social_conservatism_subtype
-					traits = { legitimate_heir }
-					expire = "1965.1.1.1"
-					id = -1
-				}
-				promote_leader = yes
+		}
+	}
+
+	after = {
+		complete_national_focus = SMA_fate_of_night
+		set_party_name = {
+			ideology = democratic
+			name = SMA_democratic_party_empire_heir
+			long_name = SMA_democratic_party_empire_heir
+		}
+		add_country_leader_role = {
+			character = SMA_Freed_Reinhardt
+			country_leader = {
+				ideology = social_conservatism_subtype
+				traits = { legitimate_heir genial_anti_revolutionary }
+				expire = "1965.1.1.1"
+				id = -1
 			}
-			set_party_name = {
-				ideology = democratic
-				name = SMA_democratic_party_empire_heir
-				long_name = SMA_democratic_party_empire_heir
-			}
+			promote_leader = yes
+		}
+		hidden_effect = {
 			every_possible_country = {
 				limit = { is_ai = no }
 				news_event = {
@@ -67,48 +90,76 @@ country_event = {
 			}
 		}
 	}
+}
+
+country_event = {
+	id = san_magnolia.2
+	title = san_magnolia.2.t
+	desc = san_magnolia.2.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			faction_leader = { save_event_target_as = AATO_leader }
+		}
+	}
 
 	option = {
-		name = san_magnolia.1.b
+		name = san_magnolia.2.a
 		ai_chance = {
-			base = 0
+			base = 10
 		}
-		complete_national_focus = SMA_fate_of_night
+		add_to_variable = { senators_support = -2 tooltip = SMA_change_of_senators_tt }
+		add_to_variable = { representatives_support = -14 tooltip = SMA_change_of_representatives_tt }
+		SMA_calc_congress = yes
+		leave_faction = yes
+		every_other_country = {
+			limit = { is_subject_of = ROOT }
+			leave_faction = yes
+		}
+		event_target:AATO_leader = { country_event = san_magnolia.3 }
+	}
+}
+
+country_event = {
+	id = san_magnolia.3
+	title = san_magnolia.3.t
+	desc = san_magnolia.3.desc
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = san_magnolia.3.a
+		ai_chance = {
+			base = 10
+		}
 		effect_tooltip = {
-			set_politics = {
-				ruling_party = democratic
-				elections_allowed = yes
-			}
-			retire_ideology_leader = democratic
-		}
-		set_party_name = {
-			ideology = democratic
-			name = SMA_democratic_party_empire_heir
-			long_name = SMA_democratic_party_empire_heir
-		}
-		hidden_effect = {
-			remove_country_leader_role = {
-				character = GIA_Richard_Turner
-				ideology = interim_government_d_subtype
-			}
-			every_possible_country = {
-				limit = { is_ai = no }
-				news_event = {
-					id = FE_news.2
-					days = 1
-					random_days = 3
+			FROM = {
+				leave_faction = yes
+				every_other_country = {
+					limit = { is_subject_of = PREV }
+					leave_faction = yes
 				}
 			}
 		}
-		add_country_leader_role = {
-			character = SMA_Freed_Reinhardt
-			country_leader = {
-				ideology = social_conservatism_subtype
-				traits = { legitimate_heir }
-				expire = "1965.1.1.1"
-				id = -1
+		dismantle_faction = yes
+		hidden_effect = {
+			every_possible_country = {
+				limit = { is_ai = no }
+				news_event = {
+					id = FE_news.23
+					days = 1
+				#	random_hours = 12
+					random_days = 3
+				}
 			}
-			promote_leader = yes
 		}
 	}
 }
