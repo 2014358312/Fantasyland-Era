@@ -37,6 +37,19 @@ SMA_fascism_influence_decision_category = {
 	priority = 8
 }
 
+SMA_congress_decision_category = {
+	allowed = {
+		original_tag = SMA
+	}
+	visible = {
+		NOT = { has_country_flag = SMA_dismiss_congress_flag }
+	}
+	scripted_gui = sma_congress_decision_ui
+	visible_when_empty = yes
+
+	priority = 7
+}
+
 SMA_balance_of_power_decision_category = {
 	allowed = {
 		original_tag = SMA
