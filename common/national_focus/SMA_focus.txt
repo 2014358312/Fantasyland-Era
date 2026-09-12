@@ -170,25 +170,31 @@ focus_tree = {
 			SMA_communist_party_active = yes
 		}
 		completion_reward = {
-			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
+			every_core_state = {
+				limit = {
+					is_owned_and_controlled_by = ROOT
+					is_in_home_area = yes
+				}
+				random_select_amount = 3
 				add_extra_state_shared_building_slots = 1
 			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
-				add_extra_state_shared_building_slots = 1
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
-				add_extra_state_shared_building_slots = 1
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
-				add_extra_state_shared_building_slots = 1
-			}
-			random_owned_controlled_state = {
-				limit = { is_core_of = ROOT }
-				add_extra_state_shared_building_slots = 1
+			every_core_state = {
+				limit = {
+					is_owned_and_controlled_by = ROOT
+					is_in_home_area = yes
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				random_select_amount = 2
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
 			}
 			SMA_check_national_industry_report_status = yes
 		}
@@ -214,6 +220,23 @@ focus_tree = {
 			add_to_variable = { SMA_NDI_consumer_goods_factor_var = 0.05 tooltip = consumer_goods_factor_tt }
 			add_to_variable = { SMA_NDI_production_speed_buildings_factor_var = 0.10 tooltip = production_speed_buildings_factor_tt }
 			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 			SMA_check_national_industry_report_status = yes
 		}
 		ai_will_do = {
@@ -298,6 +321,23 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 150
 			#this place should build two or more dams.
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 			SMA_check_national_industry_report_status = yes
 		}
 		ai_will_do = {
@@ -1010,6 +1050,15 @@ focus_tree = {
 		available = {
 			SMA_sieghart_plan_in_progress = yes
 			SMA_fascist_party_active = yes
+			any_core_state = {
+				is_owned_and_controlled_by = ROOT
+				is_in_home_area = yes
+				free_building_slots = {
+					building = arms_factory
+					size > 1
+					include_locked = yes
+				}
+			}
 		}
 		bypass = {
 			custom_trigger_tooltip = {
@@ -1024,89 +1073,17 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			random_owned_controlled_state = {
+			every_core_state = {
 				limit = {
+					is_owned_and_controlled_by = ROOT
+					is_in_home_area = yes
 					free_building_slots = {
 						building = arms_factory
 						size > 1
 						include_locked = yes
 					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 1
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
 				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 1
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 1
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
+				random_select_amount = 3
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -1539,6 +1516,7 @@ focus_tree = {
 		}
 		search_filters = {  }
 		completion_reward = {
+			army_experience = 5
 			country_lock_all_division_template = no
 			unlock_decision_category_tooltip = SMA_army_reform_decision_category
 			custom_effect_tooltip = SMA_modify_army_modifier
@@ -1560,6 +1538,26 @@ focus_tree = {
 		available = {
 			SMA_roxy_leading_military = yes
 			SMA_is_army_reforming = yes
+			any_core_state = {
+				is_owned_by = ROOT
+				free_building_slots = {
+					building = arms_factory
+					size > 1
+					include_locked = yes
+				}
+			}
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
 		}
 		search_filters = {  }
 		completion_reward = {
@@ -1623,6 +1621,8 @@ focus_tree = {
 			custom_effect_tooltip = SMA_modify_army_modifier
 			add_to_variable = { SMA_DA_conscription_factor_var = 0.10 tooltip = conscription_factor_tt }
 			add_to_variable = { SMA_DA_army_org_factor_var = 0.15 tooltip = army_org_factor_tt }
+
+			add_ideas = SMA_strict_recruitment_system_for_soldiers_idea
 		}
 		ai_will_do = {
 			factor = 1
@@ -1643,8 +1643,16 @@ focus_tree = {
 		}
 		search_filters = {  }
 		completion_reward = {
-			army_experience = 5
-			add_political_power = 50
+			add_stability = 0.05
+			custom_effect_tooltip = SMA_restrained_diplomacy_tt
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				add_cic = 1000
+			}
+			else = {
+				add_timed_idea = { idea = generic_production_capacity_subsidy days = 180 }
+			}
+			add_ideas = SMA_restrained_diplomacy_idea
 		}
 		ai_will_do = {
 			factor = 1
@@ -1669,8 +1677,8 @@ focus_tree = {
 		}
 		search_filters = {  }
 		completion_reward = {
-			army_experience = 5
-			add_political_power = 50
+			add_ideas = SMA_production_of_simple_equipment
+			set_country_flag = { flag = SMA_production_of_simple_equipment_flag value = 1 days = 730 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -1723,8 +1731,10 @@ focus_tree = {
 		}
 		search_filters = {  }
 		completion_reward = {
-			army_experience = 5
-			add_political_power = 50
+			custom_effect_tooltip = SMA_modify_army_modifier
+			add_to_variable = { SMA_DA_conscription_factor_var = -0.05 tooltip = conscription_factor_tt }
+			add_to_variable = { SMA_DA_army_morale_factor_var = 0.10 tooltip = army_morale_factor_tt }
+			add_to_variable = { SMA_DA_land_reinforce_rate_var = 0.02 tooltip = land_reinforce_rate_tt }
 		}
 		ai_will_do = {
 			factor = 1
@@ -1749,8 +1759,9 @@ focus_tree = {
 		}
 		search_filters = {  }
 		completion_reward = {
-			army_experience = 5
-			add_political_power = 50
+			custom_effect_tooltip = SMA_modify_army_modifier
+			add_to_variable = { SMA_DA_max_dig_in_factor_var = 0.10 tooltip = max_dig_in_factor_tt }
+			add_to_variable = { SMA_DA_army_defence_factor_var = 0.10 tooltip = army_defence_factor_tt }
 		}
 		ai_will_do = {
 			factor = 1
@@ -1774,10 +1785,36 @@ focus_tree = {
 		}
 		search_filters = {  }
 		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = SMA_roxy_military_reform
+				cost_reduction = 0.75
+				uses = 1
+				category = land_doctrine
+			}
+			custom_effect_tooltip = SMA_roxy_military_reform_tt
+			hidden_effect = {
+				if = {
+					limit = { has_completed_focus = SMA_production_of_simple_equipment }
+					add_mastery = { amount = 25 folder = land track = operations }
+				}
+				else_if = {
+					limit = { has_completed_focus = SMA_emphasis_on_quality }
+					add_mastery = { amount = 25 folder = land track = operations }
+				}
+				else_if = {
+					limit = { has_completed_focus = SMA_the_highest_quality_warrior }
+					add_mastery = { amount = 25 folder = land track = operations }
+				}
+				else_if = {
+					limit = { has_completed_focus = SMA_reinforcement_space_advantage }
+					add_mastery = { amount = 25 folder = land track = operations }
+				}
+			}
 			swap_ideas = {
 				remove_idea = SMA_decadent_army_ns
 				add_idea = SMA_roxy_army_reform_ns
 			}
+			add_to_variable = { SMA_DA_experience_gain_army_unit_factor_var = 0.10 tooltip = experience_gain_army_unit_factor_tt }
 		}
 		ai_will_do = {
 			factor = 1
@@ -1844,8 +1881,9 @@ focus_tree = {
 		}
 		search_filters = {  }
 		completion_reward = {
-			army_experience = 5
-			add_political_power = 50
+			army_experience = 25
+			custom_effect_tooltip = SMA_modify_army_modifier
+			add_to_variable = { SMA_RAR_army_speed_factor_var = 0.10 tooltip = army_speed_factor_tt }
 		}
 		ai_will_do = {
 			factor = 1
@@ -2372,8 +2410,8 @@ focus_tree = {
 		icon = GFX_goal_generic_build_airforce
 		prerequisite = { focus = SMA_roxy_military_reform }
 		relative_position_id = SMA_roxy_military_reform
-		x = 5
-		y = 1
+		x = 9
+		y = 5
 		cost = 5
 		available = {
 			is_subject = no
@@ -2392,7 +2430,7 @@ focus_tree = {
 		icon = GFX_goal_generic_build_navy
 		prerequisite = { focus = SMA_roxy_military_reform }
 		relative_position_id = SMA_roxy_military_reform
-		x = 9
+		x = 12
 		y = 1
 		cost = 5
 		available = {
