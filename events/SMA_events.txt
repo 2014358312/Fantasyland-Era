@@ -186,6 +186,50 @@ country_event = {
 }
 
 country_event = {
+	id = san_magnolia.21
+	title = san_magnolia.21.t
+	desc = {
+		text = san_magnolia.21.desc.a
+		trigger = {
+			has_war = no
+		}
+	}
+	desc = {
+		text = san_magnolia.21.desc.b
+	}
+	picture = GFX_report_event_EYP_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = san_magnolia.21.a
+		trigger = { has_war = no }
+	}
+
+	option = {
+		name = san_magnolia.21.b
+		trigger = { has_war = yes }
+	}
+
+	after = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = SMA_production_of_simple_equipment
+				add_idea = SMA_production_of_simple_equipment_upgrade
+			}
+		}
+		if = {
+			limit = { has_idea = SMA_production_of_simple_equipment }
+			swap_ideas = {
+				remove_idea = SMA_production_of_simple_equipment
+				add_idea = SMA_production_of_simple_equipment_upgrade
+			}
+		}
+		else = { add_ideas = SMA_production_of_simple_equipment_upgrade }
+	}
+}
+
+country_event = {
 	id = san_magnolia.61
 	title = san_magnolia.61.t
 	desc = san_magnolia.61.desc

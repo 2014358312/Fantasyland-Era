@@ -822,6 +822,108 @@ ideas = {
 				research_speed_factor = 0.10
 			}
 		}
+
+		SMA_strict_recruitment_system_for_soldiers_idea = {
+			name = SMA_strict_recruitment_system_for_soldiers
+			picture = generic_research_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+		
+			available = {
+				NOT = { has_idea = disarmed_nation }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				mobilization_laws_cost_factor = -0.75
+				custom_modifier_tooltip = SMA_strict_recruitment_system_for_soldiers_idea_mtt
+			}
+		}
+
+		SMA_restrained_diplomacy_idea = {
+			name = SWI_foreign_investments_idea
+			picture = generic_research_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+		
+			available = {
+				has_war = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				custom_modifier_tooltip = SMA_restrained_diplomacy_idea_mtt
+			}
+		}
+
+		SMA_production_of_simple_equipment = {
+			picture = generic_research_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+		
+			available = {
+				has_country_flag = SMA_production_of_simple_equipment_flag
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				custom_modifier_tooltip = SMA_production_of_simple_equipment_idea_mtt
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					reliability = -0.10
+					instant = yes
+				}
+			}
+
+			on_remove = {
+				hidden_effect = {
+					country_event = san_magnolia.21
+				}
+			}
+		}
+
+		SMA_production_of_simple_equipment_upgrade = {
+			name = SMA_production_of_simple_equipment
+			picture = generic_research_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}
+		}
 	}
 
 	industrial_concern = {
