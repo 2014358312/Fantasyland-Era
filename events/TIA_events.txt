@@ -341,12 +341,12 @@ country_event = {
 		}
 	}
 	desc = {
-		# Fallback (original fate chain / unknown combination)
+		#TIA.14（不做改变线）
 		text = TIA.15.desc
 		trigger = {
-			NOT = { has_country_flag = TIA_famine_collapse }
-			NOT = { has_idea = TIA_plague_scarred }
-			NOT = { has_idea = TIA_legitimate_war }
+			has_idea = TIA_financial_over
+			has_idea = TIA_plague_happened
+			has_idea = TIA_legitimate_war
 		}
 	}
 	picture = GFX_report_event_TIA_guillotine

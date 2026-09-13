@@ -281,9 +281,9 @@ focus_tree = {
 				add_idea = TIA_class_discrimination_1
 			}
 			set_country_flag = TIA_countdown_active
-       	 	# Food line: NO timer - famine triggers randomly via MTTH
         	set_variable = { TIA_faith_timer = 180 }
         	set_variable = { TIA_health_timer = 180 }
+        	set_variable = { TIA_food_timer = 365 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -361,7 +361,7 @@ focus_tree = {
         	hidden_effect = {
         	    set_country_flag = TIA_medical_reform_started
         	    country_event = { id = TIA.64 days = 60 }
-            	country_event = { id = TIA.3  days = 365 random_days = 90 }
+            	# country_event = { id = TIA.3  days = 365 random_days = 90 }
 			}
     	}
 		ai_will_do = {
@@ -5672,13 +5672,13 @@ focus_tree = {
 			focus = TIA_quarantine_infrastructure
 		}
 		available = {
+			has_country_flag = TIA_rural_doctors
 		}
 		prerequisite = {
 			focus = TIA_imperial_health_reform
 		}
 		completion_reward = {
 			add_manpower = 5000
-			add_monthly_population = 0.05
 			army_experience = 5
 			custom_effect_tooltip = TIA_train_field_medics_tt
 			hidden_effect = {
@@ -5707,6 +5707,7 @@ focus_tree = {
 			focus = TIA_train_field_medics
 		}
 		available = {
+			has_country_flag = TIA_quarantine_network
 		}
 		prerequisite = {
 			focus = TIA_imperial_health_reform
