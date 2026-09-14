@@ -12,24 +12,25 @@ SMA_roxy_leading_military = {
 	SMA_Roxy_Migurdia = { is_hired_as_advisor = yes }
 }
 
+SMA_is_army_reforming_status_1 = {
+	custom_trigger_tooltip = {
+		tooltip = SMA_has_decadent_army_idea_ttt
+		has_dynamic_modifier = {
+			modifier = SMA_decadent_army_dynamic_modifier
+		}
+	}
+}
+
 SMA_is_army_reforming = {
 	if = {
 		limit = {
-			has_dynamic_modifier = {
-				modifier = SMA_decadent_army_dynamic_modifier
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = SMA_has_decadent_army_idea_ttt
-			has_dynamic_modifier = {
-				modifier = SMA_decadent_army_dynamic_modifier
-			}
-		}
-	}
-	else_if = {
-		limit = {
-			has_dynamic_modifier = {
-				modifier = SMA_roxy_army_reform_dynamic_modifier
+			OR = {
+				has_dynamic_modifier = {
+					modifier = SMA_decadent_army_dynamic_modifier
+				}
+				has_dynamic_modifier = {
+					modifier = SMA_roxy_army_reform_dynamic_modifier
+				}
 			}
 		}
 		custom_trigger_tooltip = {

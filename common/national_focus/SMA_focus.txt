@@ -1512,14 +1512,14 @@ focus_tree = {
 		cost = 5
 		available = {
 			SMA_roxy_leading_military = yes
-			SMA_is_army_reforming = yes
+			SMA_is_army_reforming_status_1 = yes
 		}
 		search_filters = {  }
 		completion_reward = {
 			army_experience = 5
 			country_lock_all_division_template = no
 			unlock_decision_category_tooltip = SMA_army_reform_decision_category
-			custom_effect_tooltip = SMA_modify_army_modifier
+			custom_effect_tooltip = SMA_modify_decadent_army_modifier
 			add_to_variable = { SMA_DA_war_support_factor_var = 0.05 tooltip = war_support_factor_tt }
 		}
 		ai_will_do = {
@@ -1537,7 +1537,7 @@ focus_tree = {
 		cost = 5
 		available = {
 			SMA_roxy_leading_military = yes
-			SMA_is_army_reforming = yes
+			SMA_is_army_reforming_status_1 = yes
 			any_core_state = {
 				is_owned_by = ROOT
 				free_building_slots = {
@@ -1614,11 +1614,11 @@ focus_tree = {
 		cost = 5
 		available = {
 			SMA_roxy_leading_military = yes
-			SMA_is_army_reforming = yes
+			SMA_is_army_reforming_status_1 = yes
 		}
 		search_filters = {  }
 		completion_reward = {
-			custom_effect_tooltip = SMA_modify_army_modifier
+			custom_effect_tooltip = SMA_modify_decadent_army_modifier
 			add_to_variable = { SMA_DA_conscription_factor_var = 0.10 tooltip = conscription_factor_tt }
 			add_to_variable = { SMA_DA_army_org_factor_var = 0.15 tooltip = army_org_factor_tt }
 
@@ -1639,7 +1639,7 @@ focus_tree = {
 		cost = 5
 		available = {
 			SMA_roxy_leading_military = yes
-			SMA_is_army_reforming = yes
+			SMA_is_army_reforming_status_1 = yes
 		}
 		search_filters = {  }
 		completion_reward = {
@@ -1673,7 +1673,7 @@ focus_tree = {
 		cost = 5
 		available = {
 			SMA_roxy_leading_military = yes
-			SMA_is_army_reforming = yes
+			SMA_is_army_reforming_status_1 = yes
 		}
 		search_filters = {  }
 		completion_reward = {
@@ -1700,7 +1700,7 @@ focus_tree = {
 		cost = 5
 		available = {
 			SMA_roxy_leading_military = yes
-			SMA_is_army_reforming = yes
+			SMA_is_army_reforming_status_1 = yes
 		}
 		search_filters = {  }
 		completion_reward = {
@@ -1727,14 +1727,15 @@ focus_tree = {
 		cost = 5
 		available = {
 			SMA_roxy_leading_military = yes
-			SMA_is_army_reforming = yes
+			SMA_is_army_reforming_status_1 = yes
 		}
 		search_filters = {  }
 		completion_reward = {
-			custom_effect_tooltip = SMA_modify_army_modifier
+			custom_effect_tooltip = SMA_modify_decadent_army_modifier
 			add_to_variable = { SMA_DA_conscription_factor_var = -0.05 tooltip = conscription_factor_tt }
 			add_to_variable = { SMA_DA_army_morale_factor_var = 0.10 tooltip = army_morale_factor_tt }
 			add_to_variable = { SMA_DA_land_reinforce_rate_var = 0.02 tooltip = land_reinforce_rate_tt }
+			custom_effect_tooltip = generic_skip_one_line_tt
 		}
 		ai_will_do = {
 			factor = 1
@@ -1755,13 +1756,14 @@ focus_tree = {
 		cost = 5
 		available = {
 			SMA_roxy_leading_military = yes
-			SMA_is_army_reforming = yes
+			SMA_is_army_reforming_status_1 = yes
 		}
 		search_filters = {  }
 		completion_reward = {
-			custom_effect_tooltip = SMA_modify_army_modifier
+			custom_effect_tooltip = SMA_modify_decadent_army_modifier
 			add_to_variable = { SMA_DA_max_dig_in_factor_var = 0.10 tooltip = max_dig_in_factor_tt }
 			add_to_variable = { SMA_DA_army_defence_factor_var = 0.10 tooltip = army_defence_factor_tt }
+			custom_effect_tooltip = generic_skip_one_line_tt
 		}
 		ai_will_do = {
 			factor = 1
@@ -1781,7 +1783,7 @@ focus_tree = {
 		cost = 5
 		available = {
 			SMA_roxy_leading_military = yes
-			SMA_is_army_reforming = yes
+			SMA_is_army_reforming_status_1 = yes
 		}
 		search_filters = {  }
 		completion_reward = {
@@ -1810,11 +1812,7 @@ focus_tree = {
 					add_mastery = { amount = 25 folder = land track = operations }
 				}
 			}
-			swap_ideas = {
-				remove_idea = SMA_decadent_army_ns
-				add_idea = SMA_roxy_army_reform_ns
-			}
-			add_to_variable = { SMA_DA_experience_gain_army_unit_factor_var = 0.10 tooltip = experience_gain_army_unit_factor_tt }
+			SMA_army_reform_roxy = yes
 		}
 		ai_will_do = {
 			factor = 1
@@ -2055,8 +2053,18 @@ focus_tree = {
 		}
 		search_filters = {  }
 		completion_reward = {
-			army_experience = 5
-			add_political_power = 50
+			add_doctrine_cost_reduction = {
+				name = SMA_establish_special_force
+				cost_reduction = 0.75
+				uses = 1
+				category = special_forces
+			}
+			add_tech_bonus = {
+				name = SMA_establish_special_force
+				bonus = 1.0
+				uses = 2
+				category = cat_special_forces_generic
+			}
 		}
 		ai_will_do = {
 			factor = 1

@@ -388,6 +388,18 @@ SMA_fulfill_dalton_treaty = {
 	}
 }
 
+SMA_army_reform_into_stage_2 = {
+	set_variable = { SMA_RAR_conscription_factor_var = SMA_DA_conscription_factor_var }
+	set_variable = { SMA_RAR_land_reinforce_rate_var = SMA_DA_land_reinforce_rate_var }
+	set_variable = { SMA_RAR_army_attack_factor_var = SMA_DA_army_attack_factor_var }
+	set_variable = { SMA_RAR_army_defence_factor_var = SMA_DA_army_defence_factor_var }
+	set_variable = { SMA_RAR_army_speed_factor_var = SMA_DA_army_speed_factor_var }
+	set_variable = { SMA_RAR_army_org_factor_var = SMA_DA_army_org_factor_var }
+	set_variable = { SMA_RAR_army_morale_factor_var = SMA_DA_army_morale_factor_var }
+	set_variable = { SMA_RAR_max_dig_in_factor_var = SMA_DA_max_dig_in_factor_var }
+	set_variable = { SMA_RAR_experience_gain_army_unit_factor_var = SMA_DA_experience_gain_army_unit_factor_var }
+}
+
 SMA_army_reform_roxy = {
 	effect_tooltip = {
 		swap_ideas = {
@@ -410,8 +422,8 @@ SMA_army_reform_roxy = {
 			}
 		}
 	}
-	custom_effect_tooltip = SMA_modify_roxy_army_reform_tt
-	add_to_variable = { SMA_RAR_army_org_factor_var = 0.10 tooltip = army_org_factor_tt }
+	add_to_variable = { SMA_DA_experience_gain_army_unit_factor_var = 0.10 tooltip = experience_gain_army_unit_factor_tt }
+	SMA_army_reform_into_stage_2 = yes
 }
 
 SMA_army_reform_new = {
@@ -452,7 +464,6 @@ SMA_army_reform_new = {
 			}
 		}
 	}
-	custom_effect_tooltip = SMA_modify_roxy_army_reform_tt
 	add_to_variable = { SMA_NA_army_org_factor_var = 0.10 tooltip = army_org_factor_tt }
 }
 
