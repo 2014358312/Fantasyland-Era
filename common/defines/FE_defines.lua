@@ -8,6 +8,8 @@ NDefines.NDiplomacy.TENSION_TIME_SCALE_START_DATE = "1000.1.1.12"
 NDefines.NDiplomacy.VOLUNTEERS_PER_TARGET_PROVINCE = 0
 NDefines.NDiplomacy.VOLUNTEERS_PER_COUNTRY_ARMY = 0
 NDefines.NDiplomacy.VOLUNTEERS_DIVISIONS_REQUIRED = 0
+
+NDefines.NMilitary.GENERATE_AI_DIV_COMMAND_HISTORY_ENTRIES = false
 -- Pax Bratainnica map style
 NDefines_Graphics.NMapMode.CONSTRUCTION_MAP_MODE_BUILDING_DEFAULT_COLOR = { 0.43, 0.22, 0.22, 0.25 }			-- Color of states/provinces that can't be built on
 NDefines_Graphics.NMapMode.CONSTRUCTION_MAP_MODE_BUILDING_MAX_LEVEL_COLOR = { 0.05, 0.1, 0.7, 0.4 } 			-- Color of states/provinces where current building level is maxed out (max is current max level, not final max level) of a building type

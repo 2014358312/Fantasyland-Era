@@ -1,18 +1,18 @@
 ########################################
 
- ##   ##  #  # #  # ### ###  ### ###  ##     
-#  # #  # #  # ## #  #  #  #  #  #   #       
-#    #  # #  # # ##  #  ###   #  ##   #      
-#  # #  # #  # #  #  #  #  #  #  #     #     
- ##   ##   ##  #  #  #  #  # ### ### ## 
+ ##   ##  #  # #  # ### ###  ### ###  ##
+#  # #  # #  # ## #  #  #  #  #  #   #
+#    #  # #  # # ##  #  ###   #  ##   #
+#  # #  # #  # #  #  #  #  #  #  #     #
+ ##   ##   ##  #  #  #  #  # ### ### ##
 
-########################################     
+########################################
 
 world_at_peace_countries = {
 	input = game:all_countries
 	operators = {
 		limit = {
-			has_war = no 
+			has_war = no
 		}
 	}
 	name = COLLECTION_COUNTRIES_AT_PEACE
@@ -74,7 +74,7 @@ world_uncapitulated_democratic_countries = {
 		limit = {
 			has_capitulated = no
 		}
-	}	
+	}
 }
 
 world_non_communist_countries = {
@@ -113,10 +113,10 @@ europe_non_aligned_countries = {
 	operators = {
 		limit = {
 			capital_scope = { is_on_continent = europe }
-			has_government = neutrality 
+			has_government = neutrality
 		}
 	}
-}	
+}
 
 
 countries_china = {
@@ -124,7 +124,7 @@ countries_china = {
 	name = COLLECTION_COUNTRIES_CHINA
 	operators = {
 		limit = {
-			WTT_is_chinese_country = yes 
+			WTT_is_chinese_country = yes
 		}
 	}
 }
@@ -163,7 +163,7 @@ non_communist_or_capitulated_countries_asia = {
 			OR = {
 				NOT = { has_government = communism }
 				AND = {
-					has_capitulated = yes 
+					has_capitulated = yes
 					has_government = communism
 				}
 			}
@@ -173,11 +173,11 @@ non_communist_or_capitulated_countries_asia = {
 
 #########################
 
- ## ###  ##  ### ###  ## 
-#    #  #  #  #  #   #   
- #   #  ####  #  ##   #  
-  #  #  #  #  #  #     # 
-##   #  #  #  #  ### ##  
+ ## ###  ##  ### ###  ##
+#    #  #  #  #  #   #
+ #   #  ####  #  ##   #
+  #  #  #  #  #  #     #
+##   #  #  #  #  ### ##
 
 ########################
 
@@ -188,7 +188,7 @@ faction_owned_core_states = {
 		faction_members
 		owned_states
 		limit = {
-			is_core_of = PREV 
+			is_core_of = PREV
 		}
 	}
 	name = COLLECTION_FACTION_OWNED_CORE_STATES
@@ -275,7 +275,7 @@ china_potential_core_mainland_states = {
 	operators = {
 		limit = {
 			NOT = { state = 524 } # Taiwan does not qualify for is_one_state_island
-			is_one_state_island = no 
+			is_one_state_island = no
 		}
 	}
 }
@@ -356,10 +356,10 @@ states_in_the_baltics = {
 		limit = {
 			OR = {
 				region = 37
-				state = 763 
-				state = 784  
-				state = 208  
-				state = 209   
+				state = 763
+				state = 784
+				state = 208
+				state = 209
 			}
 		}
 	}
@@ -374,10 +374,10 @@ faction_states_in_the_baltics = {
 		limit = {
 			OR = {
 				region = 37
-				state = 763 
-				state = 784  
-				state = 208  
-				state = 209   
+				state = 763
+				state = 784
+				state = 208
+				state = 209
 			}
 		}
 	}
@@ -389,7 +389,7 @@ states_in_the_nordics = {
 	operators = {
 		limit = {
 			OR = {
-				region = 275 
+				region = 275
 				region = 10
 				region = 11
 				region = 192
@@ -399,8 +399,8 @@ states_in_the_nordics = {
 				region = 278
 				region = 13
 				region = 161
-				region = 36 
-				region = 45 
+				region = 36
+				region = 45
 			}
 		}
 	}
@@ -414,7 +414,7 @@ faction_states_in_the_nordics = {
 		controlled_states
 		limit = {
 			OR = {
-				region = 275 
+				region = 275
 				region = 10
 				region = 11
 				region = 192
@@ -424,8 +424,8 @@ faction_states_in_the_nordics = {
 				region = 278
 				region = 13
 				region = 161
-				region = 36 
-				region = 45 
+				region = 36
+				region = 45
 			}
 		}
 	}
@@ -436,7 +436,7 @@ states_in_europe = {
 	input = game:all_states
 	operators = {
 		limit = {
-			is_on_continent = europe			
+			is_on_continent = europe
 		}
 	}
 	name = COLLECTION_STATES_IN_EUROPE
@@ -448,7 +448,7 @@ faction_states_in_europe = {
 		faction_members
 		controlled_states
 		limit = {
-			is_on_continent = europe			
+			is_on_continent = europe
 		}
 	}
 	name = COLLECTION_FACTION_CONTROLLED_STATES_IN_EUROPE
@@ -470,7 +470,7 @@ faction_states_in_asia = {
 		faction_members
 		controlled_states
 		limit = {
-			is_on_continent = asia			
+			is_on_continent = asia
 		}
 	}
 	name = COLLECTION_FACTION_CONTROLLED_STATES_IN_ASIA
@@ -492,7 +492,7 @@ faction_states_in_middle_east = {
 		faction_members
 		controlled_states
 		limit = {
-			is_on_continent = middle_east			
+			is_on_continent = middle_east
 		}
 	}
 	name = COLLECTION_FACTION_CONTROLLED_STATES_IN_MIDDLE_EAST
@@ -525,7 +525,7 @@ faction_states_on_my_continent = {
 	operators = {
 		limit = {
 			is_on_same_continent_as = ROOT
-			is_controlled_by_ROOT_or_ally = yes 
+			is_controlled_by_ROOT_or_ally = yes
 		}
 	}
 	name = COLLECTION_FACTION_STATES_MY_CONTINENT
@@ -640,7 +640,7 @@ communist_or_capitulated_countries_my_continent = {
 		limit = {
 			is_on_same_continent_as = ROOT
 			OR = {
-				has_government = communism 
+				has_government = communism
 				has_capitulated = yes
 			}
 		}
@@ -708,7 +708,7 @@ faction_controlled_balkan_states = {
 	input = constant:state_groups.balkans
 	operators = {
 		limit = {
-			is_controlled_by_ROOT_or_ally = yes 
+			is_controlled_by_ROOT_or_ally = yes
 		}
 	}
 	name = COLLECTION_FACTION_CONTROLLED_BALKAN_STATES
@@ -739,24 +739,24 @@ central_powers_controlled_central_powers_border_states = {
 
 }
 
-# African Union 
+# African Union
 african_states = {
 	input = game:all_states
 	operators = {
 		limit = {
-			is_on_continent = africa 
+			is_on_continent = africa
 		}
 	}
 }
 
 non_colonial_power_controlled_african_states = {
-	input = collection:african_states 
+	input = collection:african_states
 	operators = {
 		limit = {
 			controller = {
 				AND = {
 					capital_scope = {
-						is_on_continent = africa 
+						is_on_continent = africa
 					}
 					NOT = {
 						any_country = {
@@ -775,7 +775,7 @@ non_colonial_power_controlled_african_states = {
 	name = COLLECTION_NON_COLONIAL_CONTROLLED_AFRICAN_STATES
 }
 
-# Habsburgs 
+# Habsburgs
 
 potential_habsburg_countries_total = {
 	input = game:all_countries
@@ -838,39 +838,39 @@ habsburg_countries_in_our_faction = {
 					character = HUN_joseph_august_von_habsburg
 				}
 				has_country_leader = {
-					ruling_only = yes 
+					ruling_only = yes
 					character = HUN_otto_von_habsburg
 				}
 				has_country_leader = {
-					ruling_only = yes 
+					ruling_only = yes
 					character = POL_karl_albrecht
 				}
 				has_country_leader = {
-					ruling_only = yes 
+					ruling_only = yes
 					character = CZE_albrecht_franz
 				}
 				has_country_leader = {
-					ruling_only = yes 
+					ruling_only = yes
 					character = HUN_vasyl_vyshyvanyi
 				}
 				has_country_leader = {
-					ruling_only = yes 
+					ruling_only = yes
 					character = SPA_karl_pius_von_habsburg
 				}
 				has_country_leader = {
-					ruling_only = yes 
+					ruling_only = yes
 					character = MEX_maria_de_iturbide
 				}
 				has_country_leader = {
-					ruling_only = yes 
+					ruling_only = yes
 					character = TOS_joseph_ferdinand_von_habsburg
 				}
 				has_country_leader = {
-					ruling_only = yes 
+					ruling_only = yes
 					character = LBV_robert_von_habsburg
 				}
 				has_country_leader = {
-					ruling_only = yes 
+					ruling_only = yes
 					character = CRO_joseph_francis
 				}
 			}
@@ -878,7 +878,7 @@ habsburg_countries_in_our_faction = {
 	}
 }
 
-# Islamic World 
+# Islamic World
 
 all_islamic_countries = {
 	input = constant:country_groups.islamic_world
@@ -910,7 +910,7 @@ faction_controlled_mare_nostrum_states = {
 	input = constant:state_groups.mare_nostrum_states
 	operators = {
 		limit = {
-			is_controlled_by_ROOT_or_ally = yes 
+			is_controlled_by_ROOT_or_ally = yes
 		}
 	}
 	name = COLLECTION_FACTION_CONTROLLED_MARE_NOSTRUM_STATES
@@ -925,7 +925,7 @@ faction_controlled_pax_romana_states = {
 	input = constant:state_groups.pax_romana_states
 	operators = {
 		limit = {
-			is_controlled_by_ROOT_or_ally = yes 
+			is_controlled_by_ROOT_or_ally = yes
 		}
 	}
 	name = COLLECTION_FACTION_CONTROLLED_PAX_ROMANA_STATES
@@ -944,7 +944,7 @@ comintern_controlled_border_states = {
 	name = COLLECTION_CONTROLLED_COMINTERN_BORDER_STATES
 	operators = {
 		limit = {
-			is_controlled_by_ROOT_or_ally = yes 
+			is_controlled_by_ROOT_or_ally = yes
 		}
 	}
 }
@@ -955,8 +955,8 @@ neighboring_states_to_leader = {
 	operators = {
 		limit = {
 			any_neighbor_state = {
-				is_owned_by = ROOT 
-			}	
+				is_owned_by = ROOT
+			}
 		}
 	}
 }

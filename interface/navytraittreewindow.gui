@@ -9,14 +9,14 @@ guiTypes = {
 		fade_type = linear
 		click_to_front = yes
 		moveable = yes
-				
+
 		background = {
-			name = "Background"		 
+			name = "Background"
 			spriteType ="GFX_tiled_window_transparent"
 		}
-			
+
 		iconType = {
-			name = "Background_icon"		
+			name = "Background_icon"
 			spriteType ="GFX_lpfttw_for_fe_trait_tree_bg"
 			position = { x = 0 y = 0 }
 			alwaystransparent = yes
@@ -25,7 +25,7 @@ guiTypes = {
 			name = "traits_tabs"
 			position = { x=370	 y=14 }
 			size = { width = 100%% height = 30 }
-	
+
 			buttonType = {
 				name = "leader_traits_tab"
 				position = { x = -340 y = -15 }
@@ -75,7 +75,7 @@ guiTypes = {
 			maxWidth = 122							#maxWidth = 125 + 150 - position::x
 			maxHeight = 18
 		}
-		
+
 		instantTextboxType = {						#edited
 			name = "name"
 			position = { x = 153 y = 84 }
@@ -85,23 +85,23 @@ guiTypes = {
 			maxHeight = 35							#allows two lines
 			fixedsize = yes
 		}
-		
-		
+
+
 		iconType = {								#edited (different from legacy)
 			name = "unit_leader_portrait_frame"
 			spriteType = "GFX_lpfttw_for_fe_portrait_overlay"
-			#centerposition = yes	
+			#centerposition = yes
 			position = { x = 10 y = 74 }
 		}
-		
+
 		iconType = {								#edited (overlaps "unit_leader_portrait_frame)
 			name = "skill_bg"
 			spriteType = "GFX_lpfttw_for_fe_navy_medal"
-			#centerposition = yes	
+			#centerposition = yes
 			position = { x=144 y=117 }
 			#scale = 1.2
 		}
-		
+
 		instantTextboxType = {						#edited
 			name = "skill"
 			position = { x = 152 y = 206 }
@@ -112,14 +112,14 @@ guiTypes = {
 			format = center
 			alwaystransparent = yes
 		}
-		
+
 		iconType = {								#edited
 			name = "leader_stat_attack_bg"
 			spriteType = "GFX_trait_attack"
-			centerposition = yes	
+			centerposition = yes
 			position = { x=224 y=136 }
 		}
-		
+
 		instantTextboxType = {						#edited
 			name = "leader_stat_attack"
 			position = {x=233 y=128}
@@ -137,7 +137,7 @@ guiTypes = {
 			position = { x=224 y=158 }
 			scale = 1
 		}
-		
+
 		instantTextboxType = {						#edited
 			name = "leader_stat_defense"
 			position = {x=233 y=150}
@@ -151,11 +151,11 @@ guiTypes = {
 		iconType = {								#edited
 			name = "leader_stat_maneuvering_bg"
 			spriteType = "GFX_trait_maneuvering"
-			centerposition = yes	
+			centerposition = yes
 			position = { x=224 y=180 }
 			scale = 1
 		}
-		
+
 		instantTextboxType = {						#edited
 			name = "leader_stat_maneuvering"
 			position = {x=233 y=172}
@@ -169,11 +169,11 @@ guiTypes = {
 		iconType = {								#edited
 			name = "leader_stat_coordination_bg"
 			spriteType = "GFX_trait_coordination"
-			centerposition = yes	
+			centerposition = yes
 			position = { x=224 y=202 }
 			scale = 1
 		}
-		
+
 		instantTextboxType = {						#edited
 			name = "leader_stat_coordination"
 			position = {x=233 y=194}
@@ -205,7 +205,7 @@ guiTypes = {
 				text = advisor_slot_title
 				pdx_tooltip = "FIELD_MARSHAL_TRAITS_DESC"
 			}
-			containerWindowType = {		
+			containerWindowType = {
 				name = "advisor_slot_header_container"
 				position = { x=680 y=0 }
 				size = {width=200 height=40}
@@ -220,7 +220,7 @@ guiTypes = {
 				}
 			}
 
-			containerWindowType = {		
+			containerWindowType = {
 				name = "advisor_high_command_header_container"
 				position = { x=254 y=0 }
 				size = {width=200 height=40}
@@ -249,25 +249,25 @@ guiTypes = {
 				scrollbartype = "standardlistbox_slider"
 			}
 		}
-		
+
 		containerWindowType = {						#edited
 			name = "active_traits"
 			position = {x=20 y=282}
 			size = {width=265 height=433}			#size::height = 540 +175 - position::y
 			Orientation = upper_left
 			clipping = yes
-			
+
 			containerWindowType = {
 				name = "officer_corps_title"
 				position = {x=5 y=6}
 				size = 	{width=200 height=20}
-			
+
 				iconType = {
 					name = "officer_corps_title_bg"
 					position = { x = -16 y = 0 }
-					spriteType ="GFX_trait_separator"		
+					spriteType ="GFX_trait_separator"
 				}
-				
+
 				instantTextboxType = {
 					name = "officer_corps_title_text"
 					position = { x = -16 y = -8 }
@@ -285,14 +285,14 @@ guiTypes = {
 				position = { x=0 y=210 }
 				size = 	{width=200 height=42}
 
-				
+
 				iconType = {
 					name = "new"
 					position = { x =1 y = -2 }
 					spriteType = "GFX_trait_new"
 					scale = 0.90
 				}
-				
+
 				instantTextboxType = {
 					name = "title"
 					position = {x=35 y=4}
@@ -305,18 +305,18 @@ guiTypes = {
 					text = "pick_advisor_role"
 				}
 			}
-			
+
 			containerWindowType = {
 				name = "personal_traits_title"
 				position = {x=5 y=6}
 				size = 	{width=200 height=20}
-			
+
 				iconType = {
 					name = "personal_traits_bg"
 					position = { x = -16 y = 0 }
 					spriteType ="GFX_trait_separator"
 				}
-				
+
 				instantTextboxType = {
 					name = "personal_traits_text"
 					position = { x = -16 y = -6 }
@@ -329,18 +329,18 @@ guiTypes = {
 					format = center
 				}
 			}
-			
+
 			containerWindowType = {
 				name = "traits_title"
 				position = {x=5 y=26}
 				size = 	{width=200 height=20}
-			
+
 				iconType = {
 					name = "traits_title_bg"
 					position = { x = -16 y = 0 }
-					spriteType ="GFX_trait_separator"		
+					spriteType ="GFX_trait_separator"
 				}
-				
+
 				instantTextboxType = {
 					name = "traits_title_text"
 					position = { x = -16 y = -8 }
@@ -358,14 +358,14 @@ guiTypes = {
 				position = { x=0 y=210 }
 				size = 	{width=200 height=42}
 
-				
+
 				iconType = {
 					name = "new"
 					position = { x =1 y = -2 }
 					spriteType = "GFX_trait_new"
 					scale = 0.90
 				}
-				
+
 				instantTextboxType = {
 					name = "title"
 					position = {x=35 y=4}
@@ -383,14 +383,14 @@ guiTypes = {
 				position = { x=0 y=210 }
 				size = 	{width=200 height=42}
 
-				
+
 				iconType = {
 					name = "new"
 					position = { x =1 y = -2 }
 					spriteType = "GFX_trait_new"
 					scale = 0.90
 				}
-				
+
 				instantTextboxType = {
 					name = "title"
 					position = {x=35 y=4}
@@ -409,14 +409,14 @@ guiTypes = {
 				position = { x=0 y=210 }
 				size = 	{width=200 height=42}
 
-				
+
 				iconType = {
 					name = "new"
 					position = { x =1 y = -2 }
 					spriteType = "GFX_trait_new"
 					scale = 0.90
 				}
-				
+
 				instantTextboxType = {
 					name = "title"
 					position = {x=35 y=4}
@@ -434,14 +434,14 @@ guiTypes = {
 				position = { x=0 y=210 }
 				size = 	{width=200 height=42}
 
-				
+
 				iconType = {
 					name = "new"
 					position = { x =1 y = -2 }
 					spriteType = "GFX_trait_new"
 					scale = 0.90
 				}
-				
+
 				instantTextboxType = {
 					name = "title"
 					position = {x=35 y=4}
@@ -454,26 +454,26 @@ guiTypes = {
 					text = "PICK_TRAIT"
 				}
 			}
-		
+
 			drag_scroll = { left middle }
 			verticalScrollbar = "right_vertical_slider"
-			
+
 			containerWindowType = {
 				name = "lines"
 				position = {x=0 y=0}
 			}
-			
+
 			background = {
 				name = "Background"
 				quadTextureSprite ="GFX_tiled_window_transparent"
 			}
 		}
-		
+
 		buttonType = {
 			name = "wiki_button"
 			position = { x = 18 y = -62 }
 			scale = 1.1
-			quadTextureSprite ="GFX_trait_wiki"		
+			quadTextureSprite ="GFX_trait_wiki"
 			Orientation = "LOWER_LEFT"
 			pdx_tooltip = "TRAIT_OPEN_WIKI"
 		}
@@ -485,7 +485,7 @@ guiTypes = {
 			drag_scroll = { left middle }
 			verticalScrollbar = "right_vertical_slider"
 			#horizontalScrollbar = "bottom_horizontal_slider"
-		
+
 			instantTextboxType = {
 				name = "basic_traits_text"
 				position = {x=-25 y=0}
@@ -531,7 +531,7 @@ guiTypes = {
 					quadTextureSprite ="GFX_tiled_window_transparent"
 				}
 			}
-			
+
 			@terrain_trait_width = 210
 			instantTextboxType = {
 				name = "terrain_traits_text"
@@ -543,7 +543,7 @@ guiTypes = {
 				text = "terrain_traits"
 				pdx_tooltip = "TERRAIN_TRAITS_DESC"
 			}
-			
+
 			containerWindowType = {
 				name = "terrain_traits"
 				position = {x=668 y=40}
@@ -563,10 +563,10 @@ guiTypes = {
 					position = {x=0 y=0}
 				}
 			}
-			
+
 		}
 
-		
+
 		buttonType = {
 			name = "close_button"
 			position = { x = -44 y = 11 }

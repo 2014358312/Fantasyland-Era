@@ -5,11 +5,11 @@ scripted_gui = {
 		#parent_window_token = top_bar
 		#parent_window_name = "countrypoliticsview_instance"
 		window_name = "FE_statistics_tools_box"
-		
+
 		dirty = FE_statistics_tools_box_dirty_var
-		
+
 		visible = { check_variable = { FE_statistics_tools_box_show_var = 2 } }
-		
+
 		dynamic_lists = {
 			tools_gridbox = {
 				array = THIS.FE_tools_array
@@ -19,7 +19,7 @@ scripted_gui = {
 				entry_container = FE_tools_window_container
 			}
 		}
-		
+
 		effects = {
 			close_button_click = {
 				set_variable = { FE_statistics_tools_box_show_var = 1 }
@@ -37,16 +37,16 @@ scripted_gui = {
 			}
 		}
 	}
-	
+
 	statistics_tool_show_buff = {
 		context_type = player_context
 		parent_window_token = top_bar
 		window_name = "FE_statistics_tool_show_buff"
-		
+
 		dirty = FE_statistics_tools_box_dirty_var
-		
+
 		visible = { check_variable = { FE_statistics_tools_show_array^0 = 2 } }
-		
+
 		properties = {
 			tab_1 = { frame = FE_show_buff_tab_array^1 }
 			tab_2 = { frame = FE_show_buff_tab_array^2 }
@@ -54,7 +54,7 @@ scripted_gui = {
 			tab_4 = { frame = FE_show_buff_tab_array^4 }
 			tab_5 = { frame = FE_show_buff_tab_array^5 }
 		}
-		
+
 		dynamic_lists = {
 			tool_show_buff_gridbox = {
 				array = THIS.FE_tool_show_buff_array
@@ -64,13 +64,13 @@ scripted_gui = {
 				entry_container = FE_tool_show_buff_window_container
 			}
 		}
-		
+
 		triggers = {
 			#show_buff_name_visible = {
 			#	check_variable = { v < 55 }
 			#}
 		}
-		
+
 		effects = {
 			close_button_click = {
 				set_variable = { FE_statistics_tools_show_array^0 = 1 }
@@ -84,7 +84,7 @@ scripted_gui = {
 					end = 21
 					compare = less_than_or_equals
 					value = temp_v
-					
+
 					add_to_array = { FE_tool_show_buff_array = temp_v }
 				}
 				FE_refresh_statistics_tools_box = yes
@@ -98,7 +98,7 @@ scripted_gui = {
 					end = 133
 					compare = less_than_or_equals
 					value = temp_v
-					
+
 					add_to_array = { FE_tool_show_buff_array = temp_v }
 				}
 				FE_refresh_statistics_tools_box = yes
@@ -112,7 +112,7 @@ scripted_gui = {
 					end = 251
 					compare = less_than_or_equals
 					value = temp_v
-					
+
 					add_to_array = { FE_tool_show_buff_array = temp_v }
 				}
 				FE_refresh_statistics_tools_box = yes
@@ -126,7 +126,7 @@ scripted_gui = {
 					end = 321
 					compare = less_than_or_equals
 					value = temp_v
-					
+
 					add_to_array = { FE_tool_show_buff_array = temp_v }
 				}
 				FE_refresh_statistics_tools_box = yes
@@ -140,14 +140,14 @@ scripted_gui = {
 					end = 436
 					compare = less_than_or_equals
 					value = temp_v
-					
+
 					add_to_array = { FE_tool_show_buff_array = temp_v }
 				}
 				FE_refresh_statistics_tools_box = yes
 			}
 		}
 	}
-	
+
 	global_statistics_container = {
 		context_type = player_context
 		parent_window_token = politics_tab

@@ -193,22 +193,22 @@ faction_goal_growing_the_faction = {
 		num_faction_members > 4
 	}
 	complete_effect = {
-		add_faction_power_projection = 50 
+		add_faction_power_projection = 50
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = THE_FACTION_LEADER
 		add_faction_initiative = 1
 	}
 	ai_will_do = {
 		base = 0
-		modifier = {  
+		modifier = {
 			add = 1
 			num_faction_members < 5
 		}
-		modifier = {  
+		modifier = {
 			add = 1
 			num_faction_members < 4
 		}
-		modifier = {  
+		modifier = {
 			add = 3
 			num_faction_members < 3
 		}
@@ -377,7 +377,7 @@ faction_goal_convoy_sufficiency = {
 				value < 1
 			}
 		}
-		modifier = {  
+		modifier = {
 			add = 1
 			OR = {
 				original_tag = ENG
@@ -387,7 +387,7 @@ faction_goal_convoy_sufficiency = {
 				original_tag = FRA
 			}
 		}
-		modifier = {  
+		modifier = {
 			add = 1
 			collection_size = {
 				input = {
@@ -416,7 +416,7 @@ faction_goal_ensure_military_r_d = {
 					input = game:all_states
 					operators = {
 						limit = {
-							is_controlled_by_ROOT_or_ally = yes 
+							is_controlled_by_ROOT_or_ally = yes
 							land_facility > 0
 						}
 					}
@@ -429,7 +429,7 @@ faction_goal_ensure_military_r_d = {
 					input = game:all_states
 					operators = {
 						limit = {
-							is_controlled_by_ROOT_or_ally = yes 
+							is_controlled_by_ROOT_or_ally = yes
 							naval_facility > 0
 						}
 					}
@@ -442,7 +442,7 @@ faction_goal_ensure_military_r_d = {
 					input = game:all_states
 					operators = {
 						limit = {
-							is_controlled_by_ROOT_or_ally = yes 
+							is_controlled_by_ROOT_or_ally = yes
 							air_facility > 0
 						}
 					}
@@ -458,7 +458,7 @@ faction_goal_ensure_military_r_d = {
 				input = game:all_states
 				operators = {
 					limit = {
-						is_controlled_by_ROOT_or_ally = yes 
+						is_controlled_by_ROOT_or_ally = yes
 						land_facility > 0
 					}
 				}
@@ -471,7 +471,7 @@ faction_goal_ensure_military_r_d = {
 				input = game:all_states
 				operators = {
 					limit = {
-						is_controlled_by_ROOT_or_ally = yes 
+						is_controlled_by_ROOT_or_ally = yes
 						naval_facility > 0
 					}
 				}
@@ -484,7 +484,7 @@ faction_goal_ensure_military_r_d = {
 				input = game:all_states
 				operators = {
 					limit = {
-						is_controlled_by_ROOT_or_ally = yes 
+						is_controlled_by_ROOT_or_ally = yes
 						air_facility > 0
 					}
 				}
@@ -609,7 +609,7 @@ faction_goal_military_infrastructure = {
 				operators = {
 					limit = {
 						is_core_of = CONTROLLER
-						is_controlled_by_ROOT_or_ally = yes 
+						is_controlled_by_ROOT_or_ally = yes
 						any_neighbor_state = {
 							controller = {
 								NOT = { is_in_faction_with = ROOT }
@@ -629,7 +629,7 @@ faction_goal_military_infrastructure = {
 				input = game:all_states
 				operators = {
 					limit = {
-						is_controlled_by_ROOT_or_ally = yes 
+						is_controlled_by_ROOT_or_ally = yes
 						any_neighbor_state = {
 							controller = {
 								NOT = { is_in_faction_with = ROOT }
@@ -795,7 +795,7 @@ faction_goal_war_on_communism = {
 			has_government = communism
 			is_on_same_continent_as = FROM
 		}
-		NOT = { original_tag = JAP } # they have their own goal 
+		NOT = { original_tag = JAP } # they have their own goal
 	}
 	completed = {
 		OR = {

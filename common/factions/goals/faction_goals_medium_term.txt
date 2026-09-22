@@ -94,8 +94,8 @@ faction_goal_marine_corps = {
 			every_collection_element = {
 				input = {
 					input = game:scope
-					operators = { 
-						faction_members 
+					operators = {
+						faction_members
 						limit = {
 							OR = {
 								has_tech = marines
@@ -203,8 +203,8 @@ faction_goal_airborne_corps = {
 			every_collection_element = {
 				input = {
 					input = game:scope
-					operators = { 
-						faction_members 
+					operators = {
+						faction_members
 						limit = {
 							has_tech = paratroopers
 						}
@@ -299,8 +299,8 @@ faction_goal_mountaineer_corps = {
 			every_collection_element = {
 				input = {
 					input = game:scope
-					operators = { 
-						faction_members 
+					operators = {
+						faction_members
 						limit = {
 							has_tech = tech_mountaineers
 						}
@@ -396,8 +396,8 @@ faction_goal_submarine_force = {
 		every_collection_element = {
 			input = {
 				input = game:scope
-				operators = { 
-					faction_members 
+				operators = {
+					faction_members
 					limit = {
 						has_navy_size = {
 							size > 24
@@ -489,8 +489,8 @@ faction_goal_convoy_escort_force = {
 		every_collection_element = {
 			input = {
 				input = game:scope
-				operators = { 
-					faction_members 
+				operators = {
+					faction_members
 					limit = {
 						has_navy_size = {
 							size > 24
@@ -579,8 +579,8 @@ faction_goal_air_superiority = {
 		every_collection_element = {
 			input = {
 				input = game:scope
-				operators = { 
-					faction_members 
+				operators = {
+					faction_members
 					limit = {
 						has_deployed_air_force_size = {
 							size > 249
@@ -717,8 +717,8 @@ faction_goal_industrial_research = {
 		collection_size = {
 				input = {
 					input = game:scope
-					operators =  { 
-						faction_members 
+					operators =  {
+						faction_members
 					}
 				}
 				value > 4
@@ -729,7 +729,7 @@ faction_goal_industrial_research = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		every_faction_member = {
 			tooltip = INFLUENCE_ABOVE_30_PERCENT
-			visible_when_empty = yes 
+			visible_when_empty = yes
 			limit = {
 				faction_influence_ratio > 0.3
 			}
@@ -743,8 +743,8 @@ faction_goal_industrial_research = {
 			collection_size = {
 				input = {
 					input = game:scope
-					operators =  { 
-						faction_members 
+					operators =  {
+						faction_members
 					}
 				}
 				value < 5
