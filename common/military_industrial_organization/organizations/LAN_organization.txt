@@ -41,7 +41,7 @@
 
 #####################
 LAN_landsol_national_military_factory_tanks_organization = {
-	include = generic_infantry_tank_organization
+	include = fe_infantry_tank_organization
 	icon = GFX_idea_SMA_amber
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -51,7 +51,7 @@ LAN_landsol_national_military_factory_tanks_organization = {
 }
 
 LAN_gourmet_guild_tanks_organization = {
-	include = generic_mobile_tank_organization
+	include = fe_mobile_tank_organization
 	icon = GFX_idea_SMA_amber
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -61,7 +61,7 @@ LAN_gourmet_guild_tanks_organization = {
 }
 
 LAN_diabolos_heavy_tanks_organization = {
-	include = generic_heavy_tank_organization
+	include = fe_heavy_tank_organization
 	icon = GFX_idea_LAN_diabolos_heavy
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -71,7 +71,7 @@ LAN_diabolos_heavy_tanks_organization = {
 }
 
 LAN_princess_heart_tanks_organization = {
-	include = generic_tank_refurbishment_plant_organization
+	include = fe_tank_refurbishment_plant_organization
 	icon = GFX_idea_SMA_amber
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -90,7 +90,7 @@ LAN_princess_heart_tanks_organization = {
 
 #####################
 LAN_carmina_maritime_group_ships_organization = {
-	include = generic_task_force_ship_organization
+	include = fe_task_force_ship_organization
 	icon = GFX_idea_LAN_carmina_maritime_group
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -100,7 +100,7 @@ LAN_carmina_maritime_group_ships_organization = {
 }
 
 LAN_labyrinth_institute_ships_organization = {
-	include = generic_submarine_organization
+	include = fe_submarine_organization
 	icon = GFX_idea_LAN_labyrinth_institute
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -110,7 +110,7 @@ LAN_labyrinth_institute_ships_organization = {
 }
 
 LAN_caon_naval_arsenal_ships_organization = {
-	include = generic_escort_ship_organization
+	include = fe_escort_ship_organization
 	icon = GFX_idea_LAN_caon_naval_arsenal
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -120,7 +120,7 @@ LAN_caon_naval_arsenal_ships_organization = {
 }
 
 LAN_princeton_north_shipyard_ships_organization = {
-	include = generic_refurbishment_repair_organization
+	include = fe_refurbishment_repair_organization
 	icon = GFX_idea_LAN_labyrinth_institute
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -141,7 +141,7 @@ LAN_princeton_north_shipyard_ships_organization = {
 
 ##########################
 LAN_kaproni_design_planes_organization = {
-	include = generic_multi_role_aircraft_organization
+	include = fe_multi_role_aircraft_organization
 	icon = GFX_idea_LAN_kaproni_design
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -151,7 +151,7 @@ LAN_kaproni_design_planes_organization = {
 }
 
 LAN_thor_power_company_planes_organization = {
-	include = generic_high_agility_fighter_aircraft_organization
+	include = fe_high_agility_fighter_aircraft_organization
 	icon = GFX_idea_LAN_thor_power_company
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -161,7 +161,7 @@ LAN_thor_power_company_planes_organization = {
 }
 
 LAN_twilight_caravan_design_planes_organization = {
-	include = generic_light_aircraft_organization
+	include = fe_light_aircraft_organization
 	icon = GFX_idea_LAN_twilight_caravan_design
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -171,7 +171,7 @@ LAN_twilight_caravan_design_planes_organization = {
 }
 
 LAN_weissflugel_skyworks_planes_organization = {
-	include = generic_helicopter_organization
+	include = fe_helicopter_organization
 	icon = GFX_idea_LAN_weissflugel_skyworks
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -191,7 +191,7 @@ LAN_weissflugel_skyworks_planes_organization = {
 
 ###################################
 LAN_skystar_technology_materiel_organization = {
-	include = generic_infantry_equipment_organization
+	include = fe_infantry_equipment_organization
 	icon = GFX_idea_LAN_skystar_technology
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -270,7 +270,7 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 			limit = {
 				is_mio_trait_completed = fe_mio_artillery_fund
 			}
-			add_mio_funds_gain_factor = 0.05
+			add_mio_funds_gain_factor = 0.1
 		}
 		hidden_effect = {
 			if = {
@@ -332,12 +332,16 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 			}
 		}
 	}
-	override_trait = {
-		token = fe_mio_artillery_fund
+	remove_trait = {fe_mio_artillery_fund}
+	add_trait = {
+		token = LAN_mio_artillery_fund
 		name = "科技融资"
+		icon = GFX_generic_mio_department_icon_facilities
 		special_trait_background = yes
-		production_bonus = {
-			production_capacity_factor = 0
+		position = { x=0 y=1 }
+		relative_position_id = fe_mio_artillery_efficiency_gain
+		all_parents = {
+			fe_mio_artillery_efficiency_gain
 		}
 		organization_modifier = {
 			custom_modifier_tooltip = LAN_mio_artillery_fund_tt
@@ -345,72 +349,91 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 	}
 	override_trait = {
 		token = fe_mio_artillery_defense
-		mutually_exclusive = { fe_mio_artillery_infantry_cost }
+		mutually_exclusive = { LAN_mio_artillery_infantry_cost }
 	}
 	override_trait = {
 		token = fe_mio_artillery_soft_attack
-		mutually_exclusive = { fe_mio_artillery_ap_attack fe_mio_artillery_infantry_attack }
+		mutually_exclusive = { fe_mio_artillery_ap_attack LAN_mio_artillery_infantry_attack }
 	}
 	override_trait = {
 		token = fe_mio_artillery_ap_attack
-		mutually_exclusive = { fe_mio_artillery_soft_attack fe_mio_artillery_infantry_attack }
+		mutually_exclusive = { fe_mio_artillery_soft_attack LAN_mio_artillery_infantry_attack }
 	}
 	add_trait = {
-		token = fe_mio_artillery_infantry_cost
+		token = LAN_mio_artillery_infantry_cost
 		name = "单人术式"
 		icon = GFX_generic_mio_department_icon_infantry_quality
+		special_trait_background = yes
 		position = { x=2 y=0 }
 		relative_position_id = fe_mio_artillery_defense
 		mutually_exclusive = {
 			fe_mio_artillery_defense
 		}
+		available = {
+			FROM = {
+				OR = {
+					has_tech = FE_infantry_weapons_3
+					is_researching_technology = FE_infantry_weapons_3
+				}
+			}
+		}
 		limit_to_equipment_type = {
 			FE_infantry_weapons_3
 		}
 		equipment_bonus = {
-			build_cost_ic = -0.2
-			reliability = -0.05
+			build_cost_ic = -0.15
+			reliability = -0.1
 		}
 	}
 	add_trait = {
-		token = fe_mio_artillery_infantry_attack
+		token = LAN_mio_artillery_infantry_attack
 		name = "魔导单元小型化"
 		icon = GFX_military_industrial_organization_infantry_equipment
+		special_trait_background = yes
 		position = { x=0 y=2 }
-		relative_position_id = fe_mio_artillery_infantry_cost
+		relative_position_id = LAN_mio_artillery_infantry_cost
 		any_parent = {
-			fe_mio_artillery_infantry_cost
+			LAN_mio_artillery_infantry_cost
 			fe_mio_artillery_reliability
 		}
 		mutually_exclusive = {
 			fe_mio_artillery_soft_attack
 			fe_mio_artillery_ap_attack
 		}
+		available = {
+			FROM = {
+				OR = {
+					has_tech = FE_infantry_weapons_3
+					is_researching_technology = FE_infantry_weapons_3
+				}
+			}
+		}
 		limit_to_equipment_type = {
 			FE_infantry_weapons_3
 		}
 		equipment_bonus = {
-			soft_attack = 0.15
-			hard_attack = 0.15
+			soft_attack = 0.1
+			hard_attack = 0.1
 			ap_attack = 0.15
 			reliability = -0.05
 		}
 	}
 	add_trait = {
-		token = fe_mio_artillery_infantry_capacity
+		token = LAN_mio_artillery_infantry_capacity
 		name = "量产化设计"
 		icon = GFX_generic_mio_department_icon_infantry_line_efficiency
+		special_trait_background = yes
 		position = { x=0 y=2 }
-		relative_position_id = fe_mio_artillery_infantry_attack
+		relative_position_id = LAN_mio_artillery_infantry_attack
 		all_parents = {
-			fe_mio_artillery_infantry_attack
+			LAN_mio_artillery_infantry_attack
 		}
 		limit_to_equipment_type = {
 			FE_infantry_weapons_3
 		}
 		production_bonus = {
-			production_efficiency_cap_factor = 0.1
-			production_efficiency_gain_factor = 0.1
+			production_efficiency_cap_factor = 0.05
+			production_efficiency_gain_factor = 0.05
 			production_capacity_factor = 0.05
 			production_cost_factor = -0.05
 		}
@@ -421,7 +444,7 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 }
 
 LAN_little_lyrical_workshop_materiel_organization = {
-	include = generic_support_equipment_organization
+	include = fe_support_equipment_organization
 	icon = GFX_idea_SMA_amber
 	allowed = {
 		has_dlc = "Arms Against Tyranny"

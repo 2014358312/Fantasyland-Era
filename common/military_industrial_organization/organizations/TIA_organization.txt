@@ -9,7 +9,7 @@
  ####################
 
 TIA_BCRL_arsenal_organization = {
-	include = generic_tank_organization
+	include = fe_tank_organization
 	icon = GFX_idea_B.C.R.L
 	allowed = {
 		tag = TIA
@@ -42,13 +42,18 @@ TIA_BCRL_arsenal_organization = {
 			production_cost_factor = -0.05
 		}
 	}
+	override_trait = {
+		token = generic_mio_trait_simplified_suspension
+		position = { x=0 y=0 }
+	}
 
 	trait = {
 		token = generic_mio_trait_enemy_tank_refitting
 		name = generic_mio_trait_enemy_tank_refitting
 		icon = GFX_generic_mio_department_icon_tank_general_conversion
 
-		position = { x=1 y=0 }
+		position = { x=3 y=0 }
+		relative_position_id = generic_mio_trait_defensive_equipment
 
 		limit_to_equipment_type = { armor }
 
@@ -157,7 +162,7 @@ TIA_BCRL_arsenal_organization = {
 		name = generic_mio_trait_standardized_secondary_armament
 		icon = GFX_generic_mio_trait_icon_breakthrough
 
-		position = { x=3 y=0 }
+		position = { x=2 y=0 }
 		relative_position_id = generic_mio_trait_enemy_tank_refitting
 
 		limit_to_equipment_type = { armor }
@@ -269,7 +274,7 @@ TIA_BCRL_arsenal_organization = {
 }
 
 TIA_imperial_night_organization = {
-	include = generic_tank_organization
+	include = fe_tank_organization
 	icon = GFX_idea_imperial_night
 	allowed = {
 		tag = TIA
@@ -320,7 +325,7 @@ TIA_imperial_night_organization = {
 
 
 TIA_GARDERNERS_naval_arsenal_organization = {
-	include = generic_battle_line_ship_organization
+	include = fe_battle_line_ship_organization
 	icon = GFX_idea_GARDERNERS
 	allowed = {
 		tag = TIA
@@ -340,7 +345,7 @@ TIA_GARDERNERS_naval_arsenal_organization = {
 
 
 TIA_NIGHT_CHAINS_organization = {
-	include = generic_high_agility_fighter_aircraft_organization
+	include = fe_high_agility_fighter_aircraft_organization
 	icon = GFX_idea_NIGHT_CHAINS
 
 	allowed = {
@@ -365,6 +370,7 @@ TIA_NIGHT_CHAINS_organization = {
 		icon = GFX_generic_mio_department_icon_plane_medium_line_efficiency
 
 		position = { x=1 y=0 }
+		relative_position_id = generic_mio_trait_minimum_weapon_requirements
 
 		limit_to_equipment_type = { mio_cat_eq_all_medium_plane }
 
@@ -648,7 +654,7 @@ TIA_NIGHT_CHAINS_organization = {
 ###################################
 
 TIA_SOURCE_CITADEL_arsenal_organization = {
-	include = generic_infantry_equipment_organization
+	include = fe_infantry_equipment_organization
 	icon = GFX_idea_SOURCE_CITADEL
 	allowed = {
 		tag = TIA
@@ -657,7 +663,7 @@ TIA_SOURCE_CITADEL_arsenal_organization = {
 }
 
 TIA_GARDERNERS_artillery_organization = {
-	include = generic_artillery_organization
+	include = fe_artillery_organization
 	icon = GFX_idea_GARDERNERS
 	allowed = {
 		tag = TIA
@@ -669,7 +675,7 @@ TIA_GARDERNERS_artillery_organization = {
 # 温克勒商会 兵工部（商业联合体 -> 火炮/工业，完成"联系温克勒商会"后解锁）
 ###########################
 TIA_Winkler_Chamber_Commerce_organization = {
-	include = generic_artillery_organization
+	include = fe_artillery_organization
 	icon = GFX_idea_GARDERNERS
 	allowed = {
 		tag = TIA
@@ -697,7 +703,7 @@ TIA_Winkler_Chamber_Commerce_organization = {
 # 马奇诺女子学院（精英军事学院 -> 步兵装备，完成"扩建马奇诺女子学院"后解锁）
 ###########################
 TIA_Marcino_Girls_Academy_organization = {
-	include = generic_infantry_equipment_organization
+	include = fe_infantry_equipment_organization
 	icon = GFX_idea_SOURCE_CITADEL
 	allowed = {
 		tag = TIA
@@ -724,7 +730,7 @@ TIA_Marcino_Girls_Academy_organization = {
 # 魔学院兵工部（尤蜜拉魔能工业化 -> 魔导飞行器，完成"魔能工业化"后解锁）
 ###########################
 TIA_magic_academy_organization = {
-	include = generic_medium_aircraft_organization
+	include = fe_medium_aircraft_organization
 	icon = GFX_idea_NIGHT_CHAINS
 	allowed = {
 		tag = TIA
@@ -751,7 +757,7 @@ TIA_magic_academy_organization = {
 # 帝国制铁所（莉薇娅钢铁帝国 -> 重装甲，完成"工业再兴"后解锁）
 ###########################
 TIA_imperial_steelworks_organization = {
-	include = generic_heavy_tank_organization
+	include = fe_heavy_tank_organization
 	icon = GFX_idea_B.C.R.L
 	allowed = {
 		tag = TIA
@@ -779,7 +785,7 @@ TIA_imperial_steelworks_organization = {
 # 圣诺尔学院（堤亚穆名门学府，湖中之岛 -> 海军，完成"圣诺尔学院"国策后解锁）
 ###########################
 TIA_Saint_Noel_Academy_organization = {
-	include = generic_escort_ship_organization
+	include = fe_escort_ship_organization
 	icon = GFX_idea_GARDERNERS
 	allowed = {
 		tag = TIA
