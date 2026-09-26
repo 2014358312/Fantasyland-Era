@@ -202,7 +202,6 @@ LAN_skystar_technology_materiel_organization = {
 
 LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 	include = fe_artillery_organization
-	name = LAN_landsol_royal_artillery_arsenal_factory_materiel_organization
 	icon = GFX_idea_SMA_amber
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -369,14 +368,6 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 		mutually_exclusive = {
 			fe_mio_artillery_defense
 		}
-		available = {
-			FROM = {
-				OR = {
-					has_tech = FE_infantry_weapons_3
-					is_researching_technology = FE_infantry_weapons_3
-				}
-			}
-		}
 		limit_to_equipment_type = {
 			FE_infantry_weapons_3
 		}
@@ -399,14 +390,6 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 		mutually_exclusive = {
 			fe_mio_artillery_soft_attack
 			fe_mio_artillery_ap_attack
-		}
-		available = {
-			FROM = {
-				OR = {
-					has_tech = FE_infantry_weapons_3
-					is_researching_technology = FE_infantry_weapons_3
-				}
-			}
 		}
 		limit_to_equipment_type = {
 			FE_infantry_weapons_3

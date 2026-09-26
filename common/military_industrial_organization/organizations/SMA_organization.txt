@@ -191,7 +191,19 @@ SMA_Amber_materiel_organization = {
 		FROM = { original_tag = SMA }
 	}
 	visible = { FROM = { original_tag = SMA } }
-
+	equipment_type = {
+		infantry
+	}
+	initial_trait = {
+		name = SMA_Amber_materiel_organization_initial_trait
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_size_up_requirement = -0.1
+		}
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
 	add_trait = {
 		token = SMA_mio_trait_authorize_partner_enterprise_materiel
 		name = SMA_mio_trait_authorize_partner_enterprise_materiel_name
