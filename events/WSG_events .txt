@@ -1,4 +1,4 @@
-﻿###########################
+###########################
 # Warship Girls Events
 ###########################
 
@@ -270,20 +270,10 @@ country_event = {
 		}
 	}
 	option = {
-		name = WSG_event.011.a
-		add_stability = -0.03
-		add_war_support = 0.05
-		add_to_variable = { WSG_right_line = 1 }
-	}
-	option = {
-		name = WSG_event.011.b
-		add_stability = -0.03
-		add_to_variable = { WSG_middle_line = 1 }
-	}
-	option = {
-		name = WSG_event.011.c
-		add_political_power = -100
-		add_to_variable = { WSG_left_line = 1 }
+		name = WSG_game_text.07.a
+		hidden_effect = {
+			country_event = { id =  WSG_game_text.07 }
+		}
 	}
 }
 
@@ -1417,5 +1407,28 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = WSG_game_text.06.a
+	}
+}
+country_event = {
+	id = WSG_game_text.07
+	title = WSG_game_text.07.t
+	desc = WSG_game_text.07.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = WSG_event.011.a
+		add_stability = -0.03
+		add_war_support = 0.05
+		add_to_variable = { WSG_right_line = 1 }
+	}
+	option = {
+		name = WSG_event.011.b
+		add_stability = -0.03
+		add_to_variable = { WSG_middle_line = 1 }
+	}
+	option = {
+		name = WSG_event.011.c
+		add_political_power = -100
+		add_to_variable = { WSG_left_line = 1 }
 	}
 }
