@@ -61,13 +61,24 @@ LAN_gourmet_guild_tanks_organization = {
 }
 
 LAN_diabolos_heavy_tanks_organization = {
-	include = fe_heavy_tank_organization
+	#include = fe_heavy_tank_organization
 	icon = GFX_idea_LAN_diabolos_heavy
+	equipment_type = {
+		mio_cat_eq_all_heavy_tank
+	}
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
 		FROM = { original_tag = LAN }
 	}
 	visible = { FROM = { original_tag = LAN } }
+	tree_header_text = {
+		text = "未启用重坦相关装备与科技"
+		x = 1
+	}
+	tree_header_text = {
+		text = "需重新设计此制造商"
+		x = 4
+	}
 }
 
 LAN_princess_heart_tanks_organization = {
@@ -171,13 +182,24 @@ LAN_twilight_caravan_design_planes_organization = {
 }
 
 LAN_weissflugel_skyworks_planes_organization = {
-	include = fe_helicopter_organization
+	#include = fe_helicopter_organization
 	icon = GFX_idea_LAN_weissflugel_skyworks
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
 		FROM = { original_tag = LAN }
 	}
 	visible = { FROM = { original_tag = LAN } }
+	equipment_type = {
+		helicopter_equipment
+	}
+	tree_header_text = {
+		text = "直升机制造商已被移去"
+		x = 1
+	}
+	tree_header_text = {
+		text = "需重新设计此制造商"
+		x = 4
+	}
 }
 
 
