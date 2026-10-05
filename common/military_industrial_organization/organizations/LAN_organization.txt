@@ -221,7 +221,6 @@ LAN_skystar_technology_materiel_organization = {
 	}
 	visible = { FROM = { original_tag = LAN } }
 }
-
 LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 	include = fe_artillery_organization
 	icon = GFX_idea_SMA_amber
@@ -231,7 +230,9 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 	}
 	visible = { FROM = { original_tag = LAN } }
 	equipment_type = {
-		mio_cat_eq_all_artillery
+		artillery
+		anti_tank_equipment
+		anti_air_equipment
 		FE_infantry_weapons_3
 	}
 	on_industrial_manufacturer_assigned = {
@@ -375,10 +376,15 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 	override_trait = {
 		token = fe_mio_artillery_soft_attack
 		mutually_exclusive = { fe_mio_artillery_ap_attack LAN_mio_artillery_infantry_attack }
+		limit_to_equipment_type = { artillery }
 	}
 	override_trait = {
 		token = fe_mio_artillery_ap_attack
 		mutually_exclusive = { fe_mio_artillery_soft_attack LAN_mio_artillery_infantry_attack }
+	}
+	override_trait = {
+		token = fe_mio_artillery_capacity
+		limit_to_equipment_type = { artillery }
 	}
 	add_trait = {
 		token = LAN_mio_artillery_infantry_cost
@@ -447,7 +453,6 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 		}
 	}
 }
-
 LAN_little_lyrical_workshop_materiel_organization = {
 	include = fe_support_equipment_organization
 	icon = GFX_idea_SMA_amber
@@ -456,4 +461,135 @@ LAN_little_lyrical_workshop_materiel_organization = {
 		FROM = { original_tag = LAN }
 	}
 	visible = { FROM = { original_tag = LAN } }
+	equipment_type = { infantry_equipment support_equipment }
+	research_categories = { infantry_weapons support_tech }
+	tree_header_text = {
+		text = mio_header_design
+		x = 1
+	}
+	tree_header_text = {
+		text = mio_header_production
+		x = 4
+	}
+	tree_header_text = {
+		text = RESEARCH_RESEARCH
+		x = 7
+	}
+	research_bonus = 0.1
+	initial_trait = {
+		name = LAN_mio_support_initial_trait
+		organization_modifier = {
+			military_industrial_organization_size_up_requirement = -0.1
+		}
+		equipment_bonus = {
+			reliability = 0.05
+			build_cost_ic = -0.05
+		}
+	}
+	add_trait = {
+		token = LAN_mio_support_design
+		name = LAN_mio_support_design
+		icon = GFX_generic_mio_department_icon_support_conversion
+		position = { x=1 y=0 }
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.5
+		}
+	}
+	override_trait = {
+		token = fe_mio_support_reliability
+		position = { x=-1 y=1 }
+		relative_position_id = LAN_mio_support_design
+		all_parents = { LAN_mio_support_design }
+		equipment_bonus = {
+			reliability = 0.05
+			defense = 0.05
+		}
+	}
+	override_trait = {
+		token = fe_mio_support_cost
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+		all_parents = { LAN_mio_support_design }
+		equipment_bonus = {
+			build_cost_ic = -0.05
+			maximum_speed = 0.1
+		}
+	}
+	override_trait = {
+		token = fe_mio_support_additional_reliability
+		equipment_bonus = {
+			reliability = 0.05
+			soft_attack = 0.05
+		}
+	}
+	override_trait = {
+		token = fe_mio_support_extra_reliability
+		position = { x=0 y=1 }
+		equipment_bonus = {
+			reliability = 0.1
+			defense = 0.05
+			build_cost_ic = 0.05
+		}
+	}
+	override_trait = {
+		token = fe_mio_support_build_cost_ic
+		equipment_bonus = {
+			build_cost_ic = -0.05
+			maximum_speed = 0.05
+		}
+	}
+	add_trait = {
+		token = LAN_mio_support_funds
+		name = LAN_mio_support_funds
+		icon = GFX_generic_mio_department_icon_facilities
+		position = { x=3 y=0 }
+		relative_position_id = LAN_mio_support_design
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.05
+		}
+	}
+	override_trait = {
+		token = fe_mio_support_capacity
+		position = { x=0 y=1 }
+		relative_position_id = LAN_mio_support_funds
+		all_parents = { LAN_mio_support_funds }
+	}
+	override_trait = {
+		token = fe_mio_support_efficiency_cap
+		position = { x=1 y=1 }
+	}
+	override_trait = {
+		token = fe_mio_support_research
+		position = { x=3 y=-1 }
+	}
+	add_trait = {
+		token = LAN_mio_support_research_bonus
+		name = LAN_mio_support_research_bonus
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+		position = { x=-1 y=2 }
+		relative_position_id = fe_mio_support_funds
+		all_parents = { fe_mio_support_funds }
+		mutually_exclusive = { LAN_mio_support_design_cost }
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = -0.1
+		}
+	}
+	add_trait = {
+		token = LAN_mio_support_design_cost
+		name = LAN_mio_support_design_cost
+		icon = GFX_generic_mio_trait_icon_unique
+		special_trait_background = yes
+		position = { x=2 y=0 }
+		relative_position_id = LAN_mio_support_research_bonus
+		all_parents = { fe_mio_support_funds }
+		mutually_exclusive = { LAN_mio_support_research_bonus }
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -2
+			military_industrial_organization_research_bonus = -0.05
+		}
+	}
 }

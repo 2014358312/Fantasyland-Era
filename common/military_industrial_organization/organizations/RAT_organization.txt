@@ -45,7 +45,7 @@
 
 ###################################
 DEM_organization = {
-	include = fe_support_equipment_organization
+	include = LAN_little_lyrical_workshop_materiel_organization
 	icon = GFX_idea_RAT_DEM
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -71,5 +71,55 @@ DEM_organization = {
 	}
 	available = {
 		FROM = { has_character = RAT_Issac_Ray_Pelham_Westcott }
+	}
+	tree_header_text = {
+		text = mio_header_design
+		x = 2
+	}
+	tree_header_text = {
+		text = mio_header_production
+		x = 5
+	}
+	tree_header_text = {
+		text = RESEARCH_RESEARCH
+		x = 8
+	}
+	initial_trait = {
+		equipment_bonus = {
+			soft_attack = 0.05
+			defense = 0.05
+		}
+	}
+	override_trait = {
+		token = LAN_mio_support_design
+		position = { x=2 y=0 }
+	}
+	override_trait = {
+		token = LAN_mio_support_research_bonus
+		name = DEM_organization_production
+		icon = GFX_generic_mio_department_icon_support_technology
+		position = { x=0 y=1 }
+		relative_position_id = fe_mio_support_efficiency_cap
+		all_parents = { fe_mio_support_efficiency_cap }
+		organization_modifier = {
+			military_industrial_organization_research_bonus = -0.1
+		}
+		production_bonus = {
+			production_efficiency_cap_factor = 0.1
+		}
+	}
+	override_trait = {
+		token = LAN_mio_support_design_cost
+		name = DEM_organization_design
+		position = { x=3 y=0 }
+		equipment_bonus = {
+			soft_attack = 0.05
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		production_bonus = {
+			production_efficiency_gain_factor = -0.1
+		}
 	}
 }
