@@ -61,23 +61,79 @@ LAN_gourmet_guild_tanks_organization = {
 }
 
 LAN_diabolos_heavy_tanks_organization = {
-	#include = fe_heavy_tank_organization
+	include = fe_motorized_mechanized_organization
 	icon = GFX_idea_LAN_diabolos_heavy
-	equipment_type = {
-		mio_cat_eq_all_heavy_tank
-	}
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
 		FROM = { original_tag = LAN }
 	}
 	visible = { FROM = { original_tag = LAN } }
-	tree_header_text = {
-		text = "未启用重坦相关装备与科技"
-		x = 1
+	equipment_type = {
+		motorized
+		mechanized
+		ifv_chassis
 	}
-	tree_header_text = {
-		text = "需重新设计此制造商"
-		x = 4
+	research_categories = {
+		motorized_equipment
+		mio_cat_tech_light_armor_and_modules
+	}
+	override_trait = {
+		token = fe_mio_motorized_reliability
+		mutually_exclusive = { fe_mio_motorized_maximum_speed LAN_mio_motorized_maximum_speed }
+	}
+	override_trait = {
+		token = fe_mio_motorized_maximum_speed
+		position = { x=1 y=0 }
+		mutually_exclusive = { fe_mio_motorized_reliability LAN_mio_motorized_maximum_speed }
+	}
+	add_trait = {
+		token = LAN_mio_motorized_maximum_speed
+		name = LAN_mio_motorized_maximum_speed
+		icon = GFX_generic_mio_trait_icon_breakthrough
+		position = { x=1 y=0 }
+		relative_position_id = fe_mio_motorized_maximum_speed
+		all_parents = { fe_mio_motorized_oil }
+		mutually_exclusive = { fe_mio_motorized_reliability fe_mio_motorized_maximum_speed }
+		equipment_bonus = {
+			maximum_speed = 0.1
+			breakthrough = 0.1
+			reliability = -0.1
+		}
+	}
+	override_trait = {
+		token = fe_mio_motorized_attack
+		limit_to_equipment_type = { motorized_rocket_equipment armored_car_equipment ifv_chassis }
+	}
+	override_trait = {
+		token = fe_mio_motorized_rocket
+		limit_to_equipment_type = { motorized_rocket_equipment ifv_artillery_chassis }
+	}
+	override_trait = {
+		token = fe_mio_motorized_ap
+		limit_to_equipment_type = { mechanized armored_car_equipment ifv_chassis }
+	}
+	override_trait = {
+		token = fe_mio_motorized_defense
+		limit_to_equipment_type = { mechanized armored_car_equipment ifv_chassis }
+	}
+	override_trait = {
+		token = fe_mio_motorized_armor
+		limit_to_equipment_type = { mechanized armored_car_equipment ifv_chassis }
+	}
+	add_trait = {
+		token = LAN_mio_motorized_ap
+		name = LAN_mio_motorized_ap
+		icon = GFX_generic_mio_department_icon_tank_general_at
+		special_trait_background = yes
+		position = { x=0 y=2 }
+		relative_position_id = fe_mio_motorized_ap
+		all_parents = { fe_mio_motorized_ap }
+		limit_to_equipment_type = { ifv_chassis }
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			ap_attack = 0.1
+		}
 	}
 }
 
@@ -182,24 +238,13 @@ LAN_twilight_caravan_design_planes_organization = {
 }
 
 LAN_weissflugel_skyworks_planes_organization = {
-	#include = fe_helicopter_organization
+	include = fe_general_aircraft_organization
 	icon = GFX_idea_LAN_weissflugel_skyworks
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
 		FROM = { original_tag = LAN }
 	}
 	visible = { FROM = { original_tag = LAN } }
-	equipment_type = {
-		helicopter_equipment
-	}
-	tree_header_text = {
-		text = "直升机制造商已被移去"
-		x = 1
-	}
-	tree_header_text = {
-		text = "需重新设计此制造商"
-		x = 4
-	}
 }
 
 
