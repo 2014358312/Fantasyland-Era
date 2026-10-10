@@ -68,11 +68,6 @@ LAN_diabolos_heavy_tanks_organization = {
 		FROM = { original_tag = LAN }
 	}
 	visible = { FROM = { original_tag = LAN } }
-	equipment_type = {
-		motorized
-		mechanized
-		ifv_chassis
-	}
 	research_categories = {
 		motorized_equipment
 		mio_cat_tech_light_armor_and_modules
@@ -99,26 +94,6 @@ LAN_diabolos_heavy_tanks_organization = {
 			breakthrough = 0.1
 			reliability = -0.1
 		}
-	}
-	override_trait = {
-		token = fe_mio_motorized_attack
-		limit_to_equipment_type = { motorized_rocket_equipment armored_car_equipment ifv_chassis }
-	}
-	override_trait = {
-		token = fe_mio_motorized_rocket
-		limit_to_equipment_type = { motorized_rocket_equipment ifv_artillery_chassis }
-	}
-	override_trait = {
-		token = fe_mio_motorized_ap
-		limit_to_equipment_type = { mechanized armored_car_equipment ifv_chassis }
-	}
-	override_trait = {
-		token = fe_mio_motorized_defense
-		limit_to_equipment_type = { mechanized armored_car_equipment ifv_chassis }
-	}
-	override_trait = {
-		token = fe_mio_motorized_armor
-		limit_to_equipment_type = { mechanized armored_car_equipment ifv_chassis }
 	}
 	add_trait = {
 		token = LAN_mio_motorized_ap
