@@ -124,6 +124,9 @@ country_event = {
 	option = {
 		name = WSG_event.007.a
 		complete_national_focus = WSG_dark_day
+		hidden_effect = {
+			country_event = { id =  WSG_game_text.10 }
+		}
 	}
 }
 
@@ -287,16 +290,25 @@ country_event = {
 		name = WSG_event.012.a
 		add_popularity = { ideology =  democratic popularity = 0.03 }
 		add_to_variable = { WSG_middle_line = 1 }
+		hidden_effect = {
+			country_event = { id =  WSG_game_text.08 }
+		}
 	}
 	option = {
 		name = WSG_event.012.b
 		add_popularity = { ideology = communism popularity = 0.03 }
 		add_to_variable = { WSG_left_line = 1 }
+		hidden_effect = {
+			country_event = { id =  WSG_game_text.08 }
+		}
 	}
 	option = {
 		name = WSG_event.012.c
 		add_popularity = { ideology = fascism popularity = 0.03 }
 		add_to_variable = { WSG_right_line = 1 }
+		hidden_effect = {
+			country_event = { id =  WSG_game_text.08 }
+		}
 	}
 }
 
@@ -1431,4 +1443,50 @@ country_event = {
 		add_political_power = -100
 		add_to_variable = { WSG_left_line = 1 }
 	}
+}
+country_event = {
+	id = WSG_game_text.08
+	title = WSG_game_text.08.t
+	desc = WSG_game_text.08.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = WSG_game_text.08.a
+		hidden_effect = {
+			country_event = { id =  WSG_game_text.09 }
+		}
+	}
+}
+country_event = {
+	id = WSG_game_text.09
+	title = WSG_game_text.09.t
+	desc = WSG_game_text.09.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = WSG_game_text.09.a
+	}
+}
+country_event = {
+	id = WSG_game_text.10
+	title = WSG_game_text.10.t
+	desc = WSG_game_text.10.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = WSG_game_text.10.a
+		hidden_effect = {
+			country_event = { id =  WSG_game_text.11 }
+		}
+	}
+}
+country_event = {
+	id = WSG_game_text.11
+	title = WSG_game_text.11.t
+	desc = WSG_game_text.11.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = WSG_game_text.11.a
+    }
 }
