@@ -3733,249 +3733,244 @@ fe_general_aircraft_organization = {
 	}
 	research_categories = { air_equipment helicopter_tech }
 	tree_header_text = {
-		text = mio_header_fighter_aircraft
+		text = EQ_MOD_CAT_plane_special_module_electronics_TITLE
 		x = 1
 	}
 	tree_header_text = {
-		text = mio_header_bomber_aircraft
+		text = mio_header_design_and_production
 		x = 4
 	}
 	tree_header_text = {
-		text = mio_header_naval_aircraft
-		x = 7
+		text = MODIFIER_DEFENCE
+		x = 6
+	}
+	tree_header_text = {
+		text = AIR_TITLE_WEAPONS
+		x = 8
 	}
 	initial_trait = {
 		name = fe_general_aircraft_organization
-
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.05
 		}
 		production_bonus = {
-			production_capacity_factor = 0.03
+			production_capacity_factor = 0.05
 		}
 	}
 	trait = {
-		token = generic_mio_trait_conservative_designs
-		name = generic_mio_trait_conservative_designs
-		icon = GFX_generic_mio_trait_icon_reliability
+		token = fe_mio_aircraft_conversion
+		name = fe_mio_aircraft_conversion
+		icon = GFX_generic_mio_department_icon_plane_general_production
 		position = { x=4 y=0 }
 		equipment_bonus = {
 			reliability = 0.05
 		}
+		production_bonus = {
+			production_cost_factor = -0.02
+			production_conversion_speed_factor = 0.15
+		}
 	}
 	trait = {
-		token = generic_mio_trait_fighter_aircraft_specialists
-		name = generic_mio_trait_fighter_aircraft_specialists
-		icon = GFX_generic_mio_department_icon_plane_fighter_engine
-
+		token = fe_mio_aircraft_night_penalty
+		name = fe_mio_aircraft_night_penalty
+		icon = GFX_generic_mio_trait_icon_detection
 		position = { x=-3 y=1 }
-		relative_position_id = generic_mio_trait_conservative_designs
-
-		all_parents = { generic_mio_trait_conservative_designs }
-
-		limit_to_equipment_type = { mio_cat_eq_only_light_fighter_no_cv medium_plane_fighter_airframe medium_plane_scout_plane_airframe }
-
+		relative_position_id = fe_mio_aircraft_conversion
+		all_parents = { fe_mio_aircraft_conversion }
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane mio_cat_eq_all_medium_plane mio_cat_eq_all_large_plane }
 		equipment_bonus = {
-			air_range = 0.05
+			night_penalty = 0.1
 		}
 	}
-
 	trait = {
-		token = generic_mio_trait_high_speed_design
-		name = generic_mio_trait_high_speed_design
-		icon = GFX_generic_mio_trait_icon_maximum_speed
-
+		token = fe_mio_aircraft_strategic_attack
+		name = fe_mio_aircraft_strategic_attack
+		icon = GFX_generic_mio_trait_icon_surface_detection
 		position = { x=-1 y=1 }
-		relative_position_id = generic_mio_trait_fighter_aircraft_specialists
-
-		all_parents = { generic_mio_trait_fighter_aircraft_specialists }
-
-		mutually_exclusive = { generic_mio_trait_agility_wing_design }
-
-		limit_to_equipment_type = { mio_cat_eq_only_light_fighter_no_cv medium_plane_fighter_airframe medium_plane_scout_plane_airframe }
-
+		relative_position_id = fe_mio_aircraft_night_penalty
+		all_parents = { fe_mio_aircraft_night_penalty }
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane }
 		equipment_bonus = {
-			maximum_speed = 0.05
+			air_superiority = 0.05
 		}
 	}
-
 	trait = {
-		token = generic_mio_trait_agility_wing_design
-		name = generic_mio_trait_agility_wing_design
-		icon = GFX_generic_mio_trait_icon_air_agility
-
-		position = { x=1 y=1 }
-		relative_position_id = generic_mio_trait_fighter_aircraft_specialists
-
-		all_parents = { generic_mio_trait_fighter_aircraft_specialists }
-
-		mutually_exclusive = { generic_mio_trait_high_speed_design }
-
-		limit_to_equipment_type = { mio_cat_eq_only_light_fighter_no_cv medium_plane_fighter_airframe medium_plane_scout_plane_airframe }
-
+		token = fe_mio_aircraft_detection
+		name = fe_mio_aircraft_detection
+		icon = GFX_generic_mio_trait_icon_sub_detection
+		position = { x=2 y=0 }
+		relative_position_id = fe_mio_aircraft_strategic_attack
+		all_parents = { fe_mio_aircraft_night_penalty }
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane mio_cat_eq_all_medium_plane mio_cat_eq_all_large_plane }
 		equipment_bonus = {
+			surface_detection = 0.05
+			sub_detection = 0.05
+		}
+	}
+	trait = {
+		token = fe_mio_aircraft_fighter
+		name = generic_mio_trait_fighter_aircraft_specialists
+		icon = GFX_generic_mio_department_icon_plane_fighter_quality
+		position = { x=0 y=1 }
+		relative_position_id = fe_mio_aircraft_strategic_attack
+		any_parent = { fe_mio_aircraft_strategic_attack fe_mio_aircraft_detection }
+		limit_to_equipment_type = { mio_cat_eq_only_light_fighter_no_cv medium_plane_fighter_airframe medium_plane_scout_plane_airframe }
+		equipment_bonus = {
+			air_attack = 0.05
 			air_agility = 0.05
 		}
 	}
-
 	trait = {
-		token = generic_mio_trait_fighter_aircraft_production
-		name = generic_mio_trait_fighter_aircraft_production
-		icon = GFX_generic_mio_department_icon_plane_fighter_production
-
-		position = { x=1 y=2 }
-		relative_position_id = generic_mio_trait_high_speed_design
-
-		any_parent = { generic_mio_trait_high_speed_design generic_mio_trait_agility_wing_design }
-
-		limit_to_equipment_type = { mio_cat_eq_only_light_fighter_no_cv medium_plane_fighter_airframe medium_plane_scout_plane_airframe }
-
-		production_bonus = {
-			production_capacity_factor = 0.05
-		}
-	}
-
-	trait = {
-		token = generic_mio_trait_bomber_aircraft_specialists
-		name = generic_mio_trait_bomber_aircraft_specialists
-		icon = GFX_generic_mio_department_icon_plane_strategic_bomber_engine
-
-		position = { x=0 y=1 }
-		relative_position_id = generic_mio_trait_conservative_designs
-
-		all_parents = { generic_mio_trait_conservative_designs }
-
-		limit_to_equipment_type = { small_plane_cas_airframe mio_cat_eq_only_tactical_bomber mio_cat_eq_only_strategic_bomber }
-	equipment_bonus = {
-			air_range = 0.05
-		}
-	}
-
-	trait = {
-		token = generic_mio_trait_bomb_trucks
-		name = generic_mio_trait_bomb_trucks
-		icon = GFX_generic_mio_trait_icon_defense
-
-		position = { x=-1 y=1 }
-		relative_position_id = generic_mio_trait_bomber_aircraft_specialists
-
-		all_parents = { generic_mio_trait_bomber_aircraft_specialists }
-
-		mutually_exclusive = { generic_mio_trait_fast_bombers }
-
-		limit_to_equipment_type = { small_plane_cas_airframe mio_cat_eq_only_tactical_bomber mio_cat_eq_only_strategic_bomber }
-
-		equipment_bonus = {
-			air_defence = 0.03
-		}
-	}
-
-	trait = {
-		token = generic_mio_trait_fast_bombers
-		name = generic_mio_trait_fast_bombers
-		icon = GFX_generic_mio_trait_icon_maximum_speed
-
-		position = { x=1 y=1 }
-		relative_position_id = generic_mio_trait_bomber_aircraft_specialists
-
-		all_parents = { generic_mio_trait_bomber_aircraft_specialists }
-
-		mutually_exclusive = { generic_mio_trait_bomb_trucks }
-
-		limit_to_equipment_type = { small_plane_cas_airframe mio_cat_eq_only_tactical_bomber mio_cat_eq_only_strategic_bomber }
-
-		equipment_bonus = {
-			maximum_speed = 0.05
-		}
-	}
-
-	trait = {
-		token = generic_mio_trait_bomber_aircraft_production
-		name = generic_mio_trait_bomber_aircraft_production
-		icon = GFX_generic_mio_department_icon_plane_strategic_bomber_production
-
-		position = { x=1 y=2 }
-		relative_position_id = generic_mio_trait_bomb_trucks
-
-		any_parent = { generic_mio_trait_bomb_trucks generic_mio_trait_fast_bombers }
-
-		limit_to_equipment_type = { small_plane_cas_airframe mio_cat_eq_only_tactical_bomber mio_cat_eq_only_strategic_bomber }
-
-		production_bonus = {
-			production_capacity_factor = 0.05
-		}
-	}
-
-	trait = {
-		token = generic_mio_trait_naval_aircraft_specialists
+		token = fe_mio_aircraft_naval
 		name = generic_mio_trait_naval_aircraft_specialists
-		icon = GFX_generic_mio_department_icon_plane_cv_naval_bomber_engine
-
-		position = { x=3 y=1 }
-		relative_position_id = generic_mio_trait_conservative_designs
-
-		all_parents = { generic_mio_trait_conservative_designs }
-
+		icon = GFX_generic_mio_department_icon_plane_cv_naval_bomber_quality
+		position = { x=2 y=0 }
+		relative_position_id = fe_mio_aircraft_fighter
+		all_parents = { fe_mio_aircraft_detection }
 		limit_to_equipment_type = { small_plane_naval_bomber_airframe mio_cat_eq_all_cv_aircraft large_plane_maritime_patrol_plane_airframe }
-
 		equipment_bonus = {
-			air_range = 0.05
-		}
-	}
-
-	trait = {
-		token = generic_mio_trait_naval_strike
-		name = generic_mio_trait_naval_strike
-		icon = GFX_generic_mio_trait_icon_torpedo_attack
-
-		position = { x=-1 y=1 }
-		relative_position_id = generic_mio_trait_naval_aircraft_specialists
-
-		all_parents = { generic_mio_trait_naval_aircraft_specialists }
-
-		mutually_exclusive = { generic_mio_trait_naval_air_patrol }
-
-		limit_to_equipment_type = { small_plane_naval_bomber_airframe mio_cat_eq_all_cv_aircraft large_plane_maritime_patrol_plane_airframe }
-
-		equipment_bonus = {
+			naval_strike_attack = 0.05
 			naval_strike_targetting = 0.05
 		}
 	}
-
 	trait = {
-		token = generic_mio_trait_naval_air_patrol
-		name = generic_mio_trait_naval_air_patrol
-		icon = GFX_generic_mio_trait_icon_surface_detection
-
-		position = { x=1 y=1 }
-		relative_position_id = generic_mio_trait_naval_aircraft_specialists
-
-		all_parents = { generic_mio_trait_naval_aircraft_specialists }
-
-		mutually_exclusive = { generic_mio_trait_naval_strike }
-
-		limit_to_equipment_type = { small_plane_naval_bomber_airframe mio_cat_eq_all_cv_aircraft large_plane_maritime_patrol_plane_airframe }
-
+		token = fe_mio_aircraft_thrust
+		name = fe_mio_aircraft_thrust
+		icon = GFX_generic_mio_department_icon_plane_general_engine
+		position = { x=3 y=0 }
+		relative_position_id = fe_mio_aircraft_night_penalty
+		all_parents = { fe_mio_aircraft_conversion }
 		equipment_bonus = {
-			surface_detection = 0.05
-			air_agility = 0.05
+			maximum_speed = 0.05
 		}
 	}
-
 	trait = {
-		token = generic_mio_trait_naval_aircraft_production
-		name = generic_mio_trait_naval_aircraft_production
-		icon = GFX_generic_mio_department_icon_plane_cv_naval_bomber_production
-
-		position = { x=1 y=2 }
-		relative_position_id = generic_mio_trait_naval_strike
-
-		any_parent = { generic_mio_trait_naval_strike generic_mio_trait_naval_air_patrol }
-
-		limit_to_equipment_type = { small_plane_naval_bomber_airframe mio_cat_eq_all_cv_aircraft large_plane_maritime_patrol_plane_airframe }
-
+		token = fe_mio_aircraft_air_agility
+		name = fe_mio_aircraft_air_agility
+		icon = GFX_generic_mio_trait_icon_air_agility
+		position = { x=-1 y=1 }
+		relative_position_id = fe_mio_aircraft_thrust
+		all_parents = { fe_mio_aircraft_thrust }
+		mutually_exclusive = { fe_mio_aircraft_air_range }
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane mio_cat_eq_all_medium_plane mio_cat_eq_all_large_plane }
+		equipment_bonus = {
+			air_agility = 0.05
+			weight = -0.05
+			air_defence = -0.05
+		}
+	}
+	trait = {
+		token = fe_mio_aircraft_air_range
+		name = fe_mio_aircraft_air_range
+		icon = GFX_generic_mio_trait_icon_air_range
+		position = { x=2 y=0 }
+		relative_position_id = fe_mio_aircraft_air_agility
+		all_parents = { fe_mio_aircraft_thrust }
+		mutually_exclusive = { fe_mio_aircraft_air_agility }
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane mio_cat_eq_all_medium_plane mio_cat_eq_all_large_plane }
+		equipment_bonus = {
+			air_range = 0.05
+		}
+	}
+	trait = {
+		token = fe_mio_aircraft_maximum_speed
+		name = fe_mio_aircraft_maximum_speed
+		icon = GFX_generic_mio_department_icon_plane_general_quality
+		position = { x=1 y=1 }
+		relative_position_id = fe_mio_aircraft_air_agility
+		any_parent = { fe_mio_aircraft_air_agility fe_mio_aircraft_air_range }
+		equipment_bonus = {
+			fuel_consumption = -0.05
+		}
 		production_bonus = {
-			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+	trait = {
+		token = fe_mio_aircraft_air_defence
+		name = fe_mio_aircraft_air_defence
+		icon = GFX_generic_mio_trait_icon_defense
+		position = { x=2 y=0 }
+		relative_position_id = fe_mio_aircraft_thrust
+		all_parents = { fe_mio_aircraft_conversion }
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane mio_cat_eq_all_medium_plane mio_cat_eq_all_large_plane }
+		equipment_bonus = {
+			air_defence = 0.05
+		}
+	}
+	trait = {
+		token = fe_mio_aircraft_helicopter
+		name = fe_mio_aircraft_helicopter
+		icon = GFX_generic_mio_department_icon_helicopter
+		position = { x=0 y=2 }
+		relative_position_id = fe_mio_aircraft_air_defence
+		all_parents = { fe_mio_aircraft_air_defence }
+		limit_to_equipment_type = { helicopter_equipment }
+		equipment_bonus = {
+			defense = 0.05
+			armor_value = 0.05
+		}
+	}
+	trait = {
+		token = fe_mio_aircraft_air_attack
+		name = fe_mio_aircraft_air_attack
+		icon = GFX_generic_mio_department_icon_plane_general_combat
+		position = { x=2 y=0 }
+		relative_position_id = fe_mio_aircraft_air_defence
+		all_parents = { fe_mio_aircraft_conversion }
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane mio_cat_eq_all_medium_plane mio_cat_eq_all_large_plane }
+		equipment_bonus = {
+			air_attack = 0.05
+		}
+	}
+	trait = {
+		token = fe_mio_aircraft_defence
+		name = fe_mio_aircraft_defence
+		icon = GFX_generic_mio_trait_icon_anti_air_attack
+		position = { x=-1 y=1 }
+		relative_position_id = fe_mio_aircraft_air_attack
+		all_parents = { fe_mio_aircraft_air_attack }
+		limit_to_equipment_type = { mio_cat_eq_all_large_plane }
+		equipment_bonus = {
+			air_attack = 0.05
+			air_defence = 0.05
+		}
+	}
+	trait = {
+		token = fe_mio_aircraft_air_ground_attack
+		name = fe_mio_aircraft_air_ground_attack
+		icon = GFX_generic_mio_trait_icon_air_ground_attack
+		position = { x=2 y=0 }
+		relative_position_id = fe_mio_aircraft_defence
+		all_parents = { fe_mio_aircraft_air_attack }
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane mio_cat_eq_all_medium_plane }
+		equipment_bonus = {
+			air_ground_attack = 0.05
+			naval_strike_attack = 0.05
+		}
+	}
+	trait = {
+		token = fe_mio_aircraft_bomber
+		name = generic_mio_trait_bomber_aircraft_specialists
+		icon = GFX_generic_mio_department_icon_plane_strategic_bomber_quality
+		position = { x=1 y=1 }
+		relative_position_id = fe_mio_aircraft_defence
+		all_parents = { fe_mio_aircraft_defence fe_mio_aircraft_air_ground_attack }
+		limit_to_equipment_type = { small_plane_cas_airframe mio_cat_eq_only_tactical_bomber mio_cat_eq_only_strategic_bomber }
+		equipment_bonus = {
+			air_ground_attack = 0.05
+			strategic_attack = 0.05
+		}
+	}
+	trait = {
+		token = fe_mio_aircraft_efficiency_cap
+		name = fe_mio_aircraft_efficiency_cap
+		icon = GFX_generic_mio_department_icon_plane_general_technology
+		position = { x=0 y=1 }
+		relative_position_id = fe_mio_aircraft_maximum_speed
+		any_parent = { fe_mio_aircraft_fighter fe_mio_aircraft_naval fe_mio_aircraft_maximum_speed fe_mio_aircraft_helicopter fe_mio_aircraft_bomber }
+		production_bonus = {
+			production_efficiency_cap_factor = 0.1
 		}
 	}
 }
@@ -5463,7 +5458,6 @@ fe_multi_role_aircraft_organization = {
 		mio_cat_eq_all_small_plane
 		mio_cat_eq_all_medium_plane
 		transport_plane_equipment
-		helicopter_equipment
 	}
 	research_categories = { mio_cat_all_light_aircraft_and_modules mio_cat_all_medium_aircraft_and_modules helicopter_tech }
 	tree_header_text = {
