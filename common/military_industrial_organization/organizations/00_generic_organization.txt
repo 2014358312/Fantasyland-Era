@@ -2817,7 +2817,7 @@ fe_general_aircraft_organization = {
 		all_parents = { fe_mio_aircraft_night_penalty }
 		limit_to_equipment_type = { mio_cat_eq_all_small_plane }
 		equipment_bonus = {
-			air_superiority = 0.05
+			air_superiority = 0.1
 		}
 	}
 	trait = {
@@ -2895,7 +2895,7 @@ fe_general_aircraft_organization = {
 		mutually_exclusive = { fe_mio_aircraft_air_agility }
 		limit_to_equipment_type = { mio_cat_eq_all_small_plane mio_cat_eq_all_medium_plane mio_cat_eq_all_large_plane }
 		equipment_bonus = {
-			air_range = 0.05
+			air_range = 0.1
 		}
 	}
 	trait = {
@@ -3163,9 +3163,9 @@ fe_light_aircraft_organization = {
 		all_parents = { fe_mio_light_fighter }
 		limit_to_equipment_type = { mio_cat_eq_only_light_fighter }
 		equipment_bonus = {
+			air_superiority = 0.05
 			air_agility = 0.05
 			maximum_speed = 0.05
-			air_superiority = 0.05
 		}
 	}
 	trait = {
@@ -3176,6 +3176,7 @@ fe_light_aircraft_organization = {
 		relative_position_id = fe_mio_light_thrust
 		equipment_bonus = {
 			air_attack = 0.05
+			air_superiority = 0.05
 		}
 	}
 	trait = {
@@ -3214,7 +3215,7 @@ fe_light_aircraft_organization = {
 		equipment_bonus = {
 			air_attack = 0.05
 			air_defence = 0.05
-			maximum_speed = 0.05
+			maximum_speed = 0.1
 		}
 	}
 	trait = {
@@ -3227,8 +3228,8 @@ fe_light_aircraft_organization = {
 		limit_to_equipment_type = { mio_cat_eq_only_light_cas }
 		equipment_bonus = {
 			air_ground_attack = 0.05
-			naval_strike_attack = 0.05
-			naval_strike_targetting = 0.05
+			air_attack = 0.05
+			air_defence = 0.05
 		}
 	}
 	trait = {
@@ -3251,9 +3252,8 @@ fe_light_aircraft_organization = {
 		all_parents = { fe_mio_light_air_attack fe_mio_light_detection }
 		limit_to_equipment_type = { mio_cat_eq_all_cv_aircraft mio_cat_eq_only_light_nav }
 		equipment_bonus = {
-			air_attack = 0.05
 			naval_strike_attack = 0.05
-			naval_strike_targetting = 0.05
+			naval_strike_targetting = 0.1
 		}
 	}
 }
@@ -3284,7 +3284,7 @@ fe_medium_aircraft_organization = {
 		x = 7
 	}
 	initial_trait = {
-		name = generic_mio_initial_trait_multi_role_tactical_aircraft
+		name = fe_medium_aircraft_organization_initial_trait
 		limit_to_equipment_type = { mio_cat_eq_all_medium_plane }
 		equipment_bonus = {
 			surface_detection = 0.05
@@ -3375,7 +3375,7 @@ fe_medium_aircraft_organization = {
 		limit_to_equipment_type = { mio_cat_eq_all_medium_plane }
 		equipment_bonus = {
 			air_ground_attack = 0.05
-			air_bombing = 0.05 #TODO_Manu: Not working
+			air_bombing = 0.05
 		}
 	}
 	trait = {
@@ -4112,7 +4112,7 @@ fe_multi_role_aircraft_organization = {
 		x = 6
 	}
 	initial_trait = {
-		name = fe_multi_role_aircraft_organization
+		name = fe_multi_role_aircraft_organization_initial_trait
 		limit_to_equipment_type = { mio_cat_eq_all_small_plane mio_cat_eq_all_medium_plane }
 		equipment_bonus = {
 			air_ground_attack = 0.02
@@ -4922,8 +4922,9 @@ fe_artillery_organization = {
 		icon = GFX_generic_mio_trait_icon_breakthrough
 		position = { x=-1 y=1 }
 		relative_position_id = fe_mio_artillery_defense
-		all_parents = {
+		any_parent = {
 			fe_mio_artillery_defense
+			fe_mio_artillery_cost
 		}
 		equipment_bonus = {
 			defense = 0.05
@@ -5735,7 +5736,7 @@ fe_train_organization = {
 	allowed = {
 		always = no
 	}
-	equipment_type = { train_equipment mio_cat_eq_all_large_caliber_gun }
+	equipment_type = { train_equipment railway_gun mio_cat_eq_all_super_heavy_artillery }
 	research_categories = { train_tech industry }
 	tree_header_text = {
 		text = mio_header_mechanical_design
@@ -5878,7 +5879,7 @@ fe_train_organization = {
 		position = { x=1 y=1 }
 		relative_position_id = fe_mio_train_efficiency_gain
 		all_parents = { fe_mio_train_efficiency_gain }
-		limit_to_equipment_type = { mio_cat_eq_all_large_caliber_gun }
+		limit_to_equipment_type = { railway_gun mio_cat_eq_all_super_heavy_artillery }
 		production_bonus = {
 			production_capacity_factor = 0.05
 		}
@@ -5919,7 +5920,7 @@ fe_train_organization = {
 		position = { x=1 y=1 }
 		relative_position_id = fe_mio_train_gun
 		all_parents = { fe_mio_train_gun fe_mio_train_anti_air }
-		limit_to_equipment_type = { super_heavy_artillery_equipment self_propelled_super_heavy_artillery_equipment IOP_gustaf_equipment }
+		limit_to_equipment_type = { mio_cat_eq_all_super_heavy_artillery }
 		equipment_bonus = {
 			soft_attack = 0.1
 			hard_attack = 0.1
