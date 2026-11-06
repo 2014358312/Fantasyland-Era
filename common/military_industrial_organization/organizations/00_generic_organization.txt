@@ -2840,7 +2840,7 @@ fe_general_aircraft_organization = {
 		position = { x=0 y=1 }
 		relative_position_id = fe_mio_aircraft_air_superiority
 		any_parent = { fe_mio_aircraft_air_superiority fe_mio_aircraft_detection }
-		limit_to_equipment_type = { fighter heavy_fighter scout_plane }
+		limit_to_equipment_type = { mio_cat_eq_only_light_fighter medium_plane_fighter_airframe medium_plane_scout_plane_airframe }
 		equipment_bonus = {
 			air_attack = 0.05
 			air_agility = 0.05
@@ -2853,7 +2853,7 @@ fe_general_aircraft_organization = {
 		position = { x=2 y=0 }
 		relative_position_id = fe_mio_aircraft_fighter
 		all_parents = { fe_mio_aircraft_detection }
-		limit_to_equipment_type = { mio_cat_eq_all_cv_aircraft small_plane_naval_bomber_airframe maritime_patrol_plane }
+		limit_to_equipment_type = { mio_cat_eq_all_cv_aircraft small_plane_naval_bomber_airframe large_plane_maritime_patrol_plane_airframe }
 		equipment_bonus = {
 			naval_strike_attack = 0.05
 			naval_strike_targetting = 0.05
@@ -2982,7 +2982,7 @@ fe_general_aircraft_organization = {
 		position = { x=1 y=1 }
 		relative_position_id = fe_mio_aircraft_defence
 		all_parents = { fe_mio_aircraft_defence fe_mio_aircraft_air_ground_attack }
-		limit_to_equipment_type = { cas tactical_bomber strategic_bomber }
+		limit_to_equipment_type = { mio_cat_eq_only_light_cas mio_cat_eq_only_tactical_bomber mio_cat_eq_only_strategic_bomber }
 		equipment_bonus = {
 			air_ground_attack = 0.05
 			air_bombing = 0.05
@@ -3731,9 +3731,9 @@ fe_cas_aircraft_organization = {
 		always = no
 	}
 	equipment_type = {
-		cas
-		tactical_bomber
-		strategic_bomber
+		mio_cat_eq_only_light_cas
+		mio_cat_eq_only_tactical_bomber
+		mio_cat_eq_only_strategic_bomber
 	}
 	research_categories = {	mio_cat_all_cas_and_modules cat_strategic_bomber }
 	tree_header_text = {
@@ -3757,6 +3757,9 @@ fe_cas_aircraft_organization = {
 		equipment_bonus = {
 			air_ground_attack = 0.05
 			maximum_speed = -0.03
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
 		}
 	}
 	trait = {
@@ -3925,7 +3928,7 @@ fe_naval_aircraft_organization = {
 	equipment_type = {
 		mio_cat_eq_all_cv_aircraft
 		small_plane_naval_bomber_airframe
-		maritime_patrol_plane
+		large_plane_maritime_patrol_plane_airframe
 	}
 	research_categories = { mio_cat_all_light_aircraft_and_modules }
 	tree_header_text = {
@@ -4122,9 +4125,9 @@ fe_multi_role_aircraft_organization = {
 		always = no
 	}
 	equipment_type = {
-		fighter
-		heavy_fighter
-		scout_plane
+		mio_cat_eq_only_light_fighter
+		medium_plane_fighter_airframe
+		medium_plane_scout_plane_airframe 
 	}
 	research_categories = { mio_cat_all_light_fighter_and_modules photo_reconnaisance }
 	tree_header_text = {
@@ -4398,6 +4401,9 @@ fe_high_agility_fighter_aircraft_organization = {#
 		equipment_bonus = {
 			air_agility = 0.10
 			air_range = -0.10
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
 		}
 	}
 	trait = {
