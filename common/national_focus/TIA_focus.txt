@@ -1363,7 +1363,6 @@ focus_tree = {
 			hidden_effect = {
         		set_country_flag = TIA_public_health_started
         		country_event = { id = TIA.31 days = 10 random_days = 10 }
-        		country_event = { id = TIA.65 days = 25 }
     		}
 			add_days_mission_timeout = {
 				mission = TIA_countdown_health
@@ -5681,8 +5680,8 @@ focus_tree = {
 			add_manpower = 5000
 			army_experience = 5
 			custom_effect_tooltip = TIA_train_field_medics_tt
+			set_country_flag = TIA_field_medics_trained
 			hidden_effect = {
-				set_country_flag = TIA_field_medics_trained
 				country_event = { id = TIA.138 days = 5 }
 			}
 			add_days_mission_timeout = {
@@ -5715,22 +5714,22 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 25
 			add_stability = 0.05
+			set_country_flag = TIA_quarantine_built
 			custom_effect_tooltip = TIA_quarantine_infrastructure_tt
 			add_days_mission_timeout = {
 				mission = TIA_countdown_health
 				days = 70
 			}
-			hidden_effect = {
-				set_country_flag = TIA_quarantine_built
-				random_owned_controlled_state = {
-					limit = { is_core_of = TIA }
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = infrastructure
-						level = 1
-						instant_build = yes
-					}
+			random_owned_controlled_state = {
+				limit = { is_core_of = TIA }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
 				}
+			}
+			hidden_effect = {
 				country_event = { id = TIA.139 days = 5 }
 			}
 		}
@@ -5759,9 +5758,9 @@ focus_tree = {
 			add_stability = 0.05
 			add_monthly_population = 0.05
 			custom_effect_tooltip = TIA_anne_health_inspection_tt
+			set_country_flag = TIA_anne_health_done
 			hidden_effect = {
-				set_country_flag = TIA_anne_health_done
-				country_event = { id = TIA.140 days = 5 }
+				country_event = { id = TIA.140 days = 90 }
 			}
 			add_days_mission_timeout = {
 				mission = TIA_countdown_health

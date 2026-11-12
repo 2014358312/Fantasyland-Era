@@ -2971,7 +2971,14 @@ TIA_countdown_category = {
 			custom_effect_tooltip = TIA_countdown_health_complete_tt
 		}
 		timeout_effect = {
-			country_event = { id = TIA.145 }
+			if = {
+				limit = { has_country_flag = TIA_basic_sanitation }
+				country_event = { id = TIA.69 }
+			}
+			if = {
+				limit = { NOT = { has_country_flag = TIA_basic_sanitation } }
+				country_event = { id = TIA.145 }
+			}
 		}
 	}
 }

@@ -21,8 +21,9 @@ add_namespace = TIA_inner_circle
 @inner_circle_time_tier_3_flag = 36
 @inner_circle_time_tier_4_flag = 36
 
+###### 普通事件国策 ######
+#启示（TIA.1）
 country_event = {
-	#启示
 	id = TIA.1
 	title = TIA.1.t
 	desc = TIA.1.desc
@@ -45,8 +46,8 @@ country_event = {
 	}
 }
 
+#权力交接（TIA.2）
 country_event = {
-	#权力交接
 	id = TIA.2
 	title = TIA.2.t
 	desc = TIA.2.desc
@@ -71,51 +72,10 @@ country_event = {
 			}
 		}
 	}
-	option = {
-		name = TIA.2.b
-		custom_effect_tooltip = TIA_power_change_B
-		retire_country_leader = yes
-		add_tech_bonus = {
-    		bonus = 0.5
-    		uses = 2
-    		category = industry
-		}
-        add_stability = 0.05
-		hidden_effect = {
-			add_country_leader_role = {
-    			character = TIA_Mia_Runa_Tiamun
-    			promote_leader = yes
-    			country_leader = {
-        			ideology = absolutism_subtype
-        			expire = "1100.1.1.1"
-        			traits = { Imperial_sagacity_1 }
-    			}
-			}
-		}
-	}
-	option = {
-		name = TIA.2.c
-		custom_effect_tooltip = TIA_power_change_C
-		retire_country_leader = yes
-		add_stability = -0.10
-        add_war_support = 0.05
-        add_political_power = 150
-		hidden_effect = {
-			add_country_leader_role = {
-    			character = TIA_Mia_Runa_Tiamun
-    			promote_leader = yes
-    			country_leader = {
-        			ideology = absolutism_subtype
-        			expire = "1100.1.1.1"
-        			traits = { Imperial_sagacity_1 }
-    			}
-			}
-		}
-	}
 }
 
+#医疗改革成功（TIA.3）
 country_event = {
-	#医疗改革成功
 	id = TIA.3
 	title = TIA.3.t
 	desc = TIA.3.desc
@@ -128,24 +88,21 @@ country_event = {
 	}
 }
 
+#/////暂时空缺/////
 country_event = {
-	#马术社
 	id = TIA.6
 	title = TIA.6.t
 	desc = TIA.6.desc
 	picture = GFX_report_event_TIA_guillotine
-	fire_only_once = no
+	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
 		name = TIA.6.a
-		hidden_effect = {
-			complete_national_focus = TIA_Join_equestrian_club
-		}
 	}
 }
 
+#阿鲁卡内战-堤亚穆侧提醒（TIA.10）
 country_event = {
-	#阿鲁卡王国陷入内战
 	id = TIA.10
 	title = TIA.10.t
 	desc = TIA.10.desc
@@ -154,14 +111,11 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = TIA.10.a
-		hidden_effect = {
-			complete_national_focus = TIA_Bad_news_from_neighboring
-		}
 	}
 }
 
+#确立国民信仰（TIA.11）
 country_event = {
-	#确立国民信仰
 	id = TIA.11
 	title = TIA.11.t
 	desc = TIA.11.desc
@@ -212,8 +166,8 @@ country_event = {
 	}
 }
 
+#财政告急（命运线TIA.12）
 country_event = {
-	#财政告急（命运线）
 	id = TIA.12
 	title = TIA.12.t
 	desc = TIA.12.desc
@@ -232,8 +186,8 @@ country_event = {
 	}
 }
 
+#瘟疫横行（命运线TIA.13）
 country_event = {
-	#瘟疫横行
 	id = TIA.13
 	title = TIA.13.t
 	desc = TIA.13.desc
@@ -246,15 +200,13 @@ country_event = {
 		add_war_support = -0.15
 		complete_national_focus = TIA_Plague_rampant
 		add_ideas = TIA_plague_happened
-		country_event = {
-			id = TIA.14
-			days = 30
-		}
+		country_event = { id = TIA.14 days = 30	}
+		
 	}
 }
 
+#如同日记里所说的（命运线TIA.14）
 country_event = {
-	#如同日记里所说的
 	id = TIA.14
 	title = TIA.14.t
 	desc = TIA.14.desc
@@ -273,8 +225,8 @@ country_event = {
 	}
 }
 
+#然后，革命发生了（TIA.15）
 country_event = {
-	#然后，革命发生了
 	id = TIA.15
 	title = TIA.15.t
 	desc = {
@@ -323,12 +275,30 @@ country_event = {
 		}
 	}
 	desc = {
-		# Plague only
+		#瘟疫倒计时结束（正常/仅触发TIA.145）
 		text = TIA.15.desc_plague
 		trigger = {
 			has_idea = TIA_plague_scarred
 			NOT = { has_country_flag = TIA_famine_collapse }
 			NOT = { has_idea = TIA_legitimate_war }
+		}
+	}
+	desc = {
+		#瘟疫倒计时结束（基础消毒/触发TIA.69后选择TIA.69.c）
+		text = TIA.15.desc_basic_sanitation_c
+		trigger = {
+			has_idea = TIA_plague_scarred
+			has_country_flag = TIA_basic_sanitation
+			has_country_flag = TIA_abandon_plague_zone
+		}
+	}
+	desc = {
+		#瘟疫倒计时结束（基础消毒/触发TIA.69后选择TIA.69.b但救援国家<2）
+		text = TIA.15.desc_basic_sanitation_b
+		trigger = {
+			has_idea = TIA_plague_scarred
+			has_country_flag = TIA_basic_sanitation
+			#待做事项：设置TIA.66结算后设置的变量flag
 		}
 	}
 	desc = {
@@ -2110,7 +2080,6 @@ country_event = {
                         has_country_flag = TIA_basic_sanitation
                     }
                 }
-                country_event = { id = TIA.67 days = 20 }
             }
 		}
 		ai_chance = { factor = 50 }
@@ -2366,27 +2335,21 @@ country_event = {
 		name = TIA.64.a
 		add_political_power = -50
 		custom_effect_tooltip = TIA.64.a_tt
-		hidden_effect = {
-			set_country_flag = TIA_quarantine_network
-		}
+		set_country_flag = TIA_quarantine_network
 		ai_chance = { factor = 40 }
 	}
 	option = {
 		name = TIA.64.b
 		add_political_power = -30
 		custom_effect_tooltip = TIA.64.b_tt
-		hidden_effect = {
-			set_country_flag = TIA_rural_doctors
-		}
+		set_country_flag = TIA_rural_doctors
 		ai_chance = { factor = 40 }
 	}
 	option = {
 		name = TIA.64.c
 		add_political_power = 20
 		custom_effect_tooltip = TIA.64.c_tt
-		hidden_effect = {
-			set_country_flag = TIA_basic_sanitation
-		}
+		set_country_flag = TIA_basic_sanitation
 		ai_chance = { factor = 20 }
 	}
 }
@@ -2400,62 +2363,6 @@ country_event = {
 
 	option = {
 		name = TIA.65.a
-		trigger = {
-			has_country_flag = TIA_quarantine_network
-		}
-		add_stability = 0.05
-		add_political_power = 20
-		custom_effect_tooltip = TIA.65.a_tt
-		hidden_effect = {
-			set_country_flag = TIA_plague_rapid_response
-			country_event = { id = TIA.66 days = 30 }
-		}
-		ai_chance = { factor = 100 }
-	}
-	option = {
-		name = TIA.65.b
-		trigger = {
-			has_country_flag = TIA_rural_doctors
-		}
-		add_stability = 0.03
-		add_political_power = 15
-		custom_effect_tooltip = TIA.65.b_tt
-		hidden_effect = {
-			set_country_flag = TIA_plague_early_detection
-			country_event = { id = TIA.66 days = 40 }
-		}
-		ai_chance = { factor = 100 }
-	}
-	option = {
-		name = TIA.65.c
-		trigger = {
-			has_country_flag = TIA_basic_sanitation
-			NOT = { has_country_flag = TIA_quarantine_network }
-			NOT = { has_country_flag = TIA_rural_doctors }
-		}
-		add_stability = -0.03
-		add_political_power = -20
-		custom_effect_tooltip = TIA.65.c_tt
-		hidden_effect = {
-			set_country_flag = TIA_plague_scramble
-			country_event = { id = TIA.67 days = 50 }
-		}
-		ai_chance = { factor = 100 }
-	}
-	option = {
-		name = TIA.65.d
-		trigger = {
-			NOT = { has_country_flag = TIA_quarantine_network }
-			NOT = { has_country_flag = TIA_rural_doctors }
-			NOT = { has_country_flag = TIA_basic_sanitation }
-		}
-		add_stability = -0.05
-		add_political_power = -40
-		add_war_support = -0.03
-		custom_effect_tooltip = TIA.65.d_tt
-		hidden_effect = {
-			country_event = { id = TIA.69 days = 30 }
-		}
 		ai_chance = { factor = 100 }
 	}
 }
@@ -2464,73 +2371,14 @@ country_event = {
 	id = TIA.66
 	title = TIA.66.t
 	desc = TIA.66.desc
-	picture = GFX_report_event_TIA_guillotine
 	is_triggered_only = yes
-
+	hidden = yes
+	mean_time_to_happen = {
+	}
+	immediate = {
+	}
 	option = {
 		name = TIA.66.a
-		trigger = {
-			has_country_flag = TIA_plague_rapid_response
-		}
-		add_stability = 0.10
-		add_political_power = 50
-		add_war_support = 0.05
-		if = {
-			limit = { has_idea = TIA_potential_plague }
-			swap_ideas = {
-				remove_idea = TIA_potential_plague
-				add_idea = TIA_plague_shield
-			}
-		}
-		custom_effect_tooltip = TIA.66.a_tt
-		hidden_effect = {
-			set_country_flag = TIA_plague_fully_contained
-			country_event = { id = TIA.67 days = 10 }
-		}
-		ai_chance = { factor = 100 }
-	}
-	option = {
-		name = TIA.66.b
-		trigger = {
-			has_country_flag = TIA_plague_early_detection
-			NOT = { has_country_flag = TIA_plague_rapid_response }
-		}
-		add_stability = 0.05
-		add_political_power = 25
-		if = {
-			limit = { has_idea = TIA_potential_plague }
-			swap_ideas = {
-				remove_idea = TIA_potential_plague
-				add_idea = TIA_plague_weakened
-			}
-		}
-		custom_effect_tooltip = TIA.66.b_tt
-		hidden_effect = {
-			set_country_flag = TIA_plague_mostly_contained
-			country_event = { id = TIA.67 days = 15 }
-		}
-		ai_chance = { factor = 100 }
-	}
-	option = {
-		name = TIA.66.c
-		trigger = {
-			has_country_flag = TIA_plague_scramble
-			NOT = { has_country_flag = TIA_plague_rapid_response }
-			NOT = { has_country_flag = TIA_plague_early_detection }
-		}
-		add_stability = -0.02
-		add_political_power = -15
-		if = {
-			limit = { has_idea = TIA_potential_plague }
-			swap_ideas = {
-				remove_idea = TIA_potential_plague
-				add_idea = TIA_plague_weakened
-			}
-		}
-		custom_effect_tooltip = TIA.66.c_tt
-		hidden_effect = {
-			set_country_flag = TIA_plague_barely_contained
-		}
 		ai_chance = { factor = 100 }
 	}
 }
@@ -2544,39 +2392,7 @@ country_event = {
 
 	option = {
 		name = TIA.67.a
-		trigger = {
-			has_country_flag = TIA_quarantine_network
-		}
-		add_stability = 0.08
-		add_political_power = 30
-		add_monthly_population = 0.10
-		add_manpower = 5000
 		custom_effect_tooltip = TIA.67.a_tt
-		ai_chance = { factor = 60 }
-	}
-	option = {
-		name = TIA.67.b
-		trigger = {
-			has_country_flag = TIA_rural_doctors
-			NOT = { has_country_flag = TIA_quarantine_network }
-		}
-		add_stability = 0.05
-		add_political_power = 20
-		add_monthly_population = 0.08
-		add_manpower = 8000
-		custom_effect_tooltip = TIA.67.b_tt
-		ai_chance = { factor = 60 }
-	}
-	option = {
-		name = TIA.67.c
-		trigger = {
-			NOT = { has_country_flag = TIA_quarantine_network }
-			NOT = { has_country_flag = TIA_rural_doctors }
-		}
-		add_stability = 0.03
-		add_political_power = 10
-		add_monthly_population = 0.05
-		custom_effect_tooltip = TIA.67.c_tt
 		ai_chance = { factor = 100 }
 	}
 }
@@ -2623,7 +2439,7 @@ country_event = {
 		add_political_power = -60
 		add_manpower = -5000
 		hidden_effect = {
-			country_event = { id = TIA.70 days = 45 }
+			country_event = { id = TIA.13 days = 30 }
 		}
 		if = {
 			limit = { has_idea = TIA_potential_plague }
@@ -2637,9 +2453,9 @@ country_event = {
 	}
 	option = {
 		name = TIA.69.b
-		add_stability = -0.03
-		add_political_power = -80
-		add_war_support = -0.05
+		# add_stability = -0.03
+		# add_political_power = -80
+		# add_war_support = -0.05
 		if = {
 			limit = { has_idea = TIA_potential_plague }
 			swap_ideas = {
@@ -2647,6 +2463,10 @@ country_event = {
 				add_idea = TIA_plague_weakened
 			}
 		}
+		#待做事项：增加一个事件，向所有邻国（不包括枫丹和堤穆冲突区）发出医疗求援。暂时以TIA.70重写为基础
+		# hidden_effect = {
+		# 	country_event = { id = TIA.70 days = 45 }
+		# }
 		custom_effect_tooltip = TIA.69.b_tt
 		ai_chance = { factor = 30 }
 	}
@@ -2655,9 +2475,7 @@ country_event = {
 		add_stability = -0.08
 		add_political_power = -30
 		add_manpower = -10000
-		hidden_effect = {
-			country_event = { id = TIA.70 days = 45 }
-		}
+		set_country_flag = TIA_abandon_plague_zone
 		if = {
 			limit = { has_idea = TIA_potential_plague }
 			swap_ideas = {
@@ -2670,39 +2488,36 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = TIA.70
-	title = TIA.70.t
-	desc = TIA.70.desc
-	picture = GFX_report_event_TIA_guillotine
-	is_triggered_only = yes
-	fire_only_once = yes
+# country_event = {
+# 	id = TIA.70
+# 	title = TIA.70.t
+# 	desc = TIA.70.desc
+# 	picture = GFX_report_event_TIA_guillotine
+# 	is_triggered_only = yes
+# 	fire_only_once = yes
 
-	option = {
-		name = TIA.70.a
-		add_political_power = -50
-		add_stability = 0.03
-		if = {
-			limit = { has_idea = TIA_plague_scarred }
-			swap_ideas = {
-				remove_idea = TIA_plague_scarred
-				add_idea = TIA_plague_weakened
-			}
-		}
-		hidden_effect = {
-			set_country_flag = TIA_basic_sanitation
-		}
-		custom_effect_tooltip = TIA.70.a_tt
-		ai_chance = { factor = 50 }
-	}
-	option = {
-		name = TIA.70.b
-		add_political_power = 20
-		add_war_support = 0.05
-		army_experience = 10
-		ai_chance = { factor = 50 }
-	}
-}
+# 	option = {
+# 		name = TIA.70.a
+# 		add_political_power = -50
+# 		add_stability = 0.03
+# 		if = {
+# 			limit = { has_idea = TIA_plague_scarred }
+# 			swap_ideas = {
+# 				remove_idea = TIA_plague_scarred
+# 				add_idea = TIA_plague_weakened
+# 			}
+# 		}
+# 		custom_effect_tooltip = TIA.70.a_tt
+# 		ai_chance = { factor = 50 }
+# 	}
+# 	option = {
+# 		name = TIA.70.b
+# 		add_political_power = 20
+# 		add_war_support = 0.05
+# 		army_experience = 10
+# 		ai_chance = { factor = 50 }
+# 	}
+# }
 
 ###################################
 # 枫丹危机事件链
@@ -5722,7 +5537,7 @@ country_event = {
 	}
 }
 
-# Quarantine Infrastructure Built
+#隔离线
 country_event = {
 	id = TIA.139
 	title = TIA.139.t
@@ -5732,12 +5547,11 @@ country_event = {
 
 	option = {
 		name = TIA.139.a
-		custom_effect_tooltip = TIA.139.a_tt
 		ai_chance = { factor = 100 }
 	}
 }
 
-# Anne's Health Inspection
+#四百页的报告（提升安妮人物属性）
 country_event = {
 	id = TIA.140
 	title = TIA.140.t
@@ -5747,7 +5561,6 @@ country_event = {
 
 	option = {
 		name = TIA.140.a
-		custom_effect_tooltip = TIA.140.a_tt
 		ai_chance = { factor = 100 }
 	}
 }
@@ -5795,7 +5608,7 @@ country_event = {
 }
 
 ###################################
-# Food Timer Expired
+# 饥荒倒计时
 ###################################
 
 country_event = {
