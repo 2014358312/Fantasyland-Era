@@ -58,6 +58,11 @@ country_event = { #WSG_letter_to_the_admiral
 		add_stability = 0.05
 		add_popularity = { ideology = fascism popularity = 0.05 }
 		set_country_flag = WSG_admiral_agree
+		hidden_effect = {
+			country_event = {
+				id = WSG_game_text.12
+			}
+		}
 	}
 }
 
@@ -90,6 +95,11 @@ country_event = {
 	option = {
 		name = WSG_event.005.a
 		complete_national_focus = WSG_victory_day
+		hidden_effect = {
+			country_event = {
+				id = WSG_game_text.13
+			}
+		}
 	}
 }
 
@@ -1498,9 +1508,6 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = WSG_game_text.12.a
-		hidden_effect = {
-			country_event = { id =  WSG_game_text.13 }
-		}
 	}
 }
 country_event = {
@@ -1511,5 +1518,29 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = WSG_game_text.13.a
+	
     }
+}
+country_event = {
+	id = WSG_game_text.14
+	title = WSG_game_text.14.t
+	desc = WSG_game_text.14.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = WSG_game_text.14.a
+	}
+}
+country_event = {
+	id = WSG_game_text.15
+	title = WSG_game_text.15.t
+	desc = WSG_game_text.15.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = WSG_game_text.15.a
+		hidden_effect = {
+			country_event = { id =  WSG_game_text.16 }
+		}
+	}
 }
