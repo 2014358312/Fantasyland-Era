@@ -61,7 +61,7 @@ LAN_gourmet_guild_tanks_organization = {
 }
 
 LAN_diabolos_heavy_tanks_organization = {
-	include = fe_motorized_mechanized_organization
+	include = fe_motorized_organization
 	icon = GFX_idea_LAN_diabolos_heavy
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -183,7 +183,7 @@ LAN_princeton_north_shipyard_ships_organization = {
 
 ##########################
 LAN_kaproni_design_planes_organization = {
-	include = fe_multi_role_aircraft_organization
+	include = fe_fighter_aircraft_organization
 	icon = GFX_idea_LAN_kaproni_design
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -193,7 +193,7 @@ LAN_kaproni_design_planes_organization = {
 }
 
 LAN_thor_power_company_planes_organization = {
-	include = fe_high_agility_fighter_aircraft_organization
+	include = fe_extreme_aircraft_organization
 	icon = GFX_idea_LAN_thor_power_company
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -213,7 +213,7 @@ LAN_twilight_caravan_design_planes_organization = {
 }
 
 LAN_weissflugel_skyworks_planes_organization = {
-	include = fe_general_aircraft_organization
+	include = fe_aircraft_organization
 	icon = GFX_idea_LAN_weissflugel_skyworks
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -233,7 +233,7 @@ LAN_weissflugel_skyworks_planes_organization = {
 
 ###################################
 LAN_skystar_technology_materiel_organization = {
-	include = fe_infantry_equipment_organization
+	include = fe_infantry_organization
 	icon = GFX_idea_LAN_skystar_technology
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -258,7 +258,7 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 	on_industrial_manufacturer_assigned = {
 		if = {
 			limit = {
-				is_mio_trait_completed = fe_mio_artillery_research
+				is_mio_trait_completed = LAN_mio_artillery_research
 				NOT = {
 					check_variable = {
 						number_of_currently_assigned_tasks > 4
@@ -272,7 +272,7 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 		hidden_effect = {
 			if = {
 				limit = {
-					is_mio_trait_completed = fe_mio_artillery_research
+					is_mio_trait_completed = LAN_mio_artillery_research
 					check_variable = {
 						number_of_currently_assigned_tasks < 4
 					}
@@ -284,7 +284,7 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 	on_design_team_assigned_to_tech = {
 		if = {
 			limit = {
-				is_mio_trait_completed = fe_mio_artillery_research
+				is_mio_trait_completed = LAN_mio_artillery_research
 				NOT = {
 					check_variable = {
 						LAN_mio_research_bonus > number_of_currently_assigned_tasks
@@ -298,7 +298,7 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 		hidden_effect = {
 			if = {
 				limit = {
-					is_mio_trait_completed = fe_mio_artillery_research
+					is_mio_trait_completed = LAN_mio_artillery_research
 					check_variable = {
 						number_of_currently_assigned_tasks < 4
 					}
@@ -310,14 +310,14 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 	on_tech_research_completed = {
 		if = {
 			limit = {
-				is_mio_trait_completed = fe_mio_artillery_fund
+				is_mio_trait_completed = LAN_mio_artillery_fund
 			}
 			add_mio_funds_gain_factor = 0.1
 		}
 		hidden_effect = {
 			if = {
 				limit = {
-					is_mio_trait_completed = fe_mio_artillery_research
+					is_mio_trait_completed = LAN_mio_artillery_research
 					check_variable = {
 						number_of_currently_assigned_tasks < 4
 					}
@@ -352,9 +352,17 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 		token = fe_mio_artillery_design
 		position = { x=1 y=0 }
 	}
-	override_trait = {
-		token = fe_mio_artillery_research
+	remove_trait = {fe_mio_artillery_research}
+	add_trait = {
+		token = LAN_mio_artillery_research
+		name = fe_mio_artillery_research
+		icon = GFX_generic_mio_department_icon_facilities
 		special_trait_background = yes
+		position = { x=-1 y=2 }
+		relative_position_id = fe_mio_artillery_design
+		all_parents = {
+			fe_mio_artillery_design
+		}
 		organization_modifier = {
 			custom_modifier_tooltip = LAN_mio_artillery_research_tt
 		}
@@ -473,130 +481,8 @@ LAN_landsol_royal_artillery_arsenal_factory_materiel_organization = {
 		}
 	}
 }
-LAN_infantry_and_support_equipment_organization = {
-	include = fe_support_equipment_organization
-	icon = GFX_idea_generic_infantry_equipment_manufacturer_1
-	allowed = {
-		always = no
-	}
-	equipment_type = { infantry_equipment support_equipment }
-	research_categories = { infantry_weapons support_tech }
-	tree_header_text = {
-		text = mio_header_design
-		x = 2
-	}
-	tree_header_text = {
-		text = mio_header_production
-		x = 5
-	}
-	tree_header_text = {
-		text = RESEARCH_RESEARCH
-		x = 8
-	}
-	research_bonus = 0.1
-	initial_trait = {
-		name = fe_support_equipment_organization_initial_trait
-		organization_modifier = {
-			military_industrial_organization_size_up_requirement = -0.1
-		}
-		equipment_bonus = {
-			reliability = 0.05
-			build_cost_ic = -0.05
-		}
-	}
-	add_trait = {
-		token = LAN_mio_support_design
-		name = LAN_mio_support_design
-		icon = GFX_generic_mio_department_icon_support_conversion
-		position = { x=2 y=0 }
-		organization_modifier = {
-			military_industrial_organization_design_team_assign_cost = -0.5
-		}
-	}
-	override_trait = {
-		token = fe_mio_support_reliability
-		position = { x=-1 y=1 }
-		relative_position_id = LAN_mio_support_design
-		all_parents = { LAN_mio_support_design }
-		equipment_bonus = {
-			reliability = 0.05
-			defense = 0.05
-		}
-	}
-	override_trait = {
-		token = fe_mio_support_cost
-		icon = GFX_generic_mio_trait_icon_maximum_speed
-		all_parents = { LAN_mio_support_design }
-		equipment_bonus = {
-			build_cost_ic = -0.05
-			maximum_speed = 0.1
-		}
-	}
-	override_trait = {
-		token = fe_mio_support_additional_reliability
-		equipment_bonus = {
-			reliability = 0.05
-			soft_attack = 0.05
-		}
-	}
-	override_trait = {
-		token = fe_mio_support_extra_reliability
-		position = { x=0 y=1 }
-		equipment_bonus = {
-			reliability = 0.1
-			defense = 0.05
-			build_cost_ic = 0.05
-		}
-	}
-	override_trait = {
-		token = fe_mio_support_build_cost_ic
-		equipment_bonus = {
-			build_cost_ic = -0.05
-			maximum_speed = 0.05
-		}
-	}
-	add_trait = {
-		token = LAN_mio_support_funds
-		name = LAN_mio_support_funds
-		icon = GFX_generic_mio_department_icon_facilities
-		position = { x=3 y=0 }
-		relative_position_id = LAN_mio_support_design
-		production_bonus = {
-			production_efficiency_gain_factor = 0.05
-		}
-		organization_modifier = {
-			military_industrial_organization_funds_gain = 0.05
-		}
-	}
-	override_trait = {
-		token = fe_mio_support_capacity
-		position = { x=0 y=1 }
-		relative_position_id = LAN_mio_support_funds
-		all_parents = { LAN_mio_support_funds }
-	}
-	override_trait = {
-		token = fe_mio_support_efficiency_cap
-		position = { x=1 y=1 }
-	}
-	override_trait = {
-		token = fe_mio_support_research
-		position = { x=3 y=-1 }
-	}
-	add_trait = {
-		token = LAN_mio_support_research_bonus
-		name = LAN_mio_support_research_bonus
-		icon = GFX_generic_mio_department_icon_facilities
-		position = { x=0 y=2 }
-		relative_position_id = fe_mio_support_funds
-		all_parents = { fe_mio_support_funds }
-		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.05
-			military_industrial_organization_design_team_assign_cost = -0.2
-		}
-	}
-}
 LAN_little_lyrical_workshop_materiel_organization = {
-	include = LAN_infantry_and_support_equipment_organization
+	include = fe_infantry_support_secondary_organization
 	icon = GFX_idea_SMA_amber
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -616,12 +502,12 @@ LAN_little_lyrical_workshop_materiel_organization = {
 		x = 7
 	}
 	override_trait = {
-		token = LAN_mio_support_design
+		token = fe_mio_infantry_support_design
 		position = { x=1 y=0 }
 	}
 	override_trait = {
-		token = LAN_mio_support_research_bonus
-		name = LAN_mio_support_research_bonus_alt
+		token = fe_mio_infantry_support_research_bonus
+		name = LAN_mio_support_research_bonus
 		special_trait_background = yes
 		position = { x=-1 y=2 }
 		mutually_exclusive = { LAN_mio_support_design_cost }
@@ -636,9 +522,9 @@ LAN_little_lyrical_workshop_materiel_organization = {
 		icon = GFX_generic_mio_trait_icon_unique
 		special_trait_background = yes
 		position = { x=2 y=0 }
-		relative_position_id = LAN_mio_support_research_bonus
+		relative_position_id = fe_mio_infantry_support_research_bonus
 		all_parents = { fe_mio_support_funds }
-		mutually_exclusive = { LAN_mio_support_research_bonus }
+		mutually_exclusive = { fe_mio_infantry_support_research_bonus }
 		organization_modifier = {
 			military_industrial_organization_design_team_assign_cost = -2
 			military_industrial_organization_research_bonus = -0.05

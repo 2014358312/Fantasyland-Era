@@ -1,0 +1,109 @@
+fe_infantry_support_secondary_organization = {
+	include = fe_support_organization
+	allowed = {
+		always = no
+	}
+	equipment_type = { infantry_equipment support_equipment }
+	research_categories = { infantry_weapons support_tech }
+	research_bonus = 0.1
+	initial_trait = {
+		name = fe_infantry_support_secondary_organization_initial_trait
+		organization_modifier = {
+			military_industrial_organization_size_up_requirement = -0.1
+		}
+		equipment_bonus = {
+			reliability = 0.05
+			build_cost_ic = -0.05
+		}
+	}
+	add_trait = {
+		token = fe_mio_infantry_support_design
+		name = fe_mio_infantry_support_design
+		icon = GFX_generic_mio_department_icon_support_conversion
+		position = { x=2 y=0 }
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.5
+		}
+	}
+	override_trait = {
+		token = fe_mio_support_reliability
+		position = { x=-1 y=1 }
+		relative_position_id = fe_mio_infantry_support_design
+		all_parents = { fe_mio_infantry_support_design }
+		equipment_bonus = {
+			reliability = 0.05
+			defense = 0.05
+		}
+	}
+	override_trait = {
+		token = fe_mio_support_cost
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+		all_parents = { fe_mio_infantry_support_design }
+		equipment_bonus = {
+			build_cost_ic = -0.05
+			maximum_speed = 0.1
+		}
+	}
+	override_trait = {
+		token = fe_mio_support_additional_reliability
+		equipment_bonus = {
+			reliability = 0.05
+			soft_attack = 0.05
+		}
+	}
+	override_trait = {
+		token = fe_mio_support_extra_reliability
+		position = { x=0 y=1 }
+		equipment_bonus = {
+			reliability = 0.1
+			defense = 0.05
+			build_cost_ic = 0.05
+		}
+	}
+	override_trait = {
+		token = fe_mio_support_build_cost_ic
+		equipment_bonus = {
+			build_cost_ic = -0.05
+			maximum_speed = 0.05
+		}
+	}
+	add_trait = {
+		token = fe_mio_infantry_support_funds
+		name = fe_mio_infantry_support_funds
+		icon = GFX_generic_mio_department_icon_facilities
+		position = { x=3 y=0 }
+		relative_position_id = fe_mio_infantry_support_design
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.05
+		}
+	}
+	override_trait = {
+		token = fe_mio_support_capacity
+		position = { x=0 y=1 }
+		relative_position_id = fe_mio_infantry_support_funds
+		all_parents = { fe_mio_infantry_support_funds }
+	}
+	override_trait = {
+		token = fe_mio_support_efficiency_cap
+		position = { x=1 y=1 }
+	}
+	override_trait = {
+		token = fe_mio_support_research
+		position = { x=3 y=-1 }
+	}
+	add_trait = {
+		token = fe_mio_infantry_support_research_bonus
+		name = fe_mio_infantry_support_research_bonus
+		icon = GFX_generic_mio_department_icon_facilities
+		position = { x=0 y=2 }
+		relative_position_id = fe_mio_support_funds
+		all_parents = { fe_mio_support_funds }
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_design_team_assign_cost = -0.2
+		}
+	}
+}

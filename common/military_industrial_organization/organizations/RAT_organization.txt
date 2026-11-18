@@ -45,7 +45,7 @@
 
 ###################################
 DEM_organization = {
-	include = LAN_infantry_and_support_equipment_organization
+	include = fe_infantry_support_secondary_organization
 	icon = GFX_idea_RAT_DEM
 	allowed = {
 		has_dlc = "Arms Against Tyranny"
@@ -86,7 +86,7 @@ DEM_organization = {
 		position = { x=0 y=1 }
 		relative_position_id = fe_mio_support_efficiency_cap
 		all_parents = { fe_mio_support_efficiency_cap }
-		mutually_exclusive = { LAN_mio_support_research_bonus }
+		mutually_exclusive = { fe_mio_infantry_support_research_bonus }
 		organization_modifier = {
 			military_industrial_organization_research_bonus = -0.1
 		}
@@ -95,7 +95,7 @@ DEM_organization = {
 		}
 	}
 	override_trait = {
-		token = LAN_mio_support_research_bonus
+		token = fe_mio_infantry_support_research_bonus
 		special_trait_background = yes
 		mutually_exclusive = { DEM_organization_production }
 		equipment_bonus = {
