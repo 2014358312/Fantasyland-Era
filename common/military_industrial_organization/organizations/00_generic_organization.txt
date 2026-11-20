@@ -4,8 +4,8 @@ fe_tank_organization = {
 	allowed = {
 		always = no
 	}
-	equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank }
-	research_categories = { mio_cat_tech_light_armor_and_modules mio_cat_tech_medium_armor_and_modules }
+	equipment_type = { mio_cat_eq_all_tanks }
+	research_categories = { armor }
 	tree_header_text = {
 		text = mio_header_tank_construction
 		x = 3
@@ -15,7 +15,7 @@ fe_tank_organization = {
 		x = 7
 	}
 	initial_trait = {
-		name = generic_mio_initial_trait_standardized_production
+		name = fe_tank_organization_initial_trait
 		equipment_bonus = {
 			armor_value = -0.05
 			defense =-0.05
@@ -171,8 +171,8 @@ fe_infantry_tank_organization = {
 	allowed = {
 		always = no
 	}
-	equipment_type = {mio_cat_eq_all_tanks}
-	research_categories = { mio_cat_tech_all_armor_and_modules }
+	equipment_type = { mio_cat_eq_all_tanks }
+	research_categories = { armor }
 	tree_header_text = {
 		text = mio_header_engine_and_suspension
 		x = 1
@@ -190,7 +190,7 @@ fe_infantry_tank_organization = {
 		x = 9
 	}
 	initial_trait = {
-		name = generic_mio_initial_trait_infantry_tanks_designer
+		name = fe_infantry_tank_organization_initial_trait
 		limit_to_equipment_type = {
 			armor
 		}
@@ -381,13 +381,23 @@ fe_infantry_tank_organization = {
 		}
 	}
 }
-fe_assault_guns_organization = {
+fe_vehicle_modification_organization = {
 	icon = GFX_idea_generic_tank_manufacturer_3
 	allowed = {
 		always = no
 	}
-	equipment_type = { light_tank_artillery_chassis medium_tank_artillery_chassis heavy_tank_artillery_chassis }
-	research_categories = { mio_cat_tech_all_armor_and_modules mio_cat_all_artillery_equipment }
+	equipment_type = {
+		mio_cat_eq_all_tank_derived_vehicles
+		armored_support_vehicle
+		mio_cat_eq_all_wheeled_armored_vehicle
+	}
+	research_categories = {
+		mio_cat_tech_all_armor_and_modules
+		mio_cat_all_artillery_equipment
+		sp_armored_engineer_tech
+		sp_armored_maintenance_tech
+		sp_armored_signal_tech
+	}
 	tree_header_text = {
 		text = mio_header_light_assault_gun_department
 		x = 0.4
@@ -401,7 +411,7 @@ fe_assault_guns_organization = {
 		x = 8
 	}
 	initial_trait = {
-		name = generic_mio_initial_trait_assault_guns_organization
+		name = fe_vehicle_modification_organization_initial_trait
 		limit_to_equipment_type = {
 			light_tank_artillery_chassis medium_tank_artillery_chassis heavy_tank_artillery_chassis
 		}
@@ -601,13 +611,13 @@ fe_assault_guns_organization = {
 		}
 	}
 }
-fe_mobile_tank_organization = {
+fe_cavalry_tank_organization = {
 	icon = GFX_idea_generic_tank_manufacturer_3
 	allowed = {
 		always = no
 	}
-	equipment_type = {mio_cat_eq_all_tanks}
-	research_categories = { mio_cat_tech_all_armor_and_modules }
+	equipment_type = { mio_cat_eq_all_tanks }
+	research_categories = { armor }
 	tree_header_text = {
 		text = mio_header_engine_and_suspension
 		x = 1
@@ -617,7 +627,7 @@ fe_mobile_tank_organization = {
 		x = 7
 	}
 	initial_trait = {
-		name = generic_mio_initial_trait_fast_tanks_designer
+		name = fe_cavalry_tank_organization_initial_trait
 		equipment_bonus = {
 			armor_value = -0.05
 			reliability = -0.05
@@ -762,13 +772,13 @@ fe_mobile_tank_organization = {
 		}
 	}
 }
-fe_medium_tank_organization = {
+fe_main_battle_tank_organization = {
 	icon = GFX_idea_generic_tank_manufacturer_2
 	allowed = {
 		always = no
 	}
-	equipment_type = { mio_cat_eq_all_medium_tank }
-	research_categories = { mio_cat_tech_medium_armor_and_modules }
+	equipment_type = { mio_cat_eq_all_main_battle_tanks }
+	research_categories = { mio_cat_tech_medium_armor_and_modules main_battle_tanks }
 	tree_header_text = {
 		text = mio_header_design
 		x = 1
@@ -782,7 +792,7 @@ fe_medium_tank_organization = {
 		x = 8
 	}
 	initial_trait = {
-		name = generic_mio_initial_trait_medium_tank_designer
+		name = fe_main_battle_tank_organization_initial_trait
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.05
 		}
@@ -934,13 +944,13 @@ fe_medium_tank_organization = {
 		}
 	}
 }
-fe_heavy_tank_organization = {
+fe_advanced_tank_organization = {
 	icon = GFX_idea_generic_tank_manufacturer_3
 	allowed = {
 		always = no
 	}
-	equipment_type = { mio_cat_eq_all_heavy_tank }
-	research_categories = { mio_cat_tech_heavy_armor_and_modules }
+	equipment_type = { mio_cat_eq_all_unmanned_tank }
+	research_categories = {  }
 	tree_header_text = {
 		text = mio_header_engine_and_drive_system
 		x = 1
@@ -954,7 +964,7 @@ fe_heavy_tank_organization = {
 		x = 8
 	}
 	initial_trait = {
-		name = generic_mio_initial_trait_heavy_tank_designer
+		name = fe_advanced_tank_organization_initial_trait
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.05
 		}
@@ -1118,22 +1128,13 @@ fe_heavy_tank_organization = {
 		}
 	}
 }
-fe_tank_refurbishment_plant_organization = {
+fe_machinary_manufacturer_organization = {
 	icon = GFX_idea_generic_tank_manufacturer_3
 	allowed = {
 		always = no
 	}
-	equipment_type = {
-		mio_cat_eq_all_tanks
-		support_equipment
-		train_equipment
-		railway_gun_equipment
-	}
-	research_categories = {
-		armor
-		support_tech
-		train_tech
-	}
+	equipment_type = { mio_cat_eq_all_tanks train_equipment railway_gun mio_cat_eq_all_ships_no_convoys }
+	research_categories = { armor train_tech naval_equipment }
 	tree_header_text = {
 		text = mio_header_armor
 		x = 1
@@ -1147,9 +1148,7 @@ fe_tank_refurbishment_plant_organization = {
 		x = 8
 	}
 	initial_trait = {
-		token = generic_mio_initial_trait_tank_refurbishment_plant
-		name = generic_mio_initial_trait_tank_refurbishment_plant
-		limit_to_equipment_type = {mio_cat_eq_all_tanks}
+		name = fe_machinary_manufacturer_organization_initial_trait
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.05
 		}
@@ -5554,7 +5553,7 @@ fe_motorized_organization = {
 	}
 	equipment_type = {
 		motorized_equipment
-		mio_cat_eq_all_armored_vehicle
+		mio_cat_eq_all_wheeled_armored_vehicle
 		motorized_rocket_equipment
 		helicopter_equipment
 	}
@@ -5722,7 +5721,7 @@ fe_motorized_organization = {
 		icon = GFX_generic_mio_trait_icon_ap_attack
 		position = { x=2 y=0 }
 		relative_position_id = fe_mio_motorized_attack
-		limit_to_equipment_type = { mio_cat_eq_all_armored_vehicle helicopter_equipment }
+		limit_to_equipment_type = { mio_cat_eq_all_wheeled_armored_vehicle helicopter_equipment }
 		equipment_bonus = {
 			hard_attack = 0.05
 			ap_attack = 0.1
@@ -5735,7 +5734,7 @@ fe_motorized_organization = {
 		position = { x=1 y=1 }
 		relative_position_id = fe_mio_motorized_attack
 		any_parent = { fe_mio_motorized_attack fe_mio_motorized_ap }
-		limit_to_equipment_type = { mio_cat_eq_all_armored_vehicle helicopter_equipment }
+		limit_to_equipment_type = { mio_cat_eq_all_wheeled_armored_vehicle helicopter_equipment }
 		equipment_bonus = {
 			defense = 0.05
 			armor_value = 0.05
@@ -5749,7 +5748,7 @@ fe_motorized_organization = {
 		relative_position_id = fe_mio_motorized_defense
 		all_parents = { fe_mio_motorized_defense }
 		mutually_exclusive = { fe_mio_motorized_efficiency }
-		limit_to_equipment_type = { mio_cat_eq_all_armored_vehicle helicopter_equipment }
+		limit_to_equipment_type = { mio_cat_eq_all_wheeled_armored_vehicle helicopter_equipment }
 		equipment_bonus = {
 			defense = 0.1
 			breakthrough = 0.1
@@ -5773,7 +5772,7 @@ fe_train_organization = {
 		x = 1
 	}
 	tree_header_text = {
-		text = mio_header_design_and_production
+		text = mio_header_production
 		x = 5
 	}
 	tree_header_text = {
