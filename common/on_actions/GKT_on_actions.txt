@@ -1,0 +1,26 @@
+on_actions = {
+	on_deployed_leader_defeated = {
+		effect = {
+			if = {
+				limit = {
+					has_trait = Command_doll
+				}
+				owner = {
+					add_to_variable = { GKT_num_command_doll = 1 }
+					add_to_variable = { GKT_num_command_doll_equipment = -1 }
+				}
+			}
+		}
+	}
+
+	on_daily = {
+		effect = {
+			every_collection_element = {
+				input = {
+					input = collection:GKT_country
+				}
+				GKT_num_griffin_unit_effect = yes
+			}
+		}
+	}
+}

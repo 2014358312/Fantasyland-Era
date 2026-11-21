@@ -1,0 +1,157 @@
+# options for map_icon_category:
+# For land units: infantry,armored,other
+# For sea units: ship,transport,uboat
+
+sub_units = {
+	regimental_tactical_doll_mg = {
+		abbreviation = "RTDM"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+		is_artillery_brigade = yes
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		allowed_battalion_groups = { griffin heavy }
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_light_infantry
+			category_army
+			category_tactical_UAV
+			category_tactical_doll
+			category_regimental_support_battalions
+			category_heavy_tactical_doll
+			category_GKT_griffin_unit
+		}
+		divisional = no
+
+		combat_width = 0
+		essential = {
+			doll_equipment_mg
+		}
+		need = {
+			doll_equipment_mg = 10
+		}
+		manpower = 30
+		training_time = 120
+		max_organisation = 0
+		default_morale = 0.15
+		max_strength = 0.3
+		weight = 0.1
+		
+		supply_consumption = 0.03
+
+		defense = -0.8
+		breakthrough = -0.9
+		soft_attack = -0.9
+		hard_attack = -0.9
+		ap_attack = -0.5
+		air_attack = -0.6
+		armor_value = -1.0
+		can_be_parachuted = yes
+	}
+
+	regimental_main_battle_tanks_unit = {
+		abbreviation = "RMBT"
+		sprite = "medium_armor"
+		map_icon_category = armored
+		priority = 2502
+		ai_priority = 3500
+		active = no
+		
+		type = {
+			armor
+			support
+		}
+		group = support
+		allowed_battalion_groups = { griffin heavy }
+		divisional = no
+		categories = {
+			category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+			category_heavy_unit
+			category_GKT_griffin_unit
+			category_GKT_mobile_armor
+			category_regimental_support_battalions
+			category_regimental_GKT_mobile_armor
+		}
+
+		need = {
+			equipment_main_battle_tanks = 10
+		}
+		manpower = 100
+		max_organisation = 5
+		max_strength = 0.8
+		default_morale = 0.3
+		training_time = 180
+		weight = 1.25
+		supply_consumption = 0.08
+
+		suppression = 2.5
+		
+		breakthrough = -0.4
+		defense = -0.5
+		soft_attack = -0.6
+		hard_attack = -0.4
+		armor_value = -0.4
+		air_attack = -0.4	
+	}
+
+	regimental_tactical_mecha_unit = {
+		abbreviation = "RTMU"
+		sprite = light_armor
+		map_icon_category = armored
+		priority = 2501
+		ai_priority = 2000
+		active = no
+		type = {
+			armor
+			support
+		}
+		
+		group = support
+		divisional = no
+		allowed_battalion_groups = { griffin heavy }
+		categories = {
+			category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+			category_heavy_unit
+			category_GKT_griffin_unit
+			category_GKT_mobile_armor
+			category_regimental_support_battalions
+			category_regimental_GKT_mobile_armor
+		}
+
+		need = {
+			equipment_tactical_mecha = 10
+		}
+		manpower = 100
+		max_organisation = 5
+		default_morale = 0.3
+		training_time = 180
+		max_strength = 0.8
+		weight = 1
+		supply_consumption = 0.07
+
+		suppression = 2.5
+
+		breakthrough = -0.6
+		defense = -0.3
+		soft_attack = -0.4
+		hard_attack = -0.6
+		armor_value = -0.6
+		air_attack = -0.4	
+	}
+}

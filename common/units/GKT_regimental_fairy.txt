@@ -1,0 +1,211 @@
+# options for map_icon_category:
+# For land units: infantry,armored,other
+# For sea units: ship,transport,uboat
+
+sub_units = {
+	regimental_cannonry_fairy = {
+		abbreviation = "RCF"
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+		is_artillery_brigade = yes
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		allowed_battalion_groups = { griffin heavy }
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+			category_tactical_UAV
+			category_regimental_support_artillery
+			category_regimental_support_battalions
+		}
+		divisional = no
+
+		combat_width = 0
+		essential = {
+			tactical_UAV_equipment
+		}
+		need = {
+			tactical_UAV_equipment = 5
+		}
+		manpower = 10
+		training_time = 120
+		max_organisation = 0
+		default_morale = 0.1
+		max_strength = 0.2
+		weight = 0.1
+		
+		supply_consumption = 0.08
+
+		defense = -0.6
+		breakthrough = -0.75
+		soft_attack = -0.1
+		hard_attack = -0.9
+		ap_attack = -0.7
+		air_attack = -1.0
+		armor_value = -1.0
+		can_be_parachuted = yes
+	}
+	regimental_snipe_fairy = {
+		abbreviation = "RSF"
+		sprite = anti_tank
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+		is_artillery_brigade = no
+		group = support
+		
+		type = {
+			infantry
+			support
+		}
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+			category_tactical_UAV
+			category_regimental_support_battalions
+			category_regimental_support_artillery
+		}
+		divisional = no
+		allowed_battalion_groups = { griffin heavy }
+		combat_width = 0
+		essential = {
+			tactical_UAV_equipment
+		}
+		need = {
+			tactical_UAV_equipment = 5
+		}
+		manpower = 10
+		max_organisation = 0
+		default_morale = 0.1
+		max_strength = 0.2
+		training_time = 120
+		weight = 0.1
+
+		can_be_parachuted = yes
+		
+		supply_consumption = 0.04
+
+		defense = -0.9
+		breakthrough = -0.95
+		soft_attack = -0.75
+		hard_attack = -0.1
+		ap_attack = 3.5
+		air_attack = -1.0
+		armor_value = -1.0
+	}
+	regimental_armor_fairy = {
+		abbreviation = "RAF"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		is_artillery_brigade = no
+		active = no
+		type = {
+			infantry
+			support
+		}
+		divisional = no
+		group = support
+		is_artillery_brigade = no
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+			category_tactical_UAV
+		}
+		battalion_mult = {
+			category = category_tactical_doll
+			armor_value = 0.05
+			hardness = 0.05
+		}
+		affects_speed = no
+		allowed_battalion_groups = { griffin heavy }
+		combat_width = 0
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 10
+		training_time = 120
+		weight = 0.1
+		supply_consumption = 0.02
+		can_be_parachuted = yes
+		defense = -0.25
+		breakthrough = -0.6
+		soft_attack = -1.0
+		hard_attack = -1.0
+		armor_value = 0.1
+		ap_attack = -1.0
+		air_attack = -1.0
+		
+		essential = {
+			tactical_UAV_equipment
+		}
+
+		need = {
+			tactical_UAV_equipment = 5
+		}
+	}
+	regimental_peace_fairy = {
+		abbreviation = "RPF"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+		is_artillery_brigade = no
+		type = {
+			infantry
+			support
+		}
+		divisional = no
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_tactical_UAV
+		}
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 0	
+		default_morale = 0.3
+		manpower = 50
+		training_time = 180
+		weight = 0.1
+		supply_consumption = 0.02
+		can_be_parachuted = yes
+		suppression_factor = 0.1
+		soft_attack = -0.6
+		hard_attack = -0.85
+		ap_attack = -0.75
+		air_attack = -1.0
+		armor_value = -0.6
+		defense = 0.1
+		breakthrough = -0.65
+		essential = {
+			tactical_UAV_equipment
+		}
+		
+		need = {
+			tactical_UAV_equipment = 5
+		}
+	}
+}

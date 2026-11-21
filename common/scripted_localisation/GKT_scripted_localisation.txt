@@ -1,0 +1,58 @@
+#人形床位
+defined_text = { 
+	name = GKT_doll_beds_tt 
+	text = { 
+		trigger = {
+			check_variable = { GAK_num_griffin_battalions_buff = 0.25}
+		}
+		localization_key = GKT_doll_beds_tt_1 
+	}
+	text = {
+		trigger = { 
+			check_variable = { GAK_num_griffin_battalions_buff < 0.25}
+			check_variable = { GAK_num_griffin_battalions_buff > 0}
+		}
+		localization_key = GKT_doll_beds_tt_2 
+	}
+	text = {
+		trigger = { 
+			check_variable = { GAK_num_griffin_battalions_buff = 0}
+		}
+		localization_key = GKT_doll_beds_tt_3
+	}
+	text = {
+		trigger = { 
+			check_variable = { GAK_num_griffin_battalions_buff > -0.1}
+			check_variable = { GAK_num_griffin_battalions_buff < 0}
+		}
+		localization_key = GKT_doll_beds_tt_4
+	}
+	text = {
+		trigger = { 
+			check_variable = { GAK_num_griffin_battalions_buff = -0.1}
+		}
+		localization_key = GKT_doll_beds_tt_5
+	}
+}
+#人形床位buff
+defined_text = {
+	name = GKT_doll_beds_buff_tt
+	text = { 
+		trigger = {
+			check_variable = { GAK_num_griffin_battalions_buff > 0 }
+		}
+		localization_key = GKT_doll_beds_buff_tt_1 
+	}
+	text = { 
+		trigger = {
+			check_variable = { GAK_num_griffin_battalions_buff = 0 }
+		}
+		localization_key = GKT_doll_beds_buff_tt_2 
+	}
+	text = { 
+		trigger = {
+			check_variable = { GAK_num_griffin_battalions_buff < 0 }
+		}
+		localization_key = GKT_doll_beds_buff_tt_3 
+	}
+}

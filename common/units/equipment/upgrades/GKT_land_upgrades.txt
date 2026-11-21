@@ -1,0 +1,157 @@
+upgrades = {
+
+	GKT_doll_speed_upgrade = {
+		abbreviation = "dsp"
+		max_level = 18 #each level represents ~50HP
+		cost = land
+
+		linear_cost = {
+			cost_by_level = 1
+			cost_by_level_for_licensed_equipment = 5
+		}
+
+		level_requirements = {
+			5 = {
+				has_tech = tactical_doll1
+			}
+			10 = {
+				has_tech = tactical_doll2
+			}
+			15 = {
+				is_special_project_completed = sp:sp_griffin_third_generation_tactical_doll
+			}
+		}
+
+		resource_cost_thresholds = {
+			10 = { #higher level engines do require more strategic resources
+				#chromium = 1
+			}
+		}
+
+		#maximum_speed = 0.1
+		reliability = -0.015
+		add_stats = {
+			build_cost_ic = 0.05
+			maximum_speed = 0.1
+		}
+	}
+
+	GKT_doll_armor_upgrade = {
+		abbreviation = "dar"
+		max_level = 20 #each level represents ~10mm of armor 
+		cost = land
+
+		linear_cost = {
+			cost_by_level = 1
+			cost_by_level_for_licensed_equipment = 2
+		}
+
+		level_requirements = {
+			5 = {
+				has_tech = tactical_doll1
+			}
+			10 = {
+				has_tech = tactical_doll2
+			}
+			15 = {
+				is_special_project_completed = sp:sp_griffin_third_generation_tactical_doll
+			}
+		}
+
+		resource_cost_thresholds = { # resource values defined here are TOTAL added cost, not cumulative
+			10 = {
+				steel = 1
+				#chromium = 1
+			}
+			15 = {
+				steel = 1
+				#chromium = 2
+			}
+		}
+
+		reliability = -0.015
+		#armor_value = 0.085
+		add_stats = {
+			maximum_speed = -0.05
+			breakthrough = 0.25
+			build_cost_ic = 0.1
+			armor_value = 1.5
+
+		}
+	}
+
+	GKT_mobile_armor_speed_upgrade = {
+		abbreviation = "mas"
+		max_level = 18 #each level represents ~50HP
+		cost = land
+
+		linear_cost = {
+			cost_by_level = 1
+			cost_by_level_for_licensed_equipment = 5
+		}
+
+		level_requirements = {
+			12 = {
+				OR = {
+					has_tech = main_battle_tanks1
+					has_tech = tactical_mecha1
+				}
+			}
+		}
+
+		resource_cost_thresholds = {
+			10 = { #higher level engines do require more strategic resources
+				#chromium = 1
+			}
+		}
+
+		#maximum_speed = 0.1
+		reliability = -0.015
+		add_stats = {
+			build_cost_ic = 0.1
+			maximum_speed = 0.1
+		}
+	}
+
+	GKT_mobile_armor_armor_upgrade = {
+		abbreviation = "daa"
+		max_level = 20 #each level represents ~10mm of armor 
+		cost = land
+
+		linear_cost = {
+			cost_by_level = 1
+			cost_by_level_for_licensed_equipment = 2
+		}
+
+		level_requirements = {
+			
+			12 = {
+				OR = {
+					has_tech = main_battle_tanks1
+					has_tech = tactical_mecha1
+				}
+			}
+		}
+
+		resource_cost_thresholds = { # resource values defined here are TOTAL added cost, not cumulative
+			10 = {
+				steel = 1
+				#chromium = 1
+			}
+			15 = {
+				steel = 1
+				#chromium = 2
+			}
+		}
+
+		reliability = -0.015
+		#armor_value = 0.085
+		add_stats = {
+			maximum_speed = -0.1
+			breakthrough = 1.25
+			build_cost_ic = 0.2
+			armor_value = 3
+
+		}
+	}
+}

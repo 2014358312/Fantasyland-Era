@@ -1,0 +1,162 @@
+ability = {
+	fortification_fairy_skill = {
+		name = FORTIFICATION_FAIRY_SKILL
+		desc = FORTIFICATION_FAIRY_SKILL_DESC
+
+		sound_effect = ability_deeper_dig_in
+
+		type = army_leader
+		requires_deployed_hq = yes
+
+		allowed = {
+			is_border_war = no
+		}
+
+		cost = 0.2
+		duration = 504
+
+		unit_modifiers = {
+			dig_in_speed = 8
+			max_dig_in_factor = 0.2
+			combat_entrenchment = 0.1
+		}
+	}
+
+	cooking_fairy_skill = {
+		name = COOKING_FAIRY_SKILL
+		desc = COOKING_FAIRY_SKILL_DESC
+
+		sound_effect = ability_front_overrun
+		type = army_leader
+		requires_deployed_hq = yes
+
+		allowed = {
+			is_border_war = no
+		}
+
+		unit_modifiers = {
+			org_loss_when_moving = -0.2
+			planning_decay_rate_factor = -0.4
+			army_morale = 0.2
+			supply_consumption_factor = -0.2
+		}
+		cost = 0.2
+		duration = 504
+	}
+
+	doctor_fairy_skill = {
+		name = DOCTOR_FAIRY_SKILL
+		desc = DOCTOR_FAIRY_SKILL_DESC
+
+		sound_effect = ability_local_reserves
+		type = army_leader
+		requires_deployed_hq = yes
+
+		allowed = {
+			is_border_war = no
+		}
+
+		unit_modifiers = {
+			casualty_trickleback = 0.05
+			org_loss_at_low_org_factor = -0.25
+			army_org_regain = 0.2
+			str_damage_multiplier = -0.1
+		}
+		cost = 0.2
+		duration = 504
+	}
+
+	illumine_fairy_skill = {
+		name = ILLUMINE_FAIRY_SKILL
+		desc = ILLUMINE_FAIRY_SKILL_DESC
+
+		sound_effect = ability_defence_in_depth
+		type = army_leader
+		requires_deployed_hq = yes
+
+		allowed = {
+			is_border_war = no
+		}
+
+		unit_modifiers = {
+			land_night_attack = 0.1
+			recon_factor = 0.2
+			terrain_penalty_reduction = 0.15
+		}
+		cost = 0.2
+		duration = 504
+	}
+
+	shield_fairy_skill = {
+		name = SHIELD_FAIRY_SKILL
+		desc = SHIELD_FAIRY_SKILL_DESC
+
+		sound_effect = ability_defence_in_depth
+		type = army_leader
+		requires_deployed_hq = yes
+
+		allowed = {
+			is_border_war = no
+		}
+
+		unit_modifiers = {
+			army_speed_factor = -0.3
+			army_strength_factor = 0.1
+			cas_damage_reduction = 0.15
+			defence = 0.2
+			breakthrough_factor = 0.15
+			supply_consumption_factor = 0.15
+			org_damage_multiplier = -0.1
+		}
+		cost = 0.2
+		cancelable = yes
+		duration = -1
+	}
+
+	command_fairy_skill = {
+		name = COMMAND_FAIRY_SKILL
+		desc = COMMAND_FAIRY_SKILL_DESC
+
+		sound_effect = ability_local_command
+		type = army_leader
+		requires_deployed_hq = yes
+
+		allowed = {
+			is_border_war = no
+		}
+
+		unit_modifiers = {
+			combat_width_factor = -0.1
+			pocket_penalty = -0.2
+			planning_speed = 0.4
+			planning_decay_rate_factor = -0.4
+			experience_gain_army_unit_factor = 0.5
+		}
+		cost = 0.2
+		duration = 504
+	}
+
+	EMO_support_skill = {
+		name = EMO_SUPPORT_SKILL
+		desc = EMO_SUPPORT_SKILL_DESC
+
+		sound_effect = ability_local_command
+		type = army_leader
+		requires_deployed_hq = yes
+
+		allowed = {
+			is_border_war = no
+		}
+
+		unit_modifiers = {
+			modifier_army_sub_unit_category_GKT_griffin_unit_attack_factor = 0.15
+			modifier_army_sub_unit_category_GKT_griffin_unit_defence_factor = 0.15
+			breakthrough_factor = 0.15
+			fortification_damage = 0.4
+			supply_consumption_factor = 0.2
+		}
+
+		cost = 0.3
+		duration = 504
+	}
+}

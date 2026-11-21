@@ -1,0 +1,629 @@
+# options for map_icon_category:
+# For land units: infantry,armored,other
+# For sea units: ship,transport,uboat
+
+sub_units = {
+	fortification_fairy_unit = {
+		abbreviation = "FFU"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+		type = {
+			infantry
+			support
+		}
+		group = support
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+			category_tactical_UAV
+			category_GKT_griffin_unit
+		}
+		regimental = no
+		combat_width = 0
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 50
+		training_time = 120
+		weight = 0.1
+		supply_consumption = 0.02
+		entrenchment = 2	
+		defense = 2
+		soft_attack = -0.6
+		hard_attack = -0.8
+		ap_attack = -0.8
+		air_attack = -1.0
+		breakthrough = -0.5
+		armor_value = -1.0
+		essential = {
+			tactical_UAV_equipment
+		}
+		battalion_mult = {
+				category = category_tactical_doll
+				entrenchment = 0.2
+				add = yes
+			}
+		need = {
+			tactical_UAV_equipment = 25
+		}
+
+		same_support_type = engineer
+
+		can_be_parachuted = yes
+		forest = {
+			defence = 0.25
+			movement = 0.05
+		}
+
+		hills = {
+			defence = 0.1
+		}
+
+		jungle = {
+			defence = 0.25
+		}
+
+		marsh = {
+			defence = 0.25
+			movement = 0.2
+		}
+
+		fort = {
+			attack = 0.1
+			defence = 0.25
+		}
+
+		river = {
+			defence = 0.25
+			movement = 0.25
+		}
+
+		amphibious = {
+			attack = 0.15
+		}
+	}
+	cannonry_fairy_unit = {
+		abbreviation = "CNU"
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+			category_tactical_UAV
+			category_GKT_griffin_unit
+		}
+		regimental = no
+
+		combat_width = 0
+		essential = {
+			tactical_UAV_equipment
+		}
+		need = {
+			tactical_UAV_equipment = 15
+		}
+		manpower = 25
+		training_time = 120
+		max_organisation = 0
+		default_morale = 0.1
+		max_strength = 0.2
+		weight = 0.1
+		
+		supply_consumption = 0.16
+
+		defense = -0.2
+		breakthrough = -0.5
+		soft_attack = 0.8
+		hard_attack = -0.8
+		ap_attack = -0.4
+		air_attack = -1.0
+		armor_value = -1.0
+		can_be_parachuted = yes
+	}
+	snipe_fairy_unit = {
+		abbreviation = "SFU"
+		sprite = anti_tank
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+		
+		group = support
+		
+		type = {
+			infantry
+			support
+		}
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+			category_tactical_UAV
+			category_GKT_griffin_unit
+		}
+		regimental = no
+
+		combat_width = 0
+		essential = {
+			tactical_UAV_equipment
+		}
+		need = {
+			tactical_UAV_equipment = 15
+		}
+		manpower = 20
+		max_organisation = 0
+		default_morale = 0.1
+		max_strength = 0.2
+		training_time = 120
+		weight = 0.1
+
+		can_be_parachuted = yes
+		
+		supply_consumption = 0.08
+
+		defense = -0.8
+		breakthrough = -0.9
+		soft_attack = -0.5
+		hard_attack = 0.8
+		ap_attack = 3.5
+		air_attack = -1.0
+		armor_value = -1.0
+	}
+	cooking_fairy_unit = {
+		abbreviation = "CFU"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_tactical_UAV
+			category_GKT_griffin_unit
+		}
+		regimental = no
+		combat_width = 0
+		max_strength = 1
+		max_organisation = 10	
+		default_morale = 0.4
+		manpower = 25
+		training_time = 120
+		weight = 0.1
+		can_be_parachuted = yes
+		supply_consumption_factor = -0.1
+		fuel_consumption_factor = -0.05
+		soft_attack = -1.0
+		hard_attack = -1.0
+		ap_attack = -1.0
+		air_attack = -1.0
+		defense = -0.4
+		breakthrough = -0.4
+		armor_value = -1.0
+		own_equipment_fuel_consumption_mult = 0.0 # no fuel use
+		essential = {
+			tactical_UAV_equipment
+		}
+
+		need = {
+			tactical_UAV_equipment = 15
+		}
+
+		same_support_type = logistics_company
+
+	}
+	doctor_fairy_unit = {
+		abbreviation = "DCU"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_tactical_UAV
+			category_GKT_griffin_unit
+		}
+		regimental = no
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 25
+		training_time = 120
+		weight = 0.1
+		supply_consumption = 0.05
+		can_be_parachuted = yes
+		casualty_trickleback = 0.20
+		experience_loss_factor = -0.15
+		soft_attack = -1.0
+		hard_attack = -1.0
+		ap_attack = -1.0
+		air_attack = -1.0
+		defense = -1.0
+		breakthrough = -1.0
+		armor_value = -1.0
+		own_equipment_fuel_consumption_mult = 0.0 
+		
+		same_support_type = field_hospital
+
+		essential = {
+			tactical_UAV_equipment
+		}
+		
+		need = {
+			tactical_UAV_equipment = 15
+		}
+
+	}
+	illumine_fairy_unit = {
+		abbreviation = "IFU"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_tactical_UAV
+			category_GKT_griffin_unit
+		}
+		regimental = no
+		affects_speed = no
+	
+		combat_width = 0
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 25
+		training_time = 120
+		weight = 0.1
+		supply_consumption = 0.02
+		recon = 1.2
+		can_be_parachuted = yes
+		defense = 0.2
+		breakthrough = -0.8
+		soft_attack = -0.9
+		hard_attack = -0.9
+		armor_value = -1.0
+		ap_attack = -1.0
+		air_attack = -1.0
+		essential = {
+			tactical_UAV_equipment
+		}
+
+		need = {
+			tactical_UAV_equipment = 15
+		}
+		
+		forest = {
+			movement = 0.05
+		}
+		hills = {
+			movement = 0.10
+		}
+		mountain = {
+			movement = 0.10
+		}
+		jungle = {
+			movement = 0.10
+		}
+		marsh = {
+			movement = 0.10
+		}
+		plains = {
+			movement = 0.05
+		}
+		desert = {
+			movement = 0.05
+		}
+		river = {
+			movement = 0.1
+		}
+
+		same_support_type = recon
+
+	}
+	shield_fairy_unit = {
+		abbreviation = "SFU"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		type = {
+			infantry
+			support
+		}
+		regimental = no
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+			category_tactical_UAV
+			category_GKT_griffin_unit
+		}
+		affects_speed = no
+		battalion_mult = {
+			category = category_tactical_doll
+			defence = 0.1
+			breakthrough = 0.1
+		}
+		combat_width = 0
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 25
+		training_time = 120
+		weight = 0.1
+		supply_consumption = 0.02
+		can_be_parachuted = yes
+		defense = 0.2
+		breakthrough = -0.1
+		soft_attack = -1.0
+		hard_attack = -1.0
+		armor_value = -1.0
+		ap_attack = -1.0
+		air_attack = -1.0
+		
+		essential = {
+			tactical_UAV_equipment
+		}
+
+		need = {
+			tactical_UAV_equipment = 15
+		}
+		
+		forest = {
+			defence = 0.10
+			attack = 0.05
+		}
+		hills = {
+			defence = 0.10
+			attack = 0.05
+		}
+		mountain = {
+			defence = 0.10
+			attack = 0.05
+		}
+		jungle = {
+			defence = 0.10
+			attack = 0.05
+		}
+		marsh = {
+			defence = 0.10
+			attack = 0.05
+		}
+		plains = {
+			defence = 0.10
+			attack = 0.05
+		}
+		desert = {
+			defence = 0.10
+			attack = 0.05
+		}
+		river = {
+			defence = 0.10
+			attack = 0.05
+		}
+		fort = {
+			defence = 0.10
+			attack = 0.05
+		}
+		urban = {
+			defence = 0.10
+			attack = 0.05
+		}
+	}
+	armor_fairy_unit = {
+		abbreviation = "AFU"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		type = {
+			infantry
+			support
+		}
+		regimental = no
+		group = support
+		battalion_mult = {
+			category = category_tactical_doll
+			armor_value = 0.1
+			hardness = 0.1
+		}
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+			category_tactical_UAV
+			category_GKT_griffin_unit
+		}
+		affects_speed = no
+	
+		combat_width = 0
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 25
+		training_time = 120
+		weight = 0.1
+		supply_consumption = 0.02
+		can_be_parachuted = yes
+		defense = 0.5
+		breakthrough = -0.2
+		soft_attack = -1.0
+		hard_attack = -1.0
+		armor_value = 1.2
+		ap_attack = -1.0
+		air_attack = -1.0
+		
+		essential = {
+			tactical_UAV_equipment
+		}
+
+		need = {
+			tactical_UAV_equipment = 15
+		}
+	}
+	peace_fairy_unit = {
+		abbreviation = "PFU"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_tactical_UAV
+			category_GKT_griffin_unit
+		}
+		regimental = no
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 0	
+		default_morale = 0.3
+		manpower = 50
+		training_time = 180
+		weight = 0.1
+		supply_consumption = 0.02
+		can_be_parachuted = yes
+		suppression_factor = 0.20
+		soft_attack = -0.2
+		hard_attack = -0.7
+		ap_attack = -0.5
+		air_attack = -1.0
+		armor_value = -0.6
+		defense = 1.2
+		breakthrough = -0.3
+		essential = {
+			tactical_UAV_equipment
+		}
+		
+		need = {
+			tactical_UAV_equipment = 15
+		}
+		same_support_type = military_police
+	}
+	command_fairy_unit = {
+		abbreviation = "CFU"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		regimental = no
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_tactical_UAV
+			category_GKT_griffin_unit
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 30
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		can_be_parachuted = yes
+		same_support_type = signal
+		initiative = 0.1
+		soft_attack = -1.0
+		hard_attack = -1.0
+		breakthrough = -0.7
+		ap_attack = -1.0
+		air_attack = -1.0
+		armor_value = -0.8
+		
+		own_equipment_fuel_consumption_mult = 0.0 
+		
+		essential = {
+			tactical_UAV_equipment
+		}
+
+		need = {
+			tactical_UAV_equipment = 20
+		}
+		same_support_type = signal_company
+	}
+}
