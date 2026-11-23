@@ -299,11 +299,11 @@ sp_griffin_amphibious_tactical_doll = {
 				name = sp_griffin_amphibious_tactical_doll
 				uses = 1
 				cost_factor = 1
-				equipment = doll_equipment_amphibious
+				equipment = doll_chassis_amphibious
 			}
 		}
-		enable_equipments = {
-			doll_equipment_amphibious_0
+		enable_equipment_modules = {
+			doll_surface_waterproofing
 		}
 		enable_subunits = {
 			tactical_doll_amphibious
@@ -473,12 +473,14 @@ sp_griffin_airborne_fairy = {
 				name = sp_griffin_parachuted_tactical_doll
 				uses = 1
 				cost_factor = 1
-				equipment = doll_equipment_parachuted
+				equipment = doll_chassis_parachuted
 			}
 		}
 		enable_equipments = {
-			doll_equipment_parachuted_0
 			airborne_fairy_0
+		}
+		enable_equipment_modules = {
+			doll_lightweight_design
 		}
 		enable_subunits = {
 			tactical_doll_parachuted
@@ -531,7 +533,7 @@ sp_griffin_airborne_fairy = {
 				
 				iteration_output = {
 					equipment_bonus = {
-						doll_equipment_parachuted_0 = {
+						doll_chassis_parachuted_0 = {
 							hardness = -0.5
 							build_cost_ic = -0.2
 						}
@@ -594,7 +596,7 @@ sp_griffin_airborne_fairy = {
 						}
 					}
 					equipment_bonus = {
-						doll_equipment_parachuted = {
+						doll_chassis_parachuted = {
 							build_cost_ic = 0.1
 						}
 					}

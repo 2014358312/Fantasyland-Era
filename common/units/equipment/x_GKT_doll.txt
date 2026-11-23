@@ -1,0 +1,326 @@
+duplicate_archetypes = {
+	doll_chassis_rf = {
+		archetype = doll_chassis_hg
+		type = { armor anti_tank }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			build_cost_ic = { add = 0.6 }
+			maximum_speed = { set = 5 }
+			hardness = { add = 0.05 }
+			armor_value = { add = 3 }
+			supply_consumption = { set = 0.03 }
+		}
+	}
+	doll_chassis_ar = {
+		archetype = doll_chassis_hg
+		type = { armor artillery }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			build_cost_ic = { add = 0.2 }
+			maximum_speed = { set = 6 }
+			armor_value = { add = 5 }
+			hardness = { add = 0.1 }
+			supply_consumption = { set = 0.02 }
+		}
+	}
+	doll_chassis_smg = {
+		archetype = doll_chassis_hg
+		type = { armor anti_air }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			build_cost_ic = { add = 0.3 }
+			armor_value = { add = 5 }
+			hardness = { set = 0.25 }
+			supply_consumption = { set = 0.02 }
+		}
+	}
+	doll_chassis_amphibious = {
+		archetype = doll_chassis_hg
+		type = { armor amphibious }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			maximum_speed = { set = 6 }
+			armor_value = { add = 5 }
+			hardness = { add = 0.1 }
+			supply_consumption = { set = 0.02 }
+		}
+	}
+	doll_chassis_sg = {
+		archetype = doll_chassis_hg
+		type = { armor flame }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			build_cost_ic = { add = 1.9 }
+			maximum_speed = { set = 5 }
+			armor_value = { add = 12 }
+			hardness = { set = 0.7 }
+			supply_consumption = { set = 0.04 }
+		}
+	}
+	doll_chassis_mg = {
+		archetype = doll_chassis_hg
+		type = { armor rocket }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			build_cost_ic = { add = 0.35 }
+			maximum_speed = { set = 5 }
+			armor_value = { add = 2 }
+			hardness = { add = 0.15 }
+			supply_consumption = { set = 0.04 }
+		}
+	}
+	doll_chassis_parachuted = {
+		archetype = doll_chassis_hg
+		type = { armor anti_air amphibious }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+			build_cost_ic = { add = 0.2 }
+			maximum_speed = { set = 6 }
+			armor_value = { add = 2 }
+			hardness = { add = 0.05 }
+			supply_consumption = { set = 0.02 }
+		}
+	}
+}
+equipments = {
+	doll_equipment_hg_0 = {
+		year = 975
+		archetype = doll_chassis_hg
+		priority = 10
+		visual_level = 0
+		is_convertable = yes
+	}
+	doll_equipment_hg_1 = {
+		year = 1001
+		archetype = doll_chassis_hg
+		parent = doll_equipment_hg_0
+		priority = 10
+		visual_level = 1
+		is_convertable = yes
+	}
+	doll_equipment_hg_2 = {
+		year = 1007
+		archetype = doll_chassis_hg
+		parent = doll_equipment_hg_1
+		priority = 10
+		visual_level = 2
+		is_convertable = yes
+	}
+	doll_equipment_ar_0 = {
+		year = 975
+		archetype = doll_chassis_ar
+		priority = 20
+		visual_level = 0
+		can_convert_from = {
+			doll_equipment_hg_0
+		}
+	}
+	doll_equipment_ar_1 = {
+		year = 1001
+		archetype = doll_chassis_ar
+		parent = doll_equipment_ar_0
+		priority = 20
+		visual_level = 1
+		can_convert_from = {
+			doll_equipment_hg_0
+			doll_equipment_hg_1
+		}
+	}
+	doll_equipment_ar_2 = {
+		year = 1007
+		archetype = doll_chassis_ar
+		parent = doll_equipment_ar_1
+		priority = 20
+		visual_level = 2
+		can_convert_from = {
+			doll_equipment_hg_1
+			doll_equipment_hg_2
+		}
+	}
+	doll_equipment_rf_0 = {
+		year = 975
+		archetype = doll_chassis_rf
+		priority = 30
+		visual_level = 0
+		can_convert_from = {
+			doll_equipment_hg_0
+		}
+	}
+	doll_equipment_rf_1 = {
+		year = 1001
+		archetype = doll_chassis_rf
+		parent = doll_equipment_rf_0
+		priority = 30
+		visual_level = 1
+		can_convert_from = {
+			doll_equipment_hg_0
+			doll_equipment_hg_1
+		}
+	}
+	doll_equipment_rf_2 = {
+		year = 1007
+		archetype = doll_chassis_rf
+		parent = doll_equipment_rf_1
+		priority = 30
+		visual_level = 2
+		can_convert_from = {
+			doll_equipment_hg_1
+			doll_equipment_hg_2
+		}
+	}
+	doll_equipment_smg_0 = {
+		year = 975
+		archetype = doll_chassis_smg
+		priority = 40
+		visual_level = 0
+		can_convert_from = {
+			doll_equipment_hg_0
+		}
+	}
+	doll_equipment_smg_1 = {
+		year = 1001
+		archetype = doll_chassis_smg
+		parent = doll_equipment_smg_0
+		priority = 40
+		visual_level = 1
+		can_convert_from = {
+			doll_equipment_hg_0
+			doll_equipment_hg_1
+		}
+	}
+	doll_equipment_smg_2 = {
+		year = 1007
+		archetype = doll_chassis_smg
+		parent = doll_equipment_smg_1
+		priority = 40
+		visual_level = 2
+		can_convert_from = {
+			doll_equipment_hg_1
+			doll_equipment_hg_2
+		}
+	}
+	doll_equipment_sg_0 = {
+		year = 975
+		archetype = doll_chassis_sg
+		priority = 50
+		visual_level = 0
+		can_convert_from = {
+			doll_equipment_hg_0
+		}
+	}
+	doll_equipment_sg_1 = {
+		year = 1001
+		archetype = doll_chassis_sg
+		parent = doll_equipment_sg_0
+		priority = 50
+		visual_level = 1
+		can_convert_from = {
+			doll_equipment_hg_0
+			doll_equipment_hg_1
+		}
+	}
+	doll_equipment_sg_2 = {
+		year = 1007
+		archetype = doll_chassis_sg
+		parent = doll_equipment_sg_1
+		priority = 50
+		visual_level = 2
+		can_convert_from = {
+			doll_equipment_hg_1
+			doll_equipment_hg_2
+		}
+	}
+	doll_equipment_mg_0 = {
+		year = 975
+		archetype = doll_chassis_mg
+		priority = 60
+		visual_level = 0
+		can_convert_from = {
+			doll_equipment_hg_0
+		}
+	}
+	doll_equipment_mg_1 = {
+		year = 1001
+		archetype = doll_chassis_mg
+		parent = doll_equipment_mg_0
+		priority = 60
+		visual_level = 1
+		can_convert_from = {
+			doll_equipment_hg_0
+			doll_equipment_hg_1
+		}
+	}
+	doll_equipment_mg_2 = {
+		year = 1007
+		archetype = doll_chassis_mg
+		parent = doll_equipment_mg_1
+		priority = 60
+		visual_level = 2
+		can_convert_from = {
+			doll_equipment_hg_1
+			doll_equipment_hg_2
+		}
+	}
+	doll_equipment_amphibious_0 = {
+		year = 975
+		archetype = doll_chassis_amphibious
+		priority = 70
+		visual_level = 0
+		can_convert_from = {
+			doll_equipment_hg_0
+		}
+	}
+	doll_equipment_amphibious_1 = {
+		year = 1001
+		archetype = doll_chassis_amphibious
+		parent = doll_equipment_amphibious_0
+		priority = 70
+		visual_level = 1
+		can_convert_from = {
+			doll_equipment_hg_0
+			doll_equipment_hg_1
+		}
+	}
+	doll_equipment_amphibious_2 = {
+		year = 1007
+		archetype = doll_chassis_amphibious
+		parent = doll_equipment_amphibious_1
+		priority = 70
+		visual_level = 2
+		can_convert_from = {
+			doll_equipment_hg_1
+			doll_equipment_hg_2
+		}
+	}
+	doll_equipment_parachuted_0 = {
+		year = 975
+		archetype = doll_chassis_parachuted
+		priority = 80
+		visual_level = 0
+		can_convert_from = {
+			doll_equipment_hg_0
+		}
+	}
+	doll_equipment_parachuted_1 = {
+		year = 1001
+		archetype = doll_chassis_parachuted
+		parent = doll_equipment_parachuted_0
+		priority = 80
+		visual_level = 1
+		can_convert_from = {
+			doll_equipment_hg_0
+			doll_equipment_hg_1
+		}
+	}
+	doll_equipment_parachuted_2 = {
+		year = 1007
+		archetype = doll_chassis_parachuted
+		parent = doll_equipment_parachuted_1
+		priority = 80
+		visual_level = 2
+		can_convert_from = {
+			doll_equipment_hg_1
+			doll_equipment_hg_2
+		}
+	}
+}

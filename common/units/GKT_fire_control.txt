@@ -1,7 +1,3 @@
-# options for map_icon_category:
-# For land units: infantry,armored,other
-# For sea units: ship,transport,uboat
-
 sub_units = {
 	regimental_tactical_doll_mg = {
 		abbreviation = "RTDM"
@@ -35,10 +31,10 @@ sub_units = {
 
 		combat_width = 0
 		essential = {
-			doll_equipment_mg
+			doll_chassis_mg
 		}
 		need = {
-			doll_equipment_mg = 10
+			doll_chassis_mg = 10
 		}
 		manpower = 30
 		training_time = 120
@@ -58,55 +54,6 @@ sub_units = {
 		armor_value = -1.0
 		can_be_parachuted = yes
 	}
-
-	regimental_main_battle_tanks_unit = {
-		abbreviation = "RMBT"
-		sprite = "medium_armor"
-		map_icon_category = armored
-		priority = 2502
-		ai_priority = 3500
-		active = no
-		
-		type = {
-			armor
-			support
-		}
-		group = support
-		allowed_battalion_groups = { griffin heavy }
-		divisional = no
-		categories = {
-			category_tanks
-			category_front_line
-			category_all_armor
-			category_army
-			category_heavy_unit
-			category_GKT_griffin_unit
-			category_GKT_mobile_armor
-			category_regimental_support_battalions
-			category_regimental_GKT_mobile_armor
-		}
-
-		need = {
-			equipment_main_battle_tanks = 10
-		}
-		manpower = 100
-		max_organisation = 5
-		max_strength = 0.8
-		default_morale = 0.3
-		training_time = 180
-		weight = 1.25
-		supply_consumption = 0.08
-
-		suppression = 2.5
-		
-		breakthrough = -0.4
-		defense = -0.5
-		soft_attack = -0.6
-		hard_attack = -0.4
-		armor_value = -0.4
-		air_attack = -0.4	
-	}
-
 	regimental_tactical_mecha_unit = {
 		abbreviation = "RTMU"
 		sprite = light_armor

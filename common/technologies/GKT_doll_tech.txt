@@ -1,23 +1,18 @@
 technologies = {
-	
-	@1918 = 0
-	@1936 = 2
-	@1937 = 4
-	@1938 = 6
-	@1939 = 8
-	@1940 = 10
-	@1941 = 12
-	@1942 = 14
-	@1943 = 16
-	@1944 = 18
-	@1945 = 20
-
+	@975 = 0
+	@996 = 2
+	@998 = 4
+	@1000 = 6
+	@1001 = 8
+	@1003 = 10
+	@1005 = 12
+	@1007 = 14
+	@1009 = 16
+	@1012 = 18
+	@1015 = 20
 	tactical_doll = {
 		enable_equipments = {
-			doll_equipment_hg_0
-			doll_equipment_smg_0
-			doll_equipment_rf_0
-			doll_equipment_ar_0
+			doll_chassis_hg_0
 		}
 		enable_subunits = {
 			tactical_doll_hg
@@ -33,6 +28,9 @@ technologies = {
 			doll_FMJ_high_velocity
 			doll_M61_armour_piercing_projectile
 			doll_ILMH1_hollow_point
+			doll_civilian_use
+			doll_stable_design
+			doll_generic_iron_sight
 		}
 		on_research_complete = {
 			hidden_effect = {
@@ -57,22 +55,19 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		research_cost = 1.5
-		start_year = 1936
+		start_year = 975
 		folder = {
 			name = doll_tech_folder
 			position = { x = 7 y = 1 }
 		}
-
 		categories = {
 			tactical_doll
 			tactical_doll_tech
 		}
-
 		special_project_specialization = { specialization_griffin }
-
 		ai_will_do = {
 			factor = 1
-		}	
+		}
 	}
 	tactical_doll1 = {
 		enable_subunits = {
@@ -81,27 +76,23 @@ technologies = {
 			HQ_tactical_doll_sg
 			HQ_tactical_doll_mg
 		}
-		
 		enable_equipments = {
-			doll_equipment_ar_1
-			doll_equipment_hg_1
-			doll_equipment_rf_1
-			doll_equipment_smg_1
-			doll_equipment_sg_0
-			doll_equipment_mg_0
+			doll_chassis_hg_1
 		}
 		enable_equipment_modules = {
 			doll_BK_rifled_slug
 			doll_1_buckshot
+			doll_military_modification
+			doll_strength_enhancement
 		}
 		on_research_complete = {
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
-				PROJECT = sp_griffin_airborne_fairy	
+				PROJECT = sp_griffin_airborne_fairy
 			}
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
-				PROJECT = sp_griffin_amphibious_tactical_doll	
+				PROJECT = sp_griffin_amphibious_tactical_doll
 			}
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
@@ -133,12 +124,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		research_cost = 1.5
-		start_year = 1939
+		start_year = 1001
 		folder = {
 			name = doll_tech_folder
 			position = { x = 7 y = 7 }
 		}
-
 		categories = {
 			tactical_doll
 			tactical_doll_tech
@@ -150,15 +140,10 @@ technologies = {
 	}
 	tactical_doll2 = {
 		enable_equipments = {
-			doll_equipment_ar_2
-			doll_equipment_hg_2
-			doll_equipment_rf_2
-			doll_equipment_smg_2
-			doll_equipment_sg_1
-			doll_equipment_mg_1
+			doll_chassis_hg_2
 		}
 		research_cost = 1.5
-		start_year = 1942
+		start_year = 1007
 		folder = {
 			name = doll_tech_folder
 			position = { x = 7 y = 13 }
@@ -178,16 +163,13 @@ technologies = {
 		on_research_complete = {
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
-				PROJECT = sp_griffin_third_generation_tactical_doll	
+				PROJECT = sp_griffin_third_generation_tactical_doll
 			}
 		}
-
 		special_project_specialization = { specialization_griffin }
-		
 		ai_will_do = {
 			factor = 1
 		}
-
 	}
 	tactical_doll3 = {
 		enable_equipment_modules = {
@@ -205,26 +187,21 @@ technologies = {
 				is_special_project_completed = sp:sp_griffin_third_generation_tactical_doll
 			}
 		}
-
 		is_special_project_tech = yes
 		research_cost = 1
-		start_year = 1944
+		start_year = 1012
 		folder = {
 			name = doll_tech_folder
 			position = { x = 5 y = 17 }
 		}
-
 		categories = {
 			tactical_doll
 			tactical_doll_tech
 		}
-
 		special_project_specialization = { specialization_griffin }
-		
 		ai_will_do = {
 			factor = 1
 		}
-
 	}
 	tactical_doll4 = {
 		enable_equipment_modules = {
@@ -238,30 +215,25 @@ technologies = {
 				is_special_project_completed = sp:sp_griffin_third_generation_tactical_doll
 			}
 		}
-
 		is_special_project_tech = yes
 		research_cost = 1
-		start_year = 1944
+		start_year = 1012
 		folder = {
 			name = doll_tech_folder
 			position = { x = 7 y = 17 }
 		}
-
 		categories = {
 			tactical_doll
 			tactical_doll_tech
 		}
-
 		special_project_specialization = { specialization_griffin }
-		
 		ai_will_do = {
 			factor = 1
 		}
-
 	}
 	tactical_equipment_light = {
 		research_cost = 0.5
-		start_year = 1937
+		start_year = 998
 		enable_equipment_modules = {
 			doll_JSP_high_velocity
 		}
@@ -276,7 +248,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 5 y = 3 }
 		}
-
 		categories = {
 			tactical_equipment_light
 			tactical_doll_tech
@@ -288,7 +259,7 @@ technologies = {
 	}
 	tactical_equipment_light1 = {
 		research_cost = 1
-		start_year = 1939
+		start_year = 1001
 		enable_equipment_modules = {
 			doll_JHP_high_velocity
 		}
@@ -303,7 +274,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 5 y =7 }
 		}
-
 		categories = {
 			tactical_equipment_light
 			tactical_doll_tech
@@ -315,7 +285,7 @@ technologies = {
 	}
 	tactical_equipment_light2 = {
 		research_cost = 1
-		start_year = 1941
+		start_year = 1005
 		enable_equipment_modules = {
 			doll_APCR_high_velocity
 		}
@@ -326,7 +296,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 5 y = 11 }
 		}
-
 		categories = {
 			tactical_equipment_light
 			tactical_doll_tech
@@ -338,7 +307,7 @@ technologies = {
 	}
 	tactical_equipment_light3 = {
 		research_cost = 0.5
-		start_year = 1937
+		start_year = 998
 		enable_equipment_modules = {
 			doll_ILMH2_hollow_point
 		}
@@ -356,7 +325,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 3 y = 3 }
 		}
-
 		categories = {
 			tactical_equipment_light
 			tactical_doll_tech
@@ -368,7 +336,7 @@ technologies = {
 	}
 	tactical_equipment_light4 = {
 		research_cost = 1
-		start_year = 1939
+		start_year = 1001
 		enable_equipment_modules = {
 			doll_ILMH3_hollow_point
 		}
@@ -390,7 +358,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 3 y = 7 }
 		}
-
 		categories = {
 			tactical_equipment_light
 			tactical_doll_tech
@@ -402,7 +369,7 @@ technologies = {
 	}
 	tactical_equipment_light5 = {
 		research_cost = 1
-		start_year = 1941
+		start_year = 1005
 		enable_equipment_modules = {
 			doll_ILMH4_hollow_point
 		}
@@ -416,7 +383,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 3 y = 11 }
 		}
-
 		categories = {
 			tactical_equipment_light
 			tactical_doll_tech
@@ -428,7 +394,7 @@ technologies = {
 	}
 	tactical_equipment_light6 = {
 		research_cost = 0.5
-		start_year = 1937
+		start_year = 998
 		enable_equipment_modules = {
 			doll_M993_armour_piercing_projectile
 		}
@@ -448,7 +414,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 1 y = 3 }
 		}
-
 		categories = {
 			tactical_equipment_light
 			tactical_doll_tech
@@ -460,7 +425,7 @@ technologies = {
 	}
 	tactical_equipment_light7 = {
 		research_cost = 1
-		start_year = 1939
+		start_year = 1001
 		enable_equipment_modules = {
 			doll_Mk169_armour_piercing_projectile
 		}
@@ -484,7 +449,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 1 y = 7 }
 		}
-
 		categories = {
 			tactical_equipment_light
 			tactical_doll_tech
@@ -496,7 +460,7 @@ technologies = {
 	}
 	tactical_equipment_light8 = {
 		research_cost = 1
-		start_year = 1941
+		start_year = 1005
 		enable_equipment_modules = {
 			doll_Mk211_armour_piercing_projectile
 		}
@@ -512,7 +476,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 1 y = 11 }
 		}
-
 		categories = {
 			tactical_equipment_light
 			tactical_doll_tech
@@ -524,7 +487,7 @@ technologies = {
 	}
 	tactical_equipment_light9 = {
 		research_cost = 0.5
-		start_year = 1940
+		start_year = 1003
 		enable_equipment_modules = {
 			doll_Mk33_sniper_shells
 		}
@@ -542,7 +505,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 2 y = 9 }
 		}
-
 		categories = {
 			tactical_equipment_light
 			tactical_doll_tech
@@ -554,7 +516,7 @@ technologies = {
 	}
 	tactical_equipment_light10 = {
 		research_cost = 1
-		start_year = 1942
+		start_year = 1007
 		enable_equipment_modules = {
 			doll_M1022_sniper_shells
 		}
@@ -568,7 +530,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 2 y = 13 }
 		}
-
 		categories = {
 			tactical_equipment_light
 			tactical_doll_tech
@@ -580,7 +541,7 @@ technologies = {
 	}
 	tactical_equipment_light11 = {
 		research_cost = 0.5
-		start_year = 1940
+		start_year = 1003
 		enable_equipment_modules = {
 			doll_hg_signal_flare
 		}
@@ -591,7 +552,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 4 y = 9 }
 		}
-
 		categories = {
 			tactical_equipment_light
 			tactical_doll_tech
@@ -603,7 +563,7 @@ technologies = {
 	}
 	tactical_equipment_heavy = {
 		research_cost = 0.5
-		start_year = 1940
+		start_year = 1003
 		enable_equipment_modules = {
 			doll_FST_rifled_slug
 		}
@@ -619,7 +579,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 9 y = 9 }
 		}
-
 		categories = {
 			tactical_equipment_heavy
 			tactical_doll_tech
@@ -631,7 +590,7 @@ technologies = {
 	}
 	tactical_equipment_heavy1 = {
 		research_cost = 1
-		start_year = 1942
+		start_year = 1007
 		enable_equipment_modules = {
 			doll_WAD_rifled_slug
 		}
@@ -651,7 +610,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 9 y = 13 }
 		}
-
 		categories = {
 			tactical_equipment_heavy
 			tactical_doll_tech
@@ -663,7 +621,7 @@ technologies = {
 	}
 	tactical_equipment_heavy2 = {
 		research_cost = 1
-		start_year = 1944
+		start_year = 1012
 		enable_equipment_modules = {
 			doll_SABOT_rifled_slug
 		}
@@ -675,7 +633,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 9 y = 17 }
 		}
-
 		categories = {
 			tactical_equipment_heavy
 			tactical_doll_tech
@@ -687,7 +644,7 @@ technologies = {
 	}
 	tactical_equipment_heavy3 = {
 		research_cost = 0.5
-		start_year = 1940
+		start_year = 1003
 		enable_equipment_modules = {
 			doll_0_buckshot
 		}
@@ -702,7 +659,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 11 y = 9 }
 		}
-
 		categories = {
 			tactical_equipment_heavy
 			tactical_doll_tech
@@ -714,7 +670,7 @@ technologies = {
 	}
 	tactical_equipment_heavy4 = {
 		research_cost = 1
-		start_year = 1942
+		start_year = 1007
 		enable_equipment_modules = {
 			doll_00_buckshot
 		}
@@ -733,7 +689,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 11 y = 13 }
 		}
-
 		categories = {
 			tactical_equipment_heavy
 			tactical_doll_tech
@@ -745,7 +700,7 @@ technologies = {
 	}
 	tactical_equipment_heavy5 = {
 		research_cost = 1
-		start_year = 1944
+		start_year = 1012
 		enable_equipment_modules = {
 			doll_000_buckshot
 		}
@@ -756,7 +711,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 11 y = 17 }
 		}
-
 		categories = {
 			tactical_equipment_heavy
 			tactical_doll_tech
@@ -768,7 +722,7 @@ technologies = {
 	}
 	tactical_equipment_heavy6 = {
 		research_cost = 0.5
-		start_year = 1943
+		start_year = 1009
 		enable_equipment_modules = {
 			doll_6_birdshot
 		}
@@ -783,7 +737,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 10 y = 15 }
 		}
-
 		categories = {
 			tactical_equipment_heavy
 			tactical_doll_tech
@@ -795,7 +748,7 @@ technologies = {
 	}
 	tactical_equipment_heavy7 = {
 		research_cost = 1
-		start_year = 1945
+		start_year = 1015
 		enable_equipment_modules = {
 			doll_7_birdshot
 		}
@@ -806,7 +759,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 10 y = 19 }
 		}
-
 		categories = {
 			tactical_equipment_heavy
 			tactical_doll_tech
@@ -818,13 +770,12 @@ technologies = {
 	}
 	tactical_equipment_heavy8 = {
 		research_cost = 1
-		start_year = 1942
+		start_year = 1007
 		allow = {
 			ROOT = {
 				is_special_project_completed = sp:sp_griffin_special_armour_piercing_projectile
 			}
 		}
-
 		is_special_project_tech = yes
 		enable_equipment_modules = {
 			doll_Mk900slap_special_armour_piercing_projectile
@@ -844,7 +795,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 13 y = 13 }
 		}
-
 		categories = {
 			tactical_equipment_heavy
 			tactical_doll_tech
@@ -856,13 +806,12 @@ technologies = {
 	}
 	tactical_equipment_heavy9 = {
 		research_cost = 1
-		start_year = 1944
+		start_year = 1012
 		allow = {
 			ROOT = {
 				is_special_project_completed = sp:sp_griffin_special_armour_piercing_projectile
 			}
 		}
-
 		is_special_project_tech = yes
 		enable_equipment_modules = {
 			doll_Mk1000slap_special_armour_piercing_projectile
@@ -875,7 +824,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 13 y = 17 }
 		}
-
 		categories = {
 			tactical_equipment_heavy
 			tactical_doll_tech
@@ -887,7 +835,7 @@ technologies = {
 	}
 	tactical_equipment_heavy10 = {
 		research_cost = 0.5
-		start_year = 1940
+		start_year = 1003
 		enable_equipment_modules = {
 			doll_type1_bulletproof
 		}
@@ -902,7 +850,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 15 y = 9 }
 		}
-
 		categories = {
 			tactical_equipment_heavy
 			tactical_doll_tech
@@ -914,7 +861,7 @@ technologies = {
 	}
 	tactical_equipment_heavy11 = {
 		research_cost = 1
-		start_year = 1942
+		start_year = 1007
 		enable_equipment_modules = {
 			doll_type2_bulletproof
 		}
@@ -929,7 +876,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 15 y = 13 }
 		}
-
 		categories = {
 			tactical_equipment_heavy
 			tactical_doll_tech
@@ -941,7 +887,7 @@ technologies = {
 	}
 	tactical_equipment_heavy12 = {
 		research_cost = 1
-		start_year = 1942
+		start_year = 1007
 		enable_equipment_modules = {
 			doll_type3_bulletproof
 			tank_armor_chip
@@ -955,7 +901,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 15 y = 17 }
 		}
-
 		categories = {
 			tactical_equipment_heavy
 			tactical_doll_tech
@@ -967,7 +912,7 @@ technologies = {
 	}
 	tactical_equipment_heavy13 = {
 		research_cost = 0.5
-		start_year = 1943
+		start_year = 1009
 		enable_equipment_modules = {
 			doll_sg_flash
 		}
@@ -979,7 +924,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 8 y = 15 }
 		}
-
 		categories = {
 			tactical_equipment_heavy
 			tactical_doll_tech
@@ -992,7 +936,7 @@ technologies = {
 	tactical_night_vision_device = {
 		land_night_attack = 0.05
 		research_cost = 1.5
-		start_year = 1938
+		start_year = 1000
 		path = {
 			leads_to_tech = tactical_night_vision_device1
 			research_cost_coeff = 1
@@ -1001,7 +945,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 1 y = 5 }
 		}
-
 		categories = {
 			tactical_night_vision_device
 			tactical_doll_tech
@@ -1014,7 +957,7 @@ technologies = {
 	tactical_night_vision_device1 = {
 		land_night_attack = 0.05
 		research_cost = 1.5
-		start_year = 1940
+		start_year = 1003
 		path = {
 			leads_to_tech = tactical_night_vision_device2
 			research_cost_coeff = 1
@@ -1023,7 +966,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 1 y = 9 }
 		}
-
 		categories = {
 			tactical_night_vision_device
 			tactical_doll_tech
@@ -1036,7 +978,7 @@ technologies = {
 	tactical_night_vision_device2 = {
 		research_cost = 1.5
 		land_night_attack = 0.05
-		start_year = 1942
+		start_year = 1007
 		path = {
 			leads_to_tech = tactical_night_vision_device3
 			research_cost_coeff = 1
@@ -1045,7 +987,6 @@ technologies = {
 			name = doll_tech_folder
 			position = { x = 1 y = 13 }
 		}
-
 		categories = {
 			tactical_night_vision_device
 			tactical_doll_tech
@@ -1058,12 +999,11 @@ technologies = {
 	tactical_night_vision_device3 = {
 		land_night_attack = 0.05
 		research_cost = 2.5
-		start_year = 1944
+		start_year = 1012
 		folder = {
 			name = doll_tech_folder
 			position = { x = 1 y = 17 }
 		}
-
 		categories = {
 			tactical_night_vision_device
 			tactical_doll_tech
@@ -1096,12 +1036,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		research_cost = 0.5
-		start_year = 1937
+		start_year = 998
 		folder = {
 			name = doll_tech_folder
 			position = { x = 0 y = 0 }
 		}
-
 		categories = {
 			tactical_equipment_sight
 			tactical_doll_tech
@@ -1120,12 +1059,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		research_cost = 0.5
-		start_year = 1939
+		start_year = 1001
 		folder = {
 			name = doll_tech_folder
 			position = { x = -1 y = 2 }
 		}
-
 		categories = {
 			tactical_equipment_sight
 			tactical_doll_tech
@@ -1144,12 +1082,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		research_cost = 0.5
-		start_year = 1941
+		start_year = 1005
 		folder = {
 			name = doll_tech_folder
 			position = { x = -1 y = 4 }
 		}
-
 		categories = {
 			tactical_equipment_sight
 			tactical_doll_tech
@@ -1164,12 +1101,11 @@ technologies = {
 			doll_VFL_optical_sight
 		}
 		research_cost = 0.5
-		start_year = 1943
+		start_year = 1009
 		folder = {
 			name = doll_tech_folder
 			position = { x = -1 y = 6 }
 		}
-
 		categories = {
 			tactical_equipment_sight
 			tactical_doll_tech
@@ -1188,12 +1124,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		research_cost = 0.5
-		start_year = 1939
+		start_year = 1001
 		folder = {
 			name = doll_tech_folder
 			position = { x = 1 y = 2 }
 		}
-
 		categories = {
 			tactical_equipment_sight
 			tactical_doll_tech
@@ -1212,12 +1147,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		research_cost = 0.5
-		start_year = 1941
+		start_year = 1005
 		folder = {
 			name = doll_tech_folder
 			position = { x = 1 y = 4 }
 		}
-
 		categories = {
 			tactical_equipment_sight
 			tactical_doll_tech
@@ -1232,12 +1166,11 @@ technologies = {
 			doll_EOT518_holographic_sight
 		}
 		research_cost = 0.5
-		start_year = 1943
+		start_year = 1009
 		folder = {
 			name = doll_tech_folder
 			position = { x = 1 y = 6 }
 		}
-
 		categories = {
 			tactical_equipment_sight
 			tactical_doll_tech
@@ -1256,12 +1189,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		research_cost = 0.5
-		start_year = 1939
+		start_year = 1001
 		folder = {
 			name = doll_tech_folder
 			position = { x = -3 y = 2 }
 		}
-
 		categories = {
 			tactical_equipment_sight
 			tactical_doll_tech
@@ -1280,12 +1212,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		research_cost = 0.5
-		start_year = 1941
+		start_year = 1005
 		folder = {
 			name = doll_tech_folder
 			position = { x = -3 y = 4 }
 		}
-
 		categories = {
 			tactical_equipment_sight
 			tactical_doll_tech
@@ -1300,12 +1231,11 @@ technologies = {
 			doll_ITI_MARS_riflescope
 		}
 		research_cost = 0.5
-		start_year = 1943
+		start_year = 1009
 		folder = {
 			name = doll_tech_folder
 			position = { x = -3 y = 6 }
 		}
-
 		categories = {
 			tactical_equipment_sight
 			tactical_doll_tech
@@ -1324,12 +1254,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		research_cost = 0.5
-		start_year = 1939
+		start_year = 1001
 		folder = {
 			name = doll_tech_folder
 			position = { x = 3 y = 2 }
 		}
-
 		categories = {
 			tactical_equipment_sight
 			tactical_doll_tech
@@ -1348,12 +1277,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		research_cost = 0.5
-		start_year = 1941
+		start_year = 1005
 		folder = {
 			name = doll_tech_folder
 			position = { x = 3 y = 4 }
 		}
-
 		categories = {
 			tactical_equipment_sight
 			tactical_doll_tech
@@ -1368,12 +1296,11 @@ technologies = {
 			doll_RMR_T4_spare_sight
 		}
 		research_cost = 0.5
-		start_year = 1943
+		start_year = 1009
 		folder = {
 			name = doll_tech_folder
 			position = { x = 3 y = 6 }
 		}
-
 		categories = {
 			tactical_equipment_sight
 			tactical_doll_tech
@@ -1385,6 +1312,7 @@ technologies = {
 	}
 	tactical_equipment_accessory = {
 		enable_equipment_modules = {
+			doll_thermostatic_system
 			doll_IOP_T1_exo
 			doll_IOP_X1_exo
 			doll_AC1_silencer
@@ -1395,12 +1323,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		research_cost = 1.5
-		start_year = 1936
+		start_year = 998
 		folder = {
 			name = doll_tech_folder
 			position = { x = 0 y = 0 }
 		}
-
 		categories = {
 			tactical_equipment_accessory
 			tactical_doll_tech
@@ -1428,12 +1355,11 @@ technologies = {
 			tactical_doll1 = 1
 		}
 		research_cost = 1.5
-		start_year = 1938
+		start_year = 1000
 		folder = {
 			name = doll_tech_folder
 			position = { x = 0 y = 6 }
 		}
-
 		categories = {
 			tactical_equipment_accessory
 			tactical_doll_tech
@@ -1463,12 +1389,11 @@ technologies = {
 			tactical_doll1 = 1
 		}
 		research_cost = 1.5
-		start_year = 1940
+		start_year = 1003
 		folder = {
 			name = doll_tech_folder
 			position = { x = 0 y = 12 }
 		}
-
 		categories = {
 			tactical_equipment_accessory
 			tactical_doll_tech
@@ -1495,12 +1420,11 @@ technologies = {
 			tactical_doll1 = 1
 		}
 		research_cost = 2
-		start_year = 1943
+		start_year = 1009
 		folder = {
 			name = doll_tech_folder
 			position = { x = 0 y = 18 }
 		}
-
 		categories = {
 			tactical_equipment_accessory
 			tactical_doll_tech

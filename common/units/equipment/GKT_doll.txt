@@ -1,528 +1,109 @@
 equipments = {
-	doll_equipment_ar = {
-		year = 1918
+	doll_chassis_hg = {
+		year = 975
 		is_archetype = yes
 		is_buildable = no
 		picture = archetype_doll_equipment
 		type = armor
 		group_by = archetype
-		interface_category = interface_category_land
+		interface_category = interface_category_armor
 		priority = 2000
-
 		module_slots = {
-
-			magazine_type_slot = {
+			sight_type_slot = {
 				required = yes
 				allowed_module_categories = {
-					doll_high_velocity
-				}
-			}
-			
-			sight_type_slot = {
-				required = no
-				allowed_module_categories = {
+					doll_iron_sight
 					doll_optical_sight
 					doll_holographic_sight
 					doll_riflescope
-				}
-			}
-
-			bulletproof_exo_type_slot = {
-				required = no
-				allowed_module_categories = {
-					doll_x_exo
-				}
-			}
-
-			special_type_slot_1 = {
-				required = no
-				allowed_module_categories = {
-					doll_computing_chip
-					doll_silencer
-					fire_control_component
-				}
-			}
-
-			special_type_slot_2 = {
-				required = no
-				allowed_module_categories = {
-					doll_computing_chip
-					doll_silencer
-					fire_control_component
-				}
-			}
-
-			special_type_slot_3 = {
-				required = no
-				allowed_module_categories = {
-					doll_computing_chip
-					doll_silencer
-					fire_control_component
-				}
-			}
-
-			special_type_slot_4 = {
-				required = no
-				allowed_module_categories = {
-					doll_computing_chip
-					doll_silencer
-					fire_control_component
-				}
-			}
-
-		}
-		module_count_limit = {
-			category = doll_computing_chip
-			count < 3
-		}
-		module_count_limit = {
-			category = doll_silencer
-			count < 2
-		}
-		module_count_limit = {
-			category = fire_control_component
-			count < 2
-		}
-		default_modules = {
-			magazine_type_slot = empty
-			sight_type_slot = empty
-			bulletproof_exo_type_slot = empty
-		}
-
-		fuel_consumption = 0
-		maximum_speed = 6
-		build_cost_ic = 0.2
-		reliability = 0.8
-		armor_value = 5
-		hardness = 0.15
-		supply_consumption = 0.02
-		resources = {
-			steel = 1
-		}
-
-		lend_lease_cost = 1
-
-		manpower = 5
-
-	}
-	doll_equipment_ar_0 = {
-		abbreviation = "da0"
-		derived_variant_name = doll_equipment_ar_0
-		visual_level = 0
-		year = 1936
-		archetype = doll_equipment_ar
-		priority = 2000
-		module_slots = inherit
-
-		upgrades = {
-			GKT_doll_speed_upgrade
-			GKT_doll_armor_upgrade
-		}
-	}
-	doll_equipment_ar_1 = {
-		abbreviation = "da1"
-		derived_variant_name = doll_equipment_ar_1
-		visual_level = 0
-		year = 1939
-
-		archetype = doll_equipment_ar
-		parent = doll_equipment_ar_0
-		priority = 2000
-		module_slots = inherit
-		maximum_speed = 6
-		build_cost_ic = 0.35
-		reliability = 1.0
-		armor_value = 8
-	}
-	doll_equipment_ar_2 = {
-		abbreviation = "da2"
-		derived_variant_name = doll_equipment_ar_2
-		visual_level = 0
-		year = 1942
-		archetype = doll_equipment_ar
-		parent = doll_equipment_ar_1
-		priority = 2000
-		module_slots = inherit
-		maximum_speed = 6
-		build_cost_ic = 0.55
-		reliability = 1.2
-		armor_value = 10
-		hardness = 0.2
-	}
-	doll_equipment_rf = {
-		year = 1918
-		is_archetype = yes
-		is_buildable = no
-		picture = archetype_doll_equipment
-		type = armor
-		group_by = archetype
-		interface_category = interface_category_land
-		priority = 2000
-
-		module_slots = {
-
-			magazine_type_slot = {
-				required = yes
-				allowed_module_categories = {
-					doll_armour_piercing_projectile
-					doll_sniper_shells
-				}
-			}
-			
-			sight_type_slot = {
-				required = no
-				allowed_module_categories = {
-					doll_optical_sight
-					doll_holographic_sight
-					doll_riflescope
-				}
-			}
-
-			bulletproof_exo_type_slot = {
-				required = no
-				allowed_module_categories = {
-					
-				}
-			}
-
-			special_type_slot_1 = {
-				required = no
-				allowed_module_categories = {
-					doll_silencer
-					doll_camouflage_cloak
-					doll_perambulator
-					fire_control_component
-				}
-			}
-
-			special_type_slot_2 = {
-				required = no
-				allowed_module_categories = {
-					doll_silencer
-					doll_camouflage_cloak
-					doll_perambulator
-					fire_control_component
-				}
-			}
-
-			special_type_slot_3 = {
-				required = no
-				allowed_module_categories = {
-					doll_silencer
-					doll_camouflage_cloak
-					doll_perambulator
-					fire_control_component
-				}
-			}
-
-			special_type_slot_4 = {
-				required = no
-				allowed_module_categories = {
-					doll_silencer
-					doll_camouflage_cloak
-					doll_perambulator
-					fire_control_component
-				}
-			}
-
-		}
-		module_count_limit = {
-			category = doll_silencer
-			count < 2
-		}
-		module_count_limit = {
-			category = doll_camouflage_cloak
-			count < 2
-		}
-		module_count_limit = {
-			category = doll_perambulator
-			count < 2
-		}
-		module_count_limit = {
-			category = fire_control_component
-			count < 2
-		}
-		default_modules = {
-			magazine_type_slot = empty
-			sight_type_slot = empty
-			bulletproof_exo_type_slot = empty
-		}
-
-		fuel_consumption = 0
-		maximum_speed = 5
-		build_cost_ic = 0.7
-		reliability = 0.8
-		armor_value = 3
-		hardness = 0.1
-		supply_consumption = 0.03
-		resources = {
-			steel = 1
-		}
-
-		lend_lease_cost = 8
-
-		manpower = 5
-
-	}
-	doll_equipment_rf_0 = {
-		abbreviation = "dr0"
-		derived_variant_name = doll_equipment_rf_0
-		visual_level = 0
-		year = 1936
-		archetype = doll_equipment_rf
-		priority = 2000
-		module_slots = inherit
-
-		upgrades = {
-			GKT_doll_speed_upgrade
-			GKT_doll_armor_upgrade
-		}
-	}
-	doll_equipment_rf_1 = {
-		abbreviation = "dr1"
-		derived_variant_name = doll_equipment_rf_1
-		visual_level = 0
-		year = 1939
-		archetype = doll_equipment_rf
-		parent = doll_equipment_rf_0
-		priority = 2000
-		module_slots = inherit
-		maximum_speed = 5
-		build_cost_ic = 0.8
-		reliability = 1.2
-		armor_value = 5
-	}
-	doll_equipment_rf_2 = {
-		abbreviation = "dr2"
-		derived_variant_name = doll_equipment_rf_2
-		parent = doll_equipment_rf_1
-		visual_level = 0
-		year = 1942
-		archetype = doll_equipment_rf
-		priority = 2000
-		module_slots = inherit
-		maximum_speed =5
-		build_cost_ic = 1.0
-		reliability = 1.2
-		hardness = 0.15
-		armor_value = 5
-	}
-	doll_equipment_hg = {
-		year = 1918
-		is_archetype = yes
-		is_buildable = no
-		picture = archetype_doll_equipment
-		type = armor
-		group_by = archetype
-		interface_category = interface_category_land
-		priority = 2000
-
-		module_slots = {
-
-			magazine_type_slot = {
-				required = yes
-				allowed_module_categories = {
-					doll_hollow_point
-				}
-			}
-			
-			sight_type_slot = {
-				required = no
-				allowed_module_categories = {
 					doll_spare_sight
 				}
 			}
-
-			bulletproof_exo_type_slot = {
-				required = no
-				allowed_module_categories = {
-					doll_x_exo
-					doll_t_exo
-				}
-			}
-
-			special_type_slot_1 = {
-				required = no
-				allowed_module_categories = {
-					doll_silencer
-					doll_signal_flare
-					fire_control_component
-				}
-			}
-
-			special_type_slot_2 = {
-				required = no
-				allowed_module_categories = {
-					doll_silencer
-					doll_signal_flare
-					fire_control_component
-				}
-			}
-
-			special_type_slot_3 = {
-				required = no
-				allowed_module_categories = {
-					doll_silencer
-					doll_signal_flare
-					fire_control_component
-				}
-			}
-
-			special_type_slot_4 = {
-				required = no
-				allowed_module_categories = {
-					doll_silencer
-					doll_signal_flare
-					fire_control_component
-				}
-			}
-		}
-		module_count_limit = {
-				category = doll_hg_signal_flare
-				count < 3
-			}
-		module_count_limit = {
-			category = doll_silencer
-			count < 2
-		}
-		module_count_limit = {
-			category = fire_control_component
-			count < 2
-		}
-		default_modules = {
-			magazine_type_slot = empty
-			sight_type_slot = empty
-			bulletproof_exo_type_slot = empty
-		}
-
-		fuel_consumption = 0
-		maximum_speed = 6
-		build_cost_ic = 0.1
-		reliability = 0.8
-		hardness = 0.08
-		supply_consumption = 0.01
-		resources = {
-			steel = 1
-		}
-
-		lend_lease_cost = 8
-
-		manpower = 5
-	}
-	doll_equipment_hg_0 = {
-		abbreviation = "dh0"
-		derived_variant_name = doll_equipment_hg_0
-		visual_level = 0
-		year = 1936
-		archetype = doll_equipment_hg
-		priority = 2000
-		module_slots = inherit
-
-		upgrades = {
-			GKT_doll_speed_upgrade
-			GKT_doll_armor_upgrade
-		}
-	}
-	doll_equipment_hg_1 = {
-		abbreviation = "dh1"
-		derived_variant_name = doll_equipment_hg_1
-		parent = doll_equipment_hg_0
-		visual_level = 0
-		year = 1939
-		archetype = doll_equipment_hg
-		priority = 2000
-		module_slots = inherit
-		maximum_speed = 7
-		build_cost_ic = 0.15
-		reliability = 1.0
-	}
-	doll_equipment_hg_2 = {
-		abbreviation = "dh2"
-		derived_variant_name = doll_equipment_hg_2
-		parent = doll_equipment_hg_1
-		visual_level = 0
-		year = 1942
-		archetype = doll_equipment_hg
-		priority = 2000
-		module_slots = inherit
-		maximum_speed = 7
-		build_cost_ic = 0.25
-		reliability = 1.2
-		hardness = 0.1
-	}
-
-	doll_equipment_smg = {
-		year = 1918
-		is_archetype = yes
-		is_buildable = no
-		picture = archetype_doll_equipment
-		type = armor
-		group_by = archetype
-		interface_category = interface_category_land
-		priority = 2000
-
-		module_slots = {
-
 			magazine_type_slot = {
 				required = yes
 				allowed_module_categories = {
 					doll_hollow_point
+					doll_high_velocity
+					doll_armour_piercing_projectile
+					doll_sniper_shells
+					doll_rifled_slug
+					doll_buckshot
+					doll_birdshot
+					doll_special_armour_piercing_projectile
 				}
 			}
-			
-			sight_type_slot = {
-				required = no
+			adaptivity_type_slot = {
+				required = yes
 				allowed_module_categories = {
-					doll_optical_sight
-					doll_holographic_sight
-					doll_riflescope
+					doll_generic_modification
+					doll_environmental_adaptivity
 				}
 			}
-
 			bulletproof_exo_type_slot = {
 				required = no
 				allowed_module_categories = {
 					doll_x_exo
 					doll_t_exo
+					doll_bulletproof
 				}
 			}
-
 			special_type_slot_1 = {
 				required = no
 				allowed_module_categories = {
-					doll_silencer
 					doll_computing_chip
+					doll_silencer
 					doll_signal_flare
+					doll_camouflage_cloak
+					doll_perambulator
+					doll_bore
+					doll_flash
+					doll_belt
+					doll_tripod
 					fire_control_component
 				}
 			}
-
 			special_type_slot_2 = {
 				required = no
 				allowed_module_categories = {
-					doll_silencer
 					doll_computing_chip
+					doll_silencer
 					doll_signal_flare
+					doll_camouflage_cloak
+					doll_perambulator
+					doll_bore
+					doll_flash
+					doll_belt
+					doll_tripod
 					fire_control_component
 				}
 			}
-
 			special_type_slot_3 = {
 				required = no
 				allowed_module_categories = {
-					doll_silencer
 					doll_computing_chip
+					doll_silencer
 					doll_signal_flare
+					doll_camouflage_cloak
+					doll_perambulator
+					doll_bore
+					doll_flash
+					doll_belt
+					doll_tripod
 					fire_control_component
 				}
 			}
-
 			special_type_slot_4 = {
 				required = no
 				allowed_module_categories = {
-					doll_silencer
 					doll_computing_chip
+					doll_silencer
 					doll_signal_flare
+					doll_camouflage_cloak
+					doll_perambulator
+					doll_bore
+					doll_flash
+					doll_belt
+					doll_tripod
 					fire_control_component
 				}
 			}
@@ -540,145 +121,12 @@ equipments = {
 			count < 3
 		}
 		module_count_limit = {
-			category = fire_control_component
+			category = doll_camouflage_cloak
 			count < 2
 		}
-		default_modules = {
-			magazine_type_slot = empty
-			sight_type_slot = empty
-			bulletproof_exo_type_slot = empty
-		}
-
-		fuel_consumption = 0
-		maximum_speed = 7
-		build_cost_ic = 0.22
-		reliability = 0.8
-		armor_value = 5
-		hardness = 0.25
-		supply_consumption = 0.02
-		resources = {
-			steel = 1
-		}
-
-		lend_lease_cost = 8
-
-		manpower = 5
-	}
-	doll_equipment_smg_0 = {
-		abbreviation = "dsm0"
-		derived_variant_name = doll_equipment_smg_0
-		visual_level = 0
-		year = 1936
-		archetype = doll_equipment_smg
-		priority = 2000
-		module_slots = inherit
-
-		upgrades = {
-			GKT_doll_speed_upgrade
-			GKT_doll_armor_upgrade
-		}
-	}
-	doll_equipment_smg_1 = {
-		abbreviation = "dsm1"
-		derived_variant_name = doll_equipment_smg_1
-		visual_level = 0
-		year = 1939
-		archetype = doll_equipment_smg
-		parent = doll_equipment_smg_0
-		priority = 2000
-		module_slots = inherit
-		maximum_speed = 7
-		build_cost_ic = 0.45
-		reliability = 1.0
-		armor_value = 7
-	}
-	doll_equipment_smg_2 = {
-		abbreviation = "dsm2"
-		derived_variant_name = doll_equipment_smg_2
-		visual_level = 0
-		year = 1942
-		archetype = doll_equipment_smg
-		parent = doll_equipment_smg_1
-		priority = 2000
-		module_slots = inherit
-		maximum_speed = 7
-		build_cost_ic = 0.7
-		reliability = 1.2
-		armor_value = 10
-	}
-	doll_equipment_sg = {
-		year = 1918
-		is_archetype = yes
-		is_buildable = no
-		picture = archetype_doll_equipment
-		type = armor
-		group_by = archetype
-		interface_category = interface_category_land
-		priority = 2000
-
-		module_slots = {
-
-			magazine_type_slot = {
-				required = yes
-				allowed_module_categories = {
-					doll_rifled_slug
-					doll_buckshot
-					doll_birdshot
-				}
-			}
-			
-			sight_type_slot = {
-				required = no
-				allowed_module_categories = {
-					doll_optical_sight
-					doll_holographic_sight
-					doll_riflescope
-				}
-			}
-
-			bulletproof_exo_type_slot = {
-				required = no
-				allowed_module_categories = {
-					doll_bulletproof
-				}
-			}
-
-			special_type_slot_1 = {
-				required = no
-				allowed_module_categories = {
-					doll_bore
-					doll_flash
-					fire_control_component
-				}
-			}
-
-			special_type_slot_2 = {
-				required = no
-				allowed_module_categories = {
-					doll_bore
-					doll_flash
-					fire_control_component
-				}
-			}
-
-			special_type_slot_3 = {
-				required = no
-				allowed_module_categories = {
-					doll_bore
-					doll_flash
-					fire_control_component
-				}
-			}
-
-			special_type_slot_4 = {
-				required = no
-				allowed_module_categories = {
-					doll_bore
-					doll_flash
-					fire_control_component
-				}
-			}
-
+		module_count_limit = {
+			category = doll_perambulator
+			count < 2
 		}
 		module_count_limit = {
 			category = doll_bore
@@ -687,140 +135,6 @@ equipments = {
 		module_count_limit = {
 			category = doll_flash
 			count < 2
-		}
-		module_count_limit = {
-			category = fire_control_component
-			count < 2
-		}
-		default_modules = {
-			magazine_type_slot = empty
-			sight_type_slot = empty
-			bulletproof_exo_type_slot = empty
-		}
-
-		fuel_consumption = 0
-		maximum_speed = 5
-		build_cost_ic = 1.62
-		reliability = 1.0
-		armor_value = 15
-		hardness = 0.7
-		supply_consumption = 0.04
-		resources = {
-			steel = 1
-			chromium = 1
-		}
-
-		lend_lease_cost = 8
-
-		manpower = 5
-
-	}
-	doll_equipment_sg_0 = {
-		abbreviation = "ds0"
-		derived_variant_name = doll_equipment_sg_0
-		visual_level = 0
-		year = 1936
-		archetype = doll_equipment_sg
-		priority = 2000
-		module_slots = inherit
-
-		upgrades = {
-			GKT_doll_speed_upgrade
-			GKT_doll_armor_upgrade
-		}
-	}
-	doll_equipment_sg_1 = {
-		abbreviation = "ds1"
-		derived_variant_name = doll_equipment_sg_1
-		visual_level = 0
-		year = 1939
-		archetype = doll_equipment_sg
-		parent = doll_equipment_sg_0
-		priority = 2000
-		module_slots = inherit
-		maximum_speed = 5
-		build_cost_ic = 2.32
-		reliability = 1.2
-		armor_value = 18
-		resources = {
-			steel = 2
-			chromium = 1
-		}
-	}
-	doll_equipment_mg = {
-		year = 1918
-		is_archetype = yes
-		is_buildable = no
-		picture = archetype_doll_equipment
-		type = armor
-		group_by = archetype
-		interface_category = interface_category_land
-		priority = 2000
-
-		module_slots = {
-
-			magazine_type_slot = {
-				required = yes
-				allowed_module_categories = {
-					doll_armour_piercing_projectile
-					doll_sniper_shells
-					doll_special_armour_piercing_projectile
-				}
-			}
-			
-			sight_type_slot = {
-				required = no
-				allowed_module_categories = {
-					doll_optical_sight
-					doll_holographic_sight
-					doll_riflescope
-					doll_spare_sight
-				}
-			}
-
-			bulletproof_exo_type_slot = {
-				required = no
-				allowed_module_categories = {
-					
-				}
-			}
-
-			special_type_slot_1 = {
-				required = no
-				allowed_module_categories = {
-					doll_belt
-					doll_tripod
-					fire_control_component
-				}
-			}
-
-			special_type_slot_2 = {
-				required = no
-				allowed_module_categories = {
-					doll_belt
-					doll_tripod
-					fire_control_component
-				}
-			}
-
-			special_type_slot_3 = {
-				required = no
-				allowed_module_categories = {
-					doll_belt
-					doll_tripod
-					fire_control_component
-				}
-			}
-
-			special_type_slot_4 = {
-				required = no
-				allowed_module_categories = {
-					doll_belt
-					doll_tripod
-					fire_control_component
-				}
-			}
-
 		}
 		module_count_limit = {
 			category = doll_belt
@@ -835,296 +149,63 @@ equipments = {
 			count < 2
 		}
 		default_modules = {
-			magazine_type_slot = empty
-			sight_type_slot = empty
-			bulletproof_exo_type_slot = empty
+			sight_type_slot = doll_generic_iron_sight
+			adaptivity_type_slot = doll_civilian_use
 		}
-
 		fuel_consumption = 0
-		maximum_speed = 5
-		build_cost_ic = 0.45
-		reliability = 1
-		armor_value = 5
-		hardness = 0.2
-		supply_consumption = 0.04
+		maximum_speed = 7
+		build_cost_ic = 0.1
+		reliability = 0.8
+		hardness = 0.05
+		supply_consumption = 0.01
 		resources = {
 			steel = 1
 		}
-
 		lend_lease_cost = 8
-
 		manpower = 5
-
+		scaled_by_reliability = {
+			max_strength = 2
+		}
 	}
-	doll_equipment_mg_0 = {
-		abbreviation = "dm0"
-		derived_variant_name = doll_equipment_mg_0
+	doll_chassis_hg_0 = {
+		abbreviation = "dh0"
+		derived_variant_name = doll_equipment_hg_0
 		visual_level = 0
-		year = 1939
-		archetype = doll_equipment_mg
+		year = 975
+		archetype = doll_chassis_hg
 		priority = 2000
 		module_slots = inherit
-
 		upgrades = {
 			GKT_doll_speed_upgrade
 			GKT_doll_armor_upgrade
 		}
 	}
-	doll_equipment_mg_1 = {
-		abbreviation = "dm1"
-		derived_variant_name = doll_equipment_mg_1
-		parent = doll_equipment_mg_0
+	doll_chassis_hg_1 = {
+		abbreviation = "dh1"
+		derived_variant_name = doll_equipment_hg_1
 		visual_level = 0
-		year = 1942
-		archetype = doll_equipment_mg
+		year = 1001
+		archetype = doll_chassis_hg
+		parent = doll_chassis_hg_0
 		priority = 2000
 		module_slots = inherit
-		maximum_speed = 5
-		hardness = 0.25
-		build_cost_ic = 0.55
+		maximum_speed = 7
+		build_cost_ic = 0.15
+		reliability = 1.0
+	}
+	doll_chassis_hg_2 = {
+		abbreviation = "dh2"
+		derived_variant_name = doll_equipment_hg_2
+		visual_level = 0
+		year = 1007
+		archetype = doll_chassis_hg
+		parent = doll_chassis_hg_1
+		priority = 2000
+		module_slots = inherit
+		maximum_speed = 7
+		build_cost_ic = 0.25
 		reliability = 1.2
-		armor_value = 8
-	}
-	doll_equipment_amphibious = {
-		year = 1939
-		is_archetype = yes
-		is_buildable = no
-		picture = archetype_doll_equipment_amphibious
-		type = armor
-		group_by = archetype
-		interface_category = interface_category_land
-		priority = 2000
-
-		module_slots = {
-
-			magazine_type_slot = {
-				required = yes
-				allowed_module_categories = {
-					doll_high_velocity
-				}
-			}
-			
-			sight_type_slot = {
-				required = no
-				allowed_module_categories = {
-					doll_optical_sight
-					doll_holographic_sight
-					doll_riflescope
-				}
-			}
-
-			bulletproof_exo_type_slot = {
-				required = no
-				allowed_module_categories = {
-					doll_x_exo
-				}
-			}
-
-			special_type_slot_1 = {
-				required = no
-				allowed_module_categories = {
-					doll_computing_chip
-					doll_silencer
-					fire_control_component
-				}
-			}
-
-			special_type_slot_2 = {
-				required = no
-				allowed_module_categories = {
-					doll_computing_chip
-					doll_silencer
-					fire_control_component
-				}
-			}
-
-			special_type_slot_3 = {
-				required = no
-				allowed_module_categories = {
-					doll_computing_chip
-					doll_silencer
-					fire_control_component
-				}
-			}
-
-			special_type_slot_4 = {
-				required = no
-				allowed_module_categories = {
-					doll_computing_chip
-					doll_silencer
-					fire_control_component
-				}
-			}
-
-		}
-		module_count_limit = {
-			category = doll_computing_chip
-			count < 3
-		}
-		module_count_limit = {
-			category = doll_silencer
-			count < 2
-		}
-		module_count_limit = {
-			category = fire_control_component
-			count < 2
-		}
-		default_modules = {
-			magazine_type_slot = empty
-			sight_type_slot = empty
-			bulletproof_exo_type_slot = empty
-		}
-
-		fuel_consumption = 0
-		maximum_speed = 6
-		build_cost_ic = 0.7
-		reliability = 1.1
-		armor_value = 5
-		hardness = 0.15
-		supply_consumption = 0.02
-		resources = {
-			steel = 2
-		}
-
-		lend_lease_cost = 1
-
-		manpower = 5
-
-	}
-	doll_equipment_amphibious_0 = {
-		abbreviation = "da0"
-		derived_variant_name = doll_equipment_amphibious_0
-		visual_level = 0
-		year = 1939
-		archetype = doll_equipment_amphibious
-		priority = 2000
-		module_slots = inherit
-
-		upgrades = {
-			GKT_doll_speed_upgrade
-			GKT_doll_armor_upgrade
-		}
-	}
-	doll_equipment_parachuted = {
-		year = 1939
-		is_archetype = yes
-		is_buildable = no
-		picture = archetype_doll_equipment_parachuted
-		type = armor
-		group_by = archetype
-		interface_category = interface_category_land
-		priority = 2000
-
-		module_slots = {
-
-			magazine_type_slot = {
-				required = yes
-				allowed_module_categories = {
-					doll_high_velocity
-				}
-			}
-			
-			sight_type_slot = {
-				required = no
-				allowed_module_categories = {
-					doll_optical_sight
-					doll_holographic_sight
-					doll_riflescope
-				}
-			}
-
-			bulletproof_exo_type_slot = {
-				required = no
-				allowed_module_categories = {
-					doll_x_exo
-				}
-			}
-
-			special_type_slot_1 = {
-				required = no
-				allowed_module_categories = {
-					doll_computing_chip
-					doll_silencer
-					fire_control_component
-				}
-			}
-
-			special_type_slot_2 = {
-				required = no
-				allowed_module_categories = {
-					doll_computing_chip
-					doll_silencer
-					fire_control_component
-				}
-			}
-
-			special_type_slot_3 = {
-				required = no
-				allowed_module_categories = {
-					doll_computing_chip
-					doll_silencer
-					fire_control_component
-				}
-			}
-
-			special_type_slot_4 = {
-				required = no
-				allowed_module_categories = {
-					doll_computing_chip
-					doll_silencer
-					fire_control_component
-				}
-			}
-
-		}
-		module_count_limit = {
-			category = doll_computing_chip
-			count < 3
-		}
-		module_count_limit = {
-			category = doll_silencer
-			count < 2
-		}
-		module_count_limit = {
-			category = fire_control_component
-			count < 2
-		}
-		default_modules = {
-			magazine_type_slot = empty
-			sight_type_slot = empty
-			bulletproof_exo_type_slot = empty
-		}
-
-		fuel_consumption = 0
-		maximum_speed = 6
-		build_cost_ic = 0.6
-		reliability = 1.1
-		armor_value = 2
 		hardness = 0.1
-		supply_consumption = 0.02
-		resources = {
-			aluminium = 1
-			steel = 1
-		}
-
-		lend_lease_cost = 1
-
-		manpower = 5
-
-	}
-	doll_equipment_parachuted_0 = {
-		abbreviation = "dp0"
-		derived_variant_name = doll_equipment_parachuted_0
-		visual_level = 0
-		year = 1939
-		archetype = doll_equipment_parachuted
-		priority = 2000
-		module_slots = inherit
-
-		upgrades = {
-			GKT_doll_speed_upgrade
-			GKT_doll_armor_upgrade
-		}
 	}
 	airborne_fairy = {
 		year = 1936
@@ -1162,9 +243,7 @@ equipments = {
 		group_by = archetype
 		interface_category = interface_category_land
 		priority = 2000
-
 		module_slots = {
-
 			main_magazine_type_slot = {
 				required = yes
 				allowed_module_categories = {
@@ -1194,7 +273,6 @@ equipments = {
 					doll_IOP_sight
 				}
 			}
-
 			bulletproof_exo_type_slot = {
 				required = no
 				allowed_module_categories = {
@@ -1204,7 +282,6 @@ equipments = {
 					doll_IOP_defence
 				}
 			}
-
 			special_type_slot_1 = {
 				required = no
 				allowed_module_categories = {
@@ -1217,7 +294,6 @@ equipments = {
 					doll_IOP_shield
 				}
 			}
-
 			special_type_slot_2 = {
 				required = no
 				allowed_module_categories = {
@@ -1230,7 +306,6 @@ equipments = {
 					doll_IOP_shield
 				}
 			}
-
 			special_type_slot_3 = {
 				required = no
 				allowed_module_categories = {
@@ -1243,7 +318,6 @@ equipments = {
 					doll_IOP_shield
 				}
 			}
-
 			special_type_slot_4 = {
 				required = no
 				allowed_module_categories = {
@@ -1256,7 +330,6 @@ equipments = {
 					doll_IOP_shield
 				}
 			}
-
 		}
 		module_count_limit = {
 			category = doll_computing_chip
@@ -1291,7 +364,6 @@ equipments = {
 			sight_type_slot = empty
 			bulletproof_exo_type_slot = empty
 		}
-
 		fuel_consumption = 0
 		maximum_speed = 8
 		build_cost_ic = 0.85
@@ -1302,11 +374,8 @@ equipments = {
 		resources = {
 			steel = 2
 		}
-
 		lend_lease_cost = 1
-
 		manpower = 5
-
 	}
 	doll_equipment_third_generation_0 = {
 		abbreviation = "dt0"
@@ -1316,13 +385,11 @@ equipments = {
 		archetype = doll_equipment_third_generation
 		priority = 2000
 		module_slots = inherit
-
 		upgrades = {
 			GKT_doll_speed_upgrade
 			GKT_doll_armor_upgrade
 		}
 	}
-
 	doll_equipment_command_doll = {
 		year = 1918
 		is_archetype = yes
@@ -1332,7 +399,6 @@ equipments = {
 		group_by = archetype
 		interface_category = interface_category_land
 		priority = 2000
-
 		fuel_consumption = 0
 		maximum_speed = 6
 		build_cost_ic = 2
@@ -1343,9 +409,7 @@ equipments = {
 		resources = {
 			steel = 1
 		}
-
 		lend_lease_cost = 1
-
 	}
 	doll_equipment_command_doll_0 = {
 		abbreviation = "cd0"
@@ -1356,6 +420,4 @@ equipments = {
 		priority = 2000
 		module_slots = inherit
 	}
-
 }
-
